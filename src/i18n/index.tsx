@@ -81,6 +81,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, [locale])
 
   const setLocale = useCallback((nextLocale: LocaleCode) => {
+    document.documentElement.lang = nextLocale
+    try {
+      localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale)
+    } catch {
+      // localStorage can be blocked in restricted browser contexts.
+    }
     setLocaleState(nextLocale)
   }, [])
 

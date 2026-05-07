@@ -705,7 +705,7 @@ export default function PCVerdictScreen() {
             {currentStep === 'solution' ? (() => {
               const catKey = solutionCategories[current.subIdx]
               const options = caseData.solutions[catKey] ?? []
-              const catLabel = SOLUTION_CATEGORY_LABELS[catKey] ?? catKey
+              const catLabel = caseData.solutionCategoryLabels?.[catKey] ?? SOLUTION_CATEGORY_LABELS[catKey] ?? catKey
               return (
                 <div className="pc-verdict-solution">
                   <div className="pc-verdict-solution__header">

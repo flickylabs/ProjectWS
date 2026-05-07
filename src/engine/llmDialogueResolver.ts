@@ -50,6 +50,8 @@ import type { DisclosureCaseId, DisclosureChannelType, GuardContext } from '../t
 import { evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
 import type { FreeInterrogationGuardContext } from '../types/freeInterrogationGuard'
 import { buildReleaseDialogueStyleGuide, polishNpcResponseCopy } from './npcResponsePolisher'
+import { buildLlmLanguageDirective, getLlmLocale, getLocalizedFreeQuestionBehaviorHint, getLocalizedFreeQuestionFallbackText, hasUnexpectedHangulForLocale } from '../i18n/llmLocale.ts'
+import { repairVisibleLlmTextLocale } from './llmLocaleGuard.ts'
 
 interface DossierOverrideContext {
   questionId?: string
@@ -171,11 +173,38 @@ function applySpeechReferenceGuardToResolvedDialogue(
   caseData: CaseData,
 ): ResolvedDialogue | null {
   if (!result) return result
+  if (getLlmLocale() !== 'ko') return result
   return {
     ...result,
     node: {
       ...result.node,
       text: enforceOpponentReferenceForms(result.node.text, caseData, result.target),
+    },
+  }
+}
+
+async function applyLocaleGuardToResolvedDialogue(
+  result: ResolvedDialogue | null,
+  fieldName: string,
+): Promise<ResolvedDialogue | null> {
+  if (!result) return result
+  const locale = getLlmLocale()
+  if (locale === 'ko') return result
+
+  const text = await repairVisibleLlmTextLocale(result.node.text, locale, {
+    fieldName,
+    fallbackReason: 'default',
+  })
+  const behaviorHint = hasUnexpectedHangulForLocale(result.node.behaviorHint, locale)
+    ? getLocalizedFreeQuestionBehaviorHint(locale) ?? undefined
+    : result.node.behaviorHint
+
+  return {
+    ...result,
+    node: {
+      ...result.node,
+      text,
+      behaviorHint,
     },
   }
 }
@@ -230,18 +259,41 @@ async function applyFreeInterrogationFallbackToResolvedDialogue(
     variant: 'free-interrogation-llm-response',
   })
 
-  if (fallbackResult.action !== 'fallback') return result
+  const locale = getLlmLocale()
+  if (fallbackResult.action !== 'fallback') {
+    if (!hasUnexpectedHangulForLocale(result.node.text, locale)) return result
+    return {
+      ...result,
+      node: {
+        ...result.node,
+        text: await repairVisibleLlmTextLocale(result.node.text, locale, {
+          fieldName: 'freeInterrogation.response',
+          fallbackReason: 'default',
+        }),
+      },
+    }
+  }
+  const fallbackText = await repairVisibleLlmTextLocale(fallbackResult.text, locale, {
+    fieldName: 'freeInterrogation.fallback',
+    fallbackReason: 'default',
+  })
+  const behaviorHint = locale === 'ko'
+    ? fallbackResult.behaviorHint || result.node.behaviorHint
+    : getLocalizedFreeQuestionBehaviorHint(locale)
+      ?? (hasUnexpectedHangulForLocale(result.node.behaviorHint, locale) ? undefined : result.node.behaviorHint)
 
   return {
     ...result,
     node: {
       ...result.node,
-      text: polishNpcResponseCopy(
-        enforceOpponentReferenceForms(fallbackResult.text, caseData, finalTarget),
-        caseData,
-        finalTarget,
-      ),
-      behaviorHint: fallbackResult.behaviorHint || result.node.behaviorHint,
+      text: locale === 'ko'
+        ? polishNpcResponseCopy(
+          enforceOpponentReferenceForms(fallbackText, caseData, finalTarget),
+          caseData,
+          finalTarget,
+        )
+        : fallbackText,
+      behaviorHint,
     },
   }
 }
@@ -274,7 +326,12 @@ export async function resolveLLMDialogue(
 
   // ── ScriptedText 우선 경로: 사전 생성 대사가 있으면 LLM 호출 안 함 ──
   const scriptedResult = tryScriptedDialoguePath(action, agentA, agentB, caseData, store, dossierContext)
-  if (scriptedResult !== null) return applySpeechReferenceGuardToResolvedDialogue(scriptedResult, caseData)
+  if (scriptedResult !== null) {
+    return applyLocaleGuardToResolvedDialogue(
+      applySpeechReferenceGuardToResolvedDialogue(scriptedResult, caseData),
+      'scriptedNpcResponse',
+    )
+  }
 
   // ── Blueprint 경로 분기: ClaimPolicy가 있는 사건은 새 경로 ──
   const blueprintResult = await tryBlueprintPath(action, agentA, agentB, evidenceStates, caseData, store)
@@ -289,8 +346,9 @@ export async function resolveLLMDialogue(
         },
       ),
     )
+    const localizedBlueprintResult = await applyLocaleGuardToResolvedDialogue(guardedBlueprintResult, 'blueprintNpcResponse')
     return applyFreeInterrogationFallbackToResolvedDialogue(
-      guardedBlueprintResult,
+      localizedBlueprintResult,
       action,
       caseData,
       blueprintResult.target,
@@ -407,10 +465,12 @@ export async function resolveLLMDialogue(
     }
   }
 
+  const locale = getLlmLocale()
+  const languageDirective = buildLlmLanguageDirective(locale)
   const rawSystemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult, interrogationDepth)
-  const systemPrompt = rawSystemPrompt + crossDisputeInfo
+  const systemPrompt = `${languageDirective}\n\n${rawSystemPrompt}${crossDisputeInfo}\n\n${languageDirective}`
   const contractResponseMode = (() => { try { return (JSON.parse(actionContract) as { responseMode?: string }).responseMode ?? 'answer_only' } catch { return 'answer_only' } })()
-  let userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)
+  let userPrompt = `${buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)}\n\n${languageDirective}`
 
   // 사건카드 질문 오버라이드: 재판관 질문이 이미 정해져 있으면 LLM에 직접 전달
   if (dossierRaw) {
@@ -477,14 +537,25 @@ export async function resolveLLMDialogue(
       requireConcreteAmount,
       amountHint: extractConcreteAmountHint(dispute?.truthDescription, dispute?.name),
     })
-    parsed.npcNode.text = ensureS5MinimumStructure(parsed.npcNode.text, {
-      lieState: lieEntry?.currentState,
-      previousNpcResponse: getPreviousNpcResponseText(store.dialogueLog),
-      requireConcreteAmount,
-      amountHint: extractConcreteAmountHint(dispute?.truthDescription, dispute?.name),
+    if (locale === 'ko') {
+      parsed.npcNode.text = ensureS5MinimumStructure(parsed.npcNode.text, {
+        lieState: lieEntry?.currentState,
+        previousNpcResponse: getPreviousNpcResponseText(store.dialogueLog),
+        requireConcreteAmount,
+        amountHint: extractConcreteAmountHint(dispute?.truthDescription, dispute?.name),
+      })
+      parsed.npcNode.text = diversifyAgainstPreviousResponse(parsed.npcNode.text, getPreviousNpcResponseText(store.dialogueLog))
+    }
+    parsed.npcNode.text = locale === 'ko'
+      ? enforceOpponentReferenceForms(parsed.npcNode.text, caseData, target)
+      : parsed.npcNode.text
+    parsed.npcNode.text = await repairVisibleLlmTextLocale(parsed.npcNode.text, locale, {
+      fieldName: 'npcResponse',
+      fallbackReason: 'api_failure',
     })
-    parsed.npcNode.text = diversifyAgainstPreviousResponse(parsed.npcNode.text, getPreviousNpcResponseText(store.dialogueLog))
-    parsed.npcNode.text = enforceOpponentReferenceForms(parsed.npcNode.text, caseData, target)
+    if (hasUnexpectedHangulForLocale(parsed.npcNode.behaviorHint, locale)) {
+      parsed.npcNode.behaviorHint = undefined
+    }
 
     // NPC 응답이 너무 짧으면 폴백으로 전환
     if (!parsed.npcNode.text || parsed.npcNode.text.length < 5) {
@@ -515,8 +586,8 @@ export async function resolveLLMDialogue(
       if (textLeaks.length > 0) {
         console.warn(`[TruthGuard] 텍스트 레벨 누출 감지: ${textLeaks.map(t => t.id).join(', ')} — 폴백 전환`)
         // 텍스트 누출 시 폴백 대사로 교체
-        parsed.npcNode.text = '재판관님, 그 부분은 제가 말씀드리기 어렵습니다.'
-        parsed.npcNode.behaviorHint = '입을 다물고 시선을 내린다.'
+        parsed.npcNode.text = getLocalizedFreeQuestionFallbackText('default', locale) ?? '재판관님, 그 부분은 제가 말씀드리기 어렵습니다.'
+        parsed.npcNode.behaviorHint = locale === 'ko' ? '입을 다물고 시선을 내린다.' : undefined
         parsed.stance = 'hedge'
         parsed.requestedFollowup = ''
       }
@@ -536,6 +607,10 @@ export async function resolveLLMDialogue(
         }
       }
       if (finalJudgeQuestion) {
+        finalJudgeQuestion = await repairVisibleLlmTextLocale(finalJudgeQuestion, locale, {
+          fieldName: 'judgeQuestion',
+          fallbackReason: 'default',
+        })
         finalJudgeQuestion = await applyDisclosureGuardToText(
           finalJudgeQuestion,
           buildDisclosureGuardContext(
@@ -574,8 +649,9 @@ export async function resolveLLMDialogue(
         lieState: lieEntry?.currentState,
       },
     ))
+    const localizedGuardedResult = await applyLocaleGuardToResolvedDialogue(guardedResult, 'llmNpcResponse')
     return applyFreeInterrogationFallbackToResolvedDialogue(
-      guardedResult,
+      localizedGuardedResult,
       action,
       caseData,
       target,
@@ -596,8 +672,9 @@ export async function resolveLLMDialogue(
         },
       ),
     )
+    const localizedFallback = await applyLocaleGuardToResolvedDialogue(guardedFallback, 'legacyFallbackNpcResponse')
     return applyFreeInterrogationFallbackToResolvedDialogue(
-      guardedFallback,
+      localizedFallback,
       action,
       caseData,
       fallbackResult?.target,
@@ -619,8 +696,9 @@ export async function resolveLLMDialogue(
         },
       ),
     )
+    const localizedFallback = await applyLocaleGuardToResolvedDialogue(guardedFallback, 'legacyFallbackNpcResponse')
     return applyFreeInterrogationFallbackToResolvedDialogue(
-      guardedFallback,
+      localizedFallback,
       action,
       caseData,
       fallbackResult?.target,
@@ -1232,14 +1310,17 @@ const VALID_STANCES: NpcStance[] = ['deny', 'hedge', 'partial_admit', 'admit', '
 function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string, extraCtx?: PostProcessContext): ParsedLLMResponse {
   const storeCaseData = useGameStore.getState().caseData
   const partyNames = { nameA: storeCaseData?.duo?.partyA?.name ?? 'A', nameB: storeCaseData?.duo?.partyB?.name ?? 'B' }
-  const polishText = (text: string) => polishNpcResponseCopy(
-    postProcessNpcText(text, {
-      partyNames,
-      ...extraCtx,
-    }),
-    storeCaseData,
-    speaker,
-  )
+  const locale = getLlmLocale()
+  const polishText = (text: string) => locale === 'ko'
+    ? polishNpcResponseCopy(
+      postProcessNpcText(text, {
+        partyNames,
+        ...extraCtx,
+      }),
+      storeCaseData,
+      speaker,
+    )
+    : text.trim()
   const fallback: ParsedLLMResponse = {
     npcNode: {
       id: `llm-${Date.now()}`,

@@ -17,6 +17,7 @@ import PCRecordSummary from './PCRecordSummary'
 import PCSettingsPanel from '../settings/PCSettingsPanel'
 import { playCourtControl } from '../../../engine/soundEngine'
 import { useI18n, type MessageKey } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 interface Props {
   actionPanel?: ReactNode
@@ -103,7 +104,7 @@ interface CourtControlUsedDetail {
 }
 
 export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePhase }: Props) {
-  const { t } = useI18n()
+  const { locale, t } = useI18n()
   const chatRef = useRef<HTMLDivElement>(null)
   const combinationTimerRef = useRef<number | null>(null)
   const dossierTimerRef = useRef<number | null>(null)
@@ -183,13 +184,14 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       const inputs = (detail.inputs ?? [])
         .slice(0, 2)
         .map((item) => ({
-          label: item.label,
+          label: localizeRuntimeText(item.label, locale),
           iconId: getCombinationIconId(item.type),
         }))
 
-      const outputLabel = detail.outputLabel ?? detail.resultTitle ?? t('pc.court.combination.success')
+      const outputLabel = localizeRuntimeText(detail.outputLabel ?? detail.resultTitle ?? t('pc.court.combination.success'), locale)
       const outputSummary = detail.outputSummary
-        ?? getCombinationSummary(detail.resultType, t)
+        ? localizeRuntimeText(detail.outputSummary, locale)
+        : getCombinationSummary(detail.resultType, t)
 
       setCombinationOverlay({
         id: Date.now(),
@@ -219,7 +221,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
     const handleDossierUnlock = (event: Event) => {
       const detail = (event as CustomEvent<DossierUnlockDetail>).detail
-      setDossierUnlockText(detail?.questionText ?? t('pc.court.dossier.unlockDefault'))
+      setDossierUnlockText(localizeRuntimeText(detail?.questionText ?? t('pc.court.dossier.unlockDefault'), locale))
       if (dossierTimerRef.current) window.clearTimeout(dossierTimerRef.current)
       dossierTimerRef.current = window.setTimeout(() => setDossierUnlockText(null), 1500)
     }
@@ -229,7 +231,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       playCourtControl()
       setCourtControlFlash({
         id: Date.now(),
-        label: detail?.label ?? getCourtControlLabel(detail?.action, t),
+        label: localizeRuntimeText(detail?.label ?? getCourtControlLabel(detail?.action, t), locale),
       })
       if (courtControlTimerRef.current) window.clearTimeout(courtControlTimerRef.current)
       courtControlTimerRef.current = window.setTimeout(() => setCourtControlFlash(null), 500)
@@ -246,7 +248,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       window.removeEventListener('v4:dossier-unlock', handleDossierUnlock)
       window.removeEventListener('pc:court-control-used', handleCourtControlUsed)
     }
-  }, [t])
+  }, [locale, t])
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -272,12 +274,12 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     const lines = dialogueLog
       .filter((entry) => !entry.isHidden && (entry.speaker === 'system' || entry.relatedDisputes.length > 0))
       .slice(-10)
-      .map((entry) => `T${entry.turn} · ${entry.text}`)
+      .map((entry) => `T${entry.turn} · ${localizeRuntimeText(entry.text, locale)}`)
 
     return lines.length > 0
       ? lines.join('\n\n')
       : t('pc.court.timeline.empty')
-  }, [dialogueLog, t])
+  }, [dialogueLog, locale, t])
 
   const openHeaderPanel = useCallback((kind: 'invest' | 'skill' | 'court' | 'turn' | 'timeline') => {
     if (kind === 'invest' || kind === 'skill' || kind === 'court') {
@@ -363,13 +365,13 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     if (!tokenPopup) return
     const recovery = TOKEN_RECOVERY_CONFIG[tokenPopup]
     const result = rebalanceResource(recovery.target)
-    setTokenPopupResult({ message: result.message, ok: result.ok })
+    setTokenPopupResult({ message: localizeRuntimeText(result.message, locale), ok: result.ok })
     if (!result.ok) return
     const latest = useGameStore.getState()
     if (latest.resources.courtControl < resources.courtControl) {
       window.dispatchEvent(new CustomEvent('pc:court-control-used', { detail: { label: recovery.label } }))
     }
-  }, [rebalanceResource, resources.courtControl, tokenPopup])
+  }, [locale, rebalanceResource, resources.courtControl, tokenPopup])
 
   return (
     <>
@@ -426,7 +428,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <span className="logo-text">{t('brand.title')}</span>
               {caseData ? (
                 <span className="logo-case">
-                  {caseData.meta?.title ?? caseData.caseId}
+                  {localizeRuntimeText(caseData.meta?.title ?? caseData.caseId, locale)}
                   <span className="logo-case__ver">{caseData.caseId.replace(/^case-/, '').replace(/^(spouse|family|friend|neighbor|tenant|partnership|workplace|headline)-/, '')}</span>
                 </span>
               ) : null}

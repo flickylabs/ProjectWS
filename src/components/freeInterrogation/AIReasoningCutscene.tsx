@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/useGameStore'
 import type { LightningReason } from '../../engine/vfxHierarchyEngine'
 import AIReasoningCompactVFX from './AIReasoningCompactVFX'
 import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../pc/layout/disputeRibbonEvents'
+import { useI18n, type LocaleCode } from '../../i18n'
 import '../../styles/aiReasoningCutscene.css'
 
 export interface AIReasoningCutsceneChip {
@@ -34,6 +35,53 @@ const compactDurationMs = 1450
 const reducedMajorDurationMs = 1400
 const reducedCompactDurationMs = 650
 
+const AI_REASONING_COPY = {
+  ko: {
+    title: '질문 분석',
+    skip: '건너뛰기',
+    target: '대상',
+    intent: '의도',
+    dispute: '쟁점',
+    evidence: '증거',
+    connectDispute: '쟁점 연결',
+    confirmEvidence: '관련 증거 확인',
+    routeFixed: '질문 경로 확정',
+  },
+  en: {
+    title: 'Question Analysis',
+    skip: 'Skip',
+    target: 'Target',
+    intent: 'Intent',
+    dispute: 'Dispute',
+    evidence: 'Evidence',
+    connectDispute: 'Connecting dispute',
+    confirmEvidence: 'Checking related evidence',
+    routeFixed: 'Question route confirmed',
+  },
+  ja: {
+    title: '質問分析',
+    skip: 'スキップ',
+    target: '対象',
+    intent: '意図',
+    dispute: '争点',
+    evidence: '証拠',
+    connectDispute: '争点を接続',
+    confirmEvidence: '関連証拠を確認',
+    routeFixed: '質問ルート確定',
+  },
+  'zh-CN': {
+    title: '问题分析',
+    skip: '跳过',
+    target: '对象',
+    intent: '意图',
+    dispute: '争议点',
+    evidence: '证据',
+    connectDispute: '连接争议点',
+    confirmEvidence: '确认相关证据',
+    routeFixed: '问题路径已确认',
+  },
+} as const satisfies Record<LocaleCode, Record<string, string>>
+
 const firstSuccessByCase = new Set<string>()
 
 export function claimAIReasoningCutsceneFirstSuccess(caseId: string): boolean {
@@ -49,6 +97,8 @@ export function triggerAIReasoningCutscene(payload: AIReasoningCutscenePayload):
 }
 
 export default function AIReasoningCutscene() {
+  const { locale } = useI18n()
+  const copy = AI_REASONING_COPY[locale]
   const [active, setActive] = useState<ActiveCutscene | null>(null)
   const autoTimerRef = useRef<number | null>(null)
   const closeTimerRef = useRef<number | null>(null)
@@ -134,17 +184,17 @@ export default function AIReasoningCutscene() {
   }
 
   const chipList = [
-    { key: 'target', title: '대상', chip: active.chips.target },
-    { key: 'intent', title: '의도', chip: active.chips.intent },
-    { key: 'dispute', title: '쟁점', chip: active.chips.dispute },
-    active.chips.evidence ? { key: 'evidence', title: '증거', chip: active.chips.evidence } : null,
+    { key: 'target', title: copy.target, chip: active.chips.target },
+    { key: 'intent', title: copy.intent, chip: active.chips.intent },
+    { key: 'dispute', title: copy.dispute, chip: active.chips.dispute },
+    active.chips.evidence ? { key: 'evidence', title: copy.evidence, chip: active.chips.evidence } : null,
   ].filter((item): item is NonNullable<typeof item> => Boolean(item))
 
   return (
     <div
       className={`ai-rc-root ai-rc-root--major${active.leaving ? ' is-leaving' : ''}`}
       role="dialog"
-      aria-label="질문 분석"
+      aria-label={copy.title}
       onClick={() => close(true)}
       onKeyDown={(event) => {
         if (event.key === 'Escape' || event.key === ' ') close(true)
@@ -154,9 +204,9 @@ export default function AIReasoningCutscene() {
       <div className="ai-rc ai-rc--major" onClick={(event) => event.stopPropagation()}>
         <div className="ai-rc__board-lines" aria-hidden="true" />
         <div className="ai-rc__header">
-          <span>질문 분석</span>
+          <span>{copy.title}</span>
           <button className="ai-rc__skip" onClick={() => close(true)} type="button">
-            건너뛰기
+            {copy.skip}
           </button>
         </div>
 
@@ -182,9 +232,9 @@ export default function AIReasoningCutscene() {
         </div>
 
         <div className="ai-rc__status-rail">
-          <span>쟁점 연결</span>
-          <span>관련 증거 확인</span>
-          <strong>질문 경로 확정</strong>
+          <span>{copy.connectDispute}</span>
+          <span>{copy.confirmEvidence}</span>
+          <strong>{copy.routeFixed}</strong>
         </div>
       </div>
     </div>

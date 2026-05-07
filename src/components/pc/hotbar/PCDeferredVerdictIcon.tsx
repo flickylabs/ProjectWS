@@ -13,9 +13,12 @@
  * - 다른 진실 공방이 이미 활성(pendingConfrontation 있음)이면 진입 X (큐 충돌 방지)
  */
 import { useStore, useGameStore } from '../../../store/useGameStore'
+import { useI18n } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import PCSvgIcon from '../icons/PCSvgIcon'
 
 export default function PCDeferredVerdictIcon() {
+  const { locale } = useI18n()
   // 안전 가드 — store rehydration 전 또는 dev hot reload 직후 deferredVerdicts undefined 가능
   // ★ 절대 `?? {}` selector 사용 X — 매 select마다 새 객체 인스턴스 생성으로 무한 리렌더 발생.
   // selector는 raw 값만 반환, fallback은 컴포넌트 내부에서 처리.
@@ -27,11 +30,15 @@ export default function PCDeferredVerdictIcon() {
   const entries = Object.values(deferredVerdicts)
   if (entries.length === 0) return null
 
+  const deferredLabel = localizeRuntimeText('보류된 판결', locale)
+  const resumeLabel = localizeRuntimeText('판결 재개', locale)
+
   return (
-    <div className="pc-deferred-verdict" role="region" aria-label="보류된 판결">
-      <span className="pc-deferred-verdict__label">보류된 판결</span>
+    <div className="pc-deferred-verdict" role="region" aria-label={deferredLabel}>
+      <span className="pc-deferred-verdict__label">{deferredLabel}</span>
       {entries.map((event) => {
         const disputeName = caseData.disputes.find((d) => d.id === event.disputeId)?.name ?? event.disputeId
+        const localizedDisputeName = localizeRuntimeText(disputeName, locale)
         return (
           <button
             key={event.disputeId}
@@ -39,13 +46,13 @@ export default function PCDeferredVerdictIcon() {
             className="pc-deferred-verdict__chip"
             // 다른 진실 공방이 활성 중이면 클릭 무시 (큐 충돌 방지)
             disabled={Boolean(pendingConfrontation)}
-            title={`판결 재개 — ${disputeName}`}
+            title={`${resumeLabel} — ${localizedDisputeName}`}
             onClick={() => {
               useGameStore.getState().restoreDeferredVerdict(event.disputeId)
             }}
           >
             <PCSvgIcon id="i-scale" size={14} />
-            <span className="pc-deferred-verdict__chip-name">{disputeName}</span>
+            <span className="pc-deferred-verdict__chip-name">{localizedDisputeName}</span>
           </button>
         )
       })}

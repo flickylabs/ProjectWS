@@ -15,6 +15,8 @@ import {
   type AIReasoningCutscenePayload,
 } from './AIReasoningCutscene'
 import { playInvestigationTokenWarning } from '../../engine/soundEngine'
+import { useI18n, type LocaleCode } from '../../i18n'
+import { localizeRuntimeText } from '../../i18n/runtimeText'
 
 interface Props {
   target: PartyId | null
@@ -28,6 +30,100 @@ const MIN_QUESTION_LENGTH = 5
 const MAX_QUESTION_LENGTH = 100
 const PANEL_CLOSE_BEFORE_RESULT_DELAY_MS = 140
 
+const FREE_QUESTION_COPY = {
+  ko: {
+    minLength: '5글자 이상 입력해주세요',
+    placeholder: '직접 질문을 입력하세요',
+    busy: '처리 중',
+    submit: '보내기',
+    noTokens: '심문 토큰 0',
+    fallbackUnable: '재판관님, 그 질문에는 지금 답하기 어렵습니다.',
+    behaviorHint: '질문을 고르다 잠시 말을 아낀다.',
+  },
+  en: {
+    minLength: 'Enter at least 5 characters.',
+    placeholder: 'Type your question',
+    busy: 'Processing',
+    submit: 'Send',
+    noTokens: 'Interrogation Token 0',
+    fallbackUnable: 'Your Honor, that question is difficult to answer right now.',
+    behaviorHint: 'Pauses briefly, choosing words as if sorting through the question.',
+  },
+  ja: {
+    minLength: '5文字以上入力してください',
+    placeholder: '質問を入力してください',
+    busy: '処理中',
+    submit: '送信',
+    noTokens: '尋問トークン 0',
+    fallbackUnable: '裁判官、その質問には今は答えにくいです。',
+    behaviorHint: '質問を整理するように、少し言葉を選ぶ。',
+  },
+  'zh-CN': {
+    minLength: '请输入至少 5 个字符',
+    placeholder: '输入你的问题',
+    busy: '处理中',
+    submit: '发送',
+    noTokens: '讯问令牌 0',
+    fallbackUnable: '审判官，这个问题现在很难回答。',
+    behaviorHint: '像是在整理问题一样，短暂停顿后斟酌措辞。',
+  },
+} as const satisfies Record<LocaleCode, Record<string, string>>
+
+const INTENT_LABELS = {
+  ko: {
+    fact_pursuit: '사실 추궁',
+    motive_search: '동기 탐색',
+    empathy_approach: '감정 접근',
+    evidence_query: '관련 증거 확인',
+    relation_query: '관계 확인',
+    pre_verdict_summary: '판결 전 정리',
+    off_topic: '사건 밖 질문',
+    public_info: '공개 정보',
+    gameplay_help: '진행 안내',
+    leak_probe: '비공개 정보 차단',
+    unmapped: '질문 분석',
+  },
+  en: {
+    fact_pursuit: 'Fact Pursuit',
+    motive_search: 'Motive Search',
+    empathy_approach: 'Emotional Approach',
+    evidence_query: 'Evidence Check',
+    relation_query: 'Relationship Check',
+    pre_verdict_summary: 'Pre-verdict Review',
+    off_topic: 'Off-case Question',
+    public_info: 'Public Information',
+    gameplay_help: 'Gameplay Help',
+    leak_probe: 'Protected Information',
+    unmapped: 'Question Analysis',
+  },
+  ja: {
+    fact_pursuit: '事実追及',
+    motive_search: '動機探索',
+    empathy_approach: '感情アプローチ',
+    evidence_query: '関連証拠の確認',
+    relation_query: '関係確認',
+    pre_verdict_summary: '判決前整理',
+    off_topic: '事件外の質問',
+    public_info: '公開情報',
+    gameplay_help: '進行案内',
+    leak_probe: '非公開情報の遮断',
+    unmapped: '質問分析',
+  },
+  'zh-CN': {
+    fact_pursuit: '事实追问',
+    motive_search: '动机探索',
+    empathy_approach: '情绪切入',
+    evidence_query: '相关证据确认',
+    relation_query: '关系确认',
+    pre_verdict_summary: '判决前整理',
+    off_topic: '案外问题',
+    public_info: '公开信息',
+    gameplay_help: '流程提示',
+    leak_probe: '非公开信息拦截',
+    unmapped: '问题分析',
+  },
+} as const satisfies Record<LocaleCode, Record<FreeInterrogationIntentId, string>>
+
 export default function FreeQuestionInput({
   target,
   activeDisputeId,
@@ -35,6 +131,8 @@ export default function FreeQuestionInput({
   className,
   onDone,
 }: Props) {
+  const { locale } = useI18n()
+  const copy = FREE_QUESTION_COPY[locale]
   const [text, setText] = useState('')
   const [busy, setBusy] = useState(false)
   const dispatch = useActionDispatch()
@@ -90,7 +188,7 @@ export default function FreeQuestionInput({
           return
         }
         const action = result.action
-        const cutscenePayload = buildAIReasoningCutscenePayload(trimmed, result.intent, caseData)
+        const cutscenePayload = buildAIReasoningCutscenePayload(trimmed, result.intent, caseData, locale)
         setText('')
         onDone?.()
         window.setTimeout(() => {
@@ -111,8 +209,8 @@ export default function FreeQuestionInput({
         setText('')
         onDone?.()
         const fallbackText = fallbackSpeaker === 'a' || fallbackSpeaker === 'b'
-          ? polishNpcResponseCopy(result.fallbackText ?? '재판관님, 그 질문에는 지금 답하기 어렵습니다.', caseData, fallbackSpeaker)
-          : result.fallbackText ?? '재판관님, 그 질문에는 지금 답하기 어렵습니다.'
+          ? polishNpcResponseCopy(result.fallbackText ?? copy.fallbackUnable, caseData, fallbackSpeaker)
+          : result.fallbackText ?? copy.fallbackUnable
         fresh.addDialogue({ speaker: 'judge', text: trimmed, relatedDisputes: related, turn: fresh.turnCount })
         fresh.addDialogue({
           speaker: fallbackSpeaker,
@@ -121,7 +219,7 @@ export default function FreeQuestionInput({
           turn: fresh.turnCount,
           behaviorHint: fallbackSpeaker === 'system'
             ? undefined
-            : '질문을 고르다 잠시 말을 아낀다.',
+            : copy.behaviorHint,
           source: 'fallback',
         })
         if (result.turnPolicy === 'advance') {
@@ -133,7 +231,7 @@ export default function FreeQuestionInput({
     } finally {
       setBusy(false)
     }
-  }, [activeDisputeId, canSubmit, caseData, currentPhase, dispatch, onDone, target, trimmed])
+  }, [activeDisputeId, canSubmit, caseData, copy.behaviorHint, copy.fallbackUnable, currentPhase, dispatch, locale, onDone, target, trimmed])
 
   if (!enabled) return null
 
@@ -147,7 +245,7 @@ export default function FreeQuestionInput({
     >
       <div className="pc-free-question-field relative flex-1">
         {showLengthHint ? (
-          <span className="pc-free-question-requirement">5글자 이상 입력해주세요</span>
+          <span className="pc-free-question-requirement">{copy.minLength}</span>
         ) : null}
         <textarea
           ref={autoFocusRef}
@@ -165,7 +263,7 @@ export default function FreeQuestionInput({
               void submit()
             }
           }}
-          placeholder="직접 질문을 입력하세요"
+          placeholder={copy.placeholder}
           rows={1}
           value={text}
         />
@@ -182,33 +280,20 @@ export default function FreeQuestionInput({
         disabled={!canSubmit}
         type="submit"
       >
-        {busy ? '처리 중' : '보내기'}
+        {busy ? copy.busy : copy.submit}
       </button>
       {resources.investigationTokens < 1 ? (
-        <span className="text-[11px] text-gray-500">심문 토큰 0</span>
+        <span className="text-[11px] text-gray-500">{copy.noTokens}</span>
       ) : null}
     </form>
   )
-}
-
-const INTENT_LABELS: Record<FreeInterrogationIntentId, string> = {
-  fact_pursuit: '사실 추궁',
-  motive_search: '동기 탐색',
-  empathy_approach: '감정 접근',
-  evidence_query: '관련 증거 확인',
-  relation_query: '관계 확인',
-  pre_verdict_summary: '판결 전 정리',
-  off_topic: '사건 밖 질문',
-  public_info: '공개 정보',
-  gameplay_help: '진행 도움',
-  leak_probe: '비공개 정보 차단',
-  unmapped: '질문 분석',
 }
 
 function buildAIReasoningCutscenePayload(
   questionText: string,
   intent: FreeInterrogationIntent,
   caseData: CaseData,
+  locale: LocaleCode,
 ): AIReasoningCutscenePayload | null {
   const target = intent.mapped.target
   const disputeId = intent.mapped.disputeId
@@ -227,19 +312,19 @@ function buildAIReasoningCutscenePayload(
     questionText,
     chips: {
       target: {
-        label: partyName,
+        label: localizeRuntimeText(partyName, locale),
         selector: `[data-party="${escapeAttributeValue(target)}"]`,
       },
       intent: {
-        label: INTENT_LABELS[intent.intent],
+        label: INTENT_LABELS[locale][intent.intent],
       },
       dispute: {
-        label: dispute?.name ?? disputeId,
+        label: localizeRuntimeText(dispute?.name ?? disputeId, locale),
         selector: `[data-dispute-id="${escapeAttributeValue(disputeId)}"]`,
       },
       evidence: evidence
         ? {
-            label: evidence.surfaceName ?? evidence.name,
+            label: localizeRuntimeText(evidence.surfaceName ?? evidence.name, locale),
             selector: `[data-evidence-id="${escapeAttributeValue(evidence.id)}"]`,
           }
         : undefined,

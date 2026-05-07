@@ -21,6 +21,7 @@ import { emitVerdictCtaCollapsed, PC_VERDICT_CTA_COLLAPSED_EVENT } from '../layo
 import { requestVerdictAdvance } from '../layout/verdictAdvancePrompt'
 import { normalizeCaseKey } from '../../../utils/caseHelpers'
 import { useI18n, type MessageKey, type MessageValues } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 type TFunction = (key: MessageKey, values?: MessageValues) => string
 
@@ -63,8 +64,20 @@ function getEvidenceTypeLabel(type: string, t: TFunction) {
   return t(EVIDENCE_TYPE_LABEL_KEYS[type] ?? 'pc.hotbar.evidence.file')
 }
 
+function buildEvidenceMetaTags(meta: { trustLevel?: string; source?: string } | undefined, t: TFunction): string[] {
+  const tags: string[] = []
+  if (meta?.trustLevel) tags.push(t(`pc.evidenceMeta.trust.${meta.trustLevel}` as MessageKey))
+  if (meta?.source) tags.push(t(`pc.evidenceMeta.source.${meta.source}` as MessageKey))
+  return tags
+}
+
+function formatLocalizedCaseText(value: string, locale: string, t: TFunction): string {
+  void t
+  return localizeRuntimeText(value, locale as Parameters<typeof localizeRuntimeText>[1])
+}
+
 export default function PCBottomDock() {
-  const { t } = useI18n()
+  const { locale, t } = useI18n()
   const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
   const currentPhase = useStore((s) => s.currentPhase)
@@ -221,7 +234,7 @@ export default function PCBottomDock() {
     const ev = evidenceDefinitions.find((e) => e.id === evidenceId)
     if (!ev) return
     const st = evidenceStates[ev.id]
-    const label = st?.deepInvestigated ? ev.name : (ev.surfaceName ?? ev.name)
+    const label = localizeRuntimeText(st?.deepInvestigated ? ev.name : (ev.surfaceName ?? ev.name), locale)
     const desc = st?.deepInvestigated ? ev.description : (ev.surfaceDescription ?? ev.description)
     const stages = ev.investigationStages ?? []
     const investigatedKeys = new Set(st?.investigatedActions ?? [])
@@ -234,13 +247,10 @@ export default function PCBottomDock() {
     if (revealedFindings.length > 0 || hiddenCount > 0) {
       bodyParts.push('')
       bodyParts.push(t('pc.hotbar.evidence.foundContent'))
-      revealedFindings.forEach((f) => bodyParts.push(`• ${f}`))
+      revealedFindings.forEach((f) => bodyParts.push(`• ${formatLocalizedCaseText(f, locale, t)}`))
       if (hiddenCount > 0) bodyParts.push(t('pc.hotbar.evidence.hiddenCount', { count: hiddenCount }))
     }
-    const meta = ev.meta
-    const metaTags: string[] = []
-    if (meta?.trustLabel) metaTags.push(meta.trustLabel)
-    if (meta?.sourceLabel) metaTags.push(meta.sourceLabel)
+    const metaTags = buildEvidenceMetaTags(ev.meta, t)
 
     openPcInteractionPanel({
       title: label,
@@ -253,7 +263,7 @@ export default function PCBottomDock() {
       body: bodyParts.join('\n'),
       actions: [{ kind: 'open_evidence' as const, label: t('pc.hotbar.evidence.open'), evidenceId: ev.id }],
     })
-  }, [evidenceDefinitions, evidenceStates, t])
+  }, [evidenceDefinitions, evidenceStates, locale, t])
 
   // --- Witness (slot 6) ---
   // socialGraph entries 모두를 증인으로 인식. slot whitelist 제거 — 신규 사건의
@@ -395,7 +405,7 @@ export default function PCBottomDock() {
                   <p className="pc-question-choice__hint">{t('pc.hotbar.question.chooseDispute')}</p>
                   {visibleDisputes.map((d) => (
                     <button className="pc-question-choice__dispute-btn" key={d.id} onClick={() => selectDisputeForQuestion(d.id)} type="button">
-                      <span className="pc-question-choice__dispute-name">{d.name}</span>
+                      <span className="pc-question-choice__dispute-name">{localizeRuntimeText(d.name, locale)}</span>
                     </button>
                   ))}
                 </>
@@ -413,8 +423,8 @@ export default function PCBottomDock() {
                   ) : (
                     questionOptions.map((option) => (
                       <button className="pc-question-choice__msg-btn pc-question-choice__msg-btn--question" key={option.id} onClick={() => selectQuestionOption(option)} type="button">
-                        <span className="pc-question-choice__angle">{getQuestionAngleLabel(option.answerAngle, normalizeCaseKey(caseData), option.disputeId)}</span>
-                        <span className="pc-question-choice__msg-text">{option.text}</span>
+                        <span className="pc-question-choice__angle">{localizeRuntimeText(getQuestionAngleLabel(option.answerAngle, normalizeCaseKey(caseData), option.disputeId), locale)}</span>
+                        <span className="pc-question-choice__msg-text">{localizeRuntimeText(option.text, locale)}</span>
                       </button>
                     ))
                   )}
@@ -474,7 +484,7 @@ export default function PCBottomDock() {
                       <span className="pc-question-choice__dispute-icon">
                         <PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} />
                       </span>
-                      <span className="pc-question-choice__dispute-name">{ev.surfaceName ?? ev.name}</span>
+                      <span className="pc-question-choice__dispute-name">{localizeRuntimeText(ev.surfaceName ?? ev.name, locale)}</span>
                     </button>
                   ))}
                 </>
@@ -585,7 +595,8 @@ function CharacterCard({
   caseId: string; name: string; emotion: EmotionalPhase; emotionValue: number;
   faceId: string; isActive: boolean; onClick: () => void; side: PartyId
 }) {
-  const { t } = useI18n()
+  const { locale, t } = useI18n()
+  const displayName = localizeRuntimeText(name, locale)
   // 감정 도넛 — 격앙/체념 단계는 펄스 애니메이션으로 위급 신호
   const isCritical = emotion === 'angry' || emotion === 'resigned'
   const safeValue = Math.max(0, Math.min(100, Math.round(emotionValue || 0)))
@@ -594,7 +605,7 @@ function CharacterCard({
       <div className={`char-face char-face--ring is-emo-${emotion}${isCritical ? ' is-critical' : ''}`}>
         <EmotionDonut value={safeValue} />
         <PCCharacterPortrait
-          alt={name}
+          alt={displayName}
           caseId={caseId}
           emotion={emotion}
           fallbackSymbolId={faceId}
@@ -604,7 +615,7 @@ function CharacterCard({
         <span className="char-face__value" aria-label={t('pc.hotbar.emotionValue', { value: safeValue })}>{safeValue}</span>
       </div>
       <div className="char-info">
-        <span className="char-nm">{name}</span>
+        <span className="char-nm">{displayName}</span>
         <span className={`char-emo ${emotion === 'angry' ? 'ce-sh' : 'ce-cf'}`}>{t(EMOTION_LABEL_KEYS[emotion])}</span>
       </div>
     </button>

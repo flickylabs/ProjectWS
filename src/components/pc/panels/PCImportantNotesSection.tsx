@@ -8,7 +8,8 @@ import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
-import { translate } from '../../../i18n'
+import { translate, useI18n, type LocaleCode } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 export const PC_ADD_COMBINATION_NOTE_EVENT = 'pc:add-combination-note'
 
@@ -56,6 +57,7 @@ function StarIcon({ size = 14, filled = false }: { size?: number; filled?: boole
 }
 
 export default function PCImportantNotesSection() {
+  const { locale, t } = useI18n()
   const dialogueLog = useStore((s) => s.dialogueLog)
   const caseData = useStore((s) => s.caseData)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
@@ -92,13 +94,13 @@ export default function PCImportantNotesSection() {
 
   const speakerNameMap = useMemo(() => {
     return new Map<DialogueEntry['speaker'], string>([
-      ['a', caseData?.duo.partyA.name ?? '당사자 A'],
-      ['b', caseData?.duo.partyB.name ?? '당사자 B'],
-      ['judge', '재판관'],
-      ['system', '시스템'],
-      ['witness', '증인'],
+      ['a', caseData?.duo.partyA.name ?? 'A'],
+      ['b', caseData?.duo.partyB.name ?? 'B'],
+      ['judge', t('pc.common.judge')],
+      ['system', t('pc.common.system')],
+      ['witness', t('pc.common.witness')],
     ])
-  }, [caseData?.duo.partyA.name, caseData?.duo.partyB.name])
+  }, [caseData?.duo.partyA.name, caseData?.duo.partyB.name, t])
 
   const visibleDisputes = useMemo(() => {
     if (!caseData) return []
@@ -243,17 +245,17 @@ export default function PCImportantNotesSection() {
   const openNotePanel = useCallback((note: PcPinnedNote, isPinned = false) => {
     openPcInteractionPanel({
       title: `Turn ${note.turn}`,
-      subtitle: isPinned ? '즐겨찾기' : '발언 기록',
+      subtitle: isPinned ? t('pc.notes.favorite') : t('pc.dialogue.record'),
       tone: note.speaker === 'a' ? 'red' : note.speaker === 'b' ? 'blue' : 'gold',
       variant: 'dialogue',
-      body: sanitizeKoreanSurfaceText(note.text),
+      body: localizeRuntimeText(sanitizeKoreanSurfaceText(note.text), locale),
       dialogueTurn: note.turn,
       dialogueSpeaker: note.speaker,
-      dialogueSpeakerName: speakerNameMap.get(note.speaker) ?? '발언',
+      dialogueSpeakerName: speakerNameMap.get(note.speaker) ?? t('pc.dialogue.importantUtterance'),
       dialogueDisputeIds: note.relatedDisputes,
       dialogueId: note.dialogueId,
     })
-  }, [speakerNameMap])
+  }, [locale, speakerNameMap, t])
 
   // 확장 드로어 내부 카드 클릭 → 드로어 닫고 해당 대화로 이동 (관찰/타임라인 드로어와 동일 패턴)
   const jumpFromDrawer = useCallback((dialogueId: string) => {
@@ -267,8 +269,8 @@ export default function PCImportantNotesSection() {
     event.dataTransfer.effectAllowed = 'copyMove'
     event.dataTransfer.setData(HOTBAR_DRAG_TYPE, JSON.stringify({ kind: 'note', note }))
     event.dataTransfer.setData(NOTE_DRAG_TYPE, JSON.stringify(note))
-    event.dataTransfer.setData('text/plain', getNoteSummary(sanitizeKoreanSurfaceText(note.text)))
-  }, [])
+    event.dataTransfer.setData('text/plain', getNoteSummary(localizeRuntimeText(sanitizeKoreanSurfaceText(note.text), locale)))
+  }, [locale])
 
   /* ━━━ Favorites reorder via drag ━━━ */
   const reorderFavorite = useCallback((draggedId: string, targetId: string | null) => {
@@ -333,12 +335,12 @@ export default function PCImportantNotesSection() {
       <section className="sec collapsible pc-important-notes-section">
         <div className="sec-h">
           <StarIcon size={14} filled />
-          <span>발언노트 즐겨찾기</span>
+          <span>{t('pc.notes.favoriteTitle')}</span>
           <span className="cnt">{favorites.length}</span>
           <button
             className={`pc-notes-expand-btn${expanded ? ' is-open' : ''}`}
             onClick={toggleExpanded}
-            title={expanded ? '발언 노트 전체 닫기' : '발언 노트 전체 보기'}
+            title={expanded ? t('pc.notes.closeAll') : t('pc.notes.openAll')}
             type="button"
           >
             <PCSvgIcon id="i-eye" size={12} />
@@ -361,6 +363,7 @@ export default function PCImportantNotesSection() {
                   <FavoriteCard
                     key={note.id}
                     note={note}
+                    locale={locale}
                     speakerName={speakerNameMap.get(note.speaker) ?? ''}
                     disputeIndices={note.relatedDisputes.map((id) => disputeIndexMap.get(id)).filter((v): v is number => v != null)}
                     dragging={draggingNoteId === note.id}
@@ -383,7 +386,7 @@ export default function PCImportantNotesSection() {
               {/* 빈 공간 — 드롭 안내 (목록 아래에 항상 표시, 남은 공간 채움) */}
               <div className="pc-fav-notes__placeholder">
                 <StarIcon size={14} />
-                <span>{favorites.length === 0 ? '발언을 끌어다 놓으세요' : '추가'}</span>
+                <span>{favorites.length === 0 ? t('pc.notes.dropPrompt') : t('pc.notes.add')}</span>
               </div>
             </div>
           </div>
@@ -395,15 +398,15 @@ export default function PCImportantNotesSection() {
       <aside
         className={`pc-fav-notes-drawer${expanded ? ' is-open' : ''}`}
         role="dialog"
-        aria-label="발언 노트 전체"
+        aria-label={t('pc.notes.fullLabel')}
         aria-hidden={!expanded}
       >
         <div className="pc-notes-expanded__header">
           <span className="pc-notes-expanded__title">
             <PCSvgIcon id="i-chat" size={16} />
-            <span>발언 노트</span>
+            <span>{t('pc.notes.fullTitle')}</span>
           </span>
-          <button className="pc-notes-expanded__close" onClick={() => setExpanded(false)} type="button" aria-label="닫기">
+          <button className="pc-notes-expanded__close" onClick={() => setExpanded(false)} type="button" aria-label={t('pc.common.close')}>
             ✕
           </button>
         </div>
@@ -411,18 +414,21 @@ export default function PCImportantNotesSection() {
         {/* Dispute tabs */}
         <div className="pc-notes-tabs">
           <button className={`pc-notes-tab${disputeTab === null ? ' is-active' : ''}`} onClick={() => setDisputeTab(null)} type="button">
-            전체
+            {t('pc.notes.all')}
           </button>
-          {visibleDisputes.map((d) => (
-            <button
-              className={`pc-notes-tab${disputeTab === d.id ? ' is-active' : ''}`}
-              key={d.id}
-              onClick={() => setDisputeTab(disputeTab === d.id ? null : d.id)}
-              type="button"
-            >
-              {d.name.length > 10 ? d.name.slice(0, 10) + '\u2026' : d.name}
-            </button>
-          ))}
+          {visibleDisputes.map((d) => {
+            const disputeName = localizeRuntimeText(d.name, locale)
+            return (
+              <button
+                className={`pc-notes-tab${disputeTab === d.id ? ' is-active' : ''}`}
+                key={d.id}
+                onClick={() => setDisputeTab(disputeTab === d.id ? null : d.id)}
+                type="button"
+              >
+                {disputeName.length > 10 ? disputeName.slice(0, 10) + '\u2026' : disputeName}
+              </button>
+            )
+          })}
         </div>
 
         {/* Content */}
@@ -430,11 +436,12 @@ export default function PCImportantNotesSection() {
           {disputeTab ? (
             <div className="pc-notes-compare">
               <div className="pc-notes-compare__col is-a">
-                <span className="pc-notes-compare__header">{caseData?.duo.partyA.name ?? 'A'}</span>
+                <span className="pc-notes-compare__header">{localizeRuntimeText(caseData?.duo.partyA.name ?? 'A', locale)}</span>
                 {filteredNotes.filter((n) => n.speaker === 'a').map((n) => (
                   <ExpandedNoteEntry
                     key={n.id}
                     note={n}
+                    locale={locale}
                     isFav={isFavorited(n.dialogueId)}
                     onClickNote={() => jumpFromDrawer(n.dialogueId)}
                     onToggleFav={() => toggleFavorite(n)}
@@ -445,11 +452,12 @@ export default function PCImportantNotesSection() {
                 ))}
               </div>
               <div className="pc-notes-compare__col is-b">
-                <span className="pc-notes-compare__header">{caseData?.duo.partyB.name ?? 'B'}</span>
+                <span className="pc-notes-compare__header">{localizeRuntimeText(caseData?.duo.partyB.name ?? 'B', locale)}</span>
                 {filteredNotes.filter((n) => n.speaker === 'b').map((n) => (
                   <ExpandedNoteEntry
                     key={n.id}
                     note={n}
+                    locale={locale}
                     isFav={isFavorited(n.dialogueId)}
                     onClickNote={() => jumpFromDrawer(n.dialogueId)}
                     onToggleFav={() => toggleFavorite(n)}
@@ -469,6 +477,7 @@ export default function PCImportantNotesSection() {
                     <ExpandedNoteCard
                       key={n.id}
                       note={n}
+                      locale={locale}
                       speakerName={speakerNameMap.get(n.speaker) ?? ''}
                       disputeIndices={n.relatedDisputes.map((id) => disputeIndexMap.get(id)).filter((v): v is number => v != null)}
                       isFav={isFavorited(n.dialogueId)}
@@ -492,10 +501,10 @@ export default function PCImportantNotesSection() {
 
 /* ━━━ Favorite compact card (left panel) ━━━ */
 function FavoriteCard({
-  note, speakerName, disputeIndices, dragging, reorderTarget, isCombinable, comboHint,
+  note, locale, speakerName, disputeIndices, dragging, reorderTarget, isCombinable, comboHint,
   onClickNote, onShiftClick, onRemove, onDragStart, onDragEnd, onDragOver, onDrop,
 }: {
-  note: PcPinnedNote; speakerName: string; disputeIndices: number[]; dragging: boolean; reorderTarget: boolean; isCombinable?: boolean
+  note: PcPinnedNote; locale: LocaleCode; speakerName: string; disputeIndices: number[]; dragging: boolean; reorderTarget: boolean; isCombinable?: boolean
   comboHint?: { readyCount: number; potentialCount: number } | null
   onClickNote: () => void; onShiftClick: () => void; onRemove: () => void
   onDragStart: (e: DragEvent<HTMLDivElement>) => void; onDragEnd: () => void
@@ -529,7 +538,7 @@ function FavoriteCard({
         <span className="pc-note-card__tag">{tag}</span>
       </div>
       <div className="pc-note-card__body">
-        <div className="pc-note-card__summary">{getNoteSummary(sanitizeKoreanSurfaceText(note.text))}</div>
+        <div className="pc-note-card__summary">{getNoteSummary(localizeRuntimeText(sanitizeKoreanSurfaceText(note.text), locale))}</div>
       </div>
       {comboHint && (comboHint.readyCount > 0 || comboHint.potentialCount > 0) ? (
         <span className="pc-note-card__combo" title={comboTitle}>
@@ -542,7 +551,7 @@ function FavoriteCard({
         </span>
       ) : null}
       {contradictionMeta ? <span className="pc-note-card__flash">&#x26A1;</span> : null}
-      <button className="pc-note-card__pin pc-note-card__unfav" onClick={(event) => { event.stopPropagation(); onRemove() }} title="즐겨찾기 해제" type="button">
+      <button className="pc-note-card__pin pc-note-card__unfav" onClick={(event) => { event.stopPropagation(); onRemove() }} title={translate('pc.notes.unfavorite')} type="button">
         <StarIcon size={16} filled />
       </button>
     </div>
@@ -551,9 +560,9 @@ function FavoriteCard({
 
 /* ━━━ Expanded note card (full view, turn-grouped) ━━━ */
 function ExpandedNoteCard({
-  note, speakerName, disputeIndices, isFav, onClickNote, onToggleFav, onDragStart, onDragEnd,
+  note, locale, speakerName, disputeIndices, isFav, onClickNote, onToggleFav, onDragStart, onDragEnd,
 }: {
-  note: VisibleNote; speakerName: string; disputeIndices: number[]; isFav: boolean
+  note: VisibleNote; locale: LocaleCode; speakerName: string; disputeIndices: number[]; isFav: boolean
   onClickNote: () => void; onToggleFav: () => void
   onDragStart: (e: DragEvent<HTMLDivElement>) => void; onDragEnd: () => void
 }) {
@@ -572,21 +581,21 @@ function ExpandedNoteCard({
       <div className="pc-note-expanded-card__head">
         <span className="pc-note-expanded-card__speaker" style={{ color }}>{speakerName}</span>
         {tag ? <span className="pc-note-expanded-card__disputes">{tag}</span> : null}
-        {contradictionMeta ? <span className="pc-note-expanded-card__flash">&#x26A1; 모순</span> : null}
-        <button className={`pc-note-expanded-card__pin${isFav ? ' is-fav' : ''}`} onClick={(event) => { event.stopPropagation(); onToggleFav() }} title={isFav ? '즐겨찾기 해제' : '즐겨찾기 추가'} type="button">
+        {contradictionMeta ? <span className="pc-note-expanded-card__flash">&#x26A1; {translate('pc.notes.contradiction')}</span> : null}
+        <button className={`pc-note-expanded-card__pin${isFav ? ' is-fav' : ''}`} onClick={(event) => { event.stopPropagation(); onToggleFav() }} title={isFav ? translate('pc.notes.unfavorite') : translate('pc.notes.favoriteAdd')} type="button">
           <StarIcon size={14} filled={isFav} />
         </button>
       </div>
-      <div className="pc-note-expanded-card__text">{sanitizeKoreanSurfaceText(note.text)}</div>
+      <div className="pc-note-expanded-card__text">{localizeRuntimeText(sanitizeKoreanSurfaceText(note.text), locale)}</div>
     </div>
   )
 }
 
 /* ━━━ Compare view entry (with star + drag) ━━━ */
 function ExpandedNoteEntry({
-  note, isFav, onClickNote, onToggleFav, onDragStart, onDragEnd,
+  note, locale, isFav, onClickNote, onToggleFav, onDragStart, onDragEnd,
 }: {
-  note: VisibleNote; isFav: boolean
+  note: VisibleNote; locale: LocaleCode; isFav: boolean
   onClickNote: () => void; onToggleFav: () => void
   onDragStart: (e: DragEvent<HTMLDivElement>) => void; onDragEnd: () => void
 }) {
@@ -600,9 +609,9 @@ function ExpandedNoteEntry({
       onDragEnd={onDragEnd}
     >
       <span className="pc-notes-compare__turn">T{note.turn}</span>
-      <span className="pc-notes-compare__text">{sanitizeKoreanSurfaceText(note.text)}</span>
+      <span className="pc-notes-compare__text">{localizeRuntimeText(sanitizeKoreanSurfaceText(note.text), locale)}</span>
       {contradictionMeta ? <span className="pc-notes-compare__flash">&#x26A1;</span> : null}
-      <button className={`pc-notes-compare__pin${isFav ? ' is-fav' : ''}`} onClick={(event) => { event.stopPropagation(); onToggleFav() }} title={isFav ? '즐겨찾기 해제' : '즐겨찾기 추가'} type="button">
+      <button className={`pc-notes-compare__pin${isFav ? ' is-fav' : ''}`} onClick={(event) => { event.stopPropagation(); onToggleFav() }} title={isFav ? translate('pc.notes.unfavorite') : translate('pc.notes.favoriteAdd')} type="button">
         <StarIcon size={12} filled={isFav} />
       </button>
     </div>
@@ -611,7 +620,7 @@ function ExpandedNoteEntry({
 
 export function getNoteSummary(text: string): string {
   const normalized = text.replace(/\s+/g, ' ').trim()
-  if (!normalized) return '요약 없음'
+  if (!normalized) return translate('pc.notes.summaryEmpty')
   const firstSentence = normalized.split(/(?<=[.!?])\s+/).find(Boolean) ?? normalized
   return firstSentence.length > 42 ? `${firstSentence.slice(0, 42).trim()}\u2026` : firstSentence
 }

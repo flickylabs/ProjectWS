@@ -2,76 +2,3023 @@
   "caseId": "spouse-01",
   "locale": "zh-CN",
   "overlayKind": "generatedCaseSurface",
+  "overlayScope": "full",
   "meta": {
-    "title": "丈夫每天瞒着妻子在公寓停留"
-  },
-  "context": {
-    "description": "每天下班后丈夫都会去同一栋公寓停留一段时间。车上发现的女性用品收据。凌晨的通话。妻子坚信丈夫另立家室。",
-    "triggerAmplifier": "起初，发圈与唇釉的收据、公寓 GPS、凌晨通话只朝一个方向叠合，看起来就是外遇。但越往下挖，画面越乱——双方各自没说的事和钱的去向相继浮现，事件的中心被推到外遇怀疑之外。"
+    "anchorTruth": "朴智妍确信丈夫已经开始了另一种生活后，操纵授权书取消了2000万韩元的共同储蓄账户，并将全部金额转入投资室，但因诈骗而损失殆尽。李俊浩并没有发生外遇，而是为了照顾正在接受个人康复的哥哥的侄子（国中二年级），从自己的个人行贿基金中拿出了3000万韩元现金给了弟弟。",
+    "emotionalBait": "我丈夫每天下班后都会去同一个办公室。在车内发现的女性产品收据。一大早打电话来。妻子对丈夫的另一种生活深信不疑。",
+    "resolutionDilemma": "谁应该承担更大的责任：丈夫为了保护正在康复的兄弟和侄子而将个人行贿资金中的3000万韩元现金转移，而妻子则确信自己遭到背叛，操纵授权书取消了2000万韩元的共同储蓄账户，然后在投资诈骗中损失了全部金额。丈夫先隐瞒，妻子先监听账号，妻子犯罪。",
+    "title": "丈夫每天在妻子不知情的情况下呆在办公室。"
   },
   "duo": {
     "partyA": {
       "name": "朴智妍",
-      "occupation": "辅导班前台职员"
+      "occupation": "学院服务台工作人员",
+      "speechStyle": "他首先从被背叛者的立场出发，但当有人质疑他的动机时，他会以羞耻和焦虑为借口，扩大解释范围。",
+      "fear": "最担心的是操纵授权书会被确认为犯罪。",
+      "dailyRoutine": "学校放学回家后，我反复检查信用卡信息和通话记录，越来越担心丈夫会先抛弃家庭。",
+      "sensitivePoints": [
+        "办公室电话拜访和清晨打电话是婚外情的迹象吗？",
+        "通过操纵委托书取消2000万韩元共同储蓄账户是否构成犯罪？",
+        "隐蔽和先发制人的顺序"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "他一开始接受这个职位就好像他已经被背叛了一样。"
+        },
+        {
+          "pattern": "说当时没有其他选择，计算选择的角度就变得模糊了。"
+        },
+        {
+          "pattern": "从小小的致谢开始，最后说出最可耻的事实。"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "自己",
+        "toJudge": "我的丈夫",
+        "angry": "李俊浩！"
+      }
     },
     "partyB": {
-      "name": "李俊昊",
-      "occupation": "家电卖场员工"
-    }
+      "name": "李俊浩",
+      "occupation": "家电卖场员工",
+      "speechStyle": "他们并没有完全否认事实，而是推迟重要的理由，用模棱两可的言语争取时间，然后在压力增大时一次性全部揭露出来。",
+      "fear": "担心如果提起哥哥的故事，公婆之间会发生矛盾，甚至离婚。",
+      "dailyRoutine": "商店打烊后，我去哥哥的办公室给侄子买了晚饭和生活用品，早上查看了哥哥的情况后就回家了。",
+      "sensitivePoints": [
+        "办公室电话拜访和清晨打电话是婚外情的迹象吗？",
+        "未经配偶同意，将个人行贿基金中的3000万韩元现金交给弟弟，是否属于任意行为？",
+        "隐蔽和先发制人的顺序"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "不要立即回答问题，而是稍后回答并避免使用关键词。"
+        },
+        {
+          "pattern": "承认重大事实，但直到最后才消除最痛苦的原因。"
+        },
+        {
+          "pattern": "我们首先会说这是出于善意，试图减轻违反程序的影响。"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "自己",
+        "toJudge": "我的妻子",
+        "angry": "朴智妍！"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "description": "收据（发带/染发剂）、办公室电话 GPS 和清晨通话重叠，进一步证实了 d-1 对不忠的怀疑。",
+        "distortionDirection": "A记得这件事，而B只记得生活方式，没有提及隐藏的原因。"
+      },
+      {
+        "id": "ledger-2",
+        "description": "B选择不谈论公婆的情况，因为她记得一提到公婆的话题就会有很多冲突。"
+      },
+      {
+        "id": "ledger-3",
+        "description": "B将个人行贿基金中的3000万韩元现金交给了弟弟，A则操纵委托书取消了2000万韩元的共同储蓄账户，并将全部金额放入投资室并丢失。"
+      },
+      {
+        "id": "ledger-4",
+        "description": "开始隐藏和实际执行汇款的顺序不同。",
+        "distortionDirection": "每个人首先只强调那些对他/她有利的事情。"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "w-1",
+        "name": "办公公寓保安",
+        "knowledgeScope": "我记得这辆车每周来访2-3次。我不知道具体数字，但我知道那一层没有女性独居的房子。",
+        "surfaceKnowledge": "他是第三方证人，知道进入办公电话的频率以及相关楼层的居住状况。",
+        "witnessProfile": {
+          "occupation": "保镖",
+          "relationToA": "我们互不认识。",
+          "relationToB": "我唯一看到的就是一辆车。",
+          "speechStyle": "说话简洁，注重事实，避免个人观点。",
+          "addressJudge": "启禀大人",
+          "addressA": "这个人",
+          "addressB": "车主",
+          "hiddenAgenda": "不存在。"
+        }
+      },
+      {
+        "id": "w-2",
+        "name": "银行职员",
+        "knowledgeScope": "曾经有过通过委托书取消储蓄账户的案例。虽然程序有些奇怪，但还是得到了处理。",
+        "surfaceKnowledge": "他是一名第三方证人，为 A 的授权书的操纵行为提供了线索。",
+        "witnessProfile": {
+          "occupation": "银行职员",
+          "relationToA": "我只知道他们是顾客。",
+          "relationToB": "我们互不认识。",
+          "speechStyle": "说话专业、准确，谨慎处理个人信息。",
+          "addressJudge": "启禀大人",
+          "addressA": "先生",
+          "addressB": "头衔持有者",
+          "hiddenAgenda": "我小心翼翼地避免我因程序验证不充分而承担的责任可能会被揭露。"
+        }
+      },
+      {
+        "id": "w-3",
+        "name": "米拉公园",
+        "knowledgeScope": "智妍说，“如果我丈夫出轨，我会先保护我的钱。”我给你发了投资室的链接。",
+        "surfaceKnowledge": "他是熟人证人，知道A投资诈骗的细节以及链接被转发的事实。",
+        "witnessProfile": {
+          "occupation": "咖啡厅经营",
+          "relationToA": "他是我在附近见过很久的熟人。",
+          "relationToB": "这是一种只有脸的苹果酒。",
+          "speechStyle": "我并不夸张，但我清楚地记得谁先说了什么。",
+          "addressJudge": "启禀大人",
+          "addressA": "智妍先生",
+          "addressB": "俊浩先生",
+          "hiddenAgenda": "请小心您表达的内容，以免因发送链接而被追究责任。"
+        }
+      }
+    ]
+  },
+  "context": {
+    "description": "我丈夫每天下班后都会去同一个办公室。在车内发现的女性产品收据。一大早打电话来。妻子对丈夫的另一种生活深信不疑。",
+    "triggerAmplifier": "一开始，这看起来像是一件事情，因为收据（发带/染发剂）、办公室电话 GPS 和清晨的电话只在一个方向重叠。然而线索越多，画面就越动摇，随着双方未说出口的情况和资金流向相继被揭露，案件的焦点转向了不忠嫌疑之外。",
+    "caseName": "凌晨通话记录"
   },
   "disputes": [
     {
       "id": "d-1",
-      "name": "公寓造访与凌晨通话"
+      "name": "办公室电话拜访和清晨电话",
+      "truthDescription": "这次来办公室是为了照顾在哥哥办公室的侄子（国中二年级）。清晨的电话是给我弟弟的紧急电话。",
+      "mediationLink": "对不忠和家庭照顾的误解",
+      "judgmentStatement": "办公室拜访的现实不是外遇，而是家庭关怀。",
+      "verdictOptions": {
+        "wrong": "李俊浩来办公室是因为住在另一栋房子里。",
+        "partial": "访问办公楼与与他人同居不同，但很可能是婚外情。",
+        "truth": "办公室拜访的现实不是外遇，而是家庭关怀。",
+        "defer": "目前，真相尚不清楚。保留判断力。"
+      }
     },
     {
       "id": "d-2",
-      "name": "丈夫名义账户的整笔提款"
+      "name": "从丈夫名下的账户中一次性提取",
+      "truthDescription": "李俊浩在妻子不知情的情况下，从自己名下的一个单独账户中提取了近10年来的3000万韩元行贿资金，在过去的四个月里依次提取了500万韩元、800万韩元、700万韩元、1000万韩元。解释是，这笔钱是以现金形式交付的，因为我的兄弟正在个人康复过程中，很难将钱存入他的银行账户，而且是个人资金，与共同储蓄无关。",
+      "mediationLink": "丈夫的现金流如何使用",
+      "judgmentStatement": "丈夫更负责交付3000万韩元的个人行贿资金。",
+      "v3UnlockPlan": {
+        "runtimeRule": "当达到 d-1 S3 或更高时（提及一次性提款）",
+        "authoredRule": "当 d-1 审讯中揭露了办公室电话访问的真相后，由于发现大笔资金被提取，新的问题出现了。"
+      },
+      "verdictOptions": {
+        "wrong": "3000万韩元的个人行贿基金是李俊浩用于个人娱乐的钱。",
+        "partial": "行贿资金确实被撤回，但具体用途尚不清楚。",
+        "truth": "3000万韩元的个人行贿基金是给正在接受个人康复的弟弟的现金。",
+        "defer": "无法确定预期用途。保留判断力。"
+      }
     },
     {
       "id": "h-d3",
-      "name": "共同储蓄 2,000 万韩元解约的经过"
+      "name": "2000万韩元的共同储蓄是如何被取消的",
+      "truthDescription": "联名储蓄账户在到期前被注销的痕迹得到证实。解约过程中，还存在配偶是否同意、委托书真实性等问题，2000万韩元解约金的实际去向仍需确认。现在，联合储蓄取消的情况和程序的责任被作为单独的问题来追踪。",
+      "mediationLink": "共同资产和损失的处置",
+      "judgmentStatement": "妻子更有责任操纵和取消2000万韩元的共同储蓄授权书。",
+      "v3UnlockPlan": {
+        "runtimeRule": "d-2被发现后，联合储蓄/委托书线索将被调查。",
+        "authoredRule": "如果在发现 d-2 后对任何一方进行审讯期间揭露了联合储蓄和授权书操纵的线索，则创建"
+      },
+      "verdictOptions": {
+        "wrong": "李俊浩秘密取消了共同储蓄的2000万韩元，并将其作为行贿基金。",
+        "partial": "联合储蓄账户确实被取消了，但不清楚是谁取消的。",
+        "truth": "朴智妍操纵并取消了授权书，并因投资欺诈而损失了所有资金。",
+        "defer": "终止的情况尚不清楚。保留判断力。"
+      }
     },
     {
       "id": "h-d4",
-      "name": "瞒下来与擅自先动的先后顺序"
+      "name": "隐蔽和先发制人的顺序",
+      "truthDescription": "B先隐瞒（隐瞒3000万+个人行贿资金情况），A先监控账户（早期新婚夫妇），钱同时执行（B 4个月前提现3000万，A 6周前共同储蓄2000万韩元操纵并终止委托书），犯罪活动为A（操纵委托书）。",
+      "mediationLink": "隐藏与处决",
+      "judgmentStatement": "隐瞒的优先性和不存在以及犯罪活动的存在或不存在是两个不同的维度。",
+      "v3UnlockPlan": {
+        "runtimeRule": "当A/B都达到d-2 S3 + h-d3 S3时自动解锁",
+        "authoredRule": "d-2和h-d3在释放后都会自动表达。"
+      },
+      "verdictOptions": {
+        "wrong": "既然秘密是李俊浩先创造的，朴智妍的举动就是一种自救措施。",
+        "partial": "双方都有难言之隐，但很难确定先后关系。",
+        "truth": "李俊浩第一个隐瞒，朴智妍第一个监控账号。犯罪行为（操纵授权书）是在朴智妍这边。",
+        "defer": "没有足够的证据来确定谁先来。我保留它。"
+      }
     }
   ],
   "evidence": [
     {
       "id": "e-1",
-      "surfaceName": "一沓收据（5 张）",
-      "surfaceDescription": "在丈夫车里发现的一沓收据。"
+      "name": "收据束（5张）",
+      "surfaceName": "5个收据包",
+      "description": "这是在我丈夫的车里找到的收据清单。我的妻子开始怀疑，因为收据上有女性物品。",
+      "surfaceDescription": "这是在我丈夫的车里发现的一捆收据。",
+      "investigationResults": {
+        "request_original": "染发剂和卷发筒等女士用品尤为引人注目。",
+        "check_metadata": "发带、手镜等都很引人注目。还购买了铅笔和笔记本等学习用品。",
+        "restore_context": "值得注意的是，购买了中学生参考书。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "这些收据，谁买了什么？"
+          },
+          "label": "收货确认"
+        },
+        {
+          "question": {
+            "text": "这些项目指的是谁？"
+          },
+          "label": "项目比较",
+          "unlockHint": "通过再次检查您的收据，您也可以将其与商店的其他商品进行比较。"
+        },
+        {
+          "question": {
+            "text": "这本中学生参考书是给谁买的？"
+          },
+          "label": "恢复目标",
+          "unlockHint": "匹配的商品可以帮助您了解此次购买的对象。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "请解释为什么这些收据导致其他事情被定罪。",
+          "implication": "发带/发色是怀疑不忠的起点。"
+        },
+        "b": {
+          "questionAngle": "请说明此收据上的物品是为谁购买的。",
+          "implication": "参考书成为了解访问性质的决定性线索。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅 5 个收据包可见。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "便利店，Olive Young 收据：仅可见发带、染发剂和发卷商品。"
+        },
+        {
+          "id": "original",
+          "summary": "书店、中学参考书、花店和加油站收据的额外确认"
+        },
+        {
+          "id": "context",
+          "summary": "参考书针对中二年级学生的关键细节。"
+        },
+        {
+          "id": "established",
+          "summary": "已确认购买是为了照顾侄子"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "A 提交捕获"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "使用原始提交命令检查完整历史记录"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "文本时间与原始卡片应用程序匹配。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "仅凭物品来断定外遇的说法是一种误读"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "数据是经过验证的，但事件的解释可能会被误读"
+        }
+      ],
+      "meta": {
+        "name": "5个收据包",
+        "trustLabel": "通常",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "5个收据包",
+          "trustLabel": "通常",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "公开（默认）"
+        },
+        "receipt": [
+          {
+            "storeName": "CU冠岳凤川分所",
+            "storeAddr": "首尔特别市冠岳区凤川路234",
+            "date": "2026.02.18（星期二）19:23",
+            "items": [
+              {
+                "name": "Binggrae 香蕉味牛奶"
+              },
+              {
+                "name": "三角紫菜包饭烤肉"
+              },
+              {
+                "name": "热六 250ml"
+              }
+            ],
+            "paymentMethod": "新韩卡（一次性付款）****-3892"
+          },
+          {
+            "storeName": "Olive Young 凤川站店",
+            "storeAddr": "首尔特别市冠岳区凤川路212号2楼",
+            "date": "2026年2月15日（周六）14:07",
+            "items": [
+              {
+                "name": "练习曲定色液 #05"
+              },
+              {
+                "name": "魔术发卷32毫米套装"
+              },
+              {
+                "name": "悦诗风吟绿茶籽精华液"
+              },
+              {
+                "name": "So Natural 化妆棉 80 张"
+              }
+            ],
+            "paymentMethod": "新韩卡（一次性付款）****-3892"
+          },
+          {
+            "storeName": "GS25 冠岳中央店",
+            "storeAddr": "首尔特别市冠岳区冠岳路142",
+            "date": "2026.02.08（周六）21:45",
+            "items": [
+              {
+                "name": "杯装拉面 金拉面 辣味"
+              },
+              {
+                "name": "三角紫菜包饭金枪鱼蛋黄酱"
+              },
+              {
+                "name": "可口可乐 500ml"
+              },
+              {
+                "name": "热狗经典"
+              }
+            ],
+            "paymentMethod": "新韩卡（一次性付款）****-3892"
+          },
+          {
+            "storeName": "大创凤川店",
+            "storeAddr": "首尔特别市冠岳区凤川路201 1楼",
+            "date": "2026.02.05（周三）16:12",
+            "items": [
+              {
+                "name": "迷你手镜"
+              },
+              {
+                "name": "发带套装"
+              },
+              {
+                "name": "绘图尖 0.5mm"
+              },
+              {
+                "name": "春天笔记B5"
+              }
+            ],
+            "paymentMethod": "新韩卡（一次性付款）****-3892"
+          },
+          {
+            "storeName": "教保书店江南店",
+            "storeAddr": "首尔特别市瑞草区江南大路 465",
+            "date": "2026年2月12日（周三）18:30",
+            "items": [
+              {
+                "name": "初中数学1-1基础+应用"
+              },
+              {
+                "name": "中学韩语阅读理解1级"
+              }
+            ],
+            "paymentMethod": "新韩卡（一次性付款）****-3892"
+          }
+        ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "5个收据包",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "步骤 1 - 2 便利店/美容产品"
+          },
+          "receipt": [
+            {
+              "storeName": "CU冠岳凤川分所",
+              "storeAddr": "首尔特别市冠岳区凤川路234",
+              "date": "2026.02.18（星期二）19:23",
+              "items": [
+                {
+                  "name": "Binggrae 香蕉味牛奶"
+                },
+                {
+                  "name": "三角紫菜包饭烤肉"
+                },
+                {
+                  "name": "热六 250ml"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "Olive Young 凤川站店",
+              "storeAddr": "首尔特别市冠岳区凤川路212号2楼",
+              "date": "2026年2月15日（周六）14:07",
+              "items": [
+                {
+                  "name": "练习曲定色液 #05"
+                },
+                {
+                  "name": "魔术发卷32毫米套装"
+                },
+                {
+                  "name": "悦诗风吟绿茶籽精华液"
+                },
+                {
+                  "name": "So Natural 化妆棉 80 张"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "5个收据包",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 添加便利店和家居用品（第 4 章）"
+          },
+          "receipt": [
+            {
+              "storeName": "CU冠岳凤川分所",
+              "storeAddr": "首尔特别市冠岳区凤川路234",
+              "date": "2026.02.18（星期二）19:23",
+              "items": [
+                {
+                  "name": "Binggrae 香蕉味牛奶"
+                },
+                {
+                  "name": "三角紫菜包饭烤肉"
+                },
+                {
+                  "name": "热六 250ml"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "Olive Young 凤川站店",
+              "storeAddr": "首尔特别市冠岳区凤川路212号2楼",
+              "date": "2026年2月15日（周六）14:07",
+              "items": [
+                {
+                  "name": "练习曲定色液 #05"
+                },
+                {
+                  "name": "魔术发卷32毫米套装"
+                },
+                {
+                  "name": "悦诗风吟绿茶籽精华液"
+                },
+                {
+                  "name": "So Natural 化妆棉 80 张"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "GS25 冠岳中央店",
+              "storeAddr": "首尔特别市冠岳区冠岳路142",
+              "date": "2026.02.08（周六）21:45",
+              "items": [
+                {
+                  "name": "杯装拉面 金拉面 辣味"
+                },
+                {
+                  "name": "三角紫菜包饭金枪鱼蛋黄酱"
+                },
+                {
+                  "name": "可口可乐 500ml"
+                },
+                {
+                  "name": "热狗经典"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "大创凤川店",
+              "storeAddr": "首尔特别市冠岳区凤川路201 1楼",
+              "date": "2026.02.05（周三）16:12",
+              "items": [
+                {
+                  "name": "迷你手镜"
+                },
+                {
+                  "name": "发带套装"
+                },
+                {
+                  "name": "绘图尖 0.5mm"
+                },
+                {
+                  "name": "春天笔记B5"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "5个收据包",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 阶段 — 所有 5 个章节（包括书店）"
+          },
+          "receipt": [
+            {
+              "storeName": "CU冠岳凤川分所",
+              "storeAddr": "首尔特别市冠岳区凤川路234",
+              "date": "2026.02.18（星期二）19:23",
+              "items": [
+                {
+                  "name": "Binggrae 香蕉味牛奶"
+                },
+                {
+                  "name": "三角紫菜包饭烤肉"
+                },
+                {
+                  "name": "热六 250ml"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "Olive Young 凤川站店",
+              "storeAddr": "首尔特别市冠岳区凤川路212号2楼",
+              "date": "2026年2月15日（周六）14:07",
+              "items": [
+                {
+                  "name": "练习曲定色液 #05"
+                },
+                {
+                  "name": "魔术发卷32毫米套装"
+                },
+                {
+                  "name": "悦诗风吟绿茶籽精华液"
+                },
+                {
+                  "name": "So Natural 化妆棉 80 张"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "GS25 冠岳中央店",
+              "storeAddr": "首尔特别市冠岳区冠岳路142",
+              "date": "2026.02.08（周六）21:45",
+              "items": [
+                {
+                  "name": "杯装拉面 金拉面 辣味"
+                },
+                {
+                  "name": "三角紫菜包饭金枪鱼蛋黄酱"
+                },
+                {
+                  "name": "可口可乐 500ml"
+                },
+                {
+                  "name": "热狗经典"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "大创凤川店",
+              "storeAddr": "首尔特别市冠岳区凤川路201 1楼",
+              "date": "2026.02.05（周三）16:12",
+              "items": [
+                {
+                  "name": "迷你手镜"
+                },
+                {
+                  "name": "发带套装"
+                },
+                {
+                  "name": "绘图尖 0.5mm"
+                },
+                {
+                  "name": "春天笔记B5"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            },
+            {
+              "storeName": "教保书店江南店",
+              "storeAddr": "首尔特别市瑞草区江南大路 465",
+              "date": "2026年2月12日（周三）18:30",
+              "items": [
+                {
+                  "name": "初中数学1-1基础+应用"
+                },
+                {
+                  "name": "中学韩语阅读理解1级"
+                }
+              ],
+              "paymentMethod": "新韩卡（一次性付款）****-3892"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "e-2",
-      "surfaceName": "行车记录仪 GPS 记录",
-      "surfaceDescription": "车辆 GPS 上有反复在同一坐标停留的记录。"
+      "name": "黑匣子 GPS/导航收藏夹",
+      "surfaceName": "黑匣子GPS记录",
+      "description": "每天停在同一个坐标。检查办公室电话地址。 A检查B车。",
+      "surfaceDescription": "车辆的GPS中有在同一坐标处重复停车的记录。",
+      "investigationResults": {
+        "request_original": "每天都有在相似时间移动到同一坐标的痕迹。",
+        "check_metadata": "将坐标与地址进行比较。揭示了在相似时间重复访问同一办公室的模式。",
+        "restore_context": "一件事已经关闭。每次停留时间太短，不能算是外遇。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "这是您汽车上的 GPS 日志吗？"
+          },
+          "label": "检查记录"
+        },
+        {
+          "question": {
+            "text": "为什么你多次去同一个办公室？"
+          },
+          "label": "机芯对比",
+          "unlockHint": "通过再次检查记录，您可以将坐标链接到哪个位置。"
+        },
+        {
+          "question": {
+            "text": "我每次只停留2-3个小时。您此行的目的是什么？"
+          },
+          "label": "时间模式",
+          "unlockHint": "对比运动揭示了停留时间的模式。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "请解释为什么此 GPS 记录看起来像外部路线。",
+          "implication": "地点和频率更加坚定了我的怀疑。"
+        },
+        "b": {
+          "questionAngle": "请解释此 GPS 日志的目的地。",
+          "implication": "沉默造成了更大的误会。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅 GPS 日志可见"
+        },
+        {
+          "id": "excerpt",
+          "summary": "记录在同一坐标处的重复停止"
+        },
+        {
+          "id": "original",
+          "summary": "安全地址、频率和停留时间"
+        },
+        {
+          "id": "context",
+          "summary": "办公电话路线和我哥哥的地址相符。"
+        },
+        {
+          "id": "established",
+          "summary": "通过访问我兄弟的办公室确认。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "A向管理办公室提交打印件"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "车辆数量与原始台账对比"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "B 匹配车号"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "反对认为不能断定这是一个发生外遇的地方"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "地点数据经过验证，但含义可以解释"
+        }
+      ],
+      "meta": {
+        "name": "黑匣子GPS记录",
+        "trustLabel": "通常",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "媒体披露"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "黑匣子GPS记录",
+          "trustLabel": "通常",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "媒体披露"
+        },
+        "gps_log": [
+          {
+            "location": "家（麻浦区望远洞）"
+          },
+          {
+            "location": "加入汝矣岛"
+          },
+          {
+            "location": "鹭梁津站附近"
+          },
+          {
+            "location": "进入上岛隧道"
+          },
+          {
+            "location": "进入冠岳区凤川洞"
+          },
+          {
+            "location": "★ 凤川洞Angel Officetel前（停车场）"
+          },
+          {
+            "location": "（等待停车——2小时32分钟）"
+          },
+          {
+            "location": "凤川洞出发"
+          },
+          {
+            "location": "通过上岛隧道"
+          },
+          {
+            "location": "汝矣岛方向"
+          },
+          {
+            "location": "到达家"
+          },
+          {
+            "location": "从家出发"
+          },
+          {
+            "location": "★ 凤川洞Angel Officetel前（停车场）"
+          },
+          {
+            "location": "（等待停车——2小时24分钟）"
+          },
+          {
+            "location": "从家出发"
+          },
+          {
+            "location": "★ 凤川洞Angel Officetel前（停车场）"
+          },
+          {
+            "location": "（等待停车——2小时32分钟）"
+          },
+          {
+            "location": "★ 凤川洞Angel Officetel前（停车场）"
+          }
+        ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "黑匣子GPS记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 仅时间/速度/坐标"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "黑匣子GPS记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 位置链接披露"
+          },
+          "gps_log": [
+            {
+              "location": "家（麻浦区望远洞）"
+            },
+            {
+              "location": "加入汝矣岛"
+            },
+            {
+              "location": "鹭梁津站附近"
+            },
+            {
+              "location": "进入上岛隧道"
+            },
+            {
+              "location": "进入冠岳区凤川洞"
+            },
+            {
+              "location": "奉川洞Angel Officetel前（停车场）"
+            },
+            {
+              "location": "（维持停车）"
+            },
+            {
+              "location": "凤川洞出发"
+            },
+            {
+              "location": "通过上岛隧道"
+            },
+            {
+              "location": "汝矣岛方向"
+            },
+            {
+              "location": "到达家"
+            },
+            {
+              "location": "从家出发"
+            },
+            {
+              "location": "奉川洞Angel Officetel前（停车场）"
+            },
+            {
+              "location": "（维持停车）"
+            },
+            {
+              "location": "从家出发"
+            },
+            {
+              "location": "奉川洞Angel Officetel前（停车场）"
+            },
+            {
+              "location": "（维持停车）"
+            },
+            {
+              "location": "奉川洞Angel Officetel前（停车场）"
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "黑匣子GPS记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 突出显示时间模式"
+          },
+          "gps_log": [
+            {
+              "location": "家（麻浦区望远洞）"
+            },
+            {
+              "location": "加入汝矣岛"
+            },
+            {
+              "location": "鹭梁津站附近"
+            },
+            {
+              "location": "进入上岛隧道"
+            },
+            {
+              "location": "进入冠岳区凤川洞"
+            },
+            {
+              "location": "★ 凤川洞Angel Officetel前（停车场）"
+            },
+            {
+              "location": "（等待停车——2小时32分钟）"
+            },
+            {
+              "location": "凤川洞出发"
+            },
+            {
+              "location": "通过上岛隧道"
+            },
+            {
+              "location": "汝矣岛方向"
+            },
+            {
+              "location": "到达家"
+            },
+            {
+              "location": "从家出发"
+            },
+            {
+              "location": "★ 凤川洞Angel Officetel前（停车场）"
+            },
+            {
+              "location": "（等待停车——2小时24分钟）"
+            },
+            {
+              "location": "从家出发"
+            },
+            {
+              "location": "★ 凤川洞Angel Officetel前（停车场）"
+            },
+            {
+              "location": "（等待停车——2小时32分钟）"
+            },
+            {
+              "location": "★ 凤川洞Angel Officetel前（停车场）"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "e-3",
+      "name": "通话记录",
       "surfaceName": "通话记录",
-      "surfaceDescription": "凌晨时段反复与同一号码通话的记录。"
+      "description": "在清晨重复相同的数字。即使在白天也有很多简短的通话。呼叫者 = 1 人。",
+      "surfaceDescription": "有记录显示，有人在凌晨时分多次拨打同一个号码。",
+      "investigationResults": {
+        "request_original": "我查了一下通话清单。同时重复调用的痕迹清晰可见。",
+        "check_metadata": "检查已保存的联系人。经证实，他经常拨打未注册的号码。",
+        "restore_context": "一件事已经关闭。每个电话都太短，不能被视为外遇。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "这些通话记录是你的名字吗？"
+          },
+          "label": "检查记录"
+        },
+        {
+          "question": {
+            "text": "这个未注册的号码是发给谁的？"
+          },
+          "label": "相对映射",
+          "unlockHint": "如果你再检查一次记录，就可以通过与保存的号码进行比较来识别另一个人。"
+        },
+        {
+          "question": {
+            "text": "每次通话时间都很短。这是一桩什么样的生意？"
+          },
+          "label": "时间模式",
+          "unlockHint": "统计通话时长可以揭示联系的性质。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "请解释一下为什么清晨的电话看起来像是外遇的证据。",
+          "implication": "清晨的时间加剧了怀疑。"
+        },
+        "b": {
+          "questionAngle": "请解释一下你给谁打电话以及为什么一大早给我打电话。",
+          "implication": "这是同一个号码重复打来的电话。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅可见通话记录的存在。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "在清晨重复相同的数字"
+        },
+        {
+          "id": "original",
+          "summary": "一位来电者，查看清晨 + 白天模式"
+        },
+        {
+          "id": "context",
+          "summary": "与哥哥的紧急联系方式"
+        },
+        {
+          "id": "established",
+          "summary": "和弟弟电话确认"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "A 提交通话清单捕获"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "将详细信息与原始提交订单进行比较"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "匹配运营商详细信息"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "因通话中人员身份缺失而提出异议"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "通话本身是经过验证的，但对事件的解释只是一个初步的假设。"
+        }
+      ],
+      "meta": {
+        "name": "通话记录",
+        "trustLabel": "通常",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "关键披露"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "通话记录",
+          "trustLabel": "通常",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "关键披露"
+        },
+        "log": {
+          "rows": [
+            {
+              "typeLabel": "传出",
+              "duration": "3分12秒"
+            },
+            {
+              "typeLabel": "接待",
+              "target": "010-****-7720（妻子）",
+              "duration": "1分05秒"
+            },
+            {
+              "typeLabel": "传出",
+              "duration": "4分28秒"
+            },
+            {
+              "typeLabel": "缺席的"
+            },
+            {
+              "typeLabel": "传出",
+              "target": "02-****-3441（工作）",
+              "duration": "1分30秒"
+            },
+            {
+              "typeLabel": "传出",
+              "duration": "2分47秒"
+            },
+            {
+              "typeLabel": "接待",
+              "target": "02-****-3441（工作）",
+              "duration": "2分10秒"
+            },
+            {
+              "typeLabel": "传出",
+              "target": "010-****-7720（妻子）",
+              "duration": "0分45秒"
+            },
+            {
+              "typeLabel": "传出",
+              "duration": "3分55秒"
+            },
+            {
+              "typeLabel": "接待",
+              "target": "010-****-7720（妻子）",
+              "duration": "1分20秒"
+            },
+            {
+              "typeLabel": "缺席的"
+            },
+            {
+              "typeLabel": "接待",
+              "target": "02-****-3441（工作）",
+              "duration": "3分05秒"
+            },
+            {
+              "typeLabel": "传出",
+              "duration": "1分48秒"
+            },
+            {
+              "typeLabel": "传出",
+              "duration": "4分12秒"
+            }
+          ],
+          "note": "夜间拨打010-****-3847的电话多次得到证实。不过，大部分通话时间都在3分钟以内，最长的也不足5分钟。"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "通话记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "步骤1 ─ 时间、号码、通话时间"
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "传出",
+                "duration": "3分12秒"
+              },
+              {
+                "typeLabel": "接待",
+                "duration": "1分05秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "4分28秒"
+              },
+              {
+                "typeLabel": "缺席的"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "1分30秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "2分47秒"
+              },
+              {
+                "typeLabel": "接待",
+                "duration": "2分10秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "0分45秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "3分55秒"
+              },
+              {
+                "typeLabel": "接待",
+                "duration": "1分20秒"
+              },
+              {
+                "typeLabel": "缺席的"
+              },
+              {
+                "typeLabel": "接待",
+                "duration": "3分05秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "1分48秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "4分12秒"
+              }
+            ],
+            "note": "可以看到重复拨打和拨打同一号码的痕迹。"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "通话记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "步骤 2 ─ 识别主叫方并检查未注册的号码"
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "传出",
+                "duration": "3分12秒"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "010-****-7720（妻子）",
+                "duration": "1分05秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "4分28秒"
+              },
+              {
+                "typeLabel": "缺席的"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "02-****-3441（工作）",
+                "duration": "1分30秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "2分47秒"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "02-****-3441（工作）",
+                "duration": "2分10秒"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "010-****-7720（妻子）",
+                "duration": "0分45秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "3分55秒"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "010-****-7720（妻子）",
+                "duration": "1分20秒"
+              },
+              {
+                "typeLabel": "缺席的"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "02-****-3441（工作）",
+                "duration": "3分05秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "1分48秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "4分12秒"
+              }
+            ],
+            "note": "重复拨打未注册号码 (010-****-3847) 得到确认。"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "通话记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 – 分析通话时长模式"
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "传出",
+                "duration": "3分12秒"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "010-****-7720（妻子）",
+                "duration": "1分05秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "4分28秒"
+              },
+              {
+                "typeLabel": "缺席的"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "02-****-3441（工作）",
+                "duration": "1分30秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "2分47秒"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "02-****-3441（工作）",
+                "duration": "2分10秒"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "010-****-7720（妻子）",
+                "duration": "0分45秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "3分55秒"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "010-****-7720（妻子）",
+                "duration": "1分20秒"
+              },
+              {
+                "typeLabel": "缺席的"
+              },
+              {
+                "typeLabel": "接待",
+                "target": "02-****-3441（工作）",
+                "duration": "3分05秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "1分48秒"
+              },
+              {
+                "typeLabel": "传出",
+                "duration": "4分12秒"
+              }
+            ],
+            "note": "拨打010-****-3847号码是重复的，但大多数通话时间不到3分钟。被认为是外遇的时间很短。"
+          }
+        }
+      }
     },
     {
       "id": "e-4",
-      "surfaceName": "未登记号码的短信",
-      "surfaceDescription": "与一个未登记姓名的号码之间留有的短信对话。"
+      "name": "来自未知发件人的短信",
+      "surfaceName": "来自未知发件人的短信",
+      "description": "来自未知发件人的文本线程。与熟悉区号但无法确认姓名的号码重复通话。",
+      "surfaceDescription": "留下的数字和字母的名字尚未注册。",
+      "investigationResults": {
+        "request_original": "帖子中重复了一句话：“是我。”我暂时用这个号码联系你。’，‘不要存到我名下。以后可能会出现问题。”、“今天也请帮我一个忙。”、“一直谢谢你。” 接待时间主要是在晚上和晚上之间。",
+        "check_metadata": "主叫号码没有存储在李俊浩平时使用的电话簿中。区号和第一位数字有些熟悉，但我一时想不起来是谁的名字。姓名查询不明。",
+        "restore_context": "经追查该号码，确认是李俊浩哥哥最近开通的预付费电话号码。前一个兄弟的号码因追债问题而被暂停。帖子中混杂着“佳恩开学通知”相关的群发短信，揭示了照顾侄子（国中二年级）的背景。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "这段文字的发件人是谁？"
+          },
+          "label": "检查对话"
+        },
+        {
+          "question": {
+            "text": "您为什么不将此号码保存在您的目录中？"
+          },
+          "label": "关系对比",
+          "unlockHint": "您可以通过检查对话来缩小谁拥有此号码。"
+        },
+        {
+          "question": {
+            "text": "这条文本线索与办公室电话访问有什么关系？"
+          },
+          "label": "上下文恢复",
+          "unlockHint": "通过对比这种关系，我们可以还原办公室拜访与婚外情的区别。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "这是您第一次看到这篇文字吗？你认为这意味着什么？",
+          "implication": "这可以作为判断办公室电话访问的实际目的的线索。"
+        },
+        "b": {
+          "questionAngle": "如果这条短信确实来自你的兄弟，你为什么要隐藏它？",
+          "implication": "隐藏这个号码的原因可能与家庭情况有关。"
+        }
+      },
+      "meta": {
+        "name": "来自未知发件人的短信",
+        "trustLabel": "通常",
+        "sourceLabel": "B面",
+        "legalLabel": "合法性",
+        "stageLabel": "关键披露",
+        "redactions": [
+          "侄子名字保密",
+          "学校名称和年级屏蔽",
+          "与月经密封相关的直接表达"
+        ]
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅字符线程存在可见"
+        },
+        {
+          "id": "excerpt",
+          "summary": "显示一些与访问相关的消息"
+        },
+        {
+          "id": "original",
+          "summary": "来电显示 + 完整的对话记录"
+        },
+        {
+          "id": "context",
+          "summary": "重复定期请求的情况"
+        },
+        {
+          "id": "established",
+          "summary": "与侄子/侄子关系的直接证明"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "B提交一些摘录或直接被法官捕获的步骤。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "使用原始提交命令检查整个线程"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "联系信息、日期和通知与 e-2 和 e-3 匹配"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "反对意见是，即使是家庭成员的联系，也不能成为寄大笔钱的理由。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "转换为推翻事件叙述的上下文证据"
+        }
+      ],
+      "v3SealTargets": [
+        "侄子名字",
+        "学校名称",
+        "年级",
+        "与月经有关的直接表达"
+      ],
+      "viewerData": {
+        "meta": {
+          "name": "来自未知发件人的短信",
+          "trustLabel": "通常",
+          "sourceLabel": "B面",
+          "legalLabel": "合法性",
+          "stageLabel": "关键披露",
+          "redactions": [
+            "侄子名字保密",
+            "学校名称和年级屏蔽",
+            "与月经密封相关的直接表达"
+          ]
+        },
+        "chat": {
+          "messages": [
+            {
+              "sender": "李俊浩",
+              "text": "今天我也7点左右到。"
+            },
+            {
+              "text": "每次都谢谢你。本周的日子很艰难。"
+            },
+            {
+              "sender": "李俊浩",
+              "text": "你需要什么吗？"
+            },
+            {
+              "text": "啊，我当时提到的色调和丝袜。"
+            },
+            {
+              "sender": "李俊浩",
+              "text": "是的，我会买它。"
+            },
+            {
+              "text": "但真的每次都这样吗？在家什么话不说？"
+            },
+            {
+              "sender": "李俊浩",
+              "text": "反正这些天我们相处得不太好，所以我不感兴趣。不用担心。"
+            },
+            {
+              "text": "我听说过。谢谢你，我很抱歉。"
+            },
+            {
+              "sender": "李俊浩",
+              "text": "你还好吗？那个时候所有的孩子都是这样。"
+            },
+            {
+              "text": "我想这次我对考试成绩有点压力。"
+            },
+            {
+              "sender": "李俊浩",
+              "text": "那么，要不要我看看你的学习情况？"
+            },
+            {
+              "text": "哪里有时间做这个？我从心底里感谢你。"
+            },
+            {
+              "sender": "李俊浩",
+              "text": "首先，我会买一些参考书。尝试一下然后决定。"
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "0": {
+          "meta": {
+            "name": "来自未知发件人的短信",
+            "trustLabel": "通常",
+            "sourceLabel": "B面",
+            "legalLabel": "合法性",
+            "stageLabel": "第一阶段 – 未知发件人，简短摘录",
+            "redactions": [
+              "侄子名字保密",
+              "学校名称和年级屏蔽",
+              "与月经密封相关的直接表达"
+            ]
+          },
+          "chat": {
+            "header": "发件人未知",
+            "messages": [
+              {
+                "text": "今天也请帮我一个忙。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "好的。"
+              },
+              {
+                "text": "永远谢谢你。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "什么。"
+              },
+              {
+                "text": "今天我一个人，请给我一些食物。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "好的，我稍后过来。"
+              },
+              {
+                "text": "※ 调查仅进行一次。发件人身份尚未确定。"
+              }
+            ]
+          }
+        },
+        "1": {
+          "meta": {
+            "name": "来自未知发件人的短信",
+            "trustLabel": "通常",
+            "sourceLabel": "B面",
+            "legalLabel": "合法性",
+            "stageLabel": "步骤2 ─ 号码曝光，检查可疑词组",
+            "redactions": [
+              "侄子名字保密",
+              "学校名称和年级屏蔽",
+              "与月经密封相关的直接表达"
+            ]
+          },
+          "chat": {
+            "messages": [
+              {
+                "text": "这就是我。我暂时拨打这个号码。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "是的，我明白。"
+              },
+              {
+                "text": "不要将其保存在我的名下。以后可能会出现问题。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "… 好的。"
+              },
+              {
+                "text": "今天也请帮我一个忙。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "好的，我稍后过来。"
+              },
+              {
+                "text": "永远谢谢你。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "什么。"
+              },
+              {
+                "text": "※ 调查进行了两次。熟悉主叫号码的区域和第一位数字，但姓名未知（未存储目录）。"
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "来自未知发件人的短信",
+            "trustLabel": "通常",
+            "sourceLabel": "B面",
+            "legalLabel": "合法性",
+            "stageLabel": "关键披露",
+            "redactions": [
+              "侄子名字保密",
+              "学校名称和年级屏蔽",
+              "与月经密封相关的直接表达"
+            ]
+          },
+          "chat": {
+            "messages": [
+              {
+                "sender": "李俊浩",
+                "text": "今天我也7点左右到。"
+              },
+              {
+                "text": "每次都谢谢你。本周的日子很艰难。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "你需要什么吗？"
+              },
+              {
+                "text": "啊，我当时提到的色调和丝袜。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "是的，我会买它。"
+              },
+              {
+                "text": "但真的每次都这样吗？在家什么话不说？"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "反正这些天我们相处得不太好，所以我不感兴趣。不用担心。"
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "来自未知发件人的短信",
+            "trustLabel": "通常",
+            "sourceLabel": "B面",
+            "legalLabel": "合法性",
+            "stageLabel": "上下文恢复",
+            "redactions": [
+              "侄子名字保密",
+              "学校名称和年级屏蔽",
+              "与月经密封相关的直接表达"
+            ]
+          },
+          "chat": {
+            "messages": [
+              {
+                "text": "我听说过。谢谢你，我很抱歉。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "你还好吗？那个时候所有的孩子都是这样。"
+              },
+              {
+                "text": "我想这次我对考试成绩有点压力。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "那么，要不要我看看你的学习情况？"
+              },
+              {
+                "text": "哪里有时间做这个？我从心底里感谢你。"
+              },
+              {
+                "sender": "李俊浩",
+                "text": "首先，我会买一些参考书。尝试一下然后决定。"
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-5",
-      "surfaceName": "个人账户提款记录",
-      "surfaceDescription": "未与妻子共享的另一账户，目前余额仅余几万韩元。"
+      "name": "李俊浩个人账户提款详情",
+      "surfaceName": "个人账户取款记录",
+      "description": "李俊浩名下的独立账户的交易明细。有资金长期单独管理以及近期大额提取现金的痕迹。",
+      "surfaceDescription": "我看到一个不与我妻子共享的单独帐户，并且当前余额为数万韩元。",
+      "investigationResults": {
+        "request_original": "确认了李俊浩名下的独立账户。不是与配偶共同的生活费账户，目前余额只有几万韩元。",
+        "check_metadata": "该账户包含10年前积累的工资余额和少量现金记录。累计持有金额略高于3000万韩元。",
+        "restore_context": "过去4个月内，总共提取了3000万韩元现金，顺序为：500万韩元、800万韩元、700万韩元、1000万韩元。和银行工作人员解释的500万-800万-700万-1000万韩元分期提款模式是一样的，结果现在的余额只有几万韩元。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "这个单独的帐户是对您的配偶隐藏的秘密帐户吗？"
+          },
+          "label": "检查单独帐户"
+        },
+        {
+          "question": {
+            "text": "10年来一点一滴攒下来的3000万韩元的钱，为什么要藏起来呢？"
+          },
+          "label": "长期积累确认",
+          "unlockHint": "如果进一步查看详细内容，可以看到如何通过10年的小额储蓄创建了约3000万韩元的单独基金。"
+        },
+        {
+          "question": {
+            "text": "请告诉我们按以下顺序扣除现金的原因：过去四个月内500万韩元、800万韩元、700万韩元、1000万韩元。"
+          },
+          "label": "分拆提款调查",
+          "unlockHint": "如果检查提款模式，可以查询到与银行工作人员证词相同的方式，依次提取了500万韩元、800万韩元、700万韩元、1000万韩元。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "您什么时候知道这个单独帐户的存在？",
+          "implication": "A 的监控可能会因他如何得知一个未与他的配偶共享的账户而受到动摇。"
+        },
+        "b": {
+          "questionAngle": "为什么这笔钱按以下顺序提取：500万韩元、800万韩元、700万韩元、1000万韩元？",
+          "implication": "B需要解释为什么他10多年来存下的钱被提取为现金。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅可以看到单独的帐户和当前的小额余额。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "10年间小额积累的3000万韩元左右的单独资金流"
+        },
+        {
+          "id": "original",
+          "summary": "4个月内提取现金的记录依次为：500万韩元、800万韩元、700万韩元、1000万韩元"
+        },
+        {
+          "id": "context",
+          "summary": "500万-800万-700万-1000万韩元的分割提款模式，与银行员工的证词类似"
+        },
+        {
+          "id": "established",
+          "summary": "目前余额只有几万韩元的阶段"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "A 提交部分单独账户余额详细信息"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "通过银行原始查询确认账户名称及长期持有"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "确认10年储蓄和4个月分期提款"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "B单独解释了这笔钱的用途，称这是他给弟弟的钱。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "记录本身是经过验证的，但其传输的目的是通过审问和证词来确定的。"
+        }
+      ],
+      "meta": {
+        "name": "李俊浩个人账户提款详情",
+        "trustLabel": "高度",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "第 3 步 - 分 4 个月分期提款"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "李俊浩个人账户提款详情",
+          "trustLabel": "高度",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 - 分 4 个月分期提款"
+        },
+        "bank": [
+          {
+            "desc": "累积长期储蓄 - 10 年来单独收集的资金"
+          },
+          {
+            "desc": "现金提取 - 麻浦分行柜台"
+          },
+          {
+            "desc": "现金提取 - 冠岳支行 ATM"
+          },
+          {
+            "desc": "现金提取 - 麻浦分行ATM"
+          },
+          {
+            "desc": "现金提取 - 江西分行柜台"
+          },
+          {
+            "desc": "余额查询-分期提现后当前余额",
+            "amount": "查看"
+          }
+        ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "李俊浩个人账户提款详情",
+            "trustLabel": "高度",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 - 独立账户和当前余额"
+          },
+          "bank": [
+            {
+              "desc": "开户 - 以李俊浩名义开设独立的免费存款/取款账户"
+            },
+            {
+              "desc": "余额查询 - 不与配偶共享的独立账户",
+              "amount": "查看"
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "李俊浩个人账户提款详情",
+            "trustLabel": "高度",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第2步-10年的积累历史"
+          },
+          "bank": [
+            {
+              "desc": "定期转账-工资余额中积累的小额资金"
+            },
+            {
+              "desc": "现金存款 - 假期/奖金余额累积"
+            },
+            {
+              "desc": "定期转账-累积每月生活费余额"
+            },
+            {
+              "desc": "长期积累——10年以上少量积累"
+            },
+            {
+              "desc": "余额查询-最近提现后的剩余余额",
+              "amount": "查看"
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "李俊浩个人账户提款详情",
+            "trustLabel": "高度",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 - 分 4 个月分期提款"
+          },
+          "bank": [
+            {
+              "desc": "累积长期储蓄 - 10 年来单独收集的资金"
+            },
+            {
+              "desc": "现金提取 - 麻浦分行柜台"
+            },
+            {
+              "desc": "现金提取 - 冠岳支行 ATM"
+            },
+            {
+              "desc": "现金提取 - 麻浦分行ATM"
+            },
+            {
+              "desc": "现金提取 - 江西分行柜台"
+            },
+            {
+              "desc": "余额查询-分期提现后当前余额",
+              "amount": "查看"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "e-6",
-      "surfaceName": "投资群 Telegram",
-      "surfaceDescription": "投资群 Telegram 对话与汇款流向同时留存的截图组。随阶段递进，入金、初期收益印证、跑路迹象会逐步分离呈现。"
+      "name": "投资室电报+汇款记录",
+      "surfaceName": "投资室电报",
+      "description": "朴智妍将联合储蓄提款金额的2000万韩元转入投资室信息账户后，利润确认和提款出现延迟的Telegram对话记录。",
+      "surfaceDescription": "与投资室 Telegram 对话和汇款流保持在一起的一系列捕获。随着级别的提高，存款、初始利润验证和欺诈情况将分别被揭露。",
+      "investigationResults": {
+        "request_original": "投资室 Telegram 仍然有保证高利润的促销活动以及参与者的利润认证。",
+        "check_metadata": "据证实，朴智妍在向投资室信息账户转入2000万韩元后，收到了初步盈利证明信息。",
+        "restore_context": "随后，操作员离开聊天室，提款请求被阻止，导致2000万韩元被列为不可挽回的欺诈损失。"
+      },
+      "investigationStages": [
+        {
+          "label": "投资空间介绍及利润吹嘘",
+          "question": {
+            "text": "我们来看看 Telegram 这个投资集团是如何吸引朴智妍的。"
+          }
+        },
+        {
+          "label": "存款和初始利润验证",
+          "question": {
+            "text": "我们将检查 Jiyeon Park 实际转账了多少以及她收到了哪些收入证明。"
+          },
+          "unlockHint": "检查投资室通话、汇款记录后才能开通。"
+        },
+        {
+          "label": "欺诈和损害已确认",
+          "question": {
+            "text": "我们将检查运营商在提款请求后如何响应以及如何确认欺诈损害。"
+          },
+          "unlockHint": "初次盈利认证后，确认提现延迟和操作员离开后才能开通。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "他们询问，转移到投资室是否不是一个简单的错误，而是一个实际导致从联合储蓄账户中提取2000万韩元的选择。",
+          "implication": "据透露，朴智妍的焦虑导致了实际汇款和损失。"
+        },
+        "b": {
+          "questionAngle": "这一记录将朴智妍的投资损失与李俊浩的行贿资金撤回分开。",
+          "implication": "B 的隐瞒和 A 的投资损失被组织到单独的责任轴中。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅可见标题“Investment Room Telegram”和一些促销文字。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "朴智妍似乎送了2000万韩元。"
+        },
+        {
+          "id": "original",
+          "summary": "随后出现初始利润验证和提款延迟消息。"
+        },
+        {
+          "id": "context",
+          "summary": "接线员离开聊天室、受害者抗议的情况被揭露。"
+        },
+        {
+          "id": "established",
+          "summary": "2000万韩元的投资欺诈损失被记录在官方记录中。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "B 质疑该记录是否存在或 A 仅部分提交该记录的阶段。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "单独询问与原始提交顺序的比较步骤"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "聊天时间与汇款时间匹配"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "确实，他们试图隐瞒，但并不是故意隐瞒。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "欺诈行为本身已得到证实，但是否是自卫或隐瞒仍悬而未决。"
+        }
+      ],
+      "meta": {
+        "name": "投资室电报",
+        "trustLabel": "通常",
+        "sourceLabel": "A面",
+        "legalLabel": "合法性",
+        "stageLabel": "投资室电报原对话"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "投资室电报",
+          "trustLabel": "通常",
+          "sourceLabel": "A面",
+          "legalLabel": "合法性",
+          "stageLabel": "投资室电报原对话"
+        },
+        "chat": {
+          "header": "Telegram·VIP投资俱乐部",
+          "inputStatus": "朴智妍 — 阅读",
+          "pages": [
+            {
+              "header": "Telegram·VIP投资俱乐部·01投资室介绍",
+              "messages": [
+                {
+                  "sender": "操作员（杰森）",
+                  "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+                },
+                {
+                  "sender": "海藻**",
+                  "text": "上个月，我投入了 500，结果变成了 1,400。"
+                },
+                {
+                  "sender": "这**",
+                  "text": "真的太棒了...我也存了更多。"
+                },
+                {
+                  "sender": "朴智妍",
+                  "text": "我可以在哪里发送我的第一笔存款？"
+                }
+              ]
+            },
+            {
+              "header": "Telegram · VIP 投资俱乐部 · 02 存款和初始利润验证",
+              "messages": [
+                {
+                  "sender": "朴智妍",
+                  "text": "我存了2000万韩元。请检查。"
+                },
+                {
+                  "sender": "操作员（杰森）",
+                  "text": "确认的。第一批收益将在 3 天内存入。"
+                },
+                {
+                  "sender": "操作员（杰森）",
+                  "text": "反映了初始利润8%。如果您额外存款，它将转换为 VIP 利率。"
+                },
+                {
+                  "sender": "朴智妍",
+                  "text": "如果我再等一会儿，我就能康复了，对吗？"
+                }
+              ]
+            },
+            {
+              "header": "Telegram · VIP投资俱乐部 · 03 确认提款延迟和损坏",
+              "messages": [
+                {
+                  "sender": "朴智妍",
+                  "text": "已经3天了，押金还没付。"
+                },
+                {
+                  "sender": "海藻**",
+                  "text": "杰森，我联系不上你。"
+                },
+                {
+                  "sender": "系统",
+                  "text": "主持人已离开聊天室。"
+                },
+                {
+                  "sender": "英文字母",
+                  "text": "我也被阻止提款了。"
+                },
+                {
+                  "sender": "朴智妍",
+                  "text": "房间为什么消失了？请归还我的钱。"
+                }
+              ]
+            }
+          ],
+          "messages": [
+            {
+              "sender": "操作员（杰森）",
+              "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+            },
+            {
+              "sender": "海藻**",
+              "text": "上个月，我投入了 500，结果变成了 1,400。"
+            },
+            {
+              "sender": "这**",
+              "text": "真的太棒了...我也存了更多。"
+            },
+            {
+              "sender": "朴智妍",
+              "text": "我可以在哪里发送我的第一笔存款？"
+            },
+            {
+              "sender": "朴智妍",
+              "text": "我存了2000万韩元。请检查。"
+            },
+            {
+              "sender": "操作员（杰森）",
+              "text": "确认的。第一批收益将在 3 天内存入。"
+            },
+            {
+              "sender": "操作员（杰森）",
+              "text": "反映了初始利润8%。如果您额外存款，它将转换为 VIP 利率。"
+            },
+            {
+              "sender": "朴智妍",
+              "text": "如果我再等一会儿，我就能康复了，对吗？"
+            },
+            {
+              "sender": "朴智妍",
+              "text": "已经3天了，押金还没付。"
+            },
+            {
+              "sender": "海藻**",
+              "text": "杰森，我联系不上你。"
+            },
+            {
+              "sender": "系统",
+              "text": "主持人已离开聊天室。"
+            },
+            {
+              "sender": "英文字母",
+              "text": "我也被阻止提款了。"
+            },
+            {
+              "sender": "朴智妍",
+              "text": "房间为什么消失了？请归还我的钱。"
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "投资室电报",
+            "trustLabel": "通常",
+            "sourceLabel": "A面",
+            "legalLabel": "合法性",
+            "stageLabel": "投资空间介绍及利润吹嘘"
+          },
+          "chat": {
+            "header": "Telegram·VIP投资俱乐部",
+            "inputStatus": "第一阶段披露",
+            "pages": [
+              {
+                "header": "Telegram·VIP投资俱乐部·01投资室介绍",
+                "messages": [
+                  {
+                    "sender": "操作员（杰森）",
+                    "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+                  },
+                  {
+                    "sender": "海藻**",
+                    "text": "上个月，我投入了 500，结果变成了 1,400。"
+                  },
+                  {
+                    "sender": "这**",
+                    "text": "真的太棒了...我也存了更多。"
+                  },
+                  {
+                    "sender": "朴智妍",
+                    "text": "我可以在哪里发送我的第一笔存款？"
+                  }
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "sender": "操作员（杰森）",
+                "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+              },
+              {
+                "sender": "海藻**",
+                "text": "上个月，我投入了 500，结果变成了 1,400。"
+              },
+              {
+                "sender": "这**",
+                "text": "真的太棒了...我也存了更多。"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "我可以在哪里发送我的第一笔存款？"
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "投资室电报",
+            "trustLabel": "通常",
+            "sourceLabel": "A面",
+            "legalLabel": "合法性",
+            "stageLabel": "存款和初始利润验证"
+          },
+          "chat": {
+            "header": "Telegram·VIP投资俱乐部",
+            "inputStatus": "第二阶段披露",
+            "pages": [
+              {
+                "header": "Telegram·VIP投资俱乐部·01投资室介绍",
+                "messages": [
+                  {
+                    "sender": "操作员（杰森）",
+                    "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+                  },
+                  {
+                    "sender": "海藻**",
+                    "text": "上个月，我投入了 500，结果变成了 1,400。"
+                  },
+                  {
+                    "sender": "这**",
+                    "text": "真的太棒了...我也存了更多。"
+                  },
+                  {
+                    "sender": "朴智妍",
+                    "text": "我可以在哪里发送我的第一笔存款？"
+                  }
+                ]
+              },
+              {
+                "header": "Telegram · VIP 投资俱乐部 · 02 存款和初始利润验证",
+                "messages": [
+                  {
+                    "sender": "朴智妍",
+                    "text": "我存了2000万韩元。请检查。"
+                  },
+                  {
+                    "sender": "操作员（杰森）",
+                    "text": "确认的。第一批收益将在 3 天内存入。"
+                  },
+                  {
+                    "sender": "操作员（杰森）",
+                    "text": "反映了初始利润8%。如果您额外存款，它将转换为 VIP 利率。"
+                  },
+                  {
+                    "sender": "朴智妍",
+                    "text": "如果我再等一会儿，我就能康复了，对吗？"
+                  }
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "sender": "操作员（杰森）",
+                "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+              },
+              {
+                "sender": "海藻**",
+                "text": "上个月，我投入了 500，结果变成了 1,400。"
+              },
+              {
+                "sender": "这**",
+                "text": "真的太棒了...我也存了更多。"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "我可以在哪里发送我的第一笔存款？"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "我存了2000万韩元。请检查。"
+              },
+              {
+                "sender": "操作员（杰森）",
+                "text": "确认的。第一批收益将在 3 天内存入。"
+              },
+              {
+                "sender": "操作员（杰森）",
+                "text": "反映了初始利润8%。如果您额外存款，它将转换为 VIP 利率。"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "如果我再等一会儿，我就能康复了，对吗？"
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "投资室电报",
+            "trustLabel": "通常",
+            "sourceLabel": "A面",
+            "legalLabel": "合法性",
+            "stageLabel": "欺诈和损害已确认"
+          },
+          "chat": {
+            "header": "Telegram·VIP投资俱乐部",
+            "inputStatus": "第三阶段披露",
+            "pages": [
+              {
+                "header": "Telegram·VIP投资俱乐部·01投资室介绍",
+                "messages": [
+                  {
+                    "sender": "操作员（杰森）",
+                    "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+                  },
+                  {
+                    "sender": "海藻**",
+                    "text": "上个月，我投入了 500，结果变成了 1,400。"
+                  },
+                  {
+                    "sender": "这**",
+                    "text": "真的太棒了...我也存了更多。"
+                  },
+                  {
+                    "sender": "朴智妍",
+                    "text": "我可以在哪里发送我的第一笔存款？"
+                  }
+                ]
+              },
+              {
+                "header": "Telegram · VIP 投资俱乐部 · 02 存款和初始利润验证",
+                "messages": [
+                  {
+                    "sender": "朴智妍",
+                    "text": "我存了2000万韩元。请检查。"
+                  },
+                  {
+                    "sender": "操作员（杰森）",
+                    "text": "确认的。第一批收益将在 3 天内存入。"
+                  },
+                  {
+                    "sender": "操作员（杰森）",
+                    "text": "反映了初始利润8%。如果您额外存款，它将转换为 VIP 利率。"
+                  },
+                  {
+                    "sender": "朴智妍",
+                    "text": "如果我再等一会儿，我就能康复了，对吗？"
+                  }
+                ]
+              },
+              {
+                "header": "Telegram · VIP投资俱乐部 · 03 确认提款延迟和损坏",
+                "messages": [
+                  {
+                    "sender": "朴智妍",
+                    "text": "已经3天了，押金还没付。"
+                  },
+                  {
+                    "sender": "海藻**",
+                    "text": "杰森，我联系不上你。"
+                  },
+                  {
+                    "sender": "系统",
+                    "text": "主持人已离开聊天室。"
+                  },
+                  {
+                    "sender": "英文字母",
+                    "text": "我也被阻止提款了。"
+                  },
+                  {
+                    "sender": "朴智妍",
+                    "text": "房间为什么消失了？请归还我的钱。"
+                  }
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "sender": "操作员（杰森）",
+                "text": "这个月实现了180%的回报。如果您现在加入，将适用保本活动。"
+              },
+              {
+                "sender": "海藻**",
+                "text": "上个月，我投入了 500，结果变成了 1,400。"
+              },
+              {
+                "sender": "这**",
+                "text": "真的太棒了...我也存了更多。"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "我可以在哪里发送我的第一笔存款？"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "我存了2000万韩元。请检查。"
+              },
+              {
+                "sender": "操作员（杰森）",
+                "text": "确认的。第一批收益将在 3 天内存入。"
+              },
+              {
+                "sender": "操作员（杰森）",
+                "text": "反映了初始利润8%。如果您额外存款，它将转换为 VIP 利率。"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "如果我再等一会儿，我就能康复了，对吗？"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "已经3天了，押金还没付。"
+              },
+              {
+                "sender": "海藻**",
+                "text": "杰森，我联系不上你。"
+              },
+              {
+                "sender": "系统",
+                "text": "主持人已离开聊天室。"
+              },
+              {
+                "sender": "英文字母",
+                "text": "我也被阻止提款了。"
+              },
+              {
+                "sender": "朴智妍",
+                "text": "房间为什么消失了？请归还我的钱。"
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-7",
-      "surfaceName": "共同储蓄解约文件",
-      "surfaceDescription": "共同储蓄在到期前被解约的文件留有底档。"
+      "name": "联合储蓄取消文件",
+      "surfaceName": "联合储蓄取消文件",
+      "description": "联合储蓄取消文件和处理记录。指示 A 如何进行取消程序的数据。",
+      "surfaceDescription": "仍有文件表明联名储蓄账户在到期前被取消。",
+      "investigationResults": {
+        "request_original": "这是取消联名储蓄账户的文件和授权书。终止金额为2000万韩元。",
+        "check_metadata": "疑似李俊浩在授权书上的签名不是他本人的笔迹。有朴智妍代笔的痕迹。",
+        "restore_context": "这是朴智妍在未经李俊浩同意的情况下，操纵委托书并取消了价值2000万韩元的共同储蓄账户的犯罪行为的证据。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "此终止文件上有谁的签名？"
+          },
+          "label": "检查文件"
+        },
+        {
+          "question": {
+            "text": "如果这份授权书上的签名不是我的，那么是谁写的？"
+          },
+          "label": "笔迹比较",
+          "unlockHint": "检查您的文件将使您能够将您的终止记录与您的授权书签名进行比较。"
+        },
+        {
+          "question": {
+            "text": "这种程度的文书工作可能会导致重大的法律责任。你会如何解释呢？"
+          },
+          "label": "追究责任",
+          "unlockHint": "通过比对笔迹，可以直接调查是否发生未经同意终止的情况。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "请解释您在此授权书上的签名。",
+          "implication": "文件处理过程以及随之而来的法律责任被揭示。"
+        },
+        "b": {
+          "questionAngle": "你看过这份文件吗？您曾经同意终止吗？",
+          "implication": "据透露，解约是在未经B同意的情况下进行的。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅取消文档的存在可见。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "委托书+2000万韩元解约记录"
+        },
+        {
+          "id": "original",
+          "summary": "检查是否有代笔痕迹"
+        },
+        {
+          "id": "context",
+          "summary": "操纵授权书犯罪的证据"
+        },
+        {
+          "id": "established",
+          "summary": "通过操纵A的授权书确认"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "只有结合不同证据才能组织全面的数据"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "一旦从 e-1 到 e-6 的关键轴获得认证，它们就会被组织在一起。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "如果四个或更多的基础证据经过验证，则该材料也经过验证。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "A 和 B 都可以反对，认为时间安排毫无意义。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "数据本身无法被操纵，但其解释会根据查看数据的角度而有所不同。"
+        }
+      ],
+      "meta": {
+        "name": "联合储蓄取消文件",
+        "trustLabel": "通常",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "关键披露"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "联合储蓄取消文件",
+          "trustLabel": "通常",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "关键披露"
+        },
+        "contract": {
+          "title": "申请终止定期禁令",
+          "subtitle": "○○ 银行麻浦分行 — 2026 年 1 月 18 日下午 2:14",
+          "rows": [
+            {
+              "date": "产品名称",
+              "content": "○○ 银行定期存款（每月50万韩元×36个月）"
+            },
+            {
+              "date": "帐户",
+              "content": "联名：朴智妍、李俊浩（账号：110-XXX-XXXXXX）"
+            },
+            {
+              "date": "加入日期",
+              "content": "2023 年 7 月 15 日"
+            },
+            {
+              "date": "平衡",
+              "content": "储蓄本金和利息合计",
+              "amount": "2012万韩元"
+            },
+            {
+              "date": "取消类型",
+              "content": "提前终止（到期日2026年7月14日之前）",
+              "amount": "- 利息扣除"
+            },
+            {
+              "date": "如何领取",
+              "content": "立即存入朴智妍的个人账户（○○银行110-XXX-XXXXXX）",
+              "amount": "+2012万韩元"
+            },
+            null,
+            {
+              "date": "附件1",
+              "content": "李俊浩姓名的授权书 – 附手写签名"
+            },
+            {
+              "date": "清单",
+              "content": "授权委托书签名笔迹——未确认是否与委托人现有签名相符"
+            },
+            {
+              "date": "笔记",
+              "content": "李俊浩没有访问记录/未实施身份验证流程"
+            }
+          ],
+          "signature": "申请人：朴智妍（签名） ——— 委托人：李俊浩（疑似代理签名） ——— 负责人：○○ 银行麻浦支行 金○○"
+        }
+      }
     }
-  ]
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "B去办公室拜访的目标不是他的外遇对象，而是他的哥哥和侄子。"
+    },
+    {
+      "id": "t-2",
+      "fact": "B向配偶隐瞒了个人行贿资金的3000万韩元，以现金形式交给了弟弟。"
+    },
+    {
+      "id": "t-3",
+      "fact": "A确信丈夫有外遇后，操纵授权书取消了2000万韩元的联合储蓄账户，并将全部金额转入投资银行。"
+    },
+    {
+      "id": "t-4",
+      "fact": "B先开始藏匿，A居然先进行秘密汇款。"
+    },
+    {
+      "id": "t-5",
+      "fact": "虽然两人都有不能说的理由，但两人都独自搬走了共同财产。"
+    }
+  ],
+  "solutions": {
+    "공동재산회복": [
+      "个人行贿资金中的3000万韩元的提取、共同储蓄中的2000万韩元的取消以及投资室中的2000万韩元的汇款流程被分开并与可收回金额和损失金额重新调整。",
+      "只有通过独立于婚姻财产的单独协议程序才允许来自年长兄弟姐妹的赡养费。"
+    ],
+    "신뢰순서분리": [
+      "分别记录发起隐瞒和实际执行汇款的顺序，分别判断情感背叛和执行责任。",
+      "同时重新制定与姻亲相关的沟通规则和共同财产的事先同意规则。"
+    ],
+    "봉인정보경계": [
+      "仅在必要的范围内发布次要信息和敏感的健康相关信息。",
+      "关于不忠的误解得到了解决，但家庭照顾和共同财产权仍然是单独的责任。"
+    ]
+  },
+  "combinationLab": {
+    "nodes": [
+      {
+        "id": "e-1",
+        "label": "e-1 卡声明"
+      },
+      {
+        "id": "e-2",
+        "label": "e-2 办公电话访问记录"
+      },
+      {
+        "id": "e-3",
+        "label": "e-3 清晨通话记录"
+      },
+      {
+        "id": "e-4",
+        "label": "e-4 来自未知发件人的短信"
+      },
+      {
+        "id": "e-5",
+        "label": "从e-5个人账户中提取大额金额"
+      },
+      {
+        "id": "e-6",
+        "label": "e-6投资室电报+2000万韩元转账"
+      },
+      {
+        "id": "e-7",
+        "label": "e-7 货币/账户/账户变动清单"
+      },
+      {
+        "id": "stmt-b-family",
+        "label": "B的说法是：“这是家庭问题。”"
+      },
+      {
+        "id": "stmt-b-repay",
+        "label": "B的声明“我哥哥说他很快就会还给我。”"
+      },
+      {
+        "id": "stmt-a-protect",
+        "label": "A 的声明“我试图保护我的份额，以防万一。”"
+      },
+      {
+        "id": "w-1-angle",
+        "label": "w-1 办公电话费用见证祝贺"
+      },
+      {
+        "id": "w-2-angle",
+        "label": "w-2 银行员工证词"
+      },
+      {
+        "id": "w-3-angle",
+        "label": "w-3 朴米拉的证词祝贺"
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 办公电话人员"
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 每当我们谈论我们的姻亲时，我们就会吵架。"
+      },
+      {
+        "id": "dc-3",
+        "label": "DC-3 3000万韩元 授权"
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4模型2000万韩元"
+      },
+      {
+        "id": "dc-5",
+        "label": "6000万韩元的dc-5订单"
+      },
+      {
+        "id": "dc-6",
+        "label": "dc-6 家庭情况"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "dc-1",
+        "label": "dc-1 办公电话人员",
+        "summary": "一张卡片让你重新审视你对家庭情况不忠的第一印象。",
+        "noteText": "办公室电话里的人",
+        "judgeHint": "您现在可以致电办公室保安作为证人以确认该活动。"
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 每当我们谈论我们的姻亲时，我们就会吵架。",
+        "summary": "一张牌决定了导致 B 闭嘴的恐惧的身份。",
+        "noteText": "每当提起公婆的话题，我们就会吵架",
+        "judgeHint": "如果你直接向李俊浩询问这种情绪模式，或者向他提供来自未知发件人的短信（e-4），具体的故事就会被揭露。"
+      },
+      {
+        "id": "dc-3",
+        "label": "DC-3 3000万韩元 授权",
+        "summary": "一张卡片，询问谁有权取消联名储蓄账户以及授权书程序是否合理。",
+        "noteText": "权限3000万韩元",
+        "judgeHint": "传唤银行工作人员作为证人，核实联合储蓄取消程序和委托书的真实性。"
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4模型2000万韩元",
+        "summary": "一张询问李俊浩个人资金去向和原因的卡片",
+        "noteText": "2000万韩元的数字",
+        "judgeHint": "现在你可以直接查询李俊浩家人的情况，或者通过追查他的动机来询问他为何隐瞒。"
+      },
+      {
+        "id": "dc-5",
+        "label": "6000万韩元的dc-5订单",
+        "summary": "一张将隐藏的启动与转移的实际执行分开的卡",
+        "noteText": "6000万韩元的订单",
+        "judgeHint": "见证朴米拉将最终填补加入投资室的道路。"
+      },
+      {
+        "id": "dc-6",
+        "label": "dc-6 家庭情况",
+        "summary": "通过查看收据上的参考信息和文本中的学校通知来区分家庭情况的卡片。",
+        "noteText": "家境",
+        "judgeHint": "这是指短信和购买的物品相同的家庭情况。您需要单独检查它与谁相关以及它被隐藏的原因。"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "combine-1",
+        "discoveryText": "收据购买地点与黑匣子停靠站坐标相符。仅在办公楼附近确认购买模式。"
+      },
+      {
+        "id": "combine-2",
+        "discoveryText": "收据捆绑中的中学参考书和混杂在文字中的学校通知链接到了家庭的故事。"
+      },
+      {
+        "id": "combine-3",
+        "discoveryText": "凌晨通话和大额取款记录在同一时区重叠。您需要亲自查明这笔钱的去向以及为什么向您的配偶隐瞒这笔钱。"
+      },
+      {
+        "id": "combine-4",
+        "discoveryText": "联合储蓄取消金额与投资房汇款金额完全相同。逃逸资金的去向已确定。"
+      },
+      {
+        "id": "combine-5",
+        "discoveryText": "Jiyeon Park 关于她“试图保护自己份额”的声明以及围绕授权书处理的情况都指向同一方向。据透露，取消联合储蓄并非偶然，而是有意为之。"
+      },
+      {
+        "id": "combine-6",
+        "discoveryText": "关于这是家庭事务的解释与文本内容相符。需要直接确认对象是谁以及护理范围。"
+      },
+      {
+        "id": "combine-7",
+        "discoveryText": "如果你把“这是家庭问题”和“我试图保护我的份额”放在一起，那么不首先告诉对方的原因就会重叠。"
+      }
+    ]
+  },
+  "v3Design": {
+    "evidenceAxisLegend": {
+      "depthStages": [
+        {
+          "id": "stub",
+          "summary": "只有存在才是可见的"
+        },
+        {
+          "id": "excerpt",
+          "summary": "仅查看部分"
+        },
+        {
+          "id": "original",
+          "summary": "安全原件/完整副本"
+        },
+        {
+          "id": "context",
+          "summary": "恢复之前和之后的上下文"
+        },
+        {
+          "id": "established",
+          "summary": "正式记录采用"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "当事人提交的状态"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "检查原文和上下文"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "根据可靠数据判断"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "对方对含义或范围有争议"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "伪造或摘录/误读的判定"
+        }
+      ]
+    },
+    "hiddenDisputes": [
+      {
+        "id": "h-d3",
+        "name": "取消共同储蓄2000万韩元的目的",
+        "unlockPlan": {
+          "runtimeRule": "出示 e-6 即可解锁",
+          "authoredRule": "当 e-6 变为 Excerpt 或更高版本或 A 累积 2 次同步搜索时生成。"
+        }
+      },
+      {
+        "id": "h-d4",
+        "name": "违反信托责任",
+        "unlockPlan": {
+          "runtimeRule": "出示 h-d3 + e-7 即可解锁",
+          "authoredRule": "当创建 h-d3 后 e-7 变为原始或更高时或当 e-5+e-6 出现重构线索时创建。"
+        }
+      }
+    ],
+    "leadLines": [
+      {
+        "id": "L-1",
+        "interpretationChoices": [
+          {
+            "id": "L-1-A",
+            "text": "这是婚外情。",
+            "implication": "d-1被怀疑有外遇。"
+          },
+          {
+            "id": "L-1-B",
+            "text": "这是一种照顾某人的生活方式。",
+            "implication": "e-4 逆转继续良好。"
+          },
+          {
+            "id": "L-1-C",
+            "text": "这可能是一个简单的差事",
+            "implication": "保留判断力。"
+          }
+        ]
+      },
+      {
+        "id": "L-2",
+        "interpretationChoices": [
+          {
+            "id": "L-2-A",
+            "text": "这不是外遇，但我因为尴尬而隐瞒了。",
+            "implication": "我们首先看到B的羞耻。"
+          },
+          {
+            "id": "L-2-B",
+            "text": "我把它藏起来，以避免公婆之间不和。",
+            "implication": "打开关系恐惧轴。"
+          }
+        ]
+      },
+      {
+        "id": "L-3",
+        "interpretationChoices": [
+          {
+            "id": "L-3-A",
+            "text": "这是我实际用来救我弟弟的钱。",
+            "implication": "我们看到了缓解压力的良好意愿和逻辑。"
+          },
+          {
+            "id": "L-3-B",
+            "text": "承担我哥哥的不负责任行为是过分的。",
+            "implication": "看看共同财产的责任。"
+          }
+        ]
+      },
+      {
+        "id": "L-4",
+        "interpretationChoices": [
+          {
+            "id": "L-4-A",
+            "text": "这是在害怕背叛的情况下的自卫。",
+            "implication": "我们首先看到A的恐惧。"
+          },
+          {
+            "id": "L-4-B",
+            "text": "准备离婚是一个秘密。",
+            "implication": "我们先看A的计算。"
+          }
+        ]
+      },
+      {
+        "id": "L-5",
+        "interpretationChoices": [
+          {
+            "id": "L-5-A",
+            "text": "我丈夫首先损失了一大笔钱。",
+            "implication": "这是基于金额和规模的责任声明。"
+          },
+          {
+            "id": "L-5-B",
+            "text": "妻子先把钱转移了，破坏了信任。",
+            "implication": "基于执行顺序的责任叙述。"
+          },
+          {
+            "id": "L-5-C",
+            "text": "它是一个镜面形状的谎言结构。",
+            "implication": "我们看到相互崩溃和对称结构。"
+          }
+        ]
+      }
+    ],
+    "authorityPlacements": [
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "d-1 e-1/e-3 开头摘录",
+        "purpose": "将怀疑锚定在模式中，而不是情绪中"
+      },
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "e-4出现后立即",
+        "purpose": "保护来自未知发件人的原始短信和安排通知"
+      },
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "h-d3出现后立即出现e-6轴",
+        "purpose": "确认2000万韩元汇至A投资室"
+      },
+      {
+        "action": "请正确回答",
+        "recommendedMoment": "当 B 重复“家族企业”等模糊词语时",
+        "purpose": "兄弟、侄子、三千万韩元等实体名词都是强制的。"
+      },
+      {
+        "action": "单独审讯",
+        "recommendedMoment": "B 紧接在 e-4 原件之后",
+        "purpose": "更快地消灭回避型 B"
+      },
+      {
+        "action": "单独审讯",
+        "recommendedMoment": "e-6 紧接着摘录 A 之后",
+        "purpose": "缩小A的受害者框架并揭示他的动机"
+      },
+      {
+        "action": "临时承认",
+        "recommendedMoment": "e-4认证后",
+        "purpose": "据记录，来办公室的人是我的兄弟。"
+      },
+      {
+        "action": "临时承认",
+        "recommendedMoment": "e-5认证后",
+        "purpose": "个人行贿基金提取3000万韩元现金记录"
+      },
+      {
+        "action": "临时承认",
+        "recommendedMoment": "e-6认证后",
+        "purpose": "向A投资室汇款2000万韩元的记录"
+      },
+      {
+        "action": "临时承认",
+        "recommendedMoment": "e-7成立后",
+        "purpose": "隐藏启动和传输执行前后单独记录"
+      },
+      {
+        "action": "宽大处理窗口",
+        "recommendedMoment": "紧接 dc-3 或 dc-4 之后",
+        "purpose": "B 更快地承认有罪，A 更快地承认羞耻。"
+      },
+      {
+        "action": "禁止言论/从记录中排除",
+        "recommendedMoment": "当A重复错误的断言或B嘲笑A时",
+        "purpose": "减少框架之争并将官方记录与假设分开"
+      },
+      {
+        "action": "解封敏感信息",
+        "recommendedMoment": "当选择护理解释但缺乏实质内容或恰好在 dc-1 之前时",
+        "purpose": "绝对消除对不忠的误解并管理未成年人隐私的风险"
+      }
+    ],
+    "sensitiveSealTargets": [
+      {
+        "targets": [
+          "侄子名字",
+          "学校名称",
+          "年级",
+          "与月经有关的直接表达"
+        ],
+        "risk": "过早开放未成年人的隐私可能会导致人性分数下降并进一步从B辞职。"
+      }
+    ],
+    "officialRecordRecommendations": [
+      "B 办公室拜访的对象是他的兄弟和侄子。",
+      "B向配偶隐瞒了个人行贿资金的3000万韩元，以现金形式交给了弟弟。",
+      "A确信丈夫有外遇后，操纵授权书取消了2000万韩元的联合储蓄账户，并将全部金额转入投资银行。",
+      "B先开始藏匿，A居然先进行秘密汇款。",
+      "虽然两人都有不能说的理由，但两人都独自搬走了共同财产。"
+    ]
+  },
+  "solutionCategoryLabels": {
+    "공동재산회복": "收回共同财产",
+    "신뢰순서분리": "单独信托令",
+    "봉인정보경계": "密封的信息边界"
+  }
 }

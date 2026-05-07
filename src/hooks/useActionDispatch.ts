@@ -61,6 +61,8 @@ import { getInterrogationMicroVfx } from '../engine/vfxHierarchyEngine'
 import { hasContradictionComparison } from '../utils/contradiction'
 import { getAvailableSlots } from '../engine/witnessTestimonyResolver'
 import { evaluateTruthBreakthroughGate } from '../engine/truthBreakthroughEngine'
+import { getRuntimeTextLocale, hasHangulText, localizeRuntimeText } from '../i18n/runtimeText'
+import { localizeWitnessTestimonySlots } from '../data/witnessTestimonyData/localized'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -197,6 +199,14 @@ function polishEvidencePresentationQuestion(questionText: string, displayName: s
   return text
 }
 
+function getDefaultEvidencePresentationQuestion(): string {
+  const locale = getRuntimeTextLocale()
+  if (locale === 'en') return 'Please explain how this evidence relates to the issue.'
+  if (locale === 'ja') return 'この証拠が争点とどう関係するのか説明してください。'
+  if (locale === 'zh-CN') return '请说明这项证据与争点有什么关系。'
+  return '이 증거와 관련해 설명해 주시겠습니까?'
+}
+
 function getEvidencePresentationQuestionText(caseId: string | undefined, evidence: any, evidenceRuntime: any, target: PartyId, displayName: string): string {
   const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
   const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
@@ -215,7 +225,22 @@ function getEvidencePresentationQuestionText(caseId: string | undefined, evidenc
     : stageAwareQuestion
     ?? evidence?.partyContext?.[target]?.questionAngle
     ?? '이 증거와 관련해 설명해 주시겠습니까?'
-  return polishEvidencePresentationQuestion(questionText, displayName)
+  const polished = polishEvidencePresentationQuestion(questionText, displayName)
+  const locale = getRuntimeTextLocale()
+  if (locale !== 'ko' && hasHangulText(polished)) {
+    const localized = localizeRuntimeText(polished, locale)
+    return hasHangulText(localized) ? getDefaultEvidencePresentationQuestion() : localized
+  }
+  return polished
+}
+
+function formatEvidencePresentationAddress(targetName: string, questionText: string): string {
+  const locale = getRuntimeTextLocale()
+  const localizedTargetName = localizeRuntimeText(targetName, locale)
+  if (locale === 'ja') return `${localizedTargetName}さん、${questionText}`
+  if (locale === 'zh-CN') return `${localizedTargetName}，${questionText}`
+  if (locale === 'ko') return `${targetName} 씨, ${questionText}`
+  return `${localizedTargetName}, ${questionText}`
 }
 
 function buildEvidencePresentationQuestion(
@@ -228,7 +253,7 @@ function buildEvidencePresentationQuestion(
   const targetName = getPartyName(state, target)
   const questionText = getEvidencePresentationQuestionText(state.caseData?.caseId, evidence, evidenceRuntime, target, displayName)
 
-  return `${targetName} 씨, ${questionText}`
+  return formatEvidencePresentationAddress(targetName, questionText)
 }
 
 function buildEvidencePresentationMeta(displayName: string, stageLabel: string) {
@@ -653,9 +678,12 @@ function buildCourtBeatForEvidencePresentation(
     },
     judgeLine: relationCopy.judgeLine,
     reactionLine: isHit
-      ? isDirectClash
-        ? '...그렇게 연결될 줄은 몰랐습니다.'
-        : '...그 부분은 더 설명드리겠습니다.'
+      ? localizeRuntimeText(
+        isDirectClash
+          ? '...그렇게 연결될 줄은 몰랐습니다.'
+          : '...그 부분은 더 설명드리겠습니다.',
+        getRuntimeTextLocale(),
+      )
       : undefined,
     relationshipLine: relationCopy.relationshipLine,
     notebookEntry: relationCopy.notebookEntry,
@@ -1167,6 +1195,9 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
       testimonySlots = FAMILY_01_TESTIMONY
     }
   } catch { /* 데이터 없으면 기존 방식 */ }
+  if (testimonySlots.length > 0) {
+    testimonySlots = localizeWitnessTestimonySlots(caseKey, testimonySlots, getRuntimeTextLocale())
+  }
 
   // 다층 증언 시스템: 사용 가능한 슬롯 확인
   const session = state.witnessSessions[action.witnessId] ?? { heardSlots: [], lastChoice: null, summonCount: 0 }

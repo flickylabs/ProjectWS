@@ -4,6 +4,8 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { CaseData, LieState, LieStateEntry } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
+import { useI18n } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import { PC_DISPUTE_RIBBON_EXPAND_EVENT, type DisputeRibbonExpandDetail } from './disputeRibbonEvents'
 import { PC_VERDICT_CTA_COLLAPSED_EVENT } from './verdictAdvanceEvents'
 import { requestVerdictAdvance } from './verdictAdvancePrompt'
@@ -24,6 +26,7 @@ function getTruthFactForDispute(caseData: CaseData, disputeId: string): string |
 }
 
 export default function PCDisputeRibbon() {
+  const { locale, t } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
@@ -165,10 +168,10 @@ export default function PCDisputeRibbon() {
         <button
           className="pc-dispute-ribbon__toggle"
           onClick={() => setCollapsed((c) => !c)}
-          title={collapsed ? '쟁점 펼치기' : '쟁점 접기'}
+          title={collapsed ? t('pc.disputeRibbon.open') : t('pc.disputeRibbon.close')}
           type="button"
         >
-          <span className="pc-dispute-ribbon__label">쟁점</span>
+          <span className="pc-dispute-ribbon__label">{t('pc.disputeRibbon.label')}</span>
           <span className="pc-dispute-ribbon__arrow">{collapsed ? '▼' : '▲'}</span>
         </button>
         <div className="pc-dispute-ribbon__track">
@@ -177,6 +180,7 @@ export default function PCDisputeRibbon() {
             const isPinned = pinnedId === dispute.id
             const isFocused = lastFocusedDisputeId === dispute.id
             const lieState = getMaxLieState(dispute.id)
+            const disputeName = localizeRuntimeText(dispute.name, locale)
 
             const isUrgentPending = urgentPendingDisputeIds.has(dispute.id)
 
@@ -202,11 +206,11 @@ export default function PCDisputeRibbon() {
                     setHoveredId((current) => (current === dispute.id ? null : current))
                   }
                 }}
-                title={dispute.name}
+                title={disputeName}
                 type="button"
               >
                 <span className="pc-dispute-ribbon__chip-index">{String(index + 1).padStart(2, '0')}</span>
-                {isActive ? <span className="pc-dispute-ribbon__chip-title">{dispute.name}</span> : null}
+                {isActive ? <span className="pc-dispute-ribbon__chip-title">{disputeName}</span> : null}
                 <span className={`pc-dispute-ribbon__chip-state ${getLieClassName(lieState)}`}>{lieState}</span>
               </button>
             )
@@ -219,7 +223,7 @@ export default function PCDisputeRibbon() {
             type="button"
           >
             <PCSvgIcon id="i-scale" size={14} />
-            <span>판결 진행</span>
+            <span>{t('pc.disputeRibbon.verdictProceed')}</span>
           </button>
         ) : null}
       </div>
@@ -239,17 +243,18 @@ export default function PCDisputeRibbon() {
           }}
         >
           <div className="pc-dispute-ribbon__popover-head">
-            <strong>{activeDispute.name}</strong>
+            <strong>{localizeRuntimeText(activeDispute.name, locale)}</strong>
             <span className={`pc-dispute-ribbon__state ${getLieClassName(activeLieState)}`}>
               {activeLieState}
             </span>
           </div>
           <p className={`pc-dispute-ribbon__popover-copy${activeTruthFact ? ' pc-dispute-ribbon__popover-copy--truth' : ' pc-dispute-ribbon__popover-copy--muted'}`}>
-            {activeTruthFact ?? '심문과 증거로 진실을 밝혀내세요.'}
+            {activeTruthFact ? localizeRuntimeText(activeTruthFact, locale) : t('pc.disputeRibbon.revealTruth')}
           </p>
           <div className="pc-dispute-ribbon__evidence-list">
             {activeEvidence.map((evidence) => {
               const unlocked = evidenceStates[evidence.id]?.unlocked ?? false
+              const evidenceName = localizeRuntimeText(evidence.surfaceName ?? evidence.name, locale)
               return (
                 <button
                   className={`pc-dispute-ribbon__evidence${unlocked ? '' : ' is-locked'}`}
@@ -262,8 +267,8 @@ export default function PCDisputeRibbon() {
                   type="button"
                 >
                   <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={14} />
-                  <span>{unlocked ? (evidence.surfaceName ?? evidence.name) : '???'}</span>
-                  {!unlocked ? <small>잠금</small> : null}
+                  <span>{unlocked ? evidenceName : '???'}</span>
+                  {!unlocked ? <small>{t('pc.common.locked')}</small> : null}
                 </button>
               )
             })}

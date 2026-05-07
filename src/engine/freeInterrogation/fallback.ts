@@ -7,6 +7,11 @@ import type {
   FreeInterrogationNpcKey,
   FreeInterrogationNpcProfile,
 } from '../../types/freeInterrogationGuard'
+import {
+  getLlmLocale,
+  getLocalizedFreeQuestionBehaviorHint,
+  getLocalizedFreeQuestionFallbackText,
+} from '../../i18n/llmLocale.ts'
 
 type RuntimeFallbackContext = {
   caseId: string
@@ -266,6 +271,21 @@ export function selectFreeInterrogationFallbackText(
 ): FreeInterrogationFallbackResult {
   const npcKey = resolveFreeInterrogationNpcKey(context)
   const bucket = resolveLieStateBucket(context.lieState)
+  const locale = getLlmLocale()
+  const localizedText = getLocalizedFreeQuestionFallbackText(reason, locale)
+  const localizedBehaviorHint = getLocalizedFreeQuestionBehaviorHint(locale)
+  if (localizedText) {
+    return {
+      action: 'fallback',
+      text: localizedText,
+      originalText,
+      reason,
+      issues,
+      meta: { npcKey, bucket, variantIndex: 0, reason },
+      behaviorHint: localizedBehaviorHint ?? BEHAVIOR_HINTS[npcKey] ?? 'Answers cautiously.',
+    }
+  }
+
   const variants = isSafeContextFallbackReason(reason)
     ? SAFE_CONTEXT_FALLBACKS[npcKey] ?? SAFE_CONTEXT_FALLBACKS['spouse-01:a']
     : FALLBACK_MATRIX[npcKey]?.[bucket] ?? FALLBACK_MATRIX['spouse-01:a'].S0_S1

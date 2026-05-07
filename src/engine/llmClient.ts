@@ -1,4 +1,5 @@
 import { authFetch } from '../api/steamAuth'
+import { buildLlmLanguageDirective, getLlmLocale } from '../i18n/llmLocale.ts'
 
 /**
  * LLM API 클라이언트.
@@ -24,6 +25,20 @@ interface LLMConfig {
   provider: 'openai' | 'local'
   baseUrl: string
   modelId: string
+}
+
+function withLanguageLock(messages: ChatMessage[]): ChatMessage[] {
+  const locale = getLlmLocale()
+  if (locale === 'ko') return messages
+
+  if (messages.some((message) => message.content.includes('OUTPUT LANGUAGE LOCK'))) {
+    return messages
+  }
+
+  return [
+    { role: 'system', content: buildLlmLanguageDirective(locale) },
+    ...messages,
+  ]
 }
 
 function getRuntimeEnv(name: string): string | undefined {
@@ -96,7 +111,7 @@ export async function chatCompletion(
     signal: AbortSignal.timeout(timeout),
     body: JSON.stringify({
       model: modelId,
-      messages,
+      messages: withLanguageLock(messages),
       temperature: options.temperature ?? 1.0,
       max_tokens: options.maxTokens ?? 400,
       stream: false,

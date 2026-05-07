@@ -289,6 +289,7 @@ function normalizeCaseData(raw: any): CaseData {
     lieConfigA: normTransitions(raw.lieConfigA ?? []),
     lieConfigB: normTransitions(raw.lieConfigB ?? []),
     solutions: raw.solutions ?? {},
+    solutionCategoryLabels: raw.solutionCategoryLabels ?? undefined,
     activeLedgerEntries: raw.activeLedgerEntries ?? [],
     activeThirdParties: raw.activeThirdParties ?? [],
     baseEvidenceIds: raw.baseEvidenceIds,
@@ -297,7 +298,7 @@ function normalizeCaseData(raw: any): CaseData {
   }
 
   // A/B 리터럴 → 실명 치환 (사건 데이터 내 설명 텍스트)
-  replaceABWithNames(result)
+  if (getRuntimeScriptLocale() === 'ko') replaceABWithNames(result)
   return result
 }
 
@@ -487,33 +488,158 @@ function getGeneratedCaseOverlay(caseId: string, locale: string): any | null {
 
 function mergeGeneratedCaseSurface(raw: any, overlay: any): any {
   const merged = cloneJson(raw)
-  mergeTextFields(merged.meta, overlay.meta, ['title', 'subtitle', 'summary'])
-  mergeTextFields(merged.context, overlay.context, ['description', 'triggerAmplifier'])
-  mergeTextFields(merged.duo?.partyA, overlay.duo?.partyA, ['name', 'occupation'])
-  mergeTextFields(merged.duo?.partyB, overlay.duo?.partyB, ['name', 'occupation'])
-  mergeCollectionFields(merged.disputes, overlay.disputes, ['name', 'surfaceClaim'])
-  mergeCollectionFields(merged.evidence, overlay.evidence, ['surfaceName', 'surfaceDescription'])
+  mergeGeneratedCaseOverlay(merged, overlay)
+  applyEvidenceSurfaceAliases(merged.evidence, overlay.evidence)
+  if (hasHangul(merged.meta?.emotionalBait) && !hasHangul(merged.context?.description)) {
+    merged.meta.emotionalBait = merged.context.description
+  }
   return merged
 }
 
-function mergeTextFields(target: any, source: any, fields: string[]): void {
-  if (!target || !source) return
-  for (const field of fields) {
-    if (typeof source[field] === 'string' && source[field].trim()) target[field] = source[field]
+const GENERATED_CASE_OVERLAY_ROOT_SKIP_KEYS = new Set(['caseId', 'locale', 'overlayKind', 'overlayScope'])
+const GENERATED_CASE_OVERLAY_CONTROL_KEYS = new Set([
+  'id',
+  'duoId',
+  'relationshipType',
+  'relationshipState',
+  'familyRelation',
+  'conflictSeed',
+  'variableModules',
+  'twistModule',
+  'difficulty',
+  'contextType',
+  'emotionalPressure',
+  'affects',
+  'archetype',
+  'digitalHabit',
+  'trigger',
+  'type',
+  'from',
+  'to',
+  'source',
+  'proves',
+  'isTrap',
+  'requires',
+  'subjectParty',
+  'reliability',
+  'completeness',
+  'provenance',
+  'legitimacy',
+  'trust',
+  'legal',
+  'stage',
+  'quadrant',
+  'ambiguity',
+  'weight',
+  'currentlyResolved',
+  'activeLedgerEntries',
+  'activeThirdParties',
+  'baseEvidenceIds',
+  'monetaryDisputeIds',
+  'sensitivityTags',
+  'tags',
+  'keywords',
+  'behaviorHint',
+  'lieType',
+  'lieMotive',
+  'lieIntensity',
+  'initialState',
+  'disputeId',
+  'requiredLieState',
+  'v3Visibility',
+  'visibility',
+  'hidden',
+  'repeatable',
+  'cost',
+  'inputs',
+  'effects',
+  'nodeType',
+  'kind',
+  'route',
+  'party',
+  'slot',
+  'bias',
+  'distortionRisk',
+  'emotionalResidue',
+  'connectionToCurrent',
+  'relationTo',
+])
+
+function mergeGeneratedCaseOverlay(target: any, source: any, path: string[] = []): void {
+  if (!target || !source || typeof target !== 'object' || typeof source !== 'object') return
+
+  for (const [key, sourceValue] of Object.entries(source)) {
+    if (path.length === 0 && GENERATED_CASE_OVERLAY_ROOT_SKIP_KEYS.has(key)) continue
+    if (shouldSkipGeneratedCaseOverlayKey(key)) continue
+    if (sourceValue == null) continue
+
+    const targetValue = target[key]
+    if (typeof sourceValue === 'string') {
+      if (sourceValue.trim()) target[key] = sourceValue
+      continue
+    }
+
+    if (Array.isArray(sourceValue)) {
+      if (Array.isArray(targetValue)) mergeGeneratedCaseOverlayArray(targetValue, sourceValue, [...path, key])
+      else if (key === 'solutions') target[key] = sourceValue
+      continue
+    }
+
+    if (typeof sourceValue !== 'object') continue
+
+    if (targetValue && typeof targetValue === 'object' && !Array.isArray(targetValue)) {
+      mergeGeneratedCaseOverlay(targetValue, sourceValue, [...path, key])
+    } else if (key === 'solutionCategoryLabels') {
+      target[key] = { ...(target[key] ?? {}), ...sourceValue }
+    }
   }
 }
 
-function mergeCollectionFields(target: any[] | undefined, source: any[] | undefined, fields: string[]): void {
+function mergeGeneratedCaseOverlayArray(target: any[], source: any[], path: string[]): void {
+  if (source.every((item) => item && typeof item === 'object' && !Array.isArray(item) && typeof item.id === 'string')) {
+    const targetById = new Map(
+      target
+        .filter((item) => item && typeof item === 'object' && !Array.isArray(item))
+        .map((item) => [item.id, item]),
+    )
+    for (const sourceItem of source) {
+      const targetItem = targetById.get(sourceItem.id)
+      if (targetItem) mergeGeneratedCaseOverlay(targetItem, sourceItem, path)
+    }
+    return
+  }
+
+  for (let index = 0; index < source.length; index += 1) {
+    const sourceItem = source[index]
+    if (sourceItem == null) continue
+    if (typeof sourceItem === 'string') {
+      if (sourceItem.trim()) target[index] = sourceItem
+      continue
+    }
+    if (Array.isArray(sourceItem)) {
+      if (Array.isArray(target[index])) mergeGeneratedCaseOverlayArray(target[index], sourceItem, path)
+      continue
+    }
+    if (typeof sourceItem === 'object' && target[index] && typeof target[index] === 'object') {
+      mergeGeneratedCaseOverlay(target[index], sourceItem, path)
+    }
+  }
+}
+
+function shouldSkipGeneratedCaseOverlayKey(key: string): boolean {
+  if (GENERATED_CASE_OVERLAY_CONTROL_KEYS.has(key)) return true
+  return /(?:^|[A-Z])Ids?$/.test(key) || /Id$/.test(key)
+}
+
+function applyEvidenceSurfaceAliases(target: any[] | undefined, source: any[] | undefined): void {
   if (!Array.isArray(target) || !Array.isArray(source)) return
   const byId = new Map(target.map((item) => [item.id, item]))
   for (const sourceItem of source) {
     const targetItem = byId.get(sourceItem.id)
     if (!targetItem) continue
-    for (const field of fields) {
-      if (typeof sourceItem[field] !== 'string' || !sourceItem[field].trim()) continue
-      if (field === 'surfaceName') targetItem.name = sourceItem[field]
-      else if (field === 'surfaceDescription') targetItem.description = sourceItem[field]
-      else targetItem[field] = sourceItem[field]
+    if (typeof sourceItem.surfaceName === 'string' && sourceItem.surfaceName.trim()) targetItem.name = sourceItem.surfaceName
+    if (typeof sourceItem.surfaceDescription === 'string' && sourceItem.surfaceDescription.trim()) {
+      targetItem.description = sourceItem.surfaceDescription
     }
   }
 }
@@ -532,6 +658,10 @@ function isLocaleSidecarName(name: string): boolean {
 
 function cloneJson<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T
+}
+
+function hasHangul(value: unknown): boolean {
+  return typeof value === 'string' && /[\uAC00-\uD7A3]/.test(value)
 }
 
 /** 원본 JSON에서 특정 증거의 viewerData를 조회 (sessionStorage 복원 시 누락 방어) */

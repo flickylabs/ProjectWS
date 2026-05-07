@@ -10,7 +10,8 @@ import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 import { emitVerdictCtaCollapsed } from './verdictAdvanceEvents'
-import { translate } from '../../../i18n'
+import { translate, useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
+import { getRuntimeTextLocale, localizeRuntimeText } from '../../../i18n/runtimeText'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 export const PC_CLOSE_INTERACTION_PANEL_EVENT = 'pc:close-interaction-panel'
@@ -125,6 +126,10 @@ const COPY = {
 
 const PANEL_ACTION_CLOSE_DELAY_MS = 140
 
+function localizePanelText(value: string | undefined | null): string {
+  return localizeRuntimeText(sanitizeKoreanSurfaceText(value ?? ''), getRuntimeTextLocale())
+}
+
 export function openPcInteractionPanel(payload: PcInteractionPayload): void {
   if (typeof window === 'undefined') {
     return
@@ -162,13 +167,13 @@ function buildCaseSummaryPayload(): PcInteractionPayload {
     subtitle: caseData.caseId.replace(/^case-/, '').toUpperCase(),
     tone: 'gold',
     body: [
-      `${COPY.currentDispute}: ${focusedDispute ? focusedDispute.name : COPY.noDispute}`,
+      `${COPY.currentDispute}: ${focusedDispute ? localizePanelText(focusedDispute.name) : COPY.noDispute}`,
       `${COPY.phase}: Phase ${state.currentPhase}`,
       `${COPY.turn}: ${state.turnCount}`,
       `${COPY.unlockedEvidence}: ${unlockedEvidence.length}/${state.evidenceDefinitions.length}`,
       '',
       COPY.disputeList,
-      ...caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden').slice(0, 5).map((dispute, index) => `${index + 1}. ${dispute.name}`),
+      ...caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden').slice(0, 5).map((dispute, index) => `${index + 1}. ${localizePanelText(dispute.name)}`),
     ].join('\n'),
     tags: [
       translate('pc.interaction.disputeCount', {
@@ -195,14 +200,14 @@ function buildPartyPayload(party: PartyId): PcInteractionPayload | null {
   const tone = party === 'a' ? 'blue' : 'red'
 
   return {
-    title: profile.name,
+    title: localizePanelText(profile.name),
     subtitle: COPY.targetInfo,
     tone,
     body: [
-      translate('pc.interaction.ageOccupation', { age: profile.age, occupation: profile.occupation }),
+      translate('pc.interaction.ageOccupation', { age: profile.age, occupation: localizePanelText(profile.occupation) }),
       '',
-      `${COPY.relationship}: ${caseData.duo.relationshipType}`,
-      `${COPY.watchingDispute}: ${focusedDispute ? focusedDispute.name : COPY.none}`,
+      `${COPY.relationship}: ${localizePanelText(caseData.duo.relationshipType)}`,
+      `${COPY.watchingDispute}: ${focusedDispute ? localizePanelText(focusedDispute.name) : COPY.none}`,
     ].join('\n'),
     tags: [party === 'a' ? translate('pc.interaction.partyA') : translate('pc.interaction.partyB')],
     actions: focusedDispute
@@ -227,14 +232,14 @@ function buildDisputePayload(disputeId: string): PcInteractionPayload | null {
   const unlockedEvidence = linkedEvidence.filter((evidence) => state.evidenceStates[evidence.id]?.unlocked)
 
   return {
-    title: dispute.name,
+    title: localizePanelText(dispute.name),
     subtitle: COPY.disputeInfo,
     tone: 'gold',
     body: [
       `${COPY.linkedEvidence} ${unlockedEvidence.length}/${linkedEvidence.length}`,
       '',
       linkedEvidence.length > 0
-        ? linkedEvidence.slice(0, 4).map((evidence, index) => `${index + 1}. ${evidence.surfaceName ?? evidence.name}`).join('\n')
+        ? linkedEvidence.slice(0, 4).map((evidence, index) => `${index + 1}. ${localizePanelText(evidence.surfaceName ?? evidence.name)}`).join('\n')
         : COPY.noLinkedEvidence,
     ].join('\n'),
     tags: [
@@ -316,8 +321,8 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
     return null
   }
 
-  const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-  const otherPartyName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+  const partyName = localizePanelText(party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name)
+  const otherPartyName = localizePanelText(party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name)
   // 모든 unlocked + related + 미제시 증거를 표시. subjectParty 비매칭은 disabled로 표시.
   const linkedEvidence = state.evidenceDefinitions.filter((evidence) => {
     const unlocked = state.evidenceStates[evidence.id]?.unlocked
@@ -331,7 +336,7 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
       subtitle: COPY.noAvailableSelection,
       body: COPY.noRelevantEvidence,
       tone: 'gold',
-      tags: [partyName, dispute.name],
+      tags: [partyName, localizePanelText(dispute.name)],
       actions: [
         { kind: 'focus_dispute', label: COPY.relatedDispute, disputeId },
         { kind: 'close', label: COPY.close },
@@ -344,7 +349,7 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
     subtitle: COPY.selectMessage,
     body: COPY.selectEvidenceBody,
     tone: 'gold',
-    tags: [partyName, dispute.name],
+    tags: [partyName, localizePanelText(dispute.name)],
     actions: linkedEvidence.map((evidence) => {
       const evidenceState = state.evidenceStates[evidence.id]
       const stage = getEvidenceInvestigationStage(evidenceState)
@@ -352,7 +357,7 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
       const disabledReason = getEvidencePresentDisabledReason(evidenceState, party, partyName, otherPartyName, relevant)
       return {
         kind: 'prepare_evidence_present' as const,
-        label: `${evidence.surfaceName ?? evidence.name}${stage > 0 ? ` · ${translate('pc.interaction.stageSuffix', { stage })}` : ''}`,
+        label: `${localizePanelText(evidence.surfaceName ?? evidence.name)}${stage > 0 ? ` · ${translate('pc.interaction.stageSuffix', { stage })}` : ''}`,
         evidenceId: evidence.id,
         disputeId,
         party,
@@ -376,8 +381,8 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
     return null
   }
 
-  const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-  const otherPartyName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+  const partyName = localizePanelText(party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name)
+  const otherPartyName = localizePanelText(party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name)
   const context = party === 'a' ? evidence.partyContext?.a : evidence.partyContext?.b
   const evidenceState = state.evidenceStates[evidenceId]
   const currentStage = getEvidenceInvestigationStage(evidenceState)
@@ -385,20 +390,20 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
   const disabledReason = getEvidencePresentDisabledReason(evidenceState, party, partyName, otherPartyName, relevant)
 
   return {
-    title: evidence.surfaceName ?? evidence.name,
+    title: localizePanelText(evidence.surfaceName ?? evidence.name),
     subtitle: COPY.presentWay,
     body: [
       translate('pc.interaction.evidencePromptBody', { party: partyName }),
       '',
-      context?.questionAngle ? `${COPY.recommendedQuestion}: ${context.questionAngle}` : translate('pc.interaction.noRecommendedQuestion'),
-      context?.implication ? `${COPY.implication}: ${context.implication}` : '',
+      context?.questionAngle ? `${COPY.recommendedQuestion}: ${localizePanelText(context.questionAngle)}` : translate('pc.interaction.noRecommendedQuestion'),
+      context?.implication ? `${COPY.implication}: ${localizePanelText(context.implication)}` : '',
     ].filter(Boolean).join('\n'),
     tone: 'gold',
-    tags: [partyName, dispute.name, currentStage > 0 ? translate('pc.interaction.stageSuffix', { stage: currentStage }) : translate('pc.interaction.investigationNeeded')],
+    tags: [partyName, localizePanelText(dispute.name), currentStage > 0 ? translate('pc.interaction.stageSuffix', { stage: currentStage }) : translate('pc.interaction.investigationNeeded')],
     actions: [
       {
         kind: 'present_evidence',
-        label: context?.questionAngle ?? COPY.directPresent,
+        label: context?.questionAngle ? localizePanelText(context.questionAngle) : COPY.directPresent,
         evidenceId,
         disputeId,
         party,
@@ -435,7 +440,7 @@ export function buildDisputePickerPayload(currentDisputeId: string): PcInteracti
       subtitle: COPY.cannotMove,
       body: COPY.noOtherDispute,
       tone: 'blue',
-      tags: currentDispute ? [currentDispute.name] : undefined,
+      tags: currentDispute ? [localizePanelText(currentDispute.name)] : undefined,
       actions: [{ kind: 'close', label: COPY.close }],
     }
   }
@@ -445,16 +450,17 @@ export function buildDisputePickerPayload(currentDisputeId: string): PcInteracti
     subtitle: translate('pc.interaction.targetChange'),
     body: COPY.chooseDisputeBody,
     tone: 'blue',
-    tags: currentDispute ? [currentDispute.name] : undefined,
+    tags: currentDispute ? [localizePanelText(currentDispute.name)] : undefined,
     actions: candidates.map((dispute) => ({
       kind: 'focus_dispute' as const,
-      label: dispute.name,
+      label: localizePanelText(dispute.name),
       disputeId: dispute.id,
     })),
   }
 }
 
 export default function PCInteractionPanel() {
+  const { locale, t } = useI18n()
   const dispatch = useActionDispatch()
   const setLastFocusedDisputeId = useStore((s) => s.setLastFocusedDisputeId)
   const setPendingEvidenceView = useStore((s) => s.setPendingEvidenceView)
@@ -522,7 +528,7 @@ export default function PCInteractionPanel() {
   const handleAction = (action: PcInteractionAction) => {
     if (action.disabled) {
       if (action.disabledReason) {
-        showToast(action.disabledReason, 'info')
+        showToast(localizeRuntimeText(action.disabledReason, locale), 'info')
       }
       return
     }
@@ -603,7 +609,7 @@ export default function PCInteractionPanel() {
         break
       case 'toast':
         if (action.text) {
-          showToast(action.text, action.toastType ?? 'info')
+          showToast(localizeRuntimeText(sanitizeKoreanSurfaceText(action.text), locale), action.toastType ?? 'info')
         }
         break
       case 'run_question':
@@ -758,7 +764,10 @@ export default function PCInteractionPanel() {
           runAfterPanelClose(() => {
             dispatch({ type: 'call_witness', witnessId: action.witnessId! })
             const store = useGameStore.getState()
-            const witnessName = store.caseData?.duo.socialGraph.find((witness) => witness.id === action.witnessId)?.name ?? action.label
+            const witnessName = localizeRuntimeText(
+              store.caseData?.duo.socialGraph.find((witness) => witness.id === action.witnessId)?.name ?? action.label,
+              locale,
+            )
             store.pushGameEvent({
               id: store.gameEventLog.length + 1,
               turn: store.turnCount,
@@ -788,10 +797,11 @@ export default function PCInteractionPanel() {
     return null
   }
 
-  const sanitizedBody = sanitizeKoreanSurfaceText(payload.body ?? '')
+  const rawBody = localizeRuntimeText(sanitizeKoreanSurfaceText(payload.body ?? ''), locale)
+  const sanitizedBody = rawBody
   const softPopup = payload.backdrop === false
   const wrapperClass = softPopup ? 'pc-interaction-softpop' : 'pc-interaction-overlay'
-  const cardExtra = softPopup ? ' pc-interaction-card--softpop' : ''
+  const cardExtra = `${softPopup ? ' pc-interaction-card--softpop' : ''}${payload.contrast ? ' pc-interaction-card--contrast' : ''}`
 
   return createPortal(
     <div className={wrapperClass} onClick={softPopup ? undefined : closePanel}>
@@ -803,12 +813,12 @@ export default function PCInteractionPanel() {
           <div className="pc-interaction-card__header pc-interaction-card__header--evidence">
             <div className="pc-ev-header-left">
               <div className="pc-ev-header-top">
-                {payload.evidenceTypeLabel ? <span className="pc-ev-header-type">{payload.evidenceTypeLabel}</span> : null}
+                {payload.evidenceTypeLabel ? <span className="pc-ev-header-type">{localizeRuntimeText(payload.evidenceTypeLabel, locale)}</span> : null}
                 {payload.evidenceMetaTags?.map((tag) => (
-                  <span className="pc-ev-header-meta-tag" key={tag}>{tag}</span>
+                  <span className="pc-ev-header-meta-tag" key={tag}>{localizeRuntimeText(tag, locale)}</span>
                 ))}
               </div>
-              <div className="pc-interaction-card__title">{payload.title}</div>
+              <div className="pc-interaction-card__title">{localizeRuntimeText(payload.title, locale)}</div>
             </div>
             <button className="pc-interaction-card__close" onClick={closePanel} type="button">
               &times;
@@ -817,8 +827,8 @@ export default function PCInteractionPanel() {
         ) : (
           <div className="pc-interaction-card__header">
             <div>
-              {payload.subtitle ? <div className="pc-interaction-card__subtitle">{payload.subtitle}</div> : null}
-              <div className="pc-interaction-card__title">{payload.title}</div>
+              {payload.subtitle ? <div className="pc-interaction-card__subtitle">{localizeRuntimeText(payload.subtitle, locale)}</div> : null}
+              <div className="pc-interaction-card__title">{localizeRuntimeText(payload.title, locale)}</div>
             </div>
             <button className="pc-interaction-card__close" onClick={closePanel} type="button">
               &times;
@@ -830,7 +840,7 @@ export default function PCInteractionPanel() {
           <div className="pc-interaction-card__tags">
             {payload.tags.map((tag) => (
               <span className="pc-interaction-card__tag" key={tag}>
-                {tag}
+                {localizeRuntimeText(tag, locale)}
               </span>
             ))}
           </div>
@@ -855,22 +865,22 @@ export default function PCInteractionPanel() {
             {sanitizedBody ? <div className="pc-interaction-card__contrast-intro">{sanitizedBody}</div> : null}
             <div className="pc-interaction-card__contrast">
               <div className="pc-interaction-card__contrast-side is-left">
-                <div className="pc-interaction-card__contrast-label">{payload.contrast.left.label}</div>
-                <div className="pc-interaction-card__contrast-text">"{sanitizeKoreanSurfaceText(payload.contrast.left.text)}"</div>
+                <div className="pc-interaction-card__contrast-label">{localizeRuntimeText(payload.contrast.left.label, locale)}</div>
+                <div className="pc-interaction-card__contrast-text">"{localizeRuntimeText(sanitizeKoreanSurfaceText(payload.contrast.left.text), locale)}"</div>
               </div>
               <div className="pc-interaction-card__contrast-vs" aria-hidden="true">
                 <span>VS</span>
               </div>
               <div className="pc-interaction-card__contrast-side is-right">
-                <div className="pc-interaction-card__contrast-label">{payload.contrast.right.label}</div>
-                <div className="pc-interaction-card__contrast-text">"{sanitizeKoreanSurfaceText(payload.contrast.right.text)}"</div>
+                <div className="pc-interaction-card__contrast-label">{localizeRuntimeText(payload.contrast.right.label, locale)}</div>
+                <div className="pc-interaction-card__contrast-text">"{localizeRuntimeText(sanitizeKoreanSurfaceText(payload.contrast.right.text), locale)}"</div>
               </div>
             </div>
             {payload.blocks?.length ? (
               <div className="pc-interaction-card__contrast-intro">
                 {payload.blocks.map((block) => (
                   <div key={block.title}>
-                    <strong>{block.title}</strong>: {sanitizeKoreanSurfaceText(block.text)}
+                    <strong>{localizeRuntimeText(block.title, locale)}</strong>: {localizeRuntimeText(sanitizeKoreanSurfaceText(block.text), locale)}
                   </div>
                 ))}
               </div>
@@ -891,11 +901,11 @@ export default function PCInteractionPanel() {
                 className={`pc-interaction-card__action${action.disabled ? ' is-disabled' : ''}${action.kind === 'open_evidence' ? ' is-viewer-link' : ''}`}
                 key={`${action.kind}:${action.label}:${action.disputeId ?? action.evidenceId ?? action.party ?? ''}`}
                 onClick={() => handleAction(action)}
-                title={action.disabledReason}
+                title={action.disabledReason ? localizeRuntimeText(action.disabledReason, locale) : undefined}
                 disabled={action.disabled}
                 type="button"
               >
-                {action.label}
+                {localizeRuntimeText(action.label, locale)}
               </button>
             ))}
           </div>
@@ -907,6 +917,7 @@ export default function PCInteractionPanel() {
 }
 
 function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; onClose?: () => void }) {
+  const { locale, t } = useI18n()
   const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
   const evidenceStates = useStore((s) => s.evidenceStates)
@@ -938,8 +949,8 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   // 조사 토큰: 1단계 0개, 2단계 1개, 3단계 2개
   const currentStage = getEvidenceInvestigationStage(state)
 
-  const nameA = caseData.duo.partyA.name
-  const nameB = caseData.duo.partyB.name
+  const nameA = localizeRuntimeText(caseData.duo.partyA.name, locale)
+  const nameB = localizeRuntimeText(caseData.duo.partyB.name, locale)
   const presentedToA = isEvidencePresentedForCurrentStage(state, 'a')
   const presentedToB = isEvidencePresentedForCurrentStage(state, 'b')
   // subjectParty 분기 — 비매칭 측에 제시 = 게임 메커니즘상 효과 X
@@ -957,7 +968,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
           <span className="pc-ev-detail__dispute-label">{translate('pc.interaction.majorDispute')}</span>
           <div className="pc-ev-detail__dispute-names">
             {disputes.map((d) => (
-              <span className="pc-ev-detail__dispute" key={d.id}>{d.name}</span>
+              <span className="pc-ev-detail__dispute" key={d.id}>{localizeRuntimeText(d.name, locale)}</span>
             ))}
           </div>
         </div>
@@ -993,7 +1004,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
                 </span>
                 <div className="pc-ev-detail__stage-body">
                   {stage.revealed ? (
-                    <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
+                    <span className="pc-ev-detail__stage-a">{formatLocalizedCaseText(evidence.investigationResults[stage.revealKey], locale, t)}</span>
                   ) : (
                     <span className="pc-ev-detail__stage-lock">{translate('pc.interaction.stageLocked', { stage: stage.stage })}</span>
                   )}
@@ -1049,6 +1060,11 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   )
 }
 
+function formatLocalizedCaseText(value: string | undefined, locale: LocaleCode, _t: (key: MessageKey) => string): string {
+  if (!value) return ''
+  return localizeRuntimeText(sanitizeKoreanSurfaceText(value), locale)
+}
+
 const SPEAKER_TONE_CLASS: Record<string, string> = {
   a: 'is-a',
   b: 'is-b',
@@ -1058,12 +1074,19 @@ const SPEAKER_TONE_CLASS: Record<string, string> = {
 }
 
 function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPayload; onClose: () => void }) {
+  const { locale } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const disputes = caseData?.disputes ?? []
   const relatedIds = payload.dialogueDisputeIds ?? []
-  const relatedNames = relatedIds.map((id) => disputes.find((d) => d.id === id)?.name).filter(Boolean) as string[]
-  const body = sanitizeKoreanSurfaceText(payload.body ?? '')
-  const behaviorHint = payload.dialogueBehaviorHint ? sanitizeKoreanSurfaceText(payload.dialogueBehaviorHint) : undefined
+  const relatedNames = relatedIds
+    .map((id) => disputes.find((d) => d.id === id)?.name)
+    .filter(Boolean)
+    .map((name) => localizeRuntimeText(name, locale)) as string[]
+  const body = localizeRuntimeText(sanitizeKoreanSurfaceText(payload.body ?? ''), locale)
+  const behaviorHint = payload.dialogueBehaviorHint ? localizeRuntimeText(sanitizeKoreanSurfaceText(payload.dialogueBehaviorHint), locale) : undefined
+  const speakerName = payload.dialogueSpeakerName
+    ? localizeRuntimeText(payload.dialogueSpeakerName, locale)
+    : translate('pc.common.system')
   const speakerClass = SPEAKER_TONE_CLASS[payload.dialogueSpeaker ?? ''] ?? ''
   const speakerIconId = payload.dialogueSpeaker === 'a' ? 'i-man'
     : payload.dialogueSpeaker === 'b' ? 'i-woman'
@@ -1083,7 +1106,7 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
           <span className={`pc-dialogue-popup__portrait ${speakerClass}`}>
             {party ? (
               <PCCharacterPortrait
-                alt={payload.dialogueSpeakerName}
+                alt={speakerName}
                 caseId={caseData?.caseId}
                 emotion="defensive"
                 fallbackSymbolId={speakerIconId}
@@ -1091,7 +1114,7 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
                 size={34}
               />
             ) : witnessPortrait ? (
-              <img alt={payload.dialogueSpeakerName ?? translate('pc.common.witness')} src={witnessPortrait} />
+              <img alt={speakerName} src={witnessPortrait} />
             ) : (
               <PCSvgIcon id={speakerIconId} size={18} />
             )}
@@ -1100,7 +1123,7 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
             <span className="pc-dialogue-popup__label">{translate('pc.interaction.dialogueRecord')}</span>
             <span className="pc-dialogue-popup__name-line">
               <span className={`pc-dialogue-popup__speaker ${speakerClass}`}>
-                {payload.dialogueSpeakerName ?? translate('pc.common.system')}
+                {speakerName}
               </span>
               {relatedNames.length > 0 ? (
                 <span className="pc-dialogue-popup__inline-chips" aria-label={translate('pc.interaction.relatedDisputeAria')}>
@@ -1147,6 +1170,7 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
 }
 
 function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAction) => void }) {
+  const { locale } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
   const unlockedWitnessIds = useStore((s) => s.unlockedWitnessIds)
@@ -1167,6 +1191,10 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
         const gated = (w.unlockedByDossier ?? []).length > 0
         const locked = gated && !unlockedWitnessIds.includes(w.id)
         const portrait = getWitnessPortraitPath(caseData.caseId, w.id, w.name)
+        const witnessName = localizeRuntimeText(w.name, locale)
+        const knowledgeScope = w.knowledgeScope
+          ? localizeRuntimeText(sanitizeKoreanSurfaceText(w.knowledgeScope), locale)
+          : translate('pc.interaction.witnessDefaultScope')
         return (
           <div className={`pc-witness-card${called ? ' is-called' : ''}${locked ? ' is-locked' : ''}`} key={w.id}>
             <span className="pc-witness-card__portrait" aria-hidden>
@@ -1177,16 +1205,16 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
               )}
             </span>
             <div className="pc-witness-card__info">
-              <span className="pc-witness-card__name">{locked ? '???' : w.name}</span>
+              <span className="pc-witness-card__name">{locked ? '???' : witnessName}</span>
               <span className="pc-witness-card__meta">{slotLabel}{locked ? ` · ${translate('pc.interaction.witnessLocked')}` : ''}</span>
               <span className="pc-witness-card__scope">
-                {locked ? translate('pc.interaction.witnessLockedScope') : (w.knowledgeScope ?? translate('pc.interaction.witnessDefaultScope'))}
+                {locked ? translate('pc.interaction.witnessLockedScope') : knowledgeScope}
               </span>
             </div>
             <button
               className={`pc-witness-card__btn${called ? ' is-done' : ''}${locked ? ' is-locked' : ''}`}
               disabled={locked}
-              onClick={() => !locked && onAction({ kind: 'summon_witness', label: translate('pc.interaction.witnessSummon', { name: w.name }), witnessId: w.id })}
+              onClick={() => !locked && onAction({ kind: 'summon_witness', label: translate('pc.interaction.witnessSummon', { name: witnessName }), witnessId: w.id })}
               type="button"
             >
               {locked ? translate('pc.interaction.witnessLocked') : called ? translate('pc.interaction.witnessAdditional') : translate('pc.interaction.witnessSummonButton')}

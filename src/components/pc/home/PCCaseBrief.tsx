@@ -7,13 +7,11 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import { getArchetypeLabel } from '../../../utils/archetypeLabel'
-
-const RELATION_LABELS: Record<string, string> = {
-  spouse: '부부', neighbor: '이웃', boss_employee: '직장', partnership: '동업',
-  family: '가족', tenant_landlord: '세입자-집주인', friend: '친구', headline: '헤드라인',
-}
+import { useI18n } from '../../../i18n'
+import { getRelationshipLabel } from './pcHomeShared'
 
 export default function PCCaseBrief() {
+  const { t } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const advancePhase = useStore((s) => s.advancePhase)
 
@@ -65,11 +63,11 @@ export default function PCCaseBrief() {
       <header className="pc-brief__header">
         <button className="pc-brief__back" onClick={handleExit} type="button">
           <span>←</span>
-          <span>사건 목록</span>
+          <span>{t('pc.home.caseBrief.backToList')}</span>
         </button>
         <div className="pc-brief__case-id">
           <PCSvgIcon id="i-scale" size={16} />
-          <span className="pc-brief__relation">{RELATION_LABELS[duo.relationshipType] ?? duo.relationshipType}</span>
+          <span className="pc-brief__relation">{getRelationshipLabel(duo.relationshipType)}</span>
         </div>
       </header>
 
@@ -87,7 +85,7 @@ export default function PCCaseBrief() {
             <div className="pc-brief__party-row pc-brief__party-row--a">
               <div className="pc-brief__party-text is-right">
                 <span className="pc-brief__party-name is-a">{duo.partyA.name}</span>
-                <span className="pc-brief__party-meta">{duo.partyA.age}세 · {duo.partyA.occupation}</span>
+                <span className="pc-brief__party-meta">{t('pc.home.caseBrowser.ageOccupation', { age: duo.partyA.age, occupation: duo.partyA.occupation })}</span>
                 <span className="pc-brief__party-trait">{getArchetypeLabel(duo.partyA.archetype)}</span>
               </div>
               <div className="pc-brief__party-face is-a">
@@ -119,7 +117,7 @@ export default function PCCaseBrief() {
               </div>
               <div className="pc-brief__party-text is-left">
                 <span className="pc-brief__party-name is-b">{duo.partyB.name}</span>
-                <span className="pc-brief__party-meta">{duo.partyB.age}세 · {duo.partyB.occupation}</span>
+                <span className="pc-brief__party-meta">{t('pc.home.caseBrowser.ageOccupation', { age: duo.partyB.age, occupation: duo.partyB.occupation })}</span>
                 <span className="pc-brief__party-trait">{getArchetypeLabel(duo.partyB.archetype)}</span>
               </div>
             </div>
@@ -130,7 +128,7 @@ export default function PCCaseBrief() {
             <section className="pc-brief__section">
               <h2 className="pc-brief__section-title">
                 <PCSvgIcon id="i-gavel" size={14} />
-                <span>주요 쟁점</span>
+                <span>{t('pc.home.caseBrowser.mainDisputes')}</span>
               </h2>
               <div className="pc-brief__dispute-list">
                 {initialDisputes.map((d, i) => (
@@ -143,7 +141,7 @@ export default function PCCaseBrief() {
               {hiddenCount > 0 ? (
                 <p className="pc-brief__dispute-hint">
                   <PCSvgIcon id="i-lock" size={10} />
-                  <span>심문 과정에서 추가 쟁점이 드러날 수 있습니다</span>
+                  <span>{t('pc.home.caseBrowser.hiddenDisputesHint')}</span>
                 </p>
               ) : null}
             </section>
@@ -151,7 +149,7 @@ export default function PCCaseBrief() {
             <section className="pc-brief__section">
               <h2 className="pc-brief__section-title">
                 <PCSvgIcon id="i-doc" size={14} />
-                <span>초기 증거</span>
+                <span>{t('pc.home.caseBrowser.initialEvidence')}</span>
               </h2>
               <div className="pc-brief__evidence-list">
                 {baseEvidence.length > 0 ? baseEvidence.map((ev) => (
@@ -162,7 +160,7 @@ export default function PCCaseBrief() {
                     <span className="pc-brief__evidence-name">{ev.surfaceName ?? ev.name}</span>
                   </div>
                 )) : (
-                  <p className="pc-brief__evidence-empty">초기 증거가 아직 지정되지 않았습니다</p>
+                  <p className="pc-brief__evidence-empty">{t('pc.home.caseBrowser.initialEvidenceEmpty')}</p>
                 )}
               </div>
             </section>
@@ -172,7 +170,7 @@ export default function PCCaseBrief() {
         <footer className="pc-brief__footer">
           <button className="pc-brief__start" onClick={handleStart} type="button">
             <PCSvgIcon id="i-gavel" size={22} />
-            <span>사건 입장하기</span>
+            <span>{t('pc.home.caseBrowser.enterCase')}</span>
             <kbd>Enter</kbd>
           </button>
         </footer>

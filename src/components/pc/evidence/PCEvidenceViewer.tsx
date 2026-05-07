@@ -8,6 +8,8 @@
 import { useEffect, useCallback, useMemo } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import { getOriginalViewerData, getOriginalViewerDataByStage } from '../../../data/cases/caseLoader'
+import { useI18n } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import {
@@ -24,6 +26,7 @@ import {
 } from './EvidenceSubViewers'
 
 export default function PCEvidenceViewer() {
+  const { locale, t } = useI18n()
   const pendingEvidenceView = useStore((s) => s.pendingEvidenceView)
   const setPendingEvidenceView = useStore((s) => s.setPendingEvidenceView)
   const caseData = useStore((s) => s.caseData)
@@ -55,7 +58,7 @@ export default function PCEvidenceViewer() {
   if (!pendingEvidenceView || !evidence) return null
 
   const state = evidenceStates[evidence.id]
-  const displayName = evidence.surfaceName ?? evidence.name
+  const displayName = localizeRuntimeText(evidence.surfaceName ?? evidence.name, locale)
   const currentStage = state?.investigatedActions?.length ?? 0
   const stageCount = evidence.investigationStages?.length || 3
   const boundedStage = Math.min(currentStage, stageCount)
@@ -65,8 +68,8 @@ export default function PCEvidenceViewer() {
       window.dispatchEvent(new CustomEvent('pc:open-interaction-panel', {
         detail: {
           title: displayName,
-          subtitle: '증거 조사',
-          body: '증거를 조사하면 열람 내용과 제시 질문이 단계적으로 열립니다.',
+          subtitle: t('pc.evidenceViewer.investigationTitle'),
+          body: t('pc.evidenceViewer.investigationBody'),
           tone: 'gold',
           variant: 'evidence',
           evidenceId: evidence.id,
@@ -74,12 +77,13 @@ export default function PCEvidenceViewer() {
       }))
     }, 80)
   }
-  // 원본 JSON의 viewerData를 항상 우선 사용 (sessionStorage 캐시가 오래된 구조일 수 있음)
-  const baseViewerData = getOriginalViewerData(caseData!.caseId, evidence.id) ?? evidence.viewerData
-  // 단계별 오버라이드 — currentStage 이하 중 가장 큰 key 선택 (원본 JSON 우선)
-  const viewerData = (() => {
-    const stageMap = getOriginalViewerDataByStage(caseData!.caseId, evidence.id)
-      ?? (evidence as any).viewerDataByStage
+  const baseViewerData = locale === 'ko'
+    ? (getOriginalViewerData(caseData!.caseId, evidence.id) ?? evidence.viewerData)
+    : evidence.viewerData
+  const rawViewerData = (() => {
+    const stageMap = locale === 'ko'
+      ? (getOriginalViewerDataByStage(caseData!.caseId, evidence.id) ?? (evidence as any).viewerDataByStage)
+      : (evidence as any).viewerDataByStage
     if (!stageMap || typeof stageMap !== 'object') return baseViewerData
     const validKeys = Object.keys(stageMap)
       .map((k) => Number(k))
@@ -88,7 +92,9 @@ export default function PCEvidenceViewer() {
     if (validKeys.length === 0) return baseViewerData
     return stageMap[String(validKeys[0])] ?? baseViewerData
   })()
+  const viewerData = locale === 'ko' || !containsHangulDeep(rawViewerData) ? rawViewerData : null
   const hasSubViewer = Boolean(viewerData)
+  const hasUntranslatedViewerData = Boolean(rawViewerData && !viewerData)
 
   return (
     <>
@@ -101,7 +107,7 @@ export default function PCEvidenceViewer() {
             <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={20} />
           </span>
           <span className="pc-ev-header__name">{displayName}</span>
-          <button className="pc-ev-header__close" onClick={close} title="닫기 (Esc)" type="button">
+          <button className="pc-ev-header__close" onClick={close} title={t('pc.evidenceViewer.closeTitle')} type="button">
             <PCSvgIcon id="i-plus" size={14} />
           </button>
         </div>
@@ -111,16 +117,16 @@ export default function PCEvidenceViewer() {
           {currentStage === 0 ? (
             <div className="pc-ev-placeholder is-locked">
               <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={64} />
-              <p>아직 열람할 수 없습니다</p>
-              <span>증거를 <b>조사</b>하면 내용이 공개됩니다 (첫 조사는 토큰 소모 없음)</span>
+              <p>{t('pc.evidenceViewer.lockedTitle')}</p>
+              <span>{t('pc.evidenceViewer.lockedBody')}</span>
               <button className="pc-ev-placeholder__investigate" onClick={openInvestigationPanel} type="button">
-                증거조사 바로가기
+                {t('pc.evidenceViewer.openInvestigation')}
               </button>
             </div>
           ) : hasSubViewer ? (
             <>
-              <div className="pc-ev-stage-meter" aria-label={`조사 ${boundedStage}단계 / ${stageCount}단계`}>
-                <span className="pc-ev-stage-meter__label">조사 {boundedStage}단계 / {stageCount}단계</span>
+              <div className="pc-ev-stage-meter" aria-label={t('pc.evidenceViewer.stageAria', { current: boundedStage, total: stageCount })}>
+                <span className="pc-ev-stage-meter__label">{t('pc.evidenceViewer.stageLabel', { current: boundedStage, total: stageCount })}</span>
                 <span className="pc-ev-stage-meter__track">
                   {Array.from({ length: stageCount }, (_, i) => (
                     <span
@@ -130,7 +136,7 @@ export default function PCEvidenceViewer() {
                   ))}
                 </span>
                 <span className="pc-ev-stage-meter__hint">
-                  {boundedStage < stageCount ? '부분 공개' : '전체 공개'}
+                  {boundedStage < stageCount ? t('pc.evidenceViewer.partialOpen') : t('pc.evidenceViewer.fullOpen')}
                 </span>
               </div>
               <EvidenceSubContent type={evidence.type} viewerData={viewerData!} evidenceName={displayName} />
@@ -139,13 +145,22 @@ export default function PCEvidenceViewer() {
             <div className="pc-ev-placeholder">
               <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={64} />
               <p>{displayName}</p>
-              <span>상세 열람 데이터가 아직 준비되지 않았습니다</span>
+              <span>{hasUntranslatedViewerData ? t('pc.evidenceViewer.untranslatedData') : t('pc.evidenceViewer.missingData')}</span>
             </div>
           )}
         </div>
       </div>
     </>
   )
+}
+
+function containsHangulDeep(value: unknown): boolean {
+  if (typeof value === 'string') return /[\uAC00-\uD7A3]/.test(value)
+  if (Array.isArray(value)) return value.some(containsHangulDeep)
+  if (value && typeof value === 'object') {
+    return Object.values(value as Record<string, unknown>).some(containsHangulDeep)
+  }
+  return false
 }
 
 function EvidenceSubContent({

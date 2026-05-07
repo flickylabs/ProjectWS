@@ -1,7 +1,7 @@
 import type { CaseData } from '../../../types'
 import { hasScriptedTextBundle } from '../../../engine/scriptedTextLoader'
 import { normalizeCaseKey } from '../../../utils/caseHelpers'
-import { translate, type MessageKey } from '../../../i18n'
+import { translate, type LocaleCode, type MessageKey } from '../../../i18n'
 
 export const PC_HOME_INTRO_KEY = 'solomon-intro-seen'
 export const PC_CASE_PROGRESS_KEY = 'solomon-case-progress'
@@ -120,6 +120,12 @@ export const PC_GENERAL_SESSIONS = [
 ] as const
 
 export type PCGeneralSessionId = (typeof PC_GENERAL_SESSIONS)[number]['id']
+export type PCGeneralSession = (typeof PC_GENERAL_SESSIONS)[number]
+export type LocalizedPCGeneralSession = Omit<PCGeneralSession, 'label' | 'tagline' | 'description'> & {
+  label: string
+  tagline: string
+  description: string
+}
 
 export interface PCCaseProgressEntry {
   bestScore: number
@@ -242,6 +248,15 @@ export function getCasesForPcGeneralSession(cases: CaseData[], sessionId: PCGene
   })
 }
 
+export function getLocalizedPcGeneralSession(session: PCGeneralSession, locale?: LocaleCode): LocalizedPCGeneralSession {
+  return {
+    ...session,
+    label: translate(`pc.home.session.${session.id}.label` as MessageKey, undefined, locale),
+    tagline: translate(`pc.home.session.${session.id}.tagline` as MessageKey, undefined, locale),
+    description: translate(`pc.home.session.${session.id}.description` as MessageKey, undefined, locale),
+  }
+}
+
 export function getSeasonCases(cases: CaseData[]): CaseData[] {
   void cases
   return []
@@ -254,33 +269,36 @@ export function hasPcScriptedCase(caseDataOrCaseId: CaseData | string): boolean 
 export function getRelationshipLabel(relationshipType?: string): string {
   switch (relationshipType) {
     case 'spouse':
-      return '부부'
+      return translate('pc.home.relationship.spouse')
     case 'family':
-      return '가족'
+      return translate('pc.home.relationship.family')
     case 'friend':
-      return '친구'
+      return translate('pc.home.relationship.friend')
     case 'neighbor':
-      return '이웃'
+      return translate('pc.home.relationship.neighbor')
     case 'partnership':
-      return '동업'
+      return translate('pc.home.relationship.partnership')
     case 'workplace':
     case 'boss_employee':
-      return '직장'
+      return translate('pc.home.relationship.workplace')
     case 'tenant':
+      return translate('pc.home.relationship.tenant')
     case 'tenant_landlord':
-      return '세입자'
+      return translate('pc.home.relationship.tenantLandlord')
     case 'headline':
-      return '헤드라인'
+      return translate('pc.home.relationship.headline')
     case 'online':
-      return '온라인'
+      return translate('pc.home.relationship.online')
     case 'professional':
     case 'medical_education':
-      return '의료·교육'
+      return translate('pc.home.relationship.medicalEducation')
     case 'civic':
     case 'public_system':
-      return '공공·제도'
+      return translate('pc.home.relationship.publicSystem')
+    case 'lover':
+      return translate('pc.home.relationship.lover')
     default:
-      return '무작위'
+      return translate('pc.home.relationship.random')
   }
 }
 
@@ -298,11 +316,11 @@ export function getDifficultyLevel(difficulty: string): number {
 export function getDifficultyLabel(difficulty: string): string {
   switch (difficulty) {
     case 'easy':
-      return '쉬움'
+      return translate('pc.home.difficulty.easy')
     case 'hard':
-      return '어려움'
+      return translate('pc.home.difficulty.hard')
     default:
-      return '보통'
+      return translate('pc.home.difficulty.medium')
   }
 }
 

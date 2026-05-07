@@ -4,6 +4,8 @@ import { playCourtBeat } from '../../../engine/soundEngine'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { EventFeedbackItem, EventFeedbackKind } from '../../../store/slices/eventFeedbackSlice'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
+import { useI18n, type LocaleCode } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 type Phase = 'appearing' | 'visible' | 'converging' | 'leaving'
 type CourtBeatLevel = 'none' | 'focus' | 'impact' | 'breakthrough'
@@ -204,27 +206,27 @@ function mapBeatPortraitEmotion(state?: string) {
   return 'defensive' as const
 }
 
-function getReactionStateLabel(state?: string): string {
-  if (state === 'shaken') return '동요'
-  if (state === 'defensive') return '방어'
-  if (state === 'resigned') return '체념'
-  if (state === 'softened') return '완화'
-  if (state === 'neutral') return '중립'
-  return '방어'
+function getReactionStateLabel(state: string | undefined, locale: LocaleCode): string {
+  if (state === 'shaken') return localizeRuntimeText('동요', locale)
+  if (state === 'defensive') return localizeRuntimeText('방어', locale)
+  if (state === 'resigned') return localizeRuntimeText('체념', locale)
+  if (state === 'softened') return localizeRuntimeText('완화', locale)
+  if (state === 'neutral') return localizeRuntimeText('중립', locale)
+  return localizeRuntimeText('방어', locale)
 }
 
-function CourtBeatStamp() {
+function CourtBeatStamp({ locale }: { locale: LocaleCode }) {
   return (
     <svg className="pc-court-clash__stamp-svg" viewBox="0 0 96 96" aria-hidden="true">
       <circle cx="48" cy="48" r="37" />
       <circle cx="48" cy="48" r="28" />
       <path d="M30 54h36M36 39h24M39 67h18" />
-      <text x="48" y="51" textAnchor="middle">기록</text>
+      <text x="48" y="51" textAnchor="middle">{localizeRuntimeText('기록', locale)}</text>
     </svg>
   )
 }
 
-function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
+function CourtBeatClash({ active, locale }: { active: EventFeedbackItem; locale: LocaleCode }) {
   const beat = active.courtBeat
   if (!beat) return null
   const isMiss = beat.beatType === 'evidence_miss'
@@ -232,15 +234,16 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
   const isReview = !isMiss && !hasDirectPhrase
   const reaction = beat.portraitReaction
   const evidenceRows = beat.evidence?.rows ?? []
+  const statementName = localizeRuntimeText(beat.statement?.speakerName ?? reaction?.name ?? localizeRuntimeText('당사자', locale), locale)
   const statementLabel = beat.statement?.label
-    ?? `방금 진술 · ${beat.statement?.speakerName ?? reaction?.name ?? '당사자'}`
+    ?? `${localizeRuntimeText('방금 진술', locale)} · ${statementName}`
 
   return (
     <div className={`pc-court-clash ${isMiss ? 'is-miss' : hasDirectPhrase ? 'is-hit' : 'is-review'}`}>
       <div className="pc-court-clash__grid">
         <section className="pc-court-clash__statement">
-          <div className="pc-court-clash__label">{statementLabel}</div>
-          <p>{splitHighlightedText(beat.statement?.text ?? active.body ?? active.title ?? '', beat.statement?.highlightText)}</p>
+          <div className="pc-court-clash__label">{localizeRuntimeText(statementLabel, locale)}</div>
+          <p>{splitHighlightedText(localizeRuntimeText(beat.statement?.text ?? active.body ?? active.title ?? '', locale), beat.statement?.highlightText)}</p>
         </section>
 
         <div className="pc-court-clash__strike">
@@ -262,20 +265,20 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
               </>
             )}
           </svg>
-          <span>{isMiss ? '검토' : hasDirectPhrase ? 'FRACTURE' : 'REVIEW'}</span>
+          <span>{isMiss ? localizeRuntimeText('검토', locale) : hasDirectPhrase ? 'FRACTURE' : 'REVIEW'}</span>
         </div>
 
         <section className="pc-court-clash__evidence">
-          <div className="pc-court-clash__label">증거 · {beat.evidence?.title ?? active.title}</div>
-          {beat.evidence?.stageLabel ? <div className="pc-court-clash__stage">{beat.evidence.stageLabel}</div> : null}
+          <div className="pc-court-clash__label">{localizeRuntimeText('증거', locale)} · {localizeRuntimeText(beat.evidence?.title ?? active.title, locale)}</div>
+          {beat.evidence?.stageLabel ? <div className="pc-court-clash__stage">{localizeRuntimeText(beat.evidence.stageLabel, locale)}</div> : null}
           <div className="pc-court-clash__rows">
             {evidenceRows.map((row) => (
               <div
                 key={row.id}
                 className={`pc-court-clash__row${row.highlighted ? ' is-highlighted' : ''}${row.muted ? ' is-muted' : ''}`}
               >
-                <span>{row.label}</span>
-                {row.detail ? <small>{row.detail}</small> : null}
+                <span>{localizeRuntimeText(row.label, locale)}</span>
+                {row.detail ? <small>{localizeRuntimeText(row.detail, locale)}</small> : null}
               </div>
             ))}
           </div>
@@ -298,27 +301,27 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
           )}
         </div>
         <div className="pc-court-clash__reaction-copy">
-          <strong>{reaction?.name ?? beat.statement?.speakerName ?? '당사자'}</strong>
-          <span>{getReactionStateLabel(reaction?.state)}</span>
-          {beat.reactionLine ? <p>{beat.reactionLine}</p> : null}
+          <strong>{localizeRuntimeText(reaction?.name ?? beat.statement?.speakerName ?? localizeRuntimeText('당사자', locale), locale)}</strong>
+          <span>{getReactionStateLabel(reaction?.state, locale)}</span>
+          {beat.reactionLine ? <p>{localizeRuntimeText(beat.reactionLine, locale)}</p> : null}
         </div>
         <div className="pc-court-clash__destination">
-          <CourtBeatStamp />
-          <span>{isMiss ? '관찰' : '수첩'}</span>
+          <CourtBeatStamp locale={locale} />
+          <span>{isMiss ? localizeRuntimeText('관찰', locale) : localizeRuntimeText('수첩', locale)}</span>
         </div>
       </div>
 
       {beat.judgeLine ? (
         <div className="pc-court-clash__judge">
-          <span>재판관</span>
-          <p>{beat.judgeLine}</p>
+          <span>{localizeRuntimeText('재판관', locale)}</span>
+          <p>{localizeRuntimeText(beat.judgeLine, locale)}</p>
         </div>
       ) : null}
 
       {beat.notebookEntry ? (
         <div className="pc-court-clash__notebook">
-          <span>재판관의 수첩</span>
-          <p>{beat.notebookEntry}</p>
+          <span>{localizeRuntimeText('재판관의 수첩', locale)}</span>
+          <p>{localizeRuntimeText(beat.notebookEntry, locale)}</p>
         </div>
       ) : null}
     </div>
@@ -333,6 +336,7 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
  * - observation + convergeToTag ???대떦 ?뚰떚 archetype ?쒓렇濡??섎졃 ?좊땲硫붿씠?? * - ?곷떒 以묒븰 怨좎젙, backdrop ?놁쓬 (梨꾪똿 怨꾩냽 ?쏀옒)
  */
 export default function EventFeedbackCard() {
+  const { locale } = useI18n()
   const active = useStore((s) => s.activeFeedback)
   const dismiss = useStore((s) => s.dismissActiveFeedback)
   const cardRef = useRef<HTMLDivElement | null>(null)
@@ -510,7 +514,7 @@ export default function EventFeedbackCard() {
           <button
             type="button"
             className="pc-event-feedback__close"
-            aria-label="닫기"
+            aria-label={localizeRuntimeText('닫기', locale)}
             onClick={() => setPhase('leaving')}
           >
             ×
@@ -519,7 +523,7 @@ export default function EventFeedbackCard() {
           <button
             type="button"
             className="pc-event-feedback__close"
-            aria-label="일시 보류"
+            aria-label={localizeRuntimeText('일시 보류', locale)}
             onClick={() => {
               try { active.onDefer!() } finally { setPhase('leaving') }
             }}
@@ -557,43 +561,43 @@ export default function EventFeedbackCard() {
           </div>
         ) : null}
         {active.courtBeat ? (
-          <CourtBeatClash active={active} />
+          <CourtBeatClash active={active} locale={locale} />
         ) : (
           <>
-        {active.eyebrow ? <div className="pc-event-feedback__eyebrow">{active.eyebrow}</div> : null}
-        {active.subtitle ? <div className="pc-event-feedback__subtitle">{active.subtitle}</div> : null}
-        {active.title ? <div className="pc-event-feedback__title">{active.title}</div> : null}
-        {active.body ? <div className="pc-event-feedback__body">{active.body}</div> : null}
+        {active.eyebrow ? <div className="pc-event-feedback__eyebrow">{localizeRuntimeText(active.eyebrow, locale)}</div> : null}
+        {active.subtitle ? <div className="pc-event-feedback__subtitle">{localizeRuntimeText(active.subtitle, locale)}</div> : null}
+        {active.title ? <div className="pc-event-feedback__title">{localizeRuntimeText(active.title, locale)}</div> : null}
+        {active.body ? <div className="pc-event-feedback__body">{localizeRuntimeText(active.body, locale)}</div> : null}
         {active.bodyLines && active.bodyLines.length > 0 ? (
           <div className="pc-event-feedback__lines">
-            {active.bodyLines.map((line, i) => <div key={`${active.id}-line-${i}`}>{line}</div>)}
+            {active.bodyLines.map((line, i) => <div key={`${active.id}-line-${i}`}>{localizeRuntimeText(line, locale)}</div>)}
           </div>
         ) : null}
-        {active.quote ? <div className="pc-event-feedback__quote">“{active.quote}”</div> : null}
+        {active.quote ? <div className="pc-event-feedback__quote">“{localizeRuntimeText(active.quote, locale)}”</div> : null}
         {active.claims ? (
           <div className="pc-event-feedback__claims">
             <div className="pc-event-feedback__claim party-a">
-              <strong>{active.claims.partyA.name}</strong>
-              <p>{active.claims.partyA.text}</p>
+              <strong>{localizeRuntimeText(active.claims.partyA.name, locale)}</strong>
+              <p>{localizeRuntimeText(active.claims.partyA.text, locale)}</p>
             </div>
             <div className="pc-event-feedback__claim party-b">
-              <strong>{active.claims.partyB.name}</strong>
-              <p>{active.claims.partyB.text}</p>
+              <strong>{localizeRuntimeText(active.claims.partyB.name, locale)}</strong>
+              <p>{localizeRuntimeText(active.claims.partyB.text, locale)}</p>
             </div>
           </div>
         ) : null}
         {active.contrast ? (
           <div className="pc-event-feedback__contrast">
             <div className="pc-event-feedback__contrast-side is-left">
-              <div className="pc-event-feedback__contrast-label">{active.contrast.left.label}</div>
-              <div className="pc-event-feedback__contrast-text">“{active.contrast.left.text}”</div>
+              <div className="pc-event-feedback__contrast-label">{localizeRuntimeText(active.contrast.left.label, locale)}</div>
+              <div className="pc-event-feedback__contrast-text">“{localizeRuntimeText(active.contrast.left.text, locale)}”</div>
             </div>
             <div className="pc-event-feedback__contrast-vs" aria-hidden="true">
               <span>VS</span>
             </div>
             <div className="pc-event-feedback__contrast-side is-right">
-              <div className="pc-event-feedback__contrast-label">{active.contrast.right.label}</div>
-              <div className="pc-event-feedback__contrast-text">“{active.contrast.right.text}”</div>
+              <div className="pc-event-feedback__contrast-label">{localizeRuntimeText(active.contrast.right.label, locale)}</div>
+              <div className="pc-event-feedback__contrast-text">“{localizeRuntimeText(active.contrast.right.text, locale)}”</div>
             </div>
           </div>
         ) : null}
@@ -601,18 +605,18 @@ export default function EventFeedbackCard() {
           <div className="pc-event-feedback__blocks">
             {active.blocks.map((block, i) => (
               <div key={`${active.id}-block-${i}`} className="pc-event-feedback__block">
-                <strong>{block.title}</strong>
-                <p>{block.text}</p>
+                <strong>{localizeRuntimeText(block.title, locale)}</strong>
+                <p>{localizeRuntimeText(block.text, locale)}</p>
               </div>
             ))}
           </div>
         ) : null}
         {active.meta && active.meta.length > 0 ? (
           <div className="pc-event-feedback__meta">
-            {active.meta.map((m, i) => <span key={`${active.id}-meta-${i}`}>{m}</span>)}
+            {active.meta.map((m, i) => <span key={`${active.id}-meta-${i}`}>{localizeRuntimeText(m, locale)}</span>)}
           </div>
         ) : null}
-        {active.tag ? <div className="pc-event-feedback__tag">{active.tag}</div> : null}
+        {active.tag ? <div className="pc-event-feedback__tag">{localizeRuntimeText(active.tag, locale)}</div> : null}
           </>
         )}
 
@@ -631,7 +635,7 @@ export default function EventFeedbackCard() {
                   }, 280)
                 }}
               >
-                {action.label}
+                {localizeRuntimeText(action.label, locale)}
               </button>
             ))}
           </div>
@@ -643,7 +647,7 @@ export default function EventFeedbackCard() {
             className="pc-event-feedback__dismiss"
             onClick={() => setPhase('leaving')}
           >
-            {active.courtBeat ? '닫기' : '확인'}
+            {active.courtBeat ? localizeRuntimeText('닫기', locale) : localizeRuntimeText('확인', locale)}
           </button>
         ) : null}
       </div>

@@ -18,6 +18,7 @@ import {
   playEvidenceUnlock,
 } from './soundEngine'
 import { shouldPlayCutscene, type VfxTurnContext } from './vfxHierarchyEngine'
+import { getRuntimeTextLocale, localizeRuntimeText } from '../i18n/runtimeText'
 
 // ── 타입 ──
 
@@ -139,9 +140,10 @@ async function handleEvent(event: PresentationEvent): Promise<void> {
 async function handleNewFact(e: NewFactEvent) {
   await waitForPresentationLane()
   playNewFactDiscovery()
+  const locale = getRuntimeTextLocale()
   const banner = document.createElement('div')
   banner.className = 'v4-newfact-banner'
-  banner.textContent = e.text
+  banner.textContent = localizeRuntimeText(e.text, locale)
   document.body.appendChild(banner)
   await delay(2500)
   banner.remove()
@@ -152,13 +154,14 @@ async function handleDisputeDiscovery(e: DisputeDiscoveryEvent) {
   if (shouldPlayCutscene('dispute_emergence', normalizeContext(e.context))) {
     await waitForPresentationLane()
     playDisputeDiscovery()
+    const locale = getRuntimeTextLocale()
     const overlay = document.createElement('div')
     overlay.className = 'v4-dispute-card-overlay'
     overlay.innerHTML = `
       <div class="v4-dispute-card">
-        <div class="v4-dispute-card__label">새로운 쟁점 발견</div>
-        <div class="v4-dispute-card__title">${escapeHtml(e.title)}</div>
-        <div class="v4-dispute-card__desc">${escapeHtml(e.description)}</div>
+        <div class="v4-dispute-card__label">${escapeHtml(localizeRuntimeText('새로운 쟁점 발견', locale))}</div>
+        <div class="v4-dispute-card__title">${escapeHtml(localizeRuntimeText(e.title, locale))}</div>
+        <div class="v4-dispute-card__desc">${escapeHtml(localizeRuntimeText(e.description, locale))}</div>
       </div>
     `
     document.body.appendChild(overlay)
@@ -183,13 +186,15 @@ async function handleConfession(e: ConfessionEvent) {
   if (!shouldPlayCutscene('truth_breakthrough', normalizeContext(e.context))) return
   await waitForPresentationLane()
   playLieCollapse()
+  const locale = getRuntimeTextLocale()
+  const partyName = localizeRuntimeText(e.partyName, locale)
   // 배경 오버레이
   const overlay = document.createElement('div')
   overlay.className = 'v4-confession-overlay'
   overlay.innerHTML = `
     <div class="v4-confession-message">
-      <div class="v4-confession-message__label">진실파악 5단계 도달</div>
-      <div class="v4-confession-message__title">${escapeHtml(e.partyName)}의 방어가 무너졌습니다</div>
+      <div class="v4-confession-message__label">${escapeHtml(localizeRuntimeText('진실파악 5단계 도달', locale))}</div>
+      <div class="v4-confession-message__title">${escapeHtml(localizeRuntimeText(`${partyName}의 방어가 무너졌습니다`, locale))}</div>
     </div>
   `
   document.body.appendChild(overlay)
@@ -238,15 +243,17 @@ async function handleDramaticMoment(e: DramaticMomentEvent) {
       await delay(500)
     }
     // 시스템 메시지
+    const locale = getRuntimeTextLocale()
     const msg = e.variant === 'account_spy'
       ? '양쪽 모두 침묵'
       : '중대한 사실이 드러났습니다'
-    window.dispatchEvent(new CustomEvent('v4:system-message', { detail: { text: msg } }))
+    window.dispatchEvent(new CustomEvent('v4:system-message', { detail: { text: localizeRuntimeText(msg, locale) } }))
   } else if (e.variant === 'chain_discovery') {
     if (!shouldPlayCutscene('phase_transition', normalizeContext(e.context))) return
     playPhaseTransition()
+    const locale = getRuntimeTextLocale()
     window.dispatchEvent(new CustomEvent('v4:system-message', {
-      detail: { text: '사건의 전모가 드러나고 있습니다' }
+      detail: { text: localizeRuntimeText('사건의 전모가 드러나고 있습니다', locale) }
     }))
     await delay(800)
   }

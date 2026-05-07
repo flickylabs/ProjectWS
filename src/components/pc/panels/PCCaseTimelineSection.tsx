@@ -3,6 +3,8 @@ import { useStore } from '../../../store/useGameStore'
 import type { GameEvent } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
+import { useI18n } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 interface Props {
   /** 타임라인 항목 클릭 시 호출 (패널 닫기 등) */
@@ -25,13 +27,14 @@ const TONE_MAP: Record<string, TimelineItem['tone']> = {
   question_effect: 'neutral',
 }
 
-function summarizeEvent(event: GameEvent): string {
-  const msg = event.message.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '').trim()
+function summarizeEvent(event: GameEvent, locale: ReturnType<typeof useI18n>['locale']): string {
+  const msg = localizeRuntimeText(event.message, locale).replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '').trim()
   if (msg.length <= 40) return msg
   return `${msg.slice(0, 39).trim()}…`
 }
 
 export default function PCCaseTimelineSection({ onItemClick }: Props = {}) {
+  const { locale, t } = useI18n()
   const gameEventLog = useStore((s) => s.gameEventLog)
   const dialogueLog = useStore((s) => s.dialogueLog)
   const caseData = useStore((s) => s.caseData)
@@ -42,11 +45,11 @@ export default function PCCaseTimelineSection({ onItemClick }: Props = {}) {
   const timelineItems = useMemo<TimelineItem[]>(() => {
     return gameEventLog.map((event) => ({
       ...event,
-      summary: summarizeEvent(event),
+      summary: summarizeEvent(event, locale),
       iconId: EVENT_ICON_MAP[event.type] ?? 'i-doc',
       tone: TONE_MAP[event.type] ?? 'neutral',
     }))
-  }, [gameEventLog])
+  }, [gameEventLog, locale])
 
   const mysteryPoints = useMemo(() => {
     if (!caseData) return []
@@ -57,9 +60,9 @@ export default function PCCaseTimelineSection({ onItemClick }: Props = {}) {
         const stB = agentB?.lieStateMap[d.id]?.currentState ?? 'S0'
         return Math.max(LIE_ORDER.indexOf(stA), LIE_ORDER.indexOf(stB)) < 3
       })
-      .map((d) => ({ id: `mystery-${d.id}`, hint: `이 시기에 무언가 있었을 것 같다` }))
+      .map((d) => ({ id: `mystery-${d.id}`, hint: t('pc.court.timeline.mystery') }))
       .slice(0, 3)
-  }, [caseData, agentA, agentB])
+  }, [caseData, agentA, agentB, t])
 
   useEffect(() => {
     const el = scrollRef.current
@@ -87,22 +90,22 @@ export default function PCCaseTimelineSection({ onItemClick }: Props = {}) {
     <section className="sec pc-case-timeline-section">
       <div className="sec-h">
         <PCSvgIcon id="i-clock" size={14} />
-        <span>사건 타임라인</span>
+        <span>{t('pc.court.timeline.title')}</span>
         <span className="cnt">{timelineItems.length}</span>
         <button
           className="pc-timeline-top-btn"
           onClick={scrollToTop}
-          title="최근으로 이동"
+          title={t('pc.court.timeline.recentTitle')}
           type="button"
         >
-          최근 ↑
+          {t('pc.court.timeline.recent')}
         </button>
       </div>
 
       <div className="sec-content">
         <div className="pc-timeline__scroll" ref={scrollRef}>
           {timelineItems.length === 0 ? (
-            <div className="pc-timeline__empty">이벤트가 발생하면 여기에 기록됩니다.</div>
+            <div className="pc-timeline__empty">{t('pc.court.timeline.empty')}</div>
           ) : (
             <div className="pc-timeline__track">
               {/* 최신이 위로 — 역순 표시 */}
@@ -111,7 +114,7 @@ export default function PCCaseTimelineSection({ onItemClick }: Props = {}) {
                   className={`pc-timeline__item is-${item.tone}`}
                   key={item.id}
                   onClick={() => handleItemClick(item.turn)}
-                  title="클릭하면 해당 시점으로 이동합니다"
+                  title={t('pc.court.timeline.clickToJump')}
                   type="button"
                 >
                   <span className="pc-timeline__rail">

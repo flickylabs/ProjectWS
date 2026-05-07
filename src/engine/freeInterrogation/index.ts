@@ -25,13 +25,14 @@ export * from './publicInfo'
 export * from './questionPolicy'
 
 const VALID_MODES: FreeInterrogationMode[] = ['off', 'preview', 'on']
+const DEFAULT_FREE_INTERROGATION_MODE: FreeInterrogationMode = 'on'
 const MIN_FALLBACK_CONTEXT_CONFIDENCE = 0.65
 
 export function getFreeInterrogationMode(): FreeInterrogationMode {
   const raw = import.meta.env.VITE_FREE_INTERROGATION_MODE
   return typeof raw === 'string' && VALID_MODES.includes(raw as FreeInterrogationMode)
     ? raw as FreeInterrogationMode
-    : 'off'
+    : DEFAULT_FREE_INTERROGATION_MODE
 }
 
 export function isFreeInterrogationEnabled(): boolean {

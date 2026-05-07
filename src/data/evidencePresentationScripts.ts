@@ -1,4 +1,5 @@
 import type { PartyId } from '../types'
+import { getRuntimeScriptLocale } from '../i18n/scriptLocale.ts'
 
 type LieBand = 'early' | 'mid' | 'late'
 
@@ -576,6 +577,8 @@ function clampStage(stage: number | undefined): number {
 export function getStageAwareEvidencePresent(
   input: EvidencePresentationScriptInput,
 ): EvidencePresentationScript | null {
+  if (getRuntimeScriptLocale() !== 'ko') return null
+
   const spec = CASE_SCRIPTS[input.caseId]?.[input.evidenceId]
   if (!spec) return null
 
@@ -593,6 +596,8 @@ export function getStageAwareEvidencePresent(
 export function getStageAwareEvidenceQuestion(
   input: Omit<EvidencePresentationScriptInput, 'lieBand'>,
 ): string | null {
+  if (getRuntimeScriptLocale() !== 'ko') return null
+
   const stage = clampStage(input.investigationStage)
   return CASE_QUESTIONS[input.caseId]?.[input.evidenceId]?.[input.party]?.[stage] ?? null
 }

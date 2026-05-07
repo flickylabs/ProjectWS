@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { getAllCases, getCaseById } from '../../../data/cases'
 import { getHallOfFameForSeason, getJudgeProfile, getLeaderboard, getPlayerStats, loadExtendedHistory, loadProfile } from '../../../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../../../data/seasons'
-import { TITLE_LABELS } from '../../../engine/judgeProfileEngine'
 import { checkConnection } from '../../../engine/llmClient'
 import { isBgmEnabled, isSoundEnabled, playBgm as playBgmFn, setBgmEnabled, setSoundEnabled, stopBgm as stopBgmFn } from '../../../engine/soundEngine'
 import { getSettings, updateSettings } from '../../../hooks/useLocalStorage'
@@ -10,7 +9,7 @@ import { setLLMMode } from '../../../hooks/useActionDispatch'
 import { useScreenPreset } from '../../../hooks/useScreenPreset'
 import { SCREEN_PRESETS, type ScreenPresetId } from '../../../utils/screenPresets'
 import { useGameStore, useStore } from '../../../store/useGameStore'
-import { translate, useI18n, type LocaleCode } from '../../../i18n'
+import { translate, useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCSessionIcon from '../icons/PCSessionIcon'
@@ -21,7 +20,7 @@ import { FRAGMENT_VISUALS, PCFragmentIcon } from '../progression/PCJudgeProgress
 import { PCResultFrame } from '../result/PCResultScreen'
 import PCCaseBrowser from './PCCaseBrowser'
 import PCIntroSlides from './PCIntroSlides'
-import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
+import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getLocalizedPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
 
 type HomeView = 'home' | 'general' | 'generalCases' | 'season' | 'profile' | 'leaderboard' | 'settings'
 type JudgeDeskTab = 'profile' | 'history' | 'progression'
@@ -39,19 +38,8 @@ type HistoryCaseCard = {
   latestScore: number | null
 }
 
-const SORTS: { id: SortCategory; label: string }[] = [
-  { id: 'total', label: '총점' },
-  { id: 'insight', label: '탐구' },
-  { id: 'authority', label: '판결' },
-  { id: 'wisdom', label: '해결' },
-]
-
-const HISTORY_RESULT_TABS: { id: HistoryResultTab; label: string }[] = [
-  { id: 'result', label: '01 결과 확인' },
-  { id: 'verdict_pronounce', label: '02 판결 선고' },
-  { id: 'epilogue', label: '03 후일담' },
-  { id: 'bonus', label: '04 보너스' },
-]
+const SORTS: SortCategory[] = ['total', 'insight', 'authority', 'wisdom']
+const HISTORY_RESULT_TAB_IDS: HistoryResultTab[] = ['result', 'verdict_pronounce', 'epilogue', 'bonus']
 
 function formatHallOfFameCaseLabel(caseId: string, cases: CaseData[]): string {
   const normalized = caseId.replace(/^case-/, '')
@@ -100,8 +88,9 @@ export default function PCHomeScreen() {
 
   const allCases = useMemo(
     () => getAllCases().map(({ caseId }) => getCaseById(caseId)).filter((item): item is CaseData => item != null),
-    [],
+    [locale],
   )
+  const generalSessions = useMemo(() => PC_GENERAL_SESSIONS.map((session) => getLocalizedPcGeneralSession(session, locale)), [locale])
   const seasonCases = useMemo(() => getSeasonCases(allCases), [allCases])
   const profile = useMemo(() => loadProfile(), [refreshKey])
   const history = useMemo(() => loadExtendedHistory(), [refreshKey])
@@ -116,8 +105,11 @@ export default function PCHomeScreen() {
     return map
   }, [history])
 
-  const titleInfo = TITLE_LABELS[judgeProfile.titleId] ?? TITLE_LABELS.neutral_observer
+  const titleName = t(`pc.home.judgeTitle.${judgeProfile.titleId}.name` as MessageKey)
+  const titleSubtitle = t(`pc.home.judgeTitle.${judgeProfile.titleId}.subtitle` as MessageKey)
   const selectedLocale = locales.find((item) => item.code === locale)
+  const seasonNumber = season.id.replace(/^s/, '')
+  const seasonLabel = t('pc.home.season.name', { number: seasonNumber })
   const judgeLevel = Math.max(1, history.length || 1)
   const reputation = history.reduce((sum, entry) => sum + Math.max(0, entry.score), 0)
 
@@ -134,7 +126,7 @@ export default function PCHomeScreen() {
 
   const totalGeneralCases = PC_GENERAL_SESSIONS.reduce((sum, session) => sum + sessionProgress[session.id].totalCount, 0)
   const totalGeneralCompleted = PC_GENERAL_SESSIONS.reduce((sum, session) => sum + sessionProgress[session.id].completedCount, 0)
-  const selectedSessionMeta = PC_GENERAL_SESSIONS.find((session) => session.id === selectedSession) ?? null
+  const selectedSessionMeta = generalSessions.find((session) => session.id === selectedSession) ?? null
   const selectedSessionCases = selectedSession ? getCasesForPcGeneralSession(allCases, selectedSession) : []
   const seasonProgress = buildSessionProgress(seasonCases, progressStore, bestHistoryScores)
   const seasonHistory = useMemo(() => {
@@ -281,17 +273,22 @@ export default function PCHomeScreen() {
   }
 
   const openGuide = () => openPcInteractionPanel({
-    title: '도움말',
-    subtitle: 'PC 로비 가이드',
+    title: t('pc.home.modal.guide.title'),
+    subtitle: t('pc.home.modal.guide.subtitle'),
     tone: 'blue',
-    body: '모드를 고르고 세션을 선택한 뒤 사건을 클릭하면 브리핑을 거쳐 바로 재판이 시작됩니다.',
+    body: t('pc.home.modal.guide.body'),
   })
 
   const openLive = () => openPcInteractionPanel({
-    title: '라이브 상태',
-    subtitle: llmConnected ? 'AI 연결됨' : '오프라인 모드',
+    title: t('pc.home.modal.live.title'),
+    subtitle: llmConnected ? t('pc.home.status.aiConnected') : t('pc.home.status.offline'),
     tone: llmConnected ? 'gold' : 'neutral',
-    body: [`AI 연결: ${llmConnected ? '정상' : '미연결'}`, `조사 토큰: ${globalInvest}`, `스킬 포인트: ${globalSkill}`, `다음 충전: ${formatCountdown(countdown)}`].join('\n'),
+    body: [
+      t('pc.home.modal.live.ai', { status: llmConnected ? t('pc.home.status.connected') : t('pc.home.status.disconnected') }),
+      t('pc.home.modal.live.invest', { count: globalInvest }),
+      t('pc.home.modal.live.skill', { count: globalSkill }),
+      t('pc.home.modal.live.recharge', { time: formatCountdown(countdown) }),
+    ].join('\n'),
   })
 
   const refreshProgression = () => setRefreshKey((current) => current + 1)
@@ -309,7 +306,7 @@ export default function PCHomeScreen() {
         <section className="pc-home-v2">
           <header className="pc-home-v2__topbar">
             <div className="pc-home-v2__tools">
-              <button className="pc-home-v2__tool pc-home-v2__tool--settings" onClick={() => setView('settings')} type="button" aria-label="설정">
+              <button className="pc-home-v2__tool pc-home-v2__tool--settings" onClick={() => setView('settings')} type="button" aria-label={t('settings.title')}>
                 <PCSvgIcon id="i-gear" size={28} />
               </button>
             </div>
@@ -324,28 +321,28 @@ export default function PCHomeScreen() {
             <p>{t('home.tagline')}</p>
           </div>
           <div className="pc-home-v2__mode-grid">
-            <ModeCard badge="NORMAL MODE" iconId="i-gavel" label="일반 모드 >" metaLeft={`세션 ${PC_GENERAL_SESSIONS.length}개`} metaRight={`진척 ${totalGeneralCompleted}/${totalGeneralCases}`} onClick={() => { setSelectedSession(null); setView('general') }} progressRate={totalGeneralCases ? (totalGeneralCompleted / totalGeneralCases) * 100 : 0} />
-            <ModeCard badge={season.name} iconId="i-crown" label="시즌 모드 >" metaLeft={seasonCases.length ? `${seasonCases.length}건 배정` : '배정 준비 중'} metaRight={`${remainingDays}일 남음`} onClick={() => setView('season')} progressRate={seasonProgress.progressRate} season />
+            <ModeCard badge="NORMAL MODE" iconId="i-gavel" label={t('pc.home.mode.general.label')} metaLeft={t('pc.home.mode.sessions', { count: PC_GENERAL_SESSIONS.length })} metaRight={t('pc.home.mode.progress', { completed: totalGeneralCompleted, total: totalGeneralCases })} onClick={() => { setSelectedSession(null); setView('general') }} progressRate={totalGeneralCases ? (totalGeneralCompleted / totalGeneralCases) * 100 : 0} />
+            <ModeCard badge={seasonLabel} iconId="i-crown" label={t('pc.home.mode.season.label')} metaLeft={seasonCases.length ? t('pc.home.mode.assignedCases', { count: seasonCases.length }) : t('pc.home.mode.assignmentPending')} metaRight={t('pc.home.mode.daysLeft', { days: remainingDays })} onClick={() => setView('season')} progressRate={seasonProgress.progressRate} season />
           </div>
 <div className="pc-home-v2__info-grid">
-            <InfoCard actionLabel="재판관 정보 >" iconId="i-person" onClick={() => { setJudgeDeskTab('profile'); setView('profile') }} subtitle={profile.playerName} title={titleInfo.name} />
-            <InfoCard actionLabel="상세 보기 >" iconId="i-crown" onClick={() => setView('leaderboard')} subtitle={season.name} title="리더보드" />
+            <InfoCard actionLabel={t('pc.home.profile.info')} iconId="i-person" onClick={() => { setJudgeDeskTab('profile'); setView('profile') }} subtitle={titleSubtitle} title={titleName} />
+            <InfoCard actionLabel={t('pc.home.profile.details')} iconId="i-crown" onClick={() => setView('leaderboard')} subtitle={seasonLabel} title={t('pc.home.leaderboard')} />
           </div>
         </section>
       )}
 
       {view === 'general' && (
         <section className="pc-depth-shell">
-          <DepthHeader eyebrow="GENERAL MODE" title="일반 모드" description="세션을 고르면 해당 사건 리스트로 바로 이동합니다." onBack={() => setView('home')} />
+          <DepthHeader eyebrow="GENERAL MODE" title={t('pc.home.mode.general.label')} description={t('pc.home.general.description')} onBack={() => setView('home')} />
           <div className="pc-session-grid-v2">
-            {PC_GENERAL_SESSIONS.map((session, index) => {
+            {generalSessions.map((session, index) => {
               const progress = sessionProgress[session.id]
               const disabled = progress.totalCount === 0
               return (
                 <button className={`pc-session-card-v2 pc-session-card-v2--${session.accent}${disabled ? ' is-disabled' : ''}`} disabled={disabled} key={session.id} onClick={() => { setSelectedSession(session.id); setView('generalCases') }} type="button">
                   <div className="pc-session-card-v2__top">
                     <span>{`SESSION ${String(index + 1).padStart(2, '0')}`}</span>
-                    <strong>{disabled ? '준비 중' : `${progress.completedCount}/${progress.totalCount}`}</strong>
+                    <strong>{disabled ? t('pc.home.session.ready') : `${progress.completedCount}/${progress.totalCount}`}</strong>
                   </div>
                   <div className="pc-session-card-v2__inner">
                     <div className="pc-session-card-v2__main">
@@ -359,13 +356,13 @@ export default function PCHomeScreen() {
                   </div>
                   <div className="pc-session-card-v2__bottom">
                     {progress.averageScore != null
-                      ? <span className="pc-session-card-v2__avg">평균 {progress.averageScore}점</span>
+                      ? <span className="pc-session-card-v2__avg">{t('pc.home.session.averageScore', { score: progress.averageScore })}</span>
                       : <span className="pc-session-card-v2__avg pc-session-card-v2__avg--empty">—</span>}
                   </div>
                   {disabled && (
-                    <div className="pc-session-card-v2__lock-overlay" aria-label="잠김">
+                    <div className="pc-session-card-v2__lock-overlay" aria-label={t('pc.common.locked')}>
                       <PCSvgIcon id="i-lock" size={56} />
-                      <span>준비 중</span>
+                      <span>{t('pc.home.session.ready')}</span>
                     </div>
                   )}
                 </button>
@@ -376,20 +373,20 @@ export default function PCHomeScreen() {
       )}
 
       {view === 'generalCases' && selectedSessionMeta && (
-        <section className="pc-depth-shell"><PCCaseBrowser accentIconId={selectedSessionMeta.iconId} cases={selectedSessionCases} description={`${selectedSessionMeta.tagline}. 선택한 사건은 브리핑을 거쳐 바로 재판으로 이어집니다.`} eyebrow="일반 모드" onBack={() => setView('general')} onSelectCase={startCase} progressLabel={`${sessionProgress[selectedSessionMeta.id].completedCount}/${sessionProgress[selectedSessionMeta.id].totalCount}`} showCompletedFilter title={`${selectedSessionMeta.label} · ${selectedSessionCases.length}건`} /></section>
+        <section className="pc-depth-shell"><PCCaseBrowser accentIconId={selectedSessionMeta.iconId} cases={selectedSessionCases} description={t('pc.home.session.caseListDescription', { tagline: selectedSessionMeta.tagline })} eyebrow={t('pc.home.mode.general.label')} onBack={() => setView('general')} onSelectCase={startCase} progressLabel={`${sessionProgress[selectedSessionMeta.id].completedCount}/${sessionProgress[selectedSessionMeta.id].totalCount}`} showCompletedFilter title={t('pc.home.session.caseCountTitle', { label: selectedSessionMeta.label, count: selectedSessionCases.length })} /></section>
       )}
 
       {view === 'season' && (
-        <section className="pc-depth-shell"><PCCaseBrowser accentIconId="i-crown" cases={seasonCases} description={`${season.name}에 배정된 사건들입니다. 시즌 전용 사건은 추후 선별 배정됩니다.`} emptyDescription="시즌 배정이 열리면 이곳에 자동으로 반영됩니다." emptyTitle="현재 시즌 사건이 아직 배정되지 않았습니다." eyebrow={season.name} onBack={() => setView('home')} onSelectCase={startCase} progressLabel={`${seasonProgress.completedCount}/${seasonProgress.totalCount}`} title="시즌 모드" /></section>
+        <section className="pc-depth-shell"><PCCaseBrowser accentIconId="i-crown" cases={seasonCases} description={t('pc.home.season.description', { season: seasonLabel })} emptyDescription={t('pc.home.season.emptyDescription')} emptyTitle={t('pc.home.season.emptyTitle')} eyebrow={seasonLabel} onBack={() => setView('home')} onSelectCase={startCase} progressLabel={`${seasonProgress.completedCount}/${seasonProgress.totalCount}`} title={t('pc.home.mode.season.label')} /></section>
       )}
 
       {view === 'profile' && (
         <section className="pc-depth-shell">
-          <DepthHeader eyebrow="JUDGE DESK" title="재판관 정보" description="현재 재판관의 성향과 칭호, 판결 기록을 확인합니다." onBack={() => setView('home')} />
+          <DepthHeader eyebrow="JUDGE DESK" title={t('pc.home.profile.info')} description={t('pc.home.profile.description')} onBack={() => setView('home')} />
           <div className="pc-desk-tabs">
-            <button className={`pc-desk-tab${judgeDeskTab === 'profile' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('profile')} type="button">정보 확인</button>
-            <button className={`pc-desk-tab${judgeDeskTab === 'history' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('history')} type="button">판결 기록</button>
-            <button className={`pc-desk-tab${judgeDeskTab === 'progression' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('progression')} type="button">재판관 관리</button>
+            <button className={`pc-desk-tab${judgeDeskTab === 'profile' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('profile')} type="button">{t('pc.home.profile.tab.info')}</button>
+            <button className={`pc-desk-tab${judgeDeskTab === 'history' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('history')} type="button">{t('pc.home.profile.tab.history')}</button>
+            <button className={`pc-desk-tab${judgeDeskTab === 'progression' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('progression')} type="button">{t('pc.home.profile.tab.progression')}</button>
           </div>
 
           <div className="pc-desk-tab-content">
@@ -398,46 +395,46 @@ export default function PCHomeScreen() {
               <Card eyebrow="JUDGE PROFILE" title={profile.playerName}>
                 <div className="pc-desk-profile-title">
                   <span>Lv {Math.max(1, judgeLevel)}</span>
-                  <strong>{titleInfo.name}</strong>
-                  <p>{titleInfo.subtitle}</p>
+                  <strong>{titleName}</strong>
+                  <p>{titleSubtitle}</p>
                 </div>
                 <div className="pc-desk-hero__meter">
-                  <strong>명성 진행</strong>
+                  <strong>{t('pc.home.profile.reputation')}</strong>
                   <span>{`${Math.min(reputation, 1200)}/1200`}</span>
                   <div className="pc-progress-bar"><i style={{ width: `${Math.min(100, (Math.min(reputation, 1200) / 1200) * 100)}%` }} /></div>
                 </div>
                 <div className="pc-desk-hero__stats">
-                  <MiniStat label="처리 사건" value={`${history.length}건`} />
-                  <MiniStat label="최고 점수" value={`${playerStats.bestScore}점`} />
-                  <MiniStat label="평균 점수" value={`${Math.round(playerStats.avgScore ?? 0)}점`} />
-                  <MiniStat label="시즌" value={season.name} />
+                  <MiniStat label={t('pc.home.profile.processedCases')} value={t('pc.home.unit.cases', { count: history.length })} />
+                  <MiniStat label={t('pc.home.profile.bestScore')} value={t('pc.home.unit.points', { count: playerStats.bestScore })} />
+                  <MiniStat label={t('pc.home.profile.averageScore')} value={t('pc.home.unit.points', { count: Math.round(playerStats.avgScore ?? 0) })} />
+                  <MiniStat label={t('pc.home.profile.season')} value={seasonLabel} />
                 </div>
               </Card>
-              <Card eyebrow="JUDGE AXES" title={titleInfo.name}>
-                <AxisRow label="탐구(균형)" left="논리" right="직관" value={judgeProfile.inquiryAxis} />
-                <AxisRow label="판결(균형)" left="엄격" right="관용" value={judgeProfile.judgmentAxis} />
-                <AxisRow label="해결(균형)" left="원칙" right="봉합" value={judgeProfile.resolutionAxis} />
+              <Card eyebrow="JUDGE AXES" title={titleName}>
+                <AxisRow label={t('pc.home.profile.axis.inquiry')} left={t('pc.home.profile.axis.logic')} right={t('pc.home.profile.axis.intuition')} value={judgeProfile.inquiryAxis} />
+                <AxisRow label={t('pc.home.profile.axis.judgment')} left={t('pc.home.profile.axis.strict')} right={t('pc.home.profile.axis.lenient')} value={judgeProfile.judgmentAxis} />
+                <AxisRow label={t('pc.home.profile.axis.resolution')} left={t('pc.home.profile.axis.principle')} right={t('pc.home.profile.axis.reconcile')} value={judgeProfile.resolutionAxis} />
               </Card>
             </div>
           ) : judgeDeskTab === 'progression' ? (
             <PCJudgeProgressionPanel onChange={refreshProgression} syncKey={refreshKey} />
           ) : (
             <div className="pc-history-board pc-history-board--select">
-              <div className="pc-history-mode-tabs" role="tablist" aria-label="판결 기록 모드">
-                <button className={`pc-history-mode-tab${historyMode === 'general' ? ' is-active' : ''}`} onClick={() => setHistoryModeAndTrack('general')} type="button">일반 모드</button>
-                <button className={`pc-history-mode-tab${historyMode === 'season' ? ' is-active' : ''}`} onClick={() => setHistoryModeAndTrack('season')} type="button">시즌 모드</button>
+              <div className="pc-history-mode-tabs" role="tablist" aria-label={t('pc.home.history.modeLabel')}>
+                <button className={`pc-history-mode-tab${historyMode === 'general' ? ' is-active' : ''}`} onClick={() => setHistoryModeAndTrack('general')} type="button">{t('pc.home.mode.general.label')}</button>
+                <button className={`pc-history-mode-tab${historyMode === 'season' ? ' is-active' : ''}`} onClick={() => setHistoryModeAndTrack('season')} type="button">{t('pc.home.mode.season.label')}</button>
               </div>
               <div className="pc-history-case-layout">
-                <Card eyebrow={historyMode === 'general' ? 'GENERAL MODE' : season.name.toUpperCase()} title="사건 선택">
+                <Card eyebrow={historyMode === 'general' ? 'GENERAL MODE' : seasonLabel.toUpperCase()} title={t('pc.home.history.caseSelect')}>
                   {historyCaseCards.length === 0 ? (
-                    <Empty title="표시할 사건이 없습니다." description="아직 이 모드에 연결된 사건이 없습니다." />
+                    <Empty title={t('pc.home.history.noCasesTitle')} description={t('pc.home.history.noCasesDescription')} />
                   ) : (
                     <div className="pc-history-case-picker">
                       {selectedHistoryCase ? (
                         <div className="pc-history-case-stats">
-                          <MiniStat label="플레이" value={`${selectedHistoryCase.playedCount}회`} />
-                          <MiniStat label="평균" value={selectedHistoryCase.avgScore != null ? `${selectedHistoryCase.avgScore}점` : '-'} />
-                          <MiniStat label="최고" value={selectedHistoryCase.bestScore != null ? `${selectedHistoryCase.bestScore}점` : '-'} />
+                          <MiniStat label={t('pc.home.history.playCount')} value={t('pc.home.unit.times', { count: selectedHistoryCase.playedCount })} />
+                          <MiniStat label={t('pc.home.history.average')} value={selectedHistoryCase.avgScore != null ? t('pc.home.unit.points', { count: selectedHistoryCase.avgScore }) : '-'} />
+                          <MiniStat label={t('pc.home.history.best')} value={selectedHistoryCase.bestScore != null ? t('pc.home.unit.points', { count: selectedHistoryCase.bestScore }) : '-'} />
                         </div>
                       ) : null}
 
@@ -453,7 +450,7 @@ export default function PCHomeScreen() {
                             <span className="pc-history-case-option__meta">
                               {getRelationshipLabel(item.caseData.meta?.relationshipType ?? item.caseData.duo.relationshipType)}
                               {' · '}
-                              {item.playedCount > 0 ? `평균 ${item.avgScore} / 최고 ${item.bestScore}` : '기록 없음'}
+                              {item.playedCount > 0 ? t('pc.home.history.averageBest', { average: item.avgScore ?? '-', best: item.bestScore ?? '-' }) : t('pc.home.history.noRecord')}
                             </span>
                           </button>
                         ))}
@@ -462,18 +459,18 @@ export default function PCHomeScreen() {
                   )}
                 </Card>
 
-                <Card eyebrow="PLAY HISTORY" title={selectedHistoryCase ? getCaseDisplayTitle(selectedHistoryCase.caseData) : '플레이 이력'}>
+                <Card eyebrow="PLAY HISTORY" title={selectedHistoryCase ? getCaseDisplayTitle(selectedHistoryCase.caseData) : t('pc.home.history.playHistory')}>
                   {selectedCaseEntries.length === 0 ? (
-                    <Empty title="선택한 사건의 플레이 기록이 없습니다." description="해당 사건을 클리어하면 날짜와 점수별 기록이 이곳에 저장됩니다." />
+                    <Empty title={t('pc.home.history.noPlayTitle')} description={t('pc.home.history.noPlayDescription')} />
                   ) : (
                     <div className="pc-history-play-panel">
                       <div className="pc-history-play-selects">
                         <label>
-                          <span>플레이 시점 / 점수</span>
+                          <span>{t('pc.home.history.playTimeScore')}</span>
                           <select className="pc-history-record-select pc-settings-select" value={selectedHistory ? getHistoryKey(selectedHistory) : ''} onChange={(event) => setSelectedHistoryKey(event.target.value)}>
                             {selectedCaseEntries.map((entry) => (
                               <option key={getHistoryKey(entry)} value={getHistoryKey(entry)}>
-                                {formatHistoryOptionLabel(entry)}
+                                {formatHistoryOptionLabel(entry, t, locale)}
                               </option>
                             ))}
                           </select>
@@ -483,16 +480,16 @@ export default function PCHomeScreen() {
                       {selectedHistory ? (
                         <div className="pc-history-summary-card">
                           <div className="pc-history-score-strip">
-                            <MiniStat label="총점" value={`${selectedHistory.score}점`} />
-                            <MiniStat label="탐구" value={`${selectedHistory.insight}`} />
-                            <MiniStat label="판결" value={`${selectedHistory.authority}`} />
-                            <MiniStat label="해결" value={`${selectedHistory.wisdom}`} />
+                            <MiniStat label={t('pc.home.sort.total')} value={t('pc.home.unit.points', { count: selectedHistory.score })} />
+                            <MiniStat label={t('pc.home.sort.insight')} value={`${selectedHistory.insight}`} />
+                            <MiniStat label={t('pc.home.sort.authority')} value={`${selectedHistory.authority}`} />
+                            <MiniStat label={t('pc.home.sort.wisdom')} value={`${selectedHistory.wisdom}`} />
                           </div>
                           <div className="pc-history-verdict-brief">
-                            <strong>판결 결과 요약</strong>
+                            <strong>{t('pc.home.history.verdictBrief')}</strong>
                             <p>{getHistoryVerdictBrief(selectedHistory)}</p>
                           </div>
-                          <button className="pc-inline-button" onClick={() => setHistoryDetailEntry(selectedHistory)} type="button">상세 보기</button>
+                          <button className="pc-inline-button" onClick={() => setHistoryDetailEntry(selectedHistory)} type="button">{t('pc.home.history.details')}</button>
                         </div>
                       ) : null}
                     </div>
@@ -507,31 +504,31 @@ export default function PCHomeScreen() {
 
       {view === 'leaderboard' && (
         <section className="pc-depth-shell">
-          <DepthHeader eyebrow={season.name} title="리더보드" description="현재 시즌 기준 점수와 명예의 전당 기록입니다." onBack={() => setView('home')} />
-          <div className="pc-filter-pills-v2">{SORTS.map((sort) => <button className={`pc-filter-pill-v2${leaderboardSort === sort.id ? ' is-active' : ''}`} key={sort.id} onClick={() => setLeaderboardSort(sort.id)} type="button">{sort.label}</button>)}</div>
+          <DepthHeader eyebrow={seasonLabel} title={t('pc.home.leaderboard')} description={t('pc.home.leaderboard.description')} onBack={() => setView('home')} />
+          <div className="pc-filter-pills-v2">{SORTS.map((sort) => <button className={`pc-filter-pill-v2${leaderboardSort === sort ? ' is-active' : ''}`} key={sort} onClick={() => setLeaderboardSort(sort)} type="button">{t(`pc.home.sort.${sort}` as MessageKey)}</button>)}</div>
           <div className="pc-leaderboard-grid">
-            <Card eyebrow="SCOREBOARD" title="시즌 랭킹">{leaderboard.length === 0 ? <Empty title="아직 시즌 기록이 없습니다." description="플레이 기록이 쌓이면 이곳에 자동 반영됩니다." /> : <div className="pc-ranking-list-v2">{leaderboard.slice(0, 10).map((entry, index) => <div className="pc-ranking-row-v2" key={getHistoryKey(entry)}><span className="pc-ranking-row-v2__rank">{index + 1}</span><div className="pc-ranking-row-v2__copy"><strong>{entry.nameA} vs {entry.nameB}</strong><span>{getRelationshipLabel(entry.relationshipType)}</span></div><strong className="pc-ranking-row-v2__score">{sortMetric(entry, leaderboardSort)}</strong></div>)}</div>}</Card>
-            <Card eyebrow="HALL OF FAME" title="명예의 전당">{hallOfFame.length === 0 ? <Empty title="아직 전당 기록이 없습니다." description="최고 기록이 쌓이면 시즌 명예의 전당이 채워집니다." /> : <div className="pc-ranking-list-v2">{hallOfFame.map((entry) => <div className="pc-ranking-row-v2" key={`${entry.seasonId}:${entry.rank}:${entry.caseId}`}><span className="pc-ranking-row-v2__rank">{entry.rank}</span><div className="pc-ranking-row-v2__copy"><strong>{entry.playerName}</strong><span>{formatHallOfFameCaseLabel(entry.caseId, allCases)}</span></div><strong className="pc-ranking-row-v2__score">{entry.score}점</strong></div>)}</div>}</Card>
+            <Card eyebrow="SCOREBOARD" title={t('pc.home.leaderboard.seasonRanking')}>{leaderboard.length === 0 ? <Empty title={t('pc.home.leaderboard.noSeasonTitle')} description={t('pc.home.leaderboard.noSeasonDescription')} /> : <div className="pc-ranking-list-v2">{leaderboard.slice(0, 10).map((entry, index) => <div className="pc-ranking-row-v2" key={getHistoryKey(entry)}><span className="pc-ranking-row-v2__rank">{index + 1}</span><div className="pc-ranking-row-v2__copy"><strong>{entry.nameA} vs {entry.nameB}</strong><span>{getRelationshipLabel(entry.relationshipType)}</span></div><strong className="pc-ranking-row-v2__score">{sortMetric(entry, leaderboardSort, t)}</strong></div>)}</div>}</Card>
+            <Card eyebrow="HALL OF FAME" title={t('pc.home.leaderboard.hallOfFame')}>{hallOfFame.length === 0 ? <Empty title={t('pc.home.leaderboard.noHallTitle')} description={t('pc.home.leaderboard.noHallDescription')} /> : <div className="pc-ranking-list-v2">{hallOfFame.map((entry) => <div className="pc-ranking-row-v2" key={`${entry.seasonId}:${entry.rank}:${entry.caseId}`}><span className="pc-ranking-row-v2__rank">{entry.rank}</span><div className="pc-ranking-row-v2__copy"><strong>{entry.playerName}</strong><span>{formatHallOfFameCaseLabel(entry.caseId, allCases)}</span></div><strong className="pc-ranking-row-v2__score">{t('pc.home.unit.points', { count: entry.score })}</strong></div>)}</div>}</Card>
           </div>
         </section>
       )}
 
       {view === 'settings' && (
         <section className="pc-depth-shell">
-          <DepthHeader eyebrow="SETTINGS" title="설정" description="오디오, 텍스트 속도, AI 연결 상태를 관리합니다." onBack={() => setView('home')} />
+          <DepthHeader eyebrow="SETTINGS" title={t('settings.title')} description={t('settings.preview.designGuideNote')} onBack={() => setView('home')} />
           <div className="pc-settings-grid-v2">
-            <Card eyebrow="DISPLAY" title="화면">
+            <Card eyebrow="DISPLAY" title={t('settings.display.title')}>
               <div className="pc-settings-select-row">
                 <div>
-                  <strong>해상도 프리셋</strong>
-                  <p>선택한 해상도에 맞춰 좌우 패널이 단계적으로 조정됩니다</p>
+                  <strong>{t('settings.display.resolutionPreset')}</strong>
+                  <p>{t('settings.display.resolutionDescription')}</p>
                 </div>
                 <select
                   className="pc-settings-select"
                   value={screenPreset}
                   onChange={(event) => requestScreenPreset(event.target.value as ScreenPresetId)}
                 >
-                  <option value="auto">Auto (자동 감지)</option>
+                  <option value="auto">{t('settings.display.autoDetect')}</option>
                   {SCREEN_PRESETS.map((p) => (
                     <option key={p.id} value={p.id}>{p.label}{p.note ? ` (${p.note})` : ''}</option>
                   ))}
@@ -559,9 +556,9 @@ export default function PCHomeScreen() {
               </div>
               <SummaryRow label={t('settings.language.current')} value={selectedLocale?.nativeName ?? locale} />
             </Card>
-            <Card eyebrow="AUDIO" title="오디오"><ToggleRow checked={bgmOn} label="배경음" description="타이틀과 플레이 배경음" onToggle={toggleBgm} /><ToggleRow checked={sfxOn} label="효과음" description="상호작용과 판결 효과음" onToggle={toggleSfx} /></Card>
-            <Card eyebrow="GAMEPLAY" title="게임 플레이"><SummaryRow label="행동 힌트" value={settings.showBehaviorHints ? '켜짐' : '꺼짐'} /><SummaryRow label="대사 자동 진행" value={settings.autoAdvanceDialogue ? '켜짐' : '꺼짐'} /><div className="pc-settings-select-row"><div><strong>텍스트 속도</strong><p>대사 표시와 타이핑 속도</p></div><select className="pc-settings-select" onChange={(event) => updateTypingSpeed(event.target.value as HomeSettings['typingSpeed'])} value={settings.typingSpeed}><option value="fast">빠르게</option><option value="normal">보통</option><option value="slow">느리게</option></select></div></Card>
-            <Card eyebrow="LIVE" title="라이브 상태"><SummaryRow label="AI 연결" value={llmConnected == null ? '확인 중' : llmConnected ? '정상' : '오프라인'} /><SummaryRow label="다음 충전" value={formatCountdown(countdown)} /><button className="pc-inline-button" disabled={checkingConnection} onClick={refreshConnection} type="button">{checkingConnection ? '확인 중…' : '연결 다시 확인'}</button></Card>
+            <Card eyebrow="AUDIO" title={t('settings.audio.title')}><ToggleRow checked={bgmOn} label={t('settings.audio.bgmShort')} description={t('settings.audio.bgmHomeDesc')} onToggle={toggleBgm} /><ToggleRow checked={sfxOn} label={t('settings.audio.sfxShort')} description={t('settings.audio.sfxHomeDesc')} onToggle={toggleSfx} /></Card>
+            <Card eyebrow="GAMEPLAY" title={t('settings.gameplay.homeTitle')}><SummaryRow label={t('settings.gameplay.behaviorHintsShort')} value={settings.showBehaviorHints ? t('settings.toggle.on') : t('settings.toggle.off')} /><SummaryRow label={t('settings.gameplay.autoAdvance')} value={settings.autoAdvanceDialogue ? t('settings.toggle.on') : t('settings.toggle.off')} /><div className="pc-settings-select-row"><div><strong>{t('settings.gameplay.textSpeed')}</strong><p>{t('settings.gameplay.textSpeedHomeDesc')}</p></div><select className="pc-settings-select" onChange={(event) => updateTypingSpeed(event.target.value as HomeSettings['typingSpeed'])} value={settings.typingSpeed}><option value="fast">{t('settings.gameplay.speed.fastAdverb')}</option><option value="normal">{t('settings.gameplay.speed.normal')}</option><option value="slow">{t('settings.gameplay.speed.slowAdverb')}</option></select></div></Card>
+            <Card eyebrow="LIVE" title="Live"><SummaryRow label="AI" value={llmConnected == null ? 'Checking' : llmConnected ? 'Online' : 'Offline'} /><SummaryRow label="Recharge" value={formatCountdown(countdown)} /><button className="pc-inline-button" disabled={checkingConnection} onClick={refreshConnection} type="button">{checkingConnection ? 'Checking…' : 'Check again'}</button></Card>
           </div>
         </section>
       )}
@@ -611,7 +608,7 @@ function InfoCard({ iconId, onClick, subtitle, title }: { actionLabel?: string; 
 }
 
 function DepthHeader({ eyebrow, title, description, onBack }: { eyebrow: string; title: string; description: string; onBack: () => void }) {
-  return <header className="pc-depth-header"><button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>뒤로</button><div className="pc-depth-header__copy"><span>{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></header>
+  return <header className="pc-depth-header"><button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>{translate('pc.home.back')}</button><div className="pc-depth-header__copy"><span>{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></header>
 }
 
 function Card({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
@@ -663,13 +660,13 @@ function ScreenPresetConfirmModal({ countdown, onCancel, onConfirm }: { countdow
   return (
     <div className="pc-resolution-confirm-backdrop" role="presentation">
       <section className="pc-resolution-confirm" role="dialog" aria-modal="true" aria-labelledby="pc-resolution-confirm-title">
-        <h3 id="pc-resolution-confirm-title">지금 해상도를 유지하시겠습니까?</h3>
+        <h3 id="pc-resolution-confirm-title">{translate('pc.resolutionConfirm.title')}</h3>
         <div className="pc-resolution-confirm__count">
           <span>{translate('pc.resolutionConfirm.rollback', { seconds: countdown })}</span>
         </div>
         <div className="pc-resolution-confirm__actions">
-          <button className="pc-inline-button" onClick={onConfirm} type="button">예</button>
-          <button className="pc-inline-button is-ghost" onClick={onCancel} type="button">아니요</button>
+          <button className="pc-inline-button" onClick={onConfirm} type="button">{translate('pc.home.yes')}</button>
+          <button className="pc-inline-button is-ghost" onClick={onCancel} type="button">{translate('pc.home.no')}</button>
         </div>
       </section>
     </div>
@@ -684,8 +681,8 @@ function getNumberedCaseTitle(caseData: CaseData, index: number): string {
   return `${String(index + 1).padStart(2, '0')}-${getCaseDisplayTitle(caseData)}`
 }
 
-function formatHistoryDate(date: string): string {
-  return new Date(date).toLocaleString('ko-KR', {
+function formatHistoryDate(date: string, locale: LocaleCode = 'ko'): string {
+  return new Date(date).toLocaleString(locale, {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -694,19 +691,18 @@ function formatHistoryDate(date: string): string {
   })
 }
 
-function formatHistoryOptionLabel(entry: ExtendedHistoryEntry): string {
+function formatHistoryOptionLabel(entry: ExtendedHistoryEntry, t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string, locale: LocaleCode): string {
   const d = new Date(entry.date)
-  const pad = (value: number) => String(value).padStart(2, '0')
-  const stamp = `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}. ${pad(d.getHours())}:${pad(d.getMinutes())}`
-  return `[ ${stamp} ]  -  ${entry.score}점 / ${getHistoryRating(entry.score)}`
+  const stamp = d.toLocaleString(locale, { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
+  return `[ ${stamp} ] - ${t('pc.home.unit.points', { count: entry.score })} / ${getHistoryRating(entry.score, t)}`
 }
 
-function getHistoryRating(score: number): string {
-  if (score >= 90) return '전설'
-  if (score >= 75) return '우수'
-  if (score >= 60) return '양호'
-  if (score >= 40) return '보통'
-  return '미흡'
+function getHistoryRating(score: number, t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string = translate): string {
+  if (score >= 90) return t('pc.home.history.rating.legend')
+  if (score >= 75) return t('pc.home.history.rating.excellent')
+  if (score >= 60) return t('pc.home.history.rating.good')
+  if (score >= 40) return t('pc.home.history.rating.fair')
+  return t('pc.home.history.rating.poor')
 }
 
 function formatSolutionLabel(solution: string): string {
@@ -807,6 +803,7 @@ function splitStoredAftermathDisplay(text: string | undefined, entry: ExtendedHi
 }
 
 function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; onClose: () => void }) {
+  const { t, locale } = useI18n()
   const [tab, setTab] = useState<HistoryResultTab>('result')
   const caseData = getCaseById(entry.caseId)
   const detail = entry.verdictDetail
@@ -817,7 +814,7 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
     insight: entry.insight,
     authority: entry.authority,
     wisdom: entry.wisdom,
-    rating: getHistoryRating(entry.score),
+    rating: getHistoryRating(entry.score, t),
   }
   const selectedSolutions = snapshot?.selectedSolutions ?? detail?.selectedSolutions ?? []
   const caseTitle = snapshot?.caseTitle ?? (caseData ? getCaseDisplayTitle(caseData) : `${entry.nameA} vs ${entry.nameB}`)
@@ -847,9 +844,13 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
   const responsibility = summary?.responsibility
   const percentA = responsibility?.percentA ?? 50
   const percentB = responsibility?.percentB ?? 50
-  const currentTabIndex = HISTORY_RESULT_TABS.findIndex((item) => item.id === tab)
-  const prevTab = currentTabIndex > 0 ? HISTORY_RESULT_TABS[currentTabIndex - 1] : null
-  const nextTab = currentTabIndex >= 0 && currentTabIndex < HISTORY_RESULT_TABS.length - 1 ? HISTORY_RESULT_TABS[currentTabIndex + 1] : null
+  const historyResultTabs = HISTORY_RESULT_TAB_IDS.map((id) => ({
+    id,
+    label: t(`pc.home.history.tab.${id}` as MessageKey),
+  }))
+  const currentTabIndex = HISTORY_RESULT_TAB_IDS.findIndex((item) => item === tab)
+  const prevTab = currentTabIndex > 0 ? HISTORY_RESULT_TAB_IDS[currentTabIndex - 1] : null
+  const nextTab = currentTabIndex >= 0 && currentTabIndex < HISTORY_RESULT_TAB_IDS.length - 1 ? HISTORY_RESULT_TAB_IDS[currentTabIndex + 1] : null
   const stars = Math.max(1, Math.min(3, Math.ceil(score.total / 35)))
   const rewardTitles: Array<{ id: string; name: string; rarity?: string; description?: string }> = snapshot?.titles?.length
     ? snapshot.titles.map((title) => ({ id: title.id, name: title.name, rarity: title.rarity, description: title.description }))
@@ -857,25 +858,25 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
   const rewardFragments = snapshot?.rewards ?? []
 
   return (
-    <div className="pc-history-detail-modal" role="dialog" aria-modal="true" aria-label="판결 기록 상세">
+    <div className="pc-history-detail-modal" role="dialog" aria-modal="true" aria-label={t('pc.home.history.details')}>
       <div className="pc-history-detail-modal__backdrop" onClick={onClose} />
       <section className="pc-history-detail-modal__panel" onClick={(event) => event.stopPropagation()}>
         <PCResultFrame
           activeTab={tab}
           className="pc-result-screen--history"
-          eyebrow="판결 기록"
+          eyebrow={t('pc.home.profile.tab.history')}
           footer={(
             <>
               <button
                 className="pc-verdict-footer__button"
                 disabled={!prevTab}
-                onClick={() => prevTab && setTab(prevTab.id)}
+                onClick={() => prevTab && setTab(prevTab)}
                 type="button"
               >
                 &lt; 이전
               </button>
               {nextTab ? (
-                <button className="pc-verdict-footer__button is-primary" onClick={() => setTab(nextTab.id)} type="button">
+                <button className="pc-verdict-footer__button is-primary" onClick={() => setTab(nextTab)} type="button">
                   다음 &gt;
                 </button>
               ) : (
@@ -887,28 +888,28 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
           )}
           headline={caseTitle}
           meta={[
-            { label: '관계', value: relationshipLabel },
-            { label: '쟁점', value: `${factRows.length}건` },
-            { label: '증거', value: `${caseData?.evidence.length ?? 0}종` },
+            { label: t('pc.interaction.relationship'), value: relationshipLabel },
+            { label: t('pc.interaction.disputeList'), value: t('pc.home.unit.cases', { count: factRows.length }) },
+            { label: t('pc.interaction.unlockedEvidence'), value: `${caseData?.evidence.length ?? 0}` },
           ]}
           onTabChange={setTab}
           rating={score.rating}
           score={score.total}
           stars={stars}
-          summary={`${formatHistoryDate(entry.date)} · ${relationshipLabel} · ${score.total}점`}
-          tabs={HISTORY_RESULT_TABS}
+          summary={`${formatHistoryDate(entry.date, locale)} · ${relationshipLabel} · ${t('pc.home.unit.points', { count: score.total })}`}
+          tabs={historyResultTabs}
         >
                 {tab === 'result' ? (
                   <div className="pc-result-combined">
                     <div className="pc-result-donuts">
-                      <HistoryScoreDonut label="통찰" value={score.insight} color="var(--pc-blue)" />
-                      <HistoryScoreDonut label="권위" value={score.authority} color="var(--pc-gold)" />
-                      <HistoryScoreDonut label="지혜" value={score.wisdom} color="var(--pc-green)" />
-                      <HistoryScoreDonut label="총점" value={score.total} color="#d4a24e" />
+                      <HistoryScoreDonut label={t('pc.home.sort.insight')} value={score.insight} color="var(--pc-blue)" />
+                      <HistoryScoreDonut label={t('pc.home.sort.authority')} value={score.authority} color="var(--pc-gold)" />
+                      <HistoryScoreDonut label={t('pc.home.sort.wisdom')} value={score.wisdom} color="var(--pc-green)" />
+                      <HistoryScoreDonut label={t('pc.home.sort.total')} value={score.total} color="#d4a24e" />
                     </div>
 
                     <div className="pc-result-truth">
-                      <h3>쟁점별 판단 결과</h3>
+                      <h3>{t('pc.home.history.verdictBrief')}</h3>
                       {factRows.map((row) => {
                         const correct = row.truth == null || row.finding === 'pending' ? null : (row.finding === 'true') === row.truth
                         return (
@@ -1100,8 +1101,8 @@ function getHistoryKey(entry: ExtendedHistoryEntry) {
   return `${entry.caseId}:${entry.date}`
 }
 
-function sortMetric(entry: ExtendedHistoryEntry, sort: SortCategory) {
-  if (sort === 'total') return `${entry.score}점`
+function sortMetric(entry: ExtendedHistoryEntry, sort: SortCategory, t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string) {
+  if (sort === 'total') return t('pc.home.unit.points', { count: entry.score })
   if (sort === 'insight') return `${entry.insight}`
   if (sort === 'authority') return `${entry.authority}`
   return `${entry.wisdom}`

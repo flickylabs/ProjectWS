@@ -3,7 +3,8 @@ import type { CaseData } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
-import { getDifficultyLabel, sortCasesForBrowser } from './pcHomeShared'
+import { sortCasesForBrowser } from './pcHomeShared'
+import { useI18n } from '../../../i18n'
 
 const CLEAR_SCORE_THRESHOLD = 40
 const TOTAL_SLOTS = 10
@@ -35,9 +36,10 @@ export default function PCCaseBrowser({
   onBack,
   onSelectCase,
   showCompletedFilter = false,
-  emptyTitle = '현재 조건에 맞는 사건이 없습니다.',
-  emptyDescription = '다른 세션을 고르거나 필터를 조정한 뒤 다시 확인해 주세요.',
+  emptyTitle,
+  emptyDescription,
 }: Props) {
+  const { t } = useI18n()
   const [showCompletedOnly, setShowCompletedOnly] = useState(false)
   const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null)
 
@@ -85,14 +87,16 @@ export default function PCCaseBrowser({
   const activeId = selectedCaseId ?? defaultId
   const activeStage = realStages.find(s => s.caseData.caseId === activeId)
   const activeCase = activeStage?.caseData ?? null
+  const resolvedEmptyTitle = emptyTitle ?? t('pc.home.caseBrowser.emptyTitle')
+  const resolvedEmptyDescription = emptyDescription ?? t('pc.home.caseBrowser.emptyDescription')
 
   return (
     <div className="cb">
       {/* ── 헤더 (검정 띠 안: 뒤로 + 제목만) ── */}
       <header className="cb__header pc-depth-header">
-        <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>뒤로</button>
+        <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>{t('pc.home.back')}</button>
         <div className="cb__header-info pc-depth-header__copy">
-          <span className="cb__eyebrow">{eyebrow ?? 'CASE BROWSER'}</span>
+          <span className="cb__eyebrow">{eyebrow ?? t('pc.home.caseBrowser.eyebrow')}</span>
           <h2>{title}</h2>
         </div>
       </header>
@@ -101,7 +105,7 @@ export default function PCCaseBrowser({
       <div className="cb__header-tools">
         {showCompletedFilter && (
           <label className="cb__toggle">
-            <span className="cb__toggle-label">완료 기록만</span>
+            <span className="cb__toggle-label">{t('pc.home.caseBrowser.completedOnly')}</span>
             <button
               aria-pressed={showCompletedOnly}
               className={`pc-toggle${showCompletedOnly ? ' active' : ''}`}
@@ -110,14 +114,14 @@ export default function PCCaseBrowser({
             ><i /></button>
           </label>
         )}
-        <span className="cb__count">{filteredCases.length}건</span>
+        <span className="cb__count">{t('pc.home.caseBrowser.count', { count: filteredCases.length })}</span>
       </div>
 
       {realStages.length === 0 ? (
         <div className="cb__empty">
           <PCSvgIcon id="i-doc" size={28} />
-          <strong>{emptyTitle}</strong>
-          <p>{emptyDescription}</p>
+          <strong>{resolvedEmptyTitle}</strong>
+          <p>{resolvedEmptyDescription}</p>
         </div>
       ) : (
         <div className="cb__split">
@@ -136,7 +140,7 @@ export default function PCCaseBrowser({
                         className="cb__stage is-locked is-placeholder"
                         disabled
                         type="button"
-                        aria-label={`${s.num} 미정`}
+                        aria-label={`${s.num} ${t('pc.home.caseBrowser.undecided')}`}
                       >
                         <span className="cb__stage-num">{s.num}</span>
                         <span className="cb__stage-score">???</span>
@@ -154,7 +158,7 @@ export default function PCCaseBrowser({
                     >
                       <span className="cb__stage-num">{s.num}</span>
                       <span className="cb__stage-score">
-                        {s.score > 0 ? `${s.score}점` : s.unlocked ? '—' : <PCSvgIcon id="i-lock" size={14} />}
+                        {s.score > 0 ? t('pc.home.caseBrowser.score', { score: s.score }) : s.unlocked ? '—' : <PCSvgIcon id="i-lock" size={14} />}
                       </span>
                     </button>
                   </div>
@@ -168,7 +172,7 @@ export default function PCCaseBrowser({
             {activeCase && activeStage ? (
               <CaseBriefPanel caseData={activeCase} stageNum={activeStage.num} score={activeStage.score} onStart={() => onSelectCase(activeCase)} />
             ) : (
-              <div className="cb__detail-empty"><p>좌측에서 사건을 선택하세요.</p></div>
+              <div className="cb__detail-empty"><p>{t('pc.home.caseBrowser.selectPrompt')}</p></div>
             )}
           </div>
         </div>
@@ -182,6 +186,7 @@ export default function PCCaseBrowser({
 function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
   caseData: CaseData; stageNum: string; score: number; onStart: () => void
 }) {
+  const { t } = useI18n()
   const { duo, meta } = caseData
   const faceA = getPcFaceSymbolId('a', duo?.partyA, 'defensive')
   const faceB = getPcFaceSymbolId('b', duo?.partyB, 'defensive')
@@ -218,7 +223,7 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
             />
           </div>
           <span className="cb__brief-name is-a">{duo?.partyA?.name ?? 'A'}</span>
-          <span className="cb__brief-meta">{duo?.partyA?.age ?? '?'}세 · {duo?.partyA?.occupation ?? ''}</span>
+          <span className="cb__brief-meta">{t('pc.home.caseBrowser.ageOccupation', { age: duo?.partyA?.age ?? '?', occupation: duo?.partyA?.occupation ?? '' })}</span>
         </div>
 
         <div className="cb__brief-center">
@@ -237,7 +242,7 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
             />
           </div>
           <span className="cb__brief-name is-b">{duo?.partyB?.name ?? 'B'}</span>
-          <span className="cb__brief-meta">{duo?.partyB?.age ?? '?'}세 · {duo?.partyB?.occupation ?? ''}</span>
+          <span className="cb__brief-meta">{t('pc.home.caseBrowser.ageOccupation', { age: duo?.partyB?.age ?? '?', occupation: duo?.partyB?.occupation ?? '' })}</span>
         </div>
       </div>
 
@@ -251,7 +256,7 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
       {/* 쟁점 + 증거 — 바깥 wrap 없이 직접 grid */}
       <div className="cb__brief-grid">
         <div className="cb__brief-section">
-          <h4><PCSvgIcon id="i-gavel" size={13} /> 주요 쟁점</h4>
+          <h4><PCSvgIcon id="i-gavel" size={13} /> {t('pc.home.caseBrowser.mainDisputes')}</h4>
           {initialDisputes.map((d, i) => (
             <div className="cb__brief-item" key={d.id}>
               <span className="cb__brief-item-num">{i + 1}</span>
@@ -259,17 +264,17 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
             </div>
           ))}
           {hiddenCount > 0 && (
-            <p className="cb__brief-hint"><PCSvgIcon id="i-lock" size={10} /> 심문 과정에서 추가 쟁점이 드러날 수 있습니다</p>
+            <p className="cb__brief-hint"><PCSvgIcon id="i-lock" size={10} /> {t('pc.home.caseBrowser.hiddenDisputesHint')}</p>
           )}
         </div>
         <div className="cb__brief-section">
-          <h4><PCSvgIcon id="i-doc" size={13} /> 초기 증거</h4>
+          <h4><PCSvgIcon id="i-doc" size={13} /> {t('pc.home.caseBrowser.initialEvidence')}</h4>
           {baseEvidence.length > 0 ? baseEvidence.map(ev => (
             <div className="cb__brief-item" key={ev.id}>
               <span className="cb__brief-item-icon"><PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} /></span>
               <span>{ev.surfaceName ?? ev.name}</span>
             </div>
-          )) : <p className="cb__brief-hint">초기 증거 미지정</p>}
+          )) : <p className="cb__brief-hint">{t('pc.home.caseBrowser.initialEvidenceShortEmpty')}</p>}
         </div>
       </div>
 
@@ -277,16 +282,16 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
       <div className="cb__brief-footer">
         {score > 0 && (
           <div className="cb__brief-record">
-            <span>최고 기록</span>
+            <span>{t('pc.home.caseBrowser.bestRecord')}</span>
             <strong>
-              {score}<em>점</em>
+              {t('pc.home.caseBrowser.score', { score })}
               <small>/ 100</small>
             </strong>
           </div>
         )}
         <button className="cb__brief-start" onClick={onStart} type="button">
           <PCSvgIcon id="i-gavel" size={18} />
-          <span>사건 입장하기</span>
+          <span>{t('pc.home.caseBrowser.enterCase')}</span>
           <kbd>Enter</kbd>
         </button>
       </div>

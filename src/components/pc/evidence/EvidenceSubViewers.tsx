@@ -3,6 +3,7 @@
  * Each renders the body content for PCEvidenceViewer.
  */
 import { useEffect, useState, useCallback, type ReactNode } from 'react'
+import { useI18n, type LocaleCode } from '../../../i18n'
 import type {
   BankRow, ChatMessage, ContractRow, TestimonyData,
   CCTVEvent, LogRow, DeviceSection, SNSData,
@@ -10,6 +11,398 @@ import type {
 } from './demoEvidenceData'
 
 type DocumentShellVariant = 'contract' | 'ledger' | 'bank' | 'testimony'
+
+const VIEWER_COPY = {
+  ko: {
+    evidenceCopy: '증거 사본',
+    documentCopy: '문서 사본',
+    originalCheck: '원본대조',
+    institutionCheck: '기관확인',
+    transactionCheck: '거래확인',
+    receiptItem: '영수증 {current} / {total}',
+    receiptPageSelect: '영수증 페이지 선택',
+    receiptView: '{index}번째 영수증 보기',
+    receiptList: '영수증 묶음 목록',
+    needsCompare: '대조 필요',
+    productName: '상품명',
+    unitPrice: '단가',
+    quantity: '수량',
+    amount: '금액',
+    productCode: '상품코드',
+    subtotal: '합계',
+    tax: '부가세',
+    paymentAmount: '결제금액',
+    receiptFooter: '원본 영수증 사본 · 조사 단계별 열람 기록',
+    previous: '← 이전',
+    next: '다음 →',
+    gpsLogCount: '블랙박스 GPS 로그 — {count}건',
+    all: '전체',
+    flagged: '주목',
+    time: '시각',
+    location: '위치',
+    coordinates: '위도/경도',
+    speed: '속도',
+    unknownPeriod: '조회 기간 미상',
+    bankTitle: '금융거래 내역 조회표',
+    bankSubtitle: '{period} / 거래 원장 출력본',
+    bankStamp: '거래확인',
+    bankFooter: '중점 거래 {count}건 표시 · 제출용 사본',
+    accountLookup: '조회 계좌',
+    submittedAccount: '제출자 보관 계좌',
+    displayBasis: '표시 기준',
+    debitCreditBalance: '입출금·잔액 대조',
+    bankTable: '금융거래 내역',
+    transactionDate: '거래일',
+    description: '적요',
+    transactionAmount: '거래금액',
+    balance: '잔액',
+    chatPages: '대화 캡처 페이지',
+    page: '{index}쪽',
+    counterparty: '상대방',
+    me: '나',
+    chatInputStatus: '채팅 입력 상태',
+    groupChatRoom: '단체 대화방',
+    unknownSender: '발신자 미상',
+    confirm: '확인',
+    item: '항목',
+    testimonyStamp: '공증',
+    testimonyTitle: '전 요양보호사 음성증언',
+    testimonySubtitle: '속기사 녹취 요약 / 음성 원본 대조',
+    testimonyInfo: '증언 정보',
+    witness: '증언자',
+    relation: '관계',
+    confidence: '확실도',
+    bias: '편향도',
+    biasA: 'A편',
+    biasNeutral: '중립',
+    biasB: 'B편',
+    transcriptContent: '속기사 녹취 내용',
+    directWitness: '직접 목격 진술',
+    hearsayIncluded: '전언 포함',
+    relatedRef: '관련 참조',
+    previousFrame: '← 이전 프레임',
+    nextFrame: '다음 프레임 →',
+    logOut: '발신',
+    logIn: '수신·방문',
+    logMiss: '부재중·변경',
+    callLogTitle: '통화 기록 대장',
+    recordLogTitle: '기록 대장',
+    recordPages: '기록 페이지',
+    recordFilter: '기록 필터',
+    logSubtitle: '{total}건 중 {shown}건 표시 / {source} 제출 사본',
+    carrier: '통신사',
+    institution: '기관',
+    callStamp: '통신확인',
+    institutionStamp: '기관확인',
+    callLogAria: '통화 기록',
+    visitLogAria: '방문 및 처리 기록',
+    dateTime: '일자·시각',
+    category: '분류',
+    counterNumber: '상대·번호',
+    targetContent: '대상·내용',
+    callDurationMessage: '통화시간·메시지',
+    duration: '소요시간',
+    diaryFallback: '어머니의 공책',
+    handwrittenCopy: '자필 사본',
+    phoneOf: '{owner}의 휴대폰',
+    privacy: '공개범위',
+    comments: '댓글',
+  },
+  en: {
+    evidenceCopy: 'Evidence Copy',
+    documentCopy: 'Document Copy',
+    originalCheck: 'Original Check',
+    institutionCheck: 'Institution Check',
+    transactionCheck: 'Transaction Check',
+    receiptItem: 'Receipt {current} / {total}',
+    receiptPageSelect: 'Select receipt page',
+    receiptView: 'View receipt {index}',
+    receiptList: 'Receipt bundle list',
+    needsCompare: 'Needs Review',
+    productName: 'Item',
+    unitPrice: 'Unit',
+    quantity: 'Qty',
+    amount: 'Amount',
+    productCode: 'SKU',
+    subtotal: 'Subtotal',
+    tax: 'Tax',
+    paymentAmount: 'Paid',
+    receiptFooter: 'Original receipt copy · staged investigation view log',
+    previous: '← Previous',
+    next: 'Next →',
+    gpsLogCount: 'Dashcam GPS Log — {count} entries',
+    all: 'All',
+    flagged: 'Flagged',
+    time: 'Time',
+    location: 'Location',
+    coordinates: 'Latitude/Longitude',
+    speed: 'Speed',
+    unknownPeriod: 'Unknown inquiry period',
+    bankTitle: 'Financial Transaction Statement',
+    bankSubtitle: '{period} / Ledger printout',
+    bankStamp: 'Transaction Check',
+    bankFooter: '{count} key transactions marked · submitted copy',
+    accountLookup: 'Account',
+    submittedAccount: 'Submitted holder account',
+    displayBasis: 'Display Basis',
+    debitCreditBalance: 'Debit/Credit/Balance Check',
+    bankTable: 'Financial transactions',
+    transactionDate: 'Date',
+    description: 'Description',
+    transactionAmount: 'Amount',
+    balance: 'Balance',
+    chatPages: 'Chat capture pages',
+    page: 'Page {index}',
+    counterparty: 'Counterparty',
+    me: 'Me',
+    chatInputStatus: 'Chat input status',
+    groupChatRoom: 'Group Chat',
+    unknownSender: 'Unknown Sender',
+    confirm: 'Verified',
+    item: 'Item',
+    testimonyStamp: 'Notarized',
+    testimonyTitle: 'Former Caregiver Audio Testimony',
+    testimonySubtitle: 'Transcript summary / audio original check',
+    testimonyInfo: 'Testimony info',
+    witness: 'Witness',
+    relation: 'Relation',
+    confidence: 'Confidence',
+    bias: 'Bias',
+    biasA: 'A-leaning',
+    biasNeutral: 'Neutral',
+    biasB: 'B-leaning',
+    transcriptContent: 'Transcript',
+    directWitness: 'Direct witness statement',
+    hearsayIncluded: 'Includes hearsay',
+    relatedRef: 'Related reference',
+    previousFrame: '← Previous Frame',
+    nextFrame: 'Next Frame →',
+    logOut: 'Outgoing',
+    logIn: 'Incoming/Visit',
+    logMiss: 'Missed/Changed',
+    callLogTitle: 'Call Log Register',
+    recordLogTitle: 'Record Register',
+    recordPages: 'Record pages',
+    recordFilter: 'Record filter',
+    logSubtitle: '{shown} of {total} entries shown / {source} submitted copy',
+    carrier: 'Carrier',
+    institution: 'Institution',
+    callStamp: 'Carrier Check',
+    institutionStamp: 'Institution Check',
+    callLogAria: 'Call log',
+    visitLogAria: 'Visit and handling log',
+    dateTime: 'Date/Time',
+    category: 'Type',
+    counterNumber: 'Counterparty/Number',
+    targetContent: 'Target/Content',
+    callDurationMessage: 'Call Time/Message',
+    duration: 'Duration',
+    diaryFallback: "Mother's Notebook",
+    handwrittenCopy: 'Handwritten Copy',
+    phoneOf: "{owner}'s Phone",
+    privacy: 'Privacy',
+    comments: 'Comments',
+  },
+  ja: {
+    evidenceCopy: '証拠写し',
+    documentCopy: '文書写し',
+    originalCheck: '原本照合',
+    institutionCheck: '機関確認',
+    transactionCheck: '取引確認',
+    receiptItem: 'レシート {current} / {total}',
+    receiptPageSelect: 'レシートページ選択',
+    receiptView: '{index}枚目のレシートを見る',
+    receiptList: 'レシート束一覧',
+    needsCompare: '照合必要',
+    productName: '品名',
+    unitPrice: '単価',
+    quantity: '数量',
+    amount: '金額',
+    productCode: '商品コード',
+    subtotal: '小計',
+    tax: '消費税',
+    paymentAmount: '支払額',
+    receiptFooter: '原本レシート写し · 調査段階別閲覧記録',
+    previous: '← 前へ',
+    next: '次へ →',
+    gpsLogCount: 'ドライブレコーダーGPSログ — {count}件',
+    all: '全体',
+    flagged: '注目',
+    time: '時刻',
+    location: '位置',
+    coordinates: '緯度/経度',
+    speed: '速度',
+    unknownPeriod: '照会期間不明',
+    bankTitle: '金融取引明細照会表',
+    bankSubtitle: '{period} / 取引台帳出力本',
+    bankStamp: '取引確認',
+    bankFooter: '重点取引 {count}件表示 · 提出用写し',
+    accountLookup: '照会口座',
+    submittedAccount: '提出者保管口座',
+    displayBasis: '表示基準',
+    debitCreditBalance: '入出金·残高照合',
+    bankTable: '金融取引明細',
+    transactionDate: '取引日',
+    description: '摘要',
+    transactionAmount: '取引金額',
+    balance: '残高',
+    chatPages: '会話キャプチャページ',
+    page: '{index}ページ',
+    counterparty: '相手',
+    me: '自分',
+    chatInputStatus: 'チャット入力状態',
+    groupChatRoom: 'グループチャット',
+    unknownSender: '送信者不明',
+    confirm: '確認',
+    item: '項目',
+    testimonyStamp: '公証',
+    testimonyTitle: '元介護職員の音声証言',
+    testimonySubtitle: '速記録要約 / 音声原本照合',
+    testimonyInfo: '証言情報',
+    witness: '証言者',
+    relation: '関係',
+    confidence: '確度',
+    bias: '偏向度',
+    biasA: 'A寄り',
+    biasNeutral: '中立',
+    biasB: 'B寄り',
+    transcriptContent: '速記録内容',
+    directWitness: '直接目撃証言',
+    hearsayIncluded: '伝聞を含む',
+    relatedRef: '関連参照',
+    previousFrame: '← 前のフレーム',
+    nextFrame: '次のフレーム →',
+    logOut: '発信',
+    logIn: '受信·訪問',
+    logMiss: '不在·変更',
+    callLogTitle: '通話記録台帳',
+    recordLogTitle: '記録台帳',
+    recordPages: '記録ページ',
+    recordFilter: '記録フィルター',
+    logSubtitle: '{total}件中{shown}件表示 / {source}提出写し',
+    carrier: '通信会社',
+    institution: '機関',
+    callStamp: '通信確認',
+    institutionStamp: '機関確認',
+    callLogAria: '通話記録',
+    visitLogAria: '訪問および処理記録',
+    dateTime: '日付·時刻',
+    category: '分類',
+    counterNumber: '相手·番号',
+    targetContent: '対象·内容',
+    callDurationMessage: '通話時間·メッセージ',
+    duration: '所要時間',
+    diaryFallback: '母のノート',
+    handwrittenCopy: '自筆写し',
+    phoneOf: '{owner}の携帯電話',
+    privacy: '公開範囲',
+    comments: 'コメント',
+  },
+  'zh-CN': {
+    evidenceCopy: '证据副本',
+    documentCopy: '文件副本',
+    originalCheck: '原件核对',
+    institutionCheck: '机构核验',
+    transactionCheck: '交易核验',
+    receiptItem: '收据 {current} / {total}',
+    receiptPageSelect: '选择收据页',
+    receiptView: '查看第 {index} 张收据',
+    receiptList: '收据组列表',
+    needsCompare: '需要核对',
+    productName: '商品名',
+    unitPrice: '单价',
+    quantity: '数量',
+    amount: '金额',
+    productCode: '商品代码',
+    subtotal: '合计',
+    tax: '增值税',
+    paymentAmount: '支付金额',
+    receiptFooter: '原始收据副本 · 按调查阶段开放的阅览记录',
+    previous: '← 上一页',
+    next: '下一页 →',
+    gpsLogCount: '行车记录仪 GPS 日志 — {count}条',
+    all: '全部',
+    flagged: '重点',
+    time: '时间',
+    location: '位置',
+    coordinates: '纬度/经度',
+    speed: '速度',
+    unknownPeriod: '查询期间不明',
+    bankTitle: '金融交易明细查询表',
+    bankSubtitle: '{period} / 交易台账打印件',
+    bankStamp: '交易核验',
+    bankFooter: '标记重点交易 {count}条 · 提交用副本',
+    accountLookup: '查询账户',
+    submittedAccount: '提交人保管账户',
+    displayBasis: '显示依据',
+    debitCreditBalance: '收支·余额核对',
+    bankTable: '金融交易明细',
+    transactionDate: '交易日',
+    description: '摘要',
+    transactionAmount: '交易金额',
+    balance: '余额',
+    chatPages: '聊天截图页',
+    page: '第 {index} 页',
+    counterparty: '对方',
+    me: '我',
+    chatInputStatus: '聊天输入状态',
+    groupChatRoom: '群聊',
+    unknownSender: '未知发件人',
+    confirm: '确认',
+    item: '项目',
+    testimonyStamp: '公证',
+    testimonyTitle: '前护理员音频证言',
+    testimonySubtitle: '速记摘要 / 音频原件核对',
+    testimonyInfo: '证言信息',
+    witness: '证言人',
+    relation: '关系',
+    confidence: '可信度',
+    bias: '偏向度',
+    biasA: '偏A',
+    biasNeutral: '中立',
+    biasB: '偏B',
+    transcriptContent: '速记内容',
+    directWitness: '直接目击陈述',
+    hearsayIncluded: '含转述',
+    relatedRef: '相关参照',
+    previousFrame: '← 上一帧',
+    nextFrame: '下一帧 →',
+    logOut: '呼出',
+    logIn: '呼入·访问',
+    logMiss: '未接·变更',
+    callLogTitle: '通话记录台账',
+    recordLogTitle: '记录台账',
+    recordPages: '记录页面',
+    recordFilter: '记录筛选',
+    logSubtitle: '共{total}条，显示{shown}条 / {source}提交副本',
+    carrier: '通信商',
+    institution: '机构',
+    callStamp: '通信核验',
+    institutionStamp: '机构核验',
+    callLogAria: '通话记录',
+    visitLogAria: '访问及处理记录',
+    dateTime: '日期·时间',
+    category: '分类',
+    counterNumber: '对方·号码',
+    targetContent: '对象·内容',
+    callDurationMessage: '通话时间·消息',
+    duration: '耗时',
+    diaryFallback: '母亲的笔记本',
+    handwrittenCopy: '手写副本',
+    phoneOf: '{owner}的手机',
+    privacy: '公开范围',
+    comments: '评论',
+  },
+} satisfies Record<LocaleCode, Record<string, string>>
+
+function useViewerCopy() {
+  const { locale } = useI18n()
+  return VIEWER_COPY[locale] ?? VIEWER_COPY.ko
+}
+
+function formatCopy(template: string, values: Record<string, string | number>) {
+  return template.replace(/\{(\w+)\}/g, (_, key: string) => String(values[key] ?? ''))
+}
 
 function EvidenceDocumentShell({
   title,
@@ -26,6 +419,7 @@ function EvidenceDocumentShell({
   children: ReactNode
   footer?: ReactNode
 }) {
+  const copy = useViewerCopy()
   return (
     <div className={`pc-doc-shell pc-doc-shell--${variant}`}>
       <div className="pc-doc-paper">
@@ -34,8 +428,8 @@ function EvidenceDocumentShell({
         <span className="pc-doc-paper__serial" aria-hidden="true">COPY</span>
         <span className="pc-doc-stamp" aria-hidden="true">{stamp}</span>
         <header className="pc-doc-paper__header">
-          <span className="pc-doc-paper__eyebrow">증거 사본</span>
-          <h3>{title || '문서 사본'}</h3>
+          <span className="pc-doc-paper__eyebrow">{copy.evidenceCopy}</span>
+          <h3>{title || copy.documentCopy}</h3>
           {subtitle ? <p>{subtitle}</p> : null}
         </header>
         <div className="pc-doc-paper__content">
@@ -47,10 +441,10 @@ function EvidenceDocumentShell({
   )
 }
 
-function getDocumentStamp(title: string, fallback: string) {
-  if (/유서|유언|공증/.test(title)) return '원본대조'
-  if (/방문|기록|대장|로그/.test(title)) return '기관확인'
-  if (/송금|계좌|금융|영수/.test(title)) return '거래확인'
+function getDocumentStamp(title: string, fallback: string, copy: typeof VIEWER_COPY[LocaleCode]) {
+  if (/유서|유언|공증|will|notary|公証|遺言|公证|遗嘱/i.test(title)) return copy.originalCheck
+  if (/방문|기록|대장|로그|visit|record|log|訪問|記録|台帳|日志|记录|访问/i.test(title)) return copy.institutionCheck
+  if (/송금|계좌|금융|영수|transfer|account|bank|receipt|送金|口座|金融|領収|汇款|账户|金融|收据/i.test(title)) return copy.transactionCheck
   return fallback
 }
 
@@ -59,6 +453,7 @@ function getDocumentStamp(title: string, fallback: string) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
+  const copy = useViewerCopy()
   const [current, setCurrent] = useState(0)
   const sheet = sheets[current]
   if (!sheet) return null
@@ -69,13 +464,13 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
       <div className="pc-receipt-viewer__header">
         <div className="pc-receipt-viewer__header-copy">
           <span>RECEIPT BUNDLE</span>
-          <strong>영수증 {current + 1} / {sheets.length}</strong>
+          <strong>{formatCopy(copy.receiptItem, { current: current + 1, total: sheets.length })}</strong>
         </div>
-        <div className="pc-receipt-viewer__dots" aria-label="영수증 페이지 선택">
+        <div className="pc-receipt-viewer__dots" aria-label={copy.receiptPageSelect}>
           {sheets.map((_, i) => (
             <button
               key={i}
-              aria-label={`${i + 1}번째 영수증 보기`}
+              aria-label={formatCopy(copy.receiptView, { index: i + 1 })}
               className={i === current ? 'is-active' : ''}
               onClick={() => setCurrent(i)}
               type="button"
@@ -84,7 +479,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         </div>
       </div>
 
-      <div className="pc-receipt-strip" aria-label="영수증 묶음 목록">
+      <div className="pc-receipt-strip" aria-label={copy.receiptList}>
         {sheets.map((candidate, i) => (
           <button
             className={`pc-receipt-thumb${i === current ? ' is-active' : ''}${candidate.suspicious ? ' is-suspicious' : ''}`}
@@ -104,7 +499,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <span className="pc-receipt-paper__texture" aria-hidden="true" />
         <span className="pc-receipt-paper__perforation is-top" aria-hidden="true" />
         <span className="pc-receipt-paper__perforation is-bottom" aria-hidden="true" />
-        {sheet.suspicious ? <span className="pc-receipt-paper__stamp" aria-hidden="true">대조 필요</span> : null}
+        {sheet.suspicious ? <span className="pc-receipt-paper__stamp" aria-hidden="true">{copy.needsCompare}</span> : null}
 
         <header className="pc-receipt-paper__head">
           <div className="pc-receipt-paper__mark" aria-hidden="true">
@@ -123,10 +518,10 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <div className="pc-receipt-separator" aria-hidden="true" />
 
         <div className="pc-receipt-header-row">
-          <span>상품명</span>
-          <span>단가</span>
-          <span>수량</span>
-          <span>금액</span>
+          <span>{copy.productName}</span>
+          <span>{copy.unitPrice}</span>
+          <span>{copy.quantity}</span>
+          <span>{copy.amount}</span>
         </div>
 
         <div className="pc-receipt-item-list">
@@ -135,7 +530,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
               <div className="pc-receipt-item-row__name">
                 <span>{String(i + 1).padStart(2, '0')}</span>
                 <strong>{item.name}</strong>
-                {item.code ? <em>상품코드 {item.code}</em> : null}
+                {item.code ? <em>{copy.productCode} {item.code}</em> : null}
               </div>
               <span className="tabular-nums">{item.unitPrice}</span>
               <span className="tabular-nums">{item.qty}</span>
@@ -147,13 +542,13 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <div className="pc-receipt-separator" aria-hidden="true" />
 
         <div className="pc-receipt-total-row">
-          <span>합계</span><strong className="tabular-nums">{sheet.subtotal}</strong>
+          <span>{copy.subtotal}</span><strong className="tabular-nums">{sheet.subtotal}</strong>
         </div>
         <div className="pc-receipt-total-row is-muted">
-          <span>부가세</span><strong className="tabular-nums">{sheet.tax}</strong>
+          <span>{copy.tax}</span><strong className="tabular-nums">{sheet.tax}</strong>
         </div>
         <div className="pc-receipt-total-row is-final">
-          <span>결제금액</span><strong className="tabular-nums">{sheet.total}</strong>
+          <span>{copy.paymentAmount}</span><strong className="tabular-nums">{sheet.total}</strong>
         </div>
 
         <div className="pc-receipt-payment">
@@ -161,7 +556,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
           <div className="pc-receipt-barcode" aria-hidden="true">
             <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
           </div>
-          <small>원본 영수증 사본 · 조사 단계별 열람 기록</small>
+          <small>{copy.receiptFooter}</small>
         </div>
       </div>
 
@@ -171,14 +566,14 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
           onClick={() => setCurrent((p) => Math.max(0, p - 1))}
           type="button"
         >
-          ← 이전
+          {copy.previous}
         </button>
         <button
           disabled={current === sheets.length - 1}
           onClick={() => setCurrent((p) => Math.min(sheets.length - 1, p + 1))}
           type="button"
         >
-          다음 →
+          {copy.next}
         </button>
       </div>
     </div>
@@ -190,6 +585,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
+  const copy = useViewerCopy()
   const [filter, setFilter] = useState<'all' | 'suspicious'>('all')
   const filtered = filter === 'all' ? entries : entries.filter((e) => e.suspicious)
 
@@ -198,7 +594,7 @@ export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
       {/* Header */}
       <div className="flex items-center gap-2 mb-3">
         <span className="text-xs font-semibold px-2 py-1 rounded" style={{ background: 'rgba(92,201,122,0.1)', color: '#5cc97a' }}>GPS</span>
-        <span className="text-xs" style={{ color: '#4e4e5c' }}>블랙박스 GPS 로그 — {entries.length}건</span>
+        <span className="text-xs" style={{ color: '#4e4e5c' }}>{formatCopy(copy.gpsLogCount, { count: entries.length })}</span>
         <div className="ml-auto flex gap-1.5">
           {(['all', 'suspicious'] as const).map((f) => (
             <button
@@ -211,7 +607,7 @@ export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
               }}
               onClick={() => setFilter(f)}
             >
-              {f === 'all' ? '전체' : '주목'}
+              {f === 'all' ? copy.all : copy.flagged}
             </button>
           ))}
         </div>
@@ -221,7 +617,7 @@ export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
       <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
         <thead>
           <tr>
-            {['시각', '위치', '위도/경도', '속도'].map((h) => (
+            {[copy.time, copy.location, copy.coordinates, copy.speed].map((h) => (
               <th
                 key={h}
                 className="text-left text-xs font-semibold px-2"
@@ -265,31 +661,32 @@ export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function BankViewer({ rows }: { rows: BankRow[] }) {
+  const copy = useViewerCopy()
   const period = rows.length > 0
     ? `${rows[0].date} - ${rows[rows.length - 1].date}`
-    : '조회 기간 미상'
+    : copy.unknownPeriod
   const suspiciousCount = rows.filter((row) => row.suspicious).length
 
   return (
     <EvidenceDocumentShell
-      title="금융거래 내역 조회표"
-      subtitle={`${period} / 거래 원장 출력본`}
-      stamp="거래확인"
+      title={copy.bankTitle}
+      subtitle={formatCopy(copy.bankSubtitle, { period })}
+      stamp={copy.bankStamp}
       variant="bank"
-      footer={<span>중점 거래 {suspiciousCount}건 표시 · 제출용 사본</span>}
+      footer={<span>{formatCopy(copy.bankFooter, { count: suspiciousCount })}</span>}
     >
       <div className="pc-doc-bank-summary">
-        <span>조회 계좌</span>
-        <strong>제출자 보관 계좌</strong>
-        <span>표시 기준</span>
-        <strong>입출금·잔액 대조</strong>
+        <span>{copy.accountLookup}</span>
+        <strong>{copy.submittedAccount}</strong>
+        <span>{copy.displayBasis}</span>
+        <strong>{copy.debitCreditBalance}</strong>
       </div>
-      <div className="pc-doc-table pc-doc-table--bank" role="table" aria-label="금융거래 내역">
+      <div className="pc-doc-table pc-doc-table--bank" role="table" aria-label={copy.bankTable}>
         <div className="pc-doc-table__head" role="row">
-          <span>거래일</span>
-          <span>적요</span>
-          <span>거래금액</span>
-          <span>잔액</span>
+          <span>{copy.transactionDate}</span>
+          <span>{copy.description}</span>
+          <span>{copy.transactionAmount}</span>
+          <span>{copy.balance}</span>
         </div>
         {rows.map((r, i) => {
           const isNeg = r.amount.startsWith('-')
@@ -326,7 +723,8 @@ export function ChatViewer({
   pages?: ChatPage[]
   inputStatus?: string
 }) {
-  const pages = normalizeChatPages(header, messages, rawPages)
+  const copy = useViewerCopy()
+  const pages = normalizeChatPages(header, messages, rawPages, copy)
   const [currentPage, setCurrentPage] = useState(Math.max(0, pages.length - 1))
   useEffect(() => {
     setCurrentPage(Math.max(0, pages.length - 1))
@@ -335,7 +733,7 @@ export function ChatViewer({
   const page = pages[Math.min(currentPage, pages.length - 1)] ?? pages[0]
   const activeHeader = page?.header ?? header
   const activeMessages = page?.messages ?? messages
-  const contactLabel = resolveChatContactLabel(activeHeader, activeMessages)
+  const contactLabel = resolveChatContactLabel(activeHeader, activeMessages, copy)
   const isGroupChat = resolveIsGroupChat(activeHeader, activeMessages)
   const isKakaoChat = !isGroupChat && resolveIsKakaoChat(activeHeader)
   const isTelegramChat = resolveIsTelegramChat(activeHeader)
@@ -347,7 +745,7 @@ export function ChatViewer({
           <span className="pc-phone-chat__contact">{contactLabel}</span>
         </div>
         {pages.length > 1 ? (
-          <div className="pc-phone-chat__pager" aria-label="대화 캡처 페이지">
+          <div className="pc-phone-chat__pager" aria-label={copy.chatPages}>
             {pages.map((p, i) => (
               <button
                 key={`${p.label ?? 'page'}-${i}`}
@@ -355,7 +753,7 @@ export function ChatViewer({
                 type="button"
                 onClick={() => setCurrentPage(i)}
               >
-                {p.label ?? `${i + 1}쪽`}
+                {p.label ?? formatCopy(copy.page, { index: i + 1 })}
               </button>
             ))}
           </div>
@@ -385,7 +783,7 @@ export function ChatViewer({
           }
 
           const isLeft = m.side === 'left'
-          const sender = m.sender?.trim() || (isLeft ? '상대방' : '나')
+          const sender = m.sender?.trim() || (isLeft ? copy.counterparty : copy.me)
           const group = getMessageGroup(activeMessages, i)
           if (isGroupChat) {
             return (
@@ -438,7 +836,7 @@ export function ChatViewer({
         })}
         </div>
         {inputStatus ? (
-          <div className="pc-phone-chat__input-status" aria-label="채팅 입력 상태">
+          <div className="pc-phone-chat__input-status" aria-label={copy.chatInputStatus}>
             {inputStatus}
           </div>
         ) : null}
@@ -453,12 +851,12 @@ type ChatPage = {
   messages?: ChatMessage[]
 }
 
-function normalizeChatPages(header: string, messages: ChatMessage[], pages?: ChatPage[]): Array<{ label?: string; header: string; messages: ChatMessage[] }> {
+function normalizeChatPages(header: string, messages: ChatMessage[], pages: ChatPage[] | undefined, copy: Record<string, string>): Array<{ label?: string; header: string; messages: ChatMessage[] }> {
   if (Array.isArray(pages) && pages.length > 0) {
     return pages
       .filter((page) => Array.isArray(page.messages) && page.messages.length > 0)
       .map((page, index) => ({
-        label: page.label ?? `${index + 1}쪽`,
+        label: page.label ?? formatCopy(copy.page, { index: index + 1 }),
         header: page.header ?? header,
         messages: page.messages!,
       }))
@@ -499,7 +897,7 @@ function resolveIsGroupChat(header: string, messages: ChatMessage[]): boolean {
   return senders.size >= 3
 }
 
-function resolveChatContactLabel(header: string, messages: ChatMessage[]): string {
+function resolveChatContactLabel(header: string, messages: ChatMessage[], copy: Record<string, string>): string {
   if (resolveIsGroupChat(header, messages)) {
     const quoted = header.match(/[“"']([^“"']+)[”"']/)?.[1]
     if (quoted) return quoted
@@ -507,7 +905,7 @@ function resolveChatContactLabel(header: string, messages: ChatMessage[]): strin
       .replace(/카카오톡|단체채팅|오픈채팅|대화\s*기록|발췌|확대|—.*$/g, '')
       .replace(/[()]/g, '')
       .trim()
-    return compact || '단체 대화방'
+    return compact || copy.groupChatRoom
   }
   const phoneMatch = header.match(/010-\*{4}-\d{4}/)
   if (phoneMatch) return phoneMatch[0]
@@ -523,8 +921,8 @@ function resolveChatContactLabel(header: string, messages: ChatMessage[]): strin
       .trim()
     if (compact) return compact
   }
-  if (/발신자\s*미상/.test(header)) return '발신자 미상'
-  return '발신자 미상'
+  if (/발신자\s*미상/.test(header)) return copy.unknownSender
+  return copy.unknownSender
 }
 
 function getSenderInitial(sender: string): string {
@@ -566,11 +964,12 @@ function buildGroupAvatarStack(messages: ChatMessage[]): ReactNode {
 export function ContractViewer({ title, subtitle, rows, signature }: {
   title: string; subtitle: string; rows: ContractRow[]; signature?: string
 }) {
+  const copy = useViewerCopy()
   return (
     <EvidenceDocumentShell
       title={title}
       subtitle={subtitle}
-      stamp={getDocumentStamp(title, '확인')}
+      stamp={getDocumentStamp(title, copy.confirm, copy)}
       variant="contract"
       footer={signature ? <span>{signature}</span> : null}
     >
@@ -580,7 +979,7 @@ export function ContractViewer({ title, subtitle, rows, signature }: {
             key={`${r.date}-${i}`}
             className={`pc-doc-form__row${r.missing ? ' is-focus' : ''}${r.amount ? '' : ' has-no-amount'}`}
           >
-            <span className="pc-doc-form__label">{r.date || '항목'}</span>
+            <span className="pc-doc-form__label">{r.date || copy.item}</span>
             <span className="pc-doc-form__content">{r.content}</span>
             {r.amount ? <span className="pc-doc-form__amount tabular-nums">{r.amount}</span> : null}
           </div>
@@ -606,7 +1005,9 @@ function splitTestimonyTranscript(value: string) {
 }
 
 export function TestimonyViewer({ data }: { data: TestimonyData }) {
+  const copy = useViewerCopy()
   const transcriptLines = splitTestimonyTranscript(data.quote)
+  const biasLabels: Record<string, string> = { a: copy.biasA, neutral: copy.biasNeutral, b: copy.biasB }
 
   return (
     <div className="pc-testimony-transcript-viewer">
@@ -614,25 +1015,25 @@ export function TestimonyViewer({ data }: { data: TestimonyData }) {
         <div className="pc-testimony-paper__texture" aria-hidden="true" />
         <span className="pc-testimony-paper__clip" aria-hidden="true" />
         <span className="pc-testimony-paper__serial" aria-hidden="true">COPY</span>
-        <span className="pc-testimony-paper__stamp" aria-hidden="true">공증</span>
+        <span className="pc-testimony-paper__stamp" aria-hidden="true">{copy.testimonyStamp}</span>
 
         <header className="pc-testimony-paper__header">
-          <span>공증 녹취록 사본</span>
-          <h3>전 요양보호사 음성증언</h3>
-          <p>속기사 녹취 요약 / 음성 원본 대조</p>
+          <span>{copy.evidenceCopy}</span>
+          <h3>{copy.testimonyTitle}</h3>
+          <p>{copy.testimonySubtitle}</p>
         </header>
 
-        <section className="pc-testimony-paper__meta" aria-label="증언 정보">
-          <div><span>증언자</span><strong>{data.witnessName}</strong></div>
-          <div><span>관계</span><strong>{data.witnessDesc}</strong></div>
-          <div><span>확실도</span><strong>{data.confidenceLabel}</strong></div>
-          <div><span>편향도</span><strong>{BIAS_LABELS[data.bias] ?? data.biasLabel}</strong></div>
+        <section className="pc-testimony-paper__meta" aria-label={copy.testimonyInfo}>
+          <div><span>{copy.witness}</span><strong>{data.witnessName}</strong></div>
+          <div><span>{copy.relation}</span><strong>{data.witnessDesc}</strong></div>
+          <div><span>{copy.confidence}</span><strong>{data.confidenceLabel}</strong></div>
+          <div><span>{copy.bias}</span><strong>{biasLabels[data.bias] ?? data.biasLabel}</strong></div>
         </section>
 
         <section className="pc-testimony-paper__body">
           <div className="pc-testimony-paper__body-head">
-            <span>속기사 녹취 내용</span>
-            <small>{data.directWitness ? '직접 목격 진술' : '전언 포함'}</small>
+            <span>{copy.transcriptContent}</span>
+            <small>{data.directWitness ? copy.directWitness : copy.hearsayIncluded}</small>
           </div>
           <div className="pc-testimony-paper__lines">
             {(transcriptLines.length > 0 ? transcriptLines : [data.quote]).map((line, index) => (
@@ -645,7 +1046,7 @@ export function TestimonyViewer({ data }: { data: TestimonyData }) {
         </section>
 
         <footer className="pc-testimony-paper__footer">
-          <span>관련 참조</span>
+          <span>{copy.relatedRef}</span>
           <strong>{data.relatedRef}</strong>
         </footer>
       </article>
@@ -658,6 +1059,7 @@ export function TestimonyViewer({ data }: { data: TestimonyData }) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function CCTVViewer({ events }: { events: CCTVEvent[] }) {
+  const copy = useViewerCopy()
   const [current, setCurrent] = useState(0)
   const ev = events[current]
 
@@ -781,7 +1183,7 @@ export function CCTVViewer({ events }: { events: CCTVEvent[] }) {
           disabled={current === 0}
           onClick={() => setCurrent((p) => Math.max(0, p - 1))}
         >
-          ← 이전 프레임
+          {copy.previousFrame}
         </button>
         <button
           className="text-sm px-4 py-2 rounded-lg transition-colors duration-150"
@@ -794,7 +1196,7 @@ export function CCTVViewer({ events }: { events: CCTVEvent[] }) {
           disabled={current === events.length - 1}
           onClick={() => setCurrent((p) => Math.min(events.length - 1, p + 1))}
         >
-          다음 프레임 →
+          {copy.nextFrame}
         </button>
       </div>
     </div>
@@ -817,21 +1219,23 @@ const LOG_TYPE_FALLBACK_LABELS: Record<string, string> = {
   miss: '부재중·변경',
 }
 
-function buildLogFilterOptions(rows: LogRow[]) {
+function buildLogFilterOptions(rows: LogRow[], copy: Record<string, string>) {
+  const fallbackLabels: Record<string, string> = { out: copy.logOut, in: copy.logIn, miss: copy.logMiss }
   const types = new Map<string, string>()
   rows.forEach((row) => {
     if (!types.has(row.type)) {
-      types.set(row.type, row.typeLabel || LOG_TYPE_FALLBACK_LABELS[row.type] || row.type)
+      types.set(row.type, row.typeLabel || fallbackLabels[row.type] || row.type)
     }
   })
   return [
-    { key: 'all', label: '전체' },
+    { key: 'all', label: copy.all },
     ...Array.from(types, ([key, label]) => ({ key, label })),
   ]
 }
 
 export function LogViewer({ rows, note, title, pages: rawPages }: { rows: LogRow[]; note: string; title?: string; pages?: LogPage[] }) {
-  const pages = normalizeLogPages(title, rows, note, rawPages)
+  const copy = useViewerCopy()
+  const pages = normalizeLogPages(title, rows, note, rawPages, copy)
   const [currentPage, setCurrentPage] = useState(Math.max(0, pages.length - 1))
   const [filter, setFilter] = useState<string>('all')
   useEffect(() => {
@@ -843,18 +1247,18 @@ export function LogViewer({ rows, note, title, pages: rawPages }: { rows: LogRow
   const activeRows = page?.rows ?? rows
   const activeNote = page?.note ?? note
   const activeTitle = page?.title ?? title
-  const filterOptions = buildLogFilterOptions(activeRows)
+  const filterOptions = buildLogFilterOptions(activeRows, copy)
 
   const filtered = filter === 'all' ? activeRows : activeRows.filter((r) => r.type === filter)
   const logTitle = activeTitle && /통화|전화/.test(activeTitle)
-    ? '통화 기록 대장'
-    : activeTitle || '기록 대장'
+    ? copy.callLogTitle
+    : activeTitle || copy.recordLogTitle
   const isCallLog = /통화|전화|발신|수신|부재중/.test(`${logTitle} ${activeRows.map((r) => r.typeLabel).join(' ')}`)
 
   return (
     <div>
       {pages.length > 1 ? (
-        <div className="pc-doc-toolrow pc-doc-toolrow--pages" role="tablist" aria-label="기록 페이지">
+        <div className="pc-doc-toolrow pc-doc-toolrow--pages" role="tablist" aria-label={copy.recordPages}>
           {pages.map((p, i) => (
             <button
               key={`${p.label ?? 'page'}-${i}`}
@@ -866,12 +1270,12 @@ export function LogViewer({ rows, note, title, pages: rawPages }: { rows: LogRow
               role="tab"
               type="button"
             >
-              {p.label ?? `${i + 1}쪽`}
+              {p.label ?? formatCopy(copy.page, { index: i + 1 })}
             </button>
           ))}
         </div>
       ) : null}
-      <div className="pc-doc-toolrow" role="tablist" aria-label="기록 필터">
+      <div className="pc-doc-toolrow" role="tablist" aria-label={copy.recordFilter}>
         {filterOptions.map((f) => (
           <button
             key={f.key}
@@ -887,17 +1291,17 @@ export function LogViewer({ rows, note, title, pages: rawPages }: { rows: LogRow
 
       <EvidenceDocumentShell
         title={logTitle}
-        subtitle={`${activeRows.length}건 중 ${filtered.length}건 표시 / ${isCallLog ? '통신사' : '기관'} 제출 사본`}
-        stamp={isCallLog ? '통신확인' : '기관확인'}
+        subtitle={formatCopy(copy.logSubtitle, { total: activeRows.length, shown: filtered.length, source: isCallLog ? copy.carrier : copy.institution })}
+        stamp={isCallLog ? copy.callStamp : copy.institutionStamp}
         variant="ledger"
         footer={activeNote ? <span>{activeNote}</span> : null}
       >
-        <div className={`pc-doc-table pc-doc-table--ledger${isCallLog ? ' is-call-log' : ''}`} role="table" aria-label={isCallLog ? '통화 기록' : '방문 및 처리 기록'}>
+        <div className={`pc-doc-table pc-doc-table--ledger${isCallLog ? ' is-call-log' : ''}`} role="table" aria-label={isCallLog ? copy.callLogAria : copy.visitLogAria}>
           <div className="pc-doc-table__head" role="row">
-            <span>일자·시각</span>
-            <span>분류</span>
-            <span>{isCallLog ? '상대·번호' : '대상·내용'}</span>
-            <span>{isCallLog ? '통화시간·메시지' : '소요시간'}</span>
+            <span>{copy.dateTime}</span>
+            <span>{copy.category}</span>
+            <span>{isCallLog ? copy.counterNumber : copy.targetContent}</span>
+            <span>{isCallLog ? copy.callDurationMessage : copy.duration}</span>
           </div>
           {filtered.map((r, i) => {
             const typeStyle = LOG_TYPE_STYLES[r.type] ?? LOG_TYPE_STYLES.out
@@ -933,12 +1337,12 @@ export function LogViewer({ rows, note, title, pages: rawPages }: { rows: LogRow
   )
 }
 
-function normalizeLogPages(title: string | undefined, rows: LogRow[], note: string, pages?: LogPage[]): LogPage[] {
+function normalizeLogPages(title: string | undefined, rows: LogRow[], note: string, pages: LogPage[] | undefined, copy: Record<string, string>): LogPage[] {
   if (Array.isArray(pages) && pages.length > 0) {
     return pages
       .filter((page) => Array.isArray(page.rows) && page.rows.length > 0)
       .map((page, index) => ({
-        label: page.label ?? `${index + 1}쪽`,
+        label: page.label ?? formatCopy(copy.page, { index: index + 1 }),
         title: page.title ?? title,
         rows: page.rows,
         note: page.note ?? note,
@@ -952,6 +1356,7 @@ function normalizeLogPages(title: string | undefined, rows: LogRow[], note: stri
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function DeviceViewer({ ownerName, sections }: { ownerName: string; sections: DeviceSection[] }) {
+  const copy = useViewerCopy()
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({})
 
   const toggle = useCallback((id: string) => {
@@ -968,9 +1373,9 @@ export function DeviceViewer({ ownerName, sections }: { ownerName: string; secti
           <header className="pc-diary-paper__header">
             <div>
               <span className="pc-diary-paper__label">DIARY NOTEBOOK</span>
-              <strong>{ownerName || '어머니의 공책'}</strong>
+              <strong>{ownerName || copy.diaryFallback}</strong>
             </div>
-            <span>자필 사본</span>
+            <span>{copy.handwrittenCopy}</span>
           </header>
           <div className="pc-diary-paper__body">
             {sections.map((section) => (
@@ -1010,7 +1415,7 @@ export function DeviceViewer({ ownerName, sections }: { ownerName: string; secti
         style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.04)' }}
       >
         <span>📱</span>
-        {ownerName}의 휴대폰
+        {formatCopy(copy.phoneOf, { owner: ownerName })}
       </div>
 
       {/* Sections */}
@@ -1082,6 +1487,7 @@ export function DeviceViewer({ ownerName, sections }: { ownerName: string; secti
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function SNSViewer({ data }: { data: SNSData }) {
+  const copy = useViewerCopy()
   // Highlight hashtags in text
   const renderText = (text: string) => {
     const parts = text.split(/(#\S+)/g)
@@ -1116,7 +1522,7 @@ export function SNSViewer({ data }: { data: SNSData }) {
 
         {/* Privacy scope */}
         <div className="text-xs mb-3 pl-11" style={{ color: '#4e4e5c' }}>
-          🔒 공개범위: {data.privacy}
+          🔒 {copy.privacy}: {data.privacy}
         </div>
 
         {/* Text */}
@@ -1135,7 +1541,7 @@ export function SNSViewer({ data }: { data: SNSData }) {
       {/* Comments */}
       <div className="mb-4">
         <div className="text-sm font-bold mb-2.5 flex items-center gap-1.5" style={{ color: '#a0a0b0' }}>
-          💬 댓글
+          💬 {copy.comments}
         </div>
         {data.comments.map((c, i) => (
           <div

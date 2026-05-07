@@ -256,7 +256,10 @@ function validateGeneratedCaseOverlay(caseId, locale) {
   registerSidecar(overlayPath, overlay, locale, caseId)
   assertEqual(overlay.caseId, caseId, `${overlayPath}: caseId`)
   assertEqual(overlay.overlayKind, 'generatedCaseSurface', `${overlayPath}: overlayKind`)
-  walkStrings(overlay, (value, pointer) => validateOptionalText(value, `${overlayPath}:${pointer}`, locale, caseId))
+  const isFullGeneratedCaseOverlay = overlay.overlayScope === 'full'
+  walkStrings(overlay, (value, pointer) => validateOptionalText(value, `${overlayPath}:${pointer}`, locale, caseId, {
+    skipCaseLexemes: isFullGeneratedCaseOverlay,
+  }))
 }
 
 function collectAngleVariantIds(entries, makeKey) {

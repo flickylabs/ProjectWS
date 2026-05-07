@@ -1,80 +1,2444 @@
 {
   "caseId": "family-01",
+  "locale": "en",
   "overlayKind": "generatedCaseSurface",
+  "overlayScope": "full",
   "meta": {
-    "title": "The Will of a Mother with Dementia"
-  },
-  "context": {
-    "description": "A mother in late-stage dementia left a will that splits the estate 60% to the younger son and 40% to the elder. The elder son, Yoon Tae-seong, who lived with their mother and cared for her, refuses to accept the ratio. The younger son keeps his composure to the very end.",
-    "triggerAmplifier": "Repeated visits, a switched care worker, and a notarised copy that does not match the handwritten draft are stacked one over the other. At first the suspicion runs straight at the younger son's influence over their mother's final wishes; the more clues are uncovered, the more the picture shifts, and what neither side has spoken about begins to surface."
+    "title": "Dementia mother's will",
+    "anchorTruth": "The 60:40 notarized copy remained that ratio from the beginning, but a separate handwritten practice copy, old account flows, and mother's diary re-establish the context of the will change.",
+    "emotionalBait": "Yoon Tae-seong, who had been disapproving of his younger brother all his life, breaks down when he sees that his share is 40 percent in the will left by his mother with dementia. My younger brother remains calm until the end. So it looks more suspicious.",
+    "resolutionDilemma": "The responsibility for tampering with the will, the mother's ability to make decisions, and the long-standing burden hidden between the siblings must be judged together.",
+    "triggerAmplifier": "At first, the suicide note rate and nursing home visit records seem like Yoon Jeong-hoo's intervention. However, when notary notes, handwritten practice books, old account flows, and mother's diary are opened one after another, the case goes beyond a simple inheritance dispute."
   },
   "duo": {
     "partyA": {
-      "name": "Yoon Tae-seong",
-      "occupation": "owner of a kitchen-furniture factory"
+      "name": "Taeseong Yoon",
+      "occupation": "Kitchen furniture factory representative",
+      "speechStyle": "He raises his voice to suppress others and asserts his position as the older brother first. When things get at a disadvantage, he tries to neutralize the question itself by belittling his younger brother's character.",
+      "fear": "The collapse of my identity, which I believed my whole life as the eldest son — that's what I'm afraid of.",
+      "dailyRoutine": "He processed orders at the factory and visited his mother's house in the evenings, maintaining a lifestyle that he said he took care of.",
+      "sensitivePoints": [
+        "eldest son identity",
+        "Factory crisis and 300 million won support history",
+        "birth secret"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "When things get at a disadvantage, he turns the issue around by citing his seniority, saying, “I lived with my older brother.”"
+        },
+        {
+          "pattern": "He first tries to undermine the other person's trust by bringing up his younger brother's personality or past."
+        },
+        {
+          "pattern": "When emotions arise, the voice becomes louder, making it difficult for the other person to continue speaking."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "Jeonghuya",
+        "toJudge": "my brother",
+        "angry": "Yoon Jeong-hoo!"
+      }
     },
     "partyB": {
-      "name": "Yoon Jung-hoo",
-      "occupation": "auto-parts shop operator"
-    }
+      "name": "Yoon Jeong-hoo",
+      "occupation": "Auto parts store operation",
+      "speechStyle": "Suppress your emotions as much as possible and only state the facts briefly. It looks calm, but that calmness actually raises suspicion. I try not to reveal my true feelings until the end.",
+      "fear": "My brother finding out my birth secret — that's scary.",
+      "dailyRoutine": "While running the store, he sent money to his mother whenever he had time, and helped pay regular subsidies and hospital expenses without his brother's knowledge.",
+      "sensitivePoints": [
+        "Fact of will manipulation",
+        "old secret support",
+        "My brother's birth secret"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "When asked key questions, narrow down your answers and be defensive without showing any emotion."
+        },
+        {
+          "pattern": "They choose silence over lies, and hide the truth by not speaking."
+        },
+        {
+          "pattern": "The first thing that leaks out is that he did it because he was afraid the other person would collapse."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "brother",
+        "toJudge": "my brother",
+        "angry": "Taeseong Yoon!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "description": "As to who my mother cared for more when she was alive, the memories of the two brothers are completely opposite.",
+        "distortionDirection": "Yoon Tae-seong remembers that he should receive more since he took care of it, and Yoon Jeong-hu does not tell her, knowing that his mother originally intended to leave 90 to him."
+      },
+      {
+        "id": "ledger-2",
+        "description": "Yoon Tae-seong has no idea about the regular support money that Jeong-hoo Yoon sent to his mother's bank account for a long time, and the 300 million won that was transferred through Tae-seong Yoon's mother's bank account during the factory crisis."
+      },
+      {
+        "id": "ledger-3",
+        "description": "Yoon Tae-seong's birth secret - only B knows that he is not his father's biological son."
+      },
+      {
+        "id": "ledger-4",
+        "description": "Both sides know that the will was changed 60:40. However, Taeseong Yoon does not yet know the exact ratio of separate handwritten practice books.",
+        "distortionDirection": "Yoon Tae-seong concludes that the 60:40 ratio is the result of Yoon Jeong-hoo increasing his share."
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "w-1",
+        "name": "Choi Bok-soon",
+        "knowledgeScope": "While working as a caregiver, I personally saw Jeong-hoo Yoon reading a piece of paper to his mother and being careful to finish it before his brother came.",
+        "surfaceKnowledge": "He is a third-party witness who directly witnessed the actions related to the will by his mother's side in her later years.",
+        "witnessProfile": {
+          "occupation": "Former nursing care worker",
+          "relationToA": "We don't know each other.",
+          "relationToB": "I know him through my mother.",
+          "speechStyle": "I try to carefully trace my memories and tell only what I saw.",
+          "addressJudge": "Your Honor",
+          "addressA": "The eldest son",
+          "addressB": "The younger son",
+          "hiddenAgenda": "They are careful that their responsibility may be raised during the process of replacing the caregiver."
+        }
+      },
+      {
+        "id": "w-2",
+        "name": "Youngsu Kim",
+        "knowledgeScope": "I know that on the day of the notarization, there was an observation left in the notary's memo about the mother's condition, confusion over numbers, and Yoon Jeong-hoo rushing the process.",
+        "surfaceKnowledge": "He is a third-party witness who personally confirmed the memo record on the day of notarization.",
+        "witnessProfile": {
+          "occupation": "Notary Public Notes",
+          "relationToA": "We don't know each other.",
+          "relationToB": "I only know him as someone who submitted documents.",
+          "speechStyle": "Speak accurately in a businesslike manner and answer based on records.",
+          "addressJudge": "Your Honor",
+          "addressA": "The eldest son",
+          "addressB": "Those who submitted documents",
+          "hiddenAgenda": "A line is drawn for fear of exposing the lack of verification in the notarization process."
+        }
+      },
+      {
+        "id": "w-3",
+        "name": "Soonae Park",
+        "knowledgeScope": "He is an old friend of my mother's. During her lifetime, my mother once said, 'Jeong Hu sends me money every month,' and 'Taesung used Jeong Hu's money to stop the factory when it was in trouble.'",
+        "surfaceKnowledge": "This is an acquaintance witness who heard the mother's true feelings about her two sons.",
+        "witnessProfile": {
+          "occupation": "retirement",
+          "relationToA": "I have known Taeseong since I was young as he is my mother's friend.",
+          "relationToB": "I only know it through my mother’s words.",
+          "speechStyle": "When I talk about my mother, I get emotional, and when I reminisce, I may exaggerate.",
+          "addressJudge": "Your Honor",
+          "addressA": "Taeseong",
+          "addressB": "Jeonghu",
+          "hiddenAgenda": "He tries to vaguely pass on whether he knew his mother's secret (birth secret)."
+        }
+      }
+    ]
+  },
+  "context": {
+    "description": "In the will left by the mother with dementia, it is written that the younger brother is 60% and the older brother 40%. Yoon Tae-seong, who prides himself on having lived his entire life taking care of his mother, becomes angry, while his younger brother remains calm until the end.",
+    "triggerAmplifier": "At first, the suicide note rate and nursing home visit records seem like Yoon Jeong-hoo's intervention. However, when notary notes, handwritten practice books, old account flows, and mother's diary are opened one after another, the case goes beyond a simple inheritance dispute.",
+    "caseName": "Dementia mother's will"
   },
   "disputes": [
     {
       "id": "d-1",
-      "name": "Will drafting and capacity to decide"
+      "name": "Will writing and judgment skills",
+      "truthDescription": "Yoon Jeong-hoo visited his mother frequently during her last years and discussed the contents of her will. Although the replacement of the caregiver overlapped with the time of notarization, the mother's wishes were not completely ignored.",
+      "mediationLink": "Legality of the process of writing a will in later life",
+      "judgmentStatement": "Although the mother's ability to make decisions was not completely lost, Yoon Jeong-hoo's intervention leaves questions of legality.",
+      "verdictOptions": {
+        "wrong": "The mother wrote the will under pressure from her younger brother, and was in a state where she was unable to make a proper decision.",
+        "partial": "Although there are questions about the mother's cognitive ability, it is difficult to conclude that it is completely invalid.",
+        "truth": "In his later years, Yoon Jeong-hu visited frequently and discussed her will, but he did not completely ignore his mother's wishes.",
+        "defer": "It is impossible to confirm whether the mother has the ability to make judgments. I reserve it."
+      }
     },
     {
       "id": "d-2",
-      "name": "Difference between the notarised will and a separate document"
+      "name": "Difference between a notarized will and a separate document",
+      "truthDescription": "The notarized copy remained 60:40 from the beginning, and traces of consideration for a different ratio from the notarized copy can be seen in the separate handwritten will practice copy. Yoon Jeong-hoo remains responsible for tampering with the will, but it was not a manipulation to get more.",
+      "mediationLink": "Relationship between notarized will and handwritten practice copy",
+      "judgmentStatement": "The difference in the ratio of 60:40 between the notarized copy and the separate handwritten copy makes it possible to separate the responsibility for tampering with the will and the motive.",
+      "v3UnlockPlan": {
+        "runtimeRule": "In d-1, if a crack in the notarization process and mother's status is revealed, it will be lifted.",
+        "authoredRule": "Have the notary public memo and handwritten practice copy separated and checked.",
+        "summary": "Check the differences between the notarized copy of 60:40 itself and the separate handwritten practice copy."
+      },
+      "verdictOptions": {
+        "wrong": "My younger brother manipulated the notarized copy to increase his share.",
+        "partial": "There is a difference between a notarized copy and a separate document, but motive and responsibility must be further confirmed.",
+        "truth": "The notarized copy was 60:40, and the exact ratio information can only be confirmed in the separate handwritten practice copy. Yoon Jeong-hoo's responsibility and the direction of his manipulation must be judged separately.",
+        "defer": "It is still difficult to determine the relationship between the notarized copy and the separate document. I reserve it."
+      }
     },
     {
       "id": "d-3",
-      "name": "Source of the long-running support"
+      "name": "Old sources of support",
+      "truthDescription": "Yoon Jeong-hoo sent regular monthly support money to his mother's bank account, and also sent 300 million won through his mother's bank account during a crisis at his brother's factory. Yoon Tae-seong believed that the money was his mother's money.",
+      "mediationLink": "Source and delivery order of support through mother's bank account",
+      "judgmentStatement": "The key flow of support known as mother's money was that Yoon Jeong-hoo's money was delivered through his mother's bank account.",
+      "v3UnlockPlan": {
+        "runtimeRule": "The ban will be lifted if the details of the will change are revealed in d-2.",
+        "authoredRule": "The background of the will ratio is confirmed by old account flows.",
+        "summary": "Check the source and delivery order of the support that went through your mother’s bank account."
+      },
+      "verdictOptions": {
+        "wrong": "My younger brother controlled my mother under the pretext of receiving regular support money.",
+        "partial": "Although the deposit flow is visible, only part of the source and purpose of delivery has been confirmed.",
+        "truth": "It is confirmed that Yoon Jeong-hoo's money was passed through his mother's bank account to Yoon Tae-seong.",
+        "defer": "It is difficult to determine the source and nature of account flows. I reserve it."
+      }
     },
     {
       "id": "d-4",
-      "name": "Family records and the reasons for silence"
+      "name": "Family history and reasons for silence",
+      "truthDescription": "There is a record in her mother's diary that Yoon Jeong-hu was her half-child, and that she felt more drawn to him as her identical child. Yoon Jeong-hoo remained silent for fear that this fact would bring down his brother.",
+      "mediationLink": "Mother's Diary and Brother's Silence",
+      "judgmentStatement": "There was a reason for Yoon Jeong-hoo's silence because he did not want to directly reveal sensitive circumstances in the family records to his brother.",
+      "v3UnlockPlan": {
+        "runtimeRule": "Unlocks when the source of old support is confirmed",
+        "authoredRule": "The reason for hiding the source of the money continues through the mother's diary.",
+        "summary": "Check the sensitive circumstances and reasons for silence in the family records."
+      },
+      "verdictOptions": {
+        "wrong": "The younger brother tried to exclude his older brother from the inheritance by taking advantage of family circumstances.",
+        "partial": "Although it appears to be a sensitive family situation, the relationship with the will change needs to be further confirmed.",
+        "truth": "Due to family circumstances in his mother's diary, Yoon Jeong-hoo was unable to tell his brother straight away, and his silence was linked to the motive for changing the will.",
+        "defer": "It is difficult to determine the relationship between family records and silence. I reserve it."
+      }
     },
     {
       "id": "d-5",
-      "name": "The mother's hidden wishes"
+      "name": "mother's hidden heart",
+      "truthDescription": "Yoon Tae-seong took the inheritance for granted as a reward for caring, and Yoon Jeong-hu tried to organize his mother's will and documents on his behalf for the sake of protecting his older brother. Neither of them could leave their mother's will as is.",
+      "mediationLink": "Mother's Will and Two Sons' Responsibilities",
+      "judgmentStatement": "The two brothers implemented their mother's wishes according to their own standards in different ways.",
+      "v3UnlockPlan": {
+        "runtimeRule": "Unlocked when both d-3 and d-4 are sufficiently revealed.",
+        "authoredRule": "After all old support and family records are revealed, the final accountability structure opens up.",
+        "summary": "Compare the final responsibility for who carried out the mother's will and how."
+      },
+      "verdictOptions": {
+        "wrong": "My younger brother tried to monopolize the inheritance by using my mother.",
+        "partial": "Both had problems in their relationship with their mothers.",
+        "truth": "Yoon Tae-seong took the inheritance for granted, and Yoon Jeong-hu tried to rewrite his mother's will, saying he was protecting his older brother. Neither of them could leave their mother's will as is.",
+        "defer": "It is difficult to judge the mother's hidden feelings. I reserve it."
+      }
     }
   ],
   "evidence": [
     {
       "id": "e-1",
-      "surfaceName": "Copy of the document showing the distribution ratio",
-      "surfaceDescription": "A copy of the mother's will exists."
+      "name": "60:40 Copy of will",
+      "surfaceName": "Copy of documents with distribution ratio",
+      "description": "A copy of the will written two months before my mother’s death. It is written as 60% Yoon Jeong-hoo and 40% Yoon Tae-seong and has a notarized seal.",
+      "surfaceDescription": "A copy of my mother's will exists.",
+      "investigationResults": {
+        "request_original": "It is a copy of the will with a notarized seal. The inheritance ratio is written as 60% for Yoon Jeong-hoo and 40% for Yoon Tae-seong.",
+        "check_metadata": "The notarization date is 2025.11.05, which is close to the time of my mother’s terminal care. Judgment skills and writing procedures are both issues.",
+        "restore_context": "If you just look at this copy, it looks like a final will. You need to keep track of whether there were other documents before or after the same day."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please check the notarization records for a copy of this will."
+          },
+          "label": "Check original"
+        },
+        {
+          "question": {
+            "text": "Please compare the date of writing with the mother's condition."
+          },
+          "label": "viewpoint contrast",
+          "unlockHint": "By checking the notarization date, you can see the timing of treatment and the writing process."
+        },
+        {
+          "question": {
+            "text": "Please find if there were any documents prior to this will."
+          },
+          "label": "Previous view tracking",
+          "unlockHint": "By contrasting the viewpoints, we can ask why this copy looked like the final version."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Please explain what was most unfair to you when you first saw this will.",
+          "implication": "Yoon Tae-seong sees the fact that he, the eldest son, has 40% as a trace of Yoon Jeong-hoo's intervention."
+        },
+        "b": {
+          "questionAngle": "Please explain your understanding of the proportions and writing process of this will.",
+          "implication": "It must be investigated whether Yoon Jeong-hoo was close to the process of writing the will."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the existence of a copy of the will and the notarized stamp are visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "A set ratio and the roles of the two heirs are visible."
+        },
+        {
+          "id": "original",
+          "summary": "Check the date of creation, notary public, property items, and full text."
+        },
+        {
+          "id": "context",
+          "summary": "Narrow the direction of suspicion by matching the timing of medical treatment and the notarization process."
+        },
+        {
+          "id": "established",
+          "summary": "The validity of the notarized copy and the existence of other documents are judged separately."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Taeseong Yoon submitted a copy of his notarized will."
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Check the notarization number and date of creation against agency records."
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "The notary stamp and receipt record match."
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Yoon Jeong-hoo's side disputes the meaning of the previous document over the possibility of its existence."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "The copy itself is authentic, but the final doctor's interpretation requires additional information."
+        }
+      ],
+      "meta": {
+        "name": "60:40 Copy of will",
+        "trustLabel": "Normal",
+        "sourceLabel": "institution",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "60:40 Copy of will",
+          "trustLabel": "Normal",
+          "sourceLabel": "institution",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Public Disclosure"
+        },
+        "contract": {
+          "title": "will",
+          "subtitle": "Notary Office No. 2026-0183 — November 5, 2025",
+          "rows": [
+            {
+              "date": "testator",
+              "content": "Yoon ○○ (mother, born in 1948)"
+            },
+            {
+              "date": "heir 1",
+              "content": "Yoon Jeong-hoo (second son) — 60% of total assets"
+            },
+            {
+              "date": "heir 2",
+              "content": "Yoon Tae-seong (eldest son) — 40% of total assets"
+            },
+            {
+              "date": "real estate",
+              "content": "Apartment, 24 ○○-ro, Mapo-gu",
+              "amount": "Market value approximately 400 million"
+            },
+            {
+              "date": "deposit",
+              "content": "○○Bank term deposit and ordinary deposit",
+              "amount": "About 120 million won"
+            },
+            {
+              "date": "guitar",
+              "content": "Precious metals and personal property",
+              "amount": "Not calculated"
+            },
+            {
+              "date": "notarization",
+              "content": "Notary public Bae ○○ present / 2 witnesses present"
+            },
+            {
+              "date": "Remarks",
+              "content": "“I deserve it because Jeonghu took care of me until the end.”"
+            }
+          ],
+          "signature": "Testator: Yoon ○○ (Seal) — Notary Public: Bae ○○ — Witnesses: Kim ○○, Park ○○"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "60:40 Copy of will",
+            "trustLabel": "Normal",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Certified Copy and Proportions",
+            "redactions": [
+              "Part of the heir's real name"
+            ]
+          },
+          "contract": {
+            "title": "copy of will",
+            "subtitle": "Notary office receipt — early November 2025",
+            "rows": [
+              {
+                "date": "testator",
+                "content": "Yoon ○○ (mother)"
+              },
+              {
+                "date": "heir 1",
+                "content": "Second son ○○○ — 60% of total assets"
+              },
+              {
+                "date": "heir 2",
+                "content": "Eldest son ○○○ — 40% of total assets"
+              },
+              {
+                "date": "notarization",
+                "content": "Notary stamp confirmation"
+              }
+            ],
+            "signature": "Testator: Yoon ○○ (Seal) — Notary Public: Bae ○○"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "60:40 Copy of will",
+            "trustLabel": "Normal",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Creation date and property items",
+            "redactions": [
+              "Part of detailed address"
+            ]
+          },
+          "contract": {
+            "title": "copy of will",
+            "subtitle": "Notary Office No. 2026-0183 — November 5, 2025",
+            "rows": [
+              {
+                "date": "testator",
+                "content": "Yoon ○○ (mother, born in 1948)"
+              },
+              {
+                "date": "heir 1",
+                "content": "Yoon Jeong-hoo (second son) — 60% of total assets"
+              },
+              {
+                "date": "heir 2",
+                "content": "Yoon Tae-seong (eldest son) — 40% of total assets"
+              },
+              {
+                "date": "property",
+                "content": "Applies to Mapo-gu apartments and ○○ Bank deposits.",
+                "amount": "About 500 million units"
+              },
+              {
+                "date": "notarization",
+                "content": "Notary public Bae ○○ present / 2 witnesses present"
+              }
+            ],
+            "signature": "Testator: Yoon ○○ (Seal) — Notary Public: Bae ○○"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "60:40 Copy of will",
+            "trustLabel": "Normal",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Full text and notarization information"
+          },
+          "contract": {
+            "title": "will",
+            "subtitle": "Notary Office No. 2026-0183 — November 5, 2025",
+            "rows": [
+              {
+                "date": "testator",
+                "content": "Yoon ○○ (mother, born in 1948)"
+              },
+              {
+                "date": "heir 1",
+                "content": "Yoon Jeong-hoo (second son) — 60% of total assets"
+              },
+              {
+                "date": "heir 2",
+                "content": "Yoon Tae-seong (eldest son) — 40% of total assets"
+              },
+              {
+                "date": "real estate",
+                "content": "Apartment, 24 ○○-ro, Mapo-gu",
+                "amount": "Market value approximately 400 million"
+              },
+              {
+                "date": "deposit",
+                "content": "○○Bank term deposit and ordinary deposit",
+                "amount": "About 120 million won"
+              },
+              {
+                "date": "guitar",
+                "content": "Precious metals and personal property",
+                "amount": "Not calculated"
+              },
+              {
+                "date": "notarization",
+                "content": "Notary public Bae ○○ present / 2 witnesses present"
+              },
+              {
+                "date": "Remarks",
+                "content": "“I deserve it because Jeonghu took care of me until the end.”"
+              }
+            ],
+            "signature": "Testator: Yoon ○○ (Seal) — Notary Public: Bae ○○ — Witnesses: Kim ○○, Park ○○"
+          }
+        }
+      }
     },
     {
       "id": "e-2",
-      "surfaceName": "Care-home visit log",
-      "surfaceDescription": "A visit log from the care home exists."
+      "name": "Nursing home visit records",
+      "surfaceName": "Nursing home visit records",
+      "description": "Records of Yoon Jeong-hoo's frequent visits in his later years and the date when the caregiver in charge was changed three weeks before the notarization are also confirmed.",
+      "surfaceDescription": "Records of nursing home visits exist.",
+      "investigationResults": {
+        "request_original": "This is a record of some increase in the number of visits and length of stay during Yoon Jeong-hoo's later years. It is not yet clear whether it is a care visit or a document discussion.",
+        "check_metadata": "The replacement of the caregiver in charge three weeks before the notarization and the long visit by Yoon Jeong-hoo overlapped during the same period. The reason for the change requires further confirmation.",
+        "restore_context": "Increased visits, replacement of staff, and accompanying notary public all flow together. It is time to investigate who was involved in the process of writing the will."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please check the original visit records from later years."
+          },
+          "label": "Check records"
+        },
+        {
+          "question": {
+            "text": "Please contrast the notarization date with the increase in visits."
+          },
+          "label": "frequency contrast",
+          "unlockHint": "If you check your visit history, you can see changes in frequency before and after notarization."
+        },
+        {
+          "question": {
+            "text": "Please indicate whether the change of person in charge affected the writing of the will."
+          },
+          "label": "Intervention investigation",
+          "unlockHint": "By matching the frequency and timing of replacement, we can ask who created the flow of will writing."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Please explain why my brother's visit led to suspicions of intervention in the will.",
+          "implication": "Yoon Tae-seong sees frequent visits before document procedures as a clue to his mother's pressure."
+        },
+        "b": {
+          "questionAngle": "Please explain why you often visited your mother during that period.",
+          "implication": "Jeong-Hoo Yoon must explain the discussion of care and will separately."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only records of visits to nursing homes are visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "It appears that the frequency of Yoon Jeong-hu's visits increased in his later years."
+        },
+        {
+          "id": "original",
+          "summary": "Check visitors, time, and notarized visit items by date."
+        },
+        {
+          "id": "context",
+          "summary": "Look at the flow by putting the replacement of nursing care provider and the notarization date together."
+        },
+        {
+          "id": "established",
+          "summary": "The fact that Yoon Jeong-hoo was nearby during the process of writing the will is used as a basis for judgment."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "The nursing home submitted a visitation form."
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Compare visitor signatures with nursing home computer records."
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Agency records and visit signatures match."
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Yoon Jeong-hoo's side disputes the meaning, saying that the purpose of the visit was care."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "The records are authentic, but interpretation of the purpose of the visit is judged in conjunction with other evidence."
+        }
+      ],
+      "meta": {
+        "name": "Nursing home visit records",
+        "trustLabel": "high",
+        "sourceLabel": "institution",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Nursing home visit records",
+          "trustLabel": "high",
+          "sourceLabel": "institution",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Public Disclosure"
+        },
+        "log": {
+          "rows": [
+            {
+              "typeLabel": "visit",
+              "target": "Yoon Jeong-hoo",
+              "duration": "2 hours 10 minutes"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Yoon Jeong-hoo",
+              "duration": "1 hour 40 minutes"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Taeseong Yoon",
+              "duration": "45 minutes"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Yoon Jeong-hoo",
+              "duration": "3 hours 20 minutes"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Yoon Jeong-hoo",
+              "duration": "2 hours"
+            },
+            {
+              "typeLabel": "change",
+              "target": "Replacement of care worker in charge (Choi ○○ → Park ○○)"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Yoon Jeong-hoo",
+              "duration": "4 hours"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Yoon Jeong-hoo",
+              "duration": "2 hours and 30 minutes"
+            },
+            {
+              "typeLabel": "accompany",
+              "target": "Jeonghoo Yoon + Notary Public",
+              "duration": "1 hour"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Yoon Jeong-hoo",
+              "duration": "3 hours"
+            },
+            {
+              "typeLabel": "visit",
+              "target": "Taeseong Yoon",
+              "duration": "30 minutes"
+            },
+            {
+              "typeLabel": "notarization",
+              "target": "Jeonghoo Yoon + Notary Public + 2 Witnesses",
+              "duration": "40 minutes"
+            }
+          ],
+          "note": "Since October, visits to B have increased rapidly. A long visit continued between the replacement of the caregiver (10.14) and the notarization (11.05), and Yoon Tae-seong's visits were limited to two times during the same period."
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Nursing home visit records",
+            "trustLabel": "high",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Some Frequency of Visits",
+            "redactions": [
+              "Part of visitor's real name",
+              "some exact dates"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "Early September",
+                "typeLabel": "visit",
+                "target": "Second son ○○○",
+                "duration": "1~2 hours"
+              },
+              {
+                "date": "Mid-September",
+                "typeLabel": "visit",
+                "target": "Second son ○○○",
+                "duration": "1~2 hours"
+              },
+              {
+                "date": "Late September",
+                "typeLabel": "visit",
+                "target": "Eldest son ○○○",
+                "duration": "less than 1 hour"
+              },
+              {
+                "date": "early October",
+                "typeLabel": "visit",
+                "target": "Second son ○○○",
+                "duration": "3 time zone"
+              },
+              {
+                "date": "early October",
+                "typeLabel": "visit",
+                "target": "Second son ○○○",
+                "duration": "2 time zone"
+              }
+            ],
+            "note": "The second son's visit time becomes longer starting from early October. It is difficult to determine whether it is due to care or document discussion at this stage alone."
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "Nursing home visit records",
+            "trustLabel": "high",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Including when to replace",
+            "redactions": [
+              "Replacement person's real name"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "2 hours 10 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "1 hour 40 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Taeseong Yoon",
+                "duration": "45 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "3 hours 20 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "2 hours"
+              },
+              {
+                "typeLabel": "change",
+                "target": "Replacement of caregiver in charge"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "4 hours"
+              },
+              {
+                "typeLabel": "accompany",
+                "target": "Jeonghoo Yoon + Notary Public",
+                "duration": "1 hour"
+              }
+            ],
+            "note": "During the three weeks prior to notarization, frequency of visits, replacement of person in charge, and accompanying notary public are collected during the same period. The purpose of the visit itself has not yet been confirmed."
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "Nursing home visit records",
+            "trustLabel": "high",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Complete visit log"
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "2 hours 10 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "1 hour 40 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Taeseong Yoon",
+                "duration": "45 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "3 hours 20 minutes"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "2 hours"
+              },
+              {
+                "typeLabel": "change",
+                "target": "Replacement of care worker in charge (Choi ○○ → Park ○○)"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "4 hours"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "2 hours and 30 minutes"
+              },
+              {
+                "typeLabel": "accompany",
+                "target": "Jeonghoo Yoon + Notary Public",
+                "duration": "1 hour"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Yoon Jeong-hoo",
+                "duration": "3 hours"
+              },
+              {
+                "typeLabel": "visit",
+                "target": "Taeseong Yoon",
+                "duration": "30 minutes"
+              },
+              {
+                "typeLabel": "notarization",
+                "target": "Jeonghoo Yoon + Notary Public + 2 Witnesses",
+                "duration": "40 minutes"
+              }
+            ],
+            "note": "Since October, visits to B have increased rapidly. A long visit continued between the replacement of the caregiver (10.14) and the notarization (11.05), and Yoon Tae-seong's visits were limited to two times during the same period."
+          }
+        }
+      }
     },
     {
       "id": "e-3",
-      "surfaceName": "Voice statement from the former care worker",
-      "surfaceDescription": "A statement from the former care worker exists."
+      "name": "Former nursing care worker’s voice testimony",
+      "surfaceName": "Former nursing care worker’s voice testimony",
+      "description": "The testimony was that ‘Mr. Jeong-hoo often read the paper to his mother, and was careful to finish it before his brother came.’",
+      "surfaceDescription": "There is testimony from a former care worker.",
+      "investigationResults": {
+        "request_original": "A former care worker stated that he personally saw Yoon Jeong-hoo reading a piece of paper to his mother.",
+        "check_metadata": "The testifier's working period overlaps with the period of intensive visitation before notarization. The expression ‘before my brother comes’ is also confirmed.",
+        "restore_context": "Whether the paper read was a will or whether the cautious attitude was protective or exclusionary must be judged along with other records."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please see the original transcript of this testimony."
+          },
+          "label": "Testimony confirmation"
+        },
+        {
+          "question": {
+            "text": "Please match the notarization date with the working period of the witness."
+          },
+          "label": "viewpoint contrast",
+          "unlockHint": "Checking the testimony will allow you to compare work periods and visitation records."
+        },
+        {
+          "question": {
+            "text": "Please reveal the meaning of your actions as you read the paper."
+          },
+          "label": "investigation of intent",
+          "unlockHint": "By contrasting the points in time, we can ask whether the cautious attitude was protective or exclusionary."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Do you think this testimony shows your brother's intentions?",
+          "implication": "Yoon Tae-seong takes the phrase ‘before your brother comes’ as an intention to exclude."
+        },
+        "b": {
+          "questionAngle": "Please explain why you read the paper to your mother and the atmosphere there.",
+          "implication": "Jeonghoo Yoon must clarify the difference between pressure and explanation."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "All that appears is that there is a recording of the testimony."
+        },
+        {
+          "id": "excerpt",
+          "summary": "Only the key sentence that says the paper was read is visible."
+        },
+        {
+          "id": "original",
+          "summary": "Verify the witness's identity, length of service, and full statement."
+        },
+        {
+          "id": "context",
+          "summary": "The context of the statement is restored by comparing visit records and notarization dates."
+        },
+        {
+          "id": "established",
+          "summary": "The fact of witnessing is acknowledged, and intent is judged along with other evidence."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "A statement from a former care worker was submitted."
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Compare dates on work records and recording files."
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "It was confirmed that he worked during the relevant period and whether he personally witnessed it."
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Yoon Tae-seong and Yoon Jeong-hu interpret the meaning of ‘cautiousness’ differently."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Testimony is based on direct eyewitnesses, but there are limits to determining intent."
+        }
+      ],
+      "meta": {
+        "name": "Former nursing care worker’s voice testimony",
+        "trustLabel": "Normal",
+        "sourceLabel": "Witness",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Former nursing care worker’s voice testimony",
+          "trustLabel": "Normal",
+          "sourceLabel": "Witness",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Public Disclosure"
+        },
+        "testimony": {
+          "witnessName": "Choi Bok-soon",
+          "witnessDesc": "Former nursing care worker (worked from 2024.03 to 2025.10.14)",
+          "quote": "Mr. Jeonghu often read the paper to his mother. I couldn't hear the content clearly, but he was cautious and told me to finish it before my brother came. If my mother was having a hard time, I told her to stop, and if she asked first, I explained further. But I was suddenly replaced in October. I wasn't told why.",
+          "confidenceLabel": "Normal",
+          "biasLabel": "neutral",
+          "relatedRef": "Nursing care worker replacement 2025.10.14 / Notarization 2025.11.05"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Former nursing care worker’s voice testimony",
+            "trustLabel": "Normal",
+            "sourceLabel": "Witness",
+            "legalLabel": "legal",
+            "stageLabel": "Stage 1 — Sightings only",
+            "redactions": [
+              "witness real name",
+              "exact working period"
+            ]
+          },
+          "testimony": {
+            "witnessDesc": "Former nursing care worker",
+            "quote": "I saw my younger son reading a piece of paper to his mother several times.",
+            "confidenceLabel": "Normal",
+            "biasLabel": "neutral",
+            "relatedRef": "Workers before and after notarization"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "Former nursing care worker’s voice testimony",
+            "trustLabel": "Normal",
+            "sourceLabel": "Witness",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Duration of service and key remarks",
+            "redactions": [
+              "Partial witness name"
+            ]
+          },
+          "testimony": {
+            "witnessName": "Mr. Choi",
+            "witnessDesc": "Former nursing care worker (worked from 2024.03 to 2025.10)",
+            "quote": "Mr. Jeonghu often read the paper to his mother. He was careful to finish it before my brother came.",
+            "confidenceLabel": "Normal",
+            "biasLabel": "neutral",
+            "relatedRef": "When to replace a caregiver and when to visit intensively before notarization"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "Former nursing care worker’s voice testimony",
+            "trustLabel": "Normal",
+            "sourceLabel": "Witness",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Summarize the entire transcript"
+          },
+          "testimony": {
+            "witnessName": "Choi Bok-soon",
+            "witnessDesc": "Former nursing care worker (worked from 2024.03 to 2025.10.14)",
+            "quote": "Mr. Jeonghu often read the paper to his mother. I couldn't hear the content clearly, but he was cautious and told me to finish it before my brother came. If my mother was having a hard time, I told her to stop, and if she asked first, I explained further. But I was suddenly replaced in October. I wasn't told why.",
+            "confidenceLabel": "Normal",
+            "biasLabel": "neutral",
+            "relatedRef": "Nursing care worker replacement 2025.10.14 / Notarization 2025.11.05"
+          }
+        }
+      }
     },
     {
       "id": "e-4",
-      "surfaceName": "Notary's procedural notes",
-      "surfaceDescription": "Procedural notes from the day of notarisation exist."
+      "name": "Notary public note recording",
+      "surfaceName": "Notary public note recording",
+      "description": "A progress note left by the notary on the day of notarization. The reception rate and general procedures are first confirmed, and further investigation reveals the status and progress.",
+      "surfaceDescription": "A procedural note exists on the day of notarization.",
+      "investigationResults": {
+        "request_original": "The will notarization process was carried out on the day of the notarization, and the notarized copies received were organized in a 60:40 ratio.",
+        "check_metadata": "The notary left a note that the mother was tired and slow to respond, and that she took a break once when checking the numbers.",
+        "restore_context": "The note included the observation that the mother went back and forth on the numbers a few times and that Yoon Jeong-hoo seemed to be pushing the process."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please check your general records on the day of notarization."
+          },
+          "label": "general record"
+        },
+        {
+          "question": {
+            "text": "Please check the note that your mother is not in good condition."
+          },
+          "label": "status notes",
+          "unlockHint": "You can see your mother's status and response speed on the day of notarization."
+        },
+        {
+          "question": {
+            "text": "Please check the circumstances surrounding the confusion in numbers and the push for procedures."
+          },
+          "label": "procedure pressure",
+          "unlockHint": "A notary note allows you to ask questions about how the process is conducted."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "You should check the notary day's procedures and order of progress in the notary's notes.",
+          "implication": "Yoon Tae-seong's procedural issues are reinforced by the status record on the day of notarization."
+        },
+        "b": {
+          "questionAngle": "You will need to explain why you rushed the process on the day of the notarization.",
+          "implication": "Jeong-Hoo Yoon must answer separately between the 60:40 notarized copy and the responsibility for intervention in the procedure."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the existence of the memo on the day of notarization is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "Application rates and general procedure records are shown."
+        },
+        {
+          "id": "original",
+          "summary": "Check the notary's note stating that your mother's condition was not good."
+        },
+        {
+          "id": "context",
+          "summary": "Let's look into the confusion over numbers and the pressure on Yoon Jeong-hoo."
+        },
+        {
+          "id": "established",
+          "summary": "The status and procedural issues on the day of notarization are summarized as judgment materials."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "A notary public note record was submitted."
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Compare the notary public signature with the ledger kept at the notary office."
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "The institutional archive memo and the reception ledger are consistent."
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Yoon Jeong-hoo's side argues that the memo does not directly mean coercion."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Memos should indicate procedural issues but should be distinguished from the proportion of separate handwritten exercises."
+        }
+      ],
+      "meta": {
+        "name": "Notary public note recording",
+        "trustLabel": "high",
+        "sourceLabel": "Notary office",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Notary public note recording",
+          "trustLabel": "high",
+          "sourceLabel": "Notary office",
+          "legalLabel": "legal",
+          "stageLabel": "Step 1 — General records on the day of notarization"
+        },
+        "log": {
+          "title": "Notary public note recording",
+          "rows": [
+            {
+              "typeLabel": "reception",
+              "target": "Start of will notarization process / confirm notarized copy ratio of 60:40",
+              "duration": "OK"
+            },
+            {
+              "typeLabel": "procedure",
+              "target": "Confirmation of testator's identity and record of attendance of two witnesses",
+              "duration": "normal"
+            },
+            {
+              "typeLabel": "done",
+              "target": "Notary stamp and archive number assigned",
+              "duration": "done"
+            }
+          ],
+          "note": "The notarized copy is arranged 60:40 at the time of submission."
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Notary public note recording",
+            "trustLabel": "high",
+            "sourceLabel": "Notary office",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — General records on the day of notarization"
+          },
+          "log": {
+            "title": "Notary public note recording",
+            "rows": [
+              {
+                "typeLabel": "reception",
+                "target": "Start of will notarization process / confirm notarized copy ratio of 60:40",
+                "duration": "OK"
+              },
+              {
+                "typeLabel": "procedure",
+                "target": "Confirmation of testator's identity and record of attendance of two witnesses",
+                "duration": "normal"
+              },
+              {
+                "typeLabel": "done",
+                "target": "Notary stamp and archive number assigned",
+                "duration": "done"
+              }
+            ],
+            "note": "The notarized copy is arranged 60:40 at the time of submission."
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "Notary public note recording",
+            "trustLabel": "high",
+            "sourceLabel": "Notary office",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Mother’s Status Note"
+          },
+          "log": {
+            "title": "Notary public note recording",
+            "rows": [
+              {
+                "typeLabel": "reception",
+                "target": "Start of will notarization process / confirm notarized copy ratio of 60:40",
+                "duration": "OK"
+              },
+              {
+                "typeLabel": "procedure",
+                "target": "Confirmation of testator's identity and record of attendance of two witnesses",
+                "duration": "normal"
+              },
+              {
+                "typeLabel": "done",
+                "target": "Notary stamp and archive number assigned",
+                "duration": "done"
+              },
+              {
+                "typeLabel": "status notes",
+                "target": "The testator complained of fatigue and requested rest before answering.",
+                "duration": "caution"
+              },
+              {
+                "typeLabel": "status notes",
+                "target": "Delayed response when repeating questions, asking for a glass of water",
+                "duration": "caution"
+              }
+            ],
+            "note": "A note is additionally confirmed that the mother was not in good condition on the day of the notarization."
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "Notary public note recording",
+            "trustLabel": "high",
+            "sourceLabel": "Notary office",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Number confusion and process pressure"
+          },
+          "log": {
+            "title": "Notary public note recording",
+            "rows": [
+              {
+                "typeLabel": "reception",
+                "target": "Start of will notarization process / confirm notarized copy ratio of 60:40",
+                "duration": "OK"
+              },
+              {
+                "typeLabel": "procedure",
+                "target": "Confirmation of testator's identity and record of attendance of two witnesses",
+                "duration": "normal"
+              },
+              {
+                "typeLabel": "done",
+                "target": "Notary stamp and archive number assigned",
+                "duration": "done"
+              },
+              {
+                "typeLabel": "status notes",
+                "target": "The testator complained of fatigue and requested rest before answering.",
+                "duration": "caution"
+              },
+              {
+                "typeLabel": "status notes",
+                "target": "Delayed response when repeating questions, asking for a glass of water",
+                "duration": "caution"
+              },
+              {
+                "typeLabel": "notary public note",
+                "target": "When asked again about the inheritance ratio number, he changed the number before and after.",
+                "duration": "need contrast"
+              },
+              {
+                "typeLabel": "notary public note",
+                "target": "Yoon Jeong-hoo seems to be urging the process forward, saying, “It has to be finished today.”",
+                "duration": "need contrast"
+              }
+            ],
+            "note": "The observation remains that the mother went back and forth on the numbers and that Yoon Jeong-hoo seemed to be pushing the process."
+          }
+        }
+      }
     },
     {
       "id": "e-5",
-      "surfaceName": "Mother's handwritten draft will",
-      "surfaceDescription": "A handwritten draft of the mother's will exists."
+      "name": "Practice copy of mother's handwritten will",
+      "surfaceName": "Practice copy of mother's handwritten will",
+      "description": "A copy of the handwritten will in a white envelope from my mother's drawer. It is a practice copy prepared separately from the notarized copy, and the specific ratio is confirmed at the final stage.",
+      "surfaceDescription": "There is a copy of the handwritten will left by my mother.",
+      "investigationResults": {
+        "request_original": "This is a practice copy of a handwritten will found in a drawer. The property items and the names of the two sons are visible, but the percentage numbers are partially obscured.",
+        "check_metadata": "Traces of it being rewritten several times and the date of writing before notarization are confirmed. It turns out that it is a separate draft from the 60:40 notarized copy.",
+        "restore_context": "The last page of the practice book says 90% Yoon Jeong-hoo and 10% Yoon Tae-seong. This ratio information is only confirmed in this handwritten practice book, not in the notary's memo."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please confirm the existence of a copy of the handwritten will."
+          },
+          "label": "handwriting confirmation"
+        },
+        {
+          "question": {
+            "text": "Please make sure it is a separate draft from the notarized copy."
+          },
+          "label": "draft contrast",
+          "unlockHint": "If you check the handwriting and the time of writing, you can see that it is a separate document from the notarized copy."
+        },
+        {
+          "question": {
+            "text": "Please check the ratio on the last page of the practice book."
+          },
+          "label": "check ratio",
+          "unlockHint": "Spherical proportions are only opened in the final stages of this handwritten workbook."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "You need to check what is meant by a handwritten practice copy, which is different from a notarized copy.",
+          "implication": "Yoon Tae-seong's claim of manipulation can be reexamined by separating the direction of the ratio and the nature of the document."
+        },
+        "b": {
+          "questionAngle": "You must explain why you knew about the practice copy and the notarized copy and did not tell them.",
+          "implication": "Yoon Jeong-hoo must explain that he was responsible for tampering with the will and that it was not a manipulation to get more."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only a copy of the handwritten will is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "You can see that it is a separate document from the notarized copy."
+        },
+        {
+          "id": "original",
+          "summary": "Check the date of writing, handwriting, storage status, and full text."
+        },
+        {
+          "id": "context",
+          "summary": "Compare the ratio of the practice copy and the notarized copy of 60:40."
+        },
+        {
+          "id": "established",
+          "summary": "90:10 It is summarized that information can only be confirmed in handwritten practice books."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "A copy of the handwritten will found in a drawer was submitted."
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "The handwritten appraisal and date of writing are compared."
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "The mother's handwriting and how it was stored were confirmed."
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Yoon Tae-seong's side disputes the ability to make terminal judgments and the validity of documents."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Handwriting is recognized, but its legal effect is considered along with the ability to make decisions."
+        }
+      ],
+      "meta": {
+        "name": "Practice copy of mother's handwritten will",
+        "trustLabel": "high",
+        "sourceLabel": "Side B submission",
+        "legalLabel": "legal",
+        "stageLabel": "initial release",
+        "redactions": [
+          "exact percentage number"
+        ]
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Practice copy of mother's handwritten will",
+          "trustLabel": "high",
+          "sourceLabel": "Side B submission",
+          "legalLabel": "legal",
+          "stageLabel": "Step 1 — Presence of handwritten exercises",
+          "redactions": [
+            "exact percentage number"
+          ]
+        },
+        "contract": {
+          "title": "Practice copy of mother's handwritten will",
+          "subtitle": "Handwritten draft in a white envelope",
+          "rows": [
+            {
+              "date": "document format",
+              "content": "Practice copy of handwritten will in white envelope"
+            },
+            {
+              "date": "Confirmation details",
+              "content": "Confirm the names of two sons and some property items"
+            },
+            {
+              "date": "ratio part",
+              "content": "The number part is creased and covered.",
+              "amount": "covering"
+            }
+          ],
+          "signature": "Written by: Yoon ○○ / Handwritten practice copy"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Practice copy of mother's handwritten will",
+            "trustLabel": "high",
+            "sourceLabel": "Side B submission",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Presence of handwritten exercises",
+            "redactions": [
+              "exact percentage number"
+            ]
+          },
+          "contract": {
+            "title": "Practice copy of mother's handwritten will",
+            "subtitle": "Handwritten draft in a white envelope",
+            "rows": [
+              {
+                "date": "document format",
+                "content": "Practice copy of handwritten will in white envelope"
+              },
+              {
+                "date": "Confirmation details",
+                "content": "Confirm the names of two sons and some property items"
+              },
+              {
+                "date": "ratio part",
+                "content": "The number part is creased and covered.",
+                "amount": "covering"
+              }
+            ],
+            "signature": "Written by: Yoon ○○ / Handwritten practice copy"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "Practice copy of mother's handwritten will",
+            "trustLabel": "high",
+            "sourceLabel": "Side B submission",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Notarized copy and separate draft",
+            "redactions": [
+              "exact percentage number"
+            ]
+          },
+          "contract": {
+            "title": "Practice copy of mother's handwritten will",
+            "subtitle": "Traces of writing before notarization",
+            "rows": [
+              {
+                "date": "document format",
+                "content": "Practice copy of handwritten will in white envelope"
+              },
+              {
+                "date": "Confirmation details",
+                "content": "Confirm the names of two sons and some property items"
+              },
+              {
+                "date": "ratio part",
+                "content": "The number part is creased and covered.",
+                "amount": "covering"
+              },
+              {
+                "date": "At the time of writing",
+                "content": "Traces of having been rewritten several times before notarization"
+              },
+              {
+                "date": "compared to",
+                "content": "A practice copy written separately from the notarized copy of 60:40"
+              }
+            ],
+            "signature": "Written by: Yoon ○○ / Handwritten practice copy"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "Practice copy of mother's handwritten will",
+            "trustLabel": "high",
+            "sourceLabel": "Side B submission",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Check last page proportions"
+          },
+          "contract": {
+            "title": "Practice copy of mother's handwritten will",
+            "subtitle": "Last page of handwritten practice book",
+            "rows": [
+              {
+                "date": "last chapter of practice book",
+                "content": "The ratio left to Yoon Jeong-hoo"
+              },
+              {
+                "date": "last chapter of practice book",
+                "content": "The ratio left to Yoon Tae-seong"
+              },
+              {
+                "date": "Notarized copy comparison",
+                "content": "In the notarized copy, it is organized as 60:40 from the beginning."
+              },
+              {
+                "date": "confirmation note",
+                "content": "90:10 Information is confirmed only in this handwritten exercise, not in the notary's notes."
+              }
+            ],
+            "signature": "Written by: Yoon ○○ / Handwritten practice copy compared to the original"
+          }
+        }
+      }
     },
     {
       "id": "e-6",
-      "surfaceName": "Long-running account flow",
-      "surfaceDescription": "A long-running record of account activity exists."
+      "name": "old account flow",
+      "surfaceName": "old account flow",
+      "description": "Records of repeated deposits and large sums of money transferred through my mother's bank account. The source and delivery order are opened separately at each stage.",
+      "surfaceDescription": "Old account flow records exist.",
+      "investigationResults": {
+        "request_original": "It appears that Yoon Jeong-hoo has continued to deposit money into his mother's bank account on a monthly basis.",
+        "check_metadata": "A record of 300 million won deposited from the mother's bank account to Yoon Tae-seong or the factory is confirmed.",
+        "restore_context": "Yoon Jeong-hoo put a lump sum of 300 million won into his mother's bank account, and the same amount of money was later transferred from his mother's bank account to Yoon Tae-seong."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please check the monthly deposit flow."
+          },
+          "label": "monthly deposit"
+        },
+        {
+          "question": {
+            "text": "Please check the 300 million won that went to Yoon Tae-seong from my mother’s bank account."
+          },
+          "label": "300 million won delivered",
+          "unlockHint": "You can see a lot of money going to the factory from my mother's bank account."
+        },
+        {
+          "question": {
+            "text": "Please confirm the source and delivery order of the 300 million won lump sum."
+          },
+          "label": "Check the source",
+          "unlockHint": "You can check the order in which Yoon Jeong-hoo's lump sum deposit was delivered through his mother's bank account."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "I need to double-check the source of the money I thought my mother gave me.",
+          "implication": "Yoon Tae-seong must accept the source of support and the issue of pride separately."
+        },
+        "b": {
+          "questionAngle": "You must explain why you applied through your mother’s bank account.",
+          "implication": "Yoon Jeong-hoo must explain the fact of his support and the reason for concealing it."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the existence of account flow is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "There is a pattern in which Yoon Jeong-hoo deposits money into his mother's bank account on a monthly basis."
+        },
+        {
+          "id": "original",
+          "summary": "I check the record of 300 million won going to Yoon Tae-seong/the factory from my mother's bank account."
+        },
+        {
+          "id": "context",
+          "summary": "Let's look at the order of Yoon Jeong-hoo's lump sum deposit of 300 million won and the subsequent delivery."
+        },
+        {
+          "id": "established",
+          "summary": "Determine the actual source of support that seemed like mother's money."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "A bundle of bank statements was submitted."
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Compare account name, deposit/withdrawal date, and depositor."
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "The bank ledger and submission details match."
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Yoon Tae-seong's side disputes the nature of regular subsidies and factory funds."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "The transaction itself is confirmed and the meaning of the money is resolved through interrogation."
+        }
+      ],
+      "meta": {
+        "name": "old account flow",
+        "trustLabel": "high",
+        "sourceLabel": "bank ledger",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "old account flow",
+          "trustLabel": "high",
+          "sourceLabel": "bank ledger",
+          "legalLabel": "legal",
+          "stageLabel": "Step 1 — Monthly deposit"
+        },
+        "bank": [
+          {
+            "desc": "Yoon Jeong-hoo → Monthly deposit into mother’s bank account",
+            "amount": "+800,000~1,500,000 won / month",
+            "balance": "Monthly recurring deposit"
+          },
+          {
+            "desc": "Yoon Jeong-hoo → Mother’s bank account",
+            "amount": "+1,200,000 Won",
+            "balance": "Last monthly deposit"
+          }
+        ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "old account flow",
+            "trustLabel": "high",
+            "sourceLabel": "bank ledger",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Monthly deposit"
+          },
+          "bank": [
+            {
+              "desc": "Yoon Jeong-hoo → Monthly deposit into mother’s bank account",
+              "amount": "+800,000~1,500,000 won / month",
+              "balance": "Monthly recurring deposit"
+            },
+            {
+              "desc": "Yoon Jeong-hoo → Mother’s bank account",
+              "amount": "+1,200,000 Won",
+              "balance": "Last monthly deposit"
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "old account flow",
+            "trustLabel": "high",
+            "sourceLabel": "bank ledger",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — 300 million won from mother’s bank account to the factory"
+          },
+          "bank": [
+            {
+              "desc": "Yoon Jeong-hoo → Monthly deposit into mother’s bank account",
+              "amount": "+800,000~1,500,000 won / month",
+              "balance": "Monthly recurring deposit"
+            },
+            {
+              "desc": "Yoon Jeong-hoo → Mother’s bank account",
+              "amount": "+1,200,000 Won",
+              "balance": "Last monthly deposit"
+            },
+            {
+              "desc": "Mother’s bank account → Yoon Tae-seong’s factory operating account",
+              "amount": "-300,000,000 won",
+              "balance": "factory emergency fund"
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "old account flow",
+            "trustLabel": "high",
+            "sourceLabel": "bank ledger",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Source of lump sum and order of delivery"
+          },
+          "bank": [
+            {
+              "desc": "Yoon Jeong-hoo → Deposit lump sum money into mother’s bank account",
+              "amount": "+300,000,000 Won",
+              "balance": "Check the source"
+            },
+            {
+              "desc": "Mother’s bank account → Yoon Tae-seong’s factory operating account",
+              "amount": "-300,000,000 won",
+              "balance": "factory emergency fund"
+            },
+            {
+              "desc": "Yoon Jeong-hoo → Monthly deposit into mother’s bank account",
+              "amount": "+800,000~1,500,000 won / month",
+              "balance": "Monthly recurring deposit"
+            },
+            {
+              "desc": "Yoon Jeong-hoo → Mother’s bank account",
+              "amount": "+1,200,000 Won",
+              "balance": "Last monthly deposit"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "e-7",
-      "surfaceName": "Mother's diary",
-      "surfaceDescription": "A photo of the mother's white handwritten notebook exists."
+      "name": "mother's diary",
+      "surfaceName": "mother's diary",
+      "description": "Mother's handwritten notes left in a white/ivory notebook. It starts with words of concern for his two sons and continues with his long-standing family circumstances and the regret he leaves behind for Yoon Jeong-hoo.",
+      "surfaceDescription": "There is a photo of my mother's white handwritten notebook.",
+      "investigationResults": {
+        "request_original": "This is a handwritten diary left in a white/ivory notebook. We can see his worries about his two sons and his lament that Yoon Tae-seong has not yet come to his senses.",
+        "check_metadata": "There are sentences expressing concern about Yoon Jeong-hoo and hints that the two brothers are not the same in all respects.",
+        "restore_context": "The sentence saying sorry to Yoon Jeong-hoo, the definitive statement that Yoon Jeong-hu was his half-child, and the nuance that they were still the same child and that he cared for them more still remain."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please check the handwriting and first entry in your mother's diary."
+          },
+          "label": "handwriting confirmation"
+        },
+        {
+          "question": {
+            "text": "Please check Yoon Jeong-hoo’s concerns and hints about his family’s circumstances."
+          },
+          "label": "Confirmation of implication",
+          "unlockHint": "If you check the handwriting, you can see the mother's other concerns about the two brothers."
+        },
+        {
+          "question": {
+            "text": "Please check the family circumstances confirmation record and the mother's nuances."
+          },
+          "label": "key sentence",
+          "unlockHint": "In the final stages of the diary, the family circumstances and the mother's heart are opened together."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "You need to answer to what extent you can accept how your mother wrote about you.",
+          "implication": "Yoon Tae-seong's identity as the eldest son and his memories of his mother are shaken."
+        },
+        "b": {
+          "questionAngle": "You need to explain when you found out about this record and why you didn't tell your brother.",
+          "implication": "The reasons for Yoon Jeong-hoo's silence and long-standing funding flow may lead to one reason."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the presence of diary photos is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "We can see his concern for his two sons and his lament for Yoon Tae-seong."
+        },
+        {
+          "id": "original",
+          "summary": "We confirm Yoon Jeong-hoo's worries and hints about a half-child."
+        },
+        {
+          "id": "context",
+          "summary": "Connect the sentence confirming the half-child and the mother's regret."
+        },
+        {
+          "id": "established",
+          "summary": "Determine the motive for Yoon Jeong-hoo's silence and the structure of responsibility of the two brothers."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Jeong-hoo Yoon submitted a photo of his mother's diary."
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Check the handwritten appraisal and the circumstances in which the photo was taken."
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "The mother's handwriting and date flow were confirmed."
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Yoon Tae-seong's side disputes the reliability of the records of his dementia period."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Handwriting is verified and interpretation of private records is carefully limited."
+        }
+      ],
+      "meta": {
+        "name": "mother's diary",
+        "trustLabel": "high",
+        "sourceLabel": "Side B submission",
+        "legalLabel": "legal",
+        "stageLabel": "initial release",
+        "redactions": [
+          "father's real name",
+          "Specialized in family circumstances"
+        ]
+      },
+      "v3SealTargets": [
+        "father's real name",
+        "Details of family circumstances",
+        "mother's diary personal records"
+      ],
+      "viewerData": {
+        "meta": {
+          "name": "mother's diary",
+          "trustLabel": "high",
+          "sourceLabel": "Side B submission",
+          "legalLabel": "legal",
+          "stageLabel": "Step 1 — First notes in a white notebook",
+          "redactions": [
+            "Specialized in family circumstances"
+          ]
+        },
+        "device": {
+          "ownerName": "Mother's Ivory Notebook",
+          "sections": [
+            {
+              "id": "diary-2024-spring",
+              "title": "Spring 2024, white notebook",
+              "items": [
+                {
+                  "text": "Do Taeseong and Jeonghu know how I feel? We're both worried, but we don't know each other any better."
+                },
+                {
+                  "text": "Taeseong still can't come to his senses. When it comes to factory work and my own feelings, I try to blame others first."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "mother's diary",
+            "trustLabel": "high",
+            "sourceLabel": "Side B submission",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — First notes in a white notebook",
+            "redactions": [
+              "Specialized in family circumstances"
+            ]
+          },
+          "device": {
+            "ownerName": "Mother's Ivory Notebook",
+            "sections": [
+              {
+                "id": "diary-2024-spring",
+                "title": "Spring 2024, white notebook",
+                "items": [
+                  {
+                    "text": "Do Taeseong and Jeonghu know how I feel? We're both worried, but we don't know each other any better."
+                  },
+                  {
+                    "text": "Taeseong still can't come to his senses. When it comes to factory work and my own feelings, I try to blame others first."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "mother's diary",
+            "trustLabel": "high",
+            "sourceLabel": "Side B submission",
+            "legalLabel": "legal",
+            "stageLabel": "Stage 2 — Yoon Jeong-hoo’s concerns and implications",
+            "redactions": [
+              "family circumstances confirmation sentence"
+            ]
+          },
+          "device": {
+            "ownerName": "Mother's Ivory Notebook",
+            "sections": [
+              {
+                "id": "diary-2024-spring",
+                "title": "Spring 2024, white notebook",
+                "items": [
+                  {
+                    "text": "Do Taeseong and Jeonghu know how I feel? We're both worried, but we don't know each other any better."
+                  },
+                  {
+                    "text": "Taeseong still can't come to his senses. When it comes to factory work and my own feelings, I try to blame others first."
+                  }
+                ]
+              },
+              {
+                "id": "diary-2024-winter",
+                "title": "Winter 2024, Ivory Notebook",
+                "items": [
+                  {
+                    "text": "Jeonghu has been quiet since he was young. It bothers me even more because he seems to be trying to take it all on his own."
+                  },
+                  {
+                    "text": "There are circumstances where it is difficult to say that the two are identical brothers. Still, they are both sons to me."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "mother's diary",
+            "trustLabel": "high",
+            "sourceLabel": "Side B submission",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Key Sentences of the Folded Chapter",
+            "redactions": [
+              "Father's real name is confidential"
+            ]
+          },
+          "device": {
+            "ownerName": "Mother's Ivory Notebook",
+            "sections": [
+              {
+                "id": "diary-2024-spring",
+                "title": "Spring 2024, white notebook",
+                "items": [
+                  {
+                    "text": "Do Taeseong and Jeonghu know how I feel? We're both worried, but we don't know each other any better."
+                  },
+                  {
+                    "text": "Taeseong still can't come to his senses. When it comes to factory work and my own feelings, I try to blame others first."
+                  }
+                ]
+              },
+              {
+                "id": "diary-2024-winter",
+                "title": "Winter 2024, Ivory Notebook",
+                "items": [
+                  {
+                    "text": "Jeonghu has been quiet since he was young. It bothers me even more because he seems to be trying to take it all on his own."
+                  },
+                  {
+                    "text": "There are circumstances where it is difficult to say that the two are identical brothers. Still, they are both sons to me."
+                  }
+                ]
+              },
+              {
+                "id": "diary-2025-spring",
+                "title": "Spring 2025, Folded Chapter",
+                "items": [
+                  {
+                    "text": "I feel sorry for Jeonghu. I'm afraid that if she finds out, she'll try to cover it up on her own."
+                  },
+                  {
+                    "text": "Taeseong is the child of a different father from Jeonghu. My hands are shaking as I write this sentence."
+                  },
+                  {
+                    "text": "Still, Taeseong was still my child. Because I saw a weak spot, maybe I was more mindful and took more care of it."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
-  ]
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "Although her mother did not completely lose her ability to make decisions in her later years, Yun Jeong-hoo's intervention influenced the writing of her will."
+    },
+    {
+      "id": "t-2",
+      "fact": "The notarized copy was 60:40, and the exact ratio, which is different from the notarized copy, can be confirmed in the separate handwritten copy of the will. Yoon Jeong-hoo tampered with the will, but it was not a manipulation to get more."
+    },
+    {
+      "id": "t-3",
+      "fact": "Yoon Jeong-hoo's money went into his mother's bank account on a monthly basis, and during the factory crisis, 300 million won was also transferred through the same route."
+    },
+    {
+      "id": "t-4",
+      "fact": "The mother's diary leaves behind the fact that Yoon Jeong-hoo was her half-child, and the nuance that she cared for him even more as her own child."
+    },
+    {
+      "id": "t-5",
+      "fact": "Neither of them could leave their mother's will as is. Yoon Tae-seong took the inheritance for granted, and Yoon Jeong-hu changed the will to protect his older brother."
+    }
+  ],
+  "solutions": {
+    "유서적법성판단": [
+      "The judgment ability of the mother with dementia at the time of writing the will is confirmed through professional appraisal, and the legality of the notarization process is re-evaluated.",
+      "Although Yoon Jeong-hoo's act of manipulating his will is illegal, the legal effect of the separate handwritten practice copy will be reviewed taking into account the motive."
+    ],
+    "재산분배재조정": [
+      "Compare the legal effect of 60:40 handwritten practice copy and notarized copy, and recalculate fair distribution taking into account old support history.",
+      "The 300 million won that Yoon Jeong-hoo put into his mother's bank account and was transferred to Yoon Tae-seong's factory funds is subject to separate settlement."
+    ],
+    "가족관계회복": [
+      "The scope of disclosure of birth secrets is determined with the consent of the parties, and coordination procedures are established to restore sibling relationships.",
+      "She mediates the process of the two sons understanding their mother's true intentions."
+    ]
+  },
+  "combinationLab": {
+    "nodes": [
+      {
+        "id": "e-1",
+        "label": "e-1 60:40 Copy of will"
+      },
+      {
+        "id": "e-2",
+        "label": "e-2 Nursing home visit record"
+      },
+      {
+        "id": "e-3",
+        "label": "e-3 Former nursing care worker’s voice testimony"
+      },
+      {
+        "id": "e-4",
+        "label": "e-4 notary public memorandum records"
+      },
+      {
+        "id": "e-5",
+        "label": "e-5 Practice copy of mother’s handwritten will"
+      },
+      {
+        "id": "e-6",
+        "label": "e-6 old account flow"
+      },
+      {
+        "id": "e-7",
+        "label": "e-7 mother's diary"
+      },
+      {
+        "id": "stmt-a-heir",
+        "label": "Yoon Tae-seong's remarks, \"I'm the one who took care of you, so why are you 40?\""
+      },
+      {
+        "id": "stmt-b-silence",
+        "label": "Yoon Jeong-hoo's blocked remarks: \"I can't say anything definitively right now.\""
+      },
+      {
+        "id": "stmt-b-mother",
+        "label": "Yoon Jeong-hoo's remarks, \"My mother wanted to do that.\""
+      },
+      {
+        "id": "w-1-angle",
+        "label": "w-1 Choi Bok-soon's testimony congratulations"
+      },
+      {
+        "id": "w-2-angle",
+        "label": "w-2 Kim Young-soo's testimony congratulations"
+      },
+      {
+        "id": "w-3-angle",
+        "label": "w-3 congratulations on Park Soon-ae’s testimony"
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 Circumstances of intervention in writing a will"
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 Reason for manipulation to reduce one's share"
+      },
+      {
+        "id": "dc-3",
+        "label": "Old support that dc-3 didn’t know about"
+      },
+      {
+        "id": "dc-4",
+        "label": "Reason for hiding dc-4"
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 mother's will"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "dc-1",
+        "label": "dc-1 Circumstances of intervention in writing a will",
+        "summary": "The will rate and visit history move together. You need to find out who was present during the writing process.",
+        "noteText": "Circumstances involved in writing a will",
+        "judgeHint": "The judgment ability and boundaries of intervention at the time of writing the will can be further investigated or reinforced with the testimony of a caregiver."
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 How the will was tampered with",
+        "summary": "If you look at the notary's memo and the handwritten copy together, the issue becomes that there was a separate copy of the copy 60:40 after the notarized copy and how the will was tampered with.",
+        "noteText": "How the will was tampered with",
+        "judgeHint": "On the day of notarization, check the mother's status and the percentage of handwritten practice copies separately."
+      },
+      {
+        "id": "dc-3",
+        "label": "source of dc-3 outdated support",
+        "summary": "The proportion of handwritten practice books and old account flows follow. You need to check the source of the money that went through your mother's bank account.",
+        "noteText": "Old sources of support",
+        "judgeHint": "A new issue ‘old source of support’ has been revealed. Check where the money comes from and the order in which it is delivered."
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 family history and reasons for silence",
+        "summary": "Old account flows and diaries point in the same direction as the brothers' silence. Sensitive family circumstances must be confirmed.",
+        "noteText": "Family history and reasons for silence",
+        "judgeHint": "A new issue, ‘Family records and reasons for silence,’ was revealed. Identify the meaning of the record and the extent of its silence."
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 mother's hidden heart",
+        "summary": "Will rates and mother records fluctuate together. We need to see how each of the two brothers carried out their mother's will.",
+        "noteText": "mother's hidden heart",
+        "judgeHint": "A new issue, 'Mother's hidden heart', was revealed. Separate each person's interpretation and intervention."
+      }
+    ],
+    "recipes": [
+      {
+        "id": "combine-1",
+        "discoveryText": "The 60:40 ratio in the will overlaps with the visit records from later years. It is necessary to check again whether Yoon Jeong-hoo was present during the process of writing the will."
+      },
+      {
+        "id": "combine-2",
+        "discoveryText": "The contents of the notary's memo and the handwritten practice copy are inconsistent. You must ask yourself the relationship between the 60:40 notarized copy and the separate practice copy."
+      },
+      {
+        "id": "combine-3",
+        "discoveryText": "The ratio of handwritten practice books and old account flows meet in the same hand. We need to reexamine the source of the money that went through our mother’s bank account."
+      },
+      {
+        "id": "combine-4",
+        "discoveryText": "Old account flows and diary records point to the same silence. We must ask what Yoon Jeong-hoo was carrying."
+      },
+      {
+        "id": "combine-5",
+        "discoveryText": "Yoon Jeong-hoo's blocked remarks and the notary public memo record are intertwined. We must investigate how the will was tampered with."
+      },
+      {
+        "id": "combine-6",
+        "discoveryText": "There is an old support stream behind the words “mother’s will.” You need to find out the source of the money that went through your mother’s bank account."
+      },
+      {
+        "id": "combine-7",
+        "discoveryText": "The perspectives of the handwritten practice book and the mother's diary are tied together in one flow. We must ask what they were trying to prevent by lowering the ratio."
+      },
+      {
+        "id": "combine-8",
+        "discoveryText": "The ratio of the will and the records in the mother's diary overlap. The reasons for taking the eldest son for granted and protecting him stand on the same structure."
+      },
+      {
+        "id": "combine-9",
+        "discoveryText": "My brother's words, 'I'm the one who took care of him' and the record in my mother's diary conflict. We need to figure out how each of them wrote down their mother's will."
+      },
+      {
+        "id": "combine-10",
+        "discoveryText": "Combining the older brother's words, 'I'm the one who took care of him' and the old account flow, we can see the younger brother's motivation for taking on both money and silence."
+      },
+      {
+        "id": "combine-11",
+        "discoveryText": "The increase in nursing home visit records overlaps with the time when all nursing care workers read the paper."
+      },
+      {
+        "id": "combine-12",
+        "discoveryText": "If you compare Yoon Jeong-hoo's blocking remarks with 'I'm the one who bought it, why are you 40?', you can see the trend that there is a hidden reason behind the ratio."
+      }
+    ]
+  },
+  "v3Design": {
+    "evidenceAxisLegend": {
+      "depthStages": [
+        {
+          "id": "stub",
+          "summary": "Only existence is visible"
+        },
+        {
+          "id": "excerpt",
+          "summary": "View only part"
+        },
+        {
+          "id": "original",
+          "summary": "Secure original/full copy"
+        },
+        {
+          "id": "context",
+          "summary": "Restore context before and after"
+        },
+        {
+          "id": "established",
+          "summary": "Official record adoption"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Status submitted by the party"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Checking the original and context"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Judging by reliable data"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "The other side disputes the meaning or scope"
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Determination of forgery or excerpt/misreading"
+        }
+      ]
+    },
+    "hiddenDisputes": [
+      {
+        "id": "d-2",
+        "name": "Direction of Will Manipulation",
+        "unlockPlan": {
+          "runtimeRule": "Unlocked upon reaching B d-1 S2",
+          "authoredRule": "When Yoon Jeong-hoo reaches S2 in the d-1 interrogation, a new issue emerges with the notary public memo record."
+        }
+      },
+      {
+        "id": "d-3",
+        "name": "Old sources of support",
+        "unlockPlan": {
+          "runtimeRule": "Unlocked upon reaching d-2 S3",
+          "authoredRule": "As the motive for manipulating the will is revealed, an old story of support emerges."
+        }
+      },
+      {
+        "id": "d-4",
+        "name": "The connection between birth secrets and will manipulation",
+        "unlockPlan": {
+          "runtimeRule": "Unlocked upon reaching d-3 S2",
+          "authoredRule": "Birth secrecy issue emerges as old sources of support emerge"
+        }
+      },
+      {
+        "id": "d-5",
+        "name": "mother's hidden heart",
+        "unlockPlan": {
+          "runtimeRule": "Automatically unlocked when all d-3 S3 + d-4 S2 are reached",
+          "authoredRule": "The final issue emerges after all old support and birth secrets are revealed."
+        }
+      }
+    ],
+    "leadLines": [
+      {
+        "id": "L-1",
+        "interpretationChoices": [
+          {
+            "id": "L-1-A",
+            "text": "Yoon Jeong-hoo used his dementia-stricken mother to fabricate a will.",
+            "implication": "d-1 is pushed through Yoon Jeong-hoo's malicious intervention."
+          },
+          {
+            "id": "L-1-B",
+            "text": "Yoon Jeong-hoo proceeded cautiously, confirming his mother's wishes.",
+            "implication": "It connects well with the nursing care worker’s testimony."
+          },
+          {
+            "id": "L-1-C",
+            "text": "The degree of dementia needs to be further confirmed.",
+            "implication": "Reserve judgment."
+          }
+        ]
+      },
+      {
+        "id": "L-2",
+        "interpretationChoices": [
+          {
+            "id": "L-2-A",
+            "text": "Manipulation is manipulation, it is illegal regardless of motive.",
+            "implication": "Let’s look at Yoon Jeong-hoo’s legal responsibility first."
+          },
+          {
+            "id": "L-2-B",
+            "text": "If it is manipulation that reduces one's share, the motivation is different.",
+            "implication": "Opens the meaning of operation direction."
+          }
+        ]
+      },
+      {
+        "id": "L-3",
+        "interpretationChoices": [
+          {
+            "id": "L-3-A",
+            "text": "It was good intention to help secretly for a long time.",
+            "implication": "We see Yoon Jeong-hoo's sacrifice first."
+          },
+          {
+            "id": "L-3-B",
+            "text": "Disguising it as your mother’s money is itself a deception.",
+            "implication": "We see Yoon Tae-seong's pride and right to know."
+          }
+        ]
+      },
+      {
+        "id": "L-4",
+        "interpretationChoices": [
+          {
+            "id": "L-4-A",
+            "text": "It was a protection to keep the birth secret.",
+            "implication": "Yoon Jeong-hoo's entire actions are recontextualized as protecting his older brother."
+          },
+          {
+            "id": "L-4-B",
+            "text": "My brother has the right to know.",
+            "implication": "We see the problem of concealing birth secrets itself."
+          },
+          {
+            "id": "L-4-C",
+            "text": "Both sons distorted their mother's will.",
+            "implication": "Look at the mutual responsibility structure."
+          }
+        ]
+      }
+    ],
+    "authorityPlacements": [
+      {
+        "action": "ORIGINAL SUBMISSION ORDER",
+        "recommendedMoment": "At the beginning of d-1 e-1/e-3 Excerpt",
+        "purpose": "Secure a copy of the will and the original testimony of the caregiver"
+      },
+      {
+        "action": "ORIGINAL SUBMISSION ORDER",
+        "recommendedMoment": "Immediately after the appearance of e-4",
+        "purpose": "Obtain original notary memorandum records"
+      },
+      {
+        "action": "ORIGINAL SUBMISSION ORDER",
+        "recommendedMoment": "E-6 axis immediately after the appearance of old sources of support",
+        "purpose": "Secure old account flows with bank records"
+      },
+      {
+        "action": "Please answer correctly",
+        "recommendedMoment": "When Jeonghoo Yoon repeats blocking expressions that narrow the scope of answers",
+        "purpose": "Forcing substantive nouns such as the details of manipulation, reasons for application, and diary contents"
+      },
+      {
+        "action": "separate interrogation",
+        "recommendedMoment": "B immediately after e-5 Original",
+        "purpose": "Breaking down Yoon Jeong-hoo, who is affect_flattening, faster."
+      },
+      {
+        "action": "separate interrogation",
+        "recommendedMoment": "e-7 Immediately after Excerpt A",
+        "purpose": "Observe Yoon Tae-seong's immediate reaction to his birth secret."
+      },
+      {
+        "action": "provisional recognition",
+        "recommendedMoment": "After e-4 certification",
+        "purpose": "Record mother's condition and procedure progress notes on the day of notarization"
+      },
+      {
+        "action": "provisional recognition",
+        "recommendedMoment": "After e-6 certification",
+        "purpose": "Old account flow and 300 million won delivery sequence"
+      },
+      {
+        "action": "provisional recognition",
+        "recommendedMoment": "After e-7 Established",
+        "purpose": "A record of the connection between birth secrets and the motive for will manipulation"
+      },
+      {
+        "action": "leniency window",
+        "recommendedMoment": "Immediately after dc-2 or dc-3",
+        "purpose": "Yoon Jeong-hoo admits the burden of protecting his older brother, while Yoon Tae-seong admits the shock of his identity more quickly."
+      },
+      {
+        "action": "Suppression of speech / exclusion from records",
+        "recommendedMoment": "When Yoon Tae-seong repeatedly attacks his brother's character or when Yoon Jeong-hoo remains silent",
+        "purpose": "Reduce frame battles and separate official records from hypotheses"
+      },
+      {
+        "action": "Unseal sensitive information",
+        "recommendedMoment": "When birth secret interpretation is chosen but lacks substance or just before dc-3",
+        "purpose": "Clearly reveal the birth secret but manage the risk of Yoon Tae-seong's identity shock"
+      }
+    ],
+    "sensitiveSealTargets": [
+      {
+        "targets": [
+          "father's real name",
+          "Secret details of birth",
+          "mother's diary personal records"
+        ],
+        "risk": "If the birth secret is revealed too early, Yoon Tae-seong's identity may collapse and the trial cannot proceed."
+      }
+    ],
+    "officialRecordRecommendations": [
+      "Although my mother did not completely lose her ability to make judgments in her later years, there was Yoon Jeong-hoo's intervention.",
+      "The 60:40 will is the result of Yoon Jeong-hoo's manipulation of reducing his share of the proportion of separate handwritten practice books.",
+      "Yoon Jeong-hoo had been sending regular support funds to his mother for a long time, and during Yoon Tae-seong's factory crisis, he put 300 million won into his mother's bank account and had it delivered to Yoon Tae-seong.",
+      "Yoon Tae-seong is not his father's biological son, and Yoon Jeong-hu knew this and fabricated a will to protect his older brother.",
+      "Neither of them could leave their mother as she was. Yoon Tae-seong took the inheritance for granted, and Yoon Jeong-hu tried to protect his older brother by changing his mother's will."
+    ]
+  },
+  "solutionCategoryLabels": {
+    "유서적법성판단": "Determination of legality of will",
+    "재산분배재조정": "Property distribution realignment",
+    "가족관계회복": "recovery of family relationships"
+  }
 }

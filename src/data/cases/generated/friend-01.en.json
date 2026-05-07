@@ -1,79 +1,4587 @@
 {
   "caseId": "friend-01",
+  "locale": "en",
   "overlayKind": "generatedCaseSurface",
+  "overlayScope": "full",
   "meta": {
-    "title": "The Friend Who Was Cut Off"
-  },
-  "context": {
-    "description": "An ex-best-friend who had been cut off keeps contacting my fiance. Three weeks before the wedding — looking only at that scene, anyone would think the friend has crossed a line."
+    "anchorTruth": "Choi Soo-min did not try to seduce the bride-to-be, but tried to warn her, and long before that, she became a villain herself, unable to tell what happened to Song Da-eun's father.",
+    "emotionalBait": "My ex-best friend who broke up with me continues to contact my husband-to-be. Just watching that scene, three weeks before the wedding, anyone would think that the friend had crossed a line.",
+    "resolutionDilemma": "Even if Choi Soo-min's silence was motivated by protection each time, it ultimately created greater misunderstanding and stigma. Song Da-eun's hasty decision was cruel, but it was also a reaction without knowing the truth about her father.",
+    "title": "best friend lost"
   },
   "duo": {
     "partyA": {
       "name": "Song Da-eun",
-      "occupation": "online shopping mall customer-service staff"
+      "occupation": "Online shopping mall CS employee",
+      "speechStyle": "Start with the conclusion and include evidence within it. When the other person retorts, you bring up what has already been said and narrow the context to yourself.",
+      "fear": "He is most afraid of his father's true face being revealed.",
+      "dailyRoutine": "After completing CS work at the shopping mall, I prepare for marriage with my husband-to-be and maintain a relationship by posting about my daily life in a group chat room with mutual friends.",
+      "sensitivePoints": [
+        "father's money problems",
+        "The real reason for past stop losses",
+        "Posted in a group chat room without confirmation"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "Before the other person has finished speaking, they conclude with ‘So in the end~’."
+        },
+        {
+          "pattern": "They bring past cases as the basis for current judgment, saying, ‘You’ve done that before.’"
+        },
+        {
+          "pattern": "When an unfavorable point comes up, we narrow the scope by saying, ‘That’s not what we’re talking about now.’"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "Sumina",
+        "toJudge": "my ex friend",
+        "angry": "Sumin Choi!"
+      }
     },
     "partyB": {
-      "name": "Choi Su-min",
-      "occupation": "pilates instructor"
-    }
+      "name": "Sumin Choi",
+      "occupation": "pilates instructor",
+      "speechStyle": "Suppress your emotions and list only the facts. When I tell the most painful story, my voice becomes flatter.",
+      "fear": "He knows that if he tells Song Da-eun the truth about his father, his friend will view him as someone who did not pay back the money, so he cannot tell it to the end.",
+      "dailyRoutine": "After finishing Pilates class, I cleaned things up on my own, and my contact with common friends gradually decreased. When I contacted my husband-to-be, I sent a text message alone at a cafe.",
+      "sensitivePoints": [
+        "Damage from non-repayment of loan from Song Da-eun's father",
+        "The fact that the groom-to-be crossed the line first",
+        "The current situation of becoming a villain again"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "When talking about the most painful stories, the tone becomes flatter and emotion disappears."
+        },
+        {
+          "pattern": "He neutralizes the other person's questioning by taking responsibility first, saying, 'I should have just endured it.'"
+        },
+        {
+          "pattern": "Instead of directly mentioning the actions of key characters, they say it indirectly by saying, ‘There was a situation there.’"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "Da-eun",
+        "toJudge": "Da-eun",
+        "angry": "Song Da-eun!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "description": "The fact that Choi Soo-min contacted her husband-to-be for 9 days was framed as 'obsession' in the group chat room.",
+        "distortionDirection": "Song Da-eun did not confirm the intention of the contact and concluded that it was the same pattern as in the past."
+      },
+      {
+        "id": "ledger-2",
+        "description": "The real cause of the loss in the past was Song Da-eun's father's non-repayment of a loan, but Choi Soo-min was unable to tell Song Da-eun and declared himself a villain.",
+        "distortionDirection": "Song Da-eun remembers that Choi Soo-min changed his mind because of money."
+      },
+      {
+        "id": "ledger-3",
+        "description": "The groom-to-be first sent a message that crossed the line to Choi Soo-min, and Choi Soo-min rejected it. Choi Soo-min's subsequent contact was an extension of this situation.",
+        "distortionDirection": "Song Da-eun does not know this fact itself."
+      },
+      {
+        "id": "ledger-4",
+        "description": "Song Da-eun criticized Choi Soo-min in the group chat room without confirmation, and their mutual friends agreed.",
+        "distortionDirection": "Song Da-eun thought she was ‘reporting the truth,’ but in reality, it was a conclusion without confirmation."
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "w-1",
+        "name": "Sera Kim",
+        "knowledgeScope": "After seeing Song Da-eun's post in the group chat room, I agreed with criticizing Choi Su-min. I felt uneasy afterward.",
+        "surfaceKnowledge": "He is a mutual friend witness who knows the atmosphere of the group chat room and the circumstances of Song Da-eun's first remark.",
+        "witnessProfile": {
+          "occupation": "beauty salon worker",
+          "relationToA": "We've been friends since high school.",
+          "relationToB": "I got to know him through Song Da-eun.",
+          "speechStyle": "Be honest, but slightly tone down the parts you agree with.",
+          "addressJudge": "Your Honor",
+          "addressA": "Da-eun",
+          "addressB": "Mr. Sumin",
+          "hiddenAgenda": "I am ashamed that I also participated in criticizing Choi Soo-min."
+        }
+      },
+      {
+        "id": "w-2",
+        "name": "Junhyuk Park",
+        "knowledgeScope": "As a junior at the groom-to-be's company, I know that the groom-to-be approached Su-min Choi first.",
+        "surfaceKnowledge": "He is a third-party witness who knows the behavior patterns of the groom-to-be.",
+        "witnessProfile": {
+          "occupation": "office worker",
+          "relationToA": "We don't know each other.",
+          "relationToB": "I've seen it once or twice through my husband-to-be.",
+          "speechStyle": "Speak concisely, focusing on facts, and avoid making unnecessary judgments.",
+          "addressJudge": "Your Honor",
+          "addressA": "Him",
+          "addressB": "Soo-min Choi",
+          "hiddenAgenda": "I am careful that my work relationship with my husband-to-be may become uncomfortable."
+        }
+      },
+      {
+        "id": "w-3",
+        "name": "Oh Mi-kyung",
+        "knowledgeScope": "As the owner of a local snack bar, I saw Song Da-eun's father come to borrow money from Choi Soo-min in the past. Choi Soo-min once came to the store crying.",
+        "surfaceKnowledge": "He is a third-party witness who witnessed money transactions between Song Da-eun's father and Choi Soo-min in the past.",
+        "witnessProfile": {
+          "occupation": "Snack restaurant owner",
+          "relationToA": "I saw Song Da-eun’s father in the neighborhood.",
+          "relationToB": "I am a regular at the store.",
+          "speechStyle": "Speak with sincerity, but convey exactly what you see.",
+          "addressJudge": "Your Honor",
+          "addressA": "the daughter of the house",
+          "addressB": "Sumin",
+          "hiddenAgenda": "None."
+        }
+      }
+    ]
+  },
+  "context": {
+    "description": "My ex-best friend who broke up with me continues to contact my husband-to-be. Just watching that scene, three weeks before the wedding, anyone would think that the friend had crossed a line.",
+    "triggerAmplifier": "In the beginning, Choi Soo-min's 9-day contact record and Song Da-eun's comments in the group chat room overlap, making it seem like Choi Soo-min is an obsessed person. However, as the groom-to-be's over-the-top message and Song Da-eun's father's pattern of accessing money are revealed, the focus of the case is not obsession, but repeated silence and stigma.",
+    "caseName": "best friend lost"
   },
   "disputes": [
     {
       "id": "d-1",
-      "name": "The intent behind nine days of contact"
+      "name": "9-day contact intention",
+      "truthDescription": "Choi Soo-min contacted her husband-to-be for 9 days. Rather than being obsessed, Song Da-eun tried to warn her father of his pattern of accessing money, but there was no way to say it directly.",
+      "mediationLink": "Appropriateness of intent and method of contact",
+      "judgmentStatement": "Choi Soo-min's contact was a warning, not an obsession, but the appropriateness of the method requires separate judgment.",
+      "verdictOptions": {
+        "wrong": "Choi Soo-min was obsessed with her husband-to-be and contacted her repeatedly.",
+        "partial": "It is true that Choi Soo-min contacted him, but it is unclear whether it was obsession or some other intention.",
+        "truth": "Choi Soo-min contacted her husband-to-be to warn her about Song Da-eun's father's money access patterns.",
+        "defer": "There is insufficient evidence to determine the true nature of the contact. I reserve it."
+      }
     },
     {
       "id": "d-2",
-      "name": "The fiance's overreaching approach"
+      "name": "The groom-to-be's overstepping approach",
+      "truthDescription": "The groom-to-be first sent a message that crossed the line to Choi Soo-min, and Choi Soo-min rejected it. Choi Soo-min's later contact was an extension of this situation.",
+      "mediationLink": "The groom-to-be's approach and Choi Su-min's response",
+      "judgmentStatement": "The groom-to-be crossed the line first, and Choi Soo-min was the one who refused.",
+      "v3UnlockPlan": {
+        "runtimeRule": "Unlocked when either side reaches d-1 S3 or higher.",
+        "authoredRule": "In either interrogation, if a crack in the intention to communicate is revealed in d-1, the groom-to-be's approach is revealed."
+      },
+      "verdictOptions": {
+        "wrong": "Choi Soo-min approached the groom-to-be first, and the groom-to-be was the victim.",
+        "partial": "There was contact on both sides, but it is unclear who crossed the line.",
+        "truth": "The groom-to-be sent a message that crossed the line first, and Choi Soo-min rejected it.",
+        "defer": "It is difficult to determine the sequential relationship. I reserve it."
+      }
     },
     {
       "id": "d-3",
-      "name": "Pattern of the father's approach about money"
+      "name": "Father's Money Access Pattern",
+      "truthDescription": "Song Da-eun's father was talking about money to her husband-to-be, and Soo-min Choi tried to warn her husband-to-be because she had experienced the same pattern in the past.",
+      "mediationLink": "Song Da-eun’s father’s money access pattern",
+      "judgmentStatement": "Song Da-eun's father's money access pattern was the same in the past and present.",
+      "v3UnlockPlan": {
+        "runtimeRule": "Unlocked when either side reaches d-2 S3 or higher.",
+        "authoredRule": "After the groom-to-be's approach is confirmed in d-2, when Choi Soo-min reveals the reason for the warning, Song Da-eun's father's pattern is injured."
+      },
+      "verdictOptions": {
+        "wrong": "Song Da-eun's father only said hello to the groom-to-be.",
+        "partial": "It seems like money was discussed, but the specifics cannot be confirmed.",
+        "truth": "Song Da-eun's father approached her husband-to-be to lend him money, and Choi Soo-min experienced the same pattern in the past.",
+        "defer": "The reality of the conversation cannot be confirmed. I reserve it."
+      }
     },
     {
       "id": "d-4",
-      "name": "Reason for the past breakup"
+      "name": "Reasons for past stop losses",
+      "truthDescription": "The real cause of the loss in the past was that Song Da-eun's father borrowed money from Choi Soo-min three times in millions of won, then repaid only part of it and cut off contact. Choi Soo-min couldn't bear to tell Song Da-eun because he would have to bring up the issue with his father, so he called himself a villain.",
+      "mediationLink": "Reasons for past stop losses",
+      "judgmentStatement": "The cause of the loss in the past was Song Da-eun's father's non-repayment of the loan and Choi Su-min's silence.",
+      "v3UnlockPlan": {
+        "runtimeRule": "Unlocked when either side reaches d-3 S3 or higher.",
+        "authoredRule": "After Song Da-eun's father's current pattern was confirmed, it emerged that the same thing had happened in the past."
+      },
+      "verdictOptions": {
+        "wrong": "In the past, Soo-min Choi changed his mind and unilaterally cut off the break-up.",
+        "partial": "Money issues were involved in the stop loss, but the exact circumstances are unknown.",
+        "truth": "The reason was that Song Da-eun's father borrowed money from Choi Soo-min, only repaid part of it, and then stopped contacting her. Choi Soo-min could not bear to say anything and declared himself a villain.",
+        "defer": "It is difficult to determine the true cause of stop loss. I reserve it."
+      }
     },
     {
       "id": "d-5",
-      "name": "Public framing in the group chat and reputation harm"
+      "name": "Group chat room selling and defamation",
+      "truthDescription": "The structure of Song Da-eun criticizing Choi Soo-min in the group chat room without confirmation, and Choi Soo-min claiming to be a villain was repeated. Both of them have a responsibility to be determined before confirmation.",
+      "mediationLink": "Hasty conclusions and defamation",
+      "judgmentStatement": "The responsibility of the party who decided first and made it public is greater, but the party who allowed it to be repeated through silence is also responsible.",
+      "v3UnlockPlan": {
+        "runtimeRule": "Unlocks when either side reaches d-3 S3 + d-4 S3",
+        "authoredRule": "Song Da-eun is currently injured in a defamation case after her father's pattern and unpaid past loans were revealed."
+      },
+      "verdictOptions": {
+        "wrong": "Choi Soo-min approached the groom-to-be first and destroyed his reputation.",
+        "partial": "There are parts of both sides that are presumptuous about the other.",
+        "truth": "Song Da-eun criticized Choi Soo-min in the group chat room without confirmation, and the structure of Choi Soo-min becoming a villain was repeated.",
+        "defer": "It is difficult to determine who defamed first. I reserve it."
+      }
     }
   ],
   "evidence": [
     {
       "id": "e-1",
-      "surfaceName": "Contact log",
-      "surfaceDescription": "A log of contacts Ms. Choi sent to the fiance exists."
+      "name": "Choi Soo-min → groom-to-be contact record",
+      "surfaceName": "contact history",
+      "description": "A record of Choi Soo-min repeatedly calling and texting her husband-to-be Kim Tae-yoon over the past nine days. Only by checking the original text at each step can you determine the intent of the contact.",
+      "surfaceDescription": "There is a record of contact sent by Soo-min Choi to her prospective groom.",
+      "investigationResults": {
+        "request_original": "On the first page, repeated calls and absences for 9 days are confirmed. It looks like obsessive contact, but most of the original text is sealed.",
+        "check_metadata": "On the second page, you can see a statement saying that this is not a communication about personal issues between Taeyun and Sumin. However, the exact purpose is not yet confirmed.",
+        "restore_context": "On the third page, a statement is revealed about why something similar happened in the past. There is now a basis to ask in earnest about the intention of contact."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Are these contact logs actual sending records?"
+          },
+          "label": "Check records"
+        },
+        {
+          "question": {
+            "text": "Please match the wording with the contact times."
+          },
+          "label": "time contrast",
+          "unlockHint": "If you check the original further, you will see contact times and repeated phrases as well."
+        },
+        {
+          "question": {
+            "text": "Please consider whether this contact was a warning or an obsession."
+          },
+          "label": "restoration of intention",
+          "unlockHint": "Contrasting your wording can help you make the intent of your contact clearer."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "What did you think about this contact record?",
+          "implication": "Confirm your first impression of obsession."
+        },
+        "b": {
+          "questionAngle": "Please explain why you contacted me this way.",
+          "implication": "Give them the opportunity to explain their intentions for contact."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the existence of contact records is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "Focused on number of calls and absences"
+        },
+        {
+          "id": "original",
+          "summary": "Reduce misunderstandings about personal contact by using the original text of some characters"
+        },
+        {
+          "id": "context",
+          "summary": "Next, check related reasons and hints of repetition in the past."
+        },
+        {
+          "id": "established",
+          "summary": "The intention to contact is judged based on the possibility of warning."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Song Da-eun submitted a capture"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Comparing original call records"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Verify consistency with carrier records"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Su-min Choi disputes the intention of contact."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Interpretation of obsession requires comparison with the original text."
+        }
+      ],
+      "meta": {
+        "name": "contact history",
+        "trustLabel": "Normal",
+        "sourceLabel": "Song Da-eun side",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "contact history",
+          "trustLabel": "Normal",
+          "sourceLabel": "Song Da-eun side",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Reasons involved"
+        },
+        "log": {
+          "title": "Choi Soo-min → groom-to-be contact record",
+          "rows": [
+            {
+              "typeLabel": "Outgoing",
+              "target": "Kim Tae-yoon (groom-to-be)",
+              "duration": "0 minutes 12 seconds (interrupted)"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“I’m not trying to criticize you for making a joke that crossed the line with me last time. It’s a different story.”"
+            },
+            {
+              "typeLabel": "Outgoing",
+              "target": "Kim Tae-yoon",
+              "duration": "absent"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“I have something important to say. It’s about Da-eun.”"
+            },
+            {
+              "typeLabel": "Outgoing",
+              "target": "Kim Tae-yoon",
+              "duration": "0 minutes 08 seconds (interrupted)"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“Don’t avoid me. I’m doing this because it’s difficult to tell Da-eun right now.”"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“If you meet me once and talk to me, you’ll understand everything.”"
+            },
+            {
+              "typeLabel": "Outgoing",
+              "target": "Kim Tae-yoon",
+              "duration": "1 minute 42 seconds"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“I don’t want to do this either. I can’t just ignore it because it’s Da-eun’s job.”"
+            },
+            {
+              "typeLabel": "Outgoing",
+              "target": "Kim Tae-yoon",
+              "duration": "absent"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“Please, one last time. The same thing happened before.”"
+            },
+            {
+              "typeLabel": "Outgoing",
+              "target": "Kim Tae-yoon",
+              "duration": "Out of office (presumed blocked)"
+            },
+            {
+              "typeLabel": "character",
+              "target": "Kim Tae-yoon",
+              "duration": "“I guess you blocked me. I’m sorry I didn’t want to involve Da-eun.”"
+            }
+          ],
+          "note": "In the original text on page 3, phrases such as “Story related to Da-eun” and “Same thing as before” are repeated. The intention to contact appears to be something other than an emotional issue between the groom-to-be and Sumin.",
+          "pages": [
+            {
+              "label": "Page 1 Sending Frequency",
+              "title": "Choi Soo-min → groom-to-be contact record",
+              "rows": [
+                {
+                  "date": "03.01 evening",
+                  "typeLabel": "Outgoing",
+                  "target": "Kim ○○ (groom-to-be)",
+                  "duration": "short cut"
+                },
+                {
+                  "date": "03.01 evening",
+                  "typeLabel": "character",
+                  "target": "Kim ○○",
+                  "duration": "call request phrase"
+                },
+                {
+                  "date": "03.02 am",
+                  "typeLabel": "character",
+                  "target": "Kim ○○",
+                  "duration": "Request for important stories"
+                },
+                {
+                  "date": "03.02 evening",
+                  "typeLabel": "Outgoing",
+                  "target": "Kim ○○",
+                  "duration": "absent"
+                },
+                {
+                  "date": "03.03 am",
+                  "typeLabel": "character",
+                  "target": "Kim ○○",
+                  "duration": "Request for confirmation before marriage"
+                },
+                {
+                  "date": "03.04 day",
+                  "typeLabel": "Outgoing",
+                  "target": "Kim ○○",
+                  "duration": "short cut"
+                },
+                {
+                  "date": "03.05 night",
+                  "typeLabel": "character",
+                  "target": "Kim ○○",
+                  "duration": "Phrases to meet only once"
+                }
+              ],
+              "note": "Page 1 is an excerpt focusing on the number of calls and absences. This step alone shows that Choi Soo-min repeatedly contacted her husband-to-be."
+            },
+            {
+              "label": "Page 2: Recontextualization of phrases",
+              "title": "Choi Soo-min → groom-to-be contact record",
+              "rows": [
+                {
+                  "date": "03.01 19th era",
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae○ (groom-to-be)",
+                  "duration": "0 minutes 12 seconds (interrupted)"
+                },
+                {
+                  "date": "03.01 19th era",
+                  "typeLabel": "character",
+                  "target": "Kim Tae○",
+                  "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+                },
+                {
+                  "date": "03.02 10th era",
+                  "typeLabel": "character",
+                  "target": "Kim Tae○",
+                  "duration": "“I’m not trying to make an issue of you saying something that crossed the line to me back then.”"
+                },
+                {
+                  "date": "03.03 09 era",
+                  "typeLabel": "character",
+                  "target": "Kim Tae○",
+                  "duration": "“It’s a different story, so I’d like to explain it over the phone.”"
+                },
+                {
+                  "date": "03.04 12th Age",
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae○",
+                  "duration": "0 minutes 08 seconds (interrupted)"
+                },
+                {
+                  "date": "03.05 21 era",
+                  "typeLabel": "character",
+                  "target": "Kim Tae○",
+                  "duration": "“I’m not calling you because of a problem between me and Taeyoon.”"
+                },
+                {
+                  "date": "03.06 08 era",
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae○",
+                  "duration": "1 minute 42 seconds"
+                },
+                {
+                  "date": "03.08 17th era",
+                  "typeLabel": "character",
+                  "target": "Kim Tae○",
+                  "duration": "“I don’t mean to misunderstand, but I don’t think we should just ignore it.”"
+                },
+                {
+                  "date": "03.09 11th era",
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae○",
+                  "duration": "Out of office (presumed blocked)"
+                }
+              ],
+              "note": "Page 2 restores some of the original text. It doesn't seem like Choi Soo-min is contacting Tae-yoon to discuss personal matters, but the exact purpose is still sealed."
+            },
+            {
+              "label": "Reasons related to page 3",
+              "title": "Choi Soo-min → groom-to-be contact record",
+              "rows": [
+                {
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae-yoon (groom-to-be)",
+                  "duration": "0 minutes 12 seconds (interrupted)"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“I’m not trying to criticize you for making a joke that crossed the line with me last time. It’s a different story.”"
+                },
+                {
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae-yoon",
+                  "duration": "absent"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“I have something important to say. It’s about Da-eun.”"
+                },
+                {
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae-yoon",
+                  "duration": "0 minutes 08 seconds (interrupted)"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“Don’t avoid me. I’m doing this because it’s difficult to tell Da-eun right now.”"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“If you meet me once and talk to me, you’ll understand everything.”"
+                },
+                {
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae-yoon",
+                  "duration": "1 minute 42 seconds"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“I don’t want to do this either. I can’t just ignore it because it’s Da-eun’s job.”"
+                },
+                {
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae-yoon",
+                  "duration": "absent"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“Please, one last time. The same thing happened before.”"
+                },
+                {
+                  "typeLabel": "Outgoing",
+                  "target": "Kim Tae-yoon",
+                  "duration": "Out of office (presumed blocked)"
+                },
+                {
+                  "typeLabel": "character",
+                  "target": "Kim Tae-yoon",
+                  "duration": "“I guess you blocked me. I’m sorry I didn’t want to involve Da-eun.”"
+                }
+              ],
+              "note": "In the original text on page 3, phrases such as “Story related to Da-eun” and “Same thing as before” are repeated. The intention to contact appears to be something other than an emotional issue between the groom-to-be and Sumin."
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "contact history",
+            "trustLabel": "Normal",
+            "sourceLabel": "Song Da-eun side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Sending frequency",
+            "redactions": [
+              "Masking part of recipient name",
+              "Abbreviation of original text"
+            ]
+          },
+          "log": {
+            "title": "Choi Soo-min → groom-to-be contact record",
+            "rows": [
+              {
+                "date": "03.01 evening",
+                "typeLabel": "Outgoing",
+                "target": "Kim ○○ (groom-to-be)",
+                "duration": "short cut"
+              },
+              {
+                "date": "03.01 evening",
+                "typeLabel": "character",
+                "target": "Kim ○○",
+                "duration": "call request phrase"
+              },
+              {
+                "date": "03.02 am",
+                "typeLabel": "character",
+                "target": "Kim ○○",
+                "duration": "Request for important stories"
+              },
+              {
+                "date": "03.02 evening",
+                "typeLabel": "Outgoing",
+                "target": "Kim ○○",
+                "duration": "absent"
+              },
+              {
+                "date": "03.03 am",
+                "typeLabel": "character",
+                "target": "Kim ○○",
+                "duration": "Request for confirmation before marriage"
+              },
+              {
+                "date": "03.04 day",
+                "typeLabel": "Outgoing",
+                "target": "Kim ○○",
+                "duration": "short cut"
+              },
+              {
+                "date": "03.05 night",
+                "typeLabel": "character",
+                "target": "Kim ○○",
+                "duration": "Phrases to meet only once"
+              }
+            ],
+            "note": "Page 1 is an excerpt focusing on the number of calls and absences. This step alone shows that Choi Soo-min repeatedly contacted her husband-to-be.",
+            "pages": [
+              {
+                "label": "Page 1 Sending Frequency",
+                "title": "Choi Soo-min → groom-to-be contact record",
+                "rows": [
+                  {
+                    "date": "03.01 evening",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○ (groom-to-be)",
+                    "duration": "short cut"
+                  },
+                  {
+                    "date": "03.01 evening",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "call request phrase"
+                  },
+                  {
+                    "date": "03.02 am",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Request for important stories"
+                  },
+                  {
+                    "date": "03.02 evening",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○",
+                    "duration": "absent"
+                  },
+                  {
+                    "date": "03.03 am",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Request for confirmation before marriage"
+                  },
+                  {
+                    "date": "03.04 day",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○",
+                    "duration": "short cut"
+                  },
+                  {
+                    "date": "03.05 night",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Phrases to meet only once"
+                  }
+                ],
+                "note": "Page 1 is an excerpt focusing on the number of calls and absences. This step alone shows that Choi Soo-min repeatedly contacted her husband-to-be."
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "contact history",
+            "trustLabel": "Normal",
+            "sourceLabel": "Song Da-eun side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Recontextualize the phrase",
+            "redactions": [
+              "Masking part of recipient name",
+              "Key cause phrase seal"
+            ]
+          },
+          "log": {
+            "title": "Choi Soo-min → groom-to-be contact record",
+            "rows": [
+              {
+                "date": "03.01 19th era",
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae○ (groom-to-be)",
+                "duration": "0 minutes 12 seconds (interrupted)"
+              },
+              {
+                "date": "03.01 19th era",
+                "typeLabel": "character",
+                "target": "Kim Tae○",
+                "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+              },
+              {
+                "date": "03.02 10th era",
+                "typeLabel": "character",
+                "target": "Kim Tae○",
+                "duration": "“I’m not trying to make an issue of you saying something that crossed the line to me back then.”"
+              },
+              {
+                "date": "03.03 09 era",
+                "typeLabel": "character",
+                "target": "Kim Tae○",
+                "duration": "“It’s a different story, so I’d like to explain it over the phone.”"
+              },
+              {
+                "date": "03.04 12th Age",
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae○",
+                "duration": "0 minutes 08 seconds (interrupted)"
+              },
+              {
+                "date": "03.05 21 era",
+                "typeLabel": "character",
+                "target": "Kim Tae○",
+                "duration": "“I’m not calling you because of a problem between me and Taeyoon.”"
+              },
+              {
+                "date": "03.06 08 era",
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae○",
+                "duration": "1 minute 42 seconds"
+              },
+              {
+                "date": "03.08 17th era",
+                "typeLabel": "character",
+                "target": "Kim Tae○",
+                "duration": "“I don’t mean to misunderstand, but I don’t think we should just ignore it.”"
+              },
+              {
+                "date": "03.09 11th era",
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae○",
+                "duration": "Out of office (presumed blocked)"
+              }
+            ],
+            "note": "Page 2 restores some of the original text. It doesn't seem like Choi Soo-min is contacting Tae-yoon to discuss personal matters, but the exact purpose is still sealed.",
+            "pages": [
+              {
+                "label": "Page 1 Sending Frequency",
+                "title": "Choi Soo-min → groom-to-be contact record",
+                "rows": [
+                  {
+                    "date": "03.01 evening",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○ (groom-to-be)",
+                    "duration": "short cut"
+                  },
+                  {
+                    "date": "03.01 evening",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "call request phrase"
+                  },
+                  {
+                    "date": "03.02 am",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Request for important stories"
+                  },
+                  {
+                    "date": "03.02 evening",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○",
+                    "duration": "absent"
+                  },
+                  {
+                    "date": "03.03 am",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Request for confirmation before marriage"
+                  },
+                  {
+                    "date": "03.04 day",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○",
+                    "duration": "short cut"
+                  },
+                  {
+                    "date": "03.05 night",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Phrases to meet only once"
+                  }
+                ],
+                "note": "Page 1 is an excerpt focusing on the number of calls and absences. This step alone shows that Choi Soo-min repeatedly contacted her husband-to-be."
+              },
+              {
+                "label": "Page 2: Recontextualization of phrases",
+                "title": "Choi Soo-min → groom-to-be contact record",
+                "rows": [
+                  {
+                    "date": "03.01 19th era",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○ (groom-to-be)",
+                    "duration": "0 minutes 12 seconds (interrupted)"
+                  },
+                  {
+                    "date": "03.01 19th era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+                  },
+                  {
+                    "date": "03.02 10th era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“I’m not trying to make an issue of you saying something that crossed the line to me back then.”"
+                  },
+                  {
+                    "date": "03.03 09 era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“It’s a different story, so I’d like to explain it over the phone.”"
+                  },
+                  {
+                    "date": "03.04 12th Age",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○",
+                    "duration": "0 minutes 08 seconds (interrupted)"
+                  },
+                  {
+                    "date": "03.05 21 era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“I’m not calling you because of a problem between me and Taeyoon.”"
+                  },
+                  {
+                    "date": "03.06 08 era",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○",
+                    "duration": "1 minute 42 seconds"
+                  },
+                  {
+                    "date": "03.08 17th era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“I don’t mean to misunderstand, but I don’t think we should just ignore it.”"
+                  },
+                  {
+                    "date": "03.09 11th era",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○",
+                    "duration": "Out of office (presumed blocked)"
+                  }
+                ],
+                "note": "Page 2 restores some of the original text. It doesn't seem like Choi Soo-min is contacting Tae-yoon to discuss personal matters, but the exact purpose is still sealed."
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "contact history",
+            "trustLabel": "Normal",
+            "sourceLabel": "Song Da-eun side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Reasons involved"
+          },
+          "log": {
+            "title": "Choi Soo-min → groom-to-be contact record",
+            "rows": [
+              {
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae-yoon (groom-to-be)",
+                "duration": "0 minutes 12 seconds (interrupted)"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“I’m not trying to criticize you for making a joke that crossed the line with me last time. It’s a different story.”"
+              },
+              {
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae-yoon",
+                "duration": "absent"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“I have something important to say. It’s about Da-eun.”"
+              },
+              {
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae-yoon",
+                "duration": "0 minutes 08 seconds (interrupted)"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“Don’t avoid me. I’m doing this because it’s difficult to tell Da-eun right now.”"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“If you meet me once and talk to me, you’ll understand everything.”"
+              },
+              {
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae-yoon",
+                "duration": "1 minute 42 seconds"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“I don’t want to do this either. I can’t just ignore it because it’s Da-eun’s job.”"
+              },
+              {
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae-yoon",
+                "duration": "absent"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“Please, one last time. The same thing happened before.”"
+              },
+              {
+                "typeLabel": "Outgoing",
+                "target": "Kim Tae-yoon",
+                "duration": "Out of office (presumed blocked)"
+              },
+              {
+                "typeLabel": "character",
+                "target": "Kim Tae-yoon",
+                "duration": "“I guess you blocked me. I’m sorry I didn’t want to involve Da-eun.”"
+              }
+            ],
+            "note": "In the original text on page 3, phrases such as “Story related to Da-eun” and “Same thing as before” are repeated. The intention to contact appears to be something other than an emotional issue between the groom-to-be and Sumin.",
+            "pages": [
+              {
+                "label": "Page 1 Sending Frequency",
+                "title": "Choi Soo-min → groom-to-be contact record",
+                "rows": [
+                  {
+                    "date": "03.01 evening",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○ (groom-to-be)",
+                    "duration": "short cut"
+                  },
+                  {
+                    "date": "03.01 evening",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "call request phrase"
+                  },
+                  {
+                    "date": "03.02 am",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Request for important stories"
+                  },
+                  {
+                    "date": "03.02 evening",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○",
+                    "duration": "absent"
+                  },
+                  {
+                    "date": "03.03 am",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Request for confirmation before marriage"
+                  },
+                  {
+                    "date": "03.04 day",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim ○○",
+                    "duration": "short cut"
+                  },
+                  {
+                    "date": "03.05 night",
+                    "typeLabel": "character",
+                    "target": "Kim ○○",
+                    "duration": "Phrases to meet only once"
+                  }
+                ],
+                "note": "Page 1 is an excerpt focusing on the number of calls and absences. This step alone shows that Choi Soo-min repeatedly contacted her husband-to-be."
+              },
+              {
+                "label": "Page 2: Recontextualization of phrases",
+                "title": "Choi Soo-min → groom-to-be contact record",
+                "rows": [
+                  {
+                    "date": "03.01 19th era",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○ (groom-to-be)",
+                    "duration": "0 minutes 12 seconds (interrupted)"
+                  },
+                  {
+                    "date": "03.01 19th era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+                  },
+                  {
+                    "date": "03.02 10th era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“I’m not trying to make an issue of you saying something that crossed the line to me back then.”"
+                  },
+                  {
+                    "date": "03.03 09 era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“It’s a different story, so I’d like to explain it over the phone.”"
+                  },
+                  {
+                    "date": "03.04 12th Age",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○",
+                    "duration": "0 minutes 08 seconds (interrupted)"
+                  },
+                  {
+                    "date": "03.05 21 era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“I’m not calling you because of a problem between me and Taeyoon.”"
+                  },
+                  {
+                    "date": "03.06 08 era",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○",
+                    "duration": "1 minute 42 seconds"
+                  },
+                  {
+                    "date": "03.08 17th era",
+                    "typeLabel": "character",
+                    "target": "Kim Tae○",
+                    "duration": "“I don’t mean to misunderstand, but I don’t think we should just ignore it.”"
+                  },
+                  {
+                    "date": "03.09 11th era",
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae○",
+                    "duration": "Out of office (presumed blocked)"
+                  }
+                ],
+                "note": "Page 2 restores some of the original text. It doesn't seem like Choi Soo-min is contacting Tae-yoon to discuss personal matters, but the exact purpose is still sealed."
+              },
+              {
+                "label": "Reasons related to page 3",
+                "title": "Choi Soo-min → groom-to-be contact record",
+                "rows": [
+                  {
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae-yoon (groom-to-be)",
+                    "duration": "0 minutes 12 seconds (interrupted)"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“Taeyun, this is Sumin. Can I talk to you for a moment?”"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“I’m not trying to criticize you for making a joke that crossed the line with me last time. It’s a different story.”"
+                  },
+                  {
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae-yoon",
+                    "duration": "absent"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“I have something important to say. It’s about Da-eun.”"
+                  },
+                  {
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae-yoon",
+                    "duration": "0 minutes 08 seconds (interrupted)"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“Don’t avoid me. I’m doing this because it’s difficult to tell Da-eun right now.”"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“If you meet me once and talk to me, you’ll understand everything.”"
+                  },
+                  {
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae-yoon",
+                    "duration": "1 minute 42 seconds"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“I don’t want to do this either. I can’t just ignore it because it’s Da-eun’s job.”"
+                  },
+                  {
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae-yoon",
+                    "duration": "absent"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“Please, one last time. The same thing happened before.”"
+                  },
+                  {
+                    "typeLabel": "Outgoing",
+                    "target": "Kim Tae-yoon",
+                    "duration": "Out of office (presumed blocked)"
+                  },
+                  {
+                    "typeLabel": "character",
+                    "target": "Kim Tae-yoon",
+                    "duration": "“I guess you blocked me. I’m sorry I didn’t want to involve Da-eun.”"
+                  }
+                ],
+                "note": "In the original text on page 3, phrases such as “Story related to Da-eun” and “Same thing as before” are repeated. The intention to contact appears to be something other than an emotional issue between the groom-to-be and Sumin."
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-2",
-      "surfaceName": "Group-chat captures",
-      "surfaceDescription": "Captures of the conversation in the mutual-friends group chat exist."
+      "name": "Capture from common friend group chat room",
+      "surfaceName": "Group chat room capture",
+      "description": "Song Da-eun posted, ‘Soo-min is contacting my man again,’ and several friends criticized Choi Soo-min.",
+      "surfaceDescription": "There is a conversation capture from a common friend group chat room.",
+      "investigationResults": {
+        "request_original": "On the first page of the group chat room, the circumstances that Song Da-eun posted about Choi Soo-min's contact as \"contacting my man again\" can be confirmed.",
+        "check_metadata": "On the second page, it appears that mutual friends agreed with the remarks made before direct confirmation, and some raised the need for confirmation.",
+        "restore_context": "By comparing the original text on the third page, the chronological order that Song Da-eun shared it in the group chat room first before asking Choi Su-min directly is confirmed."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Who was the first person to post in the group chat room?"
+          },
+          "label": "Check conversation"
+        },
+        {
+          "question": {
+            "text": "Please check what your friends agreed with."
+          },
+          "label": "Diffusion contrast",
+          "unlockHint": "If you look further at the original text of the conversation, you can see the order in which the reactions followed the initial remarks."
+        },
+        {
+          "question": {
+            "text": "Please consider whether disclosure took precedence over direct confirmation."
+          },
+          "label": "holding accountable",
+          "unlockHint": "Contrasting the order of spread allows us to ask who created the stigma first."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Please explain why you posted this.",
+          "implication": "We will investigate why it was disclosed without prior verification."
+        },
+        "b": {
+          "questionAngle": "How did you feel when you saw the contents of this group chat room?",
+          "implication": "Check for damage caused by defamation."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the presence of group chat room captures is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "Only Song Da-eun's first statement is shown."
+        },
+        {
+          "id": "original",
+          "summary": "Check your friends' sympathetic reactions"
+        },
+        {
+          "id": "context",
+          "summary": "Check the order of time posted without confirmation"
+        },
+        {
+          "id": "established",
+          "summary": "Confirmation of defamation caused by hasty conclusions"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Sumin Choi submitted a capture"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Comparing original text from group chat room"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Message time and sender confirmed"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Song Da-eun objected, saying, ‘I was just reporting the facts.’"
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Assumptions without confirmation may constitute defamation."
+        }
+      ],
+      "meta": {
+        "name": "Group chat room capture",
+        "trustLabel": "Normal",
+        "sourceLabel": "both sides",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Group chat room capture",
+          "trustLabel": "Normal",
+          "sourceLabel": "both sides",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Public Disclosure"
+        },
+        "chat": {
+          "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:24",
+          "messages": [
+            {
+              "text": "2026.03.06 21:24 · Original copy / Check sharing order before checking directly"
+            },
+            {
+              "sender": "Sera Kim",
+              "text": "Da-eun, have you checked why Sumin contacted you? Didn’t Taeyun contact you first?"
+            },
+            {
+              "sender": "Song Da-eun",
+              "text": "I haven’t asked Sumin directly yet. Because if you ask, it's obvious they'll say it's a misunderstanding again."
+            },
+            {
+              "sender": "Song Da-eun",
+              "text": "Still, I thought you guys should know this, so I posted it first. I don't want to be the only sensitive person."
+            },
+            {
+              "sender": "Soyeon",
+              "text": "I think you should be a little more careful about what you say before checking it out in person. If it spreads neatly, it's hard to turn it back."
+            },
+            {
+              "sender": "Haeun",
+              "text": "But the mood in the room is already starting to turn towards Sumin’s fault."
+            },
+            {
+              "sender": "Song Da-eun",
+              "text": "I didn't say that for nothing. Sumin has never explained something similar to the end in the past."
+            },
+            {
+              "sender": "Sera Kim",
+              "text": "Shouldn't we look at it separately to see if that previous incident and this contact are the same?"
+            },
+            {
+              "sender": "Song Da-eun",
+              "text": "I'm so tired of hearing things like this again before I get married. I'll tell Taeyun to clean it up first."
+            },
+            {
+              "sender": "Eugene",
+              "text": "Okay. However, if the facts are different later, corrections must be made to the room."
+            },
+            {
+              "sender": "Song Da-eun",
+              "text": "huh. But now I think it’s true that Sumin crossed the line."
+            }
+          ],
+          "pages": [
+            {
+              "label": "Page 1 Initial remarks",
+              "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:14",
+              "messages": [
+                {
+                  "text": "2026.03.06 21:14 · Group chat room capture page 1 / Masking of some names"
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "Guys, my hands are really shaking. I just looked at Taeyun's phone notifications, and Sumin's name kept popping up."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "I don't know why you're only contacting my husband-to-be without saying anything to me."
+                },
+                {
+                  "sender": "friend 1",
+                  "text": "Wait, what exactly was it about?"
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "I have call records and several text messages. It just didn't seem like an Anbu level."
+                },
+                {
+                  "sender": "friend 2",
+                  "text": "It's a bit strange that I didn't tell you first."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "You've caused people trouble like this before. Am I not the only one who is sensitive?"
+                },
+                {
+                  "sender": "friend 1",
+                  "text": "Just looking at the capture, Da-eun seems to be surprised."
+                }
+              ]
+            },
+            {
+              "label": "Page 2 Diffusion reaction",
+              "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:18",
+              "messages": [
+                {
+                  "text": "2026.03.06 21:18 · Group chat room capture page 2 / Expand reaction section"
+                },
+                {
+                  "sender": "Haeun",
+                  "text": "Oh, is he really like that again? Why are you doing this to someone who is preparing for marriage?"
+                },
+                {
+                  "sender": "Eugene",
+                  "text": "I don't think Sumin knows that she's crossing the line. You've created a strange atmosphere before."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "That makes me even more angry. I don't think I can just ignore it this time."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "Taeyun says it’s no big deal, but I don’t believe him."
+                },
+                {
+                  "sender": "Soyeon",
+                  "text": "Then did you ask Sumin directly?"
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "yet. I told you guys first because I thought I would act like a victim again if I talked to you now."
+                },
+                {
+                  "sender": "Haeun",
+                  "text": "Still, shouldn’t you check it yourself? You don’t know what’s coming from just capturing it."
+                },
+                {
+                  "sender": "Eugene",
+                  "text": "But if Da-eun is already this anxious, Sumin should have been careful too."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "that's right. Now I feel like Sumin is attached to me again."
+                }
+              ]
+            },
+            {
+              "label": "Page 3 chronological order",
+              "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:24",
+              "messages": [
+                {
+                  "text": "2026.03.06 21:24 · Original copy / Check sharing order before checking directly"
+                },
+                {
+                  "sender": "Sera Kim",
+                  "text": "Da-eun, have you checked why Sumin contacted you? Didn’t Taeyun contact you first?"
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "I haven’t asked Sumin directly yet. Because if you ask, it's obvious they'll say it's a misunderstanding again."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "Still, I thought you guys should know this, so I posted it first. I don't want to be the only sensitive person."
+                },
+                {
+                  "sender": "Soyeon",
+                  "text": "I think you should be a little more careful about what you say before checking it out in person. If it spreads neatly, it's hard to turn it back."
+                },
+                {
+                  "sender": "Haeun",
+                  "text": "But the mood in the room is already starting to turn towards Sumin’s fault."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "I didn't say that for nothing. Sumin has never explained something similar to the end in the past."
+                },
+                {
+                  "sender": "Sera Kim",
+                  "text": "Shouldn't we look at it separately to see if that previous incident and this contact are the same?"
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "I'm so tired of hearing things like this again before I get married. I'll tell Taeyun to clean it up first."
+                },
+                {
+                  "sender": "Eugene",
+                  "text": "Okay. However, if the facts are different later, corrections must be made to the room."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "text": "huh. But now I think it’s true that Sumin crossed the line."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Group chat room capture",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Initial Remarks Public",
+            "redactions": [
+              "Masking friend names",
+              "abbreviation of some remarks"
+            ]
+          },
+          "chat": {
+            "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:14",
+            "messages": [
+              {
+                "text": "2026.03.06 21:14 · Group chat room capture page 1 / Masking of some names"
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "Guys, my hands are really shaking. I just looked at Taeyun's phone notifications, and Sumin's name kept popping up."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "I don't know why you're only contacting my husband-to-be without saying anything to me."
+              },
+              {
+                "sender": "friend 1",
+                "text": "Wait, what exactly was it about?"
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "I have call records and several text messages. It just didn't seem like an Anbu level."
+              },
+              {
+                "sender": "friend 2",
+                "text": "It's a bit strange that I didn't tell you first."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "You've caused people trouble like this before. Am I not the only one who is sensitive?"
+              },
+              {
+                "sender": "friend 1",
+                "text": "Just looking at the capture, Da-eun seems to be surprised."
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1 Initial remarks",
+                "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:14",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:14 · Group chat room capture page 1 / Masking of some names"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "Guys, my hands are really shaking. I just looked at Taeyun's phone notifications, and Sumin's name kept popping up."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I don't know why you're only contacting my husband-to-be without saying anything to me."
+                  },
+                  {
+                    "sender": "friend 1",
+                    "text": "Wait, what exactly was it about?"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I have call records and several text messages. It just didn't seem like an Anbu level."
+                  },
+                  {
+                    "sender": "friend 2",
+                    "text": "It's a bit strange that I didn't tell you first."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "You've caused people trouble like this before. Am I not the only one who is sensitive?"
+                  },
+                  {
+                    "sender": "friend 1",
+                    "text": "Just looking at the capture, Da-eun seems to be surprised."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "Group chat room capture",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Add a tuning response",
+            "redactions": [
+              "Masking part of friend's name"
+            ]
+          },
+          "chat": {
+            "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:18",
+            "messages": [
+              {
+                "text": "2026.03.06 21:18 · Group chat room capture page 2 / Expand reaction section"
+              },
+              {
+                "sender": "Haeun",
+                "text": "Oh, is he really like that again? Why are you doing this to someone who is preparing for marriage?"
+              },
+              {
+                "sender": "Eugene",
+                "text": "I don't think Sumin knows that she's crossing the line. You've created a strange atmosphere before."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "That makes me even more angry. I don't think I can just ignore it this time."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "Taeyun says it’s no big deal, but I don’t believe him."
+              },
+              {
+                "sender": "Soyeon",
+                "text": "Then did you ask Sumin directly?"
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "yet. I told you guys first because I thought I would act like a victim again if I talked to you now."
+              },
+              {
+                "sender": "Haeun",
+                "text": "Still, shouldn’t you check it yourself? You don’t know what’s coming from just capturing it."
+              },
+              {
+                "sender": "Eugene",
+                "text": "But if Da-eun is already this anxious, Sumin should have been careful too."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "that's right. Now I feel like Sumin is attached to me again."
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1 Initial remarks",
+                "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:14",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:14 · Group chat room capture page 1 / Masking of some names"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "Guys, my hands are really shaking. I just looked at Taeyun's phone notifications, and Sumin's name kept popping up."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I don't know why you're only contacting my husband-to-be without saying anything to me."
+                  },
+                  {
+                    "sender": "friend 1",
+                    "text": "Wait, what exactly was it about?"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I have call records and several text messages. It just didn't seem like an Anbu level."
+                  },
+                  {
+                    "sender": "friend 2",
+                    "text": "It's a bit strange that I didn't tell you first."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "You've caused people trouble like this before. Am I not the only one who is sensitive?"
+                  },
+                  {
+                    "sender": "friend 1",
+                    "text": "Just looking at the capture, Da-eun seems to be surprised."
+                  }
+                ]
+              },
+              {
+                "label": "Page 2 Diffusion reaction",
+                "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:18",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:18 · Group chat room capture page 2 / Expand reaction section"
+                  },
+                  {
+                    "sender": "Haeun",
+                    "text": "Oh, is he really like that again? Why are you doing this to someone who is preparing for marriage?"
+                  },
+                  {
+                    "sender": "Eugene",
+                    "text": "I don't think Sumin knows that she's crossing the line. You've created a strange atmosphere before."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "That makes me even more angry. I don't think I can just ignore it this time."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "Taeyun says it’s no big deal, but I don’t believe him."
+                  },
+                  {
+                    "sender": "Soyeon",
+                    "text": "Then did you ask Sumin directly?"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "yet. I told you guys first because I thought I would act like a victim again if I talked to you now."
+                  },
+                  {
+                    "sender": "Haeun",
+                    "text": "Still, shouldn’t you check it yourself? You don’t know what’s coming from just capturing it."
+                  },
+                  {
+                    "sender": "Eugene",
+                    "text": "But if Da-eun is already this anxious, Sumin should have been careful too."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "that's right. Now I feel like Sumin is attached to me again."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "Group chat room capture",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Make the entire conversation public"
+          },
+          "chat": {
+            "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:24",
+            "messages": [
+              {
+                "text": "2026.03.06 21:24 · Original copy / Check sharing order before checking directly"
+              },
+              {
+                "sender": "Sera Kim",
+                "text": "Da-eun, have you checked why Sumin contacted you? Didn’t Taeyun contact you first?"
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "I haven’t asked Sumin directly yet. Because if you ask, it's obvious they'll say it's a misunderstanding again."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "Still, I thought you guys should know this, so I posted it first. I don't want to be the only sensitive person."
+              },
+              {
+                "sender": "Soyeon",
+                "text": "I think you should be a little more careful about what you say before checking it out in person. If it spreads neatly, it's hard to turn it back."
+              },
+              {
+                "sender": "Haeun",
+                "text": "But the mood in the room is already starting to turn towards Sumin’s fault."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "I didn't say that for nothing. Sumin has never explained something similar to the end in the past."
+              },
+              {
+                "sender": "Sera Kim",
+                "text": "Shouldn't we look at it separately to see if that previous incident and this contact are the same?"
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "I'm so tired of hearing things like this again before I get married. I'll tell Taeyun to clean it up first."
+              },
+              {
+                "sender": "Eugene",
+                "text": "Okay. However, if the facts are different later, corrections must be made to the room."
+              },
+              {
+                "sender": "Song Da-eun",
+                "text": "huh. But now I think it’s true that Sumin crossed the line."
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1 Initial remarks",
+                "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:14",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:14 · Group chat room capture page 1 / Masking of some names"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "Guys, my hands are really shaking. I just looked at Taeyun's phone notifications, and Sumin's name kept popping up."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I don't know why you're only contacting my husband-to-be without saying anything to me."
+                  },
+                  {
+                    "sender": "friend 1",
+                    "text": "Wait, what exactly was it about?"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I have call records and several text messages. It just didn't seem like an Anbu level."
+                  },
+                  {
+                    "sender": "friend 2",
+                    "text": "It's a bit strange that I didn't tell you first."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "You've caused people trouble like this before. Am I not the only one who is sensitive?"
+                  },
+                  {
+                    "sender": "friend 1",
+                    "text": "Just looking at the capture, Da-eun seems to be surprised."
+                  }
+                ]
+              },
+              {
+                "label": "Page 2 Diffusion reaction",
+                "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:18",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:18 · Group chat room capture page 2 / Expand reaction section"
+                  },
+                  {
+                    "sender": "Haeun",
+                    "text": "Oh, is he really like that again? Why are you doing this to someone who is preparing for marriage?"
+                  },
+                  {
+                    "sender": "Eugene",
+                    "text": "I don't think Sumin knows that she's crossing the line. You've created a strange atmosphere before."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "That makes me even more angry. I don't think I can just ignore it this time."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "Taeyun says it’s no big deal, but I don’t believe him."
+                  },
+                  {
+                    "sender": "Soyeon",
+                    "text": "Then did you ask Sumin directly?"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "yet. I told you guys first because I thought I would act like a victim again if I talked to you now."
+                  },
+                  {
+                    "sender": "Haeun",
+                    "text": "Still, shouldn’t you check it yourself? You don’t know what’s coming from just capturing it."
+                  },
+                  {
+                    "sender": "Eugene",
+                    "text": "But if Da-eun is already this anxious, Sumin should have been careful too."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "that's right. Now I feel like Sumin is attached to me again."
+                  }
+                ]
+              },
+              {
+                "label": "Page 3 chronological order",
+                "header": "Instagram DM group “Female Avengers” — 2026.03.06 21:24",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:24 · Original copy / Check sharing order before checking directly"
+                  },
+                  {
+                    "sender": "Sera Kim",
+                    "text": "Da-eun, have you checked why Sumin contacted you? Didn’t Taeyun contact you first?"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I haven’t asked Sumin directly yet. Because if you ask, it's obvious they'll say it's a misunderstanding again."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "Still, I thought you guys should know this, so I posted it first. I don't want to be the only sensitive person."
+                  },
+                  {
+                    "sender": "Soyeon",
+                    "text": "I think you should be a little more careful about what you say before checking it out in person. If it spreads neatly, it's hard to turn it back."
+                  },
+                  {
+                    "sender": "Haeun",
+                    "text": "But the mood in the room is already starting to turn towards Sumin’s fault."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I didn't say that for nothing. Sumin has never explained something similar to the end in the past."
+                  },
+                  {
+                    "sender": "Sera Kim",
+                    "text": "Shouldn't we look at it separately to see if that previous incident and this contact are the same?"
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "I'm so tired of hearing things like this again before I get married. I'll tell Taeyun to clean it up first."
+                  },
+                  {
+                    "sender": "Eugene",
+                    "text": "Okay. However, if the facts are different later, corrections must be made to the room."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "text": "huh. But now I think it’s true that Sumin crossed the line."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-3",
-      "surfaceName": "Past KakaoTalk thread",
-      "surfaceDescription": "A KakaoTalk record from just before the past breakup exists."
+      "name": "Kakao Talk just before the loss in the past",
+      "surfaceName": "Past KakaoTalk",
+      "description": "Choi Soo-min avoided explaining, leaving only the statement that she would sort out the matter, and Song Da-eun responded with the effect that people change when they get involved in the matter.",
+      "surfaceDescription": "There is a record of a KakaoTalk conversation just before the loss in the past.",
+      "investigationResults": {
+        "request_original": "Choi Soo-min only said that she would sort out the matter herself, and Song Da-eun responded to the effect that people change when they get involved in that matter.",
+        "check_metadata": "Shortly after this conversation, the two lost contact and did not see each other for about two years.",
+        "restore_context": "Past conversations alone do not yet separate the parties responsible for money issues. It should be checked against additional records."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please check the original text of the conversation just before the stop loss."
+          },
+          "label": "Check conversation"
+        },
+        {
+          "question": {
+            "text": "Please contrast the order in which we lost contact after the money issue."
+          },
+          "label": "Context contrast",
+          "unlockHint": "If you look before and after the conversation, you can see the mention of money issues and the stop loss point."
+        },
+        {
+          "question": {
+            "text": "Why didn't you tell me about it until the end?"
+          },
+          "label": "silent questioning",
+          "unlockHint": "Contrasting the context allows us to ask who is responsible for the hidden money problem."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Have you ever asked Sumin Choi again after this conversation?",
+          "implication": "Song Da-eun reveals a neat pattern without confirmation."
+        },
+        "b": {
+          "questionAngle": "Why didn't you tell me who was responsible for that?",
+          "implication": "We confirm Choi Soo-min's motive for silence."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the past KakaoTalk presence is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "Only the words ‘that thing’ and ‘people change’ are seen."
+        },
+        {
+          "id": "original",
+          "summary": "Check the context before and after the conversation and the point of stop loss"
+        },
+        {
+          "id": "context",
+          "summary": "It hints at the person behind Choi Soo-min's hidden money problem."
+        },
+        {
+          "id": "established",
+          "summary": "Check for possible connections to past financial issues."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "submission by both sides"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Checking original KakaoTalk text"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Message time and sender confirmed"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Choi Soo-min objected, saying, ‘I couldn’t say it.’"
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Check for hidden context"
+        }
+      ],
+      "meta": {
+        "name": "Past KakaoTalk",
+        "trustLabel": "Normal",
+        "sourceLabel": "both sides",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Past KakaoTalk",
+          "trustLabel": "Normal",
+          "sourceLabel": "both sides",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Mention and block your father"
+        },
+        "chat": {
+          "header": "Unknown person KakaoTalk — 2024.08.17",
+          "messages": [
+            {
+              "sender": "unknown partner",
+              "time": "9:53 PM",
+              "text": "Da-eun, it has to do with your father. So I was more careful."
+            },
+            {
+              "sender": "Song Da-eun",
+              "time": "9:54 PM",
+              "text": "Why are you dragging my dad in? Are you trying to threaten me with that?"
+            },
+            {
+              "sender": "unknown partner",
+              "time": "9:55 PM",
+              "text": "It's not a threat. I lent money to my father, and I hid it because I was afraid you would be hurt if you found out."
+            },
+            {
+              "sender": "Song Da-eun",
+              "time": "9:56 PM",
+              "text": "Stop it. Don't justify your money problems by bringing up my dad's name."
+            },
+            {
+              "sender": "unknown partner",
+              "time": "9:57 PM",
+              "text": "I'm sorry. Still, I didn't want it to end with you misunderstanding."
+            },
+            {
+              "sender": "Song Da-eun",
+              "time": "9:58 PM",
+              "text": "That's it. Don't contact me any more. I'll block you."
+            },
+            {
+              "text": "Song Da-eun — Blocked"
+            }
+          ],
+          "pages": [
+            {
+              "label": "Page 1: Hesitant Contact",
+              "header": "Unknown person KakaoTalk — 2024.08.17",
+              "messages": [
+                null,
+                {
+                  "sender": "unknown partner",
+                  "time": "9:41 PM",
+                  "text": "Da-eun, I’m sorry for contacting you suddenly. It was a bit difficult to say right away, so I wrote and deleted it a few times."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:42 PM",
+                  "text": "What's going on that's taking so long?"
+                },
+                {
+                  "sender": "unknown partner",
+                  "time": "9:43 PM",
+                  "text": "I hesitated because I thought it might be unpleasant for you to hear. Still, I think it will get even weirder if I just bury it."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:44 PM",
+                  "text": "Also, don't be vague and say it clearly."
+                },
+                {
+                  "sender": "unknown partner",
+                  "time": "9:45 PM",
+                  "text": "I haven't completely sorted it out either, but since it happened around you, I think I should tell you."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:46 PM",
+                  "text": "Around me? What do you mean?"
+                }
+              ]
+            },
+            {
+              "label": "Page 2 Misunderstandings about money issues",
+              "header": "Unknown person KakaoTalk — 2024.08.17",
+              "messages": [
+                {
+                  "sender": "unknown partner",
+                  "time": "9:47 PM",
+                  "text": "It's because of money issues. There's something I've been trying to sort out on my own."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:48 PM",
+                  "text": "Money? Why are you talking about money all of a sudden? What are you trying to accuse me of?"
+                },
+                {
+                  "sender": "unknown partner",
+                  "time": "9:49 PM",
+                  "text": "I'm not talking about your money. I couldn't say more because I was afraid you might misunderstand."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:50 PM",
+                  "text": "Then why did you pretend like nothing happened in front of me? Now, if you say it's a money issue, what can I believe?"
+                },
+                {
+                  "sender": "unknown partner",
+                  "time": "9:51 PM",
+                  "text": "I did it because you were talking about someone who will get hurt right away if you tell them. So I tried to block it first."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:52 PM",
+                  "text": "Don't avoid responsibility like that. The moment you bring up money, you look strange."
+                }
+              ]
+            },
+            {
+              "label": "Page 3 mention of father and blocking",
+              "header": "Unknown person KakaoTalk — 2024.08.17",
+              "messages": [
+                {
+                  "sender": "unknown partner",
+                  "time": "9:53 PM",
+                  "text": "Da-eun, it has to do with your father. So I was more careful."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:54 PM",
+                  "text": "Why are you dragging my dad in? Are you trying to threaten me with that?"
+                },
+                {
+                  "sender": "unknown partner",
+                  "time": "9:55 PM",
+                  "text": "It's not a threat. I lent money to my father, and I hid it because I was afraid you would be hurt if you found out."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:56 PM",
+                  "text": "Stop it. Don't justify your money problems by bringing up my dad's name."
+                },
+                {
+                  "sender": "unknown partner",
+                  "time": "9:57 PM",
+                  "text": "I'm sorry. Still, I didn't want it to end with you misunderstanding."
+                },
+                {
+                  "sender": "Song Da-eun",
+                  "time": "9:58 PM",
+                  "text": "That's it. Don't contact me any more. I'll block you."
+                },
+                {
+                  "text": "Song Da-eun — Blocked"
+                }
+              ]
+            }
+          ],
+          "inputStatus": "[+] You cannot talk to blocked friends."
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Past KakaoTalk",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Hesitant Contact",
+            "redactions": [
+              "Money issues and sealing conversations before being blocked"
+            ]
+          },
+          "chat": {
+            "header": "Unknown person KakaoTalk — 2024.08.17",
+            "messages": [
+              null,
+              {
+                "sender": "unknown partner",
+                "time": "9:41 PM",
+                "text": "Da-eun, I’m sorry for contacting you suddenly. It was a bit difficult to say right away, so I wrote and deleted it a few times."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:42 PM",
+                "text": "What's going on that's taking so long?"
+              },
+              {
+                "sender": "unknown partner",
+                "time": "9:43 PM",
+                "text": "I hesitated because I thought it might be unpleasant for you to hear. Still, I think it will get even weirder if I just bury it."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:44 PM",
+                "text": "Also, don't be vague and say it clearly."
+              },
+              {
+                "sender": "unknown partner",
+                "time": "9:45 PM",
+                "text": "I haven't completely sorted it out either, but since it happened around you, I think I should tell you."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:46 PM",
+                "text": "Around me? What do you mean?"
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1: Hesitant Contact",
+                "header": "Unknown person KakaoTalk — 2024.08.17",
+                "messages": [
+                  null,
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:41 PM",
+                    "text": "Da-eun, I’m sorry for contacting you suddenly. It was a bit difficult to say right away, so I wrote and deleted it a few times."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:42 PM",
+                    "text": "What's going on that's taking so long?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:43 PM",
+                    "text": "I hesitated because I thought it might be unpleasant for you to hear. Still, I think it will get even weirder if I just bury it."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:44 PM",
+                    "text": "Also, don't be vague and say it clearly."
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:45 PM",
+                    "text": "I haven't completely sorted it out either, but since it happened around you, I think I should tell you."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:46 PM",
+                    "text": "Around me? What do you mean?"
+                  }
+                ]
+              }
+            ],
+            "inputStatus": "[+] You cannot talk to blocked friends."
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "Past KakaoTalk",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Misunderstanding money issues",
+            "redactions": [
+              "Mentions related to father sealed"
+            ]
+          },
+          "chat": {
+            "header": "Unknown person KakaoTalk — 2024.08.17",
+            "messages": [
+              {
+                "sender": "unknown partner",
+                "time": "9:47 PM",
+                "text": "It's because of money issues. There's something I've been trying to sort out on my own."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:48 PM",
+                "text": "Money? Why are you talking about money all of a sudden? What are you trying to accuse me of?"
+              },
+              {
+                "sender": "unknown partner",
+                "time": "9:49 PM",
+                "text": "I'm not talking about your money. I couldn't say more because I was afraid you might misunderstand."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:50 PM",
+                "text": "Then why did you pretend like nothing happened in front of me? Now, if you say it's a money issue, what can I believe?"
+              },
+              {
+                "sender": "unknown partner",
+                "time": "9:51 PM",
+                "text": "I did it because you were talking about someone who will get hurt right away if you tell them. So I tried to block it first."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:52 PM",
+                "text": "Don't avoid responsibility like that. The moment you bring up money, you look strange."
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1: Hesitant Contact",
+                "header": "Unknown person KakaoTalk — 2024.08.17",
+                "messages": [
+                  null,
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:41 PM",
+                    "text": "Da-eun, I’m sorry for contacting you suddenly. It was a bit difficult to say right away, so I wrote and deleted it a few times."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:42 PM",
+                    "text": "What's going on that's taking so long?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:43 PM",
+                    "text": "I hesitated because I thought it might be unpleasant for you to hear. Still, I think it will get even weirder if I just bury it."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:44 PM",
+                    "text": "Also, don't be vague and say it clearly."
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:45 PM",
+                    "text": "I haven't completely sorted it out either, but since it happened around you, I think I should tell you."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:46 PM",
+                    "text": "Around me? What do you mean?"
+                  }
+                ]
+              },
+              {
+                "label": "Page 2 Misunderstandings about money issues",
+                "header": "Unknown person KakaoTalk — 2024.08.17",
+                "messages": [
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:47 PM",
+                    "text": "It's because of money issues. There's something I've been trying to sort out on my own."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:48 PM",
+                    "text": "Money? Why are you talking about money all of a sudden? What are you trying to accuse me of?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:49 PM",
+                    "text": "I'm not talking about your money. I couldn't say more because I was afraid you might misunderstand."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:50 PM",
+                    "text": "Then why did you pretend like nothing happened in front of me? Now, if you say it's a money issue, what can I believe?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:51 PM",
+                    "text": "I did it because you were talking about someone who will get hurt right away if you tell them. So I tried to block it first."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:52 PM",
+                    "text": "Don't avoid responsibility like that. The moment you bring up money, you look strange."
+                  }
+                ]
+              }
+            ],
+            "inputStatus": "[+] You cannot talk to blocked friends."
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "Past KakaoTalk",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Mention and block your father"
+          },
+          "chat": {
+            "header": "Unknown person KakaoTalk — 2024.08.17",
+            "messages": [
+              {
+                "sender": "unknown partner",
+                "time": "9:53 PM",
+                "text": "Da-eun, it has to do with your father. So I was more careful."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:54 PM",
+                "text": "Why are you dragging my dad in? Are you trying to threaten me with that?"
+              },
+              {
+                "sender": "unknown partner",
+                "time": "9:55 PM",
+                "text": "It's not a threat. I lent money to my father, and I hid it because I was afraid you would be hurt if you found out."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:56 PM",
+                "text": "Stop it. Don't justify your money problems by bringing up my dad's name."
+              },
+              {
+                "sender": "unknown partner",
+                "time": "9:57 PM",
+                "text": "I'm sorry. Still, I didn't want it to end with you misunderstanding."
+              },
+              {
+                "sender": "Song Da-eun",
+                "time": "9:58 PM",
+                "text": "That's it. Don't contact me any more. I'll block you."
+              },
+              {
+                "text": "Song Da-eun — Blocked"
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1: Hesitant Contact",
+                "header": "Unknown person KakaoTalk — 2024.08.17",
+                "messages": [
+                  null,
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:41 PM",
+                    "text": "Da-eun, I’m sorry for contacting you suddenly. It was a bit difficult to say right away, so I wrote and deleted it a few times."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:42 PM",
+                    "text": "What's going on that's taking so long?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:43 PM",
+                    "text": "I hesitated because I thought it might be unpleasant for you to hear. Still, I think it will get even weirder if I just bury it."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:44 PM",
+                    "text": "Also, don't be vague and say it clearly."
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:45 PM",
+                    "text": "I haven't completely sorted it out either, but since it happened around you, I think I should tell you."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:46 PM",
+                    "text": "Around me? What do you mean?"
+                  }
+                ]
+              },
+              {
+                "label": "Page 2 Misunderstandings about money issues",
+                "header": "Unknown person KakaoTalk — 2024.08.17",
+                "messages": [
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:47 PM",
+                    "text": "It's because of money issues. There's something I've been trying to sort out on my own."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:48 PM",
+                    "text": "Money? Why are you talking about money all of a sudden? What are you trying to accuse me of?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:49 PM",
+                    "text": "I'm not talking about your money. I couldn't say more because I was afraid you might misunderstand."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:50 PM",
+                    "text": "Then why did you pretend like nothing happened in front of me? Now, if you say it's a money issue, what can I believe?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:51 PM",
+                    "text": "I did it because you were talking about someone who will get hurt right away if you tell them. So I tried to block it first."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:52 PM",
+                    "text": "Don't avoid responsibility like that. The moment you bring up money, you look strange."
+                  }
+                ]
+              },
+              {
+                "label": "Page 3 mention of father and blocking",
+                "header": "Unknown person KakaoTalk — 2024.08.17",
+                "messages": [
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:53 PM",
+                    "text": "Da-eun, it has to do with your father. So I was more careful."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:54 PM",
+                    "text": "Why are you dragging my dad in? Are you trying to threaten me with that?"
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:55 PM",
+                    "text": "It's not a threat. I lent money to my father, and I hid it because I was afraid you would be hurt if you found out."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:56 PM",
+                    "text": "Stop it. Don't justify your money problems by bringing up my dad's name."
+                  },
+                  {
+                    "sender": "unknown partner",
+                    "time": "9:57 PM",
+                    "text": "I'm sorry. Still, I didn't want it to end with you misunderstanding."
+                  },
+                  {
+                    "sender": "Song Da-eun",
+                    "time": "9:58 PM",
+                    "text": "That's it. Don't contact me any more. I'll block you."
+                  },
+                  {
+                    "text": "Song Da-eun — Blocked"
+                  }
+                ]
+              }
+            ],
+            "inputStatus": "[+] You cannot talk to blocked friends."
+          }
+        }
+      }
     },
     {
       "id": "e-4",
-      "surfaceName": "Fiance's messages",
-      "surfaceDescription": "A record of messages between the fiance and Ms. Choi exists."
+      "name": "The groom-to-be's message crosses the line and Choi Su-min's rejection reply",
+      "surfaceName": "groom-to-be message",
+      "description": "A record of private messages exchanged between the groom-to-be and Choi Su-min. The approach and response method require further confirmation.",
+      "surfaceDescription": "There is a message record between the groom-to-be and Choi Soo-min.",
+      "investigationResults": {
+        "request_original": "On the first page, only everyday conversations that appear to be about center consultation and exercise are confirmed.",
+        "check_metadata": "On the second page, a suspicious trend is seen as Kim Tae-yoon makes a vague request to Da-eun and hints at a private conversation.",
+        "restore_context": "In the late night message on the third page, it is confirmed that Kim Tae-yoon offered a drink while drunk and Choi Soo-min refused."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Check out what our first conversation was about."
+          },
+          "label": "Initial conversation"
+        },
+        {
+          "question": {
+            "text": "Please check if there was a flow you were trying to request privately."
+          },
+          "label": "Request status",
+          "unlockHint": "If you look at the conversation further, you can see traces of Kim Tae-yoon turning his words to Da-eun in a way that made it difficult to talk to her."
+        },
+        {
+          "question": {
+            "text": "Ask yourself who has crossed the line in late-night messages."
+          },
+          "label": "Check line crossing",
+          "unlockHint": "If you look at the last page, you can see the text that followed the drinking party and Choi Su-min's rejection reply."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Have you seen this message?",
+          "implication": "It is confirmed that Song Da-eun was not aware of the groom-to-be's actions."
+        },
+        "b": {
+          "questionAngle": "Why didn't you show this message to Song Da-eun right away?",
+          "implication": "Ask the reason for silence."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the existence of the message is visible"
+        },
+        {
+          "id": "excerpt",
+          "summary": "Only everyday conversations that appear to be exercise consultations are visible."
+        },
+        {
+          "id": "original",
+          "summary": "Check the flow that even hinted at a private request"
+        },
+        {
+          "id": "context",
+          "summary": "Check messages that crossed the line after drinking late at night"
+        },
+        {
+          "id": "established",
+          "summary": "Check the circumstances of the groom-to-be's approach that crossed the line."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Sumin Choi submitted a capture"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Verifying message source"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Sender and time confirmed"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Song Da-eun objected, saying it could be a fabrication."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "The original has been authenticated, and the direction of access is determined during interrogation."
+        }
+      ],
+      "meta": {
+        "name": "groom-to-be message",
+        "trustLabel": "Normal",
+        "sourceLabel": "Choi Su-min's side",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "groom-to-be message",
+          "trustLabel": "Normal",
+          "sourceLabel": "Choi Su-min's side",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Late night original release"
+        },
+        "chat": {
+          "header": "Taeyun Kim KakaoTalk — 2026.02.24 (Page 3 late night message)",
+          "messages": [
+            {
+              "text": "2026.02.24 12:47 AM · Message that appears to be after drinking late at night"
+            },
+            {
+              "sender": "Kim Tae-yoon",
+              "time": "12:47 AM",
+              "text": "Sumin, are you sleeping? I drank some today."
+            },
+            {
+              "sender": "Kim Tae-yoon",
+              "time": "12:49 AM",
+              "text": "Strangely, when I drink alcohol, I think of Sumin."
+            },
+            {
+              "sender": "Sumin Choi",
+              "time": "12:51 AM",
+              "text": "Taeyun, given the current time, this type of contact is inconvenient."
+            },
+            {
+              "sender": "Kim Tae-yoon",
+              "time": "12:53 AM",
+              "text": "Would you like just one more drink? Just tell Da-eun that you met people from the company."
+            },
+            {
+              "sender": "Sumin Choi",
+              "time": "12:54 AM",
+              "text": "Da-eun is the groom-to-be. I don't meet people like this."
+            },
+            {
+              "sender": "Kim Tae-yoon",
+              "time": "12:56 AM",
+              "text": "Don't draw too many lines. I used to like your style."
+            },
+            {
+              "sender": "Sumin Choi",
+              "time": "12:58 AM",
+              "text": "Stop it. I'll leave this conversation aside."
+            },
+            {
+              "text": "Taeyun Kim — Read (no reply)"
+            }
+          ],
+          "pages": [
+            {
+              "label": "Page 1 Daily conversation",
+              "header": "Taeyun Kim KakaoTalk — 2026.02.18 (Page 1 Daily conversation)",
+              "messages": [
+                {
+                  "text": "2026.02.18 7:12 PM · Beginning of conversation"
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "7:12 PM",
+                  "text": "Sumin, Da-eun said it’s difficult to make Pilates reservations these days. Is that true?"
+                },
+                {
+                  "sender": "Sumin Choi",
+                  "time": "7:14 PM",
+                  "text": "Yes, the after-work hours are almost full. I will tell you the center number if necessary."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "7:15 PM",
+                  "text": "Oh, I see. I was wondering if I should do some exercise before the wedding."
+                },
+                {
+                  "sender": "Sumin Choi",
+                  "time": "7:16 PM",
+                  "text": "I think you should get counseling with Da-eun."
+                }
+              ]
+            },
+            {
+              "label": "Page 2: A questionable request",
+              "header": "Taeyun Kim KakaoTalk — 2026.02.21 (Page 2, Suspicious Request)",
+              "messages": [
+                {
+                  "text": "2026.02.21 8:36 PM · It looks like a request, but the purpose is unclear."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "8:36 PM",
+                  "text": "Sumin, can I ask Da-eun something that is difficult to say right away?"
+                },
+                {
+                  "sender": "Sumin Choi",
+                  "time": "8:38 PM",
+                  "text": "What's going on? If it's related to Da-eun, it's right to ask her directly."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "8:39 PM",
+                  "text": "I'm just curious about what it looks like from a woman's perspective."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "8:41 PM",
+                  "text": "I think it would be more comfortable if we talked briefly with Da-eun secretly."
+                },
+                {
+                  "sender": "Sumin Choi",
+                  "time": "8:43 PM",
+                  "text": "I don't think it's something to talk about secretly. Speak via text."
+                }
+              ]
+            },
+            {
+              "label": "Page 3 Late night message",
+              "header": "Taeyun Kim KakaoTalk — 2026.02.24 (Page 3 late night message)",
+              "messages": [
+                {
+                  "text": "2026.02.24 12:47 AM · Message that appears to be after drinking late at night"
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "12:47 AM",
+                  "text": "Sumin, are you sleeping? I drank some today."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "12:49 AM",
+                  "text": "Strangely, when I drink alcohol, I think of Sumin."
+                },
+                {
+                  "sender": "Sumin Choi",
+                  "time": "12:51 AM",
+                  "text": "Taeyun, given the current time, this type of contact is inconvenient."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "12:53 AM",
+                  "text": "Would you like just one more drink? Just tell Da-eun that you met people from the company."
+                },
+                {
+                  "sender": "Sumin Choi",
+                  "time": "12:54 AM",
+                  "text": "Da-eun is the groom-to-be. I don't meet people like this."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "time": "12:56 AM",
+                  "text": "Don't draw too many lines. I used to like your style."
+                },
+                {
+                  "sender": "Sumin Choi",
+                  "time": "12:58 AM",
+                  "text": "Stop it. I'll leave this conversation aside."
+                },
+                {
+                  "text": "Taeyun Kim — Read (no reply)"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "groom-to-be message",
+            "trustLabel": "Normal",
+            "sourceLabel": "Choi Su-min's side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Check your daily conversations",
+            "redactions": [
+              "back conversation seal"
+            ]
+          },
+          "chat": {
+            "header": "Taeyun Kim KakaoTalk — 2026.02.18 (Page 1 Daily conversation)",
+            "messages": [
+              {
+                "text": "2026.02.18 7:12 PM · Beginning of conversation"
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "7:12 PM",
+                "text": "Sumin, Da-eun said it’s difficult to make Pilates reservations these days. Is that true?"
+              },
+              {
+                "sender": "Sumin Choi",
+                "time": "7:14 PM",
+                "text": "Yes, the after-work hours are almost full. I will tell you the center number if necessary."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "7:15 PM",
+                "text": "Oh, I see. I was wondering if I should do some exercise before the wedding."
+              },
+              {
+                "sender": "Sumin Choi",
+                "time": "7:16 PM",
+                "text": "I think you should get counseling with Da-eun."
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1 Daily conversation",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.18 (Page 1 Daily conversation)",
+                "messages": [
+                  {
+                    "text": "2026.02.18 7:12 PM · Beginning of conversation"
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "7:12 PM",
+                    "text": "Sumin, Da-eun said it’s difficult to make Pilates reservations these days. Is that true?"
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "7:14 PM",
+                    "text": "Yes, the after-work hours are almost full. I will tell you the center number if necessary."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "7:15 PM",
+                    "text": "Oh, I see. I was wondering if I should do some exercise before the wedding."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "7:16 PM",
+                    "text": "I think you should get counseling with Da-eun."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "groom-to-be message",
+            "trustLabel": "Normal",
+            "sourceLabel": "Choi Su-min's side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Suspicious Request Circumstances",
+            "redactions": [
+              "Original text sealed late at night"
+            ]
+          },
+          "chat": {
+            "header": "Taeyun Kim KakaoTalk — 2026.02.21 (Page 2, Suspicious Request)",
+            "messages": [
+              {
+                "text": "2026.02.21 8:36 PM · It looks like a request, but the purpose is unclear."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "8:36 PM",
+                "text": "Sumin, can I ask Da-eun something that is difficult to say right away?"
+              },
+              {
+                "sender": "Sumin Choi",
+                "time": "8:38 PM",
+                "text": "What's going on? If it's related to Da-eun, it's right to ask her directly."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "8:39 PM",
+                "text": "I'm just curious about what it looks like from a woman's perspective."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "8:41 PM",
+                "text": "I think it would be more comfortable if we talked briefly with Da-eun secretly."
+              },
+              {
+                "sender": "Sumin Choi",
+                "time": "8:43 PM",
+                "text": "I don't think it's something to talk about secretly. Speak via text."
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1 Daily conversation",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.18 (Page 1 Daily conversation)",
+                "messages": [
+                  {
+                    "text": "2026.02.18 7:12 PM · Beginning of conversation"
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "7:12 PM",
+                    "text": "Sumin, Da-eun said it’s difficult to make Pilates reservations these days. Is that true?"
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "7:14 PM",
+                    "text": "Yes, the after-work hours are almost full. I will tell you the center number if necessary."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "7:15 PM",
+                    "text": "Oh, I see. I was wondering if I should do some exercise before the wedding."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "7:16 PM",
+                    "text": "I think you should get counseling with Da-eun."
+                  }
+                ]
+              },
+              {
+                "label": "Page 2: A questionable request",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.21 (Page 2, Suspicious Request)",
+                "messages": [
+                  {
+                    "text": "2026.02.21 8:36 PM · It looks like a request, but the purpose is unclear."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "8:36 PM",
+                    "text": "Sumin, can I ask Da-eun something that is difficult to say right away?"
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "8:38 PM",
+                    "text": "What's going on? If it's related to Da-eun, it's right to ask her directly."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "8:39 PM",
+                    "text": "I'm just curious about what it looks like from a woman's perspective."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "8:41 PM",
+                    "text": "I think it would be more comfortable if we talked briefly with Da-eun secretly."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "8:43 PM",
+                    "text": "I don't think it's something to talk about secretly. Speak via text."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "groom-to-be message",
+            "trustLabel": "Normal",
+            "sourceLabel": "Choi Su-min's side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Late night original release"
+          },
+          "chat": {
+            "header": "Taeyun Kim KakaoTalk — 2026.02.24 (Page 3 late night message)",
+            "messages": [
+              {
+                "text": "2026.02.24 12:47 AM · Message that appears to be after drinking late at night"
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "12:47 AM",
+                "text": "Sumin, are you sleeping? I drank some today."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "12:49 AM",
+                "text": "Strangely, when I drink alcohol, I think of Sumin."
+              },
+              {
+                "sender": "Sumin Choi",
+                "time": "12:51 AM",
+                "text": "Taeyun, given the current time, this type of contact is inconvenient."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "12:53 AM",
+                "text": "Would you like just one more drink? Just tell Da-eun that you met people from the company."
+              },
+              {
+                "sender": "Sumin Choi",
+                "time": "12:54 AM",
+                "text": "Da-eun is the groom-to-be. I don't meet people like this."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "time": "12:56 AM",
+                "text": "Don't draw too many lines. I used to like your style."
+              },
+              {
+                "sender": "Sumin Choi",
+                "time": "12:58 AM",
+                "text": "Stop it. I'll leave this conversation aside."
+              },
+              {
+                "text": "Taeyun Kim — Read (no reply)"
+              }
+            ],
+            "pages": [
+              {
+                "label": "Page 1 Daily conversation",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.18 (Page 1 Daily conversation)",
+                "messages": [
+                  {
+                    "text": "2026.02.18 7:12 PM · Beginning of conversation"
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "7:12 PM",
+                    "text": "Sumin, Da-eun said it’s difficult to make Pilates reservations these days. Is that true?"
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "7:14 PM",
+                    "text": "Yes, the after-work hours are almost full. I will tell you the center number if necessary."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "7:15 PM",
+                    "text": "Oh, I see. I was wondering if I should do some exercise before the wedding."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "7:16 PM",
+                    "text": "I think you should get counseling with Da-eun."
+                  }
+                ]
+              },
+              {
+                "label": "Page 2: A questionable request",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.21 (Page 2, Suspicious Request)",
+                "messages": [
+                  {
+                    "text": "2026.02.21 8:36 PM · It looks like a request, but the purpose is unclear."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "8:36 PM",
+                    "text": "Sumin, can I ask Da-eun something that is difficult to say right away?"
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "8:38 PM",
+                    "text": "What's going on? If it's related to Da-eun, it's right to ask her directly."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "8:39 PM",
+                    "text": "I'm just curious about what it looks like from a woman's perspective."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "8:41 PM",
+                    "text": "I think it would be more comfortable if we talked briefly with Da-eun secretly."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "8:43 PM",
+                    "text": "I don't think it's something to talk about secretly. Speak via text."
+                  }
+                ]
+              },
+              {
+                "label": "Page 3 Late night message",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.24 (Page 3 late night message)",
+                "messages": [
+                  {
+                    "text": "2026.02.24 12:47 AM · Message that appears to be after drinking late at night"
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "12:47 AM",
+                    "text": "Sumin, are you sleeping? I drank some today."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "12:49 AM",
+                    "text": "Strangely, when I drink alcohol, I think of Sumin."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "12:51 AM",
+                    "text": "Taeyun, given the current time, this type of contact is inconvenient."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "12:53 AM",
+                    "text": "Would you like just one more drink? Just tell Da-eun that you met people from the company."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "12:54 AM",
+                    "text": "Da-eun is the groom-to-be. I don't meet people like this."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "time": "12:56 AM",
+                    "text": "Don't draw too many lines. I used to like your style."
+                  },
+                  {
+                    "sender": "Sumin Choi",
+                    "time": "12:58 AM",
+                    "text": "Stop it. I'll leave this conversation aside."
+                  },
+                  {
+                    "text": "Taeyun Kim — Read (no reply)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-5",
-      "surfaceName": "Texts from Ms. Song's father",
-      "surfaceDescription": "A record of text messages between Ms. Song's father and the fiance exists."
+      "name": "A text message from Song Da-eun’s father and groom-to-be",
+      "surfaceName": "Song Da-eun’s father’s text",
+      "description": "A record of request text messages exchanged between Song Da-eun's father and her husband-to-be. Only by comparing the original text at each step can you see whether there is a request for money or confidentiality.",
+      "surfaceDescription": "There is a text record between Song Da-eun's father and her husband-to-be.",
+      "investigationResults": {
+        "request_original": "On the first page, only wedding preparations and a careful request notice are confirmed. It is still difficult to determine whether it is a money issue or personal counseling.",
+        "check_metadata": "On the second page, a flow that appears to be a financial request is revealed. However, the amount and exact purpose are still sealed.",
+        "restore_context": "On the third page, the amount, the name of the business funds, and a phrase telling Da-eun not to tell are revealed, giving us grounds to ask again why Choi Soo-min contacted her husband-to-be."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Please check the originality of the request notice."
+          },
+          "label": "Confirm request"
+        },
+        {
+          "question": {
+            "text": "Check whether the favor leads to money issues."
+          },
+          "label": "money comparison",
+          "unlockHint": "If you look further into the original text, you can determine whether the nature of the request is financial."
+        },
+        {
+          "question": {
+            "text": "Please consider how the amount and secrecy request connect with Choi Su-min's warning."
+          },
+          "label": "Secret request",
+          "unlockHint": "If you check the last page, you may ask why Choi Soo-min contacted the groom-to-be directly."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Did you know that your father asked your husband-to-be a personal favor?",
+          "implication": "We find out how much Song Da-eun knew about her father's request."
+        },
+        "b": {
+          "questionAngle": "How did you come across this text stream and why did you want to warn you?",
+          "implication": "We confirm Choi Soo-min’s motivation for warning."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only text presence is visible"
+        },
+        {
+          "id": "excerpt",
+          "summary": "Only the request notice text is visible."
+        },
+        {
+          "id": "original",
+          "summary": "There appears to be a possibility of asking for money."
+        },
+        {
+          "id": "context",
+          "summary": "Confirm amount and secret request"
+        },
+        {
+          "id": "established",
+          "summary": "We examine it in connection with Choi Soo-min's motivation for warning."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Submitted by Sumin Choi"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Verifying original text"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Sender and time confirmed"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Song Da-eun argues over the meaning of her father's request"
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "The text requesting money and requesting confidentiality is confirmed in the original."
+        }
+      ],
+      "meta": {
+        "name": "Song Da-eun’s father’s text",
+        "trustLabel": "Normal",
+        "sourceLabel": "Choi Su-min's side",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Song Da-eun’s father’s text",
+          "trustLabel": "Normal",
+          "sourceLabel": "Choi Su-min's side",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Request Money and Confidentiality"
+        },
+        "chat": {
+          "header": "Song Da-eun’s father ↔ Kim Tae-yoon text message — 2026.03.02",
+          "messages": [
+            {
+              "sender": "Song Da-eun's father",
+              "text": "If you are my son-in-law, you should believe this much. Please help me with just 30 million won."
+            },
+            {
+              "sender": "Kim Tae-yoon",
+              "text": "30 million won is difficult to decide right away."
+            },
+            {
+              "sender": "Song Da-eun's father",
+              "text": "You can repay it in two months. It's because I'm in a hurry for business funds."
+            },
+            {
+              "sender": "Kim Tae-yoon",
+              "text": "I think I need to discuss it with Da-eun."
+            },
+            {
+              "sender": "Song Da-eun's father",
+              "text": "Don’t tell Da-eun yet. Because I don't want to make you worry."
+            },
+            {
+              "text": "Taeyun Kim — Read"
+            }
+          ],
+          "pages": [
+            {
+              "label": "1 page request notice",
+              "header": "Song○○ ↔ Kim○○ Text — 2026.02.28",
+              "messages": [
+                {
+                  "sender": "Song○○",
+                  "text": "Taeyoon, are you preparing for your wedding well?"
+                },
+                {
+                  "sender": "Kim ○○",
+                  "text": "Yes, father. Da-eun and I are preparing well."
+                },
+                {
+                  "sender": "Song○○",
+                  "text": "There's one thing I'm a bit cautious about asking for."
+                },
+                {
+                  "sender": "Kim ○○",
+                  "text": "What's going on?"
+                },
+                {
+                  "sender": "Song○○",
+                  "text": "It's still awkward to tell Da-eun. Can I have a short phone call when time permits?"
+                }
+              ]
+            },
+            {
+              "label": "Page 2: Financial Request",
+              "header": "Song○○ ↔ Kim Tae○ Text — 2026.03.01",
+              "messages": [
+                {
+                  "sender": "Song○○",
+                  "text": "What I said yesterday was just a personal request. If you just give us a little help before getting married, you can sort it out right away."
+                },
+                {
+                  "sender": "Kim Tae○",
+                  "text": "Do you mean money by helping?"
+                },
+                {
+                  "sender": "Song○○",
+                  "text": "I don't plan on putting too much pressure on you. If you stop in an emergency, you can return it quickly."
+                },
+                {
+                  "sender": "Kim Tae○",
+                  "text": "Did you also tell Da-eun?"
+                },
+                {
+                  "sender": "Song○○",
+                  "text": "I haven't done it yet for fear of worrying. That's because I don't want to increase my workload for no reason."
+                }
+              ]
+            },
+            {
+              "label": "Page 3 Amount and Confidential Request",
+              "header": "Song Da-eun’s father ↔ Kim Tae-yoon text message — 2026.03.02",
+              "messages": [
+                {
+                  "sender": "Song Da-eun's father",
+                  "text": "If you are my son-in-law, you should believe this much. Please help me with just 30 million won."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "text": "30 million won is difficult to decide right away."
+                },
+                {
+                  "sender": "Song Da-eun's father",
+                  "text": "You can repay it in two months. It's because I'm in a hurry for business funds."
+                },
+                {
+                  "sender": "Kim Tae-yoon",
+                  "text": "I think I need to discuss it with Da-eun."
+                },
+                {
+                  "sender": "Song Da-eun's father",
+                  "text": "Don’t tell Da-eun yet. Because I don't want to make you worry."
+                },
+                {
+                  "text": "Taeyun Kim — Read"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Song Da-eun’s father’s text",
+            "trustLabel": "Normal",
+            "sourceLabel": "Choi Su-min's side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Notice of Request",
+            "redactions": [
+              "Masking part of sender name",
+              "Request details sealed"
+            ]
+          },
+          "chat": {
+            "header": "Song○○ ↔ Kim○○ Text — 2026.02.28",
+            "messages": [
+              {
+                "sender": "Song○○",
+                "text": "Taeyoon, are you preparing for your wedding well?"
+              },
+              {
+                "sender": "Kim ○○",
+                "text": "Yes, father. Da-eun and I are preparing well."
+              },
+              {
+                "sender": "Song○○",
+                "text": "There's one thing I'm a bit cautious about asking for."
+              },
+              {
+                "sender": "Kim ○○",
+                "text": "What's going on?"
+              },
+              {
+                "sender": "Song○○",
+                "text": "It's still awkward to tell Da-eun. Can I have a short phone call when time permits?"
+              }
+            ],
+            "pages": [
+              {
+                "label": "1 page request notice",
+                "header": "Song○○ ↔ Kim○○ Text — 2026.02.28",
+                "messages": [
+                  {
+                    "sender": "Song○○",
+                    "text": "Taeyoon, are you preparing for your wedding well?"
+                  },
+                  {
+                    "sender": "Kim ○○",
+                    "text": "Yes, father. Da-eun and I are preparing well."
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "There's one thing I'm a bit cautious about asking for."
+                  },
+                  {
+                    "sender": "Kim ○○",
+                    "text": "What's going on?"
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "It's still awkward to tell Da-eun. Can I have a short phone call when time permits?"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "Song Da-eun’s father’s text",
+            "trustLabel": "Normal",
+            "sourceLabel": "Choi Su-min's side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Ask for money",
+            "redactions": [
+              "Masking part of sender name",
+              "Seal the exact amount and purpose"
+            ]
+          },
+          "chat": {
+            "header": "Song○○ ↔ Kim Tae○ Text — 2026.03.01",
+            "messages": [
+              {
+                "sender": "Song○○",
+                "text": "What I said yesterday was just a personal request. If you just give us a little help before getting married, you can sort it out right away."
+              },
+              {
+                "sender": "Kim Tae○",
+                "text": "Do you mean money by helping?"
+              },
+              {
+                "sender": "Song○○",
+                "text": "I don't plan on putting too much pressure on you. If you stop in an emergency, you can return it quickly."
+              },
+              {
+                "sender": "Kim Tae○",
+                "text": "Did you also tell Da-eun?"
+              },
+              {
+                "sender": "Song○○",
+                "text": "I haven't done it yet for fear of worrying. That's because I don't want to increase my workload for no reason."
+              }
+            ],
+            "pages": [
+              {
+                "label": "1 page request notice",
+                "header": "Song○○ ↔ Kim○○ Text — 2026.02.28",
+                "messages": [
+                  {
+                    "sender": "Song○○",
+                    "text": "Taeyoon, are you preparing for your wedding well?"
+                  },
+                  {
+                    "sender": "Kim ○○",
+                    "text": "Yes, father. Da-eun and I are preparing well."
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "There's one thing I'm a bit cautious about asking for."
+                  },
+                  {
+                    "sender": "Kim ○○",
+                    "text": "What's going on?"
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "It's still awkward to tell Da-eun. Can I have a short phone call when time permits?"
+                  }
+                ]
+              },
+              {
+                "label": "Page 2: Financial Request",
+                "header": "Song○○ ↔ Kim Tae○ Text — 2026.03.01",
+                "messages": [
+                  {
+                    "sender": "Song○○",
+                    "text": "What I said yesterday was just a personal request. If you just give us a little help before getting married, you can sort it out right away."
+                  },
+                  {
+                    "sender": "Kim Tae○",
+                    "text": "Do you mean money by helping?"
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "I don't plan on putting too much pressure on you. If you stop in an emergency, you can return it quickly."
+                  },
+                  {
+                    "sender": "Kim Tae○",
+                    "text": "Did you also tell Da-eun?"
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "I haven't done it yet for fear of worrying. That's because I don't want to increase my workload for no reason."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "Song Da-eun’s father’s text",
+            "trustLabel": "Normal",
+            "sourceLabel": "Choi Su-min's side",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Request Money and Confidentiality"
+          },
+          "chat": {
+            "header": "Song Da-eun’s father ↔ Kim Tae-yoon text message — 2026.03.02",
+            "messages": [
+              {
+                "sender": "Song Da-eun's father",
+                "text": "If you are my son-in-law, you should believe this much. Please help me with just 30 million won."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "text": "30 million won is difficult to decide right away."
+              },
+              {
+                "sender": "Song Da-eun's father",
+                "text": "You can repay it in two months. It's because I'm in a hurry for business funds."
+              },
+              {
+                "sender": "Kim Tae-yoon",
+                "text": "I think I need to discuss it with Da-eun."
+              },
+              {
+                "sender": "Song Da-eun's father",
+                "text": "Don’t tell Da-eun yet. Because I don't want to make you worry."
+              },
+              {
+                "text": "Taeyun Kim — Read"
+              }
+            ],
+            "pages": [
+              {
+                "label": "1 page request notice",
+                "header": "Song○○ ↔ Kim○○ Text — 2026.02.28",
+                "messages": [
+                  {
+                    "sender": "Song○○",
+                    "text": "Taeyoon, are you preparing for your wedding well?"
+                  },
+                  {
+                    "sender": "Kim ○○",
+                    "text": "Yes, father. Da-eun and I are preparing well."
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "There's one thing I'm a bit cautious about asking for."
+                  },
+                  {
+                    "sender": "Kim ○○",
+                    "text": "What's going on?"
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "It's still awkward to tell Da-eun. Can I have a short phone call when time permits?"
+                  }
+                ]
+              },
+              {
+                "label": "Page 2: Financial Request",
+                "header": "Song○○ ↔ Kim Tae○ Text — 2026.03.01",
+                "messages": [
+                  {
+                    "sender": "Song○○",
+                    "text": "What I said yesterday was just a personal request. If you just give us a little help before getting married, you can sort it out right away."
+                  },
+                  {
+                    "sender": "Kim Tae○",
+                    "text": "Do you mean money by helping?"
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "I don't plan on putting too much pressure on you. If you stop in an emergency, you can return it quickly."
+                  },
+                  {
+                    "sender": "Kim Tae○",
+                    "text": "Did you also tell Da-eun?"
+                  },
+                  {
+                    "sender": "Song○○",
+                    "text": "I haven't done it yet for fear of worrying. That's because I don't want to increase my workload for no reason."
+                  }
+                ]
+              },
+              {
+                "label": "Page 3 Amount and Confidential Request",
+                "header": "Song Da-eun’s father ↔ Kim Tae-yoon text message — 2026.03.02",
+                "messages": [
+                  {
+                    "sender": "Song Da-eun's father",
+                    "text": "If you are my son-in-law, you should believe this much. Please help me with just 30 million won."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "text": "30 million won is difficult to decide right away."
+                  },
+                  {
+                    "sender": "Song Da-eun's father",
+                    "text": "You can repay it in two months. It's because I'm in a hurry for business funds."
+                  },
+                  {
+                    "sender": "Kim Tae-yoon",
+                    "text": "I think I need to discuss it with Da-eun."
+                  },
+                  {
+                    "sender": "Song Da-eun's father",
+                    "text": "Don’t tell Da-eun yet. Because I don't want to make you worry."
+                  },
+                  {
+                    "text": "Taeyun Kim — Read"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-6",
-      "surfaceName": "Past transfer record",
-      "surfaceDescription": "A record of past transfers between Ms. Choi and Ms. Song's father exists."
+      "name": "Past remittance records and IOUs",
+      "surfaceName": "Past remittance records",
+      "description": "Records of remittances and IOUs that Choi Soo-min sent to Song Da-eun's father three times in millions of won. The issue is the loss of contact after partial repayment.",
+      "surfaceDescription": "There is a record of remittances between Choi Soo-min and Song Da-eun's father in the past.",
+      "investigationResults": {
+        "request_original": "It is confirmed that money in the amount of several million won was transferred three times from Choi Su-min's account to a recipient surnamed Song.",
+        "check_metadata": "There is an IOU and partial repayment details attached, but after two small repayments, further repayment and contact is cut off.",
+        "restore_context": "If we look at the time when repayment was cut off and the KakaoTalk message just before the loss in the past, we have grounds to ask why Choi Soo-min failed to tell Song Da-eun."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Are the three transfers actually made?"
+          },
+          "label": "Confirm remittance"
+        },
+        {
+          "question": {
+            "text": "Please compare the partial repayment details with the IOU."
+          },
+          "label": "Repayment comparison",
+          "unlockHint": "If you look further at the transfer history, you will see an IOU and some repayment records."
+        },
+        {
+          "question": {
+            "text": "Please ask why Choi Su-min remained silent after the repayment was cut off."
+          },
+          "label": "silent questioning",
+          "unlockHint": "By contrasting the flow of repayment interruptions, we can ask the reason for past stop losses."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "Did you know that your father once borrowed money from Choi Soo-min?",
+          "implication": "It is confirmed that Song Da-eun did not know about her father's past financial problems."
+        },
+        "b": {
+          "questionAngle": "Why did you hide this fact from Song Da-eun until the end?",
+          "implication": "See the price of silence."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the existence of remittance records is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "Only the three transfer amounts and dates are shown."
+        },
+        {
+          "id": "original",
+          "summary": "Check the loan certificate and partial repayment details."
+        },
+        {
+          "id": "context",
+          "summary": "Contrast the point in time when contact was cut off after partial repayment and the point in time when loss was lost."
+        },
+        {
+          "id": "established",
+          "summary": "Determine the likelihood of a repeat of past money problems."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Submitted by Sumin Choi"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Comparing bank records with the original IOU"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Three transfers and partial repayment confirmed"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Song Da-eun objected that there may have been circumstances on the recipient's side."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "The flow of loss of contact and the original text message are confirmed."
+        }
+      ],
+      "meta": {
+        "name": "Past remittance records",
+        "trustLabel": "Normal",
+        "sourceLabel": "institution",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "Past remittance records",
+          "trustLabel": "Normal",
+          "sourceLabel": "institution",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Entire remittance, IOU, and repayment flow"
+        },
+        "bank": [
+          {
+            "desc": "Choi Su-min → Song ○○ (Song Da-eun’s father) transfer",
+            "amount": "-3 million won",
+            "balance": "5.2 million won"
+          },
+          {
+            "desc": "Attachment: Copy of IOU — “Urgent operating funds, repayment by the end of August”"
+          },
+          {
+            "desc": "Choi Su-min → Song ○○ transfer (2nd)",
+            "amount": "-2.5 million won",
+            "balance": "2.7 million won"
+          },
+          {
+            "desc": "Choi Su-min → Song ○○ transfer (3rd)",
+            "amount": "-2 million won",
+            "balance": "700,000 won"
+          },
+          {
+            "desc": "Song ○○ → Choi Su-min’s partial repayment",
+            "amount": "+1 million won",
+            "balance": "1.7 million won"
+          },
+          {
+            "desc": "Song ○○ → Choi Su-min’s partial repayment",
+            "amount": "+500,000 won",
+            "balance": "2.2 million won"
+          },
+          {
+            "desc": "Additional repayment and response records",
+            "amount": "None"
+          },
+          {
+            "desc": "Text: “Wait a little longer. Don’t tell Da-eun.”"
+          }
+        ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "Past remittance records",
+            "trustLabel": "Normal",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Reveal only three transfers",
+            "redactions": [
+              "Masking of some recipients",
+              "Disclosure of amount range",
+              "Balance Masking"
+            ]
+          },
+          "bank": [
+            {
+              "desc": "Choi Su-min → Song ○○ transfer",
+              "amount": "2 to 3 million won",
+              "balance": "masking"
+            },
+            {
+              "desc": "Choi Su-min → Song ○○ Additional transfer",
+              "amount": "Around 2 million won",
+              "balance": "masking"
+            },
+            {
+              "desc": "Choi Su-min → Song ○○ Additional transfer",
+              "amount": "Around 2 million won",
+              "balance": "masking"
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "Past remittance records",
+            "trustLabel": "Normal",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — IOU and partial repayment",
+            "redactions": [
+              "Masking of some recipients",
+              "Masking of some final contacts"
+            ]
+          },
+          "bank": [
+            {
+              "desc": "Choi Su-min → Song ○○ transfer",
+              "amount": "About 3 million won",
+              "balance": "Around 5.2 million won"
+            },
+            {
+              "desc": "Attachment: Copy of IOU — “Urgent operating funds, repayment by the end of August”"
+            },
+            {
+              "desc": "Choi Su-min → Song ○○ Additional transfer",
+              "amount": "About 2.5 million won",
+              "balance": "Around 2.7 million won"
+            },
+            {
+              "desc": "Choi Su-min → Song ○○ Additional transfer",
+              "amount": "About 2 million won",
+              "balance": "Around 700,000 won"
+            },
+            {
+              "desc": "Song ○○ → Choi Su-min’s partial repayment",
+              "amount": "+1 million won",
+              "balance": "Around 1.7 million won"
+            },
+            {
+              "desc": "Song ○○ → Choi Su-min’s partial repayment",
+              "amount": "+500,000 won",
+              "balance": "Around 2.2 million won"
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "Past remittance records",
+            "trustLabel": "Normal",
+            "sourceLabel": "institution",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Entire remittance, IOU, and repayment flow"
+          },
+          "bank": [
+            {
+              "desc": "Choi Su-min → Song ○○ (Song Da-eun’s father) transfer",
+              "amount": "-3 million won",
+              "balance": "5.2 million won"
+            },
+            {
+              "desc": "Attachment: Copy of IOU — “Urgent operating funds, repayment by the end of August”"
+            },
+            {
+              "desc": "Choi Su-min → Song ○○ transfer (2nd)",
+              "amount": "-2.5 million won",
+              "balance": "2.7 million won"
+            },
+            {
+              "desc": "Choi Su-min → Song ○○ transfer (3rd)",
+              "amount": "-2 million won",
+              "balance": "700,000 won"
+            },
+            {
+              "desc": "Song ○○ → Choi Su-min’s partial repayment",
+              "amount": "+1 million won",
+              "balance": "1.7 million won"
+            },
+            {
+              "desc": "Song ○○ → Choi Su-min’s partial repayment",
+              "amount": "+500,000 won",
+              "balance": "2.2 million won"
+            },
+            {
+              "desc": "Additional repayment and response records",
+              "amount": "None"
+            },
+            {
+              "desc": "Text: “Wait a little longer. Don’t tell Da-eun.”"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "e-7",
-      "surfaceName": "Comparison table",
-      "surfaceDescription": "A comparison-and-analysis table of the past and the present exists."
+      "name": "Past and present comparison chart",
+      "surfaceName": "check list",
+      "description": "A comparison table of past and present requests for money, the point in time when contact was cut off, and group chat room responses.",
+      "surfaceDescription": "There is a comparative analysis table of the past and present.",
+      "investigationResults": {
+        "request_original": "The text sent to Choi Soo-min in the past and the text sent to the current groom-to-be are almost identical.",
+        "check_metadata": "The timing between the two points overlaps exactly when Choi Soo-min hangs up and disappears instead of speaking.",
+        "restore_context": "Past and present methods of asking for money and Choi Soo-min's silence are repeated. The order in which the stigma was created can be examined."
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "Are the past and present phrases in the same flow?"
+          },
+          "label": "Check pattern"
+        },
+        {
+          "question": {
+            "text": "Please compare together up to the point when Choi Su-min disappeared."
+          },
+          "label": "viewpoint contrast",
+          "unlockHint": "A closer look at the balance sheet shows past and present phrases, amounts, and moments of silence side by side."
+        },
+        {
+          "question": {
+            "text": "Who first accused Choi Su-min of being the wrong person?"
+          },
+          "label": "stigmatization",
+          "unlockHint": "Contrasting the patterns allows us to ask the order in which the stigma arose in this case."
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "What do you think when you look at this comparison chart?",
+          "implication": "Song Da-eun is forced to confront her father's repetitive patterns."
+        },
+        "b": {
+          "questionAngle": "Is the reason you tried to stop it alone this time the same?",
+          "implication": "Check for repetitive silent structures."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "Only the presence of a comparison table is visible."
+        },
+        {
+          "id": "excerpt",
+          "summary": "Only comparison of past and present phrases is shown."
+        },
+        {
+          "id": "original",
+          "summary": "Confirmation of Choi Su-min's disappearance time point"
+        },
+        {
+          "id": "context",
+          "summary": "Restore pattern repetition context"
+        },
+        {
+          "id": "established",
+          "summary": "Determine whether the method of asking for money and the timing of Choi Su-min's silence are repeated."
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "written by judge"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Cross-checking the evidence"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Pattern match confirmed"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "Song Da-eun objected, saying it was a ‘coincidence’."
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Repetitive structures are identified and liability determinations are made in conjunction with interrogation."
+        }
+      ],
+      "meta": {
+        "name": "check list",
+        "trustLabel": "Normal",
+        "sourceLabel": "both sides",
+        "legalLabel": "legal",
+        "stageLabel": "initial release"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "check list",
+          "trustLabel": "Normal",
+          "sourceLabel": "both sides",
+          "legalLabel": "legal",
+          "stageLabel": "Step 3 — Public Disclosure"
+        },
+        "log": {
+          "rows": [
+            {
+              "typeLabel": "past",
+              "target": "Song Da-eun's father → To Choi Soo-min, \"Urgent investment, only for one month\"",
+              "duration": "5 million won"
+            },
+            {
+              "typeLabel": "present",
+              "target": "Song Da-eun's father → To her husband-to-be, \"If I were to become a son-in-law, this is what I would do.\"",
+              "duration": "Request for 30 million won"
+            },
+            {
+              "typeLabel": "past",
+              "target": "Sumin Choi received a request for additional remittance.",
+              "duration": "3 million won"
+            },
+            {
+              "typeLabel": "present",
+              "target": "Groom-to-be responds, “I’ll think about it.”",
+              "duration": "TBC"
+            },
+            {
+              "typeLabel": "past",
+              "target": "Choi Soo-min was cut off without being able to tell Song Da-eun."
+            },
+            {
+              "typeLabel": "present",
+              "target": "Choi Soo-min tries to warn her husband-to-be → is misunderstood as obsession"
+            }
+          ],
+          "note": "The phrases asking for money in the past and present are very similar, and both times Choi Soo-min was criticized for not being able to provide a sufficient explanation."
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "check list",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 1 — Excerpt the phrase pattern",
+            "redactions": [
+              "Partial masking of real names",
+              "Disclosure of amount range"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "past",
+                "typeLabel": "past",
+                "target": "Song○○ → Choi Soo-min: Urgent money request",
+                "duration": "Millions of won"
+              },
+              {
+                "date": "present",
+                "typeLabel": "present",
+                "target": "Song○○ → Groom-to-be: Request for help before marriage",
+                "duration": "Tens of millions of won"
+              }
+            ],
+            "note": "Phrases asking for money are repeated similarly in the past and present."
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "check list",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 2 — Add timing and amount",
+            "redactions": [
+              "Approximate amount disclosed"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "past",
+                "target": "Song Da-eun's father → Choi Soo-min: \"Urgent investment, only for one month.\"",
+                "duration": "About 5 million won"
+              },
+              {
+                "typeLabel": "present",
+                "target": "Song Da-eun's father → Groom-to-be: \"If you are the son-in-law.\"",
+                "duration": "Request for approximately 30 million won"
+              },
+              {
+                "typeLabel": "past",
+                "target": "Choi Soo-min was cut off without being able to tell Song Da-eun."
+              },
+              {
+                "typeLabel": "present",
+                "target": "Choi Soo-min was misunderstood after trying to warn her husband-to-be."
+              }
+            ],
+            "note": "After asking for money, there overlaps the point where Choi Soo-min is unable to speak and the relationship is broken or misunderstood."
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "check list",
+            "trustLabel": "Normal",
+            "sourceLabel": "both sides",
+            "legalLabel": "legal",
+            "stageLabel": "Step 3 — Compare the entire pattern"
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "past",
+                "target": "Song Da-eun's father → To Choi Soo-min, \"Urgent investment, only for one month\"",
+                "duration": "5 million won"
+              },
+              {
+                "typeLabel": "present",
+                "target": "Song Da-eun's father → To her husband-to-be, \"If I were to become a son-in-law, this is what I would do.\"",
+                "duration": "Request for 30 million won"
+              },
+              {
+                "typeLabel": "past",
+                "target": "Sumin Choi received a request for additional remittance.",
+                "duration": "3 million won"
+              },
+              {
+                "typeLabel": "present",
+                "target": "Groom-to-be responds, “I’ll think about it.”",
+                "duration": "TBC"
+              },
+              {
+                "typeLabel": "past",
+                "target": "Choi Soo-min was cut off without being able to tell Song Da-eun."
+              },
+              {
+                "typeLabel": "present",
+                "target": "Choi Soo-min tries to warn her husband-to-be → is misunderstood as obsession"
+              }
+            ],
+            "note": "The phrases asking for money in the past and present are very similar, and both times Choi Soo-min was criticized for not being able to provide a sufficient explanation."
+          }
+        }
+      }
     }
-  ]
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "Choi Soo-min's contact was not an obsession, but an attempt to warn Song Da-eun of her father's access to money."
+    },
+    {
+      "id": "t-2",
+      "fact": "The groom-to-be first sent a message that crossed the line to Choi Soo-min, and Choi Soo-min rejected it."
+    },
+    {
+      "id": "t-3",
+      "fact": "Song Da-eun's father borrowed money from Choi Soo-min in the past and only repaid a portion of it."
+    },
+    {
+      "id": "t-4",
+      "fact": "In the past, the loss was not due to Choi Soo-min's change of mind, but due to the non-repayment of a loan from Song Da-eun's father."
+    },
+    {
+      "id": "t-5",
+      "fact": "Song Da-eun first sold Choi Su-min in a group chat room without confirmation."
+    }
+  ],
+  "solutions": {
+    "연락의도확인": [
+      "Both sides acknowledge that Choi Soo-min's contact was a warning, not an obsession, and the appropriateness of the method is discussed separately.",
+      "The groom-to-be's over-the-top approach is shared with Song Da-eun, who uses it as an opportunity to reaffirm trust before marriage."
+    ],
+    "과거청산": [
+      "Song Da-eun confirms her father's non-repayment of past loans and current money access patterns as facts, and admits that Choi Soo-min's silence was motivated by protection.",
+      "Song Da-eun faces the issue of her father, but provides an opportunity to apologize to Choi Soo-min for past harm."
+    ],
+    "명예회복": [
+      "Song Da-eun sends a correction message to her mutual friends regarding the one-sided selling in the group chat room.",
+      "Choi Su-min also promises to communicate through a trustworthy channel rather than trying to stop it alone."
+    ]
+  },
+  "combinationLab": {
+    "nodes": [
+      {
+        "id": "e-1",
+        "label": "e-1 contact records"
+      },
+      {
+        "id": "e-2",
+        "label": "e-2 group chat room capture"
+      },
+      {
+        "id": "e-3",
+        "label": "e-3 Past KakaoTalk"
+      },
+      {
+        "id": "e-4",
+        "label": "e-4 Message from the groom-to-be"
+      },
+      {
+        "id": "e-5",
+        "label": "e-5 Song Da-eun’s father’s text"
+      },
+      {
+        "id": "e-6",
+        "label": "e-6 Past remittance records"
+      },
+      {
+        "id": "e-7",
+        "label": "e-7 check list"
+      },
+      {
+        "id": "stmt-a-accusation",
+        "label": "Song Da-eun's remarks, \"Su-min is contacting my man again.\""
+      },
+      {
+        "id": "stmt-b-silence",
+        "label": "Choi Soo-min's statement, \"I should have just endured it.\""
+      },
+      {
+        "id": "w-1-angle",
+        "label": "w-1 Kim Se-ra’s testimony congratulations"
+      },
+      {
+        "id": "w-2-angle",
+        "label": "Congratulations on w-2 Park Jun-hyuk's testimony"
+      },
+      {
+        "id": "w-3-angle",
+        "label": "w-3 Oh Mi-kyung's testimony congratulations"
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 Why didn't you tell me right away?"
+      },
+      {
+        "id": "dc-3",
+        "label": "dc-3 Did you try to stop it by yourself again?"
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 Who sold it without confirmation?"
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 stop loss value"
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 order of stigma"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "dc-2",
+        "label": "dc-2 Why didn't you tell me right away?",
+        "summary": "If the groom-to-be crossed the line first, why didn't he tell Song Da-eun right away?",
+        "noteText": "If the groom-to-be crossed the line first, why didn't he tell Song Da-eun right then?",
+        "judgeHint": "The groom-to-be's approach and the reason for his silence are intertwined. You can find out why you couldn't say it right away."
+      },
+      {
+        "id": "dc-3",
+        "label": "dc-3 Did you try to stop it by yourself again?",
+        "summary": "If Song Da-eun's father brought up the topic of money in the same way again, why did he try to stop it alone?",
+        "noteText": "If Song Da-eun's father brought up the topic of money in the same way again, why did you try to stop it by yourself this time?",
+        "judgeHint": "A new issue, 'a request to the groom-to-be' was revealed. Please check the content and route of your request."
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 Who sold it without confirmation?",
+        "summary": "Who was the first to sell a friend in a group chat room without checking directly?",
+        "noteText": "Aren't you the one who sold your friend in the group chat room without checking in person?",
+        "judgeHint": "A new issue was revealed: 'selling in group chat rooms and defamation'. Point out the route of spread."
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 stop loss value",
+        "summary": "If the past loss was not a change of mind but a result of non-repayment of loans and silence, why did you never speak up?",
+        "noteText": "value of stop loss",
+        "judgeHint": "A new issue, ‘the reason for past stop losses’ has been revealed. Check the money flow right before the stop loss and the reason for silence."
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 order of stigma",
+        "summary": "At two points, the sequence is repeated with the speech interrupted. The order of assertion and silence must be checked.",
+        "noteText": "order of stigma",
+        "judgeHint": "Selling in group chat rooms and past stop losses are intertwined. Point out the route of spread and the order of stigma."
+      }
+    ],
+    "recipes": [
+      {
+        "id": "combine-1",
+        "discoveryText": "Comparing the contact records and group chat room captures, we can see how Choi Soo-min's contact was framed as 'obsession' without confirmation."
+      },
+      {
+        "id": "combine-2",
+        "discoveryText": "After comparing the contact records with the groom-to-be's message of crossing the line, it appears that it was the groom-to-be who crossed the line. Let's ask the new witness about the relevant facts."
+      },
+      {
+        "id": "combine-3",
+        "discoveryText": "The text message sent by Song Da-eun's father to her husband-to-be and the IOU sent to Choi Soo-min in the past are almost identical in the partial repayment flow."
+      },
+      {
+        "id": "combine-4",
+        "discoveryText": "Combining the groom-to-be's approach with the comparison strengthens the conclusion that Choi Soo-min's contact was a warning."
+      },
+      {
+        "id": "combine-5",
+        "discoveryText": "The path of how Song Da-eun's comment, 'I'm contacting my man again' spread in the group chat room has been confirmed."
+      },
+      {
+        "id": "combine-6",
+        "discoveryText": "If you combine past KakaoTalk and the balance sheet, the sequence of speech interruptions is repeated at both times. It must be confirmed through interrogation who decided first and who remained silent."
+      },
+      {
+        "id": "combine-7",
+        "discoveryText": "Comparing KakaoTalk's past mention of 'money problems' with past remittance records, it is revealed that the real cause of the loss was not a change of mind but a problem of non-repayment of borrowed funds."
+      },
+      {
+        "id": "combine-8",
+        "discoveryText": "After comparing Sumin's words, 'I should have endured it' and the groom-to-be's message, it appears that it was the groom-to-be who crossed the line. Let's ask the new witness about the relevant facts."
+      },
+      {
+        "id": "combine-9",
+        "discoveryText": "Combining Sumin's words about trying to hold back and Da-eun's father's text message, it seems likely that the current contact is not just a personal contact. The actual party and purpose of the money matter must be ascertained in the interrogation."
+      },
+      {
+        "id": "combine-10",
+        "discoveryText": "If you juxtapose the assertion, “I’m contacting my man again,” with the self-reproach, “I should have held back,” it becomes clear that you are experiencing the same incident completely differently."
+      }
+    ]
+  },
+  "v3Design": {
+    "evidenceAxisLegend": {
+      "depthStages": [
+        {
+          "id": "stub",
+          "summary": "Only existence is visible"
+        },
+        {
+          "id": "excerpt",
+          "summary": "View only part"
+        },
+        {
+          "id": "original",
+          "summary": "Secure original/full copy"
+        },
+        {
+          "id": "context",
+          "summary": "Restore context before and after"
+        },
+        {
+          "id": "established",
+          "summary": "Official record adoption"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "Submitted",
+          "summary": "Status submitted by the party"
+        },
+        {
+          "id": "verifying",
+          "label": "Verifying",
+          "summary": "Checking the original and context"
+        },
+        {
+          "id": "authenticated",
+          "label": "Verified",
+          "summary": "Judging by reliable data"
+        },
+        {
+          "id": "challenged",
+          "label": "Objection raised",
+          "summary": "The other side competes over meaning or scope"
+        },
+        {
+          "id": "misread",
+          "label": "Manipulation/misreading judgment",
+          "summary": "Determination of forgery or excerpt/misreading"
+        }
+      ]
+    },
+    "hiddenDisputes": [
+      {
+        "id": "d-3",
+        "name": "Father's Money Access Pattern",
+        "unlockPlan": {
+          "runtimeRule": "Unlocked upon reaching d-2 S3",
+          "authoredRule": "After the groom-to-be's approach is confirmed in d-2, when Choi Soo-min reveals the reason for the warning, Song Da-eun's father's pattern is injured."
+        }
+      },
+      {
+        "id": "d-4",
+        "name": "The real cause of past stop loss incidents",
+        "unlockPlan": {
+          "runtimeRule": "Unlocked upon reaching d-3 S2",
+          "authoredRule": "After Song Da-eun's father's current pattern was confirmed, it emerged that the same thing had happened in the past."
+        }
+      },
+      {
+        "id": "d-5",
+        "name": "Group chat room selling and defamation",
+        "unlockPlan": {
+          "runtimeRule": "Unlocked when reaching d-3 S3 + d-4 S3",
+          "authoredRule": "Song Da-eun is currently injured in a defamation lawsuit after her father's pattern and past loan repayments were fully revealed."
+        }
+      }
+    ],
+    "leadLines": [
+      {
+        "id": "L-1",
+        "name": "cling frame lead",
+        "interpretationChoices": [
+          {
+            "id": "L-1-A",
+            "text": "Choi Soo-min is obsessed with it.",
+            "implication": "He pushes d-1 with obsession."
+          },
+          {
+            "id": "L-1-B",
+            "text": "Song Da-eun framed it first.",
+            "implication": "Connected to d-5."
+          },
+          {
+            "id": "L-1-C",
+            "text": "need more confirmation",
+            "implication": "Stay neutral."
+          }
+        ]
+      },
+      {
+        "id": "L-2",
+        "name": "The groom-to-be's twist lead",
+        "interpretationChoices": [
+          {
+            "id": "L-2-A",
+            "text": "The groom-to-be crossed the line first.",
+            "implication": "Confirm d-2."
+          },
+          {
+            "id": "L-2-B",
+            "text": "Still, the fact that Choi Soo-min continued to contact me is a problem.",
+            "implication": "Ask about the appropriateness of d-1's method."
+          },
+          {
+            "id": "L-2-C",
+            "text": "The groom-to-be should be more responsible.",
+            "implication": "Highlighting third party liability."
+          }
+        ]
+      },
+      {
+        "id": "L-3",
+        "name": "father pattern lead",
+        "interpretationChoices": [
+          {
+            "id": "L-3-A",
+            "text": "Song Da-eun's father's pattern of money problems is correct.",
+            "implication": "Confirm d-3 and d-4."
+          },
+          {
+            "id": "L-3-B",
+            "text": "There may have been a father's circumstances.",
+            "implication": "Consider Song Da-eun’s position."
+          },
+          {
+            "id": "L-3-C",
+            "text": "Choi Soo-min should have said it himself.",
+            "implication": "Holding accountable for silence."
+          }
+        ]
+      },
+      {
+        "id": "L-4",
+        "name": "warning conclusion lead",
+        "interpretationChoices": [
+          {
+            "id": "L-4-A",
+            "text": "Choi Su-min’s contact was a warning.",
+            "implication": "Reinterpret the entire incident."
+          },
+          {
+            "id": "L-4-B",
+            "text": "Even though it was a warning, the method was wrong.",
+            "implication": "I leave responsibility for Choi Su-min's method."
+          },
+          {
+            "id": "L-4-C",
+            "text": "Both of them decided before checking",
+            "implication": "Shared responsibility."
+          }
+        ]
+      }
+    ],
+    "authorityPlacements": [
+      {
+        "action": "ORIGINAL SUBMISSION ORDER",
+        "recommendedMoment": "At the beginning of d-1, at the time of e-1 Excerpt",
+        "purpose": "Check the actual contents of your contact history to determine whether you are obsessed or not."
+      },
+      {
+        "action": "ORIGINAL SUBMISSION ORDER",
+        "recommendedMoment": "At the time of e-4 stub immediately after d-2 unlocking",
+        "purpose": "Securing the original message from the groom-to-be that crosses the line"
+      },
+      {
+        "action": "witness summons",
+        "recommendedMoment": "After d-2 S2",
+        "purpose": "Confirmation of the groom-to-be’s behavior pattern through Park Jun-hyuk"
+      },
+      {
+        "action": "ORIGINAL SUBMISSION ORDER",
+        "recommendedMoment": "At the time of e-5 stub immediately after d-3 unlocking",
+        "purpose": "Song Da-eun's father's original text message secured"
+      },
+      {
+        "action": "witness summons",
+        "recommendedMoment": "After d-4 S1",
+        "purpose": "Confirmed that past money transactions were witnessed through Oh Mi-kyung"
+      },
+      {
+        "action": "ORIGINAL SUBMISSION ORDER",
+        "recommendedMoment": "At the time of e-6 stub immediately after d-4 unlocking",
+        "purpose": "Secure the original receipt of past remittances"
+      },
+      {
+        "action": "witness summons",
+        "recommendedMoment": "d-5 unlock time",
+        "purpose": "Through Kim Sera, we confirmed the atmosphere of the group chat room and the circumstances of Song Da-eun’s first remark."
+      },
+      {
+        "action": "contrast command",
+        "recommendedMoment": "When to unlock e-7",
+        "purpose": "Create a comparison chart of past and present patterns"
+      },
+      {
+        "action": "Summary of speech recordings",
+        "recommendedMoment": "After d-3 S3",
+        "purpose": "Officially records that Song Da-eun's father's money access pattern is repeated"
+      },
+      {
+        "action": "cross-examination of parties",
+        "recommendedMoment": "After d-5 S2",
+        "purpose": "Both parties meet face-to-face and confirm the circumstances that were determined without confirmation."
+      }
+    ],
+    "sensitiveSealTargets": [
+      {
+        "targets": [
+          "Specific remittance amount",
+          "Song Da-eun’s father’s real name"
+        ],
+        "risk": "If the truth about Song Da-eun's father's non-repayment of the loan is revealed too early, the interrogation may be stopped due to Song Da-eun's emotional outburst."
+      }
+    ],
+    "officialRecordRecommendations": [
+      "Choi Soo-min's contact was not for obsession but for warning purposes.",
+      "The groom-to-be first crossed the line and approached Choi Soo-min.",
+      "Song Da-eun's father's money access pattern is the same in the past and present.",
+      "The real cause of the past loss was the non-repayment of a loan from Song Da-eun's father.",
+      "Song Da-eun first sold Choi Su-min in a group chat room without confirmation."
+    ]
+  },
+  "solutionCategoryLabels": {
+    "연락의도확인": "Confirm contact intent",
+    "과거청산": "liquidation of the past",
+    "명예회복": "restoration of honor"
+  }
 }

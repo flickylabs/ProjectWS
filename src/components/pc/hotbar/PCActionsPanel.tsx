@@ -10,6 +10,7 @@ import QuestionSelector, { type QuestionToggles } from '../../actions/QuestionSe
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { playInvestigationTokenWarning } from '../../../engine/soundEngine'
 import { useI18n, type MessageKey } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 export type PCHotbarPanelView = 'question' | 'evidence' | 'special'
 
@@ -52,7 +53,7 @@ export default function PCActionsPanel({
   onViewChange,
 }: Props) {
   const dispatch = useActionDispatch()
-  const { t } = useI18n()
+  const { locale, t } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const currentPhase = useStore((s) => s.currentPhase)
   const resources = useStore((s) => s.resources)
@@ -105,8 +106,11 @@ export default function PCActionsPanel({
   }, [focusedDisputeId, quickQuestion])
 
   const disputeOptions = useMemo(() => {
-    return (caseData?.disputes ?? []).map((dispute) => ({ id: dispute.id, name: dispute.name }))
-  }, [caseData?.disputes])
+    return (caseData?.disputes ?? []).map((dispute) => ({
+      id: dispute.id,
+      name: localizeRuntimeText(dispute.name, locale),
+    }))
+  }, [caseData?.disputes, locale])
 
   useEffect(() => {
     if (targetParty && focusedDisputeId) {
@@ -227,17 +231,17 @@ export default function PCActionsPanel({
     }
     const evidenceState = state.evidenceStates[evidenceId]
     const evidenceDisplay = {
-      name: evidenceState?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
-      description: evidenceState?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+      name: localizeRuntimeText(evidenceState?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name), locale),
+      description: localizeRuntimeText(evidenceState?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description), locale),
     }
 
     state.presentEvidence(evidenceId, targetParty)
-    const targetName = targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+    const targetName = localizeRuntimeText(targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name, locale)
     const reliabilityLabel = evidence.reliability === 'hard'
       ? t('pc.actions.evidence.reliability.hard')
       : t('pc.actions.evidence.reliability.soft')
     const disputeNames = evidence.proves
-      .map((disputeId) => caseData.disputes.find((item) => item.id === disputeId)?.name ?? disputeId)
+      .map((disputeId) => localizeRuntimeText(caseData.disputes.find((item) => item.id === disputeId)?.name ?? disputeId, locale))
       .join(', ')
 
     for (const disputeId of evidence.proves) {
@@ -373,7 +377,7 @@ export default function PCActionsPanel({
     advancePhase()
   }
 
-  const selectedTargetName = targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+  const selectedTargetName = localizeRuntimeText(targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name, locale)
   const phaseAdvanceLabel = getAdvanceLabel(currentPhase, t)
   const viewMeta = VIEW_META[view]
 
@@ -396,7 +400,7 @@ export default function PCActionsPanel({
             </span>
             {focusedDisputeName ? (
               <span className="pc-control-pill">
-                {t('pc.common.currentDispute')}: {focusedDisputeName}
+              {t('pc.common.currentDispute')}: {localizeRuntimeText(focusedDisputeName, locale)}
               </span>
             ) : null}
           </div>
@@ -440,7 +444,7 @@ export default function PCActionsPanel({
         <div className="pc-control-quick">
           <div>
             <div className="pc-control-quick-label">{t('pc.common.selectedEvidence')}</div>
-            <div className="pc-control-quick-title">{selectedEvidence.surfaceName ?? selectedEvidence.name}</div>
+            <div className="pc-control-quick-title">{localizeRuntimeText(selectedEvidence.surfaceName ?? selectedEvidence.name, locale)}</div>
             <div className="pc-control-quick-text">
               {t('pc.actions.evidence.quickHelp')}
             </div>

@@ -12,39 +12,41 @@ import PCCaseTimelineSection from './PCCaseTimelineSection'
 import JudgeObservationSection from '../observation/JudgeObservationSection'
 import JudgeNotebookSection from '../observation/JudgeNotebookSection'
 import JudgeObservationHistoryDrawer from '../observation/JudgeObservationHistoryDrawer'
-import { translate } from '../../../i18n'
+import { translate, useI18n, type MessageKey } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
-const TYPE_LABELS: Record<string, string> = {
-  bank: '금융',
-  financial_record: '금융',
-  receipt: '영수증',
-  chat: '메신저',
-  contract: '계약',
-  estimate: '견적',
-  document: '문서',
-  institutional_note: '기관 문서',
-  medical_record: '의료 기록',
-  testimony: '증언',
-  cctv: '영상',
-  photo: '사진',
-  photo_video: '사진·영상',
-  video: '영상',
-  dashcam: '블랙박스',
-  log: '기록',
-  platform_log: '플랫폼 로그',
-  cloud_log: '클라우드 로그',
-  device_log: '기기 로그',
-  record: '기록',
-  delivery_record: '배달 기록',
-  repair_record: '수리 기록',
-  email: '메일',
-  audio: '오디오',
-  forensic_report: '감정',
-  device: '기기',
-  sns: 'SNS',
+const EVIDENCE_TYPE_LABEL_KEYS: Record<string, MessageKey> = {
+  bank: 'pc.left.evidenceType.bank',
+  financial_record: 'pc.left.evidenceType.financial_record',
+  receipt: 'pc.left.evidenceType.receipt',
+  chat: 'pc.left.evidenceType.chat',
+  contract: 'pc.left.evidenceType.contract',
+  estimate: 'pc.left.evidenceType.estimate',
+  document: 'pc.left.evidenceType.document',
+  institutional_note: 'pc.left.evidenceType.institutional_note',
+  medical_record: 'pc.left.evidenceType.medical_record',
+  testimony: 'pc.left.evidenceType.testimony',
+  cctv: 'pc.left.evidenceType.cctv',
+  photo: 'pc.left.evidenceType.photo',
+  photo_video: 'pc.left.evidenceType.photo_video',
+  video: 'pc.left.evidenceType.video',
+  dashcam: 'pc.left.evidenceType.dashcam',
+  log: 'pc.left.evidenceType.log',
+  platform_log: 'pc.left.evidenceType.platform_log',
+  cloud_log: 'pc.left.evidenceType.cloud_log',
+  device_log: 'pc.left.evidenceType.device_log',
+  record: 'pc.left.evidenceType.record',
+  delivery_record: 'pc.left.evidenceType.delivery_record',
+  repair_record: 'pc.left.evidenceType.repair_record',
+  email: 'pc.left.evidenceType.email',
+  audio: 'pc.left.evidenceType.audio',
+  forensic_report: 'pc.left.evidenceType.forensic_report',
+  device: 'pc.left.evidenceType.device',
+  sns: 'pc.left.evidenceType.sns',
 }
 
 export default function PCLeftPanel() {
+  const { locale, t } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const currentPhase = useStore((s) => s.currentPhase)
   const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
@@ -113,32 +115,29 @@ export default function PCLeftPanel() {
 
     if (revealedFindings.length > 0 || hiddenCount > 0) {
       bodyParts.push('')
-      bodyParts.push('발견한 내용:')
-      revealedFindings.forEach((f) => bodyParts.push(`• ${f}`))
+      bodyParts.push(t('pc.left.evidence.foundContent'))
+    revealedFindings.forEach((f) => bodyParts.push(`• ${formatLocalizedCaseText(f, locale, t)}`))
       if (hiddenCount > 0) bodyParts.push(translate('pc.notes.unseen', { count: hiddenCount }))
     }
 
     const actions: PcInteractionAction[] = [
-      { kind: 'open_evidence', label: '증거 열람', evidenceId: evidence.id },
+      { kind: 'open_evidence', label: t('pc.left.evidence.open'), evidenceId: evidence.id },
     ]
 
-    const meta = evidence.meta
-    const metaTags: string[] = []
-    if (meta?.trustLabel) metaTags.push(meta.trustLabel)
-    if (meta?.sourceLabel) metaTags.push(meta.sourceLabel)
+    const metaTags = buildEvidenceMetaTags(evidence.meta, t)
 
     openPcInteractionPanel({
       title: label,
-      subtitle: TYPE_LABELS[evidence.type] ?? '증거 파일',
+      subtitle: getEvidenceTypeLabel(evidence.type, t),
       tone: 'gold',
       variant: 'evidence',
       evidenceId: evidence.id,
-      evidenceTypeLabel: TYPE_LABELS[evidence.type] ?? '증거 파일',
+      evidenceTypeLabel: getEvidenceTypeLabel(evidence.type, t),
       evidenceMetaTags: metaTags,
       body: bodyParts.join('\n'),
       actions,
     })
-  }, [evidenceStates])
+  }, [evidenceStates, locale, t])
 
   const sendEvidenceToCombination = useCallback((evidenceId: string) => {
     window.dispatchEvent(new CustomEvent<PcCombinationPanelEventDetail>(PC_ADD_COMBINATION_NOTE_EVENT, { detail: { evidenceId } }))
@@ -176,7 +175,7 @@ export default function PCLeftPanel() {
         aria-expanded={timelineOpen}
         className={`pc-play-timeline-toggle${timelineOpen ? ' is-open' : ''}`}
         onClick={toggleTimeline}
-        title={timelineOpen ? '타임라인 닫기' : '타임라인 열기'}
+        title={timelineOpen ? t('pc.left.timeline.close') : t('pc.left.timeline.open')}
         type="button"
       >
         <PCSvgIcon id="i-clock" size={14} />
@@ -186,20 +185,20 @@ export default function PCLeftPanel() {
         className="sec pc-play-evidence-section"
         style={!evidenceInteractionAllowed ? { opacity: 0.4, pointerEvents: 'none' } : undefined}
         aria-disabled={!evidenceInteractionAllowed}
-        title={!evidenceInteractionAllowed ? '심문 단계부터 증거를 다룰 수 있습니다.' : undefined}
+        title={!evidenceInteractionAllowed ? t('pc.left.evidence.interrogationOnly') : undefined}
       >
         <div className="sec-h">
           <PCSvgIcon id="i-doc" size={14} />
-          <span>증거 수첩</span>
+          <span>{t('pc.left.evidence.title')}</span>
           <span className="cnt">{surfaceResult ? evidenceCards.length : 0}</span>
-          <span className="sub">{`— 잠금 ${lockedCount}`}</span>
-          <span className="pc-evidence-help" title="단서는 심문 진행 또는 증거 제시 이후 추가로 등장합니다">?</span>
+          <span className="sub">{`— ${t('pc.left.evidence.lockedCount', { count: lockedCount })}`}</span>
+          <span className="pc-evidence-help" title={t('pc.left.evidence.help')}>?</span>
         </div>
 
         <div className="pc-play-evidence-list">
           {evidenceCards.map((evidence) => {
             const state = evidenceStates[evidence.id]
-            const label = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
+            const label = localizeRuntimeText(state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name), locale)
             const hint = partnerHints.get(evidence.id)
             const comboTitle = hint
               ? buildComboHintTitle(hint)
@@ -243,7 +242,7 @@ export default function PCLeftPanel() {
                       ) : null}
                     </span>
                   ) : null}
-                  <span className="pc-ev-notebook__badge">{TYPE_LABELS[evidence.type] ?? '기록'}</span>
+                  <span className="pc-ev-notebook__badge">{getEvidenceTypeLabel(evidence.type, t, t('pc.left.evidence.record'))}</span>
                 </button>
               </div>
             )
@@ -264,7 +263,7 @@ export default function PCLeftPanel() {
             className="pc-drawer-close"
             onClick={() => setTimelineOpen(false)}
             type="button"
-            aria-label="닫기"
+            aria-label={t('pc.common.close')}
           >
             ✕
           </button>
@@ -289,12 +288,40 @@ function buildComboHintTitle(hint: { recipeCount: number; readyCount: number; pa
   }
   const { evidence, statement } = hint.partnersByCategory
   const categories: string[] = []
-  if (evidence > 0) categories.push(`증거 ${evidence}`)
-  if (statement > 0) categories.push(`발언 ${statement}`)
+  if (evidence > 0) categories.push(translate('pc.left.combo.evidencePartner', { count: evidence }))
+  if (statement > 0) categories.push(translate('pc.left.combo.statementPartner', { count: statement }))
   if (categories.length > 0) {
-    parts.push(`짝 후보: ${categories.join(' · ')}`)
+    parts.push(translate('pc.left.combo.partnerCandidates', { items: categories.join(' · ') }))
   }
   return parts.join('\n')
+}
+
+function getEvidenceTypeLabel(
+  type: string,
+  t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string,
+  fallback = t('pc.left.evidence.file'),
+): string {
+  const key = EVIDENCE_TYPE_LABEL_KEYS[type]
+  return key ? t(key) : fallback
+}
+
+function buildEvidenceMetaTags(
+  meta: EvidenceNode['meta'] | undefined,
+  t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string,
+): string[] {
+  const tags: string[] = []
+  if (meta?.trustLevel) tags.push(t(`pc.evidenceMeta.trust.${meta.trustLevel}` as MessageKey))
+  if (meta?.source) tags.push(t(`pc.evidenceMeta.source.${meta.source}` as MessageKey))
+  return tags
+}
+
+function formatLocalizedCaseText(
+  value: string,
+  locale: string,
+  t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string,
+): string {
+  if (locale === 'ko' || !/[\uAC00-\uD7A3]/.test(value)) return value
+  return t('pc.evidenceViewer.untranslatedData')
 }
 
 function buildPresentActions(

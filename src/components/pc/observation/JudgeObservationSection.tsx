@@ -5,6 +5,8 @@ import type {
   JudgeObservation,
   JudgeObservationCategory,
 } from '../../../store/slices/judgeObservationSlice'
+import { translate, useI18n } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 const CATEGORY_ICON: Record<JudgeObservationCategory, string> = {
   archetype: 'i-eye',
@@ -36,6 +38,7 @@ function isImportantEventObservation(obs: JudgeObservation | null): boolean {
 }
 
 export default function JudgeObservationSection() {
+  const { locale, t } = useI18n()
   const rawObservations = useStore((s) => s.judgeObservations ?? [])
   const observations = useMemo(
     () => rawObservations.filter((obs) => !LOW_VALUE_OBSERVATION_TITLES.has(obs.title)),
@@ -309,10 +312,10 @@ export default function JudgeObservationSection() {
   }
 
   return (
-    <section className="sec pc-judge-observation-section" aria-label="재판관의 관찰">
+    <section className="sec pc-judge-observation-section" aria-label={t('pc.observation.title')}>
       <div className="sec-h">
         <PCSvgIcon id="i-eye" size={14} />
-        <span>재판관의 관찰</span>
+        <span>{t('pc.observation.title')}</span>
         {unreadCount > 0 ? (
           <span className={`pc-jobs-badge${badgeFlash ? ' is-flash' : ''}`}>{unreadCount}</span>
         ) : null}
@@ -326,8 +329,8 @@ export default function JudgeObservationSection() {
             }
             setHistoryOpen(next)
           }}
-          title={historyOpen ? '전체 히스토리 닫기' : '전체 히스토리 열기'}
-          aria-label="관찰 히스토리 토글"
+          title={historyOpen ? t('pc.observation.historyClose') : t('pc.observation.historyOpen')}
+          aria-label={t('pc.observation.historyOpen')}
           aria-pressed={historyOpen}
         >
           <PCSvgIcon id="i-doc" size={12} />
@@ -335,7 +338,7 @@ export default function JudgeObservationSection() {
       </div>
 
       {/* 미니 타임라인 아이콘 줄 */}
-      <div className="pc-jobs-mini-timeline" role="list" aria-label="최근 관찰 흐름">
+      <div className="pc-jobs-mini-timeline" role="list" aria-label={t('pc.observation.recentFlow')}>
         {timeline.length === 0 ? (
           <span className="pc-jobs-mini-timeline__empty" aria-hidden="true">···</span>
         ) : (
@@ -348,7 +351,7 @@ export default function JudgeObservationSection() {
                 role="listitem"
                 className={`pc-jobs-mini-dot is-${obs.category}${isActive ? ' is-active' : ''}`}
                 onClick={handleTimelineClick}
-                title={obs.title}
+                title={localizeRuntimeText(obs.title, locale)}
               >
                 <PCSvgIcon id={obs.iconId ?? CATEGORY_ICON[obs.category]} size={10} />
               </button>
@@ -371,16 +374,16 @@ export default function JudgeObservationSection() {
             <PCSvgIcon id={main.iconId ?? CATEGORY_ICON[main.category]} size={20} />
           </span>
           <span className="pc-jobs-main__body">
-            <span className="pc-jobs-main__title">{main.title}</span>
+            <span className="pc-jobs-main__title">{localizeRuntimeText(main.title, locale)}</span>
             {main.summary ? (
-              <span className="pc-jobs-main__summary">{main.summary}</span>
+              <span className="pc-jobs-main__summary">{localizeRuntimeText(main.summary, locale)}</span>
             ) : null}
           </span>
           <span className="pc-jobs-main__time">{formatTurnGap(turnCount, main.turnCount)}</span>
         </button>
       ) : (
         <div className="pc-jobs-main is-empty" aria-hidden="true">
-          <span className="pc-jobs-main__empty-text">현재 특이사항 없음</span>
+          <span className="pc-jobs-main__empty-text">{t('pc.observation.empty')}</span>
         </div>
       )}
     </section>
@@ -389,9 +392,8 @@ export default function JudgeObservationSection() {
 
 function formatTurnGap(now: number, then: number): string {
   const gap = now - then
-  if (gap <= 0) return '방금'
-  if (gap === 1) return '1턴 전'
-  return `${gap}턴 전`
+  if (gap <= 0) return translate('pc.common.justNow')
+  return translate('pc.common.turnAgo', { count: gap })
 }
 
 /** 관찰 엔트리 / 타임라인 클릭 시 채팅의 해당 발언으로 스크롤 + 느린 pulse.

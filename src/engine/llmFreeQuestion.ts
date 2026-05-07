@@ -31,6 +31,8 @@ import type { EvidenceRuntimeState } from './evidenceEngine'
 import { useGameStore } from '../store/useGameStore'
 import { getRelationshipType, normalizeCaseKey } from '../utils/caseHelpers'
 import { buildReleaseDialogueStyleGuide, polishNpcResponseCopy } from './npcResponsePolisher'
+import { getLlmLocale, buildLlmLanguageDirective, getLocalizedFreeQuestionFallbackText, getLocalizedFreeQuestionBehaviorHint, hasUnexpectedHangulForLocale } from '../i18n/llmLocale.ts'
+import { repairVisibleLlmTextLocale } from './llmLocaleGuard.ts'
 import type {
   FreeInterrogationFallbackResult,
   FreeInterrogationGuardContext,
@@ -105,6 +107,12 @@ async function classifyQuestion(
   const systemPrompt = isAgentLoaded()
     ? buildAgentPrompt('free_question_classifier', classifierVars)
     : buildClassifierFallbackPrompt(disputeList, evidenceCatalog)
+  const languageDirective = buildLlmLanguageDirective(getLlmLocale())
+  const localizedSystemPrompt = [
+    languageDirective,
+    'Classifier output is machine-readable. Keep JSON keys and enum/id values unchanged.',
+    systemPrompt,
+  ].join('\n\n')
 
   const config = isAgentLoaded()
     ? getAgentConfig('free_question_classifier')
@@ -113,7 +121,7 @@ async function classifyQuestion(
   try {
     const raw = await chatCompletion(
       [
-        { role: 'system', content: systemPrompt },
+        { role: 'system', content: localizedSystemPrompt },
         { role: 'user', content: `재판관의 자유 질문을 분류한다.\n질문: "${question}"\n\n규칙:\n- 캐릭터 연기 금지.\n- 입력 질문만 보고 questionType, disputeId, evidence 언급 여부를 분류한다.\n- 출력은 JSON 객체 하나만 한다.` },
       ],
       { temperature: config.temperature, maxTokens: config.maxTokens },
@@ -203,12 +211,13 @@ function buildGuardFallbackFreeQuestionResult(
   fallback: FreeInterrogationFallbackResult | FreeInterrogationGuardResult,
   classification: ClassifierResult,
 ): FreeQuestionResult {
+  const locale = getLlmLocale()
   return {
     questionType: classification.questionType,
     disputeId: null,
     secondaryDisputeId: null,
-    response: fallback.text,
-    behaviorHint: 'behaviorHint' in fallback ? fallback.behaviorHint : '잠시 침묵한 뒤 짧게 답한다.',
+    response: getLocalizedFreeQuestionFallbackText('default', locale) ?? fallback.text,
+    behaviorHint: getLocalizedFreeQuestionBehaviorHint(locale) ?? ('behaviorHint' in fallback ? fallback.behaviorHint : 'Answers cautiously.'),
   }
 }
 
@@ -230,6 +239,8 @@ async function generateResponse(
   const angryCall = getAngryCall(caseData.duo, target)
   const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, target)
   const releaseStyleGuide = buildReleaseDialogueStyleGuide(caseData, target)
+  const locale = getLlmLocale()
+  const languageDirective = buildLlmLanguageDirective(locale)
 
   const relType = getRelationshipType(caseData)
   const canInformalThis = canUseInformal(caseData, target)
@@ -372,7 +383,7 @@ async function generateResponse(
   let systemPrompt = isAgentLoaded()
     ? buildAgentPrompt('free_question_responder', responderVars, { phase: currentPhase })
     : getPrompt('free_question', responderVars)
-  systemPrompt = `${systemPrompt}\n${releaseStyleGuide}`
+  systemPrompt = `${languageDirective}\n\n${systemPrompt}\n\n${languageDirective}\n${releaseStyleGuide}`
 
   const config = isAgentLoaded()
     ? getAgentConfig('free_question_responder')
@@ -393,7 +404,7 @@ async function generateResponse(
     evidenceBlock = `\n\n★ 증거 대질 맥락:\n- 증거명: ${evidenceContext.name}\n- 증거 설명: ${evidenceContext.description}\n- 출처: ${evidenceContext.provenance} / 신뢰도: ${evidenceContext.reliability}\n- ${roleDesc}\n- 재판관의 질문은 이 증거를 기반으로 하고 있다. 증거 내용을 고려하여 답변하라.`
   }
 
-  const userMessage = `분류가 끝난 자유 질문에 캐릭터로서 응답한다.
+  const userMessage = `${languageDirective}\n\n분류가 끝난 자유 질문에 캐릭터로서 응답한다.
 원문 질문: "${question}"
 classifier 결과:
 - questionType: ${classification.questionType}
@@ -411,7 +422,8 @@ ${runtimeBrief}
 - 현재 공개 단계와 제시된 증거 범위를 넘겨 숨겨진 진실을 직접 말하지 않는다.
 - 상대방 호칭은 재판관에게 말할 때 "${judgeRef}", 직접 부를 때 "${myCall}" 기준을 따른다.
 ${opponentReferenceGuide}
-- 출력은 JSON 객체 하나만 한다.`
+- 출력은 JSON 객체 하나만 한다.
+- All visible JSON string values must follow the selected display language above.`
   const guardContext = buildFreeQuestionGuardContext({
     caseData,
     target,
@@ -447,8 +459,11 @@ ${opponentReferenceGuide}
         }
 
     if (rawResult.action === 'fallback') {
+      const fallbackText = locale === 'ko'
+        ? polishNpcResponseCopy(enforceOpponentReferenceForms(rawResult.text, caseData, target), caseData, target)
+        : rawResult.text
       return buildGuardFallbackFreeQuestionResult(
-        { ...rawResult, text: polishNpcResponseCopy(enforceOpponentReferenceForms(rawResult.text, caseData, target), caseData, target) },
+        { ...rawResult, text: fallbackText },
         classification,
       )
     }
@@ -466,18 +481,30 @@ ${opponentReferenceGuide}
       speaker: target,
       previousNpcResponse: dialogueLog.filter(d => d.speaker === target).slice(-1)[0]?.text,
     }
-    const parsed = parseResponderResponse(raw, ppCtx, caseData, target)
+    const parsed = parseResponderResponse(raw, ppCtx, caseData, target, locale)
     if (guardContext) {
       const guarded = await evaluateFreeInterrogationResponse(parsed.response, guardContext)
       if (guarded.action === 'fallback') {
+        const fallbackText = locale === 'ko'
+          ? polishNpcResponseCopy(enforceOpponentReferenceForms(guarded.text, caseData, target), caseData, target)
+          : guarded.text
         return buildGuardFallbackFreeQuestionResult(
-          { ...guarded, text: polishNpcResponseCopy(enforceOpponentReferenceForms(guarded.text, caseData, target), caseData, target) },
+          { ...guarded, text: fallbackText },
           classification,
         )
       }
-      parsed.response = polishNpcResponseCopy(guarded.text, caseData, target)
+      parsed.response = locale === 'ko' ? polishNpcResponseCopy(guarded.text, caseData, target) : guarded.text
     }
-    parsed.response = polishNpcResponseCopy(enforceOpponentReferenceForms(parsed.response, caseData, target), caseData, target)
+    parsed.response = locale === 'ko'
+      ? polishNpcResponseCopy(enforceOpponentReferenceForms(parsed.response, caseData, target), caseData, target)
+      : parsed.response
+    parsed.response = await repairVisibleLlmTextLocale(parsed.response, locale, {
+      fieldName: 'freeQuestion.response',
+      fallbackReason: 'api_failure',
+    })
+    if (hasUnexpectedHangulForLocale(parsed.behaviorHint, locale)) {
+      parsed.behaviorHint = getLocalizedFreeQuestionBehaviorHint(locale) ?? parsed.behaviorHint
+    }
 
     return {
       questionType: classification.questionType,
@@ -494,8 +521,11 @@ ${opponentReferenceGuide}
         '',
         [{ dimension: 'api_failure', reason: 'free-question-responder threw unexpectedly' }],
       )
+      const fallbackText = locale === 'ko'
+        ? polishNpcResponseCopy(enforceOpponentReferenceForms(fallback.text, caseData, target), caseData, target)
+        : fallback.text
       return buildGuardFallbackFreeQuestionResult(
-        { ...fallback, text: polishNpcResponseCopy(enforceOpponentReferenceForms(fallback.text, caseData, target), caseData, target) },
+        { ...fallback, text: fallbackText },
         classification,
       )
     }
@@ -503,8 +533,8 @@ ${opponentReferenceGuide}
     return {
       questionType: classification.questionType,
       disputeId: classification.primaryDisputeId,
-      response: `... ${eunneun(party.name)} 질문을 이해하지 못한 듯합니다.`,
-      behaviorHint: '당황한 표정으로 침묵한다.',
+      response: getLocalizedFreeQuestionFallbackText('api_failure', locale) ?? `... ${eunneun(party.name)} 질문을 이해하지 못한 듯합니다.`,
+      behaviorHint: getLocalizedFreeQuestionBehaviorHint(locale) ?? '당황한 표정으로 침묵한다.',
     }
   }
 }
@@ -514,6 +544,7 @@ function parseResponderResponse(
   ppCtx: PostProcessContext | undefined,
   caseData: CaseData,
   target: PartyId,
+  locale = getLlmLocale(),
 ): { response: string; behaviorHint: string } {
   try {
     const jsonMatch = raw.match(/\{[\s\S]*\}/)
@@ -526,15 +557,17 @@ function parseResponderResponse(
     const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : '')
     const rawResponse = responseText.replace(/[（(][^)）]+[)）]/g, '').trim()
     // 전체 후처리 파이프라인 적용 (TruthThrottle/클리셰 필터/금액 보호 포함)
-    const response = polishNpcResponseCopy(
-      enforceOpponentReferenceForms(
-        ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse))),
+    const response = locale === 'ko'
+      ? polishNpcResponseCopy(
+        enforceOpponentReferenceForms(
+          ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse))),
+          caseData,
+          target,
+        ),
         caseData,
         target,
-      ),
-      caseData,
-      target,
-    )
+      )
+      : rawResponse.trim()
 
     // S0-S1 회피 패턴 감지 → 플레이어에게 힌트 제공
     let finalHint = behaviorHint
@@ -548,7 +581,9 @@ function parseResponderResponse(
     return { response: response || '...', behaviorHint: finalHint }
   } catch {
     return {
-      response: polishNpcResponseCopy(enforceOpponentReferenceForms(raw.slice(0, 200), caseData, target), caseData, target),
+      response: locale === 'ko'
+        ? polishNpcResponseCopy(enforceOpponentReferenceForms(raw.slice(0, 200), caseData, target), caseData, target)
+        : raw.slice(0, 200).trim(),
       behaviorHint: '',
     }
   }

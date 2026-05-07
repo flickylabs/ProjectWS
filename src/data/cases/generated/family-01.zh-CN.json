@@ -2,80 +2,2443 @@
   "caseId": "family-01",
   "locale": "zh-CN",
   "overlayKind": "generatedCaseSurface",
+  "overlayScope": "full",
   "meta": {
-    "title": "失智母亲留下的遗嘱"
-  },
-  "context": {
-    "description": "失智的母亲留下的遗嘱上写着——次子 60%、长子 40%。一直自认是亲自照护母亲的尹泰成怒不可遏；弟弟则始终淡然。",
-    "triggerAmplifier": "起初，遗嘱比例与疗养院的探访记录看起来都像是尹正厚介入的痕迹。但随着公证人备忘、亲笔练习本、陈年的账户流向、母亲的日记本相继被翻开，事件的中心已经不只是一桩寻常的遗产之争。"
+    "title": "痴呆妈妈的遗嘱",
+    "anchorTruth": "60:40的公证副本从一开始就保持了这个比例，但一份单独的手写练习副本、旧账户流和母亲的日记重新建立了遗嘱变更的背景。",
+    "emotionalBait": "尹泰成一生都不赞成弟弟，当他看到患有痴呆症的母亲留下的遗嘱中，自己的份额是40%时，他崩溃了。弟弟直到最后都保持着平静。所以看起来更加可疑。",
+    "resolutionDilemma": "篡改意志的责任、母亲的决策能力、以及兄妹之间长期隐藏的负担，都必须一起评判。",
+    "triggerAmplifier": "乍一看，自杀率和疗养院访问记录似乎是尹正厚的干预措施。然而，当公证笔录、手写练习册、旧账流水、母亲日记相继被翻开时，案件的中心就超越了简单的继承纠纷。"
   },
   "duo": {
     "partyA": {
       "name": "尹泰成",
-      "occupation": "厨房家具工厂代表"
+      "occupation": "厨房家具厂代表",
+      "speechStyle": "他抬高声音打压别人，首先维护自己哥哥的地位。当事情变得不利时，他试图通过贬低弟弟的性格来平息问题本身。",
+      "fear": "作为长子，我一生都相信自己的身份会崩溃——这就是我所害怕的。",
+      "dailyRoutine": "他在工厂处理订单，晚上去母亲家，维持着他自称照顾的生活方式。",
+      "sensitivePoints": [
+        "长子身份",
+        "工厂危机和3亿韩元支援历史",
+        "出生秘密"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "当事情变得不利时，他会以自己的资历来扭转局面，说：“我和哥哥住在一起。”"
+        },
+        {
+          "pattern": "他首先试图通过提起弟弟的性格或过去来破坏对方的信任。"
+        },
+        {
+          "pattern": "当情绪出现时，声音就会变大，让对方很难继续说话。"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "正休雅",
+        "toJudge": "我的兄弟",
+        "angry": "尹正浩！"
+      }
     },
     "partyB": {
       "name": "尹正厚",
-      "occupation": "汽车配件店经营"
-    }
+      "occupation": "汽配店经营",
+      "speechStyle": "尽可能压抑自己的情绪，只简单陈述事实。看似平静，但这种平静实际上却令人怀疑。我尽量不透露自己的真实感受，直到最后。",
+      "fear": "我哥哥发现了我的出生秘密——这太可怕了。",
+      "dailyRoutine": "经营商店的同时，他一有时间就给母亲寄钱，并在哥哥不知情的情况下帮忙支付定期补贴和住院费。",
+      "sensitivePoints": [
+        "意志操纵的事实",
+        "老秘密支持",
+        "我弟弟的出生秘密"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "当被问到关键问题时，缩小你的答案范围并保持防御性，不要表现出任何情绪。"
+        },
+        {
+          "pattern": "他们选择沉默而不是谎言，通过不说话来隐藏真相。"
+        },
+        {
+          "pattern": "首先泄露出来的是，他这么做是因为他害怕对方崩溃。"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "兄弟",
+        "toJudge": "我的兄弟",
+        "angry": "尹泰成！"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "description": "至于母亲生前更关心谁，两兄弟的记忆完全相反。",
+        "distortionDirection": "尹泰成记得，既然是他照顾的，他应该得到更多，尹正虎没有告诉她，因为知道母亲本来打算留给他90。"
+      },
+      {
+        "id": "ledger-2",
+        "description": "尹泰成并不知道尹正虎长期寄到母亲银行账户上的定期赡养费，以及工厂危机期间通过尹泰成母亲银行账户转入的3亿韩元的存在。"
+      },
+      {
+        "id": "ledger-3",
+        "description": "尹泰成的出生秘密——只有B知道他不是父亲的亲生儿子。"
+      },
+      {
+        "id": "ledger-4",
+        "description": "双方都知道遗嘱是60:40更改的。不过，Taeseong Yoon 尚不清楚单独手写练习册的具体比例。",
+        "distortionDirection": "尹泰成的结论是，60:40的比例是尹正厚增加份额的结果。"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "w-1",
+        "name": "崔福顺",
+        "knowledgeScope": "在担任看护员时，我亲眼看到尹正虎给他的母亲读了一张纸，并在他哥哥来之前小心地完成了它。",
+        "surfaceKnowledge": "他是一位第三方证人，直接目睹了母亲晚年身边与遗嘱相关的行为。",
+        "witnessProfile": {
+          "occupation": "前护理员",
+          "relationToA": "我们互不认识。",
+          "relationToB": "我是通过我母亲认识他的。",
+          "speechStyle": "我试着仔细追踪我的记忆，只讲述我所看到的。",
+          "addressJudge": "启禀大人",
+          "addressA": "长子",
+          "addressB": "小儿子",
+          "hiddenAgenda": "他们小心翼翼地担心在更换护理人员的过程中可能会增加自己的责任。"
+        }
+      },
+      {
+        "id": "w-2",
+        "name": "金英秀",
+        "knowledgeScope": "我知道，在公证当天，公证员的备忘录中留下了关于母亲状况的观察结果，数字混乱，尹正浩匆忙处理。",
+        "surfaceKnowledge": "他是在公证当天亲自确认备忘录记录的第三方证人。",
+        "witnessProfile": {
+          "occupation": "公证人票据",
+          "relationToA": "我们互不认识。",
+          "relationToB": "我只知道他是提交文件的人。",
+          "speechStyle": "以公事公办的方式准确发言并根据记录作答。",
+          "addressJudge": "启禀大人",
+          "addressA": "长子",
+          "addressB": "提交文件的人",
+          "hiddenAgenda": "之所以划线，是因为担心公证过程中缺乏核实的情况暴露。"
+        }
+      },
+      {
+        "id": "w-3",
+        "name": "苏奈公园",
+        "knowledgeScope": "他是我母亲的老朋友。我母亲生前曾说过，“郑虎每个月都会给我寄钱”，“泰成用郑虎的钱让工厂陷入困境”。",
+        "surfaceKnowledge": "这是一位熟人见证者，听到了这位母亲对两个儿子的真实感受。",
+        "witnessProfile": {
+          "occupation": "退休",
+          "relationToA": "我从小就认识泰成，因为他是我母亲的朋友。",
+          "relationToB": "我只是通过妈妈的话才知道的。",
+          "speechStyle": "当我谈论我的母亲时，我会情绪激动，当我回忆时，我可能会夸大其词。",
+          "addressJudge": "启禀大人",
+          "addressA": "大城",
+          "addressB": "正湖",
+          "hiddenAgenda": "他试图含糊地传递他是否知道母亲的秘密（出生秘密）。"
+        }
+      }
+    ]
+  },
+  "context": {
+    "description": "患有痴呆症的母亲留下的遗嘱中写着，弟弟占60%，哥哥占40%。以一生照顾母亲而自豪的尹泰成变得愤怒，而他的弟弟则一直保持冷静直到最后。",
+    "triggerAmplifier": "乍一看，自杀率和疗养院访问记录似乎是尹正厚的干预措施。然而，当公证笔录、手写练习册、旧账流水、母亲日记相继被翻开时，案件的中心就超越了简单的继承纠纷。",
+    "caseName": "痴呆妈妈的遗嘱"
   },
   "disputes": [
     {
       "id": "d-1",
-      "name": "遗嘱形成与判断能力"
+      "name": "遗嘱写作和判断能力",
+      "truthDescription": "尹正厚在母亲的最后几年经常去看望她，并讨论了她的遗嘱内容。虽然更换照顾者与公证时间重叠，但母亲的意愿并没有完全被忽视。",
+      "mediationLink": "晚年立遗嘱过程的合法性",
+      "judgmentStatement": "虽然母亲的决策能力并未完全丧失，但尹正厚的干预留下了合法性问题。",
+      "verdictOptions": {
+        "wrong": "母亲在弟弟的压力下写下遗嘱，处于无法做出正确决定的状态。",
+        "partial": "虽然母亲的认知能力存在疑问，但很难得出完全无效的结论。",
+        "truth": "尹正虎晚年时常来看望母亲，讨论母亲的遗嘱，但他并没有完全忽视母亲的意愿。",
+        "defer": "无法确认母亲是否有判断能力。我保留它。"
+      }
     },
     {
       "id": "d-2",
-      "name": "公证遗嘱与另一份文件的差异"
+      "name": "经过公证的遗嘱和单独文件之间的区别",
+      "truthDescription": "公证副本从一开始就保持着60:40的比例，在单独的手写遗嘱练习副本中也可以看到与公证副本不同比例的考虑痕迹。尹正厚仍然对篡改遗嘱负有责任，但这并不是为了获得更多的操纵。",
+      "mediationLink": "公证遗嘱与手写练习本的关系",
+      "judgmentStatement": "公证副本与单独手写副本60:40的比例差异，使得篡改遗嘱的责任和动机得以分离。",
+      "v3UnlockPlan": {
+        "runtimeRule": "在d-1中，如果公证过程和母亲的身份出现问题，就会被解除。",
+        "authoredRule": "将公证备忘录和手写练习副本分开并检查。",
+        "summary": "检查60:40本身的公证副本和单独的手写练习副本之间的差异。"
+      },
+      "verdictOptions": {
+        "wrong": "我弟弟操纵了公证副本来增加他的份额。",
+        "partial": "经过公证的副本和单独的文件之间存在差异，但必须进一步确认动机和责任。",
+        "truth": "公证副本为60:40，具体比例信息只能在单独的手写练习副本中确认。尹正厚的责任和他的操纵方向必须分开判断。",
+        "defer": "目前还很难确定公证副本与单独文件之间的关系。我保留它。"
+      }
     },
     {
       "id": "d-3",
-      "name": "陈年资助的来源"
+      "name": "旧的支持来源",
+      "truthDescription": "尹正厚每月定期向母亲的银行账户汇出赡养费，在哥哥工厂发生危机时，还通过母亲的银行账户汇出3亿韩元。尹泰成相信这些钱是他母亲的钱。",
+      "mediationLink": "通过母亲的银行账户提供的赡养费来源和交付顺序",
+      "judgmentStatement": "被称为“母亲的钱”的主要支持来源是尹正厚的钱是通过母亲的银行账户转入的。",
+      "v3UnlockPlan": {
+        "runtimeRule": "如果 d-2 中披露了遗嘱变更的细节，则禁令将被解除。",
+        "authoredRule": "旧账户流量证实了意愿比率的背景。",
+        "summary": "检查通过您母亲的银行账户提供的支持的来源和交付订单。"
+      },
+      "verdictOptions": {
+        "wrong": "我的弟弟以定期领取赡养费为借口控制了我的母亲。",
+        "partial": "尽管存款流向可见，但仅确认了部分交付来源和目的。",
+        "truth": "据证实，尹正厚的钱是通过母亲的银行账户转给尹泰成的。",
+        "defer": "很难确定账户流量的来源和性质。我保留它。"
+      }
     },
     {
       "id": "d-4",
-      "name": "家族记录与沉默的理由"
+      "name": "家族史和沉默的原因",
+      "truthDescription": "她母亲的日记里有记录称尹正厚是她的同父异母的孩子，而且她更喜欢他作为她的同卵孩子。尹正虎保持沉默，担心这个事实会让他的兄弟失望。",
+      "mediationLink": "母亲的日记和哥哥的沉默",
+      "judgmentStatement": "尹正厚的沉默是有原因的，他没有直接向哥哥透露家庭记录中的敏感情况。",
+      "v3UnlockPlan": {
+        "runtimeRule": "确认旧支持来源后解锁",
+        "authoredRule": "隐藏钱来源的原因在母亲的日记中继续。",
+        "summary": "检查家庭记录中的敏感情况和沉默原因。"
+      },
+      "verdictOptions": {
+        "wrong": "弟弟利用家庭条件，试图将哥哥排除在继承权之外。",
+        "partial": "虽然看似是敏感的家庭情况，但与遗嘱变更的关系还有待进一步确认。",
+        "truth": "由于母亲日记中的家庭情况，尹正厚无法立即告诉弟弟，他的沉默与改变遗嘱的动机有关。",
+        "defer": "很难确定家庭记录与沉默之间的关系。我保留它。"
+      }
     },
     {
       "id": "d-5",
-      "name": "母亲未道明的心意"
+      "name": "母亲隐藏的心",
+      "truthDescription": "尹泰成认为继承权是理所当然的，作为照顾他的回报，尹正虎以保护哥哥为由，试图整理母亲的遗嘱和文件。他们俩都不能让母亲的遗嘱保持原样。",
+      "mediationLink": "母亲的遗嘱和两个儿子的责任",
+      "judgmentStatement": "两兄弟按照自己的标准，用不同的方式实现了母亲的遗愿。",
+      "v3UnlockPlan": {
+        "runtimeRule": "当 d-3 和 d-4 都充分暴露时解锁。",
+        "authoredRule": "在所有旧的支持和家庭记录被披露后，最终的问责结构就会开放。",
+        "summary": "比较一下谁执行了母亲的遗嘱以及如何执行的最终责任。"
+      },
+      "verdictOptions": {
+        "wrong": "我的弟弟试图利用我的母亲独占遗产。",
+        "partial": "两人与母亲的关系都存在问题。",
+        "truth": "尹泰成认为继承遗产是理所当然的，尹正虎试图重写母亲的遗嘱，称自己是在保护哥哥。他们俩都不能让母亲的遗嘱保持原样。",
+        "defer": "很难判断母亲隐藏的感情。我保留它。"
+      }
     }
   ],
   "evidence": [
     {
       "id": "e-1",
-      "surfaceName": "记载分配比例的文件副本",
-      "surfaceDescription": "母亲遗嘱的副本存在。"
+      "name": "60:40 遗嘱副本",
+      "surfaceName": "附有分配比例的文件副本",
+      "description": "我母亲去世前两个月写下的遗嘱副本。上面写着60%尹正厚和40%尹泰成，并有公证印章。",
+      "surfaceDescription": "我母亲的遗嘱有一份副本。",
+      "investigationResults": {
+        "request_original": "这是带有公证印章的遗嘱副本。继承比例写为尹正厚为60%，尹泰成为40%。",
+        "check_metadata": "公证日期是2025年11月05日，接近我母亲临终关怀的时间。判断技巧和写作程序都是问题。",
+        "restore_context": "如果你只看这份副本，它看起来像是一份最终遗嘱。您需要跟踪当天之前或之后是否有其他文件。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请检查公证记录以获取该遗嘱的副本。"
+          },
+          "label": "检查原件"
+        },
+        {
+          "question": {
+            "text": "请将写作日期与母亲的状况进行比较。"
+          },
+          "label": "视点对比",
+          "unlockHint": "通过查看公证日期，您可以了解处理时间和撰写过程。"
+        },
+        {
+          "question": {
+            "text": "请查找在此遗嘱之前是否有任何文件。"
+          },
+          "label": "先前查看跟踪",
+          "unlockHint": "通过对比观点，我们可以问为什么这个副本看起来像最终版本。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "请解释当您第一次看到此遗嘱时，什么对您最不公平。",
+          "implication": "尹泰成将自己作为长子拥有40%的股份视为尹正厚干预的痕迹。"
+        },
+        "b": {
+          "questionAngle": "请解释一下您对该遗嘱的比例和书写过程的理解。",
+          "implication": "尹正厚是否参与了遗嘱的撰写过程，必须进行调查。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅可见遗嘱副本和公证印章的存在。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "设定的比例和两位继承人的角色是可见的。"
+        },
+        {
+          "id": "original",
+          "summary": "检查创建日期、公证人、财产项目和全文。"
+        },
+        {
+          "id": "context",
+          "summary": "通过匹配就医时间和公证流程，缩小嫌疑方向。"
+        },
+        {
+          "id": "established",
+          "summary": "公证副本的有效性和其他文件的存在性另行判断。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "尹泰成提交了经过公证的遗嘱副本。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "根据机构记录检查公证号码和创建日期。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "公证印章与收据记录相符。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "尹正厚方面对其存在的可能性提出了争议。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "副本本身是真实的，但最终医生的解释需要额外的信息。"
+        }
+      ],
+      "meta": {
+        "name": "60:40 遗嘱副本",
+        "trustLabel": "通常",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "60:40 遗嘱副本",
+          "trustLabel": "通常",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 公开披露"
+        },
+        "contract": {
+          "title": "将要",
+          "subtitle": "公证处编号 2026-0183 — 2025 年 11 月 5 日",
+          "rows": [
+            {
+              "date": "遗嘱人",
+              "content": "尹○○（母亲，1948年出生）"
+            },
+            {
+              "date": "继承人1",
+              "content": "尹正厚（次子）——总资产的60%"
+            },
+            {
+              "date": "继承人2",
+              "content": "尹泰成（长子）——总资产的40%"
+            },
+            {
+              "date": "房地产",
+              "content": "麻浦区○○路24号公寓",
+              "amount": "市值：约4亿"
+            },
+            {
+              "date": "订金",
+              "content": "○○银行定期存款和普通存款",
+              "amount": "约1.2亿韩元"
+            },
+            {
+              "date": "ETC",
+              "content": "贵金属和个人财产",
+              "amount": "未计算"
+            },
+            {
+              "date": "公证",
+              "content": "公证员裴○○在场/证人2名在场"
+            },
+            {
+              "date": "笔记",
+              "content": "“这是我应得的，因为Jeonghu一直照顾我直到最后。”"
+            }
+          ],
+          "signature": "遗嘱人：尹○○（印章） — 公证人：裴○○ — 见证人：金○○、朴○○"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "60:40 遗嘱副本",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 核证副本和比例",
+            "redactions": [
+              "继承人真实姓名的一部分"
+            ]
+          },
+          "contract": {
+            "title": "遗嘱副本",
+            "subtitle": "公证处收据 — 2025 年 11 月上旬",
+            "rows": [
+              {
+                "date": "遗嘱人",
+                "content": "尹○○（母亲）"
+              },
+              {
+                "date": "继承人1",
+                "content": "二儿子○○○——总资产的60%"
+              },
+              {
+                "date": "继承人2",
+                "content": "长子○○○ — 总资产的40%"
+              },
+              {
+                "date": "公证",
+                "content": "公证印章确认"
+              }
+            ],
+            "signature": "遗嘱人：尹○○（印章） — 公证人：裴○○"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "60:40 遗嘱副本",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 创建日期和属性项",
+            "redactions": [
+              "部分详细地址"
+            ]
+          },
+          "contract": {
+            "title": "遗嘱副本",
+            "subtitle": "公证处编号 2026-0183 — 2025 年 11 月 5 日",
+            "rows": [
+              {
+                "date": "遗嘱人",
+                "content": "尹○○（母亲，1948年出生）"
+              },
+              {
+                "date": "继承人1",
+                "content": "尹正厚（次子）——总资产的60%"
+              },
+              {
+                "date": "继承人2",
+                "content": "尹泰成（长子）——总资产的40%"
+              },
+              {
+                "date": "财产",
+                "content": "适用于麻浦区公寓和○○银行存款。",
+                "amount": "约5亿台"
+              },
+              {
+                "date": "公证",
+                "content": "公证员裴○○在场/证人2名在场"
+              }
+            ],
+            "signature": "遗嘱人：尹○○（印章） — 公证人：裴○○"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "60:40 遗嘱副本",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第3步——全文和公证信息"
+          },
+          "contract": {
+            "title": "将要",
+            "subtitle": "公证处编号 2026-0183 — 2025 年 11 月 5 日",
+            "rows": [
+              {
+                "date": "遗嘱人",
+                "content": "尹○○（母亲，1948年出生）"
+              },
+              {
+                "date": "继承人1",
+                "content": "尹正厚（次子）——总资产的60%"
+              },
+              {
+                "date": "继承人2",
+                "content": "尹泰成（长子）——总资产的40%"
+              },
+              {
+                "date": "房地产",
+                "content": "麻浦区○○路24号公寓",
+                "amount": "市值：约4亿"
+              },
+              {
+                "date": "订金",
+                "content": "○○银行定期存款和普通存款",
+                "amount": "约1.2亿韩元"
+              },
+              {
+                "date": "ETC",
+                "content": "贵金属和个人财产",
+                "amount": "未计算"
+              },
+              {
+                "date": "公证",
+                "content": "公证员裴○○在场/证人2名在场"
+              },
+              {
+                "date": "笔记",
+                "content": "“这是我应得的，因为Jeonghu一直照顾我直到最后。”"
+              }
+            ],
+            "signature": "遗嘱人：尹○○（印章） — 公证人：裴○○ — 见证人：金○○、朴○○"
+          }
+        }
+      }
     },
     {
       "id": "e-2",
+      "name": "疗养院探访记录",
       "surfaceName": "疗养院探访记录",
-      "surfaceDescription": "疗养院的探访记录留有底档。"
+      "description": "尹正厚晚年频繁访问的记录以及公证前三周更换负责人的日期也得到了确认。",
+      "surfaceDescription": "存在探访疗养院的记录。",
+      "investigationResults": {
+        "request_original": "这是尹正厚晚年访问次数和停留时间有所增加的记录。目前尚不清楚这是一次护理访问还是文件讨论。",
+        "check_metadata": "公证前三周更换负责护理人员和尹正厚的长期访问在同一时期重叠。变更原因尚需进一步确认。",
+        "restore_context": "增加的探访、更换工作人员以及陪同公证人都同时发生。现在是调查谁参与了遗嘱撰写过程的时候了。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请查看晚年的原始访问记录。"
+          },
+          "label": "检查记录"
+        },
+        {
+          "question": {
+            "text": "请对比公证日期和访问量的增长情况。"
+          },
+          "label": "频率对比",
+          "unlockHint": "如果您检查您的访问历史记录，您可以看到公证前后频率的变化。"
+        },
+        {
+          "question": {
+            "text": "请说明负责人变更是否影响遗嘱的书写。"
+          },
+          "label": "干预调查",
+          "unlockHint": "通过匹配更换的频率和时间，我们可以询问谁创造了遗嘱书写流程。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "请解释一下为什么我哥哥的来访导致了对遗嘱干预的怀疑。",
+          "implication": "尹泰成将文件手续前的频繁拜访视为母亲压力的一个线索。"
+        },
+        "b": {
+          "questionAngle": "请解释一下您为什么在那段时间经常去看望您的母亲。",
+          "implication": "Jeong-Hoo Yoon 必须分别解释护理和遗嘱的讨论。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅可见访问疗养院的记录。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "尹正虎晚年的访问频率似乎有所增加。"
+        },
+        {
+          "id": "original",
+          "summary": "按日期查看访客、时间和公证的访客项目。"
+        },
+        {
+          "id": "context",
+          "summary": "把更换护理人员和公证日期放在一起看看流程。"
+        },
+        {
+          "id": "established",
+          "summary": "遗嘱书写过程中尹正厚就在附近这一事实被作为判断的依据。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "疗养院提交了探视表。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "将访客签名与疗养院计算机记录进行比较。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "代理记录和访问签名相符。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "尹正厚方面对此表示质疑，称此次访问的目的是关心。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "记录是真实的，但对访问目的的解释要结合其他证据来判断。"
+        }
+      ],
+      "meta": {
+        "name": "疗养院探访记录",
+        "trustLabel": "高度",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "疗养院探访记录",
+          "trustLabel": "高度",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 公开披露"
+        },
+        "log": {
+          "rows": [
+            {
+              "typeLabel": "访问",
+              "target": "尹正厚",
+              "duration": "2小时10分钟"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹正厚",
+              "duration": "1小时40分钟"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹泰成",
+              "duration": "45分钟"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹正厚",
+              "duration": "3小时20分钟"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹正厚",
+              "duration": "2小时"
+            },
+            {
+              "typeLabel": "改变",
+              "target": "更换负责护理员（崔○○→朴○○）"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹正厚",
+              "duration": "4小时"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹正厚",
+              "duration": "2小时30分钟"
+            },
+            {
+              "typeLabel": "陪伴",
+              "target": "Jeonghoo Yoon + 公证人",
+              "duration": "1小时"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹正厚",
+              "duration": "3小时"
+            },
+            {
+              "typeLabel": "访问",
+              "target": "尹泰成",
+              "duration": "30分钟"
+            },
+            {
+              "typeLabel": "公证",
+              "target": "Jeonghoo Yoon + 公证人 + 2 名见证人",
+              "duration": "40分钟"
+            }
+          ],
+          "note": "10月份以来，B地访问量迅速增加。从更换看护人（10.14）到公证（11.05）之间持续了长时间的探视，尹泰成同一时期的探视次数也被限制为两次。"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "疗养院探访记录",
+            "trustLabel": "高度",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步——一定的访问频率",
+            "redactions": [
+              "访客真实姓名的一部分",
+              "一些确切的日期"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "九月初",
+                "typeLabel": "访问",
+                "target": "二儿子○○○",
+                "duration": "1~2小时"
+              },
+              {
+                "date": "九月中旬",
+                "typeLabel": "访问",
+                "target": "二儿子○○○",
+                "duration": "1~2小时"
+              },
+              {
+                "date": "九月下旬",
+                "typeLabel": "访问",
+                "target": "长子 ○○○",
+                "duration": "不到1小时"
+              },
+              {
+                "date": "十月初",
+                "typeLabel": "访问",
+                "target": "二儿子○○○",
+                "duration": "3个时区"
+              },
+              {
+                "date": "十月初",
+                "typeLabel": "访问",
+                "target": "二儿子○○○",
+                "duration": "2时区"
+              }
+            ],
+            "note": "从十月初开始，二儿子的来访时间变得更长。仅凭现阶段很难判断是由于护理还是文件讨论所致。"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "疗养院探访记录",
+            "trustLabel": "高度",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 包括何时更换",
+            "redactions": [
+              "替代人真实姓名"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "2小时10分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "1小时40分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹泰成",
+                "duration": "45分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "3小时20分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "2小时"
+              },
+              {
+                "typeLabel": "改变",
+                "target": "更换负责护理人员"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "4小时"
+              },
+              {
+                "typeLabel": "陪伴",
+                "target": "Jeonghoo Yoon + 公证人",
+                "duration": "1小时"
+              }
+            ],
+            "note": "公证前三周内，同期收集走访次数、更换负责人、陪同公证员情况。此次访问的目的尚未得到证实。"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "疗养院探访记录",
+            "trustLabel": "高度",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 完整的访问日志"
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "2小时10分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "1小时40分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹泰成",
+                "duration": "45分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "3小时20分钟"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "2小时"
+              },
+              {
+                "typeLabel": "改变",
+                "target": "更换负责护理员（崔○○→朴○○）"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "4小时"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "2小时30分钟"
+              },
+              {
+                "typeLabel": "陪伴",
+                "target": "Jeonghoo Yoon + 公证人",
+                "duration": "1小时"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹正厚",
+                "duration": "3小时"
+              },
+              {
+                "typeLabel": "访问",
+                "target": "尹泰成",
+                "duration": "30分钟"
+              },
+              {
+                "typeLabel": "公证",
+                "target": "Jeonghoo Yoon + 公证人 + 2 名见证人",
+                "duration": "40分钟"
+              }
+            ],
+            "note": "10月份以来，B地访问量迅速增加。从更换看护人（10.14）到公证（11.05）之间持续了长时间的探视，尹泰成同一时期的探视次数也被限制为两次。"
+          }
+        }
+      }
     },
     {
       "id": "e-3",
-      "surfaceName": "前任护理员录音证言",
-      "surfaceDescription": "前任护理员的证言已留有录音。"
+      "name": "前护理员的心声见证",
+      "surfaceName": "前护理员的心声见证",
+      "description": "证词是“先生”。正虎经常把报纸读给他的母亲听，并在他哥哥来之前小心翼翼地读完。",
+      "surfaceDescription": "有一位前护理人员的证词。",
+      "investigationResults": {
+        "request_original": "一位前护理员表示，他亲眼看到尹正厚给母亲读了一张纸。",
+        "check_metadata": "证明人的工作时间与公证前的密集探视时间重叠。 “在我哥哥来之前”这句话也得到了证实。",
+        "restore_context": "所读的文件是否是遗嘱，或者谨慎的态度是保护性的还是排他性的，必须与其他记录一起判断。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请参阅此证词的原始记录。"
+          },
+          "label": "证词确认"
+        },
+        {
+          "question": {
+            "text": "请将公证日期与见证人工作年限相符。"
+          },
+          "label": "视点对比",
+          "unlockHint": "检查证词可以让您比较工作时间和探视记录。"
+        },
+        {
+          "question": {
+            "text": "请在阅读本文时揭示你的行为的意义。"
+          },
+          "label": "意图调查",
+          "unlockHint": "通过时间点的对比，我们可以问这种谨慎态度是保护性的还是排斥性的。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "你认为这个证词表明了你哥哥的意图吗？",
+          "implication": "尹泰成将“在你哥哥来之前”这句话视为排除的意图。"
+        },
+        "b": {
+          "questionAngle": "请解释一下你为什么给你妈妈读这篇论文以及那里的气氛。",
+          "implication": "尹正厚必须分清压力和解释之间的区别。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "所出现的只是有证词录音。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "只有表示论文已阅读的关键句子可见。"
+        },
+        {
+          "id": "original",
+          "summary": "核实证人的身份、服务年限和完整陈述。"
+        },
+        {
+          "id": "context",
+          "summary": "通过比较访问记录和公证日期来恢复声明的上下文。"
+        },
+        {
+          "id": "established",
+          "summary": "目击事实得到承认，意图与其他证据一起被判断。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "提交了一名前护理人员的陈述。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "比较工作记录和记录文件上的日期。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "确认其在相关期间工作以及是否亲眼目睹。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "尹泰成和尹正虎对“谨慎”的含义有不同的解读。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "证词基于直接目击者，但确定意图存在局限性。"
+        }
+      ],
+      "meta": {
+        "name": "前护理员的心声见证",
+        "trustLabel": "通常",
+        "sourceLabel": "证人",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "前护理员的心声见证",
+          "trustLabel": "通常",
+          "sourceLabel": "证人",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 公开披露"
+        },
+        "testimony": {
+          "witnessName": "崔福顺",
+          "witnessDesc": "前护理员（2024年3月至2025年10月14日工作）",
+          "quote": "正湖先生经常给他的母亲读报纸。我听不清楚内容，但他很谨慎，让我在哥哥来之前完成。如果我妈妈很难受，我会告诉她停下来，如果她先问，我会进一步解释。但十月份我突然被替换了。我没有被告知原因。",
+          "confidenceLabel": "通常",
+          "biasLabel": "中立性",
+          "relatedRef": "护理员更换 2025.10.14 / 公证 2025.11.05"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "前护理员的心声见证",
+            "trustLabel": "通常",
+            "sourceLabel": "证人",
+            "legalLabel": "合法性",
+            "stageLabel": "第一阶段——仅目击事件",
+            "redactions": [
+              "见证人真实姓名",
+              "确切的工作期限"
+            ]
+          },
+          "testimony": {
+            "witnessDesc": "前护理员",
+            "quote": "我多次看到小儿子给他妈妈读一张纸。",
+            "confidenceLabel": "通常",
+            "biasLabel": "中立性",
+            "relatedRef": "公证前后的工人"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "前护理员的心声见证",
+            "trustLabel": "通常",
+            "sourceLabel": "证人",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 服务期限和要点",
+            "redactions": [
+              "部分证人姓名"
+            ]
+          },
+          "testimony": {
+            "witnessName": "崔先生",
+            "witnessDesc": "前护理员（2024.03至2025.10工作）",
+            "quote": "正湖先生经常给他的母亲读报纸。他小心翼翼地在我哥哥来之前完成了它。",
+            "confidenceLabel": "通常",
+            "biasLabel": "中立性",
+            "relatedRef": "何时更换看护人以及何时在公证前集中探访"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "前护理员的心声见证",
+            "trustLabel": "通常",
+            "sourceLabel": "证人",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步——总结整个文字记录"
+          },
+          "testimony": {
+            "witnessName": "崔福顺",
+            "witnessDesc": "前护理员（2024年3月至2025年10月14日工作）",
+            "quote": "正湖先生经常给他的母亲读报纸。我听不清楚内容，但他很谨慎，让我在哥哥来之前完成。如果我妈妈很难受，我会告诉她停下来，如果她先问，我会进一步解释。但十月份我突然被替换了。我没有被告知原因。",
+            "confidenceLabel": "通常",
+            "biasLabel": "中立性",
+            "relatedRef": "护理员更换 2025.10.14 / 公证 2025.11.05"
+          }
+        }
+      }
     },
     {
       "id": "e-4",
-      "surfaceName": "公证人备忘记录",
-      "surfaceDescription": "公证当日的程序备忘留有底档。"
+      "name": "公证人笔记记录",
+      "surfaceName": "公证人笔记记录",
+      "description": "公证当天公证人留下的进度条。首先确认接待率和一般程序，然后进一步调查了解状况和进展。",
+      "surfaceDescription": "公证当天存在程序说明。",
+      "investigationResults": {
+        "request_original": "遗嘱公证程序于公证当天进行，收到的公证副本按60：40的比例整理。",
+        "check_metadata": "公证员留下了一张纸条，说母亲很累，反应迟钝，在检查数字时休息了一次。",
+        "restore_context": "纸条中指出，母亲在数字上来回反复了几次，而尹正浩似乎在推动这一过程。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请在公证当天检查您的一般记录。"
+          },
+          "label": "一般记录"
+        },
+        {
+          "question": {
+            "text": "请检查一下纸条，你母亲的情况不太好。"
+          },
+          "label": "状态注释",
+          "unlockHint": "公证当天即可看到您母亲的状态和回复速度。"
+        },
+        {
+          "question": {
+            "text": "请核实数字混乱的情况和推动程序的情况。"
+          },
+          "label": "程序压力",
+          "unlockHint": "公证记录允许您询问有关该过程如何进行的问题。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "您应该在公证员备注中查看公证日的程序和进展顺序。",
+          "implication": "公证当天的状态记录进一步证实了尹泰成的程序问题。"
+        },
+        "b": {
+          "questionAngle": "您需要解释为什么您在公证当天匆忙办理该流程。",
+          "implication": "Jeong-Hoo Yoon 必须在 60:40 公证副本和干预程序的责任之间单独回答。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅在公证当天可见备忘录的存在。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "显示施用率和一般程序记录。"
+        },
+        {
+          "id": "original",
+          "summary": "检查一下公证人的证明，上面写着你母亲的状况不好。"
+        },
+        {
+          "id": "context",
+          "summary": "让我们看看数字上的混乱和尹正厚所承受的压力。"
+        },
+        {
+          "id": "established",
+          "summary": "公证当日的情况和程序问题汇总为裁判材料。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "已提交公证记录记录。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "将公证人的签名与公证处保存的分类账进行比较。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "机构档案备忘录与接待台账一致。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "尹正厚一方辩称，该备忘录并不直接意味着胁迫。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "备忘录应指出程序问题，但应与单独的手写练习的比例区分开来。"
+        }
+      ],
+      "meta": {
+        "name": "公证人笔记记录",
+        "trustLabel": "高度",
+        "sourceLabel": "公证处",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "公证人笔记记录",
+          "trustLabel": "高度",
+          "sourceLabel": "公证处",
+          "legalLabel": "合法性",
+          "stageLabel": "第1步——公证当天的一般记录"
+        },
+        "log": {
+          "title": "公证人笔记记录",
+          "rows": [
+            {
+              "typeLabel": "收据",
+              "target": "遗嘱公证流程开始/确认公证副本比例为60:40",
+              "duration": "查看"
+            },
+            {
+              "typeLabel": "程序",
+              "target": "确认遗嘱人的身份和两名见证人的出席记录",
+              "duration": "普通的"
+            },
+            {
+              "typeLabel": "完全的",
+              "target": "分配的公证印章和档案号码",
+              "duration": "完全的"
+            }
+          ],
+          "note": "公证副本于提交时60:40安排。"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "公证人笔记记录",
+            "trustLabel": "高度",
+            "sourceLabel": "公证处",
+            "legalLabel": "合法性",
+            "stageLabel": "第1步——公证当天的一般记录"
+          },
+          "log": {
+            "title": "公证人笔记记录",
+            "rows": [
+              {
+                "typeLabel": "收据",
+                "target": "遗嘱公证流程开始/确认公证副本比例为60:40",
+                "duration": "查看"
+              },
+              {
+                "typeLabel": "程序",
+                "target": "确认遗嘱人的身份和两名见证人的出席记录",
+                "duration": "普通的"
+              },
+              {
+                "typeLabel": "完全的",
+                "target": "分配的公证印章和档案号码",
+                "duration": "完全的"
+              }
+            ],
+            "note": "公证副本于提交时60:40安排。"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "公证人笔记记录",
+            "trustLabel": "高度",
+            "sourceLabel": "公证处",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 母亲的状况说明"
+          },
+          "log": {
+            "title": "公证人笔记记录",
+            "rows": [
+              {
+                "typeLabel": "收据",
+                "target": "遗嘱公证流程开始/确认公证副本比例为60:40",
+                "duration": "查看"
+              },
+              {
+                "typeLabel": "程序",
+                "target": "确认遗嘱人的身份和两名见证人的出席记录",
+                "duration": "普通的"
+              },
+              {
+                "typeLabel": "完全的",
+                "target": "分配的公证印章和档案号码",
+                "duration": "完全的"
+              },
+              {
+                "typeLabel": "状态注释",
+                "target": "遗嘱人抱怨疲劳并要求休息后再回答。",
+                "duration": "警告"
+              },
+              {
+                "typeLabel": "状态注释",
+                "target": "重复问题、要一杯水时反应迟缓",
+                "duration": "警告"
+              }
+            ],
+            "note": "另外还证实，公证当天母亲的状况不佳。"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "公证人笔记记录",
+            "trustLabel": "高度",
+            "sourceLabel": "公证处",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 数字混乱和流程压力"
+          },
+          "log": {
+            "title": "公证人笔记记录",
+            "rows": [
+              {
+                "typeLabel": "收据",
+                "target": "遗嘱公证流程开始/确认公证副本比例为60:40",
+                "duration": "查看"
+              },
+              {
+                "typeLabel": "程序",
+                "target": "确认遗嘱人的身份和两名见证人的出席记录",
+                "duration": "普通的"
+              },
+              {
+                "typeLabel": "完全的",
+                "target": "分配的公证印章和档案号码",
+                "duration": "完全的"
+              },
+              {
+                "typeLabel": "状态注释",
+                "target": "遗嘱人抱怨疲劳并要求休息后再回答。",
+                "duration": "警告"
+              },
+              {
+                "typeLabel": "状态注释",
+                "target": "重复问题、要一杯水时反应迟缓",
+                "duration": "警告"
+              },
+              {
+                "typeLabel": "公证人注释",
+                "target": "当再次询问继承比例数字时，他改变了前后的数字。",
+                "duration": "需要对比"
+              },
+              {
+                "typeLabel": "公证人注释",
+                "target": "尹正厚表示“今天必须完成”，似乎在催促这一进程。",
+                "duration": "需要对比"
+              }
+            ],
+            "note": "观察结果仍然是，这位母亲在数字上来来回回，而尹正浩似乎在推动这一过程。"
+          }
+        }
+      }
     },
     {
       "id": "e-5",
-      "surfaceName": "母亲亲笔遗书练习本",
-      "surfaceDescription": "母亲留下的亲笔遗书练习本存在。"
+      "name": "练习抄写母亲的手写遗嘱",
+      "surfaceName": "练习抄写母亲的手写遗嘱",
+      "description": "我母亲抽屉里的一个白色信封里有一份手写遗嘱的副本。它是与公证副本分开准备的练习副本，具体比例在最后阶段确定。",
+      "surfaceDescription": "有一份我母亲留下的手写遗嘱的副本。",
+      "investigationResults": {
+        "request_original": "这是在抽屉里找到的一份手写遗嘱的练习副本。财产项目和两个儿子的名字是可见的，但百分比数字部分被遮挡。",
+        "check_metadata": "其被多次重写的痕迹以及公证前的书写日期均得到确认。事实证明，它是与 60:40 公证副本不同的草稿。",
+        "restore_context": "练习册的最后一页写着90%尹正厚和10%尹泰成。这个比率信息仅在这本手写的练习册中得到确认，而不是在公证人的备忘录中得到确认。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请确认手写遗嘱的副本是否存在。"
+          },
+          "label": "笔迹确认"
+        },
+        {
+          "question": {
+            "text": "请确保它是与经过公证的副本不同的草稿。"
+          },
+          "label": "拔模对比",
+          "unlockHint": "如果您检查笔迹和书写时间，您可以发现它是与公证副本不同的文件。"
+        },
+        {
+          "question": {
+            "text": "请检查练习册最后一页的比例。"
+          },
+          "label": "检查比率",
+          "unlockHint": "球形比例仅在本手写练习册的最后阶段开放。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "您应该检查公证副本和手写练习副本的含义。",
+          "implication": "尹泰成的操纵主张可以通过将比率的方向和文件的性质分开来重新审查。"
+        },
+        "b": {
+          "questionAngle": "您必须解释为什么您知道练习副本和公证副本但没有告诉他们。",
+          "implication": "尹正厚必须解释说，他对篡改遗嘱负有责任，这并不是为了获得更多而进行的操纵。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅可见手写遗嘱的副本。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "您可以看到它是独立于公证副本的文件。"
+        },
+        {
+          "id": "original",
+          "summary": "检查书写日期、笔迹、存储状态和全文。"
+        },
+        {
+          "id": "context",
+          "summary": "比较练习副本和公证副本的比例为60：40。"
+        },
+        {
+          "id": "established",
+          "summary": "90:10 总结一下，信息只能在手写练习本上确认。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "提交了在抽屉里发现的手写遗嘱的副本。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "比较手写的评估和写作日期。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "母亲的笔迹及其存储方式得到了确认。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "尹泰成方面对最终判断的能力和文件的有效性存在争议。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "手写体是被认可的，但其法律效力以及做出决定的能力也被考虑。"
+        }
+      ],
+      "meta": {
+        "name": "练习抄写母亲的手写遗嘱",
+        "trustLabel": "高度",
+        "sourceLabel": "B面提交",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本",
+        "redactions": [
+          "确切的百分比数字"
+        ]
+      },
+      "viewerData": {
+        "meta": {
+          "name": "练习抄写母亲的手写遗嘱",
+          "trustLabel": "高度",
+          "sourceLabel": "B面提交",
+          "legalLabel": "合法性",
+          "stageLabel": "第 1 步 — 手写练习",
+          "redactions": [
+            "确切的百分比数字"
+          ]
+        },
+        "contract": {
+          "title": "练习抄写母亲的手写遗嘱",
+          "subtitle": "白色信封中的手写草稿",
+          "rows": [
+            {
+              "date": "文件格式",
+              "content": "在白色信封中练习手写遗嘱副本"
+            },
+            {
+              "date": "确认详情",
+              "content": "确认两个儿子的姓名和一些财产物品"
+            },
+            {
+              "date": "比例部分",
+              "content": "数字部分有折痕并被覆盖。",
+              "amount": "筛选"
+            }
+          ],
+          "signature": "作词：尹○○ / 手写练习本"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "练习抄写母亲的手写遗嘱",
+            "trustLabel": "高度",
+            "sourceLabel": "B面提交",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 手写练习",
+            "redactions": [
+              "确切的百分比数字"
+            ]
+          },
+          "contract": {
+            "title": "练习抄写母亲的手写遗嘱",
+            "subtitle": "白色信封中的手写草稿",
+            "rows": [
+              {
+                "date": "文件格式",
+                "content": "在白色信封中练习手写遗嘱副本"
+              },
+              {
+                "date": "确认详情",
+                "content": "确认两个儿子的姓名和一些财产物品"
+              },
+              {
+                "date": "比例部分",
+                "content": "数字部分有折痕并被覆盖。",
+                "amount": "筛选"
+              }
+            ],
+            "signature": "作词：尹○○ / 手写练习本"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "练习抄写母亲的手写遗嘱",
+            "trustLabel": "高度",
+            "sourceLabel": "B面提交",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 经过公证的副本和单独的草稿",
+            "redactions": [
+              "确切的百分比数字"
+            ]
+          },
+          "contract": {
+            "title": "练习抄写母亲的手写遗嘱",
+            "subtitle": "公证前书写痕迹",
+            "rows": [
+              {
+                "date": "文件格式",
+                "content": "在白色信封中练习手写遗嘱副本"
+              },
+              {
+                "date": "确认详情",
+                "content": "确认两个儿子的姓名和一些财产物品"
+              },
+              {
+                "date": "比例部分",
+                "content": "数字部分有折痕并被覆盖。",
+                "amount": "筛选"
+              },
+              {
+                "date": "在撰写本文时",
+                "content": "公证前多次重写的痕迹"
+              },
+              {
+                "date": "相比",
+                "content": "与公证副本分开书写的练习副本 60:40"
+              }
+            ],
+            "signature": "作词：尹○○ / 手写练习本"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "练习抄写母亲的手写遗嘱",
+            "trustLabel": "高度",
+            "sourceLabel": "B面提交",
+            "legalLabel": "合法性",
+            "stageLabel": "步骤 3 — 检查最后一页的比例"
+          },
+          "contract": {
+            "title": "练习抄写母亲的手写遗嘱",
+            "subtitle": "手写练习本最后一页",
+            "rows": [
+              {
+                "date": "练习册最后一章",
+                "content": "留给尹正厚的比例"
+              },
+              {
+                "date": "练习册最后一章",
+                "content": "留给尹泰成的比例"
+              },
+              {
+                "date": "公证副本比较",
+                "content": "在公证副本中，从一开始就被组织为60:40。"
+              },
+              {
+                "date": "确认单",
+                "content": "90:10 信息仅在这份手写练习中得到确认，而不是在公证人的笔记中得到确认。"
+              }
+            ],
+            "signature": "作词：尹○○ / 手写练习本与原作对比"
+          }
+        }
+      }
     },
     {
       "id": "e-6",
-      "surfaceName": "陈年账户流向记录",
-      "surfaceDescription": "陈年账户流向的记录存在。"
+      "name": "旧账户流量",
+      "surfaceName": "旧账户流量",
+      "description": "通过我母亲的银行账户重复存款和大笔转帐的记录。来源和交货订单在每个阶段单独打开。",
+      "surfaceDescription": "存在旧账户流水记录。",
+      "investigationResults": {
+        "request_original": "尹正厚似乎继续每月将钱存入母亲的银行账户。",
+        "check_metadata": "确认了从母亲的银行账户向尹泰成或工厂存入3亿韩元的记录。",
+        "restore_context": "尹正厚一次性将3亿韩元存入母亲的银行账户，随后又将等额的钱从母亲的银行账户转给尹泰成。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请检查每月存款流量。"
+          },
+          "label": "每月存款"
+        },
+        {
+          "question": {
+            "text": "请检查一下从我母亲的银行账户转到尹泰成的3亿韩元。"
+          },
+          "label": "交付3亿韩元",
+          "unlockHint": "你可以看到我母亲的银行账户里有很多钱流向工厂。"
+        },
+        {
+          "question": {
+            "text": "请确认一次性3亿韩元的来源和交货顺序。"
+          },
+          "label": "检查来源",
+          "unlockHint": "您可以通过尹正厚母亲的银行账户查看一次性存款的支付顺序。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "您需要仔细检查您认为母亲给您的钱的来源。",
+          "implication": "尹泰成必须分别接受支持源和自尊心问题。"
+        },
+        "b": {
+          "questionAngle": "您必须解释为什么通过您母亲的银行账户进行申请。",
+          "implication": "尹正厚必须解释他支持的事实和隐瞒的原因。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "只有账户流量的存在才是可见的。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "尹正厚每月将钱存入母亲的银行账户，这是一种模式。"
+        },
+        {
+          "id": "original",
+          "summary": "我从母亲的银行账户上查到了存入尹泰成/工厂的3亿韩元的记录。"
+        },
+        {
+          "id": "context",
+          "summary": "我们来看看尹正厚一次性定金3亿韩元的订单以及随后的交付情况。"
+        },
+        {
+          "id": "established",
+          "summary": "确定看似母亲的钱的实际支持来源。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "提交了一捆银行对账单。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "比较账户名称、存款/取款日期和存款人。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "银行分类帐和提交的详细信息相符。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "尹泰成方面对定期补贴和工厂资金的性质存在争议。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "交易本身得到确认，钱的意义也通过询问得到解决。"
+        }
+      ],
+      "meta": {
+        "name": "旧账户流量",
+        "trustLabel": "高度",
+        "sourceLabel": "银行分类账",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "旧账户流量",
+          "trustLabel": "高度",
+          "sourceLabel": "银行分类账",
+          "legalLabel": "合法性",
+          "stageLabel": "第 1 步 — 每月存款"
+        },
+        "bank": [
+          {
+            "desc": "尹正厚 → 每月存入母亲的银行账户",
+            "amount": "+800,000~1,500,000韩元/月",
+            "balance": "每月定期存款"
+          },
+          {
+            "desc": "尹正厚 → 母亲的银行账户",
+            "amount": "+1,200,000 韩元",
+            "balance": "最后每月存款"
+          }
+        ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "旧账户流量",
+            "trustLabel": "高度",
+            "sourceLabel": "银行分类账",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 每月存款"
+          },
+          "bank": [
+            {
+              "desc": "尹正厚 → 每月存入母亲的银行账户",
+              "amount": "+800,000~1,500,000韩元/月",
+              "balance": "每月定期存款"
+            },
+            {
+              "desc": "尹正厚 → 母亲的银行账户",
+              "amount": "+1,200,000 韩元",
+              "balance": "最后每月存款"
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "旧账户流量",
+            "trustLabel": "高度",
+            "sourceLabel": "银行分类账",
+            "legalLabel": "合法性",
+            "stageLabel": "第2步——从母亲的银行账户向工厂存入3亿韩元"
+          },
+          "bank": [
+            {
+              "desc": "尹正厚 → 每月存入母亲的银行账户",
+              "amount": "+800,000~1,500,000韩元/月",
+              "balance": "每月定期存款"
+            },
+            {
+              "desc": "尹正厚 → 母亲的银行账户",
+              "amount": "+1,200,000 韩元",
+              "balance": "最后每月存款"
+            },
+            {
+              "desc": "母亲的存折 → 尹泰成的工厂运营账户",
+              "amount": "-3亿韩元",
+              "balance": "工厂应急基金"
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "旧账户流量",
+            "trustLabel": "高度",
+            "sourceLabel": "银行分类账",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 一次性付款来源和交货订单"
+          },
+          "bank": [
+            {
+              "desc": "尹正厚 → 将一次性款项存入母亲的银行账户",
+              "amount": "+300,000,000 韩元",
+              "balance": "检查来源"
+            },
+            {
+              "desc": "母亲的存折 → 尹泰成的工厂运营账户",
+              "amount": "-3亿韩元",
+              "balance": "工厂应急基金"
+            },
+            {
+              "desc": "尹正厚 → 每月存入母亲的银行账户",
+              "amount": "+800,000~1,500,000韩元/月",
+              "balance": "每月定期存款"
+            },
+            {
+              "desc": "尹正厚 → 母亲的银行账户",
+              "amount": "+1,200,000 韩元",
+              "balance": "最后每月存款"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "e-7",
-      "surfaceName": "母亲的日记本",
-      "surfaceDescription": "母亲所留的白色亲笔笔记本照片存在。"
+      "name": "妈妈的日记",
+      "surfaceName": "妈妈的日记",
+      "description": "母亲的手写笔记留在白色/象牙色笔记本上。首先是对两个儿子的关心，然后是他长期以来的家庭状况以及他给尹正厚留下的遗憾。",
+      "surfaceDescription": "有一张我母亲的白色手写笔记本的照片。",
+      "investigationResults": {
+        "request_original": "这是一本留在白色/象牙色笔记本中的手写日记。我们可以看到他对两个儿子的担忧，以及对尹泰成尚未醒悟的感叹。",
+        "check_metadata": "有一些句子表达了对尹正厚的担忧，并暗示两兄弟在各方面都不相同。",
+        "restore_context": "对尹正虎​​说对不起的那句话，尹正虎是他同父异母的孩子的明确声明，以及他们仍然是同一个孩子以及他更加关心他们的细微差别仍然存在。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请检查你母亲日记中的笔迹和第一条记录。"
+          },
+          "label": "笔迹确认"
+        },
+        {
+          "question": {
+            "text": "请确认尹正厚对其家庭状况的担忧和暗示。"
+          },
+          "label": "含义的确认",
+          "unlockHint": "如果你看字迹，就能看出母亲对两兄弟的另一种担忧。"
+        },
+        {
+          "question": {
+            "text": "请检查家庭情况确认记录和母亲的细微差别。"
+          },
+          "label": "关键句",
+          "unlockHint": "在日记的最后阶段，家庭的情况和母亲的心声一起被打开。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "您需要回答您在多大程度上可以接受您母亲对您的描述。",
+          "implication": "尹泰成作为长子的身份和对母亲的记忆都受到动摇。"
+        },
+        "b": {
+          "questionAngle": "你需要解释一下你是什么时候发现这个记录的，以及为什么你没有告诉你的兄弟。",
+          "implication": "尹正厚的沉默和长期资金流动的原因可能只有一个原因。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "只有日记照片的存在是可见的。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "我们可以看到他对两个儿子的关心和对尹泰成的感叹。"
+        },
+        {
+          "id": "original",
+          "summary": "我们确认了尹正厚对半个孩子的担忧和暗示。"
+        },
+        {
+          "id": "context",
+          "summary": "连接确认半个孩子和母亲的遗憾的句子。"
+        },
+        {
+          "id": "established",
+          "summary": "确定尹正厚沉默的动机以及两兄弟的责任结构。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "尹正厚提交了一张母亲日记的照片。"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "检查手写的评价和拍摄照片的情况。"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "母亲的笔迹和日期流得到了证实。"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "尹泰成的一方对他的痴呆症时期记录的可靠性存在争议。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "笔迹经过验证，私人记录的解释受到严格限制。"
+        }
+      ],
+      "meta": {
+        "name": "妈妈的日记",
+        "trustLabel": "高度",
+        "sourceLabel": "B面提交",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本",
+        "redactions": [
+          "父亲的真实姓名",
+          "专门针对家庭情况"
+        ]
+      },
+      "v3SealTargets": [
+        "父亲的真实姓名",
+        "详细家庭情况",
+        "母亲的日记个人记录"
+      ],
+      "viewerData": {
+        "meta": {
+          "name": "妈妈的日记",
+          "trustLabel": "高度",
+          "sourceLabel": "B面提交",
+          "legalLabel": "合法性",
+          "stageLabel": "第 1 步 — 在白色笔记本上记下第一条笔记",
+          "redactions": [
+            "专门针对家庭情况"
+          ]
+        },
+        "device": {
+          "ownerName": "母亲的象牙笔记本",
+          "sections": [
+            {
+              "id": "diary-2024-spring",
+              "title": "2024年春季，白色笔记本",
+              "items": [
+                {
+                  "text": "泰成和正湖知道我的感受吗？我们都很担心，但我们彼此并不了解。"
+                },
+                {
+                  "text": "泰成还没有回过神来。当谈到工厂的工作和我自己的感受时，我会先责怪别人。"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "妈妈的日记",
+            "trustLabel": "高度",
+            "sourceLabel": "B面提交",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 在白色笔记本上记下第一条笔记",
+            "redactions": [
+              "专门针对家庭情况"
+            ]
+          },
+          "device": {
+            "ownerName": "母亲的象牙笔记本",
+            "sections": [
+              {
+                "id": "diary-2024-spring",
+                "title": "2024年春季，白色笔记本",
+                "items": [
+                  {
+                    "text": "泰成和正湖知道我的感受吗？我们都很担心，但我们彼此并不了解。"
+                  },
+                  {
+                    "text": "泰成还没有回过神来。当谈到工厂的工作和我自己的感受时，我会先责怪别人。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "妈妈的日记",
+            "trustLabel": "高度",
+            "sourceLabel": "B面提交",
+            "legalLabel": "合法性",
+            "stageLabel": "第二阶段——尹正厚的担忧和影响",
+            "redactions": [
+              "家庭情况确认句"
+            ]
+          },
+          "device": {
+            "ownerName": "母亲的象牙笔记本",
+            "sections": [
+              {
+                "id": "diary-2024-spring",
+                "title": "2024年春季，白色笔记本",
+                "items": [
+                  {
+                    "text": "泰成和正湖知道我的感受吗？我们都很担心，但我们彼此并不了解。"
+                  },
+                  {
+                    "text": "泰成还没有回过神来。当谈到工厂的工作和我自己的感受时，我会先责怪别人。"
+                  }
+                ]
+              },
+              {
+                "id": "diary-2024-winter",
+                "title": "2024 年冬季，象牙色笔记本",
+                "items": [
+                  {
+                    "text": "郑浩从小就很安静。这更让我困扰，因为他似乎想独自承担这一切。"
+                  },
+                  {
+                    "text": "在某些情况下，很难说这两个人是同父异母的兄弟。尽管如此，他们都是我的儿子。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "妈妈的日记",
+            "trustLabel": "高度",
+            "sourceLabel": "B面提交",
+            "legalLabel": "合法性",
+            "stageLabel": "第三步——折叠章节的关键句子",
+            "redactions": [
+              "父亲的真实姓名保密"
+            ]
+          },
+          "device": {
+            "ownerName": "母亲的象牙笔记本",
+            "sections": [
+              {
+                "id": "diary-2024-spring",
+                "title": "2024年春季，白色笔记本",
+                "items": [
+                  {
+                    "text": "泰成和正湖知道我的感受吗？我们都很担心，但我们彼此并不了解。"
+                  },
+                  {
+                    "text": "泰成还没有回过神来。当谈到工厂的工作和我自己的感受时，我会先责怪别人。"
+                  }
+                ]
+              },
+              {
+                "id": "diary-2024-winter",
+                "title": "2024 年冬季，象牙色笔记本",
+                "items": [
+                  {
+                    "text": "郑浩从小就很安静。这更让我困扰，因为他似乎想独自承担这一切。"
+                  },
+                  {
+                    "text": "在某些情况下，很难说这两个人是同父异母的兄弟。尽管如此，他们都是我的儿子。"
+                  }
+                ]
+              },
+              {
+                "id": "diary-2025-spring",
+                "title": "2025 年春季，折叠章节",
+                "items": [
+                  {
+                    "text": "我为正浩感到难过。生怕她知道了之后，会想方设法的去掩盖。"
+                  },
+                  {
+                    "text": "泰成是与正湖不同父亲的孩子。当我写下这句话时，我的手在颤抖。"
+                  },
+                  {
+                    "text": "尽管如此，泰成仍然是我的孩子。因为我看到了一个弱点，也许我更加用心，更加照顾它。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
-  ]
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "虽然母亲晚年并未完全丧失决策能力，但尹正厚的介入影响了她遗嘱的撰写。"
+    },
+    {
+      "id": "t-2",
+      "fact": "公证副本为60:40，具体比例与公证副本不同，可以在单独的手写遗嘱副本中确认。尹正厚篡改了意志，但这并不是为了获得更多的操纵。"
+    },
+    {
+      "id": "t-3",
+      "fact": "尹正厚的钱每月存入母亲的银行账户，在工厂危机期间，也通过同样的途径转入了3亿韩元。"
+    },
+    {
+      "id": "t-4",
+      "fact": "母亲的日记留下了尹正浩是她同父异母的孩子这一事实，以及她对尹正浩的关怀，就像对自己的孩子一样。"
+    },
+    {
+      "id": "t-5",
+      "fact": "他们俩都不能让母亲的遗嘱保持原样。尹泰成认为继承权是理所当然的，尹正虎为了保护哥哥而改变了遗​​嘱。"
+    }
+  ],
+  "solutions": {
+    "유서적법성판단": [
+      "通过专业鉴定确认痴呆母亲在撰写遗嘱时的判断能力，并重新评估公证过程的合法性。",
+      "虽然尹正厚操纵自己意志的行为是非法的，但将考虑动机来审查单独的手写练习副本的法律效力。"
+    ],
+    "재산분배재조정": [
+      "比较60:40手写练习副本和公证副本的法律效力，并考虑旧的支持历史重新计算公平分配。",
+      "尹正厚存入母亲银行账户并转入尹泰成工厂资金的3亿韩元是单独结算的。"
+    ],
+    "가족관계회복": [
+      "出生秘密的披露范围经当事人同意确定，并建立协调程序以恢复兄弟姐妹关系。",
+      "她调解两个儿子了解母亲真实意图的过程。"
+    ]
+  },
+  "combinationLab": {
+    "nodes": [
+      {
+        "id": "e-1",
+        "label": "e-1 60:40 遗嘱副本"
+      },
+      {
+        "id": "e-2",
+        "label": "e-2 疗养院探访记录"
+      },
+      {
+        "id": "e-3",
+        "label": "e-3 前护理员的心声见证"
+      },
+      {
+        "id": "e-4",
+        "label": "e-4 公证人备忘录记录"
+      },
+      {
+        "id": "e-5",
+        "label": "e-5 母亲手写遗嘱的练习副本"
+      },
+      {
+        "id": "e-6",
+        "label": "e-6 旧账户流程"
+      },
+      {
+        "id": "e-7",
+        "label": "e-7 妈妈的日记"
+      },
+      {
+        "id": "stmt-a-heir",
+        "label": "尹泰成说：“我是照顾你的人，为什么你都40岁了？”"
+      },
+      {
+        "id": "stmt-b-silence",
+        "label": "尹正厚的言论被屏蔽：“我现在不能明确地说任何事情。”"
+      },
+      {
+        "id": "stmt-b-mother",
+        "label": "尹正厚表示：“我妈妈也想这么做。”"
+      },
+      {
+        "id": "w-1-angle",
+        "label": "w-1 崔福淳作证祝贺"
+      },
+      {
+        "id": "w-2-angle",
+        "label": "w-2 金英洙作证祝贺"
+      },
+      {
+        "id": "w-3-angle",
+        "label": "恭喜 w-3 Park Soon-ae 作证"
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 干预立遗嘱的情况"
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 操纵减少股份的原因"
+      },
+      {
+        "id": "dc-3",
+        "label": "dc-3 不知道的旧支持"
+      },
+      {
+        "id": "dc-4",
+        "label": "隐藏dc-4的原因"
+      },
+      {
+        "id": "dc-5",
+        "label": "DC-5 母亲的意愿"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "dc-1",
+        "label": "dc-1 干预立遗嘱的情况",
+        "summary": "意愿率和访问历史记录同步变化。你需要找出在写作过程中谁在场。",
+        "noteText": "撰写遗嘱涉及的情况",
+        "judgeHint": "撰写遗嘱时的判断能力和干预范围可以通过看护者的证词进一步调查或加强。"
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 遗嘱是如何被篡改的",
+        "summary": "如果你把公证人的备忘录和手写的副本放在一起看，问题就变成了在公证副本之后的60:40还有一份单独的副本，以及遗嘱是如何被篡改的。",
+        "noteText": "遗嘱是如何被篡改的",
+        "judgeHint": "公证当天，分别核对母亲的状况和手写练习本的百分比。"
+      },
+      {
+        "id": "dc-3",
+        "label": "dc-3 过时支持的来源",
+        "summary": "手写练习册和老账号流量的比例如下。您需要检查通过您母亲的银行帐户的资金来源。",
+        "noteText": "旧的支持来源",
+        "judgeHint": "新一期“旧的支持来源”已经揭晓。检查钱的来源以及交付的顺序。"
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 家族史和沉默原因",
+        "summary": "旧账目和日记与兄弟俩的沉默指向同一个方向。必须确认敏感的家庭情况。",
+        "noteText": "家族史和沉默的原因",
+        "judgeHint": "新一期《家庭记录和沉默的原因》揭晓。确定记录的含义及其沉默的程度。"
+      },
+      {
+        "id": "dc-5",
+        "label": "DC-5 母亲隐藏的心",
+        "summary": "遗嘱费率和母亲记录一起波动。我们需要看看两兄弟如何执行母亲的遗愿。",
+        "noteText": "母亲隐藏的心",
+        "judgeHint": "新一期《母亲隐藏的心》公开。分开每个人的解释和干预。"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "combine-1",
+        "discoveryText": "遗嘱中60:40的比例与往年的探访记录有重叠。有必要再次确认遗嘱书写过程中尹正厚是否在场。"
+      },
+      {
+        "id": "combine-2",
+        "discoveryText": "公证员备忘录与手写执业副本内容不一致。你必须问自己60:40的公证副本和单独的执业副本之间的关系。"
+      },
+      {
+        "id": "combine-3",
+        "discoveryText": "手写练习册和老账流的比例在同一手上相遇。我们需要重新检查通过我们母亲银行账户的资金来源。"
+      },
+      {
+        "id": "combine-4",
+        "discoveryText": "旧的账户流向和日记记录都指向同样的沉默。我们必须问尹正厚携带的是什么。"
+      },
+      {
+        "id": "combine-5",
+        "discoveryText": "尹正厚被屏蔽的言论和公证人的备忘录记录交织在一起。我们必须调查遗嘱是如何被篡改的。"
+      },
+      {
+        "id": "combine-6",
+        "discoveryText": "“母亲的意愿”这个词背后有一个古老的支持流。您需要找出通过您母亲的银行帐户的资金来源。"
+      },
+      {
+        "id": "combine-7",
+        "discoveryText": "手写的练习册和母亲的日记的视角连为一体。我们必须问他们试图通过降低比率来防止什么。"
+      },
+      {
+        "id": "combine-8",
+        "discoveryText": "遗嘱和母亲日记中的记录有重叠的比例。把长子视为理所当然并保护他的理由是同一结构的。"
+      },
+      {
+        "id": "combine-9",
+        "discoveryText": "哥哥说的“我是照顾他的人”和妈妈日记里的记录是矛盾的。我们需要弄清楚他们每个人是如何写下母亲的遗嘱的。"
+      },
+      {
+        "id": "combine-10",
+        "discoveryText": "结合哥哥的一句“我是照顾他的”和旧账流，我们可以看到弟弟拿钱和沉默的动机。"
+      },
+      {
+        "id": "combine-11",
+        "discoveryText": "疗养院探访记录的增加恰逢所有护理人员阅读该论文的时间。"
+      },
+      {
+        "id": "combine-12",
+        "discoveryText": "如果将尹正厚的屏蔽言论与“我是买的，你为什么40岁？”进行比较，您可以看到该比率背后隐藏着原因的趋势。"
+      }
+    ]
+  },
+  "v3Design": {
+    "evidenceAxisLegend": {
+      "depthStages": [
+        {
+          "id": "stub",
+          "summary": "只有存在才是可见的"
+        },
+        {
+          "id": "excerpt",
+          "summary": "仅查看部分"
+        },
+        {
+          "id": "original",
+          "summary": "安全原件/完整副本"
+        },
+        {
+          "id": "context",
+          "summary": "恢复之前和之后的上下文"
+        },
+        {
+          "id": "established",
+          "summary": "正式记录采用"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "当事人提交的状态"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "检查原文和上下文"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "根据可靠数据判断"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "对方对含义或范围有争议"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "伪造或摘录/误读的判定"
+        }
+      ]
+    },
+    "hiddenDisputes": [
+      {
+        "id": "d-2",
+        "name": "意志操纵的方向",
+        "unlockPlan": {
+          "runtimeRule": "到达 B d-1 S2 后解锁",
+          "authoredRule": "当尹正浩在 d-1 审讯中到达 S2 时，公证人备忘录记录中出现了一个新问题。"
+        }
+      },
+      {
+        "id": "d-3",
+        "name": "旧的支持来源",
+        "unlockPlan": {
+          "runtimeRule": "达到 d-2 S3 后解锁",
+          "authoredRule": "随着操纵意志的动机被揭露，一个古老的支持故事出现了。"
+        }
+      },
+      {
+        "id": "d-4",
+        "name": "出生秘密与意志操纵之间的联系",
+        "unlockPlan": {
+          "runtimeRule": "达到 d-3 S2 后解锁",
+          "authoredRule": "随着旧的支持来源的出现，出生保密问题也随之出现"
+        }
+      },
+      {
+        "id": "d-5",
+        "name": "母亲隐藏的心",
+        "unlockPlan": {
+          "runtimeRule": "当达到所有d-3 S3 + d-4 S2时自动解锁",
+          "authoredRule": "在所有旧的支持和出生秘密被揭露后，最后一个问题出现了。"
+        }
+      }
+    ],
+    "leadLines": [
+      {
+        "id": "L-1",
+        "interpretationChoices": [
+          {
+            "id": "L-1-A",
+            "text": "尹正厚利用患有痴呆症的母亲伪造了一份遗嘱。",
+            "implication": "d-1是在尹正厚的恶意干预下被推动的。"
+          },
+          {
+            "id": "L-1-B",
+            "text": "尹正厚确认了母亲的愿望，小心翼翼地进行着。",
+            "implication": "这与护理人员的证言非常吻合。"
+          },
+          {
+            "id": "L-1-C",
+            "text": "痴呆程度有待进一步确认。",
+            "implication": "保留判断力。"
+          }
+        ]
+      },
+      {
+        "id": "L-2",
+        "interpretationChoices": [
+          {
+            "id": "L-2-A",
+            "text": "操纵就是操纵，无论动机如何都是非法的。",
+            "implication": "我们先来看看尹正厚的法律责任。"
+          },
+          {
+            "id": "L-2-B",
+            "text": "如果是操纵减少了自己的份额，那么动机就不同了。",
+            "implication": "打开操作方向的含义。"
+          }
+        ]
+      },
+      {
+        "id": "L-3",
+        "interpretationChoices": [
+          {
+            "id": "L-3-A",
+            "text": "暗中帮忙已是好心好久了。",
+            "implication": "我们首先看到尹正厚的牺牲。"
+          },
+          {
+            "id": "L-3-B",
+            "text": "把它伪装成你母亲的钱本身就是一种欺骗。",
+            "implication": "我们看到了尹泰成的骄傲和知情权。"
+          }
+        ]
+      },
+      {
+        "id": "L-4",
+        "interpretationChoices": [
+          {
+            "id": "L-4-A",
+            "text": "这是对出生秘密的一种保护。",
+            "implication": "尹正厚的整个行为被重新解读为保护他的哥哥。"
+          },
+          {
+            "id": "L-4-B",
+            "text": "我的兄弟有权利知道。",
+            "implication": "我们看到了隐藏出生秘密本身的问题。"
+          },
+          {
+            "id": "L-4-C",
+            "text": "两个儿子都违背了母亲的意愿。",
+            "implication": "查看相互责任结构。"
+          }
+        ]
+      }
+    ],
+    "authorityPlacements": [
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "d-1 e-1/e-3 开头摘录",
+        "purpose": "获取护理人员的遗嘱副本和原始证词"
+      },
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "e-4出现后立即",
+        "purpose": "获取原始公证备忘录记录"
+      },
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "E-6轴旧支撑源出现后立即",
+        "purpose": "使用银行记录保护旧账户流量"
+      },
+      {
+        "action": "请正确回答",
+        "recommendedMoment": "当 Jeonghoo Yoon 重复缩小答案范围的阻塞性表达时",
+        "purpose": "强行操纵细节、申请理由、日记内容等实体名词"
+      },
+      {
+        "action": "单独审讯",
+        "recommendedMoment": "B 紧接在 e-5 原件之后",
+        "purpose": "更快地瓦解影响扁平化的尹正厚。"
+      },
+      {
+        "action": "单独审讯",
+        "recommendedMoment": "e-7 紧接在摘录 A 之后",
+        "purpose": "观察尹泰成对他的出生秘密的立即反应。"
+      },
+      {
+        "action": "临时承认",
+        "recommendedMoment": "e-4认证后",
+        "purpose": "公证当天记录母亲的病情和手术进度记录"
+      },
+      {
+        "action": "临时承认",
+        "recommendedMoment": "e-6认证后",
+        "purpose": "老账户流程及3亿韩元交付顺序"
+      },
+      {
+        "action": "临时承认",
+        "recommendedMoment": "e-7成立后",
+        "purpose": "出生秘密与意志操纵动机之间联系的记录"
+      },
+      {
+        "action": "宽大处理窗口",
+        "recommendedMoment": "紧接 dc-2 或 dc-3 之后",
+        "purpose": "尹正厚承认了保护哥哥的重担，而尹泰成更快地承认了自己身份的震惊。"
+      },
+      {
+        "action": "禁止言论/从记录中排除",
+        "recommendedMoment": "当尹泰成多次攻击哥哥的人格时或当尹正厚保持沉默时",
+        "purpose": "减少框架之争并将官方记录与假设分开"
+      },
+      {
+        "action": "解封敏感信息",
+        "recommendedMoment": "当选择出生秘密解释但缺乏实质内容或在 dc-3 之前时",
+        "purpose": "明确揭露出生秘密，但应对尹泰成身份冲击的风险"
+      }
+    ],
+    "sensitiveSealTargets": [
+      {
+        "targets": [
+          "父亲的真实姓名",
+          "出生的秘密细节",
+          "母亲的日记个人记录"
+        ],
+        "risk": "如果过早透露出生秘密，尹泰成的身份可能会崩溃，审判无法进行。"
+      }
+    ],
+    "officialRecordRecommendations": [
+      "虽然母亲晚年并没有完全丧失判断能力，但有尹正厚的介入。",
+      "60:40的遗嘱是尹正厚操纵减少他在单独的手写练习册比例中所占份额的结果。",
+      "尹正厚长期以来一直定期向母亲寄送赡养费，在尹泰成工厂危机期间，他将3亿韩元存入母亲的银行账户，并交给尹泰成。",
+      "尹泰成不是父亲的亲生儿子，尹正虎知道这一点，并捏造了一份遗嘱来保护哥哥。",
+      "他们谁都不能离开母亲这个样子。尹泰成认为继承权是理所当然的，尹正虎试图通过改变母亲的遗嘱来保护哥哥。"
+    ]
+  },
+  "solutionCategoryLabels": {
+    "유서적법성판단": "遗嘱合法性的认定",
+    "재산분배재조정": "财产分配调整",
+    "가족관계회복": "家庭关系的恢复"
+  }
 }

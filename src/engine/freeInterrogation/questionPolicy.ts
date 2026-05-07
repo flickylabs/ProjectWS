@@ -597,6 +597,10 @@ export function classifyFreeInterrogationQuestionPolicy(
     return { intent: 'gameplay_help', confidence: 0.9, reason: 'modern-gameplay-help-pattern' }
   }
 
+  if (asksForPublicRelationshipIdentity(raw)) {
+    return { intent: 'public_info', confidence: 0.94, reason: 'public-relationship-identity-pattern' }
+  }
+
   if (asksAboutCaseActionOrContact(raw, context)) {
     return null
   }
@@ -635,6 +639,20 @@ export function classifyFreeInterrogationQuestionPolicy(
 function asksForRelationshipRepairOrEmotion(raw: string): boolean {
   return /(관계|사이|손절|화해|회복|개선|다시|사과|미안|마음|감정|생각|의지|노력|후회)/i.test(raw) &&
     /(회복|개선|화해|손절|사과|미안|마음|감정|생각|의지|노력|후회|싶|없었|않았|왜|어떤가|어떻|말하지|못했|숨겼)/i.test(raw)
+}
+
+function asksForPublicRelationshipIdentity(raw: string): boolean {
+  const compact = raw.toLowerCase().replace(/\s+/g, '').replace(/[？?。！!,.，、]/g, '')
+  return [
+    /你是(他|她|对方|對方|那个人|那個人|尹.{0,4})?的(哥哥|弟弟|兄弟|姐姐|妹妹|兄长|兄長|弟妹)(吗|嗎|么|嘛|\?)?$/,
+    /你和(他|她|对方|對方|那个人|那個人|尹.{0,4})(是)?(什么|什麼|怎样|怎樣)关系/,
+    /你们(是)?(什么|什麼|怎样|怎樣)关系/,
+    /あなたは(彼|彼女|相手|.+さん)?の(兄|弟|兄弟|姉|妹)(ですか|か|\?)?$/,
+    /あなたと(彼|彼女|相手|.+さん)は(どういう|どんな|何の)関係/,
+    /areyou(his|her|their|.+s)(olderbrother|youngerbrother|brother|sister|sibling)\??$/,
+    /whatisyourrelationship(to|with)(him|her|them|theotherparty|.+)\??$/,
+    /(당신|본인|증인|당사자).*(그|상대|상대방|형제|윤).*(형|동생|오빠|언니|누나|남매|자매).*(입니까|인가요|맞습니까|\?)/,
+  ].some((pattern) => pattern.test(compact))
 }
 
 function asksAboutCaseActionOrContact(raw: string, context: FreeInterrogationRuntimeContext): boolean {

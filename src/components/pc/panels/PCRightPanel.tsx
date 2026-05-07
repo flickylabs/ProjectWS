@@ -24,10 +24,9 @@ import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 import { playCombinationFailure, playCombinationSuccess } from '../../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
-import { pp이가 } from '../../../engine/koreanPostposition'
-import { translate } from '../../../i18n'
+import { translate, useI18n, type MessageKey } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import ArchetypeTag from '../tags/ArchetypeTag'
-import { ACTION_TARGETS, ActionEm, Em } from '../tags/hotbarHighlight'
 import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
@@ -38,17 +37,18 @@ const COMBINATION_RESONANCE_DELAY_MS = 260
 const COMBINATION_RESULT_PANEL_DELAY_MS = 3100
 
 
-const EMOTION_LABELS: Record<EmotionalPhase, string> = {
-  defensive: '\uACBD\uACC4',
-  confident: '\uC790\uC2E0\uAC10',
-  shaken: '\uB3D9\uC694',
-  angry: '\uACA9\uC559',
-  resigned: '\uCCB4\uB150',
+const EMOTION_LABEL_KEYS: Record<EmotionalPhase, MessageKey> = {
+  defensive: 'pc.hotbar.emotion.defensive',
+  confident: 'pc.hotbar.emotion.confident',
+  shaken: 'pc.hotbar.emotion.shaken',
+  angry: 'pc.hotbar.emotion.angry',
+  resigned: 'pc.hotbar.emotion.resigned',
 }
 
 type TargetInfoDrawer = 'emotion' | 'trust' | 'leak' | 'lieStages' | 'contradiction' | 'profile'
 
 export default function PCRightPanel() {
+  const { locale, t } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const currentPhase = useStore((s) => s.currentPhase)
   const pcTargetParty = useStore((s) => s.pcTargetParty)
@@ -130,7 +130,7 @@ export default function PCRightPanel() {
   }
   const tellType = targetProfile.verbalTells[0]?.type ?? ''
   const faceId = getPcFaceSymbolId(pcTargetParty, targetProfile, targetAgent.emotionalState.phase)
-  const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge)
+  const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge, t)
   const emotionStateValue = Math.max(0, Math.min(100, Math.round(targetAgent.emotionalState.internalValue ?? 0)))
   const trustStateValue = Math.max(0, Math.min(100, Math.round(targetAgent.trustState.trustTowardJudge ?? 0)))
   const showCombination = currentPhase === Phase.Interrogation
@@ -248,15 +248,15 @@ export default function PCRightPanel() {
     if (!recipe) return
     const spent = (store as any).spend('skillPoints', autoMatchCost)
     if (!spent) {
-      showToast('스킬 포인트가 부족합니다.', 'info')
+      showToast(t('pc.right.toast.insufficientSkill'), 'info')
       return
     }
     const [a, b] = recipe.inputs
     setComboSlots([a ?? null, b ?? null])
     setAutoMatchPanelOpen(false)
     setAutoMatchConfirming(false)
-    showGuideCutscene('조합 대상이 슬롯에 자동 배치되었습니다', '.pc-combination-card')
-  }, [canAutoMatch, readyLabRecipes, store])
+    showGuideCutscene(t('pc.right.toast.autoMatched'), '.pc-combination-card')
+  }, [canAutoMatch, readyLabRecipes, store, t])
 
   // config가 null이면 caseData에서 직접 초기화 시도
   useEffect(() => {
@@ -287,8 +287,8 @@ export default function PCRightPanel() {
     ? (availableNodes.find((node) => node.id === comboSlots[1])
       ?? (comboSlots[1] ? { id: comboSlots[1], type: 'evidence' as const, label: caseData?.evidence.find((e) => e.id === comboSlots[1])?.surfaceName ?? comboSlots[1], visibility: 'base' as const } as CombinationLabNode : null))
     : null
-  const comboNodeADisplay = comboNodeA ? getNodeDisplayLabel(comboNodeA, caseData) : null
-  const comboNodeBDisplay = comboNodeB ? getNodeDisplayLabel(comboNodeB, caseData) : null
+  const comboNodeADisplay = comboNodeA ? getNodeDisplayLabel(comboNodeA, caseData, locale) : null
+  const comboNodeBDisplay = comboNodeB ? getNodeDisplayLabel(comboNodeB, caseData, locale) : null
   const comboReady = Boolean(comboSlots[0] && comboSlots[1])
 
   const matchingRecipe = useMemo(() => {
@@ -309,18 +309,18 @@ export default function PCRightPanel() {
     return config.outputs.find((output) => output.id === matchingRecipe.outputId) ?? null
   }, [combinationLabRuntime.config, matchingRecipe])
 
-  const tellDescription = getPcTellDescription(tellType)
+  const tellDescription = localizeRuntimeText(getPcTellDescription(tellType), locale)
   const currentHint = tellDescription
     || (
       activeDispute
-        ? `${activeDispute.name} \uC7C1\uC810\uC5D0\uC11C \uD55C \uBC88 \uB354 \uC9C8\uBB38\uD558\uBA74 \uB4DC\uB7EC\uB0A0 \uBC18\uC751 \uC815\uBCF4\uC785\uB2C8\uB2E4.`
-        : '\uD604\uC7AC \uAD00\uCC30 \uC911\uC778 \uBC18\uC751 \uC815\uBCF4\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4.'
+        ? localizeRuntimeText(`${activeDispute.name} 쟁점에서 한 번 더 질문하면 드러날 반응 정보입니다.`, locale)
+        : t('pc.right.drawer.beforeObservation')
     )
 
   const queueNode = useCallback((nodeId: string) => {
     setComboSlots((current) => {
       if (current.includes(nodeId)) {
-        showToast('이미 같은 카드가 슬롯에 있습니다.', 'info')
+        showToast(t('pc.right.toast.duplicateCard'), 'info')
         return current
       }
       if (!current[0]) {
@@ -400,12 +400,12 @@ export default function PCRightPanel() {
     if (detail.note) {
       const nodeId = resolveNoteNodeId(detail.note)
       if (!nodeId) {
-        showToast('하이라이트된 핵심 발언만 조합할 수 있습니다.', 'info')
+        showToast(t('pc.right.toast.highlightOnly'), 'info')
         return
       }
       queueNode(nodeId)
     }
-  }, [queueNode, resolveEvidenceNodeId, resolveNoteNodeId])
+  }, [queueNode, resolveEvidenceNodeId, resolveNoteNodeId, t])
 
   useEffect(() => {
     const handleEvent = (event: Event) => {
@@ -443,11 +443,11 @@ export default function PCRightPanel() {
     if (!matchingRecipe || !matchingOutput) {
       playCombinationFailure()
       openPcInteractionPanel({
-        title: '\uC870\uD569 \uC2E4\uD328',
-        subtitle: '\uD604\uC7AC \uC870\uD569 \uACB0\uACFC \uC5C6\uC74C',
+        title: t('pc.right.combo.failure'),
+        subtitle: t('pc.right.combo.noResultSubtitle'),
         tone: 'red',
         variant: 'feature',
-        body: '\uC774 \uC870\uD569\uC73C\uB85C\uB294 \uC544\uC9C1 \uC0C8\uB85C\uC6B4 \uB2E8\uC11C\uAC00 \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uB2E4\uB978 \uC99D\uAC70\uB098 \uC911\uC694 \uBC1C\uC5B8 \uB178\uD2B8\uB97C \uC62C\uB824 \uBCF4\uC138\uC694.',
+        body: t('pc.right.combo.noResultBody'),
       })
       clearComboSlots()
       return
@@ -462,11 +462,11 @@ export default function PCRightPanel() {
     if (outputAlreadyRecorded) {
       playCombinationFailure()
       openPcInteractionPanel({
-        title: '이미 기록된 조합',
+        title: t('pc.right.combo.alreadyRecorded'),
         subtitle: cleanOutputLabel(matchingOutput.label),
         tone: 'gold',
         variant: 'feature',
-        body: '이 조합이 가리키는 결론은 이미 재판 기록에 반영되어 있습니다. 다른 증거 또는 발언 노트를 조합해 보세요.',
+        body: t('pc.right.combo.alreadyRecordedBody'),
       })
       clearComboSlots()
       return
@@ -475,11 +475,11 @@ export default function PCRightPanel() {
     if (!store.canRunCombinationRecipe(matchingRecipe.id)) {
       playCombinationFailure()
       openPcInteractionPanel({
-        title: '\uC870\uD569 \uBD88\uAC00',
-        subtitle: '\uBD84\uC11D \uD3EC\uC778\uD2B8 \uBD80\uC871 \uB610\uB294 \uC7A0\uAE08 \uC0C1\uD0DC',
+        title: t('pc.right.combo.unavailable'),
+        subtitle: t('pc.right.combo.unavailableSubtitle'),
         tone: 'red',
         variant: 'feature',
-        body: matchingRecipe.failHint ?? '\uC9C0\uAE08\uC740 \uC774 \uC870\uD569\uC744 \uC2DC\uB3C4\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.',
+        body: matchingRecipe.failHint ?? t('pc.right.combo.unavailableBody'),
       })
       clearComboSlots()
       return
@@ -489,11 +489,11 @@ export default function PCRightPanel() {
     if (!result.ok) {
       playCombinationFailure()
       openPcInteractionPanel({
-        title: '\uC870\uD569 \uC2E4\uD328',
-        subtitle: '\uACB0\uACFC \uC0DD\uC131 \uC2E4\uD328',
+        title: t('pc.right.combo.failure'),
+        subtitle: t('pc.right.combo.generationFailedSubtitle'),
         tone: 'red',
         variant: 'feature',
-        body: '\uC870\uD569 \uACB0\uACFC\uB97C \uC0DD\uC131\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4. \uC7A0\uC2DC \uD6C4 \uB2E4\uC2DC \uC2DC\uB3C4\uD574 \uC8FC\uC138\uC694.',
+        body: t('pc.right.combo.generationFailedBody'),
       })
       clearComboSlots()
       return
@@ -501,13 +501,14 @@ export default function PCRightPanel() {
 
     const newlyUnlockedWitnesses = result.newlyUnlockedWitnesses ?? []
     const isWitnessResult = hasWitnessCombinationResult(matchingOutput, newlyUnlockedWitnesses)
-    const outputSummary = matchingRecipe.discoveryText || cleanOutputSummary(matchingOutput.summary, matchingOutput.label) || matchingOutput.judgeHint || ''
-    const witnessNames = newlyUnlockedWitnesses.map((w) => w.name).filter(Boolean)
+    const outputSummary = localizeRuntimeText(matchingRecipe.discoveryText || cleanOutputSummary(matchingOutput.summary, matchingOutput.label) || matchingOutput.judgeHint || '', locale)
+    const outputLabel = localizeRuntimeText(cleanOutputLabel(matchingOutput.label), locale)
+    const witnessNames = newlyUnlockedWitnesses.map((w) => localizeRuntimeText(w.name, locale)).filter(Boolean)
     const panelBody = isWitnessResult
       ? [
           witnessNames.length > 0
-            ? `새 증인 ${witnessNames.join(', ')}${pp이가(witnessNames[witnessNames.length - 1] ?? '')} 소환 가능해졌습니다.`
-            : '새 증인 단서가 열렸습니다.',
+            ? t('pc.right.combo.witnessUnlockedNamed', { names: witnessNames.join(', ') })
+            : t('pc.right.combo.witnessClueOpened'),
           outputSummary,
         ].filter(Boolean).join('\n')
       : outputSummary
@@ -519,26 +520,26 @@ export default function PCRightPanel() {
       const witness = newlyUnlockedWitnesses[0]
       panelActions.push({
         kind: 'summon_witness',
-        label: `${witness.name} 소환하기`,
+        label: t('pc.right.combo.summonWitness', { name: localizeRuntimeText(witness.name, locale) }),
         witnessId: witness.id,
       })
     } else if (combinationResultType === 'evidence' && primaryEvidenceId) {
       panelActions.push({
         kind: 'open_evidence',
-        label: '새 증거 열람',
+        label: t('pc.right.combo.openNewEvidence'),
         evidenceId: primaryEvidenceId,
       })
     } else if (!isWitnessResult && primaryDisputeId) {
       panelActions.push({
         kind: 'focus_dispute',
-        label: '\uAD00\uB828 \uC7C1\uC810 \uBCF4\uAE30',
+        label: t('pc.right.combo.relatedDispute'),
         disputeId: primaryDisputeId,
       })
     }
 
     store.addDialogue({
       speaker: 'system',
-      text: `\uC870\uD569 \uACB0\uACFC: ${cleanOutputLabel(matchingOutput.label)}${outputSummary ? '\n' + outputSummary : ''}`,
+      text: t('pc.right.combo.systemResult', { label: outputLabel, summary: outputSummary ? '\n' + outputSummary : '' }),
       relatedDisputes: matchingOutput.effects
         .flatMap((effect) => [
           effect.targetId,
@@ -558,32 +559,32 @@ export default function PCRightPanel() {
 
     const effectTags = matchingOutput.effects.slice(0, 4).map((effect) => getResultKindLabel(effect.kind))
     const resultPanelPayload: PcInteractionPayload = {
-      title: cleanOutputLabel(matchingOutput.label),
-      subtitle: isWitnessResult ? '새 증인 추가' : '\uC870\uD569 \uC131\uACF5',
+      title: outputLabel,
+      subtitle: isWitnessResult ? t('pc.right.combo.tag.newWitness') : t('pc.court.combination.success'),
       tone: 'gold',
       variant: 'feature',
       body: panelBody,
-      tags: isWitnessResult ? ['새 증인', ...effectTags.filter((tag) => tag !== '새 발언')] : effectTags,
+      tags: isWitnessResult ? [t('pc.right.combo.tag.newWitness'), ...effectTags.filter((tag) => tag !== t('pc.right.combo.tag.newStatement'))] : effectTags,
       actions: panelActions,
     }
 
     if (isWitnessResult) {
       const summary = witnessNames.length > 0
-        ? `${witnessNames.join(', ')}${pp이가(witnessNames[witnessNames.length - 1] ?? '')} 새 증인으로 추가됐습니다.`
-        : '새 증인 단서가 열렸습니다.'
+        ? t('pc.right.combo.witnessUnlockedNamed', { names: witnessNames.join(', ') })
+        : t('pc.right.combo.witnessClueOpened')
       store.addJudgeObservation({
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-eye',
-        title: '새 증인 추가',
+        title: t('pc.right.combo.tag.newWitness'),
         summary,
       })
       store.enqueueFeedback({
         kind: 'witness_choice',
-        eyebrow: '새 증인 등장',
-        title: witnessNames.join(', ') || '새 증인',
-        body: '증인 목록에 소환 가능한 인물이 추가되었습니다. 필요한 시점에 증언 주제를 확인하십시오.',
-        tag: '증인 목록 갱신',
+        eyebrow: t('pc.right.combo.tag.newWitness'),
+        title: witnessNames.join(', ') || t('pc.right.combo.tag.newWitness'),
+        body: t('pc.court.combination.summary.witness'),
+        tag: t('pc.right.combo.tag.newWitness'),
         tone: 'green',
         autoDismissMs: 2700,
       })
@@ -592,32 +593,32 @@ export default function PCRightPanel() {
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-scale',
-        title: '쟁점 추가',
-        summary: outputSummary || '새 쟁점이 기록에 추가됐습니다.',
+        title: t('pc.court.combination.summary.dispute'),
+        summary: outputSummary || t('pc.court.combination.summary.dispute'),
       })
     } else if (combinationResultType === 'dossier') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-gavel',
-        title: '결정적 질문 해금',
-        summary: outputSummary || '새 질문 경로가 열렸습니다.',
+        title: t('pc.court.dossier.unlockEyebrow'),
+        summary: outputSummary || t('pc.court.combination.summary.question'),
       })
     } else if (combinationResultType === 'question') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-gavel',
-        title: '질문 경로 추가',
-        summary: outputSummary || '새 질문 경로가 열렸습니다.',
+        title: t('pc.court.combination.summary.question'),
+        summary: outputSummary || t('pc.court.combination.summary.question'),
       })
     } else if (combinationResultType === 'evidence') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
         category: 'evidence',
         iconId: 'i-doc',
-        title: '새 증거 추가',
-        summary: outputSummary || '새 증거가 기록에 추가됐습니다.',
+        title: t('pc.court.combination.summary.evidence'),
+        summary: outputSummary || t('pc.court.combination.summary.evidence'),
         evidenceId: primaryEvidenceId ?? undefined,
       })
     } else if (combinationResultType === 'mediation') {
@@ -625,24 +626,24 @@ export default function PCRightPanel() {
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-heart',
-        title: '판결 힌트 추가',
-        summary: outputSummary || '판결 진입에 참고할 힌트가 추가됐습니다.',
+        title: t('pc.court.combination.summary.mediation'),
+        summary: outputSummary || t('pc.court.combination.summary.mediation'),
       })
     } else if (combinationResultType === 'note' || combinationResultType === 'statement') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-chat',
-        title: combinationResultType === 'note' ? '단서 기록 추가' : '진술 기록 추가',
-        summary: outputSummary || '기록에 새 항목이 추가됐습니다.',
+        title: combinationResultType === 'note' ? t('pc.court.combination.summary.note') : t('pc.court.combination.summary.statement'),
+        summary: outputSummary || t('pc.court.combination.summary.note'),
       })
     } else if (combinationResultType === 'reliability' || combinationResultType === 'context') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
         category: 'evidence',
         iconId: 'i-link',
-        title: combinationResultType === 'reliability' ? '증거 신뢰도 강화' : '사건 맥락 확장',
-        summary: outputSummary || '기존 기록의 해석이 강화됐습니다.',
+        title: combinationResultType === 'reliability' ? t('pc.court.combination.summary.reliability') : t('pc.court.combination.summary.context'),
+        summary: outputSummary || t('pc.court.combination.summary.default'),
       })
     }
 
@@ -654,8 +655,8 @@ export default function PCRightPanel() {
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-gavel',
-        title: '재판관의 정리',
-        summary: judgeComment.trim(),
+        title: t('pc.right.summary.record'),
+        summary: localizeRuntimeText(judgeComment.trim(), locale),
       })
     }
 
@@ -663,7 +664,7 @@ export default function PCRightPanel() {
     for (const w of result.newlyUnlockedWitnesses ?? []) {
       store.addDialogue({
         speaker: 'system',
-        text: `새 증인 '${w.name}' 소환 가능해졌습니다.`,
+        text: t('pc.right.combo.witnessUnlockedNamed', { names: localizeRuntimeText(w.name, locale) }),
         relatedDisputes: [],
         turn: store.turnCount,
       })
@@ -677,10 +678,10 @@ export default function PCRightPanel() {
         inputs: [comboNodeA, comboNodeB]
           .filter((node): node is NonNullable<typeof comboNodeA> => Boolean(node))
           .map((node) => ({
-            label: getNodeDisplayLabel(node, caseData),
+            label: getNodeDisplayLabel(node, caseData, locale),
             type: node.type,
           })),
-        outputLabel: cleanOutputLabel(matchingOutput.label),
+        outputLabel,
         outputSummary,
         resultType: combinationResultType,
       },
@@ -703,13 +704,13 @@ export default function PCRightPanel() {
     }, COMBINATION_RESULT_PANEL_DELAY_MS)
 
     clearComboSlots()
-  }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, combinationLabRuntime.discoveredNodeIds, matchingOutput, matchingRecipe, store])
+  }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, combinationLabRuntime.discoveredNodeIds, locale, matchingOutput, matchingRecipe, store, t])
 
   const toggleCombinationPanel = useCallback(() => {
     setAutoMatchPanelOpen((v) => !v)
     setAutoMatchConfirming(false)
     setInfoDrawer(null)
-  }, [])
+  }, [t])
 
   const openSummaryPanel = useCallback(() => {
     window.dispatchEvent(new Event('pc:open-record-summary'))
@@ -734,8 +735,8 @@ export default function PCRightPanel() {
       <section className="sec pc-target-block">
         <div className="sec-h">
           <PCSvgIcon id="i-person" size={14} />
-          <span>{'\uD604\uC7AC \uB300\uC0C1'}</span>
-          <span className="sub">{targetProfile.name}</span>
+          <span>{t('pc.right.target.current')}</span>
+          <span className="sub">{localizeRuntimeText(targetProfile.name, locale)}</span>
         </div>
 
         <div className={`pc-target-shell pc-right-card party-${pcTargetParty}`} data-party={pcTargetParty}>
@@ -745,14 +746,14 @@ export default function PCRightPanel() {
               onClick={() => setPcTargetParty('a')}
               type="button"
             >
-              {caseData.duo.partyA.name}
+              {localizeRuntimeText(caseData.duo.partyA.name, locale)}
             </button>
             <button
               className={`pc-target-tab${pcTargetParty === 'b' ? ' is-active' : ''}`}
               onClick={() => setPcTargetParty('b')}
               type="button"
             >
-              {caseData.duo.partyB.name}
+              {localizeRuntimeText(caseData.duo.partyB.name, locale)}
             </button>
           </div>
 
@@ -764,10 +765,10 @@ export default function PCRightPanel() {
               style={{ cursor: 'pointer' }}
               onClick={() => toggleInfoDrawer('profile')}
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('profile') } }}
-              title={`${targetProfile.name} 상세 정보 보기`}
+              title={t('pc.right.target.profileDetails', { name: localizeRuntimeText(targetProfile.name, locale) })}
             >
               <PCCharacterPortrait
-                alt={targetProfile.name}
+                alt={localizeRuntimeText(targetProfile.name, locale)}
                 caseId={caseData.caseId}
                 emotion={targetAgent.emotionalState.phase}
                 fallbackSymbolId={faceId}
@@ -778,7 +779,7 @@ export default function PCRightPanel() {
             </div>
 
             <div className="pc-target-copy__main">
-              <div className="tgt-meta">{`${targetProfile.age}\uC138 \u00B7 ${targetProfile.occupation}`}</div>
+              <div className="tgt-meta">{t('pc.right.target.ageOccupation', { age: targetProfile.age, occupation: localizeRuntimeText(targetProfile.occupation, locale) })}</div>
               <div className="tgt-tags">
                 {(observedArchetypes[pcTargetParty] ?? []).map((arch) => (
                   <ArchetypeTag key={arch} archetype={arch} party={pcTargetParty} />
@@ -798,8 +799,8 @@ export default function PCRightPanel() {
                 onClick={() => toggleInfoDrawer('emotion')}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('emotion') } }}
               >
-                <span>감정</span>
-                <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
+                <span>{t('pc.right.emotion')}</span>
+                <strong>{t(EMOTION_LABEL_KEYS[targetAgent.emotionalState.phase])}</strong>
               </div>
               <div
                 className="pc-target-state-row is-interactive"
@@ -809,13 +810,13 @@ export default function PCRightPanel() {
                 onClick={() => toggleInfoDrawer('trust')}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('trust') } }}
               >
-                <span>신뢰 상태</span>
+                <span>{t('pc.right.trustState')}</span>
                 <strong>{trustStateLabel}</strong>
               </div>
             </div>
             <MeterRow
               icon={<PCSvgIcon id="i-drop" size={15} />}
-              label="누설"
+              label={t('pc.right.leak')}
               valueText={`${targetMeters.leakMeter}%`}
               width={targetMeters.leakMeter}
               tone="gold"
@@ -835,7 +836,7 @@ export default function PCRightPanel() {
                 className="pc-target-dispute-nav__arrow"
                 onClick={goPrevDispute}
                 disabled={!canCycleDispute}
-                aria-label="이전 쟁점"
+                aria-label={t('pc.right.dispute.prev')}
               >
                 ◀
               </button>
@@ -846,23 +847,23 @@ export default function PCRightPanel() {
                 style={{ cursor: 'pointer' }}
                 onClick={() => toggleLieStageDrawer(null)}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLieStageDrawer(null) } }}
-                title="진실파악 단계 안내 보기"
+                title={t('pc.right.dispute.stageGuide')}
               >
-                {activeDispute?.name ?? '쟁점 없음'}
+                {activeDispute?.name ? localizeRuntimeText(activeDispute.name, locale) : t('pc.right.target.noDispute')}
               </span>
               <button
                 type="button"
                 className="pc-target-dispute-nav__arrow"
                 onClick={goNextDispute}
                 disabled={!canCycleDispute}
-                aria-label="다음 쟁점"
+                aria-label={t('pc.right.dispute.next')}
               >
                 ▶
               </button>
             </div>
 
             <div className="pc-target-lie-status">
-              <span className="pc-target-lie-status__big">쟁점별 진실파악 단계</span>
+              <span className="pc-target-lie-status__big">{t('pc.right.dispute.stageTitle')}</span>
               <span className="pc-target-lie-status__step">{activeLieIndex} / 5</span>
             </div>
 
@@ -886,7 +887,7 @@ export default function PCRightPanel() {
                     style={{ cursor: 'pointer' }}
                     onClick={() => toggleLieStageDrawer(index)}
                     onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLieStageDrawer(index) } }}
-                    title={`진실파악 단계 ${index} 안내`}
+                    title={t('pc.right.dispute.stageIndexGuide', { index })}
                   >
                     {index}
                   </div>
@@ -902,11 +903,11 @@ export default function PCRightPanel() {
               style={{ cursor: 'pointer' }}
               onClick={() => toggleInfoDrawer('contradiction')}
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('contradiction') } }}
-              title="모순이 무엇인지 안내 보기"
+              title={t('pc.right.contradictionGuide')}
             >
               <span className="pc-target-contradiction__label">
                 <PCSvgIcon id="i-conflict" size={12} />
-                모순
+                {t('pc.right.contradiction')}
               </span>
               <div className="pc-target-contradiction__pips">
                 {[0, 1, 2, 3, 4].map((i) => (
@@ -927,22 +928,22 @@ export default function PCRightPanel() {
             <aside
             className={`pc-target-info-drawer${infoDrawer ? ' is-open' : ''}`}
             aria-hidden={!infoDrawer}
-            aria-label="프로필 팩터 안내"
+            aria-label={t('pc.right.drawer.factorGuide')}
           >
             <header className="pc-target-info-drawer__header">
               <div className="pc-target-info-drawer__title">
-                {infoDrawer === 'emotion' && '감정 상태'}
-                {infoDrawer === 'trust' && '신뢰 상태'}
-                {infoDrawer === 'leak' && '누설 바로미터'}
-                {infoDrawer === 'lieStages' && '쟁점별 진실파악 단계'}
-                {infoDrawer === 'contradiction' && '모순'}
-                {infoDrawer === 'profile' && `${targetProfile.name} 상세`}
+                {infoDrawer === 'emotion' && t('pc.right.drawer.emotion')}
+                {infoDrawer === 'trust' && t('pc.right.drawer.trust')}
+                {infoDrawer === 'leak' && t('pc.right.drawer.leak')}
+                {infoDrawer === 'lieStages' && t('pc.right.drawer.lieStages')}
+                {infoDrawer === 'contradiction' && t('pc.right.drawer.contradiction')}
+                {infoDrawer === 'profile' && t('pc.right.drawer.profile', { name: localizeRuntimeText(targetProfile.name, locale) })}
               </div>
               <button
                 type="button"
                 className="pc-target-info-drawer__close"
                 onClick={() => setInfoDrawer(null)}
-                aria-label="닫기"
+                aria-label={t('pc.common.close')}
               >
                 ✕
               </button>
@@ -951,16 +952,16 @@ export default function PCRightPanel() {
             {infoDrawer === 'emotion' ? (() => {
               const currentPhase = targetAgent.emotionalState.phase
               const rows = [
-                { phase: 'defensive' as const, label: '경계', desc: <>방어가 견고합니다. <ActionEm targets={ACTION_TARGETS.fact}>사실 추궁</ActionEm>으로 구체적인 상황 파악을 시도해보세요.</> },
-                { phase: 'confident' as const, label: '자신감', desc: <>모순을 숨기고 있습니다. <ActionEm targets={ACTION_TARGETS.fact}>사실추궁</ActionEm>으로 허점을 공략해보세요.</> },
-                { phase: 'shaken' as const, label: '동요', desc: <>실수가 잦아집니다. <ActionEm targets={[...ACTION_TARGETS.empathy, ...ACTION_TARGETS.motive]}>공감접근·동기탐색</ActionEm>으로 마음을 열어보세요.</> },
-                { phase: 'angry' as const, label: '격앙', desc: <>감정이 폭발하기 직전입니다. <ActionEm targets={ACTION_TARGETS.empathy}>공감 접근</ActionEm>으로 신뢰를 얻어 마음을 공략해보세요.</> },
-                { phase: 'resigned' as const, label: '체념', desc: <>자백이 예상됩니다. <ActionEm targets={ACTION_TARGETS.allInterrogation}>모든 액션</ActionEm>이 각각 효과적이니, 적극 공략해보세요.</> },
+                { phase: 'defensive' as const, label: t('pc.right.drawer.emotion.defensive'), desc: t('pc.right.drawer.emotion.defensiveDesc') },
+                { phase: 'confident' as const, label: t('pc.right.drawer.emotion.confident'), desc: t('pc.right.drawer.emotion.confidentDesc') },
+                { phase: 'shaken' as const, label: t('pc.right.drawer.emotion.shaken'), desc: t('pc.right.drawer.emotion.shakenDesc') },
+                { phase: 'angry' as const, label: t('pc.right.drawer.emotion.angry'), desc: t('pc.right.drawer.emotion.angryDesc') },
+                { phase: 'resigned' as const, label: t('pc.right.drawer.emotion.resigned'), desc: t('pc.right.drawer.emotion.resignedDesc') },
               ]
               return (
                 <>
                   <p className="pc-target-info-drawer__lede">
-                    현재의 감정 상태. 감정 상태에 따라 <Em>효과적인 액션</Em>이 다릅니다.
+                    {t('pc.right.drawer.emotionLede')}
                   </p>
                   <ul className="pc-target-info-drawer__list">
                     {rows.map((row) => {
@@ -975,8 +976,8 @@ export default function PCRightPanel() {
                     })}
                   </ul>
                   <div className="pc-target-info-drawer__now">
-                    <span>현재 상태:</span>
-                    <strong>{EMOTION_LABELS[currentPhase]} · {emotionStateValue}/100</strong>
+                    <span>{t('pc.right.drawer.currentState')}</span>
+                    <strong>{t(EMOTION_LABEL_KEYS[currentPhase])} · {emotionStateValue}/100</strong>
                   </div>
                 </>
               )
@@ -985,31 +986,31 @@ export default function PCRightPanel() {
             {infoDrawer === 'trust' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  재판관에 대한 신뢰도.
+                  {t('pc.right.drawer.trustLede')}
                 </p>
                 <div className="pc-target-info-drawer__columns">
                   <div>
-                    <div className="pc-target-info-drawer__col-h">신뢰 상승</div>
+                    <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.trustUp')}</div>
                     <ul>
-                      <li>공감 접근</li>
-                      <li>경청</li>
-                      <li>비공개 보호</li>
+                      <li>{t('pc.right.drawer.trustUpEmpathy')}</li>
+                      <li>{t('pc.right.drawer.trustUpListening')}</li>
+                      <li>{t('pc.right.drawer.trustUpPrivate')}</li>
                     </ul>
                   </div>
                   <div>
-                    <div className="pc-target-info-drawer__col-h">신뢰 하락</div>
+                    <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.trustDown')}</div>
                     <ul>
-                      <li>모순 찌르기</li>
-                      <li>반격</li>
-                      <li>반복 압박</li>
+                      <li>{t('pc.right.drawer.trustDownContradiction')}</li>
+                      <li>{t('pc.right.drawer.trustDownCounter')}</li>
+                      <li>{t('pc.right.drawer.trustDownPressure')}</li>
                     </ul>
                   </div>
                 </div>
                 <p className="pc-target-info-drawer__tip">
-                  신뢰가 높으면 <Em>자백</Em>이나 <Em>자발적인 진실 단서 제공</Em> 가능성이 높아집니다.
+                  {t('pc.right.drawer.trustTip')}
                 </p>
                 <div className="pc-target-info-drawer__now">
-                  <span>현재 상태:</span>
+                  <span>{t('pc.right.drawer.currentState')}</span>
                   <strong>{trustStateLabel} · {trustStateValue}/100</strong>
                 </div>
               </>
@@ -1018,29 +1019,29 @@ export default function PCRightPanel() {
             {infoDrawer === 'leak' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  실수로 흘린 단서의 누적량. 높을수록 <Em>진실파악 단계가 빠르게 상승</Em>할 수 있습니다.
+                  {t('pc.right.drawer.leakLede')}
                 </p>
                 <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.7fr 1.3fr' }}>
                   <div>
-                    <div className="pc-target-info-drawer__col-h">발생 경로</div>
+                    <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.sourceRoutes')}</div>
                     <ul>
-                      <li>동기 탐색</li>
-                      <li>공감 접근</li>
+                      <li>{t('pc.archetype.action.motive')}</li>
+                      <li>{t('pc.archetype.action.empathy')}</li>
                     </ul>
                   </div>
                   <div>
-                    <div className="pc-target-info-drawer__col-h">효과</div>
+                    <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.effects')}</div>
                     <ul>
-                      <li>진실파악 단계 전이 임계 ↓</li>
-                      <li>모순 기반 공략 가능성 ↑</li>
+                      <li>{t('pc.right.drawer.leakEffectThreshold')}</li>
+                      <li>{t('pc.right.drawer.leakEffectContradiction')}</li>
                     </ul>
                   </div>
                 </div>
                 <p className="pc-target-info-drawer__tip">
-                  개방된 모든 쟁점에 <Em>공통으로 적용</Em>됩니다.
+                  {t('pc.right.drawer.leakTip')}
                 </p>
                 <div className="pc-target-info-drawer__now">
-                  <span>현재 상태:</span>
+                  <span>{t('pc.right.drawer.currentState')}</span>
                   <strong>{targetMeters.leakMeter}%</strong>
                 </div>
               </>
@@ -1049,17 +1050,17 @@ export default function PCRightPanel() {
             {infoDrawer === 'lieStages' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  쟁점별 6단계 진실 접근 지표.<br />
-                  단계가 높을수록 더 많은 진실이 드러납니다.
+                  {t('pc.right.drawer.lieStagesLede1')}<br />
+                  {t('pc.right.drawer.lieStagesLede2')}
                 </p>
                 <ul className="pc-target-info-drawer__list">
                   {[
-                    { idx: 0, label: '완전 부정', desc: '사실 자체를 부인합니다. 모순이 거의 없어 공략이 어렵습니다.' },
-                    { idx: 1, label: '일부 인정', desc: '사소한 부분만 인정합니다. 핵심은 여전히 숨깁니다.' },
-                    { idx: 2, label: '핑계', desc: '인정하되 정황·이유를 들어 해명합니다.' },
-                    { idx: 3, label: '책임 전가', desc: '상대 또는 외부 탓으로 돌립니다.' },
-                    { idx: 4, label: '감정적', desc: '논리가 무너지고 감정이 앞섭니다. 자백 직전입니다.' },
-                    { idx: 5, label: '자백', desc: '사실을 그대로 인정합니다. 구체적인 정보가 모두 공개됩니다.' },
+                    { idx: 0, label: t('pc.right.drawer.lieStage0'), desc: t('pc.right.drawer.lieStage0Desc') },
+                    { idx: 1, label: t('pc.right.drawer.lieStage1'), desc: t('pc.right.drawer.lieStage1Desc') },
+                    { idx: 2, label: t('pc.right.drawer.lieStage2'), desc: t('pc.right.drawer.lieStage2Desc') },
+                    { idx: 3, label: t('pc.right.drawer.lieStage3'), desc: t('pc.right.drawer.lieStage3Desc') },
+                    { idx: 4, label: t('pc.right.drawer.lieStage4'), desc: t('pc.right.drawer.lieStage4Desc') },
+                    { idx: 5, label: t('pc.right.drawer.lieStage5'), desc: t('pc.right.drawer.lieStage5Desc') },
                   ].map((row) => {
                     // 클릭한 단계와 무관하게 항상 현재 단계(activeLieIndex)를 강조
                     const isCurrent = activeLieIndex === row.idx
@@ -1073,7 +1074,7 @@ export default function PCRightPanel() {
                   })}
                 </ul>
                 <p className="pc-target-info-drawer__tip">
-                  <Em>사실 추궁·증거 제시·공감 접근</Em> 등 액션의 효과로 단계가 상승합니다.
+                  {t('pc.right.drawer.lieStagesTip')}
                 </p>
               </>
             ) : null}
@@ -1088,34 +1089,34 @@ export default function PCRightPanel() {
               return (
                 <>
                   <p className="pc-target-info-drawer__lede">
-                    <strong>{targetProfile.name}</strong> · {targetProfile.age}세 · {targetProfile.occupation}
+                    <strong>{localizeRuntimeText(targetProfile.name, locale)}</strong> · {t('pc.right.target.ageOccupation', { age: targetProfile.age, occupation: localizeRuntimeText(targetProfile.occupation, locale) })}
                   </p>
                   <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.85fr 1.15fr' }}>
                     <div>
-                      <div className="pc-target-info-drawer__col-h">성향</div>
+                      <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.tendency')}</div>
                       <ul>
-                        <li>{archetypeRevealed ? getPcArchetypeLabel(targetArchetype) : '관찰 전'}</li>
+                        <li>{archetypeRevealed ? localizeRuntimeText(getPcArchetypeLabel(targetArchetype), locale) : t('pc.right.drawer.beforeObservation')}</li>
                       </ul>
                     </div>
                     <div>
-                      <div className="pc-target-info-drawer__col-h">소개</div>
+                      <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.intro')}</div>
                       <ul>
-                        <li>{targetProfile.age}세 · {targetProfile.occupation}</li>
+                        <li>{t('pc.right.target.ageOccupation', { age: targetProfile.age, occupation: localizeRuntimeText(targetProfile.occupation, locale) })}</li>
                       </ul>
                     </div>
                   </div>
                   {targetProfile.speechStyle ? (
                     <p className="pc-target-info-drawer__tip">
-                      <strong>말투</strong> — {targetProfile.speechStyle}
+                      <strong>{t('pc.right.drawer.speechStyle')}</strong> — {localizeRuntimeText(targetProfile.speechStyle, locale)}
                     </p>
                   ) : null}
                   {truthMostlyRevealed && targetProfile.dailyRoutine ? (
                     <p className="pc-target-info-drawer__tip">
-                      <strong>일상</strong> — {targetProfile.dailyRoutine}
+                      <strong>{t('pc.right.drawer.dailyRoutine')}</strong> — {localizeRuntimeText(targetProfile.dailyRoutine, locale)}
                     </p>
                   ) : (
                     <p className="pc-target-info-drawer__tip" style={{ opacity: 0.55 }}>
-                      <strong>일상</strong> — 진실파악 단계 4 이상에서 공개됩니다
+                      <strong>{t('pc.right.drawer.dailyRoutine')}</strong> — {t('pc.right.drawer.dailyRoutineLocked')}
                     </p>
                   )}
                   {/* verbalTells / 관찰 포인트는 게임 진행 중 발견 대상이므로 프로필에 미리 노출하지 않음 */}
@@ -1126,30 +1127,30 @@ export default function PCRightPanel() {
             {infoDrawer === 'contradiction' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  같은 쟁점에서 NPC가 앞뒤가 맞지 않는 진술을 할 때 누적되는 압박치입니다.
+                  {t('pc.right.drawer.contradictionLede')}
                 </p>
                 <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '1.15fr 0.85fr' }}>
                   <div>
-                    <div className="pc-target-info-drawer__col-h">발생 경로</div>
+                    <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.sourceRoutes')}</div>
                     <ul>
-                      <li>사실 추궁 반복</li>
-                      <li>모순된 증거 제시</li>
-                      <li>증인 증언과의 충돌</li>
+                      <li>{t('pc.right.drawer.contradictionSourceFact')}</li>
+                      <li>{t('pc.right.drawer.contradictionSourceEvidence')}</li>
+                      <li>{t('pc.right.drawer.contradictionSourceWitness')}</li>
                     </ul>
                   </div>
                   <div>
-                    <div className="pc-target-info-drawer__col-h">효과</div>
+                    <div className="pc-target-info-drawer__col-h">{t('pc.right.drawer.effects')}</div>
                     <ul>
-                      <li>진실파악 단계 전이 가속</li>
-                      <li>임계 도달 시 방어 붕괴</li>
+                      <li>{t('pc.right.drawer.contradictionEffectStage')}</li>
+                      <li>{t('pc.right.drawer.contradictionEffectCollapse')}</li>
                     </ul>
                   </div>
                 </div>
                 <p className="pc-target-info-drawer__tip">
-                  쟁점마다 별도로 누적됩니다. <Em>최대 5/5</Em>에 도달하면 결정적 모순으로 자백을 끌어냅니다.
+                  {t('pc.right.drawer.contradictionTip')}
                 </p>
                 <div className="pc-target-info-drawer__now">
-                  <span>현재 상태:</span>
+                  <span>{t('pc.right.drawer.currentState')}</span>
                   <strong>{disputeTokens} / 5</strong>
                 </div>
               </>
@@ -1168,15 +1169,15 @@ export default function PCRightPanel() {
             onDrop={handleCombinationDrop}
           >
             <div className="pc-skill-card__topline">
-              <div className="pc-skill-card__eyebrow">조합</div>
-              <button className="pc-skill-card__info-button" onClick={toggleCombinationPanel} type="button" title="조합 정보">?</button>
+              <div className="pc-skill-card__eyebrow">{t('pc.right.combo.title')}</div>
+              <button className="pc-skill-card__info-button" onClick={toggleCombinationPanel} type="button" title={t('pc.right.combo.info')}>?</button>
             </div>
 
             <div className="pc-combination-card__body">
               {comboReady ? (
                 <button className="pc-combination-card__attempt pc-combination-card__attempt--center" onClick={handleCombinationAttempt} type="button">
                   <PCSvgIcon id="i-bolt" size={20} />
-                  <span>조합 실행</span>
+                  <span>{t('pc.right.combo.execute')}</span>
                 </button>
               ) : readyLabRecipes.length > 0 ? (
                 <button
@@ -1188,12 +1189,13 @@ export default function PCRightPanel() {
                   <span className="pc-combination-card__ready-text">
                     {translate('pc.combo.readyItemsNotice', { count: readyLabRecipes.length })}
                   </span>
-                  <span className="pc-combination-card__ready-cta">확인</span>
+                  <span className="pc-combination-card__ready-cta">{t('pc.right.combo.check')}</span>
                 </button>
               ) : (
                 <div className="pc-combination-card__guide">
-                  <p><strong>증거</strong> 또는 <strong>발언 카드</strong>를 채워주신 후 조합을 실행해주세요.</p>
-                  <p className="pc-combination-card__guide-sub">드래그 앤 드롭 또는 Shift + 클릭</p>
+                  <p><strong>{t('pc.right.combo.evidence')}</strong> / <strong>{t('pc.right.combo.statementCard')}</strong></p>
+                  <p>{t('pc.right.combo.guide')}</p>
+                  <p className="pc-combination-card__guide-sub">{t('pc.right.combo.guideSub')}</p>
                 </div>
               )}
             </div>
@@ -1213,7 +1215,7 @@ export default function PCRightPanel() {
                   type="button"
                   className="pc-combination-drawer__close"
                   onClick={() => { setAutoMatchPanelOpen(false); setAutoMatchConfirming(false) }}
-                  aria-label="닫기"
+                  aria-label={t('pc.common.close')}
                 >
                   ✕
                 </button>
@@ -1222,18 +1224,18 @@ export default function PCRightPanel() {
               {!autoMatchConfirming ? (
                 <>
                   <div className="pc-combination-drawer__breakdown">
-                    <CategoryRow label="증거 + 증거" ready={recipeBreakdown.ee.ready} potential={recipeBreakdown.ee.potential} />
-                    <CategoryRow label="증거 + 발언" ready={recipeBreakdown.es.ready} potential={recipeBreakdown.es.potential} />
-                    <CategoryRow label="발언 + 발언" ready={recipeBreakdown.ss.ready} potential={recipeBreakdown.ss.potential} />
+                    <CategoryRow label={t('pc.right.combo.category.ee')} ready={recipeBreakdown.ee.ready} potential={recipeBreakdown.ee.potential} />
+                    <CategoryRow label={t('pc.right.combo.category.es')} ready={recipeBreakdown.es.ready} potential={recipeBreakdown.es.potential} />
+                    <CategoryRow label={t('pc.right.combo.category.ss')} ready={recipeBreakdown.ss.ready} potential={recipeBreakdown.ss.potential} />
                   </div>
 
                   <p className="pc-combination-drawer__lede">
-                    증거 수첩과 발언 노트에 <strong>하이라이트</strong>된 항목들 사이에 숨겨진 조합이 있습니다.
+                    {t('pc.right.combo.lede')}
                   </p>
 
                   <div className="pc-combination-drawer__auto">
                     <p className="pc-combination-drawer__auto-desc">
-                      <strong>스킬 포인트</strong>를 소비해 조합이 가능한 재료를 자동 배치할 수 있습니다.
+                      {t('pc.right.combo.autoDesc')}
                     </p>
                     <button
                       className="pc-combination-drawer__auto-cta"
@@ -1243,25 +1245,24 @@ export default function PCRightPanel() {
                     >
                       <span className="pc-combination-drawer__auto-cta-label">
                         <PCSvgIcon id="i-link" size={14} />
-                        <span>자동 매칭</span>
+                        <span>{t('pc.right.combo.autoMatch')}</span>
                       </span>
-                      <span className="pc-combination-drawer__auto-cost" title={`스킬 포인트 ${autoMatchCost} 소비`}>
+                      <span className="pc-combination-drawer__auto-cost" title={t('pc.right.combo.autoCost', { cost: autoMatchCost })}>
                         <PCSvgIcon id="i-link" size={12} />
                         <span>{autoMatchCost}</span>
                       </span>
                     </button>
                     {readyLabRecipes.length === 0 ? (
-                      <p className="pc-combination-drawer__warn">지금은 자동 매칭할 준비된 조합이 없습니다.</p>
+                      <p className="pc-combination-drawer__warn">{t('pc.right.combo.noReady')}</p>
                     ) : globalSkillPoints < autoMatchCost ? (
-                      <p className="pc-combination-drawer__warn">스킬 포인트가 부족합니다.</p>
+                      <p className="pc-combination-drawer__warn">{t('pc.right.toast.insufficientSkill')}</p>
                     ) : null}
                   </div>
                 </>
               ) : (
                 <>
                   <p className="pc-combination-drawer__confirm-text">
-                    자동 매칭에 스킬 포인트 <strong>{autoMatchCost}</strong>이 소비됩니다.<br />
-                    매칭을 진행할까요?
+                    {t('pc.right.combo.confirmText', { cost: autoMatchCost })}
                   </p>
                   <div className="pc-combination-drawer__confirm-actions">
                     <button
@@ -1269,14 +1270,14 @@ export default function PCRightPanel() {
                       onClick={() => setAutoMatchConfirming(false)}
                       type="button"
                     >
-                      아니오
+                      {t('pc.right.combo.no')}
                     </button>
                     <button
                       className="pc-combination-drawer__auto-cta is-primary"
                       onClick={handleAutoMatchConfirm}
                       type="button"
                     >
-                      예, 매칭합니다
+                      {t('pc.right.combo.yes')}
                     </button>
                   </div>
                 </>
@@ -1296,9 +1297,9 @@ export default function PCRightPanel() {
       {isInterrogationPhase ? (
         <section className="sec pc-right-block pc-right-block--summary">
           <div className="pc-skill-card pc-summary-card pc-right-card">
-            <div className="pc-skill-card__eyebrow">{'요약'}</div>
+            <div className="pc-skill-card__eyebrow">{t('pc.right.summary.title')}</div>
             <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
-              <span className="pc-summary-button__text">{'기록 정리'}</span>
+              <span className="pc-summary-button__text">{t('pc.right.summary.record')}</span>
             </button>
           </div>
         </section>
@@ -1358,8 +1359,8 @@ function CategoryRow({ label, ready, potential }: { label: string; ready: number
     <div className="pc-combination-card__cat-row">
       <span className="pc-combination-card__cat-label">{label}</span>
       <span className="pc-combination-card__cat-counts">
-        {ready > 0 ? <span className="pc-combination-card__cat-ready"><PCSvgIcon id="i-link" size={12} /> 준비 {ready}</span> : null}
-        {potential > 0 ? <span className="pc-combination-card__cat-potential"><PCSvgIcon id="i-search" size={12} /> 실마리 {potential}</span> : null}
+        {ready > 0 ? <span className="pc-combination-card__cat-ready"><PCSvgIcon id="i-link" size={12} /> {translate('pc.right.combo.readyLabel', { count: ready })}</span> : null}
+        {potential > 0 ? <span className="pc-combination-card__cat-potential"><PCSvgIcon id="i-search" size={12} /> {translate('pc.right.combo.potentialLabel', { count: potential })}</span> : null}
       </span>
     </div>
   )
@@ -1376,8 +1377,9 @@ function CombinationSlot({
   displayText: string | null
   onClear: () => void
 }) {
+  const { locale } = useI18n()
   const fallback = node ? node.label.replace(/^note:/, '') : '\uBE44\uC5B4 \uC788\uC74C'
-  const text = displayText ?? fallback
+  const text = localizeRuntimeText(displayText ?? fallback, locale)
   return (
     <button
       className={`pc-combination-slot${node ? ' is-filled' : ''}`}
@@ -1394,19 +1396,20 @@ function CombinationSlot({
 function getNodeDisplayLabel(
   node: CombinationLabNode,
   caseData: { evidence: { id: string; name?: string; surfaceName?: string }[] } | null,
+  locale: ReturnType<typeof useI18n>['locale'],
 ): string {
   if (node.type === 'evidence' || node.type === 'derived_evidence') {
     const srcId = node.sourceRef ?? node.linkedEvidenceIds?.[0] ?? node.id
     const ev = caseData?.evidence.find((e) => e.id === srcId)
-    if (ev?.surfaceName) return ev.surfaceName
-    return node.label.replace(/^[a-z]+-\d+\s+/i, '').replace(/^note:/, '')
+    if (ev?.surfaceName) return localizeRuntimeText(ev.surfaceName, locale)
+    return localizeRuntimeText(node.label.replace(/^[a-z]+-\d+\s+/i, '').replace(/^note:/, ''), locale)
   }
   if (node.type === 'statement') {
     const match = node.label.match(/["\u201C\u201D]([^"\u201C\u201D]+)["\u201C\u201D]/)
-    if (match) return match[1]
-    return node.label.replace(/^[A-Za-z\uAC00-\uD7A3]+\s*\uC758\s*\uBC1C\uC5B8\s*/, '').replace(/^[a-z]+-\d+\s+/i, '')
+    if (match) return localizeRuntimeText(match[1], locale)
+    return localizeRuntimeText(node.label.replace(/^[A-Za-z\uAC00-\uD7A3]+\s*\uC758\s*\uBC1C\uC5B8\s*/, '').replace(/^[a-z]+-\d+\s+/i, ''), locale)
   }
-  return node.label.replace(/^note:/, '').replace(/^[a-z]+-\d+\s+/i, '')
+  return localizeRuntimeText(node.label.replace(/^note:/, '').replace(/^[a-z]+-\d+\s+/i, ''), locale)
 }
 
 // 라벨 헬퍼는 utils/combinationLabels.ts로 통합됨
@@ -1425,14 +1428,14 @@ function normalizeNodeText(text: string | undefined): string {
   return (text ?? '').toLowerCase().replace(/\s+/g, '')
 }
 
-function getTrustStateLabel(value: number): string {
+function getTrustStateLabel(value: number, t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string): string {
   if (value >= 70) {
-    return '\uC2E0\uB8B0'
+    return t('pc.right.trust.trust')
   }
   if (value >= 40) {
-    return '\uACBD\uACC4'
+    return t('pc.right.trust.caution')
   }
-  return '\uC758\uC2EC'
+  return t('pc.right.trust.doubt')
 }
 
 function hasWitnessCombinationResult(
@@ -1625,17 +1628,17 @@ function escapeAttributeValue(value: string): string {
 
 function getResultKindLabel(kind: string): string {
   const labels: Record<string, string> = {
-    unlock_evidence: '\uC0C8 \uC99D\uAC70',
-    unlock_note: '\uC0C8 \uBC1C\uC5B8',
-    unlock_question: '\uC0C8 \uC9C8\uBB38',
-    unlock_dispute: '\uC0C8 \uC7C1\uC810',
-    unlock_witness_angle: '새 증인',
-    unlock_statement: '\uC9C4\uC220 \uD574\uAE08',
-    upgrade_evidence: '\uC99D\uAC70 \uAC15\uD654',
-    upgrade_dispute: '\uC7C1\uC810 \uAC15\uD654',
-    reframe_evidence: '\uC99D\uAC70 \uC7AC\uAD6C\uC131',
-    reframe_dispute: '\uC7C1\uC810 \uC7AC\uAD6C\uC131',
-    elevate_reliability: '\uC2E0\uB8B0\uB3C4 \uC0C1\uC2B9',
+    unlock_evidence: translate('pc.court.combination.summary.evidence'),
+    unlock_note: translate('pc.court.combination.summary.note'),
+    unlock_question: translate('pc.court.combination.summary.question'),
+    unlock_dispute: translate('pc.court.combination.summary.dispute'),
+    unlock_witness_angle: translate('pc.right.combo.tag.newWitness'),
+    unlock_statement: translate('pc.court.combination.summary.statement'),
+    upgrade_evidence: translate('pc.court.combination.summary.reliability'),
+    upgrade_dispute: translate('pc.court.combination.summary.dispute'),
+    reframe_evidence: translate('pc.court.combination.summary.context'),
+    reframe_dispute: translate('pc.court.combination.summary.dispute'),
+    elevate_reliability: translate('pc.court.combination.summary.reliability'),
   }
-  return labels[kind] ?? kind
+  return labels[kind] ?? kind.replace(/_/g, ' ')
 }

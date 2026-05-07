@@ -4,34 +4,35 @@ import { GamePhase, Phase } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { playPhaseTransition, playBgm } from '../../engine/soundEngine'
 import { shouldPlayCutscene } from '../../engine/vfxHierarchyEngine'
+import { useI18n, type MessageKey } from '../../i18n'
 
 interface CutsceneSpec {
   label: string
-  title: string
-  subtitle: string
+  titleKey: MessageKey
+  subtitleKey: MessageKey
 }
 
 /** Phase 전환 시 컷씬에 노출할 3단 카피. 정의되지 않은 Phase는 컷씬 없이 조용히 전환. */
 const PHASE_CUTSCENE: Partial<Record<GamePhase, CutsceneSpec>> = {
   [Phase.Pretrial]: {
     label: 'Phase 1',
-    title: '초기 진술',
-    subtitle: '초기 진술을 주의깊게 관찰해주세요.',
+    titleKey: 'pc.phase.pretrial',
+    subtitleKey: 'pc.phase.pretrial.subtitle',
   },
   [Phase.Interrogation]: {
     label: 'Phase 2',
-    title: '심문',
-    subtitle: '직접 심문을 통해 진실을 파악해주세요.',
+    titleKey: 'pc.phase.interrogation',
+    subtitleKey: 'pc.phase.interrogation.subtitle',
   },
   [Phase.Mediation]: {
     label: 'Phase 3',
-    title: '판결 진입',
-    subtitle: '기록을 닫기 전에, 더 심리할지 판결 절차로 들어갈지 결정합니다.',
+    titleKey: 'pc.phase.mediation',
+    subtitleKey: 'pc.phase.mediation.subtitle',
   },
   [Phase.Verdict]: {
     label: 'Phase 4',
-    title: '판결',
-    subtitle: '판단 내용을 기준으로 판결을 내려주세요.',
+    titleKey: 'pc.phase.verdict',
+    subtitleKey: 'pc.phase.verdict.subtitle',
   },
 }
 
@@ -48,6 +49,7 @@ const PHASE_BGM: Partial<Record<GamePhase, string>> = {
 const CUTSCENE_DURATION_MS = 1650
 
 export default function PhaseTransition() {
+  const { t } = useI18n()
   const currentPhase = useStore((s) => s.currentPhase)
   const [visible, setVisible] = useState(false)
   const [activeSpec, setActiveSpec] = useState<CutsceneSpec | null>(null)
@@ -105,8 +107,8 @@ export default function PhaseTransition() {
     <div className="pc-phase-cutscene" role="presentation" key={activeSpec.label}>
       <div className="pc-phase-cutscene__band">
         <div className="pc-phase-cutscene__label">{activeSpec.label}</div>
-        <h2 className="pc-phase-cutscene__title">{activeSpec.title}</h2>
-        <p className="pc-phase-cutscene__subtitle">{activeSpec.subtitle}</p>
+        <h2 className="pc-phase-cutscene__title">{t(activeSpec.titleKey)}</h2>
+        <p className="pc-phase-cutscene__subtitle">{t(activeSpec.subtitleKey)}</p>
       </div>
     </div>,
     document.body,

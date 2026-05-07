@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 type TokenType = 'investigation' | 'skill' | 'court'
 
@@ -80,7 +81,7 @@ export default function TokenSpendEffect() {
             top: notif.y,
           }}
         >
-          <span className="pc-token-spend-float__label">{TOKEN_LABELS[notif.type]}</span>
+          <span className="pc-token-spend-float__label">{localizeRuntimeText(TOKEN_LABELS[notif.type])}</span>
           <span className="pc-token-spend-float__amount">-{notif.amount}</span>
         </div>
       ))}

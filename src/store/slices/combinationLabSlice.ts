@@ -10,6 +10,8 @@ import type {
 } from '../../types'
 import { stripOutputCodename } from '../../utils/combinationLabels'
 import { isEvidenceFullyInvestigated } from '../../engine/evidenceEngine'
+import { getRuntimeTextLocale } from '../../i18n/runtimeText'
+import type { LocaleCode } from '../../i18n/locales'
 
 export interface CombinationLabHistoryEntry {
   recipeId: string
@@ -49,22 +51,59 @@ const EMPTY_RUNTIME: CombinationLabRuntimeState = {
 }
 
 const SPOUSE01_COMBINE2_OUTPUT_ID = 'dc-6'
-const SPOUSE01_COMBINE2_LABEL = 'dc-6 가족 쪽 정황'
-const SPOUSE01_COMBINE2_DISCOVERY_TEXT = '영수증 묶음 속 중학교 참고서와 문자에 섞인 학교 알림이 가족 쪽 정황으로 맞물린다.'
-const SPOUSE01_COMBINE2_SUMMARY = '영수증의 참고서와 문자 속 학교 알림을 함께 보며 가족 쪽 정황을 분리하는 카드'
-const SPOUSE01_COMBINE2_NOTE = '가족 쪽 정황'
-const SPOUSE01_COMBINE2_JUDGE_HINT = '문자와 구매 품목이 같은 가족 쪽 정황을 가리킵니다. 누구와 관련된 일인지와 왜 숨겼는지를 따로 확인해야 합니다.'
 const SPOUSE01_STALE_COMBINE2_JUDGE_LINE = '오피스텔의 사람을 짚어야겠습니다'
+
+const SPOUSE01_COMBINE2_COPY: Record<LocaleCode, {
+  label: string
+  discoveryText: string
+  summary: string
+  note: string
+  judgeHint: string
+}> = {
+  ko: {
+    label: 'dc-6 가족 쪽 정황',
+    discoveryText: '영수증 묶음 속 중학교 참고서와 문자에 섞인 학교 알림이 가족 쪽 정황으로 맞물린다.',
+    summary: '영수증의 참고서와 문자 속 학교 알림을 함께 보며 가족 쪽 정황을 분리하는 카드',
+    note: '가족 쪽 정황',
+    judgeHint: '문자와 구매 품목이 같은 가족 쪽 정황을 가리킵니다. 누구와 관련된 일인지와 왜 숨겼는지를 따로 확인해야 합니다.',
+  },
+  en: {
+    label: 'dc-6 Family-side context',
+    discoveryText: 'The middle-school workbook in the receipt bundle and the school notice mixed into the text messages point to a family-side context.',
+    summary: 'A card that separates the family-side context by reading the workbook receipt together with the school notice in the messages.',
+    note: 'Family-side context',
+    judgeHint: 'The messages and purchased items point to the same family-side context. Confirm who it concerns and why it was hidden separately.',
+  },
+  ja: {
+    label: 'dc-6 家族側の事情',
+    discoveryText: '領収書束の中学校参考書と、メッセージに混じった学校通知が、家族側の事情としてつながります。',
+    summary: '領収書の参考書とメッセージ内の学校通知を合わせて見て、家族側の事情を切り分けるカード。',
+    note: '家族側の事情',
+    judgeHint: 'メッセージと購入品は同じ家族側の事情を示しています。誰に関することか、なぜ隠したのかを別々に確認する必要があります。',
+  },
+  'zh-CN': {
+    label: 'dc-6 家庭方面的情况',
+    discoveryText: '收据包里的初中参考书和短信中夹杂的学校通知，指向同一条家庭方面的情况。',
+    summary: '将收据中的参考书与短信里的学校通知合并查看，用来区分家庭方面情况的卡片。',
+    note: '家庭方面的情况',
+    judgeHint: '短信和购买物品指向同一条家庭方面的情况。需要分别确认这与谁有关，以及为什么被隐瞒。',
+  },
+}
+
+function spouse01Combine2Copy() {
+  return SPOUSE01_COMBINE2_COPY[getRuntimeTextLocale()] ?? SPOUSE01_COMBINE2_COPY.ko
+}
 
 function normalizeCaseKeyLocal(caseId?: string | null): string {
   return String(caseId ?? '').replace(/^case-/, '')
 }
 
 function spouse01Combine2Node(): CombinationLabNode {
+  const copy = spouse01Combine2Copy()
   return {
     id: SPOUSE01_COMBINE2_OUTPUT_ID,
     type: 'derived_note',
-    label: SPOUSE01_COMBINE2_LABEL,
+    label: copy.label,
     linkedDisputeIds: ['d-1', 'd-2'],
     linkedEvidenceIds: ['e-1', 'e-4'],
     visibility: 'derived',
@@ -72,12 +111,13 @@ function spouse01Combine2Node(): CombinationLabNode {
 }
 
 function spouse01Combine2Output(): CombinationLabOutput {
+  const copy = spouse01Combine2Copy()
   return {
     id: SPOUSE01_COMBINE2_OUTPUT_ID,
-    label: SPOUSE01_COMBINE2_LABEL,
-    summary: SPOUSE01_COMBINE2_SUMMARY,
+    label: copy.label,
+    summary: copy.summary,
     nodeType: 'derived_note',
-    noteText: SPOUSE01_COMBINE2_NOTE,
+    noteText: copy.note,
     effects: [
       {
         kind: 'unlock_note',
@@ -91,7 +131,7 @@ function spouse01Combine2Output(): CombinationLabOutput {
         },
       },
     ],
-    judgeHint: SPOUSE01_COMBINE2_JUDGE_HINT,
+    judgeHint: copy.judgeHint,
   }
 }
 
@@ -134,7 +174,7 @@ function patchSpouse01CombinationConfig(config: CombinationLabConfig | null): Co
       ? {
           ...recipe,
           inputs: ['e-1', 'e-4'],
-          discoveryText: SPOUSE01_COMBINE2_DISCOVERY_TEXT,
+          discoveryText: spouse01Combine2Copy().discoveryText,
           outputId: SPOUSE01_COMBINE2_OUTPUT_ID,
         }
       : recipe
@@ -147,6 +187,7 @@ function patchSpouse01RuntimeState(root: any): Partial<any> | null {
   if (normalizeCaseKeyLocal(root.caseData?.caseId) !== 'spouse-01') return null
 
   const runtime = root.combinationLabRuntime as CombinationLabRuntimeState | undefined
+  const combine2Copy = spouse01Combine2Copy()
   const patchedConfig = patchSpouse01CombinationConfig(runtime?.config ?? root.caseData?.combinationLab ?? null)
   if (!runtime || !patchedConfig) return null
 
@@ -159,7 +200,7 @@ function patchSpouse01RuntimeState(root: any): Partial<any> | null {
   const history = Array.isArray(runtime.history)
     ? runtime.history.map((entry) => (
         entry.recipeId === 'combine-2' && entry.outputId === 'dc-1'
-          ? { ...entry, outputId: SPOUSE01_COMBINE2_OUTPUT_ID, summary: SPOUSE01_COMBINE2_SUMMARY }
+          ? { ...entry, outputId: SPOUSE01_COMBINE2_OUTPUT_ID, summary: combine2Copy.summary }
           : entry
       ))
     : []
@@ -180,7 +221,7 @@ function patchSpouse01RuntimeState(root: any): Partial<any> | null {
           ) {
             return {
               ...entry,
-              text: `조합 결과: ${SPOUSE01_COMBINE2_NOTE}\n${SPOUSE01_COMBINE2_DISCOVERY_TEXT}`,
+              text: `조합 결과: ${combine2Copy.note}\n${combine2Copy.discoveryText}`,
             }
           }
           return entry
@@ -211,7 +252,7 @@ function patchSpouse01RuntimeState(root: any): Partial<any> | null {
       appliedRecipeIds,
       discoveredNodeIds: nextDiscoveredNodeIds,
       unlockedNotes: combine2Applied
-        ? { ...(runtime.unlockedNotes ?? {}), [SPOUSE01_COMBINE2_OUTPUT_ID]: SPOUSE01_COMBINE2_NOTE }
+        ? { ...(runtime.unlockedNotes ?? {}), [SPOUSE01_COMBINE2_OUTPUT_ID]: combine2Copy.note }
         : (runtime.unlockedNotes ?? {}),
       history,
     },

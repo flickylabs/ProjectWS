@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { consumePrefetchedPhase1, consumePrefetchedPhase2 } from './Phase0_CaseIntro'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { playClick } from '../../engine/soundEngine'
+import { useI18n } from '../../i18n'
 import type { DialogueEntry } from '../../types'
 import type { GamePhase } from '../../types'
 
@@ -30,6 +31,7 @@ interface Props {
 }
 
 export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, phaseKey }: Props) {
+  const { t } = useI18n()
   const advancePhase = useStore((s) => s.advancePhase)
   const [allDone, setAllDone] = useState(false)
   const [displayCount, setDisplayCount] = useState(0)
@@ -161,7 +163,7 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
       dlgs.forEach((d, i) => { if (d.speaker === 'choice') console.log('[AutoDialogue] choice at idx', i, 'choiceId:', d.choiceId, 'options:', d.options?.length) })
       if (dlgs.length === 0) {
         const state = useGameStore.getState()
-        state.addDialogue({ speaker: 'system', text: '진술이 준비되지 않았습니다.', relatedDisputes: [], turn: state.turnCount })
+        state.addDialogue({ speaker: 'system', text: t('pc.dialogue.notReady'), relatedDisputes: [], turn: state.turnCount })
         setAllDoneSync(true)
         return
       }
@@ -261,7 +263,7 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
     return (
       <div className="pc-dialogue-loading">
         <div className="pc-dialogue-loading__spinner" />
-        <span>AI가 진술을 준비하고 있습니다...</span>
+        <span>{t('pc.dialogue.loading')}</span>
       </div>
     )
   }
@@ -271,7 +273,7 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
     return createPortal(
       <div className="v4-choice-overlay">
         <div className="v4-choice-panel">
-          <div className="v4-choice-panel__label">재판관의 판단</div>
+          <div className="v4-choice-panel__label">{t('pc.dialogue.choiceJudgeDecision')}</div>
           {activeChoice.options.map((option, idx) => (
             <button
               key={option.id}
@@ -297,7 +299,7 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
         onClick={handleTap}
         type="button"
       >
-        <span className="pc-dialogue-advance__label">다음 진술</span>
+        <span className="pc-dialogue-advance__label">{t('pc.dialogue.nextStatement')}</span>
         <span className="pc-dialogue-advance__count">{displayCount}/{totalCount}</span>
         <kbd>Space</kbd>
       </button>

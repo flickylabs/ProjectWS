@@ -369,6 +369,7 @@ export interface CaseData {
   lieConfigA: LieConfig[]
   lieConfigB: LieConfig[]
   solutions: Record<string, string[]>
+  solutionCategoryLabels?: Record<string, string>
   activeLedgerEntries: string[]
   activeThirdParties: string[]
   /** 증거 표면화 기본 3장 — PC에서 처음 보이는 증거 */

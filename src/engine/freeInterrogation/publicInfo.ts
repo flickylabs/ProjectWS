@@ -1,5 +1,11 @@
 import type { CharacterProfile, PartyId } from '../../types'
 import type { FreeInterrogationRuntimeContext } from '../../types/freeInterrogation'
+import type { LocaleCode } from '../../i18n/locales.ts'
+import {
+  getLlmLocale,
+  getLocalizedFreeQuestionFallbackText,
+} from '../../i18n/llmLocale.ts'
+import { localizeRuntimeText } from '../../i18n/runtimeText.ts'
 
 const RELATIONSHIP_LABELS: Record<string, string> = {
   spouse: '배우자',
@@ -24,6 +30,12 @@ export function buildFreeInterrogationPublicAnswer(
   rawText: string,
   context: FreeInterrogationRuntimeContext,
 ): string {
+  const locale = getLlmLocale()
+  const directRelationshipAnswer = buildDirectCounterpartRelationshipAnswer(rawText, context, locale)
+  if (directRelationshipAnswer) return directRelationshipAnswer
+
+  if (locale !== 'ko') return buildLocalizedFreeInterrogationPublicAnswer(rawText, context, locale)
+
   const raw = rawText.trim()
   const speaker = resolveFreeInterrogationPublicSpeaker(raw, context)
   const speakerParty = speaker === 'a' || speaker === 'b' ? speaker : null
@@ -81,15 +93,132 @@ export function buildFreeInterrogationPublicAnswer(
 }
 
 export function buildFreeInterrogationOffTopicRedirect(): string {
+  const localized = getLocalizedFreeQuestionFallbackText('off_topic')
+  if (localized) return localized
   return '그건 사건 밖 질문입니다. 사건, 인물, 증거와 관련해 물어봐 주세요.'
 }
 
 export function buildFreeInterrogationNoTokenText(): string {
+  const localized = getLocalizedFreeQuestionFallbackText('no_token')
+  if (localized) return localized
   return '조사권이 부족합니다. 공개 정보나 사건 범위 확인은 가능하지만, 유효한 심문은 조사권 1개가 필요합니다.'
 }
 
 export function buildFreeInterrogationGameplayHelp(): string {
+  const localized = getLocalizedFreeQuestionFallbackText('gameplay_help')
+  if (localized) return localized
   return '자유 질문은 현재 심문 중인 인물에게 직접 묻는 기능입니다. 사건의 사실, 동기, 감정, 공개된 증거를 기준으로 질문해 주세요. 숨겨진 정답이나 아직 열리지 않은 증거를 요구하면 답변하지 않습니다.'
+}
+
+function buildLocalizedFreeInterrogationPublicAnswer(
+  rawText: string,
+  context: FreeInterrogationRuntimeContext,
+  locale: Exclude<LocaleCode, 'ko'>,
+): string {
+  const raw = rawText.trim()
+  const speaker = resolveFreeInterrogationPublicSpeaker(raw, context)
+  const speakerParty = speaker === 'a' || speaker === 'b' ? speaker : null
+  const speakerProfile = speakerParty === 'a'
+    ? context.caseData.duo.partyA
+    : speakerParty === 'b'
+      ? context.caseData.duo.partyB
+      : null
+  const mentionedParty = resolveMentionedParty(raw, context)
+  const party = speakerProfile ?? mentionedParty
+  const partyA = context.caseData.duo.partyA
+  const partyB = context.caseData.duo.partyB
+  const relationship = getLocalizedPublicRelationship(context, locale)
+  const caseDescription = localizeRuntimeText(context.caseData.context.description, locale)
+
+  if (party) {
+    const partyName = localizeRuntimeText(party.name, locale)
+    const occupation = localizeRuntimeText(party.occupation, locale)
+    if (locale === 'en') {
+      return `${partyName}: ${party.age}, ${occupation}. This answer is limited to public case information.`
+    }
+    if (locale === 'ja') {
+      return `${partyName}: ${party.age}歳、${occupation}。公開済みの事件情報の範囲で答えています。`
+    }
+    return `${partyName}：${party.age}岁，${occupation}。此回答仅限于已公开的案件信息。`
+  }
+
+  if (isCourtroomContextQuestion(raw) || isJudgeRoleQuestion(raw)) {
+    if (locale === 'en') {
+      return 'This is a courtroom scene where the judge examines the parties’ statements and disclosed evidence. Facts that have not been revealed yet must be established through questioning and evidence.'
+    }
+    if (locale === 'ja') {
+      return 'ここは、裁判官が当事者の供述と公開済みの証拠を確認する法廷です。まだ明かされていない事実は、質問と証拠によって確認する必要があります。'
+    }
+    return '这是由裁判官核对当事人陈述和已公开证据的法庭场景。尚未揭示的事实必须通过提问和证据来确认。'
+  }
+
+  const partyAName = localizeRuntimeText(partyA.name, locale)
+  const partyBName = localizeRuntimeText(partyB.name, locale)
+  if (locale === 'en') {
+    return `${partyAName} and ${partyBName} are connected through ${relationship}. Case background: ${caseDescription}`
+  }
+  if (locale === 'ja') {
+    return `${partyAName}と${partyBName}の関係: ${relationship}。事件背景: ${caseDescription}`
+  }
+  return `${partyAName}与${partyBName}的关系：${relationship}。案件背景：${caseDescription}`
+}
+
+function buildDirectCounterpartRelationshipAnswer(
+  rawText: string,
+  context: FreeInterrogationRuntimeContext,
+  locale: LocaleCode,
+): string | null {
+  if (!context.target || !isDirectCounterpartRelationshipQuestion(rawText)) return null
+
+  const counterpart = context.target === 'a' ? context.caseData.duo.partyB : context.caseData.duo.partyA
+  const role = getCounterpartRelationRole(context, locale)
+  const counterpartName = localizeRuntimeText(counterpart.name, locale)
+
+  if (locale === 'en') return `Yes. I am ${counterpartName}'s ${role}.`
+  if (locale === 'ja') return `はい。私は${counterpartName}さんの${role}です。`
+  if (locale === 'zh-CN') return `对，我是${counterpartName}的${role}。`
+  return `맞습니다. 저는 ${counterpart.name} 씨의 ${role}입니다.`
+}
+
+function isDirectCounterpartRelationshipQuestion(rawText: string): boolean {
+  const compact = rawText.toLowerCase().replace(/\s+/g, '').replace(/[？?。！!,.，、]/g, '')
+  return [
+    /你是(他|她|对方|對方|那个人|那個人|尹.{0,4})?的(哥哥|弟弟|兄弟|姐姐|妹妹|兄长|兄長|弟妹)(吗|嗎|么|嘛|\?)?$/,
+    /你和(他|她|对方|對方|那个人|那個人|尹.{0,4})(是)?(什么|什麼|怎样|怎樣)关系/,
+    /你们(是)?(什么|什麼|怎样|怎樣)关系/,
+    /あなたは(彼|彼女|相手|.+さん)?の(兄|弟|兄弟|姉|妹)(ですか|か|\?)?$/,
+    /あなたと(彼|彼女|相手|.+さん)は(どういう|どんな|何の)関係/,
+    /areyou(his|her|their|.+s)(olderbrother|youngerbrother|brother|sister|sibling)\??$/,
+    /whatisyourrelationship(to|with)(him|her|them|theotherparty|.+)\??$/,
+    /(당신|본인|증인|당사자).*(그|상대|상대방|형제|윤).*(형|동생|오빠|언니|누나|남매|자매).*(입니까|인가요|맞습니까|\?)/,
+  ].some((pattern) => pattern.test(compact))
+}
+
+function getCounterpartRelationRole(
+  context: FreeInterrogationRuntimeContext,
+  locale: LocaleCode,
+): string {
+  const target = context.target === 'a' ? context.caseData.duo.partyA : context.caseData.duo.partyB
+  const counterpart = context.target === 'a' ? context.caseData.duo.partyB : context.caseData.duo.partyA
+  const relationshipType = context.caseData.duo.relationshipType ||
+    context.caseData.meta?.relationshipType ||
+    context.caseData.context.contextType
+
+  if (relationshipType === 'family' || context.caseId.includes('family')) {
+    const isOlder = typeof target.age === 'number' && typeof counterpart.age === 'number'
+      ? target.age >= counterpart.age
+      : context.caseId.includes('family') && context.target === 'a'
+    if (locale === 'en') return isOlder ? 'older brother' : 'younger brother'
+    if (locale === 'ja') return isOlder ? '兄' : '弟'
+    if (locale === 'zh-CN') return isOlder ? '哥哥' : '弟弟'
+    return isOlder ? '형' : '동생'
+  }
+
+  const fallback = RELATIONSHIP_LABELS[relationshipType] ?? relationshipType
+  if (locale === 'en') return fallback
+  if (locale === 'ja') return fallback
+  if (locale === 'zh-CN') return fallback
+  return fallback
 }
 
 const LIE_STATE_LABELS: Record<string, string> = {
@@ -226,6 +355,7 @@ export function resolveFreeInterrogationPublicSpeaker(
 ): PartyId | 'system' {
   if (!context.target) return 'system'
   if (isDirectPartyProfileQuestion(rawText)) return context.target
+  if (isDirectCounterpartRelationshipQuestion(rawText)) return context.target
   if (isCounterpartPublicQuestion(rawText)) return context.target
   if (isCourtroomContextQuestion(rawText) || isJudgeRoleQuestion(rawText)) return 'system'
   const raw = rawText.toLowerCase().replace(/\s+/g, '')
@@ -277,6 +407,16 @@ function getPublicRelationshipType(context: FreeInterrogationRuntimeContext): st
   return context.caseData.duo.relationshipType ||
     context.caseData.meta?.relationshipType ||
     context.caseData.context.contextType
+}
+
+function getLocalizedPublicRelationship(
+  context: FreeInterrogationRuntimeContext,
+  locale: Exclude<LocaleCode, 'ko'>,
+): string {
+  const raw = context.caseData.meta?.relationshipState ||
+    RELATIONSHIP_LABELS[getPublicRelationshipType(context)] ||
+    getPublicRelationshipType(context)
+  return localizeRuntimeText(raw, locale)
 }
 
 function formatPartyPublicProfile(raw: string, profile: CharacterProfile): string {

@@ -10,15 +10,16 @@ import { hasContradictionComparison } from '../../../utils/contradiction'
 import { isLowValueSystemDialogueText } from '../../../utils/systemLogPolicy'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
-import { translate } from '../../../i18n'
+import { translate, useI18n, type MessageKey } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
-const EMOTION_LABELS: Partial<Record<EmotionalPhase, string>> = {
-  confident: '자신감',
-  shaken: '동요',
-  angry: '격앙',
-  resigned: '체념',
+const EMOTION_LABEL_KEYS: Partial<Record<EmotionalPhase, MessageKey>> = {
+  confident: 'pc.hotbar.emotion.confident',
+  shaken: 'pc.hotbar.emotion.shaken',
+  angry: 'pc.hotbar.emotion.angry',
+  resigned: 'pc.hotbar.emotion.resigned',
 }
 
 const EXPLAINER_KEYWORDS = ['정리', '설명', '힌트', '구분', '주의', '필요']
@@ -53,30 +54,32 @@ function useRevealText(text: string, animate: boolean) {
 export type CombinationHintInfo = { readyCount: number; potentialCount: number }
 
 function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, isLatestForSpeaker }: { entry: DialogueEntryType; animate: boolean; combinableTexts?: Set<string>; combinationHintMap?: Map<string, CombinationHintInfo>; isLatestForSpeaker?: boolean }) {
+  const { locale, t } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
   const pendingFeedback = useStore((s) => s.dialoguePendingFeedback[entry.id])
   const currentTurn = useStore((s) => s.turnCount)
-  const rawText = sanitizeKoreanSurfaceText(entry.text ?? '')
+  const originalText = sanitizeKoreanSurfaceText(entry.text ?? '')
+  const rawText = localizeRuntimeText(originalText, locale)
   const displayText = useRevealText(rawText, animate)
-  const fullText = rawText.trim()
-  const nameA = caseData?.duo.partyA.name ?? '당사자 A'
-  const nameB = caseData?.duo.partyB.name ?? '당사자 B'
+  const fullText = originalText.trim()
+  const nameA = caseData?.duo.partyA.name ?? t('pc.interaction.partyA')
+  const nameB = caseData?.duo.partyB.name ?? t('pc.interaction.partyB')
 
-  const speakerName = entry.speaker === 'a' ? nameA
-    : entry.speaker === 'b' ? nameB
-    : entry.speaker === 'judge' ? '재판관'
-    : entry.speaker === 'witness' ? (entry.witnessName ?? '증인')
-    : '시스템'
+  const speakerName = entry.speaker === 'a' ? localizeRuntimeText(nameA, locale)
+    : entry.speaker === 'b' ? localizeRuntimeText(nameB, locale)
+    : entry.speaker === 'judge' ? t('script.tag.speaker.judge')
+    : entry.speaker === 'witness' ? localizeRuntimeText(entry.witnessName ?? t('pc.common.witness'), locale)
+    : t('pc.common.system')
 
   const openEntryDetail = useCallback(() => {
     openPcInteractionPanel({
       title: `Turn ${entry.turn}`,
-      subtitle: entry.behaviorHint ? '중요 발언' : '발언 기록',
+      subtitle: entry.behaviorHint ? t('pc.dialogue.importantUtterance') : t('pc.dialogue.record'),
       tone: entry.speaker === 'a' ? 'red' : entry.speaker === 'b' ? 'blue' : 'gold',
       variant: 'dialogue',
-      body: fullText,
+      body: rawText.trim(),
       dialogueTurn: entry.turn,
       dialogueSpeaker: entry.speaker,
       dialogueSpeakerName: speakerName,
@@ -84,7 +87,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       dialogueBehaviorHint: entry.behaviorHint,
       dialogueId: entry.id,
     })
-  }, [entry, fullText, speakerName])
+  }, [entry, rawText, speakerName, t])
 
   if (entry.speaker === 'system') {
     const contradiction = hasContradictionComparison(entry.contradictionMeta)
@@ -100,7 +103,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       const isExpired = turnsPassed >= expireAfter
       const isConsumed = !!pendingFeedback.consumed
       const isActive = !isConsumed && !isExpired
-      const badge = isConsumed ? '확인 완료' : isExpired ? '만료' : '지금 확인'
+      const badge = isConsumed ? t('pc.dialogue.pending.done') : isExpired ? t('pc.dialogue.pending.expired') : t('pc.dialogue.pending.now')
       // [TC-A2 픽스] tone 기반 클래스 분기 — 'alert'는 빨강(모순/공격), 기본은 골드(권위/주의 환기)
       const tone = (pendingFeedback.payload as any)?.tone
       const activeClass = tone === 'alert' ? ' is-alert' : ' is-urgent'
@@ -169,23 +172,23 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
               const isSpoilerSafe = true
               const accusedName = contradiction.party === 'a' ? nameA : nameB
               openPcInteractionPanel({
-                title: '모순 발견',
-                subtitle: `${accusedName} 진술 비교`,
+                title: t('pc.dialogue.contradiction.title'),
+                subtitle: t('pc.dialogue.contradiction.subtitle', { name: accusedName }),
                 tone: 'gold',
                 variant: 'feature',
                 body: isSpoilerSafe
-                  ? '이전 진술과 현재 진술 사이에서 모순이 감지되었습니다. 모순을 누적하면 거짓 상태가 흔들리고, 새로운 진술이나 단서가 열릴 수 있습니다.'
-                  : `${accusedName}의 진술 흐름에서 어긋남이 감지되었습니다. 모순을 찌르면 다음 단서가 열릴 수 있습니다.`,
+                  ? t('pc.dialogue.contradiction.bodySafe')
+                  : t('pc.dialogue.contradiction.bodyGeneric', { name: accusedName }),
                 contrast: isSpoilerSafe ? {
-                  left:  { label: contradiction.previousLabel ?? '이전 발언 A', text: contradiction.previousClaim },
-                  right: { label: contradiction.currentLabel ?? '현재 발언 B', text: contradiction.currentClaim },
+                  left:  { label: contradiction.previousLabel ?? t('pc.dialogue.contradiction.previous'), text: contradiction.previousClaim },
+                  right: { label: contradiction.currentLabel ?? t('pc.dialogue.contradiction.current'), text: contradiction.currentClaim },
                 } : undefined,
-                blocks: [{ title: '왜 어긋나는지', text: contradiction.reason ?? '' }],
+                blocks: [{ title: t('pc.dialogue.contradiction.reasonTitle'), text: contradiction.reason ?? '' }],
                 actions: [
-                  { kind: 'close', label: '지금은 넘긴다' },
+                  { kind: 'close', label: t('pc.dialogue.contradiction.skip') },
                   {
                     kind: 'run_contradiction',
-                    label: '모순을 찌른다',
+                    label: t('pc.dialogue.contradiction.pursue'),
                     party: contradiction.party,
                     disputeId: contradiction.disputeId,
                     previousClaim: contradiction.previousClaim,
@@ -200,7 +203,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
               <PCSvgIcon id={iconId} size={20} />
             </span>
             <span className="pc-log-system-card__text">{displayText.trim()}</span>
-            <span className="pc-log-system-card__action-badge">{used ? '추궁 완료' : '추궁하기'}</span>
+            <span className="pc-log-system-card__action-badge">{used ? t('pc.dialogue.contradiction.done') : t('pc.dialogue.contradiction.action')}</span>
           </button>
         </div>
       )
@@ -258,7 +261,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
           <div className="pc-log-bubble__text">{displayText}</div>
           {entry.evidencePresentation ? (
             <div className="pc-log-bubble__evidence-presentation">
-              {entry.evidencePresentation.label}
+              {localizeRuntimeText(entry.evidencePresentation.label, locale)}
             </div>
           ) : null}
         </button>
@@ -268,12 +271,13 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
 
   if (entry.speaker === 'witness') {
     const witnessFavor = entry.witnessFavor === 'pro_b' ? 'is-right' : 'is-left'
-    const witnessName = entry.witnessName ?? '증인'
-    const witness = caseData?.duo.socialGraph.find((item) => item.name === witnessName)
-    const witnessPortrait = getWitnessPortraitPath(caseData?.caseId, witness?.id, witnessName)
-    const depthLabel = entry.behaviorHint?.includes('모호') ? '모호'
-      : entry.behaviorHint?.includes('부분') ? '부분'
-      : entry.behaviorHint?.includes('핵심') ? '핵심'
+    const rawWitnessName = entry.witnessName ?? t('pc.common.witness')
+    const witnessName = localizeRuntimeText(rawWitnessName, locale)
+    const witness = caseData?.duo.socialGraph.find((item) => item.name === rawWitnessName)
+    const witnessPortrait = getWitnessPortraitPath(caseData?.caseId, witness?.id, rawWitnessName)
+    const depthKey = entry.behaviorHint?.includes('모호') ? 'vague'
+      : entry.behaviorHint?.includes('부분') ? 'partial'
+      : entry.behaviorHint?.includes('핵심') ? 'full'
       : null
 
     return (
@@ -288,7 +292,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
           </button>
           <button className="pc-log-speaker__name is-witness pc-log-name--button" onClick={() => openEntryDetail()} type="button">
             <span>{witnessName}</span>
-            {depthLabel ? <span className={`pc-log-depth-badge is-${depthLabel === '모호' ? 'vague' : depthLabel === '부분' ? 'partial' : 'full'}`}>{depthLabel}</span> : null}
+            {depthKey ? <span className={`pc-log-depth-badge is-${depthKey}`}>{t(`pc.dialogue.depth.${depthKey}` as MessageKey)}</span> : null}
           </button>
         </div>
         <div className="pc-log-stack">
@@ -304,7 +308,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
   const profile = isPartyA ? caseData?.duo.partyA : caseData?.duo.partyB
   const agent = isPartyA ? agentA : agentB
   const emotion = entry.emotionSnapshot?.phase ?? agent?.emotionalState.phase
-  const emotionLabel = emotion ? EMOTION_LABELS[emotion] : null
+  const emotionLabel = emotion && EMOTION_LABEL_KEYS[emotion] ? t(EMOTION_LABEL_KEYS[emotion]) : null
   const faceId = profile ? getPcFaceSymbolId(isPartyA ? 'a' : 'b', profile, emotion) : 'i-person'
 
   return (
@@ -338,7 +342,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
           {entry.isConfidential ? (
             <div className="pc-log-bubble__confidential">
               <PCSvgIcon id="i-lock" size={12} />
-              <span>비공개 진술</span>
+              <span>{t('pc.dialogue.privateStatement')}</span>
             </div>
           ) : null}
           {(() => {
@@ -366,6 +370,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
 }
 
 export default function PCDialogueLog() {
+  const { t } = useI18n()
   const dialogueLog = useStore((s) => s.dialogueLog)
   const caseData = useStore((s) => s.caseData)
   const isLLMLoading = useStore((s) => s.isLLMLoading)
@@ -435,7 +440,7 @@ export default function PCDialogueLog() {
   return (
     <>
       {visibleEntries.length === 0 && !isLLMLoading ? (
-        <div className="pc-log-empty">사건이 시작되면 대화가 이곳에 표시됩니다.</div>
+        <div className="pc-log-empty">{t('pc.dialogue.empty')}</div>
       ) : null}
 
       <div className="pc-log-list">
@@ -452,8 +457,8 @@ export default function PCDialogueLog() {
                   speaker: entry.speaker,
                   speakerName: entry.speaker === 'a' ? (caseData?.duo.partyA.name ?? 'A')
                     : entry.speaker === 'b' ? (caseData?.duo.partyB.name ?? 'B')
-                    : entry.speaker === 'judge' ? '재판관'
-                    : entry.witnessName ?? '증인',
+                    : entry.speaker === 'judge' ? t('script.tag.speaker.judge')
+                    : entry.witnessName ?? t('pc.common.witness'),
                   text: entry.text,
                   turn: entry.turn,
                   relatedDisputes: entry.relatedDisputes,

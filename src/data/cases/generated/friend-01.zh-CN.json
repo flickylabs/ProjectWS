@@ -2,80 +2,4586 @@
   "caseId": "friend-01",
   "locale": "zh-CN",
   "overlayKind": "generatedCaseSurface",
+  "overlayScope": "full",
   "meta": {
-    "title": "断交的挚友"
-  },
-  "context": {
-    "description": "已断交的前挚友，一直在联络我的未婚夫。婚礼前三周——光看这一段，谁都会觉得是朋友越了线。",
-    "triggerAmplifier": "起初，崔秀敏九天的联络记录与宋多恩在共同朋友群里的发言相互叠合，崔秀敏看起来像是纠缠者。但随着未婚夫越线的消息、与宋多恩父亲相关的金钱接近模式逐步浮现，事件的中心从纠缠被推回到反复出现的沉默与污名身上。"
+    "anchorTruth": "崔秀敏并没有试图勾引准新娘，而是试图警告她，而在此之前，她自己也成为了恶棍，无法告诉宋多恩的父亲发生了什么事。",
+    "emotionalBait": "与我分手的前最好的朋友继续联系我的未婚夫。光是看到婚礼前三周的那一幕，任何人都会认为这位朋友已经越界了。",
+    "resolutionDilemma": "即使崔秀民每次的沉默都是出于保护，但最终却造成了更大的误解和耻辱。宋多恩仓促的决定很残酷，但这也是在不了解父亲真相的情况下的反应。",
+    "title": "最好的朋友失去了"
   },
   "duo": {
     "partyA": {
       "name": "宋多恩",
-      "occupation": "网店客服员工"
+      "occupation": "网上商城CS员工",
+      "speechStyle": "从结论开始，并在其中包含证据。当对方反驳时，你会提出已经说过的话，并将上下文缩小到自己的范围内。",
+      "fear": "他最怕父亲的真面目被揭露。",
+      "dailyRoutine": "在商场完成CS工作后，我准备与我的未婚夫结婚，并通过在与共同朋友的群聊中发布我的日常生活来维持关系。",
+      "sensitivePoints": [
+        "父亲的金钱问题",
+        "过去止损的真正原因",
+        "未经确认就发布在群聊室"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "对方还没说完，就以‘所以到底~’结束。"
+        },
+        {
+          "pattern": "他们将过去的案例作为当前判断的基础，并说：“你以前就这么做过。”"
+        },
+        {
+          "pattern": "当不利的点出现时，我们会缩小范围，说：“这不是我们现在讨论的。”"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "苏米纳",
+        "toJudge": "我的前朋友",
+        "angry": "崔苏民！"
+      }
     },
     "partyB": {
-      "name": "崔秀敏",
-      "occupation": "普拉提教练"
-    }
+      "name": "崔苏民",
+      "occupation": "普拉提教练",
+      "speechStyle": "抑制你的情绪，只列出事实。当我讲述最痛苦的故事时，我的声音变得平淡。",
+      "fear": "他知道，如果他告诉宋多恩关于他父亲的真相，他的朋友会认为他是没有还钱的人，所以他不能说到底。",
+      "dailyRoutine": "普拉提课结束后，我就自己收拾东西，和普通朋友的接触也逐渐减少。当我联系我的准丈夫时，我独自在一家咖啡馆发了一条短信。",
+      "sensitivePoints": [
+        "宋多恩父亲未偿还贷款造成的损失",
+        "事实是准新郎先跨过界线",
+        "再次成为反派的现状"
+      ],
+      "verbalTells": [
+        {
+          "pattern": "当谈论最痛苦的故事时，语气变得平淡，情感消失。"
+        },
+        {
+          "pattern": "他先承担责任，平息了对方的质疑，他说：“我应该忍受的。”"
+        },
+        {
+          "pattern": "他们没有直接提及关键人物的行为，而是间接地说，“那里有一个情况。”"
+        }
+      ],
+      "callTerms": {
+        "toPartner": "多恩",
+        "toJudge": "多恩",
+        "angry": "宋多恩！"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "description": "崔秀敏与未婚夫联系了9天，在群聊中被指责为“痴迷”。",
+        "distortionDirection": "宋多恩没有确认接触的意图，断定与过去的模式相同。"
+      },
+      {
+        "id": "ledger-2",
+        "description": "过去损失的真正原因是宋多恩的父亲不偿还贷款，但崔秀民无法告诉宋多恩，并宣称自己是恶棍。",
+        "distortionDirection": "宋多恩记得崔秀民因为金钱而改变了主意。"
+      },
+      {
+        "id": "ledger-3",
+        "description": "准新郎首先给崔秀民发了一条越界的信息，被崔秀民拒绝了。崔秀民随后的接触就是这种情况的延伸。",
+        "distortionDirection": "宋多恩自己并不知道这个事实。"
+      },
+      {
+        "id": "ledger-4",
+        "description": "宋多恩在群聊中批评了崔秀民，但没有得到证实，他们共同的朋友也同意了。",
+        "distortionDirection": "宋多恩以为自己是在“报道真相”，但实际上，这只是未经证实的假设。"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "w-1",
+        "name": "莎拉·金",
+        "knowledgeScope": "看到群聊里宋多恩的帖子后，我同意批评崔秀敏。事后我感到不安。",
+        "surfaceKnowledge": "他是共同的朋友和见证人，知道群聊室的气氛和宋多恩第一次说话的情况。",
+        "witnessProfile": {
+          "occupation": "美容院工作人员",
+          "relationToA": "我们从高中起就是朋友。",
+          "relationToB": "我是通过宋多恩认识他的。",
+          "speechStyle": "诚实一点，但稍微淡化你同意的部分。",
+          "addressJudge": "启禀大人",
+          "addressA": "多恩",
+          "addressB": "苏民先生",
+          "hiddenAgenda": "我很惭愧，我也参与了批评崔秀民的活动。"
+        }
+      },
+      {
+        "id": "w-2",
+        "name": "朴俊赫",
+        "knowledgeScope": "作为准新郎公司的后辈，我知道准新郎首先接触的是崔秀敏。",
+        "surfaceKnowledge": "他是第三方见证人，了解准新郎的行为模式。",
+        "witnessProfile": {
+          "occupation": "员工",
+          "relationToA": "我们互不认识。",
+          "relationToB": "我通过我的未婚夫见过一两次。",
+          "speechStyle": "说话要简洁，注重事实，避免做出不必要的判断。",
+          "addressJudge": "启禀大人",
+          "addressA": "他",
+          "addressB": "崔秀民",
+          "hiddenAgenda": "我很担心我和未来丈夫的工作关系可能会变得不舒服。"
+        }
+      },
+      {
+        "id": "w-3",
+        "name": "吴美京",
+        "knowledgeScope": "作为当地一家小吃店的老板，我过去看到宋多恩的父亲来向崔秀民借钱。崔秀民曾经哭着来到商店。",
+        "surfaceKnowledge": "他是过去目睹宋多恩父亲与崔秀民之间金钱交易的第三方证人。",
+        "witnessProfile": {
+          "occupation": "小吃店老板",
+          "relationToA": "我在附近看到了宋多恩的父亲。",
+          "relationToB": "我是商店的常客。",
+          "speechStyle": "说话要真诚，但要准确表达你所看到的。",
+          "addressJudge": "启禀大人",
+          "addressA": "房子的女儿",
+          "addressB": "苏民",
+          "hiddenAgenda": "不存在。"
+        }
+      }
+    ]
+  },
+  "context": {
+    "description": "与我分手的前最好的朋友继续联系我的未婚夫。光是看到婚礼前三周的那一幕，任何人都会认为这位朋友已经越界了。",
+    "triggerAmplifier": "一开始，崔秀民9天的联系记录和宋多恩在群聊里的评论重叠，让人觉得崔秀民是一个痴迷的人。然而，随着准新郎过分的信息和宋多恩父亲获取金钱的模式被揭露，案件的焦点不再是痴迷，而是反复的沉默和耻辱。",
+    "caseName": "最好的朋友失去了"
   },
   "disputes": [
     {
       "id": "d-1",
-      "name": "九天联络的意图"
+      "name": "9天联系意向",
+      "truthDescription": "崔秀敏与未婚夫联系了9天。宋多恩并没有沉迷其中，而是试图警告父亲他获取金钱的方式，但没有办法直接说出来。",
+      "mediationLink": "意图和联系方法的适当性",
+      "judgmentStatement": "崔秀民的接触是一种警告，而不是一种执念，但方法是否恰当需要单独判断。",
+      "verdictOptions": {
+        "wrong": "崔秀敏对她的未婚夫很痴迷，并多次与她联系。",
+        "partial": "崔秀民确实联系了他，但不清楚是痴迷还是其他意图。",
+        "truth": "崔秀敏联系了她的未婚夫，警告她宋多恩父亲的金钱获取模式。",
+        "defer": "没有足够的证据来确定接触的真实性质。我保留它。"
+      }
     },
     {
       "id": "d-2",
-      "name": "未婚夫越线的接近"
+      "name": "准新郎的越界做法",
+      "truthDescription": "准新郎首先给崔秀民发了一条越界的信息，被崔秀民拒绝了。崔秀民后来的接触就是这种情况的延伸。",
+      "mediationLink": "准新郎的接近和崔秀敏的回应",
+      "judgmentStatement": "准新郎第一个冲过终点线，崔秀敏拒绝了。",
+      "v3UnlockPlan": {
+        "runtimeRule": "当任何一方达到 d-1 S3 或更高时解锁。",
+        "authoredRule": "在任何一次审讯中，如果 d-1 中的沟通意图出现裂痕，准新郎的接近方式就会被揭露。"
+      },
+      "verdictOptions": {
+        "wrong": "崔秀民先接近准新郎，准新郎才是受害者。",
+        "partial": "双方都有接触，但尚不清楚谁越界了。",
+        "truth": "准新郎先发了一条越界的信息，崔秀敏拒绝了。",
+        "defer": "很难确定先后关系。我保留它。"
+      }
     },
     {
       "id": "d-3",
-      "name": "父亲的金钱接近模式"
+      "name": "父亲的金钱获取模式",
+      "truthDescription": "宋多恩的父亲正在向她的未婚夫谈论金钱问题，崔秀民试图警告她的未婚夫，因为她过去也经历过同样的情况。",
+      "mediationLink": "宋多恩父亲的金钱获取模式",
+      "judgmentStatement": "宋多恩父亲的金钱获取模式过去和现在都是一样的。",
+      "v3UnlockPlan": {
+        "runtimeRule": "当任何一方达到 d-2 S3 或更高时解锁。",
+        "authoredRule": "在d-2中确认了准新郎的接近后，当崔秀民说出警告原因时，宋多恩的父亲模式受到了伤害。"
+      },
+      "verdictOptions": {
+        "wrong": "宋多恩的父亲只向准新郎打了声招呼。",
+        "partial": "好像是讨论过钱的事，但具体细节无法确认。",
+        "truth": "宋多恩的父亲向她的未婚夫借钱，崔秀敏过去也经历过同样的情况。",
+        "defer": "谈话内容的真实性无法得到证实。我保留它。"
+      }
     },
     {
       "id": "d-4",
-      "name": "当年断交的理由"
+      "name": "过去止损的原因",
+      "truthDescription": "过去损失的真正原因是宋多恩的父亲向崔秀民借了3次数百万韩元的钱，然后只偿还了一部分并断绝了联系。崔秀民不忍心告诉宋多恩，因为他必须向父亲提起这件事，所以他称自己为恶棍。",
+      "mediationLink": "过去止损的原因",
+      "judgmentStatement": "过去损失的原因是宋多恩父亲不偿还贷款和崔秀敏的沉默。",
+      "v3UnlockPlan": {
+        "runtimeRule": "当任何一方达到 d-3 S3 或更高时解锁。",
+        "authoredRule": "宋多恩父亲现在的模式被确认后，发现过去也发生过同样的事情。"
+      },
+      "verdictOptions": {
+        "wrong": "以前，崔秀民改变了主意，单方面断绝了分手。",
+        "partial": "止损涉及资金问题，但具体情况不明。",
+        "truth": "原因是宋多恩的父亲向崔秀敏借了钱，只偿还了一部分，然后就不再联系了。崔秀民不忍再说什么，宣称自己是恶棍。",
+        "defer": "很难确定止损的真正原因。我保留它。"
+      }
     },
     {
       "id": "d-5",
-      "name": "群聊里的抨击与名誉受损"
+      "name": "群聊贩卖、诽谤",
+      "truthDescription": "重复了宋多恩在群聊中未经证实地批评崔秀民、崔秀民自称是坏人的结构。他们双方都有责任在确认之前确定。",
+      "mediationLink": "草率的结论和诽谤",
+      "judgmentStatement": "最先决定并公开的一方责任更大，但允许沉默重复的一方也有责任。",
+      "v3UnlockPlan": {
+        "runtimeRule": "当任何一方达到 d-3 S3 + d-4 S3 时解锁",
+        "authoredRule": "宋多恩目前因父亲的行为和过去未偿还的贷款被揭露而因诽谤案而受伤。"
+      },
+      "verdictOptions": {
+        "wrong": "崔秀民率先接近准新郎，毁了他的名誉。",
+        "partial": "双方都有部分对对方的冒昧。",
+        "truth": "宋多恩在群聊中批评崔秀民未经证实，崔秀民成为反派的结构被重复。",
+        "defer": "很难确定谁先诽谤。我保留它。"
+      }
     }
   ],
   "evidence": [
     {
       "id": "e-1",
-      "surfaceName": "联络记录",
-      "surfaceDescription": "崔秀敏向未婚夫发出的联络记录留有底档。"
+      "name": "崔秀民 → 准新郎联络记录",
+      "surfaceName": "接触史",
+      "description": "崔秀敏在过去九天里反复给未婚夫金泰润打电话发短信的记录。只有通过每一步检查原文才能确定接触的意图。",
+      "surfaceDescription": "有崔秀敏发给她未来新郎的联系记录。",
+      "investigationResults": {
+        "request_original": "第一页确认重复来电和缺勤 9 天。看似痴迷接触，但原文大部分是被封印的。",
+        "check_metadata": "在第二页上，你可以看到一份声明，称这不是泰妍和苏民之间关于个人问题的沟通。但具体目的尚未确定。",
+        "restore_context": "第三页上有一份声明，解释了为什么过去会发生类似的事情。现在认真询问联系意向就有了基础。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "这些联系日志是真实的发送记录吗？"
+          },
+          "label": "检查记录"
+        },
+        {
+          "question": {
+            "text": "请将措辞与联系时间相匹配。"
+          },
+          "label": "时间对比",
+          "unlockHint": "如果您进一步检查原文，您还会看到联系时间和重复的短语。"
+        },
+        {
+          "question": {
+            "text": "请考虑一下这次接触是警告还是强迫。"
+          },
+          "label": "意向恢复",
+          "unlockHint": "对比你的措辞可以帮助你更清楚地表达你的联系意图。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "您对这份联系记录有何看法？",
+          "implication": "确认你对痴迷的第一印象。"
+        },
+        "b": {
+          "questionAngle": "请解释一下您为什么以这种方式联系我。",
+          "implication": "让他们有机会解释他们的联系意图。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "只有联系人记录的存在是可见的。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "重点关注来电和缺勤的数量"
+        },
+        {
+          "id": "original",
+          "summary": "使用部分文字的原文，减少个人接触的误会"
+        },
+        {
+          "id": "context",
+          "summary": "接下来，检查过去重复的相关原因和提示。"
+        },
+        {
+          "id": "established",
+          "summary": "根据警告的可能性来判断接触的意图。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "宋多恩提交了抓拍照片"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "对比原始通话记录"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "验证与承运人记录的一致性"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "崔秀敏对联系的意图提出异议。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "对痴迷的解读需要与原文进行比较。"
+        }
+      ],
+      "meta": {
+        "name": "接触史",
+        "trustLabel": "通常",
+        "sourceLabel": "宋多恩身边",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "接触史",
+          "trustLabel": "通常",
+          "sourceLabel": "宋多恩身边",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 涉及的原因"
+        },
+        "log": {
+          "title": "崔秀民 → 准新郎联络记录",
+          "rows": [
+            {
+              "typeLabel": "传出",
+              "target": "金泰润（准新郎）",
+              "duration": "0分12秒（中断）"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“我并不是想批评你上次开了一个越界的玩笑。这是一个不同的故事。”"
+            },
+            {
+              "typeLabel": "传出",
+              "target": "金泰润",
+              "duration": "缺席的"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“我有重要的事情要说。是关于多恩的。”"
+            },
+            {
+              "typeLabel": "传出",
+              "target": "金泰润",
+              "duration": "0分08秒（中断）"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“别躲着我。我这样做是因为现在很难告诉多恩。”"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“如果你见过我一次并和我交谈，你就会明白一切。”"
+            },
+            {
+              "typeLabel": "传出",
+              "target": "金泰润",
+              "duration": "1分42秒"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“我也不想这样做。我不能因为这是多恩的工作而忽视它。”"
+            },
+            {
+              "typeLabel": "传出",
+              "target": "金泰润",
+              "duration": "缺席的"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“拜托，最后一次。以前也发生过同样的事情。”"
+            },
+            {
+              "typeLabel": "传出",
+              "target": "金泰润",
+              "duration": "不在办公室（假定已被阻止）"
+            },
+            {
+              "typeLabel": "信息",
+              "target": "金泰润",
+              "duration": "“我猜你屏蔽了我。很抱歉我不想让多恩卷入其中。”"
+            }
+          ],
+          "note": "第3页的原文中，重复出现了“与多恩有关的故事”、“和以前一样的事情”等短语。接触的意图似乎不仅仅是准新郎和苏敏之间的情感问题。",
+          "pages": [
+            {
+              "label": "第1页 发送频率",
+              "title": "崔秀民 → 准新郎联络记录",
+              "rows": [
+                {
+                  "date": "03.01 晚上",
+                  "typeLabel": "传出",
+                  "target": "金○○（准新郎）",
+                  "duration": "捷径"
+                },
+                {
+                  "date": "03.01 晚上",
+                  "typeLabel": "信息",
+                  "target": "金○○",
+                  "duration": "呼叫请求短语"
+                },
+                {
+                  "date": "凌晨 03.02",
+                  "typeLabel": "信息",
+                  "target": "金○○",
+                  "duration": "请求重要故事"
+                },
+                {
+                  "date": "03.02 晚上",
+                  "typeLabel": "传出",
+                  "target": "金○○",
+                  "duration": "缺席的"
+                },
+                {
+                  "date": "凌晨 03.03",
+                  "typeLabel": "信息",
+                  "target": "金○○",
+                  "duration": "结婚前要求确认"
+                },
+                {
+                  "date": "03.04日",
+                  "typeLabel": "传出",
+                  "target": "金○○",
+                  "duration": "捷径"
+                },
+                {
+                  "date": "03.05 晚上",
+                  "typeLabel": "信息",
+                  "target": "金○○",
+                  "duration": "只见面一次的短语"
+                }
+              ],
+              "note": "第 1 页是重点关注来电和缺席数量的摘录。仅这一步就表明崔秀敏多次与她的未婚夫联系。"
+            },
+            {
+              "label": "第 2 页：短语的语境重构",
+              "title": "崔秀民 → 准新郎联络记录",
+              "rows": [
+                {
+                  "date": "03.01 十九世纪",
+                  "typeLabel": "传出",
+                  "target": "金泰○（准新郎）",
+                  "duration": "0分12秒（中断）"
+                },
+                {
+                  "date": "03.01 十九世纪",
+                  "typeLabel": "信息",
+                  "target": "金泰○",
+                  "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+                },
+                {
+                  "date": "03.02 第10纪元",
+                  "typeLabel": "信息",
+                  "target": "金泰○",
+                  "duration": "“我并不是想因为你当时对我说了一些越界的话而引起争议。”"
+                },
+                {
+                  "date": "09年3月3日",
+                  "typeLabel": "信息",
+                  "target": "金泰○",
+                  "duration": "“这是一个不同的故事，所以我想通过电话解释一下。”"
+                },
+                {
+                  "date": "03.04 12岁",
+                  "typeLabel": "传出",
+                  "target": "金泰○",
+                  "duration": "0分08秒（中断）"
+                },
+                {
+                  "date": "03.05 21时代",
+                  "typeLabel": "信息",
+                  "target": "金泰○",
+                  "duration": "“我打电话给你不是因为我和泰妍之间的问题。”"
+                },
+                {
+                  "date": "08年03.06时代",
+                  "typeLabel": "传出",
+                  "target": "金泰○",
+                  "duration": "1分42秒"
+                },
+                {
+                  "date": "03.08 第十七纪元",
+                  "typeLabel": "信息",
+                  "target": "金泰○",
+                  "duration": "“我无意误解，但我认为我们不应该忽视它。”"
+                },
+                {
+                  "date": "03.09 第11纪元",
+                  "typeLabel": "传出",
+                  "target": "金泰○",
+                  "duration": "不在办公室（假定已被阻止）"
+                }
+              ],
+              "note": "第2页恢复了部分原文。崔秀民与泰允的联系似乎并不是为了讨论个人问题，但具体目的仍是未知数。"
+            },
+            {
+              "label": "与第3页相关的原因",
+              "title": "崔秀民 → 准新郎联络记录",
+              "rows": [
+                {
+                  "typeLabel": "传出",
+                  "target": "金泰润（准新郎）",
+                  "duration": "0分12秒（中断）"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“我并不是想批评你上次开了一个越界的玩笑。这是一个不同的故事。”"
+                },
+                {
+                  "typeLabel": "传出",
+                  "target": "金泰润",
+                  "duration": "缺席的"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“我有重要的事情要说。是关于多恩的。”"
+                },
+                {
+                  "typeLabel": "传出",
+                  "target": "金泰润",
+                  "duration": "0分08秒（中断）"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“别躲着我。我这样做是因为现在很难告诉多恩。”"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“如果你见过我一次并和我交谈，你就会明白一切。”"
+                },
+                {
+                  "typeLabel": "传出",
+                  "target": "金泰润",
+                  "duration": "1分42秒"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“我也不想这样做。我不能因为这是多恩的工作而忽视它。”"
+                },
+                {
+                  "typeLabel": "传出",
+                  "target": "金泰润",
+                  "duration": "缺席的"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“拜托，最后一次。以前也发生过同样的事情。”"
+                },
+                {
+                  "typeLabel": "传出",
+                  "target": "金泰润",
+                  "duration": "不在办公室（假定已被阻止）"
+                },
+                {
+                  "typeLabel": "信息",
+                  "target": "金泰润",
+                  "duration": "“我猜你屏蔽了我。很抱歉我不想让多恩卷入其中。”"
+                }
+              ],
+              "note": "第3页的原文中，重复出现了“与多恩有关的故事”、“和以前一样的事情”等短语。接触的意图似乎不仅仅是准新郎和苏敏之间的情感问题。"
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "接触史",
+            "trustLabel": "通常",
+            "sourceLabel": "宋多恩身边",
+            "legalLabel": "合法性",
+            "stageLabel": "步骤 1 — 发送频率",
+            "redactions": [
+              "屏蔽部分收件人姓名",
+              "原文缩写"
+            ]
+          },
+          "log": {
+            "title": "崔秀民 → 准新郎联络记录",
+            "rows": [
+              {
+                "date": "03.01 晚上",
+                "typeLabel": "传出",
+                "target": "金○○（准新郎）",
+                "duration": "捷径"
+              },
+              {
+                "date": "03.01 晚上",
+                "typeLabel": "信息",
+                "target": "金○○",
+                "duration": "呼叫请求短语"
+              },
+              {
+                "date": "凌晨 03.02",
+                "typeLabel": "信息",
+                "target": "金○○",
+                "duration": "请求重要故事"
+              },
+              {
+                "date": "03.02 晚上",
+                "typeLabel": "传出",
+                "target": "金○○",
+                "duration": "缺席的"
+              },
+              {
+                "date": "凌晨 03.03",
+                "typeLabel": "信息",
+                "target": "金○○",
+                "duration": "结婚前要求确认"
+              },
+              {
+                "date": "03.04日",
+                "typeLabel": "传出",
+                "target": "金○○",
+                "duration": "捷径"
+              },
+              {
+                "date": "03.05 晚上",
+                "typeLabel": "信息",
+                "target": "金○○",
+                "duration": "只见面一次的短语"
+              }
+            ],
+            "note": "第 1 页是重点关注来电和缺席数量的摘录。仅这一步就表明崔秀敏多次与她的未婚夫联系。",
+            "pages": [
+              {
+                "label": "第1页 发送频率",
+                "title": "崔秀民 → 准新郎联络记录",
+                "rows": [
+                  {
+                    "date": "03.01 晚上",
+                    "typeLabel": "传出",
+                    "target": "金○○（准新郎）",
+                    "duration": "捷径"
+                  },
+                  {
+                    "date": "03.01 晚上",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "呼叫请求短语"
+                  },
+                  {
+                    "date": "凌晨 03.02",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "请求重要故事"
+                  },
+                  {
+                    "date": "03.02 晚上",
+                    "typeLabel": "传出",
+                    "target": "金○○",
+                    "duration": "缺席的"
+                  },
+                  {
+                    "date": "凌晨 03.03",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "结婚前要求确认"
+                  },
+                  {
+                    "date": "03.04日",
+                    "typeLabel": "传出",
+                    "target": "金○○",
+                    "duration": "捷径"
+                  },
+                  {
+                    "date": "03.05 晚上",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "只见面一次的短语"
+                  }
+                ],
+                "note": "第 1 页是重点关注来电和缺席数量的摘录。仅这一步就表明崔秀敏多次与她的未婚夫联系。"
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "接触史",
+            "trustLabel": "通常",
+            "sourceLabel": "宋多恩身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步——重新理解该短语的语境",
+            "redactions": [
+              "屏蔽部分收件人姓名",
+              "关键原因短语密封"
+            ]
+          },
+          "log": {
+            "title": "崔秀民 → 准新郎联络记录",
+            "rows": [
+              {
+                "date": "03.01 十九世纪",
+                "typeLabel": "传出",
+                "target": "金泰○（准新郎）",
+                "duration": "0分12秒（中断）"
+              },
+              {
+                "date": "03.01 十九世纪",
+                "typeLabel": "信息",
+                "target": "金泰○",
+                "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+              },
+              {
+                "date": "03.02 第10纪元",
+                "typeLabel": "信息",
+                "target": "金泰○",
+                "duration": "“我并不是想因为你当时对我说了一些越界的话而引起争议。”"
+              },
+              {
+                "date": "09年3月3日",
+                "typeLabel": "信息",
+                "target": "金泰○",
+                "duration": "“这是一个不同的故事，所以我想通过电话解释一下。”"
+              },
+              {
+                "date": "03.04 12岁",
+                "typeLabel": "传出",
+                "target": "金泰○",
+                "duration": "0分08秒（中断）"
+              },
+              {
+                "date": "03.05 21时代",
+                "typeLabel": "信息",
+                "target": "金泰○",
+                "duration": "“我打电话给你不是因为我和泰妍之间的问题。”"
+              },
+              {
+                "date": "08年03.06时代",
+                "typeLabel": "传出",
+                "target": "金泰○",
+                "duration": "1分42秒"
+              },
+              {
+                "date": "03.08 第十七纪元",
+                "typeLabel": "信息",
+                "target": "金泰○",
+                "duration": "“我无意误解，但我认为我们不应该忽视它。”"
+              },
+              {
+                "date": "03.09 第11纪元",
+                "typeLabel": "传出",
+                "target": "金泰○",
+                "duration": "不在办公室（假定已被阻止）"
+              }
+            ],
+            "note": "第2页恢复了部分原文。崔秀民与泰允的联系似乎并不是为了讨论个人问题，但具体目的仍是未知数。",
+            "pages": [
+              {
+                "label": "第1页 发送频率",
+                "title": "崔秀民 → 准新郎联络记录",
+                "rows": [
+                  {
+                    "date": "03.01 晚上",
+                    "typeLabel": "传出",
+                    "target": "金○○（准新郎）",
+                    "duration": "捷径"
+                  },
+                  {
+                    "date": "03.01 晚上",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "呼叫请求短语"
+                  },
+                  {
+                    "date": "凌晨 03.02",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "请求重要故事"
+                  },
+                  {
+                    "date": "03.02 晚上",
+                    "typeLabel": "传出",
+                    "target": "金○○",
+                    "duration": "缺席的"
+                  },
+                  {
+                    "date": "凌晨 03.03",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "结婚前要求确认"
+                  },
+                  {
+                    "date": "03.04日",
+                    "typeLabel": "传出",
+                    "target": "金○○",
+                    "duration": "捷径"
+                  },
+                  {
+                    "date": "03.05 晚上",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "只见面一次的短语"
+                  }
+                ],
+                "note": "第 1 页是重点关注来电和缺席数量的摘录。仅这一步就表明崔秀敏多次与她的未婚夫联系。"
+              },
+              {
+                "label": "第 2 页：短语的语境重构",
+                "title": "崔秀民 → 准新郎联络记录",
+                "rows": [
+                  {
+                    "date": "03.01 十九世纪",
+                    "typeLabel": "传出",
+                    "target": "金泰○（准新郎）",
+                    "duration": "0分12秒（中断）"
+                  },
+                  {
+                    "date": "03.01 十九世纪",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+                  },
+                  {
+                    "date": "03.02 第10纪元",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“我并不是想因为你当时对我说了一些越界的话而引起争议。”"
+                  },
+                  {
+                    "date": "09年3月3日",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“这是一个不同的故事，所以我想通过电话解释一下。”"
+                  },
+                  {
+                    "date": "03.04 12岁",
+                    "typeLabel": "传出",
+                    "target": "金泰○",
+                    "duration": "0分08秒（中断）"
+                  },
+                  {
+                    "date": "03.05 21时代",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“我打电话给你不是因为我和泰妍之间的问题。”"
+                  },
+                  {
+                    "date": "08年03.06时代",
+                    "typeLabel": "传出",
+                    "target": "金泰○",
+                    "duration": "1分42秒"
+                  },
+                  {
+                    "date": "03.08 第十七纪元",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“我无意误解，但我认为我们不应该忽视它。”"
+                  },
+                  {
+                    "date": "03.09 第11纪元",
+                    "typeLabel": "传出",
+                    "target": "金泰○",
+                    "duration": "不在办公室（假定已被阻止）"
+                  }
+                ],
+                "note": "第2页恢复了部分原文。崔秀民与泰允的联系似乎并不是为了讨论个人问题，但具体目的仍是未知数。"
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "接触史",
+            "trustLabel": "通常",
+            "sourceLabel": "宋多恩身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 涉及的原因"
+          },
+          "log": {
+            "title": "崔秀民 → 准新郎联络记录",
+            "rows": [
+              {
+                "typeLabel": "传出",
+                "target": "金泰润（准新郎）",
+                "duration": "0分12秒（中断）"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“我并不是想批评你上次开了一个越界的玩笑。这是一个不同的故事。”"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "金泰润",
+                "duration": "缺席的"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“我有重要的事情要说。是关于多恩的。”"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "金泰润",
+                "duration": "0分08秒（中断）"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“别躲着我。我这样做是因为现在很难告诉多恩。”"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“如果你见过我一次并和我交谈，你就会明白一切。”"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "金泰润",
+                "duration": "1分42秒"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“我也不想这样做。我不能因为这是多恩的工作而忽视它。”"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "金泰润",
+                "duration": "缺席的"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“拜托，最后一次。以前也发生过同样的事情。”"
+              },
+              {
+                "typeLabel": "传出",
+                "target": "金泰润",
+                "duration": "不在办公室（假定已被阻止）"
+              },
+              {
+                "typeLabel": "信息",
+                "target": "金泰润",
+                "duration": "“我猜你屏蔽了我。很抱歉我不想让多恩卷入其中。”"
+              }
+            ],
+            "note": "第3页的原文中，重复出现了“与多恩有关的故事”、“和以前一样的事情”等短语。接触的意图似乎不仅仅是准新郎和苏敏之间的情感问题。",
+            "pages": [
+              {
+                "label": "第1页 发送频率",
+                "title": "崔秀民 → 准新郎联络记录",
+                "rows": [
+                  {
+                    "date": "03.01 晚上",
+                    "typeLabel": "传出",
+                    "target": "金○○（准新郎）",
+                    "duration": "捷径"
+                  },
+                  {
+                    "date": "03.01 晚上",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "呼叫请求短语"
+                  },
+                  {
+                    "date": "凌晨 03.02",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "请求重要故事"
+                  },
+                  {
+                    "date": "03.02 晚上",
+                    "typeLabel": "传出",
+                    "target": "金○○",
+                    "duration": "缺席的"
+                  },
+                  {
+                    "date": "凌晨 03.03",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "结婚前要求确认"
+                  },
+                  {
+                    "date": "03.04日",
+                    "typeLabel": "传出",
+                    "target": "金○○",
+                    "duration": "捷径"
+                  },
+                  {
+                    "date": "03.05 晚上",
+                    "typeLabel": "信息",
+                    "target": "金○○",
+                    "duration": "只见面一次的短语"
+                  }
+                ],
+                "note": "第 1 页是重点关注来电和缺席数量的摘录。仅这一步就表明崔秀敏多次与她的未婚夫联系。"
+              },
+              {
+                "label": "第 2 页：短语的语境重构",
+                "title": "崔秀民 → 准新郎联络记录",
+                "rows": [
+                  {
+                    "date": "03.01 十九世纪",
+                    "typeLabel": "传出",
+                    "target": "金泰○（准新郎）",
+                    "duration": "0分12秒（中断）"
+                  },
+                  {
+                    "date": "03.01 十九世纪",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+                  },
+                  {
+                    "date": "03.02 第10纪元",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“我并不是想因为你当时对我说了一些越界的话而引起争议。”"
+                  },
+                  {
+                    "date": "09年3月3日",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“这是一个不同的故事，所以我想通过电话解释一下。”"
+                  },
+                  {
+                    "date": "03.04 12岁",
+                    "typeLabel": "传出",
+                    "target": "金泰○",
+                    "duration": "0分08秒（中断）"
+                  },
+                  {
+                    "date": "03.05 21时代",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“我打电话给你不是因为我和泰妍之间的问题。”"
+                  },
+                  {
+                    "date": "08年03.06时代",
+                    "typeLabel": "传出",
+                    "target": "金泰○",
+                    "duration": "1分42秒"
+                  },
+                  {
+                    "date": "03.08 第十七纪元",
+                    "typeLabel": "信息",
+                    "target": "金泰○",
+                    "duration": "“我无意误解，但我认为我们不应该忽视它。”"
+                  },
+                  {
+                    "date": "03.09 第11纪元",
+                    "typeLabel": "传出",
+                    "target": "金泰○",
+                    "duration": "不在办公室（假定已被阻止）"
+                  }
+                ],
+                "note": "第2页恢复了部分原文。崔秀民与泰允的联系似乎并不是为了讨论个人问题，但具体目的仍是未知数。"
+              },
+              {
+                "label": "与第3页相关的原因",
+                "title": "崔秀民 → 准新郎联络记录",
+                "rows": [
+                  {
+                    "typeLabel": "传出",
+                    "target": "金泰润（准新郎）",
+                    "duration": "0分12秒（中断）"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“泰妍，我是Sumin。我可以和你聊聊吗？”"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“我并不是想批评你上次开了一个越界的玩笑。这是一个不同的故事。”"
+                  },
+                  {
+                    "typeLabel": "传出",
+                    "target": "金泰润",
+                    "duration": "缺席的"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“我有重要的事情要说。是关于多恩的。”"
+                  },
+                  {
+                    "typeLabel": "传出",
+                    "target": "金泰润",
+                    "duration": "0分08秒（中断）"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“别躲着我。我这样做是因为现在很难告诉多恩。”"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“如果你见过我一次并和我交谈，你就会明白一切。”"
+                  },
+                  {
+                    "typeLabel": "传出",
+                    "target": "金泰润",
+                    "duration": "1分42秒"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“我也不想这样做。我不能因为这是多恩的工作而忽视它。”"
+                  },
+                  {
+                    "typeLabel": "传出",
+                    "target": "金泰润",
+                    "duration": "缺席的"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“拜托，最后一次。以前也发生过同样的事情。”"
+                  },
+                  {
+                    "typeLabel": "传出",
+                    "target": "金泰润",
+                    "duration": "不在办公室（假定已被阻止）"
+                  },
+                  {
+                    "typeLabel": "信息",
+                    "target": "金泰润",
+                    "duration": "“我猜你屏蔽了我。很抱歉我不想让多恩卷入其中。”"
+                  }
+                ],
+                "note": "第3页的原文中，重复出现了“与多恩有关的故事”、“和以前一样的事情”等短语。接触的意图似乎不仅仅是准新郎和苏敏之间的情感问题。"
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-2",
-      "surfaceName": "群聊截图",
-      "surfaceDescription": "共同朋友群聊里的对话截图存在。"
+      "name": "普通好友群聊天室截图",
+      "surfaceName": "群聊房间截图",
+      "description": "宋多恩发文称“秀民又联系我的男人了”，一些朋友批评了崔秀民。",
+      "surfaceDescription": "有一个普通朋友群聊天室的对话截图。",
+      "investigationResults": {
+        "request_original": "在群聊的首页上，可以确认宋多恩将崔秀民的联系方式发布为“再次联系我的男人”的情况。",
+        "check_metadata": "在第二页上，似乎有共同的朋友同意直接确认之前的言论，有些人提出需要确认。",
+        "restore_context": "通过对比第三页的原文，确认了宋多恩先在群聊中分享，然后直接询问崔秀敏的时间顺序。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "谁是第一个在群聊里发帖的人？"
+          },
+          "label": "检查对话"
+        },
+        {
+          "question": {
+            "text": "请检查您的朋友同意什么。"
+          },
+          "label": "扩散对比",
+          "unlockHint": "如果您进一步查看对话的原文，您可以看到反应遵循最初言论的顺序。"
+        },
+        {
+          "question": {
+            "text": "请考虑披露是否优先于直接确认。"
+          },
+          "label": "追究责任",
+          "unlockHint": "对比传播的顺序让我们可以问谁首先创造了耻辱。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "请解释一下您发布此内容的原因。",
+          "implication": "我们将调查为何在未经事先核实的情况下披露该信息。"
+        },
+        "b": {
+          "questionAngle": "当您看到这个群聊的内容时，有何感受？",
+          "implication": "检查是否有诽谤造成的损害。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅群聊室捕获的存在可见。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "只显示了宋多恩的第一句话。"
+        },
+        {
+          "id": "original",
+          "summary": "检查你朋友的同情反应"
+        },
+        {
+          "id": "context",
+          "summary": "检查发布的时间顺序，无需确认"
+        },
+        {
+          "id": "established",
+          "summary": "仓促结论造成诽谤的确认"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "Sumin Choi 提交了捕获"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "群聊室原文对比"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "消息时间和发件人已确认"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "宋多恩反对说：“我只是报道事实。”"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "未经证实的假设可能构成诽谤。"
+        }
+      ],
+      "meta": {
+        "name": "群聊房间截图",
+        "trustLabel": "通常",
+        "sourceLabel": "双方",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "群聊房间截图",
+          "trustLabel": "通常",
+          "sourceLabel": "双方",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 公开披露"
+        },
+        "chat": {
+          "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:24",
+          "messages": [
+            {
+              "text": "2026.03.06 21:24 · 原件/查看分享订单后直接查看"
+            },
+            {
+              "sender": "莎拉·金",
+              "text": "多恩，你查过Sumin联系你的原因吗？不是泰妍先联系你的吗？"
+            },
+            {
+              "sender": "宋多恩",
+              "text": "我还没有直接问Sumin。因为如果你问，很明显他们会说这又是一场误会。"
+            },
+            {
+              "sender": "宋多恩",
+              "text": "不过，我认为你们应该知道这一点，所以我先发布了。我不想成为唯一敏感的人。"
+            },
+            {
+              "sender": "素妍",
+              "text": "我认为你在亲自检查之前应该更加小心自己所说的话。如果它传播得很整齐，就很难再回头。"
+            },
+            {
+              "sender": "海恩",
+              "text": "但房间里的气氛已经开始转向苏民的错了。"
+            },
+            {
+              "sender": "宋多恩",
+              "text": "我这么说并不是无缘无故的。苏民过去从来没有解释过类似结局的事情。"
+            },
+            {
+              "sender": "莎拉·金",
+              "text": "难道我们不应该分开看一下之前的事件和这次的接触是否是同一个人吗？"
+            },
+            {
+              "sender": "宋多恩",
+              "text": "我已经厌倦了在结婚前再次听到这样的事情。我会告诉泰妍先把它清理干净。"
+            },
+            {
+              "sender": "尤金",
+              "text": "好的。但如果事后事实有所不同，就必须对房间进行更正。"
+            },
+            {
+              "sender": "宋多恩",
+              "text": "呵呵。但现在我认为Sumin确实越界了。"
+            }
+          ],
+          "pages": [
+            {
+              "label": "第1页 初步评论",
+              "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:14",
+              "messages": [
+                {
+                  "text": "2026.03.06 21:14 · 群聊房间截图1 / 部分姓名屏蔽"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "各位，我的手真的在颤抖。我刚看泰妍的手机通知，苏民的名字就不断地出现。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "我不知道你为什么只联系我的未婚夫而不跟我说任何话。"
+                },
+                {
+                  "sender": "朋友 1",
+                  "text": "等等，这到底是关于什么的？"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "我有通话记录和几条短信。简直不像暗部级别。"
+                },
+                {
+                  "sender": "朋友2",
+                  "text": "有点奇怪我没有先告诉你。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "你以前也曾给人们带来过这样的麻烦。难道我不是唯一一个敏感的人吗？"
+                },
+                {
+                  "sender": "朋友 1",
+                  "text": "光是看着这张照片，多恩就显得很惊讶。"
+                }
+              ]
+            },
+            {
+              "label": "第2页 扩散反应",
+              "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:18",
+              "messages": [
+                {
+                  "text": "2026.03.06 21:18 · 群聊房间截图第二页/展开反应部分"
+                },
+                {
+                  "sender": "海恩",
+                  "text": "哦，他真的又这样了吗？为什么要这样对一个准备结婚的人？"
+                },
+                {
+                  "sender": "尤金",
+                  "text": "我认为苏敏不知道她已经越界了。你之前已经营造过一种奇怪的气氛了。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "这让我更生气。我想这次我不能忽视它了。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "泰妍说没什么大不了的，但我不相信他。"
+                },
+                {
+                  "sender": "素妍",
+                  "text": "那你直接问苏民了吗？"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "然而。我首先告诉你们是因为我想如果我现在和你们说话我会再次表现得像个受害者。"
+                },
+                {
+                  "sender": "海恩",
+                  "text": "不过，你不应该自己检查一下吗？你不知道仅仅捕捉它会产生什么。"
+                },
+                {
+                  "sender": "尤金",
+                  "text": "但如果多恩已经这么着急了，苏民也该小心点了。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "这是正确的。现在我感觉Sumin又依恋我了。"
+                }
+              ]
+            },
+            {
+              "label": "第3页按时间顺序排列",
+              "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:24",
+              "messages": [
+                {
+                  "text": "2026.03.06 21:24 · 原件/查看分享订单后直接查看"
+                },
+                {
+                  "sender": "莎拉·金",
+                  "text": "多恩，你查过Sumin联系你的原因吗？不是泰妍先联系你的吗？"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "我还没有直接问Sumin。因为如果你问，很明显他们会说这又是一场误会。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "不过，我认为你们应该知道这一点，所以我先发布了。我不想成为唯一敏感的人。"
+                },
+                {
+                  "sender": "素妍",
+                  "text": "我认为你在亲自检查之前应该更加小心自己所说的话。如果它传播得很整齐，就很难再回头。"
+                },
+                {
+                  "sender": "海恩",
+                  "text": "但房间里的气氛已经开始转向苏民的错了。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "我这么说并不是无缘无故的。苏民过去从来没有解释过类似结局的事情。"
+                },
+                {
+                  "sender": "莎拉·金",
+                  "text": "难道我们不应该分开看一下之前的事件和这次的接触是否是同一个人吗？"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "我已经厌倦了在结婚前再次听到这样的事情。我会告诉泰妍先把它清理干净。"
+                },
+                {
+                  "sender": "尤金",
+                  "text": "好的。但如果事后事实有所不同，就必须对房间进行更正。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "text": "呵呵。但现在我认为Sumin确实越界了。"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "群聊房间截图",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步——公开初步评论",
+            "redactions": [
+              "掩盖好友姓名",
+              "一些注释的缩写"
+            ]
+          },
+          "chat": {
+            "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:14",
+            "messages": [
+              {
+                "text": "2026.03.06 21:14 · 群聊房间截图1 / 部分姓名屏蔽"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "各位，我的手真的在颤抖。我刚看泰妍的手机通知，苏民的名字就不断地出现。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "我不知道你为什么只联系我的未婚夫而不跟我说任何话。"
+              },
+              {
+                "sender": "朋友 1",
+                "text": "等等，这到底是关于什么的？"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "我有通话记录和几条短信。简直不像暗部级别。"
+              },
+              {
+                "sender": "朋友2",
+                "text": "有点奇怪我没有先告诉你。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "你以前也曾给人们带来过这样的麻烦。难道我不是唯一一个敏感的人吗？"
+              },
+              {
+                "sender": "朋友 1",
+                "text": "光是看着这张照片，多恩就显得很惊讶。"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第1页 初步评论",
+                "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:14",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:14 · 群聊房间截图1 / 部分姓名屏蔽"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "各位，我的手真的在颤抖。我刚看泰妍的手机通知，苏民的名字就不断地出现。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我不知道你为什么只联系我的未婚夫而不跟我说任何话。"
+                  },
+                  {
+                    "sender": "朋友 1",
+                    "text": "等等，这到底是关于什么的？"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我有通话记录和几条短信。简直不像暗部级别。"
+                  },
+                  {
+                    "sender": "朋友2",
+                    "text": "有点奇怪我没有先告诉你。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "你以前也曾给人们带来过这样的麻烦。难道我不是唯一一个敏感的人吗？"
+                  },
+                  {
+                    "sender": "朋友 1",
+                    "text": "光是看着这张照片，多恩就显得很惊讶。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "群聊房间截图",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 添加调整响应",
+            "redactions": [
+              "掩盖朋友姓名的一部分"
+            ]
+          },
+          "chat": {
+            "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:18",
+            "messages": [
+              {
+                "text": "2026.03.06 21:18 · 群聊房间截图第二页/展开反应部分"
+              },
+              {
+                "sender": "海恩",
+                "text": "哦，他真的又这样了吗？为什么要这样对一个准备结婚的人？"
+              },
+              {
+                "sender": "尤金",
+                "text": "我认为苏敏不知道她已经越界了。你之前已经营造过一种奇怪的气氛了。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "这让我更生气。我想这次我不能忽视它了。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "泰妍说没什么大不了的，但我不相信他。"
+              },
+              {
+                "sender": "素妍",
+                "text": "那你直接问苏民了吗？"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "然而。我首先告诉你们是因为我想如果我现在和你们说话我会再次表现得像个受害者。"
+              },
+              {
+                "sender": "海恩",
+                "text": "不过，你不应该自己检查一下吗？你不知道仅仅捕捉它会产生什么。"
+              },
+              {
+                "sender": "尤金",
+                "text": "但如果多恩已经这么着急了，苏民也该小心点了。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "这是正确的。现在我感觉Sumin又依恋我了。"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第1页 初步评论",
+                "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:14",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:14 · 群聊房间截图1 / 部分姓名屏蔽"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "各位，我的手真的在颤抖。我刚看泰妍的手机通知，苏民的名字就不断地出现。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我不知道你为什么只联系我的未婚夫而不跟我说任何话。"
+                  },
+                  {
+                    "sender": "朋友 1",
+                    "text": "等等，这到底是关于什么的？"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我有通话记录和几条短信。简直不像暗部级别。"
+                  },
+                  {
+                    "sender": "朋友2",
+                    "text": "有点奇怪我没有先告诉你。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "你以前也曾给人们带来过这样的麻烦。难道我不是唯一一个敏感的人吗？"
+                  },
+                  {
+                    "sender": "朋友 1",
+                    "text": "光是看着这张照片，多恩就显得很惊讶。"
+                  }
+                ]
+              },
+              {
+                "label": "第2页 扩散反应",
+                "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:18",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:18 · 群聊房间截图第二页/展开反应部分"
+                  },
+                  {
+                    "sender": "海恩",
+                    "text": "哦，他真的又这样了吗？为什么要这样对一个准备结婚的人？"
+                  },
+                  {
+                    "sender": "尤金",
+                    "text": "我认为苏敏不知道她已经越界了。你之前已经营造过一种奇怪的气氛了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "这让我更生气。我想这次我不能忽视它了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "泰妍说没什么大不了的，但我不相信他。"
+                  },
+                  {
+                    "sender": "素妍",
+                    "text": "那你直接问苏民了吗？"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "然而。我首先告诉你们是因为我想如果我现在和你们说话我会再次表现得像个受害者。"
+                  },
+                  {
+                    "sender": "海恩",
+                    "text": "不过，你不应该自己检查一下吗？你不知道仅仅捕捉它会产生什么。"
+                  },
+                  {
+                    "sender": "尤金",
+                    "text": "但如果多恩已经这么着急了，苏民也该小心点了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "这是正确的。现在我感觉Sumin又依恋我了。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "群聊房间截图",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 公开整个对话"
+          },
+          "chat": {
+            "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:24",
+            "messages": [
+              {
+                "text": "2026.03.06 21:24 · 原件/查看分享订单后直接查看"
+              },
+              {
+                "sender": "莎拉·金",
+                "text": "多恩，你查过Sumin联系你的原因吗？不是泰妍先联系你的吗？"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "我还没有直接问Sumin。因为如果你问，很明显他们会说这又是一场误会。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "不过，我认为你们应该知道这一点，所以我先发布了。我不想成为唯一敏感的人。"
+              },
+              {
+                "sender": "素妍",
+                "text": "我认为你在亲自检查之前应该更加小心自己所说的话。如果它传播得很整齐，就很难再回头。"
+              },
+              {
+                "sender": "海恩",
+                "text": "但房间里的气氛已经开始转向苏民的错了。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "我这么说并不是无缘无故的。苏民过去从来没有解释过类似结局的事情。"
+              },
+              {
+                "sender": "莎拉·金",
+                "text": "难道我们不应该分开看一下之前的事件和这次的接触是否是同一个人吗？"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "我已经厌倦了在结婚前再次听到这样的事情。我会告诉泰妍先把它清理干净。"
+              },
+              {
+                "sender": "尤金",
+                "text": "好的。但如果事后事实有所不同，就必须对房间进行更正。"
+              },
+              {
+                "sender": "宋多恩",
+                "text": "呵呵。但现在我认为Sumin确实越界了。"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第1页 初步评论",
+                "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:14",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:14 · 群聊房间截图1 / 部分姓名屏蔽"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "各位，我的手真的在颤抖。我刚看泰妍的手机通知，苏民的名字就不断地出现。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我不知道你为什么只联系我的未婚夫而不跟我说任何话。"
+                  },
+                  {
+                    "sender": "朋友 1",
+                    "text": "等等，这到底是关于什么的？"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我有通话记录和几条短信。简直不像暗部级别。"
+                  },
+                  {
+                    "sender": "朋友2",
+                    "text": "有点奇怪我没有先告诉你。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "你以前也曾给人们带来过这样的麻烦。难道我不是唯一一个敏感的人吗？"
+                  },
+                  {
+                    "sender": "朋友 1",
+                    "text": "光是看着这张照片，多恩就显得很惊讶。"
+                  }
+                ]
+              },
+              {
+                "label": "第2页 扩散反应",
+                "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:18",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:18 · 群聊房间截图第二页/展开反应部分"
+                  },
+                  {
+                    "sender": "海恩",
+                    "text": "哦，他真的又这样了吗？为什么要这样对一个准备结婚的人？"
+                  },
+                  {
+                    "sender": "尤金",
+                    "text": "我认为苏敏不知道她已经越界了。你之前已经营造过一种奇怪的气氛了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "这让我更生气。我想这次我不能忽视它了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "泰妍说没什么大不了的，但我不相信他。"
+                  },
+                  {
+                    "sender": "素妍",
+                    "text": "那你直接问苏民了吗？"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "然而。我首先告诉你们是因为我想如果我现在和你们说话我会再次表现得像个受害者。"
+                  },
+                  {
+                    "sender": "海恩",
+                    "text": "不过，你不应该自己检查一下吗？你不知道仅仅捕捉它会产生什么。"
+                  },
+                  {
+                    "sender": "尤金",
+                    "text": "但如果多恩已经这么着急了，苏民也该小心点了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "这是正确的。现在我感觉Sumin又依恋我了。"
+                  }
+                ]
+              },
+              {
+                "label": "第3页按时间顺序排列",
+                "header": "Instagram DM 群组“女复仇者” — 2026.03.06 21:24",
+                "messages": [
+                  {
+                    "text": "2026.03.06 21:24 · 原件/查看分享订单后直接查看"
+                  },
+                  {
+                    "sender": "莎拉·金",
+                    "text": "多恩，你查过Sumin联系你的原因吗？不是泰妍先联系你的吗？"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我还没有直接问Sumin。因为如果你问，很明显他们会说这又是一场误会。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "不过，我认为你们应该知道这一点，所以我先发布了。我不想成为唯一敏感的人。"
+                  },
+                  {
+                    "sender": "素妍",
+                    "text": "我认为你在亲自检查之前应该更加小心自己所说的话。如果它传播得很整齐，就很难再回头。"
+                  },
+                  {
+                    "sender": "海恩",
+                    "text": "但房间里的气氛已经开始转向苏民的错了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我这么说并不是无缘无故的。苏民过去从来没有解释过类似结局的事情。"
+                  },
+                  {
+                    "sender": "莎拉·金",
+                    "text": "难道我们不应该分开看一下之前的事件和这次的接触是否是同一个人吗？"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "我已经厌倦了在结婚前再次听到这样的事情。我会告诉泰妍先把它清理干净。"
+                  },
+                  {
+                    "sender": "尤金",
+                    "text": "好的。但如果事后事实有所不同，就必须对房间进行更正。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "text": "呵呵。但现在我认为Sumin确实越界了。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-3",
-      "surfaceName": "过往的聊天记录",
-      "surfaceDescription": "当年断交前夕的聊天记录留有底档。"
+      "name": "过去失利前的Kakao Talk",
+      "surfaceName": "过去的KakaoTalk",
+      "description": "崔秀敏避免解释，只留下了她会解决这件事的声明，而宋多恩则以人一旦卷入这件事就会改变的回应。",
+      "surfaceDescription": "有过去丢失之前的 KakaoTalk 对话记录。",
+      "investigationResults": {
+        "request_original": "崔秀敏只表示自己会解决这件事，而宋多恩则回应了“人一旦卷入这件事就会改变”的效果。",
+        "check_metadata": "这次谈话后不久，两人就失去了联系，大约两年没有见面。",
+        "restore_context": "仅凭过去的对话还无法区分负责金钱问题的各方。应根据其他记录进行检查。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请检查止损前的对话原文。"
+          },
+          "label": "检查对话"
+        },
+        {
+          "question": {
+            "text": "请对比一下我们在出钱后失去联系的顺序。"
+          },
+          "label": "上下文对比",
+          "unlockHint": "如果你看看谈话前后，你可以看到提到金钱问题和止损点。"
+        },
+        {
+          "question": {
+            "text": "为什么直到最后才告诉我这件事？"
+          },
+          "label": "无声的询问",
+          "unlockHint": "通过对比上下文，我们可以问谁应该对隐性资金问题负责。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "这次谈话之后你有再问过Sumin Choi吗？",
+          "implication": "宋多恩未经确认就露出了整齐的图案。"
+        },
+        "b": {
+          "questionAngle": "你为什么不告诉我谁该对此负责？",
+          "implication": "我们确认了崔秀民沉默的动机。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅过去的 KakaoTalk 存在可见。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "只能看到“那件事”和“人变了”这两个词。"
+        },
+        {
+          "id": "original",
+          "summary": "检查对话前后的上下文以及止损点"
+        },
+        {
+          "id": "context",
+          "summary": "这暗示了崔秀民隐藏的金钱问题背后的人。"
+        },
+        {
+          "id": "established",
+          "summary": "检查是否与过去的财务问题可能存在联系。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "双方提交"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "检查原始 KakaoTalk 文本"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "消息时间和发件人已确认"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "崔秀民表示反对：“我不能这么说。”"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "检查隐藏的上下文"
+        }
+      ],
+      "meta": {
+        "name": "过去的KakaoTalk",
+        "trustLabel": "通常",
+        "sourceLabel": "双方",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "过去的KakaoTalk",
+          "trustLabel": "通常",
+          "sourceLabel": "双方",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 提及并屏蔽你的父亲"
+        },
+        "chat": {
+          "header": "不明人士 KakaoTalk — 2024.08.17",
+          "messages": [
+            {
+              "sender": "未知的伙伴",
+              "time": "晚上 9:53",
+              "text": "多恩，这和你父亲有关。所以我更加小心了。"
+            },
+            {
+              "sender": "宋多恩",
+              "time": "晚上 9:54",
+              "text": "你为什么要把我爸爸拉进来？你是想用这个来威胁我吗？"
+            },
+            {
+              "sender": "未知的伙伴",
+              "time": "晚上 9:55",
+              "text": "这不是威胁。我借钱给我父亲，但我把钱藏了起来，因为我怕你知道后会受到伤害。"
+            },
+            {
+              "sender": "宋多恩",
+              "time": "晚上 9:56",
+              "text": "停止。不要通过提起我父亲的名字来为你的金钱问题辩护。"
+            },
+            {
+              "sender": "未知的伙伴",
+              "time": "晚上 9:57",
+              "text": "对不起。尽管如此，我还是不想让事情以你们的误会而告终。"
+            },
+            {
+              "sender": "宋多恩",
+              "time": "晚上 9:58",
+              "text": "没关系。别再联系我了。我会阻止你。"
+            },
+            {
+              "text": "宋多恩——被封锁"
+            }
+          ],
+          "pages": [
+            {
+              "label": "第 1 页：犹豫联系",
+              "header": "不明人士 KakaoTalk — 2024.08.17",
+              "messages": [
+                null,
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:41",
+                  "text": "多恩，很抱歉突然联系你。一下子说起来有点困难，所以写了又删了几次。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:42",
+                  "text": "到底是怎么回事，要花这么长时间？"
+                },
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:43",
+                  "text": "我犹豫了，因为我觉得你听了可能会不舒服。不过，我认为如果我把它埋起来的话会变得更奇怪。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:44",
+                  "text": "另外，不要含糊其辞，说清楚。"
+                },
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:45",
+                  "text": "我也没有完全弄清楚，但既然它发生在你身边，我想我应该告诉你。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:46",
+                  "text": "我周围？你是什​​么意思？"
+                }
+              ]
+            },
+            {
+              "label": "第2页 关于金钱问题的误解",
+              "header": "不明人士 KakaoTalk — 2024.08.17",
+              "messages": [
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:47",
+                  "text": "就是因为钱的问题。有件事我一直在尝试自己解决。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:48",
+                  "text": "钱？怎么突然谈起钱来了？你想指责我什么？"
+                },
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:49",
+                  "text": "我不是在谈论你的钱。我不能多说，因为我怕你会误会。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:50",
+                  "text": "那你为什么在我面前装作什么都没发生的样子？现在，如果你说这是钱的问题，我还能相信什么？"
+                },
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:51",
+                  "text": "我这样做是因为你正在谈论一个如果你告诉他们就会立即受到伤害的人。所以我先尝试阻止它。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:52",
+                  "text": "不要这样逃避责任。当你提起钱的时候，你看起来很奇怪。"
+                }
+              ]
+            },
+            {
+              "label": "第3页提及父亲并屏蔽",
+              "header": "不明人士 KakaoTalk — 2024.08.17",
+              "messages": [
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:53",
+                  "text": "多恩，这和你父亲有关。所以我更加小心了。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:54",
+                  "text": "你为什么要把我爸爸拉进来？你是想用这个来威胁我吗？"
+                },
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:55",
+                  "text": "这不是威胁。我借钱给我父亲，但我把钱藏了起来，因为我怕你知道后会受到伤害。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:56",
+                  "text": "停止。不要通过提起我父亲的名字来为你的金钱问题辩护。"
+                },
+                {
+                  "sender": "未知的伙伴",
+                  "time": "晚上 9:57",
+                  "text": "对不起。尽管如此，我还是不想让事情以你们的误会而告终。"
+                },
+                {
+                  "sender": "宋多恩",
+                  "time": "晚上 9:58",
+                  "text": "没关系。别再联系我了。我会阻止你。"
+                },
+                {
+                  "text": "宋多恩——被封锁"
+                }
+              ]
+            }
+          ],
+          "inputStatus": "[+] 您无法与被屏蔽的好友交谈。"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "过去的KakaoTalk",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步——犹豫联系",
+            "redactions": [
+              "金钱问题并在被阻止之前密封对话"
+            ]
+          },
+          "chat": {
+            "header": "不明人士 KakaoTalk — 2024.08.17",
+            "messages": [
+              null,
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:41",
+                "text": "多恩，很抱歉突然联系你。一下子说起来有点困难，所以写了又删了几次。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:42",
+                "text": "到底是怎么回事，要花这么长时间？"
+              },
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:43",
+                "text": "我犹豫了，因为我觉得你听了可能会不舒服。不过，我认为如果我把它埋起来的话会变得更奇怪。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:44",
+                "text": "另外，不要含糊其辞，说清楚。"
+              },
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:45",
+                "text": "我也没有完全弄清楚，但既然它发生在你身边，我想我应该告诉你。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:46",
+                "text": "我周围？你是什​​么意思？"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第 1 页：犹豫联系",
+                "header": "不明人士 KakaoTalk — 2024.08.17",
+                "messages": [
+                  null,
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:41",
+                    "text": "多恩，很抱歉突然联系你。一下子说起来有点困难，所以写了又删了几次。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:42",
+                    "text": "到底是怎么回事，要花这么长时间？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:43",
+                    "text": "我犹豫了，因为我觉得你听了可能会不舒服。不过，我认为如果我把它埋起来的话会变得更奇怪。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:44",
+                    "text": "另外，不要含糊其辞，说清楚。"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:45",
+                    "text": "我也没有完全弄清楚，但既然它发生在你身边，我想我应该告诉你。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:46",
+                    "text": "我周围？你是什​​么意思？"
+                  }
+                ]
+              }
+            ],
+            "inputStatus": "[+] 您无法与被屏蔽的好友交谈。"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "过去的KakaoTalk",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步——对金钱问题的误解",
+            "redactions": [
+              "与父亲封印相关的提及"
+            ]
+          },
+          "chat": {
+            "header": "不明人士 KakaoTalk — 2024.08.17",
+            "messages": [
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:47",
+                "text": "就是因为钱的问题。有件事我一直在尝试自己解决。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:48",
+                "text": "钱？怎么突然谈起钱来了？你想指责我什么？"
+              },
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:49",
+                "text": "我不是在谈论你的钱。我不能多说，因为我怕你会误会。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:50",
+                "text": "那你为什么在我面前装作什么都没发生的样子？现在，如果你说这是钱的问题，我还能相信什么？"
+              },
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:51",
+                "text": "我这样做是因为你正在谈论一个如果你告诉他们就会立即受到伤害的人。所以我先尝试阻止它。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:52",
+                "text": "不要这样逃避责任。当你提起钱的时候，你看起来很奇怪。"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第 1 页：犹豫联系",
+                "header": "不明人士 KakaoTalk — 2024.08.17",
+                "messages": [
+                  null,
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:41",
+                    "text": "多恩，很抱歉突然联系你。一下子说起来有点困难，所以写了又删了几次。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:42",
+                    "text": "到底是怎么回事，要花这么长时间？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:43",
+                    "text": "我犹豫了，因为我觉得你听了可能会不舒服。不过，我认为如果我把它埋起来的话会变得更奇怪。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:44",
+                    "text": "另外，不要含糊其辞，说清楚。"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:45",
+                    "text": "我也没有完全弄清楚，但既然它发生在你身边，我想我应该告诉你。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:46",
+                    "text": "我周围？你是什​​么意思？"
+                  }
+                ]
+              },
+              {
+                "label": "第2页 关于金钱问题的误解",
+                "header": "不明人士 KakaoTalk — 2024.08.17",
+                "messages": [
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:47",
+                    "text": "就是因为钱的问题。有件事我一直在尝试自己解决。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:48",
+                    "text": "钱？怎么突然谈起钱来了？你想指责我什么？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:49",
+                    "text": "我不是在谈论你的钱。我不能多说，因为我怕你会误会。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:50",
+                    "text": "那你为什么在我面前装作什么都没发生的样子？现在，如果你说这是钱的问题，我还能相信什么？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:51",
+                    "text": "我这样做是因为你正在谈论一个如果你告诉他们就会立即受到伤害的人。所以我先尝试阻止它。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:52",
+                    "text": "不要这样逃避责任。当你提起钱的时候，你看起来很奇怪。"
+                  }
+                ]
+              }
+            ],
+            "inputStatus": "[+] 您无法与被屏蔽的好友交谈。"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "过去的KakaoTalk",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 提及并屏蔽你的父亲"
+          },
+          "chat": {
+            "header": "不明人士 KakaoTalk — 2024.08.17",
+            "messages": [
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:53",
+                "text": "多恩，这和你父亲有关。所以我更加小心了。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:54",
+                "text": "你为什么要把我爸爸拉进来？你是想用这个来威胁我吗？"
+              },
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:55",
+                "text": "这不是威胁。我借钱给我父亲，但我把钱藏了起来，因为我怕你知道后会受到伤害。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:56",
+                "text": "停止。不要通过提起我父亲的名字来为你的金钱问题辩护。"
+              },
+              {
+                "sender": "未知的伙伴",
+                "time": "晚上 9:57",
+                "text": "对不起。尽管如此，我还是不想让事情以你们的误会而告终。"
+              },
+              {
+                "sender": "宋多恩",
+                "time": "晚上 9:58",
+                "text": "没关系。别再联系我了。我会阻止你。"
+              },
+              {
+                "text": "宋多恩——被封锁"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第 1 页：犹豫联系",
+                "header": "不明人士 KakaoTalk — 2024.08.17",
+                "messages": [
+                  null,
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:41",
+                    "text": "多恩，很抱歉突然联系你。一下子说起来有点困难，所以写了又删了几次。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:42",
+                    "text": "到底是怎么回事，要花这么长时间？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:43",
+                    "text": "我犹豫了，因为我觉得你听了可能会不舒服。不过，我认为如果我把它埋起来的话会变得更奇怪。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:44",
+                    "text": "另外，不要含糊其辞，说清楚。"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:45",
+                    "text": "我也没有完全弄清楚，但既然它发生在你身边，我想我应该告诉你。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:46",
+                    "text": "我周围？你是什​​么意思？"
+                  }
+                ]
+              },
+              {
+                "label": "第2页 关于金钱问题的误解",
+                "header": "不明人士 KakaoTalk — 2024.08.17",
+                "messages": [
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:47",
+                    "text": "就是因为钱的问题。有件事我一直在尝试自己解决。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:48",
+                    "text": "钱？怎么突然谈起钱来了？你想指责我什么？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:49",
+                    "text": "我不是在谈论你的钱。我不能多说，因为我怕你会误会。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:50",
+                    "text": "那你为什么在我面前装作什么都没发生的样子？现在，如果你说这是钱的问题，我还能相信什么？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:51",
+                    "text": "我这样做是因为你正在谈论一个如果你告诉他们就会立即受到伤害的人。所以我先尝试阻止它。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:52",
+                    "text": "不要这样逃避责任。当你提起钱的时候，你看起来很奇怪。"
+                  }
+                ]
+              },
+              {
+                "label": "第3页提及父亲并屏蔽",
+                "header": "不明人士 KakaoTalk — 2024.08.17",
+                "messages": [
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:53",
+                    "text": "多恩，这和你父亲有关。所以我更加小心了。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:54",
+                    "text": "你为什么要把我爸爸拉进来？你是想用这个来威胁我吗？"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:55",
+                    "text": "这不是威胁。我借钱给我父亲，但我把钱藏了起来，因为我怕你知道后会受到伤害。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:56",
+                    "text": "停止。不要通过提起我父亲的名字来为你的金钱问题辩护。"
+                  },
+                  {
+                    "sender": "未知的伙伴",
+                    "time": "晚上 9:57",
+                    "text": "对不起。尽管如此，我还是不想让事情以你们的误会而告终。"
+                  },
+                  {
+                    "sender": "宋多恩",
+                    "time": "晚上 9:58",
+                    "text": "没关系。别再联系我了。我会阻止你。"
+                  },
+                  {
+                    "text": "宋多恩——被封锁"
+                  }
+                ]
+              }
+            ],
+            "inputStatus": "[+] 您无法与被屏蔽的好友交谈。"
+          }
+        }
+      }
     },
     {
       "id": "e-4",
-      "surfaceName": "未婚夫的消息记录",
-      "surfaceDescription": "未婚夫与崔秀敏之间的消息记录存在。"
+      "name": "准新郎的留言越界，崔秀敏的拒绝回复",
+      "surfaceName": "准新郎留言",
+      "description": "准新郎与崔秀敏之间的私信记录。途径和应对方式还需要进一步确认。",
+      "surfaceDescription": "准新郎和崔秀敏之间有一条留言记录。",
+      "investigationResults": {
+        "request_original": "第一页只确认了看似与中心咨询和锻炼有关的日常对话。",
+        "check_metadata": "在第二页上，金泰润向多恩提出了含糊的请求，并暗示要进行私人谈话，因此出现了可疑的趋势。",
+        "restore_context": "第三页的深夜留言中，确认金泰润醉酒后主动提出喝酒，崔秀民拒绝了。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "看看我们的第一次谈话是关于什么的。"
+          },
+          "label": "初次对话"
+        },
+        {
+          "question": {
+            "text": "请检查是否有您试图私下请求的流程。"
+          },
+          "label": "请求状态",
+          "unlockHint": "如果再仔细观察这段对话，就会发现金泰润以一种难以与多恩交谈的方式对她说话。"
+        },
+        {
+          "question": {
+            "text": "问问自己谁在深夜发的信息中越界了。"
+          },
+          "label": "检查穿越线",
+          "unlockHint": "如果你看最后一页，你可以看到酒会后面的文字和崔秀敏的拒绝回复。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "你看到这条消息了吗？",
+          "implication": "据证实，宋多恩并不知道准新郎的行为。"
+        },
+        "b": {
+          "questionAngle": "为什么不马上把这条信息给宋多恩看呢？",
+          "implication": "询问沉默的原因。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅消息存在可见"
+        },
+        {
+          "id": "excerpt",
+          "summary": "只有看似锻炼咨询的日常对话是可见的。"
+        },
+        {
+          "id": "original",
+          "summary": "检查甚至暗示私人请求的流程"
+        },
+        {
+          "id": "context",
+          "summary": "检查深夜喝酒后越界的消息"
+        },
+        {
+          "id": "established",
+          "summary": "检查准新郎越界接近的情况。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "Sumin Choi 提交了捕获"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "验证消息来源"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "发件人和时间已确认"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "宋多恩表示反对，称这可能是捏造的。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "原件已被验证，访问方向在询问期间确定。"
+        }
+      ],
+      "meta": {
+        "name": "准新郎留言",
+        "trustLabel": "通常",
+        "sourceLabel": "崔秀敏身边",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "准新郎留言",
+          "trustLabel": "通常",
+          "sourceLabel": "崔秀敏身边",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 深夜原创发布"
+        },
+        "chat": {
+          "header": "金泰妍 KakaoTalk — 2026.02.24（第3页深夜留言）",
+          "messages": [
+            {
+              "text": "2026.02.24 12:47 AM · 疑似深夜喝酒后的消息"
+            },
+            {
+              "sender": "金泰润",
+              "time": "上午 12:47",
+              "text": "苏敏，你睡了吗？我今天喝了一些。"
+            },
+            {
+              "sender": "金泰润",
+              "time": "上午 12:49",
+              "text": "奇怪的是，我一喝酒就会想起Sumin。"
+            },
+            {
+              "sender": "崔苏民",
+              "time": "上午 12:51",
+              "text": "泰妍，在现在的时间里，这种联系方式很不方便。"
+            },
+            {
+              "sender": "金泰润",
+              "time": "上午 12:53",
+              "text": "您还想再喝一杯吗？只要告诉多恩你遇到了公司的人就可以了。"
+            },
+            {
+              "sender": "崔苏民",
+              "time": "上午 12:54",
+              "text": "多恩是准新郎。我不会遇到这样的人。"
+            },
+            {
+              "sender": "金泰润",
+              "time": "上午 12:56",
+              "text": "不要画太多线。我以前很喜欢你的风格。"
+            },
+            {
+              "sender": "崔苏民",
+              "time": "中午 12:58",
+              "text": "停止吧。我将把这次谈话放在一边。"
+            },
+            {
+              "text": "Taeyun Kim — 已读（无回复）"
+            }
+          ],
+          "pages": [
+            {
+              "label": "第1页 日常对话",
+              "header": "金泰妍 KakaoTalk — 2026.02.18（第 1 页，日常对话）",
+              "messages": [
+                {
+                  "text": "2026.02.18 7:12 PM · 对话开始"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "晚上 7:12",
+                  "text": "苏民、多恩说，现在普拉提很难预约。这是真的吗？"
+                },
+                {
+                  "sender": "崔苏民",
+                  "time": "晚上 7:14",
+                  "text": "是的，下班时间几乎已经排满了。如果需要的话我会告诉你中心号码。"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "晚上 7:15",
+                  "text": "我懂了。我想知道婚礼前是否应该做一些运动。"
+                },
+                {
+                  "sender": "崔苏民",
+                  "time": "晚上 7:16",
+                  "text": "我认为你应该向多恩咨询。"
+                }
+              ]
+            },
+            {
+              "label": "第 2 页：一个有问题的请求",
+              "header": "Taeyun Kim KakaoTalk — 2026.02.21（第 2 页，可疑请求）",
+              "messages": [
+                {
+                  "text": "2026.02.21 8:36 PM · 看起来像是请求，但目的不明。"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "晚上 8:36",
+                  "text": "Sumin，我可以问多恩一些很难马上说的话吗？"
+                },
+                {
+                  "sender": "崔苏民",
+                  "time": "晚上 8:38",
+                  "text": "这是怎么回事？如果是和多恩有关的话，直接问她就对了。"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "晚上 8:39",
+                  "text": "我只是好奇从女人的角度来看它是什么样子。"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "晚上 8:41",
+                  "text": "我想如果我们私下和多恩简单聊聊会更舒服。"
+                },
+                {
+                  "sender": "崔苏民",
+                  "time": "晚上 8:43",
+                  "text": "我认为这不是什么值得秘密谈论的事情。通过文字说话。"
+                }
+              ]
+            },
+            {
+              "label": "第3页 深夜留言",
+              "header": "金泰妍 KakaoTalk — 2026.02.24（第3页深夜留言）",
+              "messages": [
+                {
+                  "text": "2026.02.24 12:47 AM · 疑似深夜喝酒后的消息"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "上午 12:47",
+                  "text": "苏敏，你睡了吗？我今天喝了一些。"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "上午 12:49",
+                  "text": "奇怪的是，我一喝酒就会想起Sumin。"
+                },
+                {
+                  "sender": "崔苏民",
+                  "time": "上午 12:51",
+                  "text": "泰妍，在现在的时间里，这种联系方式很不方便。"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "上午 12:53",
+                  "text": "您还想再喝一杯吗？只要告诉多恩你遇到了公司的人就可以了。"
+                },
+                {
+                  "sender": "崔苏民",
+                  "time": "上午 12:54",
+                  "text": "多恩是准新郎。我不会遇到这样的人。"
+                },
+                {
+                  "sender": "金泰润",
+                  "time": "上午 12:56",
+                  "text": "不要画太多线。我以前很喜欢你的风格。"
+                },
+                {
+                  "sender": "崔苏民",
+                  "time": "中午 12:58",
+                  "text": "停止吧。我将把这次谈话放在一边。"
+                },
+                {
+                  "text": "Taeyun Kim — 已读（无回复）"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "准新郎留言",
+            "trustLabel": "通常",
+            "sourceLabel": "崔秀敏身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 检查您的日常对话",
+            "redactions": [
+              "回话密封"
+            ]
+          },
+          "chat": {
+            "header": "金泰妍 KakaoTalk — 2026.02.18（第 1 页，日常对话）",
+            "messages": [
+              {
+                "text": "2026.02.18 7:12 PM · 对话开始"
+              },
+              {
+                "sender": "金泰润",
+                "time": "晚上 7:12",
+                "text": "苏民、多恩说，现在普拉提很难预约。这是真的吗？"
+              },
+              {
+                "sender": "崔苏民",
+                "time": "晚上 7:14",
+                "text": "是的，下班时间几乎已经排满了。如果需要的话我会告诉你中心号码。"
+              },
+              {
+                "sender": "金泰润",
+                "time": "晚上 7:15",
+                "text": "我懂了。我想知道婚礼前是否应该做一些运动。"
+              },
+              {
+                "sender": "崔苏民",
+                "time": "晚上 7:16",
+                "text": "我认为你应该向多恩咨询。"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第1页 日常对话",
+                "header": "金泰妍 KakaoTalk — 2026.02.18（第 1 页，日常对话）",
+                "messages": [
+                  {
+                    "text": "2026.02.18 7:12 PM · 对话开始"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 7:12",
+                    "text": "苏民、多恩说，现在普拉提很难预约。这是真的吗？"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 7:14",
+                    "text": "是的，下班时间几乎已经排满了。如果需要的话我会告诉你中心号码。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 7:15",
+                    "text": "我懂了。我想知道婚礼前是否应该做一些运动。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 7:16",
+                    "text": "我认为你应该向多恩咨询。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "准新郎留言",
+            "trustLabel": "通常",
+            "sourceLabel": "崔秀敏身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 可疑请求情况",
+            "redactions": [
+              "深夜封印原文"
+            ]
+          },
+          "chat": {
+            "header": "Taeyun Kim KakaoTalk — 2026.02.21（第 2 页，可疑请求）",
+            "messages": [
+              {
+                "text": "2026.02.21 8:36 PM · 看起来像是请求，但目的不明。"
+              },
+              {
+                "sender": "金泰润",
+                "time": "晚上 8:36",
+                "text": "Sumin，我可以问多恩一些很难马上说的话吗？"
+              },
+              {
+                "sender": "崔苏民",
+                "time": "晚上 8:38",
+                "text": "这是怎么回事？如果是和多恩有关的话，直接问她就对了。"
+              },
+              {
+                "sender": "金泰润",
+                "time": "晚上 8:39",
+                "text": "我只是好奇从女人的角度来看它是什么样子。"
+              },
+              {
+                "sender": "金泰润",
+                "time": "晚上 8:41",
+                "text": "我想如果我们私下和多恩简单聊聊会更舒服。"
+              },
+              {
+                "sender": "崔苏民",
+                "time": "晚上 8:43",
+                "text": "我认为这不是什么值得秘密谈论的事情。通过文字说话。"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第1页 日常对话",
+                "header": "金泰妍 KakaoTalk — 2026.02.18（第 1 页，日常对话）",
+                "messages": [
+                  {
+                    "text": "2026.02.18 7:12 PM · 对话开始"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 7:12",
+                    "text": "苏民、多恩说，现在普拉提很难预约。这是真的吗？"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 7:14",
+                    "text": "是的，下班时间几乎已经排满了。如果需要的话我会告诉你中心号码。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 7:15",
+                    "text": "我懂了。我想知道婚礼前是否应该做一些运动。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 7:16",
+                    "text": "我认为你应该向多恩咨询。"
+                  }
+                ]
+              },
+              {
+                "label": "第 2 页：一个有问题的请求",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.21（第 2 页，可疑请求）",
+                "messages": [
+                  {
+                    "text": "2026.02.21 8:36 PM · 看起来像是请求，但目的不明。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 8:36",
+                    "text": "Sumin，我可以问多恩一些很难马上说的话吗？"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 8:38",
+                    "text": "这是怎么回事？如果是和多恩有关的话，直接问她就对了。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 8:39",
+                    "text": "我只是好奇从女人的角度来看它是什么样子。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 8:41",
+                    "text": "我想如果我们私下和多恩简单聊聊会更舒服。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 8:43",
+                    "text": "我认为这不是什么值得秘密谈论的事情。通过文字说话。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "准新郎留言",
+            "trustLabel": "通常",
+            "sourceLabel": "崔秀敏身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 深夜原创发布"
+          },
+          "chat": {
+            "header": "金泰妍 KakaoTalk — 2026.02.24（第3页深夜留言）",
+            "messages": [
+              {
+                "text": "2026.02.24 12:47 AM · 疑似深夜喝酒后的消息"
+              },
+              {
+                "sender": "金泰润",
+                "time": "上午 12:47",
+                "text": "苏敏，你睡了吗？我今天喝了一些。"
+              },
+              {
+                "sender": "金泰润",
+                "time": "上午 12:49",
+                "text": "奇怪的是，我一喝酒就会想起Sumin。"
+              },
+              {
+                "sender": "崔苏民",
+                "time": "上午 12:51",
+                "text": "泰妍，在现在的时间里，这种联系方式很不方便。"
+              },
+              {
+                "sender": "金泰润",
+                "time": "上午 12:53",
+                "text": "您还想再喝一杯吗？只要告诉多恩你遇到了公司的人就可以了。"
+              },
+              {
+                "sender": "崔苏民",
+                "time": "上午 12:54",
+                "text": "多恩是准新郎。我不会遇到这样的人。"
+              },
+              {
+                "sender": "金泰润",
+                "time": "上午 12:56",
+                "text": "不要画太多线。我以前很喜欢你的风格。"
+              },
+              {
+                "sender": "崔苏民",
+                "time": "中午 12:58",
+                "text": "停止吧。我将把这次谈话放在一边。"
+              },
+              {
+                "text": "Taeyun Kim — 已读（无回复）"
+              }
+            ],
+            "pages": [
+              {
+                "label": "第1页 日常对话",
+                "header": "金泰妍 KakaoTalk — 2026.02.18（第 1 页，日常对话）",
+                "messages": [
+                  {
+                    "text": "2026.02.18 7:12 PM · 对话开始"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 7:12",
+                    "text": "苏民、多恩说，现在普拉提很难预约。这是真的吗？"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 7:14",
+                    "text": "是的，下班时间几乎已经排满了。如果需要的话我会告诉你中心号码。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 7:15",
+                    "text": "我懂了。我想知道婚礼前是否应该做一些运动。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 7:16",
+                    "text": "我认为你应该向多恩咨询。"
+                  }
+                ]
+              },
+              {
+                "label": "第 2 页：一个有问题的请求",
+                "header": "Taeyun Kim KakaoTalk — 2026.02.21（第 2 页，可疑请求）",
+                "messages": [
+                  {
+                    "text": "2026.02.21 8:36 PM · 看起来像是请求，但目的不明。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 8:36",
+                    "text": "Sumin，我可以问多恩一些很难马上说的话吗？"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 8:38",
+                    "text": "这是怎么回事？如果是和多恩有关的话，直接问她就对了。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 8:39",
+                    "text": "我只是好奇从女人的角度来看它是什么样子。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "晚上 8:41",
+                    "text": "我想如果我们私下和多恩简单聊聊会更舒服。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "晚上 8:43",
+                    "text": "我认为这不是什么值得秘密谈论的事情。通过文字说话。"
+                  }
+                ]
+              },
+              {
+                "label": "第3页 深夜留言",
+                "header": "金泰妍 KakaoTalk — 2026.02.24（第3页深夜留言）",
+                "messages": [
+                  {
+                    "text": "2026.02.24 12:47 AM · 疑似深夜喝酒后的消息"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "上午 12:47",
+                    "text": "苏敏，你睡了吗？我今天喝了一些。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "上午 12:49",
+                    "text": "奇怪的是，我一喝酒就会想起Sumin。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "上午 12:51",
+                    "text": "泰妍，在现在的时间里，这种联系方式很不方便。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "上午 12:53",
+                    "text": "您还想再喝一杯吗？只要告诉多恩你遇到了公司的人就可以了。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "上午 12:54",
+                    "text": "多恩是准新郎。我不会遇到这样的人。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "time": "上午 12:56",
+                    "text": "不要画太多线。我以前很喜欢你的风格。"
+                  },
+                  {
+                    "sender": "崔苏民",
+                    "time": "中午 12:58",
+                    "text": "停止吧。我将把这次谈话放在一边。"
+                  },
+                  {
+                    "text": "Taeyun Kim — 已读（无回复）"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-5",
-      "surfaceName": "宋多恩父亲的短信",
-      "surfaceDescription": "宋多恩父亲与未婚夫之间的短信记录存在。"
+      "name": "宋多恩的父亲兼准新郎发来的短信",
+      "surfaceName": "宋多恩父亲的文字",
+      "description": "宋多恩的父亲和她的未婚夫之间交换的请求短信记录。只有每一步对比原文，才能看出是否有索要金钱或保密的要求。",
+      "surfaceDescription": "宋多恩的父亲和她的未婚夫之间有短信记录。",
+      "investigationResults": {
+        "request_original": "第一页上只确认了婚礼准备工作和仔细的请求通知。目前还很难确定是金钱问题还是个人咨询问题。",
+        "check_metadata": "在第二页上，显示了一个看似财务请求的流程。但具体金额和具体用途仍处于保密状态。",
+        "restore_context": "第三页透露了金额、商业基金的名称以及告诉多恩不要告诉的一句话，让我们有理由再次询问崔秀敏为何联系她的未婚夫。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "请检查请求通知的原创性。"
+          },
+          "label": "确认请求"
+        },
+        {
+          "question": {
+            "text": "检查这种恩惠是否会导致金钱问题。"
+          },
+          "label": "金钱比较",
+          "unlockHint": "如果您进一步查看原文，您可以确定请求的性质是否是财务方面的。"
+        },
+        {
+          "question": {
+            "text": "请考虑金额和保密要求与崔秀敏的警告有何联系。"
+          },
+          "label": "秘密请求",
+          "unlockHint": "如果你看最后一页，你可能会问崔秀民为什么直接联系准新郎。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "你知道你父亲要求你丈夫帮忙吗？",
+          "implication": "我们了解宋多恩对她父亲的要求了解多少。"
+        },
+        "b": {
+          "questionAngle": "您是如何发现此文本流的？为什么要警告您？",
+          "implication": "我们确认崔秀民的警告动机。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅文本存在可见"
+        },
+        {
+          "id": "excerpt",
+          "summary": "仅请求通知文本可见。"
+        },
+        {
+          "id": "original",
+          "summary": "看来有要钱的可能。"
+        },
+        {
+          "id": "context",
+          "summary": "确认金额和秘密请求"
+        },
+        {
+          "id": "established",
+          "summary": "我们将其与崔秀民的警告动机联系起来进行研究。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "由 Sumin Choi 提交"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "验证原文"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "发件人和时间已确认"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "宋多恩争论父亲要求的含义"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "要求金钱和要求保密的文字在原文中得到了确认。"
+        }
+      ],
+      "meta": {
+        "name": "宋多恩父亲的文字",
+        "trustLabel": "通常",
+        "sourceLabel": "崔秀敏身边",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "宋多恩父亲的文字",
+          "trustLabel": "通常",
+          "sourceLabel": "崔秀敏身边",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 索要资金和保密"
+        },
+        "chat": {
+          "header": "宋多恩父亲↔金泰润短信 — 2026.03.02",
+          "messages": [
+            {
+              "sender": "宋多恩的父亲",
+              "text": "如果你是我女婿，你就应该相信这一点。请帮助我3000万韩元。"
+            },
+            {
+              "sender": "金泰润",
+              "text": "3000万韩元很难马上决定。"
+            },
+            {
+              "sender": "宋多恩的父亲",
+              "text": "两个月后就可以还清。因为我急需商业资金。"
+            },
+            {
+              "sender": "金泰润",
+              "text": "我想我需要和多恩讨论一下。"
+            },
+            {
+              "sender": "宋多恩的父亲",
+              "text": "先别告诉多恩。因为我不想让你担心。"
+            },
+            {
+              "text": "金泰妍 — 阅读"
+            }
+          ],
+          "pages": [
+            {
+              "label": "1 页请求通知",
+              "header": "宋○○ ↔ 金○○ 文 — 2026.02.28",
+              "messages": [
+                {
+                  "sender": "宋○○",
+                  "text": "泰妍，你的婚礼准备好了吗？"
+                },
+                {
+                  "sender": "金○○",
+                  "text": "是的，父亲。我和多恩正在好好准备。"
+                },
+                {
+                  "sender": "宋○○",
+                  "text": "有件事我对提出要求有点谨慎。"
+                },
+                {
+                  "sender": "金○○",
+                  "text": "这是怎么回事？"
+                },
+                {
+                  "sender": "宋○○",
+                  "text": "告诉多恩还是很尴尬。如果时间允许的话我可以打个简短的电话吗？"
+                }
+              ]
+            },
+            {
+              "label": "第 2 页：财务请求",
+              "header": "宋○○ ↔ 金泰○ 正文 — 2026.03.01",
+              "messages": [
+                {
+                  "sender": "宋○○",
+                  "text": "我昨天所说的只是个人请求。只要你在结婚前给我们一点帮助，就能马上解决。"
+                },
+                {
+                  "sender": "金泰○",
+                  "text": "当你说帮助时，你指的是钱吗？"
+                },
+                {
+                  "sender": "宋○○",
+                  "text": "我不打算给你太大的压力。如果遇到紧急情况停车，可以快速返回。"
+                },
+                {
+                  "sender": "金泰○",
+                  "text": "你也告诉多恩了吗？"
+                },
+                {
+                  "sender": "宋○○",
+                  "text": "我还没有做，怕担心。那是因为我不想无缘无故地增加自己的工作量。"
+                }
+              ]
+            },
+            {
+              "label": "第 3 页 金额和保密请求",
+              "header": "宋多恩父亲↔金泰润短信 — 2026.03.02",
+              "messages": [
+                {
+                  "sender": "宋多恩的父亲",
+                  "text": "如果你是我女婿，你就应该相信这一点。请帮助我3000万韩元。"
+                },
+                {
+                  "sender": "金泰润",
+                  "text": "3000万韩元很难马上决定。"
+                },
+                {
+                  "sender": "宋多恩的父亲",
+                  "text": "两个月后就可以还清。因为我急需商业资金。"
+                },
+                {
+                  "sender": "金泰润",
+                  "text": "我想我需要和多恩讨论一下。"
+                },
+                {
+                  "sender": "宋多恩的父亲",
+                  "text": "先别告诉多恩。因为我不想让你担心。"
+                },
+                {
+                  "text": "金泰妍 — 阅读"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "宋多恩父亲的文字",
+            "trustLabel": "通常",
+            "sourceLabel": "崔秀敏身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 请求通知",
+            "redactions": [
+              "屏蔽发件人姓名的一部分",
+              "请求详细信息已密封"
+            ]
+          },
+          "chat": {
+            "header": "宋○○ ↔ 金○○ 文 — 2026.02.28",
+            "messages": [
+              {
+                "sender": "宋○○",
+                "text": "泰妍，你的婚礼准备好了吗？"
+              },
+              {
+                "sender": "金○○",
+                "text": "是的，父亲。我和多恩正在好好准备。"
+              },
+              {
+                "sender": "宋○○",
+                "text": "有件事我对提出要求有点谨慎。"
+              },
+              {
+                "sender": "金○○",
+                "text": "这是怎么回事？"
+              },
+              {
+                "sender": "宋○○",
+                "text": "告诉多恩还是很尴尬。如果时间允许的话我可以打个简短的电话吗？"
+              }
+            ],
+            "pages": [
+              {
+                "label": "1 页请求通知",
+                "header": "宋○○ ↔ 金○○ 文 — 2026.02.28",
+                "messages": [
+                  {
+                    "sender": "宋○○",
+                    "text": "泰妍，你的婚礼准备好了吗？"
+                  },
+                  {
+                    "sender": "金○○",
+                    "text": "是的，父亲。我和多恩正在好好准备。"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "有件事我对提出要求有点谨慎。"
+                  },
+                  {
+                    "sender": "金○○",
+                    "text": "这是怎么回事？"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "告诉多恩还是很尴尬。如果时间允许的话我可以打个简短的电话吗？"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "宋多恩父亲的文字",
+            "trustLabel": "通常",
+            "sourceLabel": "崔秀敏身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 索要钱",
+            "redactions": [
+              "屏蔽发件人姓名的一部分",
+              "密封准确的金额和用途"
+            ]
+          },
+          "chat": {
+            "header": "宋○○ ↔ 金泰○ 正文 — 2026.03.01",
+            "messages": [
+              {
+                "sender": "宋○○",
+                "text": "我昨天所说的只是个人请求。只要你在结婚前给我们一点帮助，就能马上解决。"
+              },
+              {
+                "sender": "金泰○",
+                "text": "当你说帮助时，你指的是钱吗？"
+              },
+              {
+                "sender": "宋○○",
+                "text": "我不打算给你太大的压力。如果遇到紧急情况停车，可以快速返回。"
+              },
+              {
+                "sender": "金泰○",
+                "text": "你也告诉多恩了吗？"
+              },
+              {
+                "sender": "宋○○",
+                "text": "我还没有做，怕担心。那是因为我不想无缘无故地增加自己的工作量。"
+              }
+            ],
+            "pages": [
+              {
+                "label": "1 页请求通知",
+                "header": "宋○○ ↔ 金○○ 文 — 2026.02.28",
+                "messages": [
+                  {
+                    "sender": "宋○○",
+                    "text": "泰妍，你的婚礼准备好了吗？"
+                  },
+                  {
+                    "sender": "金○○",
+                    "text": "是的，父亲。我和多恩正在好好准备。"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "有件事我对提出要求有点谨慎。"
+                  },
+                  {
+                    "sender": "金○○",
+                    "text": "这是怎么回事？"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "告诉多恩还是很尴尬。如果时间允许的话我可以打个简短的电话吗？"
+                  }
+                ]
+              },
+              {
+                "label": "第 2 页：财务请求",
+                "header": "宋○○ ↔ 金泰○ 正文 — 2026.03.01",
+                "messages": [
+                  {
+                    "sender": "宋○○",
+                    "text": "我昨天所说的只是个人请求。只要你在结婚前给我们一点帮助，就能马上解决。"
+                  },
+                  {
+                    "sender": "金泰○",
+                    "text": "当你说帮助时，你指的是钱吗？"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "我不打算给你太大的压力。如果遇到紧急情况停车，可以快速返回。"
+                  },
+                  {
+                    "sender": "金泰○",
+                    "text": "你也告诉多恩了吗？"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "我还没有做，怕担心。那是因为我不想无缘无故地增加自己的工作量。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "宋多恩父亲的文字",
+            "trustLabel": "通常",
+            "sourceLabel": "崔秀敏身边",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 索要资金和保密"
+          },
+          "chat": {
+            "header": "宋多恩父亲↔金泰润短信 — 2026.03.02",
+            "messages": [
+              {
+                "sender": "宋多恩的父亲",
+                "text": "如果你是我女婿，你就应该相信这一点。请帮助我3000万韩元。"
+              },
+              {
+                "sender": "金泰润",
+                "text": "3000万韩元很难马上决定。"
+              },
+              {
+                "sender": "宋多恩的父亲",
+                "text": "两个月后就可以还清。因为我急需商业资金。"
+              },
+              {
+                "sender": "金泰润",
+                "text": "我想我需要和多恩讨论一下。"
+              },
+              {
+                "sender": "宋多恩的父亲",
+                "text": "先别告诉多恩。因为我不想让你担心。"
+              },
+              {
+                "text": "金泰妍 — 阅读"
+              }
+            ],
+            "pages": [
+              {
+                "label": "1 页请求通知",
+                "header": "宋○○ ↔ 金○○ 文 — 2026.02.28",
+                "messages": [
+                  {
+                    "sender": "宋○○",
+                    "text": "泰妍，你的婚礼准备好了吗？"
+                  },
+                  {
+                    "sender": "金○○",
+                    "text": "是的，父亲。我和多恩正在好好准备。"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "有件事我对提出要求有点谨慎。"
+                  },
+                  {
+                    "sender": "金○○",
+                    "text": "这是怎么回事？"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "告诉多恩还是很尴尬。如果时间允许的话我可以打个简短的电话吗？"
+                  }
+                ]
+              },
+              {
+                "label": "第 2 页：财务请求",
+                "header": "宋○○ ↔ 金泰○ 正文 — 2026.03.01",
+                "messages": [
+                  {
+                    "sender": "宋○○",
+                    "text": "我昨天所说的只是个人请求。只要你在结婚前给我们一点帮助，就能马上解决。"
+                  },
+                  {
+                    "sender": "金泰○",
+                    "text": "当你说帮助时，你指的是钱吗？"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "我不打算给你太大的压力。如果遇到紧急情况停车，可以快速返回。"
+                  },
+                  {
+                    "sender": "金泰○",
+                    "text": "你也告诉多恩了吗？"
+                  },
+                  {
+                    "sender": "宋○○",
+                    "text": "我还没有做，怕担心。那是因为我不想无缘无故地增加自己的工作量。"
+                  }
+                ]
+              },
+              {
+                "label": "第 3 页 金额和保密请求",
+                "header": "宋多恩父亲↔金泰润短信 — 2026.03.02",
+                "messages": [
+                  {
+                    "sender": "宋多恩的父亲",
+                    "text": "如果你是我女婿，你就应该相信这一点。请帮助我3000万韩元。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "text": "3000万韩元很难马上决定。"
+                  },
+                  {
+                    "sender": "宋多恩的父亲",
+                    "text": "两个月后就可以还清。因为我急需商业资金。"
+                  },
+                  {
+                    "sender": "金泰润",
+                    "text": "我想我需要和多恩讨论一下。"
+                  },
+                  {
+                    "sender": "宋多恩的父亲",
+                    "text": "先别告诉多恩。因为我不想让你担心。"
+                  },
+                  {
+                    "text": "金泰妍 — 阅读"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "id": "e-6",
-      "surfaceName": "过往的汇款记录",
-      "surfaceDescription": "过往崔秀敏与宋多恩父亲之间的汇款记录存在。"
+      "name": "过往汇款记录及欠条",
+      "surfaceName": "过往汇款记录",
+      "description": "崔秀民向宋多恩的父亲发送了3次百万韩元的汇款和欠条记录。问题是部分还款后失去联系。",
+      "surfaceDescription": "崔秀民和宋多恩父亲之间过去有汇款记录。",
+      "investigationResults": {
+        "request_original": "据证实，崔秀民的账户上曾有3次向宋某的收款人转账数百万韩元的资金。",
+        "check_metadata": "附有欠条和部分还款明细，但两次小额还款后，进一步还款和联系就断绝了。",
+        "restore_context": "如果我们看看过去的还款被切断的时间和损失前的KakaoTalk消息，我们就有理由问为什么崔秀敏没有告诉宋多恩。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "这三笔转账真的完成了吗？"
+          },
+          "label": "确认汇款"
+        },
+        {
+          "question": {
+            "text": "请将部分还款详情与欠条进行比较。"
+          },
+          "label": "还款比较",
+          "unlockHint": "如果你进一步查看转账记录，你会看到一张欠条和一些还款记录。"
+        },
+        {
+          "question": {
+            "text": "请问崔秀民在还款被切断后为何保持沉默？"
+          },
+          "label": "无声的询问",
+          "unlockHint": "通过对比还款中断的流程，我们可以询问过去止损的原因。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "你知道你父亲曾经向崔秀民借过钱吗？",
+          "implication": "据证实，宋多恩并不知道父亲过去的经济问题。"
+        },
+        "b": {
+          "questionAngle": "为什么到最后才向宋多恩隐瞒这个事实呢？",
+          "implication": "看看沉默的代价。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "只有汇款记录的存在是可见的。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "仅显示三笔转账金额和日期。"
+        },
+        {
+          "id": "original",
+          "summary": "检查贷款证明和部分还款详情。"
+        },
+        {
+          "id": "context",
+          "summary": "对比部分还款后切断联系的时间点和丢失的时间点。"
+        },
+        {
+          "id": "established",
+          "summary": "确定过去的金钱问题重复发生的可能性。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "由 Sumin Choi 提交"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "将银行记录与原始借条进行比较"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "三笔转账及部分还款已确认"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "宋多恩表示反对，认为收件人一方可能存在情况。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "失联流程及短信原文均已确认。"
+        }
+      ],
+      "meta": {
+        "name": "过往汇款记录",
+        "trustLabel": "通常",
+        "sourceLabel": "器官",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "过往汇款记录",
+          "trustLabel": "通常",
+          "sourceLabel": "器官",
+          "legalLabel": "合法性",
+          "stageLabel": "第三步——整个汇款、欠条、还款流程"
+        },
+        "bank": [
+          {
+            "desc": "崔秀敏 → 宋○○（宋多恩的父亲）转学",
+            "amount": "-300万韩元",
+            "balance": "520万韩元"
+          },
+          {
+            "desc": "附：欠条复印件——“紧急运营资金，8月底还清”"
+          },
+          {
+            "desc": "崔秀敏 → 宋○○转接（第2次）",
+            "amount": "-250万韩元",
+            "balance": "270万韩元"
+          },
+          {
+            "desc": "崔秀敏 → 宋○○转院（第3次）",
+            "amount": "-200万韩元",
+            "balance": "70万韩元"
+          },
+          {
+            "desc": "宋○○ → 崔秀敏的部分还款",
+            "amount": "+100万韩元",
+            "balance": "170万韩元"
+          },
+          {
+            "desc": "宋○○ → 崔秀敏的部分还款",
+            "amount": "+500,000韩元",
+            "balance": "220万韩元"
+          },
+          {
+            "desc": "额外的还款和响应记录",
+            "amount": "不存在"
+          },
+          {
+            "desc": "文字：“再等一下。别告诉多恩。”"
+          }
+        ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "过往汇款记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 1 步 — 仅显示三笔转账",
+            "redactions": [
+              "屏蔽某些收件人",
+              "披露金额范围",
+              "平衡掩蔽"
+            ]
+          },
+          "bank": [
+            {
+              "desc": "崔秀敏 → 宋○○转乘",
+              "amount": "2~300万韩元",
+              "balance": "掩蔽"
+            },
+            {
+              "desc": "崔秀敏 → 宋 ○○ 追加转乘",
+              "amount": "200万韩元左右",
+              "balance": "掩蔽"
+            },
+            {
+              "desc": "崔秀敏 → 宋 ○○ 追加转乘",
+              "amount": "200万韩元左右",
+              "balance": "掩蔽"
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "过往汇款记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 欠条和部分还款",
+            "redactions": [
+              "屏蔽某些收件人",
+              "屏蔽一些最终接触"
+            ]
+          },
+          "bank": [
+            {
+              "desc": "崔秀敏 → 宋○○转乘",
+              "amount": "约300万韩元",
+              "balance": "约520万韩元"
+            },
+            {
+              "desc": "附：欠条复印件——“紧急运营资金，8月底还清”"
+            },
+            {
+              "desc": "崔秀敏 → 宋 ○○ 追加转乘",
+              "amount": "约250万韩元",
+              "balance": "约270万韩元"
+            },
+            {
+              "desc": "崔秀敏 → 宋 ○○ 追加转乘",
+              "amount": "约200万韩元",
+              "balance": "70万韩元左右"
+            },
+            {
+              "desc": "宋○○ → 崔秀敏的部分还款",
+              "amount": "+100万韩元",
+              "balance": "约170万韩元"
+            },
+            {
+              "desc": "宋○○ → 崔秀敏的部分还款",
+              "amount": "+500,000韩元",
+              "balance": "约220万韩元"
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "过往汇款记录",
+            "trustLabel": "通常",
+            "sourceLabel": "器官",
+            "legalLabel": "合法性",
+            "stageLabel": "第三步——整个汇款、欠条、还款流程"
+          },
+          "bank": [
+            {
+              "desc": "崔秀敏 → 宋○○（宋多恩的父亲）转学",
+              "amount": "-300万韩元",
+              "balance": "520万韩元"
+            },
+            {
+              "desc": "附：欠条复印件——“紧急运营资金，8月底还清”"
+            },
+            {
+              "desc": "崔秀敏 → 宋○○转接（第2次）",
+              "amount": "-250万韩元",
+              "balance": "270万韩元"
+            },
+            {
+              "desc": "崔秀敏 → 宋○○转院（第3次）",
+              "amount": "-200万韩元",
+              "balance": "70万韩元"
+            },
+            {
+              "desc": "宋○○ → 崔秀敏的部分还款",
+              "amount": "+100万韩元",
+              "balance": "170万韩元"
+            },
+            {
+              "desc": "宋○○ → 崔秀敏的部分还款",
+              "amount": "+500,000韩元",
+              "balance": "220万韩元"
+            },
+            {
+              "desc": "额外的还款和响应记录",
+              "amount": "不存在"
+            },
+            {
+              "desc": "文字：“再等一下。别告诉多恩。”"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "e-7",
-      "surfaceName": "对照表",
-      "surfaceDescription": "过往与当下的对照分析表存在。"
+      "name": "过去与现在对比图",
+      "surfaceName": "检查清单",
+      "description": "过去和现在的金钱请求、联系被切断的时间点以及群聊室回复的对比表。",
+      "surfaceDescription": "有一个过去和现在的对比分析表。",
+      "investigationResults": {
+        "request_original": "过去发给崔秀民的短信和发给现在准新郎的短信几乎一模一样。",
+        "check_metadata": "这两点之间的时间恰好重叠，崔秀敏挂断电话并消失而不是说话。",
+        "restore_context": "过去和现在的要钱方式和崔秀民的沉默不断重复。可以检查柱头产生的顺序。"
+      },
+      "investigationStages": [
+        {
+          "question": {
+            "text": "过去和现在的短语是否处于同一流程？"
+          },
+          "label": "检查图案"
+        },
+        {
+          "question": {
+            "text": "请一起比较一下崔秀民失踪之前的情况。"
+          },
+          "label": "视点对比",
+          "unlockHint": "仔细观察资产负债表，可以并排看到过去和现在的短语、金额和沉默时刻。"
+        },
+        {
+          "question": {
+            "text": "是谁首先指责崔秀民认错人的？"
+          },
+          "label": "污名化",
+          "unlockHint": "通过对比这些模式，我们可以了解这种情况下耻辱出现的顺序。"
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "看完这张对比图，你有什么感想呢？",
+          "implication": "宋多恩被迫面对父亲的重复模式。"
+        },
+        "b": {
+          "questionAngle": "这次你独自阻止的理由也是一样吗？",
+          "implication": "检查重复的无声结构。"
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "summary": "仅可见比较表的存在。"
+        },
+        {
+          "id": "excerpt",
+          "summary": "仅显示过去和现在短语的比较。"
+        },
+        {
+          "id": "original",
+          "summary": "崔秀敏失踪时间点确认"
+        },
+        {
+          "id": "context",
+          "summary": "恢复模式重复上下文"
+        },
+        {
+          "id": "established",
+          "summary": "确定索要钱财的方式和崔秀敏沉默的时间是否重复。"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "法官写的"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "交叉核对证据"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "模式匹配已确认"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "宋多恩表示反对，称这是“巧合”。"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "识别重复结构并结合审讯确定责任。"
+        }
+      ],
+      "meta": {
+        "name": "检查清单",
+        "trustLabel": "通常",
+        "sourceLabel": "双方",
+        "legalLabel": "合法性",
+        "stageLabel": "初始版本"
+      },
+      "viewerData": {
+        "meta": {
+          "name": "检查清单",
+          "trustLabel": "通常",
+          "sourceLabel": "双方",
+          "legalLabel": "合法性",
+          "stageLabel": "第 3 步 — 公开披露"
+        },
+        "log": {
+          "rows": [
+            {
+              "typeLabel": "过去的",
+              "target": "宋多恩父亲→致崔秀民“紧急投资资金，仅一个月”",
+              "duration": "500万韩元"
+            },
+            {
+              "typeLabel": "今天",
+              "target": "宋多恩的父亲→对未婚夫说：“如果我成为女婿，我就会这么做。”",
+              "duration": "要求3000万韩元"
+            },
+            {
+              "typeLabel": "过去的",
+              "target": "Sumin Choi 收到额外汇款的请求。",
+              "duration": "300万韩元"
+            },
+            {
+              "typeLabel": "今天",
+              "target": "准新郎回答：“我会考虑一下。”",
+              "duration": "待定"
+            },
+            {
+              "typeLabel": "过去的",
+              "target": "崔秀民没能告诉宋多恩就被切断了联系。"
+            },
+            {
+              "typeLabel": "今天",
+              "target": "崔秀敏警告未婚夫 → 被误认为痴迷"
+            }
+          ],
+          "note": "过去和现在的要钱用语非常相似，崔秀敏两次都因无法提供充分的解释而受到批评。"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "检查清单",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "步骤 1 — 摘录短语模式",
+            "redactions": [
+              "部分掩盖真实姓名",
+              "披露金额范围"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "过去的",
+                "typeLabel": "过去的",
+                "target": "宋○○→崔秀民：急需资金",
+                "duration": "百万韩元"
+              },
+              {
+                "date": "今天",
+                "typeLabel": "今天",
+                "target": "宋○○ → 准新郎：婚前请求帮助",
+                "duration": "数千万韩元"
+              }
+            ],
+            "note": "过去和现在都类似地重复要钱的短语。"
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "检查清单",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 2 步 — 添加时间和金额",
+            "redactions": [
+              "披露的大概金额"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "过去的",
+                "target": "宋多恩父亲→崔秀民：“紧急投资，只有一个月。”",
+                "duration": "约500万韩元"
+              },
+              {
+                "typeLabel": "今天",
+                "target": "宋多恩的父亲→准新郎：“如果你是女婿的话。”",
+                "duration": "要求约3000万韩元"
+              },
+              {
+                "typeLabel": "过去的",
+                "target": "崔秀民没能告诉宋多恩就被切断了联系。"
+              },
+              {
+                "typeLabel": "今天",
+                "target": "崔秀敏试图警告未婚夫，却遭到误解。"
+              }
+            ],
+            "note": "索要钱财后，崔秀民无法说话，关系破裂或被误会的点重叠。"
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "检查清单",
+            "trustLabel": "通常",
+            "sourceLabel": "双方",
+            "legalLabel": "合法性",
+            "stageLabel": "第 3 步 — 比较整个模式"
+          },
+          "log": {
+            "rows": [
+              {
+                "typeLabel": "过去的",
+                "target": "宋多恩父亲→致崔秀民“紧急投资资金，仅一个月”",
+                "duration": "500万韩元"
+              },
+              {
+                "typeLabel": "今天",
+                "target": "宋多恩的父亲→对未婚夫说：“如果我成为女婿，我就会这么做。”",
+                "duration": "要求3000万韩元"
+              },
+              {
+                "typeLabel": "过去的",
+                "target": "Sumin Choi 收到额外汇款的请求。",
+                "duration": "300万韩元"
+              },
+              {
+                "typeLabel": "今天",
+                "target": "准新郎回答：“我会考虑一下。”",
+                "duration": "待定"
+              },
+              {
+                "typeLabel": "过去的",
+                "target": "崔秀民没能告诉宋多恩就被切断了联系。"
+              },
+              {
+                "typeLabel": "今天",
+                "target": "崔秀敏警告未婚夫 → 被误认为痴迷"
+              }
+            ],
+            "note": "过去和现在的要钱用语非常相似，崔秀敏两次都因无法提供充分的解释而受到批评。"
+          }
+        }
+      }
     }
-  ]
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "崔秀敏的联系并不是痴迷，而是试图警告宋多恩她父亲有权获取金钱。"
+    },
+    {
+      "id": "t-2",
+      "fact": "准新郎首先给崔秀民发了一条越界的信息，被崔秀民拒绝了。"
+    },
+    {
+      "id": "t-3",
+      "fact": "宋多恩的父亲以前向崔秀民借过钱，只还了一部分。"
+    },
+    {
+      "id": "t-4",
+      "fact": "过去的损失并不是因为崔秀民改变主意，而是因为宋多恩父亲的贷款没有偿还。"
+    },
+    {
+      "id": "t-5",
+      "fact": "宋多恩在没有得到确认的情况下，在群聊中首次出卖了崔秀敏。"
+    }
+  ],
+  "solutions": {
+    "연락의도확인": [
+      "双方均承认崔秀民的接触是一种警告，而非痴迷，具体方式的适当性将另行讨论。",
+      "宋多恩也分享了准新郎过分的做法，宋多恩以此为契机，在婚前重申了信任。"
+    ],
+    "과거청산": [
+      "宋多恩证实了父亲不偿还过去贷款和目前的资金获取模式的事实，并承认崔秀敏的沉默是出于保护。",
+      "宋多恩面临父亲的问题，但却提供了一个机会，为过去的伤害向崔秀敏道歉。"
+    ],
+    "명예회복": [
+      "宋多恩向她共同的朋友就群聊中的单方面推销行为发出了纠正信息。",
+      "崔秀敏还承诺通过值得信赖的渠道进行沟通，而不是试图独自阻止。"
+    ]
+  },
+  "combinationLab": {
+    "nodes": [
+      {
+        "id": "e-1",
+        "label": "e-1 联系记录"
+      },
+      {
+        "id": "e-2",
+        "label": "e-2群聊室截图"
+      },
+      {
+        "id": "e-3",
+        "label": "e-3 过去的 KakaoTalk"
+      },
+      {
+        "id": "e-4",
+        "label": "e-4 准新郎致辞"
+      },
+      {
+        "id": "e-5",
+        "label": "e-5 宋多恩父亲的文字"
+      },
+      {
+        "id": "e-6",
+        "label": "e-6 过去的汇款记录"
+      },
+      {
+        "id": "e-7",
+        "label": "e-7 检查清单"
+      },
+      {
+        "id": "stmt-a-accusation",
+        "label": "宋多恩表示：“秀敏又联系我的男人了。”"
+      },
+      {
+        "id": "stmt-b-silence",
+        "label": "崔秀民表示：“我本来应该忍受的。”"
+      },
+      {
+        "id": "w-1-angle",
+        "label": "w-1 金世拉作证祝贺"
+      },
+      {
+        "id": "w-2-angle",
+        "label": "恭喜w-2朴俊赫作证"
+      },
+      {
+        "id": "w-3-angle",
+        "label": "w-3 吴美京作证祝贺"
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 你为什么不马上告诉我？"
+      },
+      {
+        "id": "dc-3",
+        "label": "dc-3 你又尝试自己阻止了吗？"
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 谁在没有确认的情况下出售了它？"
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4止损值"
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 柱头阶"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "dc-2",
+        "label": "dc-2 你为什么不马上告诉我？",
+        "summary": "如果准新郎先越线，为什么不立即告诉宋多恩呢？",
+        "noteText": "如果准新郎先越线，他为什么不立即告诉宋多恩呢？",
+        "judgeHint": "准新郎的接近和他沉默的原因是交织在一起的。你可以立即找出为什么你不能说出来。"
+      },
+      {
+        "id": "dc-3",
+        "label": "dc-3 你又尝试自己阻止了吗？",
+        "summary": "如果宋多恩的父亲再次以同样的方式提起金钱的话题，为什么他要独自阻止呢？",
+        "noteText": "如果宋多恩的父亲再次以同样的方式提起金钱的话题，为什么这次你要自己阻止呢？",
+        "judgeHint": "新一期“对准新郎的请求”被揭晓。请检查您的请求内容和途径。"
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 谁在没有确认的情况下出售了它？",
+        "summary": "谁第一个在群聊里不直接查看就把好友卖了？",
+        "noteText": "你不是那个在群聊里不亲自查看就把朋友卖掉的人吗？",
+        "judgeHint": "一个新问题被揭露：“群聊里的卖东西和诽谤”。指出传播途径。"
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4止损值",
+        "summary": "如果过去的损失不是心意改变，而是贷款不还、沉默造成的，那为什么你从来不说出来呢？",
+        "noteText": "止损值",
+        "judgeHint": "一个新问题“过去止损的原因”被揭晓。检查止损前的资金流向以及沉默的原因。"
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 柱头阶",
+        "summary": "在两个点上，该序列会重复，但语音会被打断。必须检查断言和沉默的顺序。",
+        "noteText": "耻辱顺序",
+        "judgeHint": "群聊室的卖出和过去的止损是交织在一起的。指出传播途径和柱头的顺序。"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "combine-1",
+        "discoveryText": "比较联系记录和群聊室截图，我们可以看到崔秀民的联系是如何在未经确认的情况下被定性为“痴迷”的。"
+      },
+      {
+        "id": "combine-2",
+        "discoveryText": "对照联系记录和准新郎的越界留言，看来是准新郎越界了。我们向新证人询问相关事实。"
+      },
+      {
+        "id": "combine-3",
+        "discoveryText": "宋多恩父亲发给未婚夫的短信和过去发给崔秀敏的欠条在部分还款流程上几乎一模一样。"
+      },
+      {
+        "id": "combine-4",
+        "discoveryText": "将准新郎的做法与比较结合起来，强化了崔秀民的接触是一种警告的结论。"
+      },
+      {
+        "id": "combine-5",
+        "discoveryText": "宋多恩的“我又联系我的男人了”的评论在群聊中的传播路径已经确定。"
+      },
+      {
+        "id": "combine-6",
+        "discoveryText": "如果将过去的 KakaoTalk 和资产负债表结合起来，两次都会重复语音中断的顺序。必须通过审讯来确定谁先做出决定，谁保持沉默。"
+      },
+      {
+        "id": "combine-7",
+        "discoveryText": "将KakaoTalk过去提到的“资金问题”与过去的汇款记录进行比较，发现损失的真正原因不是改变主意，而是借入资金不归还的问题。"
+      },
+      {
+        "id": "combine-8",
+        "discoveryText": "对比Sumin的“我应该忍耐”的话和准新郎的留言，看来是准新郎越界了。我们向新证人询问相关事实。"
+      },
+      {
+        "id": "combine-9",
+        "discoveryText": "结合秀敏试图克制的话和多恩父亲的短信来看，目前的联系很可能不仅仅是私人联系。审讯时必须查明金钱问题的实际当事人和目的。"
+      },
+      {
+        "id": "combine-10",
+        "discoveryText": "如果你将“我再次联系我的男人”的断言与“我应该忍住”的自责放在一起，很明显，你正在经历完全不同的同一事件。"
+      }
+    ]
+  },
+  "v3Design": {
+    "evidenceAxisLegend": {
+      "depthStages": [
+        {
+          "id": "stub",
+          "summary": "只有存在才是可见的"
+        },
+        {
+          "id": "excerpt",
+          "summary": "仅查看部分"
+        },
+        {
+          "id": "original",
+          "summary": "安全原件/完整副本"
+        },
+        {
+          "id": "context",
+          "summary": "恢复之前和之后的上下文"
+        },
+        {
+          "id": "established",
+          "summary": "正式记录采用"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "已提交",
+          "summary": "当事人提交的状态"
+        },
+        {
+          "id": "verifying",
+          "label": "正在验证",
+          "summary": "检查原文和上下文"
+        },
+        {
+          "id": "authenticated",
+          "label": "已验证",
+          "summary": "根据可靠数据判断"
+        },
+        {
+          "id": "challenged",
+          "label": "提出异议",
+          "summary": "另一方争夺意义或范围"
+        },
+        {
+          "id": "misread",
+          "label": "操纵/误读判断",
+          "summary": "伪造或摘录/误读的判定"
+        }
+      ]
+    },
+    "hiddenDisputes": [
+      {
+        "id": "d-3",
+        "name": "父亲的金钱获取模式",
+        "unlockPlan": {
+          "runtimeRule": "达到 d-2 S3 后解锁",
+          "authoredRule": "在d-2中确认了准新郎的接近后，当崔秀民说出警告原因时，宋多恩的父亲模式受到了伤害。"
+        }
+      },
+      {
+        "id": "d-4",
+        "name": "以往止损事件的真正原因",
+        "unlockPlan": {
+          "runtimeRule": "达到 d-3 S2 后解锁",
+          "authoredRule": "宋多恩父亲现在的模式被确认后，发现过去也发生过同样的事情。"
+        }
+      },
+      {
+        "id": "d-5",
+        "name": "群聊贩卖、诽谤",
+        "unlockPlan": {
+          "runtimeRule": "达到 d-3 S3 + d-4 S3 时解锁",
+          "authoredRule": "由于父亲的作风和过去的贷款偿还情况被完全揭露，宋多恩目前在诽谤诉讼中受伤。"
+        }
+      }
+    ],
+    "leadLines": [
+      {
+        "id": "L-1",
+        "name": "紧贴框架引线",
+        "interpretationChoices": [
+          {
+            "id": "L-1-A",
+            "text": "崔秀敏对此很着迷。",
+            "implication": "他痴迷于推动 d-1。"
+          },
+          {
+            "id": "L-1-B",
+            "text": "是宋多恩先框起来的。",
+            "implication": "连接到 d-5。"
+          },
+          {
+            "id": "L-1-C",
+            "text": "需要更多确认",
+            "implication": "保持中立。"
+          }
+        ]
+      },
+      {
+        "id": "L-2",
+        "name": "准新郎的扭绳",
+        "interpretationChoices": [
+          {
+            "id": "L-2-A",
+            "text": "准新郎第一个冲过终点线。",
+            "implication": "确认d-2。"
+          },
+          {
+            "id": "L-2-B",
+            "text": "尽管如此，崔秀民继续与我联系还是一个问题。",
+            "implication": "询问d-1的方法是否合适。"
+          },
+          {
+            "id": "L-2-C",
+            "text": "准新郎应该承担更多的责任。",
+            "implication": "突出第三方责任。"
+          }
+        ]
+      },
+      {
+        "id": "L-3",
+        "name": "父亲模式引线",
+        "interpretationChoices": [
+          {
+            "id": "L-3-A",
+            "text": "宋多恩父亲处理金钱问题的模式是正确的。",
+            "implication": "确认d-3和d-4。"
+          },
+          {
+            "id": "L-3-B",
+            "text": "可能有父亲的情况。",
+            "implication": "考虑一下宋多恩的立场。"
+          },
+          {
+            "id": "L-3-C",
+            "text": "应该是崔秀民自己说的。",
+            "implication": "对沉默负责。"
+          }
+        ]
+      },
+      {
+        "id": "L-4",
+        "name": "警告结论引导",
+        "interpretationChoices": [
+          {
+            "id": "L-4-A",
+            "text": "崔秀民的接触是一种警告。",
+            "implication": "重新解读整个事件。"
+          },
+          {
+            "id": "L-4-B",
+            "text": "虽然是警告，但方法却是错误的。",
+            "implication": "我对崔秀民的方法负有责任。"
+          },
+          {
+            "id": "L-4-C",
+            "text": "两人在检查前就决定了",
+            "implication": "共同责任。"
+          }
+        ]
+      }
+    ],
+    "authorityPlacements": [
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "在 d-1 开始时，在 e-1 时 摘录",
+        "purpose": "检查你的联系历史记录的实际内容，以确定你是否着迷。"
+      },
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "d-2 解锁后立即进行 e-4 存根时",
+        "purpose": "确保来自越界准新郎的原始消息"
+      },
+      {
+        "action": "证人传票",
+        "recommendedMoment": "d-2 S2后",
+        "purpose": "通过朴俊赫确认准新郎的行为模式"
+      },
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "d-3 解锁后立即进行 e-5 存根时",
+        "purpose": "宋多恩父亲的原始短信已被锁定"
+      },
+      {
+        "action": "证人传票",
+        "recommendedMoment": "d-4 S1后",
+        "purpose": "确认过去的金钱交易是通过吴美京目击的"
+      },
+      {
+        "action": "原始提交订单",
+        "recommendedMoment": "d-4 解锁后立即进行 e-6 存根时",
+        "purpose": "确保过去汇款的原始收据"
+      },
+      {
+        "action": "证人传票",
+        "recommendedMoment": "d-5解锁时间",
+        "purpose": "通过金世拉，我们确认了群聊室的气氛和宋多恩第一次发言的情况。"
+      },
+      {
+        "action": "对比命令",
+        "recommendedMoment": "何时解锁 e-7",
+        "purpose": "创建过去和现在模式的比较图表"
+      },
+      {
+        "action": "演讲录音摘要",
+        "recommendedMoment": "d-3 S3后",
+        "purpose": "官方记录宋多恩父亲的金钱获取模式重复"
+      },
+      {
+        "action": "当事人交叉询问",
+        "recommendedMoment": "d-5 S2后",
+        "purpose": "双方面对面会面，确认未经确认的情况。"
+      }
+    ],
+    "sensitiveSealTargets": [
+      {
+        "targets": [
+          "具体汇款金额",
+          "宋多恩父亲的真实姓名"
+        ],
+        "risk": "如果宋多恩父亲不偿还贷款的真相被揭露得太早，审讯可能会因为宋多恩的情绪爆发而停止。"
+      }
+    ],
+    "officialRecordRecommendations": [
+      "崔秀民的接触不是为了痴迷，而是为了警告。",
+      "准新郎首先越过界限，接近崔秀民。",
+      "宋多恩父亲的金钱获取模式过去和现在都是一样的。",
+      "过去损失的真正原因是宋多恩父亲没有偿还贷款。",
+      "宋多恩在没有得到确认的情况下，在群聊中首次出卖了崔秀敏。"
+    ]
+  },
+  "solutionCategoryLabels": {
+    "연락의도확인": "确认联系意向",
+    "과거청산": "清算过去",
+    "명예회복": "恢复荣誉"
+  }
 }

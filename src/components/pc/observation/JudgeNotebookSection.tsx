@@ -5,6 +5,8 @@ import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from './JudgeObservationSection'
 import { JudgeNotebookHistoryDrawer } from './JudgeObservationHistoryDrawer'
 import type { JudgeNotebookEntry, JudgeNotebookCategory } from '../../../store/slices/judgeNotebookSlice'
+import { translate, useI18n, type MessageKey } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 const CATEGORY_ICON: Record<JudgeNotebookCategory, string> = {
   confession: 'i-key',
@@ -14,12 +16,12 @@ const CATEGORY_ICON: Record<JudgeNotebookCategory, string> = {
   dispute_emergence: 'i-bolt',
 }
 
-const CATEGORY_LABEL: Record<JudgeNotebookCategory, string> = {
-  confession: '자백',
-  critical_contradiction: '결정적 모순',
-  key_statement: '핵심 발화',
-  dispute_probe: '쟁점 파악',
-  dispute_emergence: '쟁점 발현',
+const CATEGORY_LABEL_KEYS: Record<JudgeNotebookCategory, MessageKey> = {
+  confession: 'pc.notebook.filter.confession',
+  critical_contradiction: 'pc.notebook.filter.critical_contradiction',
+  key_statement: 'pc.notebook.filter.key_statement',
+  dispute_probe: 'pc.notebook.filter.dispute_probe',
+  dispute_emergence: 'pc.notebook.filter.dispute_emergence',
 }
 
 const CATEGORY_TONE: Record<JudgeNotebookCategory, 'gold' | 'red' | 'blue'> = {
@@ -43,6 +45,7 @@ const CATEGORY_TO_OBS: Record<JudgeNotebookCategory, string> = {
 const TIMELINE_COUNT = 8
 
 export default function JudgeNotebookSection() {
+  const { locale, t } = useI18n()
   const entries = useStore((s) => s.notebookEntries ?? [])
   const caseData = useStore((s) => s.caseData)
   const turnCount = useStore((s) => s.turnCount)
@@ -115,19 +118,19 @@ export default function JudgeNotebookSection() {
     markEntryRead(entry.id)
     const pname = partyName(entry.party)
     const subtitleParts = [
-      CATEGORY_LABEL[entry.category],
-      `턴 ${entry.turnCount}`,
+      t(CATEGORY_LABEL_KEYS[entry.category]),
+      `T${entry.turnCount}`,
       pname,
     ].filter(Boolean)
     openPcInteractionPanel({
-      title: entry.title,
+      title: localizeRuntimeText(entry.title, locale),
       subtitle: subtitleParts.join(' · '),
-      body: entry.summary || '결정적 사건 기록입니다.',
+      body: localizeRuntimeText(entry.summary || t('pc.notebook.empty'), locale),
       tone: CATEGORY_TONE[entry.category],
       variant: 'feature',
       actions: [
-        { kind: 'close', label: '확인' },
-        ...(entry.linkedDialogueId ? [{ kind: 'close' as const, label: '발화로 이동' }] : []),
+        { kind: 'close', label: t('pc.right.combo.check') },
+        ...(entry.linkedDialogueId ? [{ kind: 'close' as const, label: t('pc.dialogue.record') }] : []),
       ],
     })
     if (entry.linkedDialogueId) {
@@ -150,11 +153,11 @@ export default function JudgeNotebookSection() {
     <section
       className="sec pc-judge-observation-section pc-judge-observation-section--notebook"
       data-resonance-target="judge-notebook"
-      aria-label="재판관의 수첩"
+      aria-label={t('pc.notebook.title')}
     >
       <div className="sec-h">
         <PCSvgIcon id="i-doc" size={14} />
-        <span>재판관의 수첩</span>
+        <span>{t('pc.notebook.title')}</span>
         {unreadCount > 0 ? (
           <span className={`pc-jobs-badge${badgeFlash ? ' is-flash' : ''}`}>{unreadCount}</span>
         ) : entries.length > 0 ? (
@@ -164,8 +167,8 @@ export default function JudgeNotebookSection() {
           type="button"
           className={`pc-jobs-history-btn${historyOpen ? ' is-open' : ''}`}
           onClick={toggleHistory}
-          title={historyOpen ? '수첩 히스토리 닫기' : '수첩 히스토리 열기'}
-          aria-label="수첩 히스토리 열기"
+          title={historyOpen ? t('pc.notebook.historyClose') : t('pc.notebook.historyOpen')}
+          aria-label={t('pc.notebook.historyOpen')}
           aria-pressed={historyOpen}
         >
           <PCSvgIcon id="i-doc" size={12} />
@@ -173,7 +176,7 @@ export default function JudgeNotebookSection() {
       </div>
 
       {/* 미니 타임라인 — 관찰과 동일 클래스 (.pc-jobs-mini-timeline) */}
-      <div className="pc-jobs-mini-timeline" role="list" aria-label="최근 수첩 흐름">
+      <div className="pc-jobs-mini-timeline" role="list" aria-label={t('pc.notebook.recentFlow')}>
         {timeline.length === 0 ? (
           <span className="pc-jobs-mini-timeline__empty" aria-hidden="true">···</span>
         ) : (
@@ -187,7 +190,7 @@ export default function JudgeNotebookSection() {
                 role="listitem"
                 className={`pc-jobs-mini-dot is-${obsCategory}${isActive ? ' is-active' : ''}${entry.read ? '' : ' is-unread'}`}
                 onClick={() => openEntryDetail(entry)}
-                title={entry.title}
+                title={localizeRuntimeText(entry.title, locale)}
               >
                 <PCSvgIcon id={entry.iconId ?? CATEGORY_ICON[entry.category]} size={10} />
               </button>
@@ -209,18 +212,18 @@ export default function JudgeNotebookSection() {
             <PCSvgIcon id={main.iconId ?? CATEGORY_ICON[main.category]} size={20} />
           </span>
           <span className="pc-jobs-main__body">
-            <span className="pc-jobs-main__title">{main.title}</span>
+            <span className="pc-jobs-main__title">{localizeRuntimeText(main.title, locale)}</span>
             {main.summary ? (
-              <span className="pc-jobs-main__summary">{main.summary}</span>
+              <span className="pc-jobs-main__summary">{localizeRuntimeText(main.summary, locale)}</span>
             ) : (
-              <span className="pc-jobs-main__summary">{CATEGORY_LABEL[main.category]} · 턴 {main.turnCount}</span>
+              <span className="pc-jobs-main__summary">{t(CATEGORY_LABEL_KEYS[main.category])} · T{main.turnCount}</span>
             )}
           </span>
           <span className="pc-jobs-main__time">{formatTurnGap(turnCount, main.turnCount)}</span>
         </button>
       ) : (
         <div className="pc-jobs-main is-empty" aria-hidden="true">
-          <span className="pc-jobs-main__empty-text">결정적 사건이 일어나면 여기에 기록됩니다.</span>
+          <span className="pc-jobs-main__empty-text">{t('pc.notebook.empty')}</span>
         </div>
       )}
     </section>
@@ -231,7 +234,6 @@ export default function JudgeNotebookSection() {
 
 function formatTurnGap(now: number, then: number): string {
   const gap = now - then
-  if (gap <= 0) return '방금'
-  if (gap === 1) return '1턴 전'
-  return `${gap}턴 전`
+  if (gap <= 0) return translate('pc.common.justNow')
+  return translate('pc.common.turnAgo', { count: gap })
 }
