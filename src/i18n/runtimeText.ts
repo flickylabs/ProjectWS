@@ -25,6 +25,11 @@ export function getRuntimeTextLocale(): LocaleCode {
 }
 
 const EXACT: Record<string, LocaleText> = {
+  '대화 중 반복적으로 드러나는 말버릇 정보입니다.': {
+    en: 'A recurring speech habit is visible in the dialogue.',
+    ja: '会話の中で繰り返し表れる話し方の癖です。',
+    'zh-CN': '这是对话中反复显现的说话习惯信息。',
+  },
   '증거 조사': { en: 'Evidence Investigation', ja: '証拠調査', 'zh-CN': '证据调查' },
   '증거조사': { en: 'Evidence Investigation', ja: '証拠調査', 'zh-CN': '证据调查' },
   '새 증거 확보': { en: 'New Evidence Secured', ja: '新証拠を確保', 'zh-CN': '已取得新证据' },

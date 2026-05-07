@@ -29,14 +29,14 @@ export interface ScreenPreset {
 }
 
 export const SCREEN_PRESETS: ScreenPreset[] = [
-  { id: '1366x768', label: '1366 × 768', width: 1366, height: 768, note: '노트북' },
-  { id: '1440x900', label: '1440 × 900', width: 1440, height: 900, note: '16:10' },
-  { id: '1920x1080', label: '1920 × 1080', width: 1920, height: 1080, note: 'FHD' },
-  { id: '2560x1080', label: '2560 × 1080', width: 2560, height: 1080, note: '울트라와이드 21:9' },
-  { id: '2560x1440', label: '2560 × 1440', width: 2560, height: 1440, note: 'QHD' },
-  { id: '2560x1600', label: '2560 × 1600', width: 2560, height: 1600, note: '16:10' },
-  { id: '3440x1440', label: '3440 × 1440', width: 3440, height: 1440, note: '울트라와이드 QHD' },
-  { id: '3840x2160', label: '3840 × 2160', width: 3840, height: 2160, note: '4K' },
+  { id: '1366x768', label: '1366 x 768', width: 1366, height: 768, note: 'HD' },
+  { id: '1440x900', label: '1440 x 900', width: 1440, height: 900, note: '16:10' },
+  { id: '1920x1080', label: '1920 x 1080', width: 1920, height: 1080, note: 'FHD' },
+  { id: '2560x1080', label: '2560 x 1080', width: 2560, height: 1080, note: '21:9' },
+  { id: '2560x1440', label: '2560 x 1440', width: 2560, height: 1440, note: 'QHD' },
+  { id: '2560x1600', label: '2560 x 1600', width: 2560, height: 1600, note: '16:10' },
+  { id: '3440x1440', label: '3440 x 1440', width: 3440, height: 1440, note: 'UWQHD' },
+  { id: '3840x2160', label: '3840 x 2160', width: 3840, height: 2160, note: '4K' },
 ]
 
 export const DEFAULT_PRESET: ScreenPresetId = 'auto'

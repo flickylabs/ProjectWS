@@ -62,7 +62,7 @@ body.pc-mode {
 html[lang^="en"] body.pc-mode {
   word-break: normal;
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 
 html[lang^="ja"] body.pc-mode,
@@ -4744,14 +4744,15 @@ body.pc-mode .pc-home-v2__hero::before {
   top: 0;
   bottom: 0;
   transform: translateX(-50%);
-  width: 100vw;
-  /* depth-header와 100% 동일한 색·알파·페이드 */
+  width: calc(100vw + 96px);
+  border-radius: 0;
+  /* Full-bleed title band with soft edges */
   background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(13, 14, 18, 0.72) 12%,
-    rgba(13, 14, 18, 0.78) 50%,
-    rgba(13, 14, 18, 0.72) 88%,
-    transparent 100%);
+    rgba(13, 14, 18, 0.08) 0%,
+    rgba(13, 14, 18, 0.62) 14%,
+    rgba(13, 14, 18, 0.82) 50%,
+    rgba(13, 14, 18, 0.62) 86%,
+    rgba(13, 14, 18, 0.08) 100%);
   z-index: 0;
   pointer-events: none;
 }
@@ -4765,7 +4766,9 @@ body.pc-mode .pc-home-v2__title-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 22px;
+  width: min(100%, 1180px);
+  min-width: 0;
 }
 
 body.pc-mode .pc-home-v2__title-scale {
@@ -4779,29 +4782,71 @@ body.pc-mode .pc-home-v2__title-scale {
 /* v3: Hero — display-xl 64px 800 + subtle gold text-shadow */
 body.pc-mode .pc-home-v2__hero h1 {
   margin: 0;
-  font-size: clamp(44px, 4.6vw, 64px);
+  font-size: 56px;
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   color: var(--pc-text);
   text-shadow: 0 2px 18px rgba(212, 162, 78, 0.18);
-  white-space: normal;
+  white-space: nowrap;
   word-break: keep-all;
-  overflow-wrap: break-word;
-  max-width: min(1100px, calc(100% - 200px));
+  overflow-wrap: normal;
+  max-width: min(980px, calc(100% - 180px));
   text-align: center;
 }
 
 html[lang^="en"] body.pc-mode .pc-home-v2__hero h1 {
-  letter-spacing: -0.02em;
+  font-size: 58px;
+}
+
+html[lang^="ja"] body.pc-mode .pc-home-v2__hero h1 {
+  font-size: 48px;
+}
+
+html[lang^="zh"] body.pc-mode .pc-home-v2__hero h1 {
+  font-size: 52px;
 }
 
 body.pc-mode .pc-home-v2__hero p {
-  margin: 14px 0 0;
-  font-size: 18px;
+  margin: 16px 0 0;
+  max-width: 780px;
+  font-size: 19px;
+  font-weight: 500;
   color: var(--pc-text-dim);
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   line-height: 1.5;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 980px) {
+  body.pc-mode .pc-home-v2__title-scale {
+    display: none;
+  }
+
+  body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="en"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="ja"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="zh"] body.pc-mode .pc-home-v2__hero h1 {
+    font-size: 38px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  body.pc-mode .pc-home-v2__hero {
+    padding-inline: 20px;
+  }
+
+  body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="en"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="ja"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="zh"] body.pc-mode .pc-home-v2__hero h1 {
+    font-size: 28px;
+  }
+
+  body.pc-mode .pc-home-v2__hero p {
+    font-size: 15px;
+  }
 }
 
 body.pc-mode .pc-home-v2__mode-grid {
@@ -22408,7 +22453,11 @@ body.pc-mode .cb__brief-character .cb__brief-meta {
   font-size: 11px !important;
   color: var(--pc-text-muted);
   letter-spacing: 0.02em;
-  white-space: nowrap;
+  line-height: 1.32;
+  max-width: 124px;
+  hyphens: manual;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 /* 가운데 — 사건 제목 + bait */
@@ -23469,9 +23518,9 @@ body.pc-mode .cb__zigzag {
 
 /* HERO — 사건 제목 가운데, portraits 안쪽으로 이동 (padding-x 키움) */
 body.pc-mode .cb__brief-hero {
-  grid-template-columns: 84px 1fr 84px !important;
-  gap: 36px !important;
-  padding: 48px 64px 32px !important;
+  grid-template-columns: 112px 1fr 112px !important;
+  gap: 24px !important;
+  padding: 48px 48px 32px !important;
 }
 body.pc-mode .cb__brief-portrait {
   width: 80px !important;
@@ -23916,9 +23965,9 @@ body.pc-mode .pc-play-hbar .slot-nm {
   }
 
   body.pc-mode .cb__brief-hero {
-    grid-template-columns: 64px 1fr 64px !important;
-    gap: 20px !important;
-    padding: 24px 44px 18px !important;
+    grid-template-columns: 104px 1fr 104px !important;
+    gap: 18px !important;
+    padding: 24px 28px 18px !important;
   }
 
   body.pc-mode .cb__brief-portrait {
@@ -28496,7 +28545,7 @@ body.pc-mode .pc-result-shell {
   }
 
   body.pc-mode .pc-home-v2__hero h1 {
-    font-size: clamp(38px, 4vw, 54px) !important;
+    font-size: 46px !important;
   }
 
   body.pc-mode .pc-mode-card {
@@ -28505,6 +28554,24 @@ body.pc-mode .pc-result-shell {
 
   body.pc-mode .pc-home-info-card {
     padding: 18px 22px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="en"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="ja"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="zh"] body.pc-mode .pc-home-v2__hero h1 {
+    font-size: 38px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="en"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="ja"] body.pc-mode .pc-home-v2__hero h1,
+  html[lang^="zh"] body.pc-mode .pc-home-v2__hero h1 {
+    font-size: 28px !important;
   }
 }
 

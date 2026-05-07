@@ -40,7 +40,7 @@ export async function generatePhase1Dialogues(caseData: CaseData): Promise<Omit<
     )
     return parseDialogueArray(response, nameA, nameB)
   } catch (error) {
-    console.warn('Phase 1 LLM 생성 실패:', error)
+    console.warn('Phase 1 LLM generation failed:', error)
     return []
   }
 }
@@ -76,7 +76,7 @@ export async function generatePhase2Dialogues(caseData: CaseData): Promise<Omit<
     )
     return parseDialogueArray(response, nameA, nameB)
   } catch (error) {
-    console.warn('Phase 2 LLM 생성 실패:', error)
+    console.warn('Phase 2 LLM generation failed:', error)
     return []
   }
 }

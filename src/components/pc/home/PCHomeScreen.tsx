@@ -10,6 +10,7 @@ import { useScreenPreset } from '../../../hooks/useScreenPreset'
 import { SCREEN_PRESETS, type ScreenPresetId } from '../../../utils/screenPresets'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { translate, useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
+import { hasUnexpectedHangulForLocale } from '../../../i18n/llmLocale'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCSessionIcon from '../icons/PCSessionIcon'
@@ -18,6 +19,7 @@ import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCJudgeProgressionPanel from '../profile/PCJudgeProgressionPanel'
 import { FRAGMENT_VISUALS, PCFragmentIcon } from '../progression/PCJudgeProgressionShared'
 import { PCResultFrame } from '../result/PCResultScreen'
+import { getFragmentLabel, getResultCopy, getRewardTitleInfo } from '../result/resultCopy'
 import PCCaseBrowser from './PCCaseBrowser'
 import PCIntroSlides from './PCIntroSlides'
 import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getLocalizedPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
@@ -110,6 +112,11 @@ export default function PCHomeScreen() {
   const selectedLocale = locales.find((item) => item.code === locale)
   const seasonNumber = season.id.replace(/^s/, '')
   const seasonLabel = t('pc.home.season.name', { number: seasonNumber })
+  const liveStatus = llmConnected == null
+    ? t('pc.home.status.checking')
+    : llmConnected
+      ? t('pc.home.status.connected')
+      : t('pc.home.status.disconnected')
   const judgeLevel = Math.max(1, history.length || 1)
   const reputation = history.reduce((sum, entry) => sum + Math.max(0, entry.score), 0)
 
@@ -487,7 +494,7 @@ export default function PCHomeScreen() {
                           </div>
                           <div className="pc-history-verdict-brief">
                             <strong>{t('pc.home.history.verdictBrief')}</strong>
-                            <p>{getHistoryVerdictBrief(selectedHistory)}</p>
+                            <p>{getHistoryVerdictBrief(selectedHistory, locale)}</p>
                           </div>
                           <button className="pc-inline-button" onClick={() => setHistoryDetailEntry(selectedHistory)} type="button">{t('pc.home.history.details')}</button>
                         </div>
@@ -558,7 +565,7 @@ export default function PCHomeScreen() {
             </Card>
             <Card eyebrow="AUDIO" title={t('settings.audio.title')}><ToggleRow checked={bgmOn} label={t('settings.audio.bgmShort')} description={t('settings.audio.bgmHomeDesc')} onToggle={toggleBgm} /><ToggleRow checked={sfxOn} label={t('settings.audio.sfxShort')} description={t('settings.audio.sfxHomeDesc')} onToggle={toggleSfx} /></Card>
             <Card eyebrow="GAMEPLAY" title={t('settings.gameplay.homeTitle')}><SummaryRow label={t('settings.gameplay.behaviorHintsShort')} value={settings.showBehaviorHints ? t('settings.toggle.on') : t('settings.toggle.off')} /><SummaryRow label={t('settings.gameplay.autoAdvance')} value={settings.autoAdvanceDialogue ? t('settings.toggle.on') : t('settings.toggle.off')} /><div className="pc-settings-select-row"><div><strong>{t('settings.gameplay.textSpeed')}</strong><p>{t('settings.gameplay.textSpeedHomeDesc')}</p></div><select className="pc-settings-select" onChange={(event) => updateTypingSpeed(event.target.value as HomeSettings['typingSpeed'])} value={settings.typingSpeed}><option value="fast">{t('settings.gameplay.speed.fastAdverb')}</option><option value="normal">{t('settings.gameplay.speed.normal')}</option><option value="slow">{t('settings.gameplay.speed.slowAdverb')}</option></select></div></Card>
-            <Card eyebrow="LIVE" title="Live"><SummaryRow label="AI" value={llmConnected == null ? 'Checking' : llmConnected ? 'Online' : 'Offline'} /><SummaryRow label="Recharge" value={formatCountdown(countdown)} /><button className="pc-inline-button" disabled={checkingConnection} onClick={refreshConnection} type="button">{checkingConnection ? 'Checking…' : 'Check again'}</button></Card>
+            <Card eyebrow="LIVE" title={t('pc.home.modal.live.title')}><SummaryRow label="AI" value={liveStatus} /><SummaryRow label={t('pc.home.modal.live.rechargeLabel')} value={formatCountdown(countdown)} /><button className="pc-inline-button" disabled={checkingConnection} onClick={refreshConnection} type="button">{checkingConnection ? t('pc.home.status.checking') : t('pc.home.modal.live.checkAgain')}</button></Card>
           </div>
         </section>
       )}
@@ -723,25 +730,36 @@ function splitResolutionSentences(text: string): string[] {
     .filter(Boolean)
 }
 
-function getHistoryVerdictBrief(entry: ExtendedHistoryEntry): string {
+function getHistoryVerdictBrief(entry: ExtendedHistoryEntry, locale: LocaleCode): string {
   const detail = entry.verdictDetail
-  if (detail?.verdictSummary?.caseSummary) return sanitizeStoredText(detail.verdictSummary.caseSummary)
+  if (detail?.verdictSummary?.caseSummary && !hasUnexpectedHangulForLocale(detail.verdictSummary.caseSummary, locale)) return sanitizeStoredText(detail.verdictSummary.caseSummary)
   if (detail?.selectedSolutions?.length) {
-    return sanitizeStoredText(detail.selectedSolutions.map(formatSolutionLabel).slice(0, 2).join('. '))
+    const text = sanitizeStoredText(detail.selectedSolutions.map(formatSolutionLabel).slice(0, 2).join('. '))
+    if (!hasUnexpectedHangulForLocale(text, locale)) return text
   }
-  return `${entry.nameA} vs ${entry.nameB} · ${formatHistoryDate(entry.date)} 판결 기록`
+  if (locale === 'en') return `${entry.nameA} vs ${entry.nameB} · ${formatHistoryDate(entry.date, locale)} verdict record`
+  if (locale === 'ja') return `${entry.nameA} vs ${entry.nameB} · ${formatHistoryDate(entry.date, locale)} 判決記録`
+  if (locale === 'zh-CN') return `${entry.nameA} vs ${entry.nameB} · ${formatHistoryDate(entry.date, locale)} 判决记录`
+  return `${entry.nameA} vs ${entry.nameB} · ${formatHistoryDate(entry.date, locale)} 판결 기록`
 }
 
-function getStoredFindingLabel(value: string): string {
-  if (value === 'true') return '사실'
-  if (value === 'false') return '거짓'
-  if (value === 'pending') return '보류'
-  return value || '미기록'
+function getStoredFindingLabel(value: string, locale: LocaleCode): string {
+  const labels = {
+    ko: { true: '사실', false: '거짓', pending: '보류', none: '미기록' },
+    en: { true: 'Fact', false: 'False', pending: 'Deferred', none: 'Not recorded' },
+    ja: { true: '事実', false: '虚偽', pending: '保留', none: '未記録' },
+    'zh-CN': { true: '事实', false: '虚假', pending: '暂缓', none: '未记录' },
+  } as const
+  const table = labels[locale] ?? labels.ko
+  if (value === 'true') return table.true
+  if (value === 'false') return table.false
+  if (value === 'pending') return table.pending
+  return value || table.none
 }
 
 function splitStoredParagraphs(text?: string): string[] {
   return (text ?? '')
-    .replace(/\*?\*?(?:교훈 한 문장|교훈|명언)\*?\*?\s*[:：]\s*/g, '')
+    .replace(/\*?\*?(?:교훈 한 문장|교훈|명언|lesson|moral|quote|教訓|格言|启示|教训|名言)\*?\*?\s*[:：]\s*/gi, '')
     .split(/\n\n+/)
     .map((para) => sanitizeStoredText(para))
     .filter(Boolean)
@@ -757,8 +775,63 @@ function pickStoredAftermath(snapshotText?: string, detailText?: string): string
   })[0]
 }
 
-function buildHistoryAftermathFallback(entry: ExtendedHistoryEntry, caseTitle: string, selectedSolutions: string[]): string[] {
+function buildHistoryAftermathFallback(entry: ExtendedHistoryEntry, caseTitle: string, selectedSolutions: string[], locale: LocaleCode): string[] {
   const mainAction = selectedSolutions.map(formatSolutionLabel).filter(Boolean)[0]
+  if (locale === 'en') {
+    const actionText = mainAction
+      ? `The conclusion, "${mainAction}", did not remain as wording on a record. It became a promise and boundary the two had to check again.`
+      : 'Instead of declaring the conclusion loudly, the two first wrote down the records and words that still needed checking.'
+    const lesson = entry.relationshipType === 'friend'
+      ? 'Even a late warning leaves a wound if it is never explained.'
+      : entry.relationshipType === 'family'
+        ? 'A family heart also has to be reread before the facts.'
+        : entry.relationshipType === 'spouse'
+          ? 'Silence can outlast goodwill as suspicion.'
+          : 'An unchecked heart returns from outside the relationship.'
+    return [
+      `Even after the verdict in ${caseTitle}, ${entry.nameA} and ${entry.nameB} could not speak easily for a while. Scores and records had been organized, but the feelings between them were still less clear than the words spoken in court. One nodded first, and the other read both fatigue and hesitation in that expression.`,
+      `A few days later, they exchanged only necessary messages. ${actionText} Their replies stayed cautious because the emotions were not fully settled, and several sentences were written, erased, and rewritten. Still, they did not corner each other again with certainty that had never been checked.`,
+      `As time passed, the case became less about winning and more about the distance that remained. They could not return easily to the way things were, but they understood more clearly where the same wound had started. That understanding was too small to call reconciliation, but it was enough to keep the next words from breaking immediately.`,
+      `"${lesson}"`,
+    ]
+  }
+  if (locale === 'ja') {
+    const actionText = mainAction
+      ? `「${mainAction}」という結論は文面のまま残らず、二人がもう一度確かめるべき約束と境界へ移りました。`
+      : '二人は結論を大きく語るよりも、確認すべき記録と残った言葉を先に書き分けました。'
+    const lesson = entry.relationshipType === 'friend'
+      ? '遅い警告も、説明されなければ傷として残る。'
+      : entry.relationshipType === 'family'
+        ? '家族の心も、事実の前で読み直されなければならない。'
+        : entry.relationshipType === 'spouse'
+          ? '沈黙は時に、善意より長く疑いを残す。'
+          : '確かめない心は、関係の外から戻ってくる。'
+    return [
+      `${caseTitle}の判決が終わった後も、${entry.nameA}と${entry.nameB}はしばらく簡単には言葉を出せませんでした。点数と記録は整理されましたが、互いに残った感情はまだ法廷の言葉ほど明確ではありませんでした。片方が先にうなずき、もう片方はその表情に遅れてきた疲れと迷いを見ました。`,
+      `数日後、二人は必要な連絡だけを短く交わしました。${actionText} 感情が完全にほどけたわけではなく、返信は慎重で、何度か書いた言葉を消してまた書き直しました。それでも、以前のように確かめない確信で相手を追い詰めることはありませんでした。`,
+      `時間が経つにつれ、事件は勝敗よりも残った距離の問題へ変わりました。二人は簡単に以前のようには戻れませんでしたが、同じ傷がどこから始まったのかは少しはっきり分かるようになりました。その理解は和解と呼ぶには小さくても、次の言葉を壊さないための最低限の変化でした。`,
+      `「${lesson}」`,
+    ]
+  }
+  if (locale === 'zh-CN') {
+    const actionText = mainAction
+      ? `“${mainAction}”这个结论没有停留在文字上，而是变成两人需要重新确认的约定和边界。`
+      : '两人没有急着大声宣告结论，而是先把需要重新确认的记录和没说完的话分别写下。'
+    const lesson = entry.relationshipType === 'friend'
+      ? '迟来的提醒若不被说明，也会留下伤口。'
+      : entry.relationshipType === 'family'
+        ? '家人的心意，也要在事实面前重新读过。'
+        : entry.relationshipType === 'spouse'
+          ? '沉默有时比善意更久地留下怀疑。'
+          : '未经确认的心意，会从关系之外再次回来。'
+    return [
+      `${caseTitle}的判决结束后，${entry.nameA}和${entry.nameB}仍有一段时间很难开口。分数和记录已经整理完，但彼此留下的情绪还没有法庭里的句子那样清楚。一方先点了头，另一方从那个表情里看见迟来的疲惫和犹豫。`,
+      `几天后，两人只短短交换必要的联系。${actionText} 情绪并没有完全松开，回复仍很谨慎，有几次写下的话又被删掉再重新写过。即便如此，他们没有再像以前那样用未经确认的确信逼迫对方。`,
+      `随着时间过去，案件从胜负变成了剩余距离的问题。两人很难轻易回到过去，但他们更清楚同一道伤是从哪里开始的。那份理解还小得不能称作和解，却至少成了不让下一句话立刻崩坏的变化。`,
+      `“${lesson}”`,
+    ]
+  }
+
   const actionText = mainAction
     ? `${mainAction}라는 결론은 문장 그대로 남지 않고, 두 사람이 다시 확인해야 할 약속과 경계로 옮겨졌다.`
     : '두 사람은 당장 결론을 크게 말하기보다, 다시 확인해야 할 기록과 남은 말을 먼저 나누어 적었다.'
@@ -778,9 +851,9 @@ function buildHistoryAftermathFallback(entry: ExtendedHistoryEntry, caseTitle: s
   ]
 }
 
-function splitStoredAftermathDisplay(text: string | undefined, entry: ExtendedHistoryEntry, caseTitle: string, selectedSolutions: string[]): { bodyParas: string[]; lesson: string | null } {
-  const fallback = buildHistoryAftermathFallback(entry, caseTitle, selectedSolutions)
-  const paragraphs = splitStoredParagraphs(text)
+function splitStoredAftermathDisplay(text: string | undefined, entry: ExtendedHistoryEntry, caseTitle: string, selectedSolutions: string[], locale: LocaleCode): { bodyParas: string[]; lesson: string | null } {
+  const fallback = buildHistoryAftermathFallback(entry, caseTitle, selectedSolutions, locale)
+  const paragraphs = splitStoredParagraphs(text).filter((paragraph) => !hasUnexpectedHangulForLocale(paragraph, locale))
   const isMechanicalOldText = Boolean(text && /책임\s*비율|책임.*배분.*판결|판결문에\s*적힌\s*해결\s*방향|다음\s*조치였다|후일담의\s*방향/.test(text))
   const completed = isMechanicalOldText
     ? fallback
@@ -804,6 +877,7 @@ function splitStoredAftermathDisplay(text: string | undefined, entry: ExtendedHi
 
 function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; onClose: () => void }) {
   const { t, locale } = useI18n()
+  const resultCopy = getResultCopy(locale)
   const [tab, setTab] = useState<HistoryResultTab>('result')
   const caseData = getCaseById(entry.caseId)
   const detail = entry.verdictDetail
@@ -819,7 +893,7 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
   const selectedSolutions = snapshot?.selectedSolutions ?? detail?.selectedSolutions ?? []
   const caseTitle = snapshot?.caseTitle ?? (caseData ? getCaseDisplayTitle(caseData) : `${entry.nameA} vs ${entry.nameB}`)
   const aftermath = pickStoredAftermath(snapshot?.aftermath, detail?.aftermath)
-  const { bodyParas: aftermathBodyParas, lesson: aftermathLesson } = splitStoredAftermathDisplay(aftermath, entry, caseTitle, selectedSolutions)
+  const { bodyParas: aftermathBodyParas, lesson: aftermathLesson } = splitStoredAftermathDisplay(aftermath, entry, caseTitle, selectedSolutions, locale)
   const factRows = snapshot?.factFindings?.length
     ? snapshot.factFindings
     : caseData?.disputes.map((dispute) => ({
@@ -833,10 +907,21 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
       finding,
       truth: undefined,
     }))
-  const resolutionSentences = splitResolutionSentences(summary?.resolution ?? selectedSolutions.map(formatSolutionLabel).join('. '))
-  const relationshipLabel = snapshot?.relationshipLabel ?? getRelationshipLabel(entry.relationshipType)
-  const factMomentLines = factRows.map((row) => `${row.name}: ${getStoredFindingLabel(row.finding)}로 정리했습니다.`)
-  const keyMomentLines = summary?.keyMoment
+  const rawResolutionText = summary?.resolution && !hasUnexpectedHangulForLocale(summary.resolution, locale)
+    ? summary.resolution
+    : selectedSolutions.map(formatSolutionLabel).filter((item) => !hasUnexpectedHangulForLocale(item, locale)).join('. ')
+  const resolutionSentences = splitResolutionSentences(rawResolutionText)
+  const relationshipLabel = snapshot?.relationshipLabel && !hasUnexpectedHangulForLocale(snapshot.relationshipLabel, locale)
+    ? snapshot.relationshipLabel
+    : getRelationshipLabel(entry.relationshipType)
+  const factMomentLines = factRows.map((row) => {
+    const findingLabel = getStoredFindingLabel(row.finding, locale)
+    if (locale === 'en') return `${row.name}: organized as ${findingLabel}.`
+    if (locale === 'ja') return `${row.name}: ${findingLabel}として整理しました。`
+    if (locale === 'zh-CN') return `${row.name}: 整理为${findingLabel}。`
+    return `${row.name}: ${findingLabel}로 정리했습니다.`
+  })
+  const keyMomentLines = summary?.keyMoment && !hasUnexpectedHangulForLocale(summary.keyMoment, locale)
     ? splitResolutionSentences(summary.keyMoment)
     : factMomentLines
   const partyAName = caseData?.duo.partyA.name ?? entry.nameA
@@ -873,15 +958,15 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                 onClick={() => prevTab && setTab(prevTab)}
                 type="button"
               >
-                &lt; 이전
+                {t('pc.verdict.footer.previous')}
               </button>
               {nextTab ? (
                 <button className="pc-verdict-footer__button is-primary" onClick={() => setTab(nextTab)} type="button">
-                  다음 &gt;
+                  {t('pc.verdict.footer.next')}
                 </button>
               ) : (
                 <button className="pc-verdict-footer__button is-primary" onClick={onClose} type="button">
-                  닫기
+                  {t('pc.common.close')}
                 </button>
               )}
             </>
@@ -916,7 +1001,7 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                           <div className={`pc-result-truth__card ${correct === true ? 'is-correct' : correct === false ? 'is-wrong' : ''}`} key={row.id}>
                             <div>
                               <strong>{row.name}</strong>
-                              <p>내 판단: {getStoredFindingLabel(row.finding)}</p>
+                              <p>{t('pc.record.myJudgment')}: {getStoredFindingLabel(row.finding, locale)}</p>
                             </div>
                             <div className="pc-history-result-mark">
                               {correct === true ? 'O' : correct === false ? 'X' : '—'}
@@ -932,7 +1017,13 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                 {tab === 'verdict_pronounce' ? (
                   <div className="pc-result-text">
                     <p className="pc-history-result-pronounce">
-                      본 사건은 <strong>{partyAName}</strong>과 <strong>{partyBName}</strong>의 {relationshipLabel} 분쟁으로, 저장된 판결 기록을 기준으로 다시 표시합니다.
+                      {locale === 'en'
+                        ? `This ${relationshipLabel} dispute between ${partyAName} and ${partyBName} is being replayed from the saved verdict record.`
+                        : locale === 'ja'
+                          ? `本件は${partyAName}と${partyBName}の${relationshipLabel}をめぐる紛争で、保存された判決記録をもとに再表示しています。`
+                          : locale === 'zh-CN'
+                            ? `本案是${partyAName}与${partyBName}之间的${relationshipLabel}纠纷，正在根据已保存的判决记录重新显示。`
+                            : `본 사건은 ${partyAName}과 ${partyBName}의 ${relationshipLabel} 분쟁으로, 저장된 판결 기록을 기준으로 다시 표시합니다.`}
                     </p>
 
                     {summary ? (
@@ -960,29 +1051,29 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                           </div>
 
                           <div className="pc-result-summary__section pc-result-summary__section--compact">
-                            <h3>결정적 순간</h3>
+                            <h3>{resultCopy.sections.keyMoments}</h3>
                             <ul className="pc-result-key-moments__list">
                               {keyMomentLines.map((line, index) => <li className="pc-result-key-moments__item" key={`${index}-${line}`}>{line}</li>)}
                             </ul>
                           </div>
 
                           <div className="pc-result-summary__section pc-result-summary__section--compact pc-result-resolution--wide" style={{ margin: 0, gridColumn: '1 / -1' }}>
-                            <h3>해결 방향</h3>
+                            <h3>{resultCopy.sections.resolution}</h3>
                             <div className="pc-result-resolution__list">
                               {resolutionSentences.map((item, index) => <div className="pc-result-resolution__item" key={`${index}-${item}`}>{item}</div>)}
                             </div>
                           </div>
                         </div>
                         <div className="pc-result-summary__section">
-                          <h3>판결문 요약</h3>
-                          <p>{summary.caseSummary}</p>
-                          <p>{summary.responsibilityReason}</p>
+                          <h3>{locale === 'en' ? 'Verdict Summary' : locale === 'ja' ? '判決要約' : locale === 'zh-CN' ? '判决摘要' : '판결문 요약'}</h3>
+                          <p>{hasUnexpectedHangulForLocale(summary.caseSummary, locale) ? getHistoryVerdictBrief(entry, locale) : summary.caseSummary}</p>
+                          {summary.responsibilityReason && !hasUnexpectedHangulForLocale(summary.responsibilityReason, locale) ? <p>{summary.responsibilityReason}</p> : null}
                         </div>
                       </>
                     ) : (
                       <div className="pc-result-summary__section">
-                        <h3>판결문 요약</h3>
-                        <p>{getHistoryVerdictBrief(entry)}</p>
+                        <h3>{locale === 'en' ? 'Verdict Summary' : locale === 'ja' ? '判決要約' : locale === 'zh-CN' ? '判决摘要' : '판결문 요약'}</h3>
+                        <p>{getHistoryVerdictBrief(entry, locale)}</p>
                       </div>
                     )}
                     <span aria-hidden="true" style={{ display: 'none' }} />
@@ -1000,7 +1091,14 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                           <p className="pc-result-aftermath__para" key={`${index}-${paragraph.slice(0, 12)}`}>
                             {paragraph}
                           </p>
-                        )) : <p className="pc-history-detail-empty">이전 플레이 기록에는 후일담이 저장되어 있지 않습니다. 앞으로 완료되는 플레이는 후일담까지 함께 저장됩니다.</p>}
+                        )) : (
+                          <p className="pc-history-detail-empty">
+                            {locale === 'en' ? 'This previous play record has no saved epilogue. Future completed plays will save the epilogue as well.'
+                              : locale === 'ja' ? '以前のプレイ記録には後日談が保存されていません。今後完了したプレイでは後日談も保存されます。'
+                                : locale === 'zh-CN' ? '该历史游玩记录没有保存后日谈。之后完成的游玩会一并保存后日谈。'
+                                  : '이전 플레이 기록에는 후일담이 저장되어 있지 않습니다. 앞으로 완료되는 플레이는 후일담까지 함께 저장됩니다.'}
+                          </p>
+                        )}
                         {aftermathLesson ? (
                           <p className="pc-result-aftermath__lesson">
                             &ldquo;{aftermathLesson}&rdquo;
@@ -1016,20 +1114,30 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                   <div className="pc-result-text">
                     <div className="pc-history-bonus-layout">
                       <div className="pc-result-summary__section">
-                        <h3>획득 카드</h3>
+                        <h3>{locale === 'en' ? 'Earned Cards' : locale === 'ja' ? '獲得カード' : locale === 'zh-CN' ? '获得卡片' : '획득 카드'}</h3>
                         {rewardTitles.length ? (
                           <div className="pc-history-title-cards">
-                            {rewardTitles.map((title) => (
-                              <div className={`pc-result-title-card ${title.rarity ? `is-${title.rarity}` : ''}`} key={title.id}>
-                                <span className="pc-result-title-card__name">{title.name}</span>
-                                {title.description ? <span className="pc-result-title-card__tooltip">{title.description}</span> : null}
-                              </div>
-                            ))}
+                            {rewardTitles.map((title) => {
+                              const titleCopy = getRewardTitleInfo(title, locale)
+                              return (
+                                <div className={`pc-result-title-card ${title.rarity ? `is-${title.rarity}` : ''}`} key={title.id}>
+                                  <span className="pc-result-title-card__name">{titleCopy.name}</span>
+                                  {titleCopy.description ? <span className="pc-result-title-card__tooltip">{titleCopy.description}</span> : null}
+                                </div>
+                              )
+                            })}
                           </div>
-                        ) : <p className="pc-history-detail-empty">저장된 칭호 기록이 없습니다.</p>}
+                        ) : (
+                          <p className="pc-history-detail-empty">
+                            {locale === 'en' ? 'No saved title record.'
+                              : locale === 'ja' ? '保存された称号記録がありません。'
+                                : locale === 'zh-CN' ? '没有保存的称号记录。'
+                                  : '저장된 칭호 기록이 없습니다.'}
+                          </p>
+                        )}
                       </div>
                       <div className="pc-result-summary__section">
-                        <h3>보상 조각</h3>
+                        <h3>{locale === 'en' ? 'Reward Fragments' : locale === 'ja' ? '報酬フラグメント' : locale === 'zh-CN' ? '奖励碎片' : '보상 조각'}</h3>
                         <HistoryRewardGrid rewards={rewardFragments} />
                       </div>
                     </div>
@@ -1070,18 +1178,29 @@ function HistoryScoreDonut({ color, label, value }: { color: string; label: stri
 }
 
 function HistoryRewardGrid({ rewards }: { rewards: Array<{ fragmentId: string; count: number; label?: string }> }) {
+  const { locale } = useI18n()
   if (!rewards.length) {
-    return <p className="pc-history-detail-empty">저장된 보상 기록이 없습니다.</p>
+    return (
+      <p className="pc-history-detail-empty">
+        {locale === 'en' ? 'No saved reward record.'
+          : locale === 'ja' ? '保存された報酬記録がありません。'
+            : locale === 'zh-CN' ? '没有保存的奖励记录。'
+              : '저장된 보상 기록이 없습니다.'}
+      </p>
+    )
   }
 
   return (
     <div className="pc-history-reward-grid">
       {rewards.map((reward) => {
         const visual = FRAGMENT_VISUALS[reward.fragmentId as keyof typeof FRAGMENT_VISUALS]
+        const rewardLabel = reward.label && !hasUnexpectedHangulForLocale(reward.label, locale)
+          ? reward.label
+          : getFragmentLabel(reward.fragmentId, locale)
         return (
           <div className="pc-history-reward-card" key={reward.fragmentId}>
             <PCFragmentIcon fragmentId={reward.fragmentId as any} size={56} />
-            <strong>{reward.label ?? visual?.name ?? reward.fragmentId}</strong>
+            <strong>{rewardLabel ?? visual?.name ?? reward.fragmentId}</strong>
             <span>× {reward.count}</span>
           </div>
         )

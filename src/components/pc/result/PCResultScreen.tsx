@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { loadGeneratedCases } from '../../../data/cases/caseLoader'
 import { evaluateTitles, saveUnlockedTitles, loadUnlockedTitles, type Title } from '../../../data/titles'
 import { loadDriftState, loadExtendedHistory, loadJudgePerks, loadProgressionState, saveProgressionState, updateLatestAftermath, updateLatestResultSnapshot } from '../../../data/leaderboard'
-import { deriveCaseProfile, deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../../engine/judgeProfileEngine'
+import { deriveCaseProfile, deriveJudgeProfile } from '../../../engine/judgeProfileEngine'
 import PCTitleEmblem from '../icons/PCTitleEmblem'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { PCFragmentIcon } from '../progression/PCJudgeProgressionShared'
@@ -16,20 +16,32 @@ import { saveCaseProgress } from '../../phase/CaseMap'
 import { resetAftermathCache } from '../../result/Aftermath'
 import { resolveScriptedAftermath } from '../../../engine/aftermathResolver'
 import { playClick } from '../../../engine/soundEngine'
-import { pp과와, pp은는 } from '../../../engine/koreanPostposition'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCClearanceDetailPopup from './PCClearanceDetailPopup'
 import { evaluateClearance } from '../../../engine/clearanceTracker'
 import PCFragmentRewardOverlay from './PCFragmentRewardOverlay'
-
-type ResultTab = 'result' | 'verdict_pronounce' | 'epilogue' | 'bonus'
-
-const TABS: { id: ResultTab; label: string }[] = [
-  { id: 'result', label: '01 결과 확인' },
-  { id: 'verdict_pronounce', label: '02 판결 선고' },
-  { id: 'epilogue', label: '03 후일담' },
-  { id: 'bonus', label: '04 보너스' },
-]
+import { useI18n, type LocaleCode } from '../../../i18n'
+import { getLlmLanguageName, hasUnexpectedHangulForLocale } from '../../../i18n/llmLocale'
+import {
+  RESULT_TAB_IDS,
+  buildAftermathFallback,
+  buildDisputeMomentLine,
+  buildVerdictIntro,
+  getAxisLabels,
+  getAxisTagLabel,
+  getFindingLabel,
+  getFragmentLabel,
+  getJudgeTierLabel,
+  getProfileDescription,
+  getProfileTitleInfo,
+  getRarityLabel,
+  getRelationLabel,
+  getResultCopy,
+  getResultRating,
+  getResultTabs,
+  getRewardTitleInfo,
+  type ResultTab,
+} from './resultCopy'
 
 export type PCResultFrameTab<T extends string = string> = { id: T; label: string }
 
@@ -53,7 +65,7 @@ export function PCResultFrame<T extends string>({
   stars,
   summary,
   tabs,
-  unit = '점',
+  unit,
 }: {
   activeTab: T
   actions?: React.ReactNode
@@ -71,6 +83,10 @@ export function PCResultFrame<T extends string>({
   tabs: readonly PCResultFrameTab<T>[]
   unit?: string
 }) {
+  const { locale } = useI18n()
+  const frameCopy = getResultCopy(locale)
+  const resolvedUnit = unit ?? frameCopy.unitPoint
+
   return (
     <div className={`pc-result-screen${className ? ` ${className}` : ''}`}>
       <style>{`
@@ -127,12 +143,12 @@ export function PCResultFrame<T extends string>({
 
           <div className="pc-result-score">
             <span className="pc-result-score__value">{score}</span>
-            <span className="pc-result-score__unit">{unit}</span>
+            <span className="pc-result-score__unit">{resolvedUnit}</span>
           </div>
 
           <div className="pc-result-hero__rating">{rating}</div>
           {typeof stars === 'number' ? (
-            <div className="pc-result-hero__stars" aria-label={`별 ${stars}개`}>
+            <div className="pc-result-hero__stars" aria-label={frameCopy.starAria(stars)}>
               {Array.from({ length: 3 }, (_, index) => (
                 <span className={index < stars ? 'is-filled' : ''} key={index}>★</span>
               ))}
@@ -187,49 +203,11 @@ export function PCResultFrame<T extends string>({
   )
 }
 
-function getRating(total: number): string {
-  if (total >= 90) return '전설적인 재판관'
-  if (total >= 75) return '훌륭한 재판관'
-  if (total >= 60) return '능숙한 재판관'
-  if (total >= 40) return '보통의 재판관'
-  if (total >= 20) return '미숙한 재판관'
-  return '판단 실패'
-}
-
-function getRelationLabel(relationshipType: string): string {
-  const labels: Record<string, string> = {
-    spouse: '부부',
-    family: '가족',
-    friend: '친구',
-    neighbor: '이웃',
-    partnership: '동업',
-    workplace: '직장',
-    boss_employee: '직장',
-    tenant: '세입자',
-    tenant_landlord: '세입자',
-    headline: '헤드라인',
-    online: '온라인',
-    professional: '의료·교육',
-    medical_education: '의료·교육',
-    civic: '공공·제도',
-    public_system: '공공·제도',
-  }
-
-  return labels[relationshipType] ?? relationshipType
-}
-
 const RARITY_CLASS: Record<string, string> = {
   common: 'is-common',
   rare: 'is-rare',
   epic: 'is-epic',
   legendary: 'is-legendary',
-}
-
-const RARITY_LABEL: Record<string, string> = {
-  common: '일반',
-  rare: '희귀',
-  epic: '영웅',
-  legendary: '전설',
 }
 
 function aggregateFragmentRewards(rewards: FragmentReward[]): FragmentReward[] {
@@ -259,15 +237,6 @@ function isLieStateS3Plus(state?: { currentState?: string }) {
   return Number.isFinite(rank) && rank >= 3
 }
 
-function getFindingLabel(value: 'true' | 'false' | 'pending' | undefined, truth: boolean): string {
-  if (value === 'pending') return '판단 보류'
-  if (value === 'true') return truth ? '사실로 판단' : '상대 주장 사실로 판단'
-  if (value === 'false') return truth ? '사실 아님으로 판단' : '거짓으로 판단'
-  return '미판단'
-}
-
-type ResultEvidenceStateMap = Record<string, { presented?: boolean; unlocked?: boolean } | undefined>
-
 function formatSolutionLabel(solution: string): string {
   const raw = solution.includes('::') ? solution.slice(solution.indexOf('::') + 2) : solution
   return raw.replace(/\s+/g, ' ').trim()
@@ -287,68 +256,6 @@ function getResolutionItems(verdictInput: VerdictInput, summary?: { resolution?:
     .split(/\n+|[;；]/)
     .map((item) => item.replace(/^[-•]\s*/, '').trim())
     .filter(Boolean)
-}
-
-function getDisputeEvidenceNames(
-  caseData: CaseData,
-  evidenceStates: ResultEvidenceStateMap,
-  requiredEvidence?: string[],
-): string[] {
-  const evidenceById = new Map(caseData.evidence.map((e) => [e.id, e]))
-  const candidates = (requiredEvidence ?? [])
-    .map((id) => evidenceById.get(id))
-    .filter((e): e is NonNullable<typeof e> => Boolean(e))
-
-  const surfaced = candidates.filter((e) => {
-    const state = evidenceStates[e.id]
-    return state?.presented || state?.unlocked
-  })
-
-  const source = surfaced.length > 0 ? surfaced : candidates
-  return source
-    .map((e) => e.name)
-    .filter(Boolean)
-    .slice(0, 3)
-}
-
-function buildDisputeMomentLine(
-  caseData: CaseData,
-  evidenceStates: ResultEvidenceStateMap,
-  verdictInput: VerdictInput,
-  dispute: CaseData['disputes'][number],
-): string {
-  const finding = verdictInput.factFindings[dispute.id]
-  const evidenceNames = getDisputeEvidenceNames(caseData, evidenceStates, dispute.requiredEvidence)
-  const evidenceText = evidenceNames.length > 0
-    ? `${evidenceNames.join(', ')}${evidenceNames.length >= 3 ? ' 등 관련 자료를' : ' 자료를'}`
-    : '제출된 기록과 진술을'
-  const statement = dispute.judgmentStatement || dispute.truthDescription || '핵심 사실관계'
-
-  if (!finding || finding === 'pending') {
-    return `${dispute.name}: ${evidenceText} 검토했지만, 판결에서 확정할 만큼의 사실관계는 아직 보류했습니다.`
-  }
-
-  const correct = (finding === 'true') === dispute.truth
-  if (correct) {
-    return `${dispute.name}: ${evidenceText} 대조해 ${statement} 쪽으로 사실관계를 정리했습니다.`
-  }
-
-  return `${dispute.name}: ${evidenceText} 검토했으나, 기록과 진술의 연결이 충분히 맞물리지 않아 불안정한 판단으로 남았습니다.`
-}
-
-function getProfileDescription(titleId: string): string {
-  const descriptions: Record<string, string> = {
-    cold_judge: '증거와 논리를 중시하며, 엄격한 기준으로 공정한 판결을 내리는 타입입니다.',
-    practical_analyst: '논리적 분석을 바탕으로 현실적인 해결책을 찾아내는 타입입니다.',
-    balanced_sage: '논리적이면서도 관대한 시선으로 원칙을 지키는 타입입니다.',
-    careful_mediator: '신중한 분석과 관용적 태도로 양측의 화해를 이끄는 타입입니다.',
-    instinct_judge: '직관적 판단과 엄격한 원칙으로 정의를 추구하는 타입입니다.',
-    passion_arbiter: '열정적인 공감과 단호한 판단으로 해결을 이끄는 타입입니다.',
-    gentle_guardian: '따뜻한 공감과 관대한 시선으로 원칙을 수호하는 타입입니다.',
-    warm_mediator: '공감과 이해를 바탕으로 양측 모두가 만족하는 화해를 추구하는 타입입니다.',
-    neutral_observer: '편향 없이 균형 잡힌 시선으로 사건을 바라보는 타입입니다.',
-  }
-  return descriptions[titleId] ?? descriptions.neutral_observer
 }
 
 /** ?? SVG ??? ? ?? ??? ??? SVG */
@@ -412,6 +319,9 @@ function getTitleSvgIcon(icon: string): React.ReactNode {
 }
 
 export default function PCResultScreen() {
+  const { locale } = useI18n()
+  const copy = getResultCopy(locale)
+  const tabs = getResultTabs(locale)
   const verdictScore = useStore((s) => s.verdictScore)
   const caseData = useStore((s) => s.caseData)
   const verdictInput = useStore((s) => s.verdictInput)
@@ -474,7 +384,8 @@ export default function PCResultScreen() {
 
   // 결과 화면 진입 시 LLM 후일담을 즉시 백그라운드 생성 (판결 결과 기반)
   useEffect(() => {
-    if (_aftermathCache?.caseId === caseData?.caseId) return
+    const cached = _aftermathCache
+    if (cached && cached.caseId === caseData?.caseId && cached.locale === locale) return
     if (!caseData || !verdictScore) return
 
     void (async () => {
@@ -483,13 +394,13 @@ export default function PCResultScreen() {
         const { AFTERMATH_MAX_TOKENS, buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
 
         const keyDiscoveries: string[] = []
-        if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(`거짓말 ${processMetrics.liesCollapsed}건 자백 유도`)
-        if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(`숨겨진 진실 ${processMetrics.deepTruthsUnlocked}건 발견`)
+        if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(copy.discovery.lies(processMetrics.liesCollapsed))
+        if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(copy.discovery.truths(processMetrics.deepTruthsUnlocked))
 
         const disputeJudgments: Record<string, string> = {}
         for (const d of caseData.disputes) {
           const fact = verdictInput.factFindings[d.id]
-          disputeJudgments[d.id] = fact === 'true' ? '사실로 판단' : fact === 'false' ? '거짓으로 판단' : '보류'
+          disputeJudgments[d.id] = fact === 'true' ? copy.judgmentWords.true : fact === 'false' ? copy.judgmentWords.false : copy.judgmentWords.pending
         }
 
         const prompt = buildAftermathPrompt({
@@ -497,38 +408,40 @@ export default function PCResultScreen() {
           verdictDetails: {
             disputeJudgments,
             issueWeights: Object.fromEntries(Object.entries(verdictInput.responsibility).map(([id, r]) => [id, r.b])),
-            selectedResolution: verdictInput.selectedSolutions.join(', ') || '없음',
+            selectedResolution: verdictInput.selectedSolutions.join(', ') || copy.aftermath.none,
           },
           scores: { insight: verdictScore.insight, authority: verdictScore.authority, wisdom: verdictScore.wisdom },
-          title: '재판관',
+          title: copy.aftermath.apprentice,
           keyDiscoveries,
         })
 
-        console.log('[후일담] 결과 화면 진입 — LLM 즉시 호출 시작')
-        const response = await chatCompletion(
-          [{ role: 'user', content: prompt }],
-          { temperature: 0.9, maxTokens: AFTERMATH_MAX_TOKENS, model: 'gpt-4o-mini', endpoint: 'aftermath' },
-        )
-        if (response) {
-          const processed = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
-          if (processed) {
-            const result = withVerdictContext(caseData, verdictInput, processed)
-            _aftermathCache = { caseId: caseData.caseId, text: result }
-            updateLatestAftermath(result, caseData.caseId)
-            console.log('[후일담] LLM 생성 완료, 길이:', processed.length)
-          }
+        console.log('[aftermath] Result screen background generation started')
+        const result = await generateAftermathWithLocaleRetry({
+          caseData,
+          chatCompletion,
+          locale,
+          maxTokens: AFTERMATH_MAX_TOKENS,
+          postProcessAftermath,
+          prompt,
+          total: verdictScore.total,
+          verdictInput,
+        })
+        if (result) {
+          _aftermathCache = { caseId: caseData.caseId, locale, text: result }
+          updateLatestAftermath(result, caseData.caseId)
+          console.log('[aftermath] Background generation completed, length:', result.length)
         }
       } catch (err) {
-        console.warn('[후일담] 백그라운드 LLM 생성 실패:', err)
+        console.warn('[aftermath] Background generation failed:', err)
         const scripted = resolveScriptedAftermath(caseData, verdictInput)
         const fallbackText = scripted
-          ? withVerdictContext(caseData, verdictInput, scripted.text)
-          : buildFallback(caseData, verdictScore.total, verdictInput)
-        _aftermathCache = { caseId: caseData.caseId, text: fallbackText }
+          ? ensureAftermathShape(caseData, verdictInput, verdictScore.total, withVerdictContext(caseData, verdictInput, scripted.text, locale), locale)
+          : buildAftermathFallback(caseData, verdictScore.total, verdictInput, locale)
+        _aftermathCache = { caseId: caseData.caseId, locale, text: fallbackText }
         updateLatestAftermath(fallbackText, caseData.caseId)
       }
     })()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [caseData, copy, locale, processMetrics.deepTruthsUnlocked, processMetrics.liesCollapsed, verdictInput, verdictScore])
 
   const rewardBundle = useMemo(() => {
     if (!verdictScore || !caseData) {
@@ -635,10 +548,10 @@ export default function PCResultScreen() {
     return null
   }
 
-  const judgeTierInfo = TIER_LABELS[judgeProfile.tier]
+  const judgeTierLabel = getJudgeTierLabel(judgeProfile.tier, locale)
 
   const stars = verdictScore.total >= 75 ? 3 : verdictScore.total >= 55 ? 2 : verdictScore.total >= 35 ? 1 : 0
-  const relationLabel = getRelationLabel(caseData.meta?.relationshipType ?? caseData.duo.relationshipType)
+  const relationLabel = getRelationLabel(caseData.meta?.relationshipType ?? caseData.duo.relationshipType, locale)
   const headline = caseData.disputes[0]?.name ?? caseData.context.description
   const clearanceResult = verdictScore.clearanceResult ?? evaluateClearance(useGameStore.getState())
   const diffOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2 }
@@ -649,9 +562,9 @@ export default function PCResultScreen() {
   const currentIdx = sessionCases.findIndex((item) => item.caseId === caseData.caseId)
   const nextCase = currentIdx >= 0 ? sessionCases[currentIdx + 1] : null
   const rewardOverlayOpen = false // 보너스 탭으로 이동 — 팝업 비활성
-  const tabIndex = TABS.findIndex((item) => item.id === tab)
-  const prevTab = tabIndex > 0 ? TABS[tabIndex - 1] : null
-  const nextTab = tabIndex < TABS.length - 1 ? TABS[tabIndex + 1] : null
+  const tabIndex = RESULT_TAB_IDS.findIndex((item) => item === tab)
+  const prevTab = tabIndex > 0 ? tabs[tabIndex - 1] : null
+  const nextTab = tabIndex >= 0 && tabIndex < tabs.length - 1 ? tabs[tabIndex + 1] : null
   const visibleDisputes = caseData.disputes.filter((d) => {
     const v = disputeVisibility[d.id]
     return !v || v.visibility !== 'hidden'
@@ -700,7 +613,7 @@ export default function PCResultScreen() {
   }
 
   const handleCopyShare = async () => {
-    const text = `${headline} - ${verdictScore.total}점 (${getRating(verdictScore.total)})`
+    const text = `${headline} - ${verdictScore.total}${copy.unitPoint} (${getResultRating(verdictScore.total, locale)})`
     try {
       await navigator.clipboard.writeText(text)
       setCopied(true)
@@ -783,11 +696,11 @@ export default function PCResultScreen() {
 
           <div className="pc-result-score">
             <span className="pc-result-score__value">{verdictScore.total}</span>
-            <span className="pc-result-score__unit">점</span>
+            <span className="pc-result-score__unit">{copy.unitPoint}</span>
           </div>
 
-          <div className="pc-result-hero__rating">{getRating(verdictScore.total)}</div>
-          <div className="pc-result-hero__stars" aria-label={`별 ${stars}개`}>
+          <div className="pc-result-hero__rating">{getResultRating(verdictScore.total, locale)}</div>
+          <div className="pc-result-hero__stars" aria-label={copy.starAria(stars)}>
             {Array.from({ length: 3 }, (_, index) => (
               <span className={index < stars ? 'is-filled' : ''} key={index}>★</span>
             ))}
@@ -795,21 +708,21 @@ export default function PCResultScreen() {
 
           <div className="pc-result-hero__meta">
             <div className="pc-result-hero__meta-card">
-              <span>관계</span>
+              <span>{copy.meta.relationship}</span>
               <strong>{relationLabel}</strong>
             </div>
             <div className="pc-result-hero__meta-card">
-              <span>쟁점</span>
-              <strong>{visibleDisputes.length}개</strong>
+              <span>{copy.meta.disputes}</span>
+              <strong>{copy.meta.caseCount(visibleDisputes.length)}</strong>
             </div>
             <div className="pc-result-hero__meta-card">
-              <span>증거</span>
-              <strong>{caseData.evidence.length}종</strong>
+              <span>{copy.meta.evidence}</span>
+              <strong>{copy.meta.evidenceCount(caseData.evidence.length)}</strong>
             </div>
           </div>
 
           <div className="pc-result-hero__steps">
-            {TABS.map((item) => (
+            {tabs.map((item) => (
               <button
                 className={`pc-result-step-link${tab === item.id ? ' is-active' : ''}`}
                 key={item.id}
@@ -828,17 +741,17 @@ export default function PCResultScreen() {
               minHeight: 48, padding: '0 12px',
               fontSize: 14, fontWeight: 800, color: '#a8a8b4', textAlign: 'center',
             }}>
-              {judgeTierInfo.name} ({judgeProfile.casesCompleted}건){judgeProfile.isStabilized ? ' 안정' : ''}
+              {judgeTierLabel} ({copy.judge.cases(judgeProfile.casesCompleted)}){judgeProfile.isStabilized ? ` ${copy.judge.stable}` : ''}
             </div>
             <button className="pc-result-hero__button is-ghost" onClick={handleRetry} type="button">
-              판결 다시 하기
+              {copy.buttons.retry}
             </button>
           </div>
         </aside>
 
         <section className="pc-result-main">
           <div className="pc-result-tabs" role="tablist">
-            {TABS.map((item) => (
+            {tabs.map((item) => (
               <button
                 aria-selected={tab === item.id}
                 className={`pc-result-tab${tab === item.id ? ' is-active' : ''}`}
@@ -858,10 +771,10 @@ export default function PCResultScreen() {
                 {/* 점수 도넛 — 2배 크기, /100 제거, 라벨 상단 */}
                 <div className="pc-result-donuts" style={{ gap: 32 }}>
                   {[
-                    { label: '통찰', value: verdictScore.insight, color: 'var(--pc-blue)' },
-                    { label: '권위', value: verdictScore.authority, color: 'var(--pc-gold)' },
-                    { label: '지혜', value: verdictScore.wisdom, color: 'var(--pc-green)' },
-                    { label: '달성율', value: clearanceResult.percent, color: '#d4a24e', isClearance: true },
+                    { label: copy.scoreAxes.insight, value: verdictScore.insight, color: 'var(--pc-blue)' },
+                    { label: copy.scoreAxes.authority, value: verdictScore.authority, color: 'var(--pc-gold)' },
+                    { label: copy.scoreAxes.wisdom, value: verdictScore.wisdom, color: 'var(--pc-green)' },
+                    { label: copy.scoreAxes.clearance, value: clearanceResult.percent, color: '#d4a24e', isClearance: true },
                   ].map((axis) => {
                     const pct = Math.min(axis.value, 100)
                     const dash = (pct / 100) * 251
@@ -879,7 +792,7 @@ export default function PCResultScreen() {
                           {'isClearance' in axis && axis.isClearance ? (
                             <text x="50" y="68" textAnchor="middle" fill="#8b8b9a" fontSize="9" fontWeight="600"
                               style={{ cursor: 'pointer' }} onClick={handleOpenClearanceDetail}>
-                              상세보기
+                              {copy.detailView}
                             </text>
                           ) : null}
                         </svg>
@@ -890,7 +803,7 @@ export default function PCResultScreen() {
 
                 {/* 쟁점별 정답 공개 */}
                 <div className="pc-result-truth" style={{ marginTop: 8 }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 8 }}>쟁점별 판단 결과</h3>
+                  <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 8 }}>{copy.sections.disputeResult}</h3>
                   {visibleDisputes.map((d) => {
                     const finding = verdictInput.factFindings[d.id]
                     const correct = finding === 'pending'
@@ -898,6 +811,7 @@ export default function PCResultScreen() {
                       : (finding === 'true') === d.truth
                     // 유저가 실제로 선택한 텍스트
                     const selectedText = ((window as any).__factSelectedTexts ?? {})[d.id] as string | undefined
+                    const safeSelectedText = selectedText && !hasUnexpectedHangulForLocale(selectedText, locale) ? selectedText : undefined
                     return (
                       <div className={`pc-result-truth__card ${correct === true ? 'is-correct' : correct === false ? 'is-wrong' : ''}`} key={d.id}
                         style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px' }}
@@ -905,7 +819,7 @@ export default function PCResultScreen() {
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <strong style={{ fontSize: 14, display: 'block', marginBottom: 3, color: '#e0ddd6' }}>{d.name}</strong>
                           <p style={{ fontSize: 13, color: '#b0aeb4', lineHeight: 1.5, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' } as any}>
-                            내 판단: {selectedText ?? getFindingLabel(finding, d.truth)}
+                            {copy.selectedJudgment}: {safeSelectedText ?? getFindingLabel(finding, d.truth, locale)}
                           </p>
                         </div>
                         <div style={{
@@ -931,14 +845,14 @@ export default function PCResultScreen() {
             {tab === 'verdict_pronounce' ? (() => {
               const avgA = verdictSummary ? verdictSummary.responsibility.percentA : 50
               const disputeMomentLines = visibleDisputes.map((d) =>
-                buildDisputeMomentLine(caseData, evidenceStates, verdictInput, d),
+                buildDisputeMomentLine(caseData, evidenceStates, verdictInput, d, locale),
               )
               const resolutionItems = getResolutionItems(verdictInput, verdictSummary)
               return (
               <div className="pc-result-text">
                 {/* 상단 선고문 */}
                 <p style={{ fontSize: 17, color: '#e8e5dc', lineHeight: 1.8, textAlign: 'center', marginBottom: 28 }}>
-                  본 사건은 <strong>{caseData.duo.partyA.name}</strong>{pp과와(caseData.duo.partyA.name)} <strong>{caseData.duo.partyB.name}</strong>의 {relationLabel} 간 분쟁으로, 총 <strong style={{ color: 'var(--pc-gold-light)' }}>{turnCount}</strong>회의 심리를 거쳐 다음과 같은 판결에 이르렀습니다.
+                  {buildVerdictIntro(caseData, relationLabel, turnCount, locale)}
                 </p>
 
                 {verdictSummary ? (
@@ -982,7 +896,7 @@ export default function PCResultScreen() {
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {/* 결정적 순간 */}
                         <div className="pc-result-summary__section pc-result-summary__section--compact" style={{ margin: 0 }}>
-                          <h3>결정적 순간</h3>
+                          <h3>{copy.sections.keyMoments}</h3>
                           {disputeMomentLines.length > 0 ? (
                             <ul className="pc-result-key-moments__list">
                               {disputeMomentLines.map((line, idx) => (
@@ -996,7 +910,7 @@ export default function PCResultScreen() {
                       </div>
                       {/* 해결 방향 — 저울 아래까지 가로 확장 */}
                       <div className="pc-result-summary__section pc-result-summary__section--compact pc-result-resolution--wide" style={{ margin: 0, gridColumn: '1 / -1' }}>
-                        <h3>해결 방향</h3>
+                        <h3>{copy.sections.resolution}</h3>
                         <div className="pc-result-resolution__list">
                           {resolutionItems.map((item: string, i: number) => (
                             <div key={i} className="pc-result-resolution__item">
@@ -1009,7 +923,7 @@ export default function PCResultScreen() {
 
                     {/* ── 하단: 재판관 성향 — 좌측 타이틀/설명, 우측 게이지 ── */}
                     <div style={{ paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                      <h3 style={{ marginTop: 0, marginBottom: 12 }}>재판관 성향</h3>
+                      <h3 style={{ marginTop: 0, marginBottom: 12 }}>{copy.sections.profile}</h3>
                       <div style={{ display: 'grid', gridTemplateColumns: 'minmax(220px, 0.9fr) 1.1fr', gap: 16 }}>
                         {/* 좌측: 타이틀 + 설명 + 태그 */}
                         <ProfileInfoSection />
@@ -1046,22 +960,25 @@ export default function PCResultScreen() {
                 {/* 획득 칭호 — 버튼 바로 위 고정 */}
                 {titles.length > 0 && (
                   <div style={{ marginBottom: 16, flexShrink: 0 }}>
-                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 8 }}>획득한 칭호</h3>
+                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 8 }}>{copy.sections.earnedTitles}</h3>
                     <div className="pc-result-titles-scroll">
-                      {titles.map((t) => (
-                        <button
-                          className={`pc-result-title-card ${RARITY_CLASS[t.rarity] ?? ''} ${newTitles.has(t.id) ? 'is-new' : ''}`}
-                          key={t.id}
-                          onClick={() => playClick()}
-                          type="button"
-                        >
-                          <span className="pc-result-title-card__tooltip">{t.description}</span>
-                          <span className="pc-result-title-card__icon">{getTitleSvgIcon(t.icon)}</span>
-                          <span className="pc-result-title-card__name">{t.name}</span>
-                          <span className="pc-result-title-card__rarity">{RARITY_LABEL[t.rarity]}</span>
-                          {newTitles.has(t.id) ? <em className="pc-result-title-card__new">NEW</em> : null}
-                        </button>
-                      ))}
+                      {titles.map((t) => {
+                        const titleCopy = getRewardTitleInfo(t, locale)
+                        return (
+                          <button
+                            className={`pc-result-title-card ${RARITY_CLASS[t.rarity] ?? ''} ${newTitles.has(t.id) ? 'is-new' : ''}`}
+                            key={t.id}
+                            onClick={() => playClick()}
+                            type="button"
+                          >
+                            <span className="pc-result-title-card__tooltip">{titleCopy.description}</span>
+                            <span className="pc-result-title-card__icon">{getTitleSvgIcon(t.icon)}</span>
+                            <span className="pc-result-title-card__name">{titleCopy.name}</span>
+                            <span className="pc-result-title-card__rarity">{getRarityLabel(t.rarity, locale)}</span>
+                            {newTitles.has(t.id) ? <em className="pc-result-title-card__new">NEW</em> : null}
+                          </button>
+                        )
+                      })}
                     </div>
                   </div>
                 )}
@@ -1083,7 +1000,7 @@ export default function PCResultScreen() {
                     textAlign: 'center', marginTop: 6, marginBottom: 6,
                   }}>
                     <span style={{ fontSize: 12, fontWeight: 700, color: '#5cc97a' }}>
-                      성향 강화 가능! — 내 정보에서 확인하세요
+                      {copy.bonusEnhance}
                     </span>
                   </div>
                 )}
@@ -1098,16 +1015,16 @@ export default function PCResultScreen() {
               onClick={() => prevTab && setTab(prevTab.id)}
               type="button"
             >
-              &lt; 이전
+              {copy.buttons.prev}
             </button>
             {nextTab ? (
               <button className="pc-verdict-footer__button is-primary" onClick={() => setTab(nextTab.id)} type="button">
-                다음 &gt;
+                {copy.buttons.next}
               </button>
             ) : (
               <button className="pc-verdict-footer__button is-primary" onClick={handleExit} type="button">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }}><path d="M3 12l9-8 9 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                홈으로
+                {copy.buttons.home}
               </button>
             )}
           </div>
@@ -1154,10 +1071,10 @@ const FRAG_SVG: Record<string, React.ReactNode> = {
   reconciliation_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M6 16c2-2 4-3 6-3 1 0 2.5.5 4 2 1.5-1.5 3-2 4-2 2 0 4 1 6 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M10 19l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M16 19l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
 }
 
-const GRID_ROWS: { negLabel: string; posLabel: string; fragments: [string, string, string] }[] = [
-  { negLabel: '논리', posLabel: '직관', fragments: ['reasoning_fragment', 'inquiry_fragment', 'empathy_fragment'] },
-  { negLabel: '엄격', posLabel: '관용', fragments: ['severity_fragment', 'deliberation_fragment', 'leniency_fragment'] },
-  { negLabel: '원칙', posLabel: '화해', fragments: ['jurisprudence_fragment', 'balance_fragment', 'reconciliation_fragment'] },
+const GRID_ROWS: { axis: 'inquiry' | 'judgment' | 'resolution'; fragments: [string, string, string] }[] = [
+  { axis: 'inquiry', fragments: ['reasoning_fragment', 'inquiry_fragment', 'empathy_fragment'] },
+  { axis: 'judgment', fragments: ['severity_fragment', 'deliberation_fragment', 'leniency_fragment'] },
+  { axis: 'resolution', fragments: ['jurisprudence_fragment', 'balance_fragment', 'reconciliation_fragment'] },
 ]
 
 const FRAG_COLORS: Record<string, string> = {
@@ -1173,6 +1090,8 @@ const FRAG_COLORS: Record<string, string> = {
 }
 
 function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
+  const { locale } = useI18n()
+  const copy = getResultCopy(locale)
   const rewardMap = new Map<string, number>()
   for (const r of rewards) rewardMap.set(r.fragmentId, (rewardMap.get(r.fragmentId) ?? 0) + r.count)
 
@@ -1182,7 +1101,7 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
         <div key={rowIdx} style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 8 }}>
           {/* 왼쪽 라벨 */}
           <span style={{ width: 48, textAlign: 'right', fontSize: 13, fontWeight: 800, color: '#8b8d99', flexShrink: 0 }}>
-            {'<'}{row.negLabel}
+            {'<'}{getAxisLabels(row.axis, locale).negative}
           </span>
 
           {/* 3 카드 — 큰 카드 + 넓은 간격 */}
@@ -1227,7 +1146,7 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
                     textShadow: '0 2px 6px rgba(0,0,0,0.6)',
                     letterSpacing: '0.02em',
                   }}>
-                    {def?.name?.replace('의 조각', '') ?? fragId}
+                    {getFragmentLabel(fragId, locale) ?? def?.name ?? fragId}
                   </span>
                 </div>
               )
@@ -1236,13 +1155,13 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
 
           {/* 오른쪽 라벨 */}
           <span style={{ width: 48, textAlign: 'left', fontSize: 13, fontWeight: 800, color: '#8b8d99', flexShrink: 0 }}>
-            {row.posLabel}{'>'}
+            {getAxisLabels(row.axis, locale).positive}{'>'}
           </span>
         </div>
       ))}
 
       <p style={{ textAlign: 'center', fontSize: 11, color: '#4a4d5e', marginTop: 8 }}>
-        *각 조각은 재판관 성향 성장 재료로 사용할 수 있습니다.
+        {copy.fragmentFooter}
       </p>
     </div>
   )
@@ -1251,34 +1170,36 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
 /* ─── Aftermath inline (uses same LLM/scripted logic) ─── */
 
 // 후일담 캐시 — 탭 전환으로 리마운트되어도 재호출하지 않음
-let _aftermathCache: { caseId: string; text: string } | null = null
+let _aftermathCache: { caseId: string; locale: LocaleCode; text: string } | null = null
 
-function getCachedAftermath(caseId?: string): string | null {
+function getCachedAftermath(caseId: string | undefined, locale: LocaleCode): string | null {
   const cached = _aftermathCache
-  return cached && cached.caseId === caseId ? cached.text : null
+  return cached && cached.caseId === caseId && cached.locale === locale ? cached.text : null
 }
 
 function AftermathInline() {
+  const { locale } = useI18n()
+  const copy = getResultCopy(locale)
   const caseData = useStore((s) => s.caseData)
   const verdictInput = useStore((s) => s.verdictInput)
   const verdictScore = useStore((s) => s.verdictScore)
   const processMetrics = useStore((s) => s.processMetrics)
   const discovery = useStore((s) => s.discovery)
-  const [aftermath, setAftermath] = useState<string | null>(getCachedAftermath(caseData?.caseId))
+  const [aftermath, setAftermath] = useState<string | null>(getCachedAftermath(caseData?.caseId, locale))
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     // 캐시가 있으면 재호출하지 않음
-    const cached = getCachedAftermath(caseData?.caseId)
+    const cached = getCachedAftermath(caseData?.caseId, locale)
     if (cached) { setAftermath(cached); return }
     // 사전 생성된 결과가 있으면 사용
     const pregenerated = (window as any).__aftermathPregenerated as string | undefined
-    if (pregenerated) {
-      _aftermathCache = { caseId: caseData?.caseId ?? 'unknown', text: pregenerated }
+    if (pregenerated && !hasUnexpectedHangulForLocale(pregenerated, locale)) {
+      _aftermathCache = { caseId: caseData?.caseId ?? 'unknown', locale, text: pregenerated }
       setAftermath(pregenerated)
       if (caseData?.caseId) updateLatestAftermath(pregenerated, caseData.caseId)
-      console.log('[후일담] 사전 생성 결과 사용')
+      console.log('[aftermath] Using pregenerated result')
       return
     }
     if (!caseData || !verdictScore) return
@@ -1292,10 +1213,10 @@ function AftermathInline() {
         const { evaluateTitles } = await import('../../../data/titles')
 
         const keyDiscoveries: string[] = []
-        if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(`거짓말 ${processMetrics.liesCollapsed}건 자백 유도`)
-        if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(`숨겨진 진실 ${processMetrics.deepTruthsUnlocked}건 발견`)
+        if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(copy.discovery.lies(processMetrics.liesCollapsed))
+        if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(copy.discovery.truths(processMetrics.deepTruthsUnlocked))
         const emergedCount = Object.values(discovery.disputeVisibility).filter(v => v.visibility === 'emerged').length
-        if (emergedCount > 0) keyDiscoveries.push(`숨겨진 쟁점 ${emergedCount}건 발현`)
+        if (emergedCount > 0) keyDiscoveries.push(copy.discovery.disputes(emergedCount))
 
         const titles = evaluateTitles(verdictScore, verdictInput, {
           turnsUsed: processMetrics.questionsAsked + processMetrics.evidenceEffective,
@@ -1309,7 +1230,7 @@ function AftermathInline() {
         const disputeJudgments: Record<string, string> = {}
         for (const d of caseData.disputes) {
           const fact = verdictInput.factFindings[d.id]
-          disputeJudgments[d.id] = fact === 'true' ? '사실로 판단' : fact === 'false' ? '거짓으로 판단' : '보류'
+          disputeJudgments[d.id] = fact === 'true' ? copy.judgmentWords.true : fact === 'false' ? copy.judgmentWords.false : copy.judgmentWords.pending
         }
 
         const prompt = buildAftermathPrompt({
@@ -1320,51 +1241,53 @@ function AftermathInline() {
             issueWeights: Object.fromEntries(
               Object.entries(verdictInput.responsibility).map(([id, r]) => [id, r.b]),
             ),
-            selectedResolution: verdictInput.selectedSolutions.join(', ') || '없음',
+            selectedResolution: verdictInput.selectedSolutions.join(', ') || copy.aftermath.none,
           },
           scores: { insight: verdictScore.insight, authority: verdictScore.authority, wisdom: verdictScore.wisdom },
-          title: titles[0]?.name ?? '견습 재판관',
+          title: titles[0] ? getRewardTitleInfo(titles[0], locale).name : copy.aftermath.apprentice,
           keyDiscoveries,
         })
 
-        console.log('[후일담] LLM 호출 시작')
-        const response = await chatCompletion(
-          [{ role: 'user', content: prompt }],
-          { temperature: 0.9, maxTokens: AFTERMATH_MAX_TOKENS, model: 'gpt-4o-mini', endpoint: 'aftermath' },
-        )
-        console.log('[후일담] LLM 응답 길이:', response.length)
-        const generated = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
-        const result = generated
-          ? withVerdictContext(caseData, verdictInput, generated)
-          : buildFallback(caseData, verdictScore.total, verdictInput)
-        _aftermathCache = { caseId: caseData.caseId, text: result }
+        console.log('[aftermath] LLM call started')
+        const generated = await generateAftermathWithLocaleRetry({
+          caseData,
+          chatCompletion,
+          locale,
+          maxTokens: AFTERMATH_MAX_TOKENS,
+          postProcessAftermath,
+          prompt,
+          total: verdictScore.total,
+          verdictInput,
+        })
+        const result = generated ?? buildAftermathFallback(caseData, verdictScore.total, verdictInput, locale)
+        _aftermathCache = { caseId: caseData.caseId, locale, text: result }
         setAftermath(result)
         updateLatestAftermath(result, caseData.caseId)
       } catch (err: any) {
-        console.error('[후일담] LLM 호출 실패:', err?.message ?? err)
-        setError(err?.message ?? 'LLM 호출 실패')
+        console.error('[aftermath] LLM call failed:', err?.message ?? err)
+        setError(err?.message ?? 'LLM call failed')
         const scripted = resolveScriptedAftermath(caseData, verdictInput)
         const fb = scripted
-          ? withVerdictContext(caseData, verdictInput, scripted.text)
-          : buildFallback(caseData, verdictScore.total, verdictInput)
-        _aftermathCache = { caseId: caseData.caseId, text: fb }
+          ? ensureAftermathShape(caseData, verdictInput, verdictScore.total, withVerdictContext(caseData, verdictInput, scripted.text, locale), locale)
+          : buildAftermathFallback(caseData, verdictScore.total, verdictInput, locale)
+        _aftermathCache = { caseId: caseData.caseId, locale, text: fb }
         setAftermath(fb)
         updateLatestAftermath(fb, caseData.caseId)
       } finally {
         setLoading(false)
       }
     })()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [caseData, copy, discovery.disputeVisibility, locale, processMetrics, verdictInput, verdictScore])
 
   if (loading) {
-    return <p style={{ color: '#8c8fa0', fontStyle: 'italic' }}>후일담을 작성하고 있습니다...</p>
+    return <p style={{ color: '#8c8fa0', fontStyle: 'italic' }}>{copy.aftermath.loading}</p>
   }
   if (!aftermath) {
-    return <p>후일담 데이터가 없습니다.</p>
+    return <p>{copy.aftermath.empty}</p>
   }
 
   const shapedAftermath = caseData && verdictScore
-    ? ensureAftermathShape(caseData, verdictInput, verdictScore.total, aftermath)
+    ? ensureAftermathShape(caseData, verdictInput, verdictScore.total, aftermath, locale)
     : aftermath
 
   const { bodyParas, lesson } = splitAftermathDisplay(shapedAftermath)
@@ -1383,17 +1306,86 @@ function AftermathInline() {
   )
 }
 
-function getSelectedSolutionText(verdictInput: VerdictInput): string {
-  const selectedSolutions = verdictInput.selectedSolutions
-    .map((entry) => entry.includes('::') ? entry.slice(entry.indexOf('::') + 2) : entry)
-    .filter(Boolean)
-  return selectedSolutions.length > 0
-    ? selectedSolutions.slice(0, 2).join(', ')
-    : '추가 조치 없이 판결 내용을 따르는 것'
-}
-
 function splitAftermathParagraphs(text: string): string[] {
   return text.split(/\n\n+/).map((para) => para.trim()).filter(Boolean)
+}
+
+type AftermathChatMessage = { role: 'system' | 'user' | 'assistant'; content: string }
+type AftermathChatCompletion = (
+  messages: AftermathChatMessage[],
+  options: { temperature?: number; maxTokens?: number; model?: string; endpoint?: 'dialogue' | 'aftermath' },
+) => Promise<string>
+type AftermathPostProcessor = (
+  raw: string,
+  partyNames?: { a: string; b: string },
+  locale?: LocaleCode,
+) => string
+
+const AFTERMATH_LLM_MAX_ATTEMPTS = 3
+
+function isAftermathCompleteForLocale(text: string, locale: LocaleCode): boolean {
+  return splitAftermathParagraphs(text).length >= 4 && !hasUnexpectedHangulForLocale(text, locale)
+}
+
+function buildAftermathRetryPrompt(prompt: string, locale: LocaleCode, attempt: number): string {
+  if (attempt === 0) return prompt
+  const language = getLlmLanguageName(locale)
+  return `${prompt}
+
+## Retry Language Correction
+The previous answer was rejected because it contained Korean/Hangul or did not keep the requested paragraph structure.
+Regenerate the epilogue from scratch in ${language}.
+Do not reuse any Korean/Hangul sentence or paragraph. Translate all Korean source material into ${language}.
+Output exactly 4 paragraphs: 3 body paragraphs and 1 separate quoted lesson paragraph.`
+}
+
+async function generateAftermathWithLocaleRetry({
+  caseData,
+  chatCompletion,
+  locale,
+  maxTokens,
+  postProcessAftermath,
+  prompt,
+  total,
+  verdictInput,
+}: {
+  caseData: CaseData
+  chatCompletion: AftermathChatCompletion
+  locale: LocaleCode
+  maxTokens: number
+  postProcessAftermath: AftermathPostProcessor
+  prompt: string
+  total: number
+  verdictInput: VerdictInput
+}): Promise<string | null> {
+  let lastReason = 'empty response'
+
+  for (let attempt = 0; attempt < AFTERMATH_LLM_MAX_ATTEMPTS; attempt += 1) {
+    const response = await chatCompletion(
+      [{ role: 'user', content: buildAftermathRetryPrompt(prompt, locale, attempt) }],
+      { temperature: 0.9, maxTokens, model: 'gpt-4o-mini', endpoint: 'aftermath' },
+    )
+    console.log('[aftermath] LLM response length:', response.length, 'attempt:', attempt + 1)
+
+    const processed = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name }, locale)
+    if (!processed) {
+      lastReason = 'empty processed text'
+      continue
+    }
+
+    const contextual = withVerdictContext(caseData, verdictInput, processed, locale)
+    if (isAftermathCompleteForLocale(contextual, locale)) {
+      return ensureAftermathShape(caseData, verdictInput, total, contextual, locale)
+    }
+
+    lastReason = hasUnexpectedHangulForLocale(contextual, locale)
+      ? 'unexpected Korean/Hangul'
+      : `paragraph count ${splitAftermathParagraphs(contextual).length}`
+    console.warn('[aftermath] Rejected generated epilogue:', lastReason)
+  }
+
+  console.warn('[aftermath] LLM generation exhausted retries:', lastReason)
+  return null
 }
 
 function normalizeNarrativePunctuation(text: string): string {
@@ -1408,8 +1400,8 @@ function normalizeNarrativePunctuation(text: string): string {
 
 function removeAftermathLessonLabels(text: string): string {
   return normalizeNarrativePunctuation(text
-    .replace(/\*?\*?(?:교훈 한 문장|교훈|명언)\*?\*?\s*[:：]\s*/g, '')
-    .replace(/^\s*(?:교훈 한 문장|교훈|명언)\s*[:：]\s*/gm, ''))
+    .replace(/\*?\*?(?:교훈 한 문장|교훈|명언|lesson|moral|quote|教訓|格言|启示|教训|名言)\*?\*?\s*[:：]\s*/gi, '')
+    .replace(/^\s*(?:교훈 한 문장|교훈|명언|lesson|moral|quote|教訓|格言|启示|教训|名言)\s*[:：]\s*/gim, ''))
 }
 
 function normalizeAftermathLesson(text: string): string {
@@ -1447,113 +1439,19 @@ function splitAftermathDisplay(text: string): { bodyParas: string[]; lesson: str
   return { bodyParas: paragraphs.slice(0, 3), lesson: null }
 }
 
-function ensureAftermathShape(caseData: CaseData, verdictInput: VerdictInput, total: number, text: string): string {
+function ensureAftermathShape(caseData: CaseData, verdictInput: VerdictInput, total: number, text: string, locale: LocaleCode): string {
+  const fallbackParagraphs = splitAftermathParagraphs(buildAftermathFallback(caseData, total, verdictInput, locale))
+  if (hasUnexpectedHangulForLocale(text, locale)) return fallbackParagraphs.join('\n\n')
+
   const paragraphs = splitAftermathParagraphs(text)
-  if (paragraphs.length >= 4) return text
-
-  const fallbackParagraphs = splitAftermathParagraphs(buildFallback(caseData, total, verdictInput))
-  if (paragraphs.length === 0) return fallbackParagraphs.join('\n\n')
-
-  const body = [
-    paragraphs[0],
-    ...fallbackParagraphs.slice(1, 3),
-  ].slice(0, 3)
-  const lesson = fallbackParagraphs[fallbackParagraphs.length - 1]
-  return [...body, lesson].join('\n\n')
+  if (paragraphs.length >= 4) return paragraphs.slice(0, 4).join('\n\n')
+  return fallbackParagraphs.join('\n\n')
 }
 
-function getResponsibilityContext(caseData: CaseData, verdictInput: VerdictInput): { avgA: number; text: string } {
-  const nameA = caseData.duo.partyA.name
-  const nameB = caseData.duo.partyB.name
-  const responsibilities = Object.values(verdictInput.responsibility)
-  const avgA = responsibilities.length > 0
-    ? Math.round(responsibilities.reduce((sum, item) => sum + item.a, 0) / responsibilities.length)
-    : 50
-  const text = avgA > 55
-    ? `${nameA}에게 더 큰 책임이 배분된 판결`
-    : avgA < 45
-      ? `${nameB}에게 더 큰 책임이 배분된 판결`
-      : '양측 책임을 비슷하게 본 판결'
-  return { avgA, text }
-}
-
-function withVerdictContext(caseData: CaseData, verdictInput: VerdictInput, text: string): string {
+function withVerdictContext(caseData: CaseData, verdictInput: VerdictInput, text: string, locale: LocaleCode): string {
   const paras = splitAftermathParagraphs(text)
-  if (paras.length === 0) return normalizeNarrativePunctuation(buildFallback(caseData, 50, verdictInput))
+  if (paras.length === 0) return normalizeNarrativePunctuation(buildAftermathFallback(caseData, 50, verdictInput, locale))
   return normalizeNarrativePunctuation(text)
-}
-
-function buildFallback(caseData: CaseData, total: number, verdictInput: VerdictInput): string {
-  const nameA = caseData.duo.partyA.name
-  const nameB = caseData.duo.partyB.name
-  const pA = pp과와(nameA)
-  const pB = pp은는(nameB)
-  const solutionText = getSelectedSolutionText(verdictInput)
-  {
-    const { avgA } = getResponsibilityContext(caseData, verdictInput)
-    const heavierName = avgA > 55 ? nameA : avgA < 45 ? nameB : null
-    const lighterName = avgA > 55 ? nameB : avgA < 45 ? nameA : null
-    const responsibilityMood = heavierName && lighterName
-      ? `${heavierName}${pp은는(heavierName)} 먼저 고개를 끄덕였지만, 그 끄덕임은 승복보다 체념에 가까웠다. ${lighterName}${pp은는(lighterName)} 그 표정을 보고서야 자신이 붙들고 있던 억울함이 상대에게는 또 다른 압박이었을 수 있다는 생각을 떠올렸다.`
-      : `${nameA}${pA} ${nameB}${pB} 서로에게 남은 책임이 한쪽으로만 기울지 않았다는 사실 앞에서 쉽게 승자와 패자를 가르지 못했다. 둘 다 조금씩 억울했고, 그래서 더 조심스럽게 말을 고를 수밖에 없었다.`
-    const firstAction = describeAftermathAction(solutionText)
-    const lesson = getAftermathLesson(caseData.caseId, total)
-
-    if (total >= 75) {
-      return `${nameA}${pA} ${nameB}${pB} 법정을 나설 때까지 서로를 바로 보지 못했다. 결론이 내려졌다는 사실보다, 이제는 더 이상 모르는 척할 핑계가 없다는 사실이 먼저 다가왔다. ${responsibilityMood} 문 밖으로 나와 엘리베이터를 기다리는 짧은 시간 동안, 두 사람은 서로에게 가장 먼저 해야 할 말이 사과인지 설명인지도 쉽게 정하지 못했다. 다만 적어도 그날의 침묵은 예전처럼 상대를 밀어내기 위한 침묵이 아니라, 말을 망치지 않기 위해 가까스로 붙잡은 침묵이었다.\n\n며칠 뒤 두 사람은 ${firstAction} 처음에는 필요한 문장만 오갔다. 감정이 완전히 풀린 것은 아니어서 답장은 짧았고, 몇 번은 쓰다가 지운 흔적만 남았다. 그래도 이전처럼 억울함을 앞세워 말을 끊지는 않았다. ${nameA}${pp은는(nameA)} 자신이 확인해야 할 일을 메모했고, ${nameB}${pp은는(nameB)} 더 묻지 말아야 할 선과 반드시 말해야 할 선을 따로 적어 두었다. 그 작은 정리는 화해의 선언은 아니었지만, 같은 상처를 다시 만들지 않겠다는 첫 행동이었다.\n\n한 달이 지나자 다툼의 열기는 줄었고, 남은 불편함은 서로가 지켜야 할 경계의 모양으로 바뀌었다. 두 사람은 예전처럼 쉽게 웃지는 못했지만, 같은 장면을 서로 다르게 기억한다는 사실을 더 이상 부정하지 않았다. 어느 날 짧은 안부가 오갔고, 누구도 그 안부를 관계 회복의 증거로 과장하지 않았다. 그저 예전처럼 덮어 두지 않고, 불편한 사실을 불편한 채로 정리하는 법을 조금 배웠을 뿐이었다.\n\n\"${lesson}\"`
-    }
-    if (total >= 50) {
-      return `${nameA}${pA} ${nameB}${pB} 판결이 끝난 뒤에도 한동안 자리에서 일어나지 못했다. 누구도 완전히 이긴 얼굴은 아니었고, 누구도 완전히 납득한 얼굴도 아니었다. ${responsibilityMood} 법정의 결론은 감정을 지워 주지 않았지만, 적어도 두 사람이 같은 말로 다시 서로를 몰아붙이는 일은 멈춰 세웠다. 그날 두 사람에게 남은 것은 시원함보다, 이제부터는 정말로 조심해야 한다는 피로에 가까웠다.\n\n이후 두 사람은 ${firstAction} 대화는 건조했고, 몇 번은 문장이 너무 짧아 오히려 더 차갑게 느껴졌다. 그래도 예전처럼 단정부터 앞세우지는 않았다. 확인할 것은 확인하고, 사과할 수 있는 부분은 짧게라도 사과했다. 불만은 남았지만 두 사람 모두 어느 지점에서 같은 싸움이 반복되는지 알고 있었고, 그 지점을 지나칠 때마다 잠시 말을 멈추는 버릇이 생겼다.\n\n시간이 지나도 정리가 곧 화해가 되지는 않았다. 다만 이번에는 더 크게 무너지는 일을 막아 낸 결말로 남았다. ${nameA}${pA} ${nameB}${pp은는(nameB)} 서로를 완전히 이해했다고 말하지 않았지만, 적어도 확인하지 않은 확신으로 다시 상처를 만들지는 않기로 했다. 그 조심스러운 거리감이 판결 뒤에 남은 가장 현실적인 변화였다.\n\n\"${lesson}\"`
-    }
-    return `${nameA}${pA} ${nameB}${pB} 법정을 나서면서도 쉽게 걸음을 맞추지 못했다. 결론은 내려졌지만, 두 사람의 마음에는 아직 풀리지 않은 질문이 남아 있었다. ${nameA}${pp은는(nameA)} 자신에게 불리했던 대목을 오래 곱씹었고, ${nameB}${pp은는(nameB)} 끝내 충분히 들리지 못한 말들이 있다고 느꼈다. 그날의 판결은 두 사람을 화해시키기보다, 더 크게 다치기 전에 멈춰 서야 할 지점을 표시한 쪽에 가까웠다.\n\n며칠 뒤 두 사람은 ${firstAction} 필요한 연락은 이어졌지만, 말끝마다 다시 다투지 않기 위한 조심스러운 거리감이 먼저 끼어들었다. 사과와 정리는 일부만 진행됐고, 남은 말들은 다음 갈등의 씨앗처럼 법정 밖으로 따라 나갔다. 그래도 예전처럼 감정이 먼저 결론을 내리기 전에, 기록과 절차를 한 번 더 확인해야 한다는 생각만큼은 남았다.\n\n일상은 이전과 비슷하게 흘렀지만, 두 사람은 같은 방식으로 돌아가지는 못했다. 서로의 주장에는 아직 날이 서 있었고, 쉽게 믿겠다는 말도 나오지 않았다. 다만 이번에는 각자가 어떤 말로 상대를 가장 아프게 했는지 조금은 알게 되었다. 봉합이라고 부르기에는 모자랐지만, 적어도 다음 상처가 어디서 시작되는지는 더 선명해진 결말이었다.\n\n\"${lesson}\"`
-  }
-}
-
-function describeAftermathAction(solutionText: string): string {
-  const normalized = solutionText.replace(/[.。]+$/g, '').trim()
-  if (!normalized || normalized.includes('추가 조치 없음')) {
-    return '먼저 연락하기보다 각자 남은 기록을 정리했다.'
-  }
-  if (/사과|해명|정정/.test(normalized)) {
-    return '처음에는 긴 문장을 쓰다 지우고, 결국 가장 짧은 사과부터 다시 보냈다.'
-  }
-  if (/연락|대화|신뢰|관계/.test(normalized)) {
-    return '끊겼던 연락을 한 번 더 열어 두기 위해 짧은 메시지를 먼저 보냈다.'
-  }
-  if (/계좌|정산|분배|금액|송금|돈|재산|상속/.test(normalized)) {
-    return '계좌와 문서를 다시 펼쳐 놓고, 설명할 수 있는 금액부터 줄마다 정리했다.'
-  }
-  if (/기록|문서|증거|확인|검토|공증|유언/.test(normalized)) {
-    return '서로 다른 기억을 밀어붙이기보다 남은 기록을 한 장씩 다시 확인했다.'
-  }
-  if (/조정|중재|절차|분리|보류/.test(normalized)) {
-    return '감정이 먼저 번지지 않도록 한 사람을 사이에 두고 필요한 말만 다시 꺼냈다.'
-  }
-  if (/공개|공유|범위|고지/.test(normalized)) {
-    return '혼자 품고 있던 말을 필요한 사람들에게 어디까지 설명할지 다시 정했다.'
-  }
-  return '결론을 문장으로 옮기기 전에, 각자 먼저 책임져야 할 일부터 적어 보았다.'
-}
-
-function getAftermathLesson(caseId: string, total: number): string {
-  if (caseId === 'friend-01') {
-    return total >= 75
-      ? '늦은 경고도 진심이면 다시 설명되어야 한다.'
-      : '확인하지 않은 걱정은 쉽게 비난이 된다.'
-  }
-  if (caseId === 'family-01') {
-    return total >= 75
-      ? '가족을 지킨다는 말도 사실 앞에서 다시 써야 한다.'
-      : '숨긴 마음은 결국 다른 상속으로 남는다.'
-  }
-  if (caseId === 'spouse-01') {
-    return total >= 75
-      ? '말하지 않은 선의도 믿음 앞에서는 설명이 필요하다.'
-      : '침묵은 때로 거짓보다 오래 의심을 남긴다.'
-  }
-  return total >= 75
-    ? '책임을 말한 뒤에야 관계는 다음 문장을 찾는다.'
-    : '확인 없는 확신은 법정 밖에서도 상처가 된다.'
 }
 
 /* ─── Profile inline ─── */
@@ -1579,10 +1477,9 @@ function hasMeaningfulCaseAxes(axes: CaseProfileAxes | null): axes is CaseProfil
   )
 }
 
-function getAxisTag(axis: keyof CaseProfileAxes, value: number): string | null {
+function getAxisTag(axis: keyof CaseProfileAxes, value: number, locale: LocaleCode): string | null {
   if (Math.abs(value) < 12) return null
-  const labels = AXIS_LABELS[axis]
-  return value < 0 ? labels.negative : labels.positive
+  return getAxisTagLabel(axis, value, locale)
 }
 
 function resolveCaseTitleId(axes: CaseProfileAxes): string {
@@ -1626,6 +1523,7 @@ function buildDisplayDriftFromAxes(drift: JudgeDriftState, axes: CaseProfileAxes
 
 /** 프로필 데이터 공유 hook */
 function useProfileData() {
+  const { locale } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const verdictInput = useStore((s) => s.verdictInput)
   const processMetrics = useStore((s) => s.processMetrics)
@@ -1658,9 +1556,9 @@ function useProfileData() {
     const displayDrift = buildDisplayDriftFromAxes(drift, currentAxes)
     const profileFromAxes = deriveJudgeProfile(displayDrift, undefined, perkSelection)
     const subtags = [
-      getAxisTag('inquiry', currentAxes.inquiry),
-      getAxisTag('judgment', currentAxes.judgment),
-      getAxisTag('resolution', currentAxes.resolution),
+      getAxisTag('inquiry', currentAxes.inquiry, locale),
+      getAxisTag('judgment', currentAxes.judgment, locale),
+      getAxisTag('resolution', currentAxes.resolution, locale),
     ].filter(Boolean) as string[]
     const profile: JudgeProfile = {
       ...profileFromAxes,
@@ -1673,14 +1571,14 @@ function useProfileData() {
       subtags,
     }
     return { profile, driftState: displayDrift, totalGames: Math.max(1, drift.casesProcessed), currentAxes }
-  }, [caseData, verdictInput, processMetrics])
+  }, [caseData, locale, verdictInput, processMetrics])
 }
 
 /** 좌측: 타이틀 + 설명 + 태그 + 티어 */
 function ProfileInfoSection() {
+  const { locale } = useI18n()
   const { profile } = useProfileData()
-  const titleInfo = TITLE_LABELS[profile.titleId] ?? TITLE_LABELS.neutral_observer
-  const tierInfo = TIER_LABELS[profile.tier]
+  const titleInfo = getProfileTitleInfo(profile.titleId, locale)
 
   return (
     <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
@@ -1693,7 +1591,7 @@ function ProfileInfoSection() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 0 }}>
         <h2 style={{ fontSize: 20, fontWeight: 900, color: 'var(--pc-gold-light)', margin: 0 }}>{titleInfo.name}</h2>
         <p style={{ fontSize: 15, color: '#a8a8b4', lineHeight: 1.6, margin: 0 }}>
-          {getProfileDescription(profile.titleId)}
+          {getProfileDescription(profile.titleId, locale)}
         </p>
         {profile.subtags.length > 0 && (
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
@@ -1709,21 +1607,23 @@ function ProfileInfoSection() {
 
 /** 우측: 3축 게이지 */
 function ProfileGaugeSection() {
+  const { locale } = useI18n()
   const { driftState, totalGames, currentAxes } = useProfileData()
+  const copy = getResultCopy(locale)
 
   if (totalGames === 0 && !currentAxes) {
     return (
       <div style={{ padding: '12px 16px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)', fontSize: 13, color: '#8c8fa0', lineHeight: 1.7 }}>
-        첫 번째 재판을 마쳤습니다. 사건을 거듭할수록 성향이 드러납니다.
+        {copy.noProfile}
       </div>
     )
   }
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
-      <ProfileAxis label={AXIS_LABELS.inquiry.label} negativeLabel={AXIS_LABELS.inquiry.negative} positiveLabel={AXIS_LABELS.inquiry.positive} axisState={driftState.inquiry} axisValue={currentAxes?.inquiry} />
-      <ProfileAxis label={AXIS_LABELS.judgment.label} negativeLabel={AXIS_LABELS.judgment.negative} positiveLabel={AXIS_LABELS.judgment.positive} axisState={driftState.judgment} axisValue={currentAxes?.judgment} />
-      <ProfileAxis label={AXIS_LABELS.resolution.label} negativeLabel={AXIS_LABELS.resolution.negative} positiveLabel={AXIS_LABELS.resolution.positive} axisState={driftState.resolution} axisValue={currentAxes?.resolution} />
+      <ProfileAxis label={getAxisLabels('inquiry', locale).label} negativeLabel={getAxisLabels('inquiry', locale).negative} positiveLabel={getAxisLabels('inquiry', locale).positive} axisState={driftState.inquiry} axisValue={currentAxes?.inquiry} />
+      <ProfileAxis label={getAxisLabels('judgment', locale).label} negativeLabel={getAxisLabels('judgment', locale).negative} positiveLabel={getAxisLabels('judgment', locale).positive} axisState={driftState.judgment} axisValue={currentAxes?.judgment} />
+      <ProfileAxis label={getAxisLabels('resolution', locale).label} negativeLabel={getAxisLabels('resolution', locale).negative} positiveLabel={getAxisLabels('resolution', locale).positive} axisState={driftState.resolution} axisValue={currentAxes?.resolution} />
     </div>
   )
 }

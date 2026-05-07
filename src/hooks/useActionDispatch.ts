@@ -1477,15 +1477,47 @@ function pickConfessionRecapLine(caseId: string, party: 'a' | 'b'): string {
   // family-01: A confrontational, B affect_flattening
   // friend-01: A premature_summary, B affect_flattening
   const key = `${caseId.replace(/^case-/, '')}:${party}`
-  const map: Record<string, string> = {
-    'spouse-01:a': '이미 인정했습니다. 더 무엇을 더 말씀드려야 하나요.',
-    'spouse-01:b': '…더 드릴 말씀이 없습니다.',
-    'family-01:a': '이미 다 얘기했습니다. 같은 말 반복하고 싶지 않습니다.',
-    'family-01:b': '…전에 말씀드린 그대로입니다.',
-    'friend-01:a': '그 부분은 이미 말씀드린 그대로입니다.',
-    'friend-01:b': '…더 보탤 말이 없습니다.',
+  const locale = getRuntimeTextLocale()
+  const linesByLocale = {
+    ko: {
+      'spouse-01:a': '이미 인정했습니다. 더 무엇을 더 말씀드려야 하나요.',
+      'spouse-01:b': '…더 드릴 말씀이 없습니다.',
+      'family-01:a': '이미 다 얘기했습니다. 같은 말 반복하고 싶지 않습니다.',
+      'family-01:b': '…전에 말씀드린 그대로입니다.',
+      'friend-01:a': '그 부분은 이미 말씀드린 그대로입니다.',
+      'friend-01:b': '…더 보탤 말이 없습니다.',
+      default: '이미 자백한 부분입니다. 더 드릴 말씀이 없습니다.',
+    },
+    en: {
+      'spouse-01:a': 'I have already admitted that. What more do I need to say?',
+      'spouse-01:b': '...I have nothing more to add.',
+      'family-01:a': 'I have already told you everything. I do not want to repeat the same point.',
+      'family-01:b': '...It is exactly as I said earlier.',
+      'friend-01:a': 'That part is exactly as I already said.',
+      'friend-01:b': '...There is nothing more to add.',
+      default: 'That part has already been confessed. I have nothing more to add.',
+    },
+    ja: {
+      'spouse-01:a': 'それはもう認めました。これ以上何を話せばいいのですか。',
+      'spouse-01:b': '…これ以上お話しすることはありません。',
+      'family-01:a': 'もう全部話しました。同じことを繰り返したくありません。',
+      'family-01:b': '…先ほど申し上げたとおりです。',
+      'friend-01:a': 'その部分はすでに申し上げたとおりです。',
+      'friend-01:b': '…これ以上付け加えることはありません。',
+      default: 'その部分はすでに自白しています。これ以上お話しすることはありません。',
+    },
+    'zh-CN': {
+      'spouse-01:a': '我已经承认了。还需要我再说什么？',
+      'spouse-01:b': '……我没有更多要补充的。',
+      'family-01:a': '我已经全都说过了，不想重复同样的话。',
+      'family-01:b': '……就像我之前说的那样。',
+      'friend-01:a': '那部分就像我已经说过的那样。',
+      'friend-01:b': '……没有更多可以补充的。',
+      default: '那部分已经承认过了。我没有更多要补充的。',
+    },
   }
-  return map[key] ?? '이미 자백한 부분입니다. 더 드릴 말씀이 없습니다.'
+  const map = linesByLocale[locale] ?? linesByLocale.ko
+  return map[key] ?? map.default
 }
 function dispatchS5ConfessionAnswer(party: PartyId, disputeId: string): boolean {
   const state = useGameStore.getState()

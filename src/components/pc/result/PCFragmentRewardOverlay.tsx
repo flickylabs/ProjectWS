@@ -2,11 +2,11 @@ import { useEffect, useMemo, type CSSProperties } from 'react'
 import { loadProgressionState } from '../../../data/leaderboard'
 import { canEnhanceTrait, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
 import {
-  FRAGMENT_VISUALS,
   PCFragmentIcon,
   TRAIT_ORDER,
-  TRAIT_VISUALS,
 } from '../progression/PCJudgeProgressionShared'
+import { useI18n } from '../../../i18n'
+import { getFragmentLabel, getResultCopy, getTraitLabel } from './resultCopy'
 
 interface Props {
   rewards: FragmentReward[]
@@ -23,6 +23,8 @@ export default function PCFragmentRewardOverlay({
   onClose,
   autoCloseMs = 3000,
 }: Props) {
+  const { locale } = useI18n()
+  const copy = getResultCopy(locale)
   const summarizedRewards = useMemo(() => {
     const byFragment = new Map<string, {
       reward: FragmentReward
@@ -82,16 +84,25 @@ export default function PCFragmentRewardOverlay({
         <div className="pc-fragment-reward-overlay__head">
           <div>
             <span className="pc-fragment-reward-overlay__eyebrow">FRAGMENT REWARD</span>
-            <h3 id="pc-fragment-reward-title">판결 조각 회수 완료</h3>
+            <h3 id="pc-fragment-reward-title">
+              {locale === 'en' ? 'Verdict Fragments Recovered'
+                : locale === 'ja' ? '判決フラグメント回収完了'
+                  : locale === 'zh-CN' ? '判决碎片回收完成'
+                    : '판결 조각 회수 완료'}
+            </h3>
           </div>
           <button className="pc-fragment-reward-overlay__close" onClick={onClose} type="button">
-            닫기
+            {locale === 'en' ? 'Close' : locale === 'ja' ? '閉じる' : locale === 'zh-CN' ? '关闭' : '닫기'}
           </button>
         </div>
 
         <div className="pc-fragment-reward-overlay__stage" aria-hidden="true">
-          <div className="pc-fragment-reward-overlay__origin">판결 중심</div>
-          <div className="pc-fragment-reward-overlay__inventory">인벤토리</div>
+          <div className="pc-fragment-reward-overlay__origin">
+            {locale === 'en' ? 'Verdict Core' : locale === 'ja' ? '判決の中心' : locale === 'zh-CN' ? '判决核心' : '판결 중심'}
+          </div>
+          <div className="pc-fragment-reward-overlay__inventory">
+            {locale === 'en' ? 'Inventory' : locale === 'ja' ? 'インベントリ' : locale === 'zh-CN' ? '背包' : '인벤토리'}
+          </div>
           {summarizedRewards.map(({ reward, isBonus }, index) => (
             <div
               className={`pc-fragment-reward-flight${isBonus ? ' is-bonus' : ''}`}
@@ -120,8 +131,8 @@ export default function PCFragmentRewardOverlay({
                 <PCFragmentIcon fragmentId={reward.fragmentId} size={46} />
               </div>
               <span className="pc-fragment-reward-card__tag">{isBonus ? 'BONUS' : 'FRAGMENT'}</span>
-              <strong>{FRAGMENT_VISUALS[reward.fragmentId].name}</strong>
-              <span>{FRAGMENT_VISUALS[reward.fragmentId].shortLabel}</span>
+              <strong>{getFragmentLabel(reward.fragmentId, locale)}</strong>
+              <span>{getFragmentLabel(reward.fragmentId, locale)}</span>
               <b>+{reward.count}</b>
             </article>
           ))}
@@ -129,11 +140,16 @@ export default function PCFragmentRewardOverlay({
 
         {resolvedEnhanceableTraits.length > 0 ? (
           <div className="pc-fragment-reward-overlay__alert">
-            <strong>성향 강화 가능</strong>
+            <strong>
+              {locale === 'en' ? 'Trait Enhancement Available'
+                : locale === 'ja' ? '傾向強化が可能'
+                  : locale === 'zh-CN' ? '可强化倾向'
+                    : '성향 강화 가능'}
+            </strong>
             <div className="pc-fragment-reward-overlay__chips">
               {resolvedEnhanceableTraits.map((traitId) => (
                 <span className="pc-fragment-reward-overlay__chip" key={traitId}>
-                  {TRAIT_VISUALS[traitId].label}
+                  {getTraitLabel(traitId, locale)}
                 </span>
               ))}
             </div>
@@ -141,7 +157,7 @@ export default function PCFragmentRewardOverlay({
         ) : null}
 
         <button className="pc-judge-action is-primary" onClick={onClose} type="button">
-          결과 확인
+          {copy.tabs.result.replace(/^01\s*/, '')}
         </button>
       </div>
     </div>

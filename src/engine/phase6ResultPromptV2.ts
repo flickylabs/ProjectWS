@@ -9,6 +9,7 @@ import type { Phase3PromptBridgeV2 } from './phase3LogCollector'
 import { getStructureV2 } from './v2DataLoader'
 import { buildPhase3PromptBridge, deriveToneProfile, getPhase3StructuredLog } from './phase3LogCollector'
 import type { ResolvedRevealedFact } from './phase3LogCollector'
+import { buildLlmLanguageDirective, getLlmLanguageName, getLlmLocale } from '../i18n/llmLocale'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 브릿지 빌드 헬퍼 — store/caseData에서 자동 수집
@@ -172,27 +173,22 @@ ${JSON.stringify(bridge.keyMoments)}
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function buildResultSystemPrompt(): string {
-  return `당신은 Solomon의 결과/후일담 서술자다.
-판결 결과와 Phase 3에서 실제로 드러난 구조화 로그를 바탕으로,
-즉시 반응과 짧은 후일담을 일관된 톤으로 작성한다.
+  const locale = getLlmLocale()
+  const language = getLlmLanguageName(locale)
+  return `${buildLlmLanguageDirective(locale)}
 
-규칙:
-1. 드러나지 않은 사실을 새로 만들지 마라.
-2. disprovedFakeIssues는 오해가 풀린 사건으로만 다뤄라.
-3. relationCoreRevealed가 false이면 깊은 화해/완전한 단절을 과장하지 마라.
-4. finalEmotions와 lastLinesByParty를 참고해 즉시 반응의 말투를 이어가라.
-5. keyMoments 중 가장 강한 장면 1~2개를 암시적으로 반영하되, 긴 인용은 하지 마라.
+You are Solomon's result and epilogue narrator.
+Using the verdict and the Phase 3 structured log, write immediate reactions and a short epilogue in ${language}.
 
-★ 번역체/보고서 톤 절대 금지:
-- "~된 것으로 판단됩니다", "~인 측면이 있었습니다" → 자연스러운 한국어로
-- "여러 가지 상황이 얽혀" → 구체적으로 1가지만
-- "해당 건에 대해서는" → "그 일은"
-- "~하는 바입니다", "인지하고 있습니다" → 금지
-- "~만을" → "~만" 또는 "~만으로" (이중 조사. "이름만을 보고" ❌ → "이름만 보고" ✅)
-- 실제 법정 후일담/에필로그처럼 따뜻하고 인간적인 톤으로 작성하라.
-★ 후일담은 최소 3문단 이상. 양쪽 당사자의 이후 삶을 구체적으로 그려라.
-★ aReaction과 bReaction에 각 당사자의 판결 직후 반응을 구체적으로 써라. shortEpilogue에서도 양쪽의 이후 삶을 반영하라.
-★ shortEpilogue 형식: 본문 2~3문장 + 빈 줄(\n\n) + 후일담 전체를 관통하는 짧은 교훈 한 문장("큰따옴표"). 교훈 문장은 반드시 별도 문단으로 분리하고, 25~45자 안팎의 명언처럼 간결하게 쓰라.`
+Rules:
+1. Do not invent unrevealed facts.
+2. Treat disprovedFakeIssues only as misunderstandings that were cleared.
+3. If relationCoreRevealed is false, do not exaggerate deep reconciliation or total rupture.
+4. Let finalEmotions and lastLinesByParty influence the immediate reactions.
+5. Reflect one or two strong keyMoments indirectly, without long quotation.
+6. Avoid report tone and mechanical verdict summaries.
+7. shortEpilogue must include both parties' later lives and end with one separate quoted lesson sentence.
+8. ${locale === 'ko' ? 'Korean/Hangul is allowed.' : 'Do not output Korean/Hangul in visible JSON string values.'}`
 }
 
 export interface VerdictData {
@@ -208,7 +204,11 @@ export function buildResultUserPrompt(
   caseMeta: CaseMeta,
   verdict: VerdictData,
 ): string {
-  return `[CASE]
+  const locale = getLlmLocale()
+  const language = getLlmLanguageName(locale)
+  return `${buildLlmLanguageDirective(locale)}
+
+[CASE]
 ${JSON.stringify(caseMeta)}
 
 [VERDICT]
@@ -235,7 +235,7 @@ ${JSON.stringify(bridge.lastLinesByParty)}
 [KEY_MOMENTS]
 ${JSON.stringify(bridge.keyMoments)}
 
-다음 형식의 JSON으로 답하라.
+Answer as JSON in this exact shape. All string values must be written in ${language}.
 
 {
   "verdictSummary": "...",
@@ -246,10 +246,11 @@ ${JSON.stringify(bridge.keyMoments)}
   "relationshipOutlook": "fragile | unresolved | cautiously_repairing | stabilized"
 }
 
-추가 지시:
-- relationCoreRevealed가 ${bridge.structuredLog.relationCoreRevealed ? 'true이고 fake issue가 해소되었다면, shortEpilogue에 "오해는 풀렸지만 방식의 상처가 남는다" 또는 그 반대의 구조를 반영하라' : 'false이므로 relationshipOutlook을 지나치게 낙관/비관하지 말고 fragile 또는 unresolved 쪽으로 보수적으로 선택하라'}.
-- finalEmotions 값이 70 이상인 당사자는 immediateAftermath에서 짧고 딱딱한 반응을 우선한다.
-- shortEpilogue 마지막 문장은 사건을 요약 설명하지 말고, 전체 후일담을 관통하는 짧은 교훈이나 명언처럼 남겨라.`
+Additional instructions:
+- relationCoreRevealed is ${bridge.structuredLog.relationCoreRevealed}; ${bridge.structuredLog.relationCoreRevealed ? 'if a fake issue was cleared, reflect that the misunderstanding was resolved while the method still left damage, or the reverse structure.' : 'choose fragile or unresolved conservatively rather than making the outlook too optimistic or too bleak.'}
+- If either finalEmotions value is 70 or higher, prioritize a short, stiff immediate reaction for that party.
+- The final sentence of shortEpilogue must be a short lesson or aphorism, not a case summary.
+- ${locale === 'ko' ? 'Korean/Hangul is allowed.' : 'Do not use Korean/Hangul in visible values.'}`
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
