@@ -16,6 +16,8 @@ import {
 } from '../pc/panels/PCImportantNotesSection'
 import { playCombinationFailure, playCombinationSuccess } from '../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../utils/combinationLabels'
+import { useI18n, type LocaleCode } from '../../i18n'
+import { localizeRuntimeText } from '../../i18n/runtimeText'
 
 function normalizeInputs(ids: string[]): string[] {
   return [...ids].sort()
@@ -31,31 +33,149 @@ function normalizeNodeText(text: string | undefined): string {
   return (text ?? '').toLowerCase().replace(/\s+/g, '')
 }
 
-function resultKindLabel(kind: CombinationLabResultKind): string {
-  const labels: Record<CombinationLabResultKind, string> = {
-    unlock_evidence: '새 증거',
-    unlock_note: '새 메모',
-    unlock_question: '새 질문',
-    unlock_statement: '새 진술',
-    unlock_dispute: '새 쟁점',
-    unlock_witness_angle: '증인 각도',
-    unlock_interjection: '끼어들기',
-    unlock_mediation_hint: '판결 힌트',
-    upgrade_question: '질문 발전',
-    upgrade_evidence: '증거 발전',
-    upgrade_dispute: '쟁점 발전',
-    reframe_question: '질문 재해석',
-    reframe_evidence: '증거 재해석',
-    reframe_dispute: '쟁점 재프레임',
-    split_dispute: '쟁점 분할',
-    merge_disputes: '쟁점 통합',
-    elevate_reliability: '신뢰도 승격',
-    expand_context: '맥락 확장',
-    narrow_scope: '범위 축소',
-    shift_legality_weight: '적법성 재평가',
-    shift_responsibility_weight: '책임 재배분',
+const RESULT_KIND_LABELS: Record<CombinationLabResultKind, Record<LocaleCode, string>> = {
+  unlock_evidence: { ko: '새 증거', en: 'New Evidence', ja: '新証拠', 'zh-CN': '新证据' },
+  unlock_note: { ko: '새 메모', en: 'New Note', ja: '新メモ', 'zh-CN': '新笔记' },
+  unlock_question: { ko: '새 질문', en: 'New Question', ja: '新質問', 'zh-CN': '新问题' },
+  unlock_statement: { ko: '새 진술', en: 'New Statement', ja: '新供述', 'zh-CN': '新陈述' },
+  unlock_dispute: { ko: '새 쟁점', en: 'New Dispute', ja: '新争点', 'zh-CN': '新争议' },
+  unlock_witness_angle: { ko: '증인 각도', en: 'Witness Angle', ja: '証人の視点', 'zh-CN': '证人角度' },
+  unlock_interjection: { ko: '끼어들기', en: 'Interjection', ja: '割り込み', 'zh-CN': '插话' },
+  unlock_mediation_hint: { ko: '판결 힌트', en: 'Verdict Hint', ja: '判決ヒント', 'zh-CN': '裁决提示' },
+  upgrade_question: { ko: '질문 발전', en: 'Question Upgrade', ja: '質問発展', 'zh-CN': '问题升级' },
+  upgrade_evidence: { ko: '증거 발전', en: 'Evidence Upgrade', ja: '証拠発展', 'zh-CN': '证据升级' },
+  upgrade_dispute: { ko: '쟁점 발전', en: 'Dispute Upgrade', ja: '争点発展', 'zh-CN': '争议升级' },
+  reframe_question: { ko: '질문 재해석', en: 'Question Reframe', ja: '質問の再解釈', 'zh-CN': '问题重构' },
+  reframe_evidence: { ko: '증거 재해석', en: 'Evidence Reframe', ja: '証拠の再解釈', 'zh-CN': '证据重构' },
+  reframe_dispute: { ko: '쟁점 재프레임', en: 'Dispute Reframe', ja: '争点の再構成', 'zh-CN': '争议重构' },
+  split_dispute: { ko: '쟁점 분할', en: 'Dispute Split', ja: '争点分割', 'zh-CN': '争议拆分' },
+  merge_disputes: { ko: '쟁점 통합', en: 'Dispute Merge', ja: '争点統合', 'zh-CN': '争议合并' },
+  elevate_reliability: { ko: '신뢰도 승격', en: 'Reliability Raised', ja: '信頼度上昇', 'zh-CN': '可信度提升' },
+  expand_context: { ko: '맥락 확장', en: 'Context Expanded', ja: '文脈拡張', 'zh-CN': '语境扩展' },
+  narrow_scope: { ko: '범위 축소', en: 'Scope Narrowed', ja: '範囲縮小', 'zh-CN': '范围缩小' },
+  shift_legality_weight: { ko: '적법성 재평가', en: 'Legality Reweighted', ja: '適法性再評価', 'zh-CN': '合法性重评' },
+  shift_responsibility_weight: { ko: '책임 재배분', en: 'Responsibility Reweighted', ja: '責任再配分', 'zh-CN': '责任重分配' },
+}
+
+function resultKindLabel(kind: CombinationLabResultKind, locale: LocaleCode): string {
+  return RESULT_KIND_LABELS[kind]?.[locale] ?? kind
+}
+
+const LAB_COPY: Record<LocaleCode, {
+  title: string
+  analysis: (points: number) => string
+  slot: (index: number) => string
+  selectNode: string
+  description: string
+  reset: string
+  evidence: string
+  note: string
+  derivedNode: string
+  cost: (value: number) => string
+  hiddenCombo: string
+  run: string
+  needTwo: string
+  noAuthoredResult: string
+  nodeNotFound: string
+  alreadyDiscovered: string
+  recipeLocked: string
+  noConfig: string
+  failed: string
+  success: (label: string) => string
+  dialogueTitle: string
+}> = {
+  ko: {
+    title: '조합 실험실',
+    analysis: (points) => `분석 ${points}pt`,
+    slot: (index) => `slot ${index}`,
+    selectNode: '노드 선택',
+    description: '기존 비교 보관함을 확장한 실험실입니다. 증거와 노트를 교차 조합할 수 있습니다.',
+    reset: '초기화',
+    evidence: '증거',
+    note: '노트',
+    derivedNode: '파생 노드',
+    cost: (value) => `비용 ${value}`,
+    hiddenCombo: 'hidden combo · 첫 성공 시 포인트 환급 적용',
+    run: '조합 실행',
+    needTwo: '증거나 노트를 2개 이상 올리면 가능한 조합을 찾습니다.',
+    noAuthoredResult: '이 조합에는 아직 authoring된 결과가 없습니다.',
+    nodeNotFound: '조합 가능한 노드를 찾지 못했습니다.',
+    alreadyDiscovered: '이미 기록된 결론입니다. 다른 조합을 시도해 주세요.',
+    recipeLocked: '지금은 이 조합을 실행할 수 없습니다.',
+    noConfig: '이 사건에는 조합 실험실 데이터가 없습니다.',
+    failed: '조합 실행에 실패했습니다.',
+    success: (label) => `조합 성공: ${label}`,
+    dialogueTitle: '조합 실험실',
+  },
+  en: {
+    title: 'Combination Lab',
+    analysis: (points) => `Analysis ${points}pt`,
+    slot: (index) => `slot ${index}`,
+    selectNode: 'Select Node',
+    description: 'An expanded comparison lab. Cross-combine evidence and notes.',
+    reset: 'Reset',
+    evidence: 'Evidence',
+    note: 'Notes',
+    derivedNode: 'Derived Nodes',
+    cost: (value) => `Cost ${value}`,
+    hiddenCombo: 'hidden combo · first success refunds points',
+    run: 'Run Combination',
+    needTwo: 'Place at least two evidence or note nodes to find possible combinations.',
+    noAuthoredResult: 'This combination has no authored result yet.',
+    nodeNotFound: 'No combinable node was found.',
+    alreadyDiscovered: 'This conclusion is already recorded. Try another combination.',
+    recipeLocked: 'This combination cannot be run yet.',
+    noConfig: 'This case has no combination lab data.',
+    failed: 'Combination failed.',
+    success: (label) => `Combination Success: ${label}`,
+    dialogueTitle: 'Combination Lab',
+  },
+  ja: {
+    title: '組み合わせラボ',
+    analysis: (points) => `分析 ${points}pt`,
+    slot: (index) => `slot ${index}`,
+    selectNode: 'ノード選択',
+    description: '既存の比較保管庫を拡張したラボです。証拠とノートを交差して組み合わせられます。',
+    reset: '初期化',
+    evidence: '証拠',
+    note: 'ノート',
+    derivedNode: '派生ノード',
+    cost: (value) => `コスト ${value}`,
+    hiddenCombo: 'hidden combo · 初回成功時にポイント還元',
+    run: '組み合わせ実行',
+    needTwo: '証拠またはノートを2つ以上置くと、可能な組み合わせを探します。',
+    noAuthoredResult: 'この組み合わせにはまだ作成済みの結果がありません。',
+    nodeNotFound: '組み合わせ可能なノードが見つかりませんでした。',
+    alreadyDiscovered: 'すでに記録された結論です。別の組み合わせを試してください。',
+    recipeLocked: '今はこの組み合わせを実行できません。',
+    noConfig: 'この事件には組み合わせラボのデータがありません。',
+    failed: '組み合わせ実行に失敗しました。',
+    success: (label) => `組み合わせ成功: ${label}`,
+    dialogueTitle: '組み合わせラボ',
+  },
+  'zh-CN': {
+    title: '组合实验室',
+    analysis: (points) => `分析 ${points}pt`,
+    slot: (index) => `slot ${index}`,
+    selectNode: '选择节点',
+    description: '这是扩展后的比较保管室。可交叉组合证据与笔记。',
+    reset: '重置',
+    evidence: '证据',
+    note: '笔记',
+    derivedNode: '派生节点',
+    cost: (value) => `消耗 ${value}`,
+    hiddenCombo: 'hidden combo · 首次成功时返还点数',
+    run: '执行组合',
+    needTwo: '放入至少两个证据或笔记后，会寻找可用组合。',
+    noAuthoredResult: '该组合尚无已编写结果。',
+    nodeNotFound: '未找到可组合的节点。',
+    alreadyDiscovered: '该结论已记录。请尝试其他组合。',
+    recipeLocked: '现在无法执行该组合。',
+    noConfig: '本案件没有组合实验室数据。',
+    failed: '组合执行失败。',
+    success: (label) => `组合成功: ${label}`,
+    dialogueTitle: '组合实验室',
   }
-  return labels[kind] ?? kind
 }
 
 function nodeBadge(node: CombinationLabNode): string {
@@ -110,6 +230,7 @@ function getCombinationResultType(output: CombinationLabOutput): PcCombinationRe
 }
 
 export default function CombinationLabPanel() {
+  const { locale } = useI18n()
   const runtime = useStore((s) => s.combinationLabRuntime)
   const evidenceStates = useStore((s) => s.evidenceStates)
   const caseData = useStore((s) => s.caseData)
@@ -119,6 +240,7 @@ export default function CombinationLabPanel() {
 
   const config = runtime.config
   const store = useGameStore.getState()
+  const copy = LAB_COPY[locale]
 
   const availableNodes = useMemo(() => {
     if (!config) return [] as CombinationLabNode[]
@@ -215,7 +337,7 @@ export default function CombinationLabPanel() {
           : null
 
       if (!nodeId) {
-        showToast('조합 가능한 노드를 찾지 못했습니다.', 'warn')
+        showToast(copy.nodeNotFound, 'warn')
         return
       }
 
@@ -225,7 +347,7 @@ export default function CombinationLabPanel() {
 
     window.addEventListener(PC_ADD_COMBINATION_NOTE_EVENT, handleAddFromPanel as EventListener)
     return () => window.removeEventListener(PC_ADD_COMBINATION_NOTE_EVENT, handleAddFromPanel as EventListener)
-  }, [pinNode, resolveEvidenceNodeId, resolveNoteNodeId])
+  }, [copy.nodeNotFound, pinNode, resolveEvidenceNodeId, resolveNoteNodeId])
 
   if (!caseData || !config) return null
 
@@ -235,17 +357,17 @@ export default function CombinationLabPanel() {
     if (!result.ok) {
       playCombinationFailure()
       const reason =
-        result.reason === 'output_already_discovered' ? '이미 기록된 결론입니다. 다른 조합을 시도해 주세요.' :
-        result.reason === 'recipe_locked' ? '지금은 이 조합을 실행할 수 없습니다.' :
-        result.reason === 'no_config' ? '이 사건에는 조합 실험실 데이터가 없습니다.' :
-        '조합 실행에 실패했습니다.'
+        result.reason === 'output_already_discovered' ? copy.alreadyDiscovered :
+        result.reason === 'recipe_locked' ? copy.recipeLocked :
+        result.reason === 'no_config' ? copy.noConfig :
+        copy.failed
       showToast(reason, 'warn')
       return
     }
 
     store.addDialogue({
       speaker: 'system',
-      text: `🧪 조합 실험실: ${cleanOutputLabel(matchingOutput.label)}${cleanOutputSummary(matchingOutput.summary, matchingOutput.label) ? '\n' + cleanOutputSummary(matchingOutput.summary, matchingOutput.label) : ''}`,
+      text: `🧪 ${copy.dialogueTitle}: ${localizeRuntimeText(cleanOutputLabel(matchingOutput.label), locale)}${cleanOutputSummary(matchingOutput.summary, matchingOutput.label) ? '\n' + localizeRuntimeText(cleanOutputSummary(matchingOutput.summary, matchingOutput.label), locale) : ''}`,
       relatedDisputes: matchingOutput.effects
         .flatMap((effect) => [
           effect.targetId,
@@ -271,16 +393,16 @@ export default function CombinationLabPanel() {
           .map((id) => availableNodes.find((node) => node.id === id))
           .filter((node): node is CombinationLabNode => Boolean(node))
           .map((node) => ({
-            label: node.label.replace(/^note:/, ''),
+            label: localizeRuntimeText(node.label.replace(/^note:/, ''), locale),
             type: node.type,
           })),
-        outputLabel: cleanOutputLabel(matchingOutput.label),
-        outputSummary: cleanOutputSummary(matchingOutput.summary, matchingOutput.label),
+        outputLabel: localizeRuntimeText(cleanOutputLabel(matchingOutput.label), locale),
+        outputSummary: localizeRuntimeText(cleanOutputSummary(matchingOutput.summary, matchingOutput.label), locale),
         resultType: getCombinationResultType(matchingOutput),
       },
     }))
 
-    showGuideCutscene(`조합 성공: ${cleanOutputLabel(matchingOutput.label)}`, '.pc-combination-card')
+    showGuideCutscene(copy.success(localizeRuntimeText(cleanOutputLabel(matchingOutput.label), locale)), '.pc-combination-card')
     clearAll()
   }
 
@@ -297,8 +419,8 @@ export default function CombinationLabPanel() {
       >
         <div className="flex items-center gap-2">
           <Emoji char="🧪" size={14} />
-          <span className="text-[11px] font-semibold text-cyan-300">조합 실험실</span>
-          <span className="text-[10px] text-cyan-500">분석 {runtime.analysisPoints}pt</span>
+          <span className="text-[11px] font-semibold text-cyan-300">{copy.title}</span>
+          <span className="text-[10px] text-cyan-500">{copy.analysis(runtime.analysisPoints)}</span>
         </div>
         <span className={`text-xs text-gray-500 transition-transform ${expanded ? 'rotate-180' : ''}`}>▼</span>
       </button>
@@ -319,9 +441,9 @@ export default function CombinationLabPanel() {
                       : 'border-gray-700/40 bg-gray-900/30 text-gray-600'
                   }`}
                 >
-                  <div className="text-[9px] uppercase tracking-wide opacity-70">slot {index + 1}</div>
+                  <div className="text-[9px] uppercase tracking-wide opacity-70">{copy.slot(index + 1)}</div>
                   <div className="text-[11px] leading-snug mt-0.5">
-                    {node ? `${nodeBadge(node)} ${node.label}` : '노드 선택'}
+                    {node ? `${nodeBadge(node)} ${localizeRuntimeText(node.label, locale)}` : copy.selectNode}
                   </div>
                 </button>
               )
@@ -330,34 +452,34 @@ export default function CombinationLabPanel() {
 
           <div className="flex items-center justify-between">
             <div className="text-[10px] text-gray-500">
-              기존 비교 보관함을 확장한 실험실입니다. 증거와 노트를 교차 조합할 수 있습니다.
+              {copy.description}
             </div>
             <button onClick={clearAll} type="button" className="text-[10px] text-gray-500 hover:text-gray-300">
-              초기화
+              {copy.reset}
             </button>
           </div>
 
-          <NodeBank title="증거" nodes={evidenceNodes} selected={selectedIds} onSelect={pinNode} />
-          <NodeBank title="노트" nodes={noteNodes} selected={selectedIds} onSelect={pinNode} />
-          {derivedNodes.length > 0 && <NodeBank title="파생 노드" nodes={derivedNodes} selected={selectedIds} onSelect={pinNode} />}
+          <NodeBank title={copy.evidence} nodes={evidenceNodes} selected={selectedIds} onSelect={pinNode} locale={locale} />
+          <NodeBank title={copy.note} nodes={noteNodes} selected={selectedIds} onSelect={pinNode} locale={locale} />
+          {derivedNodes.length > 0 && <NodeBank title={copy.derivedNode} nodes={derivedNodes} selected={selectedIds} onSelect={pinNode} locale={locale} />}
 
           <div className="border border-cyan-800/30 rounded-lg bg-gray-950/40 px-3 py-2">
             {matchingRecipe && matchingOutput ? (
               <>
                 <div className="flex items-center justify-between mb-1">
-                  <div className="text-xs font-semibold text-cyan-200">{matchingOutput.label}</div>
-                  <div className="text-[10px] text-cyan-500">비용 {matchingRecipe.cost}</div>
+                  <div className="text-xs font-semibold text-cyan-200">{localizeRuntimeText(matchingOutput.label, locale)}</div>
+                  <div className="text-[10px] text-cyan-500">{copy.cost(matchingRecipe.cost)}</div>
                 </div>
-                <div className="text-[11px] text-gray-300 leading-relaxed">{matchingOutput.summary}</div>
+                <div className="text-[11px] text-gray-300 leading-relaxed">{localizeRuntimeText(matchingOutput.summary, locale)}</div>
                 <div className="mt-2 flex flex-wrap gap-1">
                   {matchingOutput.effects.map((effect, index) => (
                     <span key={`${matchingOutput.id}-effect-${index}`} className="text-[10px] px-1.5 py-0.5 rounded bg-cyan-900/30 text-cyan-200 border border-cyan-700/30">
-                      {resultKindLabel(effect.kind)}
+                      {resultKindLabel(effect.kind, locale)}
                     </span>
                   ))}
                 </div>
                 {matchingRecipe.hidden && (
-                  <div className="mt-1 text-[10px] text-amber-300">hidden combo · 첫 성공 시 포인트 환급 적용</div>
+                  <div className="mt-1 text-[10px] text-amber-300">{copy.hiddenCombo}</div>
                 )}
                 <div className="mt-2 flex justify-end">
                   <button
@@ -368,15 +490,15 @@ export default function CombinationLabPanel() {
                       canRun ? 'bg-cyan-600 text-white hover:bg-cyan-500 active:scale-95' : 'bg-gray-800 text-gray-600 cursor-not-allowed'
                     }`}
                   >
-                    조합 실행
+                    {copy.run}
                   </button>
                 </div>
               </>
             ) : (
               <div className="text-[11px] text-gray-500 leading-relaxed">
                 {selectedIds.length < 2
-                  ? '증거나 노트를 2개 이상 올리면 가능한 조합을 찾습니다.'
-                  : '이 조합에는 아직 authoring된 결과가 없습니다.'}
+                  ? copy.needTwo
+                  : copy.noAuthoredResult}
               </div>
             )}
           </div>
@@ -391,11 +513,13 @@ function NodeBank({
   nodes,
   selected,
   onSelect,
+  locale,
 }: {
   title: string
   nodes: CombinationLabNode[]
   selected: string[]
   onSelect: (nodeId: string) => void
+  locale: LocaleCode
 }) {
   if (nodes.length === 0) return null
   return (
@@ -416,7 +540,7 @@ function NodeBank({
                   : 'border-gray-700/40 bg-gray-900/30 text-gray-300 hover:border-cyan-700/50 hover:text-cyan-100'
               }`}
             >
-              {nodeBadge(node)} {node.label}
+              {nodeBadge(node)} {localizeRuntimeText(node.label, locale)}
             </button>
           )
         })}

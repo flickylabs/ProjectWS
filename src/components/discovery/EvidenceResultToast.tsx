@@ -5,6 +5,7 @@
 
 import { useEffect, useState } from 'react'
 import Emoji from '../common/Emoji'
+import { useI18n, type LocaleCode } from '../../i18n'
 
 export type EvidenceResultType = 'hold' | 'crack' | 'collapse'
 
@@ -15,40 +16,56 @@ interface Props {
 }
 
 const CONFIG: Record<EvidenceResultType, {
-  label: string
+  label: Record<LocaleCode, string>
   icon: string
   color: string
   bg: string
   border: string
-  description: string
+  description: Record<LocaleCode, string>
 }> = {
   hold: {
-    label: '버팀',
+    label: { ko: '버팀', en: 'Held', ja: '持ちこたえ', 'zh-CN': '守住' },
     icon: '🛡️',
     color: 'text-gray-400',
     bg: 'bg-gray-800/80',
     border: 'border-gray-700/50',
-    description: '상대가 방어를 유지했습니다.',
+    description: {
+      ko: '상대가 방어를 유지했습니다.',
+      en: 'The other party maintained their defense.',
+      ja: '相手は防御を保ちました。',
+      'zh-CN': '对方维持了防备。',
+    },
   },
   crack: {
-    label: '균열',
+    label: { ko: '균열', en: 'Crack', ja: '亀裂', 'zh-CN': '裂痕' },
     icon: '⚡',
     color: 'text-orange-400',
     bg: 'bg-orange-950/60',
     border: 'border-orange-600/50',
-    description: '방어에 금이 갔습니다!',
+    description: {
+      ko: '방어에 금이 갔습니다!',
+      en: 'Their defense cracked.',
+      ja: '防御に亀裂が入りました。',
+      'zh-CN': '防线出现了裂痕。',
+    },
   },
   collapse: {
-    label: '붕괴',
+    label: { ko: '붕괴', en: 'Collapse', ja: '崩壊', 'zh-CN': '瓦解' },
     icon: '💥',
     color: 'text-red-400',
     bg: 'bg-red-950/60',
     border: 'border-red-600/50',
-    description: '방어선이 무너졌습니다!',
+    description: {
+      ko: '방어선이 무너졌습니다!',
+      en: 'The defense line collapsed.',
+      ja: '防御線が崩れました。',
+      'zh-CN': '防线已经瓦解。',
+    },
   },
 }
 
 export default function EvidenceResultToast({ result, evidenceName, onDone }: Props) {
+  const { locale } = useI18n()
   const [visible, setVisible] = useState(true)
   const cfg = CONFIG[result]
 
@@ -70,8 +87,8 @@ export default function EvidenceResultToast({ result, evidenceName, onDone }: Pr
         <div className="flex items-center gap-2">
           <Emoji char={cfg.icon} size={20} />
           <div>
-            <div className={`text-sm font-bold ${cfg.color}`}>{cfg.label}</div>
-            <div className="text-[11px] text-gray-400">{cfg.description}</div>
+            <div className={`text-sm font-bold ${cfg.color}`}>{cfg.label[locale]}</div>
+            <div className="text-[11px] text-gray-400">{cfg.description[locale]}</div>
           </div>
         </div>
         <div className="text-[10px] text-gray-500 mt-1">{evidenceName}</div>

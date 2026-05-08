@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import Emoji from './Emoji'
+import { useI18n, type LocaleCode } from '../../i18n'
+import { localizeRuntimeText } from '../../i18n/runtimeText'
 
 interface ToastMessage {
   id: number
@@ -24,7 +26,66 @@ export function showLLMErrorBanner() {
   showErrorBannerFn?.(true)
 }
 
+const TOAST_COPY: Record<LocaleCode, {
+  offline: string
+  online: string
+  reportSubject: string
+  reportBody: (date: string, userAgent: string) => string
+  llmErrorTitle: string
+  llmErrorBodyLine1: string
+  llmErrorBodyLine2: string
+  report: string
+  close: string
+}> = {
+  ko: {
+    offline: '네트워크 연결이 끊어졌습니다',
+    online: '네트워크가 복구되었습니다',
+    reportSubject: '[솔로몬] 게임 중 통신 오류 신고',
+    reportBody: (date, userAgent) => `[오류 신고]\n\n발생 시점: ${date}\n브라우저: ${userAgent}\n\n증상:\n- 게임 중 AI 응답이 정상적으로 생성되지 않았습니다.\n\n추가 설명:\n(여기에 상황을 적어주세요)\n`,
+    llmErrorTitle: '데이터 송수신에 일시적인 문제가 발생했습니다',
+    llmErrorBodyLine1: '통신이 원활한 환경에서 다시 시도해 주세요.',
+    llmErrorBodyLine2: '문제가 반복되면 아래 버튼으로 알려주세요.',
+    report: '오류 신고하기',
+    close: '닫기',
+  },
+  en: {
+    offline: 'Network connection lost',
+    online: 'Network connection restored',
+    reportSubject: '[Justitia] Communication error report',
+    reportBody: (date, userAgent) => `[Error Report]\n\nTime: ${date}\nBrowser: ${userAgent}\n\nSymptom:\n- The AI response was not generated correctly during play.\n\nAdditional details:\n(Describe what happened here.)\n`,
+    llmErrorTitle: 'A temporary data communication problem occurred',
+    llmErrorBodyLine1: 'Please try again on a stable connection.',
+    llmErrorBodyLine2: 'If the problem repeats, let us know with the button below.',
+    report: 'Report Error',
+    close: 'Close',
+  },
+  ja: {
+    offline: 'ネットワーク接続が切断されました',
+    online: 'ネットワーク接続が復旧しました',
+    reportSubject: '[ソロモン] 通信エラー報告',
+    reportBody: (date, userAgent) => `[エラー報告]\n\n発生時刻: ${date}\nブラウザ: ${userAgent}\n\n症状:\n- プレイ中にAI応答が正常に生成されませんでした。\n\n補足:\n(状況をここに記入してください)\n`,
+    llmErrorTitle: 'データ送受信に一時的な問題が発生しました',
+    llmErrorBodyLine1: '通信が安定した環境で再度お試しください。',
+    llmErrorBodyLine2: '問題が繰り返される場合は、下のボタンからお知らせください。',
+    report: 'エラー報告',
+    close: '閉じる',
+  },
+  'zh-CN': {
+    offline: '网络连接已断开',
+    online: '网络连接已恢复',
+    reportSubject: '[包青天的抉择] 通信错误报告',
+    reportBody: (date, userAgent) => `[错误报告]\n\n发生时间: ${date}\n浏览器: ${userAgent}\n\n现象:\n- 游戏过程中 AI 回复未能正常生成。\n\n补充说明:\n(请在此处描述情况)\n`,
+    llmErrorTitle: '数据通信暂时出现问题',
+    llmErrorBodyLine1: '请在网络稳定的环境下重试。',
+    llmErrorBodyLine2: '如果问题反复出现，请通过下方按钮告知我们。',
+    report: '报告错误',
+    close: '关闭',
+  },
+}
+
 export default function ToastContainer() {
+  const { locale } = useI18n()
+  const copy = TOAST_COPY[locale]
   const [toasts, setToasts] = useState<ToastMessage[]>([])
   const [errorBanner, setErrorBanner] = useState(false)
 
@@ -46,21 +107,20 @@ export default function ToastContainer() {
 
   // 네트워크 상태 감지
   useEffect(() => {
-    const onOffline = () => addToast({ text: '네트워크 연결이 끊어졌습니다', type: 'error' })
-    const onOnline = () => addToast({ text: '네트워크가 복구되었습니다', type: 'info' })
+    const onOffline = () => addToast({ text: copy.offline, type: 'error' })
+    const onOnline = () => addToast({ text: copy.online, type: 'info' })
     window.addEventListener('offline', onOffline)
     window.addEventListener('online', onOnline)
     return () => {
       window.removeEventListener('offline', onOffline)
       window.removeEventListener('online', onOnline)
     }
-  }, [addToast])
+  }, [addToast, copy])
 
   const handleReport = () => {
-    const subject = encodeURIComponent('[솔로몬] 게임 중 통신 오류 신고')
-    const body = encodeURIComponent(
-      `[오류 신고]\n\n발생 시점: ${new Date().toLocaleString('ko-KR')}\n브라우저: ${navigator.userAgent}\n\n증상:\n- 게임 중 AI 응답이 정상적으로 생성되지 않았습니다.\n\n추가 설명:\n(여기에 상황을 적어주세요)\n`,
-    )
+    const dateLocale = locale === 'zh-CN' ? 'zh-CN' : locale === 'ja' ? 'ja-JP' : locale === 'en' ? 'en-US' : 'ko-KR'
+    const subject = encodeURIComponent(copy.reportSubject)
+    const body = encodeURIComponent(copy.reportBody(new Date().toLocaleString(dateLocale), navigator.userAgent))
     window.open(`mailto:support@flickylabs.com?subject=${subject}&body=${body}`, '_blank')
     setErrorBanner(false)
   }
@@ -104,7 +164,7 @@ export default function ToastContainer() {
                   style={pcStyle}
                 >
                   <Emoji char={icon} size={20} />
-                  <span className="flex-1 leading-snug">{t.text}</span>
+                  <span className="flex-1 leading-snug">{localizeRuntimeText(t.text, locale)}</span>
                 </div>
               )
             })}
@@ -119,24 +179,24 @@ export default function ToastContainer() {
           <div className="bg-gray-900 border border-gray-700/50 rounded-2xl p-5 w-[320px] shadow-2xl text-center space-y-4">
             <div className="text-2xl">📡</div>
             <div className="text-sm text-gray-200 font-medium">
-              데이터 송수신에 일시적인 문제가 발생했습니다
+              {copy.llmErrorTitle}
             </div>
             <div className="text-xs text-gray-500 leading-relaxed">
-              통신이 원활한 환경에서 다시 시도해 주세요.<br />
-              문제가 반복되면 아래 버튼으로 알려주세요.
+              {copy.llmErrorBodyLine1}<br />
+              {copy.llmErrorBodyLine2}
             </div>
             <div className="flex gap-2">
               <button
                 onClick={handleReport}
                 className="flex-1 py-2.5 rounded-xl text-xs font-medium bg-amber-600/80 text-gray-950 active:scale-95 transition-all"
               >
-                오류 신고하기
+                {copy.report}
               </button>
               <button
                 onClick={() => setErrorBanner(false)}
                 className="flex-1 py-2.5 rounded-xl text-xs text-gray-400 bg-gray-800 active:scale-95 transition-all"
               >
-                닫기
+                {copy.close}
               </button>
             </div>
           </div>

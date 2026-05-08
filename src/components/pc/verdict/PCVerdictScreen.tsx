@@ -21,7 +21,8 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { CAMPAIGN_STAGE_MAP, getCampaignStageKey } from '../../verdict/VerdictScreen'
 import { triggerCutscene } from '../../discovery/CutsceneOverlay'
 import { CUTSCENE_DURATION, shouldTriggerCutscene } from '../../../engine/cutsceneTriggerEngine'
-import { useI18n, type MessageKey, type MessageValues } from '../../../i18n'
+import { useI18n, type LocaleCode, type MessageKey, type MessageValues } from '../../../i18n'
+import { getResultRating } from '../result/resultCopy'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
 type FlatItem = { step: VerdictStep; subIdx: number }
@@ -43,8 +44,9 @@ function buildKeyMomentText(args: {
   agentBLieMap: Record<string, { currentState: LieState }>
   keyEvidenceNames: string[]
   avgPercentA: number
+  locale: LocaleCode
 }): string {
-  const { caseData, verdictInput, agentALieMap, agentBLieMap, keyEvidenceNames, avgPercentA } = args
+  const { caseData, verdictInput, agentALieMap, agentBLieMap, keyEvidenceNames, avgPercentA, locale } = args
   const candidates = caseData.disputes.flatMap((dispute) => {
     const aState = agentALieMap[dispute.id]?.currentState ?? 'S0'
     const bState = agentBLieMap[dispute.id]?.currentState ?? 'S0'
@@ -56,11 +58,32 @@ function buildKeyMomentText(args: {
 
   const confession = candidates.find((item) => item.state === 'S5' && item.finding !== 'pending')
   if (confession) {
+    if (locale === 'en') return `${confession.partyName}'s confession about "${confession.disputeName}" became the point that fixed the responsibility split and resolution.`
+    if (locale === 'ja') return `${confession.partyName}が「${confession.disputeName}」について感情を高ぶらせながら告白したことが、責任配分と解決方針を確定する基準になりました。`
+    if (locale === 'zh-CN') return `${confession.partyName}围绕“${confession.disputeName}”情绪激动并作出承认，这段陈述成为确定责任分配和解决方向的依据。`
     return `${confession.partyName}${pp이가(confession.partyName)} "${confession.disputeName}" 쟁점과 관련해 감정이 격앙되며 자백했고, 그 진술이 책임 배분과 해결 방향을 확정하는 기준이 되었습니다.`
   }
 
   const pressured = candidates.find((item) => LIE_STATE_RANK[item.state] >= 3)
   if (pressured) {
+    if (locale === 'en') {
+      const statePhrase = pressured.state === 'S4'
+        ? 'the answer breaking under mounting emotional pressure'
+        : 'the answer losing consistency under pressure'
+      return `${pressured.partyName}'s ${statePhrase} around "${pressured.disputeName}" was decisive. Because it did not reach a final confession, the verdict weighed the submitted evidence together with the selected responsibility split.`
+    }
+    if (locale === 'ja') {
+      const statePhrase = pressured.state === 'S4'
+        ? '感情が限界まで高まり供述が揺らいだ点'
+        : '追い詰められる中で供述の一貫性が揺らいだ点'
+      return `${pressured.partyName}について、「${pressured.disputeName}」をめぐる${statePhrase}が決定的でした。最終的な告白には至らなかったため、判決は提出された証拠と選択された責任比率をあわせて反映しました。`
+    }
+    if (locale === 'zh-CN') {
+      const statePhrase = pressured.state === 'S4'
+        ? '情绪被推到极限后陈述发生动摇'
+        : '回答被逼入角后陈述一致性发生动摇'
+      return `${pressured.partyName}围绕“${pressured.disputeName}”时，${statePhrase}成为关键。由于尚未进入最终承认，裁决同时参考了已提交证据和所选责任比例。`
+    }
     const statePhrase = pressured.state === 'S4'
       ? '감정이 한계까지 밀리며 진술이 흔들린 점'
       : '답변이 궁지에 몰리며 진술의 일관성이 흔들린 점'
@@ -68,21 +91,52 @@ function buildKeyMomentText(args: {
   }
 
   if (keyEvidenceNames.length > 0) {
+    if (locale === 'en') return `"${keyEvidenceNames[0]}" and the submitted evidence narrowed the gap between the claims.`
+    if (locale === 'ja') return `「${keyEvidenceNames[0]}」などの提出証拠が、双方の主張の差を絞り込む基準になりました。`
+    if (locale === 'zh-CN') return `“${keyEvidenceNames[0]}”等已提交证据成为缩小双方主张差距的依据。`
     return `"${keyEvidenceNames[0]}" 등 제출된 증거가 각 주장 사이의 차이를 좁히는 기준이 되었습니다.`
   }
 
   if (avgPercentA >= 55) {
+    if (locale === 'en') return `The responsibility split placing greater weight on ${caseData.duo.partyA.name} shaped the direction of the verdict.`
+    if (locale === 'ja') return `${caseData.duo.partyA.name}により重い責任を置いた配分が、判決の方向を分けました。`
+    if (locale === 'zh-CN') return `将更大责任置于${caseData.duo.partyA.name}一方的责任分配，决定了裁决方向。`
     return `${caseData.duo.partyA.name}에게 더 큰 책임을 둔 책임 배분이 판결의 방향을 갈랐습니다.`
   }
   if (avgPercentA <= 45) {
+    if (locale === 'en') return `The responsibility split placing greater weight on ${caseData.duo.partyB.name} shaped the direction of the verdict.`
+    if (locale === 'ja') return `${caseData.duo.partyB.name}により重い責任を置いた配分が、判決の方向を分けました。`
+    if (locale === 'zh-CN') return `将更大责任置于${caseData.duo.partyB.name}一方的责任分配，决定了裁决方向。`
     return `${caseData.duo.partyB.name}에게 더 큰 책임을 둔 책임 배분이 판결의 방향을 갈랐습니다.`
   }
+  if (locale === 'en') return 'The verdict turned on a relatively even reading of both sides\' responsibility.'
+  if (locale === 'ja') return '双方の責任を比較的均等に見た判断が、今回の判決の核心になりました。'
+  if (locale === 'zh-CN') return '本次裁决的核心，是较为均衡地看待双方责任。'
   return '양측의 책임을 비교적 균등하게 본 판단이 이번 판결의 핵심 기준이 되었습니다.'
 }
 
 function getRelLabel(type: string): string {
   const map: Record<string, string> = { spouse: '부부', family: '가족', friend: '친구', neighbor: '이웃', partnership: '동업', workplace: '직장', tenant_landlord: '세입자' }
   return map[type] ?? type
+}
+
+function containsHangul(text: string): boolean {
+  return /[가-힣]/.test(text)
+}
+
+function getSolutionCategoryLabel(
+  catKey: string,
+  labels: CaseData['solutionCategoryLabels'] | undefined,
+  locale: LocaleCode,
+  t: TFunction,
+): string {
+  const generatedLabel = labels?.[catKey]?.trim()
+  if (generatedLabel && (locale === 'ko' || !containsHangul(generatedLabel))) {
+    return generatedLabel
+  }
+  const mappedLabel = SOLUTION_CATEGORY_LABELS[locale][catKey]
+  if (mappedLabel) return mappedLabel
+  return locale === 'ko' ? catKey : t('pc.verdict.step.solution')
 }
 
 function getSolutionIcon(text: string): React.ReactNode {
@@ -95,21 +149,71 @@ function getSolutionIcon(text: string): React.ReactNode {
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" stroke="#d4a24e" strokeWidth="1.5" fill="none"/></svg>
 }
 
-const SOLUTION_CATEGORY_LABELS: Record<string, string> = {
-  '공동재산회복': '공동 재산 회복',
-  '신뢰순서분리': '신뢰 순서 분리',
-  '봉인정보경계': '봉인 정보 경계',
-  '관계재건': '관계 재건',
-  '역할재조정': '역할 재조정',
-  '소통구조개선': '소통 구조 개선',
-  '경계설정': '경계 설정',
-  '책임분담': '책임 분담',
-  '신뢰회복': '신뢰 회복',
-  '금전정리': '금전 정리',
-  '재정투명화': '재정 투명화',
-  '의사소통': '의사소통',
-  '생활규칙': '생활 규칙',
-  '법적정리': '법적 정리',
+const SOLUTION_CATEGORY_LABELS: Record<LocaleCode, Record<string, string>> = {
+  ko: {
+    공동재산회복: '공동 재산 회복',
+    신뢰순서분리: '신뢰 순서 분리',
+    봉인정보경계: '봉인 정보 경계',
+    관계재건: '관계 재건',
+    역할재조정: '역할 재조정',
+    소통구조개선: '소통 구조 개선',
+    경계설정: '경계 설정',
+    책임분담: '책임 분담',
+    신뢰회복: '신뢰 회복',
+    금전정리: '금전 정리',
+    재정투명화: '재정 투명화',
+    의사소통: '의사소통',
+    생활규칙: '생활 규칙',
+    법적정리: '법적 정리',
+  },
+  en: {
+    공동재산회복: 'Shared Asset Recovery',
+    신뢰순서분리: 'Separated Trust Steps',
+    봉인정보경계: 'Sealed Information Boundary',
+    관계재건: 'Relationship Repair',
+    역할재조정: 'Role Adjustment',
+    소통구조개선: 'Communication Structure',
+    경계설정: 'Boundary Setting',
+    책임분담: 'Responsibility Sharing',
+    신뢰회복: 'Trust Recovery',
+    금전정리: 'Financial Settlement',
+    재정투명화: 'Financial Transparency',
+    의사소통: 'Communication',
+    생활규칙: 'Household Rules',
+    법적정리: 'Legal Settlement',
+  },
+  ja: {
+    공동재산회복: '共有財産の回復',
+    신뢰순서분리: '信頼回復手順の分離',
+    봉인정보경계: '封印情報の境界',
+    관계재건: '関係の再構築',
+    역할재조정: '役割の再調整',
+    소통구조개선: '対話構造の改善',
+    경계설정: '境界設定',
+    책임분담: '責任分担',
+    신뢰회복: '信頼回復',
+    금전정리: '金銭整理',
+    재정투명화: '財務の透明化',
+    의사소통: '意思疎通',
+    생활규칙: '生活ルール',
+    법적정리: '法的整理',
+  },
+  'zh-CN': {
+    공동재산회복: '共同财产恢复',
+    신뢰순서분리: '信任步骤分离',
+    봉인정보경계: '封存信息边界',
+    관계재건: '关系重建',
+    역할재조정: '角色再调整',
+    소통구조개선: '沟通结构改善',
+    경계설정: '边界设定',
+    책임분담: '责任分担',
+    신뢰회복: '信任恢复',
+    금전정리: '金钱整理',
+    재정투명화: '财务透明化',
+    의사소통: '沟通',
+    생활규칙: '生活规则',
+    법적정리: '法律整理',
+  },
 }
 
 /** Check if a dispute has been "discovered" (either party's lieState reached S3+) */
@@ -222,7 +326,7 @@ function ScaleSVG({ percentA, nameA, nameB, caseId }: { percentA: number; nameA:
 }
 
 export default function PCVerdictScreen() {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const [globalIdx, setGlobalIdx] = useState(0)
   const [autoAdvanceEnabled, setAutoAdvanceEnabled] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -379,22 +483,14 @@ export default function PCVerdictScreen() {
       ? Math.round(responsibilityEntries.reduce((sum, item) => sum + item.a, 0) / responsibilityEntries.length)
       : 50
 
-    const judgeTitle = score.total >= 90
-      ? '전설적인 재판관'
-      : score.total >= 75
-        ? '훌륭한 재판관'
-        : score.total >= 60
-          ? '능숙한 재판관'
-          : score.total >= 40
-            ? '보통의 재판관'
-            : '미숙한 재판관'
+    const judgeTitle = getResultRating(score.total, locale)
 
     const summary = generateVerdictSummary({
       caseName: caseData.context.description || caseData.caseId,
       partyAName: caseData.duo.partyA.name,
       partyBName: caseData.duo.partyB.name,
       percentA: avgPercentA,
-      selectedSolution: verdictInput.selectedSolutions.join(', ') || '미선택',
+      selectedSolution: verdictInput.selectedSolutions.join(', '),
       keyEvidenceNames,
       keyTransition,
       keyMomentText: buildKeyMomentText({
@@ -404,10 +500,12 @@ export default function PCVerdictScreen() {
         agentBLieMap: state.agentB.lieStateMap,
         keyEvidenceNames,
         avgPercentA,
+        locale,
       }),
       judgeTitle,
       totalTurns: turnCount,
       contradictionsFound: processMetrics.lieTransitions,
+      locale,
     })
     setVerdictSummary(summary)
 
@@ -439,13 +537,14 @@ export default function PCVerdictScreen() {
     )
     saveDriftState(newDrift)
 
-    const initialAftermath = buildDefaultAftermath(caseData, score, verdictInput)
+    const initialAftermath = buildDefaultAftermath(caseData, score, verdictInput, locale)
     const resultSnapshot = buildVerdictResultSnapshot({
       caseData,
       verdictInput,
       score,
       verdictSummary: summary,
       aftermath: initialAftermath,
+      locale,
     })
 
     recordHistory({
@@ -485,12 +584,13 @@ export default function PCVerdictScreen() {
           partyAName: caseData.duo.partyA.name,
           partyBName: caseData.duo.partyB.name,
           percentA: 50,
-          selectedSolution: verdictInput.selectedSolutions.join(', ') || '미선택',
+          selectedSolution: verdictInput.selectedSolutions.join(', '),
           keyEvidenceNames: [],
           keyTransition: null,
-          judgeTitle: '재판관',
+          judgeTitle: getResultRating(50, locale),
           totalTurns: turnCount,
           contradictionsFound: 0,
+          locale,
         }))
       }
     }
@@ -705,7 +805,7 @@ export default function PCVerdictScreen() {
             {currentStep === 'solution' ? (() => {
               const catKey = solutionCategories[current.subIdx]
               const options = caseData.solutions[catKey] ?? []
-              const catLabel = caseData.solutionCategoryLabels?.[catKey] ?? SOLUTION_CATEGORY_LABELS[catKey] ?? catKey
+              const catLabel = getSolutionCategoryLabel(catKey, caseData.solutionCategoryLabels, locale, t)
               return (
                 <div className="pc-verdict-solution">
                   <div className="pc-verdict-solution__header">

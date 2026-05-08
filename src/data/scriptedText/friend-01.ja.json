@@ -24476,7 +24476,7 @@
         {
           "key": "dc-1.a.q1|soft",
           "dossierCardId": "dc-1",
-          "dossierCardName": "집착의 겉면",
+          "dossierCardName": "執着の表側",
           "questionId": "dc-1.a.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -24488,13 +24488,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-1이 Original 이상",
-            "e-2가 Excerpt 이상",
-            "d-1에서 최수민 씨 S1 이상"
+            "e-1がオリジナル以上",
+            "e-2がExcerpt以上",
+            "d-1からチェ・スミン氏S1以上"
           ],
           "successEffects": [
-            "d-1의 표면 프레임이 흔들린다",
-            "송다은의 확인 전 단정과 최수민의 연락 의도를 같은 화면에서 다룰 수 있다"
+            "d-1の表面枠が揺れる",
+            "ソン・ダウンの確認前断定とチェ・スミンの連絡意図を同じ画面で扱うことができる"
           ],
           "variants": [
             {
@@ -24522,7 +24522,7 @@
         {
           "key": "dc-1.a.q1|mid",
           "dossierCardId": "dc-1",
-          "dossierCardName": "집착의 겉면",
+          "dossierCardName": "執着の表側",
           "questionId": "dc-1.a.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -24534,13 +24534,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-1이 Original 이상",
-            "e-2가 Excerpt 이상",
-            "d-1에서 최수민 씨 S1 이상"
+            "e-1がオリジナル以上",
+            "e-2がExcerpt以上",
+            "d-1からチェ・スミン氏S1以上"
           ],
           "successEffects": [
-            "d-1의 표면 프레임이 흔들린다",
-            "송다은의 확인 전 단정과 최수민의 연락 의도를 같은 화면에서 다룰 수 있다"
+            "d-1の表面枠が揺れる",
+            "ソン・ダウンの確認前断定とチェ・スミンの連絡意図を同じ画面で扱うことができる"
           ],
           "variants": [
             {
@@ -24568,7 +24568,7 @@
         {
           "key": "dc-1.a.q1|hard",
           "dossierCardId": "dc-1",
-          "dossierCardName": "집착의 겉면",
+          "dossierCardName": "執着の表側",
           "questionId": "dc-1.a.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -24580,13 +24580,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-1이 Original 이상",
-            "e-2가 Excerpt 이상",
-            "d-1에서 최수민 씨 S1 이상"
+            "e-1がオリジナル以上",
+            "e-2がExcerpt以上",
+            "d-1からチェ・スミン氏S1以上"
           ],
           "successEffects": [
-            "d-1의 표면 프레임이 흔들린다",
-            "송다은의 확인 전 단정과 최수민의 연락 의도를 같은 화면에서 다룰 수 있다"
+            "d-1の表面枠が揺れる",
+            "ソン・ダウンの確認前断定とチェ・スミンの連絡意図を同じ画面で扱うことができる"
           ],
           "variants": [
             {
@@ -24614,7 +24614,7 @@
         {
           "key": "dc-1.b.q1|soft",
           "dossierCardId": "dc-1",
-          "dossierCardName": "집착의 겉면",
+          "dossierCardName": "執着の表側",
           "questionId": "dc-1.b.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -24626,13 +24626,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-1이 Original 이상",
-            "e-2가 Excerpt 이상",
-            "d-1에서 최수민 씨 S1 이상"
+            "e-1がオリジナル以上",
+            "e-2がExcerpt以上",
+            "d-1からチェ・スミン氏S1以上"
           ],
           "successEffects": [
-            "d-1의 표면 프레임이 흔들린다",
-            "송다은의 확인 전 단정과 최수민의 연락 의도를 같은 화면에서 다룰 수 있다"
+            "d-1の表面枠が揺れる",
+            "ソン・ダウンの確認前断定とチェ・スミンの連絡意図を同じ画面で扱うことができる"
           ],
           "variants": [
             {
@@ -24660,7 +24660,7 @@
         {
           "key": "dc-1.b.q1|mid",
           "dossierCardId": "dc-1",
-          "dossierCardName": "집착의 겉면",
+          "dossierCardName": "執着の表側",
           "questionId": "dc-1.b.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -24672,13 +24672,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-1이 Original 이상",
-            "e-2가 Excerpt 이상",
-            "d-1에서 최수민 씨 S1 이상"
+            "e-1がオリジナル以上",
+            "e-2がExcerpt以上",
+            "d-1からチェ・スミン氏S1以上"
           ],
           "successEffects": [
-            "d-1의 표면 프레임이 흔들린다",
-            "송다은의 확인 전 단정과 최수민의 연락 의도를 같은 화면에서 다룰 수 있다"
+            "d-1の表面枠が揺れる",
+            "ソン・ダウンの確認前断定とチェ・スミンの連絡意図を同じ画面で扱うことができる"
           ],
           "variants": [
             {
@@ -24706,7 +24706,7 @@
         {
           "key": "dc-1.b.q1|hard",
           "dossierCardId": "dc-1",
-          "dossierCardName": "집착의 겉면",
+          "dossierCardName": "執着の表側",
           "questionId": "dc-1.b.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -24718,13 +24718,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-1이 Original 이상",
-            "e-2가 Excerpt 이상",
-            "d-1에서 최수민 씨 S1 이상"
+            "e-1がオリジナル以上",
+            "e-2がExcerpt以上",
+            "d-1からチェ・スミン氏S1以上"
           ],
           "successEffects": [
-            "d-1의 표면 프레임이 흔들린다",
-            "송다은의 확인 전 단정과 최수민의 연락 의도를 같은 화면에서 다룰 수 있다"
+            "d-1の表面枠が揺れる",
+            "ソン・ダウンの確認前断定とチェ・スミンの連絡意図を同じ画面で扱うことができる"
           ],
           "variants": [
             {
@@ -24752,7 +24752,7 @@
         {
           "key": "dc-2.b.q1|soft",
           "dossierCardId": "dc-2",
-          "dossierCardName": "먼저 넘은 선",
+          "dossierCardName": "先に超えた線",
           "questionId": "dc-2.b.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -24764,12 +24764,12 @@
             "d-2"
           ],
           "successConditionSummary": [
-            "e-4가 Original 이상",
-            "d-1에서 최수민 씨 S2 이상"
+            "e-4がオリジナル以上",
+            "d-1からチェ・スミン氏S2以上"
           ],
           "successEffects": [
-            "예비신랑 연락의 선후관계가 뒤집힌다",
-            "d-3 해금에 필요한 설명 경로가 열린다"
+            "予備新郎連絡の先後関係がひっくり返る",
+            "d-3 解禁に必要な説明経路が開く"
           ],
           "variants": [
             {
@@ -24797,7 +24797,7 @@
         {
           "key": "dc-2.b.q1|mid",
           "dossierCardId": "dc-2",
-          "dossierCardName": "먼저 넘은 선",
+          "dossierCardName": "先に超えた線",
           "questionId": "dc-2.b.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -24809,12 +24809,12 @@
             "d-2"
           ],
           "successConditionSummary": [
-            "e-4가 Original 이상",
-            "d-1에서 최수민 씨 S2 이상"
+            "e-4がオリジナル以上",
+            "d-1からチェ・スミン氏S2以上"
           ],
           "successEffects": [
-            "예비신랑 연락의 선후관계가 뒤집힌다",
-            "d-3 해금에 필요한 설명 경로가 열린다"
+            "予備新郎連絡の先後関係がひっくり返る",
+            "d-3 解禁に必要な説明経路が開く"
           ],
           "variants": [
             {
@@ -24842,7 +24842,7 @@
         {
           "key": "dc-2.b.q1|hard",
           "dossierCardId": "dc-2",
-          "dossierCardName": "먼저 넘은 선",
+          "dossierCardName": "先に超えた線",
           "questionId": "dc-2.b.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -24854,12 +24854,12 @@
             "d-2"
           ],
           "successConditionSummary": [
-            "e-4가 Original 이상",
-            "d-1에서 최수민 씨 S2 이상"
+            "e-4がオリジナル以上",
+            "d-1からチェ・スミン氏S2以上"
           ],
           "successEffects": [
-            "예비신랑 연락의 선후관계가 뒤집힌다",
-            "d-3 해금에 필요한 설명 경로가 열린다"
+            "予備新郎連絡の先後関係がひっくり返る",
+            "d-3 解禁に必要な説明経路が開く"
           ],
           "variants": [
             {
@@ -24887,7 +24887,7 @@
         {
           "key": "dc-3.b.q1|soft",
           "dossierCardId": "dc-3",
-          "dossierCardName": "같은 부탁",
+          "dossierCardName": "同じお願い",
           "questionId": "dc-3.b.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -24899,13 +24899,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-5가 Original 이상",
-            "e-6이 Original 이상",
-            "d-2가 S3 이상"
+            "e-5がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-2がS3以上"
           ],
           "successEffects": [
-            "송다은 아버지의 현재 접근이 과거와 연결된다",
-            "d-4 해금에 필요한 반복 패턴이 확정된다"
+            "ソンダは父親の現在のアプローチが過去につながる",
+            "d-4 解禁に必要な繰り返しパターンが確定する"
           ],
           "variants": [
             {
@@ -24933,7 +24933,7 @@
         {
           "key": "dc-3.b.q1|mid",
           "dossierCardId": "dc-3",
-          "dossierCardName": "같은 부탁",
+          "dossierCardName": "同じお願い",
           "questionId": "dc-3.b.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -24945,13 +24945,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-5가 Original 이상",
-            "e-6이 Original 이상",
-            "d-2가 S3 이상"
+            "e-5がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-2がS3以上"
           ],
           "successEffects": [
-            "송다은 아버지의 현재 접근이 과거와 연결된다",
-            "d-4 해금에 필요한 반복 패턴이 확정된다"
+            "ソンダは父親の現在のアプローチが過去につながる",
+            "d-4 解禁に必要な繰り返しパターンが確定する"
           ],
           "variants": [
             {
@@ -24979,7 +24979,7 @@
         {
           "key": "dc-3.b.q1|hard",
           "dossierCardId": "dc-3",
-          "dossierCardName": "같은 부탁",
+          "dossierCardName": "同じお願い",
           "questionId": "dc-3.b.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -24991,13 +24991,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-5가 Original 이상",
-            "e-6이 Original 이상",
-            "d-2가 S3 이상"
+            "e-5がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-2がS3以上"
           ],
           "successEffects": [
-            "송다은 아버지의 현재 접근이 과거와 연결된다",
-            "d-4 해금에 필요한 반복 패턴이 확정된다"
+            "ソンダは父親の現在のアプローチが過去につながる",
+            "d-4 解禁に必要な繰り返しパターンが確定する"
           ],
           "variants": [
             {
@@ -25025,7 +25025,7 @@
         {
           "key": "dc-3.a.q1|soft",
           "dossierCardId": "dc-3",
-          "dossierCardName": "같은 부탁",
+          "dossierCardName": "同じお願い",
           "questionId": "dc-3.a.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -25037,13 +25037,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-5가 Original 이상",
-            "e-6이 Original 이상",
-            "d-2가 S3 이상"
+            "e-5がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-2がS3以上"
           ],
           "successEffects": [
-            "송다은 아버지의 현재 접근이 과거와 연결된다",
-            "d-4 해금에 필요한 반복 패턴이 확정된다"
+            "ソンダは父親の現在のアプローチが過去につながる",
+            "d-4 解禁に必要な繰り返しパターンが確定する"
           ],
           "variants": [
             {
@@ -25071,7 +25071,7 @@
         {
           "key": "dc-3.a.q1|mid",
           "dossierCardId": "dc-3",
-          "dossierCardName": "같은 부탁",
+          "dossierCardName": "同じお願い",
           "questionId": "dc-3.a.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -25083,13 +25083,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-5가 Original 이상",
-            "e-6이 Original 이상",
-            "d-2가 S3 이상"
+            "e-5がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-2がS3以上"
           ],
           "successEffects": [
-            "송다은 아버지의 현재 접근이 과거와 연결된다",
-            "d-4 해금에 필요한 반복 패턴이 확정된다"
+            "ソンダは父親の現在のアプローチが過去につながる",
+            "d-4 解禁に必要な繰り返しパターンが確定する"
           ],
           "variants": [
             {
@@ -25117,7 +25117,7 @@
         {
           "key": "dc-3.a.q1|hard",
           "dossierCardId": "dc-3",
-          "dossierCardName": "같은 부탁",
+          "dossierCardName": "同じお願い",
           "questionId": "dc-3.a.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -25129,13 +25129,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-5가 Original 이상",
-            "e-6이 Original 이상",
-            "d-2가 S3 이상"
+            "e-5がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-2がS3以上"
           ],
           "successEffects": [
-            "송다은 아버지의 현재 접근이 과거와 연결된다",
-            "d-4 해금에 필요한 반복 패턴이 확정된다"
+            "ソンダは父親の現在のアプローチが過去につながる",
+            "d-4 解禁に必要な繰り返しパターンが確定する"
           ],
           "variants": [
             {
@@ -25163,7 +25163,7 @@
         {
           "key": "dc-4.b.q1|soft",
           "dossierCardId": "dc-4",
-          "dossierCardName": "손절의 값",
+          "dossierCardName": "手節の値",
           "questionId": "dc-4.b.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -25174,13 +25174,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-3이 Original 이상",
-            "e-6이 Original 이상",
-            "d-3이 S2 이상"
+            "e-3がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-3がS2以上"
           ],
           "successEffects": [
-            "과거 손절의 빈칸이 투자 명목 피해의 맥락으로 채워진다",
-            "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러난다"
+            "過去の手節の空白が投資名目被害の文脈で満たされる",
+            "チェ・スミンの沈黙の動機とソン・ダウンの急な結論が一緒に現れる"
           ],
           "variants": [
             {
@@ -25208,7 +25208,7 @@
         {
           "key": "dc-4.b.q1|mid",
           "dossierCardId": "dc-4",
-          "dossierCardName": "손절의 값",
+          "dossierCardName": "手節の値",
           "questionId": "dc-4.b.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -25219,13 +25219,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-3이 Original 이상",
-            "e-6이 Original 이상",
-            "d-3이 S2 이상"
+            "e-3がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-3がS2以上"
           ],
           "successEffects": [
-            "과거 손절의 빈칸이 투자 명목 피해의 맥락으로 채워진다",
-            "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러난다"
+            "過去の手節の空白が投資名目被害の文脈で満たされる",
+            "チェ・スミンの沈黙の動機とソン・ダウンの急な結論が一緒に現れる"
           ],
           "variants": [
             {
@@ -25253,7 +25253,7 @@
         {
           "key": "dc-4.b.q1|hard",
           "dossierCardId": "dc-4",
-          "dossierCardName": "손절의 값",
+          "dossierCardName": "手節の値",
           "questionId": "dc-4.b.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -25264,13 +25264,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-3이 Original 이상",
-            "e-6이 Original 이상",
-            "d-3이 S2 이상"
+            "e-3がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-3がS2以上"
           ],
           "successEffects": [
-            "과거 손절의 빈칸이 투자 명목 피해의 맥락으로 채워진다",
-            "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러난다"
+            "過去の手節の空白が投資名目被害の文脈で満たされる",
+            "チェ・スミンの沈黙の動機とソン・ダウンの急な結論が一緒に現れる"
           ],
           "variants": [
             {
@@ -25298,7 +25298,7 @@
         {
           "key": "dc-4.a.q1|soft",
           "dossierCardId": "dc-4",
-          "dossierCardName": "손절의 값",
+          "dossierCardName": "手節の値",
           "questionId": "dc-4.a.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -25309,13 +25309,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-3이 Original 이상",
-            "e-6이 Original 이상",
-            "d-3이 S2 이상"
+            "e-3がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-3がS2以上"
           ],
           "successEffects": [
-            "과거 손절의 빈칸이 투자 명목 피해의 맥락으로 채워진다",
-            "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러난다"
+            "過去の手節の空白が投資名目被害の文脈で満たされる",
+            "チェ・スミンの沈黙の動機とソン・ダウンの急な結論が一緒に現れる"
           ],
           "variants": [
             {
@@ -25343,7 +25343,7 @@
         {
           "key": "dc-4.a.q1|mid",
           "dossierCardId": "dc-4",
-          "dossierCardName": "손절의 값",
+          "dossierCardName": "手節の値",
           "questionId": "dc-4.a.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -25354,13 +25354,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-3이 Original 이상",
-            "e-6이 Original 이상",
-            "d-3이 S2 이상"
+            "e-3がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-3がS2以上"
           ],
           "successEffects": [
-            "과거 손절의 빈칸이 투자 명목 피해의 맥락으로 채워진다",
-            "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러난다"
+            "過去の手節の空白が投資名目被害の文脈で満たされる",
+            "チェ・スミンの沈黙の動機とソン・ダウンの急な結論が一緒に現れる"
           ],
           "variants": [
             {
@@ -25388,7 +25388,7 @@
         {
           "key": "dc-4.a.q1|hard",
           "dossierCardId": "dc-4",
-          "dossierCardName": "손절의 값",
+          "dossierCardName": "手節の値",
           "questionId": "dc-4.a.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -25399,13 +25399,13 @@
             "d-4"
           ],
           "successConditionSummary": [
-            "e-3이 Original 이상",
-            "e-6이 Original 이상",
-            "d-3이 S2 이상"
+            "e-3がオリジナル以上",
+            "e-6がオリジナル以上",
+            "d-3がS2以上"
           ],
           "successEffects": [
-            "과거 손절의 빈칸이 투자 명목 피해의 맥락으로 채워진다",
-            "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러난다"
+            "過去の手節の空白が投資名目被害の文脈で満たされる",
+            "チェ・スミンの沈黙の動機とソン・ダウンの急な結論が一緒に現れる"
           ],
           "variants": [
             {
@@ -25433,7 +25433,7 @@
         {
           "key": "dc-5.a.q1|soft",
           "dossierCardId": "dc-5",
-          "dossierCardName": "낙인의 순서",
+          "dossierCardName": "烙印の順序",
           "questionId": "dc-5.a.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -25445,13 +25445,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-7이 Original 이상",
-            "d-3과 d-4가 S3 이상",
-            "단톡방 발언의 시간 순서가 확인됨"
+            "e-7がオリジナル以上",
+            "d-3とd-4がS3以上",
+            "ダントクバン発言の時間順が確認されました"
           ],
           "successEffects": [
-            "d-5가 최종 쟁점으로 정리된다",
-            "정정과 사과가 필요한 지점이 명확해진다"
+            "d-5が最終的な問題としてまとめられる",
+            "訂正と謝罪が必要な点が明確になる"
           ],
           "variants": [
             {
@@ -25479,7 +25479,7 @@
         {
           "key": "dc-5.a.q1|mid",
           "dossierCardId": "dc-5",
-          "dossierCardName": "낙인의 순서",
+          "dossierCardName": "烙印の順序",
           "questionId": "dc-5.a.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -25491,13 +25491,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-7이 Original 이상",
-            "d-3과 d-4가 S3 이상",
-            "단톡방 발언의 시간 순서가 확인됨"
+            "e-7がオリジナル以上",
+            "d-3とd-4がS3以上",
+            "ダントクバン発言の時間順が確認されました"
           ],
           "successEffects": [
-            "d-5가 최종 쟁점으로 정리된다",
-            "정정과 사과가 필요한 지점이 명확해진다"
+            "d-5が最終的な問題としてまとめられる",
+            "訂正と謝罪が必要な点が明確になる"
           ],
           "variants": [
             {
@@ -25525,7 +25525,7 @@
         {
           "key": "dc-5.a.q1|hard",
           "dossierCardId": "dc-5",
-          "dossierCardName": "낙인의 순서",
+          "dossierCardName": "烙印の順序",
           "questionId": "dc-5.a.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -25537,13 +25537,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-7이 Original 이상",
-            "d-3과 d-4가 S3 이상",
-            "단톡방 발언의 시간 순서가 확인됨"
+            "e-7がオリジナル以上",
+            "d-3とd-4がS3以上",
+            "ダントクバン発言の時間順が確認されました"
           ],
           "successEffects": [
-            "d-5가 최종 쟁점으로 정리된다",
-            "정정과 사과가 필요한 지점이 명확해진다"
+            "d-5が最終的な問題としてまとめられる",
+            "訂正と謝罪が必要な点が明確になる"
           ],
           "variants": [
             {
@@ -25571,7 +25571,7 @@
         {
           "key": "dc-5.b.q1|soft",
           "dossierCardId": "dc-5",
-          "dossierCardName": "낙인의 순서",
+          "dossierCardName": "烙印の順序",
           "questionId": "dc-5.b.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -25583,13 +25583,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-7이 Original 이상",
-            "d-3과 d-4가 S3 이상",
-            "단톡방 발언의 시간 순서가 확인됨"
+            "e-7がオリジナル以上",
+            "d-3とd-4がS3以上",
+            "ダントクバン発言の時間順が確認されました"
           ],
           "successEffects": [
-            "d-5가 최종 쟁점으로 정리된다",
-            "정정과 사과가 필요한 지점이 명확해진다"
+            "d-5が最終的な問題としてまとめられる",
+            "訂正と謝罪が必要な点が明確になる"
           ],
           "variants": [
             {
@@ -25617,7 +25617,7 @@
         {
           "key": "dc-5.b.q1|mid",
           "dossierCardId": "dc-5",
-          "dossierCardName": "낙인의 순서",
+          "dossierCardName": "烙印の順序",
           "questionId": "dc-5.b.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -25629,13 +25629,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-7이 Original 이상",
-            "d-3과 d-4가 S3 이상",
-            "단톡방 발언의 시간 순서가 확인됨"
+            "e-7がオリジナル以上",
+            "d-3とd-4がS3以上",
+            "ダントクバン発言の時間順が確認されました"
           ],
           "successEffects": [
-            "d-5가 최종 쟁점으로 정리된다",
-            "정정과 사과가 필요한 지점이 명확해진다"
+            "d-5が最終的な問題としてまとめられる",
+            "訂正と謝罪が必要な点が明確になる"
           ],
           "variants": [
             {
@@ -25663,7 +25663,7 @@
         {
           "key": "dc-5.b.q1|hard",
           "dossierCardId": "dc-5",
-          "dossierCardName": "낙인의 순서",
+          "dossierCardName": "烙印の順序",
           "questionId": "dc-5.b.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -25675,13 +25675,13 @@
             "d-5"
           ],
           "successConditionSummary": [
-            "e-7이 Original 이상",
-            "d-3과 d-4가 S3 이상",
-            "단톡방 발언의 시간 순서가 확인됨"
+            "e-7がオリジナル以上",
+            "d-3とd-4がS3以上",
+            "ダントクバン発言の時間順が確認されました"
           ],
           "successEffects": [
-            "d-5가 최종 쟁점으로 정리된다",
-            "정정과 사과가 필요한 지점이 명확해진다"
+            "d-5が最終的な問題としてまとめられる",
+            "訂正と謝罪が必要な点が明確になる"
           ],
           "variants": [
             {
@@ -25721,7 +25721,7 @@
           "unlockedByDossier": [
             "dc-3"
           ],
-          "hiddenAgenda": "자신도 최수민을 비난하는 데 가담한 것이 부끄럽다.",
+          "hiddenAgenda": "自分もチェ・スミンを非難することに加わったのが恥ずかしい。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -25757,7 +25757,7 @@
           "unlockedByDossier": [
             "dc-3"
           ],
-          "hiddenAgenda": "자신도 최수민을 비난하는 데 가담한 것이 부끄럽다.",
+          "hiddenAgenda": "自分もチェ・スミンを非難することに加わったのが恥ずかしい。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -25793,7 +25793,7 @@
           "unlockedByDossier": [
             "dc-3"
           ],
-          "hiddenAgenda": "자신도 최수민을 비난하는 데 가담한 것이 부끄럽다.",
+          "hiddenAgenda": "自分もチェ・スミンを非難することに加わったのが恥ずかしい。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -25829,7 +25829,7 @@
           "unlockedByDossier": [
             "dc-2"
           ],
-          "hiddenAgenda": "예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
+          "hiddenAgenda": "予備新郎との職場関係が不便になるか見て気をつける。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -25865,7 +25865,7 @@
           "unlockedByDossier": [
             "dc-2"
           ],
-          "hiddenAgenda": "예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
+          "hiddenAgenda": "予備新郎との職場関係が不便になるか見て気をつける。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -25901,7 +25901,7 @@
           "unlockedByDossier": [
             "dc-2"
           ],
-          "hiddenAgenda": "예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
+          "hiddenAgenda": "予備新郎との職場関係が不便になるか見て気をつける。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -25937,7 +25937,7 @@
           "unlockedByDossier": [
             "dc-4"
           ],
-          "hiddenAgenda": "없음.",
+          "hiddenAgenda": "なし。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -25973,7 +25973,7 @@
           "unlockedByDossier": [
             "dc-4"
           ],
-          "hiddenAgenda": "없음.",
+          "hiddenAgenda": "なし。",
           "addressJudge": "裁判官",
           "variants": [
             {
@@ -26009,7 +26009,7 @@
           "unlockedByDossier": [
             "dc-4"
           ],
-          "hiddenAgenda": "없음.",
+          "hiddenAgenda": "なし。",
           "addressJudge": "裁判官",
           "variants": [
             {

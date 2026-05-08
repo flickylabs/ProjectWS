@@ -1519,6 +1519,14 @@ function pickConfessionRecapLine(caseId: string, party: 'a' | 'b'): string {
   const map = linesByLocale[locale] ?? linesByLocale.ko
   return map[key] ?? map.default
 }
+
+function alreadyConfessedNotice(targetName: string, locale = getRuntimeTextLocale()): string {
+  if (locale === 'en') return `${targetName} has already confessed on this dispute. Proceed with another dispute or another party.`
+  if (locale === 'ja') return `${targetName}はこの争点についてすでに告白しています。別の争点または別の当事者に進んでください。`
+  if (locale === 'zh-CN') return `${targetName}已就此争议点作出承认。请改为推进其他争议点或其他当事人。`
+  return `${targetName}${pp은는(targetName)} 이 쟁점에 대해 이미 자백했습니다. 다른 쟁점이나 다른 당사자로 진행해 주세요.`
+}
+
 function dispatchS5ConfessionAnswer(party: PartyId, disputeId: string): boolean {
   const state = useGameStore.getState()
   const caseData = state.caseData
@@ -1611,9 +1619,10 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     return
   }
   if (alreadyConfessed) {
+    const locale = getRuntimeTextLocale()
     const targetName = action.target === 'a'
-      ? state.caseData?.duo.partyA.name ?? '당사자'
-      : state.caseData?.duo.partyB.name ?? '당사자'
+      ? state.caseData?.duo.partyA.name ?? (locale === 'ko' ? '당사자' : 'the party')
+      : state.caseData?.duo.partyB.name ?? (locale === 'ko' ? '당사자' : 'the party')
     // 캐릭터별 짧은 재진술 발화
     const recapText = pickConfessionRecapLine(state.caseData?.caseId ?? '', action.target)
     state.addDialogue({
@@ -1632,7 +1641,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     })
     state.addDialogue({
       speaker: 'system',
-      text: `${targetName}${pp은는(targetName)} 이 쟁점에 대해 이미 자백했습니다. 다른 쟁점이나 다른 당사자로 진행해 주세요.`,
+      text: alreadyConfessedNotice(targetName, locale),
       relatedDisputes: [action.disputeId],
       turn: state.turnCount,
     })

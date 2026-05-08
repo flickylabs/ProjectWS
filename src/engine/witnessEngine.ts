@@ -14,6 +14,10 @@ import { normalizeCaseKey } from '../utils/caseHelpers'
 import { getWitnessSpeechSamples } from '../data/caseEnrichment'
 import { getScriptedWitness } from './scriptedTextLoader'
 import { pp과와 } from './koreanPostposition'
+import { buildLlmLanguageDirective, getLlmLocale } from '../i18n/llmLocale'
+import { getRuntimeTextLocale } from '../i18n/runtimeText'
+import { repairVisibleLlmTextLocale } from './llmLocaleGuard'
+import type { LocaleCode } from '../i18n/locales'
 import type { CaseData } from '../types'
 import type { AgentState } from '../types'
 import type { LieState } from '../types/agent'
@@ -79,8 +83,27 @@ export function determineTestimonyDepth(
 
 /** 깊이 단계별 시스템 메시지 */
 export function getDepthSystemMessage(depth: TestimonyDepth): string | undefined {
-  if (depth === 'vague') return '증인의 증언은 심문 진행에 따라 더 구체적인 내용을 확인할 수 있습니다.'
-  if (depth === 'partial') return '증인이 일부 내용을 더 밝히고 있지만, 아직 핵심 정보는 조심스러워합니다.'
+  const locale = getRuntimeTextLocale()
+  const copy: Record<LocaleCode, Record<Exclude<TestimonyDepth, 'full'>, string>> = {
+    ko: {
+      vague: '증인의 증언은 심문 진행에 따라 더 구체적인 내용을 확인할 수 있습니다.',
+      partial: '증인이 일부 내용을 더 밝히고 있지만, 아직 핵심 정보는 조심스러워합니다.',
+    },
+    en: {
+      vague: 'The witness can provide more specific testimony as the examination progresses.',
+      partial: 'The witness is revealing some details, but remains cautious about the core information.',
+    },
+    ja: {
+      vague: '証人の証言は、尋問が進むにつれてより具体的な内容を確認できます。',
+      partial: '証人は一部の内容を明かしていますが、核心情報にはまだ慎重です。',
+    },
+    'zh-CN': {
+      vague: '随着讯问推进，证人的证言可以确认更具体的内容。',
+      partial: '证人正在透露部分内容，但对核心信息仍很谨慎。',
+    },
+  }
+  if (depth === 'vague') return copy[locale].vague
+  if (depth === 'partial') return copy[locale].partial
   return undefined
 }
 
@@ -150,6 +173,7 @@ export async function generateWitnessTestimony(
   depth: TestimonyDepth = 'full',
 ): Promise<WitnessTestimony> {
   const caseKey = normalizeCaseKey(caseData)
+  const locale = getLlmLocale()
   const scripted = getScriptedWitness(caseKey, witness.id, depth)
   if (scripted) {
     return {
@@ -174,7 +198,7 @@ export async function generateWitnessTestimony(
   const vars = buildWitnessVars(witness, caseData, recentDialogues)
 
   // 깊이 게이팅 지시를 변수에 추가
-  vars.witnessDepthInstruction = buildDepthInstruction(depth)
+  vars.witnessDepthInstruction = buildDepthInstruction(depth, locale)
 
   // few-shot 예시 주입 (증인 유형 × depth 기반)
   const witnessSlot = normalizeWitnessSlot(witness)
@@ -183,7 +207,7 @@ export async function generateWitnessTestimony(
   // Agent 블록 조합 우선, 폴백으로 하드코딩 프롬프트
   const systemPrompt = isAgentLoaded()
     ? buildAgentPrompt('witness_testimony', vars)
-    : buildFallbackWitnessPrompt(witness, caseData, recentDialogues, depth)
+    : buildFallbackWitnessPrompt(witness, caseData, recentDialogues, depth, locale)
 
   const config = isAgentLoaded()
     ? getAgentConfig('witness_testimony')
@@ -192,13 +216,21 @@ export async function generateWitnessTestimony(
   try {
     const raw = await chatCompletion(
       [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: `재판관: "${witness.name} 증인, 이 사건에 대해 아는 바를 말씀해 주십시오."` },
+        { role: 'system', content: `${buildLlmLanguageDirective(locale)}\n\n${systemPrompt}` },
+        { role: 'user', content: buildWitnessUserPrompt(witness.name, locale) },
       ],
       { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
 
     const result = parseWitnessResponse(raw, witness)
+    result.testimony = await repairVisibleLlmTextLocale(result.testimony, locale, {
+      fieldName: 'witness.testimony',
+      fallbackReason: 'default',
+    })
+    result.behaviorHint = await repairVisibleLlmTextLocale(result.behaviorHint, locale, {
+      fieldName: 'witness.behaviorHint',
+      fallbackReason: 'default',
+    })
     result.depth = depth
     result.depthMessage = getDepthSystemMessage(depth)
     return result
@@ -209,7 +241,51 @@ export async function generateWitnessTestimony(
 }
 
 /** 깊이별 LLM 프롬프트 지시 생성 */
-function buildDepthInstruction(depth: TestimonyDepth): string {
+function buildWitnessUserPrompt(witnessName: string, locale: LocaleCode): string {
+  if (locale === 'en') return `Judge: "Witness ${witnessName}, please tell the court what you know about this case."`
+  if (locale === 'ja') return `裁判官: 「${witnessName}証人、この事件について知っていることを話してください。」`
+  if (locale === 'zh-CN') return `裁判官：“${witnessName}证人，请说明你对本案所知的内容。”`
+  return `재판관: "${witnessName} 증인, 이 사건에 대해 아는 바를 말씀해 주십시오."`
+}
+
+function buildDepthInstruction(depth: TestimonyDepth, locale: LocaleCode = getLlmLocale()): string {
+  if (locale !== 'ko') {
+    const copy = {
+      en: {
+        vague: `## Testimony depth limit: vague
+The witness is still cautious and must not state core information directly.
+- Do not mention specific amounts, dates, or names.
+- Give only vague confirmation within 2 sentences.`,
+        partial: `## Testimony depth limit: partial
+The witness reveals some facts but withholds the most important details.
+- Explain the broad situation, but say exact details are not known.
+- Answer in about 3 sentences.`,
+      },
+      ja: {
+        vague: `## 証言深度制限: 曖昧
+証人はまだ慎重で、核心情報を直接話してはいけません。
+- 具体的な金額、日付、名前には触れないこと。
+- 2文以内の曖昧な確認に留めること。`,
+        partial: `## 証言深度制限: 部分公開
+証人は一部の事実を明かしますが、最重要の詳細はまだ話しません。
+- 大まかな状況は説明し、正確な詳細は分からないと述べること。
+- 3文程度で答えること。`,
+      },
+      'zh-CN': {
+        vague: `## 证言深度限制：模糊
+证人仍然谨慎，不得直接说出核心信息。
+- 不要提及具体金额、日期或姓名。
+- 只做两句以内的模糊确认。`,
+        partial: `## 证言深度限制：部分公开
+证人会透露部分事实，但仍保留最核心细节。
+- 可以说明大致情况，但表示不清楚准确细节。
+- 用约三句话回答。`,
+      },
+    } as const
+    if (depth === 'vague') return copy[locale].vague
+    if (depth === 'partial') return copy[locale].partial
+    return ''
+  }
   switch (depth) {
     case 'vague':
       return `## 증언 깊이 제한: 모호
@@ -347,10 +423,13 @@ function buildFallbackWitnessPrompt(
   caseData: CaseData,
   recentDialogues: { speaker: string; text: string }[],
   depth: TestimonyDepth = 'full',
+  locale: LocaleCode = getLlmLocale(),
 ): string {
   const vars = buildWitnessVars(witness, caseData, recentDialogues)
-  const depthInstruction = buildDepthInstruction(depth)
-  return `당신은 이 사건의 증인 "${vars.witnessName}"입니다.
+  const depthInstruction = buildDepthInstruction(depth, locale)
+  return `${buildLlmLanguageDirective(locale)}
+
+당신은 이 사건의 증인 "${vars.witnessName}"입니다.
 
 ## 증인 프로필
 - 이름: ${vars.witnessName}
@@ -456,11 +535,70 @@ function buildSpeechSampleBlock(caseData: CaseData, witnessId: string): string {
 /* ── LLM 실패 시 폴백 증언 ──────────────── */
 
 function generateFallbackTestimony(witness: ThirdParty, _caseData: CaseData, depth: TestimonyDepth = 'full'): WitnessTestimony {
-  const biasText: Record<string, string> = {
-    pro_a: '제가 본 바로는 그쪽 말이 맞는 것 같습니다.',
-    pro_b: '제가 알기로는 이쪽 사정이 있었습니다.',
-    neutral: '제가 아는 건 이것뿐입니다.',
+  const locale = getRuntimeTextLocale()
+  const copy = {
+    ko: {
+      bias: {
+        pro_a: '제가 본 바로는 그쪽 말이 맞는 것 같습니다.',
+        pro_b: '제가 알기로는 이쪽 사정이 있었습니다.',
+        neutral: '제가 아는 건 이것뿐입니다.',
+      },
+      vague: '재판관님, 네... 그런 일이 있었던 것 같습니다만, 자세한 내용은 잘 기억이 나지 않습니다.',
+      vagueHint: '눈을 피하며 조심스럽게 말한다.',
+      partial: (bias: string) => `재판관님, 네, 그 건에 대해서는 어느 정도 알고 있습니다. ${bias} 다만 자세한 사정까지는 모르겠습니다.`,
+      partialHint: '신중하게 말을 고르며 답한다.',
+      full: (scope: string, bias: string) => `재판관님, ${scope.slice(0, 80)}... ${bias}`,
+      fullHintDirect: '또렷한 기억을 더듬으며 말한다.',
+      fullHintHeard: '전해 들은 이야기를 조심스럽게 전한다.',
+    },
+    en: {
+      bias: {
+        pro_a: 'From what I saw, that side seems correct.',
+        pro_b: 'As far as I know, there were circumstances on this side.',
+        neutral: 'That is all I know.',
+      },
+      vague: 'Judge, yes... I think something like that happened, but I do not remember the details clearly.',
+      vagueHint: 'Avoids eye contact and speaks cautiously.',
+      partial: (bias: string) => `Judge, yes, I know something about that matter. ${bias} But I do not know the detailed circumstances.`,
+      partialHint: 'Chooses words carefully before answering.',
+      full: (scope: string, bias: string) => `Judge, ${scope.slice(0, 80)}... ${bias}`,
+      fullHintDirect: 'Searches a clear memory while speaking.',
+      fullHintHeard: 'Carefully relays what they heard.',
+    },
+    ja: {
+      bias: {
+        pro_a: '私が見た限りでは、そちらの言い分が正しいように思います。',
+        pro_b: '私の知る限りでは、こちら側にも事情がありました。',
+        neutral: '私が知っているのはこれだけです。',
+      },
+      vague: '裁判官、はい……そのようなことはあったと思いますが、詳しい内容はよく覚えていません。',
+      vagueHint: '目をそらしながら慎重に話す。',
+      partial: (bias: string) => `裁判官、はい、その件についてはある程度知っています。${bias} ただ、詳しい事情までは分かりません。`,
+      partialHint: '慎重に言葉を選びながら答える。',
+      full: (scope: string, bias: string) => `裁判官、${scope.slice(0, 80)}……${bias}`,
+      fullHintDirect: 'はっきりした記憶をたどりながら話す。',
+      fullHintHeard: '聞いた話を慎重に伝える。',
+    },
+    'zh-CN': {
+      bias: {
+        pro_a: '就我看到的情况，那一方说得更接近事实。',
+        pro_b: '据我所知，这一方也有自己的情况。',
+        neutral: '我知道的只有这些。',
+      },
+      vague: '裁判官，是的……好像发生过那样的事，但细节我记不太清了。',
+      vagueHint: '避开视线，谨慎地说。',
+      partial: (bias: string) => `裁判官，是的，那件事我知道一些。${bias} 但具体情况我并不清楚。`,
+      partialHint: '谨慎斟酌措辞后回答。',
+      full: (scope: string, bias: string) => `裁判官，${scope.slice(0, 80)}……${bias}`,
+      fullHintDirect: '一边回忆清晰记忆一边作证。',
+      fullHintHeard: '谨慎转述听来的事情。',
+    },
   }
+  const text = copy[locale]
+  const biasText = text.bias
+  const bias = witness.bias in biasText
+    ? biasText[witness.bias as keyof typeof biasText]
+    : biasText.neutral
 
   // 깊이별 폴백 증언 생성
   let testimony: string
@@ -468,16 +606,16 @@ function generateFallbackTestimony(witness: ThirdParty, _caseData: CaseData, dep
 
   switch (depth) {
     case 'vague':
-      testimony = `재판관님, 네... 그런 일이 있었던 것 같습니다만, 자세한 내용은 잘 기억이 나지 않습니다.`
-      behaviorHint = '눈을 피하며 조심스럽게 말한다.'
+      testimony = text.vague
+      behaviorHint = text.vagueHint
       break
     case 'partial':
-      testimony = `재판관님, 네, 그 건에 대해서는 어느 정도 알고 있습니다. ${biasText[witness.bias] ?? biasText.neutral} 다만 자세한 사정까지는 모르겠습니다.`
-      behaviorHint = '신중하게 말을 고르며 답한다.'
+      testimony = text.partial(bias)
+      behaviorHint = text.partialHint
       break
     default:
-      testimony = `재판관님, ${witness.knowledgeScope.slice(0, 80)}... ${biasText[witness.bias] ?? biasText.neutral}`
-      behaviorHint = witness.witnessedDirectly ? '또렷한 기억을 더듬으며 말한다.' : '전해 들은 이야기를 조심스럽게 전한다.'
+      testimony = text.full(witness.knowledgeScope, bias)
+      behaviorHint = witness.witnessedDirectly ? text.fullHintDirect : text.fullHintHeard
   }
 
   return {

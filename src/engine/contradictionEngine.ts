@@ -1,4 +1,6 @@
 import type { ClaimNode } from '../types'
+import { buildLlmLanguageDirective, getLlmLocale } from '../i18n/llmLocale'
+import { repairVisibleLlmTextLocale } from './llmLocaleGuard'
 
 export interface ContradictionResult {
   found: boolean
@@ -85,24 +87,82 @@ export async function verifyContradictionWithLLM(
 ): Promise<string | null> {
   try {
     const { chatCompletion } = await import('./llmClient')
+    const locale = getLlmLocale()
+    const labels = {
+      ko: {
+        intro: '아래 두 진술이 실질적으로 모순되는지 판정하세요.',
+        party: '당사자',
+        dispute: '쟁점',
+        previous: '이전 진술',
+        current: '현재 진술',
+        criteria: '판정 기준',
+        same: '같은 내용을 다른 표현으로 말한 것은 모순이 아닙니다.',
+        emotion: '감정 표현이나 강조 방식만 달라진 것은 모순이 아닙니다.',
+        contradiction: '모순이란: 사실관계가 다르거나(했다→안 했다), 입장이 바뀌었거나(부정→인정), 구체적 내용이 상충하는 것입니다.',
+        output: 'JSON만 출력',
+        reason: '모순이면 핵심 차이점 1문장, 아니면 빈 문자열',
+      },
+      en: {
+        intro: 'Decide whether the two statements below are substantively contradictory.',
+        party: 'Party',
+        dispute: 'Dispute',
+        previous: 'Previous statement',
+        current: 'Current statement',
+        criteria: 'Decision criteria',
+        same: 'Saying the same content in different words is not a contradiction.',
+        emotion: 'A change only in emotion or emphasis is not a contradiction.',
+        contradiction: 'A contradiction means the facts differ, the stance changed, or concrete details conflict.',
+        output: 'Output JSON only',
+        reason: 'If contradictory, one sentence explaining the core difference; otherwise an empty string',
+      },
+      ja: {
+        intro: '以下の二つの供述が実質的に矛盾するか判定してください。',
+        party: '当事者',
+        dispute: '争点',
+        previous: '以前の供述',
+        current: '現在の供述',
+        criteria: '判定基準',
+        same: '同じ内容を別の表現で話しただけなら矛盾ではありません。',
+        emotion: '感情表現や強調だけが変わった場合は矛盾ではありません。',
+        contradiction: '矛盾とは、事実関係が異なる、立場が変わった、または具体的内容が衝突している状態です。',
+        output: 'JSONのみ出力',
+        reason: '矛盾なら核心的な違いを1文、違うなら空文字',
+      },
+      'zh-CN': {
+        intro: '判断以下两段陈述是否存在实质性矛盾。',
+        party: '当事人',
+        dispute: '争议点',
+        previous: '先前陈述',
+        current: '当前陈述',
+        criteria: '判断标准',
+        same: '用不同表达说同一内容，不构成矛盾。',
+        emotion: '只有情绪或强调方式变化，不构成矛盾。',
+        contradiction: '矛盾是指事实关系不同、立场改变，或具体内容相互冲突。',
+        output: '只输出 JSON',
+        reason: '若有矛盾，用一句话说明核心差异；否则为空字符串',
+      },
+    } as const
+    const t = labels[locale]
     const raw = await chatCompletion(
       [{
         role: 'user',
-        content: `아래 두 진술이 실질적으로 모순되는지 판정하세요.
+        content: `${buildLlmLanguageDirective(locale)}
 
-당사자: ${npcName}
-쟁점: ${disputeName}
+${t.intro}
 
-이전 진술: "${previousClaim}"
-현재 진술: "${currentClaim}"
+${t.party}: ${npcName}
+${t.dispute}: ${disputeName}
 
-판정 기준:
-- 같은 내용을 다른 표현으로 말한 것은 모순이 아닙니다.
-- 감정 표현이나 강조 방식만 달라진 것은 모순이 아닙니다.
-- 모순이란: 사실관계가 다르거나(했다→안 했다), 입장이 바뀌었거나(부정→인정), 구체적 내용이 상충하는 것입니다.
+${t.previous}: "${previousClaim}"
+${t.current}: "${currentClaim}"
 
-JSON만 출력:
-{"isContradiction": true/false, "reason": "모순이면 핵심 차이점 1문장, 아니면 빈 문자열"}`,
+${t.criteria}:
+- ${t.same}
+- ${t.emotion}
+- ${t.contradiction}
+
+${t.output}:
+{"isContradiction": true/false, "reason": "${t.reason}"}`,
       }],
       { temperature: 0.1, maxTokens: 100 },
     )
@@ -111,7 +171,10 @@ JSON만 출력:
     if (match) {
       const parsed = JSON.parse(match[0])
       if (parsed.isContradiction && parsed.reason) {
-        return parsed.reason
+        return repairVisibleLlmTextLocale(String(parsed.reason), locale, {
+          fieldName: 'contradiction.reason',
+          fallbackReason: 'default',
+        })
       }
     }
     return null

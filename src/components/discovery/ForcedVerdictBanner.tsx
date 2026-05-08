@@ -7,8 +7,30 @@
 import { useStore } from '../../store/useGameStore'
 import { getReadinessHint } from '../../engine/meterStagingV2'
 import Emoji from '../common/Emoji'
+import { useI18n, type LocaleCode } from '../../i18n'
+import { localizeRuntimeText } from '../../i18n/runtimeText'
+
+const FORCED_COPY: Record<LocaleCode, { title: string; body: string }> = {
+  ko: {
+    title: '불충분 심리',
+    body: '핵심 쟁점이 충분히 정리되지 않았습니다. 판결은 가능하지만 신뢰도 감점이 적용됩니다.',
+  },
+  en: {
+    title: 'Insufficient Examination',
+    body: 'The key disputes have not been organized enough. A verdict is possible, but a reliability penalty will apply.',
+  },
+  ja: {
+    title: '審理不十分',
+    body: '核心争点が十分に整理されていません。判決は可能ですが、信頼度の減点が適用されます。',
+  },
+  'zh-CN': {
+    title: '审理不足',
+    body: '核心争议点尚未充分整理。可以作出裁决，但会受到可信度扣分。',
+  },
+}
 
 export default function ForcedVerdictBanner() {
+  const { locale } = useI18n()
   const verdictMode = useStore((s) => s.verdictMode)
   const turnCount = useStore((s) => s.turnCount)
   const readinessState = useStore((s) => s.readinessState)
@@ -20,9 +42,9 @@ export default function ForcedVerdictBanner() {
         <div className="flex items-start gap-2">
           <span className="mt-0.5"><Emoji char="⚠️" size={16} /></span>
           <div>
-            <p className="text-xs font-semibold text-red-400">불충분 심리</p>
+            <p className="text-xs font-semibold text-red-400">{FORCED_COPY[locale].title}</p>
             <p className="text-[11px] text-gray-400 mt-0.5">
-              핵심 쟁점이 충분히 정리되지 않았습니다. 판결은 가능하지만 신뢰도 감점이 적용됩니다.
+              {FORCED_COPY[locale].body}
             </p>
           </div>
         </div>
@@ -56,8 +78,8 @@ export default function ForcedVerdictBanner() {
       <div className="flex items-start gap-2">
         <span className="mt-0.5"><Emoji char={iconMap[hint.highlight]} size={16} /></span>
         <div>
-          <p className={`text-xs font-semibold ${textMap[hint.highlight]}`}>{hint.label}</p>
-          <p className="text-[11px] text-gray-400 mt-0.5">{hint.detail}</p>
+          <p className={`text-xs font-semibold ${textMap[hint.highlight]}`}>{localizeRuntimeText(hint.label, locale)}</p>
+          <p className="text-[11px] text-gray-400 mt-0.5">{localizeRuntimeText(hint.detail, locale)}</p>
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@
 import { EMOTION_TIER_CONFIG, getEmotionTier } from '../../engine/discoveryEngine'
 import Emoji from '../common/Emoji'
 import type { EmotionTier } from '../../types'
+import { useI18n, type LocaleCode } from '../../i18n'
+import { localizeRuntimeText } from '../../i18n/runtimeText'
 
 interface Props {
   partyName: string
@@ -18,7 +20,56 @@ const TIER_STYLES: Record<EmotionTier, { bg: string; border: string; text: strin
   shutdown: { bg: 'bg-gray-800/40', border: 'border-gray-600/40', text: 'text-gray-400', icon: '🔒' },
 }
 
+const EMOTION_COPY: Record<LocaleCode, {
+  title: (name: string) => string
+  value: string
+  tiers: Record<EmotionTier, string>
+  current: string
+  slipChance: string
+  lieTransition: string
+  close: string
+}> = {
+  ko: {
+    title: (name) => `${name} 감정 상태`,
+    value: '감정 수치',
+    tiers: { calm: '침착', agitated: '동요', explosive: '격앙', shutdown: '체념' },
+    current: '현재',
+    slipChance: '실수 자백 확률',
+    lieTransition: '거짓말 전이',
+    close: '닫기',
+  },
+  en: {
+    title: (name) => `${name}'s Emotional State`,
+    value: 'Emotion Level',
+    tiers: { calm: 'Calm', agitated: 'Shaken', explosive: 'Agitated', shutdown: 'Resigned' },
+    current: 'Current',
+    slipChance: 'Slip confession chance',
+    lieTransition: 'Lie transition',
+    close: 'Close',
+  },
+  ja: {
+    title: (name) => `${name} 感情状態`,
+    value: '感情値',
+    tiers: { calm: '冷静', agitated: '動揺', explosive: '激昂', shutdown: '諦め' },
+    current: '現在',
+    slipChance: '失言による告白確率',
+    lieTransition: '嘘の遷移',
+    close: '閉じる',
+  },
+  'zh-CN': {
+    title: (name) => `${name}的情绪状态`,
+    value: '情绪数值',
+    tiers: { calm: '冷静', agitated: '动摇', explosive: '激动', shutdown: '放弃' },
+    current: '当前',
+    slipChance: '失言承认概率',
+    lieTransition: '谎言转移',
+    close: '关闭',
+  },
+}
+
 export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: Props) {
+  const { locale } = useI18n()
+  const copy = EMOTION_COPY[locale]
   const currentTier = getEmotionTier(emotionValue)
 
   return (
@@ -31,7 +82,7 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
         <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-gray-800">
           <div className="flex items-center gap-2">
             <Emoji char={TIER_STYLES[currentTier.tier].icon} size={20} />
-            <h2 className="text-sm font-bold text-gray-200">{partyName} 감정 상태</h2>
+            <h2 className="text-sm font-bold text-gray-200">{copy.title(partyName)}</h2>
           </div>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-300 active:scale-95">✕</button>
         </div>
@@ -39,7 +90,7 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
         {/* 현재 수치 바 */}
         <div className="px-4 pt-3 pb-2">
           <div className="flex items-center justify-between mb-1.5">
-            <span className="text-xs text-gray-500">감정 수치</span>
+            <span className="text-xs text-gray-500">{copy.value}</span>
             <span className={`text-xs font-bold ${TIER_STYLES[currentTier.tier].text}`}>
               {Math.round(emotionValue)} / 100
             </span>
@@ -59,10 +110,10 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
             </div>
           </div>
           <div className="flex justify-between mt-1">
-            <span className="text-[10px] text-blue-500">침착</span>
-            <span className="text-[10px] text-yellow-500">동요</span>
-            <span className="text-[10px] text-red-500">격앙</span>
-            <span className="text-[10px] text-gray-500">체념</span>
+            <span className="text-[10px] text-blue-500">{copy.tiers.calm}</span>
+            <span className="text-[10px] text-yellow-500">{copy.tiers.agitated}</span>
+            <span className="text-[10px] text-red-500">{copy.tiers.explosive}</span>
+            <span className="text-[10px] text-gray-500">{copy.tiers.shutdown}</span>
           </div>
         </div>
 
@@ -81,18 +132,18 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
                 <div className="flex items-center gap-2 mb-1">
                   <Emoji char={style.icon} size={16} />
                   <span className={`text-xs font-bold ${isCurrent ? style.text : 'text-gray-500'}`}>
-                    {tier.label} ({tier.min}~{tier.max})
+                    {localizeRuntimeText(tier.label, locale)} ({tier.min}~{tier.max})
                   </span>
                   {isCurrent && (
-                    <span className="text-[10px] bg-white/10 text-white/70 px-1.5 py-0.5 rounded-full">현재</span>
+                    <span className="text-[10px] bg-white/10 text-white/70 px-1.5 py-0.5 rounded-full">{copy.current}</span>
                   )}
                 </div>
                 <p className={`text-xs leading-relaxed ${isCurrent ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {tier.description}
+                  {localizeRuntimeText(tier.description, locale)}
                 </p>
                 {tier.tier === 'explosive' && isCurrent && (
                   <div className="mt-2 text-[10px] text-red-400 bg-red-950/30 rounded-lg px-2 py-1">
-                    실수 자백 확률: {Math.round(tier.slipChance * 100)}% | 거짓말 전이 {tier.lieTransitionMultiplier}배
+                    {copy.slipChance}: {Math.round(tier.slipChance * 100)}% | {copy.lieTransition} {tier.lieTransitionMultiplier}x
                   </div>
                 )}
               </div>
@@ -106,7 +157,7 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
             onClick={onClose}
             className="w-full py-2.5 rounded-xl bg-gray-800 text-gray-300 text-sm font-medium active:scale-95 hover:bg-gray-700"
           >
-            닫기
+            {copy.close}
           </button>
         </div>
       </div>

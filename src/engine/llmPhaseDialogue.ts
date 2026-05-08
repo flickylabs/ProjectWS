@@ -8,6 +8,8 @@ import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { buildSpeechGuide, getRelationLabel } from './llmSpeechGuide'
 import type { CaseData, DialogueEntry } from '../types'
+import { buildLlmLanguageDirective, getLlmLocale } from '../i18n/llmLocale'
+import { repairVisibleLlmTextLocale } from './llmLocaleGuard'
 
 export async function generatePhase1Dialogues(caseData: CaseData): Promise<Omit<DialogueEntry, 'id'>[]> {
   const { duo, context, disputes } = caseData
@@ -32,13 +34,14 @@ export async function generatePhase1Dialogues(caseData: CaseData): Promise<Omit<
     : getPrompt('phase1_generation', p1Vars)
 
   const config = isAgentLoaded() ? getAgentConfig('phase1_generator') : getPromptConfig('phase1_generation')
+  const locale = getLlmLocale()
 
   try {
     const response = await chatCompletion(
-      [{ role: 'user', content: prompt }],
+      [{ role: 'user', content: `${prompt}\n\n${buildLlmLanguageDirective(locale)}` }],
       { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
-    return parseDialogueArray(response, nameA, nameB)
+    return repairDialogueArrayLocale(parseDialogueArray(response, nameA, nameB), locale)
   } catch (error) {
     console.warn('Phase 1 LLM generation failed:', error)
     return []
@@ -68,17 +71,32 @@ export async function generatePhase2Dialogues(caseData: CaseData): Promise<Omit<
     : getPrompt('phase2_generation', p2Vars)
 
   const config = isAgentLoaded() ? getAgentConfig('phase2_generator') : getPromptConfig('phase2_generation')
+  const locale = getLlmLocale()
 
   try {
     const response = await chatCompletion(
-      [{ role: 'user', content: prompt }],
+      [{ role: 'user', content: `${prompt}\n\n${buildLlmLanguageDirective(locale)}` }],
       { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
-    return parseDialogueArray(response, nameA, nameB)
+    return repairDialogueArrayLocale(parseDialogueArray(response, nameA, nameB), locale)
   } catch (error) {
     console.warn('Phase 2 LLM generation failed:', error)
     return []
   }
+}
+
+async function repairDialogueArrayLocale(
+  rows: Omit<DialogueEntry, 'id'>[],
+  locale: ReturnType<typeof getLlmLocale>,
+): Promise<Omit<DialogueEntry, 'id'>[]> {
+  if (locale === 'ko') return rows
+  return Promise.all(rows.map(async (row) => ({
+    ...row,
+    text: await repairVisibleLlmTextLocale(row.text, locale, { fieldName: 'phaseDialogue.text', fallbackReason: 'default' }),
+    behaviorHint: row.behaviorHint
+      ? await repairVisibleLlmTextLocale(row.behaviorHint, locale, { fieldName: 'phaseDialogue.behaviorHint', fallbackReason: 'default' })
+      : row.behaviorHint,
+  })))
 }
 
 /** LLM이 반환하는 speaker 값을 정규화 (이름 매칭 포함) */

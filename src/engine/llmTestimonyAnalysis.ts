@@ -9,6 +9,7 @@ import { chatCompletion } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import type { CaseData } from '../types'
+import { buildLlmLanguageDirective, getLlmLocale } from '../i18n/llmLocale'
 
 export interface TestimonyAnalysis {
   claimsA: string[]       // A의 핵심 주장
@@ -24,10 +25,18 @@ export async function analyzeTestimony(
   const nameA = caseData.duo.partyA.name
   const nameB = caseData.duo.partyB.name
   const disputes = caseData.disputes.map(d => `${d.id}: ${d.name}`).join(', ')
+  const locale = getLlmLocale()
+  const speakerLabels = {
+    ko: { judge: '재판관', system: '시스템', failed: '분석 실패' },
+    en: { judge: 'Judge', system: 'System', failed: 'Analysis failed' },
+    ja: { judge: '裁判官', system: 'システム', failed: '分析失敗' },
+    'zh-CN': { judge: '裁判官', system: '系统', failed: '分析失败' },
+  } as const
+  const labels = speakerLabels[locale]
 
   // 대화 히스토리 정리 (최근 30개, 시스템 제외)
   const speakerNames: Record<string, string> = {
-    a: nameA, b: nameB, judge: '재판관', system: '시스템',
+    a: nameA, b: nameB, judge: labels.judge, system: labels.system,
   }
   const history = dialogueLog
     .filter(d => d.speaker !== 'system')
@@ -45,7 +54,7 @@ export async function analyzeTestimony(
 
   try {
     const response = await chatCompletion(
-      [{ role: 'user', content: prompt }],
+      [{ role: 'user', content: `${prompt}\n\n${buildLlmLanguageDirective(locale)}` }],
       { temperature: config.temperature, maxTokens: config.maxTokens },
     )
 
@@ -61,8 +70,8 @@ export async function analyzeTestimony(
     }
   } catch {
     return {
-      claimsA: ['분석 실패'],
-      claimsB: ['분석 실패'],
+      claimsA: [labels.failed],
+      claimsB: [labels.failed],
       contradictions: [],
       unknowns: [],
     }
