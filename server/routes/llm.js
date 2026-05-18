@@ -1,10 +1,7 @@
 import { Router } from 'express';
-import { requireSteamSession } from '../lib/steamAuth.js';
 
 const router = Router();
 const ALLOWED_ENDPOINTS = new Set(['dialogue', 'aftermath']);
-
-router.use(requireSteamSession);
 
 router.get('/:endpoint', (req, res) => {
   if (!ALLOWED_ENDPOINTS.has(req.params.endpoint)) {
