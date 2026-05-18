@@ -16,6 +16,14 @@ export type TutorialStep = {
    * Title stays the same across variants.
    */
   bodyVariants?: Record<string, string>
+  /**
+   * Optional larger anchor used to position the message card so it doesn't
+   * overlap the active target (e.g., a choice panel that contains the options).
+   * When set, the first matching element's rect is used for card placement;
+   * the hand still tracks `targetSelector`. Falls back to bounding rect of
+   * targets when omitted.
+   */
+  cardAnchorSelector?: string
   completionCondition: {
     type: 'state-mutation' | 'click-with-state-check'
     storeSelector?: (state: GameStore) => boolean
@@ -40,6 +48,9 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     // hand cycles between judge-intervention choices. Falls back to the dialogue
     // advance button or latest entry when only those are visible.
     targetSelector: '.v4-choice-panel__option, .pc-dialogue-advance, [data-tutorial-target="dialogue-latest-entry"]',
+    // Card anchors on the whole choice panel so it sits above the panel wrapper
+    // rather than overlapping it; falls through to dialogue advance / latest entry.
+    cardAnchorSelector: '.v4-choice-panel, .pc-dialogue-advance, [data-tutorial-target="dialogue-latest-entry"]',
     fingerPlacement: 'top',
     messageKey: 'pc.tutorial.spouse01.initial-statement-acknowledge',
     bodyVariants: {
@@ -85,8 +96,14 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   },
   {
     id: 'evidence-investigate-e2',
-    targetSelector: '[data-tutorial-target="evidence-e2-detail"], [data-tutorial-target="evidence-e2-card"]',
-    fingerPlacement: 'right',
+    // Prefer the actual investigate action button (inside the evidence detail panel)
+    // so the hand points at the clickable slot, not the panel wrapper or the
+    // upstream evidence card. Falls back to the detail panel / list card.
+    targetSelector: '[data-tutorial-target="evidence-e2-investigate-action"], [data-tutorial-target="evidence-e2-detail"], [data-tutorial-target="evidence-e2-card"]',
+    // Card anchors on the detail panel (or list card) so it stays in a stable
+    // position above the panel while the hand sits on the investigate button.
+    cardAnchorSelector: '[data-tutorial-target="evidence-e2-detail"], [data-tutorial-target="evidence-e2-card"]',
+    fingerPlacement: 'top',
     messageKey: 'pc.tutorial.spouse01.evidence-investigate-e2',
     completionCondition: {
       type: 'state-mutation',

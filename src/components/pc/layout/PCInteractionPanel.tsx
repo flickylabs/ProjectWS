@@ -985,6 +985,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
               return (
                 <button
                   className="pc-ev-detail__stage is-ready"
+                  data-tutorial-target={evidenceId === 'e-2' ? 'evidence-e2-investigate-action' : undefined}
                   key={stage.index}
                   onClick={() => handleInvestigate(stage.revealKey)}
                   type="button"

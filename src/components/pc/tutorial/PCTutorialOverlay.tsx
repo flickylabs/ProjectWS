@@ -280,8 +280,15 @@ export default function PCTutorialOverlay() {
     setTargetMissing(false)
     const newRect = rectFromElement(target)
     setRect((prev) => (rectsApproxEqual(prev, newRect) ? prev : newRect))
-    // Card uses bounding rect across ALL targets so it stays put while the hand cycles.
-    const newCardRect = targets.length > 1 ? boundingRectFromTargets(targets) : newRect
+    // Card placement: cardAnchorSelector wins (lets card sit outside the wrapping
+    // panel/modal), then bounding rect across all targets (stable during hand cycling),
+    // then the single active target.
+    const anchorElement = step.cardAnchorSelector ? findTutorialTarget(step.cardAnchorSelector) : null
+    const newCardRect = anchorElement
+      ? rectFromElement(anchorElement)
+      : targets.length > 1
+        ? boundingRectFromTargets(targets)
+        : newRect
     setCardRect((prev) => (rectsApproxEqual(prev, newCardRect) ? prev : newCardRect))
   }, [currentStepId, step, cycleIndex])
 
