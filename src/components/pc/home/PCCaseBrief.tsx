@@ -10,6 +10,7 @@ import { getArchetypeLabel } from '../../../utils/archetypeLabel'
 import { useI18n } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import { getRelationshipLabel } from './pcHomeShared'
+import PCTutorialOverlay from '../tutorial/PCTutorialOverlay'
 
 export default function PCCaseBrief() {
   const { t, locale } = useI18n()
@@ -169,13 +170,14 @@ export default function PCCaseBrief() {
         </div>
 
         <footer className="pc-brief__footer">
-          <button className="pc-brief__start" onClick={handleStart} type="button">
+          <button className="pc-brief__start" data-tutorial-target="briefing-advance-button" onClick={handleStart} type="button">
             <PCSvgIcon id="i-gavel" size={22} />
             <span>{t('pc.home.caseBrowser.enterCase')}</span>
             <kbd>Enter</kbd>
           </button>
         </footer>
       </div>
+      <PCTutorialOverlay />
     </div>
   )
 }

@@ -18,6 +18,7 @@ import PCSettingsPanel from '../settings/PCSettingsPanel'
 import { playCourtControl } from '../../../engine/soundEngine'
 import { useI18n, type MessageKey } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
+import PCTutorialOverlay from '../tutorial/PCTutorialOverlay'
 
 interface Props {
   actionPanel?: ReactNode
@@ -536,6 +537,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <PCGameplayOverlay />
       <TokenSpendEffect />
       <PCSettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <PCTutorialOverlay />
       {combinationOverlay ? (
         <div className={`pc-combination-success is-${combinationOverlay.resultType ?? 'upgrade'}`} key={combinationOverlay.id}>
           <div className="pc-combination-success__card" data-resonance-target="combination-success">

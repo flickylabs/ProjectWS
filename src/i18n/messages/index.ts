@@ -7,6 +7,7 @@ import { profileMessages } from './profile'
 import { hotbarMessages } from './hotbar'
 import { scriptMessages } from './scripts'
 import { layoutMessages } from './layout'
+import { tutorialMessages } from './tutorial'
 import type { LocaleCode } from '../locales'
 
 const ko = {
@@ -19,6 +20,7 @@ const ko = {
   ...profileMessages["ko"],
   ...scriptMessages["ko"],
   ...layoutMessages["ko"],
+  ...tutorialMessages["ko"],
 } as const
 
 export type MessageKey = keyof typeof ko
@@ -35,6 +37,7 @@ export const messages: Record<LocaleCode, Record<MessageKey, string>> = {
   ...profileMessages["en"],
   ...scriptMessages["en"],
   ...layoutMessages["en"],
+  ...tutorialMessages["en"],
   },
   ja: {
   ...commonMessages["ja"],
@@ -46,6 +49,7 @@ export const messages: Record<LocaleCode, Record<MessageKey, string>> = {
   ...profileMessages["ja"],
   ...scriptMessages["ja"],
   ...layoutMessages["ja"],
+  ...tutorialMessages["ja"],
   },
   'zh-CN': {
   ...commonMessages["zh-CN"],
@@ -57,5 +61,6 @@ export const messages: Record<LocaleCode, Record<MessageKey, string>> = {
   ...profileMessages["zh-CN"],
   ...scriptMessages["zh-CN"],
   ...layoutMessages["zh-CN"],
+  ...tutorialMessages["zh-CN"],
   },
 }

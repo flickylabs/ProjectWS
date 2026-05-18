@@ -153,6 +153,7 @@ export default function JudgeNotebookSection() {
     <section
       className="sec pc-judge-observation-section pc-judge-observation-section--notebook"
       data-resonance-target="judge-notebook"
+      data-tutorial-target="judge-notebook-section"
       aria-label={t('pc.notebook.title')}
     >
       <div className="sec-h">

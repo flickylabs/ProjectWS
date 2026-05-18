@@ -961,7 +961,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   const bDisabledReason = getEvidencePresentDisabledReason(state, 'b', nameB, nameA, bRelevant)
 
   return (
-    <div className="pc-ev-detail">
+    <div className="pc-ev-detail" data-tutorial-target={evidenceId === 'e-2' ? 'evidence-e2-detail' : undefined}>
       {/* Dispute section */}
       {disputes.length > 0 ? (
         <div className="pc-ev-detail__dispute-section">
@@ -1038,6 +1038,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
         </button>
         <button
           className={`pc-ev-detail__present-btn is-b${presentedToB ? ' is-done' : ''}${!bRelevant ? ' is-mismatch' : ''}${currentStage <= 0 ? ' is-stage-locked' : ''}`}
+          data-tutorial-target={evidenceId === 'e-2' ? 'evidence-present-e2-to-b' : undefined}
           disabled={Boolean(bDisabledReason)}
           title={bDisabledReason}
           onClick={() => {

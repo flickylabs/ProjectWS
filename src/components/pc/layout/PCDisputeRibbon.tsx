@@ -188,6 +188,7 @@ export default function PCDisputeRibbon() {
               <button
                 className={`pc-dispute-ribbon__chip${isActive ? ' is-active' : ''}${isPinned ? ' is-pinned' : ''}${isFocused ? ' is-focused' : ''}${flashId === dispute.id ? ' is-flash' : ''}${isUrgentPending ? ' is-pending-urgent' : ''}`}
                 data-dispute-id={dispute.id}
+                data-tutorial-target={dispute.id === 'd-1' ? 'dispute-d1-chip' : undefined}
                 key={dispute.id}
                 onClick={() => {
                   setLastFocusedDisputeId(dispute.id)

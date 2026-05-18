@@ -449,6 +449,7 @@ export default function PCDialogueLog() {
           return (
             <div
               data-dialogue-id={entry.id}
+              data-tutorial-target={index === visibleEntries.length - 1 ? 'dialogue-latest-entry' : undefined}
               key={entry.id}
               draggable={isDraggable}
               onDragStart={isDraggable ? (e) => {

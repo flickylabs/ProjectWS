@@ -209,6 +209,7 @@ export default function PCLeftPanel() {
                 className={`pc-ev-notebook${combinableIds.has(evidence.id) ? ' is-combinable' : ''}`}
                 data-evidence-id={evidence.id}
                 data-resonance-target={`evidence-${evidence.id}`}
+                data-tutorial-target={evidence.id === 'e-2' ? 'evidence-e2-card' : undefined}
                 draggable
                 key={evidence.id}
                 onDragStart={(event) => startEvidenceDrag(event, evidence.id, label)}

@@ -389,7 +389,7 @@ export default function PCBottomDock() {
       {questionChoice ? (
         <div className="pc-question-choice">
           <div className="pc-question-choice__backdrop" onClick={() => setQuestionChoice(null)} />
-          <div className="pc-question-choice__panel">
+          <div className="pc-question-choice__panel" data-tutorial-target={questionChoice.type === 'fact_pursuit' ? 'question-fact-panel' : undefined}>
             <div className="pc-question-choice__header">
               <PCSvgIcon id={questionChoice.type === 'fact_pursuit' ? 'i-gavel' : questionChoice.type === 'motive_search' ? 'i-eye' : 'i-heart'} size={18} />
               <span className="pc-question-choice__title">
@@ -527,7 +527,7 @@ export default function PCBottomDock() {
 
             <div className={`hotbar-slots${isLLMLoading ? ' hotbar-slots--locked' : ''}`}>
               {/* 1: 사실 추궁 */}
-              <button className="slot" data-guide-target="question-fact" disabled={isLLMLoading} onClick={() => openQuestionChoice('fact_pursuit')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.fact.title')} type="button">
+              <button className="slot" data-guide-target="question-fact" data-tutorial-target="question-type-fact" disabled={isLLMLoading} onClick={() => openQuestionChoice('fact_pursuit')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.fact.title')} type="button">
                 <span className="slot-key">1</span>
                 <span className="slot-ico"><PCSvgIcon id="i-gavel" size={24} /></span>
                 <span className="slot-nm">{t('pc.hotbar.slot.fact.compact')}</span>
@@ -557,7 +557,7 @@ export default function PCBottomDock() {
               ) : null}
 
               {/* 5: 증거 제시 */}
-              <button className="slot" data-guide-target="evidence-present" disabled={isLLMLoading} onClick={openEvidenceChoice} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.evidence.title')} type="button">
+              <button className="slot" data-guide-target="evidence-present" data-tutorial-target="evidence-present-button" disabled={isLLMLoading} onClick={openEvidenceChoice} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.evidence.title')} type="button">
                 <span className="slot-key">5</span>
                 <span className="slot-ico"><PCSvgIcon id="i-doc" size={24} /></span>
                 <span className="slot-nm">{t('pc.hotbar.slot.evidence.compact')}</span>
@@ -601,7 +601,7 @@ function CharacterCard({
   const isCritical = emotion === 'angry' || emotion === 'resigned'
   const safeValue = Math.max(0, Math.min(100, Math.round(emotionValue || 0)))
   return (
-    <button className={`char char-${side}${isActive ? ' spk' : ''}`} data-character-card={side} onClick={onClick} type="button">
+    <button className={`char char-${side}${isActive ? ' spk' : ''}`} data-character-card={side} data-tutorial-target={side === 'b' ? 'character-slot-b' : undefined} onClick={onClick} type="button">
       <div className={`char-face char-face--ring is-emo-${emotion}${isCritical ? ' is-critical' : ''}`}>
         <EmotionDonut value={safeValue} />
         <PCCharacterPortrait

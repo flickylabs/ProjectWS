@@ -14,6 +14,7 @@ import { createCharacterTagSlice, type CharacterTagSlice } from './slices/charac
 import { createEventFeedbackSlice, type EventFeedbackSlice, type EventFeedbackCourtBeat } from './slices/eventFeedbackSlice'
 import { createJudgeObservationSlice, type JudgeObservationSlice } from './slices/judgeObservationSlice'
 import { createJudgeNotebookSlice, type JudgeNotebookSlice } from './slices/judgeNotebookSlice'
+import { createTutorialSlice, type TutorialState } from './slices/tutorialSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -331,7 +332,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & JudgeObservationSlice & JudgeNotebookSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & JudgeObservationSlice & JudgeNotebookSlice & TutorialState & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -512,6 +513,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createEventFeedbackSlice(...args),
     ...createJudgeObservationSlice(...args),
     ...createJudgeNotebookSlice(...args),
+    ...createTutorialSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -1112,6 +1114,11 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         pcTargetParty: 'a',
         pcSummaryUnlocked: false,
         pendingEvidenceView: null,
+        enabled: false,
+        activeCase: null,
+        currentStepId: null,
+        completedSteps: [],
+        isOverlayVisible: false,
         // 턴/Phase 완전 초기화
         turnCount: 0,
         phaseTurnCount: 0,

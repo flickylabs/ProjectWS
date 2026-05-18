@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "case": "spouse-01",
+    "language": "ko",
+    "tone": "평어 / 시스템 안내 (해요체 X)",
+    "truth_leak_check": "PASS — 송금/간병/형/조카/돌봄/280만원 등 진실 키워드 0건",
+    "length_check": "PASS — title 6자 이하 / body 18자 이하",
+    "honorific_check": "PASS — 전 단계 단정형 평어. 해요체 0건",
+    "mechanism_intent_check": "PASS — 각 단계 학습 의도가 body 1문장에 반영"
+  },
+
+  "pc.tutorial.spouse01.briefing-advance": {
+    "title": "사건 브리핑",
+    "body": "사건 개요를 확인한 뒤 시작한다.",
+    "hint": "재판 시작"
+  },
+
+  "pc.tutorial.spouse01.initial-statement-acknowledge": {
+    "title": "양측의 진술",
+    "body": "두 사람의 첫 진술이 기록에 남는다.",
+    "hint": "진술 확인"
+  },
+
+  "pc.tutorial.spouse01.dispute-focus-d1": {
+    "title": "쟁점 선택",
+    "body": "다룰 쟁점을 골라 심리를 시작한다.",
+    "hint": "쟁점 선택"
+  },
+
+  "pc.tutorial.spouse01.target-select-b": {
+    "title": "대상 선택",
+    "body": "묻는 대상에 따라 답이 달라진다.",
+    "hint": "인물 선택"
+  },
+
+  "pc.tutorial.spouse01.question-fact": {
+    "title": "사실 추궁",
+    "body": "근거를 캐물어 진술의 빈틈을 본다.",
+    "hint": "사실 추궁"
+  },
+
+  "pc.tutorial.spouse01.evidence-investigate-e2": {
+    "title": "증거 조사",
+    "body": "증거를 자세히 살펴 단서를 얻는다.",
+    "hint": "증거 열기"
+  },
+
+  "pc.tutorial.spouse01.evidence-present-e2-to-b": {
+    "title": "증거 제시",
+    "body": "증거를 제시해 진술을 흔든다.",
+    "hint": "증거 제시"
+  },
+
+  "pc.tutorial.spouse01.feedback-acknowledge": {
+    "title": "반응 확인",
+    "body": "진술의 변화가 그대로 드러난다.",
+    "hint": "결과 확인"
+  },
+
+  "pc.tutorial.spouse01.observation-hint": {
+    "title": "재판관 수첩",
+    "body": "중요한 변화는 여기에 기록된다.",
+    "hint": "수첩 확인"
+  },
+
+  "pc.tutorial.spouse01.tutorial-complete": {
+    "title": "준비 완료",
+    "body": "이제 진실은 당신이 직접 밝힌다."
+  },
+
+  "pc.tutorial.spouse01.skip-button": "튜토리얼 건너뛰기",
+  "pc.tutorial.spouse01.completion-toast": "튜토리얼 완료. 진실은 당신이 밝힌다."
+}
