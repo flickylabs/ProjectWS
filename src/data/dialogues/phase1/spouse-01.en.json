@@ -5,7 +5,7 @@
     {
       "id": "0",
       "speaker": "system",
-      "text": "Park Ji-yeon and Lee Jun-ho, married ten years. They have been sleeping in separate rooms for eight months. The wife, Park Ji-yeon, has filed for trial, claiming her husband is keeping a second household."
+      "text": "Park Ji-yeon and Lee Jun-ho have been married for ten years. They have slept in separate rooms for eight months. Park Ji-yeon, the wife, filed for trial claiming her husband is maintaining a secret second household."
     },
     {
       "id": "1",
@@ -29,15 +29,15 @@
       "options": [
         {
           "id": "c1_press_b",
-          "text": "Mr. Lee, you said it was a 'misunderstanding' — please explain specifically which part you mean."
+          "text": "Mr. Lee Jun-ho, you called it a 'misunderstanding'—please explain specifically which part is a misunderstanding."
         },
         {
           "id": "c1_let_a",
-          "text": "Mrs. Park, please continue."
+          "text": "Ms. Park Ji-yeon, please continue."
         },
         {
           "id": "c1_calm",
-          "text": "Both of you, please calm yourselves. I will hear each side in order."
+          "text": "Both sides, calm down. I will hear you in order."
         }
       ]
     },
@@ -93,11 +93,11 @@
       "options": [
         {
           "id": "c2_stop_a",
-          "text": "Mrs. Park, the in-law matter is separate from this case. Please focus on the studio-apartment issue."
+          "text": "Ms. Park Ji-yeon, the in-laws issue is not the matter before us. Please focus on the officetel issue."
         },
         {
           "id": "c2_ask_b",
-          "text": "Mr. Lee, is the in-law matter Mrs. Park just described actually true?"
+          "text": "Mr. Lee Jun-ho, is the in-laws issue Ms. Park Ji-yeon mentioned true?"
         },
         {
           "id": "c2_allow",
@@ -167,15 +167,15 @@
       "options": [
         {
           "id": "c3_press",
-          "text": "Mr. Lee, who is this 'someone you know'? Answer specifically."
+          "text": "Mr. Lee Jun-ho, who is this 'person you know'? Answer specifically."
         },
         {
           "id": "c3_empathy",
-          "text": "Mr. Lee, it seems there are circumstances that are difficult to speak about. Even so, this is the place to bring them out."
+          "text": "Mr. Lee Jun-ho, it seems there are circumstances that are difficult to discuss. But it would be better to disclose them here."
         },
         {
           "id": "c3_defer",
-          "text": "I will examine this part more closely during interrogation."
+          "text": "I will confirm this part in detail during questioning."
         }
       ]
     },
@@ -212,7 +212,7 @@
     {
       "id": "33",
       "speaker": "system",
-      "text": "The studio-apartment visits, the late-night calls, the receipts — the husband admitted to all of them, but never revealed who the other party was. The two sides' accounts run head-on against each other. The truth must now be confirmed through interrogation."
+      "text": "Officetel visits, early-morning calls, receipts—the husband admitted all of them but never revealed who was involved. The two sides’ claims are in direct conflict. The truth must be confirmed through questioning."
     }
   ]
 }

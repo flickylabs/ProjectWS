@@ -4,25 +4,145 @@
   "caseId": "friend-01",
   "overlayKind": "angle_catalog",
   "angles": [
-    { "disputeId": "d-1", "angleId": "contact_timeline", "label": "Timeline of the Nine Days of Contact", "description": "Examine, broken out, the duration, time-of-day, and reply status of the 6 calls and 11 texts.", "keywordsLocale": [] },
-    { "disputeId": "d-1", "angleId": "message_intent", "label": "The Purpose Inside the Message Wording", "description": "Press on the purpose of the contacts via the absence of affectionate language and phrases like 'I really need to tell you something.'", "keywordsLocale": [] },
-    { "disputeId": "d-1", "angleId": "bypass_da_eun", "label": "Going Around Ms. Song", "description": "Ask why the contact went to the fiance directly instead of going through Ms. Song, and the responsibility for the indirect route.", "keywordsLocale": [] },
-    { "disputeId": "d-1", "angleId": "unanswered_escalation", "label": "Reason for No Reply and Repetition", "description": "Distinguish whether the rising count of contacts is obsession or repeated check-ins because of unanswered messages.", "keywordsLocale": [] },
-    { "disputeId": "d-2", "angleId": "message_sequence", "label": "Order of the Messages", "description": "Confirm the start point, the late-night timing, and the reply order of the messages between the fiance and Ms. Choi.", "keywordsLocale": [] },
-    { "disputeId": "d-2", "angleId": "boundary_response", "label": "Boundary-Setting Reply and Distance", "description": "Confirm the range and meaning of Ms. Choi's reply — whether it was reciprocation or distance-keeping.", "keywordsLocale": [] },
-    { "disputeId": "d-2", "angleId": "withheld_capture", "label": "Reason the Capture Was Held Back", "description": "Separate why Ms. Choi did not present the original right away, and why Ms. Song delayed checking it.", "keywordsLocale": [] },
-    { "disputeId": "d-2", "angleId": "private_request_pressure", "label": "Pressure of the Private Request", "description": "Confirm any flow in which the fiance asked Ms. Choi for something behind Ms. Song's back, or pulled the conversation into private territory.", "keywordsLocale": [] },
-    { "disputeId": "d-3", "angleId": "father_request_signal", "label": "Signal of the Father's Request", "description": "Confirm what kind of message the wedding-prep check-in and the foreshadowing of a request truly were, without concluding yet.", "keywordsLocale": [] },
-    { "disputeId": "d-3", "angleId": "money_secrecy", "label": "Money Concerns and Requests for Secrecy", "description": "Confirm whether the request was leading to a money matter, and whether there was any ask to keep it from Ms. Song.", "keywordsLocale": [] },
-    { "disputeId": "d-3", "angleId": "pattern_warning", "label": "A Flow That Looks Like the Past", "description": "Step by step, ask whether the current message resembles a past money matter, without locking in a pattern early on.", "keywordsLocale": [] },
-    { "disputeId": "d-3", "angleId": "father_blindspot", "label": "The Point Where the Father Was Set Aside", "description": "Examine how Ms. Song treated her father's request as merely a family matter and noticed only late what was unsettling about it.", "keywordsLocale": [] },
-    { "disputeId": "d-4", "angleId": "severance_chat_gap", "label": "The Gap in the Pre-Breakup KakaoTalk", "description": "Examine the gap in the past chat between 'I will sort this out' and the actual cutoff.", "keywordsLocale": [] },
-    { "disputeId": "d-4", "angleId": "transfer_repayment", "label": "Flow of Transfers and Repayments", "description": "Through three transfers, an IOU, partial repayment, and then loss of contact, confirm step by step the actual nature of the money matter.", "keywordsLocale": [] },
-    { "disputeId": "d-4", "angleId": "protective_silence", "label": "Silence That Was Meant to Protect", "description": "Confirm why Ms. Choi could not tell Ms. Song about the past money matter and instead took on the villain role.", "keywordsLocale": [] },
-    { "disputeId": "d-4", "angleId": "loan_document_weight", "label": "The Weight of the IOU", "description": "Confirm whether it was goodwill or a loan, and how the IOU and the partial repayment support Ms. Choi's silence and the reason for the cutoff.", "keywordsLocale": [] },
-    { "disputeId": "d-5", "angleId": "first_groupchat_post", "label": "The First Post in the Group Chat", "description": "Confirm the wording Ms. Song used to post in the group chat first, and whether public exposure preceded direct confirmation.", "keywordsLocale": [] },
-    { "disputeId": "d-5", "angleId": "pile_on_spread", "label": "Friends Joining In and Spreading the Take", "description": "Confirm what wording the friends added in agreement, and how Ms. Song and Ms. Choi handled the spread.", "keywordsLocale": [] },
-    { "disputeId": "d-5", "angleId": "repeat_villain_frame", "label": "Repeated Villain Structure", "description": "Sort out the structure where Ms. Choi was left as the villain, in both the past and the present, and Ms. Song concluded first.", "keywordsLocale": [] },
-    { "disputeId": "d-5", "angleId": "verification_gap", "label": "Public Posting Without Verification", "description": "Confirm whether Ms. Song posted in the group chat before checking with Ms. Choi, and whether there was a chance to correct it after going public.", "keywordsLocale": [] }
+    {
+      "disputeId": "d-1",
+      "angleId": "contact_timeline",
+      "label": "No Response and Repetition",
+      "description": "Distinguish whether the increase in contact was obsession, or repeated attempts to confirm because there was no answer.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "message_intent",
+      "label": "The Purpose Inside the Message Wording",
+      "description": "Press on the purpose of the contacts via the absence of affectionate language and phrases like 'I really need to tell you something.'",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "bypass_da_eun",
+      "label": "Going Around Ms. Song",
+      "description": "Ask why the contact went to the fiance directly instead of going through Ms. Song, and the responsibility for the indirect route.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "unanswered_escalation",
+      "label": "Reason for No Reply and Repetition",
+      "description": "Distinguish whether the rising count of contacts is obsession or repeated check-ins because of unanswered messages.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "message_sequence",
+      "label": "Pressure of a Private Request",
+      "description": "Confirm whether the fiancé secretly asked Choi Su-min for something behind Da-eun's back, or drew her into a private exchange.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "boundary_response",
+      "label": "Boundary-Setting Reply and Distance",
+      "description": "Confirm the range and meaning of Ms. Choi's reply — whether it was reciprocation or distance-keeping.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "withheld_capture",
+      "label": "Reason the Capture Was Held Back",
+      "description": "Separate why Ms. Choi did not present the original right away, and why Ms. Song delayed checking it.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "private_request_pressure",
+      "label": "Pressure of the Private Request",
+      "description": "Confirm any flow in which the fiance asked Ms. Choi for something behind Ms. Song's back, or pulled the conversation into private territory.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "father_request_signal",
+      "label": "Avoiding the Father's Issue",
+      "description": "Confirm how Song Da-eun treated her father's request as only a family matter, and only later saw the parts that bothered her.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "money_secrecy",
+      "label": "Money Concerns and Requests for Secrecy",
+      "description": "Confirm whether the request was leading to a money matter, and whether there was any ask to keep it from Ms. Song.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "pattern_warning",
+      "label": "A Flow That Looks Like the Past",
+      "description": "Step by step, ask whether the current message resembles a past money matter, without locking in a pattern early on.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "father_blindspot",
+      "label": "The Point Where the Father Was Set Aside",
+      "description": "Examine how Ms. Song treated her father's request as merely a family matter and noticed only late what was unsettling about it.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "severance_chat_gap",
+      "label": "Weight of the IOU",
+      "description": "Confirm whether it was goodwill or a loan, and how the IOU and partial repayment support Choi Su-min's silence and the reason for cutting ties.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "transfer_repayment",
+      "label": "Flow of Transfers and Repayments",
+      "description": "Through three transfers, an IOU, partial repayment, and then loss of contact, confirm step by step the actual nature of the money matter.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "protective_silence",
+      "label": "Silence That Was Meant to Protect",
+      "description": "Confirm why Ms. Choi could not tell Ms. Song about the past money matter and instead took on the villain role.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "loan_document_weight",
+      "label": "The Weight of the IOU",
+      "description": "Confirm whether it was goodwill or a loan, and how the IOU and the partial repayment support Ms. Choi's silence and the reason for the cutoff.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "first_groupchat_post",
+      "label": "Public Without Verification",
+      "description": "Confirm whether Song Da-eun posted in the group chat before checking with Choi Su-min, and whether there was a chance to correct it after disclosure.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "pile_on_spread",
+      "label": "Friends Joining In and Spreading the Take",
+      "description": "Confirm what wording the friends added in agreement, and how Ms. Song and Ms. Choi handled the spread.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "repeat_villain_frame",
+      "label": "Repeated Villain Structure",
+      "description": "Sort out the structure where Ms. Choi was left as the villain, in both the past and the present, and Ms. Song concluded first.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "verification_gap",
+      "label": "Public Posting Without Verification",
+      "description": "Confirm whether Ms. Song posted in the group chat before checking with Ms. Choi, and whether there was a chance to correct it after going public.",
+      "keywordsLocale": []
+    }
   ]
 }

@@ -8,10 +8,11 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import { getArchetypeLabel } from '../../../utils/archetypeLabel'
 import { useI18n } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import { getRelationshipLabel } from './pcHomeShared'
 
 export default function PCCaseBrief() {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const advancePhase = useStore((s) => s.advancePhase)
 
@@ -86,7 +87,7 @@ export default function PCCaseBrief() {
               <div className="pc-brief__party-text is-right">
                 <span className="pc-brief__party-name is-a">{duo.partyA.name}</span>
                 <span className="pc-brief__party-meta">{t('pc.home.caseBrowser.ageOccupation', { age: duo.partyA.age, occupation: duo.partyA.occupation })}</span>
-                <span className="pc-brief__party-trait">{getArchetypeLabel(duo.partyA.archetype)}</span>
+                <span className="pc-brief__party-trait">{localizeRuntimeText(getArchetypeLabel(duo.partyA.archetype), locale)}</span>
               </div>
               <div className="pc-brief__party-face is-a">
                 <PCCharacterPortrait
@@ -118,7 +119,7 @@ export default function PCCaseBrief() {
               <div className="pc-brief__party-text is-left">
                 <span className="pc-brief__party-name is-b">{duo.partyB.name}</span>
                 <span className="pc-brief__party-meta">{t('pc.home.caseBrowser.ageOccupation', { age: duo.partyB.age, occupation: duo.partyB.occupation })}</span>
-                <span className="pc-brief__party-trait">{getArchetypeLabel(duo.partyB.archetype)}</span>
+                <span className="pc-brief__party-trait">{localizeRuntimeText(getArchetypeLabel(duo.partyB.archetype), locale)}</span>
               </div>
             </div>
           </section>

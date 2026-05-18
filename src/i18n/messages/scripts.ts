@@ -15,7 +15,7 @@ export const scriptMessages = {
     "script.tag.speaker.judge": "Judge",
     "script.address.judgeVocative": "Your Honor",
     "script.address.spouseIntimate": "Honey",
-    "script.behaviorHint.unavailable": "Behavior notes are not localized yet.",
+    "script.behaviorHint.unavailable": "Behavior notes are being prepared for the current language.",
   },
   ja: {
     "script.tag.speaker.a": "A",
@@ -23,15 +23,15 @@ export const scriptMessages = {
     "script.tag.speaker.judge": "裁判官",
     "script.address.judgeVocative": "裁判官",
     "script.address.spouseIntimate": "あなた",
-    "script.behaviorHint.unavailable": "行動描写はまだ翻訳準備中です。",
+    "script.behaviorHint.unavailable": "行動描写は現在の言語で準備中です。",
   },
   "zh-CN": {
     "script.tag.speaker.a": "A",
     "script.tag.speaker.b": "B",
-    "script.tag.speaker.judge": "裁判官",
-    "script.address.judgeVocative": "裁判官",
+    "script.tag.speaker.judge": "法官",
+    "script.address.judgeVocative": "法官",
     "script.address.spouseIntimate": "亲爱的",
-    "script.behaviorHint.unavailable": "行为提示尚未完成本地化。",
+    "script.behaviorHint.unavailable": "行为描述正在为当前语言准备中。",
   },
 } as const satisfies Record<LocaleCode, Record<string, string>>
 

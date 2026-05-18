@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "遺言書作成の経緯",
-      "description": "母が遺言書の内容を理解し、自らの意思を示していたのか、その作成過程を確かめる。"
+      "label": "紙を読み聞かせた場面",
+      "description": "ユン・ジョンフが母に紙を読み聞かせ、兄が来る前に終わらせようとした状況を切り分けて見る。"
     },
     {
       "disputeId": "d-1",
@@ -43,8 +43,8 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "最終の遺言書ができるまで",
-      "description": "60対40の遺言書が、どのような経路で最終本となったのかを確かめる。"
+      "label": "偽造責任",
+      "description": "動機が何であれ、母の書類に手を加えた責任を確認する。"
     },
     {
       "disputeId": "d-2",
@@ -73,8 +73,8 @@
     {
       "disputeId": "d-3",
       "angleId": "general",
-      "label": "母の通帳の資金",
-      "description": "母の通帳を経由した金銭と、兄弟間の資金の動きを確かめる。"
+      "label": "兄の面子と沈黙",
+      "description": "お金を語らなかった沈黙が、保護だったのか欺きだったのかを確認する。"
     },
     {
       "disputeId": "d-3",
@@ -103,8 +103,8 @@
     {
       "disputeId": "d-4",
       "angleId": "general",
-      "label": "日記に残る家族史",
-      "description": "母の日記に残された繊細な家族の事情と、その沈黙を確かめる。"
+      "label": "遺言書変更とのつながり",
+      "description": "敏感な家族事情が、遺言書変更の判断とどうつながったのかを問う。"
     },
     {
       "disputeId": "d-4",
@@ -133,8 +133,8 @@
     {
       "disputeId": "d-5",
       "angleId": "general",
-      "label": "兄弟の責任構造",
-      "description": "二人の兄弟が母の意思をそれぞれどう解釈し、どう歪めたのかを確かめる。"
+      "label": "二人の兄弟の共同責任",
+      "description": "一方だけを悪役にする構図ではなく、異なる形の責任を合わせて整理する。"
     },
     {
       "disputeId": "d-5",

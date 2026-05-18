@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "Visits and Calls — Circumstances",
-      "description": "Examine the studio-apartment visits, late-night calls, and items in the receipts together along the same line of suspicion.",
+      "label": "Reason for Hiding",
+      "description": "Confirm why the visits, calls, and items were not explained to the spouse.",
       "keywordsLocale": []
     },
     {
@@ -49,8 +49,8 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "Large Cash Withdrawal — Circumstances",
-      "description": "Examine the large withdrawal from a personal account, the cash movement, and the exclusion of the spouse from the decision.",
+      "label": "Spouse Consent Excluded",
+      "description": "Ask about the responsibility for moving a large sum without telling the spouse, even if it was personal money.",
       "keywordsLocale": []
     },
     {
@@ -84,8 +84,8 @@
     {
       "disputeId": "h-d3",
       "angleId": "general",
-      "label": "Savings and Transfer — Circumstances",
-      "description": "Examine in order: the cancellation of the joint savings, the authorization paperwork, the transfer to the investment group, and how it was lost.",
+      "label": "Loss and Legal Responsibility",
+      "description": "Separate the result of the missing money and responsibility for document handling from claims of emotional harm.",
       "keywordsLocale": []
     },
     {
@@ -119,8 +119,8 @@
     {
       "disputeId": "h-d4",
       "angleId": "general",
-      "label": "Order of Responsibility",
-      "description": "Do not bundle concealment, account checking, money movement, and document violations into one — keep them separate.",
+      "label": "Separated Responsibility Record",
+      "description": "Record concealment, monitoring, execution, and illegality separately, rather than deciding who is worse.",
       "keywordsLocale": []
     },
     {

@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "訪問・通話の経緯",
-      "description": "オフィステル訪問、深夜の通話、レシートの品物を、同じ疑念の線上で確かめる。"
+      "label": "隠した理由",
+      "description": "訪問、電話、物をなぜ配偶者に説明しなかったのか確認する。"
     },
     {
       "disputeId": "d-1",
@@ -43,8 +43,8 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "大口出金の経緯",
-      "description": "個人口座からの大口出金、現金移動、配偶者排除の問題を確かめる。"
+      "label": "配偶者同意の排除",
+      "description": "個人の金であっても、配偶者に告げず大金を動かした責任を問う。"
     },
     {
       "disputeId": "d-2",
@@ -73,8 +73,8 @@
     {
       "disputeId": "h-d3",
       "angleId": "general",
-      "label": "貯蓄・送金の経緯",
-      "description": "共同貯蓄の解約、委任書類、投資チャットルームへの送金、損失の経緯を順に確かめる。"
+      "label": "損失と法的責任",
+      "description": "金が失われた結果と書類処理の責任を、感情的被害の主張から切り分ける。"
     },
     {
       "disputeId": "h-d3",
@@ -103,8 +103,8 @@
     {
       "disputeId": "h-d4",
       "angleId": "general",
-      "label": "責任の順序",
-      "description": "隠匿、口座の確認、資金の実行、書類違反——これらをひとまとめにせず、分けて確かめる。"
+      "label": "切り分けられた責任記録",
+      "description": "どちらがより悪いかではなく、隠蔽、監視、実行、違法性をそれぞれ別に記録する。"
     },
     {
       "disputeId": "h-d4",

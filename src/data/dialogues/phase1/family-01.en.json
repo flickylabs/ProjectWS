@@ -2,66 +2,217 @@
   "caseId": "case-family-01",
   "overlayKind": "phase1Dialogue",
   "dialogues": [
-    { "id": "0", "speaker": "system", "text": "A copy of the will left by their mother — in the late stages of dementia — gives 60 percent to the younger son, Yoon Jung-hoo, and 40 percent to the elder, Yoon Tae-seong. Yoon Tae-seong, who lived with their mother and cared for her, has filed for trial, refusing to accept the ratio." },
-    { "id": "1", "speaker": "a", "text": "Your Honor, I lived with our mother and cared for her. I took her to the hospital myself, I was the one who got up every time she woke at night. And then I see that my share in the will is forty — everything went black in front of me." },
-    { "id": "2", "speaker": "a", "text": "What is even more outrageous is the state our mother was in at the end. There were days she did not even recognise me. To say that someone in that state clearly judged a sixty-forty split two months ago — I cannot believe it." },
-    { "id": "3", "speaker": "b", "text": "Your Honor, the claim that I moved our mother's hand is not true." },
+    {
+      "id": "0",
+      "speaker": "system",
+      "text": "The copy of the will left by their mother in late-stage dementia states 60 percent for the younger son, Yoon Jeong-hu, and 40 percent for the older son, Yoon Tae-seong. Yoon Tae-seong, who lived with and cared for his mother, filed for trial, saying he could not accept that ratio."
+    },
+    {
+      "id": "1",
+      "speaker": "a",
+      "text": "Your Honor, I lived with our mother and cared for her. I took her to the hospital myself, I was the one who got up every time she woke at night. And then I see that my share in the will is forty — everything went black in front of me."
+    },
+    {
+      "id": "2",
+      "speaker": "a",
+      "text": "What is even more outrageous is the state our mother was in at the end. There were days she did not even recognise me. To say that someone in that state clearly judged a sixty-forty split two months ago — I cannot believe it."
+    },
+    {
+      "id": "3",
+      "speaker": "b",
+      "text": "Your Honor, the claim that I moved our mother's hand is not true."
+    },
     {
       "id": "4",
       "speaker": "choice",
       "text": "",
       "options": [
-        { "id": "c1_ask_b", "text": "Yoon Jung-hoo, please explain in your own words why you visited so often." },
-        { "id": "c1_hear_a", "text": "Yoon Tae-seong, please tell me more about the basis for the suspicion." },
-        { "id": "c1_calm", "text": "Both sides, please calm yourselves. I will hear each side in order." }
+        {
+          "id": "c1_ask_b",
+          "text": "Mr. Yoon Jeong-hu, explain directly why you visited so often."
+        },
+        {
+          "id": "c1_hear_a",
+          "text": "Mr. Yoon Tae-seong, please say more about what led you to suspect that."
+        },
+        {
+          "id": "c1_calm",
+          "text": "Both sides, please calm down. I will hear you in order."
+        }
       ]
     },
-    { "id": "5", "speaker": "b", "text": "I did visit often. I went to see our mother's condition. Whether that means I made the decision for her is another matter — that is something I should not have to hear." },
-    { "id": "6", "speaker": "a", "text": "Jung-hoo, do you really think our mother was clear-headed at the end? If you stayed beside her constantly, every word you said had weight." },
-    { "id": "7", "speaker": "b", "text": "I did try to wrap things up before our mother got tired, before my brother arrived. But I did not arrange anything behind his back." },
-    { "id": "8", "speaker": "a", "text": "Basis? Start with the will copy itself. My younger brother is sixty and I am forty. The numbers themselves do not match the state our mother was in at the end." },
-    { "id": "9", "speaker": "a", "text": "Look at the care-home visit log — right before the notarisation, my younger brother shows up unusually often. The timing of the assigned care worker being switched overlaps too. I have no choice but to find that suspicious." },
-    { "id": "10", "speaker": "b", "text": "The number of visits is correct. But going often does not mean I shaped our mother's wishes." },
-    { "id": "11", "speaker": "a", "text": "Understood. Even so, Your Honor — I cannot accept that someone in our mother's state at the end decided that ratio on her own." },
-    { "id": "12", "speaker": "b", "text": "I do not want to drive this with emotion either. I will speak only to the facts." },
-    { "id": "13", "speaker": "a", "text": "Your Honor, there is also voice testimony from the former care worker. She said that my younger brother often read the paper aloud to our mother and was anxious to finish before I arrived. If that is not orchestration, what is?" },
+    {
+      "id": "5",
+      "speaker": "b",
+      "text": "I did visit often. I went to see our mother's condition. Whether that means I made the decision for her is another matter — that is something I should not have to hear."
+    },
+    {
+      "id": "6",
+      "speaker": "a",
+      "text": "Jung-hoo, do you really think our mother was clear-headed at the end? If you stayed beside her constantly, every word you said had weight."
+    },
+    {
+      "id": "7",
+      "speaker": "b",
+      "text": "I did try to wrap things up before our mother got tired, before my brother arrived. But I did not arrange anything behind his back."
+    },
+    {
+      "id": "8",
+      "speaker": "a",
+      "text": "Basis? Start with the will copy itself. My younger brother is sixty and I am forty. The numbers themselves do not match the state our mother was in at the end."
+    },
+    {
+      "id": "9",
+      "speaker": "a",
+      "text": "Look at the care-home visit log — right before the notarisation, my younger brother shows up unusually often. The timing of the assigned care worker being switched overlaps too. I have no choice but to find that suspicious."
+    },
+    {
+      "id": "10",
+      "speaker": "b",
+      "text": "The number of visits is correct. But going often does not mean I shaped our mother's wishes."
+    },
+    {
+      "id": "11",
+      "speaker": "a",
+      "text": "Understood. Even so, Your Honor — I cannot accept that someone in our mother's state at the end decided that ratio on her own."
+    },
+    {
+      "id": "12",
+      "speaker": "b",
+      "text": "I do not want to drive this with emotion either. I will speak only to the facts."
+    },
+    {
+      "id": "13",
+      "speaker": "a",
+      "text": "Your Honor, there is also voice testimony from the former care worker. She said that my younger brother often read the paper aloud to our mother and was anxious to finish before I arrived. If that is not orchestration, what is?"
+    },
     {
       "id": "14",
       "speaker": "choice",
       "text": "",
       "options": [
-        { "id": "c2_press_b", "text": "Yoon Jung-hoo, answering this short only feeds the suspicion. Please speak clearly." },
-        { "id": "c2_protect_b", "text": "Yoon Jung-hoo, if it is hard to answer right away, take your time and lay it out." },
-        { "id": "c2_move_on", "text": "Setting aside any judgement on demeanour, let us start with the confirmed facts." }
+        {
+          "id": "c2_press_b",
+          "text": "Mr. Yoon Jeong-hu, if you keep answering this briefly, suspicion will only grow. Speak clearly."
+        },
+        {
+          "id": "c2_protect_b",
+          "text": "Mr. Yoon Jeong-hu, if it is difficult to answer right away, take your time and organize your thoughts."
+        },
+        {
+          "id": "c2_move_on",
+          "text": "Set aside the assessment of attitude; we will begin with confirmed facts."
+        }
       ]
     },
-    { "id": "15", "speaker": "b", "text": "…She was not in the same state every day until the end. There were cloudy days, and there were clear ones. I tried to confirm her wishes within those clear moments." },
-    { "id": "16", "speaker": "a", "text": "Jung-hoo, that makes it more suspicious. It also reads as you choosing only the clear days." },
-    { "id": "17", "speaker": "b", "text": "…Thank you. I only wanted to say that our mother was not always in the same state." },
-    { "id": "18", "speaker": "a", "text": "That is exactly why it was dangerous. A brief moment of clarity is not enough to trust those numbers." },
-    { "id": "19", "speaker": "b", "text": "I never put words in her mouth. I was confirming." },
-    { "id": "20", "speaker": "a", "text": "Facts? The visit log and the voice testimony are exactly that. Those alone are enough to show that my younger brother shaped the atmosphere at our mother's side." },
-    { "id": "21", "speaker": "b", "text": "The records are correct. The interpretation is not." },
-    { "id": "22", "speaker": "a", "text": "Your Honor, I am the one who lived with our mother. I prepared her meals, I took her to the hospital, I was the one who picked up after every slip. So why is my share forty in the will?" },
-    { "id": "23", "speaker": "b", "text": "It is true that my brother lived with her. Even so, a sixty-forty number alone cannot wipe out our mother's whole judgement." },
-    { "id": "24", "speaker": "a", "text": "Yoon Jung-hoo! Do you really think our mother had the presence of mind to settle that ratio at the end? Because you sat reading to her, because you pressed beside her — that is how this result came out!" },
-    { "id": "25", "speaker": "b", "text": "Brother — I know you want to believe that. But I did not take what our mother said lightly." },
+    {
+      "id": "15",
+      "speaker": "b",
+      "text": "…She was not in the same state every day until the end. There were cloudy days, and there were clear ones. I tried to confirm her wishes within those clear moments."
+    },
+    {
+      "id": "16",
+      "speaker": "a",
+      "text": "Jung-hoo, that makes it more suspicious. It also reads as you choosing only the clear days."
+    },
+    {
+      "id": "17",
+      "speaker": "b",
+      "text": "…Thank you. I only wanted to say that our mother was not always in the same state."
+    },
+    {
+      "id": "18",
+      "speaker": "a",
+      "text": "That is exactly why it was dangerous. A brief moment of clarity is not enough to trust those numbers."
+    },
+    {
+      "id": "19",
+      "speaker": "b",
+      "text": "I never put words in her mouth. I was confirming."
+    },
+    {
+      "id": "20",
+      "speaker": "a",
+      "text": "Facts? The visit log and the voice testimony are exactly that. Those alone are enough to show that my younger brother shaped the atmosphere at our mother's side."
+    },
+    {
+      "id": "21",
+      "speaker": "b",
+      "text": "The records are correct. The interpretation is not."
+    },
+    {
+      "id": "22",
+      "speaker": "a",
+      "text": "Your Honor, I am the one who lived with our mother. I prepared her meals, I took her to the hospital, I was the one who picked up after every slip. So why is my share forty in the will?"
+    },
+    {
+      "id": "23",
+      "speaker": "b",
+      "text": "It is true that my brother lived with her. Even so, a sixty-forty number alone cannot wipe out our mother's whole judgement."
+    },
+    {
+      "id": "24",
+      "speaker": "a",
+      "text": "Yoon Jung-hoo! Do you really think our mother had the presence of mind to settle that ratio at the end? Because you sat reading to her, because you pressed beside her — that is how this result came out!"
+    },
+    {
+      "id": "25",
+      "speaker": "b",
+      "text": "Brother — I know you want to believe that. But I did not take what our mother said lightly."
+    },
     {
       "id": "26",
       "speaker": "choice",
       "text": "",
       "options": [
-        { "id": "c3_evidence_first", "text": "First we will go through the disclosed evidence in order." },
-        { "id": "c3_state_first", "text": "Before the ratio, I want to hear how each of you saw our mother's state in her final year." },
-        { "id": "c3_defer", "text": "Let us not conclude now; this part will be confirmed during interrogation." }
+        {
+          "id": "c3_evidence_first",
+          "text": "First, we will examine the disclosed evidence in order."
+        },
+        {
+          "id": "c3_state_first",
+          "text": "Before the ratio, I will hear how each side viewed the mother's condition in her later years."
+        },
+        {
+          "id": "c3_defer",
+          "text": "Do not draw a conclusion now; I will confirm this point in questioning."
+        }
       ]
     },
-    { "id": "27", "speaker": "a", "text": "Good. Start with the visit log and the former care worker's voice testimony. Those two alone show how close my younger brother was to our mother." },
-    { "id": "28", "speaker": "b", "text": "It is fine to look at the evidence. But the number of visits and our mother's capacity to decide are not the same thing." },
-    { "id": "29", "speaker": "a", "text": "I saw it every day, beside her. There were days she did not even know I was her son. I cannot believe that someone in that state clearly settled the final ratio." },
-    { "id": "30", "speaker": "b", "text": "I saw other moments too. There were times when, even tired, she spoke clearly." },
-    { "id": "31", "speaker": "a", "text": "Your Honor, the longer this is reserved, the more my grievance grows. Why a sixty-forty came out — that first piece has to be put in place today." },
-    { "id": "32", "speaker": "b", "text": "…Confirm whatever you need. I will not run from this." },
-    { "id": "33", "speaker": "system", "text": "The 60:40 will copy, the care-home visit log, and the former care worker's voice testimony have all been disclosed. Yoon Jung-hoo admits to visiting often but denies any suggestion that he influenced their mother's final judgement. Whether their mother was truly able to decide on her own must now be confirmed through interrogation." }
+    {
+      "id": "27",
+      "speaker": "a",
+      "text": "Good. Start with the visit log and the former care worker's voice testimony. Those two alone show how close my younger brother was to our mother."
+    },
+    {
+      "id": "28",
+      "speaker": "b",
+      "text": "It is fine to look at the evidence. But the number of visits and our mother's capacity to decide are not the same thing."
+    },
+    {
+      "id": "29",
+      "speaker": "a",
+      "text": "I saw it every day, beside her. There were days she did not even know I was her son. I cannot believe that someone in that state clearly settled the final ratio."
+    },
+    {
+      "id": "30",
+      "speaker": "b",
+      "text": "I saw other moments too. There were times when, even tired, she spoke clearly."
+    },
+    {
+      "id": "31",
+      "speaker": "a",
+      "text": "Your Honor, the longer this is reserved, the more my grievance grows. Why a sixty-forty came out — that first piece has to be put in place today."
+    },
+    {
+      "id": "32",
+      "speaker": "b",
+      "text": "…Confirm whatever you need. I will not run from this."
+    },
+    {
+      "id": "33",
+      "speaker": "system",
+      "text": "The 60:40 Will Copy, care home visit record, and Former Caregiver Audio Testimony have all been disclosed. Yoon Jeong-hu admits that he often visited his mother, but denies the suspicion that he swayed her judgment in her later years. The questioning must now confirm whether their mother was truly able to judge for herself."
+    }
   ]
 }

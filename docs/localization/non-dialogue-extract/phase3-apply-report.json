@@ -1,0 +1,10 @@
+{
+  "rows": 18630,
+  "jsonUpdates": 43866,
+  "messageUpdates": 4044,
+  "witnessUpdates": 540,
+  "runtimeGenerated": 1523,
+  "brandSanitizations": 21,
+  "disclosureSanitizations": 155,
+  "missingTargets": []
+}

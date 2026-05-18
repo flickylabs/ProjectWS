@@ -3,11 +3,11 @@
   "overlayKind": "mediationDialogue",
   "paths": {
     "immediate": {
-      "judge": "I will rule on the issues as currently organised. We move to the verdict stage.",
+      "judge": "I will make an immediate judgment based on the issues as organized. We will move to the verdict stage.",
       "dialogues": []
     },
     "conditional": {
-      "judge": "I will start by proposing a conditional mediation that separates the core responsibilities. The will-drafting procedure, the difference between the notarised copy and the handwritten draft, and the long-running care and account flow will not be bundled into one matter.",
+      "judge": "I will first present a conditional mediation that separates the core responsibilities. The will-drafting procedure, the difference between the notarized copy and the handwritten draft, and the long-running care and account trail will not be treated as one bundle.",
       "dialogues": [
         {
           "id": "0",
@@ -22,7 +22,7 @@
       ]
     },
     "postpone": {
-      "judge": "I will fix only the facts that can be confirmed today and reserve the rest. How each side understood our mother's wishes will be looked at separately, between record and testimony.",
+      "judge": "I will first fix only the facts that can be confirmed and reserve the rest. We will separate records and testimony when examining who understood Mother's wishes, and how.",
       "dialogues": [
         {
           "id": "0",
@@ -37,7 +37,7 @@
       ]
     },
     "fact_first": {
-      "judge": "Before any solution, I will fix the facts. The will-drafting procedure, the difference between the handwritten draft and the notarised copy, and the order of the long-running care and account flow come first.",
+      "judge": "Before moving to a solution, I will organize the facts. We will first fix the order of the will-drafting procedure, the difference between the handwritten draft and the notarized copy, and the long-running care and account trail.",
       "dialogues": [
         {
           "id": "0",

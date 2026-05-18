@@ -1,4 +1,5 @@
 import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, normalizeLocale, type LocaleCode } from './locales.ts'
+import { GENERATED_RUNTIME_TEXT } from './runtimeText.generated.ts'
 
 type LocaleText = Record<Exclude<LocaleCode, 'ko'>, string>
 
@@ -1771,7 +1772,8 @@ const CONTENT_PHRASES: Record<string, LocaleText> = {
 }
 
 function exact(value: string, locale: Exclude<LocaleCode, 'ko'>): string | null {
-  return EXACT[value.trim()]?.[locale] ?? null
+  const trimmed = value.trim()
+  return GENERATED_RUNTIME_TEXT[trimmed]?.[locale] ?? EXACT[trimmed]?.[locale] ?? null
 }
 
 function phrase(value: string, locale: Exclude<LocaleCode, 'ko'>): string {

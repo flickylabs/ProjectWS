@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "造访与通话经过",
-      "description": "在同一条怀疑线上，把公寓造访、凌晨通话、收据上的物品一起核对。"
+      "label": "隐瞒的理由",
+      "description": "确认为何没有向配偶说明探访、电话和物品。"
     },
     {
       "disputeId": "d-1",
@@ -43,8 +43,8 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "整笔提款经过",
-      "description": "确认个人账户整笔提款、现金流向、把配偶排除在外的问题。"
+      "label": "排除配偶同意",
+      "description": "追问即使是个人资金，也未告知配偶就动用大笔钱的责任。"
     },
     {
       "disputeId": "d-2",
@@ -73,8 +73,8 @@
     {
       "disputeId": "h-d3",
       "angleId": "general",
-      "label": "储蓄·汇款经过",
-      "description": "依次确认共同储蓄解约、委托文件、投资群汇款与亏损经过。"
+      "label": "损失与法律责任",
+      "description": "将钱款消失的结果和文件处理责任，与情绪受害主张分开。"
     },
     {
       "disputeId": "h-d3",
@@ -103,8 +103,8 @@
     {
       "disputeId": "h-d4",
       "angleId": "general",
-      "label": "责任先后",
-      "description": "瞒下、查账、动钱、违反文件——别捆成一团，要分开看。"
+      "label": "分项责任记录",
+      "description": "不是判断谁更坏，而是分别记录隐瞒、监控、执行和违法性。"
     },
     {
       "disputeId": "h-d4",

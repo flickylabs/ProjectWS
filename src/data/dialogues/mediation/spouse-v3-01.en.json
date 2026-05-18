@@ -3,11 +3,11 @@
   "overlayKind": "mediationDialogue",
   "paths": {
     "immediate": {
-      "judge": "I will rule on the matter as it currently stands. We move directly to the verdict.",
+      "judge": "I will make an immediate judgment based on the matters clarified so far. We will proceed directly to the verdict.",
       "dialogues": []
     },
     "conditional": {
-      "judge": "I will start by proposing a conditional mediation that takes each side's responsibility separately. The studio-apartment visits and late-night calls, the personal-fund withdrawal, and the cancellation of the joint savings will not all be bundled into one matter.",
+      "judge": "I will first present a conditional mediation proposal that separates each person's responsibility. The Officetel visits and early-morning calls, the personal slush-fund withdrawal, and the joint savings cancellation will not be bundled into one issue.",
       "dialogues": [
         {
           "id": "0",
@@ -22,7 +22,7 @@
       ]
     },
     "postpone": {
-      "judge": "I will fix only the facts that can be confirmed today and reserve the rest. The responsibility for what was hidden and the responsibility for moving first on a judgment will be looked at separately.",
+      "judge": "I will first settle only the facts that can be confirmed now and reserve the rest. I will separately assess responsibility for what was concealed and responsibility for acting first on one's own judgment.",
       "dialogues": [
         {
           "id": "0",
@@ -37,7 +37,7 @@
       ]
     },
     "fact_first": {
-      "judge": "Before any solution, I will fix the facts. We start with the order of events: the studio-apartment visits and late-night calls, the 30-million-won withdrawal from the personal account, and the cancellation of the joint savings.",
+      "judge": "Before discussing a solution, I will clarify the facts. We will first establish the order of the Officetel visits and early-morning calls, the ₩30M personal slush-fund withdrawal, and the joint savings cancellation.",
       "dialogues": [
         {
           "id": "0",

@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "遗嘱形成经过",
-      "description": "确认母亲是否理解遗嘱内容并表达过自己的意思——审视形成过程。"
+      "label": "读纸的场景",
+      "description": "分开查看尹正厚把纸读给母亲听，并试图在哥哥到来前结束的情形。"
     },
     {
       "disputeId": "d-1",
@@ -43,8 +43,8 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "最终遗嘱的形成经过",
-      "description": "确认六比四的遗嘱通过怎样的路径成为了最终版本。"
+      "label": "伪造责任",
+      "description": "无论动机是什么，都确认动过母亲文件的责任。"
     },
     {
       "disputeId": "d-2",
@@ -73,8 +73,8 @@
     {
       "disputeId": "d-3",
       "angleId": "general",
-      "label": "母亲账户的资金",
-      "description": "经母亲账户呈现的款项与兄弟之间的资金往来，逐项确认。"
+      "label": "哥哥的体面与沉默",
+      "description": "确认没有说出钱的沉默，是保护还是欺骗。"
     },
     {
       "disputeId": "d-3",
@@ -103,8 +103,8 @@
     {
       "disputeId": "d-4",
       "angleId": "general",
-      "label": "日记本里的家事",
-      "description": "母亲日记本里所留下的敏感家事与沉默——审视清楚。"
+      "label": "与遗嘱变更的关联",
+      "description": "询问敏感的家庭情况如何与遗嘱变更判断相连。"
     },
     {
       "disputeId": "d-4",
@@ -133,8 +133,8 @@
     {
       "disputeId": "d-5",
       "angleId": "general",
-      "label": "兄弟责任结构",
-      "description": "两兄弟各自怎样理解、又怎样扭曲了母亲的意思——审视清楚。"
+      "label": "两兄弟的共同责任",
+      "description": "不是单方恶人结构，而是一起整理双方不同形式的责任。"
     },
     {
       "disputeId": "d-5",

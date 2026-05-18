@@ -3,11 +3,11 @@
   "overlayKind": "mediationDialogue",
   "paths": {
     "immediate": {
-      "judge": "I will rule on the issues as currently organised. We move to the verdict stage.",
+      "judge": "I will decide immediately on the issues as organized. We will move to the judgment phase.",
       "dialogues": []
     },
     "conditional": {
-      "judge": "I will start by proposing a conditional mediation that separates the core responsibilities. The intent behind nine days of contact, the nuance of the fiance's messages, and the past breakup with the texts about the father will not be bundled into one matter.",
+      "judge": "I will first present a conditional mediation that separates the core responsibilities. The intent behind the nine days of contact, the nuance of the fiancé's messages, the old fallout, and the father-related texts will not be treated as one bundle.",
       "dialogues": [
         {
           "id": "0",
@@ -22,7 +22,7 @@
       ]
     },
     "postpone": {
-      "judge": "I will fix only the facts that can be confirmed today and reserve the rest. The circumstances of the past breakup and the issues around the father will be examined separately, between record and the parties' own accounts.",
+      "judge": "I will first fix only the facts that can be established and reserve the rest. For the old fallout and the father-related issues, I will separate the records from the parties' explanations.",
       "dialogues": [
         {
           "id": "0",
@@ -37,7 +37,7 @@
       ]
     },
     "fact_first": {
-      "judge": "Before any solution, I will fix the facts. The nine days of contact, the fiance's messages, and the circumstances of the past breakup — where each connects to which — come first.",
+      "judge": "Before discussing a remedy, I will first settle the facts. We will fix where the nine days of contact, the fiancé's messages, and the circumstances of the old fallout connect to one another.",
       "dialogues": [
         {
           "id": "0",

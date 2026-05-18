@@ -1,25 +1,5 @@
 import type { LocaleCode } from '../locales'
 
-export type CourtMessageKey =
-  "pc.notes.unseen"
-  | "pc.combo.ready"
-  | "pc.combo.potential"
-  | "pc.combo.readyPairToast"
-  | "pc.combo.readyItemsNotice"
-  | "pc.combo.readyMaterialsNotice"
-  | "pc.combo.readyDetailLabel"
-  | "pc.recordSummary.moreConvincing"
-  | "pc.verdictAdvance.minimumVisible"
-  | "pc.verdictAdvance.conditionsMissing"
-  | "pc.verdictAdvance.hidden.title"
-  | "pc.verdictAdvance.hidden.subtitle"
-  | "pc.verdictAdvance.hidden.body"
-  | "pc.verdictAdvance.hidden.visibleTag"
-  | "pc.verdictAdvance.hidden.hiddenTag"
-  | "pc.verdictAdvance.hidden.confirm"
-  | "pc.verdictAdvance.hidden.collapse"
-  | "pc.verdictAdvance.hidden.keepInvestigating"
-
 export const courtMessages = {
   ko: {
     "pc.notes.unseen": "(미확인 항목 {count}개)",
@@ -43,28 +23,28 @@ export const courtMessages = {
   },
   en: {
     "pc.notes.unseen": "({count} unverified)",
-    "pc.combo.ready": "{count} ready to combine — connect now",
-    "pc.combo.potential": "{count} leads still missing — keep investigating",
+    "pc.combo.ready": "{count} combinations available — connect them now",
+    "pc.combo.potential": "Need {count} leads — some clues are still hidden",
     "pc.combo.readyPairToast": "A combinable pair is ready",
     "pc.combo.readyItemsNotice": "{count} combinable items available",
     "pc.combo.readyMaterialsNotice": "{count} combinable materials ready",
-    "pc.combo.readyDetailLabel": "Combinable Item Details",
-    "pc.recordSummary.moreConvincing": "{party}’s claim is more convincing.",
-    "pc.verdictAdvance.minimumVisible": "A verdict needs at least {required} revealed disputes. Currently revealed: {visible}.",
-    "pc.verdictAdvance.conditionsMissing": "Verdict conditions are not met yet. Verify each dispute, truth, and evidence first.",
-    "pc.verdictAdvance.hidden.title": "Unrevealed disputes remain",
-    "pc.verdictAdvance.hidden.subtitle": "Before the verdict",
-    "pc.verdictAdvance.hidden.body": "{visible} disputes are currently revealed.\\n{hidden} disputes remain hidden.\\n\\nProceed to the verdict anyway?",
-    "pc.verdictAdvance.hidden.visibleTag": "Revealed {count}",
-    "pc.verdictAdvance.hidden.hiddenTag": "Hidden {count}",
+    "pc.combo.readyDetailLabel": "Combination Details",
+    "pc.recordSummary.moreConvincing": "{party}'s claim was judged more convincing.",
+    "pc.verdictAdvance.minimumVisible": "Verdict can proceed after at least {required} issues are revealed. Currently revealed: {visible}.",
+    "pc.verdictAdvance.conditionsMissing": "Verdict conditions are not met yet. Check the truth and evidence for each issue.",
+    "pc.verdictAdvance.hidden.title": "Unrevealed issues remain",
+    "pc.verdictAdvance.hidden.subtitle": "Before the Verdict",
+    "pc.verdictAdvance.hidden.body": "{visible} issues are currently revealed.\n{hidden} issues remain hidden.\n\nProceed to the verdict anyway?",
+    "pc.verdictAdvance.hidden.visibleTag": "Revealed Issues {count}",
+    "pc.verdictAdvance.hidden.hiddenTag": "Hidden Issues {count}",
     "pc.verdictAdvance.hidden.confirm": "Proceed Anyway",
     "pc.verdictAdvance.hidden.collapse": "Hide Verdict Button",
     "pc.verdictAdvance.hidden.keepInvestigating": "Keep Investigating",
   },
   ja: {
     "pc.notes.unseen": "（未確認項目 {count}件）",
-    "pc.combo.ready": "組み合わせ可能 {count}件 ─ 今すぐ連結できます",
-    "pc.combo.potential": "手がかり要 {count}件 ─ まだ見つかっていない手がかりがあるようです",
+    "pc.combo.ready": "組み合わせ可能 {count}件 — 今すぐつなげられます",
+    "pc.combo.potential": "手がかりが{count}件必要 — まだ見つかっていない手がかりがあります",
     "pc.combo.readyPairToast": "組み合わせ可能なペアが準備できました",
     "pc.combo.readyItemsNotice": "組み合わせ可能な項目が{count}件あります",
     "pc.combo.readyMaterialsNotice": "組み合わせ可能な材料が{count}件揃いました",
@@ -74,7 +54,7 @@ export const courtMessages = {
     "pc.verdictAdvance.conditionsMissing": "まだ判決条件を満たしていません。争点ごとの真相と証拠をさらに確認してください。",
     "pc.verdictAdvance.hidden.title": "まだ明らかになっていない争点があります",
     "pc.verdictAdvance.hidden.subtitle": "判決前の確認",
-    "pc.verdictAdvance.hidden.body": "現在明らかな争点は{visible}件です。\\nまだ明らかになっていない争点が{hidden}件残っています。\\n\\nそれでも判決へ進みますか？",
+    "pc.verdictAdvance.hidden.body": "現在明らかな争点は{visible}件です。\nまだ明らかになっていない争点が{hidden}件残っています。\n\nそれでも判決へ進みますか？",
     "pc.verdictAdvance.hidden.visibleTag": "公開争点 {count}",
     "pc.verdictAdvance.hidden.hiddenTag": "隠れた争点 {count}",
     "pc.verdictAdvance.hidden.confirm": "それでも判決へ進む",
@@ -83,22 +63,24 @@ export const courtMessages = {
   },
   "zh-CN": {
     "pc.notes.unseen": "（未确认项目 {count} 个）",
-    "pc.combo.ready": "可组合 {count} 个 — 现在可连接",
-    "pc.combo.potential": "需要线索 {count} 个 — 似乎还有未发现的线索",
+    "pc.combo.ready": "可组合 {count} 项 — 现在即可连接",
+    "pc.combo.potential": "需要 {count} 条线索 — 似乎还有未发现的线索",
     "pc.combo.readyPairToast": "可组合的一组已准备好",
     "pc.combo.readyItemsNotice": "有 {count} 个可组合项目",
     "pc.combo.readyMaterialsNotice": "已准备 {count} 个可组合材料",
     "pc.combo.readyDetailLabel": "可组合项目详情",
-    "pc.recordSummary.moreConvincing": "判定 {party} 一方的主张更有说服力。",
+    "pc.recordSummary.moreConvincing": "判定{party}方主张更有说服力。",
     "pc.verdictAdvance.minimumVisible": "需要至少揭示 {required} 个争议点后才能进入裁决。当前已揭示 {visible} 个。",
-    "pc.verdictAdvance.conditionsMissing": "尚未满足裁决条件。请先确认各争议点的真相与证据。",
+    "pc.verdictAdvance.conditionsMissing": "尚未满足裁决条件。请继续确认各争议点的真相和证据。",
     "pc.verdictAdvance.hidden.title": "仍有尚未揭示的争议点",
     "pc.verdictAdvance.hidden.subtitle": "裁决前确认",
-    "pc.verdictAdvance.hidden.body": "当前已揭示 {visible} 个争议点。\\n仍有 {hidden} 个争议点尚未揭示。\\n\\n仍要直接进入裁决吗？",
-    "pc.verdictAdvance.hidden.visibleTag": "已公开争议 {count}",
-    "pc.verdictAdvance.hidden.hiddenTag": "隐藏争议 {count}",
+    "pc.verdictAdvance.hidden.body": "当前已揭示 {visible} 个争议点。\n仍有 {hidden} 个争议点尚未揭示。\n\n仍要直接进入裁决吗？",
+    "pc.verdictAdvance.hidden.visibleTag": "已公开争议点 {count}",
+    "pc.verdictAdvance.hidden.hiddenTag": "隐藏争议点 {count}",
     "pc.verdictAdvance.hidden.confirm": "仍然进入裁决",
     "pc.verdictAdvance.hidden.collapse": "仅隐藏裁决按钮",
     "pc.verdictAdvance.hidden.keepInvestigating": "继续调查",
   },
-} as const satisfies Record<LocaleCode, Record<CourtMessageKey, string>>
+} as const satisfies Record<LocaleCode, Record<string, string>>
+
+export type CourtMessageKey = keyof typeof courtMessages.ko

@@ -1,9 +1,5 @@
 import type { LocaleCode } from '../locales'
 
-export type ProfileMessageKey =
-  "pc.perk.required"
-  | "pc.profile.fragments.needCount"
-
 export const profileMessages = {
   ko: {
     "pc.perk.required": "{name} 필요",
@@ -21,4 +17,6 @@ export const profileMessages = {
     "pc.perk.required": "需要 {name}",
     "pc.profile.fragments.needCount": "至少需要 {count} 个",
   },
-} as const satisfies Record<LocaleCode, Record<ProfileMessageKey, string>>
+} as const satisfies Record<LocaleCode, Record<string, string>>
+
+export type ProfileMessageKey = keyof typeof profileMessages.ko

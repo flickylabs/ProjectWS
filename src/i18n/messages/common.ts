@@ -1,28 +1,12 @@
 import type { LocaleCode } from '../locales'
 
-export type CommonMessageKey =
-  "app.title"
-  | "brand.internalProjectName"
-  | "brand.title"
-  | "brand.subtitle"
-  | "brand.fullTitle"
-  | "splash.subtitle"
-  | "language.selectorLabel"
-  | "language.selectorTitle"
-  | "steam.authRequired.title"
-  | "steam.authRequired.description"
-  | "steam.authRequired.retry"
-  | "steam.authFailedFallback"
-  | "session.preparing.title"
-  | "session.preparing.description"
-
 export const commonMessages = {
   ko: {
-    "app.title": "솔로몬의 딜레마: 진실의 무게",
+    "app.title": "솔로몬의 딜레마: 진실의 재판",
     "brand.internalProjectName": "Project_Solomon",
     "brand.title": "솔로몬의 딜레마",
-    "brand.subtitle": "진실의 무게",
-    "brand.fullTitle": "솔로몬의 딜레마: 진실의 무게",
+    "brand.subtitle": "진실의 재판",
+    "brand.fullTitle": "솔로몬의 딜레마: 진실의 재판",
     "splash.subtitle": "법정 시뮬레이션 게임",
     "language.selectorLabel": "언어",
     "language.selectorTitle": "표시 언어 선택",
@@ -34,12 +18,12 @@ export const commonMessages = {
     "session.preparing.description": "사건 데이터와 재판 환경을 불러오고 있습니다.",
   },
   en: {
-    "app.title": "Justitia : Weight of Truth",
+    "app.title": "Verdict Zero: Trial of Truth",
     "brand.internalProjectName": "Project_Solomon",
-    "brand.title": "Justitia",
-    "brand.subtitle": "Weight of Truth",
-    "brand.fullTitle": "Justitia : Weight of Truth",
-    "splash.subtitle": "COURT SIMULATION GAME",
+    "brand.title": "Verdict Zero",
+    "brand.subtitle": "Trial of Truth",
+    "brand.fullTitle": "Verdict Zero: Trial of Truth",
+    "splash.subtitle": "COURTROOM SIMULATION GAME",
     "language.selectorLabel": "Language",
     "language.selectorTitle": "Select display language",
     "steam.authRequired.title": "Steam authentication required",
@@ -50,11 +34,11 @@ export const commonMessages = {
     "session.preparing.description": "Loading case data and the courtroom environment.",
   },
   ja: {
-    "app.title": "ソロモンのジレンマ : 真実の重さ",
+    "app.title": "ソロモンのジレンマ：真実の裁き",
     "brand.internalProjectName": "Project_Solomon",
     "brand.title": "ソロモンのジレンマ",
-    "brand.subtitle": "真実の重さ",
-    "brand.fullTitle": "ソロモンのジレンマ : 真実の重さ",
+    "brand.subtitle": "真実の裁き",
+    "brand.fullTitle": "ソロモンのジレンマ：真実の裁き",
     "splash.subtitle": "法廷シミュレーションゲーム",
     "language.selectorLabel": "言語",
     "language.selectorTitle": "表示言語を選択",
@@ -66,11 +50,11 @@ export const commonMessages = {
     "session.preparing.description": "事件データと法廷環境を読み込んでいます。",
   },
   "zh-CN": {
-    "app.title": "包青天的抉择 : 真相之重",
+    "app.title": "所罗门的困境：真相之重",
     "brand.internalProjectName": "Project_Solomon",
-    "brand.title": "包青天的抉择",
+    "brand.title": "所罗门的困境",
     "brand.subtitle": "真相之重",
-    "brand.fullTitle": "包青天的抉择 : 真相之重",
+    "brand.fullTitle": "所罗门的困境：真相之重",
     "splash.subtitle": "法庭模拟游戏",
     "language.selectorLabel": "语言",
     "language.selectorTitle": "选择显示语言",
@@ -81,4 +65,6 @@ export const commonMessages = {
     "session.preparing.title": "正在准备会话",
     "session.preparing.description": "正在加载案件数据和审判环境。",
   },
-} as const satisfies Record<LocaleCode, Record<CommonMessageKey, string>>
+} as const satisfies Record<LocaleCode, Record<string, string>>
+
+export type CommonMessageKey = keyof typeof commonMessages.ko

@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "contact_timeline",
-      "label": "九天联络的时间表",
-      "description": "电话六次、短信十一条所横跨的期间、时段与回应状态——分开来确认。"
+      "label": "无回应与反复的理由",
+      "description": "区分联系次数增加是出于执着，还是因为没有回应而反复请求确认。"
     },
     {
       "disputeId": "d-1",
@@ -31,8 +31,8 @@
     {
       "disputeId": "d-2",
       "angleId": "message_sequence",
-      "label": "消息的先后关系",
-      "description": "未婚夫与崔秀敏之间消息的起点、夜间时段、回应顺序——确认清楚。"
+      "label": "私下请求的压力",
+      "description": "确认未婚夫是否背着多恩私下请求崔秀敏，或把她带入私人交流。"
     },
     {
       "disputeId": "d-2",
@@ -55,8 +55,8 @@
     {
       "disputeId": "d-3",
       "angleId": "father_request_signal",
-      "label": "父亲的请求信号",
-      "description": "婚事的关心问候与请求预告这一类字句具备何种性质——目前先不下定论，逐步确认。"
+      "label": "回避父亲问题的地方",
+      "description": "确认宋多恩如何只把父亲的请求看作家事，并迟迟才看到让人在意的部分。"
     },
     {
       "disputeId": "d-3",
@@ -79,8 +79,8 @@
     {
       "disputeId": "d-4",
       "angleId": "severance_chat_gap",
-      "label": "断交前夕聊天里的空白",
-      "description": "在过往聊天里，‘我自己来处理’这一句与最终断交之间的空白——确认清楚。"
+      "label": "借条的分量",
+      "description": "确认那是好意还是借款，以及借条和部分偿还如何支撑崔秀敏的沉默与断交理由。"
     },
     {
       "disputeId": "d-4",
@@ -103,8 +103,8 @@
     {
       "disputeId": "d-5",
       "angleId": "first_groupchat_post",
-      "label": "群聊里最先一句",
-      "description": "宋多恩以怎样的话先把事情发到群里——核实之前是否就先公开了？确认清楚。"
+      "label": "未经确认的公开",
+      "description": "确认宋多恩是否在向崔秀敏求证前就发到群聊，以及公开后是否有机会更正。"
     },
     {
       "disputeId": "d-5",

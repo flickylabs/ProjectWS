@@ -4,648 +4,654 @@
   "overlayKind": "generatedCaseSurface",
   "overlayScope": "full",
   "meta": {
-    "anchorTruth": "After Ji-yeon Park became convinced that her husband had started another life, she manipulated the power of attorney to cancel the joint savings account of 20 million won, and transferred the entire amount to an investment room, but lost it through fraud. Lee Jun-ho was not having an affair, but was taking care of his brother's nephew (second year of middle school), who was undergoing personal rehabilitation, and gave 30 million won in cash from his personal slush fund to his brother.",
-    "emotionalBait": "My husband stops by the same officetel every day after work. A receipt for feminine products found in the car. Early morning calls. The wife is convinced of her husband's other life.",
-    "resolutionDilemma": "Who should bear greater responsibility: the husband, who transferred 30 million won of his personal slush fund in cash to protect his brother and nephew, who were in rehabilitation, or the wife, who, convinced that she had been betrayed, manipulated the power of attorney to cancel the joint savings account of 20 million won and then lost the entire amount in investment fraud. The husband first hid it, the wife first monitored the account, and the wife committed the crime.",
-    "title": "A husband who stays at the officetel every day without his wife knowing."
+    "anchorTruth": "After becoming convinced that her husband had set up a secret second household, Park Ji-yeon manipulated a power of attorney, cancelled the ₩20M joint savings account, and lost the full amount to an investment chat scam. Lee Jun-ho was not having an affair; he was caring for the middle-school-aged child of his older brother, who was in personal rehabilitation, and he handed ₩30M in cash from his personal hidden fund to that brother.",
+    "emotionalBait": "A husband who stops by the same Officetel every day after work. Receipts for women’s items found in his car. Calls before dawn. His wife becomes convinced he has a secret second household.",
+    "resolutionDilemma": "Who should bear the heavier responsibility: the husband who, while trying to protect his older brother in personal rehabilitation and that brother’s child, handed over ₩30M in cash from his personal hidden fund; or the wife who, convinced she had been betrayed, manipulated a power of attorney, cancelled the ₩20M joint savings account, and lost the full amount to an investment chat scam? The husband hid things first, the wife began monitoring accounts first, and the wife committed the criminal act.",
+    "title": "The Husband Who Secretly Stayed at an Officetel Every Day"
   },
   "duo": {
     "partyA": {
-      "name": "Jiyeon Park",
-      "occupation": "academy desk staff",
-      "speechStyle": "He first speaks from the position of the person who was betrayed, but when asked about his motives, he uses shame and anxiety as an excuse to broaden the scope of his explanation.",
-      "fear": "The biggest fear is that power of attorney manipulation will be confirmed as a crime.",
-      "dailyRoutine": "After returning home after the academy closed, I repeatedly checked my credit card details and call records, growing anxious that my husband might abandon the family first.",
+      "name": "Park Ji-yeon",
+      "occupation": "Academy front-desk staff",
+      "speechStyle": "She speaks first from the position of someone betrayed, but when motive questions come in, she expands her explanation by citing shame and anxiety.",
+      "fear": "Her greatest fear is that the power-of-attorney manipulation will be confirmed as a crime.",
+      "dailyRoutine": "After closing up at the academy, she returned home and repeatedly checked card statements and call logs, feeding her anxiety that her husband might abandon the family first.",
       "sensitivePoints": [
-        "Are officetel visits and early morning phone calls a sign of extramarital affairs?",
-        "Is it a crime to cancel a joint savings account of 20 million won by manipulating a power of attorney?",
-        "The order of concealment and preemptive action"
+        "Are the Officetel visits and early-morning calls signs of a secret household?",
+        "Was manipulating a power of attorney to cancel the ₩20M joint savings account a crime?",
+        "Order of Concealment and First Moves"
       ],
       "verbalTells": [
         {
-          "pattern": "He first takes the position as if he had already been betrayed."
+          "pattern": "She positions herself first as if she has already been betrayed."
         },
         {
-          "pattern": "The angle of the calculated choice is blurred by saying that there was no other choice at the time."
+          "pattern": "She blurs the calculated nature of her choice by saying she had no other option at the time."
         },
         {
-          "pattern": "Start with small acknowledgments and say the most shameful facts last."
+          "pattern": "She starts with small admissions and saves the most shameful fact for last."
         }
       ],
       "callTerms": {
-        "toPartner": "baby",
+        "toPartner": "honey",
         "toJudge": "my husband",
-        "angry": "Junho Lee!"
+        "angry": "Lee Jun-ho!"
       }
     },
     "partyB": {
-      "name": "Junho Lee",
-      "occupation": "Home appliance store employee",
-      "speechStyle": "Rather than completely denying the facts, they put off important reasons, buy time with ambiguous words, and then reveal them all at once when pressure builds.",
-      "fear": "Fear that if I bring up my brother's story, there will be conflict between my in-laws and even divorce.",
-      "dailyRoutine": "After the store closed, I stopped by my brother's officetel to get dinner and daily necessities for my nephew, and in the morning, after checking on my brother's situation, I returned home.",
+      "name": "Lee Jun-ho",
+      "occupation": "Home-appliance store employee",
+      "speechStyle": "Rather than deny facts completely, he postpones the important reasons, buys time with vague language, and reveals everything at once when pressure builds.",
+      "fear": "Fear that bringing up his brother would turn into conflict with the in-laws and even divorce.",
+      "dailyRoutine": "After closing the store, he stopped by his brother's Officetel to take care of his niece's dinner and daily necessities, then returned home after checking on his brother's situation in the early morning.",
       "sensitivePoints": [
-        "Are officetel visits and early morning phone calls a sign of extramarital affairs?",
-        "Was it arbitrary to give 30 million won in cash from a personal slush fund to your brother without the consent of your spouse?",
-        "The order of concealment and preemptive action"
+        "Are the Officetel visits and early-morning calls signs of a secret household?",
+        "Was handing ₩30M in personal hidden funds to his brother in cash a unilateral act without spousal consent?",
+        "Order of Concealment and First Moves"
       ],
       "verbalTells": [
         {
-          "pattern": "Instead of answering questions right away, answer them a beat later and avoid key words."
+          "pattern": "He takes questions a beat late, avoiding the key words."
         },
         {
-          "pattern": "Acknowledge the big facts, but cut out the most painful reasons until the end."
+          "pattern": "He admits the major facts, but withholds the most painful reason until the end."
         },
         {
-          "pattern": "We will first try to lower the weight of the violation of procedures by saying that it was done in good faith."
+          "pattern": "He tries to reduce the weight of the procedural violation first by saying it was done in good faith."
         }
       ],
       "callTerms": {
-        "toPartner": "baby",
+        "toPartner": "honey",
         "toJudge": "my wife",
-        "angry": "Jiyeon Park!"
+        "angry": "Park Ji-yeon!"
       }
     },
     "relationshipLedger": [
       {
         "id": "ledger-1",
-        "description": "Receipts (hair ties/tint), officetel GPS, and early morning calls overlapped, solidifying d-1's suspicion of infidelity.",
-        "distortionDirection": "A remembers the affair, while B only remembers the lifestyle pattern without mentioning the reason for hiding it."
+        "description": "Receipts (hair tie/lip tint), Officetel GPS, and early-morning calls overlap, fixing d-1 in an affair-suspicion frame.",
+        "distortionDirection": "A remembers it through the lens of an affair, while B separates only the routine pattern without stating the reason for hiding it."
       },
       {
         "id": "ledger-2",
-        "description": "B chose not to talk about her in-laws' situation because she remembered that there would be a lot of conflict when the topic of her in-laws came up."
+        "description": "Because talks about the in-laws had led to major clashes before, B chose not to speak about his brother’s family situation."
       },
       {
         "id": "ledger-3",
-        "description": "B gave 30 million won in cash from his personal slush fund to his brother, and A manipulated the power of attorney to cancel the joint savings account of 20 million won and put the entire amount into an investment room and lost it."
+        "description": "B handed ₩30M in cash from his personal hidden fund to his older brother. A manipulated a power of attorney, cancelled the ₩20M joint savings account, and lost the entire amount in an investment chat."
       },
       {
         "id": "ledger-4",
-        "description": "The order of starting the hiding and actually executing the remittance is different.",
-        "distortionDirection": "Each person emphasizes first and foremost only those that are advantageous to him/her."
+        "description": "The start of the concealment and the actual execution of the transfer happen in a different order.",
+        "distortionDirection": "Each side first emphasizes only the sequence that favors them."
       }
     ],
     "socialGraph": [
       {
         "id": "w-1",
-        "name": "Officetel Guard",
-        "knowledgeScope": "I remember the car visiting 2-3 times a week. I don't know the exact number, but I know that there are no houses on that floor where women live alone.",
-        "surfaceKnowledge": "He is a third-party witness who knows the frequency of access to the officetel and the status of residence on the relevant floor.",
+        "name": "Officetel Security Guard",
+        "knowledgeScope": "Remembers a car visiting two to three times a week. Does not know the exact unit, but understands that no woman lives alone on that floor.",
+        "surfaceKnowledge": "A third-party witness who knows the Officetel entry frequency and the residency status on that floor.",
         "witnessProfile": {
           "occupation": "security guard",
-          "relationToA": "We don't know each other.",
-          "relationToB": "The only thing I see is a car.",
-          "speechStyle": "Speak concisely, focusing on facts and avoid personal opinions.",
+          "relationToA": "No prior relationship.",
+          "relationToB": "Knows them only by the car.",
+          "speechStyle": "Speaks briefly and factually, avoiding personal opinions.",
           "addressJudge": "Your Honor",
           "addressA": "This person",
-          "addressB": "The car owner",
+          "addressB": "The owner of that car",
           "hiddenAgenda": "None."
         }
       },
       {
         "id": "w-2",
-        "name": "bank clerk",
-        "knowledgeScope": "There was a case where the savings account was canceled by power of attorney. There was something odd about the procedure, but it was dealt with.",
-        "surfaceKnowledge": "He is a third-party witness who provides hints on the manipulation of A's power of attorney.",
+        "name": "Bank Clerk",
+        "knowledgeScope": "There was a joint savings cancellation made through a power of attorney. Something seemed procedurally odd, but it was processed.",
+        "surfaceKnowledge": "A third-party witness who provides a clue to A’s manipulation of the power of attorney.",
         "witnessProfile": {
-          "occupation": "bank clerk",
-          "relationToA": "I only know them as customers.",
-          "relationToB": "We don't know each other.",
-          "speechStyle": "Speak professionally and accurately and handle personal information carefully.",
+          "occupation": "Bank Clerk",
+          "relationToA": "Knows them only as a customer.",
+          "relationToB": "No prior relationship.",
+          "speechStyle": "Speaks with professional precision and handles personal information carefully.",
           "addressJudge": "Your Honor",
-          "addressA": "customer",
-          "addressB": "Title holder",
+          "addressA": "Customer",
+          "addressB": "The account holder",
           "hiddenAgenda": "I am careful that my responsibility for insufficient procedural verification may be revealed."
         }
       },
       {
         "id": "w-3",
-        "name": "Mira Park",
-        "knowledgeScope": "Jiyeon said, ‘If my husband cheats, I will protect my money first.’ I sent you a link to the investment room.",
-        "surfaceKnowledge": "He is an acquaintance witness who knows the details of A's investment fraud and the fact that the link was passed on.",
+        "name": "Park Mi-ra",
+        "knowledgeScope": "Ji-yeon said, 'If my husband is cheating, I’m protecting my money first.' I sent her the investment chat link.",
+        "surfaceKnowledge": "An acquaintance witness who knows how A became involved in the investment scam and that the link was sent.",
         "witnessProfile": {
-          "occupation": "Cafe operation",
-          "relationToA": "He is an acquaintance I have seen in the neighborhood for a long time.",
-          "relationToB": "It is a cider with only a face.",
-          "speechStyle": "I don't exaggerate, but I clearly remember who said what first.",
+          "occupation": "café owner",
+          "relationToA": "An acquaintance from the neighborhood for many years.",
+          "relationToB": "Only knows them by face.",
+          "speechStyle": "Does not exaggerate, but clearly remembers who said what first.",
           "addressJudge": "Your Honor",
-          "addressA": "Mr. Jiyeon",
-          "addressB": "Mr. Junho",
+          "addressA": "Ji-yeon",
+          "addressB": "Jun-ho",
           "hiddenAgenda": "Be careful about what you express for fear of being held responsible for sending the link."
         }
       }
     ]
   },
   "context": {
-    "description": "My husband stops by the same officetel every day after work. A receipt for feminine products found in the car. Early morning calls. The wife is convinced of her husband's other life.",
-    "triggerAmplifier": "In the beginning, it looks like an affair because the receipts (hair band/tint), officetel GPS, and early morning phone calls overlap in only one direction. However, the more clues are uncovered, the more the picture shakes, and as the unsaid circumstances of both sides and the movement of money are revealed one after another, the focus of the case turns beyond suspicion of infidelity.",
-    "caseName": "Early morning call records"
+    "description": "A husband who stops at the same Officetel every day after work. Receipts for women's items found in his car. Calls in the early morning. His wife becomes convinced he has a secret household.",
+    "triggerAmplifier": "At first, the receipts (hair ties/lip tint), Officetel GPS, and early-morning calls all point in one direction: an affair. But as more clues surface, that picture falters. Unspoken circumstances on both sides and the movement of money come to light, shifting the case beyond suspicion of infidelity.",
+    "caseName": "Early-Morning Call Logs"
   },
   "disputes": [
     {
       "id": "d-1",
-      "name": "Officetel visit and early morning phone call",
-      "truthDescription": "The visit to the officetel was to take care of my nephew (second year of middle school) at my brother's officetel. The early morning call is an emergency call with my brother.",
-      "mediationLink": "Misunderstandings about infidelity and family care",
-      "judgmentStatement": "The reality of the officetel visit was not an affair, but family care.",
+      "name": "Officetel Visit and Early-Morning Call",
+      "truthDescription": "The Officetel visits were to care for his niece, a second-year middle-school student, at his older brother's Officetel. The early-morning calls were urgent contact with his brother.",
+      "mediationLink": "Misunderstood Affair and Family Care",
+      "judgmentStatement": "The Officetel visits were not an affair, but family care.",
       "verdictOptions": {
-        "wrong": "Lee Jun-ho's visit to the officetel was due to living in a different house.",
-        "partial": "Visiting an officetel is not the same as living with someone else, but it is highly likely to be an affair.",
-        "truth": "The reality of the officetel visit was not an affair, but family care.",
-        "defer": "Currently, the reality is unknown. Reserve judgment."
+        "wrong": "Lee Jun-ho visited the Officetel because he had a secret household.",
+        "partial": "The Officetel visits do not prove a secret household, but they are likely an affair.",
+        "truth": "The Officetel visits were not an affair, but family care.",
+        "defer": "The substance is unclear for now. Judgment is deferred."
       }
     },
     {
       "id": "d-2",
-      "name": "Withdrawal of lump sum from account in husband's name",
-      "truthDescription": "Lee Jun-ho withdrew 30 million won in slush funds from a separate account in his name, which he had saved for nearly 10 years without his wife's knowledge, in the order of 5 million won, 8 million won, 7 million won, and 10 million won over the past four months. The explanation is that the money was delivered in cash as it was difficult for my brother to deposit money into his bank account as he was in the process of personal rehabilitation, and it was personal funds that had nothing to do with joint savings.",
-      "mediationLink": "How the Husband's Cash Flow Is Used",
-      "judgmentStatement": "The husband is more responsible for delivering 30 million won in personal slush funds.",
+      "name": "Large Withdrawal from the Husband's Account",
+      "truthDescription": "Without his wife knowing, Lee Jun-ho withdrew ₩30M in hidden funds from a separate account in his own name, saved over nearly ten years, in cash over the last four months: ₩5M, ₩8M, ₩7M, then ₩10M. His explanation is that his older brother was in personal debt rehabilitation, making account deposits difficult, so he handed over cash. The money was personal funds unrelated to the joint savings account.",
+      "mediationLink": "Where the Husband-Side Cash Went",
+      "judgmentStatement": "The husband bears greater responsibility for handing over ₩30M in personal hidden funds in cash.",
       "v3UnlockPlan": {
-        "runtimeRule": "When reaching d-1 S3 or higher (mention lump sum withdrawal)",
-        "authoredRule": "When the truth about the officetel visit is revealed in the d-1 interrogation, a new issue arises due to the discovery of a large sum of money being withdrawn."
+        "runtimeRule": "d-1 reaches S3 or higher (large withdrawal mentioned)",
+        "authoredRule": "d-1 questioning overturns the truth of the Officetel visits, and discovery of the large withdrawal raises a new issue."
       },
       "verdictOptions": {
-        "wrong": "The personal slush fund of 30 million won is money that Lee Jun-ho spent on personal entertainment.",
-        "partial": "It is true that slush funds were withdrawn, but their exact use is unclear.",
-        "truth": "The personal slush fund of 30 million won was money given in cash to my brother who was undergoing personal rehabilitation.",
-        "defer": "The intended use cannot be determined. Reserve judgment."
+        "wrong": "The ₩30M in personal hidden funds was money Lee Jun-ho spent on personal entertainment.",
+        "partial": "The hidden-fund withdrawal is real, but exactly where the money went is uncertain.",
+        "truth": "The ₩30M in personal hidden funds was cash handed to his older brother during personal debt rehabilitation.",
+        "defer": "Where the money went cannot be determined. Judgment is deferred."
       }
     },
     {
       "id": "h-d3",
-      "name": "How 20 million won in joint savings was canceled",
-      "truthDescription": "Traces of the joint savings account being canceled before maturity were confirmed. During the termination process, issues remain regarding whether the spouse consents and the authenticity of the power of attorney, and the actual destination of the 20 million won termination payment still needs to be confirmed. Now, the circumstances of joint savings cancellation and responsibility for the procedure are traced as separate issues.",
-      "mediationLink": "Disposal of joint assets and losses",
-      "judgmentStatement": "The wife is more responsible for manipulating and canceling the 20 million won joint savings power of attorney.",
+      "name": "How the ₩20M Joint Savings Was Canceled",
+      "truthDescription": "Traces show the joint savings account was canceled before maturity. Questions remain over spousal consent and the authenticity of the power of attorney, and the actual destination of the ₩20M cancellation proceeds must still be confirmed. The circumstances and procedural responsibility for canceling the joint savings account are now tracked as a separate issue.",
+      "mediationLink": "Circumstances and Losses from Disposing of Joint Assets",
+      "judgmentStatement": "The wife bears greater responsibility for manipulating the power of attorney to cancel the ₩20M joint savings account.",
       "v3UnlockPlan": {
-        "runtimeRule": "After d-2 is discovered, joint savings/power of attorney clues are investigated.",
-        "authoredRule": "Generated if clues to joint savings and power of attorney manipulation are revealed during interrogation of either side after discovery of d-2"
+        "runtimeRule": "d-2 discovered; unlocked when the joint savings / power-of-attorney clues are investigated.",
+        "authoredRule": "d-2 discovered; generated if any questioning reveals clues about the joint savings account and power-of-attorney manipulation."
       },
       "verdictOptions": {
-        "wrong": "Lee Jun-ho secretly canceled the joint savings of 20 million won and took it as a slush fund.",
-        "partial": "It is true that the joint savings account was canceled, but it is unclear who canceled it.",
-        "truth": "Jiyeon Park manipulated and canceled the power of attorney, and lost all of the money due to investment fraud.",
-        "defer": "The circumstances of the termination are unclear. Reserve judgment."
+        "wrong": "Lee Jun-ho secretly canceled the ₩20M joint savings account and diverted it into hidden funds.",
+        "partial": "The joint savings account was canceled, but it is unclear who canceled it.",
+        "truth": "Park Ji-yeon manipulated the power of attorney to cancel it, then lost all the money in an investment scam.",
+        "defer": "The cancellation circumstances are unclear. Judgment is deferred."
+      },
+      "unlockCondition": {
+        "note": "d-2 blame-shifting stage passed; unlocked if either side touches a joint savings clue."
       }
     },
     {
       "id": "h-d4",
-      "name": "The order of concealment and preemptive action",
-      "truthDescription": "B is the first to hide (concealing the 30 million+ personal slush fund situation), A is the first to monitor the accounts (early newlyweds), money is executed at the same time (B 4 months ago, 30 million cash withdrawal, A 6 weeks ago, joint savings 20 million won manipulation and termination of power of attorney), and criminal activity is A (manipulation of power of attorney).",
-      "mediationLink": "Concealment and Execution",
-      "judgmentStatement": "The precedence and absence of concealment and the presence or absence of criminal activity are two different dimensions.",
+      "name": "Order of Concealment and First Moves",
+      "truthDescription": "B concealed first (₩30M in personal hidden funds + his brother's situation), while A began account monitoring first (early in the marriage). The money actions occurred around the same period: B withdrew ₩30M in cash four months ago, and A manipulated the power of attorney to cancel the ₩20M joint savings six weeks ago. The criminal act was A's power-of-attorney manipulation.",
+      "mediationLink": "Order of Concealment and Execution",
+      "judgmentStatement": "The order of concealment and the existence of a criminal act are separate questions.",
       "v3UnlockPlan": {
-        "runtimeRule": "Automatically unlocked when both A/B reaches d-2 S3 + h-d3 S3",
-        "authoredRule": "Both d-2 and h-d3 are automatically expressed after being released."
+        "runtimeRule": "Automatically unlocked when either A or B reaches both d-2 S3 and h-d3 S3.",
+        "authoredRule": "d-2 and h-d3 are both revealed, then automatically appears."
       },
       "verdictOptions": {
-        "wrong": "Since Lee Jun-ho created the secret first, Park Ji-yeon's actions were a self-rescue measure.",
-        "partial": "Both sides have something to hide, but it is difficult to determine the sequential relationship.",
-        "truth": "Lee Jun-ho was the first to hide it, and Park Ji-yeon was the first to monitor the account. The criminal act (manipulating the power of attorney) is on Park Ji-yeon’s side.",
-        "defer": "There is insufficient evidence to determine who came first. I reserve it."
+        "wrong": "Because Lee Jun-ho created the secret first, Park Ji-yeon's action was self-help.",
+        "partial": "Both sides hid things, but the order is difficult to determine.",
+        "truth": "Lee Jun-ho concealed first; Park Ji-yeon monitored the account first. The criminal act (power-of-attorney manipulation) is on Park Ji-yeon's side.",
+        "defer": "There is not enough basis to decide who acted first. Deferred."
+      },
+      "unlockCondition": {
+        "note": "d-2 + h-d3 both reach the blame-shifting stage, then automatic."
       }
     }
   ],
   "evidence": [
     {
       "id": "e-1",
-      "name": "Receipt bundle (5 sheets)",
-      "surfaceName": "5 receipt packets",
-      "description": "This is a list of receipts found in my husband's car. My wife became suspicious because there were women's items on the receipt.",
-      "surfaceDescription": "This is a bundle of receipts found in my husband's car.",
+      "name": "Receipt Bundle (5)",
+      "surfaceName": "5-Receipt Bundle",
+      "description": "A list of receipts found in the husband's car. Items for women on the receipts sparked the wife's suspicion.",
+      "surfaceDescription": "A bundle of receipts found in the husband's car.",
       "investigationResults": {
-        "request_original": "Women's items such as tint and hair rollers stand out.",
-        "check_metadata": "Hair ties, hand mirrors, etc. are noticeable. School supplies such as pencils and notebooks are also purchased.",
-        "restore_context": "It is noteworthy that reference books for middle school students were purchased."
+        "request_original": "Women's items such as lip tint and hair rollers stand out.",
+        "check_metadata": "Hair ties, a hand mirror, and similar items stand out. School supplies such as a mechanical pencil and notebook were also bought.",
+        "restore_context": "The purchase of a workbook for middle-school students stands out."
       },
       "investigationStages": [
         {
           "question": {
-            "text": "These receipts, who bought what?"
+            "text": "Who bought what on these receipts?"
           },
-          "label": "Receipt confirmation"
+          "label": "Receipt Check"
         },
         {
           "question": {
-            "text": "Who do these items refer to?"
+            "text": "Who do these items point to?"
           },
-          "label": "Item comparison",
-          "unlockHint": "By examining your receipt one more time, you can compare it to other store items as well."
+          "label": "Item Check",
+          "unlockHint": "Investigate the receipts again to compare items from the other stores as well."
         },
         {
           "question": {
-            "text": "Who is this reference book for middle school students purchased for?"
+            "text": "Who was the middle-school workbook bought for?"
           },
-          "label": "Restore target",
-          "unlockHint": "Matching items can help you restore who this purchase was for."
+          "label": "Target Reconstruction",
+          "unlockHint": "Compare the items to reconstruct who this purchase was for."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "Please explain why these receipts led to the conviction of other things.",
-          "implication": "Hair ties/tint are the starting point for suspicion of infidelity."
+          "questionAngle": "Please explain why these receipts led you to believe there was a secret household.",
+          "implication": "The hair tie and lip tint are the starting point of the affair suspicion."
         },
         "b": {
-          "questionAngle": "Please explain for whom the items on this receipt were purchased.",
-          "implication": "The reference book becomes a decisive clue to the nature of the visit."
+          "questionAngle": "Please explain who the items on this receipt were purchased for.",
+          "implication": "The workbook becomes the decisive clue distinguishing the nature of the visit."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only 5 receipt bundles are visible."
+          "summary": "Only the presence of five bundled receipts is visible."
         },
         {
           "id": "excerpt",
-          "summary": "Convenience store, Olive Young receipt: Only hair ties, tint, and hair roll items are visible."
+          "summary": "Convenience store and Olive Young receipts: only hair tie, lip tint, and hair roller items visible."
         },
         {
           "id": "original",
-          "summary": "Additional confirmation of bookstore, middle school reference books, flower shop, and gas station receipts"
+          "summary": "Additional confirmation of bookstore middle-school workbook, flower shop, and gas station receipts."
         },
         {
           "id": "context",
-          "summary": "The crucial detail that the reference book is for second year middle school students."
+          "summary": "The decisive detail that the workbook is for second-year middle school."
         },
         {
           "id": "established",
-          "summary": "Confirmed purchase was made to care for nephew"
+          "summary": "Confirmed as a purchase for caring for the niece."
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "A submits the capture"
+          "summary": "A submitted a screenshot."
         },
         {
           "id": "verifying",
           "label": "Verifying",
-          "summary": "Check full history with original submission command"
+          "summary": "Full details checked through an order to submit the original."
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "The text time matches the original card app"
+          "label": "Authenticated",
+          "summary": "Matches the original card-app data and text message time."
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "The argument that concluding an affair based on items alone is a misreading"
+          "label": "Challenged",
+          "summary": "Objection that concluding an affair from the items alone is a misread."
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "Data is authenticated, but interpretation of affair can be misread"
+          "label": "Manipulation/Misread Finding",
+          "summary": "The data is authenticated, but interpreting it as an affair may be a misread."
         }
       ],
       "meta": {
-        "name": "5 receipt packets",
+        "name": "5-Receipt Bundle",
         "trustLabel": "Normal",
-        "sourceLabel": "institution",
-        "legalLabel": "legal",
-        "stageLabel": "initial release"
+        "sourceLabel": "Agency",
+        "legalLabel": "Legal",
+        "stageLabel": "Initial Reveal"
       },
       "viewerData": {
         "meta": {
-          "name": "5 receipt packets",
+          "name": "5-Receipt Bundle",
           "trustLabel": "Normal",
-          "sourceLabel": "institution",
-          "legalLabel": "legal",
-          "stageLabel": "Public (default)"
+          "sourceLabel": "Agency",
+          "legalLabel": "Legal",
+          "stageLabel": "Full Reveal (Default)"
         },
         "receipt": [
           {
             "storeName": "CU Gwanak Bongcheon Branch",
-            "storeAddr": "234 Bongcheon-ro, Gwanak-gu, Seoul",
+            "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 234",
             "date": "2026.02.18 (Tue) 19:23",
             "items": [
               {
                 "name": "Binggrae Banana Flavored Milk"
               },
               {
-                "name": "Samgak Gimbap Bulgogi"
+                "name": "Triangle Gimbap, Bulgogi"
               },
               {
-                "name": "Hot Six 250ml"
+                "name": "Hot6 250 ml"
               }
             ],
-            "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+            "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
           },
           {
             "storeName": "Olive Young Bongcheon Station Branch",
-            "storeAddr": "2F, 212 Bongcheon-ro, Gwanak-gu, Seoul",
+            "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 212, 2F",
             "date": "2026.02.15 (Sat) 14:07",
             "items": [
               {
                 "name": "Etude Fixing Tint #05"
               },
               {
-                "name": "Magic Hair Roll 32mm Set"
+                "name": "Magic Hair Roller 32 mm Set"
               },
               {
                 "name": "Innisfree Green Tea Seed Serum"
               },
               {
-                "name": "So Natural Cotton Pads 80 sheets"
+                "name": "So Natural Cotton Pads, 80 ct"
               }
             ],
-            "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+            "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
           },
           {
-            "storeName": "GS25 Gwanak Jungang Branch",
-            "storeAddr": "142 Gwanak-ro, Gwanak-gu, Seoul",
+            "storeName": "GS25 Gwanak Central Branch",
+            "storeAddr": "Seoul, Gwanak-gu, Gwanak-ro 142",
             "date": "2026.02.08 (Sat) 21:45",
             "items": [
               {
-                "name": "Cup Ramen Jin Ramyun Spicy Flavor"
+                "name": "Cup Noodles, Jin Ramen Spicy"
               },
               {
-                "name": "Triangle Gimbap Tuna Mayo"
+                "name": "Triangle Gimbap, Tuna Mayo"
               },
               {
-                "name": "Coca Cola 500ml"
+                "name": "Coca-Cola 500 ml"
               },
               {
-                "name": "hot dog classic"
+                "name": "Classic Hot Dog"
               }
             ],
-            "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+            "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
           },
           {
             "storeName": "Daiso Bongcheon Branch",
-            "storeAddr": "1F, 201 Bongcheon-ro, Gwanak-gu, Seoul",
+            "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 201, 1F",
             "date": "2026.02.05 (Wed) 16:12",
             "items": [
               {
-                "name": "mini hand mirror"
+                "name": "Mini Hand Mirror"
               },
               {
-                "name": "hair tie set"
+                "name": "Hair Tie Set"
               },
               {
-                "name": "Drafting Sharp 0.5mm"
+                "name": "Drafting Mechanical Pencil 0.5 mm"
               },
               {
-                "name": "Spring Note B5"
+                "name": "B5 Spiral Notebook"
               }
             ],
-            "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+            "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
           },
           {
             "storeName": "Kyobo Bookstore Gangnam Branch",
-            "storeAddr": "465 Gangnam-daero, Seocho-gu, Seoul",
+            "storeAddr": "Seoul, Seocho-gu, Gangnam-daero 465",
             "date": "2026.02.12 (Wed) 18:30",
             "items": [
               {
-                "name": "Middle School Mathematics 1-1 Basic + Application"
+                "name": "Middle School Math 1-1 Basic + Applied"
               },
               {
-                "name": "Middle school Korean reading comprehension level 1"
+                "name": "Middle School Korean Reading Comprehension, Level 1"
               }
             ],
-            "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+            "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
           }
         ]
       },
       "viewerDataByStage": {
         "1": {
           "meta": {
-            "name": "5 receipt packets",
+            "name": "5-Receipt Bundle",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 1 — 2 convenience store/beauty items"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 1 — 2 Convenience Store / Beauty Receipts"
           },
           "receipt": [
             {
               "storeName": "CU Gwanak Bongcheon Branch",
-              "storeAddr": "234 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 234",
               "date": "2026.02.18 (Tue) 19:23",
               "items": [
                 {
                   "name": "Binggrae Banana Flavored Milk"
                 },
                 {
-                  "name": "Samgak Gimbap Bulgogi"
+                  "name": "Triangle Gimbap, Bulgogi"
                 },
                 {
-                  "name": "Hot Six 250ml"
+                  "name": "Hot6 250 ml"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
               "storeName": "Olive Young Bongcheon Station Branch",
-              "storeAddr": "2F, 212 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 212, 2F",
               "date": "2026.02.15 (Sat) 14:07",
               "items": [
                 {
                   "name": "Etude Fixing Tint #05"
                 },
                 {
-                  "name": "Magic Hair Roll 32mm Set"
+                  "name": "Magic Hair Roller 32 mm Set"
                 },
                 {
                   "name": "Innisfree Green Tea Seed Serum"
                 },
                 {
-                  "name": "So Natural Cotton Pads 80 sheets"
+                  "name": "So Natural Cotton Pads, 80 ct"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             }
           ]
         },
         "2": {
           "meta": {
-            "name": "5 receipt packets",
+            "name": "5-Receipt Bundle",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 2 — Add convenience stores and household goods (Chapter 4)"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 2 — Convenience Store / Daily Goods Added (4 Receipts)"
           },
           "receipt": [
             {
               "storeName": "CU Gwanak Bongcheon Branch",
-              "storeAddr": "234 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 234",
               "date": "2026.02.18 (Tue) 19:23",
               "items": [
                 {
                   "name": "Binggrae Banana Flavored Milk"
                 },
                 {
-                  "name": "Samgak Gimbap Bulgogi"
+                  "name": "Triangle Gimbap, Bulgogi"
                 },
                 {
-                  "name": "Hot Six 250ml"
+                  "name": "Hot6 250 ml"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
               "storeName": "Olive Young Bongcheon Station Branch",
-              "storeAddr": "2F, 212 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 212, 2F",
               "date": "2026.02.15 (Sat) 14:07",
               "items": [
                 {
                   "name": "Etude Fixing Tint #05"
                 },
                 {
-                  "name": "Magic Hair Roll 32mm Set"
+                  "name": "Magic Hair Roller 32 mm Set"
                 },
                 {
                   "name": "Innisfree Green Tea Seed Serum"
                 },
                 {
-                  "name": "So Natural Cotton Pads 80 sheets"
+                  "name": "So Natural Cotton Pads, 80 ct"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
-              "storeName": "GS25 Gwanak Jungang Branch",
-              "storeAddr": "142 Gwanak-ro, Gwanak-gu, Seoul",
+              "storeName": "GS25 Gwanak Central Branch",
+              "storeAddr": "Seoul, Gwanak-gu, Gwanak-ro 142",
               "date": "2026.02.08 (Sat) 21:45",
               "items": [
                 {
-                  "name": "Cup Ramen Jin Ramyun Spicy Flavor"
+                  "name": "Cup Noodles, Jin Ramen Spicy"
                 },
                 {
-                  "name": "Triangle Gimbap Tuna Mayo"
+                  "name": "Triangle Gimbap, Tuna Mayo"
                 },
                 {
-                  "name": "Coca Cola 500ml"
+                  "name": "Coca-Cola 500 ml"
                 },
                 {
-                  "name": "hot dog classic"
+                  "name": "Classic Hot Dog"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
               "storeName": "Daiso Bongcheon Branch",
-              "storeAddr": "1F, 201 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 201, 1F",
               "date": "2026.02.05 (Wed) 16:12",
               "items": [
                 {
-                  "name": "mini hand mirror"
+                  "name": "Mini Hand Mirror"
                 },
                 {
-                  "name": "hair tie set"
+                  "name": "Hair Tie Set"
                 },
                 {
-                  "name": "Drafting Sharp 0.5mm"
+                  "name": "Drafting Mechanical Pencil 0.5 mm"
                 },
                 {
-                  "name": "Spring Note B5"
+                  "name": "B5 Spiral Notebook"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             }
           ]
         },
         "3": {
           "meta": {
-            "name": "5 receipt packets",
+            "name": "5-Receipt Bundle",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Stage 3 — All 5 chapters (including bookstore)"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 3 — All 5 Receipts (Including Bookstore)"
           },
           "receipt": [
             {
               "storeName": "CU Gwanak Bongcheon Branch",
-              "storeAddr": "234 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 234",
               "date": "2026.02.18 (Tue) 19:23",
               "items": [
                 {
                   "name": "Binggrae Banana Flavored Milk"
                 },
                 {
-                  "name": "Samgak Gimbap Bulgogi"
+                  "name": "Triangle Gimbap, Bulgogi"
                 },
                 {
-                  "name": "Hot Six 250ml"
+                  "name": "Hot6 250 ml"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
               "storeName": "Olive Young Bongcheon Station Branch",
-              "storeAddr": "2F, 212 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 212, 2F",
               "date": "2026.02.15 (Sat) 14:07",
               "items": [
                 {
                   "name": "Etude Fixing Tint #05"
                 },
                 {
-                  "name": "Magic Hair Roll 32mm Set"
+                  "name": "Magic Hair Roller 32 mm Set"
                 },
                 {
                   "name": "Innisfree Green Tea Seed Serum"
                 },
                 {
-                  "name": "So Natural Cotton Pads 80 sheets"
+                  "name": "So Natural Cotton Pads, 80 ct"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
-              "storeName": "GS25 Gwanak Jungang Branch",
-              "storeAddr": "142 Gwanak-ro, Gwanak-gu, Seoul",
+              "storeName": "GS25 Gwanak Central Branch",
+              "storeAddr": "Seoul, Gwanak-gu, Gwanak-ro 142",
               "date": "2026.02.08 (Sat) 21:45",
               "items": [
                 {
-                  "name": "Cup Ramen Jin Ramyun Spicy Flavor"
+                  "name": "Cup Noodles, Jin Ramen Spicy"
                 },
                 {
-                  "name": "Triangle Gimbap Tuna Mayo"
+                  "name": "Triangle Gimbap, Tuna Mayo"
                 },
                 {
-                  "name": "Coca Cola 500ml"
+                  "name": "Coca-Cola 500 ml"
                 },
                 {
-                  "name": "hot dog classic"
+                  "name": "Classic Hot Dog"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
               "storeName": "Daiso Bongcheon Branch",
-              "storeAddr": "1F, 201 Bongcheon-ro, Gwanak-gu, Seoul",
+              "storeAddr": "Seoul, Gwanak-gu, Bongcheon-ro 201, 1F",
               "date": "2026.02.05 (Wed) 16:12",
               "items": [
                 {
-                  "name": "mini hand mirror"
+                  "name": "Mini Hand Mirror"
                 },
                 {
-                  "name": "hair tie set"
+                  "name": "Hair Tie Set"
                 },
                 {
-                  "name": "Drafting Sharp 0.5mm"
+                  "name": "Drafting Mechanical Pencil 0.5 mm"
                 },
                 {
-                  "name": "Spring Note B5"
+                  "name": "B5 Spiral Notebook"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             },
             {
               "storeName": "Kyobo Bookstore Gangnam Branch",
-              "storeAddr": "465 Gangnam-daero, Seocho-gu, Seoul",
+              "storeAddr": "Seoul, Seocho-gu, Gangnam-daero 465",
               "date": "2026.02.12 (Wed) 18:30",
               "items": [
                 {
-                  "name": "Middle School Mathematics 1-1 Basic + Application"
+                  "name": "Middle School Math 1-1 Basic + Applied"
                 },
                 {
-                  "name": "Middle school Korean reading comprehension level 1"
+                  "name": "Middle School Korean Reading Comprehension, Level 1"
                 }
               ],
-              "paymentMethod": "Shinhan Card (lump sum payment) ****-3892"
+              "paymentMethod": "Shinhan Card (one-time payment) ****-3892"
             }
           ]
         }
@@ -653,117 +659,117 @@
     },
     {
       "id": "e-2",
-      "name": "Black Box GPS / Navigation Favorites",
-      "surfaceName": "Black box GPS recording",
-      "description": "Stop at the same coordinates every day. Check the officetel address. A checks in car B.",
-      "surfaceDescription": "There is a record of repeated stops at the same coordinates in the vehicle's GPS.",
+      "name": "Dashcam GPS / Navigation Favorites",
+      "surfaceName": "Dashcam GPS Record",
+      "description": "Stops at the same coordinates every day. Officetel address confirmed. A found it in B's car.",
+      "surfaceDescription": "The vehicle GPS shows repeated stops at the same coordinates.",
       "investigationResults": {
-        "request_original": "There are traces of moving to the same coordinates at similar times every day.",
-        "check_metadata": "The coordinates were compared to the address. A pattern of repeated visits to the same officetel at similar times is revealed.",
-        "restore_context": "One thing is off. The stay time is too short each time to be considered an affair."
+        "request_original": "Traces show movement to the same coordinates at similar times each day.",
+        "check_metadata": "The coordinates were checked against the address. A pattern of repeated visits to the same Officetel at similar times emerges.",
+        "restore_context": "One detail does not fit: each stay is too short to look like an affair."
       },
       "investigationStages": [
         {
           "question": {
-            "text": "Is this GPS log from your car?"
+            "text": "Is this GPS record from your car?"
           },
-          "label": "Check records"
+          "label": "Record Check"
         },
         {
           "question": {
-            "text": "Why did you go to the same officetel repeatedly?"
+            "text": "Why did you repeatedly go to the same Officetel?"
           },
-          "label": "Movement comparison",
-          "unlockHint": "By examining the records one more time, you can link the coordinates to which location."
+          "label": "Route Check",
+          "unlockHint": "Investigate the records again to link the coordinates to a specific location."
         },
         {
           "question": {
-            "text": "I only stayed for 2-3 hours each time. What was the purpose of your visit?"
+            "text": "You stayed only two to three hours each time. What was the purpose of these visits?"
           },
-          "label": "time pattern",
-          "unlockHint": "Contrasting movements reveals patterns of dwell time."
+          "label": "Time Pattern",
+          "unlockHint": "Compare the route to reveal the pattern in the length of each stay."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "Please explain why this GPS record appears to be an external route.",
-          "implication": "The location and frequency solidified my suspicions."
+          "questionAngle": "Please explain why this GPS record looked like an affair route.",
+          "implication": "The location and frequency hardened the suspicion."
         },
         "b": {
-          "questionAngle": "Please explain where this GPS log is headed.",
-          "implication": "Silence created greater misunderstanding."
+          "questionAngle": "Please explain where this GPS record's destination was.",
+          "implication": "Silence created a bigger misunderstanding."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only GPS logs are visible"
+          "summary": "Only the existence of GPS records is visible."
         },
         {
           "id": "excerpt",
-          "summary": "Record repeated stops at the same coordinates"
+          "summary": "Record of repeated stops at the same coordinates."
         },
         {
           "id": "original",
-          "summary": "Secure address, frequency, and length of stay"
+          "summary": "Address, frequency, and length of stay secured."
         },
         {
           "id": "context",
-          "summary": "The officetel route and my brother’s address match."
+          "summary": "Officetel route matches the brother's address."
         },
         {
           "id": "established",
-          "summary": "Confirmed by visiting my brother’s officetel."
+          "summary": "Confirmed as the route to the brother's Officetel."
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "A submits a printout to the management office"
+          "summary": "A submitted a printout from the management office."
         },
         {
           "id": "verifying",
           "label": "Verifying",
-          "summary": "Comparison of vehicle number with original ledger"
+          "summary": "Vehicle number compared against the original ledger."
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "B Matches vehicle number"
+          "label": "Authenticated",
+          "summary": "Matches B's vehicle number."
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "The objection that it cannot be concluded that it is a place for an affair"
+          "label": "Challenged",
+          "summary": "Objection that it cannot be assumed to be an affair location."
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "Place data is authenticated, but meaning is open to interpretation"
+          "label": "Manipulation/Misread Finding",
+          "summary": "Location data is authenticated, but its meaning remains open to interpretation."
         }
       ],
       "meta": {
-        "name": "Black box GPS recording",
+        "name": "Dashcam GPS Record",
         "trustLabel": "Normal",
-        "sourceLabel": "institution",
-        "legalLabel": "legal",
-        "stageLabel": "medium disclosure"
+        "sourceLabel": "Agency",
+        "legalLabel": "Legal",
+        "stageLabel": "Mid Reveal"
       },
       "viewerData": {
         "meta": {
-          "name": "Black box GPS recording",
+          "name": "Dashcam GPS Record",
           "trustLabel": "Normal",
-          "sourceLabel": "institution",
-          "legalLabel": "legal",
-          "stageLabel": "medium disclosure"
+          "sourceLabel": "Agency",
+          "legalLabel": "Legal",
+          "stageLabel": "Mid Reveal"
         },
         "gps_log": [
           {
             "location": "Home (Mangwon-dong, Mapo-gu)"
           },
           {
-            "location": "Join Yeouidae"
+            "location": "Merge onto Yeouidae-ro"
           },
           {
             "location": "Near Noryangjin Station"
@@ -772,73 +778,73 @@
             "location": "Enter Sangdo Tunnel"
           },
           {
-            "location": "Entering Bongcheon-dong, Gwanak-gu"
+            "location": "Enter Bongcheon-dong, Gwanak-gu"
           },
           {
-            "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+            "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
           },
           {
-            "location": "(Holding Parking — 2 hours and 32 minutes)"
+            "location": "(Parking maintained — 2 hr 32 min)"
           },
           {
-            "location": "Departure from Bongcheon-dong"
+            "location": "Depart Bongcheon-dong"
           },
           {
             "location": "Pass through Sangdo Tunnel"
           },
           {
-            "location": "Towards Yeouido"
+            "location": "Toward Yeouido"
           },
           {
-            "location": "Arrival at home"
+            "location": "Arrive Home"
           },
           {
-            "location": "Departure from home"
+            "location": "Leave Home"
           },
           {
-            "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+            "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
           },
           {
-            "location": "(Holding Parking — 2 hours and 24 minutes)"
+            "location": "(Parking maintained — 2 hr 24 min)"
           },
           {
-            "location": "Departure from home"
+            "location": "Leave Home"
           },
           {
-            "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+            "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
           },
           {
-            "location": "(Holding Parking — 2 hours and 32 minutes)"
+            "location": "(Parking maintained — 2 hr 32 min)"
           },
           {
-            "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+            "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
           }
         ]
       },
       "viewerDataByStage": {
         "1": {
           "meta": {
-            "name": "Black box GPS recording",
+            "name": "Dashcam GPS Record",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 1 — Time/Speed/Coordinates Only"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 1 — Time / Speed / Coordinates Only"
           }
         },
         "2": {
           "meta": {
-            "name": "Black box GPS recording",
+            "name": "Dashcam GPS Record",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 2 — Disclose location associations"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 2 — Location Link Revealed"
           },
           "gps_log": [
             {
               "location": "Home (Mangwon-dong, Mapo-gu)"
             },
             {
-              "location": "Join Yeouidae"
+              "location": "Merge onto Yeouidae-ro"
             },
             {
               "location": "Near Noryangjin Station"
@@ -847,63 +853,63 @@
               "location": "Enter Sangdo Tunnel"
             },
             {
-              "location": "Entering Bongcheon-dong, Gwanak-gu"
+              "location": "Enter Bongcheon-dong, Gwanak-gu"
             },
             {
-              "location": "In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "In front of Angel Officetel, Bongcheon-dong (parked)"
             },
             {
-              "location": "(maintain parking)"
+              "location": "(Parking maintained)"
             },
             {
-              "location": "Departure from Bongcheon-dong"
+              "location": "Depart Bongcheon-dong"
             },
             {
               "location": "Pass through Sangdo Tunnel"
             },
             {
-              "location": "Towards Yeouido"
+              "location": "Toward Yeouido"
             },
             {
-              "location": "Arrival at home"
+              "location": "Arrive Home"
             },
             {
-              "location": "Departure from home"
+              "location": "Leave Home"
             },
             {
-              "location": "In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "In front of Angel Officetel, Bongcheon-dong (parked)"
             },
             {
-              "location": "(maintain parking)"
+              "location": "(Parking maintained)"
             },
             {
-              "location": "Departure from home"
+              "location": "Leave Home"
             },
             {
-              "location": "In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "In front of Angel Officetel, Bongcheon-dong (parked)"
             },
             {
-              "location": "(maintain parking)"
+              "location": "(Parking maintained)"
             },
             {
-              "location": "In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "In front of Angel Officetel, Bongcheon-dong (parked)"
             }
           ]
         },
         "3": {
           "meta": {
-            "name": "Black box GPS recording",
+            "name": "Dashcam GPS Record",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 3 — Highlight temporal patterns"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 3 — Time Pattern Highlighted"
           },
           "gps_log": [
             {
               "location": "Home (Mangwon-dong, Mapo-gu)"
             },
             {
-              "location": "Join Yeouidae"
+              "location": "Merge onto Yeouidae-ro"
             },
             {
               "location": "Near Noryangjin Station"
@@ -912,46 +918,46 @@
               "location": "Enter Sangdo Tunnel"
             },
             {
-              "location": "Entering Bongcheon-dong, Gwanak-gu"
+              "location": "Enter Bongcheon-dong, Gwanak-gu"
             },
             {
-              "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
             },
             {
-              "location": "(Holding Parking — 2 hours and 32 minutes)"
+              "location": "(Parking maintained — 2 hr 32 min)"
             },
             {
-              "location": "Departure from Bongcheon-dong"
+              "location": "Depart Bongcheon-dong"
             },
             {
               "location": "Pass through Sangdo Tunnel"
             },
             {
-              "location": "Towards Yeouido"
+              "location": "Toward Yeouido"
             },
             {
-              "location": "Arrival at home"
+              "location": "Arrive Home"
             },
             {
-              "location": "Departure from home"
+              "location": "Leave Home"
             },
             {
-              "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
             },
             {
-              "location": "(Holding Parking — 2 hours and 24 minutes)"
+              "location": "(Parking maintained — 2 hr 24 min)"
             },
             {
-              "location": "Departure from home"
+              "location": "Leave Home"
             },
             {
-              "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
             },
             {
-              "location": "(Holding Parking — 2 hours and 32 minutes)"
+              "location": "(Parking maintained — 2 hr 32 min)"
             },
             {
-              "location": "★ In front of Angel Officetel in Bongcheon-dong (parking)"
+              "location": "★ In front of Angel Officetel, Bongcheon-dong (parked)"
             }
           ]
         }
@@ -959,566 +965,566 @@
     },
     {
       "id": "e-3",
-      "name": "call records",
-      "surfaceName": "call records",
-      "description": "Repeating the same number in the early morning hours. Many short calls even during the day. Caller = 1 person.",
-      "surfaceDescription": "There is a record of repeated calls to the same number during the early morning hours.",
+      "name": "Call Logs",
+      "surfaceName": "Call Logs",
+      "description": "Same number repeated in the early-morning hours. Many short calls during the day as well. Call counterpart = 1 person.",
+      "surfaceDescription": "There are records of repeated calls to the same number in the early-morning hours.",
       "investigationResults": {
-        "request_original": "I looked up the call list. Traces of repeated calls at the same time are visible.",
-        "check_metadata": "Checked against saved contacts. It was confirmed that he made frequent calls to an unregistered number.",
-        "restore_context": "One thing is off. Each call is too short to be considered an affair."
+        "request_original": "The call list was checked. Traces of repeated calls in the same time period are visible.",
+        "check_metadata": "Compared against saved contacts. Frequent calls with one unsaved number are confirmed.",
+        "restore_context": "One detail does not fit: each call is too short to look like an affair."
       },
       "investigationStages": [
         {
           "question": {
-            "text": "Are these call records in your name?"
+            "text": "Are these call logs under your name?"
           },
-          "label": "Check records"
+          "label": "Record Check"
         },
         {
           "question": {
-            "text": "Who is this unregistered number addressed to?"
+            "text": "Who is behind this unsaved number?"
           },
-          "label": "Relative mapping",
-          "unlockHint": "If you examine the record one more time, you can identify the other person by comparing it with the saved numbers."
+          "label": "Counterpart Mapping",
+          "unlockHint": "Investigate the records again to compare them with saved numbers and identify the counterpart."
         },
         {
           "question": {
-            "text": "The call time is short every time. What kind of business was it?"
+            "text": "Each call was short. What were they about?"
           },
-          "label": "time pattern",
-          "unlockHint": "Tallying the length of calls reveals the nature of the contact."
+          "label": "Time Pattern",
+          "unlockHint": "Aggregate call lengths to reveal the nature of the contact."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "Please explain why the early morning phone call seemed like evidence of an affair.",
-          "implication": "The early morning hours heightened suspicion."
+          "questionAngle": "Please explain why the early-morning calls looked like evidence of an affair.",
+          "implication": "The early-morning hours intensified the suspicion."
         },
         "b": {
-          "questionAngle": "Please explain who you are calling and why you are calling me in the early morning.",
-          "implication": "It was a repeated call from the same number."
+          "questionAngle": "Please explain who the call counterpart was and why you called in the early morning.",
+          "implication": "They were repeated calls with the same number."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only the presence of call records is visible."
+          "summary": "Only the existence of call logs is visible."
         },
         {
           "id": "excerpt",
-          "summary": "Repeating the same number in the early morning hours"
+          "summary": "Same number repeated in early-morning hours."
         },
         {
           "id": "original",
-          "summary": "One caller, check early morning + day pattern"
+          "summary": "One call counterpart; early-morning + daytime pattern confirmed."
         },
         {
           "id": "context",
-          "summary": "Emergency contact pattern with older brother"
+          "summary": "Pattern of urgent contact with his brother."
         },
         {
           "id": "established",
-          "summary": "Confirmed by phone call with my brother"
+          "summary": "Confirmed as calls with his brother."
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "A submits call list capture"
+          "summary": "A submitted a screenshot of the call list."
         },
         {
           "id": "verifying",
           "label": "Verifying",
-          "summary": "Compare details with original submission order"
+          "summary": "Details compared through an order to submit the original."
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "Matches carrier details"
+          "label": "Authenticated",
+          "summary": "Matches carrier details."
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "Objection that the identity of the person on the call is missing"
+          "label": "Challenged",
+          "summary": "Objection that the call counterpart's identity is missing."
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "The call itself is authenticated, but the interpretation of the affair is a tentative hypothesis."
+          "label": "Manipulation/Misread Finding",
+          "summary": "The call itself is authenticated, but the affair interpretation is only a tentative hypothesis."
         }
       ],
       "meta": {
-        "name": "call records",
+        "name": "Call Logs",
         "trustLabel": "Normal",
-        "sourceLabel": "institution",
-        "legalLabel": "legal",
-        "stageLabel": "key disclosure"
+        "sourceLabel": "Agency",
+        "legalLabel": "Legal",
+        "stageLabel": "Key Reveal"
       },
       "viewerData": {
         "meta": {
-          "name": "call records",
+          "name": "Call Logs",
           "trustLabel": "Normal",
-          "sourceLabel": "institution",
-          "legalLabel": "legal",
-          "stageLabel": "key disclosure"
+          "sourceLabel": "Agency",
+          "legalLabel": "Legal",
+          "stageLabel": "Key Reveal"
         },
         "log": {
           "rows": [
             {
               "typeLabel": "Outgoing",
-              "duration": "3 minutes 12 seconds"
+              "duration": "3 min 12 sec"
             },
             {
-              "typeLabel": "receive",
+              "typeLabel": "Incoming",
               "target": "010-****-7720 (wife)",
-              "duration": "1 minute 05 seconds"
+              "duration": "1 min 5 sec"
             },
             {
               "typeLabel": "Outgoing",
-              "duration": "4 minutes 28 seconds"
+              "duration": "4 min 28 sec"
             },
             {
-              "typeLabel": "absent"
+              "typeLabel": "Missed"
             },
             {
               "typeLabel": "Outgoing",
               "target": "02-****-3441 (work)",
-              "duration": "1 minute 30 seconds"
+              "duration": "1 min 30 sec"
             },
             {
               "typeLabel": "Outgoing",
-              "duration": "2 minutes 47 seconds"
+              "duration": "2 min 47 sec"
             },
             {
-              "typeLabel": "receive",
+              "typeLabel": "Incoming",
               "target": "02-****-3441 (work)",
-              "duration": "2 minutes 10 seconds"
+              "duration": "2 min 10 sec"
             },
             {
               "typeLabel": "Outgoing",
               "target": "010-****-7720 (wife)",
-              "duration": "0 minutes 45 seconds"
+              "duration": "0 min 45 sec"
             },
             {
               "typeLabel": "Outgoing",
-              "duration": "3 minutes 55 seconds"
+              "duration": "3 min 55 sec"
             },
             {
-              "typeLabel": "receive",
+              "typeLabel": "Incoming",
               "target": "010-****-7720 (wife)",
-              "duration": "1 minute 20 seconds"
+              "duration": "1 min 20 sec"
             },
             {
-              "typeLabel": "absent"
+              "typeLabel": "Missed"
             },
             {
-              "typeLabel": "receive",
+              "typeLabel": "Incoming",
               "target": "02-****-3441 (work)",
-              "duration": "3 minutes 05 seconds"
+              "duration": "3 min 5 sec"
             },
             {
               "typeLabel": "Outgoing",
-              "duration": "1 minute 48 seconds"
+              "duration": "1 min 48 sec"
             },
             {
               "typeLabel": "Outgoing",
-              "duration": "4 minutes 12 seconds"
+              "duration": "4 min 12 sec"
             }
           ],
-          "note": "Nighttime calls to number 010-****-3847 were repeatedly confirmed. However, most call times are less than 3 minutes, and the longest is less than 5 minutes."
+          "note": "Repeated nighttime calls to 010-****-3847 are confirmed. However, most calls were under three minutes, and even the longest was under five minutes."
         }
       },
       "viewerDataByStage": {
         "1": {
           "meta": {
-            "name": "call records",
+            "name": "Call Logs",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 1 ─ Time, number, call time"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 1 ─ Time · Number · Call Duration"
           },
           "log": {
             "rows": [
               {
                 "typeLabel": "Outgoing",
-                "duration": "3 minutes 12 seconds"
+                "duration": "3 min 12 sec"
               },
               {
-                "typeLabel": "receive",
-                "duration": "1 minute 05 seconds"
-              },
-              {
-                "typeLabel": "Outgoing",
-                "duration": "4 minutes 28 seconds"
-              },
-              {
-                "typeLabel": "absent"
+                "typeLabel": "Incoming",
+                "duration": "1 min 5 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "1 minute 30 seconds"
+                "duration": "4 min 28 sec"
+              },
+              {
+                "typeLabel": "Missed"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "2 minutes 47 seconds"
-              },
-              {
-                "typeLabel": "receive",
-                "duration": "2 minutes 10 seconds"
+                "duration": "1 min 30 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "0 minutes 45 seconds"
+                "duration": "2 min 47 sec"
+              },
+              {
+                "typeLabel": "Incoming",
+                "duration": "2 min 10 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "3 minutes 55 seconds"
-              },
-              {
-                "typeLabel": "receive",
-                "duration": "1 minute 20 seconds"
-              },
-              {
-                "typeLabel": "absent"
-              },
-              {
-                "typeLabel": "receive",
-                "duration": "3 minutes 05 seconds"
+                "duration": "0 min 45 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "1 minute 48 seconds"
+                "duration": "3 min 55 sec"
+              },
+              {
+                "typeLabel": "Incoming",
+                "duration": "1 min 20 sec"
+              },
+              {
+                "typeLabel": "Missed"
+              },
+              {
+                "typeLabel": "Incoming",
+                "duration": "3 min 5 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "4 minutes 12 seconds"
+                "duration": "1 min 48 sec"
+              },
+              {
+                "typeLabel": "Outgoing",
+                "duration": "4 min 12 sec"
               }
             ],
-            "note": "Traces of repeated calls to and from the same number are visible."
+            "note": "Traces show repeated calls to and from the same number."
           }
         },
         "2": {
           "meta": {
-            "name": "call records",
+            "name": "Call Logs",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 2 ─ Identify the calling party and check the unregistered number"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 2 ─ Identify Call Counterpart and Confirm Unsaved Number"
           },
           "log": {
             "rows": [
               {
                 "typeLabel": "Outgoing",
-                "duration": "3 minutes 12 seconds"
+                "duration": "3 min 12 sec"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "010-****-7720 (wife)",
-                "duration": "1 minute 05 seconds"
+                "duration": "1 min 5 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "4 minutes 28 seconds"
+                "duration": "4 min 28 sec"
               },
               {
-                "typeLabel": "absent"
+                "typeLabel": "Missed"
               },
               {
                 "typeLabel": "Outgoing",
                 "target": "02-****-3441 (work)",
-                "duration": "1 minute 30 seconds"
+                "duration": "1 min 30 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "2 minutes 47 seconds"
+                "duration": "2 min 47 sec"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "02-****-3441 (work)",
-                "duration": "2 minutes 10 seconds"
+                "duration": "2 min 10 sec"
               },
               {
                 "typeLabel": "Outgoing",
                 "target": "010-****-7720 (wife)",
-                "duration": "0 minutes 45 seconds"
+                "duration": "0 min 45 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "3 minutes 55 seconds"
+                "duration": "3 min 55 sec"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "010-****-7720 (wife)",
-                "duration": "1 minute 20 seconds"
+                "duration": "1 min 20 sec"
               },
               {
-                "typeLabel": "absent"
+                "typeLabel": "Missed"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "02-****-3441 (work)",
-                "duration": "3 minutes 05 seconds"
+                "duration": "3 min 5 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "1 minute 48 seconds"
+                "duration": "1 min 48 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "4 minutes 12 seconds"
+                "duration": "4 min 12 sec"
               }
             ],
-            "note": "Repeated calls to an unregistered number (010-****-3847) are confirmed."
+            "note": "Repeated calls with an unsaved number (010-****-3847) are confirmed."
           }
         },
         "3": {
           "meta": {
-            "name": "call records",
+            "name": "Call Logs",
             "trustLabel": "Normal",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 3 – Analyzing call length patterns"
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 3 ─ Call Duration Pattern Analysis"
           },
           "log": {
             "rows": [
               {
                 "typeLabel": "Outgoing",
-                "duration": "3 minutes 12 seconds"
+                "duration": "3 min 12 sec"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "010-****-7720 (wife)",
-                "duration": "1 minute 05 seconds"
+                "duration": "1 min 5 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "4 minutes 28 seconds"
+                "duration": "4 min 28 sec"
               },
               {
-                "typeLabel": "absent"
+                "typeLabel": "Missed"
               },
               {
                 "typeLabel": "Outgoing",
                 "target": "02-****-3441 (work)",
-                "duration": "1 minute 30 seconds"
+                "duration": "1 min 30 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "2 minutes 47 seconds"
+                "duration": "2 min 47 sec"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "02-****-3441 (work)",
-                "duration": "2 minutes 10 seconds"
+                "duration": "2 min 10 sec"
               },
               {
                 "typeLabel": "Outgoing",
                 "target": "010-****-7720 (wife)",
-                "duration": "0 minutes 45 seconds"
+                "duration": "0 min 45 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "3 minutes 55 seconds"
+                "duration": "3 min 55 sec"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "010-****-7720 (wife)",
-                "duration": "1 minute 20 seconds"
+                "duration": "1 min 20 sec"
               },
               {
-                "typeLabel": "absent"
+                "typeLabel": "Missed"
               },
               {
-                "typeLabel": "receive",
+                "typeLabel": "Incoming",
                 "target": "02-****-3441 (work)",
-                "duration": "3 minutes 05 seconds"
+                "duration": "3 min 5 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "1 minute 48 seconds"
+                "duration": "1 min 48 sec"
               },
               {
                 "typeLabel": "Outgoing",
-                "duration": "4 minutes 12 seconds"
+                "duration": "4 min 12 sec"
               }
             ],
-            "note": "Calls to the 010-****-3847 number are repetitive, but most call times are less than 3 minutes. It is short to be considered an affair."
+            "note": "Calls to 010-****-3847 repeat, but most are under three minutes. Too short to look like an affair."
           }
         }
       }
     },
     {
       "id": "e-4",
-      "name": "Text from unknown sender",
-      "surfaceName": "Text from unknown sender",
-      "description": "Text thread from unknown sender. Repeated communication with a number whose area code is familiar but whose name cannot be confirmed.",
-      "surfaceDescription": "There remain threads of numbers and letters whose names have not been registered.",
+      "name": "Text from Unknown Sender",
+      "surfaceName": "Text from Unknown Sender",
+      "description": "A text thread from an unknown sender. Repeated exchanges with a number whose area code is familiar, but whose subscriber cannot be confirmed.",
+      "surfaceDescription": "A text thread remains with a number saved under no name.",
       "investigationResults": {
-        "request_original": "A phrase repeated in the thread: 'It's me. I will contact you from this number for the time being.’, ‘Do not save it under my name. It could be a problem later.’, ‘Please do me a favor today as well.’, ‘Thank you always.’ Reception time is mainly between evening and night.",
-        "check_metadata": "The calling number is not stored in the directory that Junho Lee usually uses. The area code and the first digit are somewhat familiar, but I can't immediately remember whose name it is. Name inquiry is unknown.",
-        "restore_context": "When the number is traced back, it is confirmed to be the prepaid phone number that Lee Jun-ho's brother recently opened. The previous brother's number was suspended due to debt collection issues. Group text messages related to ‘Ga-eun’s school notification’ are mixed in the thread, revealing the context of caring for a nephew (second year of middle school)."
+        "request_original": "Repeated phrases in the thread include: \"It's me. Contact me on this number for now,\" \"Don't save it under my name. It could become a problem later,\" \"Please help again today,\" and \"Thanks, always.\" Receipt times are mostly between evening and night.",
+        "check_metadata": "The sender number is not saved in the contacts Mr. Lee Jun-ho usually uses. The area code and prefix feel familiar, but he cannot immediately place whose number it is. Subscriber lookup is unknown.",
+        "restore_context": "Tracing the number confirms it as a prepaid phone recently opened by Mr. Lee Jun-ho's older brother. The brother's previous number had been suspended due to debt collection issues. Group texts related to \"Gaeun's school notices\" are mixed into the thread, revealing the context of caring for his niece, a second-year middle-school student."
       },
       "investigationStages": [
         {
           "question": {
-            "text": "Who is the sender of this text?"
+            "text": "Who sent this text?"
           },
-          "label": "Check conversation"
+          "label": "Conversation Check"
         },
         {
           "question": {
-            "text": "Why didn't you save this number in your directory?"
+            "text": "Why did you not save this number in your contacts?"
           },
-          "label": "relationship contrast",
-          "unlockHint": "You can narrow down who owns this number by checking the conversation."
+          "label": "Relationship Check",
+          "unlockHint": "Check the conversation to narrow down who owns this number."
         },
         {
           "question": {
-            "text": "What does this text thread have to do with officetel visits?"
+            "text": "How is this text thread related to the Officetel visits?"
           },
-          "label": "Context restoration",
-          "unlockHint": "By contrasting the relationship, we can restore what the officetel visit was as opposed to an affair."
+          "label": "Context Reconstruction",
+          "unlockHint": "Compare the relationship to reconstruct what the Officetel visits were, if not an affair."
         }
       ],
       "partyContext": {
         "a": {
           "questionAngle": "Is this your first time seeing this text? What do you think it means?",
-          "implication": "This can be a clue to gauge the actual purpose of the officetel visit."
+          "implication": "It may be a clue to the real purpose of the Officetel visits."
         },
         "b": {
-          "questionAngle": "If it is true that this text came from your brother, why did you hide it?",
-          "implication": "The reason for hiding this number may be related to family circumstances."
+          "questionAngle": "If this text really came from your brother, why did you hide it?",
+          "implication": "The reason he kept this number hidden may be tied to Family Circumstances."
         }
       },
       "meta": {
-        "name": "Text from unknown sender",
+        "name": "Text from Unknown Sender",
         "trustLabel": "Normal",
-        "sourceLabel": "B side",
-        "legalLabel": "legal",
-        "stageLabel": "key disclosure",
+        "sourceLabel": "B Side",
+        "legalLabel": "Legal",
+        "stageLabel": "Key Reveal",
         "redactions": [
-          "Nephew's name private",
-          "School name and grade masking",
-          "Direct expression related to menstruation sealed"
+          "Niece's name undisclosed",
+          "School name and grade masked",
+          "Direct menstruation-related wording sealed"
         ]
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only character thread presence is visible"
+          "summary": "Only the existence of the text thread is visible."
         },
         {
           "id": "excerpt",
-          "summary": "Show some messages related to the visit"
+          "summary": "Some messages related to the visits are visible."
         },
         {
           "id": "original",
-          "summary": "Caller ID + complete conversation transcript"
+          "summary": "Sender confirmation + full conversation."
         },
         {
           "id": "context",
-          "summary": "Circumstances where regular requests were repeated"
+          "summary": "Circumstances showing repeated regular requests."
         },
         {
           "id": "established",
-          "summary": "Direct proof of relationship with nephew/nephew"
+          "summary": "Direct proof of the niece-care relationship."
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "Steps in which B submits some extracts or is directly captured by the judge."
+          "summary": "Stage where B submits partial excerpts or the Judge directly detects them."
         },
         {
           "id": "verifying",
           "label": "Verifying",
-          "summary": "Check entire thread with original submit command"
+          "summary": "Entire thread checked through an order to submit the original."
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "Contact information, date, and notification match e-2 and e-3"
+          "label": "Authenticated",
+          "summary": "Contact, date, and notice match e-2 and e-3."
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "The objection is that even if it is a contact from a family member, it does not justify sending a large amount of money."
+          "label": "Challenged",
+          "summary": "Objection that even family contact does not justify a large money transfer."
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "Convert to contextual evidence that overturns the affair narrative"
+          "label": "Manipulation/Misread Finding",
+          "summary": "Converted into context evidence that overturns the affair narrative."
         }
       ],
       "v3SealTargets": [
-        "nephew name",
+        "Niece's name",
         "School name",
-        "grade",
-        "Direct expressions related to menstruation"
+        "Grade",
+        "Direct menstruation-related wording"
       ],
       "viewerData": {
         "meta": {
-          "name": "Text from unknown sender",
+          "name": "Text from Unknown Sender",
           "trustLabel": "Normal",
-          "sourceLabel": "B side",
-          "legalLabel": "legal",
-          "stageLabel": "key disclosure",
+          "sourceLabel": "B Side",
+          "legalLabel": "Legal",
+          "stageLabel": "Key Reveal",
           "redactions": [
-            "Nephew's name private",
-            "School name and grade masking",
-            "Direct expression related to menstruation sealed"
+            "Niece's name undisclosed",
+            "School name and grade masked",
+            "Direct menstruation-related wording sealed"
           ]
         },
         "chat": {
           "messages": [
             {
-              "sender": "Junho Lee",
-              "text": "I’ll be there around 7 o’clock today too."
+              "sender": "Lee Jun-ho",
+              "text": "I'll be there around 7 today too."
             },
             {
-              "text": "Thank you every time. Times are difficult this week."
+              "text": "Thanks every time. This week is hard for me too."
             },
             {
-              "sender": "Junho Lee",
+              "sender": "Lee Jun-ho",
               "text": "Do you need anything?"
             },
             {
-              "text": "Ah, the tint and stockings I mentioned back then."
+              "text": "Oh, the lip tint and stockings we talked about before."
             },
             {
-              "sender": "Junho Lee",
-              "text": "Yes, I will buy it."
+              "sender": "Lee Jun-ho",
+              "text": "Yeah, I'll buy them on the way."
             },
             {
-              "text": "But is it really okay every time? What do you not say at home?"
+              "text": "But is it really okay every time? Don't they say anything at home?"
             },
             {
-              "sender": "Junho Lee",
-              "text": "Anyway, we don't get along very well these days, so I'm not interested. don't worry."
+              "sender": "Lee Jun-ho",
+              "text": "We are not getting along these days anyway, so there is no interest. Don't worry."
             },
             {
-              "text": "I heard about it. Thank you and I'm sorry."
+              "text": "I heard what happened. Thank you, and I'm sorry."
             },
             {
-              "sender": "Junho Lee",
-              "text": "are you okay. All kids are like that around that time."
+              "sender": "Lee Jun-ho",
+              "text": "It's okay. Kids are all like that at that age."
             },
             {
-              "text": "I guess I was a little stressed about my test scores this time."
+              "text": "Looks like the test results stressed her out this time."
             },
             {
-              "sender": "Junho Lee",
-              "text": "Then, would you like me to take a look at your studies?"
+              "sender": "Lee Jun-ho",
+              "text": "Then should I help with the studying a bit?"
             },
             {
-              "text": "Where is the time for that? Thank you from the bottom of my heart."
+              "text": "Where would you find the time? I'm grateful just for the thought."
             },
             {
-              "sender": "Junho Lee",
-              "text": "First, I'll buy some reference books. Just give it a try and decide."
+              "sender": "Lee Jun-ho",
+              "text": "I'll pick up some workbooks for now. We can try them and decide."
             }
           ]
         }
@@ -1526,174 +1532,174 @@
       "viewerDataByStage": {
         "0": {
           "meta": {
-            "name": "Text from unknown sender",
+            "name": "Text from Unknown Sender",
             "trustLabel": "Normal",
-            "sourceLabel": "B side",
-            "legalLabel": "legal",
-            "stageLabel": "Stage 1 – Unknown sender, short excerpt",
+            "sourceLabel": "B Side",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 1 ─ Unknown Sender, Short Excerpt",
             "redactions": [
-              "Nephew's name private",
-              "School name and grade masking",
-              "Direct expression related to menstruation sealed"
+              "Niece's name undisclosed",
+              "School name and grade masked",
+              "Direct menstruation-related wording sealed"
             ]
           },
           "chat": {
-            "header": "Sender unknown",
+            "header": "Unknown Sender",
             "messages": [
               {
-                "text": "Please do me a favor today too."
+                "text": "Please help again today."
               },
               {
-                "sender": "Junho Lee",
-                "text": "okay."
+                "sender": "Lee Jun-ho",
+                "text": "Got it."
               },
               {
-                "text": "Thank you always."
+                "text": "Thanks, always."
               },
               {
-                "sender": "Junho Lee",
-                "text": "what."
+                "sender": "Lee Jun-ho",
+                "text": "No problem."
               },
               {
-                "text": "I'm alone today so please give me some food."
+                "text": "She's alone today, so please take care of dinner."
               },
               {
-                "sender": "Junho Lee",
-                "text": "Okay, I'll stop by later."
+                "sender": "Lee Jun-ho",
+                "text": "Got it. I'll stop by later."
               },
               {
-                "text": "※ The survey is conducted only once. The sender has not been identified."
+                "text": "※ Only one investigation has been performed. The sender has not been identified."
               }
             ]
           }
         },
         "1": {
           "meta": {
-            "name": "Text from unknown sender",
+            "name": "Text from Unknown Sender",
             "trustLabel": "Normal",
-            "sourceLabel": "B side",
-            "legalLabel": "legal",
-            "stageLabel": "Step 2 ─ Number exposure, check suspicious phrases",
+            "sourceLabel": "B Side",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 2 ─ Number Revealed, Suspicious Wording Confirmed",
             "redactions": [
-              "Nephew's name private",
-              "School name and grade masking",
-              "Direct expression related to menstruation sealed"
+              "Niece's name undisclosed",
+              "School name and grade masked",
+              "Direct menstruation-related wording sealed"
             ]
           },
           "chat": {
             "messages": [
               {
-                "text": "It's me. I will call this number for the time being."
+                "text": "It's me. Contact me on this number for now."
               },
               {
-                "sender": "Junho Lee",
-                "text": "Yeah, I understand."
+                "sender": "Lee Jun-ho",
+                "text": "Yeah, got it."
               },
               {
-                "text": "Don't save it under my name. It could be a problem later."
+                "text": "Don't save it under my name. It could become a problem later."
               },
               {
-                "sender": "Junho Lee",
-                "text": "… okay."
+                "sender": "Lee Jun-ho",
+                "text": "…Got it."
               },
               {
-                "text": "Please do me a favor today too."
+                "text": "Please help again today."
               },
               {
-                "sender": "Junho Lee",
-                "text": "Okay, I'll stop by later."
+                "sender": "Lee Jun-ho",
+                "text": "Got it. I'll stop by later."
               },
               {
-                "text": "Thank you always."
+                "text": "Thanks, always."
               },
               {
-                "sender": "Junho Lee",
-                "text": "what."
+                "sender": "Lee Jun-ho",
+                "text": "No problem."
               },
               {
-                "text": "※ Survey conducted twice. The area and first digit of the calling number are familiar, but the name is unknown (the directory is not stored)."
+                "text": "※ Two investigations performed. The sender number's area and prefix are familiar, but the subscriber is unknown (not saved in contacts)."
               }
             ]
           }
         },
         "2": {
           "meta": {
-            "name": "Text from unknown sender",
+            "name": "Text from Unknown Sender",
             "trustLabel": "Normal",
-            "sourceLabel": "B side",
-            "legalLabel": "legal",
-            "stageLabel": "key disclosure",
+            "sourceLabel": "B Side",
+            "legalLabel": "Legal",
+            "stageLabel": "Key Reveal",
             "redactions": [
-              "Nephew's name private",
-              "School name and grade masking",
-              "Direct expression related to menstruation sealed"
+              "Niece's name undisclosed",
+              "School name and grade masked",
+              "Direct menstruation-related wording sealed"
             ]
           },
           "chat": {
             "messages": [
               {
-                "sender": "Junho Lee",
-                "text": "I’ll be there around 7 o’clock today too."
+                "sender": "Lee Jun-ho",
+                "text": "I'll be there around 7 today too."
               },
               {
-                "text": "Thank you every time. Times are difficult this week."
+                "text": "Thanks every time. This week is hard for me too."
               },
               {
-                "sender": "Junho Lee",
+                "sender": "Lee Jun-ho",
                 "text": "Do you need anything?"
               },
               {
-                "text": "Ah, the tint and stockings I mentioned back then."
+                "text": "Oh, the lip tint and stockings we talked about before."
               },
               {
-                "sender": "Junho Lee",
-                "text": "Yes, I will buy it."
+                "sender": "Lee Jun-ho",
+                "text": "Yeah, I'll buy them on the way."
               },
               {
-                "text": "But is it really okay every time? What do you not say at home?"
+                "text": "But is it really okay every time? Don't they say anything at home?"
               },
               {
-                "sender": "Junho Lee",
-                "text": "Anyway, we don't get along very well these days, so I'm not interested. don't worry."
+                "sender": "Lee Jun-ho",
+                "text": "We are not getting along these days anyway, so there is no interest. Don't worry."
               }
             ]
           }
         },
         "3": {
           "meta": {
-            "name": "Text from unknown sender",
+            "name": "Text from Unknown Sender",
             "trustLabel": "Normal",
-            "sourceLabel": "B side",
-            "legalLabel": "legal",
-            "stageLabel": "Context restoration",
+            "sourceLabel": "B Side",
+            "legalLabel": "Legal",
+            "stageLabel": "Context Reconstruction",
             "redactions": [
-              "Nephew's name private",
-              "School name and grade masking",
-              "Direct expression related to menstruation sealed"
+              "Niece's name undisclosed",
+              "School name and grade masked",
+              "Direct menstruation-related wording sealed"
             ]
           },
           "chat": {
             "messages": [
               {
-                "text": "I heard about it. Thank you and I'm sorry."
+                "text": "I heard what happened. Thank you, and I'm sorry."
               },
               {
-                "sender": "Junho Lee",
-                "text": "are you okay. All kids are like that around that time."
+                "sender": "Lee Jun-ho",
+                "text": "It's okay. Kids are all like that at that age."
               },
               {
-                "text": "I guess I was a little stressed about my test scores this time."
+                "text": "Looks like the test results stressed her out this time."
               },
               {
-                "sender": "Junho Lee",
-                "text": "Then, would you like me to take a look at your studies?"
+                "sender": "Lee Jun-ho",
+                "text": "Then should I help with the studying a bit?"
               },
               {
-                "text": "Where is the time for that? Thank you from the bottom of my heart."
+                "text": "Where would you find the time? I'm grateful just for the thought."
               },
               {
-                "sender": "Junho Lee",
-                "text": "First, I'll buy some reference books. Just give it a try and decide."
+                "sender": "Lee Jun-ho",
+                "text": "I'll pick up some workbooks for now. We can try them and decide."
               }
             ]
           }
@@ -1702,206 +1708,206 @@
     },
     {
       "id": "e-5",
-      "name": "Lee Jun-ho's personal account withdrawal details",
-      "surfaceName": "Personal account withdrawal history",
-      "description": "Transaction details of a separate account in Lee Jun-ho’s name. There are traces of funds that have been separately managed for a long time and recent large cash withdrawals.",
-      "surfaceDescription": "I can see a separate account that is not shared with my wife and a current balance of tens of thousands of won.",
+      "name": "Lee Jun-ho's Personal Withdrawal Records",
+      "surfaceName": "Personal Account Withdrawal Records",
+      "description": "Transaction records for a separate account in Lee Jun-ho's own name. They show funds managed separately over a long period and traces of recent large cash withdrawals.",
+      "surfaceDescription": "A separate account not shared with the wife is shown, with a current balance of only tens of thousands of won.",
       "investigationResults": {
-        "request_original": "A separate account in Lee Jun-ho’s name is confirmed. It is not a living expenses account shared with the spouse, and the current balance is only tens of thousands of won.",
-        "check_metadata": "The account contains records of salary balance and small amounts of cash accumulated from 10 years ago. The cumulative holding amount is slightly over 30 million won.",
-        "restore_context": "Over the past four months, a total of 30 million won was withdrawn in cash in the following order: 5 million won, 8 million won, 7 million won, and 10 million won. It is the same as the 5 million - 8 million - 7 million - 10 million won split withdrawal pattern explained by the bank employee, and as a result, the current balance is only tens of thousands of won."
+        "request_original": "A separate account in Lee Jun-ho's name is confirmed. It is not a living-expense account shared with the spouse, and only tens of thousands of won remain in the current balance.",
+        "check_metadata": "The account shows salary balances and cash accumulating little by little since ten years ago. The accumulated balance is slightly over ₩30M.",
+        "restore_context": "Over the last four months, a total of ₩30M was withdrawn in cash in the order of ₩5M, ₩8M, ₩7M, and ₩10M. This matches the split-withdrawal pattern described by the Bank Clerk, and as a result only tens of thousands of won remain in the current balance."
       },
       "investigationStages": [
         {
           "question": {
             "text": "Is this separate account a secret account hidden from your spouse?"
           },
-          "label": "Check separate account"
+          "label": "Separate Account Check"
         },
         {
           "question": {
-            "text": "Why did you hide this 30 million won worth of money that you had saved little by little over 10 years?"
+            "text": "Why did you hide this fund in the ₩30M range, saved little by little over ten years?"
           },
-          "label": "Long-term accumulation confirmation",
-          "unlockHint": "If you check the details further, you can see how a separate fund of around 30 million won was created by saving small amounts over 10 years."
+          "label": "Long-Term Accumulation Check",
+          "unlockHint": "Check the records further to see the flow of small amounts accumulated over ten years into a separate fund in the ₩30M range."
         },
         {
           "question": {
-            "text": "Please tell us the reason for deducting cash in the following order: 5 million won, 8 million won, 7 million won, and 10 million won over the past four months."
+            "text": "Explain why you withdrew cash over the last four months in the order of ₩5M, ₩8M, ₩7M, and ₩10M."
           },
-          "label": "Investigation into split withdrawal",
-          "unlockHint": "If you check the withdrawal pattern, you can inquire into the fact that 5 million won, 8 million won, 7 million won, and 10 million won were withdrawn sequentially in the same way as the bank employee testimony."
+          "label": "Press Split Withdrawals",
+          "unlockHint": "Confirm the withdrawal pattern to press the fact that ₩5M, ₩8M, ₩7M, and ₩10M were withdrawn sequentially in the same manner described by the Bank Clerk."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "When did you become aware of the existence of this separate account?",
-          "implication": "A's surveillance may be shaken by how he learned of an account that was not shared with his spouse."
+          "questionAngle": "When did you learn this separate account existed?",
+          "implication": "A's monitoring history may be shaken by how she learned of an account not shared with the spouse."
         },
         "b": {
-          "questionAngle": "Why was this money withdrawn in the following order: 5 million won, 8 million won, 7 million won, and 10 million won?",
-          "implication": "B needs an explanation as to why the money he saved over 10 years was withdrawn as cash."
+          "questionAngle": "Why did you withdraw this money in cash in the order of ₩5M, ₩8M, ₩7M, and ₩10M?",
+          "implication": "B must explain why money saved over ten years was withdrawn in cash."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only separate accounts and current small balances are visible."
+          "summary": "Only a separate account and the current small balance are visible."
         },
         {
           "id": "excerpt",
-          "summary": "Separate fund flow in the 30 million won range accumulated in small amounts over 10 years"
+          "summary": "Flow of separate funds in the ₩30M range accumulated in small amounts over ten years."
         },
         {
           "id": "original",
-          "summary": "Records of cash withdrawals in the following order: 5 million won, 8 million won, 7 million won, and 10 million won over 4 months"
+          "summary": "Record of cash withdrawals over four months in the order of ₩5M, ₩8M, ₩7M, and ₩10M."
         },
         {
           "id": "context",
-          "summary": "Split withdrawal pattern of 5 million - 8 million - 7 million - 10 million won, similar to bank employee testimony."
+          "summary": "Split-withdrawal pattern of ₩5M–₩8M–₩7M–₩10M matching the Bank Clerk's testimony."
         },
         {
           "id": "established",
-          "summary": "The stage where the current balance is only tens of thousands of won"
+          "summary": "Stage where only tens of thousands of won remain in the current balance."
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "A submits part of separate account balance details"
+          "summary": "A submitted partial balance details for the separate account."
         },
         {
           "id": "verifying",
           "label": "Verifying",
-          "summary": "Confirm account title and long-term holding through bank original inquiry"
+          "summary": "Account holder and long-term holding confirmed through original bank inquiry."
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "Confirmation of 10 years of savings and 4 monthly installments of cash withdrawal"
+          "label": "Authenticated",
+          "summary": "Ten years of accumulation and four months of split cash withdrawals confirmed."
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "B explained separately how it was used, saying it was money he gave to his brother."
+          "label": "Challenged",
+          "summary": "B separately explains that it was money given to his brother."
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "The record itself is authenticated, but the purpose of its transmission is established through interrogation and testimony."
+          "label": "Manipulation/Misread Finding",
+          "summary": "The record itself is authenticated, but the purpose of the handoff is established through questioning and testimony."
         }
       ],
       "meta": {
-        "name": "Lee Jun-ho's personal account withdrawal details",
-        "trustLabel": "high",
-        "sourceLabel": "institution",
-        "legalLabel": "legal",
-        "stageLabel": "Step 3 - Withdrawal in 4 monthly installments"
+        "name": "Lee Jun-ho's Personal Withdrawal Records",
+        "trustLabel": "High",
+        "sourceLabel": "Agency",
+        "legalLabel": "Legal",
+        "stageLabel": "Stage 3 - Four-Month Split Withdrawals"
       },
       "viewerData": {
         "meta": {
-          "name": "Lee Jun-ho's personal account withdrawal details",
-          "trustLabel": "high",
-          "sourceLabel": "institution",
-          "legalLabel": "legal",
-          "stageLabel": "Step 3 - Withdrawal in 4 monthly installments"
+          "name": "Lee Jun-ho's Personal Withdrawal Records",
+          "trustLabel": "High",
+          "sourceLabel": "Agency",
+          "legalLabel": "Legal",
+          "stageLabel": "Stage 3 - Four-Month Split Withdrawals"
         },
         "bank": [
           {
-            "desc": "Cumulative long-term savings - Separate funds collected over 10 years"
+            "desc": "Long-Term Accumulation - Separate funds saved over ten years"
           },
           {
-            "desc": "Cash withdrawal - Mapo branch counter"
+            "desc": "Cash Withdrawal - Mapo Branch Counter"
           },
           {
-            "desc": "Cash withdrawal - Gwanak Branch ATM"
+            "desc": "Cash Withdrawal - Gwanak Branch ATM"
           },
           {
-            "desc": "Cash withdrawal - Mapo Branch ATM"
+            "desc": "Cash Withdrawal - Mapo Branch ATM"
           },
           {
-            "desc": "Cash withdrawal - Gangseo branch counter"
+            "desc": "Cash Withdrawal - Gangseo Branch Counter"
           },
           {
-            "desc": "Balance inquiry - Current balance after split withdrawal",
-            "amount": "View"
+            "desc": "Balance Inquiry - Current balance after split withdrawals",
+            "amount": "Inquiry"
           }
         ]
       },
       "viewerDataByStage": {
         "1": {
           "meta": {
-            "name": "Lee Jun-ho's personal account withdrawal details",
-            "trustLabel": "high",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 1 - Separate Accounts and Current Balances"
+            "name": "Lee Jun-ho's Personal Withdrawal Records",
+            "trustLabel": "High",
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 1 - Separate Account and Current Balance"
           },
           "bank": [
             {
-              "desc": "Account opening - separate free deposit/withdrawal account in Lee Jun-ho's name"
+              "desc": "Account Opening - Separate demand deposit account in Lee Jun-ho's name"
             },
             {
-              "desc": "Balance Inquiry - Separate Accounts Not Shared with Spouse",
-              "amount": "View"
+              "desc": "Balance Inquiry - Separate account not shared with spouse",
+              "amount": "Inquiry"
             }
           ]
         },
         "2": {
           "meta": {
-            "name": "Lee Jun-ho's personal account withdrawal details",
-            "trustLabel": "high",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 2 - Accumulation history for 10 years"
+            "name": "Lee Jun-ho's Personal Withdrawal Records",
+            "trustLabel": "High",
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 2 - Ten Years of Savings Records"
           },
           "bank": [
             {
-              "desc": "Regular transfer - small amount accumulated in salary balance"
+              "desc": "Scheduled Transfer - Small savings from salary balance"
             },
             {
-              "desc": "Cash deposit - Holiday/bonus balance accumulation"
+              "desc": "Cash Deposit - Savings from holiday and bonus balances"
             },
             {
-              "desc": "Regular transfer - Accumulate monthly living expenses balance"
+              "desc": "Scheduled Transfer - Savings from monthly living-expense balance"
             },
             {
-              "desc": "Long-term accumulated accumulation - small amount accumulated over 10 years"
+              "desc": "Long-Term Accumulation - Ten years of small savings"
             },
             {
-              "desc": "Balance inquiry - remaining balance after recent withdrawal",
-              "amount": "View"
+              "desc": "Balance Inquiry - Balance remaining after recent withdrawals",
+              "amount": "Inquiry"
             }
           ]
         },
         "3": {
           "meta": {
-            "name": "Lee Jun-ho's personal account withdrawal details",
-            "trustLabel": "high",
-            "sourceLabel": "institution",
-            "legalLabel": "legal",
-            "stageLabel": "Step 3 - Withdrawal in 4 monthly installments"
+            "name": "Lee Jun-ho's Personal Withdrawal Records",
+            "trustLabel": "High",
+            "sourceLabel": "Agency",
+            "legalLabel": "Legal",
+            "stageLabel": "Stage 3 - Four-Month Split Withdrawals"
           },
           "bank": [
             {
-              "desc": "Cumulative long-term savings - Separate funds collected over 10 years"
+              "desc": "Long-Term Accumulation - Separate funds saved over ten years"
             },
             {
-              "desc": "Cash withdrawal - Mapo branch counter"
+              "desc": "Cash Withdrawal - Mapo Branch Counter"
             },
             {
-              "desc": "Cash withdrawal - Gwanak Branch ATM"
+              "desc": "Cash Withdrawal - Gwanak Branch ATM"
             },
             {
-              "desc": "Cash withdrawal - Mapo Branch ATM"
+              "desc": "Cash Withdrawal - Mapo Branch ATM"
             },
             {
-              "desc": "Cash withdrawal - Gangseo branch counter"
+              "desc": "Cash Withdrawal - Gangseo Branch Counter"
             },
             {
-              "desc": "Balance inquiry - Current balance after split withdrawal",
-              "amount": "View"
+              "desc": "Balance Inquiry - Current balance after split withdrawals",
+              "amount": "Inquiry"
             }
           ]
         }
@@ -1909,179 +1915,179 @@
     },
     {
       "id": "e-6",
-      "name": "Investment Room Telegram + Remittance Record",
-      "surfaceName": "investment room telegram",
-      "description": "A record of a Telegram conversation in which Park Ji-yeon transferred 20 million won of the joint savings withdrawal amount to the investment room information account, followed by a delay in profit verification and withdrawal.",
-      "surfaceDescription": "A bundle of captures that remain together with investment room Telegram conversations and remittance flows. As the level increases, the deposit, initial profit verification, and fraud circumstances are revealed separately.",
+      "name": "Investment Chat Telegram + Transfer Records",
+      "surfaceName": "Investment Chat Telegram",
+      "description": "Telegram conversation records showing Park Ji-yeon transferring the ₩20M joint savings cancellation proceeds to an account provided by the investment chat, followed by profit confirmations and withdrawal delays.",
+      "surfaceDescription": "A bundle of screenshots preserving the investment chat Telegram conversation together with the transfer flow. As the stage rises, the deposit, initial profit confirmation, and exit-scam circumstances are revealed separately.",
       "investigationResults": {
-        "request_original": "Investment room Telegram still has promotions guaranteeing high profits and certification of profits for participants.",
-        "check_metadata": "It is confirmed that Park Ji-yeon received an initial profit certification message after transferring 20 million won to the investment room information account.",
-        "restore_context": "Afterwards, the operator left the chat room and the withdrawal request was blocked, resulting in 20 million won being classified as unrecoverable fraud damage."
+        "request_original": "The investment chat Telegram contains promotions guaranteeing high returns and participants' profit confirmations.",
+        "check_metadata": "The flow confirms that Park Ji-yeon transferred ₩20M to the account provided by the investment chat and then received initial profit confirmation messages.",
+        "restore_context": "Afterward, the operator left the chat room and withdrawal requests were blocked, establishing the unrecovered ₩20M as scam damage."
       },
       "investigationStages": [
         {
-          "label": "Introduction to investment room and boasting of profits",
+          "label": "Investment Chat Introduction and Profit Bragging",
           "question": {
-            "text": "Let’s check how this investment group Telegram attracted Jiyeon Park."
+            "text": "We will check how this investment chat Telegram drew Ms. Park Ji-yeon in."
           }
         },
         {
-          "label": "Deposit and initial profit verification",
+          "label": "Deposit and Initial Profit Confirmation",
           "question": {
-            "text": "We will check how much Jiyeon Park actually transferred and what kind of profit certification she received."
+            "text": "We will check how much Ms. Park Ji-yeon actually transferred and what profit confirmations she received."
           },
-          "unlockHint": "It can be opened only after checking the investment room conversation and remittance records."
+          "unlockHint": "Unlocked by checking the investment chat conversation together with the transfer record."
         },
         {
-          "label": "Fraud and damage confirmed",
+          "label": "Exit Scam and Damage Confirmed",
           "question": {
-            "text": "We will check how the operator responded after the withdrawal request and how the fraud damage is confirmed."
+            "text": "We will check how the operator responded after the withdrawal request and how the scam damage became confirmed."
           },
-          "unlockHint": "It can only be opened after confirming the withdrawal delay and operator departure after initial profit certification."
+          "unlockHint": "Unlocked by confirming the withdrawal delays and operator disappearance after the initial profit confirmation."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "They ask whether the transfer to the investment room was not a simple mistake but a choice that actually resulted in the withdrawal of 20 million won from the joint savings account.",
-          "implication": "It is revealed that Park Ji-yeon's anxiety led to actual remittances and losses."
+          "questionAngle": "This asks whether the transfer to the investment chat was not a simple mistake, but a choice that actually sent out the ₩20M joint savings cancellation proceeds.",
+          "implication": "Responsibility emerges for Park Ji-yeon's anxiety leading to an actual transfer and loss."
         },
         "b": {
-          "questionAngle": "This record separates the fact that Park Ji-yeon's investment damage is separate from Lee Jun-ho's slush fund withdrawal.",
-          "implication": "B's concealment and A's investment losses are organized into separate liability axes."
+          "questionAngle": "This separates the record as Park Ji-yeon's investment loss, distinct from Lee Jun-ho's hidden-fund withdrawal.",
+          "implication": "B's concealment and A's investment loss are organized as separate axes of responsibility."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only the title “Investment Room Telegram” and some promotional text are visible."
+          "summary": "Only the title \"Investment Chat Telegram\" and some promotional wording are visible."
         },
         {
           "id": "excerpt",
-          "summary": "It appears that Park Ji-yeon sent 20 million won."
+          "summary": "The flow shows Park Ji-yeon transferring ₩20M."
         },
         {
           "id": "original",
-          "summary": "Initial profit verification and withdrawal delay message follow."
+          "summary": "Initial profit confirmations are followed by withdrawal-delay messages."
         },
         {
           "id": "context",
-          "summary": "Circumstances are revealed where the operator leaves the chat room and the victims protest."
+          "summary": "Circumstances emerge showing the operator leaving the chat room and victims protesting."
         },
         {
           "id": "established",
-          "summary": "The 20 million won investment fraud damage is recorded in official records."
+          "summary": "The ₩20M investment scam loss is organized as an official record."
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "The stage in which B questions the existence of this record or A only partially submits it."
+          "summary": "Stage where B challenges the existence of this record or A submits only part of it."
         },
         {
           "id": "verifying",
           "label": "Verifying",
-          "summary": "A Step of comparison between separate interrogation and original submission order"
+          "summary": "Stage of comparison through A's separate questioning and an order to submit the original."
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "Chat time and remittance time match"
+          "label": "Authenticated",
+          "summary": "Chat time matches transfer time."
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "It is true that they tried to hide it, but it was not an intentional concealment."
+          "label": "Challenged",
+          "summary": "Objection that it was hidden, but not intentionally concealed."
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "The fraud itself is certified, but whether it was self-defense or concealment remains open."
+          "label": "Manipulation/Misread Finding",
+          "summary": "The scam loss itself is authenticated, but whether it was self-defense or concealment remains open."
         }
       ],
       "meta": {
-        "name": "investment room telegram",
+        "name": "Investment Chat Telegram",
         "trustLabel": "Normal",
-        "sourceLabel": "Side A",
-        "legalLabel": "legal",
-        "stageLabel": "Investment room telegram original conversation"
+        "sourceLabel": "A Side",
+        "legalLabel": "Legal",
+        "stageLabel": "Original Investment Chat Telegram Conversation"
       },
       "viewerData": {
         "meta": {
-          "name": "investment room telegram",
+          "name": "Investment Chat Telegram",
           "trustLabel": "Normal",
-          "sourceLabel": "Side A",
-          "legalLabel": "legal",
-          "stageLabel": "Investment room telegram original conversation"
+          "sourceLabel": "A Side",
+          "legalLabel": "Legal",
+          "stageLabel": "Original Investment Chat Telegram Conversation"
         },
         "chat": {
           "header": "Telegram · VIP Investment Club",
-          "inputStatus": "Jiyeon Park — Read",
+          "inputStatus": "Park Ji-yeon — Read",
           "pages": [
             {
-              "header": "Telegram · VIP Investment Club · 01 Investment Room Introduction",
+              "header": "Telegram · VIP Investment Club · 01 Investment Chat Intro",
               "messages": [
                 {
                   "sender": "Operator (Jason)",
-                  "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+                  "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
                 },
                 {
-                  "sender": "Kim**",
-                  "text": "Last month, I put in 500 and it became 1,400."
+                  "sender": "Kim **",
+                  "text": "I put in 500 last month and it became 1,400."
                 },
                 {
-                  "sender": "Lee**",
-                  "text": "It's really awesome... I deposited additional money too."
+                  "sender": "Lee **",
+                  "text": "This is amazing... I made an additional deposit too."
                 },
                 {
-                  "sender": "Jiyeon Park",
-                  "text": "Where can I send my first deposit?"
+                  "sender": "Park Ji-yeon",
+                  "text": "Where should I send my first deposit?"
                 }
               ]
             },
             {
-              "header": "Telegram · VIP Investment Club · 02 Deposit and initial profit verification",
+              "header": "Telegram · VIP Investment Club · 02 Deposit and Initial Profit Confirmation",
               "messages": [
                 {
-                  "sender": "Jiyeon Park",
-                  "text": "I deposited 20 million won. Please check."
+                  "sender": "Park Ji-yeon",
+                  "text": "I deposited ₩20M. Please confirm."
                 },
                 {
                   "sender": "Operator (Jason)",
-                  "text": "Confirmed. The first proceeds will be deposited within 3 days."
+                  "text": "Confirmed. Your first profit payment is scheduled within three days."
                 },
                 {
                   "sender": "Operator (Jason)",
-                  "text": "Initial profit of 8% was reflected. If you make an additional deposit, it will be converted to VIP rate."
+                  "text": "Initial profit of 8% has been reflected. Make an additional deposit to switch to the VIP rate."
                 },
                 {
-                  "sender": "Jiyeon Park",
-                  "text": "If I wait a little longer, I can recover, right?"
+                  "sender": "Park Ji-yeon",
+                  "text": "If I wait a little longer, I can recover it, right?"
                 }
               ]
             },
             {
-              "header": "Telegram · VIP Investment Club · 03 Withdrawal delay and damage confirmed",
+              "header": "Telegram · VIP Investment Club · 03 Withdrawal Delay and Damage Confirmed",
               "messages": [
                 {
-                  "sender": "Jiyeon Park",
-                  "text": "It's been 3 days and the deposit hasn't been paid yet."
+                  "sender": "Park Ji-yeon",
+                  "text": "It has been three days, but the deposit still has not arrived."
                 },
                 {
-                  "sender": "Kim**",
-                  "text": "Jason, I can't contact you."
+                  "sender": "Kim **",
+                  "text": "I can't reach Jason."
                 },
                 {
-                  "sender": "system",
-                  "text": "The moderator has left the chat room."
+                  "sender": "System",
+                  "text": "The operator has left the chat room."
                 },
                 {
-                  "sender": "English letters",
-                  "text": "I too was blocked from withdrawing money."
+                  "sender": "Young-ja",
+                  "text": "My withdrawal request was blocked too."
                 },
                 {
-                  "sender": "Jiyeon Park",
-                  "text": "Why did the room disappear? Please return my money."
+                  "sender": "Park Ji-yeon",
+                  "text": "Why did the room disappear? Give me my money back."
                 }
               ]
             }
@@ -2089,55 +2095,55 @@
           "messages": [
             {
               "sender": "Operator (Jason)",
-              "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+              "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
             },
             {
-              "sender": "Kim**",
-              "text": "Last month, I put in 500 and it became 1,400."
+              "sender": "Kim **",
+              "text": "I put in 500 last month and it became 1,400."
             },
             {
-              "sender": "Lee**",
-              "text": "It's really awesome... I deposited additional money too."
+              "sender": "Lee **",
+              "text": "This is amazing... I made an additional deposit too."
             },
             {
-              "sender": "Jiyeon Park",
-              "text": "Where can I send my first deposit?"
+              "sender": "Park Ji-yeon",
+              "text": "Where should I send my first deposit?"
             },
             {
-              "sender": "Jiyeon Park",
-              "text": "I deposited 20 million won. Please check."
-            },
-            {
-              "sender": "Operator (Jason)",
-              "text": "Confirmed. The first proceeds will be deposited within 3 days."
+              "sender": "Park Ji-yeon",
+              "text": "I deposited ₩20M. Please confirm."
             },
             {
               "sender": "Operator (Jason)",
-              "text": "Initial profit of 8% was reflected. If you make an additional deposit, it will be converted to VIP rate."
+              "text": "Confirmed. Your first profit payment is scheduled within three days."
             },
             {
-              "sender": "Jiyeon Park",
-              "text": "If I wait a little longer, I can recover, right?"
+              "sender": "Operator (Jason)",
+              "text": "Initial profit of 8% has been reflected. Make an additional deposit to switch to the VIP rate."
             },
             {
-              "sender": "Jiyeon Park",
-              "text": "It's been 3 days and the deposit hasn't been paid yet."
+              "sender": "Park Ji-yeon",
+              "text": "If I wait a little longer, I can recover it, right?"
             },
             {
-              "sender": "Kim**",
-              "text": "Jason, I can't contact you."
+              "sender": "Park Ji-yeon",
+              "text": "It has been three days, but the deposit still has not arrived."
             },
             {
-              "sender": "system",
-              "text": "The moderator has left the chat room."
+              "sender": "Kim **",
+              "text": "I can't reach Jason."
             },
             {
-              "sender": "English letters",
-              "text": "I too was blocked from withdrawing money."
+              "sender": "System",
+              "text": "The operator has left the chat room."
             },
             {
-              "sender": "Jiyeon Park",
-              "text": "Why did the room disappear? Please return my money."
+              "sender": "Young-ja",
+              "text": "My withdrawal request was blocked too."
+            },
+            {
+              "sender": "Park Ji-yeon",
+              "text": "Why did the room disappear? Give me my money back."
             }
           ]
         }
@@ -2145,34 +2151,34 @@
       "viewerDataByStage": {
         "1": {
           "meta": {
-            "name": "investment room telegram",
+            "name": "Investment Chat Telegram",
             "trustLabel": "Normal",
-            "sourceLabel": "Side A",
-            "legalLabel": "legal",
-            "stageLabel": "Introduction to investment room and boasting of profits"
+            "sourceLabel": "A Side",
+            "legalLabel": "Legal",
+            "stageLabel": "Investment Chat Introduction and Profit Bragging"
           },
           "chat": {
             "header": "Telegram · VIP Investment Club",
-            "inputStatus": "Stage 1 disclosure",
+            "inputStatus": "Stage 1 Revealed",
             "pages": [
               {
-                "header": "Telegram · VIP Investment Club · 01 Investment Room Introduction",
+                "header": "Telegram · VIP Investment Club · 01 Investment Chat Intro",
                 "messages": [
                   {
                     "sender": "Operator (Jason)",
-                    "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+                    "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
                   },
                   {
-                    "sender": "Kim**",
-                    "text": "Last month, I put in 500 and it became 1,400."
+                    "sender": "Kim **",
+                    "text": "I put in 500 last month and it became 1,400."
                   },
                   {
-                    "sender": "Lee**",
-                    "text": "It's really awesome... I deposited additional money too."
+                    "sender": "Lee **",
+                    "text": "This is amazing... I made an additional deposit too."
                   },
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "Where can I send my first deposit?"
+                    "sender": "Park Ji-yeon",
+                    "text": "Where should I send my first deposit?"
                   }
                 ]
               }
@@ -2180,74 +2186,74 @@
             "messages": [
               {
                 "sender": "Operator (Jason)",
-                "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+                "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
               },
               {
-                "sender": "Kim**",
-                "text": "Last month, I put in 500 and it became 1,400."
+                "sender": "Kim **",
+                "text": "I put in 500 last month and it became 1,400."
               },
               {
-                "sender": "Lee**",
-                "text": "It's really awesome... I deposited additional money too."
+                "sender": "Lee **",
+                "text": "This is amazing... I made an additional deposit too."
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "Where can I send my first deposit?"
+                "sender": "Park Ji-yeon",
+                "text": "Where should I send my first deposit?"
               }
             ]
           }
         },
         "2": {
           "meta": {
-            "name": "investment room telegram",
+            "name": "Investment Chat Telegram",
             "trustLabel": "Normal",
-            "sourceLabel": "Side A",
-            "legalLabel": "legal",
-            "stageLabel": "Deposit and initial profit verification"
+            "sourceLabel": "A Side",
+            "legalLabel": "Legal",
+            "stageLabel": "Deposit and Initial Profit Confirmation"
           },
           "chat": {
             "header": "Telegram · VIP Investment Club",
-            "inputStatus": "Stage 2 disclosure",
+            "inputStatus": "Stage 2 Revealed",
             "pages": [
               {
-                "header": "Telegram · VIP Investment Club · 01 Investment Room Introduction",
+                "header": "Telegram · VIP Investment Club · 01 Investment Chat Intro",
                 "messages": [
                   {
                     "sender": "Operator (Jason)",
-                    "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+                    "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
                   },
                   {
-                    "sender": "Kim**",
-                    "text": "Last month, I put in 500 and it became 1,400."
+                    "sender": "Kim **",
+                    "text": "I put in 500 last month and it became 1,400."
                   },
                   {
-                    "sender": "Lee**",
-                    "text": "It's really awesome... I deposited additional money too."
+                    "sender": "Lee **",
+                    "text": "This is amazing... I made an additional deposit too."
                   },
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "Where can I send my first deposit?"
+                    "sender": "Park Ji-yeon",
+                    "text": "Where should I send my first deposit?"
                   }
                 ]
               },
               {
-                "header": "Telegram · VIP Investment Club · 02 Deposit and initial profit verification",
+                "header": "Telegram · VIP Investment Club · 02 Deposit and Initial Profit Confirmation",
                 "messages": [
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "I deposited 20 million won. Please check."
+                    "sender": "Park Ji-yeon",
+                    "text": "I deposited ₩20M. Please confirm."
                   },
                   {
                     "sender": "Operator (Jason)",
-                    "text": "Confirmed. The first proceeds will be deposited within 3 days."
+                    "text": "Confirmed. Your first profit payment is scheduled within three days."
                   },
                   {
                     "sender": "Operator (Jason)",
-                    "text": "Initial profit of 8% was reflected. If you make an additional deposit, it will be converted to VIP rate."
+                    "text": "Initial profit of 8% has been reflected. Make an additional deposit to switch to the VIP rate."
                   },
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "If I wait a little longer, I can recover, right?"
+                    "sender": "Park Ji-yeon",
+                    "text": "If I wait a little longer, I can recover it, right?"
                   }
                 ]
               }
@@ -2255,115 +2261,115 @@
             "messages": [
               {
                 "sender": "Operator (Jason)",
-                "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+                "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
               },
               {
-                "sender": "Kim**",
-                "text": "Last month, I put in 500 and it became 1,400."
+                "sender": "Kim **",
+                "text": "I put in 500 last month and it became 1,400."
               },
               {
-                "sender": "Lee**",
-                "text": "It's really awesome... I deposited additional money too."
+                "sender": "Lee **",
+                "text": "This is amazing... I made an additional deposit too."
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "Where can I send my first deposit?"
+                "sender": "Park Ji-yeon",
+                "text": "Where should I send my first deposit?"
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "I deposited 20 million won. Please check."
-              },
-              {
-                "sender": "Operator (Jason)",
-                "text": "Confirmed. The first proceeds will be deposited within 3 days."
+                "sender": "Park Ji-yeon",
+                "text": "I deposited ₩20M. Please confirm."
               },
               {
                 "sender": "Operator (Jason)",
-                "text": "Initial profit of 8% was reflected. If you make an additional deposit, it will be converted to VIP rate."
+                "text": "Confirmed. Your first profit payment is scheduled within three days."
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "If I wait a little longer, I can recover, right?"
+                "sender": "Operator (Jason)",
+                "text": "Initial profit of 8% has been reflected. Make an additional deposit to switch to the VIP rate."
+              },
+              {
+                "sender": "Park Ji-yeon",
+                "text": "If I wait a little longer, I can recover it, right?"
               }
             ]
           }
         },
         "3": {
           "meta": {
-            "name": "investment room telegram",
+            "name": "Investment Chat Telegram",
             "trustLabel": "Normal",
-            "sourceLabel": "Side A",
-            "legalLabel": "legal",
-            "stageLabel": "Fraud and damage confirmed"
+            "sourceLabel": "A Side",
+            "legalLabel": "Legal",
+            "stageLabel": "Exit Scam and Damage Confirmed"
           },
           "chat": {
             "header": "Telegram · VIP Investment Club",
-            "inputStatus": "Stage 3 disclosure",
+            "inputStatus": "Stage 3 Revealed",
             "pages": [
               {
-                "header": "Telegram · VIP Investment Club · 01 Investment Room Introduction",
+                "header": "Telegram · VIP Investment Club · 01 Investment Chat Intro",
                 "messages": [
                   {
                     "sender": "Operator (Jason)",
-                    "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+                    "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
                   },
                   {
-                    "sender": "Kim**",
-                    "text": "Last month, I put in 500 and it became 1,400."
+                    "sender": "Kim **",
+                    "text": "I put in 500 last month and it became 1,400."
                   },
                   {
-                    "sender": "Lee**",
-                    "text": "It's really awesome... I deposited additional money too."
+                    "sender": "Lee **",
+                    "text": "This is amazing... I made an additional deposit too."
                   },
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "Where can I send my first deposit?"
+                    "sender": "Park Ji-yeon",
+                    "text": "Where should I send my first deposit?"
                   }
                 ]
               },
               {
-                "header": "Telegram · VIP Investment Club · 02 Deposit and initial profit verification",
+                "header": "Telegram · VIP Investment Club · 02 Deposit and Initial Profit Confirmation",
                 "messages": [
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "I deposited 20 million won. Please check."
+                    "sender": "Park Ji-yeon",
+                    "text": "I deposited ₩20M. Please confirm."
                   },
                   {
                     "sender": "Operator (Jason)",
-                    "text": "Confirmed. The first proceeds will be deposited within 3 days."
+                    "text": "Confirmed. Your first profit payment is scheduled within three days."
                   },
                   {
                     "sender": "Operator (Jason)",
-                    "text": "Initial profit of 8% was reflected. If you make an additional deposit, it will be converted to VIP rate."
+                    "text": "Initial profit of 8% has been reflected. Make an additional deposit to switch to the VIP rate."
                   },
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "If I wait a little longer, I can recover, right?"
+                    "sender": "Park Ji-yeon",
+                    "text": "If I wait a little longer, I can recover it, right?"
                   }
                 ]
               },
               {
-                "header": "Telegram · VIP Investment Club · 03 Withdrawal delay and damage confirmed",
+                "header": "Telegram · VIP Investment Club · 03 Withdrawal Delay and Damage Confirmed",
                 "messages": [
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "It's been 3 days and the deposit hasn't been paid yet."
+                    "sender": "Park Ji-yeon",
+                    "text": "It has been three days, but the deposit still has not arrived."
                   },
                   {
-                    "sender": "Kim**",
-                    "text": "Jason, I can't contact you."
+                    "sender": "Kim **",
+                    "text": "I can't reach Jason."
                   },
                   {
-                    "sender": "system",
-                    "text": "The moderator has left the chat room."
+                    "sender": "System",
+                    "text": "The operator has left the chat room."
                   },
                   {
-                    "sender": "English letters",
-                    "text": "I too was blocked from withdrawing money."
+                    "sender": "Young-ja",
+                    "text": "My withdrawal request was blocked too."
                   },
                   {
-                    "sender": "Jiyeon Park",
-                    "text": "Why did the room disappear? Please return my money."
+                    "sender": "Park Ji-yeon",
+                    "text": "Why did the room disappear? Give me my money back."
                   }
                 ]
               }
@@ -2371,55 +2377,55 @@
             "messages": [
               {
                 "sender": "Operator (Jason)",
-                "text": "Achieved 180% return this month. If you join now, the principal guarantee event will be applied."
+                "text": "Returns reached 180% this month. Join now and the principal-guarantee event applies."
               },
               {
-                "sender": "Kim**",
-                "text": "Last month, I put in 500 and it became 1,400."
+                "sender": "Kim **",
+                "text": "I put in 500 last month and it became 1,400."
               },
               {
-                "sender": "Lee**",
-                "text": "It's really awesome... I deposited additional money too."
+                "sender": "Lee **",
+                "text": "This is amazing... I made an additional deposit too."
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "Where can I send my first deposit?"
+                "sender": "Park Ji-yeon",
+                "text": "Where should I send my first deposit?"
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "I deposited 20 million won. Please check."
-              },
-              {
-                "sender": "Operator (Jason)",
-                "text": "Confirmed. The first proceeds will be deposited within 3 days."
+                "sender": "Park Ji-yeon",
+                "text": "I deposited ₩20M. Please confirm."
               },
               {
                 "sender": "Operator (Jason)",
-                "text": "Initial profit of 8% was reflected. If you make an additional deposit, it will be converted to VIP rate."
+                "text": "Confirmed. Your first profit payment is scheduled within three days."
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "If I wait a little longer, I can recover, right?"
+                "sender": "Operator (Jason)",
+                "text": "Initial profit of 8% has been reflected. Make an additional deposit to switch to the VIP rate."
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "It's been 3 days and the deposit hasn't been paid yet."
+                "sender": "Park Ji-yeon",
+                "text": "If I wait a little longer, I can recover it, right?"
               },
               {
-                "sender": "Kim**",
-                "text": "Jason, I can't contact you."
+                "sender": "Park Ji-yeon",
+                "text": "It has been three days, but the deposit still has not arrived."
               },
               {
-                "sender": "system",
-                "text": "The moderator has left the chat room."
+                "sender": "Kim **",
+                "text": "I can't reach Jason."
               },
               {
-                "sender": "English letters",
-                "text": "I too was blocked from withdrawing money."
+                "sender": "System",
+                "text": "The operator has left the chat room."
               },
               {
-                "sender": "Jiyeon Park",
-                "text": "Why did the room disappear? Please return my money."
+                "sender": "Young-ja",
+                "text": "My withdrawal request was blocked too."
+              },
+              {
+                "sender": "Park Ji-yeon",
+                "text": "Why did the room disappear? Give me my money back."
               }
             ]
           }
@@ -2428,157 +2434,157 @@
     },
     {
       "id": "e-7",
-      "name": "Joint savings cancellation documents",
-      "surfaceName": "Joint savings cancellation documents",
-      "description": "Joint savings cancellation documents and processing records. Data indicating how A proceeded with the cancellation procedure.",
-      "surfaceDescription": "There remains documentation that the joint savings account was canceled before maturity.",
+      "name": "Joint Savings Cancellation Papers",
+      "surfaceName": "Joint Savings Cancellation Papers",
+      "description": "Joint Savings Cancellation Papers and processing records. Materials indicating how A proceeded with the cancellation.",
+      "surfaceDescription": "Documents remain showing the joint savings account was canceled before maturity.",
       "investigationResults": {
-        "request_original": "This is a document for canceling a joint savings account and a power of attorney. The termination amount is 20 million won.",
-        "check_metadata": "It is suspected that Lee Jun-ho's signature on the power of attorney is not his own handwriting. There are traces of Park Ji-yeon's ghostwriting.",
-        "restore_context": "This is evidence of a criminal act in which Park Ji-yeon manipulated the power of attorney and canceled the joint savings account worth 20 million won without Lee Jun-ho's consent."
+        "request_original": "Joint Savings Cancellation Papers and a power of attorney. Cancellation amount: ₩20M.",
+        "check_metadata": "Lee Jun-ho's signature on the power of attorney is suspected not to be in his own handwriting. There are traces suggesting Park Ji-yeon wrote it for him.",
+        "restore_context": "Evidence that Park Ji-yeon manipulated the power of attorney and committed the criminal act of canceling the ₩20M joint savings account without Lee Jun-ho's consent."
       },
       "investigationStages": [
         {
           "question": {
-            "text": "Whose signature is on this termination document?"
+            "text": "Whose signature is on this cancellation document?"
           },
-          "label": "Check documents"
+          "label": "Document Check"
         },
         {
           "question": {
-            "text": "If the signature on this power of attorney is not mine, who wrote it?"
+            "text": "If the signature on this power of attorney is not his, who wrote it?"
           },
-          "label": "handwriting comparison",
-          "unlockHint": "Checking your documents will allow you to compare your termination records with your power of attorney signature."
+          "label": "Handwriting Check",
+          "unlockHint": "Check the documents to compare the cancellation record together with the power-of-attorney signature."
         },
         {
           "question": {
-            "text": "This level of paperwork can result in significant legal liability. How would you explain it?"
+            "text": "Paperwork at this level can lead to serious legal responsibility. How do you explain it?"
           },
-          "label": "holding accountable",
-          "unlockHint": "By comparing handwriting, you can directly investigate whether termination without consent has occurred."
+          "label": "Press Responsibility",
+          "unlockHint": "Compare the handwriting to directly press whether the cancellation was done without consent."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "Please explain your signature on this power of attorney.",
-          "implication": "The document processing process and the legal responsibilities that come with it are revealed."
+          "questionAngle": "Please explain the signature on this power of attorney.",
+          "implication": "The document-handling process and the legal responsibility that follows are revealed."
         },
         "b": {
-          "questionAngle": "Have you seen this document? Have you ever consented to termination?",
-          "implication": "It is revealed that the termination was carried out without B’s consent."
+          "questionAngle": "Have you seen this document before? Did you ever consent to the cancellation?",
+          "implication": "It is revealed whether the cancellation proceeded without B's consent."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only the existence of the cancellation document is visible."
+          "summary": "Only the existence of cancellation documents is visible."
         },
         {
           "id": "excerpt",
-          "summary": "Power of attorney + 20 million won termination record"
+          "summary": "Power of attorney + ₩20M cancellation record."
         },
         {
           "id": "original",
-          "summary": "Check for signs of ghostwriting"
+          "summary": "Traces of proxy-written signature confirmed."
         },
         {
           "id": "context",
-          "summary": "Evidence of power of attorney manipulation crime"
+          "summary": "Evidence of the power-of-attorney manipulation crime."
         },
         {
           "id": "established",
-          "summary": "Confirmed by manipulating A’s power of attorney"
+          "summary": "Confirmed as A's power-of-attorney manipulation."
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "Comprehensive data that can only be organized when different evidence is combined"
+          "summary": "Comprehensive material that only becomes organized when combined with other evidence."
         },
         {
           "id": "verifying",
           "label": "Verifying",
-          "summary": "Once the key axes from e-1 to e-6 are certified, they are organized together."
+          "summary": "e-1 through e-6 key axes are organized together once authenticated."
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "If four or more pieces of underlying evidence are authenticated, this material is also authenticated."
+          "label": "Authenticated",
+          "summary": "This material is also authenticated once four or more pieces of underlying evidence are authenticated."
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "Both A and B can object that the timing is meaningless."
+          "label": "Challenged",
+          "summary": "Both A and B may object that the order of timing is meaningless."
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "The data itself cannot be manipulated, but its interpretation varies depending on the perspective from which it is viewed."
+          "label": "Manipulation/Misread Finding",
+          "summary": "The material itself cannot be manipulated, but interpretation changes depending on the perspective used."
         }
       ],
       "meta": {
-        "name": "Joint savings cancellation documents",
+        "name": "Joint Savings Cancellation Papers",
         "trustLabel": "Normal",
-        "sourceLabel": "institution",
-        "legalLabel": "legal",
-        "stageLabel": "key disclosure"
+        "sourceLabel": "Agency",
+        "legalLabel": "Legal",
+        "stageLabel": "Key Reveal"
       },
       "viewerData": {
         "meta": {
-          "name": "Joint savings cancellation documents",
+          "name": "Joint Savings Cancellation Papers",
           "trustLabel": "Normal",
-          "sourceLabel": "institution",
-          "legalLabel": "legal",
-          "stageLabel": "key disclosure"
+          "sourceLabel": "Agency",
+          "legalLabel": "Legal",
+          "stageLabel": "Key Reveal"
         },
         "contract": {
-          "title": "Application for termination of periodic ban",
+          "title": "INSTALLMENT SAVINGS CANCELLATION APPLICATION",
           "subtitle": "○○ Bank Mapo Branch — January 18, 2026, 2:14 PM",
           "rows": [
             {
-              "date": "Product name",
-              "content": "○○ Bank fixed deposit (500,000 won per month × 36 months)"
+              "date": "Product Name",
+              "content": "○○ Bank Installment Savings (₩500,000/month × 36 months)"
             },
             {
-              "date": "account",
-              "content": "Joint names: Park Ji-yeon, Lee Jun-ho (Account number: 110-XXX-XXXXXX)"
+              "date": "Account",
+              "content": "Joint holders: Park Ji-yeon, Lee Jun-ho (Account No.: 110-XXX-XXXXXX)"
             },
             {
-              "date": "Join date",
+              "date": "Enrollment Date",
               "content": "July 15, 2023"
             },
             {
-              "date": "balance",
-              "content": "Total of savings principal and interest",
-              "amount": "20.12 million won"
+              "date": "Balance",
+              "content": "Total savings principal and interest",
+              "amount": "₩20.12M"
             },
             {
-              "date": "Cancellation type",
-              "content": "Early termination (before maturity date July 14, 2026)",
-              "amount": "- interest deduction"
+              "date": "Cancellation Type",
+              "content": "Early Cancellation (before maturity date: July 14, 2026)",
+              "amount": "-Interest deducted"
             },
             {
-              "date": "How to receive",
-              "content": "Immediate deposit to Jiyeon Park’s personal account (○○ Bank 110-XXX-XXXXXX)",
-              "amount": "+20.12 million won"
+              "date": "Receipt Method",
+              "content": "Immediately deposited to Park Ji-yeon's personal account (○○ Bank 110-XXX-XXXXXX)",
+              "amount": "+₩20.12M"
             },
             null,
             {
               "date": "Attachment 1",
-              "content": "Power of attorney in the name of Lee Jun-ho – handwritten signature attached"
+              "content": "Power of attorney in Lee Jun-ho's name — handwritten signature attached"
             },
             {
-              "date": "Checklist",
-              "content": "Power of attorney signature handwriting — Unconfirmed whether it matches the principal’s existing signature"
+              "date": "Check Item",
+              "content": "Power-of-attorney signature handwriting — match with existing signature unconfirmed"
             },
             {
               "date": "Remarks",
-              "content": "Junho Lee has no record of his visit / identity verification process not implemented"
+              "content": "No record of Lee Jun-ho's personal visit / identity verification not performed"
             }
           ],
-          "signature": "Applicant: Park Ji-yeon (signature) ——— Mandator: Lee Jun-ho (proxy signature suspected) ——— Person in charge: ○○ Bank Mapo Branch Kim ○○"
+          "signature": "Applicant: Park Ji-yeon (seal) ——— Principal: Lee Jun-ho (proxy signature suspected) ——— Handler: Kim ○○, ○○ Bank Mapo Branch"
         }
       }
     }
@@ -2586,190 +2592,190 @@
   "truthTable": [
     {
       "id": "t-1",
-      "fact": "The target of B's officetel visit was not his affair partner, but his older brother and nephew."
+      "fact": "B’s Officetel visits were to his older brother and that brother’s child, not an affair partner."
     },
     {
       "id": "t-2",
-      "fact": "B hid 30 million won of his personal slush fund from his spouse and delivered it to his brother in cash."
+      "fact": "B hid ₩30M in personal hidden funds from his spouse and handed it to his older brother in cash."
     },
     {
       "id": "t-3",
-      "fact": "After becoming convinced that her husband was having an affair, A manipulated the power of attorney to cancel the joint savings account of 20 million won and transferred the entire amount to an investment bank."
+      "fact": "After becoming convinced her husband was having an affair, A manipulated a power of attorney, cancelled the ₩20M joint savings account, and transferred the full amount to an investment chat."
     },
     {
       "id": "t-4",
-      "fact": "B started the hiding first, and A actually carried out the secret remittance first."
+      "fact": "B began the concealment first, while A executed the actual secret transfer first."
     },
     {
       "id": "t-5",
-      "fact": "Although both had reasons they could not speak about, they both moved their joint property alone."
+      "fact": "Both had reasons they could not speak of, but both moved joint property on their own."
     }
   ],
   "solutions": {
     "공동재산회복": [
-      "The flow of withdrawal of 30 million won from personal slush fund, cancellation of 20 million won from joint savings, and remittance of 20 million won from investment room are separated and re-aligned with recoverable amount and loss amount.",
-      "Support from older siblings is only allowed through a separate agreement process that is separate from the marital property."
+      "Separate the flow of the ₩30M personal hidden-fund withdrawal, the ₩20M joint savings cancellation, and the ₩20M investment chat transfer, then reconcile recoverable amounts against losses.",
+      "Support for the brother’s family is allowed only through a separate agreement process, apart from marital joint property."
     ],
     "신뢰순서분리": [
-      "The sequence of initiation of concealment and actual execution of remittance is recorded separately, and emotional betrayal and execution responsibility are judged separately.",
-      "Simultaneously re-establish communication rules related to in-laws and prior consent rules for common property."
+      "Record the start of concealment separately from the actual execution of transfers, and judge emotional betrayal apart from execution responsibility.",
+      "Rebuild both the rules for discussing the in-laws and the rules for prior consent over joint property."
     ],
     "봉인정보경계": [
-      "Minor information and sensitive health-related information are released only to the extent necessary.",
-      "Misunderstandings about infidelity are resolved, but family care and joint property rights are left as separate responsibilities."
+      "Release minor-related information and health-sensitive information only to the extent necessary.",
+      "Resolve the affair misunderstanding, but leave family care and overreach over joint property as separate responsibilities."
     ]
   },
   "combinationLab": {
     "nodes": [
       {
         "id": "e-1",
-        "label": "e-1 card statement"
+        "label": "e-1 Card Statement"
       },
       {
         "id": "e-2",
-        "label": "e-2 officetel access record"
+        "label": "e-2 Officetel Entry Logs"
       },
       {
         "id": "e-3",
-        "label": "e-3 early morning call records"
+        "label": "e-3 Early-Morning Call Logs"
       },
       {
         "id": "e-4",
-        "label": "e-4 text from unknown sender"
+        "label": "e-4 Text from Unknown Sender"
       },
       {
         "id": "e-5",
-        "label": "Withdrawal of large amounts from e-5 personal account"
+        "label": "e-5 Large Personal Account Withdrawal"
       },
       {
         "id": "e-6",
-        "label": "e-6 Investment Room Telegram + 20 million won transfer"
+        "label": "e-6 Investment Chat Telegram + ₩20M Transfer"
       },
       {
         "id": "e-7",
-        "label": "e-7 Currency/Account/Account Movement Checklist"
+        "label": "e-7 Call / Entry / Account Movement Chart"
       },
       {
         "id": "stmt-b-family",
-        "label": "B's statement, \"It's a family matter.\""
+        "label": "B's statement: \"It is a family matter.\""
       },
       {
         "id": "stmt-b-repay",
-        "label": "B's statement \"My brother said he would pay me back soon.\""
+        "label": "B's statement: \"My brother said he would pay it back soon.\""
       },
       {
         "id": "stmt-a-protect",
-        "label": "A's statement \"I tried to protect my share just in case.\""
+        "label": "A's statement: \"I tried to protect my share, just in case.\""
       },
       {
         "id": "w-1-angle",
-        "label": "w-1 officetel expense testimony congratulations"
+        "label": "w-1 Officetel Security Guard Testimony Track"
       },
       {
         "id": "w-2-angle",
-        "label": "w-2 bank employee testimony"
+        "label": "w-2 Bank Clerk Testimony Track"
       },
       {
         "id": "w-3-angle",
-        "label": "w-3 Park Mira's testimony congratulations"
+        "label": "w-3 Park Mi-ra Testimony Track"
       },
       {
         "id": "dc-1",
-        "label": "People at dc-1 officetel"
+        "label": "dc-1 People at the Officetel"
       },
       {
         "id": "dc-2",
-        "label": "dc-2 We fight whenever we talk about our in-laws."
+        "label": "dc-2 Fights Whenever the In-Laws Come Up"
       },
       {
         "id": "dc-3",
-        "label": "dc-3 30 million won authority"
+        "label": "dc-3 Authority over ₩30M"
       },
       {
         "id": "dc-4",
-        "label": "dc-4 figure of 20 million won"
+        "label": "dc-4 The ₩20M Issue"
       },
       {
         "id": "dc-5",
-        "label": "dc-5 order of 60 million won"
+        "label": "dc-5 Order of the ₩60M"
       },
       {
         "id": "dc-6",
-        "label": "dc-6 family circumstances"
+        "label": "dc-6 Family Circumstances"
       }
     ],
     "outputs": [
       {
         "id": "dc-1",
-        "label": "People at dc-1 officetel",
-        "summary": "A card that makes you reexamine your first impression of infidelity in terms of family circumstances.",
-        "noteText": "People in officetel",
-        "judgeHint": "You can now call the officetel security as a witness to confirm the movement."
+        "label": "dc-1 People at the Officetel",
+        "summary": "A card that reframes the first impression of an affair as a Family Circumstances.",
+        "noteText": "People at the Officetel",
+        "judgeHint": "You can now call the Officetel Security Guard as a witness to confirm the route."
       },
       {
         "id": "dc-2",
-        "label": "dc-2 We fight whenever we talk about our in-laws.",
-        "summary": "A card that determines the identity of the fear that causes B to close his mouth.",
-        "noteText": "Whenever the topic of in-laws comes up, we fight",
-        "judgeHint": "If you directly question Junho Lee about this emotional pattern or present him with a text message (e-4) from an unknown sender, the specific story will be revealed."
+        "label": "dc-2 Fights Whenever the In-Laws Come Up",
+        "summary": "A card that gauges the fear keeping B silent.",
+        "noteText": "Fights Whenever the In-Laws Come Up",
+        "judgeHint": "Press Mr. Lee Jun-ho on this emotional pattern, or present the Text from Unknown Sender (e-4), and the details will emerge."
       },
       {
         "id": "dc-3",
-        "label": "dc-3 30 million won authority",
-        "summary": "A card asking who had the authority to cancel the joint savings account and whether the power of attorney process was justified.",
-        "noteText": "Authority of 30 million won",
-        "judgeHint": "Call a bank employee as a witness to verify the joint savings cancellation procedure and the authenticity of the power of attorney."
+        "label": "dc-3 Authority over ₩30M",
+        "summary": "A card asking who had authority to cancel the joint savings account and whether the power of attorney was handled properly.",
+        "noteText": "Authority over ₩30M",
+        "judgeHint": "Call the Bank Clerk as a witness to verify the joint savings cancellation procedure and the power of attorney."
       },
       {
         "id": "dc-4",
-        "label": "dc-4 figure of 20 million won",
-        "summary": "A card asking where and why Lee Jun-ho's personal funds went away",
-        "noteText": "Figure of 20 million won",
-        "judgeHint": "Now you can directly check the situation with Lee Jun-ho's family, or ask him why he hid it by exploring his motive."
+        "label": "dc-4 The ₩20M Issue",
+        "summary": "A card asking where Mr. Lee Jun-ho's personal funds went and why.",
+        "noteText": "The ₩20M Issue",
+        "judgeHint": "You can now check Mr. Lee Jun-ho's Family Circumstances directly, or use a motive probe to ask why he hid them."
       },
       {
         "id": "dc-5",
-        "label": "dc-5 order of 60 million won",
-        "summary": "A card that separates the initiation of concealment from the actual execution of the transfer",
-        "noteText": "Order of 60 million won",
-        "judgeHint": "Witness Park Mira will definitively fill in the path to joining the investment room."
+        "label": "dc-5 Order of the ₩60M",
+        "summary": "A card separating the start of concealment from the actual transfer.",
+        "noteText": "Order of the ₩60M",
+        "judgeHint": "Witness Park Mi-ra will decisively fill in how the investment chat was joined."
       },
       {
         "id": "dc-6",
-        "label": "dc-6 family circumstances",
-        "summary": "A card that separates family circumstances by looking at the reference on the receipt and the school notification in the text.",
-        "noteText": "family circumstances",
-        "judgeHint": "This refers to a family situation where the text message and the item purchased are the same. You need to separately check who it is related to and why it was hidden."
+        "label": "dc-6 Family Circumstances",
+        "summary": "A card that separates the Family Circumstances by reading the receipt's workbook together with the school notice in the texts.",
+        "noteText": "Family Circumstances",
+        "judgeHint": "The text and purchased items point to the same Family Circumstances. Confirm separately who it involved and why it was hidden."
       }
     ],
     "recipes": [
       {
         "id": "combine-1",
-        "discoveryText": "The receipt purchase location and the black box stop coordinates match. The purchase pattern is confirmed only near the officetel."
+        "discoveryText": "The receipt purchase locations match the dashcam stop coordinates. A pattern of buying only near the Officetel is confirmed."
       },
       {
         "id": "combine-2",
-        "discoveryText": "The middle school reference book in the receipt bundle and the school notice mixed in the text link to the family's side of the story."
+        "discoveryText": "The middle-school workbook in the receipt bundle and the school notice mixed into the texts align as Family Circumstances."
       },
       {
         "id": "combine-3",
-        "discoveryText": "Early morning calls and large money withdrawal records overlap in the same time zone. You need to find out for yourself where the money is moving and why you are hiding it from your spouse."
+        "discoveryText": "The early-morning call and large withdrawal records overlap in the same period. Confirm directly where the money went and why it was hidden from the spouse."
       },
       {
         "id": "combine-4",
-        "discoveryText": "The joint savings cancellation amount and the investment room remittance amount are exactly the same. The destination of the money that has escaped is confirmed."
+        "discoveryText": "The joint savings cancellation amount exactly matches the transfer to the investment chat. The destination of the withdrawn money is confirmed."
       },
       {
         "id": "combine-5",
-        "discoveryText": "Jiyeon Park's statement that she 'tried to protect her share' and the circumstances surrounding the processing of the power of attorney point in the same direction. It is revealed that the cancellation of the joint savings was not an accident but a conscious act."
+        "discoveryText": "Ms. Park Ji-yeon's claim that she \"tried to protect her share\" and the power-of-attorney handling point in the same direction. The joint savings cancellation was not accidental, but a deliberate act."
       },
       {
         "id": "combine-6",
-        "discoveryText": "The explanation that it was a family matter matches the content of the text. It is necessary to directly confirm who the person is and the scope of care."
+        "discoveryText": "The explanation that it was a family matter aligns with the text messages. Confirm directly who the other person was and what care was provided."
       },
       {
         "id": "combine-7",
-        "discoveryText": "If you put the words \"it's a family matter\" and \"I tried to protect my share\" side by side, the reasons for not telling each other first overlap."
+        "discoveryText": "Placed side by side, \"a family matter\" and \"I tried to protect my share\" reveal overlapping reasons for not telling each other first."
       }
     ]
   },
@@ -2778,68 +2784,68 @@
       "depthStages": [
         {
           "id": "stub",
-          "summary": "Only existence is visible"
+          "summary": "Existence only shown"
         },
         {
           "id": "excerpt",
-          "summary": "View only part"
+          "summary": "View excerpt only"
         },
         {
           "id": "original",
-          "summary": "Secure original/full copy"
+          "summary": "Secure original/full version"
         },
         {
           "id": "context",
-          "summary": "Restore context before and after"
+          "summary": "Restore surrounding context"
         },
         {
           "id": "established",
-          "summary": "Official record adoption"
+          "summary": "Adopt as official record"
         }
       ],
       "trustStates": [
         {
           "id": "submitted",
           "label": "Submitted",
-          "summary": "Status submitted by the party"
+          "summary": "Submitted by a party"
         },
         {
           "id": "verifying",
-          "label": "Verifying",
-          "summary": "Checking the original and context"
+          "label": "Under Verification",
+          "summary": "Checking against the original and confirming context"
         },
         {
           "id": "authenticated",
-          "label": "Verified",
-          "summary": "Judging by reliable data"
+          "label": "Authenticated",
+          "summary": "Judged as reliable material"
         },
         {
           "id": "challenged",
-          "label": "Objection raised",
-          "summary": "The other side disputes the meaning or scope"
+          "label": "Challenged",
+          "summary": "The opposing side disputes the meaning or scope"
         },
         {
           "id": "misread",
-          "label": "Manipulation/misreading judgment",
-          "summary": "Determination of forgery or excerpt/misreading"
+          "label": "Manipulation/Misread Ruling",
+          "summary": "Forgery or excerpt/misread status has been ruled on"
         }
       ]
     },
     "hiddenDisputes": [
       {
         "id": "h-d3",
-        "name": "Purpose of cancellation of joint savings of 20 million won",
+        "name": "Purpose of Closing the ₩20M Joint Savings",
         "unlockPlan": {
-          "runtimeRule": "Unlock upon presentation of e-6",
-          "authoredRule": "Generated when e-6 becomes Excerpt or higher or 2 synchronous searches are accumulated for A."
+          "runtimeRule": "e-6 presented: unlocks.",
+          "authoredRule": "e-6 reaches Excerpt or higher, or A accumulates two motive probes, then generated."
         }
       },
       {
         "id": "h-d4",
-        "name": "Liability for Breach of Trust",
+        "name": "Responsibility for Breach of Trust",
         "unlockPlan": {
-          "runtimeRule": "Unlocks by presenting h-d3 + e-7",
-          "authoredRule": "Created when e-7 becomes Original or higher after creating h-d3 or when a Reframe Lead occurs with e-5+e-6."
+          "runtimeRule": "Unlocked when h-d3 is unlocked and e-7 is presented.",
+          "authoredRule": "Generated after h-d3 is created if e-7 reaches Original or higher, or if e-5 + e-6 creates a Reframe Lead."
         }
       }
     ],
@@ -2849,171 +2855,176 @@
         "interpretationChoices": [
           {
             "id": "L-1-A",
-            "text": "It's an affair route.",
-            "implication": "d-1 is suspected of having an affair."
+            "text": "It is an affair route",
+            "implication": "Push d-1 toward affair suspicion."
           },
           {
             "id": "L-1-B",
-            "text": "It is a lifestyle that takes care of someone.",
-            "implication": "It continues well with the e-4 reversal."
+            "text": "It is a care-taking daily route",
+            "implication": "Connects well to the e-4 reversal."
           },
           {
             "id": "L-1-C",
-            "text": "It could be a simple errand",
+            "text": "It may be a simple errand",
             "implication": "Reserve judgment."
           }
-        ]
+        ],
+        "name": "Timeline Lead"
       },
       {
         "id": "L-2",
         "interpretationChoices": [
           {
             "id": "L-2-A",
-            "text": "It wasn't an affair, but I hid it because I was embarrassed.",
-            "implication": "We see B’s shame first."
+            "text": "Not an affair, but hidden out of shame",
+            "implication": "Look first at B’s shame."
           },
           {
             "id": "L-2-B",
-            "text": "I hid it to avoid discord between my in-laws.",
-            "implication": "Open the relationship fear axis."
+            "text": "Hidden to avoid conflict with the in-laws",
+            "implication": "Open the relationship-fear axis."
           }
-        ]
+        ],
+        "name": "Context Lead"
       },
       {
         "id": "L-3",
         "interpretationChoices": [
           {
             "id": "L-3-A",
-            "text": "This is the money I actually used to save my brother.",
-            "implication": "We see good intentions and logic for relief."
+            "text": "Money meant to actually save his brother’s family",
+            "implication": "Look at good faith and rescue logic."
           },
           {
             "id": "L-3-B",
-            "text": "It's an excess of authority to take on my brother's irresponsibility.",
-            "implication": "Look at common property responsibilities."
+            "text": "An overreach that took on his brother’s irresponsibility",
+            "implication": "Look at joint-property responsibility."
           }
-        ]
+        ],
+        "name": "Beneficiary Lead"
       },
       {
         "id": "L-4",
         "interpretationChoices": [
           {
             "id": "L-4-A",
-            "text": "It is self-defense amidst the fear of betrayal.",
-            "implication": "We see A’s fear first."
+            "text": "Self-defense within fear of betrayal",
+            "implication": "Look first at A’s fear."
           },
           {
             "id": "L-4-B",
-            "text": "It's a secret to prepare for divorce.",
-            "implication": "Let’s look at A’s calculation first."
+            "text": "Concealment in preparation for divorce",
+            "implication": "Look first at A’s calculation."
           }
-        ]
+        ],
+        "name": "Emotion Lead"
       },
       {
         "id": "L-5",
         "interpretationChoices": [
           {
             "id": "L-5-A",
-            "text": "My husband lost the larger amount of money first.",
-            "implication": "It is a responsibility narrative based on the amount and size."
+            "text": "The husband damaged the larger sum first",
+            "implication": "A responsibility narrative based on amount size."
           },
           {
             "id": "L-5-B",
-            "text": "The wife broke trust by moving the money first.",
-            "implication": "Responsibility narrative based on execution order."
+            "text": "The wife moved the money first and broke trust",
+            "implication": "A responsibility narrative based on execution order."
           },
           {
             "id": "L-5-C",
-            "text": "It is a mirror-shaped lie structure.",
-            "implication": "We see mutual collapse and symmetry structures."
+            "text": "A mirrored lie structure",
+            "implication": "Look at mutual collapse and mirrored structure."
           }
-        ]
+        ],
+        "name": "Reframe Lead"
       }
     ],
     "authorityPlacements": [
       {
-        "action": "ORIGINAL SUBMISSION ORDER",
-        "recommendedMoment": "At the beginning of d-1 e-1/e-3 Excerpt",
-        "purpose": "Anchoring Doubts in Patterns, Not Emotions"
+        "action": "Order Original Submission",
+        "recommendedMoment": "Early d-1, at the e-1/e-3 Excerpt point",
+        "purpose": "Anchor suspicion in patterns, not emotion"
       },
       {
-        "action": "ORIGINAL SUBMISSION ORDER",
-        "recommendedMoment": "Immediately after the appearance of e-4",
-        "purpose": "Secure original text messages and schedule notifications from unknown senders"
+        "action": "Order Original Submission",
+        "recommendedMoment": "Immediately after e-4 appears",
+        "purpose": "Secure the original unknown-sender text and schedule notice"
       },
       {
-        "action": "ORIGINAL SUBMISSION ORDER",
-        "recommendedMoment": "e-6 axis immediately after the appearance of h-d3",
-        "purpose": "Confirmation of remittance of 20 million won to A’s investment room"
+        "action": "Order Original Submission",
+        "recommendedMoment": "h-d3 immediately after appearance, along the e-6 axis",
+        "purpose": "Confirm A’s ₩20M transfer to the investment chat"
       },
       {
-        "action": "Please answer correctly",
-        "recommendedMoment": "When B repeats vague words like “family business”",
-        "purpose": "Substantive nouns such as brother, nephew, and 30 million won are forced."
+        "action": "Answer Precisely",
+        "recommendedMoment": "When B repeats vague phrases like “family matter”",
+        "purpose": "Force concrete nouns such as older brother, niece/nephew, and ₩30M"
       },
       {
-        "action": "separate interrogation",
+        "action": "Separate Questioning",
         "recommendedMoment": "B immediately after e-4 Original",
-        "purpose": "Destroys avoidant B more quickly"
+        "purpose": "Break down avoidant B more quickly"
       },
       {
-        "action": "separate interrogation",
-        "recommendedMoment": "e-6 Immediately after Excerpt A",
-        "purpose": "Reduces A's victim frame and reveals his motives"
+        "action": "Separate Questioning",
+        "recommendedMoment": "A immediately after e-6 Excerpt",
+        "purpose": "Reduce A’s victim frame and expose motive"
       },
       {
-        "action": "provisional recognition",
-        "recommendedMoment": "After e-4 certification",
-        "purpose": "It is recorded that the person visiting the officetel was my brother."
+        "action": "Provisional Admission",
+        "recommendedMoment": "After e-4 authentication",
+        "purpose": "Record that the Officetel visit was to the brother’s family"
       },
       {
-        "action": "provisional recognition",
-        "recommendedMoment": "After e-5 certification",
-        "purpose": "Record of cash withdrawal of 30 million won from personal slush fund"
+        "action": "Provisional Admission",
+        "recommendedMoment": "After e-5 authentication",
+        "purpose": "Record the ₩30M personal hidden-fund cash withdrawal"
       },
       {
-        "action": "provisional recognition",
-        "recommendedMoment": "After e-6 certification",
-        "purpose": "Record of 20 million won remittance to A’s investment room"
+        "action": "Provisional Admission",
+        "recommendedMoment": "After e-6 authentication",
+        "purpose": "Record A’s ₩20M transfer to the investment chat"
       },
       {
-        "action": "provisional recognition",
+        "action": "Provisional Admission",
         "recommendedMoment": "After e-7 Established",
-        "purpose": "Pre- and post-separate records of hidden initiation and transfer execution"
+        "purpose": "Record the sequence of concealment start and transfer execution separately"
       },
       {
-        "action": "leniency window",
+        "action": "Leniency Channel",
         "recommendedMoment": "Immediately after dc-3 or dc-4",
-        "purpose": "B is quicker to admit guilt and A is quicker to admit shame."
+        "purpose": "Help B admit guilt and A admit shame sooner"
       },
       {
-        "action": "Suppression of speech / exclusion from records",
-        "recommendedMoment": "When A repeats false assertions or B mocks A",
-        "purpose": "Reduce frame battles and separate official records from hypotheses"
+        "action": "Restrain Statement / Exclude from Record",
+        "recommendedMoment": "When A keeps repeating the secret-second-household conclusion or B mocks A",
+        "purpose": "Reduce framing fights and separate official records from hypotheses"
       },
       {
-        "action": "Unseal sensitive information",
-        "recommendedMoment": "When care interpretation is chosen but substance is lacking or just before dc-1",
-        "purpose": "Definitely discourage misunderstandings about infidelity and manage risks to minors' privacy"
+        "action": "Unseal Sensitive Information",
+        "recommendedMoment": "When the care-taking interpretation is chosen but lacks substance, or just before dc-1",
+        "purpose": "Break the affair misunderstanding clearly while managing the minor’s privacy risk"
       }
     ],
     "sensitiveSealTargets": [
       {
         "targets": [
-          "nephew name",
+          "Niece's name",
           "School name",
-          "grade",
-          "Direct expressions related to menstruation"
+          "Grade",
+          "Direct menstruation-related wording"
         ],
-        "risk": "Opening the minor's privacy too early may result in a drop in humanity scores and further resignation from B."
+        "risk": "Opening the minor's private life too early may lower the Humaneness score and cause B to give up further."
       }
     ],
     "officialRecordRecommendations": [
-      "The subjects of B's ​​officetel visit were his brother and nephew.",
-      "B hid 30 million won of his personal slush fund from his spouse and delivered it to his brother in cash.",
-      "After becoming convinced that her husband was having an affair, A manipulated the power of attorney to cancel the joint savings account of 20 million won and transferred the entire amount to an investment bank.",
-      "B started the hiding first, and A actually carried out the secret remittance first.",
-      "Although both had reasons they could not speak about, they both moved their joint property alone."
+      "B’s Officetel visits were to his older brother and that brother’s child.",
+      "B hid ₩30M in personal hidden funds from his spouse and handed it to his older brother in cash.",
+      "After becoming convinced her husband was having an affair, A manipulated a power of attorney, cancelled the ₩20M joint savings account, and transferred the full amount to an investment chat.",
+      "B began the concealment first, while A executed the actual secret transfer first.",
+      "Both had reasons they could not speak of, but both moved joint property on their own."
     ]
   },
   "solutionCategoryLabels": {
