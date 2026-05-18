@@ -1364,7 +1364,7 @@
       "investigationResults": {
         "request_original": "Repeated phrases in the thread include: \"It's me. Contact me on this number for now,\" \"Don't save it under my name. It could become a problem later,\" \"Please help again today,\" and \"Thanks, always.\" Receipt times are mostly between evening and night.",
         "check_metadata": "The sender number is not saved in the contacts Mr. Lee Jun-ho usually uses. The area code and prefix feel familiar, but he cannot immediately place whose number it is. Subscriber lookup is unknown.",
-        "restore_context": "Tracing the number confirms it as a prepaid phone recently opened by Mr. Lee Jun-ho's older brother. The brother's previous number had been suspended due to debt collection issues. Group texts related to \"Gaeun's school notices\" are mixed into the thread, revealing the context of caring for his niece, a second-year middle-school student."
+        "restore_context": "The messages discuss tests and studying. There appears to be a student involved beyond the parties themselves."
       },
       "investigationStages": [
         {
