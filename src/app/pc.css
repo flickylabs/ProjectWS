@@ -943,11 +943,18 @@ body.pc-mode .pc-dispute-ribbon__state.dp-3 {
 }
 
 body.pc-mode .pc-dispute-ribbon__popover {
+  /* PC QA round 2: float above the chat below so expand doesn't reflow downstream layout. */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
   margin-top: 12px;
   padding: 16px 18px;
   border-radius: 18px;
   background: rgba(17, 17, 25, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+  z-index: 50;
 }
 
 body.pc-mode .pc-dispute-ribbon__popover-head {

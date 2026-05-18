@@ -414,7 +414,7 @@ export default function DiscoveryFeedbackWatcher() {
       tag: '쟁점 보드 갱신',
       tone: 'gold',
       disputeId: pendingEmergence.disputeId,
-      autoDismissMs: playEmergenceBeat ? (isT3 ? 3500 : 1800) : 2800,
+      // PC QA round 2: autodismiss removed — user clicks the [확인] button to advance.
       ...emergenceBeatPayload,
     })
 

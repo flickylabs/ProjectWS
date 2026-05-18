@@ -67,10 +67,12 @@ interface KindMeta {
   defaultAutoMs?: number
 }
 
+// PC QA round 2: all autodismiss removed — user must click to close every feedback card.
+// Manual close button is rendered automatically when actions are absent and autoMs is null.
 const KIND_META: Record<EventFeedbackKind, KindMeta> = {
-  observation:        { tone: 'gold',    defaultAutoMs: 2000 },
-  state_change:       { tone: 'gold',    defaultAutoMs: 2000 },
-  transition_choice:  { tone: 'gold',    defaultAutoMs: 2000 },
+  observation:        { tone: 'gold' },
+  state_change:       { tone: 'gold' },
+  transition_choice:  { tone: 'gold' },
   contradiction:      { tone: 'gold' },
   emergence:          { tone: 'gold' },
   confrontation:      { tone: 'gold' },
@@ -78,8 +80,8 @@ const KIND_META: Record<EventFeedbackKind, KindMeta> = {
   emotional_slip:     { tone: 'red' },
   perk_choice:        { tone: 'blue' },
   witness_choice:     { tone: 'green' },
-  evidence_result:    { tone: 'gold',    defaultAutoMs: 2000 },
-  info:               { tone: 'gold',    defaultAutoMs: 2000 },
+  evidence_result:    { tone: 'gold' },
+  info:               { tone: 'gold' },
 }
 
 /** 컷씬 성격의 kind만 게임 UI 위에 짧게 띄우고, 선택지가 있는 경우에는 모달로 처리한다. */
@@ -141,13 +143,10 @@ function getStateChangeCue(active: EventFeedbackItem): CourtBeatCue {
 }
 
 function getFeedbackAutoDismissMs(active: EventFeedbackItem, meta: KindMeta): number | undefined {
-  if (active.courtBeat) {
-    if (active.autoDismissMs != null) return active.autoDismissMs
-    const intensity = active.courtBeat.intensity ?? 'impact'
-    if (intensity === 'breakthrough') return 3600
-    if (intensity === 'impact') return 3000
-    return 2200
-  }
+  // PC QA round 2: respect explicit autoDismissMs on the feedback item only.
+  // KIND_META defaultAutoMs and courtBeat intensity-based defaults removed so all
+  // cards stay until the user clicks (manual close button is rendered when no
+  // actions are present).
   return active.autoDismissMs ?? meta.defaultAutoMs
 }
 
