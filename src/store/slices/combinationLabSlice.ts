@@ -12,6 +12,7 @@ import { stripOutputCodename } from '../../utils/combinationLabels'
 import { isEvidenceFullyInvestigated } from '../../engine/evidenceEngine'
 import { getRuntimeTextLocale } from '../../i18n/runtimeText'
 import type { LocaleCode } from '../../i18n/locales'
+import { emitCombinationAttempt, emitCombinationFail, emitCombinationSuccess } from '../../telemetry/wirePoints'
 
 export interface CombinationLabHistoryEntry {
   recipeId: string
@@ -402,24 +403,31 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
 
   runCombinationRecipe: (recipeId) => {
     const root = get() as any
+    const caseId = root.caseData?.caseId
+    emitCombinationAttempt(recipeId, caseId)
+    const fail = (reason: string) => {
+      emitCombinationFail(recipeId, reason, caseId)
+      return { ok: false, reason }
+    }
+
     const runtime = ensureSpouse01RuntimePatched(get, set as (partial: any) => void)
     const config = runtime.config
-    if (!config) return { ok: false, reason: 'no_config' }
+    if (!config) return fail('no_config')
 
     const recipe = config.recipes.find((item: CombinationLabRecipe) => item.id === recipeId)
-    if (!recipe) return { ok: false, reason: 'recipe_not_found' }
+    if (!recipe) return fail('recipe_not_found')
     const output = config.outputs.find((item: CombinationLabOutput) => item.id === recipe.outputId)
-    if (!output) return { ok: false, reason: 'output_not_found' }
-    if (!recipe.repeatable && runtime.appliedRecipeIds.includes(recipe.id)) return { ok: false, reason: 'recipe_locked' }
+    if (!output) return fail('output_not_found')
+    if (!recipe.repeatable && runtime.appliedRecipeIds.includes(recipe.id)) return fail('recipe_locked')
     if (!recipe.repeatable && runtime.discoveredNodeIds.includes(output.id)) {
-      return { ok: false, reason: 'output_already_discovered' }
+      return fail('output_already_discovered')
     }
-    if (!root.canRunCombinationRecipe(recipeId)) return { ok: false, reason: 'recipe_locked' }
+    if (!root.canRunCombinationRecipe(recipeId)) return fail('recipe_locked')
     const hiddenRefund = recipe.hidden ? (config.analysisPointRefundOnFirstHidden ?? 0) : 0
     const unlockedDossierForFirstTime = output.id.startsWith('dc-') && !runtime.appliedRecipeIds.includes(recipe.id)
 
     let caseData = root.caseData as CaseData | null
-    if (!caseData) return { ok: false, reason: 'no_case' }
+    if (!caseData) return fail('no_case')
 
     const nextDiscoveredNodeIds = [...runtime.discoveredNodeIds]
     const nextNotes = { ...runtime.unlockedNotes }
@@ -644,6 +652,7 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
       }
     }
 
+    emitCombinationSuccess(recipe.id, output.id, caseId)
     return { ok: true, outputId: output.id, newlyUnlockedWitnesses }
   },
 })

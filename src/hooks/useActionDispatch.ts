@@ -1,6 +1,8 @@
 // @ts-nocheck — 대규모 파일, 점진적 타입 정리 예정
 import { useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
+import type { EventFeedbackVisualEffect } from '../store/slices/eventFeedbackSlice'
+import type { TutorialStepId } from '../store/slices/tutorialSlice'
 import { resolveDialogue, generateDynamicFallback } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
 import { pp을를, pp과와, pp이가, pp은는 } from '../engine/koreanPostposition'
@@ -57,12 +59,19 @@ import type { BeatScriptV2 } from '../types'
 import { toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
-import { getInterrogationMicroVfx } from '../engine/vfxHierarchyEngine'
+import { getInterrogationMicroVfx, shouldPlayImpactBeat } from '../engine/vfxHierarchyEngine'
 import { hasContradictionComparison } from '../utils/contradiction'
 import { getAvailableSlots } from '../engine/witnessTestimonyResolver'
 import { evaluateTruthBreakthroughGate } from '../engine/truthBreakthroughEngine'
 import { getRuntimeTextLocale, hasHangulText, localizeRuntimeText } from '../i18n/runtimeText'
 import { localizeWitnessTestimonySlots } from '../data/witnessTestimonyData/localized'
+import {
+  emitActionBlocked,
+  emitActionSelect,
+  emitEvidenceInvestigate,
+  emitEvidencePresentResult,
+  emitQuestionResult,
+} from '../telemetry/wirePoints'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -79,6 +88,20 @@ export { setDossierQuestionOverride, consumeDossierQuestionOverride }
 export { setNextConfidential, setNextEvasionReading }
 
 let globalDispatchLock = false
+
+function telemetryActionType(action: PlayerAction) {
+  if (action.type === 'question') return 'question'
+  if (action.type === 'evidence_present' || action.type === 'evidence_investigate') return 'evidence'
+  if (action.type === 'call_witness') return 'witness'
+  return 'special'
+}
+
+function markTutorialStepComplete(stepId: TutorialStepId): void {
+  const state = useGameStore.getState()
+  if (state.enabled && state.activeCase === 'spouse-01') {
+    state.markStepComplete(stepId)
+  }
+}
 
 function buildWitnessGameState(state: ReturnType<typeof useGameStore.getState>) {
   return {
@@ -652,11 +675,23 @@ function buildCourtBeatForEvidencePresentation(
     : `${evidenceName}의 관련성을 현재 쟁점과 별도로 검토합니다.`
   const highlightText = hasStatementContext ? rawHighlightText : undefined
   const relationCopy = buildCourtBeatRelationCopy(evidenceName, evidenceRows, statementText, isHit, isDirectClash, hasStatementContext, evidence)
+  const playImpactBeat = isHit && shouldPlayImpactBeat({
+    beatId: `evidence:${evidence?.id ?? evidenceName}:${target}`,
+    turn: state.turnCount,
+    caseId: state.caseData?.caseId,
+    phase: state.currentPhase,
+  })
   return {
     beatType: isHit ? 'evidence_hit_major' : 'evidence_miss',
-    intensity: isHit ? 'impact' : 'focus',
-    cue: isDirectClash ? 'contradiction' : 'evidence',
+    intensity: isHit ? 'breakthrough' : 'focus',
+    cue: 'evidence',
     destination: isHit ? 'notebook' : 'observation',
+    ...(playImpactBeat ? {
+      visualEffects: ['card-slam', 'portrait-shake', 'screen-shake-light'] as EventFeedbackVisualEffect[],
+      effectTiming: 'during' as const,
+      chipLabel: '결정적 단서',
+      beatId: `evidence:${evidence?.id ?? evidenceName}:${target}`,
+    } : {}),
     statement: {
       label: hasStatementContext ? undefined : '검토 대상',
       speakerName: hasStatementContext ? targetName : undefined,
@@ -847,6 +882,13 @@ function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
 
 export function useActionDispatch() {
   const dispatch = useCallback((action: PlayerAction) => {
+    const telemetryState = useGameStore.getState()
+    if (globalDispatchLock) {
+      emitActionBlocked(telemetryActionType(action), 'condition', telemetryState.caseData?.caseId)
+      console.warn('[dispatch] previous action still running; ignored')
+      return
+    }
+    emitActionSelect(action, telemetryState.caseData?.caseId)
     if (globalDispatchLock) { console.warn('[dispatch] 이전 액션 처리 중 — 무시'); return }
     const state = useGameStore.getState()
 
@@ -894,25 +936,38 @@ let _suppressTransitionChoice = false
 export function suppressTransitionChoice() { _suppressTransitionChoice = true }
 export function unsuppressTransitionChoice() { _suppressTransitionChoice = false }
 async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evidence_present' }>) {
-  if (evidencePresentLock) return
+  if (evidencePresentLock) {
+    emitActionBlocked('evidence', 'condition', useGameStore.getState().caseData?.caseId)
+    return
+  }
   evidencePresentLock = true
   try {
   const state = useGameStore.getState()
-  if (!state.isUnlocked(action.evidenceId)) { evidencePresentLock = false; return }
+  if (!state.isUnlocked(action.evidenceId)) {
+    emitActionBlocked('evidence', 'invalid_target', state.caseData?.caseId)
+    evidencePresentLock = false
+    return
+  }
   // [Phase B-3] 체념(셧다운) 상태에서 증거 제시도 차단. 카운팅도 안 됨.
   const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
   if (lockoutUntil > state.turnCount) {
+    emitActionBlocked('evidence', 'condition', state.caseData?.caseId)
     addAngryLockoutNotice(state, action.target, [], '증거를 제시할')
     evidencePresentLock = false
     return
   }
 
   const evDef = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
-  if (!evDef) { evidencePresentLock = false; return }
+  if (!evDef) {
+    emitActionBlocked('evidence', 'invalid_target', state.caseData?.caseId)
+    evidencePresentLock = false
+    return
+  }
   const currentEvidenceState = state.evidenceStates[action.evidenceId]
   const presentationStage = currentEvidenceState?.investigatedActions?.length ?? 0
   const presentedStages = currentEvidenceState?.presentedStagesByParty?.[action.target] ?? []
   if (presentationStage <= 0) {
+    emitActionBlocked('evidence', 'resource', state.caseData?.caseId)
     state.enqueueFeedback({
       kind: 'evidence_result',
       eyebrow: '증거 제시',
@@ -925,6 +980,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     return
   }
   if (presentedStages.includes(presentationStage)) {
+    emitActionBlocked('evidence', 'condition', state.caseData?.caseId)
     state.enqueueFeedback({
       kind: 'evidence_result',
       eyebrow: '증거 제시',
@@ -946,6 +1002,9 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const prevTriggeredCount = state.triggeredCombinations.length
 
   const newUnlocks = state.presentEvidence(action.evidenceId, action.target)
+  if (action.evidenceId === 'e-2' && action.target === 'b') {
+    markTutorialStepComplete('evidence-present-e2-to-b')
+  }
   if (newUnlocks.length > 0) v4Effects.evidenceUnlock()
 
   playEvidencePresent()
@@ -1059,6 +1118,13 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       visibleEvProves,
       resultType,
     )
+    emitEvidencePresentResult({
+      caseId: toastState.caseData?.caseId,
+      evidenceId: evDef.id,
+      target: action.target,
+      disputeId: visibleEvProves[0] ?? evDef.proves[0],
+      result: resultType === 'hold' ? 'ineffective' : 'effective',
+    })
     toastState.setPendingEvidenceResult({ type: resultType, evidenceName: displayName, evidenceId: evDef.id, courtBeat })
 
     // penalty_buffer 퍼크: hold(증거 무효) 시 철회/재프레이밍 선택지
@@ -1415,6 +1481,7 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
   const investigationCost = prevInvestigations === 0 ? 0 : (nextInvestigationStage === 2 ? 1 : 2)
   if (investigationCost > 0) {
     if (!state.spend('investigationTokens', investigationCost)) {
+      emitActionBlocked('evidence', 'resource', state.caseData?.caseId)
       playInvestigationTokenWarning()
       state.enqueueFeedback({
         kind: 'evidence_result',
@@ -1428,6 +1495,10 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
     }
   }
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
+  emitEvidenceInvestigate(action.evidenceId, state.caseData?.caseId)
+  if (action.evidenceId === 'e-2') {
+    markTutorialStepComplete('evidence-investigate-e2')
+  }
   if (result) {
     const def = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
     const displayName = def ? getEvidenceDisplayName(def, state.evidenceStates[def.id]) : '증거 조사'
@@ -1574,7 +1645,10 @@ function dispatchS5ConfessionAnswer(party: PartyId, disputeId: string): boolean 
 }
 
 async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }>) {
-  if (questionLock) return
+  if (questionLock) {
+    emitActionBlocked('question', 'condition', useGameStore.getState().caseData?.caseId)
+    return
+  }
   questionLock = true
   try {
   const state = useGameStore.getState()
@@ -1587,6 +1661,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   const judgeQuestionText = freeInterrogation?.rawText
     ?? action.judgeQuestionText
     ?? buildQuestionText(action.questionType, action.target, action.disputeId)
+  if ((state.emotionalLockoutUntil?.[action.target] ?? 0) > state.turnCount) {
+    emitActionBlocked('question', 'condition', state.caseData?.caseId)
+  }
   // [감정 과부하 lockout] 차단 만료 turn 까지 질문 거부 — 메시지 1회만 출력
   const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
   if (lockoutUntil > state.turnCount) {
@@ -2388,6 +2465,14 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     // ── V3: 이벤트 트리거 평가 ──
     const prevState = _lieStateBeforeTransition[`${action.target}:${action.disputeId}`] ?? 'S0'
     const newState = v3Lie?.currentState ?? prevState
+    emitQuestionResult({
+      caseId: v3State.caseData?.caseId,
+      disputeId: action.disputeId,
+      target: action.target,
+      angle: action.questionType,
+      before: prevState,
+      after: newState,
+    })
     const transitions = prevState !== newState
       ? [{ party: action.target, disputeId: action.disputeId, from: prevState, to: newState }]
       : []
@@ -2419,6 +2504,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     }
   }
 
+  if (action.questionType === 'fact_pursuit') {
+    markTutorialStepComplete('question-fact')
+  }
   useGameStore.getState().incrementTurn()
   } finally { questionLock = false }
 }

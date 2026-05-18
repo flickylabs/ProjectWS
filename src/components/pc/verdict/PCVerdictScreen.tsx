@@ -23,6 +23,8 @@ import { triggerCutscene } from '../../discovery/CutsceneOverlay'
 import { CUTSCENE_DURATION, shouldTriggerCutscene } from '../../../engine/cutsceneTriggerEngine'
 import { useI18n, type LocaleCode, type MessageKey, type MessageValues } from '../../../i18n'
 import { getResultRating } from '../result/resultCopy'
+import { steamAchievements } from '../../../steam/steamServices'
+import { emitVerdictSubmit } from '../../../telemetry/wirePoints'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
 type FlatItem = { step: VerdictStep; subIdx: number }
@@ -454,6 +456,8 @@ export default function PCVerdictScreen() {
     score.total = Math.round((score.insight + score.authority + score.wisdom) / 3)
 
     setVerdictScore(score)
+    emitVerdictSubmit(`score_${score.total}`, score.total, caseData.caseId)
+    void steamAchievements.unlock('ACH_FIRST_CASE_CLEARED')
 
     const keyEvidenceNames = caseData.evidence
       .filter((item) => evidenceStates[item.id]?.presented)

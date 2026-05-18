@@ -9,6 +9,7 @@ import PCPrototypeStyle from '../components/pc/prototype/PCPrototypeStyle'
 import PCSvgDefs from '../components/pc/icons/PCSvgDefs'
 import EventFeedbackCard from '../components/pc/feedback/EventFeedbackCard'
 import ResonanceLayer from '../components/pc/observation/ResonanceLayer'
+import PCTelemetryConsentModal from '../components/pc/settings/PCTelemetryConsentModal'
 import AIReasoningCutscene from '../components/freeInterrogation/AIReasoningCutscene'
 import { bucketFromPreset, readStoredPreset } from '../utils/screenPresets'
 import { I18nProvider } from '../i18n'
@@ -32,6 +33,7 @@ createRoot(document.getElementById('root')!).render(
         <PCPrototypeStyle />
         <PCSvgDefs />
         <PCApp />
+        <PCTelemetryConsentModal />
         <ToastContainer />
         <EventFeedbackCard />
         <AIReasoningCutscene />

@@ -8,6 +8,7 @@ import type { EvidenceRuntimeState } from '../../engine/evidenceEngine'
 import { createInitialEmotionalState, updateEmotion } from '../../engine/emotionEngine'
 import { createInitialTrustState, updateTrust as updateTrustState } from '../../engine/trustEngine'
 import { applyBridge } from '../../engine/bridgeEngine'
+import { emitTruthStageChanged } from '../../telemetry/wirePoints'
 
 export interface AgentSlice {
   agentA: AgentState
@@ -253,6 +254,7 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
       set({
         [agentKey]: nextAgent,
       })
+      emitTruthStageChanged(party, disputeId, entry.currentState, result.to, state.caseData?.caseId)
       if (shouldTrackBothSidesS3Plus(state, party, nextAgent)) {
         state.trackMetric('bothSidesS3Plus')
       }
@@ -295,6 +297,9 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
     set({
       [agentKey]: nextAgent,
     })
+    if (didTransition) {
+      emitTruthStageChanged(party, disputeId, entry.currentState, targetState, state.caseData?.caseId)
+    }
     if (didTransition && shouldTrackBothSidesS3Plus(state, party, nextAgent)) {
       state.trackMetric('bothSidesS3Plus')
     }

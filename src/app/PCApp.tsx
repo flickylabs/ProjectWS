@@ -23,6 +23,8 @@ import { useScreenPreset } from '../hooks/useScreenPreset'
 import { ensureSteamAuthSession, isSteamAuthRequired } from '../api/steamAuth'
 import { useGameStore, useStore } from '../store/useGameStore'
 import { useI18n, type LocaleCode } from '../i18n'
+import { flushNow, initTelemetry } from '../telemetry/funnelClient'
+import { emitSessionEnd, emitSessionStart } from '../telemetry/wirePoints'
 
 try {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -44,6 +46,23 @@ export default function PCApp() {
   const steamAuthRequired = isSteamAuthRequired()
   // 해상도 프리셋 전역 바인딩 (body[data-screen-bucket] 자동 갱신)
   useScreenPreset()
+
+  useEffect(() => {
+    initTelemetry()
+    emitSessionStart(useGameStore.getState().caseData ? 'case-direct' : 'home')
+
+    const emitEnd = () => {
+      const state = useGameStore.getState()
+      emitSessionEnd(state.currentPhase, state.currentPhase === Phase.Result ? 'verdict' : 'quit')
+      void flushNow()
+    }
+
+    window.addEventListener('pagehide', emitEnd)
+    return () => {
+      window.removeEventListener('pagehide', emitEnd)
+      emitEnd()
+    }
+  }, [])
 
   // 인트로 스플래시: 최소 1.2초 표시 후 fade out
   useEffect(() => {

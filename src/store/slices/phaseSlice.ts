@@ -6,6 +6,9 @@ import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readiness
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 import { triggerConfessionModalIfReady } from '../../engine/confessionTrigger'
 import { getVerdictDisputeGate } from '../../engine/verdictAdvanceGate'
+import { emitPhaseEnter, emitPhaseExit } from '../../telemetry/wirePoints'
+
+let phaseEnteredAt = Date.now()
 
 export type MediationChoice = 'immediate' | 'conditional' | 'postpone' | 'fact_first' | null
 
@@ -55,6 +58,14 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       return
     }
 
+    const rootBefore = get() as any
+    emitPhaseExit(
+      currentPhase,
+      (Date.now() - phaseEnteredAt) / 1000,
+      rootBefore.phaseTurnCount ?? 0,
+      rootBefore.caseData?.caseId,
+    )
+
     // Phase 전환: separationTarget/separationTurns는 GameStore 루트 상태이지만
     // Zustand 슬라이스 간 상태 공유를 위해 여기서 직접 리셋 (의도적 타입 캐스트)
     set((state) => ({
@@ -64,6 +75,15 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       separationTarget: null,
       separationTurns: 0,
     } as Partial<typeof state>))
+
+    phaseEnteredAt = Date.now()
+    const rootAfter = get() as any
+    emitPhaseEnter(
+      nextPhase,
+      rootAfter.turnCount ?? rootBefore.turnCount ?? 0,
+      currentPhase,
+      rootAfter.caseData?.caseId ?? rootBefore.caseData?.caseId,
+    )
 
     // Phase 3 진입 시 브리지 자동 적용
     if (nextPhase === Phase.Interrogation) {
@@ -158,11 +178,28 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
   },
 
   setPhase: (phase) => {
+    const rootBefore = get() as any
+    const previousPhase = rootBefore.currentPhase
+    emitPhaseExit(
+      previousPhase,
+      (Date.now() - phaseEnteredAt) / 1000,
+      rootBefore.phaseTurnCount ?? 0,
+      rootBefore.caseData?.caseId,
+    )
+
     set((state) => ({
       currentPhase: phase,
       phaseHistory: [...state.phaseHistory, state.currentPhase],
       phaseTurnCount: 0,
     }))
+    phaseEnteredAt = Date.now()
+    const rootAfter = get() as any
+    emitPhaseEnter(
+      phase,
+      rootAfter.turnCount ?? rootBefore.turnCount ?? 0,
+      previousPhase,
+      rootAfter.caseData?.caseId ?? rootBefore.caseData?.caseId,
+    )
   },
 
   setVerdictMode: (mode) => {

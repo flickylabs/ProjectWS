@@ -20,6 +20,7 @@ import {
 import { notifyDisputeEmergence } from '../../engine/readinessEngine'
 import { createAppraisal } from '../../engine/evidenceEngine'
 import { getSafeEmergenceDescription } from '../../data/safeEmergenceCopy'
+import { emitHiddenDisputeEmerged } from '../../telemetry/wirePoints'
 
 const EMPTY_DISCOVERY: DiscoveryState = {
   judgments: {},
@@ -203,6 +204,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
     notifyDisputeEmergence()
     // 타임라인 이벤트
     const store = get() as any
+    const wasHidden = store.discovery?.disputeVisibility?.[disputeId]?.visibility === 'hidden'
     const safeDescription = getSafeEmergenceDescription(store, disputeId, description)
     store.pushGameEvent?.({
       id: (store.gameEventLog?.length ?? 0) + 1,
@@ -233,6 +235,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
         },
       }
     })
+    if (wasHidden) emitHiddenDisputeEmerged(disputeId, via, store.caseData?.caseId)
   },
 
   acknowledgeEmergence: (disputeId) => {

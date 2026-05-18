@@ -37,6 +37,12 @@ npm run steam:ready
 
 `run-pc.bat` starts the local API server when needed and then launches the PC Vite app. `npm run steam:dir:release` builds the Steam/Electron directory release and requires `VITE_API_URL` in `.env.production.local`. `npm run steam:stage:windows` prepares the Windows depot payload in `release/steam-depot/windows/`.
 
+## Telemetry
+
+The funnel telemetry client is disabled automatically in Vite dev builds. Set `VITE_TELEMETRY_FORCE_ON=true` only when testing the telemetry path locally. Steam/Electron production builds should set `VITE_API_URL` to the Oracle Cloud API endpoint; the server stores only anonymous `anon_id` events and never stores Steam IDs, free-form questions, dialogue text, or personal text.
+
+Server-side toggles live in `server/.env`: `TELEMETRY_ENABLED=false` disables writes, and `TELEMETRY_ALLOWED_ORIGINS` can add production Electron origins beyond `file://` and `app://.`.
+
 ## Documentation
 
 Start with `docs/README.md`. Historical one-off prompts, QA dumps, screenshots, old request packets, old generator scripts, reference asset dumps, and obsolete Vercel deployment files were moved under `docs/LEGACY/20260506-pre-steam-cleanup/` or the ignored local archive `LEGACY/20260506-pre-steam-cleanup/`.
