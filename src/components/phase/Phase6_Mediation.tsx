@@ -4,6 +4,7 @@ import { useGameStore, useStore } from '../../store/useGameStore'
 import PCSvgIcon from '../pc/icons/PCSvgIcon'
 import PCVerdictReviewMontage from '../pc/verdict/PCVerdictReviewMontage'
 import { verdictEntryCutscene } from '../../engine/presentationEngine'
+import { getVerdictDisputeGate } from '../../engine/verdictAdvanceGate'
 
 export default function Phase6_Mediation() {
   const advancePhase = useStore((s) => s.advancePhase)
@@ -24,9 +25,14 @@ export default function Phase6_Mediation() {
     })
   }, [agentA.lieStateMap, agentB.lieStateMap, caseData?.disputes])
 
+  // PC QA round 2 A-1: surface visible/hidden dispute counts so the standalone
+  // hidden-dispute pre-modal can be removed and this is the single decision screen.
+  const disputeGate = useMemo(() => getVerdictDisputeGate(useGameStore.getState()), [caseData, agentA, agentB])
+
   if (!caseData) return null
 
   const hasUnresolved = unresolvedDisputes.length > 0
+  const hasHiddenDisputes = disputeGate.hiddenCount > 0
 
   const enterVerdict = () => {
     if (reviewing || enteringVerdict) return
@@ -59,10 +65,19 @@ export default function Phase6_Mediation() {
         <h2 id="pc-mediation-entry-title">심문을 마치고 판결에 들어가시겠습니까?</h2>
         <p>심문을 마저 이어나갈지, 바로 판결에 들어갈지 결정합니다.</p>
 
-        {hasUnresolved ? (
+        <div className="pc-mediation-entry__dispute-tags">
+          <span className="pc-mediation-entry__tag is-visible">공개 쟁점 {disputeGate.visibleCount}</span>
+          {hasHiddenDisputes ? (
+            <span className="pc-mediation-entry__tag is-hidden">숨은 쟁점 {disputeGate.hiddenCount}</span>
+          ) : null}
+        </div>
+
+        {hasUnresolved || hasHiddenDisputes ? (
           <div className="pc-mediation-entry__warning">
-            <strong>아직 확정되지 않은 쟁점이 존재합니다. 이대로 판결을 선고하시겠습니까?</strong>
-            <span>판결은 가능하지만, 불완전한 기록으로 평가될 수 있습니다.</span>
+            <strong>아직 확정되지 않은 쟁점이 존재합니다. 이대로 선고하시겠습니까?</strong>
+            <span>{hasHiddenDisputes
+              ? '미발견 쟁점이 남아 있으면 선고가 불완전한 기록으로 평가될 수 있습니다.'
+              : '선고는 가능하지만, 불완전한 기록으로 평가될 수 있습니다.'}</span>
           </div>
         ) : null}
 

@@ -13665,6 +13665,31 @@ body.pc-mode .pc-mediation-entry__ready {
   text-align: left;
 }
 
+/* PC QA round 2 A-1: visible/hidden dispute count tags inside the entry modal,
+   replacing the standalone hidden-dispute pre-modal. */
+body.pc-mode .pc-mediation-entry__dispute-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 4px 0 12px;
+}
+body.pc-mode .pc-mediation-entry__tag {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+body.pc-mode .pc-mediation-entry__tag.is-visible {
+  background: rgba(212, 162, 78, 0.12);
+  color: var(--pc-gold-light, #e8c172);
+  border: 1px solid rgba(212, 162, 78, 0.32);
+}
+body.pc-mode .pc-mediation-entry__tag.is-hidden {
+  background: rgba(224, 96, 96, 0.1);
+  color: #e89696;
+  border: 1px solid rgba(224, 96, 96, 0.3);
+}
+
 body.pc-mode .pc-mediation-entry__warning {
   border: 1px solid rgba(224, 96, 96, 0.32);
   background: linear-gradient(180deg, rgba(92, 38, 38, 0.28), rgba(26, 16, 20, 0.72));

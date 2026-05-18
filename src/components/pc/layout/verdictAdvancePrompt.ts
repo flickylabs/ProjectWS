@@ -2,8 +2,11 @@ import { getVerdictDisputeGate, MIN_VISIBLE_DISPUTES_FOR_VERDICT } from '../../.
 import { useGameStore } from '../../../store/useGameStore'
 import { translate } from '../../../i18n'
 import { showToast } from '../../common/Toast'
-import { openPcInteractionPanel } from './PCInteractionPanel'
 
+// PC QA round 2 A-1: hidden-dispute pre-modal removed. The verdict-entry decision
+// modal (Phase6_Mediation) now surfaces the visible/hidden dispute counts and
+// the "incomplete record" warning itself, so the user sees one decision screen
+// instead of two stacked modals.
 export function requestVerdictAdvance(): boolean {
   const state = useGameStore.getState()
   const gate = getVerdictDisputeGate(state)
@@ -22,34 +25,6 @@ export function requestVerdictAdvance(): boolean {
   if (!state.canAdvancePhase()) {
     showToast(translate('pc.verdictAdvance.conditionsMissing'), 'warn')
     return false
-  }
-
-  if (gate.hiddenCount > 0) {
-    openPcInteractionPanel({
-      title: translate('pc.verdictAdvance.hidden.title'),
-      subtitle: translate('pc.verdictAdvance.hidden.subtitle'),
-      tone: 'gold',
-      body: translate('pc.verdictAdvance.hidden.body', {
-        visible: gate.visibleCount,
-        hidden: gate.hiddenCount,
-      }),
-      tags: [
-        translate('pc.verdictAdvance.hidden.visibleTag', { count: gate.visibleCount }),
-        translate('pc.verdictAdvance.hidden.hiddenTag', { count: gate.hiddenCount }),
-      ],
-      actions: [
-        {
-          kind: 'close',
-          label: translate('pc.verdictAdvance.hidden.keepInvestigating'),
-        },
-        {
-          kind: 'run_special',
-          label: translate('pc.verdictAdvance.hidden.confirm'),
-          specialAction: 'advance_phase',
-        },
-      ],
-    })
-    return true
   }
 
   state.advancePhase()
