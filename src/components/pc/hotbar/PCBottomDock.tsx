@@ -382,16 +382,8 @@ export default function PCBottomDock() {
       {/* --- 보류된 판결 미니 아이콘 (핫바 위 floating) --- */}
       <PCDeferredVerdictIcon />
 
-      {/* --- Advance phase auto-suggestion banner (B-7) --- */}
-      {canAdvance && !advanceDismissed ? (
-        <div className="pc-advance-banner">
-          <span className="pc-advance-banner__text">{advanceBannerText}</span>
-          <button className="pc-advance-banner__btn" onClick={handleAdvance} type="button">{advanceLabel}</button>
-          <button className="pc-advance-banner__dismiss" onClick={collapseAdvanceBanner} title={t('pc.hotbar.close')} type="button">
-            <PCSvgIcon id="i-plus" size={12} />
-          </button>
-        </div>
-      ) : null}
+      {/* PC QA round 2 A-2: advance button moved inline into hotbar (between 6 slots
+          and Character B). The floating banner above the hotbar is removed. */}
 
       {/* --- Question choice overlay (slots 1-3) --- */}
       {questionChoice ? (
@@ -580,6 +572,19 @@ export default function PCBottomDock() {
             </div>
           </div>
         </div>
+
+        {/* PC QA round 2 A-2: inline advance button between hotbar slots and Character B */}
+        {canAdvance && !advanceDismissed ? (
+          <button
+            className="pc-inline-advance-btn"
+            onClick={handleAdvance}
+            type="button"
+            title={advanceBannerText}
+          >
+            <span className="pc-inline-advance-btn__caption">{advanceBannerText}</span>
+            <strong className="pc-inline-advance-btn__label">{advanceLabel}</strong>
+          </button>
+        ) : null}
 
         {/* Character B */}
         <CharacterCard
