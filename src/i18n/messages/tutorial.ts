@@ -4,7 +4,7 @@ export const tutorialMessages = {
   ko: {
     "pc.tutorial.spouse01.briefing-advance.title": "사건 브리핑",
     "pc.tutorial.spouse01.briefing-advance.body": "사건 개요를 확인하고 아래 시작 버튼을 눌러주세요.",
-    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "양측의 진술",
+    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "사전 진술",
     "pc.tutorial.spouse01.initial-statement-acknowledge.body": "양측의 진술 단계예요. 화면 안내에 따라 진행해주세요.",
     "pc.tutorial.spouse01.initial-statement-acknowledge.advance.body": "[다음 진술] 버튼을 눌러 다음 발언으로 넘어가주세요.",
     "pc.tutorial.spouse01.initial-statement-acknowledge.choice.body": "재판관으로서 판단해주세요. 어느 선택지든 마음에 드는 것을 골라보세요.",
@@ -32,7 +32,7 @@ export const tutorialMessages = {
   en: {
     "pc.tutorial.spouse01.briefing-advance.title": "Case Briefing",
     "pc.tutorial.spouse01.briefing-advance.body": "Take a look at the case overview, then tap the Start button below.",
-    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "Both Sides' Statements",
+    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "Opening Statements",
     "pc.tutorial.spouse01.initial-statement-acknowledge.body": "You've heard statements from both sides. Tap the [Next Statement] button to continue.",
     "pc.tutorial.spouse01.initial-statement-acknowledge.advance.body": "Press the [Next Statement] button to move on to the next statement.",
     "pc.tutorial.spouse01.initial-statement-acknowledge.choice.body": "As the Judge, make your call. Pick whichever option you like.",
@@ -60,7 +60,7 @@ export const tutorialMessages = {
   ja: {
     "pc.tutorial.spouse01.briefing-advance.title": "事件ブリーフィング",
     "pc.tutorial.spouse01.briefing-advance.body": "事件概要を確認したら、下の開始ボタンを押してください。",
-    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "双方の陳述",
+    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "冒頭陳述",
     "pc.tutorial.spouse01.initial-statement-acknowledge.body": "双方の陳述をすべて聞き終えました。[次の陳述]ボタンを押して、次へ進みましょう。",
     "pc.tutorial.spouse01.initial-statement-acknowledge.advance.body": "[次の陳述] ボタンを押して、次の発言へ進みましょう。",
     "pc.tutorial.spouse01.initial-statement-acknowledge.choice.body": "裁判官として判断してください。どの選択肢でも大丈夫です。気に入ったものを選んでみましょう。",
@@ -88,7 +88,7 @@ export const tutorialMessages = {
   "zh-CN": {
     "pc.tutorial.spouse01.briefing-advance.title": "案件简报",
     "pc.tutorial.spouse01.briefing-advance.body": "请先查看案件概要，然后点击下方的开始按钮。",
-    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "双方陈述",
+    "pc.tutorial.spouse01.initial-statement-acknowledge.title": "开场陈述",
     "pc.tutorial.spouse01.initial-statement-acknowledge.body": "您已经听完双方的陈述了。请点击[下一陈述]按钮继续。",
     "pc.tutorial.spouse01.initial-statement-acknowledge.advance.body": "请点击 [下一陈述] 按钮，进入下一段发言吧。",
     "pc.tutorial.spouse01.initial-statement-acknowledge.choice.body": "请以法官身份作出判断。哪个选项都可以，请选一个您喜欢的吧。",

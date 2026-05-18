@@ -55,7 +55,7 @@ export default function Phase6_Mediation() {
         <div className="pc-mediation-entry__mark" aria-hidden="true">
           <PCSvgIcon id="i-scale" size={30} />
         </div>
-        <div className="pc-mediation-entry__eyebrow">판결 진입</div>
+        <div className="pc-mediation-entry__eyebrow">판결</div>
         <h2 id="pc-mediation-entry-title">심문을 마치고 판결에 들어가시겠습니까?</h2>
         <p>심문을 마저 이어나갈지, 바로 판결에 들어갈지 결정합니다.</p>
 

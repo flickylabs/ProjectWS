@@ -322,6 +322,10 @@ export default function PCBottomDock() {
       ? t('pc.hotbar.advance.evidence')
       : t('pc.hotbar.advance.next')
 
+  const advanceBannerText = currentPhase === Phase.Interrogation
+    ? t('pc.hotbar.advance.banner.interrogation')
+    : t('pc.hotbar.advance.can', { label: advanceLabel })
+
   // --- Keyboard shortcuts ---
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -377,7 +381,7 @@ export default function PCBottomDock() {
       {/* --- Advance phase auto-suggestion banner (B-7) --- */}
       {canAdvance && !advanceDismissed ? (
         <div className="pc-advance-banner">
-          <span className="pc-advance-banner__text">{t('pc.hotbar.advance.can', { label: advanceLabel })}</span>
+          <span className="pc-advance-banner__text">{advanceBannerText}</span>
           <button className="pc-advance-banner__btn" onClick={handleAdvance} type="button">{advanceLabel}</button>
           <button className="pc-advance-banner__dismiss" onClick={collapseAdvanceBanner} title={t('pc.hotbar.close')} type="button">
             <PCSvgIcon id="i-plus" size={12} />

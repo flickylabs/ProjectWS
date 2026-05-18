@@ -39,17 +39,13 @@ export function requestVerdictAdvance(): boolean {
       ],
       actions: [
         {
+          kind: 'close',
+          label: translate('pc.verdictAdvance.hidden.keepInvestigating'),
+        },
+        {
           kind: 'run_special',
           label: translate('pc.verdictAdvance.hidden.confirm'),
           specialAction: 'advance_phase',
-        },
-        {
-          kind: 'collapse_verdict_cta',
-          label: translate('pc.verdictAdvance.hidden.collapse'),
-        },
-        {
-          kind: 'close',
-          label: translate('pc.verdictAdvance.hidden.keepInvestigating'),
         },
       ],
     })
