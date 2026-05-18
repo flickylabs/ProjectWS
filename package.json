@@ -35,6 +35,7 @@
     "qa:route:exhaustive": "node scripts/qa-route-simulator.cjs --exhaustive --max-depth=5 --max-states=240 --max-routes=480 --max-actions-per-state=36 --fail-on-hard",
     "qa:browser": "node scripts/qa-browser-harness.cjs",
     "qa:fast": "node scripts/qa-fast.cjs",
+    "qa:lqa": "node scripts/verify-translations.cjs --strict --scan-applied && node scripts/detect-truth-leak.cjs --strict",
     "qa:free-interrogation": "node --experimental-strip-types scripts/qa-free-interrogation-policy.mjs",
     "qa:deep": "node scripts/qa-deep.cjs",
     "qa:visual": "node scripts/qa-visual-report.cjs",
