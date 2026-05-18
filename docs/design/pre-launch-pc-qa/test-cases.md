@@ -20,6 +20,21 @@
 
 발견 사항은 §8 보고 포맷대로 정리 후 다음 메인 세션에 전달.
 
+### §0.1. 언어별 검수 책임 분담
+
+사용자 직접 테스트는 **한국어(KO)만** 내용 검수 가능. 외국어(EN/JA/ZH-CN)는 다음 범위만 사용자 담당:
+
+| 검수 영역 | KO | EN/JA/ZH-CN |
+|---|---|---|
+| 카피 의미 / 톤 / 자연성 | ✅ 사용자 직접 | ❌ LQA Phase 2 Codex β1~β10 thread 담당 |
+| 메시지 노출 여부 (빈 칸 / placeholder 잔류 / 깨진 인코딩) | ✅ | ✅ **사용자가 노출 자체만 확인** |
+| UI 라벨 (대괄호 토큰 통일 등) | ✅ | ✅ 사용자 spot |
+| 인명 / 호칭 표기 (glossary 일관) | ✅ | ✅ 사용자 spot |
+| 길이 overflow / 잘림 | ✅ | ✅ 사용자 spot |
+| 진실 누설 / 정책 위배 | ✅ | ❌ Phase 2 thread + detect-truth-leak.cjs 자동 매트릭스 |
+
+→ §3~§5 (EN/JA/ZH-CN 회차)는 **빠른 spot pass**로 진행. 메시지가 정상 표시되는지, 빈 칸 / 깨진 글자 / 잘림이 있는지만 체크. 내용 검수는 [Phase 2 thread brief](../translation-lqa-phase/threads/)에 맡김.
+
 ---
 
 ## §1. 사전 준비
@@ -42,11 +57,12 @@
 
 1. **F12** → Application 탭 → Local Storage → 도메인 선택 → 우클릭 "Clear"
 2. 또는 시크릿 창 / InPrivate 창에서 새로 진입
-3. localStorage 키 중 다음이 초기화되어야 함:
-   - `solomons:caseProgress:*`
-   - `solomons:tutorialCompleted:*`
-   - `solomons:telemetry:consent`
-   - `solomons:settings:locale`
+3. **튜토리얼 회차** 진행하려면 다음 키가 반드시 비어 있어야 함:
+   - **`solomon.tutorial.spouse01.v1`** — 이전 회차에서 `completedAt: "<date>"` 또는 `skipped: true` 저장됨. 이 값 남아있으면 PCTutorialOverlay가 `startTutorial()` 호출해도 `readProgressFlag()`에서 차단됨 → 튜토리얼 미발동.
+   - **대체 방법**: 게임 내 설정 → "튜토리얼 안내 재시작" 버튼 (PCSettingsPanel) — `restartTutorial()` 호출되어 진행 flag 자동 클리어 + 즉시 시작
+4. 그 외 클리어 후보 키 (회차 재시작 정합 위해 권장):
+   - `solomon-init:*` (case progress / settings / telemetry consent)
+   - 도메인 전체 "Clear site data" 가 가장 안전
 
 ### §1.3. 단축키 / 도구
 

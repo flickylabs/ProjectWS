@@ -2,7 +2,7 @@ import type { LocaleCode } from '../locales'
 
 export const homeMessages = {
   ko: {
-    "home.gameTitle": "솔로몬의 딜레마: 진실의 재판",
+    "home.gameTitle": "솔로몬의 딜레마: 진실의 무게",
     "home.tagline": "\"법이 닿지 못한 진실, 당신의 판단에 맡깁니다.\"",
     "pc.home.moreCases": "외 {count}건",
     "pc.home.countdown.ready": "곧 충전",
@@ -205,7 +205,7 @@ export const homeMessages = {
     "pc.resolutionConfirm.title": "지금 해상도를 유지하시겠습니까?",
   },
   en: {
-    "home.gameTitle": "Verdict Zero: Trial of Truth",
+    "home.gameTitle": "Verdict Zero: Weight of Truth",
     "home.tagline": "\"A truth beyond the law's reach—yours to weigh.\"",
     "pc.home.moreCases": "+{count} more",
     "pc.home.countdown.ready": "Ready soon",
@@ -408,7 +408,7 @@ export const homeMessages = {
     "pc.resolutionConfirm.title": "Keep this resolution?",
   },
   ja: {
-    "home.gameTitle": "ソロモンのジレンマ：真実の裁き",
+    "home.gameTitle": "ソロモンのジレンマ：真実の重み",
     "home.tagline": "\"法の及ばぬ真実、あなたの判断に委ねます。\"",
     "pc.home.moreCases": "ほか {count}件",
     "pc.home.countdown.ready": "まもなく回復",
