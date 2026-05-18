@@ -1,0 +1,233 @@
+{
+  "generatedAt": "2026-05-18T10:38:51.599Z",
+  "input": "docs/localization/non-dialogue-extract/batches/GPT_Result/batch_17_global_scripted_part1_retranslated.csv",
+  "glossary": "docs/localization/non-dialogue-extract/GPT_Result/glossary_locked.csv",
+  "maxIssuesPerType": 1000,
+  "summary": {
+    "rows": 545,
+    "glossary_terms": 509,
+    "placeholder_issues": 0,
+    "empty_translation_issues": 0,
+    "cjk_in_english_issues": 0,
+    "english_length_spike_issues": 14,
+    "glossary_issues": 0,
+    "totalIssues": 14
+  },
+  "issueLimits": {
+    "placeholder": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "empty": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "cjkInEnglish": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "englishLengthSpike": {
+      "total": 14,
+      "included": 14,
+      "omitted": 0
+    },
+    "glossary": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    }
+  },
+  "issues": {
+    "placeholder": [],
+    "empty": [],
+    "cjkInEnglish": [],
+    "englishLengthSpike": [
+      {
+        "row_number": 33,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/layout/Tutorial.tsx",
+        "case_id": "",
+        "key_path": "line:60",
+        "locale": "en",
+        "ko_length": 54,
+        "en_length": 138,
+        "ratio": 2.56,
+        "ko": "사실 인정 → 책임 배분 → 해결책 선택. 위법 증거를 판결 근거로 쓰면 권위 점수가 떨어집니다.",
+        "en": "Find the facts → assign responsibility → choose a remedy. Using illegal evidence as grounds for a verdict will lower your Authority score."
+      },
+      {
+        "row_number": 208,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/demoEvidenceData.ts",
+        "case_id": "",
+        "key_path": "line:194",
+        "locale": "en",
+        "ko_length": 17,
+        "en_length": 45,
+        "ratio": 2.65,
+        "ko": "회사 선배... 결혼이랑 장례식",
+        "en": "A senior coworker... a wedding and a funeral."
+      },
+      {
+        "row_number": 252,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/demoEvidenceData.ts",
+        "case_id": "",
+        "key_path": "line:249",
+        "locale": "en",
+        "ko_length": 15,
+        "en_length": 40,
+        "ratio": 2.67,
+        "ko": "T7 \"경조사비 + 영수증\"",
+        "en": "T7 \"Family Occasion Expenses + Receipts\""
+      },
+      {
+        "row_number": 320,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/demoEvidenceData.ts",
+        "case_id": "",
+        "key_path": "line:353",
+        "locale": "en",
+        "ko_length": 28,
+        "en_length": 73,
+        "ratio": 2.61,
+        "ko": "캡처 범위: 원본 삭제됨, B(박서연)가 캡처 제출",
+        "en": "Capture scope: original deleted; B (Park Seo-yeon) submitted the capture."
+      },
+      {
+        "row_number": 321,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/demoEvidenceData.ts",
+        "case_id": "",
+        "key_path": "line:354",
+        "locale": "en",
+        "ko_length": 20,
+        "en_length": 54,
+        "ratio": 2.7,
+        "ko": "누락 문맥: 이전/이후 게시글 미확보",
+        "en": "Missing context: previous/following posts not secured."
+      },
+      {
+        "row_number": 359,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:225",
+        "locale": "en",
+        "ko_length": 20,
+        "en_length": 61,
+        "ratio": 3.05,
+        "ko": "原本レシート写し · 調査段階別閲覧記録",
+        "en": "Original Receipt Copy · Viewing Record by Investigation Stage"
+      },
+      {
+        "row_number": 371,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:236",
+        "locale": "en",
+        "ko_length": 9,
+        "en_length": 39,
+        "ratio": 4.33,
+        "ko": "金融取引明細照会表",
+        "en": "Financial Transaction Inquiry Statement"
+      },
+      {
+        "row_number": 379,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:243",
+        "locale": "en",
+        "ko_length": 8,
+        "en_length": 34,
+        "ratio": 4.25,
+        "ko": "入出金·残高照合",
+        "en": "Deposit/Withdrawal · Balance Check"
+      },
+      {
+        "row_number": 398,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:260",
+        "locale": "en",
+        "ko_length": 14,
+        "en_length": 43,
+        "ratio": 3.07,
+        "ko": "速記録要約 / 音声原本照合",
+        "en": "Stenographic Summary / Audio Original Check"
+      },
+      {
+        "row_number": 462,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:320",
+        "locale": "en",
+        "ko_length": 21,
+        "en_length": 61,
+        "ratio": 2.9,
+        "ko": "原始收据副本 · 按调查阶段开放的阅览记录",
+        "en": "Original Receipt Copy · Viewing Record by Investigation Stage"
+      },
+      {
+        "row_number": 474,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:331",
+        "locale": "en",
+        "ko_length": 9,
+        "en_length": 39,
+        "ratio": 4.33,
+        "ko": "金融交易明细查询表",
+        "en": "Financial Transaction Inquiry Statement"
+      },
+      {
+        "row_number": 481,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:338",
+        "locale": "en",
+        "ko_length": 7,
+        "en_length": 34,
+        "ratio": 4.86,
+        "ko": "收支·余额核对",
+        "en": "Deposit/Withdrawal · Balance Check"
+      },
+      {
+        "row_number": 493,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:35",
+        "locale": "en",
+        "ko_length": 24,
+        "en_length": 61,
+        "ratio": 2.54,
+        "ko": "원본 영수증 사본 · 조사 단계별 열람 기록",
+        "en": "Original Receipt Copy · Viewing Record by Investigation Stage"
+      },
+      {
+        "row_number": 499,
+        "category": "hardcoded_source_literal",
+        "source": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+        "case_id": "",
+        "key_path": "line:355",
+        "locale": "en",
+        "ko_length": 13,
+        "en_length": 43,
+        "ratio": 3.31,
+        "ko": "速记摘要 / 音频原件核对",
+        "en": "Stenographic Summary / Audio Original Check"
+      }
+    ],
+    "glossary": []
+  }
+}

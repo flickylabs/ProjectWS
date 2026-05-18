@@ -1,0 +1,308 @@
+[
+  {
+    "file": "batch_11_friend01_part3_retranslated.csv",
+    "row": 495,
+    "id": "non_party_scripted_text_src_data_scriptedText_friend-01_channels_aftermath_.entries_b_primary_fault_.variants_b_primary_fault-v5_.text",
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "friend-01",
+    "key_path": "channels[aftermath].entries[b_primary_fault].variants[b_primary_fault-v5].text",
+    "ko_length": 212,
+    "ko_sentences": 4,
+    "en_length": 261,
+    "ja_length": 99,
+    "zh-CN_length": 67,
+    "ratios": {
+      "en": 0.8207547169811321,
+      "ja": 0.4669811320754717,
+      "zh-CN": 0.3511530398322851
+    },
+    "issues": [
+      "ja=short(ratio=0.47)",
+      "zh-CN=short(ratio=0.35)"
+    ],
+    "severity": 2,
+    "ko_preview": "이 판결에서 수민은 피해자이면서도 이번 오해를 키운 주된 당사자로 남았다. 과거 피해를 말하지 못한 이유는 이해되지만, 현재의 경고까지 같은 방식으로 숨기면서 다은에게는 확인할 실...",
+    "raw": {
+      "ko": "이 판결에서 수민은 피해자이면서도 이번 오해를 키운 주된 당사자로 남았다. 과거 피해를 말하지 못한 이유는 이해되지만, 현재의 경고까지 같은 방식으로 숨기면서 다은에게는 확인할 실마리가 사라졌다. 다은의 분노는 지나쳤지만, 수민의 반복된 침묵은 그 분노가 자랄 자리를 만들었다. 재판 뒤 수민은 다은에게 진실을 한 번에 던지기보다, 자료와 순서를 갖춰 설명하는 법을 배워야 했다.",
+      "en": "The conclusion did not deny Su-min’s hurt. It held that hurt could not justify a method that made another person guess in the dark. Da-eun had to correct her public words, but Su-min had to accept that bearing everything alone had become another source of harm.",
+      "ja": "結論はスミンの傷を否定しなかった。ただ、その傷が相手を暗闇の中で推測させる方法を正当化することはできないとした。ダウンは公開発言を正し、スミンは一人で抱えることが別の傷になったと認める必要があった。",
+      "zh-CN": "结论没有否定秀敏的伤。它指出，受伤不能正当化让另一个人在黑暗中猜测的方法。多恩要修正公开发言，秀敏也要承认独自承担已经变成另一种伤害。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_03_spouse01_part3_retranslated.csv",
+    "row": 17,
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "spouse-01",
+    "key_path": "channels[aftermath].entries[procedural_caution].variants[procedural_caution-v2].text",
+    "ko_length": 156,
+    "ko_sentences": 3,
+    "en_length": 368,
+    "ja_length": 41,
+    "zh-CN_length": 121,
+    "ratios": {
+      "en": 1.5726495726495726,
+      "ja": 0.26282051282051283,
+      "zh-CN": 0.8618233618233618
+    },
+    "issues": [
+      "ja=sentence_drop(3->1)",
+      "ja=short(ratio=0.26)"
+    ],
+    "severity": 2,
+    "ko_preview": "법정의 마지막 말은 차가우면서도 완전히 닫혀 있지는 않았다. 위조 서류와 무단 인출은 각각 다른 법적 위험을 지니고 있었고, 재판관은 그 책임을 선명하게 나눠 경고했다. 그러나 판...",
+    "raw": {
+      "ko": "법정의 마지막 말은 차가우면서도 완전히 닫혀 있지는 않았다. 위조 서류와 무단 인출은 각각 다른 법적 위험을 지니고 있었고, 재판관은 그 책임을 선명하게 나눠 경고했다. 그러나 판결문 너머에서 남은 숙제는 여전히 관계의 문제였고, 부부는 처음으로 그 사실을 같은 자리에서 들었다.",
+      "en": "The court's last words were cold but not entirely closed. The forged paperwork and the unauthorized withdrawal each carried a different legal risk, and the Judge separated the responsibilities cleanly in his warning. But beyond the verdict, the assignment that remained was still the relationship, and the couple heard that fact, for the first time, in the same place.",
+      "ja": "法廷は判決の主文を述べる一方、書類の扱いと提示の順序に関する注意も併せて記録した。",
+      "zh-CN": "法庭散场后，法官明确警告:文件处理上的疑点不是关系纷争所能掩盖的犯罪。同时，他也指出，李俊浩的沉默把朴智妍逼到了悬崖边。处罚之外，他没有关闭关系修复的门。两人各自带着比承认错误的文件更沉重的——必须对彼此说清楚的话——回家了。一切都需要时间。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_11_friend01_part3_retranslated.csv",
+    "row": 492,
+    "id": "non_party_scripted_text_src_data_scriptedText_friend-01_channels_aftermath_.entries_b_primary_fault_.variants_b_primary_fault-v2_.text",
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "friend-01",
+    "key_path": "channels[aftermath].entries[b_primary_fault].variants[b_primary_fault-v2].text",
+    "ko_length": 227,
+    "ko_sentences": 4,
+    "en_length": 310,
+    "ja_length": 121,
+    "zh-CN_length": 79,
+    "ratios": {
+      "en": 0.9104258443465492,
+      "ja": 0.5330396475770925,
+      "zh-CN": 0.3866862457170827
+    },
+    "issues": [
+      "zh-CN=short(ratio=0.39)"
+    ],
+    "severity": 1,
+    "ko_preview": "이 결말에서는 수민의 침묵과 우회가 핵심 책임으로 정리됐다. 예비신랑의 메시지와 아버지의 돈 접근이 사실이어도, 수민이 설명을 끝까지 미루며 연락만 반복한 방식은 다은을 더 불안하...",
+    "raw": {
+      "ko": "이 결말에서는 수민의 침묵과 우회가 핵심 책임으로 정리됐다. 예비신랑의 메시지와 아버지의 돈 접근이 사실이어도, 수민이 설명을 끝까지 미루며 연락만 반복한 방식은 다은을 더 불안하게 만들었다. 다은은 성급히 퍼뜨린 말을 거두어야 했지만, 처음부터 사실을 보여 주지 않은 수민의 책임이 더 컸다. 재판 뒤 수민은 피해 사실과 경고 이유를 공식 기록으로 남겼고, 다은은 그제야 자신이 오해한 지점을 알게 됐다.",
+      "en": "The judgment held that Su-min had known the truth but tried to block it alone for too long. Even if she meant to protect Da-eun, that protection looked only like obsession and silence. Da-eun’s group chat comments had to be corrected, but Su-min’s own closure of the path to explanation carried heavier weight.",
+      "ja": "判決は、スミンが真実を知りながら長く一人で止めようとした点を重く見た。守る気持ちがあったとしても、その保護はダウンには執着と沈黙にしか見えなかった。ダウンのグループチャット発言は訂正対象だが、スミンが説明の道を自ら閉じた責任はさらに重かった。",
+      "zh-CN": "判决看重的是秀敏明知真相，却太久都试图独自阻止。即使是出于保护，那种保护在多恩眼里也只像执着和沉默。多恩的群聊发言需要更正，但秀敏自己关上解释之路的责任更重。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_11_friend01_part3_retranslated.csv",
+    "row": 497,
+    "id": "non_party_scripted_text_src_data_scriptedText_friend-01_channels_aftermath_.entries_procedural_caution_.variants_procedural_caution-v2_.text",
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "friend-01",
+    "key_path": "channels[aftermath].entries[procedural_caution].variants[procedural_caution-v2].text",
+    "ko_length": 200,
+    "ko_sentences": 4,
+    "en_length": 281,
+    "ja_length": 113,
+    "zh-CN_length": 76,
+    "ratios": {
+      "en": 0.9366666666666666,
+      "ja": 0.565,
+      "zh-CN": 0.4222222222222222
+    },
+    "issues": [
+      "zh-CN=short(ratio=0.42)"
+    ],
+    "severity": 1,
+    "ko_preview": "절차 주의 판결은 두 사람에게 더 말하기보다 먼저 정리하라고 요구했다. 누가 먼저 선을 넘었는지, 누가 공개적으로 낙인을 만들었는지, 돈 요구가 어디까지 이어졌는지를 각각 따로 확...",
+    "raw": {
+      "ko": "절차 주의 판결은 두 사람에게 더 말하기보다 먼저 정리하라고 요구했다. 누가 먼저 선을 넘었는지, 누가 공개적으로 낙인을 만들었는지, 돈 요구가 어디까지 이어졌는지를 각각 따로 확인해야 했다. 한꺼번에 사과와 폭로를 섞으면 또 다른 오해가 생길 수 있기 때문이었다. 판결 뒤 두 사람은 상담과 자료 정리를 병행하며, 공통 친구들에게는 정정된 사실만 전달했다.",
+      "en": "The procedural ruling asked the two of them to organize before saying more. Who crossed a line first, who created a public stigma, and how far the money request went had to be checked separately. Mixing apology and disclosure all at once would only create another misunderstanding.",
+      "ja": "手続き重視の判決は、二人にさらに話すより先に整理せよと求めた。誰が先に線を越えたのか、誰が公開の烙印を作ったのか、金銭要求がどこまで続いたのかをそれぞれ別に確認する。謝罪と暴露を一度に混ぜれば、また別の誤解が生じるためだった。",
+      "zh-CN": "重视程序的判决要求两人先整理，而不是继续多说。谁先越界、谁公开制造污名、金钱要求延伸到哪里，都要分别确认。把道歉和揭露一次性混在一起，只会制造新的误会。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_11_friend01_part3_retranslated.csv",
+    "row": 490,
+    "id": "non_party_scripted_text_src_data_scriptedText_friend-01_channels_aftermath_.entries_a_primary_fault_.variants_a_primary_fault-v5_.text",
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "friend-01",
+    "key_path": "channels[aftermath].entries[a_primary_fault].variants[a_primary_fault-v5].text",
+    "ko_length": 210,
+    "ko_sentences": 4,
+    "en_length": 325,
+    "ja_length": 118,
+    "zh-CN_length": 91,
+    "ratios": {
+      "en": 1.0317460317460319,
+      "ja": 0.5619047619047619,
+      "zh-CN": 0.48148148148148145
+    },
+    "issues": [
+      "zh-CN=short(ratio=0.48)"
+    ],
+    "severity": 1,
+    "ko_preview": "판결은 다은이 믿고 싶었던 이야기와 실제 기록 사이의 틈을 짚었다. 그녀는 결혼 직전의 불안을 이유로 최수민을 먼저 위험한 사람으로 만들었고, 공통 친구들의 시선까지 그 방향으로 ...",
+    "raw": {
+      "ko": "판결은 다은이 믿고 싶었던 이야기와 실제 기록 사이의 틈을 짚었다. 그녀는 결혼 직전의 불안을 이유로 최수민을 먼저 위험한 사람으로 만들었고, 공통 친구들의 시선까지 그 방향으로 끌고 갔다. 최수민의 대응도 서툴렀지만, 다은의 공개 매도는 회복하기 어려운 상처를 남겼다. 후일담은 화해가 아니라 정정, 사과, 그리고 다시는 확인 없이 이름을 올리지 않겠다는 약속으로 시작됐다.",
+      "en": "The judgment pointed to the gap between the story Da-eun wanted to believe and the actual record. On the eve of marriage, she made Su-min into a dangerous person first and drew their mutual friends in that direction. Su-min’s response was clumsy, but Da-eun’s public condemnation left the wound that had to be repaired first.",
+      "ja": "判決は、ダウンが信じたかった物語と実際の記録との隙間を指摘した。結婚直前の不安を理由に、彼女は先にスミンを危険な人にし、共通の友人たちの視線までその方向へ引き込んだ。スミンの対応も拙かったが、ダウンの公開非難が先に修復すべき傷を残した。",
+      "zh-CN": "判决指出了多恩想相信的故事与实际记录之间的缝隙。她以婚前的不安为由，先把秀敏塑造成危险的人，也把共同朋友的视线带向同一个方向。秀敏的应对也笨拙，但多恩的公开贬损留下了必须先修复的伤。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_03_spouse01_part3_retranslated.csv",
+    "row": 22,
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "spouse-01",
+    "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v2].text",
+    "ko_length": 157,
+    "ko_sentences": 3,
+    "en_length": 367,
+    "ja_length": 56,
+    "zh-CN_length": 117,
+    "ratios": {
+      "en": 1.5583864118895967,
+      "ja": 0.35668789808917195,
+      "zh-CN": 0.8280254777070063
+    },
+    "issues": [
+      "ja=short(ratio=0.36)"
+    ],
+    "severity": 1,
+    "ko_preview": "결론은 단죄만으로 끝나지 않았다. 재판관은 이준호에게는 가족 문제를 투명하게 드러내라고, 박지연에게는 숨은 돈을 쫓는 대신 피해 회복 절차를 밟으라고 권했다. 형과 조카, 사기 피...",
+    "raw": {
+      "ko": "결론은 단죄만으로 끝나지 않았다. 재판관은 이준호에게는 가족 문제를 투명하게 드러내라고, 박지연에게는 숨은 돈을 쫓는 대신 피해 회복 절차를 밟으라고 권했다. 형과 조카, 사기 피해, 무너진 부부 관계가 한꺼번에 놓인 자리에서 두 사람은 처음으로 함께 해결해야 할 문제를 마주했다.",
+      "en": "The conclusion did not end in punishment alone. To Lee Jun-ho the Judge advised laying out family matters transparently; to Park Ji-yeon, taking the recovery procedure for the loss instead of chasing hidden money. Standing all at once with the family situation, the loss, and the broken marriage, the two faced for the first time a problem they had to solve together.",
+      "ja": "裁判官は処罰一色ではなく、双方の保護と再発防止を中心に判決を組んだ。当面の住み分けと支援機関の関与が提案された。",
+      "zh-CN": "法庭散场后，法官先谈的是修复，而非胜负。家人方面的问题不能再当作秘密，投资损失经过造成的损失也是夫妻必须共同承担的事。走出法庭时，两人之间依旧有冰冷，但在第一次被告知\"必须看向同一个方向\"的那句话面前，两人都久久沉默。一切都需要时间。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_03_spouse01_part3_retranslated.csv",
+    "row": 14,
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "spouse-01",
+    "key_path": "channels[aftermath].entries[b_primary_fault].variants[b_primary_fault-v4].text",
+    "ko_length": 200,
+    "ko_sentences": 3,
+    "en_length": 476,
+    "ja_length": 79,
+    "zh-CN_length": 140,
+    "ratios": {
+      "en": 1.5866666666666667,
+      "ja": 0.395,
+      "zh-CN": 0.7777777777777778
+    },
+    "issues": [
+      "ja=short(ratio=0.40)"
+    ],
+    "severity": 1,
+    "ko_preview": "법정은 박지연의 불안이 혼자 생겨난 것이 아니라고 보았다. 이준호가 오피스텔 방문, 새벽 통화, 3,000만 원 현금 전달을 모두 늦게 말한 탓에 의심이 결혼 전체를 삼켰다는 판단...",
+    "raw": {
+      "ko": "법정은 박지연의 불안이 혼자 생겨난 것이 아니라고 보았다. 이준호가 오피스텔 방문, 새벽 통화, 3,000만 원 현금 전달을 모두 늦게 말한 탓에 의심이 결혼 전체를 삼켰다는 판단이었다. 판결 뒤 이준호는 집안 사정을 처리하는 일과 배우자에게 숨기는 일을 더는 같은 말로 묶지 않겠다고 했고, 박지연은 남은 절차를 지켜보며 이혼 여부를 따로 결정하기로 했다.",
+      "en": "The court saw that Park Ji-yeon's anxiety had not arisen on its own. The judgement was that the Officetel visits, the late-night calls, and the ₩30M cash transfer being all explained late had let suspicion swallow the entire marriage. After the verdict, Lee Jun-ho said he would no longer bundle handling family matters and hiding things from his spouse into the same phrase, and Park Ji-yeon decided to watch the remaining procedure and rule separately on whether to divorce.",
+      "ja": "イ・ジュノの沈黙が主たる原因と認められた一方、パク・ジヨンの書類細工は別途重い処分として記された。判決後、ふたりは互いの責任を分けて受け止めることに合意した。",
+      "zh-CN": "退庭之后，法官将李俊浩持续隐瞒小金库、家人方面的问题与3000万韩元取款的事，判断为更大的破口。朴智妍在文件处理上的疑点固然是明显的过错，但法官认为，正是先前持续的沉默才使家庭崩塌。宣判之后，李俊浩第一次完整地讲出了那位家人和孩子的处境，朴智妍含着泪听完。这是这个家走出的第一步。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_03_spouse01_part3_retranslated.csv",
+    "row": 23,
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "spouse-01",
+    "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v3].text",
+    "ko_length": 169,
+    "ko_sentences": 3,
+    "en_length": 418,
+    "ja_length": 57,
+    "zh-CN_length": 117,
+    "ratios": {
+      "en": 1.6489151873767258,
+      "ja": 0.33727810650887574,
+      "zh-CN": 0.7692307692307693
+    },
+    "issues": [
+      "ja=short(ratio=0.34)"
+    ],
+    "severity": 1,
+    "ko_preview": "재판관은 조카와 형의 사정을 공개 기록에 모두 남기지 않기로 했다. 대신 이준호에게는 가족을 도운 내역을 박지연에게 투명하게 설명하게 하고, 박지연에게는 적금 해지와 투자방 손실 ...",
+    "raw": {
+      "ko": "재판관은 조카와 형의 사정을 공개 기록에 모두 남기지 않기로 했다. 대신 이준호에게는 가족을 도운 내역을 박지연에게 투명하게 설명하게 하고, 박지연에게는 적금 해지와 투자방 손실 회복 절차를 별도로 밟게 했다. 두 사람은 책임을 가볍게 넘기지 않되, 아이의 생활이 더 흔들리지 않도록 절차를 단순화했다.",
+      "en": "The Judge decided not to put the family details into the public record in full. Instead, Lee Jun-ho was to explain to Park Ji-yeon transparently the support he had provided, and Park Ji-yeon was to follow a separate procedure for the savings cancellation and the loss recovery. The two were not let off lightly, but the procedure was simplified so that the household life of those involved would not be shaken further.",
+      "ja": "判決は救済と再発防止を優先した。書類処理の問題は別途軽くない手続きへ送られ、夫婦は支援を受けつつ次の判断を進める。",
+      "zh-CN": "判决落下之后，法官先谈的是修复，而非胜负。家人方面的问题不能再当作秘密，投资损失经过造成的损失也是夫妻必须共同承担的事。走出法庭时，两人之间依旧有冰冷，但在第一次被告知\"必须看向同一个方向\"的那句话面前，两人都久久沉默。两人各自承担。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_03_spouse01_part3_retranslated.csv",
+    "row": 16,
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "spouse-01",
+    "key_path": "channels[aftermath].entries[procedural_caution].variants[procedural_caution-v1].text",
+    "ko_length": 161,
+    "ko_sentences": 3,
+    "en_length": 416,
+    "ja_length": 70,
+    "zh-CN_length": 105,
+    "ratios": {
+      "en": 1.7225672877846792,
+      "ja": 0.43478260869565216,
+      "zh-CN": 0.7246376811594203
+    },
+    "issues": [
+      "ja=short(ratio=0.43)"
+    ],
+    "severity": 1,
+    "ko_preview": "재판관은 위임장 조작이 관계 다툼으로 덮일 수 없는 범죄라고 분명히 경고했다. 동시에 이준호의 침묵 역시 박지연을 벼랑 끝으로 몰았다는 점을 짚으며, 처벌과 별개로 관계 회복의 문...",
+    "raw": {
+      "ko": "재판관은 위임장 조작이 관계 다툼으로 덮일 수 없는 범죄라고 분명히 경고했다. 동시에 이준호의 침묵 역시 박지연을 벼랑 끝으로 몰았다는 점을 짚으며, 처벌과 별개로 관계 회복의 문은 닫지 않았다. 두 사람은 각자 잘못을 인정하는 서류보다 먼저, 서로에게 설명해야 할 말을 떠안고 돌아갔다.",
+      "en": "The Judge made clear that altering an power of attorney is a crime that cannot be smoothed over by relationship dispute. At the same time, noting that Lee Jun-ho's silence had pushed Park Ji-yeon to the edge, the Judge did not close the door on relationship recovery, separate from punishment. The two went back carrying not so much the paperwork acknowledging fault as the words they still had to say to each other.",
+      "ja": "判決のあと、裁判官は手続上の注意を残した。証拠の順序と書類の扱いについて再点検が必要と認められ、両者は今後の手続を慎重に進めるよう促された。",
+      "zh-CN": "法官明确警告:委托书操作不是关系纷争所能掩盖的犯罪。同时，他也指出，李俊浩的沉默把朴智妍逼到了悬崖边。处罚之外，他没有关闭关系修复的门。两人各自带着比承认错误的委托书更沉重的——必须对彼此说清楚的话——回家了。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  },
+  {
+    "file": "batch_03_spouse01_part3_retranslated.csv",
+    "row": 25,
+    "category": "non_party_scripted_text",
+    "source": "src/data/scriptedText",
+    "case_id": "spouse-01",
+    "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v5].text",
+    "ko_length": 159,
+    "ko_sentences": 3,
+    "en_length": 434,
+    "ja_length": 63,
+    "zh-CN_length": 115,
+    "ratios": {
+      "en": 1.819706498951782,
+      "ja": 0.39622641509433965,
+      "zh-CN": 0.8036338225017471
+    },
+    "issues": [
+      "ja=short(ratio=0.40)"
+    ],
+    "severity": 1,
+    "ko_preview": "법정은 민감한 가족 사정을 모두 드러내는 대신, 확인된 책임만 남기는 방식을 택했다. 이준호의 현금 전달, 박지연의 적금 해지와 손실은 기록하되 조카의 일상은 보호했다. 부부는 공...",
+    "raw": {
+      "ko": "법정은 민감한 가족 사정을 모두 드러내는 대신, 확인된 책임만 남기는 방식을 택했다. 이준호의 현금 전달, 박지연의 적금 해지와 손실은 기록하되 조카의 일상은 보호했다. 부부는 공개 다툼을 더 키우기보다, 피해 회복과 집안 사정을 처리하는 기준을 같은 문서 안에서 다시 세우기로 했다.",
+      "en": "Rather than exposing every sensitive family detail, the courtroom chose to record only the confirmed responsibilities. Lee Jun-ho's cash transfer and Park Ji-yeon's savings cancellation and loss were set down, but the daily life of those connected was kept protected. Rather than escalating the public dispute, the couple decided to set, within the same document, the standards for loss recovery and for handling family circumstances.",
+      "ja": "裁判官は保護的な決着を選んだ。互いの距離をとりつつ、書類問題は別途、感情の整理は相談を経て、と段階を分けて進めることになった。",
+      "zh-CN": "法槌落定之后，法官先谈的是修复，而非胜负。家人方面的问题不能再当作秘密，投资损失经过造成的损失也是夫妻必须共同承担的事。走出法庭时，两人之间依旧有冰冷，但在第一次被告知\"必须看向同一个方向\"的那句话面前，两人都久久沉默。事已至此。",
+      "notes": "Scripted text channel without party a/b as speaker: system, judge, witness, dossier, mediation, aftermath, and milestone copy."
+    }
+  }
+]

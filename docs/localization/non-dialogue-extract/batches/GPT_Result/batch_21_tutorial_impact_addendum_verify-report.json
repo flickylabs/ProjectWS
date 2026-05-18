@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-05-18T10:38:52.475Z",
+  "input": "docs/localization/non-dialogue-extract/batches/GPT_Result/batch_21_tutorial_impact_addendum_retranslated.csv",
+  "glossary": "docs/localization/non-dialogue-extract/GPT_Result/glossary_locked.csv",
+  "maxIssuesPerType": 1000,
+  "summary": {
+    "rows": 27,
+    "glossary_terms": 509,
+    "placeholder_issues": 0,
+    "empty_translation_issues": 0,
+    "cjk_in_english_issues": 0,
+    "english_length_spike_issues": 2,
+    "glossary_issues": 0,
+    "totalIssues": 2
+  },
+  "issueLimits": {
+    "placeholder": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "empty": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "cjkInEnglish": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "englishLengthSpike": {
+      "total": 2,
+      "included": 2,
+      "omitted": 0
+    },
+    "glossary": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    }
+  },
+  "issues": {
+    "placeholder": [],
+    "empty": [],
+    "cjkInEnglish": [],
+    "englishLengthSpike": [
+      {
+        "row_number": 11,
+        "category": "ui_i18n_message",
+        "source": "src/i18n/messages/tutorial.ts",
+        "case_id": "spouse-01",
+        "key_path": "pc.tutorial.spouse01.question-fact.body",
+        "locale": "en",
+        "ko_length": 19,
+        "en_length": 49,
+        "ratio": 2.58,
+        "ko": "근거를 캐물어 진술의 빈틈을 본다.",
+        "en": "Press for grounds and find gaps in the statement."
+      },
+      {
+        "row_number": 15,
+        "category": "ui_i18n_message",
+        "source": "src/i18n/messages/tutorial.ts",
+        "case_id": "spouse-01",
+        "key_path": "pc.tutorial.spouse01.evidence-present-e2-to-b.body",
+        "locale": "en",
+        "ko_length": 16,
+        "en_length": 42,
+        "ratio": 2.63,
+        "ko": "증거를 제시해 진술을 흔든다.",
+        "en": "Present evidence to challenge a statement."
+      }
+    ],
+    "glossary": []
+  }
+}

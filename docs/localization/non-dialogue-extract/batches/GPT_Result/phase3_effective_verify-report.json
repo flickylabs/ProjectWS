@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T10:54:39.979Z",
+  "generatedAt": "2026-05-18T12:37:27.354Z",
   "input": "docs/localization/non-dialogue-extract/batches/GPT_Result/phase3_effective_retranslated.csv",
   "glossary": "docs/localization/non-dialogue-extract/GPT_Result/glossary_locked.csv",
   "maxIssuesPerType": 1000,
@@ -9,9 +9,9 @@
     "placeholder_issues": 0,
     "empty_translation_issues": 0,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 6077,
+    "english_length_spike_issues": 6113,
     "glossary_issues": 0,
-    "totalIssues": 6077
+    "totalIssues": 6113
   },
   "issueLimits": {
     "placeholder": {
@@ -30,9 +30,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 6077,
+      "total": 6113,
       "included": 1000,
-      "omitted": 5077
+      "omitted": 5113
     },
     "glossary": {
       "total": 0,
@@ -13340,10 +13340,24 @@
         "key_path": "channels[aftermath].entries[a_primary_fault].variants[a_primary_fault-v1].text",
         "locale": "en",
         "ko_length": 156,
-        "en_length": 403,
-        "ratio": 2.58,
+        "en_length": 407,
+        "ratio": 2.61,
         "ko": "판결 뒤 박지연은 오래 고개를 들지 못했다. 이준호의 숨김이 가벼운 잘못은 아니었지만, 재판관은 위임장 조작과 투자 사기 송금을 더 무겁게 보았다. 이준호는 형과 조카 이야기를 더는 숨기지 않겠다고 했고, 박지연은 잃은 돈보다 먼저 무너진 신뢰를 어떻게 감당할지 마주하게 되었다.",
-        "en": "After the verdict, Park Ji-yeon could not lift her head for a long while. Lee Jun-ho's concealment was not a minor fault, but the Judge weighed the power of attorney manipulation …"
+        "en": "After the verdict, Park Ji-yeon could not raise her head for a long time. Lee Jun-ho's concealment was not a minor wrong, but the Judge treated the power of attorney manipulation …"
+      },
+      {
+        "row_number": 2603,
+        "id": "",
+        "category": "non_party_scripted_text",
+        "source": "src/data/scriptedText",
+        "case_id": "spouse-01",
+        "key_path": "channels[aftermath].entries[a_primary_fault].variants[a_primary_fault-v2].text",
+        "locale": "en",
+        "ko_length": 156,
+        "en_length": 400,
+        "ratio": 2.56,
+        "ko": "법정이 정리된 뒤에도 부부는 곧바로 서로를 보지 못했다. 재판관은 가족을 위한 침묵보다 문서를 조작하고 공동 적금을 빼낸 선택이 더 치명적이었다고 판단했다. 이준호는 형 문제를 공개적으로 정리하겠다고 했고, 박지연은 자신의 불안이 범죄가 된 순간을 되돌아보며 천천히 자리를 떴다.",
+        "en": "Even after the courtroom was cleared, the couple could not look at each other right away. The Judge judged that manipulating documents and taking money out of the joint savings ac…"
       },
       {
         "row_number": 2604,
@@ -13354,10 +13368,10 @@
         "key_path": "channels[aftermath].entries[a_primary_fault].variants[a_primary_fault-v3].text",
         "locale": "en",
         "ko_length": 197,
-        "en_length": 559,
-        "ratio": 2.84,
+        "en_length": 627,
+        "ratio": 3.18,
         "ko": "박지연은 위임장 조작과 투자방 송금 손실을 인정한 뒤 별도 처분 절차를 받아들였다. 뒤늦게 형과 조카 사정을 들은 그는 외도 의심이 전부였던 시간도 다시 보게 되었지만, 그 불안이 서류 조작으로 이어진 책임은 사라지지 않았다. 이준호는 침묵이 오해를 키운 단초였음을 인정했고, 두 사람은 관계를 다시 세울지 이혼 절차로 …",
-        "en": "After admitting the power of attorney manipulation and the loss from the investment chat transfer, Park Ji-yeon accepted a separate disposition procedure. Hearing belatedly about …"
+        "en": "After admitting the power of attorney manipulation and the loss from the investment chat transfer, Park Ji-yeon accepted a separate disposition procedure. After belatedly hearing …"
       },
       {
         "row_number": 2605,
@@ -13368,10 +13382,10 @@
         "key_path": "channels[aftermath].entries[a_primary_fault].variants[a_primary_fault-v4].text",
         "locale": "en",
         "ko_length": 174,
-        "en_length": 473,
-        "ratio": 2.72,
+        "en_length": 502,
+        "ratio": 2.89,
         "ko": "판결 뒤 박지연에게 남은 건 잃은 돈보다 서명 한 줄의 무게였다. 재판관은 이준호가 피한 점과 가족 사정을 숨긴 점을 짚었지만, 공동 적금을 해지하려고 위임장을 꾸민 선택을 더 무겁게 기록했다. 이준호는 형 문제를 더는 부부 밖에 숨기지 않겠다고 약속했고, 박지연은 사과와 피해 회복 계획을 먼저 내놓아야 했다.",
-        "en": "After the verdict, what remained for Park Ji-yeon was the weight of a single signature, heavier than the money lost. The Judge noted Lee Jun-ho's avoidance and his concealment of …"
+        "en": "After the verdict, what remained for Park Ji-yeon was the weight of one line of signature more than the money she had lost. The Judge pointed out Lee Jun-ho's avoidance and his co…"
       },
       {
         "row_number": 2606,
@@ -13382,10 +13396,10 @@
         "key_path": "channels[aftermath].entries[a_primary_fault].variants[a_primary_fault-v5].text",
         "locale": "en",
         "ko_length": 153,
-        "en_length": 412,
-        "ratio": 2.69,
+        "en_length": 450,
+        "ratio": 2.94,
         "ko": "박지연은 끝까지 자신도 버림받을까 두려웠다고 말했지만, 판결은 그 두려움이 범죄의 방패가 될 수 없다고 정리했다. 이준호는 형과 조카 일을 숨긴 책임을 인정하며 시댁 갈등을 따로 정리하겠다고 했다. 부부는 한동안 별거하며 공동재산 회복과 형사 절차를 분리해 진행하기로 했다.",
-        "en": "Park Ji-yeon said to the end that she had feared being abandoned as well, but the verdict made clear that fear could not become a shield for crime. Lee Jun-ho admitted responsibil…"
+        "en": "Park Ji-yeon said to the end that she had been afraid she too would be abandoned, but the verdict concluded that fear could not become a shield for crime. Lee Jun-ho acknowledged …"
       },
       {
         "row_number": 2607,
@@ -13396,10 +13410,10 @@
         "key_path": "channels[aftermath].entries[b_primary_fault].variants[b_primary_fault-v1].text",
         "locale": "en",
         "ko_length": 172,
-        "en_length": 450,
-        "ratio": 2.62,
+        "en_length": 474,
+        "ratio": 2.76,
         "ko": "재판관은 이준호가 비자금과 형 문제, 3,000만 원 출금을 계속 숨긴 점을 더 큰 파열로 판단했다. 박지연의 위임장 조작은 명백한 잘못이었지만, 그 이전부터 이어진 침묵이 가정을 무너뜨렸다고 본 것이다. 판결 뒤 이준호는 처음으로 형과 조카의 사정을 모두 설명했고, 박지연은 울음을 삼키며 그 말을 들었다.",
-        "en": "The Judge found the greater rupture in Lee Jun-ho's continued concealment of his slush fund, his brother's situation, and the ₩30M withdrawal. Park Ji-yeon's power of attorney man…"
+        "en": "The Judge treated Lee Jun-ho's continued concealment of his hidden fund, his older brother's issue, and the ₩30M withdrawal as the greater rupture. Park Ji-yeon's power of attorne…"
       },
       {
         "row_number": 2608,
@@ -13410,10 +13424,10 @@
         "key_path": "channels[aftermath].entries[b_primary_fault].variants[b_primary_fault-v2].text",
         "locale": "en",
         "ko_length": 156,
-        "en_length": 393,
-        "ratio": 2.52,
+        "en_length": 417,
+        "ratio": 2.67,
         "ko": "승패가 갈린 뒤에도 분위기는 무겁게 가라앉아 있었다. 재판관은 박지연의 범행을 꾸짖으면서도, 그 배경을 만든 것은 이준호의 오랜 비밀과 일방적인 자금 집행이라고 짚었다. 이준호는 늦게라도 모든 사정을 털어놓았고, 박지연은 그 설명을 듣고도 쉽게 용서하지 못한 채 한참을 침묵했다.",
-        "en": "Even after the outcome was decided, the air remained heavy. The Judge rebuked Park Ji-yeon's offense, but pointed out that its background had been created by Lee Jun-ho's long-hel…"
+        "en": "Even after the winner and loser were decided, the atmosphere remained heavily subdued. The Judge reprimanded Park Ji-yeon's crime, but also pointed out that the background had bee…"
       },
       {
         "row_number": 2609,
@@ -13424,10 +13438,24 @@
         "key_path": "channels[aftermath].entries[b_primary_fault].variants[b_primary_fault-v3].text",
         "locale": "en",
         "ko_length": 193,
-        "en_length": 490,
-        "ratio": 2.54,
+        "en_length": 553,
+        "ratio": 2.87,
         "ko": "이 결과에서 재판관은 사건의 시작을 이준호의 침묵과 비자금을 숨긴 것으로 보았다. 박지연의 적금 문제는 별도 책임으로 남았지만, 이준호가 형 사정과 현금 전달을 계속 숨기며 외도처럼 보이게 만든 점이 더 크게 잡혔다. 그는 뒤늦게 형과 조카 이야기를 모두 꺼냈고, 박지연은 그 설명을 들으면서도 이미 무너진 신뢰 앞에서 …",
-        "en": "In this outcome, the Judge saw the beginning of the case in Lee Jun-ho's silence and his concealment of slush funds. Park Ji-yeon's savings issue remained a separate responsibilit…"
+        "en": "In this result, the Judge saw the beginning of the case in Lee Jun-ho's silence and concealment of the hidden fund. Park Ji-yeon's savings issue remained a separate responsibility…"
+      },
+      {
+        "row_number": 2611,
+        "id": "",
+        "category": "non_party_scripted_text",
+        "source": "src/data/scriptedText",
+        "case_id": "spouse-01",
+        "key_path": "channels[aftermath].entries[b_primary_fault].variants[b_primary_fault-v5].text",
+        "locale": "en",
+        "ko_length": 162,
+        "en_length": 409,
+        "ratio": 2.52,
+        "ko": "이준호에게 더 무거운 책임이 돌아간 결말에서도 박지연의 행동이 깨끗해진 것은 아니었다. 다만 재판관은 먼저 침묵을 만들고 돈의 행방을 감춘 사람이 이준호였다는 점을 선명하게 적었다. 그는 형을 돕는 선의만 내세우던 태도를 접고, 박지연 앞에서 자신이 무엇을 숨겼는지 순서대로 설명해야 했다.",
+        "en": "Even in the ending where heavier responsibility returned to Lee Jun-ho, Park Ji-yeon's actions did not become clean. However, the Judge wrote clearly that the person who first cre…"
       },
       {
         "row_number": 2612,
@@ -13438,10 +13466,10 @@
         "key_path": "channels[aftermath].entries[procedural_caution].variants[procedural_caution-v1].text",
         "locale": "en",
         "ko_length": 161,
-        "en_length": 416,
-        "ratio": 2.58,
+        "en_length": 429,
+        "ratio": 2.66,
         "ko": "재판관은 위임장 조작이 관계 다툼으로 덮일 수 없는 범죄라고 분명히 경고했다. 동시에 이준호의 침묵 역시 박지연을 벼랑 끝으로 몰았다는 점을 짚으며, 처벌과 별개로 관계 회복의 문은 닫지 않았다. 두 사람은 각자 잘못을 인정하는 서류보다 먼저, 서로에게 설명해야 할 말을 떠안고 돌아갔다.",
-        "en": "The Judge made clear that altering an power of attorney is a crime that cannot be smoothed over by relationship dispute. At the same time, noting that Lee Jun-ho's silence had pus…"
+        "en": "The Judge clearly warned that power of attorney manipulation is a crime that cannot be covered over as a relationship dispute. At the same time, the Judge pointed out that Lee Jun…"
       },
       {
         "row_number": 2614,
@@ -13452,10 +13480,10 @@
         "key_path": "channels[aftermath].entries[procedural_caution].variants[procedural_caution-v3].text",
         "locale": "en",
         "ko_length": 143,
-        "en_length": 406,
-        "ratio": 2.84,
+        "en_length": 410,
+        "ratio": 2.87,
         "ko": "재판관은 곧바로 결론을 닫지 않고 추가 절차를 명했다. 위임장 조작은 별도로 확인되어야 하고, 형의 개인회생과 조카 보호 문제는 가족 상담 안에서 다뤄져야 한다는 판단이었다. 두 사람은 각자 책임을 인정했지만, 처분과 회복은 같은 속도로 진행될 수 없었다.",
-        "en": "The Judge did not close the conclusion immediately and ordered additional procedures. The power of attorney act had to be confirmed separately, and the relative's personal financi…"
+        "en": "The Judge did not close the conclusion immediately and ordered additional procedures. The judgment was that the power of attorney manipulation had to be confirmed separately, and …"
       },
       {
         "row_number": 2616,
@@ -13466,10 +13494,52 @@
         "key_path": "channels[aftermath].entries[procedural_caution].variants[procedural_caution-v5].text",
         "locale": "en",
         "ko_length": 130,
-        "en_length": 419,
-        "ratio": 3.22,
+        "en_length": 412,
+        "ratio": 3.17,
         "ko": "마지막 절차는 경고에 가까웠다. 가족 사정을 숨겼다는 이유로 돈을 몰래 움직일 수 없고, 배신당했다는 믿음만으로 위임장을 꾸밀 수도 없다는 정리였다. 재판관은 조카 보호와 형 사정 확인, 부부 상담을 나란히 두고 다음 절차로 넘겼다.",
-        "en": "The final procedure was closer to a warning. Money cannot be moved in secret on the grounds that family circumstances were being hidden, nor can an power of attorney be manufactur…"
+        "en": "The final procedure was close to a warning. The conclusion was that money cannot be moved in secret just because family circumstances were hidden, and a power of attorney cannot b…"
+      },
+      {
+        "row_number": 2617,
+        "id": "",
+        "category": "non_party_scripted_text",
+        "source": "src/data/scriptedText",
+        "case_id": "spouse-01",
+        "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v1].text",
+        "locale": "en",
+        "ko_length": 150,
+        "en_length": 433,
+        "ratio": 2.89,
+        "ko": "재판관은 승패보다 회복을 먼저 말했다. 형과 조카 문제는 더는 비밀로 둘 수 없고, 투자 사기 피해도 부부가 함께 수습해야 할 일이라고 했다. 법정을 나서는 두 사람 사이엔 여전히 서늘함이 남았지만, 처음으로 같은 방향을 봐야 한다는 말 앞에서는 둘 다 오래 침묵했다.",
+        "en": "The Judge spoke first of recovery, not victory or defeat. The Judge said the issue of the older brother and nephew could no longer be kept secret, and that the harm from the inves…"
+      },
+      {
+        "row_number": 2618,
+        "id": "",
+        "category": "non_party_scripted_text",
+        "source": "src/data/scriptedText",
+        "case_id": "spouse-01",
+        "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v2].text",
+        "locale": "en",
+        "ko_length": 157,
+        "en_length": 399,
+        "ratio": 2.54,
+        "ko": "결론은 단죄만으로 끝나지 않았다. 재판관은 이준호에게는 가족 문제를 투명하게 드러내라고, 박지연에게는 숨은 돈을 쫓는 대신 피해 회복 절차를 밟으라고 권했다. 형과 조카, 사기 피해, 무너진 부부 관계가 한꺼번에 놓인 자리에서 두 사람은 처음으로 함께 해결해야 할 문제를 마주했다.",
+        "en": "The conclusion did not end with condemnation alone. The Judge advised Lee Jun-ho to reveal the family issue transparently, and advised Park Ji-yeon to follow the harm-recovery pro…"
+      },
+      {
+        "row_number": 2619,
+        "id": "",
+        "category": "non_party_scripted_text",
+        "source": "src/data/scriptedText",
+        "case_id": "spouse-01",
+        "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v3].text",
+        "locale": "en",
+        "ko_length": 169,
+        "en_length": 474,
+        "ratio": 2.8,
+        "ko": "재판관은 조카와 형의 사정을 공개 기록에 모두 남기지 않기로 했다. 대신 이준호에게는 가족을 도운 내역을 박지연에게 투명하게 설명하게 하고, 박지연에게는 적금 해지와 투자방 손실 회복 절차를 별도로 밟게 했다. 두 사람은 책임을 가볍게 넘기지 않되, 아이의 생활이 더 흔들리지 않도록 절차를 단순화했다.",
+        "en": "The Judge decided not to leave all the circumstances of the nephew and older brother in the public record. Instead, the Judge made Lee Jun-ho transparently explain to Park Ji-yeon…"
       },
       {
         "row_number": 2620,
@@ -13480,10 +13550,10 @@
         "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v4].text",
         "locale": "en",
         "ko_length": 149,
-        "en_length": 431,
-        "ratio": 2.89,
+        "en_length": 416,
+        "ratio": 2.79,
         "ko": "결론은 단죄보다 보호에 가까웠다. 형의 개인회생과 조카의 생활 정보는 필요한 범위에서만 다루고, 부부의 자금 문제는 별도 합의서로 정리하기로 했다. 이준호는 더는 가족 사정을 방패로 침묵하지 않겠다고 했고, 박지연은 자기 수치심 때문에 손실을 숨기지 않겠다고 말했다.",
-        "en": "The conclusion was closer to protection than to punishment. The relative's personal financial difficulty and the household details of those connected would be handled only in nece…"
+        "en": "The conclusion was closer to protection than condemnation. The older brother's personal rehabilitation and the nephew's life information would be handled only within the necessary…"
       },
       {
         "row_number": 2621,
@@ -13494,10 +13564,24 @@
         "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v5].text",
         "locale": "en",
         "ko_length": 159,
-        "en_length": 434,
-        "ratio": 2.73,
+        "en_length": 420,
+        "ratio": 2.64,
         "ko": "법정은 민감한 가족 사정을 모두 드러내는 대신, 확인된 책임만 남기는 방식을 택했다. 이준호의 현금 전달, 박지연의 적금 해지와 손실은 기록하되 조카의 일상은 보호했다. 부부는 공개 다툼을 더 키우기보다, 피해 회복과 집안 사정을 처리하는 기준을 같은 문서 안에서 다시 세우기로 했다.",
-        "en": "Rather than exposing every sensitive family detail, the courtroom chose to record only the confirmed responsibilities. Lee Jun-ho's cash transfer and Park Ji-yeon's savings cancel…"
+        "en": "Instead of revealing all sensitive family circumstances, the court chose a method that left only confirmed responsibilities. It recorded Lee Jun-ho's cash delivery and Park Ji-yeo…"
+      },
+      {
+        "row_number": 2624,
+        "id": "",
+        "category": "non_party_scripted_text",
+        "source": "src/data/scriptedText",
+        "case_id": "spouse-01",
+        "key_path": "channels[aftermath].entries[shared_fault].variants[shared_fault-v3].text",
+        "locale": "en",
+        "ko_length": 181,
+        "en_length": 461,
+        "ratio": 2.55,
+        "ko": "판결은 두 사람 모두의 책임을 나눠 적었다. 이준호는 형과 조카를 숨기며 개인 비자금 3,000만 원을 혼자 움직였고, 박지연은 배신 공포를 이유로 위임장을 꾸며 공동 적금 2,000만 원을 해지했다. 법정을 나온 뒤 부부는 돈을 회복하는 문제보다, 서로에게 사실을 말하지 않았던 습관부터 끊어야 한다는 말을 오래 떠올렸…",
+        "en": "The verdict divided and recorded the responsibility of both people. Lee Jun-ho hid his older brother and nephew while moving ₩30M from his personal hidden fund alone, and Park Ji-…"
       },
       {
         "row_number": 2625,
@@ -13508,10 +13592,10 @@
         "key_path": "channels[aftermath].entries[shared_fault].variants[shared_fault-v4].text",
         "locale": "en",
         "ko_length": 144,
-        "en_length": 387,
-        "ratio": 2.69,
+        "en_length": 393,
+        "ratio": 2.73,
         "ko": "한 사람만 피해자라고 부르기 어려운 결말이었다. 이준호의 침묵은 외도 오해를 키웠고, 박지연의 선제행동은 범죄와 손실로 이어졌다. 두 사람은 합의 이혼과 관계 회복 상담을 모두 열어 둔 채, 먼저 형 가족을 도운 것과 공동재산 관리를 문서로 정리하기로 했다.",
-        "en": "It was an ending where it was difficult to call only one person the victim. Lee Jun-ho's silence grew the misunderstanding of an affair, and Park Ji-yeon's preemptive action led t…"
+        "en": "It was an ending in which it was hard to call only one person the victim. Lee Jun-ho's silence grew the misunderstanding of an affair, and Park Ji-yeon's preemptive action led to …"
       },
       {
         "row_number": 2626,
@@ -13522,10 +13606,10 @@
         "key_path": "channels[aftermath].entries[shared_fault].variants[shared_fault-v5].text",
         "locale": "en",
         "ko_length": 149,
-        "en_length": 431,
-        "ratio": 2.89,
+        "en_length": 445,
+        "ratio": 2.99,
         "ko": "재판관은 숨김의 시작, 자금 실행, 위임장 조작을 한 줄로 묶지 않았다. 그래서 결론도 한 사람의 승리로 끝나지 않았다. 이준호는 집안 사정을 처리한다는 말로 배우자를 배제한 책임을, 박지연은 버림받을까 두려웠다는 말로 서류 조작을 덮으려 한 책임을 각각 받아들였다.",
-        "en": "The Judge did not bind the start of concealment, the execution of funds, and the power of attorney manipulation into a single line. Therefore the conclusion did not end as one per…"
+        "en": "The Judge did not tie the beginning of concealment, the movement of funds, and the power of attorney manipulation into one line. Therefore, the conclusion did not end as one perso…"
       },
       {
         "row_number": 2647,
@@ -13954,90 +14038,6 @@
         "source": "src/data/scriptedText",
         "case_id": "spouse-01",
         "key_path": "channels[dossier].entries[dc-3.b.q1|late].variants[dc-3-b-q1-late-v1].behaviorHint",
-        "locale": "en",
-        "ko_length": 28,
-        "en_length": 82,
-        "ratio": 2.93,
-        "ko": "회피를 멈추고 숨김의 이유와 책임을 함께 인정한다.",
-        "en": "Stop evading and admit both the reason for the concealment and the responsibility."
-      },
-      {
-        "row_number": 2769,
-        "id": "",
-        "category": "non_party_scripted_text",
-        "source": "src/data/scriptedText",
-        "case_id": "spouse-01",
-        "key_path": "channels[dossier].entries[dc-3.b.q1|late].variants[dc-3-b-q1-late-v10].behaviorHint",
-        "locale": "en",
-        "ko_length": 28,
-        "en_length": 82,
-        "ratio": 2.93,
-        "ko": "회피를 멈추고 숨김의 이유와 책임을 함께 인정한다.",
-        "en": "Stop evading and admit both the reason for the concealment and the responsibility."
-      },
-      {
-        "row_number": 2771,
-        "id": "",
-        "category": "non_party_scripted_text",
-        "source": "src/data/scriptedText",
-        "case_id": "spouse-01",
-        "key_path": "channels[dossier].entries[dc-3.b.q1|late].variants[dc-3-b-q1-late-v2].behaviorHint",
-        "locale": "en",
-        "ko_length": 28,
-        "en_length": 82,
-        "ratio": 2.93,
-        "ko": "회피를 멈추고 숨김의 이유와 책임을 함께 인정한다.",
-        "en": "Stop evading and admit both the reason for the concealment and the responsibility."
-      },
-      {
-        "row_number": 2773,
-        "id": "",
-        "category": "non_party_scripted_text",
-        "source": "src/data/scriptedText",
-        "case_id": "spouse-01",
-        "key_path": "channels[dossier].entries[dc-3.b.q1|late].variants[dc-3-b-q1-late-v3].behaviorHint",
-        "locale": "en",
-        "ko_length": 28,
-        "en_length": 82,
-        "ratio": 2.93,
-        "ko": "회피를 멈추고 숨김의 이유와 책임을 함께 인정한다.",
-        "en": "Stop evading and admit both the reason for the concealment and the responsibility."
-      },
-      {
-        "row_number": 2775,
-        "id": "",
-        "category": "non_party_scripted_text",
-        "source": "src/data/scriptedText",
-        "case_id": "spouse-01",
-        "key_path": "channels[dossier].entries[dc-3.b.q1|late].variants[dc-3-b-q1-late-v4].behaviorHint",
-        "locale": "en",
-        "ko_length": 28,
-        "en_length": 82,
-        "ratio": 2.93,
-        "ko": "회피를 멈추고 숨김의 이유와 책임을 함께 인정한다.",
-        "en": "Stop evading and admit both the reason for the concealment and the responsibility."
-      },
-      {
-        "row_number": 2777,
-        "id": "",
-        "category": "non_party_scripted_text",
-        "source": "src/data/scriptedText",
-        "case_id": "spouse-01",
-        "key_path": "channels[dossier].entries[dc-3.b.q1|late].variants[dc-3-b-q1-late-v5].behaviorHint",
-        "locale": "en",
-        "ko_length": 28,
-        "en_length": 82,
-        "ratio": 2.93,
-        "ko": "회피를 멈추고 숨김의 이유와 책임을 함께 인정한다.",
-        "en": "Stop evading and admit both the reason for the concealment and the responsibility."
-      },
-      {
-        "row_number": 2779,
-        "id": "",
-        "category": "non_party_scripted_text",
-        "source": "src/data/scriptedText",
-        "case_id": "spouse-01",
-        "key_path": "channels[dossier].entries[dc-3.b.q1|late].variants[dc-3-b-q1-late-v6].behaviorHint",
         "locale": "en",
         "ko_length": 28,
         "en_length": 82,

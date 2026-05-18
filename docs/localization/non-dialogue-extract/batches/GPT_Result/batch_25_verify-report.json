@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-05-18T13:31:31.013Z",
+  "input": "docs/localization/non-dialogue-extract/batches/GPT_Result/batch_25_tutorial_statement_variants_retranslated.csv",
+  "glossary": "docs/localization/non-dialogue-extract/GPT_Result/glossary_locked.csv",
+  "maxIssuesPerType": 1000,
+  "summary": {
+    "rows": 2,
+    "glossary_terms": 509,
+    "placeholder_issues": 0,
+    "empty_translation_issues": 0,
+    "cjk_in_english_issues": 0,
+    "english_length_spike_issues": 0,
+    "glossary_issues": 0,
+    "totalIssues": 0
+  },
+  "issueLimits": {
+    "placeholder": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "empty": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "cjkInEnglish": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "englishLengthSpike": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "glossary": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    }
+  },
+  "issues": {
+    "placeholder": [],
+    "empty": [],
+    "cjkInEnglish": [],
+    "englishLengthSpike": [],
+    "glossary": []
+  }
+}

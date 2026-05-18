@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-05-18T13:12:53.048Z",
+  "input": "docs/localization/non-dialogue-extract/batches/GPT_Result/batch_24_tutorial_copy_refresh_retranslated.csv",
+  "glossary": "docs/localization/non-dialogue-extract/GPT_Result/glossary_locked.csv",
+  "maxIssuesPerType": 1000,
+  "summary": {
+    "rows": 14,
+    "glossary_terms": 509,
+    "placeholder_issues": 0,
+    "empty_translation_issues": 0,
+    "cjk_in_english_issues": 0,
+    "english_length_spike_issues": 2,
+    "glossary_issues": 0,
+    "totalIssues": 2
+  },
+  "issueLimits": {
+    "placeholder": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "empty": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "cjkInEnglish": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "englishLengthSpike": {
+      "total": 2,
+      "included": 2,
+      "omitted": 0
+    },
+    "glossary": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    }
+  },
+  "issues": {
+    "placeholder": [],
+    "empty": [],
+    "cjkInEnglish": [],
+    "englishLengthSpike": [
+      {
+        "row_number": 5,
+        "id": "ui_i18n_message_src_i18n_messages_tutorial.ts_pc.tutorial.spouse01.target-select-b.body",
+        "category": "ui_i18n_message",
+        "source": "src/i18n/messages/tutorial.ts",
+        "case_id": "spouse-01",
+        "key_path": "pc.tutorial.spouse01.target-select-b.body",
+        "locale": "en",
+        "ko_length": 32,
+        "en_length": 86,
+        "ratio": 2.69,
+        "ko": "누구에게 질문할지 골라주세요. 대상에 따라 답이 달라져요.",
+        "en": "Choose who you'd like to question. The answer will change depending on who you choose."
+      },
+      {
+        "row_number": 8,
+        "id": "ui_i18n_message_src_i18n_messages_tutorial.ts_pc.tutorial.spouse01.evidence-present-e2-to-b.body",
+        "category": "ui_i18n_message",
+        "source": "src/i18n/messages/tutorial.ts",
+        "case_id": "spouse-01",
+        "key_path": "pc.tutorial.spouse01.evidence-present-e2-to-b.body",
+        "locale": "en",
+        "ko_length": 28,
+        "en_length": 94,
+        "ratio": 3.36,
+        "ko": "조사한 증거를 상대에게 제시해 진술을 흔들어보세요.",
+        "en": "Present the evidence you've examined to the other party, and see if it shakes their statement."
+      }
+    ],
+    "glossary": []
+  }
+}

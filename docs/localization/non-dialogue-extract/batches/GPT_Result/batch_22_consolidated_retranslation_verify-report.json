@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-05-18T10:38:52.623Z",
+  "input": "docs/localization/non-dialogue-extract/batches/GPT_Result/batch_22_consolidated_retranslation_retranslated.csv",
+  "glossary": "docs/localization/non-dialogue-extract/GPT_Result/glossary_locked.csv",
+  "maxIssuesPerType": 1000,
+  "summary": {
+    "rows": 11,
+    "glossary_terms": 509,
+    "placeholder_issues": 0,
+    "empty_translation_issues": 0,
+    "cjk_in_english_issues": 0,
+    "english_length_spike_issues": 2,
+    "glossary_issues": 0,
+    "totalIssues": 2
+  },
+  "issueLimits": {
+    "placeholder": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "empty": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "cjkInEnglish": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    },
+    "englishLengthSpike": {
+      "total": 2,
+      "included": 2,
+      "omitted": 0
+    },
+    "glossary": {
+      "total": 0,
+      "included": 0,
+      "omitted": 0
+    }
+  },
+  "issues": {
+    "placeholder": [],
+    "empty": [],
+    "cjkInEnglish": [],
+    "englishLengthSpike": [
+      {
+        "row_number": 7,
+        "id": "ui_i18n_message_src_i18n_messages_settings.ts_settings.consent.telemetry.toggleDesc",
+        "category": "ui_i18n_message",
+        "source": "src/i18n/messages/settings.ts",
+        "case_id": "",
+        "key_path": "settings.consent.telemetry.toggleDesc",
+        "locale": "en",
+        "ko_length": 20,
+        "en_length": 52,
+        "ratio": 2.6,
+        "ko": "익명 통계로 게임 개선에 사용됩니다.",
+        "en": "Helps improve the game through anonymous statistics."
+      },
+      {
+        "row_number": 12,
+        "id": "non_party_scripted_text_src_data_scriptedText_friend-01_channels_aftermath_.entries_protective_resolution_.variants_protective_resolution-v3_.text",
+        "category": "non_party_scripted_text",
+        "source": "src/data/scriptedText",
+        "case_id": "friend-01",
+        "key_path": "channels[aftermath].entries[protective_resolution].variants[protective_resolution-v3].text",
+        "locale": "en",
+        "ko_length": 203,
+        "en_length": 531,
+        "ratio": 2.62,
+        "ko": "판결 뒤 두 사람은 서로를 다시 친구라고 부르기보다, 서로를 더 망가뜨리지 않는 방법부터 골랐다. 다은은 확인 없는 글을 정정했고, 수민은 과거 피해를 비공개 기록으로 남겼다. 아버지의 문제는 별도 확인 절차로 넘기고, 예비신랑의 행동도 다은이 직접 마주하기로 했다. 공개적 폭로 대신 제한된 정리로 끝낸 것은, 남은 삶…",
+        "en": "After the ruling, rather than calling each other friends again, the two first chose a way not to break each other any further. Da-eun corrected the unverified post, and Su-min kep…"
+      }
+    ],
+    "glossary": []
+  }
+}
