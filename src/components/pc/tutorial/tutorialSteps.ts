@@ -83,15 +83,50 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
-    id: 'question-fact',
-    // First selector: the actual question option buttons (multi-target cycling).
-    // Falls back to the panel/category button when the question list is not yet open.
-    targetSelector: '[data-tutorial-target="question-fact-panel"] .pc-question-choice__msg-btn--question, [data-tutorial-target="question-fact-panel"] .pc-question-choice__dispute-btn, [data-tutorial-target="question-fact-panel"], [data-tutorial-target="question-type-fact"]',
+    // PC QA round 2: split — show the three hotbar question slots, complete when
+    // the user opens any question panel.
+    id: 'question-method-select',
+    targetSelector: '[data-tutorial-target="question-type-fact"], [data-tutorial-target="question-type-motive"], [data-tutorial-target="question-type-empathy"]',
     fingerPlacement: 'top',
-    messageKey: 'pc.tutorial.spouse01.question-fact',
+    messageKey: 'pc.tutorial.spouse01.question-method-select',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'tutorial:question_panel_opened',
+    },
+  },
+  {
+    // PC QA round 2: inside the opened panel — pick a dispute chip.
+    id: 'question-dispute-select',
+    targetSelector: '[data-tutorial-target="question-fact-panel"] .pc-question-choice__dispute-btn, [data-tutorial-target="question-fact-panel"]',
+    cardAnchorSelector: '[data-tutorial-target="question-fact-panel"]',
+    fingerPlacement: 'top',
+    messageKey: 'pc.tutorial.spouse01.question-dispute-select',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'tutorial:question_dispute_selected',
+    },
+  },
+  {
+    // PC QA round 2: after the dispute is chosen — pick a question variant.
+    id: 'question-content-select',
+    targetSelector: '[data-tutorial-target="question-fact-panel"] .pc-question-choice__msg-btn--question, [data-tutorial-target="question-fact-panel"]',
+    cardAnchorSelector: '[data-tutorial-target="question-fact-panel"]',
+    fingerPlacement: 'top',
+    messageKey: 'pc.tutorial.spouse01.question-content-select',
     completionCondition: {
       type: 'state-mutation',
       actionType: 'question:fact_pursuit',
+    },
+  },
+  {
+    // PC QA round 2: split — pick the evidence card to open its detail panel.
+    id: 'evidence-select',
+    targetSelector: '[data-tutorial-target="evidence-e2-card"]',
+    fingerPlacement: 'right',
+    messageKey: 'pc.tutorial.spouse01.evidence-select',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'tutorial:evidence_card_opened',
     },
   },
   {
@@ -113,7 +148,10 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   {
     id: 'evidence-present-e2-to-b',
     targetSelector: '[data-tutorial-target="evidence-present-e2-to-b"], [data-tutorial-target="evidence-present-button"]',
-    fingerPlacement: 'top',
+    // PC QA round 2: anchor the card on the evidence detail wrapper so it sits
+    // beside the present buttons rather than overlapping the choice modal.
+    cardAnchorSelector: '[data-tutorial-target="evidence-e2-detail"]',
+    fingerPlacement: 'right',
     messageKey: 'pc.tutorial.spouse01.evidence-present-e2-to-b',
     completionCondition: {
       type: 'state-mutation',

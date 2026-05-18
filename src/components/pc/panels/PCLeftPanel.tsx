@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react
 import { createPortal } from 'react-dom'
 import { Phase, type CaseData, type EvidenceNode, type PartyId } from '../../../types'
 import { computeSurfacedEvidence } from '../../../engine/evidenceEngine'
-import { useStore } from '../../../store/useGameStore'
+import { useGameStore, useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
@@ -100,6 +100,10 @@ export default function PCLeftPanel() {
   }, [evidenceDefinitions, surfaceResult])
 
   const openEvidenceMenu = useCallback((evidence: EvidenceNode) => {
+    // Tutorial: complete the "select evidence" step when the e-2 card is opened.
+    if (evidence.id === 'e-2') {
+      useGameStore.getState().markStepComplete('evidence-select')
+    }
     const state = evidenceStates[evidence.id]
     const label = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
     const desc = state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description)

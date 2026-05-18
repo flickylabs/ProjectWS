@@ -2505,7 +2505,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   }
 
   if (action.questionType === 'fact_pursuit') {
-    markTutorialStepComplete('question-fact')
+    markTutorialStepComplete('question-content-select')
   }
   useGameStore.getState().incrementTurn()
   } finally { questionLock = false }

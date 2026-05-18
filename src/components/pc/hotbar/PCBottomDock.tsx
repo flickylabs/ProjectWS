@@ -137,11 +137,15 @@ export default function PCBottomDock() {
     if (!caseData) return
     closeAll()
     setQuestionChoice({ type: questionType })
+    // Tutorial: complete the "select interrogation method" step on panel open.
+    useGameStore.getState().markStepComplete('question-method-select')
   }, [caseData, closeAll])
 
   const selectDisputeForQuestion = useCallback((disputeId: string) => {
     if (!questionChoice) return
     setQuestionChoice({ ...questionChoice, disputeId })
+    // Tutorial: complete the "select dispute" step when a dispute chip is picked.
+    useGameStore.getState().markStepComplete('question-dispute-select')
   }, [questionChoice])
 
   const questionOptions = useMemo(() => {
@@ -539,14 +543,14 @@ export default function PCBottomDock() {
               </button>
 
               {/* 2: 동기 탐색 */}
-              <button className="slot" data-guide-target="question-motive" disabled={isLLMLoading} onClick={() => openQuestionChoice('motive_search')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.motive.title')} type="button">
+              <button className="slot" data-guide-target="question-motive" data-tutorial-target="question-type-motive" disabled={isLLMLoading} onClick={() => openQuestionChoice('motive_search')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.motive.title')} type="button">
                 <span className="slot-key">2</span>
                 <span className="slot-ico"><PCSvgIcon id="i-eye" size={24} /></span>
                 <span className="slot-nm">{t('pc.hotbar.slot.motive.compact')}</span>
               </button>
 
               {/* 3: 공감 접근 */}
-              <button className="slot" data-guide-target="question-empathy" disabled={isLLMLoading} onClick={() => openQuestionChoice('empathy_approach')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.empathy.title')} type="button">
+              <button className="slot" data-guide-target="question-empathy" data-tutorial-target="question-type-empathy" disabled={isLLMLoading} onClick={() => openQuestionChoice('empathy_approach')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.empathy.title')} type="button">
                 <span className="slot-key">3</span>
                 <span className="slot-ico"><PCSvgIcon id="i-heart" size={24} /></span>
                 <span className="slot-nm">{t('pc.hotbar.slot.empathy.compact')}</span>

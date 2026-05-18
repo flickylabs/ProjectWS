@@ -15,7 +15,12 @@ export const TUTORIAL_STEP_IDS = [
   'initial-statement-acknowledge',
   'dispute-focus-d1',
   'target-select-b',
-  'question-fact',
+  // PC QA round 2: question step split into 3 sub-steps (method → dispute → content)
+  'question-method-select',
+  'question-dispute-select',
+  'question-content-select',
+  // PC QA round 2: evidence step split into 2 (select card → investigate)
+  'evidence-select',
   'evidence-investigate-e2',
   'evidence-present-e2-to-b',
   'feedback-acknowledge',
