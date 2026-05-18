@@ -26,12 +26,15 @@
 
 ### §1.1. 빌드 선택
 
-| 빌드 | 명령 | 용도 |
+| 명령 | 용도 | 게임 플레이? |
 |---|---|---|
-| Dev | `npm run dev` 또는 `run-pc.bat` | 빠른 진입, hot-reload |
-| Prod | `simulator.bat` (메모리 권장 표준) | **출시 동일 환경 정확 검증** |
+| **`run-pc.bat`** | Vite dev server + local API proxy → `http://127.0.0.1:5174/index-pc.html` | ✅ **TC 진행용 — 본 문서의 모든 §2~§7 회차는 이 명령으로 진입** |
+| `npm run dev` | `run-pc.bat` 내부에서 호출되는 dev 서버 단독 명령 | ✅ (API proxy 별도 기동 필요 시 직접 호출) |
+| `simulator.bat` | qa:deep + qa:visual HTML 리포트 생성 → 브라우저에 리포트 표시 | ❌ **게임 안 띄움 — 정적 QA 게이트 자동화 (qa-route-simulator 등 코드 시뮬레이션)** |
+| `npm run build` + `npm run preview` | 프로덕션 빌드 + 정적 serve | ✅ (Steam 빌드 직전 최종 검증용, dev와 동작 차이 spot check) |
 
-→ 모든 P0/P1 TC는 **Prod 빌드(simulator.bat)** 권장. P2는 Dev 가능.
+→ **P0/P1/P2 TC 모두 `run-pc.bat`으로 진행 가능**. Steam release 빌드 최종 검증은 별도 트랙.
+→ `simulator.bat`은 commit 단위 회귀 게이트로 사용 (TC 회차 후 또는 fix 후 자동 검증).
 
 ### §1.2. 데이터 초기화
 
