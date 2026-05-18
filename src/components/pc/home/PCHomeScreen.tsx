@@ -4,11 +4,13 @@ import { getHallOfFameForSeason, getJudgeProfile, getLeaderboard, getPlayerStats
 import { getCurrentSeason, getRemainingDays } from '../../../data/seasons'
 import { checkConnection } from '../../../engine/llmClient'
 import { isBgmEnabled, isSoundEnabled, playBgm as playBgmFn, setBgmEnabled, setSoundEnabled, stopBgm as stopBgmFn } from '../../../engine/soundEngine'
+import { isTelemetryOptedOut, setOptOut as setTelemetryOptOut } from '../../../telemetry/funnelClient'
 import { getSettings, updateSettings } from '../../../hooks/useLocalStorage'
 import { setLLMMode } from '../../../hooks/useActionDispatch'
 import { useScreenPreset } from '../../../hooks/useScreenPreset'
 import { SCREEN_PRESETS, type ScreenPresetId } from '../../../utils/screenPresets'
 import { useGameStore, useStore } from '../../../store/useGameStore'
+import { shouldRunSpouse01Tutorial } from '../../../store/slices/tutorialSlice'
 import { translate, useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
 import { hasUnexpectedHangulForLocale } from '../../../i18n/llmLocale'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
@@ -67,6 +69,7 @@ export default function PCHomeScreen() {
   const [settings, setSettings] = useState<HomeSettings>(() => getSettings())
   const [bgmOn, setBgmOn] = useState(() => isBgmEnabled())
   const [sfxOn, setSfxOn] = useState(() => isSoundEnabled())
+  const [telemetryAllowed, setTelemetryAllowed] = useState(() => !isTelemetryOptedOut())
   const [llmConnected, setLlmConnected] = useState<boolean | null>(null)
   const [checkingConnection, setCheckingConnection] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
@@ -228,7 +231,9 @@ export default function PCHomeScreen() {
     initializeCase(caseData)
     beginCasePrefetch(caseData)
     // 브리핑 건너뛰고 바로 Phase1 진입
-    useGameStore.getState().advancePhase(GamePhase.Phase1_InitialStatement)
+    if (!shouldRunSpouse01Tutorial(caseData.caseId)) {
+      useGameStore.getState().advancePhase(GamePhase.Phase1_InitialStatement)
+    }
   }
 
   const toggleBgm = () => {
@@ -243,6 +248,12 @@ export default function PCHomeScreen() {
     const next = !sfxOn
     setSfxOn(next)
     setSoundEnabled(next)
+  }
+
+  const toggleTelemetry = () => {
+    const next = !telemetryAllowed
+    setTelemetryAllowed(next)
+    setTelemetryOptOut(!next)
   }
 
   const refreshConnection = async () => {
@@ -566,6 +577,14 @@ export default function PCHomeScreen() {
             <Card eyebrow="AUDIO" title={t('settings.audio.title')}><ToggleRow checked={bgmOn} label={t('settings.audio.bgmShort')} description={t('settings.audio.bgmHomeDesc')} onToggle={toggleBgm} /><ToggleRow checked={sfxOn} label={t('settings.audio.sfxShort')} description={t('settings.audio.sfxHomeDesc')} onToggle={toggleSfx} /></Card>
             <Card eyebrow="GAMEPLAY" title={t('settings.gameplay.homeTitle')}><SummaryRow label={t('settings.gameplay.behaviorHintsShort')} value={settings.showBehaviorHints ? t('settings.toggle.on') : t('settings.toggle.off')} /><SummaryRow label={t('settings.gameplay.autoAdvance')} value={settings.autoAdvanceDialogue ? t('settings.toggle.on') : t('settings.toggle.off')} /><div className="pc-settings-select-row"><div><strong>{t('settings.gameplay.textSpeed')}</strong><p>{t('settings.gameplay.textSpeedHomeDesc')}</p></div><select className="pc-settings-select" onChange={(event) => updateTypingSpeed(event.target.value as HomeSettings['typingSpeed'])} value={settings.typingSpeed}><option value="fast">{t('settings.gameplay.speed.fastAdverb')}</option><option value="normal">{t('settings.gameplay.speed.normal')}</option><option value="slow">{t('settings.gameplay.speed.slowAdverb')}</option></select></div></Card>
             <Card eyebrow="LIVE" title={t('pc.home.modal.live.title')}><SummaryRow label="AI" value={liveStatus} /><SummaryRow label={t('pc.home.modal.live.rechargeLabel')} value={formatCountdown(countdown)} /><button className="pc-inline-button" disabled={checkingConnection} onClick={refreshConnection} type="button">{checkingConnection ? t('pc.home.status.checking') : t('pc.home.modal.live.checkAgain')}</button></Card>
+            <Card eyebrow="DATA" title={t('settings.data.telemetry.group')}>
+              <ToggleRow
+                checked={telemetryAllowed}
+                label={t('settings.data.telemetry.toggle')}
+                description={t('settings.data.telemetry.toggleDesc')}
+                onToggle={toggleTelemetry}
+              />
+            </Card>
           </div>
         </section>
       )}

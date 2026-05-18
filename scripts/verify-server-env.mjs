@@ -11,7 +11,15 @@ const required = [
   'OPENAI_API_KEY',
 ];
 
-const optional = ['STEAM_AUTH_MOCK', 'STEAM_REQUIRE_API_AUTH', 'PORT', 'NODE_ENV'];
+const optional = [
+  'STEAM_AUTH_MOCK',
+  'STEAM_REQUIRE_API_AUTH',
+  'PORT',
+  'NODE_ENV',
+  'TELEMETRY_ENABLED',
+  'TELEMETRY_ALLOWED_ORIGINS',
+  'CORS_ALLOWED_ORIGINS',
+];
 const missing = required.filter((key) => !process.env[key]);
 const report = Object.fromEntries([...required, ...optional].map((key) => [
   key,

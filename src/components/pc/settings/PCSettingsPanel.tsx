@@ -5,6 +5,8 @@ import { useScreenPreset } from '../../../hooks/useScreenPreset'
 import { SCREEN_PRESETS, nearestPreset, type ScreenPresetId } from '../../../utils/screenPresets'
 import { getSettings, updateSettings } from '../../../hooks/useLocalStorage'
 import { useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
+import { useGameStore } from '../../../store/useGameStore'
+import { isTelemetryOptedOut, setOptOut } from '../../../telemetry/funnelClient'
 import {
   isBgmEnabled,
   setBgmEnabled,
@@ -285,6 +287,7 @@ function GameplaySettings() {
   const [typing, setTyping] = useState<'fast' | 'normal' | 'slow'>(() => {
     try { return getSettings().typingSpeed } catch { return 'normal' }
   })
+  const [tutorialFeedback, setTutorialFeedback] = useState('')
 
   const onToggleHints = useCallback((v: boolean) => {
     setHints(v)
@@ -298,6 +301,10 @@ function GameplaySettings() {
     setTyping(v)
     try { updateSettings({ typingSpeed: v }) } catch { /* */ }
   }, [])
+  const onRestartTutorial = useCallback(() => {
+    useGameStore.getState().restartTutorial()
+    setTutorialFeedback(t('settings.gameplay.tutorialRestarted' as MessageKey))
+  }, [t])
 
   return (
     <div className="pc-settings-content">
@@ -334,9 +341,24 @@ function GameplaySettings() {
         <h3 className="pc-settings-group__title">{t('settings.gameplay.gameplayOptions')}</h3>
         <div className="pc-settings-pending">
           <PendingRow label={t('settings.gameplay.pending.autosave')} desc={t('settings.gameplay.pending.autosaveDesc')} />
-          <PendingRow label={t('settings.gameplay.pending.tutorial')} desc={t('settings.gameplay.pending.tutorialDesc')} />
+        </div>
+        <div className="pc-settings-action-row">
+          <div className="pc-settings-action-row__main">
+            <span className="pc-settings-action-row__label">{t('settings.gameplay.pending.tutorial')}</span>
+            <span className="pc-settings-action-row__desc">{t('settings.gameplay.pending.tutorialDesc')}</span>
+          </div>
+          <button type="button" className="pc-settings-action-btn" onClick={onRestartTutorial}>
+            {t('settings.gameplay.tutorialRestart' as MessageKey)}
+          </button>
+        </div>
+        <div className="pc-settings-pending">
           <PendingRow label={t('settings.gameplay.pending.difficulty')} desc={t('settings.gameplay.pending.difficultyDesc')} />
         </div>
+        {tutorialFeedback ? (
+          <div className="pc-settings-toast" role="status" aria-live="polite">
+            {tutorialFeedback}
+          </div>
+        ) : null}
       </section>
     </div>
   )
@@ -362,6 +384,9 @@ function DataSettings() {
   const { t } = useI18n()
   const [busy, setBusy] = useState(false)
   const [feedback, setFeedback] = useState<string>('')
+  const [telemetryAllowed, setTelemetryAllowed] = useState<boolean>(() => {
+    try { return !isTelemetryOptedOut() } catch { return true }
+  })
 
   const onExport = useCallback(() => {
     try {
@@ -403,6 +428,11 @@ function DataSettings() {
     }
   }, [busy, t])
 
+  const onToggleTelemetry = useCallback((v: boolean) => {
+    setTelemetryAllowed(v)
+    setOptOut(!v)
+  }, [])
+
   return (
     <div className="pc-settings-content">
       <h2 className="pc-settings-content__title">{t('settings.data.title')}</h2>
@@ -423,6 +453,16 @@ function DataSettings() {
           <PendingRow label={t('settings.data.importJson')} desc={t('settings.data.importJsonDesc')} />
           <PendingRow label={t('settings.data.cloudSync')} desc={t('settings.data.cloudSyncDesc')} />
         </div>
+      </section>
+
+      <section className="pc-settings-group">
+        <h3 className="pc-settings-group__title">{t('settings.data.telemetry.group')}</h3>
+        <ToggleRow
+          label={t('settings.data.telemetry.toggle')}
+          desc={t('settings.data.telemetry.toggleDesc')}
+          checked={telemetryAllowed}
+          onChange={onToggleTelemetry}
+        />
       </section>
 
       <section className="pc-settings-group">

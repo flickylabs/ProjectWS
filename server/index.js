@@ -23,6 +23,7 @@ import seasonsRouter from './routes/seasons.js';
 import llmLogRouter from './routes/llmLog.js';
 import authRouter from './routes/auth.js';
 import llmRouter from './routes/llm.js';
+import telemetryRouter from './routes/telemetry.js';
 import { requireSteamSession } from './lib/steamAuth.js';
 
 dotenv.config({ quiet: true });
@@ -44,7 +45,33 @@ function steamApiAuthGate(req, res, next) {
   return requireSteamSession(req, res, next);
 }
 
-app.use(cors());
+function getAllowedCorsOrigins() {
+  const defaults = [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://127.0.0.1:5173',
+    'http://127.0.0.1:5174',
+  ];
+  const configured = [
+    process.env.CORS_ALLOWED_ORIGINS,
+    process.env.TELEMETRY_ALLOWED_ORIGINS,
+  ].flatMap((value) => String(value || '').split(',').map((item) => item.trim()).filter(Boolean));
+  return new Set([...defaults, ...configured]);
+}
+
+const allowedCorsOrigins = getAllowedCorsOrigins();
+
+app.use(cors({
+  credentials: true,
+  origin(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (origin === 'null') return callback(null, true);
+    if (origin.startsWith('file://') || origin.startsWith('app://')) return callback(null, true);
+    if (allowedCorsOrigins.has(origin)) return callback(null, true);
+    if (process.env.NODE_ENV !== 'production') return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
+  },
+}));
 app.use(express.json({ limit: '2mb' }));
 
 app.get('/api/health', (req, res) => {
@@ -52,6 +79,7 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/telemetry', telemetryRouter);
 app.use('/api', steamApiAuthGate);
 app.use('/api/llm', llmRouter);
 app.use('/api/notices', noticesRouter);

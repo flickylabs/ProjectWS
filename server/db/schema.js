@@ -3,6 +3,8 @@
  * 모든 테이블 생성 및 마이그레이션
  */
 
+import { addTelemetryEventsMigration } from './migrations/add-telemetry-events.js';
+
 export function createTables(db) {
   db.exec(`
     -- ═══════════════════════════════════════════
@@ -267,4 +269,5 @@ export function createTables(db) {
   try { db.exec("ALTER TABLE ai_prompts ADD COLUMN max_tokens INTEGER"); } catch { /* 이미 존재 */ }
   try { db.exec("ALTER TABLE ai_agents ADD COLUMN provider TEXT"); } catch { /* 이미 존재 */ }
   try { db.exec("ALTER TABLE ai_agents ADD COLUMN context_flags TEXT DEFAULT '{}'"); } catch { /* 이미 존재 */ }
+  addTelemetryEventsMigration(db);
 }
