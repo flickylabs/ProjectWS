@@ -3378,27 +3378,27 @@
       "variants": [
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v1",
-          "text": "Ms. Park Ji-yeon, please answer first when and through which material you confirmed what you hid and when.",
+          "text": "Ms. Park Ji-yeon, please answer first what you believe your husband concealed first, and what material supports that judgment.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about what the party hid and when from inference, and keep the answer at the fact level."
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v2",
-          "text": "Please separate the parts you directly confirmed from the parts that remained inference.",
+          "text": "Please separate the silence you confirmed directly from the silence you learned about from other people.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about what the party hid and when from inference, and keep the answer at the fact level."
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v3",
-          "text": "Where is the largest gap between Mr. Lee Jun-ho's statement and the records or facts you saw?",
+          "text": "Please identify where Mr. Lee Jun-ho's account of when the silence began diverges from your own timeline.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about what the party hid and when from inference, and keep the answer at the fact level."
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v4",
-          "text": "Please organize which records support your view of what you hid and when, without turning the answer into a final interpretation.",
+          "text": "Please organize, by source material and in chronological order, whether there were items on your side that went unstated during the same period and how the silence on both sides unfolded.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about what the party hid and when from inference, and keep the answer at the fact level."
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v5",
-          "text": "Ms. Park Ji-yeon, if any point about what you hid and when remains an inference rather than something directly confirmed, begin with that item.",
+          "text": "Ms. Park Ji-yeon, if any silence remains an inference because you did not confirm it directly, please begin with that part.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about what the party hid and when from inference, and keep the answer at the fact level."
         }
       ]
@@ -3444,27 +3444,27 @@
       "variants": [
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v1",
-          "text": "Ms. Park Ji-yeon, please state what motivated your decision around what you hid and when.",
+          "text": "Ms. Park Ji-yeon, please answer, from your own perspective, what you hid first and what motivated you at that point.",
           "behaviorHint": "Motive probe. Ask what motivated the party’s decision around what the party hid and when, without opening the final combined conclusion."
         },
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v2",
-          "text": "What fear or calculation led you to choose that course instead of a direct conversation?",
+          "text": "Please separate whether your own concealment began after you encountered what you regarded as your husband's concealment, or whether there was a separate concealment that had begun earlier.",
           "behaviorHint": "Motive probe. Ask what motivated the party’s decision around what the party hid and when, without opening the final combined conclusion."
         },
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v3",
-          "text": "Did you hold to that conclusion because of the weight of the circumstances, or because it protected you? Please separate the two.",
+          "text": "Please explain whether your concealment included an element of self-defense or retaliation.",
           "behaviorHint": "Motive probe. Ask what motivated the party’s decision around what the party hid and when, without opening the final combined conclusion."
         },
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v4",
-          "text": "Please explain why you delayed asking directly or accepting another possibility.",
+          "text": "Please answer what motivated your decision not to resolve that concealment even when there was a point at which you could have done so.",
           "behaviorHint": "Motive probe. Ask what motivated the party’s decision around what the party hid and when, without opening the final combined conclusion."
         },
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v5",
-          "text": "Within what you can say now, please state the single strongest reason for that decision.",
+          "text": "Within what you can disclose now, please state what kind of concealment was the last one you brought out.",
           "behaviorHint": "Motive probe. Ask what motivated the party’s decision around what the party hid and when, without opening the final combined conclusion."
         }
       ]
@@ -3510,27 +3510,27 @@
       "variants": [
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v1",
-          "text": "Ms. Park Ji-yeon, I understand how what you hid and when could have weighed heavily on you. Please state what you felt at that moment.",
+          "text": "Ms. Park Ji-yeon, when you noticed the other side's silence, a certain resolve may also have formed quickly within you. Could you tell us what you felt then?",
           "behaviorHint": "Empathy approach. Acknowledge the emotional weight around what the party hid and when, while separating what the party can personally take responsibility for."
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v2",
-          "text": "Ms. Park Ji-yeon, please separate what you directly confirmed about what you hid and when from what you filled in by inference.",
+          "text": "Please separate the grounds for your judgment that the other side had concealed something first from the part you personally confirmed.",
           "behaviorHint": "Empathy approach. Acknowledge the emotional weight around what the party hid and when, while separating what the party can personally take responsibility for."
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v3",
-          "text": "Ms. Park Ji-yeon, among your concealment and the other side’s silence, which point was hardest for you to accept?",
+          "text": "How close together were the first moment you noticed the other side's silence and the later point when that moved into your own action?",
           "behaviorHint": "Empathy approach. Acknowledge the emotional weight around what the party hid and when, while separating what the party can personally take responsibility for."
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v4",
-          "text": "Ms. Park Ji-yeon, as far as you can admit, please state where you moved from suspicion to a firm conclusion.",
+          "text": "Set aside your anger at the other side's silence for the moment, and state as much as you can acknowledge about your responsibility for what you began on top of that anger.",
           "behaviorHint": "Empathy approach. Acknowledge the emotional weight around what the party hid and when, while separating what the party can personally take responsibility for."
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v5",
-          "text": "Ms. Park Ji-yeon, this is not to decide everything at once. Please revisit the one moment when what you hid and when weighed most heavily on you.",
+          "text": "Ms. Park Ji-yeon, this is not meant to settle the order of silence now. Could you revisit even one moment when you first noticed the other side's silence?",
           "behaviorHint": "Empathy approach. Acknowledge the emotional weight around what the party hid and when, while separating what the party can personally take responsibility for."
         }
       ]
