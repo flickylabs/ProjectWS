@@ -324,6 +324,9 @@ export interface Dispute {
   legitimacyIssue: boolean
   /** 게임 시작 시 숨겨진 쟁점 여부 */
   hidden?: boolean
+  /** 사건당 최고점 임팩트 비트. 현재는 T3 climactic one-shot에 사용. */
+  tier?: 'T3'
+  visualImpact?: 'climactic'
   /** V3 visibility: 'hidden'이면 발현 전까지 비노출 */
   v3Visibility?: 'visible' | 'hidden'
   /** 판결 단계 4지선다 선택지 (스크립트 생성) */

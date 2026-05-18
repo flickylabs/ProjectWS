@@ -34,6 +34,8 @@ export interface VfxTurnContext {
   caseId?: string | null
   phase?: GamePhase | string | null
   turn: number
+  tier?: 'T3' | null
+  beatId?: string | null
 }
 
 export interface LightningGateRequest extends VfxTurnContext {
@@ -57,6 +59,7 @@ const STRONG_UNLOCK_LIGHTNING_PER_TURN_LIMIT = 3
 const PHASE_CUTIN_WARN_THRESHOLD = 5
 const PHASE_TRANSITION_STRONG_LIMIT = 2
 const MAJOR_HARD_CAP_PER_CASE = 8
+const T3_HARD_CAP_PER_CASE = 1
 
 const MAJOR_CUTSCENES = new Set<CutsceneType>([
   'lie_collapse',
@@ -81,6 +84,9 @@ const ALLOWED_LIGHTNING_REASONS = new Set<LightningReason>([
 
 const lastCutInTurn = new Map<string, number>()
 const majorCountByCase = new Map<string, number>()
+const t3CountByCase = new Map<string, number>()
+const t3BeatPlayedByCase = new Map<string, Set<string>>()
+const lastImpactBeatTurn = new Map<string, number>()
 const phaseCutInCount = new Map<string, number>()
 const phaseWarned = new Set<string>()
 const phaseTransitionCountByCase = new Map<string, number>()
@@ -159,7 +165,54 @@ function canPlayMajor(type: CutsceneType, ctx: VfxTurnContext): boolean {
   return true
 }
 
+function canPlayT3(ctx: VfxTurnContext): boolean {
+  const cKey = caseKey(ctx.caseId)
+  const beatId = ctx.beatId ?? 't3'
+  const played = t3BeatPlayedByCase.get(cKey) ?? new Set<string>()
+  if (played.has(beatId)) return false
+
+  const count = t3CountByCase.get(cKey) ?? 0
+  if (count >= T3_HARD_CAP_PER_CASE) {
+    warnOnce(
+      majorWarned,
+      `${cKey}:T3`,
+      `[VFX hierarchy] T3 climax hard cap reached (${T3_HARD_CAP_PER_CASE}) for ${cKey}.`,
+    )
+    return false
+  }
+
+  played.add(beatId)
+  t3BeatPlayedByCase.set(cKey, played)
+  t3CountByCase.set(cKey, count + 1)
+  return true
+}
+
+export function shouldPlayImpactBeat(ctx: VfxTurnContext & { beatId: string }): boolean {
+  if (ctx.tier === 'T3') return canPlayT3(ctx)
+
+  const cKey = caseKey(ctx.caseId)
+  const beatKey = `${cKey}:impact:${ctx.beatId}`
+  const last = lastImpactBeatTurn.get(beatKey)
+  if (last != null && ctx.turn - last < CUT_IN_COOLDOWN_TURNS) return false
+
+  const count = majorCountByCase.get(cKey) ?? 0
+  if (count >= MAJOR_HARD_CAP_PER_CASE) {
+    warnOnce(
+      majorWarned,
+      cKey,
+      `[VFX hierarchy] major cutscene hard cap reached (${MAJOR_HARD_CAP_PER_CASE}) for ${cKey}.`,
+    )
+    return false
+  }
+
+  majorCountByCase.set(cKey, count + 1)
+  lastImpactBeatTurn.set(beatKey, ctx.turn)
+  recordPhaseCutIn('dispute_emergence', ctx)
+  return true
+}
+
 export function shouldPlayCutscene(type: CutsceneType, ctx: VfxTurnContext): boolean {
+  if (ctx.tier === 'T3') return canPlayT3(ctx)
   if (MAJOR_CUTSCENES.has(type)) return canPlayMajor(type, ctx)
 
   if (type === 'phase_transition') {
@@ -256,6 +309,7 @@ export function getVfxHierarchyConstants() {
     phaseCutInWarnThreshold: PHASE_CUTIN_WARN_THRESHOLD,
     phaseTransitionStrongLimit: PHASE_TRANSITION_STRONG_LIMIT,
     majorHardCapPerCase: MAJOR_HARD_CAP_PER_CASE,
+    t3HardCapPerCase: T3_HARD_CAP_PER_CASE,
     combinationLightningPerTurnLimit: COMBINATION_LIGHTNING_PER_TURN_LIMIT,
     strongUnlockLightningPerTurnLimit: STRONG_UNLOCK_LIGHTNING_PER_TURN_LIMIT,
     allowedLightningReasons: Array.from(ALLOWED_LIGHTNING_REASONS),
@@ -265,6 +319,9 @@ export function getVfxHierarchyConstants() {
 export function resetVfxHierarchyState(): void {
   lastCutInTurn.clear()
   majorCountByCase.clear()
+  t3CountByCase.clear()
+  t3BeatPlayedByCase.clear()
+  lastImpactBeatTurn.clear()
   phaseCutInCount.clear()
   phaseWarned.clear()
   phaseTransitionCountByCase.clear()

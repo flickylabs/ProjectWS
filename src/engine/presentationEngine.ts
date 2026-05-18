@@ -16,9 +16,11 @@ import {
   playDossierUnlock,
   playPhaseTransition,
   playEvidenceUnlock,
+  playCutsceneSfx,
 } from './soundEngine'
 import { shouldPlayCutscene, type VfxTurnContext } from './vfxHierarchyEngine'
 import { getRuntimeTextLocale, localizeRuntimeText } from '../i18n/runtimeText'
+import { emitVerdictEntryCutscenePlayed } from '../telemetry/wirePoints'
 
 // ── 타입 ──
 
@@ -314,6 +316,41 @@ function normalizeContext(context?: VfxTurnContext): VfxTurnContext {
     caseId: context?.caseId,
     phase: context?.phase,
   }
+}
+
+export async function verdictEntryCutscene(): Promise<void> {
+  if (typeof document === 'undefined') return
+  await waitForPresentationLane(800)
+
+  const locale = getRuntimeTextLocale()
+  const overlay = document.createElement('div')
+  overlay.className = 'pc-verdict-entry-cutscene'
+  overlay.innerHTML = `
+    <div class="pc-verdict-entry-cutscene__blackout"></div>
+    <div class="pc-verdict-entry-cutscene__gavel" aria-hidden="true">
+      <svg viewBox="0 0 96 96" role="img">
+        <rect x="23" y="14" width="50" height="20" rx="5"></rect>
+        <rect x="44" y="32" width="8" height="42" rx="3"></rect>
+        <ellipse cx="48" cy="80" rx="24" ry="6"></ellipse>
+      </svg>
+    </div>
+    <div class="pc-verdict-entry-cutscene__title">${escapeHtml(localizeRuntimeText('최종 판단', locale))}</div>
+    <div class="pc-verdict-entry-cutscene__flash"></div>
+  `
+  document.body.appendChild(overlay)
+  requestAnimationFrame(() => overlay.classList.add('is-active'))
+
+  const gavelTimer = window.setTimeout(() => {
+    playCutsceneSfx('verdict_gavel')
+  }, 1800)
+
+  await delay(2500)
+  window.clearTimeout(gavelTimer)
+  overlay.classList.add('is-leaving')
+  await delay(120)
+  overlay.remove()
+  emitVerdictEntryCutscenePlayed()
+  window.dispatchEvent(new CustomEvent('pc:verdict-entry-cutscene-played'))
 }
 
 // ── 외부에서 편하게 쓰는 헬퍼 ──

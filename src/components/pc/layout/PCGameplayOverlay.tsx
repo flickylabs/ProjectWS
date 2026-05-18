@@ -76,7 +76,7 @@ export default function PCGameplayOverlay() {
         body: descriptor.body,
         tone: descriptor.tone,
         courtBeat: pendingEvidenceResult.courtBeat,
-        ...(pendingEvidenceResult.courtBeat ? {} : { autoDismissMs: 3200 }),
+        autoDismissMs: pendingEvidenceResult.courtBeat ? 1500 : 3200,
       })
       // 증거 결과는 카드 micro 강조로 축소한다.
       const evidenceId = pendingEvidenceResult.evidenceId

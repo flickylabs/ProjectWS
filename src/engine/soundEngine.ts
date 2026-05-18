@@ -858,6 +858,12 @@ function duckBgmForCourtBeat(durationMs: number, volume: number) {
   }, durationMs)
 }
 
+export function duckBgmForImpact(durationMs: number, reductionDb = -30) {
+  if (!bgmAudio || !bgmEnabled) return
+  const targetVolume = bgmAudio.volume * Math.pow(10, reductionDb / 20)
+  duckBgmForCourtBeat(durationMs, targetVolume)
+}
+
 function playCourtBeatTone(
   ctx: AudioContext,
   at: number,

@@ -349,6 +349,8 @@
       "legitimacyIssue": true,
       "judgmentStatement": "공동 적금 2,000만원 위임장 조작 해지는 아내 책임이 더 크다.",
       "hidden": true,
+      "tier": "T3",
+      "visualImpact": "climactic",
       "v3Visibility": "hidden",
       "unlockCondition": {
         "requireDispute": {

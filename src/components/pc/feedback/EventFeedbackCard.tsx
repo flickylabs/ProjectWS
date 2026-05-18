@@ -1,11 +1,25 @@
-﻿import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { createPortal } from 'react-dom'
-import { playCourtBeat } from '../../../engine/soundEngine'
+import { duckBgmForImpact, playCourtBeat } from '../../../engine/soundEngine'
 import { useGameStore, useStore } from '../../../store/useGameStore'
-import type { EventFeedbackItem, EventFeedbackKind } from '../../../store/slices/eventFeedbackSlice'
+import type {
+  EventFeedbackBigTypography,
+  EventFeedbackImpactSubtitle,
+  EventFeedbackItem,
+  EventFeedbackKind,
+  EventFeedbackSplitContent,
+  EventFeedbackVisualEffect,
+} from '../../../store/slices/eventFeedbackSlice'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { useI18n, type LocaleCode } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
+import {
+  emitFeedbackAction,
+  emitFeedbackDismiss,
+  emitFeedbackShown,
+  emitImpactBeatPlayed,
+  emitT3ClimaxReached,
+} from '../../../telemetry/wirePoints'
 
 type Phase = 'appearing' | 'visible' | 'converging' | 'leaving'
 type CourtBeatLevel = 'none' | 'focus' | 'impact' | 'breakthrough'
@@ -16,6 +30,36 @@ interface CourtBeatProfile {
   level: CourtBeatLevel
   cue: CourtBeatCue
   destination: CourtBeatDestination
+}
+
+const VISUAL_EFFECT_CLASS: Record<EventFeedbackVisualEffect, string> = {
+  'screen-shake-light': 'pc-impact-screen-shake-light',
+  'screen-shake-medium': 'pc-impact-screen-shake-medium',
+  'screen-shake-heavy': 'pc-impact-screen-shake-heavy',
+  'screen-flash-white': 'pc-impact-screen-flash-white',
+  'screen-flash-dark': 'pc-impact-screen-flash-dark',
+  'screen-freeze': 'pc-impact-screen-freeze',
+  'vignette-strong': 'pc-impact-vignette-strong',
+  'vignette-red': 'pc-impact-vignette-red',
+  'portrait-shake': 'pc-impact-portrait-shake',
+  'portrait-desaturate': 'pc-impact-portrait-desaturate',
+  'portrait-zoom-in': 'pc-impact-portrait-zoom-in',
+  'card-slam': 'pc-impact-card-slam',
+}
+
+const VISUAL_EFFECT_DURATION_MS: Record<EventFeedbackVisualEffect, number> = {
+  'screen-shake-light': 240,
+  'screen-shake-medium': 420,
+  'screen-shake-heavy': 680,
+  'screen-flash-white': 240,
+  'screen-flash-dark': 440,
+  'screen-freeze': 240,
+  'vignette-strong': 780,
+  'vignette-red': 780,
+  'portrait-shake': 460,
+  'portrait-desaturate': 1100,
+  'portrait-zoom-in': 680,
+  'card-slam': 480,
 }
 
 interface KindMeta {
@@ -107,6 +151,19 @@ function getFeedbackAutoDismissMs(active: EventFeedbackItem, meta: KindMeta): nu
   return active.autoDismissMs ?? meta.defaultAutoMs
 }
 
+function getImpactVisualEffects(active: EventFeedbackItem | null): EventFeedbackVisualEffect[] {
+  if (!active) return []
+  return active.visualEffects ?? active.courtBeat?.visualEffects ?? []
+}
+
+function getImpactBigTypography(active: EventFeedbackItem | null): EventFeedbackBigTypography | undefined {
+  return active?.bigTypography ?? active?.courtBeat?.bigTypography
+}
+
+function getImpactSubtitle(active: EventFeedbackItem | null): EventFeedbackImpactSubtitle | undefined {
+  return active?.impactSubtitle ?? active?.courtBeat?.subtitle
+}
+
 function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile {
   if (!active) return { level: 'none', cue: 'silent', destination: 'none' }
 
@@ -125,6 +182,14 @@ function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile
       level: active.courtBeat.intensity ?? (active.courtBeat.beatType === 'evidence_miss' ? 'focus' : 'impact'),
       cue,
       destination: destination === 'observation' ? 'none' : destination,
+    }
+  }
+
+  if (active.intensity || active.cue) {
+    return {
+      level: active.intensity ?? 'impact',
+      cue: active.cue ?? 'truth',
+      destination: active.destination === 'observation' || !active.destination ? 'none' : active.destination,
     }
   }
 
@@ -203,6 +268,8 @@ function mapBeatPortraitEmotion(state?: string) {
   if (state === 'shaken') return 'shaken' as const
   if (state === 'resigned') return 'resigned' as const
   if (state === 'softened') return 'confident' as const
+  if (state === 'zoomed-in' || state === 'zoom-pulse') return 'shaken' as const
+  if (state === 'desaturated') return 'resigned' as const
   return 'defensive' as const
 }
 
@@ -211,6 +278,9 @@ function getReactionStateLabel(state: string | undefined, locale: LocaleCode): s
   if (state === 'defensive') return localizeRuntimeText('방어', locale)
   if (state === 'resigned') return localizeRuntimeText('체념', locale)
   if (state === 'softened') return localizeRuntimeText('완화', locale)
+  if (state === 'desaturated') return localizeRuntimeText('탈색', locale)
+  if (state === 'zoomed-in') return localizeRuntimeText('압박', locale)
+  if (state === 'zoom-pulse') return localizeRuntimeText('동요', locale)
   if (state === 'neutral') return localizeRuntimeText('중립', locale)
   return localizeRuntimeText('방어', locale)
 }
@@ -223,6 +293,104 @@ function CourtBeatStamp({ locale }: { locale: LocaleCode }) {
       <path d="M30 54h36M36 39h24M39 67h18" />
       <text x="48" y="51" textAnchor="middle">{localizeRuntimeText('기록', locale)}</text>
     </svg>
+  )
+}
+
+function CourtBeatSplitVs({ active, locale }: { active: EventFeedbackItem; locale: LocaleCode }) {
+  const state = useGameStore.getState()
+  const caseData = state.caseData
+  const content: EventFeedbackSplitContent = active.splitContent ?? active.courtBeat?.splitContent ?? {
+    left: {
+      partyId: 'a',
+      label: active.contrast?.left.label,
+      text: active.contrast?.left.text,
+    },
+    right: {
+      partyId: 'b',
+      label: active.contrast?.right.label,
+      text: active.contrast?.right.text,
+    },
+  }
+  const leftParty = content.left.partyId === 'b' ? caseData?.duo.partyB : caseData?.duo.partyA
+  const rightParty = content.right.partyId === 'a' ? caseData?.duo.partyA : caseData?.duo.partyB
+  const leftId = content.left.partyId ?? 'a'
+  const rightId = content.right.partyId ?? 'b'
+  const leftLabel = content.left.label ?? leftParty?.name ?? localizeRuntimeText('기존 판단', locale)
+  const rightLabel = content.right.label ?? rightParty?.name ?? localizeRuntimeText('새 충돌 정보', locale)
+
+  return (
+    <div className="pc-court-split-vs">
+      <section className={`pc-court-split-vs__panel is-party-${leftId}`}>
+        <div className="pc-court-split-vs__head">
+          {caseData && leftId ? (
+            <PCCharacterPortrait
+              alt={leftParty?.name ?? ''}
+              caseId={caseData.caseId}
+              emotion="defensive"
+              fallbackSymbolId="i-person"
+              party={leftId}
+              size={54}
+            />
+          ) : null}
+          <span>{localizeRuntimeText(leftLabel, locale)}</span>
+        </div>
+        <p>{localizeRuntimeText(content.left.text ?? active.contrast?.left.text ?? '', locale)}</p>
+      </section>
+
+      <div className="pc-court-split-vs__mark" aria-hidden="true">
+        <span>VS</span>
+      </div>
+
+      <section className={`pc-court-split-vs__panel is-party-${rightId}`}>
+        <div className="pc-court-split-vs__head">
+          {caseData && rightId ? (
+            <PCCharacterPortrait
+              alt={rightParty?.name ?? ''}
+              caseId={caseData.caseId}
+              emotion="defensive"
+              fallbackSymbolId="i-person"
+              party={rightId}
+              size={54}
+            />
+          ) : null}
+          <span>{localizeRuntimeText(rightLabel, locale)}</span>
+        </div>
+        <p>{localizeRuntimeText(content.right.text ?? active.contrast?.right.text ?? '', locale)}</p>
+      </section>
+    </div>
+  )
+}
+
+function ImpactTypographyOverlay({
+  bigTypography,
+  subtitle,
+  locale,
+}: {
+  bigTypography?: EventFeedbackBigTypography
+  subtitle?: EventFeedbackImpactSubtitle
+  locale: LocaleCode
+}) {
+  if (!bigTypography && !subtitle) return null
+  const style = bigTypography?.sizeScale
+    ? { '--pc-impact-size-scale': bigTypography.sizeScale } as CSSProperties
+    : undefined
+
+  return (
+    <div className="pc-impact-typography" aria-hidden="true">
+      {bigTypography ? (
+        <div
+          className={`pc-impact-typography__title tone-${bigTypography.tone ?? 'gold'}`}
+          style={style}
+        >
+          {localizeRuntimeText(bigTypography.text, locale)}
+        </div>
+      ) : null}
+      {subtitle ? (
+        <div className={`pc-impact-typography__subtitle tone-${subtitle.tone}`}>
+          {localizeRuntimeText(subtitle.text, locale)}
+        </div>
+      ) : null}
+    </div>
   )
 }
 
@@ -240,6 +408,7 @@ function CourtBeatClash({ active, locale }: { active: EventFeedbackItem; locale:
 
   return (
     <div className={`pc-court-clash ${isMiss ? 'is-miss' : hasDirectPhrase ? 'is-hit' : 'is-review'}`}>
+      {beat.chipLabel ? <div className="pc-court-clash__chip">{localizeRuntimeText(beat.chipLabel, locale)}</div> : null}
       <div className="pc-court-clash__grid">
         <section className="pc-court-clash__statement">
           <div className="pc-court-clash__label">{localizeRuntimeText(statementLabel, locale)}</div>
@@ -346,6 +515,9 @@ export default function EventFeedbackCard() {
   const unlockVfxFiredRef = useRef<string | null>(null)
   const beatSfxFiredRef = useRef<string | null>(null)
   const activeBeat = getCourtBeatProfile(active)
+  const visualEffects = getImpactVisualEffects(active)
+  const bigTypography = getImpactBigTypography(active)
+  const impactSubtitle = getImpactSubtitle(active)
 
   // active 변경 시 phase 초기화
   useEffect(() => {
@@ -362,6 +534,12 @@ export default function EventFeedbackCard() {
     beatSfxFiredRef.current = null
     setPhase('appearing')
     setConvergeTransform(null)
+    const profile = getCourtBeatProfile(active)
+    emitFeedbackShown(
+      active.kind,
+      active.courtBeat?.intensity ?? active.intensity ?? (profile.level === 'none' ? undefined : profile.level),
+      active.courtBeat?.cue ?? active.cue ?? (profile.cue === 'silent' ? undefined : profile.cue),
+    )
     const t = window.setTimeout(() => setPhase('visible'), 40)
     return () => window.clearTimeout(t)
   }, [active])
@@ -370,8 +548,41 @@ export default function EventFeedbackCard() {
     if (!active || activeBeat.level === 'none') return
     if (beatSfxFiredRef.current === active.id) return
     beatSfxFiredRef.current = active.id
+    const beatId = active.courtBeat?.beatId ?? active.beatId ?? `${active.kind}:${activeBeat.cue}`
+    const caseId = useGameStore.getState().caseData?.caseId
+    emitImpactBeatPlayed(beatId, activeBeat.level, caseId)
+    if ((active.tier ?? active.courtBeat?.tier) === 'T3') {
+      emitT3ClimaxReached(caseId, beatId)
+    }
     playCourtBeat(activeBeat.cue, activeBeat.level)
   }, [active, activeBeat.cue, activeBeat.level])
+
+  useEffect(() => {
+    if (!active || typeof document === 'undefined') return
+    const effects = getImpactVisualEffects(active)
+    const tier = active.tier ?? active.courtBeat?.tier
+    if (effects.length === 0 && tier !== 'T3') return
+
+    const body = document.body
+    const timers: number[] = []
+    const classes = effects.map((effect) => VISUAL_EFFECT_CLASS[effect])
+    classes.forEach((className) => body.classList.add(className))
+
+    if (tier === 'T3') {
+      duckBgmForImpact(3500, -30)
+    }
+
+    effects.forEach((effect) => {
+      timers.push(window.setTimeout(() => {
+        body.classList.remove(VISUAL_EFFECT_CLASS[effect])
+      }, VISUAL_EFFECT_DURATION_MS[effect]))
+    })
+
+    return () => {
+      timers.forEach((timer) => window.clearTimeout(timer))
+      classes.forEach((className) => body.classList.remove(className))
+    }
+  }, [active])
 
   // visible 진입 후 auto-dismiss 스케줄
   useEffect(() => {
@@ -445,13 +656,14 @@ export default function EventFeedbackCard() {
     const duration = phase === 'converging' ? 520 : 260
     const timer = window.setTimeout(() => {
         // 목적지가 있으면 한 번 더 펄스 처리
-        if (phase === 'converging' && active?.convergeTargetSelector) {
+      if (phase === 'converging' && active?.convergeTargetSelector) {
         const target = document.querySelector<HTMLElement>(active.convergeTargetSelector)
         if (target) {
           target.classList.add('pc-dialogue-jump-pulse')
           window.setTimeout(() => target.classList.remove('pc-dialogue-jump-pulse'), 3350)
         }
       }
+      if (active) emitFeedbackDismiss(active.kind)
       dismiss()
     }, duration)
     return () => window.clearTimeout(timer)
@@ -476,7 +688,9 @@ export default function EventFeedbackCard() {
   const beatClass = focusTakeover
     ? ` is-focus-takeover is-beat-${activeBeat.level} is-cue-${activeBeat.cue} is-destination-${activeBeat.destination}`
     : ''
-  const rootClass = `pc-event-feedback-root${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}${beatClass} is-phase-${phase}`
+  const effectClass = visualEffects.map((effect) => ` is-effect-${effect}`).join('')
+  const tierClass = (active.tier ?? active.courtBeat?.tier) ? ` is-tier-${active.tier ?? active.courtBeat?.tier}` : ''
+  const rootClass = `pc-event-feedback-root${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}${beatClass}${effectClass}${tierClass} is-phase-${phase}`
   // 而룹뵮(?먮룞?뚮㈇ ?뚮┝ 4醫?: 諛곌꼍 ?대┃ ??利됱떆 ?リ린. ?좏깮 ?꾩닔 紐⑤떖? 李⑤떒.
   const allowBackdropDismiss = cutscene
 
@@ -489,6 +703,7 @@ export default function EventFeedbackCard() {
         if (e.target === e.currentTarget) setPhase('leaving')
       } : undefined}
     >
+      <ImpactTypographyOverlay bigTypography={bigTypography} subtitle={impactSubtitle} locale={locale} />
       {focusTakeover ? (
         <div className="pc-court-beat-stage" aria-hidden="true">
           <div className="pc-court-beat-stage__curtain" />
@@ -499,7 +714,8 @@ export default function EventFeedbackCard() {
       ) : null}
       <div
         ref={cardRef}
-        className={`pc-event-feedback-card tone-${tone} kind-${active.kind} is-phase-${phase}${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}${active.courtBeat ? ' is-court-clash-card' : ''}${beatClass}`}
+        className={`pc-event-feedback-card tone-${tone} kind-${active.kind} is-phase-${phase}${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}${active.courtBeat ? ' is-court-clash-card' : ''}${beatClass}${effectClass}${tierClass}`}
+        data-tutorial-target="feedback-card"
         data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
@@ -586,7 +802,9 @@ export default function EventFeedbackCard() {
             </div>
           </div>
         ) : null}
-        {active.contrast ? (
+        {active.layoutVariant === 'split-vs' ? (
+          <CourtBeatSplitVs active={active} locale={locale} />
+        ) : active.contrast ? (
           <div className="pc-event-feedback__contrast">
             <div className="pc-event-feedback__contrast-side is-left">
               <div className="pc-event-feedback__contrast-label">{localizeRuntimeText(active.contrast.left.label, locale)}</div>
@@ -629,6 +847,7 @@ export default function EventFeedbackCard() {
                 className={`pc-event-feedback__action tone-${action.tone ?? 'gold'}`}
                 onClick={() => {
                   const runAction = action.onSelect
+                  emitFeedbackAction(active.kind, `action_${i}`)
                   setPhase('leaving')
                   window.setTimeout(() => {
                     runAction()

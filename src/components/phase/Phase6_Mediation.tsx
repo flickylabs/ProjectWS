@@ -1,7 +1,9 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Phase } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import PCSvgIcon from '../pc/icons/PCSvgIcon'
+import PCVerdictReviewMontage from '../pc/verdict/PCVerdictReviewMontage'
+import { verdictEntryCutscene } from '../../engine/presentationEngine'
 
 export default function Phase6_Mediation() {
   const advancePhase = useStore((s) => s.advancePhase)
@@ -11,6 +13,8 @@ export default function Phase6_Mediation() {
   const turnCount = useStore((s) => s.turnCount)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
+  const [reviewing, setReviewing] = useState(false)
+  const [enteringVerdict, setEnteringVerdict] = useState(false)
 
   const unresolvedDisputes = useMemo(() => {
     return (caseData?.disputes ?? []).filter((dispute) => {
@@ -25,6 +29,7 @@ export default function Phase6_Mediation() {
   const hasUnresolved = unresolvedDisputes.length > 0
 
   const enterVerdict = () => {
+    if (reviewing || enteringVerdict) return
     useGameStore.getState().setMediationChoice('immediate')
     addDialogue({
       speaker: 'judge',
@@ -32,8 +37,17 @@ export default function Phase6_Mediation() {
       relatedDisputes: [],
       turn: turnCount,
     })
+    setReviewing(true)
+  }
+
+  const completeReview = async () => {
+    if (enteringVerdict) return
+    setEnteringVerdict(true)
+    await verdictEntryCutscene()
     advancePhase(Phase.Verdict)
   }
+
+  if (reviewing) return <PCVerdictReviewMontage onComplete={completeReview} />
 
   return (
     <div className="pc-mediation pc-mediation--entry">

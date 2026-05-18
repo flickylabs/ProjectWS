@@ -6,11 +6,13 @@ import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
 import { pp이가, pp을를 } from '../../../engine/koreanPostposition'
 import type { TruthJudgment } from '../../../types/discovery'
+import type { EventFeedbackVisualEffect } from '../../../store/slices/eventFeedbackSlice'
 import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
 import { getSafeEmergenceTitle } from '../../../data/safeEmergenceCopy'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import type { Dispute } from '../../../types/case'
 import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
+import { shouldPlayImpactBeat } from '../../../engine/vfxHierarchyEngine'
 
 const CONTRADICTION_SURFACE_FALLBACK = '진술 흐름에서 확인할 지점이 생겼습니다. 추가 질문으로 맥락을 확인하세요.'
 const EMOTIONAL_BURST_SURFACE_FALLBACK = '감정이 격해졌습니다. 반응을 더 밀어붙일지, 잠시 정리할지 판단하세요.'
@@ -55,6 +57,13 @@ function isSpousePrivateAccountWithdrawalDispute(dispute: Dispute | undefined): 
   return /남편\s*명의.*계좌.*목돈\s*출금/.test(text)
     || /개인\s*계좌.*출금/.test(text)
     || /비밀\s*계좌.*목돈/.test(text)
+}
+
+function isT3ClimaxDispute(caseId: string | undefined, dispute: (Dispute & { tier?: string; visualImpact?: string }) | undefined): boolean {
+  const normalizedCaseId = String(caseId ?? '').replace(/^case-/, '')
+  return normalizedCaseId === 'spouse-01' &&
+    dispute?.id === 'h-d3' &&
+    (dispute.tier === 'T3' || dispute.visualImpact === 'climactic')
 }
 
 function buildDisputeEmergenceDetails(dispute: Dispute | undefined, routeDescription: string | undefined, displayName?: string) {
@@ -279,10 +288,29 @@ export default function DiscoveryFeedbackWatcher() {
       ]),
       disputeId: pendingConflict.disputeId,
     })
+    const playConflictBeat = shouldPlayImpactBeat({
+      beatId: `conflict:${pendingConflict.disputeId}`,
+      turn: state.turnCount,
+      caseId: caseData.caseId,
+      phase: state.currentPhase,
+    })
     state.enqueueFeedback({
       kind: 'conflict',
       eyebrow: '판단 충돌',
       title: dispute?.name ?? pendingConflict.disputeId,
+      ...(playConflictBeat ? {
+        intensity: 'impact' as const,
+        cue: 'contradiction' as const,
+        visualEffects: ['screen-freeze', 'screen-shake-light'] as EventFeedbackVisualEffect[],
+        effectTiming: 'before' as const,
+        bigTypography: { text: 'VS', durationMs: 1000, tone: 'amber-warning' as const },
+        layoutVariant: 'split-vs' as const,
+        splitContent: {
+          left: { partyId: 'a' as const, label: leftLabel, text: leftText },
+          right: { partyId: 'b' as const, label: '새 충돌 정보', text: pendingConflict.conflictingInfo },
+        },
+        beatId: `conflict:${pendingConflict.disputeId}`,
+      } : {}),
       contrast: {
         left:  { label: leftLabel, text: leftText },
         right: { label: '새 충돌 정보', text: pendingConflict.conflictingInfo },
@@ -328,17 +356,66 @@ export default function DiscoveryFeedbackWatcher() {
     const routeLabel = ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.'
     const surfaceOnlyEmergence = isSpousePrivateAccountWithdrawalDispute(dispute)
     const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description, disputeName)
+    const isT3 = isT3ClimaxDispute(caseData.caseId, dispute as (Dispute & { tier?: string; visualImpact?: string }) | undefined)
+    const playEmergenceBeat = shouldPlayImpactBeat({
+      beatId: isT3 ? 'h-d3' : `emergence:${pendingEmergence.disputeId}`,
+      turn: state.turnCount,
+      caseId: caseData.caseId,
+      phase: state.currentPhase,
+      tier: isT3 ? 'T3' : undefined,
+    })
+    const emergenceBeatPayload = playEmergenceBeat
+      ? isT3
+        ? {
+            intensity: 'breakthrough' as const,
+            cue: 'truth' as const,
+            tier: 'T3' as const,
+            visualEffects: [
+              'screen-freeze',
+              'screen-flash-dark',
+              'portrait-desaturate',
+              'vignette-strong',
+              'screen-shake-heavy',
+            ] as EventFeedbackVisualEffect[],
+            effectTiming: 'before' as const,
+            bigTypography: {
+              text: '사건이 완전히 다르게 보인다',
+              durationMs: 1800,
+              sizeScale: 1.14,
+            },
+            impactSubtitle: {
+              text: '어디서부터 어긋났을까',
+              durationMs: 1100,
+              tone: 'amber-warning' as const,
+            },
+            beatId: 'h-d3',
+          }
+        : {
+            intensity: 'impact' as const,
+            cue: 'truth' as const,
+            visualEffects: ['screen-flash-dark', 'screen-shake-medium', 'vignette-strong'] as EventFeedbackVisualEffect[],
+            effectTiming: 'during' as const,
+            bigTypography: { text: '새로운 쟁점', durationMs: 1000 },
+            impactSubtitle: {
+              text: disputeName,
+              durationMs: 1000,
+              tone: 'gold' as const,
+            },
+            beatId: `emergence:${pendingEmergence.disputeId}`,
+          }
+      : {}
 
     state.enqueueFeedback({
       kind: 'emergence',
       eyebrow: '새 쟁점 발견',
       title: disputeName,
-      subtitle: '확인해야 할 범위가 넓어졌습니다',
+      subtitle: playEmergenceBeat ? disputeName : '확인해야 할 범위가 넓어졌습니다',
       body: '아직 결론이 아닙니다. 관련 기록과 진술을 더 확인해 쟁점으로 다룰지 판단하십시오.',
       tag: '쟁점 보드 갱신',
       tone: 'gold',
       disputeId: pendingEmergence.disputeId,
-      autoDismissMs: 2800,
+      autoDismissMs: playEmergenceBeat ? (isT3 ? 3500 : 1800) : 2800,
+      ...emergenceBeatPayload,
     })
 
     // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달은 자동으로 띄우지 않고 (B-17 D 옵션),

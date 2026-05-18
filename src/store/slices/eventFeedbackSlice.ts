@@ -43,6 +43,40 @@ export type EventFeedbackCourtBeatType =
 export type EventFeedbackCourtBeatIntensity = 'focus' | 'impact' | 'breakthrough'
 export type EventFeedbackCourtBeatCue = 'evidence' | 'contradiction' | 'notebook' | 'truth'
 export type EventFeedbackCourtBeatDestination = 'evidence' | 'dispute' | 'notebook' | 'truth' | 'observation'
+export type EventFeedbackVisualEffect =
+  | 'screen-shake-light'
+  | 'screen-shake-medium'
+  | 'screen-shake-heavy'
+  | 'screen-flash-white'
+  | 'screen-flash-dark'
+  | 'screen-freeze'
+  | 'vignette-strong'
+  | 'vignette-red'
+  | 'portrait-shake'
+  | 'portrait-desaturate'
+  | 'portrait-zoom-in'
+  | 'card-slam'
+export type EventFeedbackEffectTiming = 'before' | 'during' | 'after'
+export type EventFeedbackTier = 'T3'
+export type EventFeedbackImpactTone = 'gold' | 'neutral' | 'amber-warning'
+
+export interface EventFeedbackBigTypography {
+  text: string
+  durationMs: number
+  sizeScale?: number
+  tone?: EventFeedbackImpactTone
+}
+
+export interface EventFeedbackImpactSubtitle {
+  text: string
+  durationMs: number
+  tone: EventFeedbackImpactTone
+}
+
+export interface EventFeedbackSplitContent {
+  left: { partyId?: PartyId; label?: string; text?: string }
+  right: { partyId?: PartyId; label?: string; text?: string }
+}
 
 export interface EventFeedbackEvidenceRow {
   id: string
@@ -57,6 +91,15 @@ export interface EventFeedbackCourtBeat {
   intensity?: EventFeedbackCourtBeatIntensity
   cue?: EventFeedbackCourtBeatCue
   destination?: EventFeedbackCourtBeatDestination
+  visualEffects?: EventFeedbackVisualEffect[]
+  effectTiming?: EventFeedbackEffectTiming
+  tier?: EventFeedbackTier
+  bigTypography?: EventFeedbackBigTypography
+  subtitle?: EventFeedbackImpactSubtitle
+  layoutVariant?: 'split-vs'
+  splitContent?: EventFeedbackSplitContent
+  chipLabel?: string
+  beatId?: string
   statement?: {
     label?: string
     speakerName?: string
@@ -73,7 +116,7 @@ export interface EventFeedbackCourtBeat {
     caseId?: string
     party?: PartyId
     name?: string
-    state?: 'neutral' | 'defensive' | 'shaken' | 'resigned' | 'softened'
+    state?: 'neutral' | 'defensive' | 'shaken' | 'resigned' | 'softened' | 'desaturated' | 'zoomed-in' | 'zoom-pulse'
   }
   judgeLine?: string
   reactionLine?: string
@@ -87,6 +130,19 @@ export interface EventFeedbackItem {
   title?: string
   subtitle?: string
   body?: string
+  /** Court beat 없이도 쓰는 임팩트 envelope. 기존 subtitle 문자열과 충돌하지 않게 별도 필드로 둔다. */
+  intensity?: EventFeedbackCourtBeatIntensity
+  cue?: EventFeedbackCourtBeatCue
+  destination?: EventFeedbackCourtBeatDestination
+  visualEffects?: EventFeedbackVisualEffect[]
+  effectTiming?: EventFeedbackEffectTiming
+  tier?: EventFeedbackTier
+  bigTypography?: EventFeedbackBigTypography
+  impactSubtitle?: EventFeedbackImpactSubtitle
+  layoutVariant?: 'split-vs'
+  splitContent?: EventFeedbackSplitContent
+  chipLabel?: string
+  beatId?: string
   /** 본문 여러 줄 (body 뒤에 세로로 나열) */
   bodyLines?: string[]
   /** 강조 인용문 ("..." 디자인) */
