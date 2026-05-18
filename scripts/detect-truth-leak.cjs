@@ -9,31 +9,59 @@ const DEFAULT_MATRIX = path.join(BASE_DIR, 'truth-leak-matrix.json')
 const DEFAULT_OUT = path.join(BASE_DIR, 'truth-leak-report.json')
 const LOCALES = ['ko', 'en', 'ja', 'zh-CN']
 
+// Player-visible text fields. Internal metadata fields (behaviorHint,
+// tags, id, key, dossierCardId, etc.) carry author/AI guidance that
+// never reaches the player and therefore must not be scanned — keyword
+// matches there are by-design directives, not leaks.
+const PLAYER_VISIBLE_FIELD_RE = /\.(text|questionText|title|body|label|line|narration)$/
+
+// Channels scanned for pre-confession truth-leak surfaces. The intent
+// (per memory feedback_truth_leak_prohibition) is to flag NPC-truth
+// content surfacing in the JUDGE / SYSTEM / DOSSIER channels before
+// the confession arc has reached the lieState that legitimates it.
+//
+// Channel names below are the EXACT segment names inside the source
+// JSON files. The matcher requires a whole-segment hit (see
+// extractStringsFromChannels), so e.g. 'judge_question' will not
+// accidentally match 'judge_witness_summon' siblings.
+//
+// Intentionally excluded surfaces (post-confession / post-discovery /
+// player-driven where keyword matches are by-design references rather
+// than leaks):
+//   - interrogation   : NPC dialogue gated by lieState. S0~S2 is
+//     pre-confession but S4~S5 legitimately reveals truth — needs
+//     per-entry lieState filtering, out of scope for the static
+//     keyword scan. Review manually during Phase 2.
+//   - mediation / aftermath : Phase 4 / Phase 5 — post-confession.
+//   - evidence_present / witness / evidence_discovery : player-
+//     triggered surfaces, dossier-unlock already exposed the topic.
+//   - rapport_milestone / contradict_milestone / interjection /
+//     emotional_overload / contradiction_pursuit / trust_action :
+//     rare state triggers that fire only after the relevant unlock.
+//   - angle_catalog (scriptedAngles) : Phase 3 angle inventory,
+//     post-emergence.
 const CASE_FILE_SPECS = [
   {
     source: 'src/data/scriptedAngles',
     fileBase: (caseId) => `${caseId}_judge_questions`,
-    channels: ['judge_question', 'judgeQuestions'],
-  },
-  {
-    source: 'src/data/scriptedAngles',
-    fileBase: (caseId) => `${caseId}_angle_catalog`,
-    channels: ['judge', 'system', 'mediation', 'aftermath'],
+    channels: ['judgeQuestions', 'judge_question'],
   },
   {
     source: 'src/data/scriptedText',
     fileBase: (caseId) => caseId,
-    channels: ['judge', 'system', 'mediation', 'aftermath', 'judge_question', 'judge_evidence_combo'],
-  },
-  {
-    source: 'src/data/dialogues/mediation',
-    fileBase: (caseId) => `${caseId.split('-')[0]}-v3-01`,
-    channels: ['judge', 'system', 'mediation', 'aftermath'],
+    channels: [
+      'judge_question',
+      'judge_contradiction',
+      'judge_evidence_combo',
+      'judge_witness_summon',
+      'system_message',
+      'dossier',
+    ],
   },
   {
     source: 'src/data/dialogues/phase1',
     fileBase: (caseId) => caseId,
-    channels: ['judge', 'system', 'mediation', 'aftermath'],
+    channels: ['dialogues'],
   },
 ]
 
@@ -72,6 +100,7 @@ function detectTruthLeak(matrix, options) {
   const seen = new Set()
 
   for (const caseId of Object.keys(matrix)) {
+    if (caseId.startsWith('_')) continue
     for (const lang of LOCALES) {
       const files = getCaseFiles(caseId, lang, options.dataRoot)
       for (const fileInfo of files) {
@@ -79,6 +108,7 @@ function detectTruthLeak(matrix, options) {
         const strings = extractStringsFromChannels(data, fileInfo.channels)
         for (const { key, text } of strings) {
           for (const disputeId of Object.keys(matrix[caseId])) {
+            if (disputeId.startsWith('_')) continue
             const hiddenKeywords = matrix[caseId][disputeId].hidden[lang] || []
             for (const keyword of hiddenKeywords) {
               if (!keyword || !containsKeyword(text, keyword, lang)) continue
@@ -120,11 +150,17 @@ function getCaseFiles(caseId, lang, dataRoot) {
 }
 
 function extractStringsFromChannels(data, channelNames) {
-  const channelNeedles = channelNames.map((name) => name.toLowerCase())
+  // Match channel name as a whole path segment (anchored by start/dot before and
+  // dot/bracket/end after). Prevents "judge" from matching "judge_evidence_combo"
+  // or similar sibling channels we explicitly do NOT want to scan.
+  const patterns = channelNames.map((name) => {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    return new RegExp(`(?:^|\\.)${escaped}(?:\\.|\\[|$)`, 'i')
+  })
   const strings = []
   walkJson(data, '', (key, text) => {
-    const lowerKey = key.toLowerCase()
-    if (!channelNeedles.some((needle) => lowerKey.includes(needle))) return
+    if (!patterns.some((pattern) => pattern.test(key))) return
+    if (!PLAYER_VISIBLE_FIELD_RE.test(key)) return
     strings.push({ key: key || '$', text })
   })
   return strings
@@ -182,10 +218,12 @@ function validateMatrix(matrix) {
   }
 
   for (const [caseId, disputes] of Object.entries(matrix)) {
+    if (caseId.startsWith('_')) continue // underscore-prefixed keys are metadata, skip
     if (!disputes || typeof disputes !== 'object' || Array.isArray(disputes)) {
       throw new Error(`matrix.${caseId} must be an object keyed by disputeId`)
     }
     for (const [disputeId, entry] of Object.entries(disputes)) {
+      if (disputeId.startsWith('_')) continue // underscore-prefixed keys are metadata, skip
       if (!entry || typeof entry !== 'object') {
         throw new Error(`matrix.${caseId}.${disputeId} must be an object`)
       }

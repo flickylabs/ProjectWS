@@ -1,65 +1,114 @@
 {
+  "_notes": {
+    "purpose": "Per-case x dispute hidden-truth keyword matrix used by scripts/detect-truth-leak.cjs. Flags occurrences of hidden truth keywords in the pre-confession surfaces scanned by CASE_FILE_SPECS (judge channels + system_message + dossier + phase1 dialogue).",
+    "authoring_rules": [
+      "hidden[lang] entries should describe the SECRET ACT or HIDDEN MOTIVE, not the public topic. e.g., '공동 적금 해지' (cancellation, the act) instead of '공동 적금' (the topic, which is public).",
+      "All four languages must encode the same level of specificity. If KO says '위임장 조작' (forgery), EN must say 'power of attorney forgery' not bare 'power of attorney'.",
+      "surface[lang] entries record the publicly disclosable facts for context — they are NOT used by the detector but document what should be considered safe to mention.",
+      "Mention by the JUDGE / SYSTEM / DOSSIER of a hidden keyword before the corresponding lieState progression is a truth leak (see memory feedback_truth_leak_prohibition).",
+      "Per-dispute lieState gating and per-entry disputeId binding is OUT of scope for this static scanner — flagged matches require human review during Phase 2 LQA threads."
+    ]
+  },
   "spouse-01": {
+    "h-d3": {
+      "hidden": {
+        "ko": [
+          "공동 적금 무단 해지",
+          "박지연 단독 해지",
+          "본인 동의 없이 해지"
+        ],
+        "en": [
+          "unilateral joint savings cancellation",
+          "secret joint savings cancellation",
+          "joint savings cancelled without consent"
+        ],
+        "ja": [
+          "共同積立預金の無断解約",
+          "パク・ジヨン単独での解約",
+          "本人の同意なしの解約"
+        ],
+        "zh-CN": [
+          "私自取消共同储蓄",
+          "未经同意取消共同储蓄",
+          "朴智妍单方面取消共同储蓄"
+        ]
+      },
+      "surface": {
+        "ko": ["공동 적금", "예금 잔액 변화", "계좌 확인"],
+        "en": ["joint savings account", "balance change", "account check"],
+        "ja": ["共同積立預金", "残高の変化", "口座確認"],
+        "zh-CN": ["共同储蓄账户", "余额变化", "账户查看"]
+      }
+    },
     "h-d4": {
       "hidden": {
         "ko": [
           "위임장 조작",
           "투자 사기",
-          "공동 적금 해지",
-          "송금 손실",
+          "투자방 송금 손실",
           "형사 절차"
         ],
         "en": [
-          "power of attorney",
+          "power of attorney forgery",
+          "forged power of attorney",
           "investment scam",
-          "joint savings",
-          "transfer loss",
+          "investment scam transfer loss",
           "criminal procedure"
         ],
         "ja": [
-          "委任状",
+          "委任状の偽造",
+          "委任状偽造",
           "投資詐欺",
-          "共同積立",
-          "送金損失",
+          "投資詐欺による送金損失",
           "刑事手続"
         ],
         "zh-CN": [
-          "委托书",
+          "委托书伪造",
+          "伪造委托书",
           "投资诈骗",
-          "共同储蓄",
-          "转账损失",
+          "投资诈骗的转账损失",
           "刑事程序"
         ]
       },
       "surface": {
-        "ko": [
-          "침묵",
-          "계좌 감시",
-          "자금 이동",
-          "양쪽 책임",
-          "자료 확인"
-        ],
-        "en": [
-          "silence",
-          "account monitoring",
-          "fund movement",
-          "responsibility on both sides",
-          "record check"
-        ],
-        "ja": [
-          "沈黙",
-          "口座確認",
-          "資金移動",
-          "双方の責任",
-          "資料確認"
-        ],
-        "zh-CN": [
-          "沉默",
-          "账户查看",
-          "资金流动",
-          "双方责任",
-          "资料确认"
-        ]
+        "ko": ["침묵", "계좌 감시", "자금 이동", "양쪽 책임", "자료 확인"],
+        "en": ["silence", "account monitoring", "fund movement", "responsibility on both sides", "record check"],
+        "ja": ["沈黙", "口座確認", "資金移動", "双方の責任", "資料確認"],
+        "zh-CN": ["沉默", "账户查看", "资金流动", "双方责任", "资料确认"]
+      }
+    }
+  },
+  "family-01": {
+    "_TBD": "user/Claude must author the per-dispute hidden/surface keywords with knowledge of game-design truth-disclosure points. Skeleton below is a placeholder for d-4 (birth secret) only.",
+    "d-4": {
+      "hidden": {
+        "ko": ["출생 비밀", "친자 확인", "윤정후 입양", "다른 부모"],
+        "en": ["birth secret", "biological parentage", "adopted son", "non-biological parent"],
+        "ja": ["出生の秘密", "実子確認", "養子であること", "実の親ではない"],
+        "zh-CN": ["出生秘密", "亲生父母确认", "养子身份", "非亲生父母"]
+      },
+      "surface": {
+        "ko": ["일기장", "어머니 메모", "공증 절차"],
+        "en": ["diary", "mother's memo", "notarization procedure"],
+        "ja": ["日記帳", "母のメモ", "公証手続"],
+        "zh-CN": ["日记", "母亲笔记", "公证程序"]
+      }
+    }
+  },
+  "friend-01": {
+    "_TBD": "user/Claude must author the per-dispute hidden/surface keywords. friend-01 case truths require fresh review of lie configs + dossier unlock chain.",
+    "_placeholder_d1": {
+      "hidden": {
+        "ko": [],
+        "en": [],
+        "ja": [],
+        "zh-CN": []
+      },
+      "surface": {
+        "ko": [],
+        "en": [],
+        "ja": [],
+        "zh-CN": []
       }
     }
   }
