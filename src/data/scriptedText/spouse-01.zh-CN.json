@@ -16767,7 +16767,7 @@
         {
           "key": "w-1|vague",
           "witnessId": "w-1",
-          "witnessName": "?????",
+          "witnessName": "韩式商住公寓保安",
           "depth": "vague",
           "stanceHint": "answer",
           "truthLevel": "hint",
@@ -16827,7 +16827,7 @@
         {
           "key": "w-1|partial",
           "witnessId": "w-1",
-          "witnessName": "?????",
+          "witnessName": "韩式商住公寓保安",
           "depth": "partial",
           "stanceHint": "answer",
           "truthLevel": "partial",
@@ -16887,7 +16887,7 @@
         {
           "key": "w-1|full",
           "witnessId": "w-1",
-          "witnessName": "?????",
+          "witnessName": "韩式商住公寓保安",
           "depth": "full",
           "stanceHint": "answer",
           "truthLevel": "full",
@@ -16947,7 +16947,7 @@
         {
           "key": "w-2|vague",
           "witnessId": "w-2",
-          "witnessName": "????",
+          "witnessName": "银行职员",
           "depth": "vague",
           "stanceHint": "answer",
           "truthLevel": "hint",
@@ -17007,7 +17007,7 @@
         {
           "key": "w-2|partial",
           "witnessId": "w-2",
-          "witnessName": "????",
+          "witnessName": "银行职员",
           "depth": "partial",
           "stanceHint": "answer",
           "truthLevel": "partial",
@@ -17067,7 +17067,7 @@
         {
           "key": "w-2|full",
           "witnessId": "w-2",
-          "witnessName": "????",
+          "witnessName": "银行职员",
           "depth": "full",
           "stanceHint": "answer",
           "truthLevel": "full",
@@ -17127,7 +17127,7 @@
         {
           "key": "w-3|vague",
           "witnessId": "w-3",
-          "witnessName": "???",
+          "witnessName": "朴美罗",
           "depth": "vague",
           "stanceHint": "answer",
           "truthLevel": "hint",
@@ -17187,7 +17187,7 @@
         {
           "key": "w-3|partial",
           "witnessId": "w-3",
-          "witnessName": "???",
+          "witnessName": "朴美罗",
           "depth": "partial",
           "stanceHint": "answer",
           "truthLevel": "partial",
@@ -17247,7 +17247,7 @@
         {
           "key": "w-3|full",
           "witnessId": "w-3",
-          "witnessName": "???",
+          "witnessName": "朴美罗",
           "depth": "full",
           "stanceHint": "answer",
           "truthLevel": "full",
@@ -17314,7 +17314,7 @@
           "variants": [
             {
               "id": "a_primary_fault-v1",
-              "text": "裁决之后，朴智妍久久无法抬头。李俊浩的隐瞒并非轻微过错，但法官更重地看待委托书操作和投资损失经过转账。李俊浩表示不会再隐瞒家人和孩子的事，朴智妍则不得不面对：比失去的钱更早崩塌的信任，要如何承受。"
+              "text": "裁决之后，朴智妍久久无法抬头。李俊浩的隐瞒并非轻微过错，但法官更重地看待伪造委托书和向投资诈骗账户转账的行为。李俊浩表示不会再隐瞒哥哥和侄子/侄女的事，朴智妍则不得不面对：比失去的钱更早崩塌的信任，要如何承受。"
             },
             {
               "id": "a_primary_fault-v2",
@@ -17418,7 +17418,7 @@
           "variants": [
             {
               "id": "procedural_caution-v1",
-              "text": "法官明确警告:委托书操作不是关系纷争所能掩盖的犯罪。同时，他也指出，李俊浩的沉默把朴智妍逼到了悬崖边。处罚之外，他没有关闭关系修复的门。两人各自带着比承认错误的委托书更沉重的——必须对彼此说清楚的话——回家了。"
+              "text": "法官明确警告：伪造委托书是无法用关系纠纷掩盖的犯罪。同时，他也指出，李俊浩的沉默把朴智妍逼到了悬崖边。处罚之外，他没有关闭关系修复的门。两人带回家的，不是先填写承认各自错误的文件，而是必须先向彼此说明的话。"
             },
             {
               "id": "procedural_caution-v2",
@@ -22130,7 +22130,7 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-2-v1",
-              "text": "李俊浩先生，请分开您看到的、做过的、推定的内容，并按时间顺序整理韩式商住公寓探访与凌晨通话。",
+              "text": "李俊浩先生，请说明每天凌晨与同一号码短暂通话，究竟与谁的情况有关。",
               "behaviorHint": "缩小到构成情况的细节发问。分开时间与联系对象，寻找动摇点。"
             },
             {
@@ -22164,7 +22164,7 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-3-v1",
-              "text": "李俊浩先生，请分开您看到的、做过的、推定的内容，并按时间顺序整理韩式商住公寓探访与凌晨通话。",
+              "text": "李俊浩先生，你说那些东西是家人需要的。请说明是什么情况让你必须亲自购买。",
               "behaviorHint": "初期不直接要求核心人物，只缩小购买物品情形中的空隙。"
             },
             {
@@ -23794,7 +23794,7 @@
           "variants": [
             {
               "id": "judgec-d-1-hard-v1",
-              "text": "李俊浩先生，围绕韩式商住公寓探访与凌晨通话的矛盾不能再拖延。请直接回答，并承担对自己不利的部分。",
+              "text": "李俊浩先生，不能再拖延说明韩式商住公寓里还有其他相关人员这一点。请现在回答，当时那里有谁。",
               "behaviorHint": "法官逼迫其不能再把隐瞒与断定分开。语气坚决，促使其先说出对自己不利的部分。"
             },
             {
@@ -24119,7 +24119,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-1-b-q1-soft-v1",
-              "text": "李俊浩先生，我们一起看韩式商住公寓出入记录。请冷静说明它们与韩式商住公寓探访与通话背后的家人情况有什么关系。",
+              "text": "李俊浩先生，我们把GPS坐标和未知发件人短信内容放在一起看。它们指向同一时间段、同一处韩式商住公寓，请冷静说明那里当时有谁。",
               "behaviorHint": "确认案件卡线索后，法官整理证据组合的意义。"
             },
             {

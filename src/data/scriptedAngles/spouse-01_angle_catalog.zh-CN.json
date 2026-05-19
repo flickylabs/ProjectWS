@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "隐瞒的理由",
-      "description": "确认为何没有向配偶说明探访、电话和物品。"
+      "label": "探访与通话经过",
+      "description": "确认韩式商住公寓探访、凌晨电话和收据物品是否同属同一条怀疑线索。"
     },
     {
       "disputeId": "d-1",
@@ -43,14 +43,14 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "排除配偶同意",
+      "label": "大额取款经过",
       "description": "追问即使是个人资金，也未告知配偶就动用大笔钱的责任。"
     },
     {
       "disputeId": "d-2",
       "angleId": "cash_withdrawal",
       "label": "3,000 万韩元现金提款",
-      "description": "李俊昊名下另一账户在最近四个月内分批提出 3,000 万韩元现金，确认时点与方式。"
+      "description": "李俊浩名下另一账户在最近四个月内分批取出3000万韩元现金，确认时点与方式。"
     },
     {
       "disputeId": "d-2",
@@ -73,8 +73,8 @@
     {
       "disputeId": "h-d3",
       "angleId": "general",
-      "label": "损失与法律责任",
-      "description": "将钱款消失的结果和文件处理责任，与情绪受害主张分开。"
+      "label": "储蓄账户解约与转账经过",
+      "description": "依次确认共同储蓄账户解约、委托文件、向投资群转账以及损失经过。"
     },
     {
       "disputeId": "h-d3",
@@ -122,7 +122,7 @@
       "disputeId": "h-d4",
       "angleId": "execution_timeline",
       "label": "资金动用的时点",
-      "description": "把李俊昊的现金提款与朴智妍解约共同储蓄、汇款的时点，按时间顺序排开。"
+      "description": "把李俊浩的现金取款与朴智妍解约共同储蓄账户、转账的时点按时间顺序排开。"
     },
     {
       "disputeId": "h-d4",
