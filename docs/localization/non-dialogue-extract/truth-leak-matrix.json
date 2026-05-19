@@ -637,7 +637,6 @@
       "_designIntentTags": [
         "lieBand:late",
         "stance:confess",
-        "stance:admit",
         "reveal:full",
         "continuity:dossier_late_admition",
         "continuity:collapse",
@@ -696,7 +695,6 @@
       "_designIntentTags": [
         "lieBand:late",
         "stance:confess",
-        "stance:admit",
         "reveal:full",
         "continuity:dossier_late_admition",
         "continuity:collapse",
