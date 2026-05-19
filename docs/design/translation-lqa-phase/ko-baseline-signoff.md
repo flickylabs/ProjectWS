@@ -151,4 +151,34 @@ Date: 2026-05-19
 
 ## 사용자 서명
 
-User: <서명 commit 대기>
+User: flickylabs (확인) — 2026-05-19
+Sign-off commit: 본 문서 사인오프 갱신 commit (다음 commit).
+
+### Fix 적용 commit chain
+
+| Severity | Commit | 영역 |
+|---|---|---|
+| P0 ×3 | `1be71c56` | spouse-01 discover-b-e-3-capture-v1 / family-01 judgeq-d-4-empathy-approach-3-v2 / judgec-d-4-mid-v1 |
+| P1 ×3 | `d12947c3` | spouse-01 judgeq-d-1-fact_pursuit-1-v2 / family-01 leadLines L-4-A / friend-01 a-e-6-late-stage1 v1~v10 (10개 다양화) |
+| P2 ×11 | `0d9292ac` | system_message phase-transition 7건 + mediation 2건 + scriptedAngles family_items 2건 |
+
+### 검증 결과 (사인오프 시점)
+
+| 명령 | 결과 |
+|---|---|
+| `npx tsc -b --noEmit` | 통과 |
+| `npm run qa:fast` | RELEASE READY, P0=0 |
+| `node scripts/detect-truth-leak.cjs` | family-01 3건 baseline 유지 |
+| `npm run qa:lqa` | 누적 strict 60,463건 (외국어 부채, Phase 2 cycle에서 해소) |
+
+### Phase 2 spawn 게이트 통과
+
+`docs/design/translation-lqa-phase/orchestration.md` §2.1 사전 체크 5개 항목:
+
+1. Phase 0 완료 (verify-translations.cjs v2 + detect-truth-leak.cjs) — ✅
+2. **Phase 1 사인오프 (본 문서)** — ✅ 본 commit
+3. working tree clean — ✅ (untracked `docs/localization/non-dialogue-extract/truth-leak-report.json`만)
+4. `reports/` 비어있음 — ✅
+5. 메모리 동기화 — ✅
+
+→ **Phase 2 (Codex β1~β10) spawn 게이트 통과**. 60,463건 누적 외국어 부채는 case×lang 10 thread 병렬 처리로 해소.
