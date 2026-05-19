@@ -191441,7 +191441,7 @@
           "variants": [
             {
               "id": "discover-b-e-3-capture-v1",
-              "text": "방금 학교라고 하셨습니다. 그 번호와 학교 알림이 어떤 관계인지 설명해 주십시오.",
+              "text": "방금 학교라고 하셨습니다. 그 번호가 어떤 학교 쪽 연락이었는지 설명해 주십시오.",
               "behaviorHint": "재판관이 새로 나온 단서를 즉시 좁힌다. 번호의 정체를 더는 막연하게 둘 수 없게 만든다.",
               "tags": [
                 "channel:evidence_discovery_sequence",
