@@ -65,3 +65,53 @@ Anchor: `dd7eeac1`
   - static P0=0, route P0=0
 - `node scripts/detect-truth-leak.cjs`: 기존 matrix 기준 findings 3 (`family-01` ko). 이번 변경 파일과 무관하며 새 변경 파일 없음.
 - `run-pc.bat`: 대화형 dev server 실행 스크립트라 자동 실행은 생략. 대신 동일 입력의 target 결정 로직을 ad-hoc 재현해 기존 `a` -> 수정 후 `b`, 그리고 `씨에게`/`씨가` 표현은 기존 target 유지됨을 확인했다.
+
+## 다음 세션 재검증 (2026-05-19 메인 thread)
+
+### 사용자 케이스 경로 식별
+
+사용자 보고 Q1/Q2 텍스트가 scripted variant와 정확히 일치한다. 두 경로 가능:
+
+| 경로 | 시작점 | Codex fix 적용 여부 |
+|---|---|---|
+| (a) **Free interrogation 입력** | 사용자가 textbox에 "이준호 씨, ..." 입력 | ✅ Fix 적용 (resolveTarget vocative override) |
+| (b) **Scripted judge_question 버튼** | 사용자가 PC 핫바 motive_search 버튼 클릭 | ❌ Fix 미적용 (별도 dispatch 경로) |
+
+### Scripted 경로 코드 정합성 확인
+
+- `useActionDispatch.handleQuestion`: `action.target='b'` 명시적 전달 → `buildQuestionText` → `getScriptedJudgeQuestion(..., target='b')`.
+- `scriptedTextLoader.getScriptedJudgeQuestion`: `targetParty` 인자를 `selectVariant`/`getFromChannel`에 전달.
+- `scriptedTextLoader.scoreVariant:263-265`: **`tags.targetParty !== context.targetParty` 시 score=-1000 강제 제외, 일치 시 +30 강한 선호**.
+- `scriptedAngleTextLoader.ts:160,196`: explicit filter `entry.targetParty !== input.target` continue.
+- 답변 fetch: `getScriptedInterrogation(caseId, party, disputeId, lieState, questionType)` → `b|d-2|S0|motive_search` key (line 24265 존재) → `b-d-2-S0-motive-search-v*` variant 반환.
+
+→ Scripted 경로는 target/vocative 불일치에 대해 hard filter로 방어됨. **이론적 회귀 X**.
+
+### 잠재적 silent-fail (낮은 확률)
+
+`getScriptedInterrogation:551-565`에 **opposite-party fallback** 존재. target party 키가 없을 때 상대 party 키로 폴백. 단, `speaker:action.target` 그대로 사용 → 텍스트만 상대 발화. 단, `b|d-2|S0|motive_search` 키는 데이터에 존재(line 24265) → trigger 안 됨. 다른 (party, dispute, lieState, questionType) 조합에서는 가능.
+
+### PC QA 재현 절차 (사용자 영역)
+
+dev server `run-pc.bat` (port 5176) 띄운 상태에서:
+
+1. **case = spouse-01**, h-d3 직후 또는 d-2 활성 단계까지 진행.
+2. **Path A 검증 (scripted 버튼)**:
+   - 핫바 슬롯에서 `이준호 + motive_search` depth 1 버튼 클릭.
+   - 기대: 재판관 질문 "이준호 씨, 돈 문제를..." + **이준호 portrait 답변** 1개.
+   - 이어서 `박지연 + fact_pursuit` depth 2 버튼 클릭.
+   - 기대: 재판관 질문 "박지연 씨, ..." + **박지연 portrait 답변** 1개.
+   - **재현 시**: 별도 진단 thread 필요 (scripted dispatch 영역).
+3. **Path B 검증 (자유 질문)**:
+   - UI target = 박지연(a) 선택 상태에서 자유 입력 textbox에 "이준호 씨, 돈 문제를 박지연 씨에게 열지 못하게 만든 가장 직접적인 두려움이 무엇이었습니까." 입력.
+   - 기대 (post-fix): vocative override로 target=b 라우팅 → **이준호 portrait 답변**.
+   - 비교 control: "이준호 씨에게 왜 ..." 입력 → 기존 UI target(a) 유지 → **박지연 portrait 답변**.
+
+### 결론
+
+- Codex fix (8590abd6)는 **Path B free interrogation vocative override** 영역에 정확히 적용됨.
+- 사용자 원래 케이스가 Path A scripted였다면 별도 thread. Path B였다면 fix 효과 확인 필요.
+- 사용자 직접 PC QA 재현 후 확인 시점에서 결정.
+
+검증 일자: 2026-05-19 (메인 thread)
+
