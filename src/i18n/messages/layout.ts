@@ -33,7 +33,7 @@ export const layoutMessages = {
     "pc.disputeRibbon.label": "쟁점",
     "pc.disputeRibbon.open": "쟁점 펼치기",
     "pc.disputeRibbon.close": "쟁점 접기",
-    "pc.disputeRibbon.verdictProceed": "판결로 진행",
+    "pc.disputeRibbon.verdictProceed": "판결 진행",
     "pc.disputeRibbon.revealTruth": "심문과 증거로 진실을 밝혀내세요.",
     "pc.left.timeline.open": "타임라인 열기",
     "pc.left.timeline.close": "타임라인 닫기",

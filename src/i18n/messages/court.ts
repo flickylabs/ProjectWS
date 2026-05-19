@@ -17,7 +17,7 @@ export const courtMessages = {
     "pc.verdictAdvance.hidden.body": "현재 드러난 쟁점은 {visible}개입니다. 아직 발견하지 못한 쟁점이 {hidden}개 남아 있습니다. 그래도 바로 판결로 진행하시겠습니까? 미발견 쟁점이 남아 있으면 판결에 제약이 있을 수 있습니다.",
     "pc.verdictAdvance.hidden.visibleTag": "공개 쟁점 {count}",
     "pc.verdictAdvance.hidden.hiddenTag": "숨은 쟁점 {count}",
-    "pc.verdictAdvance.hidden.confirm": "판결로 진행",
+    "pc.verdictAdvance.hidden.confirm": "판결 진행",
     "pc.verdictAdvance.hidden.collapse": "판결 버튼만 숨기기",
     "pc.verdictAdvance.hidden.keepInvestigating": "추가 심문",
     "pc.mediation.entry.eyebrow": "판결",
@@ -29,7 +29,7 @@ export const courtMessages = {
     "pc.mediation.entry.warning.hiddenBody": "미발견 쟁점이 남아 있으면 판결 기록이 불완전하다고 평가될 수 있습니다.",
     "pc.mediation.entry.warning.unresolvedBody": "선고는 가능하지만, 판결 기록이 불완전하다고 평가될 수 있습니다.",
     "pc.mediation.entry.secondary": "추가 심문",
-    "pc.mediation.entry.primary": "선고로 진행",
+    "pc.mediation.entry.primary": "선고 진행",
     "pc.mediation.entry.dialogue": "심문을 마치고 판결에 들어가겠습니다.",
   },
   en: {

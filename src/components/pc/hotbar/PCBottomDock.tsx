@@ -523,6 +523,16 @@ export default function PCBottomDock() {
                   <kbd>E</kbd><PCSvgIcon id="i-gavel" size={13} /><span>{t('pc.hotbar.special.immediate.compact')}</span>
                 </button>
               </div>
+              {canAdvance && !advanceDismissed ? (
+                <button
+                  className="pc-topbar-advance-btn"
+                  onClick={handleAdvance}
+                  type="button"
+                  title={advanceBannerText}
+                >
+                  {advanceLabel}
+                </button>
+              ) : null}
             </div>
 
             <div className={`hotbar-slots${isLLMLoading ? ' hotbar-slots--locked' : ''}`}>
@@ -572,19 +582,6 @@ export default function PCBottomDock() {
             </div>
           </div>
         </div>
-
-        {/* PC QA round 2 A-2: inline advance button between hotbar slots and Character B */}
-        {canAdvance && !advanceDismissed ? (
-          <button
-            className="pc-inline-advance-btn"
-            onClick={handleAdvance}
-            type="button"
-            title={advanceBannerText}
-          >
-            <span className="pc-inline-advance-btn__caption">{advanceBannerText}</span>
-            <strong className="pc-inline-advance-btn__label">{advanceLabel}</strong>
-          </button>
-        ) : null}
 
         {/* Character B */}
         <CharacterCard

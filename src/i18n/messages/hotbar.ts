@@ -7,7 +7,7 @@ export const hotbarMessages = {
     "pc.hotbar.shortcutTitle": "{label} ({key})",
     "pc.hotbar.advance.can": "{label}할 수 있습니다",
     "pc.hotbar.advance.banner.interrogation": "이제 판결로 진행할 수 있습니다",
-    "pc.hotbar.advance.interrogation": "판결로 진행",
+    "pc.hotbar.advance.interrogation": "판결 진행",
     "pc.hotbar.advance.evidence": "최종 심문 단계로",
     "pc.hotbar.advance.next": "다음 단계로 진행",
     "pc.hotbar.slot.fact.title": "사실 추궁 - 모순에 집중하기",
