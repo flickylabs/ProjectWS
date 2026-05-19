@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "读纸的场景",
-      "description": "分开查看尹正厚把纸读给母亲听，并试图在哥哥到来前结束的情形。"
+      "label": "遗嘱制作经过",
+      "description": "确认母亲是否理解遗嘱内容并表达了自己的意思，以及遗嘱形成的过程。"
     },
     {
       "disputeId": "d-1",
@@ -43,8 +43,8 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "伪造责任",
-      "description": "无论动机是什么，都确认动过母亲文件的责任。"
+      "label": "最终遗嘱形成经过",
+      "description": "确认60:40遗嘱是通过什么过程成为最终版本的。"
     },
     {
       "disputeId": "d-2",
@@ -55,8 +55,8 @@
     {
       "disputeId": "d-2",
       "angleId": "original_gap",
-      "label": "亲笔练习本与公证副本的差异",
-      "description": "追问为何亲笔练习本与公证副本之间会出现比例差。"
+      "label": "亲笔遗嘱草稿与公证副本的差异",
+      "description": "追问为何亲笔遗嘱草稿与公证副本之间会出现比例差。"
     },
     {
       "disputeId": "d-2",
@@ -73,8 +73,8 @@
     {
       "disputeId": "d-3",
       "angleId": "general",
-      "label": "哥哥的体面与沉默",
-      "description": "确认没有说出钱的沉默，是保护还是欺骗。"
+      "label": "母亲账户里的资金",
+      "description": "确认看似来自母亲账户的钱，以及兄弟之间的资金流向。"
     },
     {
       "disputeId": "d-3",
@@ -103,8 +103,8 @@
     {
       "disputeId": "d-4",
       "angleId": "general",
-      "label": "与遗嘱变更的关联",
-      "description": "询问敏感的家庭情况如何与遗嘱变更判断相连。"
+      "label": "日记中的家庭往事",
+      "description": "确认母亲日记里留下的敏感家庭情况，以及围绕它的沉默。"
     },
     {
       "disputeId": "d-4",
