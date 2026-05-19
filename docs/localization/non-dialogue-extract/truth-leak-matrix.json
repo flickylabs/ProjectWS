@@ -10,6 +10,78 @@
     ]
   },
   "spouse-01": {
+    "d-1": {
+      "hidden": {
+        "ko": [
+          "친형 오피스텔에서 조카를 돌봄",
+          "조카 돌봄",
+          "형과의 긴급 연락",
+          "가족 돌봄"
+        ],
+        "en": [
+          "niece care at his older brother's Officetel",
+          "care for his niece",
+          "urgent contact with his brother",
+          "family care"
+        ],
+        "ja": [
+          "実兄のオフィステルで姪の世話",
+          "姪の世話",
+          "兄との緊急連絡",
+          "家族の世話"
+        ],
+        "zh-CN": [
+          "在亲哥哥的韩式商住公寓照顾侄女",
+          "照顾侄女",
+          "与哥哥的紧急联系",
+          "照顾家人"
+        ]
+      },
+      "surface": {
+        "ko": ["오피스텔 방문", "새벽 전화", "같은 좌표 정차", "미등록 번호"],
+        "en": ["Officetel visit", "early-morning call", "repeated GPS stop", "unregistered number"],
+        "ja": ["オフィステル訪問", "早朝の電話", "同じ座標での停車", "未登録番号"],
+        "zh-CN": ["韩式商住公寓探访", "凌晨电话", "同一坐标反复停车", "未登记号码"]
+      }
+    },
+    "d-2": {
+      "hidden": {
+        "ko": [
+          "별도 계좌 비자금",
+          "비자금 3,000만원",
+          "형에게 현금 전달",
+          "개인회생 중인 형",
+          "공동 적금과 무관한 개인 자금"
+        ],
+        "en": [
+          "separate-account hidden funds",
+          "₩30M hidden funds",
+          "cash handed to his older brother",
+          "older brother in personal debt rehabilitation",
+          "personal funds unrelated to the joint savings account"
+        ],
+        "ja": [
+          "別口座の隠し資金",
+          "隠し資金3,000万ウォン",
+          "兄への現金手渡し",
+          "個人再生中の兄",
+          "共同積立預金とは無関係な個人資金"
+        ],
+        "zh-CN": [
+          "另设账户的私房钱",
+          "3000万韩元私房钱",
+          "以现金交给哥哥",
+          "正在个人债务重整的哥哥",
+          "与共同储蓄账户无关的个人资金"
+        ]
+      },
+      "surface": {
+        "ko": ["남편 명의 계좌", "목돈 출금", "별도 계좌", "현금 출금"],
+        "en": ["husband's account", "large withdrawal", "separate account", "cash withdrawal"],
+        "ja": ["夫名義口座", "高額出金", "別口座", "現金出金"],
+        "zh-CN": ["丈夫名下账户", "大额取款", "另设账户", "现金取款"]
+      }
+    },
     "h-d3": {
       "hidden": {
         "ko": [
@@ -79,7 +151,108 @@
     }
   },
   "family-01": {
-    "_TBD": "user/Claude must author the per-dispute hidden/surface keywords with knowledge of game-design truth-disclosure points. Skeleton below is a placeholder for d-4 (birth secret) only.",
+    "d-1": {
+      "hidden": {
+        "ko": [
+          "유서 내용을 논의",
+          "어머니 의사를 완전히 무시한 것은 아니었다",
+          "말년 유서 논의",
+          "윤정후의 개입은 적법성 문제"
+        ],
+        "en": [
+          "discussed the contents of the will",
+          "did not completely disregard the mother's wishes",
+          "late-life will discussions",
+          "Yoon Jeong-hu's involvement leaves legality questions"
+        ],
+        "ja": [
+          "遺言書の内容を話し合った",
+          "母の意思を完全に無視したわけではない",
+          "晩年の遺言書協議",
+          "ユン・ジョンフの関与には適法性の問題"
+        ],
+        "zh-CN": [
+          "讨论遗嘱内容",
+          "并非完全无视母亲意愿",
+          "晚年遗嘱讨论",
+          "尹正厚的介入留下合法性问题"
+        ]
+      },
+      "surface": {
+        "ko": ["유서 작성", "판단 능력", "요양원 방문기록", "전 요양보호사 증언"],
+        "en": ["will drafting", "capacity", "care home visit record", "former caregiver testimony"],
+        "ja": ["遺言書作成", "判断能力", "介護施設訪問記録", "元介護職員の証言"],
+        "zh-CN": ["遗嘱制作", "判断能力", "疗养院探访记录", "前护理员证言"]
+      }
+    },
+    "d-2": {
+      "hidden": {
+        "ko": [
+          "자기 몫을 줄인 조작",
+          "더 많이 받으려 한 조작은 아니었다",
+          "별도 자필 유언장 연습본의 다른 비율",
+          "유언장에 손댄 책임"
+        ],
+        "en": [
+          "manipulation that reduced his own share",
+          "not manipulation to increase his own share",
+          "different ratio in the separate handwritten will draft",
+          "responsibility for altering the will"
+        ],
+        "ja": [
+          "自分の取り分を減らす操作",
+          "より多く受け取るための操作ではなかった",
+          "別の自筆遺言書下書きの異なる比率",
+          "遺言書に手を加えた責任"
+        ],
+        "zh-CN": [
+          "减少自己份额的操纵",
+          "并不是为了多拿份额的操纵",
+          "另行亲笔遗嘱草稿中的不同比例",
+          "改动遗嘱的责任"
+        ]
+      },
+      "surface": {
+        "ko": ["공증 유서", "별도 문서", "비율 차이", "공증인 메모"],
+        "en": ["notarized will", "separate document", "ratio difference", "notary memo"],
+        "ja": ["公証遺言書", "別文書", "比率差", "公証人メモ"],
+        "zh-CN": ["公证遗嘱", "另行文件", "比例差异", "公证人笔记"]
+      }
+    },
+    "d-3": {
+      "hidden": {
+        "ko": [
+          "윤정후 돈이 어머니 통장을 거쳐 전달",
+          "월 단위 정기 지원금",
+          "공장 위기 때 3억원",
+          "어머니 돈이라고 믿고 있었다"
+        ],
+        "en": [
+          "Yoon Jeong-hu's money passed through the mother's account",
+          "regular monthly support payments",
+          "₩300M during the factory crisis",
+          "believed the money was his mother's"
+        ],
+        "ja": [
+          "ユン・ジョンフの金が母の口座を経由して渡された",
+          "月単位の定期支援金",
+          "工場危機の際の3億ウォン",
+          "母の金だと信じていた"
+        ],
+        "zh-CN": [
+          "尹正厚的钱经由母亲账户转交",
+          "每月定期支援金",
+          "工厂危机时的3亿韩元",
+          "一直相信那是母亲的钱"
+        ]
+      },
+      "surface": {
+        "ko": ["오래된 계좌 흐름", "장기 지원금", "큰돈 이동", "돈의 출처"],
+        "en": ["old account trail", "long-running support", "large fund movement", "source of money"],
+        "ja": ["古い口座の流れ", "長期支援金", "大きな資金移動", "金の出どころ"],
+        "zh-CN": ["旧日账户流向", "长期支援金", "大额资金流动", "钱的来源"]
+      }
+    },
     "d-4": {
       "hidden": {
         "ko": ["출생 비밀", "친자 확인", "윤정후 입양", "다른 부모"],
@@ -93,22 +266,215 @@
         "ja": ["日記帳", "母のメモ", "公証手続"],
         "zh-CN": ["日记", "母亲笔记", "公证程序"]
       }
+    },
+    "d-5": {
+      "hidden": {
+        "ko": [
+          "유산을 돌봄의 보상처럼 당연시",
+          "형을 보호한다며 어머니 뜻을 고쳐 쓰려 함",
+          "어머니 뜻을 있는 그대로 두지 못함",
+          "두 형제가 어머니 뜻을 왜곡"
+        ],
+        "en": [
+          "took the inheritance for granted as compensation for care",
+          "rewrote the mother's wishes to protect his brother",
+          "neither left the mother's wishes as they were",
+          "both brothers distorted the mother's wishes"
+        ],
+        "ja": [
+          "遺産を世話の報酬のように当然視",
+          "兄を守るために母の意思を書き換えようとした",
+          "母の意思をそのままにしておけなかった",
+          "兄弟二人が母の意思を歪めた"
+        ],
+        "zh-CN": [
+          "把遗产视作照顾母亲的补偿",
+          "以保护哥哥为由改写母亲的意愿",
+          "没能让母亲的意愿保持原样",
+          "两兄弟扭曲了母亲的意愿"
+        ]
+      },
+      "surface": {
+        "ko": ["어머니의 숨겨진 마음", "어머니 뜻", "두 형제의 개입", "유산 해석"],
+        "en": ["mother's hidden feelings", "mother's wishes", "both brothers' involvement", "inheritance interpretation"],
+        "ja": ["母の隠された思い", "母の意思", "兄弟二人の関与", "遺産の解釈"],
+        "zh-CN": ["母亲隐藏的心意", "母亲意愿", "两兄弟的介入", "遗产解读"]
+      }
     }
   },
   "friend-01": {
-    "_TBD": "user/Claude must author the per-dispute hidden/surface keywords. friend-01 case truths require fresh review of lie configs + dossier unlock chain.",
-    "_placeholder_d1": {
+    "d-1": {
       "hidden": {
-        "ko": [],
-        "en": [],
-        "ja": [],
-        "zh-CN": []
+        "ko": [
+          "송다은 아버지의 돈 접근 패턴을 경고",
+          "집착이 아니라 경고",
+          "직접 말할 길이 없었다",
+          "경고 목적 연락"
+        ],
+        "en": [
+          "warning about Song Da-eun's father's money pattern",
+          "not obsession but warning",
+          "no direct way to say it",
+          "warning contact"
+        ],
+        "ja": [
+          "ソン・ダウンの父の金銭接近パターンを警告",
+          "執着ではなく警告",
+          "直接言う方法がなかった",
+          "警告目的の連絡"
+        ],
+        "zh-CN": [
+          "警告宋多恩父亲接近钱财的模式",
+          "不是执念而是警告",
+          "没有办法直接说出来",
+          "出于警告目的的联系"
+        ]
       },
       "surface": {
-        "ko": [],
-        "en": [],
-        "ja": [],
-        "zh-CN": []
+        "ko": ["9일간 연락", "연락 기록", "연락 의도", "예비신랑에게 연락"],
+        "en": ["nine days of contact", "contact records", "intent behind contact", "contacting the fiance"],
+        "ja": ["9日間の連絡", "連絡記録", "連絡意図", "婚約者への連絡"],
+        "zh-CN": ["9天联系", "联系记录", "联系意图", "联系未婚夫"]
+      }
+    },
+    "d-2": {
+      "hidden": {
+        "ko": [
+          "예비신랑이 먼저 선 넘는 메시지",
+          "최수민은 거절했다",
+          "예비신랑이 먼저",
+          "연락은 이 상황의 연장선"
+        ],
+        "en": [
+          "fiance sent an overstepping message first",
+          "fiancé sent an overstepping message first",
+          "Choi Su-min refused",
+          "contact was an extension of that situation"
+        ],
+        "ja": [
+          "婚約者が先に一線を越えたメッセージ",
+          "チェ・スミンは拒否した",
+          "婚約者が先に",
+          "連絡はこの状況の延長線"
+        ],
+        "zh-CN": [
+          "未婚夫先发越界信息",
+          "崔秀敏拒绝了",
+          "未婚夫在先",
+          "联系是这种情况的延伸"
+        ]
+      },
+      "surface": {
+        "ko": ["예비신랑 메시지", "사적 메시지", "메시지 교환", "선후관계"],
+        "en": ["fiance message", "private message", "message exchange", "order of contact"],
+        "ja": ["婚約者のメッセージ", "私的なメッセージ", "メッセージ交換", "前後関係"],
+        "zh-CN": ["未婚夫信息", "私人信息", "信息往来", "先后关系"]
+      }
+    },
+    "d-3": {
+      "hidden": {
+        "ko": [
+          "예비신랑에게 돈 얘기를 꺼냄",
+          "돈을 빌려달라고 접근",
+          "과거 같은 패턴",
+          "같은 피해를 막으려 했다"
+        ],
+        "en": [
+          "brought up money with the fiance",
+          "approached the fiance to borrow money",
+          "same pattern in the past",
+          "tried to prevent the same harm"
+        ],
+        "ja": [
+          "婚約者に金の話を持ち出した",
+          "金を貸してほしいと近づいた",
+          "過去と同じパターン",
+          "同じ被害を防ごうとした"
+        ],
+        "zh-CN": [
+          "向未婚夫提起钱的事",
+          "向未婚夫借钱",
+          "过去同样的模式",
+          "试图阻止同样的伤害"
+        ]
+      },
+      "surface": {
+        "ko": ["송다은 아버지 문자", "돈 부탁 정황", "가족 쪽 문자", "현재 문자"],
+        "en": ["Song Da-eun's father's texts", "money-request context", "family-side text", "current text"],
+        "ja": ["ソン・ダウンの父のメッセージ", "金の頼みの状況", "家族側のメッセージ", "現在のメッセージ"],
+        "zh-CN": ["宋多恩父亲的短信", "金钱请求情况", "家人一方的短信", "当前短信"]
+      }
+    },
+    "d-4": {
+      "hidden": {
+        "ko": [
+          "차용금 미상환",
+          "세 차례 돈을 빌린 뒤 일부만 갚음",
+          "일부만 갚고 연락을 끊음",
+          "아버지 문제를 들춰야 해서 말하지 못함",
+          "악역을 자처"
+        ],
+        "en": [
+          "unpaid loan from Song Da-eun's father",
+          "borrowed money three times and repaid only part",
+          "repaid only part and cut off contact",
+          "could not speak because it would expose her father's issue",
+          "accepted the role of the villain"
+        ],
+        "ja": [
+          "ソン・ダウンの父の借用金未返済",
+          "3回金を借りて一部だけ返済",
+          "一部だけ返済して連絡を切った",
+          "父の問題を明かすことになるため言えなかった",
+          "悪役を自ら引き受けた"
+        ],
+        "zh-CN": [
+          "宋多恩父亲未偿还贷款",
+          "三次借钱后只还了一部分",
+          "只偿还一部分后断绝联系",
+          "因为会揭开父亲的问题而没能说出口",
+          "主动承担反派角色"
+        ]
+      },
+      "surface": {
+        "ko": ["과거 손절", "돈 문제", "과거 송금 기록", "차용증"],
+        "en": ["old fallout", "money issue", "past remittance records", "loan note"],
+        "ja": ["過去の絶交", "金銭問題", "過去の送金記録", "借用書"],
+        "zh-CN": ["旧日决裂", "金钱问题", "过去汇款记录", "借条"]
+      }
+    },
+    "d-5": {
+      "hidden": {
+        "ko": [
+          "확인 없이 단톡방에서 최수민을 매도",
+          "공개 매도",
+          "최수민이 또 악역이 되는 구조",
+          "확인 전에 단정한 책임"
+        ],
+        "en": [
+          "smeared Choi Su-min in the group chat without checking",
+          "public smear",
+          "structure in which Choi Su-min became the villain again",
+          "responsibility for judging before verifying"
+        ],
+        "ja": [
+          "確認せずにグループチャットでチェ・スミンを決めつけた",
+          "公開の決めつけ",
+          "チェ・スミンがまた悪役になる構造",
+          "確認前に断定した責任"
+        ],
+        "zh-CN": [
+          "未经确认就在群聊中抹黑崔秀敏",
+          "公开抹黑",
+          "崔秀敏再次成为反派的结构",
+          "确认前就下判断的责任"
+        ]
+      },
+      "surface": {
+        "ko": ["단톡방 발언", "단톡방 캡처", "공통 친구 반응", "확산 경로"],
+        "en": ["group chat statement", "group chat screenshot", "mutual friends' reaction", "spread path"],
+        "ja": ["グループチャット発言", "グループチャットのスクリーンショット", "共通の友人の反応", "拡散経路"],
+        "zh-CN": ["群聊发言", "群聊截图", "共同朋友反应", "传播路径"]
       }
     }
   }
