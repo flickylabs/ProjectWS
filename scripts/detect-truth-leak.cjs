@@ -98,15 +98,20 @@ function main() {
 function detectTruthLeak(matrix, options) {
   const findings = []
   const seen = new Set()
+  const explicitWhitelist = Array.isArray(matrix._explicitWhitelist) ? matrix._explicitWhitelist : []
 
   for (const caseId of Object.keys(matrix)) {
     if (caseId.startsWith('_')) continue
+    // Pre-load ko source variant id -> tags map so non-ko findings can
+    // recover design-intent tags from the canonical KO authoring file
+    // (translated locales typically omit tags).
+    const koTagMap = loadKoTagMap(caseId, options.dataRoot)
     for (const lang of LOCALES) {
       const files = getCaseFiles(caseId, lang, options.dataRoot)
       for (const fileInfo of files) {
         const data = JSON.parse(fs.readFileSync(fileInfo.file, 'utf8'))
         const strings = extractStringsFromChannels(data, fileInfo.channels)
-        for (const { key, text } of strings) {
+        for (const { key, text, parent } of strings) {
           for (const disputeId of Object.keys(matrix[caseId])) {
             if (disputeId.startsWith('_')) continue
             const hiddenKeywords = matrix[caseId][disputeId].hidden[lang] || []
@@ -115,6 +120,15 @@ function detectTruthLeak(matrix, options) {
               const fingerprint = `${caseId}\0${disputeId}\0${lang}\0${fileInfo.file}\0${key}\0${keyword}`
               if (seen.has(fingerprint)) continue
               seen.add(fingerprint)
+              if (isDesignIntent({
+                caseId,
+                disputeId,
+                key,
+                parent,
+                koTagMap,
+                disputeNode: matrix[caseId][disputeId],
+                explicitWhitelist,
+              })) continue
               findings.push({
                 caseId,
                 disputeId,
@@ -132,6 +146,63 @@ function detectTruthLeak(matrix, options) {
   }
 
   return findings
+}
+
+// Design-intent gate: a finding is suppressed when its variant tags match
+// the dispute's _designIntentTags allowlist, or its variant id matches an
+// _explicitWhitelist pattern at matrix root. Translated locales typically
+// strip tags during the localization pipeline, so we recover them from the
+// KO authoring file via the variant id.
+function isDesignIntent({ caseId, disputeId, key, parent, koTagMap, disputeNode, explicitWhitelist }) {
+  const variantId = parent && typeof parent === 'object' && typeof parent.id === 'string' ? parent.id : null
+  const localTags = parent && Array.isArray(parent.tags) ? parent.tags : []
+  const koTags = variantId && koTagMap[variantId] ? koTagMap[variantId] : []
+  const effectiveTags = localTags.length ? localTags : koTags
+
+  // Tag-based allowlist (per dispute)
+  const designIntentTags = Array.isArray(disputeNode?._designIntentTags) ? disputeNode._designIntentTags : []
+  if (designIntentTags.length && effectiveTags.length) {
+    for (const tag of designIntentTags) {
+      if (effectiveTags.includes(tag)) return true
+    }
+  }
+
+  // Explicit id-pattern whitelist (matrix root). Supports trailing '*' wildcard.
+  if (variantId) {
+    for (const rule of explicitWhitelist) {
+      if (rule.caseId && rule.caseId !== caseId) continue
+      if (rule.disputeId && rule.disputeId !== disputeId) continue
+      const pattern = rule.variantIdPattern
+      if (!pattern) continue
+      if (pattern.endsWith('*')) {
+        if (variantId.startsWith(pattern.slice(0, -1))) return true
+      } else if (variantId === pattern) {
+        return true
+      }
+    }
+  }
+
+  // `key` is reserved for future path-pattern rules; currently unused.
+  void key
+  return false
+}
+
+// Build a { variantId: tags[] } map from KO authoring files for a case so
+// non-ko findings can resolve their design-intent tags (translated locales
+// drop the tags array during the localization pipeline).
+function loadKoTagMap(caseId, dataRoot) {
+  const map = {}
+  for (const spec of CASE_FILE_SPECS) {
+    const file = path.join(dataRoot, spec.source, `${spec.fileBase(caseId)}.json`)
+    if (!fs.existsSync(file)) continue
+    const data = JSON.parse(fs.readFileSync(file, 'utf8'))
+    walkJson(data, '', (_key, _text, parent) => {
+      if (parent && typeof parent === 'object' && typeof parent.id === 'string' && Array.isArray(parent.tags)) {
+        if (!map[parent.id]) map[parent.id] = parent.tags
+      }
+    })
+  }
+  return map
 }
 
 function getCaseFiles(caseId, lang, dataRoot) {
@@ -158,29 +229,29 @@ function extractStringsFromChannels(data, channelNames) {
     return new RegExp(`(?:^|\\.)${escaped}(?:\\.|\\[|$)`, 'i')
   })
   const strings = []
-  walkJson(data, '', (key, text) => {
+  walkJson(data, '', (key, text, parent) => {
     if (!patterns.some((pattern) => pattern.test(key))) return
     if (!PLAYER_VISIBLE_FIELD_RE.test(key)) return
-    strings.push({ key: key || '$', text })
+    strings.push({ key: key || '$', text, parent })
   })
   return strings
 }
 
-function walkJson(value, keyPath, visit) {
+function walkJson(value, keyPath, visit, parent) {
   if (typeof value === 'string') {
-    visit(keyPath, value)
+    visit(keyPath, value, parent)
     return
   }
   if (Array.isArray(value)) {
     value.forEach((item, index) => {
-      walkJson(item, `${keyPath}[${index}]`, visit)
+      walkJson(item, `${keyPath}[${index}]`, visit, value)
     })
     return
   }
   if (!value || typeof value !== 'object') return
   for (const [key, child] of Object.entries(value)) {
     const childPath = keyPath ? `${keyPath}.${key}` : key
-    walkJson(child, childPath, visit)
+    walkJson(child, childPath, visit, value)
   }
 }
 
@@ -236,6 +307,36 @@ function validateMatrix(matrix) {
             throw new Error(`matrix.${caseId}.${disputeId}.${bucket}.${lang} must be an array`)
           }
         }
+      }
+      // Optional design-intent allowlist for this dispute. Tags listed here
+      // are evaluated against each candidate variant's `tags` array (or the
+      // KO authoring tags when the locale file dropped them). Any single
+      // match marks the catch as design-intent and suppresses the finding.
+      if (entry._designIntentTags !== undefined) {
+        if (!Array.isArray(entry._designIntentTags)) {
+          throw new Error(`matrix.${caseId}.${disputeId}._designIntentTags must be an array`)
+        }
+        for (const tag of entry._designIntentTags) {
+          if (typeof tag !== 'string' || !tag.includes(':')) {
+            throw new Error(`matrix.${caseId}.${disputeId}._designIntentTags entries must be "key:value" strings`)
+          }
+        }
+      }
+    }
+  }
+  // Optional explicit variant-id whitelist at matrix root, for entries that
+  // cannot be expressed via tags (e.g., scriptedAngles variants whose tag
+  // set is intentionally minimal).
+  if (matrix._explicitWhitelist !== undefined) {
+    if (!Array.isArray(matrix._explicitWhitelist)) {
+      throw new Error('matrix._explicitWhitelist must be an array')
+    }
+    for (const rule of matrix._explicitWhitelist) {
+      if (!rule || typeof rule !== 'object') {
+        throw new Error('matrix._explicitWhitelist entries must be objects')
+      }
+      if (typeof rule.variantIdPattern !== 'string' || !rule.variantIdPattern) {
+        throw new Error('matrix._explicitWhitelist entries require variantIdPattern')
       }
     }
   }

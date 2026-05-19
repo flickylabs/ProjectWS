@@ -5729,7 +5729,8 @@
             "targetParty:a",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5741,7 +5742,8 @@
             "targetParty:a",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5753,7 +5755,8 @@
             "targetParty:a",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5765,7 +5768,8 @@
             "targetParty:a",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5777,7 +5781,8 @@
             "targetParty:a",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         }
       ]
@@ -5797,7 +5802,8 @@
             "targetParty:b",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5809,7 +5815,8 @@
             "targetParty:b",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5821,7 +5828,8 @@
             "targetParty:b",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5833,7 +5841,8 @@
             "targetParty:b",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5845,7 +5854,8 @@
             "targetParty:b",
             "questionType:fact_pursuit",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         }
       ]
@@ -5865,7 +5875,8 @@
             "targetParty:a",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5877,7 +5888,8 @@
             "targetParty:a",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5889,7 +5901,8 @@
             "targetParty:a",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5901,7 +5914,8 @@
             "targetParty:a",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5913,7 +5927,8 @@
             "targetParty:a",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         }
       ]
@@ -5933,7 +5948,8 @@
             "targetParty:b",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5945,7 +5961,8 @@
             "targetParty:b",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5957,7 +5974,8 @@
             "targetParty:b",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5969,7 +5987,8 @@
             "targetParty:b",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -5981,7 +6000,8 @@
             "targetParty:b",
             "questionType:motive_search",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         }
       ]
@@ -6001,7 +6021,8 @@
             "targetParty:a",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6013,7 +6034,8 @@
             "targetParty:a",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6025,7 +6047,8 @@
             "targetParty:a",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6037,7 +6060,8 @@
             "targetParty:a",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6049,7 +6073,8 @@
             "targetParty:a",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         }
       ]
@@ -6069,7 +6094,8 @@
             "targetParty:b",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6081,7 +6107,8 @@
             "targetParty:b",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6093,7 +6120,8 @@
             "targetParty:b",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6105,7 +6133,8 @@
             "targetParty:b",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         },
         {
@@ -6117,7 +6146,8 @@
             "targetParty:b",
             "questionType:empathy_approach",
             "answerAngle:protective_silence",
-            "disputeId:d-4"
+            "disputeId:d-4",
+            "gating:gated"
           ]
         }
       ]

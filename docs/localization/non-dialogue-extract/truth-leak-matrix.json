@@ -6,9 +6,19 @@
       "All four languages must encode the same level of specificity. If KO says '위임장 조작' (forgery), EN must say 'power of attorney forgery' not bare 'power of attorney'.",
       "surface[lang] entries record the publicly disclosable facts for context — they are NOT used by the detector but document what should be considered safe to mention.",
       "Mention by the JUDGE / SYSTEM / DOSSIER of a hidden keyword before the corresponding lieState progression is a truth leak (see memory feedback_truth_leak_prohibition).",
-      "Per-dispute lieState gating and per-entry disputeId binding is OUT of scope for this static scanner — flagged matches require human review during Phase 2 LQA threads."
+      "Per-dispute lieState gating and per-entry disputeId binding is OUT of scope for this static scanner — flagged matches require human review during Phase 2 LQA threads.",
+      "_designIntentTags[] (per-dispute, optional): list of 'key:value' variant tags that mark a catch as a deliberate design-intent disclosure (dossier confession band, post-combo unlock, etc.). The detector resolves tags from the variant's own tags array when present, otherwise falls back to the KO authoring file's tags via the variant id (translated locales drop tag arrays).",
+      "_explicitWhitelist[] (matrix root, optional): list of { caseId, disputeId, variantIdPattern, reason } entries. variantIdPattern may end with '*' for prefix matching. Use sparingly — prefer _designIntentTags."
     ]
   },
+  "_explicitWhitelist": [
+    {
+      "caseId": "family-01",
+      "disputeId": "d-5",
+      "variantIdPattern": "dc-5-b-q1-early-v2",
+      "reason": "Early-band dossier confession entry: dossier card engagement is a confession path even at the early interview depth; the admission is design-intent. (Cannot be expressed via _designIntentTags since the early-band variant uses hedge/hint tags shared with non-design-intent disclosures.)"
+    }
+  ],
   "spouse-01": {
     "d-1": {
       "hidden": {
@@ -251,7 +261,8 @@
         "en": ["old account trail", "long-running support", "large fund movement", "source of money"],
         "ja": ["古い口座の流れ", "長期支援金", "大きな資金移動", "金の出どころ"],
         "zh-CN": ["旧日账户流向", "长期支援金", "大额资金流动", "钱的来源"]
-      }
+      },
+      "_designIntentTags": ["continuity:evidence_combo"]
     },
     "d-4": {
       "hidden": {
@@ -299,7 +310,16 @@
         "en": ["mother's hidden feelings", "mother's wishes", "both brothers' involvement", "inheritance interpretation"],
         "ja": ["母の隠された思い", "母の意思", "兄弟二人の関与", "遺産の解釈"],
         "zh-CN": ["母亲隐藏的心意", "母亲意愿", "两兄弟的介入", "遗产解读"]
-      }
+      },
+      "_designIntentTags": [
+        "stance:confess",
+        "stance:partial",
+        "reveal:partial",
+        "reveal:full",
+        "continuity:dossier_late_admition",
+        "continuity:collapse",
+        "continuity:partial_slip"
+      ]
     }
   },
   "friend-01": {
@@ -413,7 +433,15 @@
         "en": ["Song Da-eun's father's texts", "money-request context", "family-side text", "current text"],
         "ja": ["ソン・ダウンの父のメッセージ", "金の頼みの状況", "家族側のメッセージ", "現在のメッセージ"],
         "zh-CN": ["宋多恩父亲的短信", "金钱请求情况", "家人一方的短信", "当前短信"]
-      }
+      },
+      "_designIntentTags": [
+        "lieBand:late",
+        "stance:confess",
+        "stance:admit",
+        "reveal:full",
+        "continuity:dossier_late_admition",
+        "continuity:collapse"
+      ]
     },
     "d-4": {
       "hidden": {
@@ -451,7 +479,16 @@
         "en": ["old fallout", "money issue", "past remittance records", "loan note"],
         "ja": ["過去の絶交", "金銭問題", "過去の送金記録", "借用書"],
         "zh-CN": ["旧日决裂", "金钱问题", "过去汇款记录", "借条"]
-      }
+      },
+      "_designIntentTags": [
+        "lieBand:late",
+        "stance:confess",
+        "stance:admit",
+        "reveal:full",
+        "continuity:dossier_late_admition",
+        "continuity:collapse",
+        "gating:gated"
+      ]
     },
     "d-5": {
       "hidden": {
