@@ -380,25 +380,32 @@
           "예비신랑에게 돈 얘기를 꺼냄",
           "돈을 빌려달라고 접근",
           "과거 같은 패턴",
-          "같은 피해를 막으려 했다"
+          "같은 피해를 막으려 했다",
+          "돈을 요구",
+          "돈을 빌려 달라"
         ],
         "en": [
           "brought up money with the fiance",
           "approached the fiance to borrow money",
           "same pattern in the past",
-          "tried to prevent the same harm"
+          "tried to prevent the same harm",
+          "request for money",
+          "borrow money"
         ],
         "ja": [
           "婚約者に金の話を持ち出した",
           "金を貸してほしいと近づいた",
           "過去と同じパターン",
-          "同じ被害を防ごうとした"
+          "同じ被害を防ごうとした",
+          "金を貸して"
         ],
         "zh-CN": [
           "向未婚夫提起钱的事",
           "向未婚夫借钱",
           "过去同样的模式",
-          "试图阻止同样的伤害"
+          "试图阻止同样的伤害",
+          "要钱",
+          "借钱"
         ]
       },
       "surface": {
