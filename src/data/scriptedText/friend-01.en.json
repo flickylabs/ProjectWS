@@ -24746,7 +24746,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-2-v3",
-              "text": "Both of you, match the point where the money request and the warning contact overlapped to the materials.",
+              "text": "Both of you, match the point where the money-related conversation and the repeated outreach overlapped to the materials.",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 2."
             },
             {
@@ -25345,7 +25345,7 @@
             },
             {
               "id": "judgeq-d-4-motive_search-4-v4",
-              "text": "Ms. Choi, explain why the pattern of making yourself the villain repeated.",
+              "text": "Ms. Choi, explain why the choice to put yourself in a difficult position repeated.",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 4."
             },
             {
@@ -25434,7 +25434,7 @@
             },
             {
               "id": "judgeq-d-4-empathy_approach-3-v2",
-              "text": "Ms. Song, how does it sound to hear that Ms. Choi chose to be the villain?",
+              "text": "Ms. Song, how does the view that Ms. Choi took the burden on herself sound to you?",
               "behaviorHint": "The judge acknowledges the emotional pressure without losing sight of responsibility. Adjust the question intensity for depth 3."
             },
             {
