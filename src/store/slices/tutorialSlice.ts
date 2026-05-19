@@ -15,15 +15,26 @@ export const TUTORIAL_STEP_IDS = [
   'initial-statement-acknowledge',
   'dispute-focus-d1',
   'target-select-b',
+  // PC QA round 2 A-3: introduce the emotion/trust gauge before the user starts asking.
+  'emotion-trust-intro',
   // PC QA round 2: question step split into 3 sub-steps (method → dispute → content)
   'question-method-select',
   'question-dispute-select',
   'question-content-select',
   // PC QA round 2: evidence step split into 2 (select card → investigate)
   'evidence-select',
+  // PC QA round 2 A-3: walk the user through the evidence detail panel.
+  'evidence-detail-open',
   'evidence-investigate-e2',
+  // PC QA round 2 A-3: introduce the combination lab after first investigation.
+  'combination-intro',
   'evidence-present-e2-to-b',
   'feedback-acknowledge',
+  // PC QA round 2 A-3: introduce the right-side info surfaces (record summary,
+  // speech notes, judge's observation) before the notebook hint.
+  'record-summary-intro',
+  'speech-note-intro',
+  'judge-observation-intro',
   'observation-hint',
   'tutorial-complete',
 ] as const

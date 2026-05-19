@@ -312,7 +312,7 @@ export default function JudgeObservationSection() {
   }
 
   return (
-    <section className="sec pc-judge-observation-section" aria-label={t('pc.observation.title')}>
+    <section className="sec pc-judge-observation-section" data-tutorial-target="judge-observation-section" aria-label={t('pc.observation.title')}>
       <div className="sec-h">
         <PCSvgIcon id="i-eye" size={14} />
         <span>{t('pc.observation.title')}</span>

@@ -270,7 +270,7 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
   }, [agentA, agentB, calledWitnesses, caseData, evidenceStates, hiddenDisputeCount, judgments, visibleDisputes])
 
   return (
-    <div className="pc-record-summary">
+    <div className="pc-record-summary" data-tutorial-target="record-summary">
       <div className="pc-record-summary__backdrop" onClick={onClose} />
       <div className="pc-record-summary__panel">
         <div className="pc-record-summary__header">

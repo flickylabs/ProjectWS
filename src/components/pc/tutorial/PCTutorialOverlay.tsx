@@ -360,6 +360,20 @@ export default function PCTutorialOverlay() {
     return () => window.clearTimeout(timer)
   }, [currentStepId, enabled, markStepComplete])
 
+  // PC QA round 2 A-3: generic auto-advance for view-only intro steps (emotion-
+  // trust / evidence-detail / combination / record-summary / speech-note /
+  // judge-observation). Each spotlights an info surface for a few seconds, then
+  // advances on its own. The two specific hooks above retain their original
+  // timings; this one only fires for the new intro steps.
+  useEffect(() => {
+    if (!enabled || !step) return
+    if (step.completionCondition.type !== 'state-mutation') return
+    if (step.completionCondition.actionType !== 'auto') return
+    if (currentStepId === 'observation-hint' || currentStepId === 'tutorial-complete') return
+    const timer = window.setTimeout(() => markStepComplete(step.id), 3500)
+    return () => window.clearTimeout(timer)
+  }, [currentStepId, enabled, markStepComplete, step])
+
   if (!enabled || activeCase !== 'spouse-01' || !isOverlayVisible || !step) {
     return null
   }

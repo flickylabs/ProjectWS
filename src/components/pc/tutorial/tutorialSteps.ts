@@ -83,6 +83,17 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
+    // PC QA round 2 A-3: spotlight the emotion donut + trust state on Character B.
+    id: 'emotion-trust-intro',
+    targetSelector: '[data-tutorial-target="character-slot-b"]',
+    fingerPlacement: 'top',
+    messageKey: 'pc.tutorial.spouse01.emotion-trust-intro',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'auto',
+    },
+  },
+  {
     // PC QA round 2: split — show the three hotbar question slots, complete when
     // the user opens any question panel.
     id: 'question-method-select',
@@ -130,6 +141,17 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
+    // PC QA round 2 A-3: spotlight the evidence detail panel once it's opened.
+    id: 'evidence-detail-open',
+    targetSelector: '[data-tutorial-target="evidence-e2-detail"]',
+    fingerPlacement: 'left',
+    messageKey: 'pc.tutorial.spouse01.evidence-detail-open',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'auto',
+    },
+  },
+  {
     id: 'evidence-investigate-e2',
     // Prefer the actual investigate action button (inside the evidence detail panel)
     // so the hand points at the clickable slot, not the panel wrapper or the
@@ -143,6 +165,17 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     completionCondition: {
       type: 'state-mutation',
       actionType: 'evidence_investigate:e-2',
+    },
+  },
+  {
+    // PC QA round 2 A-3: highlight the combination lab between investigate and present.
+    id: 'combination-intro',
+    targetSelector: '[data-tutorial-target="combination-lab"], .pc-combination-lab',
+    fingerPlacement: 'left',
+    messageKey: 'pc.tutorial.spouse01.combination-intro',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'auto',
     },
   },
   {
@@ -165,6 +198,38 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     messageKey: 'pc.tutorial.spouse01.feedback-acknowledge',
     completionCondition: {
       type: 'click-with-state-check',
+    },
+  },
+  {
+    // PC QA round 2 A-3: walk through the right-side info surfaces — record
+    // summary → speech notes → judge's observation → judge's notebook.
+    id: 'record-summary-intro',
+    targetSelector: '[data-tutorial-target="record-summary"], .pc-record-summary',
+    fingerPlacement: 'left',
+    messageKey: 'pc.tutorial.spouse01.record-summary-intro',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'auto',
+    },
+  },
+  {
+    id: 'speech-note-intro',
+    targetSelector: '[data-tutorial-target="speech-notes"], .pc-favorite-speech, .pc-speech-notes',
+    fingerPlacement: 'right',
+    messageKey: 'pc.tutorial.spouse01.speech-note-intro',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'auto',
+    },
+  },
+  {
+    id: 'judge-observation-intro',
+    targetSelector: '[data-tutorial-target="judge-observation-section"]',
+    fingerPlacement: 'right',
+    messageKey: 'pc.tutorial.spouse01.judge-observation-intro',
+    completionCondition: {
+      type: 'state-mutation',
+      actionType: 'auto',
     },
   },
   {
