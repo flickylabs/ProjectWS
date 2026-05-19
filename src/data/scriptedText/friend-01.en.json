@@ -24723,7 +24723,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-1-v5",
-              "text": "Ms. Song, how did the request to borrow that money connect with wedding preparations?",
+              "text": "Ms. Song, how did that money-related wording connect with wedding preparations?",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 1."
             }
           ]
@@ -24736,7 +24736,7 @@
           "variants": [
             {
               "id": "judgeq-d-3-fact_pursuit-2-v1",
-              "text": "Ms. Choi, explain why you saw the current request to borrow money as resembling your past experience.",
+              "text": "Ms. Choi, explain why you saw the current money-related wording as resembling your past experience.",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 2."
             },
             {
@@ -24769,7 +24769,7 @@
           "variants": [
             {
               "id": "judgeq-d-3-fact_pursuit-3-v1",
-              "text": "Ms. Choi, separate the repeated request to borrow money into past and present, and explain the order.",
+              "text": "Ms. Choi, separate the repeated money-related wording into past and present, and explain the order.",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 3."
             },
             {
@@ -24789,7 +24789,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-3-v5",
-              "text": "Ms. Song, do you still see the flow of your father's money request as a misunderstanding?",
+              "text": "Ms. Song, do you still see the flow of your father's money-related conduct as a misunderstanding?",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 3."
             }
           ]
@@ -24873,7 +24873,7 @@
             },
             {
               "id": "judgeq-d-3-motive_search-2-v2",
-              "text": "Ms. Song, why did you try to see the request for money only as help within the family?",
+              "text": "Ms. Song, why did you try to see the money-related wording only as help within the family?",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 2."
             },
             {
@@ -24944,7 +24944,7 @@
             },
             {
               "id": "judgeq-d-3-motive_search-4-v3",
-              "text": "Both of you, after acknowledging that the request for money repeated, each state why you hid what you hid.",
+              "text": "Both of you, after acknowledging that the money-related flow repeated, each state why you hid what you hid.",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 4."
             },
             {
@@ -24967,7 +24967,7 @@
           "variants": [
             {
               "id": "judgeq-d-3-empathy_approach-1-v1",
-              "text": "Ms. Choi, when you saw the same request to borrow money again, what feeling rose in you?",
+              "text": "Ms. Choi, when you saw the same money-related wording again, what feeling rose in you?",
               "behaviorHint": "The judge acknowledges the emotional pressure without losing sight of responsibility. Adjust the question intensity for depth 1."
             },
             {
@@ -25700,7 +25700,7 @@
             },
             {
               "id": "judgec-d-3-soft-v3",
-              "text": "both of you, the record now turns on the father's money approach and the repeated pattern. Set out the missing explanation calmly.",
+              "text": "Both of you, organize where the current record and past memory meet around the money-related wording.",
               "behaviorHint": "The Judge narrows the contradiction to the father's money approach and the repeated pattern and requires a direct answer without revealing more than the record supports."
             },
             {
