@@ -186887,7 +186887,7 @@
           "variants": [
             {
               "id": "sys-phase-transition-v1",
-              "text": "국면이 넘어간다. 방금 믿은 사실도 다시 봐야 한다.",
+              "text": "흐름이 바뀐다. 방금 믿은 사실도 다시 봐야 한다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -186957,7 +186957,7 @@
             },
             {
               "id": "sys-phase-transition-v3",
-              "text": "새 국면이 열린다. 숨은 쟁점이 앞으로 나온다.",
+              "text": "새 단계가 시작된다. 숨은 쟁점이 앞으로 나온다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",

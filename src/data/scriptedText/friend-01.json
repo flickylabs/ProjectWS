@@ -178320,7 +178320,7 @@
           "variants": [
             {
               "id": "sys-phase-transition-v1",
-              "text": "심문이 다음 국면으로 넘어간다.",
+              "text": "심문이 새 단계로 넘어간다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -178396,7 +178396,7 @@
             },
             {
               "id": "sys-phase-transition-v3",
-              "text": "지금까지의 말이 새 국면을 밀어 연다.",
+              "text": "지금까지 나온 말이 새 단계를 연다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -179967,7 +179967,7 @@
           "variants": [
             {
               "id": "mediation-immediate-b-v1",
-              "text": "바로 정리하셔도 괜찮습니다. 연락한 방식은 제 책임입니다. 다만 그 연락이 유혹이 아니라 경고였다는 축은 명확히 남겨 주십시오.",
+              "text": "바로 정리하셔도 괜찮습니다. 연락한 방식은 제 책임입니다. 다만 그 연락이 유혹이 아니라 경고였다는 점은 명확히 남겨 주십시오.",
               "behaviorHint": "감정을 누른 채 사실의 순서와 침묵의 이유를 분리해 말한다.",
               "tags": [
                 "channel:mediation",
