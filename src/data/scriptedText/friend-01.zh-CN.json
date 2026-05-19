@@ -19580,7 +19580,7 @@
             },
             {
               "id": "sys-evidence-new_unlock-v2",
-              "text": "新的物证登上了局面。"
+              "text": "新的物证被提交到案面上。"
             },
             {
               "id": "sys-evidence-new_unlock-v3",
@@ -19684,7 +19684,7 @@
           "variants": [
             {
               "id": "sys-phase-transition-v1",
-              "text": "审问进入下一个局面。"
+              "text": "审问进入新的阶段。"
             },
             {
               "id": "sys-phase-transition-v2",
