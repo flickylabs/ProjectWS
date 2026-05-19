@@ -17,6 +17,9 @@ export interface CutsceneEvent {
     | 'dispute_emergence'
     | 'phase_transition'
     | 'verdict_gavel'
+    | 'truth_reveal_trust'   // 신뢰 자백 (lieState S5 자연 도달)
+    | 'truth_reveal_slip'    // 감정 슬립 (격앙 + verbalTell 누설)
+    | 'truth_reveal_witness' // 증인 경로 (witness breakthrough)
   data?: {
     partyName?: string
     disputeName?: string
@@ -26,6 +29,16 @@ export interface CutsceneEvent {
     score?: number
     text?: string // 폭발 대사
     caseId?: string
+    // ── truth-reveal payload ──
+    disputeId?: string
+    partyId?: 'a' | 'b'
+    route?: 'trust' | 'emotion'           // witness breakthrough route
+    linkedDisputeId?: string               // slip cascade target
+    lieStateBefore?: string
+    lieStateAfter?: string
+    witnessId?: string
+    witnessName?: string
+    witnessQuote?: string
   }
 }
 
@@ -37,6 +50,9 @@ export const CUTSCENE_DURATION: Record<CutsceneEvent['type'], number> = {
   dispute_emergence: 2000,
   phase_transition: 2000,
   verdict_gavel: 3000,
+  truth_reveal_trust: 9500,    // ~7s reveal + 2.5s closure
+  truth_reveal_slip: 9500,
+  truth_reveal_witness: 10000,
 }
 
 /** 쿨다운 초기화 (새 사건 시작 시 호출) */
@@ -126,6 +142,32 @@ export function shouldTriggerCutscene(
         type,
         data: {
           phase: data?.phase as string | undefined,
+        },
+      }
+      break
+    }
+
+    // 신뢰 자백 / 감정 슬립 / 증인 경로 — 진실 발견 3 경로
+    case 'truth_reveal_trust':
+    case 'truth_reveal_slip':
+    case 'truth_reveal_witness': {
+      const type = eventType as 'truth_reveal_trust' | 'truth_reveal_slip' | 'truth_reveal_witness'
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
+      result = {
+        type,
+        data: {
+          caseId: data?.caseId as string | undefined,
+          disputeId: data?.disputeId as string | undefined,
+          disputeName: data?.disputeName as string | undefined,
+          partyId: data?.partyId as 'a' | 'b' | undefined,
+          partyName: data?.partyName as string | undefined,
+          route: data?.route as 'trust' | 'emotion' | undefined,
+          linkedDisputeId: data?.linkedDisputeId as string | undefined,
+          lieStateBefore: data?.lieStateBefore as string | undefined,
+          lieStateAfter: data?.lieStateAfter as string | undefined,
+          witnessId: data?.witnessId as string | undefined,
+          witnessName: data?.witnessName as string | undefined,
+          witnessQuote: data?.witnessQuote as string | undefined,
         },
       }
       break

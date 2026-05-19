@@ -269,6 +269,9 @@ export type CutsceneSfxType =
   | 'phase_transition'
   | 'verdict_gavel'
   | 'dramatic_reveal'
+  | 'truth_reveal_trust'
+  | 'truth_reveal_slip'
+  | 'truth_reveal_witness'
 
 export type LightningSfxIntensity = 'minor' | 'major'
 

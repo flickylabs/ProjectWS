@@ -12,6 +12,9 @@ export type CutsceneType =
   | 'dispute_emergence'
   | 'phase_transition'
   | 'verdict_gavel'
+  | 'truth_reveal_trust'
+  | 'truth_reveal_slip'
+  | 'truth_reveal_witness'
 
 export type LightningReason =
   | 'free_interrogation_mapping'
@@ -68,6 +71,9 @@ const MAJOR_CUTSCENES = new Set<CutsceneType>([
   'emotion_peak',
   'trust_peak',
   'verdict_gavel',
+  'truth_reveal_trust',
+  'truth_reveal_slip',
+  'truth_reveal_witness',
 ])
 const ALLOWED_LIGHTNING_REASONS = new Set<LightningReason>([
   'free_interrogation_mapping',

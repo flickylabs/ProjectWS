@@ -19,6 +19,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import type { CutsceneEvent } from '../../engine/cutsceneTriggerEngine'
 import { CUTSCENE_DURATION } from '../../engine/cutsceneTriggerEngine'
 import { playCutsceneSfx } from '../../engine/soundEngine'
+import TruthRevealCutscene from './TruthRevealCutscene'
 
 // ── 외부 트리거 함수 ──────────────────────────────────
 
@@ -78,6 +79,14 @@ export default function CutsceneOverlay() {
       {event.type === 'dispute_emergence' && <DisputeEmergenceScene data={event.data} />}
       {event.type === 'phase_transition' && <PhaseTransitionScene data={event.data} />}
       {event.type === 'verdict_gavel' && <VerdictGavelScene data={event.data} />}
+      {(event.type === 'truth_reveal_trust' ||
+        event.type === 'truth_reveal_slip' ||
+        event.type === 'truth_reveal_witness') && (
+        <TruthRevealCutscene
+          event={event as Parameters<typeof TruthRevealCutscene>[0]['event']}
+          onDismiss={dismiss}
+        />
+      )}
     </div>
   )
 }
