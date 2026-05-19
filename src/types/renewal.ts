@@ -333,6 +333,14 @@ export interface EmotionalOutburstEvent {
   id: string
   party: PartyId
   outburstLine: string
+  /**
+   * PC QA round 2 B-8: optional lie-state jump on outburst. When the outburst
+   * is a confession in disguise (e.g., the NPC blurts out the hidden truth
+   * under emotional pressure), set this to the target LieState; the runtime
+   * advances the trigger dispute's lieState directly to that level so the
+   * player's truth gauge reflects what was just admitted.
+   */
+  lieStateJump?: LieState
   options: {
     press: { label: string; effect: string }
     calm: { label: string; effect: string }

@@ -85,6 +85,7 @@
       "id": "spouse-01-outburst-b",
       "party": "b",
       "outburstLine": "형네 숨긴 게 떳떳했다고는 말 못 해요. 그래도 외도한 사람 취급까지 받으니까 너무 억울해요, 제가 챙긴 건 여자 하나가 아니라 조카였어요.",
+      "lieStateJump": "S5",
       "options": {
         "press": {
           "label": "억울함밀기",

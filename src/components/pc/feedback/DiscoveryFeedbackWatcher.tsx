@@ -884,6 +884,32 @@ export default function DiscoveryFeedbackWatcher() {
         if (outburstLine) {
           s.addDialogue({ speaker: ev.party, text: outburstLine, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         }
+        // PC QA round 2 B-8: confessional outburst jumps lieState. The outburst
+        // text itself already reveals the hidden truth; mirror that into the
+        // truth gauge so the gauge doesn't lag behind what was actually said.
+        const jumpTarget = v3Event?.lieStateJump
+        if (jumpTarget) {
+          const lieRank: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+          const agent = ev.party === 'a' ? s.agentA : s.agentB
+          const currentLie = agent.lieStateMap[ev.disputeId]?.currentState ?? 'S0'
+          const targetRank = lieRank[jumpTarget] ?? 0
+          const currentRank = lieRank[currentLie] ?? 0
+          if (targetRank > currentRank) {
+            const distance = targetRank - currentRank
+            for (let i = 0; i < distance; i += 1) {
+              s.transitionLie(ev.party, ev.disputeId, 'emotional_burst_confession')
+            }
+            const after = useGameStore.getState()
+            const afterAgent = ev.party === 'a' ? after.agentA : after.agentB
+            const afterLie = afterAgent.lieStateMap[ev.disputeId]?.currentState ?? currentLie
+            after.addDialogue({
+              speaker: 'system',
+              text: `감정이 무너지면서 진실에 가까워졌다 — ${disputeName} 단계 ${currentLie} → ${afterLie}`,
+              relatedDisputes: [ev.disputeId],
+              turn: after.turnCount,
+            })
+          }
+        }
       }
       const handlePress = () => {
         const s = useGameStore.getState()
