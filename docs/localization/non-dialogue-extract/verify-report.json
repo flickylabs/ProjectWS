@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T05:54:48.345Z",
+  "generatedAt": "2026-05-19T16:08:19.265Z",
   "input": "",
   "glossary": "docs/localization/glossary.csv",
   "mode": "applied",
@@ -9,18 +9,18 @@
     "rows": 36061,
     "glossary_terms": 13,
     "placeholder_issues": 0,
-    "empty_translation_issues": 36960,
+    "empty_translation_issues": 36920,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 17021,
+    "english_length_spike_issues": 16966,
     "glossary_issues": 0,
-    "literal_english_noun_phrase_issues": 123,
-    "cross_batch_inconsistency_issues": 1765,
-    "japanese_particle_anomaly_issues": 4041,
-    "chinese_korean_word_order_issues": 522,
+    "literal_english_noun_phrase_issues": 75,
+    "cross_batch_inconsistency_issues": 1773,
+    "japanese_particle_anomaly_issues": 4052,
+    "chinese_korean_word_order_issues": 516,
     "person_name_divergence_issues": 31,
     "system_tone_remnant_issues": 0,
     "placeholder_leak_issues": 0,
-    "totalIssues": 60463
+    "totalIssues": 60333
   },
   "issueLimits": {
     "placeholder": {
@@ -29,9 +29,9 @@
       "omitted": 0
     },
     "empty": {
-      "total": 36960,
+      "total": 36920,
       "included": 1000,
-      "omitted": 35960
+      "omitted": 35920
     },
     "cjkInEnglish": {
       "total": 0,
@@ -39,9 +39,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 17021,
+      "total": 16966,
       "included": 1000,
-      "omitted": 16021
+      "omitted": 15966
     },
     "glossary": {
       "total": 0,
@@ -49,23 +49,23 @@
       "omitted": 0
     },
     "literalEnglishNounPhrase": {
-      "total": 123,
-      "included": 123,
+      "total": 75,
+      "included": 75,
       "omitted": 0
     },
     "crossBatchInconsistency": {
-      "total": 1765,
+      "total": 1773,
       "included": 1000,
-      "omitted": 765
+      "omitted": 773
     },
     "japaneseParticleAnomaly": {
-      "total": 4041,
+      "total": 4052,
       "included": 1000,
-      "omitted": 3041
+      "omitted": 3052
     },
     "chineseKoreanWordOrder": {
-      "total": 522,
-      "included": 522,
+      "total": 516,
+      "included": 516,
       "omitted": 0
     },
     "personNameDivergence": {
@@ -9099,10 +9099,10 @@
         "key_path": "combinationLab.nodes[10].label",
         "locale": "en",
         "ko_length": 16,
-        "en_length": 44,
-        "ratio": 2.75,
+        "en_length": 43,
+        "ratio": 2.69,
         "ko": "w-1 오피스텔 경비 증언 축",
-        "en": "w-1 Officetel Security Guard Testimony Track"
+        "en": "w-1 Officetel Security Guard Testimony Lead"
       },
       {
         "row_number": 19,
@@ -9187,20 +9187,6 @@
         "ratio": 2.87,
         "ko": "남편 명의 계좌의 목돈 출금",
         "en": "Large Withdrawal from the Husband's Account"
-      },
-      {
-        "row_number": 43,
-        "id": "applied:spouse-01:case_generated:duo.relationshipLedger[3].description",
-        "category": "case_generated",
-        "source": "src/data/cases/generated/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "duo.relationshipLedger[3].description",
-        "locale": "en",
-        "ko_length": 29,
-        "en_length": 98,
-        "ratio": 3.38,
-        "ko": "숨김의 시작과 실제 송금 실행의 순서는 서로 다르다.",
-        "en": "The start of the concealment and the actual execution of the transfer happen in a different order."
       },
       {
         "row_number": 57,
@@ -10715,20 +10701,6 @@
         "en": "Concealment in preparation for divorce"
       },
       {
-        "row_number": 511,
-        "id": "applied:spouse-01:mediation_dialogue:paths.conditional.dialogues[0].text",
-        "category": "mediation_dialogue",
-        "source": "src/data/dialogues/mediation/spouse-v3-01.json",
-        "case_id": "spouse-01",
-        "key_path": "paths.conditional.dialogues[0].text",
-        "locale": "en",
-        "ko_length": 79,
-        "en_length": 205,
-        "ratio": 2.59,
-        "ko": "조건부 조정이라면 저도 받아들이겠습니다. 다만 오피스텔 방문과 새벽 전화의 사실관계부터 먼저 분명히 정리되어야 같은 의심이 반복되지 않습니다.",
-        "en": "If it is a conditional mediation, I can accept that. But the facts about the studio-apartment visits and the late-night calls have to be settled clearly first, or the same suspi..."
-      },
-      {
         "row_number": 514,
         "id": "applied:spouse-01:mediation_dialogue:paths.conditional.judge",
         "category": "mediation_dialogue",
@@ -10841,6 +10813,20 @@
         "en": "Honey, what is the misunderstanding? You go there every single day and call it nothing but a misunderstanding? What are you doing there?"
       },
       {
+        "row_number": 595,
+        "id": "applied:spouse-01:scripted_angle_catalog:angles[0].description",
+        "category": "scripted_angle_catalog",
+        "source": "src/data/scriptedAngles/spouse-01_angle_catalog.json",
+        "case_id": "spouse-01",
+        "key_path": "angles[0].description",
+        "locale": "en",
+        "ko_length": 39,
+        "en_length": 106,
+        "ratio": 2.72,
+        "ko": "오피스텔 방문, 새벽 전화, 영수증 물건을 같은 의심선상에서 확인한다.",
+        "en": "Check the Officetel visits, early-morning calls, and receipt items together as part of the same suspicion."
+      },
+      {
         "row_number": 597,
         "id": "applied:spouse-01:scripted_angle_catalog:angles[10].description",
         "category": "scripted_angle_catalog",
@@ -10867,6 +10853,20 @@
         "ratio": 2.67,
         "ko": "공동 적금 해지, 위임 서류, 투자방 송금, 손실 경위를 차례대로 확인한다.",
         "en": "Separate the result of the missing money and responsibility for document handling from claims of emotional harm."
+      },
+      {
+        "row_number": 600,
+        "id": "applied:spouse-01:scripted_angle_catalog:angles[11].label",
+        "category": "scripted_angle_catalog",
+        "source": "src/data/scriptedAngles/spouse-01_angle_catalog.json",
+        "case_id": "spouse-01",
+        "key_path": "angles[11].label",
+        "locale": "en",
+        "ko_length": 8,
+        "en_length": 47,
+        "ratio": 5.88,
+        "ko": "적금·송금 경위",
+        "en": "Savings Cancellation and Transfer Circumstances"
       },
       {
         "row_number": 603,
@@ -11017,10 +11017,10 @@
         "key_path": "angles[4].description",
         "locale": "en",
         "ko_length": 32,
-        "en_length": 92,
-        "ratio": 2.88,
+        "en_length": 88,
+        "ratio": 2.75,
         "ko": "오피스텔, 전화, 물건이 외도 정황인지 아닌지를 구분한다.",
-        "en": "Distinguish whether the studio apartment, the calls, and the items truly point to an affair."
+        "en": "Separate whether the Officetel visits, calls, and items are actually signs of an affair."
       },
       {
         "row_number": 631,
@@ -11035,6 +11035,20 @@
         "ratio": 3.06,
         "ko": "개인 계좌 목돈 출금, 현금 이동, 배우자 배제 문제를 확인한다.",
         "en": "Ask about the responsibility for moving a large sum without telling the spouse, even if it was personal money."
+      },
+      {
+        "row_number": 632,
+        "id": "applied:spouse-01:scripted_angle_catalog:angles[6].label",
+        "category": "scripted_angle_catalog",
+        "source": "src/data/scriptedAngles/spouse-01_angle_catalog.json",
+        "case_id": "spouse-01",
+        "key_path": "angles[6].label",
+        "locale": "en",
+        "ko_length": 8,
+        "en_length": 42,
+        "ratio": 5.25,
+        "ko": "목돈 출금 경위",
+        "en": "Circumstances of the Large Cash Withdrawal"
       },
       {
         "row_number": 633,
@@ -12575,6 +12589,20 @@
         "ratio": 3.48,
         "ko": "사실 추궁. 본인 출금일과 박지연 씨 자금 실행일을 자료 기준으로 시간순 분리해 답하게 한다.",
         "en": "Fact pursuit. Have the party separate confirmed facts about your cash withdrawal four months ago and the silence that followed from inference, and keep the answer at the fact le..."
+      },
+      {
+        "row_number": 810,
+        "id": "applied:spouse-01:scripted_judge_questions:judgeQuestions[115].variants[0].text",
+        "category": "scripted_judge_questions",
+        "source": "src/data/scriptedAngles/spouse-01_judge_questions.json",
+        "case_id": "spouse-01",
+        "key_path": "judgeQuestions[115].variants[0].text",
+        "locale": "en",
+        "ko_length": 66,
+        "en_length": 180,
+        "ratio": 2.73,
+        "ko": "이준호 씨, 4개월 전 현금 출금 시점과 박지연 씨의 적금 해지·송금 시점을 본인이 아는 한 시간순으로 답해 주십시오.",
+        "en": "Mr. Lee Jun-ho, as far as you know, please state in chronological order the timing of your cash withdrawal four months ago and Ms. Park Ji-yeon's savings cancellation and transfer."
       },
       {
         "row_number": 811,
@@ -14782,10 +14810,10 @@
         "case_id": "spouse-01",
         "key_path": "judgeQuestions[23].variants[2].text",
         "locale": "en",
-        "ko_length": 45,
+        "ko_length": 47,
         "en_length": 120,
-        "ratio": 2.67,
-        "ko": "박지연 씨, 여성용품과 학용품 중 가장 받아들이기 어려웠던 품목이 무엇이었습니까.",
+        "ratio": 2.55,
+        "ko": "박지연 씨, 영수증 묶음 안의 물건들 중 가장 받아들이기 어려웠던 게 무엇이었습니까.",
         "en": "Ms. Park Ji-yeon, among hair ties, lip tint, supplies, and daily necessities, which point was hardest for you to accept?"
       },
       {
@@ -16817,6 +16845,20 @@
         "ratio": 4.21,
         "ko": "사실 추궁. 출금 계좌 성격과 입금 출처를 자료 단위로 답하게 한다.",
         "en": "Fact pursuit. Have the party separate confirmed facts about treating the money as one's own personal fund from inference, and keep the answer at the fact level."
+      },
+      {
+        "row_number": 1382,
+        "id": "applied:spouse-01:scripted_judge_questions:judgeQuestions[48].variants[1].text",
+        "category": "scripted_judge_questions",
+        "source": "src/data/scriptedAngles/spouse-01_judge_questions.json",
+        "case_id": "spouse-01",
+        "key_path": "judgeQuestions[48].variants[1].text",
+        "locale": "en",
+        "ko_length": 55,
+        "en_length": 143,
+        "ratio": 2.6,
+        "ko": "공동 적금 계좌와 개인 계좌가 따로 있었다면 두 계좌의 잔액 변동을 각각 시간순으로 답해 주십시오.",
+        "en": "If the joint savings account and the personal account were separate, please explain the balance changes in each account in chronological order."
       },
       {
         "row_number": 1383,
@@ -23047,65 +23089,10 @@
         "ratio": 2.86,
         "ko": "선의였다고 말하고 싶지만, 제 아내를 빼고 돈을 전달한 건 제 잘못입니다. 외도로 단정된 점은 억울합니다.",
         "en": "I admit I avoided naming the recipient; I will speak now to what I personally did with the cash. I am admitting the seam, and I am not asking for the seam to be ignored."
-      },
-      {
-        "row_number": 2341,
-        "id": "applied:spouse-01:scripted_text:channels.contradiction_pursuit.entries[22].variants[8].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.contradiction_pursuit.entries[22].variants[8].text",
-        "locale": "en",
-        "ko_length": 58,
-        "en_length": 154,
-        "ratio": 2.66,
-        "ko": "그 돈은 그쪽의 급한 사정을 막으려 꺼낸 겁니다. 하지만 배우자에게 말하지 않은 건 변명하기 어렵습니다.",
-        "en": "I admit I avoided naming the recipient; I will speak now to what I personally did with the cash. I am making my answer smaller and more honest, not safer."
-      },
-      {
-        "row_number": 2345,
-        "id": "applied:spouse-01:scripted_text:channels.contradiction_pursuit.entries[23].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.contradiction_pursuit.entries[23].variants[0].text",
-        "locale": "en",
-        "ko_length": 56,
-        "en_length": 188,
-        "ratio": 3.36,
-        "ko": "솔직히 말씀드리면, 제 아내가 반대할 걸 알아서 먼저 돈을 전달했습니다. 그래서 더 말 못 했습니다.",
-        "en": "I handed it to family in cash, and I admit my responsibility for not telling my spouse — even if I cannot lay out everything here. I am laying down the defense; the rest is resp..."
-      },
-      {
-        "row_number": 2347,
-        "id": "applied:spouse-01:scripted_text:channels.contradiction_pursuit.entries[23].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.contradiction_pursuit.entries[23].variants[1].text",
-        "locale": "en",
-        "ko_length": 72,
-        "en_length": 189,
-        "ratio": 2.63,
-        "ko": "제가 두려웠던 건 돈 문제보다 시댁 얘기였습니다. 형에게 3,000만 원이 갔다고 하면, 우리 집도 끝날 수 있다고 생각했습니다.",
-        "en": "I handed it to family in cash, and I admit my responsibility for not telling my spouse — even if I cannot lay out everything here. Please do not soften this for me — I would rat..."
       }
     ],
     "glossary": [],
     "literalEnglishNounPhrase": [
-      {
-        "row_number": 718,
-        "id": "applied:spouse-01:scripted_judge_questions:judgeQuestions[106].variants[4].text",
-        "category": "scripted_judge_questions",
-        "source": "src/data/scriptedAngles/spouse-01_judge_questions.json",
-        "case_id": "spouse-01",
-        "key_path": "judgeQuestions[106].variants[4].text",
-        "locale": "en",
-        "pattern": "order_of_abstract",
-        "snippet": "the order of silence",
-        "ko": "박지연 씨, 침묵의 선후를 지금 결론짓자는 뜻은 아닙니다. 상대 침묵을 본인이 처음 알아챈 한 시점만이라도 다시 짚어 주실 수 있겠습니까.",
-        "en": "Ms. Park Ji-yeon, this is not meant to settle the order of silence now. Could you revisit even one moment when you first noticed the other side's silence?"
-      },
       {
         "row_number": 1975,
         "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[3].variants[1].text",
@@ -23131,19 +23118,6 @@
         "snippet": "the order of concealment",
         "ko": "두 분, 숨김이 시작된 때와 돈이 실제로 움직인 때를 섞으면 책임이 흐려집니다. 각자 어느 축에서 먼저였는지 밝히십시오.",
         "en": "Both of you, your statements on the order of concealment, monitoring, execution, and manipulation no longer line up. Separate the missing facts from the interpretation and answe..."
-      },
-      {
-        "row_number": 9591,
-        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[10].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_contradiction.entries[10].variants[1].text",
-        "locale": "en",
-        "pattern": "order_of_abstract",
-        "snippet": "the order of concealment",
-        "ko": "박지연 씨, 먼저 배신당했다는 감정이 해지 절차 문제의 책임을 없애지는 못합니다. 왜 두 문제를 하나로 묶으셨습니까.",
-        "en": "Ms. Park, your statements on the order of concealment, monitoring, execution, and manipulation no longer line up. Separate the missing facts from the interpretation and answer p..."
       },
       {
         "row_number": 9593,
@@ -23326,19 +23300,6 @@
         "snippet": "the order of concealment",
         "ko": "두 분, 숨김이 시작된 순서와 실제 돈이 움직인 순서를 한 줄로 섞지 말고 따로 정리해 주십시오.",
         "en": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation."
-      },
-      {
-        "row_number": 10231,
-        "id": "applied:spouse-01:scripted_text:channels.judge_question.entries[36].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_question.entries[36].variants[1].text",
-        "locale": "en",
-        "pattern": "order_of_abstract",
-        "snippet": "the order of concealment",
-        "ko": "박지연 씨, 계좌를 먼저 확인하기 시작한 시점과 공동 적금을 해지한 시점을 구분해 말씀해 주십시오.",
-        "en": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation."
       },
       {
         "row_number": 10233,
@@ -24106,591 +24067,6 @@
         "snippet": "the order of responsibility",
         "ko": "책임의 순서를 붙잡으며 고개를 끄덕인다.",
         "en": "Nods while holding on to the order of responsibility."
-      },
-      {
-        "row_number": 20236,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[18].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[18].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 어머니를 찾아뵌 일 자체를 문제 삼으시는 겁니까. 그건 이상한 말입니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I will speak ..."
-      },
-      {
-        "row_number": 20242,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[18].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[18].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 한 일은 어머니를 본 겁니다. 그 이상으로 들으시는 건 제 형의 해석입니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I will speak ..."
-      },
-      {
-        "row_number": 20248,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[18].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[18].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "말을 아낀 건 맞습니다. 어머니가 그날 전부 흐리셨다고 보지는 않습니다. 지금은 그 선에서 말하겠습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I will speak ..."
-      },
-      {
-        "row_number": 20316,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[21].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[21].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "예전보다 횟수가 늘어난 것도 맞습니다. 하루하루 컨디션이 달라지셔서 틈날 때마다 갔습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I will admit ..."
-      },
-      {
-        "row_number": 20322,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[21].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[21].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "기록으로 보면 많아 보일 겁니다. 실제로는 잠깐씩 확인하고 나온 날도 적지 않았습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I will admit ..."
-      },
-      {
-        "row_number": 20328,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[21].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[21].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "말을 아낀 부분은 있습니다. 어머니가 그날 전부 흐리셨다고 보지는 않습니다. 다만 전부를 연 건 아닙니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I will admit ..."
-      },
-      {
-        "row_number": 20376,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[24].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[24].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "어머니가 정리해야 할 일이 남았다고 말씀하신 적이 있습니다. 그 안에 유서 얘기도 있었습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit there..."
-      },
-      {
-        "row_number": 20382,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[24].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[24].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 유서 얘기를 입에 올린 적이 있다는 건 부인하지 않겠습니다. 다만 처음 말씀을 꺼낸 분은 어머니였습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit there..."
-      },
-      {
-        "row_number": 20388,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[24].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[24].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "말을 아낀 건 맞습니다. 유서 준비를 조금 도운 건 맞습니다. 말을 고르는 이유가 있습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit there..."
-      },
-      {
-        "row_number": 20436,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[27].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[27].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "어머니 곁 환경이 달라진 뒤로 서두른 건 사실입니다. 그때는 시간을 길게 끌 수 없다고 봤습니다. 상대 쪽 책임도 남아 있습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit that ..."
-      },
-      {
-        "row_number": 20442,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[27].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[27].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "결과만 보면 제가 몰아간 것처럼 보일 수 있습니다. 다만 그 급함은 제 형을 밀어내려는 게 아니라 어머니 상태를 보고 내린 판단이었습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit that ..."
-      },
-      {
-        "row_number": 20448,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[27].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[27].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "말을 아낀 건 맞습니다. 종이를 읽어드리고 저희 형이 오기 전 마치려 한 부분은 인정합니다. 일부 책임은 제게 있습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit that ..."
-      },
-      {
-        "row_number": 20516,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[30].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[30].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "어머니가 걱정하신 건 재산 다툼만이 아니었습니다. 제 형이 알게 되면 버티지 못할 무언가를 두려워하셨습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit that ..."
-      },
-      {
-        "row_number": 20522,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[30].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[30].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "그래서 저는 이 일을 단순한 서류 문제로만 볼 수 없습니다. 어머니가 지키려 한 사람은 제 형이었습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit that ..."
-      },
-      {
-        "row_number": 20528,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[30].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[30].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "말을 아낀 건 맞습니다. 종이를 읽어드리고 저희 형이 오기 전 마치려 한 부분은 인정합니다. 저희 형이 다칠까 봐 두려웠습니다.",
-        "en": "On the will, the figure recorded against my name is sixty and my older brother's is forty, and the notary's record matches that without any irregularity I can see. I admit that ..."
-      },
-      {
-        "row_number": 21036,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[54].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[54].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "제 형이 의심하는 방식으로 내용을 바꾼 적은 없습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21042,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[54].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[54].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "제 형은 제 침묵을 조작으로 읽겠지만, 없는 일을 있다고 할 수는 없습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21048,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[54].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[54].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "말을 아낀 부분은 있습니다. 유서에 제가 손댔다는 말은 지금 단계에서 받아들일 수 없습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21096,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[57].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[57].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "어머님께서 쓰신 표현을 읽기 쉽게 다듬은 적은 있습니다. 그게 다입니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21102,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[57].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[57].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "어머니 원문이 바로 제출되기 어려워 보여서 손본 겁니다. 그 선을 넘었다고는 말씀드리지 않았습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21108,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[57].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[57].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "말을 아낀 건 맞습니다. 유서에 제가 손댔다는 말은 지금 단계에서 인정하지 않겠습니다. 다만 전부를 연 건 아닙니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21176,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[60].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[60].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "정리한 문서를 마지막에 제가 들고 갔습니다. 제출까지 제 손으로 한 것도 맞습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21182,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[60].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[60].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "문서가 어떻게 최종본이 됐는지 묻는다면, 적어도 마지막 단계에 제가 있었다고는 말씀드릴 수 있습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21188,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[60].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[60].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "말을 아낀 건 맞습니다. 서류 처리에 관여한 건 맞습니다. 말을 고르는 이유가 있습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21236,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[63].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[63].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "공증 당일 절차에 제가 관여했습니다. 자필 연습본에는 제 몫 90, 형 몫 10이었고, 공증본에는 제 몫 60, 형 몫 40이 남았습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21242,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[63].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[63].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "제 형이 믿어 온 방향과는 반대입니다. 저는 제 몫을 늘린 게 아니라 줄였습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21248,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[63].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[63].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "말을 아낀 건 맞습니다. 제 몫 90, 형 몫 10이던 자필 연습본을 제 몫 60, 형 몫 40으로 바꾼 사실은 인정합니다. 일부 책임은 제게 있습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21296,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[66].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[66].variants[1].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "바뀐 건 제 형 몫이 아니라 제 몫의 숫자였습니다. 저는 제 몫을 덜어낸 뒤 최종본으로 넘겼습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21302,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[66].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[66].variants[4].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "제 형 눈엔 여전히 제가 더 가진 사람으로 보였겠지만, 실제로 제가 한 건 제 몫을 접는 일이었습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21308,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[66].variants[7].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[66].variants[7].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the final figure",
-        "ko": "말을 아낀 건 맞습니다. 제 몫 90, 형 몫 10이던 자필 연습본을 제 몫 60, 형 몫 40으로 바꾼 사실은 인정합니다. 저희 형이 다칠까 봐 두려웠습니다.",
-        "en": "On the two documents, the handwritten draft was an earlier version and the notarised copy is the final figure, and the gap between them has a reason my older brother does not ye..."
-      },
-      {
-        "row_number": 21478,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[74].variants[2].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[74].variants[2].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "도움이 오갔다고 해도 그 안에는 같이 산 세월이 있습니다. 돈만 떼어 내서 누가 누구를 먹여 살렸다고 말하고 싶진 않습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I was carrying that pain alone for a long time. I am..."
-      },
-      {
-        "row_number": 21484,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[74].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[74].variants[5].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "재판관님, 공장 도움을 떠올릴 때마다 제가 버텼다고 생각했습니다. 그 기억이 제 자존심이었습니다. 제 입장은 아직 달라지지 않았습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I was carrying that pain alone for a long time. I wi..."
-      },
-      {
-        "row_number": 21490,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[74].variants[8].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[74].variants[8].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 붙잡은 건 사실만이 아니었습니다. 그 기억이 제 자존심이었습니다. 그 의심은 그대로입니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I was carrying that pain alone for a long time. I sa..."
-      },
-      {
-        "row_number": 21538,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[77].variants[2].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[77].variants[2].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "솔직히 어머니를 의심하는 아들처럼 보이고 싶지 않았습니다. 그래서 그냥 받았습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit that some of that pain made me act before I ..."
-      },
-      {
-        "row_number": 21544,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[77].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[77].variants[5].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "재판관님, 공장 도움을 떠올릴 때마다 제가 버텼다고 생각했습니다. 그 기억이 제 자존심이었습니다. 다만 전부를 단정하진 않겠습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit that some of that pain made me act before I ..."
-      },
-      {
-        "row_number": 21550,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[77].variants[8].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[77].variants[8].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 붙잡은 건 사실만이 아니었습니다. 그 기억이 제 자존심이었습니다. 그 차이는 인정하겠습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit that some of that pain made me act before I ..."
-      },
-      {
-        "row_number": 21618,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[80].variants[2].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[80].variants[2].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제 동생일 수 있다는 쪽으로 마음이 가는 순간이 있었습니다. 솔직히 그건 제가 제일 믿기 싫은 답입니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit there was a part where my hurt closed my ear..."
-      },
-      {
-        "row_number": 21624,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[80].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[80].variants[5].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "재판관님, 돈 출처 앞에서 제 자존심이 먼저 방어로 움직입니다. 제가 모른 채 받은 도움이라는 게 더 아픕니다. 그 시점부터 의심이 더 선명해졌습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit there was a part where my hurt closed my ear..."
-      },
-      {
-        "row_number": 21630,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[80].variants[8].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[80].variants[8].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 붙잡은 건 사실만이 아니었습니다. 제가 모른 채 받은 도움이라는 게 더 아픕니다. 여전히 설명이 필요합니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit there was a part where my hurt closed my ear..."
-      },
-      {
-        "row_number": 21678,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[83].variants[2].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[83].variants[2].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "고맙다는 말도 제대로 한 적 없는 제 동생에게 기대고 살았다는 뜻 아닙니까. 저는 지금 그 사실이 제일 무섭습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I now see that my hurt became its own pressure on th..."
-      },
-      {
-        "row_number": 21684,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[83].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[83].variants[5].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "재판관님, 제 동생 돈을 받고도 모르고 산 사실이 수치스럽습니다. 그래서 처음엔 더 세게 부정했습니다. 이제는 일부 정황을 인정할 수밖에 없습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I now see that my hurt became its own pressure on th..."
-      },
-      {
-        "row_number": 21690,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[83].variants[8].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[83].variants[8].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 붙잡은 건 사실만이 아니었습니다. 그래서 처음엔 더 세게 부정했습니다. 그래서 저는 더 세게 묻는 겁니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I now see that my hurt became its own pressure on th..."
-      },
-      {
-        "row_number": 21738,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[86].variants[2].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[86].variants[2].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "감사해야 할 사람을 잘못 붙잡고 있었다는 뜻 아닙니까. 그 생각을 하니 숨이 막힙니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit that, even hurting, I had a hand in how this..."
-      },
-      {
-        "row_number": 21744,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[86].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[86].variants[5].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "재판관님, 제 동생 돈을 받고도 모르고 산 사실이 수치스럽습니다. 그래서 처음엔 더 세게 부정했습니다. 이 대목에서는 감정이 앞서는 걸 숨기기 어렵습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit that, even hurting, I had a hand in how this..."
-      },
-      {
-        "row_number": 21750,
-        "id": "applied:family-01:scripted_text:channels.interrogation.entries[86].variants[8].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/family-01.json",
-        "case_id": "family-01",
-        "key_path": "channels.interrogation.entries[86].variants[8].text",
-        "locale": "en",
-        "pattern": "the_figure",
-        "snippet": "the figure",
-        "ko": "제가 붙잡은 건 사실만이 아니었습니다. 그래서 처음엔 더 세게 부정했습니다. 그래도 화가 완전히 가라앉진 않습니다. 그때는 불안해서 버티기 어려웠습니다.",
-        "en": "When the account flow was finally pointed out to me, what hurt was not the figure but the years of silence packed inside it. I admit that, even hurting, I had a hand in how this..."
       }
     ],
     "crossBatchInconsistency": [
@@ -25176,7 +24552,7 @@
         "variants": [
           "获取原件/完整版",
           "取得原件/完整版",
-          "安全原件/完整副本"
+          "取得原件/完整本"
         ],
         "occurrences": 3,
         "examples": [
@@ -44500,6 +43876,30 @@
       },
       {
         "row_number": 6829,
+        "locale": "ja",
+        "ko": "재판관님, 비자금 3,000만 원을 숨기고 형에게 현금으로 보낸 건 제 출발점입니다. 그 사실은 인정합니다.",
+        "variants": [
+          "裁判官、隠し資金3,000万ウォンを隠し、兄に現金で渡したことが私の出発点です。その事実は認めます。",
+          "当時、甥の世話と兄の生活を一度に支えねばならず、その費用を私が動かしました。"
+        ],
+        "occurrences": 2,
+        "examples": [
+          {
+            "row_number": 6829,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[105].variants[5].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[105].variants[5].text"
+          },
+          {
+            "row_number": 6849,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[106].variants[5].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[106].variants[5].text"
+          }
+        ]
+      },
+      {
+        "row_number": 6829,
         "locale": "zh-CN",
         "ko": "재판관님, 비자금 3,000만 원을 숨기고 형에게 현금으로 보낸 건 제 출발점입니다. 그 사실은 인정합니다.",
         "variants": [
@@ -45098,6 +44498,30 @@
       },
       {
         "row_number": 7631,
+        "locale": "ja",
+        "ko": "재판관님, 형에게 3,000만 원을 현금으로 전한 사실을 인정합니다. 숨긴 책임도 제게 있습니다.",
+        "variants": [
+          "裁判官、兄に3,000万ウォンを現金で渡した事実を認めます。隠した責任も私にあります。",
+          "事情を妻にすぐ話さなかった、その点は認めます。 兄と甥の生活を支えていた事実を、もっと早く法廷で述べるべきでした。"
+        ],
+        "occurrences": 2,
+        "examples": [
+          {
+            "row_number": 7631,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[141].variants[6].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[141].variants[6].text"
+          },
+          {
+            "row_number": 7651,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[142].variants[6].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[142].variants[6].text"
+          }
+        ]
+      },
+      {
+        "row_number": 7631,
         "locale": "zh-CN",
         "ko": "재판관님, 형에게 3,000만 원을 현금으로 전한 사실을 인정합니다. 숨긴 책임도 제게 있습니다.",
         "variants": [
@@ -45315,6 +44739,7 @@
         "locale": "ja",
         "ko": "재판관님, 제가 위임장을 조작해 공동 적금 2,000만 원을 해지했습니다. 그 선택을 두려움으로 설명할 수는 있어도 정당화할 수는 없습니다.",
         "variants": [
+          "裁判官、私が委任状を偽造して共同積立預金2,000万ウォンを解約しました。その選択を恐怖で説明することはできても、正当化はできません。",
           "ブラックボックスの記録を見た瞬間、頭の中で整理がつきました。 恐怖と疑念に押されて、夫の名を書類に写しました。罪は私です。",
           "私は罪を犯しました。委任状の署名を偽り、共同の金を動かし、投資で全てを失いました。判決を受け入れます。"
         ],
@@ -45981,6 +45406,36 @@
       },
       {
         "row_number": 8511,
+        "locale": "ja",
+        "ko": "재판관님, 공동 적금 2,000만 원을 제 판단으로 해지했습니다. 수치심 때문에 끝까지 말하지 못했습니다.",
+        "variants": [
+          "裁判官、共同積立預金2,000万ウォンを私の判断で解約しました。恥ずかしくて最後まで言えませんでした。",
+          "共同口座の動きに違和感を覚えていました。 判決を待つ立場として、整わぬ言葉を重ねるつもりはありません。"
+        ],
+        "occurrences": 3,
+        "examples": [
+          {
+            "row_number": 8511,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[51].variants[6].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[51].variants[6].text"
+          },
+          {
+            "row_number": 8531,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[52].variants[6].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[52].variants[6].text"
+          },
+          {
+            "row_number": 8551,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[53].variants[6].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[53].variants[6].text"
+          }
+        ]
+      },
+      {
+        "row_number": 8511,
         "locale": "zh-CN",
         "ko": "재판관님, 공동 적금 2,000만 원을 제 판단으로 해지했습니다. 수치심 때문에 끝까지 말하지 못했습니다.",
         "variants": [
@@ -46203,6 +45658,30 @@
         "variants": [
           "Now that I have to be plain: the thirty million went, in cash, to my older brother for personal-debt rehabilitation, ...",
           "Each step of secrecy around the money was about protecting my in-laws from a story I thought I could absorb alone — n..."
+        ],
+        "occurrences": 2,
+        "examples": [
+          {
+            "row_number": 8889,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[69].variants[5].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[69].variants[5].text"
+          },
+          {
+            "row_number": 8929,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[70].variants[5].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[70].variants[5].text"
+          }
+        ]
+      },
+      {
+        "row_number": 8889,
+        "locale": "ja",
+        "ko": "재판관님, 비자금 3,000만 원을 형에게 현금으로 전달했습니다. 그 사실은 인정합니다.",
+        "variants": [
+          "裁判官、隠し資金3,000万ウォンを兄に現金で渡しました。その事実は認めます。",
+          "当時、甥の世話と兄の生活を一度に支えねばならず、その費用を私が動かしました。"
         ],
         "occurrences": 2,
         "examples": [
@@ -47254,6 +46733,7 @@
         "ko": "재판관님이 끝까지 들어주실 거라는 믿음이 생깁니다. 그래서 한 발 더 말씀드리겠습니다.",
         "variants": [
           "我相信裁判官会听到最后。所以我再多说一步。",
+          "比起最初，我现在对法官说话愿意多放出一点。我没把握全部讲完，但开始往那个方向走。",
           "比起最初，我现在对裁判官说话愿意多放出一点。我没把握全部讲完，但开始往那个方向走。"
         ],
         "occurrences": 3,
@@ -50561,6 +50041,7 @@
           "療養院の面会記録に私の名で残った行動から、認める順序で並べます。 療養院の面会記録に残った行為の順序を、まず日付順で並べます。",
           "療養院の面会記録に私の名で残った行動から、認める順序で並べます。 療養院の面会記録に表れた範囲は認め、それ以外は控えます。",
           "療養院の面会記録の中身は資料の通りで、私はその枠で答えます。 療養院の面会記録の前で、私の言葉が遅れていたことについてはお詫びします。",
+          "訪問と遺言書の話が重なった日があります。助けと介入の線を私が曖昧にした部分は説明します。",
           "療養院の面会記録の中身は資料の通りで、私はその枠で答えます。 療養院の面会記録の枠の中で、私が直接した行為だけを先に申告します。"
         ],
         "occurrences": 14,
@@ -55211,8 +54692,8 @@
         "locale": "zh-CN",
         "ko": "전 요양보호사 증언을 들으면 종이를 반복해 읽어드린 장면이 남습니다. 영향이 없었다고 보기 어렵습니다.",
         "variants": [
-          "这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。",
-          "在这里我不会让步。这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。我已经把话放在桌面上。"
+          "这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。",
+          "在这里我不会让步。这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。我已经把话放在桌面上。"
         ],
         "occurrences": 14,
         "examples": [
@@ -55337,8 +54818,8 @@
         "locale": "zh-CN",
         "ko": "전 요양보호사 증언을 들으면 종이를 반복해 읽어드린 장면이 남습니다. 영향이 없었다고 보기 어렵습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
         "variants": [
-          "我必须把这点说清楚。这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。这是我的立场。",
-          "这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。"
+          "我必须把这点说清楚。这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。这是我的立场。",
+          "这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。"
         ],
         "occurrences": 7,
         "examples": [
@@ -55463,8 +54944,8 @@
         "locale": "zh-CN",
         "ko": "양쪽 말을 함께 놓고 봐야 합니다. 전 요양보호사 증언을 들으면 종이를 반복해 읽어드린 장면이 남습니다. 영향이 없었다고 보기 어렵습니다.",
         "variants": [
-          "在这里我不会让步。这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。我已经把话放在桌面上。",
-          "我必须把这点说清楚。这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。这是我的立场。"
+          "在这里我不会让步。这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。我已经把话放在桌面上。",
+          "我必须把这点说清楚。这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。这是我的立场。"
         ],
         "occurrences": 7,
         "examples": [
@@ -55589,8 +55070,8 @@
         "locale": "zh-CN",
         "ko": "전 요양보호사 증언을 들으면 종이를 반복해 읽어드린 장면이 남습니다. 영향이 없었다고 보기 어렵습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
-          "我必须把这点说清楚。这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。这是我的立场。",
-          "这份关于亲笔练习本上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。"
+          "我必须把这点说清楚。这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。这是我的立场。",
+          "这份关于亲笔遗嘱草稿上的写法的资料，明显跟我多年照顾母亲的经历不相符。我必须先把这一点讲清楚。"
         ],
         "occurrences": 7,
         "examples": [
@@ -57781,8 +57262,8 @@
         "locale": "zh-CN",
         "ko": "증언은 동생이 어머니께 문서를 읽어드리고 형이 오기 전 마치려 했다는 흐름을 보여 줍니다.",
         "variants": [
-          "从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。",
-          "在这里我不会让步。从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。我已经把话放在桌面上。"
+          "从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。",
+          "在这里我不会让步。从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。我已经把话放在桌面上。"
         ],
         "occurrences": 14,
         "examples": [
@@ -57907,8 +57388,8 @@
         "locale": "zh-CN",
         "ko": "증언은 동생이 어머니께 문서를 읽어드리고 형이 오기 전 마치려 했다는 흐름을 보여 줍니다. 양쪽 말을 함께 놓고 봐야 합니다.",
         "variants": [
-          "我必须把这点说清楚。从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。这是我的立场。",
-          "从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。"
+          "我必须把这点说清楚。从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。这是我的立场。",
+          "从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。"
         ],
         "occurrences": 7,
         "examples": [
@@ -58033,8 +57514,8 @@
         "locale": "zh-CN",
         "ko": "양쪽 말을 함께 놓고 봐야 합니다. 증언은 동생이 어머니께 문서를 읽어드리고 형이 오기 전 마치려 했다는 흐름을 보여 줍니다.",
         "variants": [
-          "在这里我不会让步。从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。我已经把话放在桌面上。",
-          "我必须把这点说清楚。从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。这是我的立场。"
+          "在这里我不会让步。从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。我已经把话放在桌面上。",
+          "我必须把这点说清楚。从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。这是我的立场。"
         ],
         "occurrences": 7,
         "examples": [
@@ -58159,8 +57640,8 @@
         "locale": "zh-CN",
         "ko": "증언은 동생이 어머니께 문서를 읽어드리고 형이 오기 전 마치려 했다는 흐름을 보여 줍니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
-          "我必须把这点说清楚。从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。这是我的立场。",
-          "从亲笔练习本上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。"
+          "我必须把这点说清楚。从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。这是我的立场。",
+          "从亲笔遗嘱草稿上的写法里能看出几个明显的落差。这些落差不能只用一句\"母亲一个人的意思\"盖过去。"
         ],
         "occurrences": 7,
         "examples": [
@@ -59390,7 +58871,8 @@
         "ko": "제가 어머니께 보낸 3억이 형의 공장으로 전달됐습니다. 형이 그 돈을 어머니 돈으로 알게 둔 책임도 제게 있습니다. 제가 직접 설명해야 할 부분입니다.",
         "variants": [
           "年代物の口座の流れのうち、私が直接した行為に当たる部分を先にお出しします。 年代物の口座の流れに対する解釈と、私の行為そのものは別に扱います。",
-          "年代物の口座の流れに私の名で残った行動から、認める順序で並べます。 年代物の口座の流れを踏まえて、私の側の説明を改めて整えます。"
+          "年代物の口座の流れに私の名で残った行動から、認める順序で並べます。 年代物の口座の流れを踏まえて、私の側の説明を改めて整えます。",
+          "私が母に送った3億ウォンが兄の工場に渡りました。兄にそのお金を母のお金だと思わせたままにした責任も私にあります。私が直接説明すべき部分です。"
         ],
         "occurrences": 7,
         "examples": [
@@ -59813,8 +59295,8 @@
         "locale": "zh-CN",
         "ko": "이 증언은 동생의 도움과 압박이 겹친 장면을 보여 줍니다. 다만 모든 뜻이 사라졌다는 결론은 따로 봐야 합니다.",
         "variants": [
-          "亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。",
-          "在这里我不会让步。亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。我已经把话放在桌面上。"
+          "亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。",
+          "在这里我不会让步。亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。我已经把话放在桌面上。"
         ],
         "occurrences": 14,
         "examples": [
@@ -59939,8 +59421,8 @@
         "locale": "zh-CN",
         "ko": "이 증언은 동생의 도움과 압박이 겹친 장면을 보여 줍니다. 다만 모든 뜻이 사라졌다는 결론은 따로 봐야 합니다. 양쪽 말을 함께 놓고 봐야 합니다.",
         "variants": [
-          "我必须把这点说清楚。亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。",
-          "亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。"
+          "我必须把这点说清楚。亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。",
+          "亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。"
         ],
         "occurrences": 7,
         "examples": [
@@ -60065,8 +59547,8 @@
         "locale": "zh-CN",
         "ko": "양쪽 말을 함께 놓고 봐야 합니다. 이 증언은 동생의 도움과 압박이 겹친 장면을 보여 줍니다. 다만 모든 뜻이 사라졌다는 결론은 따로 봐야 합니다.",
         "variants": [
-          "在这里我不会让步。亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。我已经把话放在桌面上。",
-          "我必须把这点说清楚。亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。"
+          "在这里我不会让步。亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。我已经把话放在桌面上。",
+          "我必须把这点说清楚。亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。"
         ],
         "occurrences": 7,
         "examples": [
@@ -60191,8 +59673,8 @@
         "locale": "zh-CN",
         "ko": "이 증언은 동생의 도움과 압박이 겹친 장면을 보여 줍니다. 다만 모든 뜻이 사라졌다는 결론은 따로 봐야 합니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
-          "我必须把这点说清楚。亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。",
-          "亲笔练习本上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。"
+          "我必须把这点说清楚。亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。",
+          "亲笔遗嘱草稿上的写法和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。"
         ],
         "occurrences": 7,
         "examples": [
@@ -62618,8 +62100,8 @@
         "locale": "zh-CN",
         "ko": "종이를 읽어드린 일은 있습니다. 어머니께 내용을 확인시켜 드리려던 것이었습니다.",
         "variants": [
-          "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。",
-          "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+          "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。",
+          "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
         ],
         "occurrences": 14,
         "examples": [
@@ -62744,8 +62226,8 @@
         "locale": "zh-CN",
         "ko": "종이를 읽어드린 일은 있습니다. 어머니께 내용을 확인시켜 드리려던 것이었습니다. 제가 직접 설명해야 할 부분입니다.",
         "variants": [
-          "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。",
-          "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+          "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。",
+          "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
         ],
         "occurrences": 7,
         "examples": [
@@ -62870,8 +62352,8 @@
         "locale": "zh-CN",
         "ko": "제가 직접 설명해야 할 부분입니다. 종이를 읽어드린 일은 있습니다. 어머니께 내용을 확인시켜 드리려던 것이었습니다.",
         "variants": [
-          "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。",
-          "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+          "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。",
+          "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
         ],
         "occurrences": 7,
         "examples": [
@@ -62996,8 +62478,8 @@
         "locale": "zh-CN",
         "ko": "종이를 읽어드린 일은 있습니다. 어머니께 내용을 확인시켜 드리려던 것이었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
-          "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。",
-          "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+          "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。",
+          "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
         ],
         "occurrences": 7,
         "examples": [
@@ -64798,8 +64280,8 @@
         "locale": "zh-CN",
         "ko": "형이 오기 전 마치려 했다는 말은 제가 서두른 것처럼 보일 수 있습니다. 그 점은 설명하겠습니다.",
         "variants": [
-          "亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。",
-          "把顺序拉回到事实，亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。剩下的请按程序来。"
+          "亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。",
+          "把顺序拉回到事实，亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。剩下的请按程序来。"
         ],
         "occurrences": 14,
         "examples": [
@@ -64924,8 +64406,8 @@
         "locale": "zh-CN",
         "ko": "형이 오기 전 마치려 했다는 말은 제가 서두른 것처럼 보일 수 있습니다. 그 점은 설명하겠습니다. 제가 직접 설명해야 할 부분입니다.",
         "variants": [
-          "请容我先说一句。亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。我能说的就到这里。",
-          "亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。"
+          "请容我先说一句。亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。我能说的就到这里。",
+          "亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。"
         ],
         "occurrences": 7,
         "examples": [
@@ -65050,8 +64532,8 @@
         "locale": "zh-CN",
         "ko": "제가 직접 설명해야 할 부분입니다. 형이 오기 전 마치려 했다는 말은 제가 서두른 것처럼 보일 수 있습니다. 그 점은 설명하겠습니다.",
         "variants": [
-          "把顺序拉回到事实，亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。剩下的请按程序来。",
-          "请容我先说一句。亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。我能说的就到这里。"
+          "把顺序拉回到事实，亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。剩下的请按程序来。",
+          "请容我先说一句。亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。我能说的就到这里。"
         ],
         "occurrences": 7,
         "examples": [
@@ -65176,8 +64658,8 @@
         "locale": "zh-CN",
         "ko": "형이 오기 전 마치려 했다는 말은 제가 서두른 것처럼 보일 수 있습니다. 그 점은 설명하겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
-          "请容我先说一句。亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。我能说的就到这里。",
-          "亲笔练习本上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。"
+          "请容我先说一句。亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。我能说的就到这里。",
+          "亲笔遗嘱草稿上的写法的内容我承认。问题在于谁在哪一步替母亲做了什么，这一段我愿意一段一段讲。"
         ],
         "occurrences": 7,
         "examples": [
@@ -65514,175 +64996,6 @@
             "key_path": "channels.evidence_present.entries[50].variants[2].text"
           }
         ]
-      },
-      {
-        "row_number": 16478,
-        "locale": "ja",
-        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 공증본은 60:40이고, 별도 자필 연습본과 방향이 다릅니다. 그래도 최종 문서에 손댄 책임은 남습니다.",
-        "variants": [
-          "分配比率が記された書類の写しに対して私が組み立てた読みを、まずお伝えします。 責任の範囲を引き受けたうえで、まだ控えている背景があります。",
-          "分配比率が記された書類の写しを見て私が結論を急いだ部分から、先に整理します。 相手の沈黙が長かった分、最悪の絵が先に出てしまったのは事実です。"
-        ],
-        "occurrences": 6,
-        "examples": [
-          {
-            "row_number": 16478,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[170].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[170].variants[2].text"
-          },
-          {
-            "row_number": 16778,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[2].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[2].variants[2].text"
-          },
-          {
-            "row_number": 17058,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[2].text"
-          },
-          {
-            "row_number": 17068,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[7].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[7].text"
-          },
-          {
-            "row_number": 17088,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[50].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[50].variants[2].text"
-          }
-        ]
-      },
-      {
-        "row_number": 16478,
-        "locale": "zh-CN",
-        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 공증본은 60:40이고, 별도 자필 연습본과 방향이 다릅니다. 그래도 최종 문서에 손댄 책임은 남습니다.",
-        "variants": [
-          "在这里我不会让步。公证副本上的份额安排和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。我已经把话放在桌面上。",
-          "我必须把这点说清楚。公证副本上的份额安排和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。"
-        ],
-        "occurrences": 6,
-        "examples": [
-          {
-            "row_number": 16478,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[170].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[170].variants[2].text"
-          },
-          {
-            "row_number": 16778,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[2].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[2].variants[2].text"
-          },
-          {
-            "row_number": 17058,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[2].text"
-          },
-          {
-            "row_number": 17068,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[7].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[7].text"
-          },
-          {
-            "row_number": 17088,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[50].variants[2].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[50].variants[2].text"
-          }
-        ]
-      },
-      {
-        "row_number": 16482,
-        "locale": "en",
-        "ko": "공증본은 60:40이고, 별도 자필 연습본과 방향이 다릅니다. 그래도 최종 문서에 손댄 책임은 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
-        "variants": [
-          "Looking at the distribution ratio document, the figures do not line up with what our mother said while she was lucid....",
-          "Looking at the distribution ratio document, the figures do not line up with what our mother said while she was lucid....",
-          "Your Honor, this copy of the distribution ratio document does not match how our mother weighed the years of care. I w..."
-        ],
-        "occurrences": 6,
-        "examples": [
-          {
-            "row_number": 16482,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[170].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[170].variants[4].text"
-          },
-          {
-            "row_number": 16782,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[2].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[2].variants[4].text"
-          },
-          {
-            "row_number": 17062,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[4].text"
-          },
-          {
-            "row_number": 17072,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[9].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[9].text"
-          },
-          {
-            "row_number": 17092,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[50].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[50].variants[4].text"
-          }
-        ]
-      },
-      {
-        "row_number": 16482,
-        "locale": "ja",
-        "ko": "공증본은 60:40이고, 별도 자필 연습본과 방향이 다릅니다. 그래도 최종 문서에 손댄 책임은 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
-        "variants": [
-          "分配比率が記された書類の写しを見て私が結論を急いだ部分から、先に整理します。 判断を固めた背景にあった不安を、ここで隠しません。",
-          "分配比率が記された書類の写しは相手の側のものですが、私の解釈で扱った経緯から説明します。 分配比率が記された書類の写しの前で、私の判断にまだ説明が残ることを認めます。"
-        ],
-        "occurrences": 6,
-        "examples": [
-          {
-            "row_number": 16482,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[170].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[170].variants[4].text"
-          },
-          {
-            "row_number": 16782,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[2].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[2].variants[4].text"
-          },
-          {
-            "row_number": 17062,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[4].text"
-          },
-          {
-            "row_number": 17072,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[49].variants[9].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[49].variants[9].text"
-          },
-          {
-            "row_number": 17092,
-            "id": "applied:family-01:scripted_text:channels.evidence_present.entries[50].variants[4].text",
-            "source": "src/data/scriptedText/family-01.json",
-            "key_path": "channels.evidence_present.entries[50].variants[4].text"
-          }
-        ]
       }
     ],
     "japaneseParticleAnomaly": [
@@ -65864,7 +65177,7 @@
         "locale": "ja",
         "pattern": "repeated_particle",
         "snippet": "では",
-        "ja": "……はい、わかりました。ですが裁判官、これは順番に聞くかどうかの問題ではありません。私の夫が毎日同じ場所に通い、深夜に通話までしていて、何の説明もしないこと自体が問題なのです。"
+        "ja": "……はい、分かりました。ですが裁判官、これは順番に聞くかどうかの問題ではありません。夫が毎日同じ場所に通い、早朝に通話までしていながら、何も説明しないこと自体が問題なのです。"
       },
       {
         "row_number": 539,
@@ -65900,7 +65213,7 @@
         "locale": "ja",
         "pattern": "repeated_particle",
         "snippet": "では",
-        "ja": "裁判官、それだけではありません。深夜にドアの隙間から、夫が誰かと長く電話している声を聞いたこともあります。"
+        "ja": "裁判官、それだけではありません。早朝に、ドアの隙間から夫が誰かと長く電話している声を聞いたこともあります。"
       },
       {
         "row_number": 557,
@@ -66767,6 +66080,18 @@
         "ja": "事実追及。不倫否定とその横にある沈黙について、確認済みの事実と推定を切り分け、事実関係の水準で答えさせる。 S5までは家族の正体を開示しない。"
       },
       {
+        "row_number": 1122,
+        "id": "applied:spouse-01:scripted_judge_questions:judgeQuestions[24].variants[1].text",
+        "category": "scripted_judge_questions",
+        "source": "src/data/scriptedAngles/spouse-01_judge_questions.json",
+        "case_id": "spouse-01",
+        "key_path": "judgeQuestions[24].variants[1].text",
+        "locale": "ja",
+        "pattern": "noun_particle_loop",
+        "snippet": "根拠を時系列で整理",
+        "ja": "オフィステルへの出入り、早朝の通話、車内のレシートがいずれもあなた側から生じたことは事実ですか。その中で不倫とは無関係だと考える根拠を時系列で整理してください。"
+      },
+      {
         "row_number": 1123,
         "id": "applied:spouse-01:scripted_judge_questions:judgeQuestions[24].variants[2].behaviorHint",
         "category": "scripted_judge_questions",
@@ -67208,7 +66533,7 @@
         "locale": "ja",
         "pattern": "repeated_particle",
         "snippet": "では",
-        "ja": "イ・ジュノさん、すべてを一度に説明させる意図ではありません。説明しないままにしたオフィステル訪問、通話、レシートのうち、最も誤解を招きやすかった一点を整理してください。"
+        "ja": "イ・ジュノさん、すべてを一度に話せという意味ではありません。ただ、早朝の通話一件だけでも、どのような連絡だったのか今整理できますか。"
       },
       {
         "row_number": 1412,
@@ -73163,6 +72488,18 @@
         "ja": "正直に申し上げますと、当時の判断には言いきれない事情がありました。"
       },
       {
+        "row_number": 7621,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[141].variants[1].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[141].variants[1].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "には",
+        "ja": "私には隠していた金があり、3,000万ウォンを現金で渡し、義実家の問題も隠し、オフィステルへの出入りも説明しませんでした。すべて私の責任です。受け入れます。"
+      },
+      {
         "row_number": 7627,
         "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[141].variants[4].text",
         "category": "scripted_text",
@@ -73209,6 +72546,18 @@
         "pattern": "repeated_particle",
         "snippet": "はで",
         "ja": "毎日決まった時間、同じ建物。私はもう答えを察していました。 あの選択を後で取り戻すことはできません。"
+      },
+      {
+        "row_number": 7709,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[15].variants[5].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[15].variants[5].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "裁判官、私が委任状を偽造して共同積立預金2,000万ウォンを解約しました。その選択を恐怖で説明することはできても、正当化はできません。"
       },
       {
         "row_number": 7727,
@@ -74615,6 +73964,18 @@
         "ja": "家族の事情を口にできなかったのは、私の弱さです。"
       },
       {
+        "row_number": 8939,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[71].variants[0].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[71].variants[0].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "には",
+        "ja": "個人口座の隠し資金を現金で引き出して兄に渡しました。個人再生中の兄が口座で受け取れなかったからですが、妻には最後まで言えませんでした。互いに隠し、互いを疑ってしまったのです。二人とも間違っていました。"
+      },
+      {
         "row_number": 8955,
         "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[71].variants[8].text",
         "category": "scripted_text",
@@ -75635,18 +74996,6 @@
         "ja": "共同口座にはそのまま手をつけていない、という言葉に、私は嘘をつきました。 これ以上は、整理して申し上げます。"
       },
       {
-        "row_number": 9279,
-        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[87].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.interrogation.entries[87].variants[0].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "がで",
-        "ja": "共同積立金三千万ウォンを解約する際、委任状の夫の署名は私が書きました。あの瞬間、夫が別の生活を持ったと確信し、お金が流れる前に動かねばと思い込みました。偽造が罪と知りながら、恐怖が判断を呑み込みました。その金は投資先に全額入れ、詐欺で全て失いました。今は裁判官をまっすぐ見ることができません。"
-      },
-      {
         "row_number": 9283,
         "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[87].variants[2].text",
         "category": "scripted_text",
@@ -75679,8 +75028,8 @@
         "key_path": "channels.interrogation.entries[88].variants[0].text",
         "locale": "ja",
         "pattern": "repeated_particle",
-        "snippet": "がで",
-        "ja": "共同積立金三千万ウォンを解約する際、委任状の夫の署名は私が書きました。あの瞬間、夫が別の生活を持ったと確信し、お金が流れる前に動かねばと思い込みました。偽造が罪と知りながら、恐怖が判断を呑み込みました。その金は投資先に全額入れ、詐欺で全て失いました。今は裁判官をまっすぐ見ることができません。"
+        "snippet": "ではで",
+        "ja": "犯罪だとは分かっています。私の名義だけではできないことだったので、夫の名前を借りました。その瞬間は、生き残ることが先だと思っていました。"
       },
       {
         "row_number": 9303,
@@ -75705,18 +75054,6 @@
         "pattern": "repeated_particle",
         "snippet": "には",
         "ja": "夫を裏切った金の使い方は私自身の判断でした。家族の事情を遅く知ったことが言い訳にはなりません。"
-      },
-      {
-        "row_number": 9319,
-        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[89].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.interrogation.entries[89].variants[0].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "がで",
-        "ja": "共同積立金三千万ウォンを解約する際、委任状の夫の署名は私が書きました。あの瞬間、夫が別の生活を持ったと確信し、お金が流れる前に動かねばと思い込みました。偽造が罪と知りながら、恐怖が判断を呑み込みました。その金は投資先に全額入れ、詐欺で全て失いました。今は裁判官をまっすぐ見ることができません。"
       },
       {
         "row_number": 9323,
@@ -77661,30 +76998,6 @@
         "pattern": "noun_particle_loop",
         "snippet": "意味を裁判官が整理",
         "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
-      },
-      {
-        "row_number": 9880,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[4].variants[1].behaviorHint",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[4].variants[1].behaviorHint",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "意味を裁判官が整理",
-        "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
-      },
-      {
-        "row_number": 9882,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[4].variants[2].behaviorHint",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[4].variants[2].behaviorHint",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "意味を裁判官が整理",
-        "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
       }
     ],
     "chineseKoreanWordOrder": [
@@ -79149,8 +78462,8 @@
         "key_path": "channels.evidence_present.entries[15].variants[0].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 16276,
@@ -79161,8 +78474,8 @@
         "key_path": "channels.evidence_present.entries[15].variants[1].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 16278,
@@ -79173,8 +78486,8 @@
         "key_path": "channels.evidence_present.entries[15].variants[2].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 16280,
@@ -79185,8 +78498,8 @@
         "key_path": "channels.evidence_present.entries[15].variants[3].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 16282,
@@ -79197,8 +78510,8 @@
         "key_path": "channels.evidence_present.entries[15].variants[4].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 16614,
@@ -80109,8 +79422,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[0].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17856,
@@ -80121,8 +79434,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[1].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17858,
@@ -80133,8 +79446,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[2].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17860,
@@ -80145,8 +79458,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[3].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17862,
@@ -80157,8 +79470,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[4].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17864,
@@ -80169,8 +79482,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[5].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17866,
@@ -80181,8 +79494,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[6].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17868,
@@ -80193,8 +79506,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[7].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17870,
@@ -80205,8 +79518,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[8].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17872,
@@ -80217,8 +79530,8 @@
         "key_path": "channels.evidence_present.entries[87].variants[9].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17874,
@@ -80229,8 +79542,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[0].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17876,
@@ -80241,8 +79554,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[1].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17878,
@@ -80253,8 +79566,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[2].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17880,
@@ -80265,8 +79578,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[3].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17882,
@@ -80277,8 +79590,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[4].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17884,
@@ -80289,8 +79602,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[5].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17886,
@@ -80301,8 +79614,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[6].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17888,
@@ -80313,8 +79626,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[7].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17890,
@@ -80325,8 +79638,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[8].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17892,
@@ -80337,8 +79650,8 @@
         "key_path": "channels.evidence_present.entries[88].variants[9].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17894,
@@ -80349,8 +79662,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[0].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17896,
@@ -80361,8 +79674,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[1].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17898,
@@ -80373,8 +79686,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[2].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17900,
@@ -80385,8 +79698,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[3].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17902,
@@ -80397,8 +79710,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[4].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17904,
@@ -80409,8 +79722,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[5].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17906,
@@ -80421,8 +79734,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[6].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 17908,
@@ -80433,8 +79746,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[7].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "请容我先说一句。这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "请容我先说一句。这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。我能说的就到这里。"
       },
       {
         "row_number": 17910,
@@ -80445,8 +79758,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[8].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "把顺序拉回到事实，这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "把顺序拉回到事实，这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。剩下的请按程序来。"
       },
       {
         "row_number": 17912,
@@ -80457,8 +79770,8 @@
         "key_path": "channels.evidence_present.entries[89].variants[9].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
-        "snippet": "这份关于亲笔练习本上的写法的材料是真实的",
-        "target": "这份关于亲笔练习本上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
+        "snippet": "这份关于亲笔遗嘱草稿上的写法的材料是真实的",
+        "target": "这份关于亲笔遗嘱草稿上的写法的材料是真实的。我不会去否认它，只是希望它被放到完整的过程里看。"
       },
       {
         "row_number": 18124,
@@ -80569,30 +79882,6 @@
         "target": "如果先看事实，我会说。我改过的数字和长期隐瞒的钱是分开的，但彼此相连。"
       },
       {
-        "row_number": 23915,
-        "id": "applied:friend-01:case_generated:context.description",
-        "category": "case_generated",
-        "source": "src/data/cases/generated/friend-01.json",
-        "case_id": "friend-01",
-        "key_path": "context.description",
-        "locale": "zh-CN",
-        "pattern": "stacked_de",
-        "snippet": "与我分手的前最好的朋友继续联系我的",
-        "target": "与我分手的前最好的朋友继续联系我的未婚夫。光是看到婚礼前三周的那一幕，任何人都会认为这位朋友已经越界了。"
-      },
-      {
-        "row_number": 24782,
-        "id": "applied:friend-01:scripted_judge_questions:judgeQuestions[102].variants[1].text",
-        "category": "scripted_judge_questions",
-        "source": "src/data/scriptedAngles/friend-01_judge_questions.json",
-        "case_id": "friend-01",
-        "key_path": "judgeQuestions[102].variants[1].text",
-        "locale": "zh-CN",
-        "pattern": "stacked_de",
-        "snippet": "请区分您对群聊中附和扩散的过程亲自确认的部分和推定的",
-        "target": "宋多恩女士，请区分您对群聊中附和扩散的过程亲自确认的部分和推定的部分。"
-      },
-      {
         "row_number": 24792,
         "id": "applied:friend-01:scripted_judge_questions:judgeQuestions[103].variants[1].text",
         "category": "scripted_judge_questions",
@@ -80603,18 +79892,6 @@
         "pattern": "stacked_de",
         "snippet": "请区分您对群聊中附和扩散的过程亲自确认的部分和推定的",
         "target": "崔秀敏女士，请区分您对群聊中附和扩散的过程亲自确认的部分和推定的部分。"
-      },
-      {
-        "row_number": 24842,
-        "id": "applied:friend-01:scripted_judge_questions:judgeQuestions[108].variants[1].text",
-        "category": "scripted_judge_questions",
-        "source": "src/data/scriptedAngles/friend-01_judge_questions.json",
-        "case_id": "friend-01",
-        "key_path": "judgeQuestions[108].variants[1].text",
-        "locale": "zh-CN",
-        "pattern": "stacked_de",
-        "snippet": "请区分您对反复把秀敏推成反面角色的框架亲自确认的部分和推定的",
-        "target": "宋多恩女士，请区分您对反复把秀敏推成反面角色的框架亲自确认的部分和推定的部分。"
       },
       {
         "row_number": 24852,
@@ -80639,18 +79916,6 @@
         "pattern": "stacked_de",
         "snippet": "天联系的顺序与目的中你直接确认的",
         "target": "崔秀敏女士，请把9天联系的顺序与目的中你直接确认的部分，以及后来通过说明或推测得知的部分分开。"
-      },
-      {
-        "row_number": 25068,
-        "id": "applied:friend-01:scripted_judge_questions:judgeQuestions[1].variants[4].text",
-        "category": "scripted_judge_questions",
-        "source": "src/data/scriptedAngles/friend-01_judge_questions.json",
-        "case_id": "friend-01",
-        "key_path": "judgeQuestions[1].variants[4].text",
-        "locale": "zh-CN",
-        "pattern": "stacked_de",
-        "snippet": "天联系的顺序与目的周围已确认的",
-        "target": "崔秀敏女士，请只使用9天联系的顺序与目的周围已确认的事实，说明它如何连接到你之前的陈述。"
       },
       {
         "row_number": 25500,
@@ -80699,18 +79964,6 @@
         "pattern": "stacked_de",
         "snippet": "天联系的顺序与目的产生的",
         "target": "崔秀敏女士，请说明围绕9天联系的顺序与目的产生的情绪顺序，不要加入最终判断。"
-      },
-      {
-        "row_number": 25642,
-        "id": "applied:friend-01:scripted_judge_questions:judgeQuestions[72].variants[1].text",
-        "category": "scripted_judge_questions",
-        "source": "src/data/scriptedAngles/friend-01_judge_questions.json",
-        "case_id": "friend-01",
-        "key_path": "judgeQuestions[72].variants[1].text",
-        "locale": "zh-CN",
-        "pattern": "stacked_de",
-        "snippet": "请区分您对旧日决裂前聊天中的空白亲自确认的部分和推定的",
-        "target": "宋多恩女士，请区分您对旧日决裂前聊天中的空白亲自确认的部分和推定的部分。"
       },
       {
         "row_number": 25652,
@@ -80923,18 +80176,6 @@
         "source": "src/data/scriptedText/friend-01.json",
         "case_id": "friend-01",
         "key_path": "channels.contradiction_pursuit.entries[17].variants[9].text",
-        "locale": "zh-CN",
-        "pattern": "stacked_de",
-        "snippet": "通讯次数和我那帖里的措辞之间的距离是真的",
-        "target": "我并不是把先前的话推翻。通讯次数和我那帖里的措辞之间的距离是真的，那一点我没有移动。"
-      },
-      {
-        "row_number": 26255,
-        "id": "applied:friend-01:scripted_text:channels.contradiction_pursuit.entries[1].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/friend-01.json",
-        "case_id": "friend-01",
-        "key_path": "channels.contradiction_pursuit.entries[1].variants[0].text",
         "locale": "zh-CN",
         "pattern": "stacked_de",
         "snippet": "通讯次数和我那帖里的措辞之间的距离是真的",
@@ -84110,7 +83351,7 @@
             "id": "applied:friend-01:case_generated:combinationLab.nodes[9].label",
             "source": "src/data/cases/generated/friend-01.json",
             "key_path": "combinationLab.nodes[9].label",
-            "target": "w-1 Kim Se-ra Testimony Angle",
+            "target": "w-1 Kim Se-ra testimony angle",
             "example_index": 0
           },
           {
@@ -84586,7 +83827,7 @@
             "id": "applied:friend-01:case_generated:combinationLab.nodes[10].label",
             "source": "src/data/cases/generated/friend-01.json",
             "key_path": "combinationLab.nodes[10].label",
-            "target": "w-2 Park Jun-hyeok Testimony Angle",
+            "target": "w-2 Park Jun-hyeok testimony angle",
             "example_index": 0
           },
           {
@@ -84919,7 +84160,7 @@
             "id": "applied:friend-01:case_generated:combinationLab.nodes[11].label",
             "source": "src/data/cases/generated/friend-01.json",
             "key_path": "combinationLab.nodes[11].label",
-            "target": "w-3 Oh Mi-gyeong Testimony Angle",
+            "target": "w-3 Oh Mi-gyeong testimony angle",
             "example_index": 0
           },
           {
@@ -85575,7 +84816,7 @@
             "id": "applied:friend-01:case_generated:evidence[1].viewerData.chat.messages[8].text",
             "source": "src/data/cases/generated/friend-01.json",
             "key_path": "evidence[1].viewerData.chat.messages[8].text",
-            "target": "I’m exhausted hearing this again right before my wedding. I’ll tell Tae-yun to handle it first.",
+            "target": "I am exhausted hearing this again right before my wedding. I will tell Tae-yoon that I will handle it first.",
             "example_index": 2
           },
           {
