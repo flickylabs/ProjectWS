@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "contact_timeline",
-      "label": "無応答と反復の理由",
-      "description": "連絡回数が増えた理由が執着なのか、返事がなく確認の依頼が繰り返されたのかを切り分ける。"
+      "label": "9日間の連絡の時系列",
+      "description": "電話6回、メッセージ11件が続いた期間・時間帯・応答状況を分けて確認する。"
     },
     {
       "disputeId": "d-1",
@@ -31,8 +31,8 @@
     {
       "disputeId": "d-2",
       "angleId": "message_sequence",
-      "label": "非公開の頼みによる圧力",
-      "description": "婚約者がダウンに隠れてチェ・スミンに頼みごとをしたり、私的なやり取りへ引き込んだ流れを確認する。"
+      "label": "メッセージの前後関係",
+      "description": "婚約者とチェ・スミンの間のメッセージについて、始まりの時点、夜の時間帯、返信の順序を確認する。"
     },
     {
       "disputeId": "d-2",
@@ -55,7 +55,7 @@
     {
       "disputeId": "d-3",
       "angleId": "father_request_signal",
-      "label": "父の問題を避けた地点",
+      "label": "父からの頼みを示す兆候",
       "description": "ソン・ダウンが父の頼みを家族のこととしてだけ見て、気にかかる部分を遅れて見た過程を確認する。"
     },
     {
@@ -79,7 +79,7 @@
     {
       "disputeId": "d-4",
       "angleId": "severance_chat_gap",
-      "label": "借用書の重み",
+      "label": "絶交直前のカカオトークに残る空白",
       "description": "好意なのか借入なのか、借用書と一部返済がチェ・スミンの沈黙と絶交理由をどう裏づけるのか確認する。"
     },
     {
