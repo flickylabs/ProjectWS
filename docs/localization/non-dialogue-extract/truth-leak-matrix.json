@@ -440,7 +440,8 @@
         "stance:admit",
         "reveal:full",
         "continuity:dossier_late_admition",
-        "continuity:collapse"
+        "continuity:collapse",
+        "continuity:evidence_combo"
       ]
     },
     "d-4": {
