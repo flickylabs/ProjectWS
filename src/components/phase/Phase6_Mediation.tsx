@@ -63,7 +63,7 @@ export default function Phase6_Mediation() {
         </div>
         <div className="pc-mediation-entry__eyebrow">판결</div>
         <h2 id="pc-mediation-entry-title">심문을 마치고 판결에 들어가시겠습니까?</h2>
-        <p>심문을 마저 이어나갈지, 바로 판결에 들어갈지 결정합니다.</p>
+        <p>심문을 더 이어갈지, 바로 판결로 들어갈지 결정합니다.</p>
 
         <div className="pc-mediation-entry__dispute-tags">
           <span className="pc-mediation-entry__tag is-visible">공개 쟁점 {disputeGate.visibleCount}</span>
@@ -74,19 +74,19 @@ export default function Phase6_Mediation() {
 
         {hasUnresolved || hasHiddenDisputes ? (
           <div className="pc-mediation-entry__warning">
-            <strong>아직 확정되지 않은 쟁점이 존재합니다. 이대로 선고하시겠습니까?</strong>
+            <strong>아직 정리되지 않은 쟁점이 있습니다. 이대로 선고하시겠습니까?</strong>
             <span>{hasHiddenDisputes
-              ? '미발견 쟁점이 남아 있으면 선고가 불완전한 기록으로 평가될 수 있습니다.'
-              : '선고는 가능하지만, 불완전한 기록으로 평가될 수 있습니다.'}</span>
+              ? '미발견 쟁점이 남아 있으면 판결 기록이 불완전하다고 평가될 수 있습니다.'
+              : '선고는 가능하지만, 판결 기록이 불완전하다고 평가될 수 있습니다.'}</span>
           </div>
         ) : null}
 
         <div className="pc-mediation-entry__actions">
           <button type="button" className="pc-mediation-entry__secondary" onClick={() => setPhase(Phase.Interrogation)}>
-            추가 심리
+            추가 심문
           </button>
           <button type="button" className="pc-mediation-entry__primary" onClick={enterVerdict}>
-            판결 선고
+            선고로 진행
           </button>
         </div>
       </section>

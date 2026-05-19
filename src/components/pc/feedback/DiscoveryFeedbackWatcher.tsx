@@ -419,11 +419,11 @@ export default function DiscoveryFeedbackWatcher() {
       eyebrow: '새 쟁점 발견',
       title: disputeName,
       subtitle: unlockSourceName
-        ? `"${unlockSourceName}" 흐름이 풀리며 다른 면이 보입니다`
+        ? `"${unlockSourceName}"${pp을를(unlockSourceName)} 확인하는 과정에서 다른 쟁점이 보입니다`
         : playEmergenceBeat ? disputeName : '확인해야 할 범위가 넓어졌습니다',
       body: unlockSourceName
-        ? `"${unlockSourceName}" 쟁점의 진실에 다가가면서 "${disputeName}"이(가) 새 쟁점으로 부상했습니다. 아직 결론이 아닙니다. 관련 기록과 진술을 더 확인해 쟁점으로 다룰지 판단하십시오.`
-        : '아직 결론이 아닙니다. 관련 기록과 진술을 더 확인해 쟁점으로 다룰지 판단하십시오.',
+        ? `"${unlockSourceName}" 쟁점을 확인하는 과정에서 "${disputeName}"${pp이가(disputeName)} 새 쟁점으로 떠올랐습니다. 아직 결론은 아닙니다. 관련 기록과 진술을 더 확인한 뒤, 쟁점으로 다룰지 판단해주세요.`
+        : '아직 결론은 아닙니다. 관련 기록과 진술을 더 확인한 뒤, 쟁점으로 다룰지 판단해주세요.',
       tag: '쟁점 보드 갱신',
       tone: 'gold',
       disputeId: pendingEmergence.disputeId,
@@ -436,7 +436,7 @@ export default function DiscoveryFeedbackWatcher() {
     const sysMsgId = state.addDialogue({
       speaker: 'system',
       text: unlockSourceName
-        ? `"${unlockSourceName}" 흐름이 풀리면서 새 쟁점이 드러났다 — ${disputeName}`
+        ? `"${unlockSourceName}"${pp을를(unlockSourceName)} 확인하는 과정에서 새 쟁점이 드러났다 - ${disputeName}`
         : `새 쟁점이 드러났다 — ${disputeName}`,
       relatedDisputes: [pendingEmergence.disputeId],
       turn: state.turnCount,
@@ -904,7 +904,7 @@ export default function DiscoveryFeedbackWatcher() {
             const afterLie = afterAgent.lieStateMap[ev.disputeId]?.currentState ?? currentLie
             after.addDialogue({
               speaker: 'system',
-              text: `감정이 무너지면서 진실에 가까워졌다 — ${disputeName} 단계 ${currentLie} → ${afterLie}`,
+              text: `감정이 격해지며 더 솔직한 진술이 나왔다 - ${disputeName} 단계 ${currentLie} → ${afterLie}`,
               relatedDisputes: [ev.disputeId],
               turn: after.turnCount,
             })
