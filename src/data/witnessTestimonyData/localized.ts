@@ -641,7 +641,7 @@ const FRIEND_01_OVERLAYS: CaseTestimonyOverlay = {
     "w3-d2-father-identity": {
       behaviorHint: "awkward",
       question: "Did you later find out who that middle-aged man was?",
-      testimony: "I later heard in the neighborhood that he was Ms. Song Da-eun’s father. A few days later I asked Da-eun if that day was all right, and she only said briefly, \"I ended things with Su-min.\"",
+      testimony: "I later heard in the neighborhood that he was Ms. Song Da-eun's father. A few days later, when I asked Da-eun whether she was all right after that day, she only said, \"I ended things with Su-min.\"",
       topic: "Ask who the man was",
     },
     "w3-d2-overheard-phrase": {
@@ -653,7 +653,7 @@ const FRIEND_01_OVERLAYS: CaseTestimonyOverlay = {
     "w3-d3-breakup-cause": {
       behaviorHint: "careful but firm",
       question: "Based on what you saw that day, what did the cause of the earlier break look closer to?",
-      testimony: "What I saw was not a friend changing her mind, but a money problem. Ms. Song Da-eun’s father pressed Ms. Choi Su-min, and Ms. Choi Su-min fell apart alone without being able to tell Da-eun. If the relationship broke after that, the first crack came closer from the adult, not from the friend.",
+      testimony: "What I saw was not a friend changing her mind, but a money problem. Ms. Song Da-eun's father pressed Ms. Choi Su-min, and Ms. Choi Su-min fell apart alone without being able to tell Da-eun. If the relationship broke after that, the first crack came more from the adult than from the friend.",
       topic: "Ask about the cause of the earlier break",
     },
   },

@@ -14,7 +14,7 @@
       "name": "Song Da-eun",
       "occupation": "Online shopping mall customer service employee",
       "speechStyle": "Start with the conclusion and include evidence within it. When the other person retorts, you bring up what has already been said and narrow the context to yourself.",
-      "fear": "He is most afraid of his father's true face being revealed.",
+      "fear": "She is most afraid of her father's true face being revealed.",
       "dailyRoutine": "After completing CS work at the shopping mall, I prepare for marriage with my fiancé and maintain a relationship by posting about my daily life in a group chat with mutual friends.",
       "sensitivePoints": [
         "Father’s money issue",
@@ -42,7 +42,7 @@
       "name": "Choi Su-min",
       "occupation": "Pilates instructor",
       "speechStyle": "Suppress your emotions and list only the facts. When I tell the most painful story, my voice becomes flatter.",
-      "fear": "He knows that if he tells Song Da-eun the truth about his father, his friend will view him as someone who did not pay back the money, so he cannot tell it to the end.",
+      "fear": "She cannot tell Song Da-eun to the end because she knows Da-eun would have to see her own father as someone who failed to repay money.",
       "dailyRoutine": "After finishing Pilates class, I cleaned things up on my own, and my contact with common friends gradually decreased. When I contacted my fiancé, I sent a text message alone at a cafe.",
       "sensitivePoints": [
         "Harm from Song Da-eun’s father’s unpaid loan",
@@ -54,7 +54,7 @@
           "pattern": "When talking about the most painful stories, the tone becomes flatter and emotion disappears."
         },
         {
-          "pattern": "He neutralizes the other person's questioning by taking responsibility first, saying, 'I should have just endured it.'"
+          "pattern": "She neutralizes the other person's questioning by taking responsibility first, saying, \"I should have just endured it.\""
         },
         {
           "pattern": "Instead of directly mentioning the actions of key characters, they say it indirectly by saying, ‘There was a situation there.’"
@@ -93,7 +93,7 @@
         "id": "w-1",
         "name": "Kim Se-ra",
         "knowledgeScope": "After seeing Song Da-eun's post in the group chat, I agreed with criticizing Choi Su-min. I felt uneasy afterward.",
-        "surfaceKnowledge": "He is a mutual friend witness who knows the atmosphere of the group chat and the circumstances of Song Da-eun's first remark.",
+        "surfaceKnowledge": "A mutual-friend witness who knows the group chat mood and how Song Da-eun first made the statement.",
         "witnessProfile": {
           "occupation": "Hair salon employee",
           "relationToA": "They have been friends since high school.",
@@ -101,7 +101,7 @@
           "speechStyle": "She speaks honestly but slightly downplays the part where she joined in.",
           "addressJudge": "Your Honor",
           "addressA": "Da-eun",
-          "addressB": "Ms. Su-min",
+          "addressB": "Ms. Choi",
           "hiddenAgenda": "I am ashamed that I also participated in criticizing Choi Soo-min."
         }
       },
@@ -125,7 +125,7 @@
         "id": "w-3",
         "name": "Oh Mi-gyeong",
         "knowledgeScope": "As the owner of a local snack bar, I saw Song Da-eun's father come to borrow money from Choi Su-min in the past. Choi Su-min once came to the store crying.",
-        "surfaceKnowledge": "He is a third-party witness who witnessed money transactions between Song Da-eun's father and Choi Su-min in the past.",
+        "surfaceKnowledge": "A third-party witness who saw the past money transaction between Song Da-eun's father and Choi Su-min.",
         "witnessProfile": {
           "occupation": "Snack bar owner",
           "relationToA": "She has seen Song Da-eun’s father around the neighborhood.",
@@ -194,7 +194,7 @@
     },
     {
       "id": "d-4",
-      "name": "Why the Old Friendship Ended",
+      "name": "Reason for the Past Fallout",
       "truthDescription": "The real reason for the old fallout was that Song Da-eun’s father borrowed several million won from Choi Su-min three times, repaid only part of it, then cut off contact. Choi Su-min could not bring herself to tell Song Da-eun because it would expose her father’s issue, so she accepted the role of the villain.",
       "mediationLink": "Why the Old Friendship Ended",
       "judgmentStatement": "The old fallout was caused by Song Da-eun’s father’s unpaid loan and Choi Su-min’s silence.",
@@ -211,7 +211,7 @@
     },
     {
       "id": "d-5",
-      "name": "Group Chat Smear and Defamation",
+      "name": "Group Chat Denouncement and Defamation",
       "truthDescription": "Song Da-eun smeared Choi Su-min in the group chat without checking, and the structure in which Choi Su-min took the villain’s role repeated. Both bear responsibility for judging before verifying.",
       "mediationLink": "Hasty judgment and defamation",
       "judgmentStatement": "The side that judged and publicized the matter first bears greater responsibility, but the side whose silence allowed the pattern to repeat also bears responsibility.",
@@ -230,10 +230,10 @@
   "evidence": [
     {
       "id": "e-1",
-      "name": "Choi Su-min → Fiancé Contact Logs",
+      "name": "Choi Su-min -> Fiance Contact Logs",
       "surfaceName": "Contact Logs",
       "description": "A record of Choi Su-min repeatedly calling and texting Kim Tae-yun, the fiancé, over the last nine days. The intent behind the contact can only be judged by checking the original text at each stage.",
-      "surfaceDescription": "There are contact logs from Choi Su-min to the fiancé.",
+      "surfaceDescription": "There is a record of contact sent by Choi Su-min to the fiance.",
       "investigationResults": {
         "request_original": "Page 1 confirms repeated outgoing calls and missed calls over nine days. It looks like obsessive contact, but most of the original text is still sealed.",
         "check_metadata": "Page 2 shows wording indicating the contact was not about a private matter between Tae-yun and Su-min. The exact purpose, however, is still unconfirmed.",
@@ -1179,7 +1179,7 @@
       "id": "e-2",
       "name": "Mutual Friends Group Chat Screenshot",
       "surfaceName": "Group Chat Screenshot",
-      "description": "Song Da-eun posted, “Su-min is contacting my man again,” and several friends criticized Choi Su-min.",
+      "description": "Song Da-eun posted, \"Su-min is contacting my man again,\" and several friends criticized Choi Su-min.",
       "surfaceDescription": "A screenshot of a mutual friends’ group chat exists.",
       "investigationResults": {
         "request_original": "The first page of the group chat confirms that Song Da-eun posted Choi Su-min’s contact as “contacting my man again,” presenting it as a settled conclusion.",
@@ -1302,7 +1302,7 @@
             },
             {
               "sender": "So-yeon",
-              "text": "If you haven’t checked directly yet, you should be careful with your words. Once it spreads as a conclusion, it’s hard to take back."
+              "text": "If this spreads as a settled claim, it will be hard to undo."
             },
             {
               "sender": "Ha-eun",
@@ -1318,7 +1318,7 @@
             },
             {
               "sender": "Song Da-eun",
-              "text": "I’m exhausted hearing this again right before my wedding. I’ll tell Tae-yun to handle it first."
+              "text": "I am exhausted hearing this again right before my wedding. I will tell Tae-yoon that I will handle it first."
             },
             {
               "sender": "Yu-jin",
@@ -1433,7 +1433,7 @@
                 },
                 {
                   "sender": "So-yeon",
-                  "text": "If you haven’t checked directly yet, you should be careful with your words. Once it spreads as a conclusion, it’s hard to take back."
+                  "text": "If this spreads as a settled claim, it will be hard to undo."
                 },
                 {
                   "sender": "Ha-eun",
@@ -3643,7 +3643,7 @@
       "id": "e-6",
       "name": "Past Transfers and IOU",
       "surfaceName": "Past Transfer Records",
-      "description": "Transfer records and an IOU showing that Choi Su-min sent Song Da-eun’s father several million won three times. The issue is the flow in which contact stopped after partial repayment.",
+      "description": "Transfer records and an IOU for three transfers of several million won from Choi Su-min to Song Da-eun's father. The issue is the cutoff in contact after partial repayment.",
       "surfaceDescription": "There are past transfer records between Ms. Choi Su-min and Ms. Song Da-eun’s father.",
       "investigationResults": {
         "request_original": "The records confirm three transfers of several million won each from Choi Su-min’s account to a recipient with the surname Song.",
@@ -4235,15 +4235,15 @@
       },
       {
         "id": "w-1-angle",
-        "label": "w-1 Kim Se-ra Testimony Angle"
+        "label": "w-1 Kim Se-ra testimony angle"
       },
       {
         "id": "w-2-angle",
-        "label": "w-2 Park Jun-hyeok Testimony Angle"
+        "label": "w-2 Park Jun-hyeok testimony angle"
       },
       {
         "id": "w-3-angle",
-        "label": "w-3 Oh Mi-gyeong Testimony Angle"
+        "label": "w-3 Oh Mi-gyeong testimony angle"
       },
       {
         "id": "dc-2",
@@ -4255,11 +4255,11 @@
       },
       {
         "id": "dc-1",
-        "label": "dc-1 Who Condemned Without Checking?"
+        "label": "dc-1 Who maligned her without checking?"
       },
       {
         "id": "dc-4",
-        "label": "dc-4 The Price of Cutting Ties"
+        "label": "dc-4 The Cost of Cutting Ties"
       },
       {
         "id": "dc-5",
@@ -4284,13 +4284,13 @@
       {
         "id": "dc-1",
         "label": "dc-1 Who Condemned Without Checking?",
-        "summary": "Who condemned a friend in the group chat before checking directly?",
+        "summary": "Who maligned a friend in the group chat first without checking directly?",
         "noteText": "Weren’t you the one who condemned your friend in the group chat before checking directly?",
         "judgeHint": "A new issue has emerged: “Group Chat Smear and Defamation.” Trace how it spread."
       },
       {
         "id": "dc-4",
-        "label": "dc-4 The Price of Cutting Ties",
+        "label": "dc-4 The Cost of Cutting Ties",
         "summary": "If the old fallout was not a change of heart, but the result of an unpaid loan and silence, why were you never able to say so?",
         "noteText": "The Price of Cutting Ties",
         "judgeHint": "A new issue has emerged: “Why the Old Friendship Ended.” Check the money flow just before the fallout and the reason for the silence."
@@ -4409,7 +4409,7 @@
       },
       {
         "id": "d-4",
-        "name": "The Real Cause of the Old Fallout",
+        "name": "The Real Cause of the Past Fallout",
         "unlockPlan": {
           "runtimeRule": "d-3 Unlocks upon reaching d-3 S2",
           "authoredRule": "Once Song Da-eun’s father’s current pattern is confirmed, the fact that the same thing happened in the past emerges."
@@ -4417,7 +4417,7 @@
       },
       {
         "id": "d-5",
-        "name": "Group Chat Smear and Defamation",
+        "name": "Group Chat Denouncement and Defamation",
         "unlockPlan": {
           "runtimeRule": "d-3 Unlocks upon reaching d-3 S3 + d-4 S3",
           "authoredRule": "After Song Da-eun’s father’s pattern and the old unpaid loan are sufficiently revealed, the current defamation structure emerges."
@@ -4483,7 +4483,7 @@
           },
           {
             "id": "L-3-C",
-            "text": "Choi Su-min should have spoken directly.",
+            "text": "Choi Su-min should have said it herself.",
             "implication": "Questions responsibility for the silence."
           }
         ]

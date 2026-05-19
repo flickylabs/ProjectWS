@@ -88,7 +88,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-contact_timeline-v3",
-          "text": "Ms. Song Da-eun, separate the reason you can admit now from the part you still contest, and answer regarding the nine-day record of calls and messages.",
+          "text": "Please tell us honestly how the fact that this was three weeks before the wedding affected the way you read that timeline.",
           "behaviorHint": "Motive search. Focus on the nine-day record of calls and messages. Ask why the choice was made while separating motive from proven facts."
         },
         {
@@ -296,7 +296,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-message_intent-v5",
-          "text": "Ms. Song Da-eun, tell the court what you were trying to protect or avoid when dealing with how you read the wording of the messages.",
+          "text": "Ms. Song Da-eun, why did you rely on someone else's summary of the wording instead of asking about its intent directly?",
           "behaviorHint": "Motive search. Focus on how you read the wording of the messages. Ask why the choice was made while separating motive from proven facts."
         }
       ]
@@ -1809,7 +1809,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v4",
-          "text": "Ms. Song Da-eun, separate direct knowledge from later understanding as you explain the money wording and the request to keep it from you.",
+          "text": "Have you heard any circumstances suggesting that your father made similar requests to other family members or acquaintances without telling you?",
           "behaviorHint": "Fact pursuit. Focus on the money wording and the request to keep it from you. Keep the answer tied to records, sequence, and what was directly confirmed."
         },
         {
