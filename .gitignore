@@ -57,4 +57,7 @@ server/node_modules/
 /tmp-current-home.png
 /tmp_case_extract_*.txt
 
+# Detector ad-hoc outputs (verify-report.json is committed as baseline)
+/docs/localization/non-dialogue-extract/truth-leak-report.json
+
 .vercel
