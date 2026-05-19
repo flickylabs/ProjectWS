@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-3",
+  "case": "friend-01",
+  "confession_trust": {
+    "ko": "다은이 아버지가 태윤 씨에게 돈 얘기를 한다는 걸 듣고 넘길 수 없었습니다. 예전에 저도 같은 방식으로 돈을 보냈고 제대로 돌려받지 못했습니다. 그래서 태윤 씨에게 먼저 멈추라고 하려 했습니다.",
+    "en": "When I heard Daeun's father was talking to Taeyoon about money, I could not ignore it. I had once sent money after the same kind of request and had not been repaid properly. That is why I tried to tell Taeyoon to stop first.",
+    "ja": "ダウンのお父さんがテユンさんにお金の話をしていると聞き、見過ごせませんでした。以前、私も同じ形でお金を送り、きちんと返してもらえませんでした。だから先にテユンさんを止めようとしました。",
+    "zh-CN": "听说多恩的父亲在向泰允提钱，我不能当作没看见。以前我也因同样的请求转过钱，却没有好好拿回来。所以我想先让泰允停下来。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "예전에도 그분이 저한테 똑같이 돈을 꺼냈고, 이번에도 태윤 씨에게...",
+      "en": "He brought up money to me the exact same way before, and this time with Taeyoon...",
+      "ja": "前にもあの方は私に同じようにお金の話を出して、今回もテユンさんに...",
+      "zh-CN": "以前他也是用同样的方式跟我提钱，这次又对泰允..."
+    },
+    "phase2": {
+      "ko": "아직 그 얘긴 안 돼요...",
+      "en": "I cannot say that part yet...",
+      "ja": "その話はまだ言えません...",
+      "zh-CN": "那部分还不能说..."
+    },
+    "linkedDisputeId": "d-4"
+  },
+  "admission_witness_trust": {
+    "ko": "오미경 사장님이 본 일을 부정하지 않겠습니다. 다은이 아버지의 돈 부탁을 겪었기에 이번 일도 같은 패턴으로 봤습니다.",
+    "en": "I will not deny what Ms. Oh Mikyung saw. Because I had experienced Daeun's father's money request, I saw this as the same pattern.",
+    "ja": "オ・ミギョンさんが見たことは否定しません。ダウンのお父さんのお金の頼みを経験していたので、今回も同じパターンだと見ました。",
+    "zh-CN": "吴美京老板看到的事，我不否认。正因为经历过多恩父亲借钱的事，我才把这次看成同一种模式。"
+  },
+  "admission_witness_emotion": {
+    "ko": "맞아요, 저는 그 패턴을 이미 겪었어요. 사장님이 말한 그날 이후로도 제대로 설명 못 했고, 이번에도 다은이에게 직접 말하지 못했습니다.",
+    "en": "Yes, I had already lived through that pattern. Even after the day the owner described, I could not explain it properly, and this time I still could not tell Daeun directly.",
+    "ja": "そうです、私はそのパターンをもう経験していました。店主さんが話したあの日の後もきちんと説明できず、今回もダウンに直接言えませんでした。",
+    "zh-CN": "对，我已经经历过那种模式了。老板说的那天之后，我也没能好好解释，这次仍然没能直接告诉多恩。"
+  },
+  "closure_truth": {
+    "ko": "송다은 아버지는 예비신랑에게 금전 부탁을 꺼내고 있었다. 최수민은 과거에 같은 방식의 접근을 겪은 당사자로서 이를 경고하려 했으며, 과거와 현재의 패턴은 일치한다.",
+    "en": "Song Daeun's father was raising a money request with the fiance. Choi Sumin, having experienced the same type of approach in the past, tried to warn him, and the past and present patterns match.",
+    "ja": "ソン・ダウンの父親は婚約者に金銭の頼みを持ちかけていた。チェ・スミンは過去に同じ形の接近を受けた当事者として警告しようとし、過去と現在のパターンは一致している。",
+    "zh-CN": "宋多恩的父亲正在向未婚夫提出金钱请求。崔秀敏曾经经历过同样方式的接近，因此试图发出警告；过去与现在的模式一致。"
+  }
+}

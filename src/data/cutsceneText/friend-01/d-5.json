@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-5",
+  "case": "friend-01",
+  "confession_trust": {
+    "ko": "저는 수민이에게 확인하지 않고 단톡방에 먼저 올렸습니다. 연락 기록만 보고 결론냈고 친구들이 따라오게 했습니다. 예전에도 묻지 않고 끊었는데 이번에도 같은 방식을 반복했습니다.",
+    "en": "I posted in the group chat before checking with Sumin. I saw only the contact record, reached a conclusion, and made our friends follow it. I cut her off once before without asking, and this time I repeated the same pattern.",
+    "ja": "私はスミンに確認せず、先にグループチャットへ上げました。連絡記録だけを見て結論を出し、友人たちにもそれを追わせました。以前も聞かずに切ったのに、今回も同じやり方を繰り返しました。",
+    "zh-CN": "我没有向秀敏确认，就先发到了群聊里。我只看联系记录就下了结论，还让朋友们跟着走。以前我也没问就断了关系，这次又重复了同样的方式。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "내가 먼저 올리지만 않았어도, 그 연락이 경고였다는 걸 확인할 시간은 있었는데...",
+      "en": "If I had not posted first, there would have been time to check whether those calls were actually a warning...",
+      "ja": "私が先に上げさえしなければ、その連絡が警告だったのか確かめる時間はあったのに...",
+      "zh-CN": "如果不是我先发出去，本来还有时间确认那些联系是不是警告..."
+    },
+    "phase2": {
+      "ko": "잠깐, 그렇게까지는...",
+      "en": "Wait, I did not mean to go that far...",
+      "ja": "待って、そこまで言うつもりは...",
+      "zh-CN": "等等，我不是要说到那一步..."
+    },
+    "linkedDisputeId": "d-1"
+  },
+  "admission_witness_trust": {
+    "ko": "세라 말이 맞습니다. 저는 확인 전에 방에 올렸고 그 말이 분위기를 만들었습니다. 수민이에게 묻기 전에 평판부터 흔든 건 제 책임입니다.",
+    "en": "Sera is right. I posted before checking, and my words set the tone. Shaking Sumin's reputation before asking her was my responsibility.",
+    "ja": "セラの言う通りです。私は確認する前に投稿し、その言葉が空気を作りました。スミンに聞く前に評判を揺らした責任は私にあります。",
+    "zh-CN": "世罗说得对。我在确认之前就发了出去，那句话带出了气氛。没问秀敏之前就动摇她的名声，是我的责任。"
+  },
+  "admission_witness_emotion": {
+    "ko": "맞아요, 내가 먼저 몰아갔어요. 친구들이 같이 말해주길 바랐고, 그 순간 수민이 입장은 지워졌습니다.",
+    "en": "Yes, I pushed the blame first. I wanted my friends to speak with me, and in that moment Sumin's side disappeared.",
+    "ja": "そうです、私が先に追い込みました。友人たちに一緒に言ってほしかったし、その瞬間、スミンの立場は消えていました。",
+    "zh-CN": "对，是我先把她往那边推。我希望朋友们站在我这边说话，那一刻秀敏的处境被抹掉了。"
+  },
+  "closure_truth": {
+    "ko": "송다은은 확인 없이 단톡방에서 최수민을 먼저 매도했고, 그 발언은 평판 피해로 이어졌다. 공개 단정의 책임은 송다은에게 더 크지만, 최수민의 침묵도 같은 구조가 반복되게 했다.",
+    "en": "Song Daeun denounced Choi Sumin in the group chat without verification, and the statement damaged Sumin's reputation. Daeun bears greater responsibility for the public conclusion, while Sumin's silence also allowed the pattern to repeat.",
+    "ja": "ソン・ダウンは確認なしにグループチャットでチェ・スミンを先に非難し、その発言は評判被害につながった。公に断定した責任はダウンのほうが重いが、スミンの沈黙も同じ構造を繰り返させた。",
+    "zh-CN": "宋多恩未经确认就在群聊中先指责崔秀敏，该发言造成了名誉损害。公开定性的责任多恩更重，但秀敏的沉默也让同样的结构得以重复。"
+  }
+}

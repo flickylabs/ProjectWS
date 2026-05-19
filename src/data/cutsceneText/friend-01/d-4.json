@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-4",
+  "case": "friend-01",
+  "confession_trust": {
+    "ko": "과거 손절은 제가 변해서가 아니었습니다. 다은이 아버지가 세 차례 돈을 빌리고 일부만 갚은 뒤 연락을 피했습니다. 다은이가 아버지를 의심하게 할 수 없어 제가 나쁜 사람이 됐습니다.",
+    "en": "The past break did not happen because I changed. Daeun's father borrowed money three times, repaid only part of it, and then avoided contact. I could not make Daeun suspect her father, so I became the bad person instead.",
+    "ja": "過去の断絶は、私が変わったからではありません。ダウンのお父さんは三度お金を借り、一部だけ返して連絡を避けました。ダウンに父親を疑わせることができず、私が悪い人になりました。",
+    "zh-CN": "过去断交不是因为我变了。多恩的父亲三次借钱，只还了一部分，之后躲开联系。我不能让多恩去怀疑父亲，所以让自己成了坏人。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그분이 태윤 씨한테도 같은 말을 꺼냈다는 걸 듣고, 예전에 빌려준 돈이...",
+      "en": "When I heard he had said the same thing to Taeyoon, the money I lent before...",
+      "ja": "あの方がテユンさんにも同じ話を出したと聞いて、昔貸したお金が...",
+      "zh-CN": "听说他也对泰允说了同样的话，我以前借出去的钱就..."
+    },
+    "phase2": {
+      "ko": "잠깐, 금액 얘기는...",
+      "en": "Wait, the amounts are not...",
+      "ja": "待って、金額の話は...",
+      "zh-CN": "等等，金额的事..."
+    },
+    "linkedDisputeId": "d-3"
+  },
+  "admission_witness_trust": {
+    "ko": "오미경 사장님 증언이 맞습니다. 다은이 아버지에게 돈을 빌려줬고, 돌려받지 못한 돈이 남았습니다. 그래서 제가 변한 사람처럼 물러났습니다.",
+    "en": "Ms. Oh Mikyung's testimony is correct. I lent money to Daeun's father, and part of it was never returned. So I stepped back as if I had changed.",
+    "ja": "オ・ミギョンさんの証言は正しいです。私はダウンのお父さんにお金を貸し、返ってこなかった分が残りました。だから私が変わった人のように退きました。",
+    "zh-CN": "吴美京老板的证言是对的。我借过钱给多恩的父亲，还有一部分没有拿回来。所以我像是自己变了那样退开了。"
+  },
+  "admission_witness_emotion": {
+    "ko": "네, 돈을 빌려준 건 사실이에요. 일부만 돌아왔고, 저는 그 말을 못 했습니다. 다은이가 아버지를 의심해야 하는 일이 너무 잔인했습니다.",
+    "en": "Yes, it is true that I lent him money. Only part of it came back, and I could not say it. Making Daeun suspect her father felt too cruel.",
+    "ja": "はい、お金を貸したのは事実です。一部しか返ってこず、私はそのことを言えませんでした。ダウンが父親を疑わなければならないのは、あまりに残酷でした。",
+    "zh-CN": "是的，我确实借过钱。只回来了一部分，我没能说出口。让多恩去怀疑自己的父亲，太残忍了。"
+  },
+  "closure_truth": {
+    "ko": "과거 손절의 원인은 최수민의 변심이 아니라 송다은 아버지의 차용금 미상환과 최수민의 침묵이었다. 최수민은 사실을 말하면 송다은이 아버지 문제를 마주해야 해서 악역을 자처했다.",
+    "en": "The past break was caused not by Choi Sumin changing, but by Song Daeun's father's unpaid borrowing and Sumin's silence. Sumin accepted the villain role because telling the truth would force Daeun to face her father's conduct.",
+    "ja": "過去の断絶の原因はチェ・スミンの変心ではなく、ソン・ダウンの父親の借金未返済とスミンの沈黙だった。真実を話せばダウンが父親の問題に向き合うことになるため、スミンは悪役を引き受けた。",
+    "zh-CN": "过去断交的原因不是崔秀敏变心，而是宋多恩父亲的借款未还以及秀敏的沉默。秀敏之所以承担反派位置，是因为说出事实会迫使多恩面对父亲的问题。"
+  }
+}

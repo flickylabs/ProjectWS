@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-2",
+  "case": "friend-01",
+  "confession_trust": {
+    "ko": "김태윤 씨가 먼저 밤늦게 사적인 말을 보냈고 저는 선을 그었습니다. 다은이 예비신랑이라 더 받아줄 수 없었습니다. 원본을 내밀면 결혼이 무너질까 봐 숨겼습니다.",
+    "en": "Kim Taeyoon first sent private messages late at night, and I drew the line. He was Daeun's fiance, so I could not accept it. I hid the original messages because I feared showing them would break the wedding apart.",
+    "ja": "キム・テユンさんが先に夜遅く私的な言葉を送り、私は線を引きました。ダウンの婚約者だから受け入れられませんでした。原文を出せば結婚が壊れる気がして、隠しました。",
+    "zh-CN": "金泰允先在深夜发来私人的话，我划清了界限。他是多恩的未婚夫，我不能接受。我怕拿出原始信息会让婚事崩掉，所以藏了起来。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그 사람이 먼저 몰래 보자고 했는데도, 제가 다은이를 끌어들이지 않으려고 참은 거였는데...",
+      "en": "He was the one who asked to meet in secret first, and I held back because I did not want to drag Daeun into it...",
+      "ja": "先にこっそり会おうと言ったのはあの人なのに、私はダウンを巻き込みたくなくて我慢していたのに...",
+      "zh-CN": "明明是他先说要偷偷见面，我只是因为不想把多恩卷进来才忍住的..."
+    },
+    "phase2": {
+      "ko": "지금 이 얘기는...",
+      "en": "This is not the part I meant to...",
+      "ja": "今その話は...",
+      "zh-CN": "现在不是说这个..."
+    },
+    "linkedDisputeId": "d-1"
+  },
+  "admission_witness_trust": {
+    "ko": "박준혁 씨가 본 선후관계를 인정합니다. 김태윤 씨가 먼저 사적으로 접근했고, 저는 거절했습니다. 숨긴 건 말할 용기가 없어서였습니다.",
+    "en": "I accept the order Park Junhyeok described. Kim Taeyoon made the private approach first, and I rejected him. I hid it because I lacked the courage to say it.",
+    "ja": "パク・ジュンヒョクさんが見た順序を認めます。先に私的に近づいたのはキム・テユンさんで、私は拒みました。隠したのは、言う勇気がなかったからです。",
+    "zh-CN": "我承认朴俊赫看到的先后顺序。先做私人接近的是金泰允，我拒绝了他。我隐瞒，是因为没有勇气说出来。"
+  },
+  "admission_witness_emotion": {
+    "ko": "네, 먼저 연락한 건 태윤 씨예요. 저는 거절했어요. 그런데 그걸 말하는 순간 다은이 결혼이 깨질까 봐 입이 막혔습니다.",
+    "en": "Yes, Taeyoon contacted me first. I rejected him. But the moment I said that, I thought Daeun's wedding might break apart, so the words would not come out.",
+    "ja": "はい、先に連絡したのはテユンさんです。私は拒みました。でもそれを言った瞬間、ダウンの結婚が壊れる気がして、口が動きませんでした。",
+    "zh-CN": "是的，先联系的是泰允。我拒绝了。可一说出口，我就觉得多恩的婚事会碎掉，所以话堵住了。"
+  },
+  "closure_truth": {
+    "ko": "예비신랑 김태윤이 먼저 최수민에게 선 넘는 메시지를 보냈고, 최수민은 이를 거절했다. 최수민의 이후 연락은 그 접근과 연결된 경고였으며, 유혹으로 보기 어렵다.",
+    "en": "Fiance Kim Taeyoon first sent messages that crossed the line, and Choi Sumin rejected them. Her later contact was a warning connected to that approach and is difficult to classify as seduction.",
+    "ja": "婚約者のキム・テユンが先に一線を越えるメッセージを送り、チェ・スミンはそれを拒んだ。その後のスミンの連絡はその接近とつながる警告であり、誘惑とは見なしにくい。",
+    "zh-CN": "未婚夫金泰允先向崔秀敏发送越界信息，崔秀敏予以拒绝。她之后的联系是与该接近相关的警告，难以视为引诱。"
+  }
+}

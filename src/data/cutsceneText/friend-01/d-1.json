@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-1",
+  "case": "friend-01",
+  "confession_trust": {
+    "ko": "태윤 씨에게 9일간 연락한 건 결혼을 흔들려던 게 아니었습니다. 다은이 아버지의 돈 부탁이 예전과 같다는 말을 듣고 먼저 막으려 했습니다. 바로 말하지 못해 연락만 남긴 건 제 잘못입니다.",
+    "en": "I contacted Taeyoon for nine days, but not to shake the wedding. I heard Daeun's father's money request matched the old pattern, so I tried to stop him first. It was my fault that I could not tell Daeun directly and left only the contact record.",
+    "ja": "テユンさんに九日間連絡したのは、結婚を揺さぶるためではありません。ダウンのお父さんのお金の頼みが昔と同じだと聞き、先に止めようとしました。直接言えず連絡だけを残したのは、私の落ち度です。",
+    "zh-CN": "我联系泰允九天，不是为了动摇婚事。我听说多恩父亲的借钱方式和以前一样，才想先拦住他。没能直接说明，只留下联系记录，是我的错。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "태윤 씨가 먼저 선을 넘지만 않았어도 제가 그렇게까지 연락할 일은 없었잖아요, 그러니까 그건...",
+      "en": "If Taeyoon had not crossed the line first, I would never have had to contact him that much, so that means...",
+      "ja": "テユンさんが先に一線を越えなければ、私があそこまで連絡する必要なんてなかったんです。だから、それは...",
+      "zh-CN": "如果不是泰允先越了线，我根本不用联系到那个地步，所以那件事..."
+    },
+    "phase2": {
+      "ko": "잠깐, 그 말은 아직...",
+      "en": "Wait, I did not mean to say that yet...",
+      "ja": "待って、今の話はまだ...",
+      "zh-CN": "等等，那句话还不能..."
+    },
+    "linkedDisputeId": "d-2"
+  },
+  "admission_witness_trust": {
+    "ko": "박준혁 씨 말대로 태윤 씨가 먼저 애매한 연락을 했습니다. 저는 다은이에게 바로 말하지 못하고 태윤 씨만 붙잡았습니다.",
+    "en": "As Park Junhyeok said, Taeyoon sent the ambiguous messages first. I could not tell Daeun right away and only held on to Taeyoon.",
+    "ja": "パク・ジュンヒョクさんの言う通り、先に曖昧な連絡をしたのはテユンさんです。私はダウンにすぐ言えず、テユンさんだけを追いました。",
+    "zh-CN": "朴俊赫说得对，先发出暧昧信息的是泰允。我没能马上告诉多恩，只能一直抓着泰允。"
+  },
+  "admission_witness_emotion": {
+    "ko": "맞아요, 태윤 씨가 먼저 선을 넘었어요. 그래서 그냥 둘 수 없었는데, 다은이한테 말할 용기가 없어서 더 꼬였습니다.",
+    "en": "Yes, Taeyoon crossed the line first. That is why I could not leave it alone, but I did not have the courage to tell Daeun, and it only became more tangled.",
+    "ja": "そうです、先に一線を越えたのはテユンさんです。だから放っておけなかったのに、ダウンに言う勇気がなくて、余計にこじれました。",
+    "zh-CN": "对，是泰允先越了线。所以我不能放着不管，可我没有勇气告诉多恩，事情才越缠越乱。"
+  },
+  "closure_truth": {
+    "ko": "최수민은 9일간 예비신랑에게 연락했지만 목적은 집착이 아니라 경고였다. 다만 직접 설명하지 않은 채 반복 연락을 택한 방식의 적절성은 별도로 판단된다.",
+    "en": "Choi Sumin contacted the fiance for nine days, but the purpose was a warning, not obsession. The appropriateness of repeated contact without direct explanation remains a separate issue.",
+    "ja": "チェ・スミンは九日間、婚約者に連絡していたが、その目的は執着ではなく警告だった。ただし、直接説明せずに繰り返し連絡した方法の適切性は別に判断される。",
+    "zh-CN": "崔秀敏连续九天联系未婚夫，但目的不是纠缠，而是警告。不过，她没有直接说明却反复联系，这种方式是否妥当需要另行判断。"
+  }
+}
