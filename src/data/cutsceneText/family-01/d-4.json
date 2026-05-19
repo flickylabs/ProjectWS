@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-4",
+  "case": "family-01",
+  "confession_trust": {
+    "ko": "어머니 일기장에서 형이 아버지의 친자가 아니라는 사실을 봤습니다. 그 말이 형을 무너뜨릴까 봐 숨겼고, 유서 비율도 재산 다툼처럼 보이게 고쳤습니다. 형을 지킨다는 말로 어머니 뜻까지 고쳤습니다.",
+    "en": "In Mother's diary, I saw that my brother was not Father's biological son. I hid it because I feared those words would break him, and I changed the will ratio so it would look like an inheritance fight. In the name of protecting my brother, I even changed Mother's wishes.",
+    "ja": "母の日記で、兄が父の実子ではないという事実を見ました。その言葉が兄を壊すと思って隠し、遺書の比率も相続争いのように見えるよう変えました。兄を守るという言葉で、母の意思まで変えました。",
+    "zh-CN": "我在母亲日记里看到了哥哥不是父亲亲生儿子的事实。我怕这句话会让哥哥崩溃，所以隐瞒了，还把遗嘱比例改得像只是遗产纠纷。说是保护哥哥，其实连母亲的意思也被我改了。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "형이 그걸 알면 평생 믿고 선 자리까지 무너질까 봐, 그래서 제가 숫자를...",
+      "en": "If my brother learned that, even the place he had stood on his whole life might collapse, so I changed the numbers...",
+      "ja": "兄がそれを知ったら、一生信じて立っていた場所まで崩れると思って、それで私が数字を...",
+      "zh-CN": "哥哥要是知道那件事，他一辈子站着的地方都会塌掉，所以我才把数字..."
+    },
+    "phase2": {
+      "ko": "아니, 아직 읽지 마세요—",
+      "en": "No, please do not read that yet—",
+      "ja": "いえ、まだ読まないでください—",
+      "zh-CN": "不，请先不要读——"
+    },
+    "linkedDisputeId": "d-5"
+  },
+  "admission_witness_trust": {
+    "ko": "박순애 어르신 말씀이 그 일기장과 이어집니다. 저는 형의 출생에 관한 사실을 알았고 숨겼습니다. 유서까지 고친 이유도 그 침묵 때문입니다.",
+    "en": "What Mrs. Park Sun-ae said connects to that diary. I knew the fact about my brother's birth, and I hid it. That silence is also why I changed the will.",
+    "ja": "朴順愛さんの話は、その日記につながります。私は兄の出生に関する事実を知り、それを隠しました。遺書まで変えた理由も、その沈黙にあります。",
+    "zh-CN": "朴顺爱老人说的话和那本日记是连在一起的。我知道有关哥哥出生的事实，也隐瞒了。连遗嘱都改掉，也是因为这份沉默。"
+  },
+  "admission_witness_emotion": {
+    "ko": "맞습니다, 제가 숨겼습니다. 형이 그 말을 듣고 무너질까 봐요. 그래서 숫자를 건드렸습니다.",
+    "en": "Yes, I hid it. I thought my brother would collapse if he heard those words. That is why I touched the numbers.",
+    "ja": "そうです、私が隠しました。兄がその言葉を聞けば崩れると思ったからです。だから数字に手を入れました。",
+    "zh-CN": "没错，是我隐瞒了。我怕哥哥听到那句话会崩溃，所以才动了那些数字。"
+  },
+  "closure_truth": {
+    "ko": "어머니 일기장에는 윤태성이 아버지의 친자가 아니라는 기록이 있었다. 윤정후의 침묵은 그 사실을 형에게 곧장 드러내지 않으려는 선택이었다.",
+    "en": "Mother's diary recorded that Yoon Tae-seong was not Father's biological son. Yoon Jeong-hu's silence was a choice to keep that fact from being put directly in front of his brother.",
+    "ja": "母の日記には、尹泰成が父の実子ではないという記録があった。尹正厚の沈黙は、その事実を兄に直接突きつけないための選択だった。",
+    "zh-CN": "母亲日记中记载了尹泰成不是父亲亲生儿子的事实。尹正厚的沉默，是为了不把这个事实直接摆到哥哥面前。"
+  }
+}

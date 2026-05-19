@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-3",
+  "case": "family-01",
+  "confession_trust": {
+    "ko": "제가 보낸 돈입니다. 오래 매달 어머니 통장에 넣었고, 형 공장이 무너질 때 3억원도 그 통장을 거쳐 보냈습니다. 형은 어머니 돈이라고 믿었습니다. 저는 형 자존심이 무너질까 봐 제 이름을 지웠습니다.",
+    "en": "It was money I sent. For years I put money into Mother's account every month, and when my brother's factory was about to collapse, I sent 300 million won through that account as well. My brother believed it was Mother's money. I erased my name because I feared his pride would break.",
+    "ja": "私が送ったお金です。長い間、毎月母の口座に入れ、兄の工場が倒れそうになった時の3億ウォンもその口座を通して送りました。兄は母のお金だと信じていました。兄の自尊心が壊れるのが怖くて、私は自分の名前を消しました。",
+    "zh-CN": "那是我汇的钱。这么多年我每月把钱打进母亲账户，哥哥工厂快撑不住时，3亿韩元也是经由那个账户送过去的。哥哥一直以为那是母亲的钱。我怕他的自尊垮掉，所以把自己的名字抹掉了。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그 돈을 제 이름으로 보냈으면 형이 왜 제가 그렇게까지 했는지 묻게 됐을 겁니다...",
+      "en": "If I had sent that money in my own name, my brother would have asked why I went that far...",
+      "ja": "そのお金を私の名前で送っていたら、兄はなぜ私がそこまでしたのかを聞いたはずです...",
+      "zh-CN": "如果那笔钱用我的名义汇过去，哥哥一定会问我为什么做到那个地步..."
+    },
+    "phase2": {
+      "ko": "아니, 거기까지는—",
+      "en": "No, not that far—",
+      "ja": "いえ、そこまでは—",
+      "zh-CN": "不，还不能说到那里——"
+    },
+    "linkedDisputeId": "d-4"
+  },
+  "admission_witness_trust": {
+    "ko": "박순애 어르신 말씀이 맞습니다. 어머니가 받았다고 한 돈의 출처는 제 쪽이었습니다. 형이 편히 받게 하려고 어머니 이름 뒤에 숨겼습니다.",
+    "en": "Mrs. Park Sun-ae is right. The money Mother said she received came from me. I hid behind Mother's name so my brother could accept it without pain.",
+    "ja": "朴順愛さんの言葉は正しいです。母が受け取ったと言っていたお金の出所は私でした。兄が受け取りやすいように、母の名前の後ろに隠しました。",
+    "zh-CN": "朴顺爱老人说得没错。母亲说收到的那些钱，来源是我这边。我躲在母亲的名字后面，是为了让哥哥能安心收下。"
+  },
+  "admission_witness_emotion": {
+    "ko": "맞습니다, 제 돈이었습니다. 형이 무너질까 봐 말 못 했습니다. 고맙다는 말 들으려던 게 아닙니다.",
+    "en": "Yes, it was my money. I could not say it because I thought my brother would break. I was not doing it to hear thanks.",
+    "ja": "そうです、私のお金でした。兄が崩れると思って言えませんでした。感謝の言葉が欲しかったわけではありません。",
+    "zh-CN": "没错，那是我的钱。我怕哥哥承受不住，所以没有说。我不是为了听一句感谢。"
+  },
+  "closure_truth": {
+    "ko": "윤태성이 어머니 돈으로 알았던 핵심 지원은 윤정후 돈이 어머니 통장을 거쳐 전달된 것이었다. 이 숨김은 형의 자존심과 가족사 충격을 피하려는 선택이었다.",
+    "en": "The key support Yoon Tae-seong believed was Mother's money was Yoon Jeong-hu's money routed through Mother's account. The concealment was a choice meant to avoid wounding his brother's pride and exposing a deeper family shock.",
+    "ja": "尹泰成が母のお金だと思っていた主要な支援は、尹正厚の金が母の口座を経て渡ったものだった。この隠蔽は、兄の自尊心と家族史の衝撃を避けるための選択だった。",
+    "zh-CN": "尹泰成以为是母亲的钱的关键支援，其实是尹正厚的钱经由母亲账户转交过去的。这种隐瞒是为了避开哥哥的自尊受挫和更深的家庭冲击。"
+  }
+}

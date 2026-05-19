@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-2",
+  "case": "family-01",
+  "confession_trust": {
+    "ko": "제가 바꿨습니다. 자필 연습본의 90:10 비율을 알고도 공증본을 60:40으로 맞췄습니다. 더 받으려 한 게 아니라 형이 연습본을 파고드는 걸 막으려 했습니다. 그래도 유언장에 손댄 책임은 제 것입니다.",
+    "en": "I changed it. I knew the handwritten draft said 90 to 10, but I submitted the notarized version as 60 to 40. I was not trying to receive more; I was trying to stop my brother from digging into that draft. Even so, the responsibility for touching the will is mine.",
+    "ja": "私が変えました。自筆下書きが90対10だったと知りながら、公証本を60対40にしました。多く受け取ろうとしたのではなく、兄が下書きを掘り下げるのを止めたかったのです。それでも、遺言書に手を入れた責任は私にあります。",
+    "zh-CN": "是我改的。我明知亲笔草稿写的是90比10，还是把公证本做成了60比40。我不是想多拿，而是想阻止哥哥追查那份草稿。即便如此，动过遗嘱的责任在我。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그 비율은 제가 늘린 게 아니에요. 원래 적힌 숫자를 낮춘 건데, 그 뒤에는 어머니 통장 쪽 일이...",
+      "en": "I did not raise that share. I lowered what was originally written, and behind that was the account matter...",
+      "ja": "あの比率は私が増やしたものではありません。元の数字を下げたんです。その裏には母の通帳のことが...",
+      "zh-CN": "那个比例不是我加大的。我是把原本写下的数字降了下来，而背后还有母亲账户那边的事..."
+    },
+    "phase2": {
+      "ko": "아니, 지금 그 말은—",
+      "en": "No, what I mean now is—",
+      "ja": "いえ、今のは—",
+      "zh-CN": "不，我现在说的是——"
+    },
+    "linkedDisputeId": "d-3"
+  },
+  "admission_witness_trust": {
+    "ko": "김영수 씨 메모가 맞습니다. 공증본과 자필 연습본은 따로 봐야 합니다. 더 받으려 한 게 아니라 형이 그 연습본을 보지 않게 하려 했습니다.",
+    "en": "Mr. Kim Young-soo's memo is right. The notarized copy and the handwritten draft must be read separately. I was not trying to receive more; I was trying to keep my brother from seeing that draft.",
+    "ja": "金永洙さんのメモは正しいです。公証本と自筆下書きは分けて見るべきです。多く受け取ろうとしたのではなく、兄にその下書きを見せないようにしたかったのです。",
+    "zh-CN": "金英洙先生的记录是对的。公证本和亲笔草稿必须分开看。我不是想多拿，而是不想让哥哥看到那份草稿。"
+  },
+  "admission_witness_emotion": {
+    "ko": "맞아요, 제가 손댔습니다. 하지만 제 몫을 키운 게 아니라 줄인 겁니다. 그게 면책은 아니죠.",
+    "en": "Yes, I touched it. But I did not increase my share; I reduced it. That does not excuse me.",
+    "ja": "はい、私が手を入れました。ただ、自分の取り分を増やしたのではなく、減らしたのです。それで免責されるわけではありません。",
+    "zh-CN": "对，是我动过。但我不是把自己的份额变大，而是变小了。这并不能免除我的责任。"
+  },
+  "closure_truth": {
+    "ko": "공증본은 60:40으로 남았고, 별도 자필 연습본에는 다른 비율 고민이 있었다. 윤정후의 책임은 유언장에 손댄 행위에 있으며, 더 많이 받으려 한 조작과는 구분된다.",
+    "en": "The notarized copy remained 60 to 40, while a separate handwritten draft showed consideration of a different ratio. Yoon Jeong-hu is responsible for altering the will, but that is distinct from manipulating it to receive more.",
+    "ja": "公証本は60対40として残り、別の自筆下書きには異なる比率を考えた跡があった。尹正厚の責任は遺言書に手を入れた行為にあり、多く受け取るための改ざんとは区別される。",
+    "zh-CN": "公证本保留为60比40，另一份亲笔草稿显示曾考虑过不同的比例。尹正厚的责任在于动过遗嘱，但这与为了多拿而造假应当区分。"
+  }
+}

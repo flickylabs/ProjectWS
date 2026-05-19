@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-1",
+  "case": "family-01",
+  "confession_trust": {
+    "ko": "저는 어머니 말년에 자주 찾아가 유서 얘기를 꺼냈습니다. 종이를 읽어드리고 형 오기 전에 마치려 했습니다. 어머니 뜻을 지운 건 아니지만 빈틈을 제 판단으로 메웠습니다. 선을 넘은 책임은 제게 있습니다.",
+    "en": "I visited Mother often near the end and brought up the will. I read the paper to her and tried to finish before my brother came. I did not erase her wishes, but I filled the gaps with my own judgment. I am responsible for crossing that line.",
+    "ja": "母の晩年、私は何度も訪ねて遺書の話をしました。紙を読み聞かせ、兄が来る前に終わらせようとしました。母の意思を消したわけではありませんが、足りない部分を私の判断で埋めました。その一線を越えた責任は私にあります。",
+    "zh-CN": "母亲晚年时，我常去看她，也主动提起遗嘱的事。我把纸读给她听，还想在哥哥来之前结束。我没有抹掉母亲的意思，但空白处是我用自己的判断补上的。越过那条线的责任在我。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "형이 오기 전에 끝내야 했어요. 그 종이가 더 파헤쳐지면 다른 것까지...",
+      "en": "I had to finish before my brother came. If that paper was dug into, other things would...",
+      "ja": "兄が来る前に終わらせなければならなかったんです。あの紙をさらに掘られたら、別のことまで...",
+      "zh-CN": "必须在哥哥来之前结束。那张纸要是被继续追下去，别的事也会..."
+    },
+    "phase2": {
+      "ko": "아니, 그런 뜻이 아니라—",
+      "en": "No, that is not what I meant—",
+      "ja": "いえ、そういう意味では—",
+      "zh-CN": "不，我不是那个意思——"
+    },
+    "linkedDisputeId": "d-2"
+  },
+  "admission_witness_trust": {
+    "ko": "최복순 씨가 본 그대로입니다. 제가 종이를 읽어드렸고 형 오기 전에 마치려 했습니다. 어머니 뜻을 도왔다고만 말할 수는 없습니다.",
+    "en": "What Ms. Choi Bok-soon saw is true. I read the paper to Mother and tried to finish before my brother came. I cannot call it only helping Mother's wishes.",
+    "ja": "崔福順さんが見たとおりです。私が紙を読み聞かせ、兄が来る前に終わらせようとしました。母の意思を手伝っただけだとは言えません。",
+    "zh-CN": "崔福顺女士看到的是真的。我把纸读给母亲听，也想在哥哥来之前结束。这不能只说是在帮母亲表达意思。"
+  },
+  "admission_witness_emotion": {
+    "ko": "맞습니다, 제가 곁에 있었습니다. 끝내야 한다고 서둘렀고, 그때부터 제 책임이 생겼습니다.",
+    "en": "Yes, I was beside her. I hurried it along because I thought it had to be finished, and my responsibility began there.",
+    "ja": "そのとおりです。私はそばにいました。終わらせなければと思って急がせ、その時点で私の責任が生まれました。",
+    "zh-CN": "没错，我当时在她身边。我觉得必须结束，所以催了她。从那一刻起，我就有责任。"
+  },
+  "closure_truth": {
+    "ko": "어머니의 판단 능력은 완전히 사라지지 않았지만, 윤정후는 유서 작성 과정에 개입했다. 그 개입은 유서의 적법성에 문제를 남긴다.",
+    "en": "Mother's capacity to decide was not completely gone, but Yoon Jeong-hu intervened in the making of the will. That intervention leaves a legal problem around the will's validity.",
+    "ja": "母の判断能力は完全に失われていなかったが、尹正厚は遺書作成の過程に介入した。その介入は遺書の適法性に問題を残す。",
+    "zh-CN": "母亲的判断能力并未完全丧失，但尹正厚介入了遗嘱制作过程。该介入给遗嘱的合法性留下了问题。"
+  }
+}

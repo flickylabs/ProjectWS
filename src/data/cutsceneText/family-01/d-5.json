@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-5",
+  "case": "family-01",
+  "confession_trust": {
+    "ko": "형도 저도 어머니를 있는 그대로 두지 못했습니다. 형은 돌봄을 유산의 권리처럼 붙들었고, 저는 형을 지킨다며 어머니 뜻을 고쳤습니다. 상처가 줄 거라 믿었지만, 그 책임은 없어지지 않습니다.",
+    "en": "Neither my brother nor I left Mother as she was. My brother held caregiving as if it were a right to inherit, and I changed Mother's wishes while saying I was protecting him. I believed the wound would be smaller, but that responsibility does not disappear.",
+    "ja": "兄も私も、母をありのままにはしておけませんでした。兄は介護を相続の権利のように握り、私は兄を守ると言って母の意思を変えました。傷は小さくなると信じましたが、その責任は消えません。",
+    "zh-CN": "哥哥和我都没能让母亲的意思保持原样。哥哥把照顾母亲当成继承的权利，我则说是保护哥哥而改了母亲的意思。我以为伤害会小一点，但这个责任不会消失。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그 일기장을 안 본 척하면 우리 둘 다 편했겠죠. 하지만 어머니 뜻 위에 각자 자기 말을...",
+      "en": "It would have been easier for both of us to pretend we never saw that diary. But each of us put our own words over Mother's wishes...",
+      "ja": "あの日記を見なかったふりをすれば、私たちは二人とも楽だったでしょう。でも母の意思の上に、それぞれ自分の言葉を...",
+      "zh-CN": "如果装作没看见那本日记，我们两个都会轻松些。可是我们都把自己的话压在母亲的意思上..."
+    },
+    "phase2": {
+      "ko": "아니, 제가 할 말은—",
+      "en": "No, what I need to say is—",
+      "ja": "いえ、私が言うべきことは—",
+      "zh-CN": "不，我要说的是——"
+    },
+    "linkedDisputeId": "d-4"
+  },
+  "admission_witness_trust": {
+    "ko": "박순애 어르신 말씀이 어머니 마음을 꺼냈습니다. 형은 돌봄을 보상으로 읽었고 저는 보호라는 말로 문서를 고쳤습니다. 둘 다 제 뜻을 얹었습니다.",
+    "en": "Mrs. Park Sun-ae's words brought out Mother's heart. My brother read care as something to be repaid, and I changed the document under the word protection. We both placed our own will over hers.",
+    "ja": "朴順愛さんの言葉が、母の心を表に出しました。兄は世話を報いとして読み、私は保護という言葉で文書を変えました。二人とも自分の意思を重ねました。",
+    "zh-CN": "朴顺爱老人把母亲的心意说了出来。哥哥把照顾解读成应得的补偿，我则用保护这个说法改了文件。我们两个人都加上了自己的意思。"
+  },
+  "admission_witness_emotion": {
+    "ko": "그만하겠습니다. 형만 잘못한 것도, 저만 피해자인 것도 아닙니다. 제가 어머니 뜻을 고쳤고 형도 그 뜻을 자기 권리로 읽었습니다.",
+    "en": "I will stop hiding behind this. My brother is not the only one at fault, and I am not only a victim. I changed Mother's wishes, and my brother read those wishes as his own right.",
+    "ja": "もうやめます。兄だけが悪いわけでも、私だけが被害者なわけでもありません。私は母の意思を変え、兄もその意思を自分の権利として読みました。",
+    "zh-CN": "我不再躲了。不是只有哥哥错，也不是只有我是受害者。我改了母亲的意思，哥哥也把那份意思读成了自己的权利。"
+  },
+  "closure_truth": {
+    "ko": "윤태성은 유산을 돌봄의 보상처럼 당연시했고, 윤정후는 보호 명분으로 어머니 뜻과 문서를 고쳤다. 두 형제는 서로 다른 방식으로 어머니 뜻을 자기 기준에 맞춰 움직였다.",
+    "en": "Yoon Tae-seong treated the inheritance as if it were compensation for caregiving, while Yoon Jeong-hu changed Mother's wishes and the document under the reason of protection. The two brothers moved Mother's wishes to fit their own standards in different ways.",
+    "ja": "尹泰成は遺産を介護への報いのように当然視し、尹正厚は保護を名目に母の意思と文書を変えた。二人の兄弟は、異なる形で母の意思を自分の基準に合わせて動かした。",
+    "zh-CN": "尹泰成把遗产视为照顾母亲的应得补偿，尹正厚则以保护为名改动了母亲的意思和文件。兄弟二人以不同方式把母亲的意思移向了自己的标准。"
+  }
+}
