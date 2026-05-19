@@ -14,16 +14,16 @@
  */
 
 import type { LieState, EmotionalPhase, PartyId } from '../types'
-import type { EmotionTier, QuestionType, ReadinessState } from '../types'
+import type { EmotionTier as _EmotionTier, QuestionType, ReadinessState } from '../types'
 import type { QuestionMeterState } from './questionEffectEngine'
 import { getMeterEffects } from './questionEffectEngine'
 import {
   getEventTexts,
   getAvailableInterjections,
   getAvailableOutbursts,
-  getTransitionBeat,
+  getTransitionBeat as _getTransitionBeat,
 } from './v3GameLoopLoader'
-import type { TransitionBeat } from '../types'
+import type { TransitionBeat as _TransitionBeat } from '../types'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 타입
@@ -201,7 +201,7 @@ function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
 
   const party = snapshot.activeParty
   const focusTokens = snapshot.meters[party].contradictionTokensByDispute[snapshot.focusDisputeId] ?? 0
-  const meterEffects = getMeterEffects(snapshot.meters[party], snapshot.focusDisputeId)
+  const _meterEffects = getMeterEffects(snapshot.meters[party], snapshot.focusDisputeId)
 
   // 조건 1: 모순토큰 3개 이상 축적
   if (focusTokens < CONTRADICTION_MIN_TOKENS) return null
@@ -362,7 +362,7 @@ function checkEmotionalBurst(snapshot: TurnSnapshot): GameEventTrigger | null {
 // 내부 — 새 쟁점 출현
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-function checkDisputeEmergence(snapshot: TurnSnapshot): GameEventTrigger | null {
+function _checkDisputeEmergence(snapshot: TurnSnapshot): GameEventTrigger | null {
   // 숨겨진 쟁점이 있는지 확인
   const hiddenDisputes = Object.entries(snapshot.disputeVisibility)
     .filter(([_, v]) => v === 'hidden')

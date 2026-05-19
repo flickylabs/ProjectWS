@@ -4,6 +4,8 @@
  */
 import type { StateCreator } from 'zustand'
 import type { MiniGameType, MiniGameProgress, MiniGameConfig } from '../../types/minigame'
+import type { UnsafeAny } from '../../types/lint'
+
 
 export interface MinigameSlice {
   /** 미니게임별 진행도 */
@@ -20,7 +22,7 @@ export interface MinigameSlice {
 
 const EMPTY_PROGRESS: MiniGameProgress = { completedRounds: 0, totalEarned: 0 }
 
-export const createMinigameSlice: StateCreator<any, [], [], MinigameSlice> = (set) => ({
+export const createMinigameSlice: StateCreator<UnsafeAny, [], [], MinigameSlice> = (set) => ({
   minigameProgress: {
     memory_match: { ...EMPTY_PROGRESS },
     skill_runner: { ...EMPTY_PROGRESS },

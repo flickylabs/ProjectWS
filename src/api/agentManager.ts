@@ -10,7 +10,7 @@
  * 6. 세션 스냅샷: 세션 시작 시 블록 버전 고정 → 진행 중 갱신 방지
  */
 
-import { agentApi, type AgentConfig, type AgentBlockComposition, type PromptBlock } from './client'
+import { agentApi, type AgentConfig, type AgentBlockComposition as _AgentBlockComposition, type PromptBlock } from './client'
 
 // ── 라이브 캐시 (polling으로 갱신) ──
 let agentCache: Record<string, AgentConfig> = {}

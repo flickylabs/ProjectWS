@@ -10,7 +10,7 @@ import type { LieState } from './agent'
 import type { Dispute } from './case'
 import type { PartyId } from './game'
 import type {
-  AngleTag,
+  AngleTag as _AngleTag,
   BeliefMode,
   IssueLayer,
   IssueRole,

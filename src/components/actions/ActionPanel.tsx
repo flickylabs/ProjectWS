@@ -16,10 +16,12 @@ import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { getDossierCards, getDossierCard, resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
 import { resolveInvestigation } from '../../engine/evidenceChallengeEngine'
 import { evaluateDossierUnlock } from '../../engine/meterStagingV2'
-import { showToast } from '../common/Toast'
+import { showToast as _showToast } from '../common/Toast'
 import { showGuideCutscene } from '../common/guideCutscene'
 
 import Emoji from '../common/Emoji'
+import type { UnsafeAny } from '../../types/lint'
+
 
 type ActionTab = 'question' | 'evidence' | 'skill' | null
 
@@ -680,7 +682,7 @@ export default function ActionPanel() {
 /* ── 액티브 스킬 패널 (이의 제기 / 분리 심문 / 즉답 요구) ── */
 
 function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, onTrust, currentPhase, onClose }: {
-  target: PartyId; disputes: {id:string;name:string}[]; resources: any; canUseSkill: (s:SkillType)=>boolean
+  target: PartyId; disputes: {id:string;name:string}[]; resources: UnsafeAny; canUseSkill: (s:SkillType)=>boolean
   onObj: ()=>void; onSkill: (s:SkillType,d?:string)=>void; onTrust: (a:TrustActionType)=>void; currentPhase: GamePhase
   onClose?: ()=>void
 }) {

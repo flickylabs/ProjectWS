@@ -14,13 +14,15 @@ import type {
 import type { PartyId } from '../../types'
 import {
   createInitialDiscoveryState,
-  computeCascadeTargets,
-  checkEmergence,
+  computeCascadeTargets as _computeCascadeTargets,
+  checkEmergence as _checkEmergence,
 } from '../../engine/discoveryEngine'
 import { notifyDisputeEmergence } from '../../engine/readinessEngine'
 import { createAppraisal } from '../../engine/evidenceEngine'
 import { getSafeEmergenceDescription } from '../../data/safeEmergenceCopy'
 import { emitHiddenDisputeEmerged } from '../../telemetry/wirePoints'
+import type { UnsafeAny } from '../../types/lint'
+
 
 const EMPTY_DISCOVERY: DiscoveryState = {
   judgments: {},
@@ -45,7 +47,7 @@ export interface DiscoverySlice {
   discovery: DiscoveryState
 
   // ── 초기화 ──
-  initDiscovery: (caseData: any) => void
+  initDiscovery: (caseData: UnsafeAny) => void
 
   // ── 진실 공방 ──
   /** 진실 공방 모달 트리거 */
@@ -203,7 +205,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
     // 숨겨진 쟁점 발현 시 보너스 턴 부여 (동기 호출)
     notifyDisputeEmergence()
     // 타임라인 이벤트
-    const store = get() as any
+    const store = get() as UnsafeAny
     const wasHidden = store.discovery?.disputeVisibility?.[disputeId]?.visibility === 'hidden'
     const safeDescription = getSafeEmergenceDescription(store, disputeId, description)
     store.pushGameEvent?.({
@@ -223,7 +225,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
         ...entry,
         visibility: 'emerged',
         emergedAtTurn: turn,
-        emergedVia: via as any,
+        emergedVia: via as UnsafeAny,
         isNew: true,
       }
 
@@ -231,7 +233,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
         discovery: {
           ...d,
           disputeVisibility: vis,
-          pendingEmergence: { disputeId, route: via as any, description: safeDescription },
+          pendingEmergence: { disputeId, route: via as UnsafeAny, description: safeDescription },
         },
       }
     })
@@ -268,7 +270,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
     const safeEvent = event
       ? {
           ...event,
-          description: getSafeEmergenceDescription(get() as any, event.disputeId, event.description),
+          description: getSafeEmergenceDescription(get() as UnsafeAny, event.disputeId, event.description),
         }
       : event
     set((prev) => ({

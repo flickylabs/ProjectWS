@@ -306,7 +306,7 @@ export default function PCBottomDock() {
     requestVerdictAdvance()
   }, [])
 
-  const collapseAdvanceBanner = useCallback(() => {
+  const _collapseAdvanceBanner = useCallback(() => {
     setAdvanceDismissed(true)
     emitVerdictCtaCollapsed()
   }, [])

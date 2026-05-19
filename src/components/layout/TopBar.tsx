@@ -1,7 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { Phase } from '../../types'
-import PhaseIndicator from './PhaseIndicator'
+import _PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
 import Emoji from '../common/Emoji'
 import { checkConnection } from '../../engine/llmClient'

@@ -16,7 +16,7 @@ import { saveCaseProgress } from '../../phase/CaseMap'
 import { resetAftermathCache } from '../../result/Aftermath'
 import { resolveScriptedAftermath } from '../../../engine/aftermathResolver'
 import { playClick } from '../../../engine/soundEngine'
-import CharacterFaceSvg from '../icons/CharacterFaceSvg'
+import _CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCClearanceDetailPopup from './PCClearanceDetailPopup'
 import { evaluateClearance } from '../../../engine/clearanceTracker'
 import PCFragmentRewardOverlay from './PCFragmentRewardOverlay'
@@ -42,6 +42,8 @@ import {
   getRewardTitleInfo,
   type ResultTab,
 } from './resultCopy'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 export type PCResultFrameTab<T extends string = string> = { id: T; label: string }
 
@@ -341,11 +343,11 @@ export default function PCResultScreen() {
   const [tab, setTab] = useState<ResultTab>('result')
   const [titles, setTitles] = useState<Title[]>([])
   const [newTitles, setNewTitles] = useState<Set<string>>(new Set())
-  const [copied, setCopied] = useState(false)
-  const [summaryCopied, setSummaryCopied] = useState(false)
+  const [_copied, setCopied] = useState(false)
+  const [_summaryCopied, setSummaryCopied] = useState(false)
   const [clearanceDetailOpen, setClearanceDetailOpen] = useState(false)
   const [rewardApplied, setRewardApplied] = useState(true)
-  const [rewardOverlayDismissed, setRewardOverlayDismissed] = useState(true)
+  const [_rewardOverlayDismissed, setRewardOverlayDismissed] = useState(true)
 
   useEffect(() => {
     if (verdictScore && caseData) {
@@ -580,7 +582,7 @@ export default function PCResultScreen() {
     state.setPhase(GamePhase.Phase0_CaseIntro)
   }
 
-  const handleNextCase = () => {
+  const _handleNextCase = () => {
     if (!nextCase) {
       handleExit()
       return
@@ -612,7 +614,7 @@ export default function PCResultScreen() {
     setRewardOverlayDismissed(true)
   }
 
-  const handleCopyShare = async () => {
+  const _handleCopyShare = async () => {
     const text = `${headline} - ${verdictScore.total}${copy.unitPoint} (${getResultRating(verdictScore.total, locale)})`
     try {
       await navigator.clipboard.writeText(text)
@@ -623,7 +625,7 @@ export default function PCResultScreen() {
     }
   }
 
-  const handleCopySummary = async () => {
+  const _handleCopySummary = async () => {
     if (!verdictSummary) return
     try {
       await navigator.clipboard.writeText(verdictSummary.fullText)
@@ -810,7 +812,7 @@ export default function PCResultScreen() {
                       ? null
                       : (finding === 'true') === d.truth
                     // 유저가 실제로 선택한 텍스트
-                    const selectedText = ((window as any).__factSelectedTexts ?? {})[d.id] as string | undefined
+                    const selectedText = ((window as UnsafeAny).__factSelectedTexts ?? {})[d.id] as string | undefined
                     const safeSelectedText = selectedText && !hasUnexpectedHangulForLocale(selectedText, locale) ? selectedText : undefined
                     return (
                       <div className={`pc-result-truth__card ${correct === true ? 'is-correct' : correct === false ? 'is-wrong' : ''}`} key={d.id}
@@ -818,7 +820,7 @@ export default function PCResultScreen() {
                       >
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <strong style={{ fontSize: 14, display: 'block', marginBottom: 3, color: '#e0ddd6' }}>{d.name}</strong>
-                          <p style={{ fontSize: 13, color: '#b0aeb4', lineHeight: 1.5, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' } as any}>
+                          <p style={{ fontSize: 13, color: '#b0aeb4', lineHeight: 1.5, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' } as UnsafeAny}>
                             {copy.selectedJudgment}: {safeSelectedText ?? getFindingLabel(finding, d.truth, locale)}
                           </p>
                         </div>
@@ -1050,7 +1052,7 @@ export default function PCResultScreen() {
 
 /* ─── Fragment 3×3 Grid ─── */
 
-const FRAG_SVG: Record<string, React.ReactNode> = {
+const _FRAG_SVG: Record<string, React.ReactNode> = {
   // 탐구 — 음: 추론(돋보기)
   reasoning_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="2.5"/><line x1="20" y1="20" x2="27" y2="27" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg>,
   // 탐구 — 중립: 탐구(책)
@@ -1137,7 +1139,7 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
                     }}>x{count}</span>
                   ) : null}
                   {/* 아이콘 — 크게 */}
-                  <PCFragmentIcon fragmentId={fragId as any} size={92} />
+                  <PCFragmentIcon fragmentId={fragId as UnsafeAny} size={92} />
                   {/* 이름 라벨 — 카드 하단 오버레이 */}
                   <span style={{
                     position: 'absolute', bottom: 10, left: 10, right: 10,
@@ -1187,14 +1189,14 @@ function AftermathInline() {
   const discovery = useStore((s) => s.discovery)
   const [aftermath, setAftermath] = useState<string | null>(getCachedAftermath(caseData?.caseId, locale))
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [_error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     // 캐시가 있으면 재호출하지 않음
     const cached = getCachedAftermath(caseData?.caseId, locale)
     if (cached) { setAftermath(cached); return }
     // 사전 생성된 결과가 있으면 사용
-    const pregenerated = (window as any).__aftermathPregenerated as string | undefined
+    const pregenerated = (window as UnsafeAny).__aftermathPregenerated as string | undefined
     if (pregenerated && !hasUnexpectedHangulForLocale(pregenerated, locale)) {
       _aftermathCache = { caseId: caseData?.caseId ?? 'unknown', locale, text: pregenerated }
       setAftermath(pregenerated)
@@ -1263,7 +1265,7 @@ function AftermathInline() {
         _aftermathCache = { caseId: caseData.caseId, locale, text: result }
         setAftermath(result)
         updateLatestAftermath(result, caseData.caseId)
-      } catch (err: any) {
+      } catch (err: UnsafeAny) {
         console.error('[aftermath] LLM call failed:', err?.message ?? err)
         setError(err?.message ?? 'LLM call failed')
         const scripted = resolveScriptedAftermath(caseData, verdictInput)
@@ -1629,7 +1631,7 @@ function ProfileGaugeSection() {
 }
 
 /** 기존 통합 (다른 곳에서 사용 시) */
-function ProfileInline() {
+function _ProfileInline() {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
       <ProfileInfoSection />

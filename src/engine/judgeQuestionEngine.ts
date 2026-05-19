@@ -11,6 +11,8 @@
 import type { QuestionType } from '../types'
 import type { CaseData, PartyId } from '../types'
 import type { LieState } from '../types'
+import { getScriptedJudgeQuestion } from './scriptedTextLoader'
+import { normalizeCaseKey } from '../utils/caseHelpers'
 
 type Tone = 'soft' | 'hard'
 type QuestionPool = {
@@ -232,8 +234,6 @@ export function generateJudgeQuestion(
   // ScriptedText 우선: 사건별 맞춤 질문
   // [B1·B2 픽스] target 인자 전달 — 추궁 대상자와 변종 호명이 일치하도록 강제
   try {
-    const { getScriptedJudgeQuestion } = require('./scriptedTextLoader')
-    const { normalizeCaseKey } = require('../utils/caseHelpers')
     const caseKey = normalizeCaseKey(caseData.caseId ?? '')
     const depth = Math.min(Math.max(interrogationDepth, 1), 4)
     const scripted = getScriptedJudgeQuestion(caseKey, disputeId, questionType, depth, target)

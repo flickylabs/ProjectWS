@@ -92,7 +92,7 @@ function getCardDefinition(kind: EvidenceCardId): EvidenceCardDefinition {
   return CARD_LIBRARY.find((card) => card.id === kind) ?? CARD_LIBRARY[0]
 }
 
-function MemoryMatchIcon({ kind, className }: { kind: EvidenceCardId; className?: string }) {
+function _MemoryMatchIcon({ kind, className }: { kind: EvidenceCardId; className?: string }) {
   const baseProps = {
     className,
     viewBox: '0 0 64 64',
@@ -279,7 +279,7 @@ export default function MemoryMatchGame({ round }: { round: number }) {
   const timeoutIdsRef = useRef<number[]>([])
 
   const roundConfig = getRoundConfig(round)
-  const clearedPairs = cards.filter((card) => card.cleared).length / 2
+  const _clearedPairs = cards.filter((card) => card.cleared).length / 2
 
   const clearScheduled = useCallback(() => {
     for (const timeoutId of timeoutIdsRef.current) {

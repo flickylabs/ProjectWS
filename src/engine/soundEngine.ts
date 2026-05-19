@@ -1,3 +1,4 @@
+import type { UnsafeAny } from '../types/lint'
 /**
  * 사운드 이벤트 시스템.
  * 실제 MP3 파일 우선, 없으면 Web Audio API 합성음 폴백.
@@ -10,7 +11,7 @@ let enabled = (() => {
 
 function getAudioCtx(): AudioContext {
   if (!audioCtx) {
-    audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)()
+    audioCtx = new (window.AudioContext || (window as UnsafeAny).webkitAudioContext)()
   }
   return audioCtx
 }

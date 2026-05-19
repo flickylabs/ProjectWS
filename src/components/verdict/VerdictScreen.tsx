@@ -17,6 +17,8 @@ import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
 import EvidenceLegality from './EvidenceLegality'
 import Emoji from '../common/Emoji'
+import type { UnsafeAny } from '../../types/lint'
+
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'legality' | 'confirm'
 
@@ -201,8 +203,8 @@ export default function VerdictScreen() {
       processMetrics,
       caseData.disputes.map(d => ({
         id: d.id,
-        ambiguity: (d as any).ambiguity,
-        truth: (d as any).truth ?? true,
+        ambiguity: (d as UnsafeAny).ambiguity,
+        truth: (d as UnsafeAny).truth ?? true,
       })),
       caseData.caseId,
       caseData.solutions,

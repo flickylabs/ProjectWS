@@ -11,7 +11,7 @@ function normalizeContradictionClaim(value: string): string {
     .normalize('NFKC')
     .toLowerCase()
     .replace(/["'`]/g, '')
-    .replace(/[.,!?~:;()[\]{}<>\-\s]/g, '')
+    .replace(/[.,!?~:;()[\]{}<>\s-]/g, '')
 }
 
 function tokenizeContradictionClaim(value: string): string[] {
@@ -19,7 +19,7 @@ function tokenizeContradictionClaim(value: string): string[] {
     .normalize('NFKC')
     .toLowerCase()
     .replace(/["'`]/g, '')
-    .replace(/[.,!?~:;()[\]{}<>\-]/g, ' ')
+    .replace(/[.,!?~:;()[\]{}<>-]/g, ' ')
     .split(/\s+/)
     .map((token) => token.trim())
     .filter((token) => token.length >= 2)

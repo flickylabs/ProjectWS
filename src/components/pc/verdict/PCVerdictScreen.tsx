@@ -16,7 +16,7 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import { GamePhase } from '../../../types'
 import type { CaseData, LieState, VerdictInput } from '../../../types'
 import { recordHistory } from '../../layout/HistoryPanel'
-import CharacterFaceSvg from '../icons/CharacterFaceSvg'
+import _CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { CAMPAIGN_STAGE_MAP, getCampaignStageKey } from '../../verdict/VerdictScreen'
 import { triggerCutscene } from '../../discovery/CutsceneOverlay'
@@ -25,6 +25,8 @@ import { useI18n, type LocaleCode, type MessageKey, type MessageValues } from '.
 import { getResultRating } from '../result/resultCopy'
 import { steamAchievements } from '../../../steam/steamServices'
 import { emitVerdictSubmit } from '../../../telemetry/wirePoints'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
 type FlatItem = { step: VerdictStep; subIdx: number }
@@ -117,7 +119,7 @@ function buildKeyMomentText(args: {
   return '양측의 책임을 비교적 균등하게 본 판단이 이번 판결의 핵심 기준이 되었습니다.'
 }
 
-function getRelLabel(type: string): string {
+function _getRelLabel(type: string): string {
   const map: Record<string, string> = { spouse: '부부', family: '가족', friend: '친구', neighbor: '이웃', partnership: '동업', workplace: '직장', tenant_landlord: '세입자' }
   return map[type] ?? type
 }
@@ -717,9 +719,9 @@ export default function PCVerdictScreen() {
                             if (isLocked) return
                             setFactSelections((prev) => ({ ...prev, [dispute.id]: opt.key }))
                             // 선택한 텍스트를 전역에 저장 — 결과 화면에서 사용
-                            const stored = (window as any).__factSelectedTexts ?? {}
+                            const stored = (window as UnsafeAny).__factSelectedTexts ?? {}
                             stored[dispute.id] = opt.text
-                            ;(window as any).__factSelectedTexts = stored
+                            ;(window as UnsafeAny).__factSelectedTexts = stored
                             useGameStore.getState().setFactFinding(dispute.id, opt.mapping)
                             if (autoAdvanceEnabled && current.subIdx < disputes.length - 1) {
                               setTimeout(() => {

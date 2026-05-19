@@ -17,6 +17,8 @@ import {
 } from '../../engine/v3GameLoopLoader'
 import type { LieState } from '../../types'
 import { resolveInvestigation } from '../../engine/evidenceChallengeEngine'
+import type { UnsafeAny } from '../../types/lint'
+
 
 interface Props {
   target: PartyId
@@ -76,7 +78,7 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchDo
   const lieStates: Record<string, LieState> = {}
   if (lieConfig) {
     for (const [dId, cfg] of Object.entries(lieConfig)) {
-      lieStates[dId] = (cfg as any).currentState ?? 'S0'
+      lieStates[dId] = (cfg as UnsafeAny).currentState ?? 'S0'
     }
   }
 

@@ -98,7 +98,7 @@ export default function PCActionsPanel({
     return questions.find((question) => question.type === quickQuestionType) ?? null
   }, [quickQuestionType, questions])
 
-  const quickQuestionDispute = useMemo(() => {
+  const _quickQuestionDispute = useMemo(() => {
     if (!quickQuestion || !focusedDisputeId) {
       return null
     }

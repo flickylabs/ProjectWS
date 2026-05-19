@@ -7,11 +7,13 @@ import { postposition } from '../../engine/koreanPostposition'
 import { getRuntimeScriptLocale } from '../../i18n/scriptLocale.ts'
 
 // Vite의 glob import로 모든 JSON을 lazy 로드 가능하게 등록
-const caseModules = import.meta.glob('./generated/*.json', { eager: true }) as Record<string, { default: any }>
+const caseModules = import.meta.glob('./generated/*.json', { eager: true }) as Record<string, { default: UnsafeAny }>
 const scriptedModules = import.meta.glob('../scriptedText/*.json', { eager: false })
 
 // 정제 완료 목록
 import refinedManifest from './refined/manifest.json'
+import type { UnsafeAny } from '../../types/lint'
+
 const REFINED_SET = new Set((refinedManifest as { refined: string[] }).refined)
 const EXCLUDED_CASE_KEYS = new Set(['neighbor-new-10', 'civic-new-07'])
 const SCRIPTED_SET = new Set(
@@ -37,17 +39,17 @@ const RAW_CASES = Object.entries(caseModules)
  * 간소화 포맷 감지 (parties/issues 구조 = ChatGPT 대안 스키마).
  * 표준 포맷(duo/disputes)으로 변환 후 정규화에 넘긴다.
  */
-function convertAlternateFormat(raw: any): any {
+function convertAlternateFormat(raw: UnsafeAny): UnsafeAny {
   const pa = raw.parties?.a
   const pb = raw.parties?.b
 
   // ID 변환 헬퍼: I1→d-1, E1→e-1
   const issueIdMap: Record<string, string> = {}
   const evidenceIdMap: Record<string, string> = {}
-  ;(raw.issues ?? []).forEach((iss: any, i: number) => {
+  ;(raw.issues ?? []).forEach((iss: UnsafeAny, i: number) => {
     issueIdMap[iss.issueId] = `d-${i + 1}`
   })
-  ;(raw.evidence ?? []).forEach((ev: any, i: number) => {
+  ;(raw.evidence ?? []).forEach((ev: UnsafeAny, i: number) => {
     evidenceIdMap[ev.evidenceId] = `e-${i + 1}`
   })
 
@@ -107,7 +109,7 @@ function convertAlternateFormat(raw: any): any {
       sensitivePoints: [],
       verbalTells: convertTells(pb?.verbalTells ?? []),
     },
-    relationshipLedger: (raw.relationshipLedger ?? []).map((l: any, i: number) => ({
+    relationshipLedger: (raw.relationshipLedger ?? []).map((l: UnsafeAny, i: number) => ({
       id: `ledger-${i + 1}`,
       category: l.status === 'confirmed' ? 'confirmed' : l.status === 'distorted' ? 'distorted' : 'silenced',
       description: l.entry ?? '',
@@ -119,7 +121,7 @@ function convertAlternateFormat(raw: any): any {
       emotionalResidue: l.status === 'silenced' ? 'strong' : 'mild',
       connectionToCurrent: 'direct',
     })),
-    socialGraph: (raw.socialGraph ?? []).map((sg: any, i: number) => ({
+    socialGraph: (raw.socialGraph ?? []).map((sg: UnsafeAny, i: number) => ({
       id: `tp-${i + 1}`,
       slot: i === 0 ? 'institutional' : `acquaintance_${i}`,
       name: sg.name ?? '',
@@ -134,7 +136,7 @@ function convertAlternateFormat(raw: any): any {
   // issues → disputes
   const faultA = raw.faultShare?.a ?? 50
   const faultB = raw.faultShare?.b ?? 50
-  const disputes = (raw.issues ?? []).map((iss: any, i: number) => ({
+  const disputes = (raw.issues ?? []).map((iss: UnsafeAny, i: number) => ({
     id: issueIdMap[iss.issueId],
     name: iss.statement?.slice(0, 40) ?? `쟁점 ${i + 1}`,
     truth: iss.truth ?? true,
@@ -149,7 +151,7 @@ function convertAlternateFormat(raw: any): any {
   }))
 
   // evidence 변환
-  const evidence = (raw.evidence ?? []).map((ev: any) => ({
+  const evidence = (raw.evidence ?? []).map((ev: UnsafeAny) => ({
     id: evidenceIdMap[ev.evidenceId],
     name: ev.title ?? '',
     description: ev.summary ?? '',
@@ -165,9 +167,9 @@ function convertAlternateFormat(raw: any): any {
   }))
 
   // lies → lieConfig
-  const convertLies = (lies: any[], _party: 'a' | 'b') =>
-    (lies ?? []).map((lie: any, _i: number) => {
-      const disputeId = issueIdMap[lie.collapseViaEvidence?.[0] ? (raw.evidence ?? []).find((e: any) => e.evidenceId === lie.collapseViaEvidence[0])?.reveals?.[0] : null] ?? disputes[0]?.id ?? 'd-1'
+  const convertLies = (lies: UnsafeAny[], _party: 'a' | 'b') =>
+    (lies ?? []).map((lie: UnsafeAny, _i: number) => {
+      const disputeId = issueIdMap[lie.collapseViaEvidence?.[0] ? (raw.evidence ?? []).find((e: UnsafeAny) => e.evidenceId === lie.collapseViaEvidence[0])?.reveals?.[0] : null] ?? disputes[0]?.id ?? 'd-1'
       return {
         disputeId,
         lieType: lie.type ?? 'LT-1',
@@ -188,7 +190,7 @@ function convertAlternateFormat(raw: any): any {
   // solutions 변환
   const solutions: Record<string, string[]> = {}
   if (raw.solutionOptions) {
-    for (const [_key, val] of Object.entries(raw.solutionOptions as Record<string, any>)) {
+    for (const [_key, val] of Object.entries(raw.solutionOptions as Record<string, UnsafeAny>)) {
       solutions[disputes[0]?.id ?? 'd-1'] = solutions[disputes[0]?.id ?? 'd-1'] ?? []
       solutions[disputes[0]?.id ?? 'd-1'].push(`[${val.label}] ${val.action}`)
     }
@@ -207,7 +209,7 @@ function convertAlternateFormat(raw: any): any {
     disputes,
     evidence,
     evidenceCombinations: [],
-    truthTable: (raw.issues ?? []).map((iss: any) => ({
+    truthTable: (raw.issues ?? []).map((iss: UnsafeAny) => ({
       id: `truth-${issueIdMap[iss.issueId]}`,
       fact: iss.statement ?? '',
       isTrue: iss.truth ?? true,
@@ -217,13 +219,13 @@ function convertAlternateFormat(raw: any): any {
     lieConfigA: convertLies(raw.lies?.a ?? [], 'a'),
     lieConfigB: convertLies(raw.lies?.b ?? [], 'b'),
     solutions,
-    activeLedgerEntries: (raw.relationshipLedger ?? []).map((_: any, i: number) => `ledger-${i + 1}`),
-    activeThirdParties: (raw.socialGraph ?? []).map((_: any, i: number) => `tp-${i + 1}`),
+    activeLedgerEntries: (raw.relationshipLedger ?? []).map((_: UnsafeAny, i: number) => `ledger-${i + 1}`),
+    activeThirdParties: (raw.socialGraph ?? []).map((_: UnsafeAny, i: number) => `tp-${i + 1}`),
   }
 }
 
 /** JSON 사건을 CaseData로 정규화 */
-function normalizeCaseData(raw: any): CaseData {
+function normalizeCaseData(raw: UnsafeAny): CaseData {
   // 간소화 포맷 감지: parties 필드가 있고 duo가 없으면 변환
   if (raw.parties && !raw.duo) {
     raw = convertAlternateFormat(raw)
@@ -259,17 +261,17 @@ function normalizeCaseData(raw: any): CaseData {
   if (!duo.relationshipLedger) duo.relationshipLedger = []
   if (!duo.socialGraph) duo.socialGraph = []
 
-  const normTransitions = (configs: any[]): LieConfig[] =>
-    configs.map((c: any) => ({
+  const normTransitions = (configs: UnsafeAny[]): LieConfig[] =>
+    configs.map((c: UnsafeAny) => ({
       ...c,
-      transitions: (c.transitions ?? []).map((t: any) => ({
+      transitions: (c.transitions ?? []).map((t: UnsafeAny) => ({
         from: t.from,
         to: t.to,
         trigger: normalizeLieTrigger(t.trigger),
       })),
     }))
 
-  const evidence = (raw.evidence ?? []).map((e: any) => ({
+  const evidence = (raw.evidence ?? []).map((e: UnsafeAny) => ({
     ...e,
     type: normalizeEvidenceType(e.type),
     completeness: normalizeCompleteness(e.completeness),
@@ -303,7 +305,7 @@ function normalizeCaseData(raw: any): CaseData {
 }
 
 /** 사건 데이터 내 텍스트에서 'A', 'B' 리터럴을 실명으로 치환 */
-function replaceABWithNames(caseData: any) {
+function replaceABWithNames(caseData: UnsafeAny) {
   const nameA = caseData.duo?.partyA?.name
   const nameB = caseData.duo?.partyB?.name
   if (!nameA || !nameB) return
@@ -351,7 +353,7 @@ function replaceABWithNames(caseData: any) {
     'archetype', 'verbalTell', 'digitalHabit', 'key', 'schemaVersion',
   ])
 
-  const walk = (obj: any) => {
+  const walk = (obj: UnsafeAny) => {
     if (!obj || typeof obj !== 'object') return
     for (const key of Object.keys(obj)) {
       if (SKIP_KEYS.has(key)) continue
@@ -385,7 +387,7 @@ function normalizeArchetype(a: string): 'avoidant' | 'confrontational' | 'victim
     territorial: 'cold_logic', fairness_guardian: 'confrontational',
     indirect_expressive: 'avoidant', status_defender: 'confrontational',
   }
-  return (map[a] ?? 'avoidant') as any
+  return (map[a] ?? 'avoidant') as UnsafeAny
 }
 
 function normalizeDigitalHabit(d: string): 'sns_active' | 'messenger_main' | 'minimal' | 'banking_app_heavy' {
@@ -401,7 +403,7 @@ function normalizeTrigger(t: string): 'lying' | 'cornered' | 'emotional' | 'avoi
     lying: 'lying', cornered: 'cornered', emotional: 'emotional', avoiding: 'avoiding',
     shame: 'emotional', hurt: 'emotional', defensive: 'avoiding',
   }
-  return (map[t] ?? 'lying') as any
+  return (map[t] ?? 'lying') as UnsafeAny
 }
 
 function normalizeEvidenceType(t: string): string {
@@ -416,7 +418,7 @@ function normalizeCompleteness(c: string): 'original' | 'edited' | 'partial' | '
     original: 'original', edited: 'edited', partial: 'partial',
     context_missing: 'context_missing', cropped: 'partial',
   }
-  return (map[c] ?? 'original') as any
+  return (map[c] ?? 'original') as UnsafeAny
 }
 
 function normalizeProvenance(p: string): 'self_possessed' | 'third_party' | 'anonymous' | 'institutional' {
@@ -426,7 +428,7 @@ function normalizeProvenance(p: string): 'self_possessed' | 'third_party' | 'ano
     personal_device: 'self_possessed', household_device: 'self_possessed',
     platform: 'institutional', mixed: 'third_party',
   }
-  return (map[p] ?? 'institutional') as any
+  return (map[p] ?? 'institutional') as UnsafeAny
 }
 
 function normalizeLieTrigger(t: string): string {
@@ -460,33 +462,33 @@ export interface CaseMeta {
 
 /** 모든 생성 사건의 메타 정보 반환 */
 export function loadCaseMetas(): CaseMeta[] {
-  return getRuntimeRawCases().map((raw: any) => ({
+  return getRuntimeRawCases().map((raw: UnsafeAny) => ({
     caseId: raw.caseId,
     relationshipType: raw.meta?.relationshipType ?? raw.duo?.relationshipType ?? 'unknown',
     difficulty: raw.meta?.difficulty ?? 'medium',
     anchorTruth: raw.meta?.anchorTruth ?? '',
-    disputeNames: (raw.disputes ?? raw.issues ?? []).map((d: any) => d.name ?? d.statement?.slice(0, 40) ?? ''),
+    disputeNames: (raw.disputes ?? raw.issues ?? []).map((d: UnsafeAny) => d.name ?? d.statement?.slice(0, 40) ?? ''),
   }))
 }
 
-function getRuntimeRawCases(): any[] {
+function getRuntimeRawCases(): UnsafeAny[] {
   const locale = getRuntimeScriptLocale()
   if (locale === 'ko') return RAW_CASES
-  return RAW_CASES.map((raw: any) => {
+  return RAW_CASES.map((raw: UnsafeAny) => {
     const overlay = getGeneratedCaseOverlay(raw.caseId, locale)
     return overlay ? mergeGeneratedCaseSurface(raw, overlay) : raw
   })
 }
 
-function getGeneratedCaseOverlay(caseId: string, locale: string): any | null {
+function getGeneratedCaseOverlay(caseId: string, locale: string): UnsafeAny | null {
   const key = normalizeCaseOverlayKey(caseId)
   const mod = caseModules[`./generated/${key}.${locale}.json`]
-  const overlay = (mod as any)?.default ?? mod
+  const overlay = (mod as UnsafeAny)?.default ?? mod
   if (!overlay || typeof overlay !== 'object') return null
   return overlay
 }
 
-function mergeGeneratedCaseSurface(raw: any, overlay: any): any {
+function mergeGeneratedCaseSurface(raw: UnsafeAny, overlay: UnsafeAny): UnsafeAny {
   const merged = cloneJson(raw)
   mergeGeneratedCaseOverlay(merged, overlay)
   applyEvidenceSurfaceAliases(merged.evidence, overlay.evidence)
@@ -565,7 +567,7 @@ const GENERATED_CASE_OVERLAY_CONTROL_KEYS = new Set([
   'relationTo',
 ])
 
-function mergeGeneratedCaseOverlay(target: any, source: any, path: string[] = []): void {
+function mergeGeneratedCaseOverlay(target: UnsafeAny, source: UnsafeAny, path: string[] = []): void {
   if (!target || !source || typeof target !== 'object' || typeof source !== 'object') return
 
   for (const [key, sourceValue] of Object.entries(source)) {
@@ -595,7 +597,7 @@ function mergeGeneratedCaseOverlay(target: any, source: any, path: string[] = []
   }
 }
 
-function mergeGeneratedCaseOverlayArray(target: any[], source: any[], path: string[]): void {
+function mergeGeneratedCaseOverlayArray(target: UnsafeAny[], source: UnsafeAny[], path: string[]): void {
   if (source.every((item) => item && typeof item === 'object' && !Array.isArray(item) && typeof item.id === 'string')) {
     const targetById = new Map(
       target
@@ -631,7 +633,7 @@ function shouldSkipGeneratedCaseOverlayKey(key: string): boolean {
   return /(?:^|[A-Z])Ids?$/.test(key) || /Id$/.test(key)
 }
 
-function applyEvidenceSurfaceAliases(target: any[] | undefined, source: any[] | undefined): void {
+function applyEvidenceSurfaceAliases(target: UnsafeAny[] | undefined, source: UnsafeAny[] | undefined): void {
   if (!Array.isArray(target) || !Array.isArray(source)) return
   const byId = new Map(target.map((item) => [item.id, item]))
   for (const sourceItem of source) {
@@ -666,16 +668,16 @@ function hasHangul(value: unknown): boolean {
 
 /** 원본 JSON에서 특정 증거의 viewerData를 조회 (sessionStorage 복원 시 누락 방어) */
 export function getOriginalViewerData(caseId: string, evidenceId: string): Record<string, unknown> | undefined {
-  const raw = RAW_CASES.find((r: any) => r.caseId === caseId)
+  const raw = RAW_CASES.find((r: UnsafeAny) => r.caseId === caseId)
   if (!raw) return undefined
-  const ev = (raw.evidence ?? []).find((e: any) => e.id === evidenceId)
+  const ev = (raw.evidence ?? []).find((e: UnsafeAny) => e.id === evidenceId)
   return ev?.viewerData
 }
 
 /** 원본 JSON에서 단계별 viewerData 오버라이드를 조회 */
 export function getOriginalViewerDataByStage(caseId: string, evidenceId: string): Record<string, Record<string, unknown>> | undefined {
-  const raw = RAW_CASES.find((r: any) => r.caseId === caseId)
+  const raw = RAW_CASES.find((r: UnsafeAny) => r.caseId === caseId)
   if (!raw) return undefined
-  const ev = (raw.evidence ?? []).find((e: any) => e.id === evidenceId)
+  const ev = (raw.evidence ?? []).find((e: UnsafeAny) => e.id === evidenceId)
   return ev?.viewerDataByStage
 }

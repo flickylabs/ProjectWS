@@ -308,7 +308,7 @@ function AchievementSection() {
     markClaimed(ach.id)
     setClaimedIds([...claimedIds, ach.id])
     // 보상은 localStorage에 직접 지급 (우편 시스템 연동 시 mailApi 사용)
-    const profile = JSON.parse(localStorage.getItem('solomon-profile') ?? '{}')
+    const _profile = JSON.parse(localStorage.getItem('solomon-profile') ?? '{}')
     alert(`🎉 "${ach.title}" 보상 수령!\n${ach.reward.type === 'invest' ? '🔍' : '⚡'} ×${ach.reward.amount}`)
   }
 

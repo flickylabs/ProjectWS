@@ -3,7 +3,7 @@ import type { CSSProperties, PointerEvent as ReactPointerEvent } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import {
   playMoleHit,
-  playMoleMiss,
+  playMoleMiss as _playMoleMiss,
   playMoleBossHit,
   playMoleCivilianHit,
   playMoleEscape,

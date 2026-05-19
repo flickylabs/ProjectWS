@@ -15,7 +15,7 @@ import { isEvidenceFullyInvestigated } from '../../../engine/evidenceEngine'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
-import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pcUiLabels'
+import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel as _getPcTellLabel } from '../pcUiLabels'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { closePcInteractionPanel, openPcInteractionPanel, type PcInteractionAction, type PcInteractionPayload } from '../layout/PCInteractionPanel'
 import { showToast } from '../../common/Toast'
@@ -28,6 +28,8 @@ import { translate, useI18n, type MessageKey } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import ArchetypeTag from '../tags/ArchetypeTag'
 import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 const COMBINATION_SUCCESS_SOURCE_SELECTOR = '[data-resonance-target="combination-success"]'
@@ -65,7 +67,7 @@ export default function PCRightPanel() {
   const observedArchetypes = useStore((s) => s.observedArchetypes)
   const combinationLabRuntime = useStore((s) => s.combinationLabRuntime)
   const migrateCombinationLabRuntime = useStore((s) => s.migrateCombinationLabRuntime)
-  const pcSummaryUnlocked = useStore((s) => s.pcSummaryUnlocked)
+  const _pcSummaryUnlocked = useStore((s) => s.pcSummaryUnlocked)
   const globalSkillPoints = useStore((s) => s.resources.skillPoints)
 
   const evidenceCombinations = useStore((s) => s.evidenceCombinations)
@@ -246,7 +248,7 @@ export default function PCRightPanel() {
     // 첫 번째 준비된 레시피 선택
     const recipe = readyLabRecipes[0]
     if (!recipe) return
-    const spent = (store as any).spend('skillPoints', autoMatchCost)
+    const spent = (store as UnsafeAny).spend('skillPoints', autoMatchCost)
     if (!spent) {
       showToast(t('pc.right.toast.insufficientSkill'), 'info')
       return
@@ -310,7 +312,7 @@ export default function PCRightPanel() {
   }, [combinationLabRuntime.config, matchingRecipe])
 
   const tellDescription = localizeRuntimeText(getPcTellDescription(tellType), locale)
-  const currentHint = tellDescription
+  const _currentHint = tellDescription
     || (
       activeDispute
         ? localizeRuntimeText(`${activeDispute.name} 쟁점에서 한 번 더 질문하면 드러날 반응 정보입니다.`, locale)
@@ -1424,7 +1426,7 @@ function sameInputs(a: string[], b: string[]): boolean {
   return left.length === right.length && left.every((value, index) => value === right[index])
 }
 
-function normalizeNodeText(text: string | undefined): string {
+function _normalizeNodeText(text: string | undefined): string {
   return (text ?? '').toLowerCase().replace(/\s+/g, '')
 }
 

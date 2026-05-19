@@ -1,3 +1,4 @@
+import type { UnsafeAny } from '../types/lint'
 /**
  * 칭호/업적 시스템
  * 다양한 조건 달성 시 칭호 + 보상 지급
@@ -48,35 +49,35 @@ function getHistoryCount(): number {
 function getBestScore(): number {
   try {
     const history = JSON.parse(localStorage.getItem('solomon-history') ?? '[]')
-    return Math.max(0, ...history.map((h: any) => h.score ?? 0))
+    return Math.max(0, ...history.map((h: UnsafeAny) => h.score ?? 0))
   } catch { return 0 }
 }
 
 function getThreeStarCount(): number {
   try {
     const history = JSON.parse(localStorage.getItem('solomon-history') ?? '[]')
-    return history.filter((h: any) => (h.score ?? 0) >= 85).length
+    return history.filter((h: UnsafeAny) => (h.score ?? 0) >= 85).length
   } catch { return 0 }
 }
 
 function getBestAxis(axis: string): number {
   try {
     const history = JSON.parse(localStorage.getItem('solomon-history') ?? '[]')
-    return Math.max(0, ...history.map((h: any) => h[axis] ?? 0))
+    return Math.max(0, ...history.map((h: UnsafeAny) => h[axis] ?? 0))
   } catch { return 0 }
 }
 
 function getRelTypeCount(relType: string): number {
   try {
     const history = JSON.parse(localStorage.getItem('solomon-history') ?? '[]')
-    return new Set(history.filter((h: any) => h.relationshipType === relType).map((h: any) => h.caseId)).size
+    return new Set(history.filter((h: UnsafeAny) => h.relationshipType === relType).map((h: UnsafeAny) => h.caseId)).size
   } catch { return 0 }
 }
 
 function getAllTypesPlayed(): boolean {
   try {
     const history = JSON.parse(localStorage.getItem('solomon-history') ?? '[]')
-    const types = new Set(history.map((h: any) => h.relationshipType))
+    const types = new Set(history.map((h: UnsafeAny) => h.relationshipType))
     return ['spouse', 'neighbor', 'boss_employee', 'partnership', 'family', 'tenant_landlord', 'friend'].every(t => types.has(t))
   } catch { return false }
 }

@@ -39,6 +39,8 @@ import type {
   FreeInterrogationGuardResult,
   FreeInterrogationIntent,
 } from '../types/freeInterrogationGuard'
+import type { UnsafeAny } from '../types/lint'
+
 
 export interface FreeQuestionResult {
   questionType: QuestionType | 'irrelevant'
@@ -312,7 +314,7 @@ async function generateResponse(
   let truthThrottleBlock = ''
   let archetypeBlock = ''
   if (lieEntry) {
-    truthThrottleBlock = getTruthThrottle(lieEntry.currentState as any)
+    truthThrottleBlock = getTruthThrottle(lieEntry.currentState as UnsafeAny)
   }
   if (party.archetype) {
     archetypeBlock = getArchetypeGuide(party.archetype)

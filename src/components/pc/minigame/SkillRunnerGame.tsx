@@ -1092,7 +1092,7 @@ export default function SkillRunnerGame() {
   }
 
   const progressPercent = Math.min(100, (ui.collected / ui.target) * 100)
-  const speedMultiplier = ui.speed / config.baseSpeed
+  const _speedMultiplier = ui.speed / config.baseSpeed
 
   return (
     <div className="pc-skill-runner">

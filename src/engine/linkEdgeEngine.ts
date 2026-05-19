@@ -14,7 +14,7 @@
 
 import type { LieState } from '../types'
 import type { DisputeLinkEdge, DepthLayerId } from '../types'
-import { getAllLinkEdges, getBeatRuntimeState } from './v2DataLoader'
+import { getAllLinkEdges, getBeatRuntimeState as _getBeatRuntimeState } from './v2DataLoader'
 import { recordResolvedLink } from './phase3LogCollector'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -144,7 +144,7 @@ export default function Phase6_Mediation() {
         '해결책을 서두르기보다 사실을 먼저 정리하는 편이 공정합니다. 감정과 책임을 분리해 봐야 합니다.',
       ],
     }
-    const lines = (fallbacks as any)[path] ?? ['']
+    const lines = (fallbacks as unknown)[path] ?? ['']
     if (lines[0]) addDialogue({ speaker: 'a', text: lines[0], relatedDisputes: [], turn: turnCount })
     if (lines[1]) addDialogue({ speaker: 'b', text: lines[1], relatedDisputes: [], turn: turnCount })
   }

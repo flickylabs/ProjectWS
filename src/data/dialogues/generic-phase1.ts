@@ -27,7 +27,7 @@ function rebuttalTone(arch: Archetype): { hint: string } {
 }
 
 /** archetype별 A의 첫 진술 텍스트 */
-function buildAOpening(nameB: string, mainDispute: string, arch: Archetype, fear: string): string {
+function buildAOpening(nameB: string, mainDispute: string, arch: Archetype, _fear: string): string {
   switch (arch) {
     case 'avoidant':
       return `재판관님, 저는 억울합니다. ${nameB} 씨가 상황을 왜곡하고 있어요. ${mainDispute}에 대해 먼저 설명하겠습니다.`
@@ -41,7 +41,7 @@ function buildAOpening(nameB: string, mainDispute: string, arch: Archetype, fear
 }
 
 /** 관계형별 시스템 도입부 */
-function systemIntro(relType: string, nameA: string, nameB: string): string {
+function systemIntro(relType: string, nameA: string, _nameB: string): string {
   switch (relType) {
     case 'spouse': return `양측의 초기 진술을 듣겠습니다. 부부간의 갈등이므로 서로를 존중하며 말씀해 주십시오.`
     case 'neighbor': return `양측의 초기 진술을 듣겠습니다. 이웃 간 분쟁이므로 사실 중심으로 말씀해 주십시오.`
@@ -109,7 +109,7 @@ export function buildGenericPhase1(caseData: CaseData): Omit<DialogueEntry, 'id'
   })
   const main = sorted[0]
   const sub = sorted[1]
-  const third = sorted[2]
+  const _third = sorted[2]
 
   // 과거 이력 (연결성 높은 것 우선)
   const ledger = duo.relationshipLedger.find(l => l.connectionToCurrent === 'direct' && l.emotionalResidue !== 'none')
@@ -250,7 +250,7 @@ export function buildGenericPhase1(caseData: CaseData): Omit<DialogueEntry, 'id'
   // 11. 제3자 언급 (있으면)
   if (tp) {
     const mentioner = tp.bias === 'pro_a' ? 'a' : 'b'
-    const mentionerName = mentioner === 'a' ? nameA : nameB
+    const _mentionerName = mentioner === 'a' ? nameA : nameB
     entries.push({
       speaker: mentioner,
       text: thirdPartyMention(tp),
@@ -287,7 +287,7 @@ export function buildGenericPhase2(caseData: CaseData): Omit<DialogueEntry, 'id'
   const nameA = duo.partyA.name
   const nameB = duo.partyB.name
   const archA = duo.partyA.archetype
-  const archB = duo.partyB.archetype
+  const _archB = duo.partyB.archetype
 
   const sorted = [...disputes].sort((a, b) => {
     const w = { high: 3, medium: 2, low: 1 }

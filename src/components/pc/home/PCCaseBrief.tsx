@@ -52,7 +52,7 @@ export default function PCCaseBrief() {
   const faceB = getPcFaceSymbolId('b', duo.partyB, 'defensive')
   const title = meta?.title ?? caseData.caseId
   const bait = meta?.emotionalBait ?? ''
-  const versionTag = caseData.caseId.replace(/^case-/, '').replace(/^(spouse|family|friend|neighbor|tenant|partnership|workplace|headline)-/, '')
+  const _versionTag = caseData.caseId.replace(/^case-/, '').replace(/^(spouse|family|friend|neighbor|tenant|partnership|workplace|headline)-/, '')
 
   const visibleDisputes = caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden')
   const initialDisputes = visibleDisputes

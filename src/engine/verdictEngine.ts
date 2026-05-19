@@ -9,6 +9,8 @@ import type { ClearanceResult, VerdictInput, VerdictScore, ProcessMetrics } from
 import type { Dispute, EvidenceNode } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 import { evaluateClearance, type ClearanceTrackerState } from './clearanceTracker'
+import type { UnsafeAny } from '../types/lint'
+
 
 interface VerdictContext {
   disputes: Dispute[]
@@ -88,7 +90,7 @@ function calculateInsight(ctx: VerdictContext, clearanceResult?: ClearanceResult
   }
 
   // V4 보너스: 숨겨진 쟁점 모두 발견 +15
-  const hiddenDisputes = ctx.disputes.filter((d) => d.weight === 'low' || (d as any).hidden)
+  const hiddenDisputes = ctx.disputes.filter((d) => d.weight === 'low' || (d as UnsafeAny).hidden)
   const discoveredHidden = hiddenDisputes.filter((d) => ctx.input.factFindings[d.id] && ctx.input.factFindings[d.id] !== 'pending')
   if (hiddenDisputes.length > 0 && discoveredHidden.length === hiddenDisputes.length) {
     processBonus += 15

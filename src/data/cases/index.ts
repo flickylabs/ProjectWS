@@ -6,6 +6,8 @@ import type { CaseData } from '../../types'
 import { loadGeneratedCases, loadCaseMetas, type CaseMeta } from './caseLoader'
 import { getRuntimeScriptLocale } from '../../i18n/scriptLocale'
 import type { LocaleCode } from '../../i18n/locales'
+import type { UnsafeAny } from '../../types/lint'
+
 
 // 활성 사건 등록소 (manifest.json refined 목록 기준). Locale별 표면 텍스트가 달라지므로
 // 모듈 import 시점에 한 번만 고정하지 않고 현재 런타임 locale별로 캐시한다.
@@ -104,7 +106,7 @@ export function getAllCases(): { caseId: string; type: string; nameA: string; na
     type: c.duo.relationshipType,
     nameA: c.duo.partyA.name,
     nameB: c.duo.partyB.name,
-    difficulty: (c as any).meta?.difficulty ?? 'medium',
+    difficulty: (c as UnsafeAny).meta?.difficulty ?? 'medium',
   }))
 }
 

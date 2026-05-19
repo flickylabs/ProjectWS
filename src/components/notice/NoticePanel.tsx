@@ -30,7 +30,7 @@ interface Props {
   autoPopup?: boolean
 }
 
-export default function NoticePanel({ onClose, autoPopup = false }: Props) {
+export default function NoticePanel({ onClose, autoPopup: _autoPopup = false }: Props) {
   const [notices, setNotices] = useState<Notice[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [loading, setLoading] = useState(true)

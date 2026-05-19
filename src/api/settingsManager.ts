@@ -24,7 +24,7 @@ export async function loadSettings(): Promise<void> {
   }
 }
 
-function get(key: string, fallback: string): string {
+function _get(key: string, fallback: string): string {
   return settings[key] ?? fallback
 }
 

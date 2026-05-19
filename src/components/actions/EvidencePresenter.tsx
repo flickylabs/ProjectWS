@@ -2,14 +2,16 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { PartyId } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
-import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth, getDepthSystemMessage } from '../../engine/witnessEngine'
+import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth as _determineTestimonyDepth, getDepthSystemMessage as _getDepthSystemMessage } from '../../engine/witnessEngine'
 import { canAppraise, getUnlockedQuestions, getLockedQuestions, computeSurfacedEvidence } from '../../engine/evidenceEngine'
-import { playClick, playEvidenceUnlock, playInvestigationTokenWarning } from '../../engine/soundEngine'
+import { playClick, playEvidenceUnlock as _playEvidenceUnlock, playInvestigationTokenWarning } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 import EvidenceVisual from '../common/EvidenceVisual'
 import { EvidenceAppraisalModal } from '../discovery'
-import { getDossierCards, getAvailableDossierQuestions, resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
+import { getDossierCards as _getDossierCards, getAvailableDossierQuestions as _getAvailableDossierQuestions, resolveDossierQuestion as _resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
 import { getWitnessPortraitPath } from '../../utils/witnessPortraits'
+import type { UnsafeAny } from '../../types/lint'
+
 
 interface Props {
   target: PartyId | null
@@ -23,8 +25,8 @@ interface Props {
 
 /** 증거 우선순위 점수 계산 — 현재 쟁점 관련성, 신규 여부, 조사 진행도 반영 */
 function computeEvidenceScore(
-  ev: any,
-  state: any,
+  ev: UnsafeAny,
+  state: UnsafeAny,
   focusDisputeId: string | null,
   isNew: boolean,
 ): number {
@@ -40,8 +42,8 @@ function computeEvidenceScore(
 
 /** 추천 사유 텍스트 생성 */
 function getRecommendationReason(
-  ev: any,
-  state: any,
+  ev: UnsafeAny,
+  state: UnsafeAny,
   focusDisputeId: string | null,
 ): string {
   if (focusDisputeId && ev.proves?.includes(focusDisputeId)) return '현재 쟁점과 직접 연결됩니다'
@@ -104,8 +106,8 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
 
   const { available, presented, locked, dimmed, unrelated } = useMemo(() => {
     // subjectParty 기준 매칭 — 비매칭은 unrelated 카테고리로 분리해 disabled로 표시
-    const isRelevant = (e: any) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
-    const isPresentedToTarget = (e: any) => {
+    const isRelevant = (e: UnsafeAny) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
+    const isPresentedToTarget = (e: UnsafeAny) => {
       if (!target) return false
       const state = evidenceStates[e.id]
       const currentStage = state?.investigatedActions?.length ?? 0
@@ -175,10 +177,10 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
         const relevant = rest.filter(s => s.score > 0)
         const other = rest.filter(s => s.score <= 0)
 
-        const topRecommended = topItem ? (recommendedEvidenceIds.includes(topItem.ev.id) || true) : false
+        const _topRecommended = topItem ? (recommendedEvidenceIds.includes(topItem.ev.id) || true) : false
         const recommendationReason = topItem ? getRecommendationReason(topItem.ev, evidenceStates[topItem.ev.id], lastFocusedDisputeId) : ''
 
-        const renderCard = (ev: any, isTop = false) => {
+        const renderCard = (ev: UnsafeAny, isTop = false) => {
           const reinforcementCount = surfaceResult.reinforcements[ev.id]?.length ?? 0
           return (
             <EvidenceCard
@@ -302,7 +304,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
 }
 
 /** 증인 소환 섹션 — 증거 탭 하단에 표시 */
-function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) => void; resources: any; onCalled?: () => void }) {
+function WitnessSection({ dispatch, resources: _resources, onCalled }: { dispatch: (a: UnsafeAny) => void; resources: UnsafeAny; onCalled?: () => void }) {
   const [expanded, setExpanded] = useState(false)
   const caseData = useStore((s) => s.caseData)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
@@ -418,7 +420,7 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
 }
 
 /** 희미한(dimmed) 증거 카드 — 해금되었지만 표면화되지 않은 증거 */
-function DimmedEvidenceCard({ ev }: { ev: any }) {
+function DimmedEvidenceCard({ ev }: { ev: UnsafeAny }) {
   const displayName = ev.surfaceName ?? ev.name
   const typeIcon = ({ bank: '🏦', chat: '💬', cctv: '📹', contract: '📑', testimony: '🗣️', log: '📋', device: '📱', sns: '📲' } as Record<string, string>)[ev.type] ?? '📄'
   return (
@@ -451,7 +453,7 @@ const INVESTIGATION_LABELS: Record<string, string> = {
 }
 
 /** 증거 기반 자동 제안 질문 생성 — investigationStages가 있으면 단계별 해금 질문 사용, 없으면 기존 유형별 폴백 */
-function generateSuggestions(ev: any, state: any, target?: PartyId | null): { text: string; stage?: number; locked?: boolean; hint?: string }[] {
+function generateSuggestions(ev: UnsafeAny, state: UnsafeAny, _target?: PartyId | null): { text: string; stage?: number; locked?: boolean; hint?: string }[] {
   // investigationStages가 있으면 staged 시스템 사용
   if (ev.investigationStages && state) {
     const unlocked = getUnlockedQuestions(ev, state)
@@ -474,7 +476,7 @@ function generateSuggestions(ev: any, state: any, target?: PartyId | null): { te
 
   // 폴백: 기존 유형별 제안
   const suggestions: { text: string }[] = []
-  const investigatedCount = state?.investigatedActions?.filter((a: string) => KEY_ORDER.includes(a as any))?.length ?? 0
+  const investigatedCount = state?.investigatedActions?.filter((a: string) => KEY_ORDER.includes(a as UnsafeAny))?.length ?? 0
 
   const typeQuestions: Record<string, string> = {
     bank: '이 거래 내역에 대해 설명하십시오.',
@@ -508,17 +510,17 @@ function generateSuggestions(ev: any, state: any, target?: PartyId | null): { te
 }
 
 function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew, target, isRecommended, reinforcementCount }: {
-  ev: any; state: any; isExpanded: boolean
+  ev: UnsafeAny; state: UnsafeAny; isExpanded: boolean
   onToggle: () => void; onPresent?: () => void; onConfront?: (text: string) => void
   onInvestigate: () => void; onAppraise?: () => void; canPresent: boolean; canInvestigate: boolean
-  appraisal?: any; canAppraise?: boolean; llmMode?: boolean
+  appraisal?: UnsafeAny; canAppraise?: boolean; llmMode?: boolean
   isNew?: boolean; target?: PartyId | null; isRecommended?: boolean
   reinforcementCount?: number
 }) {
   const [showPresent, setShowPresent] = useState(false)
-  const [confrontText, setConfrontText] = useState('')
+  const [_confrontText, setConfrontText] = useState('')
   const [showRevealAnim, setShowRevealAnim] = useState(false)
-  const investigatedCount = state?.investigatedActions?.filter((a: string) => KEY_ORDER.includes(a as any))?.length ?? 0
+  const investigatedCount = state?.investigatedActions?.filter((a: string) => KEY_ORDER.includes(a as UnsafeAny))?.length ?? 0
   const fullyInvestigated = investigatedCount >= 3
   const legWarning = ev.legitimacy !== 'lawful'
 

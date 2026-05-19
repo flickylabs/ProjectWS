@@ -12,6 +12,8 @@ import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 import { translate, useI18n, type MessageKey } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
@@ -105,7 +107,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       const isActive = !isConsumed && !isExpired
       const badge = isConsumed ? t('pc.dialogue.pending.done') : isExpired ? t('pc.dialogue.pending.expired') : t('pc.dialogue.pending.now')
       // [TC-A2 픽스] tone 기반 클래스 분기 — 'alert'는 빨강(모순/공격), 기본은 골드(권위/주의 환기)
-      const tone = (pendingFeedback.payload as any)?.tone
+      const tone = (pendingFeedback.payload as UnsafeAny)?.tone
       const activeClass = tone === 'alert' ? ' is-alert' : ' is-urgent'
       const stateClass = isConsumed ? ' is-consumed' : isExpired ? ' is-expired' : activeClass
 
@@ -376,7 +378,7 @@ export default function PCDialogueLog() {
   const isLLMLoading = useStore((s) => s.isLLMLoading)
   const llmTarget = useStore((s) => s.llmLoadingTarget)
   const evidenceStates = useStore((s) => s.evidenceStates)
-  const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
+  const combinationLabRuntime = useStore((s) => (s as UnsafeAny).combinationLabRuntime)
 
   // 조합 대상 발언 텍스트 추출 (statement 노드의 따옴표 내용)
   const combinableStatementTexts = useMemo(() => {

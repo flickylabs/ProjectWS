@@ -7,6 +7,8 @@ import { normalizeCaseKey } from '../../utils/caseHelpers'
 import { triggerConfessionModalIfReady } from '../../engine/confessionTrigger'
 import { getVerdictDisputeGate } from '../../engine/verdictAdvanceGate'
 import { emitPhaseEnter, emitPhaseExit } from '../../telemetry/wirePoints'
+import type { UnsafeAny } from '../../types/lint'
+
 
 let phaseEnteredAt = Date.now()
 
@@ -53,12 +55,12 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     if (
       currentPhase === Phase.Interrogation &&
       (nextPhase === Phase.Mediation || nextPhase === Phase.Verdict) &&
-      !getVerdictDisputeGate(get() as any).hasMinimumVisibleDisputes
+      !getVerdictDisputeGate(get() as UnsafeAny).hasMinimumVisibleDisputes
     ) {
       return
     }
 
-    const rootBefore = get() as any
+    const rootBefore = get() as UnsafeAny
     emitPhaseExit(
       currentPhase,
       (Date.now() - phaseEnteredAt) / 1000,
@@ -77,7 +79,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     } as Partial<typeof state>))
 
     phaseEnteredAt = Date.now()
-    const rootAfter = get() as any
+    const rootAfter = get() as UnsafeAny
     emitPhaseEnter(
       nextPhase,
       rootAfter.turnCount ?? rootBefore.turnCount ?? 0,
@@ -87,7 +89,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
 
     // Phase 3 진입 시 브리지 자동 적용
     if (nextPhase === Phase.Interrogation) {
-      const fullState = get() as any
+      const fullState = get() as UnsafeAny
       if (fullState.applyPhase3Bridge && fullState.caseData) {
         const caseId = normalizeCaseKey(fullState.caseData)
         if (caseId) fullState.applyPhase3Bridge(caseId)
@@ -102,7 +104,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     }))
 
     // [Phase C-2 새 기획] 셧다운 만료 시 emotion 자동 체념(85+)으로 진입 + 자백 유도 모달.
-    const after = get() as any
+    const after = get() as UnsafeAny
     for (const party of ['a', 'b'] as const) {
       const lockoutUntil = after.emotionalLockoutUntil?.[party] ?? 0
       if (lockoutUntil > 0 && lockoutUntil === after.turnCount) {
@@ -130,11 +132,11 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     }
 
     // 매 턴 끝: readiness 자동 갱신
-    const fullState = get() as any
+    const fullState = get() as UnsafeAny
     if (fullState.updateReadiness) fullState.updateReadiness()
 
     // 최대 턴 초과 시 강제 판결 전환 (readinessEngine canonical)
-    const state = get() as any
+    const state = get() as UnsafeAny
     const { turnCount, currentPhase, advancePhase, setVerdictMode } = state
     const interrogationPhases = [
       Phase.Interrogation,
@@ -151,7 +153,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
   },
 
   canAdvancePhase: () => {
-    const state = get() as any // GameStore 전체 접근 (readinessState 포함)
+    const state = get() as UnsafeAny // GameStore 전체 접근 (readinessState 포함)
     const { currentPhase } = state
 
     // Phase 3 통합 심문: readinessEngine에서 판결 가능 여부 확인
@@ -178,7 +180,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
   },
 
   setPhase: (phase) => {
-    const rootBefore = get() as any
+    const rootBefore = get() as UnsafeAny
     const previousPhase = rootBefore.currentPhase
     emitPhaseExit(
       previousPhase,
@@ -193,7 +195,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       phaseTurnCount: 0,
     }))
     phaseEnteredAt = Date.now()
-    const rootAfter = get() as any
+    const rootAfter = get() as UnsafeAny
     emitPhaseEnter(
       phase,
       rootAfter.turnCount ?? rootBefore.turnCount ?? 0,

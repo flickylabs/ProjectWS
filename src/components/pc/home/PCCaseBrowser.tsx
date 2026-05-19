@@ -30,7 +30,7 @@ interface Props {
 export default function PCCaseBrowser({
   eyebrow,
   title,
-  description,
+  description: _description,
   progressLabel: _progressLabel,
   cases,
   onBack,
@@ -183,7 +183,7 @@ export default function PCCaseBrowser({
 
 // ── 우측 브리핑 패널 (PCCaseBrief 내용 인라인) ──
 
-function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
+function CaseBriefPanel({ caseData, stageNum: _stageNum, score, onStart }: {
   caseData: CaseData; stageNum: string; score: number; onStart: () => void
 }) {
   const { t } = useI18n()
@@ -299,7 +299,7 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
   )
 }
 
-function buildStageTitle(c: CaseData) {
+function _buildStageTitle(c: CaseData) {
   const t = c.meta?.title
   if (t) return truncate(compact(t), 48)
   const d = compact(c.disputes[0]?.name ?? '')

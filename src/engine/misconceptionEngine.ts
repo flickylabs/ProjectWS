@@ -15,7 +15,7 @@
 import type { PartyId, QuestionType, AttackVector } from '../types'
 import type { MisconceptionState, AngleTag, TrapState } from '../types'
 import type { BeliefMode } from '../types'
-import type { DisputeV2, MisconceptionProfile, DisputeLinkEdge } from '../types'
+import type { DisputeV2 as _DisputeV2, MisconceptionProfile, DisputeLinkEdge } from '../types'
 import { recordDisprovedFakeIssue } from './phase3LogCollector'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -548,7 +548,7 @@ export function attemptMisconceptionTransition(
   }
 
   // 질문 기반 트리거
-  const matchedTrap = matchTrapSignal(input.disputeId, '')
+  const _matchedTrap = matchTrapSignal(input.disputeId, '')
   const qTrigger = deriveTriggerFromQuestion({
     disputeId: input.disputeId,
     turn,

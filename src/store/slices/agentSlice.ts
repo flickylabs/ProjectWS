@@ -9,6 +9,8 @@ import { createInitialEmotionalState, updateEmotion } from '../../engine/emotion
 import { createInitialTrustState, updateTrust as updateTrustState } from '../../engine/trustEngine'
 import { applyBridge } from '../../engine/bridgeEngine'
 import { emitTruthStageChanged } from '../../telemetry/wirePoints'
+import type { UnsafeAny } from '../../types/lint'
+
 
 export interface AgentSlice {
   agentA: AgentState
@@ -53,7 +55,7 @@ type AgentSliceRootState = AgentSlice & {
   witnessSessions?: Record<string, { heardSlots: string[]; lastChoice: string | null; summonCount: number }>
   processMetrics: ProcessMetrics
   trackMetric: (key: keyof ProcessMetrics, delta?: number) => void
-  enqueueFeedback?: (item: any) => string
+  enqueueFeedback?: (item: UnsafeAny) => string
 }
 
 function hasS3Plus(agent: AgentState): boolean {

@@ -2,10 +2,10 @@ import { useEffect, useState, useMemo } from 'react'
 import { GamePhase, Phase } from '../types'
 import { useGameStore, useStore } from '../store/useGameStore'
 import type { GameStore } from '../store/useGameStore'
-import { checkConnection, getProviderName } from '../engine/llmClient'
+import { checkConnection, getProviderName as _getProviderName } from '../engine/llmClient'
 import { setLLMMode, isLLMMode } from '../hooks/useActionDispatch'
-import { getRandomCase, getCaseCount, getCaseCountByType } from '../data/cases'
-import { generatePhase1Dialogues, generatePhase2Dialogues } from '../engine/llmPhaseDialogue'
+import { getRandomCase, getCaseCount as _getCaseCount, getCaseCountByType as _getCaseCountByType } from '../data/cases'
+import { generatePhase1Dialogues as _generatePhase1Dialogues, generatePhase2Dialogues } from '../engine/llmPhaseDialogue'
 import type { StageDefinition } from '../data/campaign'
 import { loadProfile, loadExtendedHistory, getPlayerStats } from '../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../data/seasons'
@@ -16,9 +16,9 @@ import CourtLayout from '../components/layout/CourtLayout'
 import PhaseTransition from '../components/layout/PhaseTransition'
 import Tutorial from '../components/layout/Tutorial'
 import Phase0_CaseIntro, { resetPrefetch } from '../components/phase/Phase0_CaseIntro'
-import AutoDialoguePhase from '../components/phase/AutoDialoguePhase'
+import AutoDialoguePhase, { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 import Phase6_Mediation from '../components/phase/Phase6_Mediation'
-import CampaignScreen from '../components/phase/CampaignScreen'
+import _CampaignScreen from '../components/phase/CampaignScreen'
 import CaseMap from '../components/phase/CaseMap'
 import SessionSelect from '../components/phase/SessionSelect'
 import ActionPanel from '../components/actions/ActionPanel'
@@ -34,26 +34,13 @@ import MailInbox from '../components/mail/MailInbox'
 import { loadPrompts, startPromptPolling } from '../api/promptManager'
 import { loadAgents, startAgentPolling, snapshotForSession } from '../api/agentManager'
 import { registerAllEnrichments } from '../data/caseEnrichment'
-
-// 보강 데이터 자동 등록 (H 단계 후 caseEnrichmentData.ts가 존재하면 로드)
-try {
-  // @ts-ignore — H 단계 전에는 파일 미존재
-  const { CASE_ENRICHMENT_DATA } = require('../data/caseEnrichmentData')
-  if (CASE_ENRICHMENT_DATA) registerAllEnrichments(CASE_ENRICHMENT_DATA)
-} catch { /* H 단계 전: 보강 데이터 없음 — 정상 */ }
+import { CASE_ENRICHMENT_DATA } from '../data/caseEnrichmentData'
 import { playerApi, mailApi, healthApi, noticeApi } from '../api/client'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
-import { loadPhase1Script, loadPhase2Script, getScriptCounts } from '../data/dialogues/phaseScriptLoader'
+import { loadPhase1Script, loadPhase2Script } from '../data/dialogues/phaseScriptLoader'
 
-// 디버그: 스크립트 로드 확인
-if (typeof window !== 'undefined') {
-  const counts = getScriptCounts()
-  console.log(`[Solomon] Script loader — Phase1: ${counts.phase1}, Phase2: ${counts.phase2}`)
-}
-
-// prefetch는 AutoDialoguePhase 내부에서 직접 소비
-import { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
-
+// 보강 데이터 자동 등록 (H 단계 후 caseEnrichmentData.ts가 존재하면 로드)
+if (CASE_ENRICHMENT_DATA) registerAllEnrichments(CASE_ENRICHMENT_DATA)
 export default function App() {
   const currentPhase = useStore((s: GameStore) => s.currentPhase)
   const caseData = useStore((s: GameStore) => s.caseData)
@@ -122,7 +109,7 @@ function TitleScreen() {
   const [noticeAutoPopup, setNoticeAutoPopup] = useState(false)
   const [showMail, setShowMail] = useState(false)
   const [unreadMail, setUnreadMail] = useState(0)
-  const [serverConnected, setServerConnected] = useState(false)
+  const [_serverConnected, setServerConnected] = useState(false)
   const [bgmOn, setBgmOn] = useState(isBgmEnabled())
   const initializeCase = useStore((s: GameStore) => s.initializeCase)
   const globalInvest = useStore((s: GameStore) => s.resources.investigationTokens)
@@ -174,8 +161,8 @@ function TitleScreen() {
   // Profile & stats data
   const profile = useMemo(() => loadProfile(), [showProfile])
   const history = useMemo(() => loadExtendedHistory(), [showProfile, showHistory])
-  const stats = useMemo(() => getPlayerStats(), [showProfile, showHistory])
-  const campaign = useMemo(() => loadCampaignProgress(), [showCaseMap])
+  const _stats = useMemo(() => getPlayerStats(), [showProfile, showHistory])
+  const _campaign = useMemo(() => loadCampaignProgress(), [showCaseMap])
   const season = getCurrentSeason()
   const remaining = getRemainingDays()
 
@@ -184,7 +171,7 @@ function TitleScreen() {
     [history],
   )
 
-  const tierLabel = useMemo(() => {
+  const _tierLabel = useMemo(() => {
     if (reputation >= 2000) return '솔로몬'
     if (reputation >= 1000) return '원로'
     if (reputation >= 600) return '숙련'
@@ -193,7 +180,7 @@ function TitleScreen() {
     return '수습'
   }, [reputation])
 
-  const handleStart = (relationshipType?: string) => {
+  const _handleStart = (relationshipType?: string) => {
     resetPrefetch()
     stopBgmFn() // 타이틀 BGM 정지
     setLLMMode(llmStatus?.connected ?? false)
@@ -201,7 +188,7 @@ function TitleScreen() {
     initializeCase(caseData)
   }
 
-  const handleCampaignStage = (stage: StageDefinition) => {
+  const _handleCampaignStage = (stage: StageDefinition) => {
     resetPrefetch()
     stopBgmFn() // 타이틀 BGM 정지
     setLLMMode(llmStatus?.connected ?? false)
@@ -367,7 +354,7 @@ function TitleScreen() {
 
 function getActionPanel(phase: GamePhase) {
   const caseData = useGameStore.getState().caseData
-  const llmMode = isLLMMode()
+  const _llmMode = isLLMMode()
 
   switch (phase) {
     case Phase.Pretrial: {

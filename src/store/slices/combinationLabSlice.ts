@@ -13,6 +13,8 @@ import { isEvidenceFullyInvestigated } from '../../engine/evidenceEngine'
 import { getRuntimeTextLocale } from '../../i18n/runtimeText'
 import type { LocaleCode } from '../../i18n/locales'
 import { emitCombinationAttempt, emitCombinationFail, emitCombinationSuccess } from '../../telemetry/wirePoints'
+import type { UnsafeAny } from '../../types/lint'
+
 
 export interface CombinationLabHistoryEntry {
   recipeId: string
@@ -184,7 +186,7 @@ function patchSpouse01CombinationConfig(config: CombinationLabConfig | null): Co
   return { ...config, nodes, outputs, recipes }
 }
 
-function patchSpouse01RuntimeState(root: any): Partial<any> | null {
+function patchSpouse01RuntimeState(root: UnsafeAny): Partial<UnsafeAny> | null {
   if (normalizeCaseKeyLocal(root.caseData?.caseId) !== 'spouse-01') return null
 
   const runtime = root.combinationLabRuntime as CombinationLabRuntimeState | undefined
@@ -208,12 +210,12 @@ function patchSpouse01RuntimeState(root: any): Partial<any> | null {
 
   const dialogueLog = Array.isArray(root.dialogueLog)
     ? root.dialogueLog
-        .filter((entry: any) => !(
+        .filter((entry: UnsafeAny) => !(
           entry?.speaker === 'judge' &&
           typeof entry.text === 'string' &&
           entry.text.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
         ))
-        .map((entry: any) => {
+        .map((entry: UnsafeAny) => {
           if (
             typeof entry?.text === 'string' &&
             entry.text.includes('조합 결과: 오피스텔의 사람들') &&
@@ -231,11 +233,11 @@ function patchSpouse01RuntimeState(root: any): Partial<any> | null {
 
   const judgeObservations = Array.isArray(root.judgeObservations)
     ? root.judgeObservations
-        .filter((entry: any) => !(
+        .filter((entry: UnsafeAny) => !(
           typeof entry?.summary === 'string' &&
           entry.summary.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
         ))
-        .map((entry: any) => {
+        .map((entry: UnsafeAny) => {
           if (typeof entry?.summary === 'string' && entry.summary.includes('가족 쪽 돌봄 정황')) {
             return { ...entry, summary: entry.summary.replaceAll('가족 쪽 돌봄 정황', '가족 쪽 정황') }
           }
@@ -262,7 +264,7 @@ function patchSpouse01RuntimeState(root: any): Partial<any> | null {
   }
 }
 
-function ensureSpouse01RuntimePatched(get: () => any, set: (partial: any) => void): CombinationLabRuntimeState {
+function ensureSpouse01RuntimePatched(get: () => UnsafeAny, set: (partial: UnsafeAny) => void): CombinationLabRuntimeState {
   const patch = patchSpouse01RuntimeState(get())
   if (patch) set(patch)
   return (patch?.combinationLabRuntime ?? get().combinationLabRuntime) as CombinationLabRuntimeState
@@ -306,7 +308,7 @@ export interface CombinationLabSlice {
   syncStatementsFromDialogue: (text: string) => void
 }
 
-export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLabSlice> = (set, get) => ({
+export const createCombinationLabSlice: StateCreator<UnsafeAny, [], [], CombinationLabSlice> = (set, get) => ({
   combinationLabRuntime: { ...EMPTY_RUNTIME },
 
   initCombinationLab: (caseData) => {
@@ -359,21 +361,21 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
   },
 
   migrateCombinationLabRuntime: () => {
-    ensureSpouse01RuntimePatched(get, set as (partial: any) => void)
+    ensureSpouse01RuntimePatched(get, set as (partial: UnsafeAny) => void)
   },
 
   getCombinationNode: (nodeId) => {
-    const config = ensureSpouse01RuntimePatched(get, set as (partial: any) => void).config
+    const config = ensureSpouse01RuntimePatched(get, set as (partial: UnsafeAny) => void).config
     return config?.nodes.find((node: CombinationLabNode) => node.id === nodeId)
   },
 
   getCombinationOutput: (outputId) => {
-    const config = ensureSpouse01RuntimePatched(get, set as (partial: any) => void).config
+    const config = ensureSpouse01RuntimePatched(get, set as (partial: UnsafeAny) => void).config
     return config?.outputs.find((output: CombinationLabOutput) => output.id === outputId)
   },
 
   canRunCombinationRecipe: (recipeId) => {
-    const state = ensureSpouse01RuntimePatched(get, set as (partial: any) => void)
+    const state = ensureSpouse01RuntimePatched(get, set as (partial: UnsafeAny) => void)
     const config = state.config
     if (!config) return false
     const recipe = config.recipes.find((item: CombinationLabRecipe) => item.id === recipeId)
@@ -383,7 +385,7 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     if (output && !recipe.repeatable && state.discoveredNodeIds.includes(output.id)) return false
     if (state.analysisPoints < recipe.cost) return false
 
-    const root = get() as any
+    const root = get() as UnsafeAny
     // 스킬 포인트 1 이상 필요
     if ((root.resources?.skillPoints ?? 0) < 1) return false
     const evidenceDefinitions = (root.evidenceDefinitions ?? []) as EvidenceNode[]
@@ -402,7 +404,7 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
   },
 
   runCombinationRecipe: (recipeId) => {
-    const root = get() as any
+    const root = get() as UnsafeAny
     const caseId = root.caseData?.caseId
     emitCombinationAttempt(recipeId, caseId)
     const fail = (reason: string) => {
@@ -410,7 +412,7 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
       return { ok: false, reason }
     }
 
-    const runtime = ensureSpouse01RuntimePatched(get, set as (partial: any) => void)
+    const runtime = ensureSpouse01RuntimePatched(get, set as (partial: UnsafeAny) => void)
     const config = runtime.config
     if (!config) return fail('no_config')
 
@@ -601,12 +603,12 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     }
 
     // 스킬 포인트 1 소비 (수동 조합 비용)
-    const resources = (root as any).resources
+    const resources = (root as UnsafeAny).resources
     if (resources && resources.skillPoints >= 1) {
-      ;(root as any).spend('skillPoints', 1)
+      ;(root as UnsafeAny).spend('skillPoints', 1)
     }
 
-    ;(set as (partial: any) => void)({
+    ;(set as (partial: UnsafeAny) => void)({
       caseData,
       combinationLabRuntime: {
         ...runtime,
@@ -640,7 +642,7 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     // dialog는 호출자에서 순서 제어 (시스템 결과 → 재판관 코멘트 → 시스템 증인 알림)
     const newlyUnlockedWitnesses: { id: string; name: string }[] = []
     if (output.id.startsWith('dc-')) {
-      const freshRoot = get() as any
+      const freshRoot = get() as UnsafeAny
       const currentUnlocked = new Set<string>(freshRoot.unlockedWitnessIds ?? [])
       for (const tp of caseData!.duo.socialGraph ?? []) {
         if (currentUnlocked.has(tp.id)) continue

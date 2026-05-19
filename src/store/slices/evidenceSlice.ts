@@ -8,8 +8,10 @@ import {
   presentEvidence as presentEv,
   investigateEvidence as investigateEv,
   type EvidenceRuntimeState,
-  type SurfaceResult,
+  type SurfaceResult as _SurfaceResult,
 } from '../../engine/evidenceEngine'
+import type { UnsafeAny } from '../../types/lint'
+
 
 export interface EvidenceSlice {
   evidenceStates: Record<string, EvidenceRuntimeState>
@@ -58,14 +60,14 @@ export interface CombinationPartnerHint {
 }
 
 function collectMaxLieStates(getRoot: () => unknown): Record<string, string> {
-  const root = getRoot() as any
+  const root = getRoot() as UnsafeAny
   const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
   const lieStates: Record<string, string> = {}
 
   for (const agent of [root.agentA, root.agentB]) {
     if (!agent?.lieStateMap) continue
     for (const [dId, entry] of Object.entries(agent.lieStateMap)) {
-      const st = (entry as any).currentState ?? 'S0'
+      const st = (entry as UnsafeAny).currentState ?? 'S0'
       lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0)
         ? st
         : lieStates[dId]
@@ -214,7 +216,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
       }
     }
     // 2) combinationLab.recipes (신 시스템) — ALL inputs 준비 + 증거는 investigationStages 완료 시에만 shimmer
-    const labRuntime = (get() as any).combinationLabRuntime as { config: any; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
+    const labRuntime = (get() as UnsafeAny).combinationLabRuntime as { config: UnsafeAny; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
     if (labRuntime?.config?.recipes) {
       const applied = new Set(labRuntime.appliedRecipeIds ?? [])
       const discovered = new Set(labRuntime.discoveredNodeIds ?? [])
@@ -222,7 +224,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
       for (const recipe of labRuntime.config.recipes) {
         if (applied.has(recipe.id) && !recipe.repeatable) continue
         const allReady = recipe.inputs.every((inputId: string) => {
-          const node = nodes.find((n: any) => n.id === inputId)
+          const node = nodes.find((n: UnsafeAny) => n.id === inputId)
           if (node?.type === 'evidence' || node?.type === 'derived_evidence') {
             const st = evidenceStates[inputId]
             if (!st?.unlocked) return false
@@ -242,7 +244,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   getCombinationPartnerHints: () => {
     const { evidenceStates, evidenceDefinitions } = get()
     const hints = new Map<string, CombinationPartnerHint>()
-    const labRuntime = (get() as any).combinationLabRuntime as { config: any; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
+    const labRuntime = (get() as UnsafeAny).combinationLabRuntime as { config: UnsafeAny; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
     if (!labRuntime?.config?.recipes) return hints
 
     const applied = new Set(labRuntime.appliedRecipeIds ?? [])

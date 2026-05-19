@@ -31,6 +31,8 @@ import {
 import { getStageAwareEvidencePresent } from '../data/evidencePresentationScripts'
 import type { LocaleCode } from '../i18n/locales'
 import { getRuntimeScriptLocale } from '../i18n/scriptLocale.ts'
+import type { UnsafeAny } from '../types/lint'
+
 
 // 캐시: caseId → bundle
 const bundleCache = new Map<string, ScriptedTextBundle>()
@@ -129,23 +131,23 @@ function loadBundle(caseId: string, locale: LocaleCode = getRuntimeScriptLocale(
 
 function readScriptedTextModule(path: string): ScriptedTextBundle | null {
   const mod = scriptModsLazy[path]
-  const bundle = ((mod as any)?.default ?? mod) as ScriptedTextBundle | null | undefined
+  const bundle = ((mod as UnsafeAny)?.default ?? mod) as ScriptedTextBundle | null | undefined
   if (!bundle || typeof bundle !== 'object') return null
   return bundle
 }
 
 function mergeScriptedTextBundle(base: ScriptedTextBundle, overlay: Partial<ScriptedTextBundle>): ScriptedTextBundle {
   const merged = cloneJson(base)
-  const overlayChannels = (overlay as any).channels ?? {}
-  for (const [channelName, overlayChannel] of Object.entries<any>(overlayChannels)) {
-    const targetChannel = (merged.channels as any)[channelName]
+  const overlayChannels = (overlay as UnsafeAny).channels ?? {}
+  for (const [channelName, overlayChannel] of Object.entries<UnsafeAny>(overlayChannels)) {
+    const targetChannel = (merged.channels as UnsafeAny)[channelName]
     if (!targetChannel?.entries || !Array.isArray(overlayChannel?.entries)) continue
     mergeChannelEntries(targetChannel.entries, overlayChannel.entries)
   }
   return merged
 }
 
-function mergeChannelEntries(targetEntries: any[], overlayEntries: any[]): void {
+function mergeChannelEntries(targetEntries: UnsafeAny[], overlayEntries: UnsafeAny[]): void {
   const targetByKey = new Map(targetEntries.map((entry) => [entry.key, entry]))
   for (const overlayEntry of overlayEntries) {
     const targetEntry = targetByKey.get(overlayEntry.key)
@@ -900,7 +902,7 @@ export function getScriptedJudgeQuestionOptions(
   if (angleOptions.length > 0) return angleOptions
 
   const bundle = loadBundle(caseId)
-  const entries = (bundle?.channels as any)?.judge_question?.entries
+  const entries = (bundle?.channels as UnsafeAny)?.judge_question?.entries
   if (!Array.isArray(entries)) return []
 
   const limit = Math.max(1, options?.limit ?? 5)
@@ -965,13 +967,13 @@ function getFromChannel(
 ): { text: string; behaviorHint: string } | null {
   const bundle = loadBundle(caseId)
   if (!bundle) return null
-  const ch = (bundle.channels as any)[channel]
+  const ch = (bundle.channels as UnsafeAny)[channel]
   if (!ch?.entries) return null
-  const entry = ch.entries.find((e: any) => e.key === key)
+  const entry = ch.entries.find((e: UnsafeAny) => e.key === key)
   if (!entry?.variants?.length) return null
-  const variant = selectVariant(entry.variants, caseId, { channel, key, ...(extraContext ?? {}) } as any)
+  const variant = selectVariant(entry.variants, caseId, { channel, key, ...(extraContext ?? {}) } as UnsafeAny)
   if (!variant) return null
-  logScriptedHit(caseId, channel as any, key)
+  logScriptedHit(caseId, channel as UnsafeAny, key)
   return { text: variant.text, behaviorHint: variant.behaviorHint }
 }
 

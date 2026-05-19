@@ -14,7 +14,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
-import type { LieState } from '../../types'
+import type { LieState as _LieState } from '../../types'
 import { getMeterHudModel, type MeterDisplayMode } from '../../engine/meterStagingV2'
 import { getPostTransitionRecommendation } from '../../engine/stateTransitionHelper'
 
@@ -317,7 +317,7 @@ function MeterBar({ label, value, max, warning, critical, active, color, stageLa
         ? 'text-blue-400/60'
         : 'text-gray-600'
 
-  const isHighlight = warning || critical || active
+  const _isHighlight = warning || critical || active
   const ringColor = critical ? 'ring-red-500/15' : warning ? 'ring-orange-500/15' : active ? 'ring-blue-500/15' : 'ring-white/[0.04]'
   const bgColor = critical ? 'bg-red-500/[0.04]' : warning ? 'bg-orange-500/[0.04]' : active ? 'bg-blue-500/[0.04]' : 'bg-white/[0.015]'
 

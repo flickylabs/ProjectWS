@@ -4,6 +4,8 @@ import { checkConnection, getProviderName } from '../../engine/llmClient'
 import { isSoundEnabled, setSoundEnabled, isBgmEnabled, setBgmEnabled } from '../../engine/soundEngine'
 import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
+import type { UnsafeAny } from '../../types/lint'
+
 
 interface Props {
   onClose: () => void
@@ -20,7 +22,7 @@ export default function SettingsPanel({ onClose }: Props) {
     checkConnection().then(setLlmStatus)
   }, [])
 
-  const handleChange = (key: string, value: any) => {
+  const handleChange = (key: string, value: UnsafeAny) => {
     const updated = { ...settings, [key]: value }
     setSettings(updated)
     updateSettings({ [key]: value })
@@ -152,7 +154,7 @@ function Stat({ label, value }: { label: string; value: string }) {
 function CheatSection() {
   const resources = useStore((s) => s.resources)
   const gain = useStore((s) => s.gain)
-  const caseData = useStore((s) => s.caseData)
+  const _caseData = useStore((s) => s.caseData)
 
   // 대기 중인 변경사항 (확인 누르기 전까지 적용 안 됨)
   const [pending, setPending] = useState<{ invest: number; skill: number }>({ invest: 0, skill: 0 })

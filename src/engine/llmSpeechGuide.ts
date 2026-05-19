@@ -4,7 +4,7 @@
  */
 import type { CaseData, PartyId } from '../types'
 import { getRelationshipType } from '../utils/caseHelpers'
-import { pp이가, pp은는 } from './koreanPostposition'
+import { pp이가 as _pp이가, pp은는 as _pp은는 } from './koreanPostposition'
 
 /* ── 관계 유형 라벨 ─────────────────────── */
 

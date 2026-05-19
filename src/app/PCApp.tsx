@@ -2,19 +2,20 @@ import { useEffect, useState } from 'react'
 import { loadAgents, snapshotForSession } from '../api/agentManager'
 import { loadPrompts } from '../api/promptManager'
 import { registerAllEnrichments } from '../data/caseEnrichment'
+import { CASE_ENRICHMENT_DATA } from '../data/caseEnrichmentData'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
 import { loadPhase1Script, loadPhase2Script } from '../data/dialogues/phaseScriptLoader'
 import { generatePhase2Dialogues } from '../engine/llmPhaseDialogue'
 import { GamePhase, Phase } from '../types'
 import ActionPanel from '../components/actions/ActionPanel'
 import AutoDialoguePhase, { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
-import Phase0_CaseIntro, { resetPrefetch } from '../components/phase/Phase0_CaseIntro'
+import _Phase0_CaseIntro, { resetPrefetch } from '../components/phase/Phase0_CaseIntro'
 import PCCaseBrief from '../components/pc/home/PCCaseBrief'
 import Phase6_Mediation from '../components/phase/Phase6_Mediation'
 import PhaseTransition from '../components/layout/PhaseTransition'
 import PCCourtLayout from '../components/pc/layout/PCCourtLayout'
 import PCHomeScreen from '../components/pc/home/PCHomeScreen'
-import { playBgm } from '../engine/soundEngine'
+import { playBgm as _playBgm } from '../engine/soundEngine'
 import PCResultScreen from '../components/pc/result/PCResultScreen'
 import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
 import PCTestConsole from '../components/pc/debug/PCTestConsole'
@@ -26,14 +27,7 @@ import { useI18n, type LocaleCode } from '../i18n'
 import { flushNow, initTelemetry } from '../telemetry/funnelClient'
 import { emitSessionEnd, emitSessionStart } from '../telemetry/wirePoints'
 
-try {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { CASE_ENRICHMENT_DATA } = require('../data/caseEnrichmentData')
-  if (CASE_ENRICHMENT_DATA) registerAllEnrichments(CASE_ENRICHMENT_DATA)
-} catch {
-  // optional
-}
-
+if (CASE_ENRICHMENT_DATA) registerAllEnrichments(CASE_ENRICHMENT_DATA)
 export default function PCApp() {
   const { t } = useI18n()
   const currentPhase = useStore((s) => s.currentPhase)

@@ -42,6 +42,8 @@ import { resetActivatedLinks } from '../engine/linkEdgeEngine'
 import { resetQuestionRotation } from '../engine/judgeQuestionEngine'
 import { resetVfxHierarchyState } from '../engine/vfxHierarchyEngine'
 import type { QuestionType, EmotionTier, Stance } from '../types'
+import type { UnsafeAny } from '../types/lint'
+
 
 const EMPTY_METRICS: ProcessMetrics = {
   questionsAsked: 0, lieTransitions: 0, liesCollapsed: 0,
@@ -118,13 +120,13 @@ function dedupeStrings(values: unknown): string[] {
   return Array.from(new Set(Array.isArray(values) ? values.filter((value): value is string => typeof value === 'string') : []))
 }
 
-function patchSpouse01CombinationConfig(config: any): any {
+function patchSpouse01CombinationConfig(config: UnsafeAny): UnsafeAny {
   if (!config || !Array.isArray(config.nodes) || !Array.isArray(config.outputs) || !Array.isArray(config.recipes)) {
     return config
   }
 
   let hasDc6Node = false
-  const nodes = config.nodes.map((node: any) => {
+  const nodes = config.nodes.map((node: UnsafeAny) => {
     if (node?.id === 'dc-1') {
       return {
         ...node,
@@ -143,7 +145,7 @@ function patchSpouse01CombinationConfig(config: any): any {
   }
 
   let hasDc6Output = false
-  const outputs = config.outputs.map((output: any) => {
+  const outputs = config.outputs.map((output: UnsafeAny) => {
     if (output?.id === SPOUSE01_COMBINE2_OUTPUT_ID) {
       hasDc6Output = true
       return { ...output, ...spouse01Combine2Output() }
@@ -154,7 +156,7 @@ function patchSpouse01CombinationConfig(config: any): any {
     outputs.push(spouse01Combine2Output())
   }
 
-  const recipes = config.recipes.map((recipe: any) => (
+  const recipes = config.recipes.map((recipe: UnsafeAny) => (
     recipe?.id === 'combine-2'
       ? {
           ...recipe,
@@ -169,7 +171,7 @@ function patchSpouse01CombinationConfig(config: any): any {
   return { ...config, nodes, outputs, recipes }
 }
 
-function patchSpouse01CombinationRuntime(runtime: any): any {
+function patchSpouse01CombinationRuntime(runtime: UnsafeAny): UnsafeAny {
   if (!runtime) return runtime
 
   const appliedRecipeIds = dedupeStrings(runtime.appliedRecipeIds)
@@ -179,7 +181,7 @@ function patchSpouse01CombinationRuntime(runtime: any): any {
     ? [...discoveredNodeIds, SPOUSE01_COMBINE2_OUTPUT_ID]
     : discoveredNodeIds
   const history = Array.isArray(runtime.history)
-    ? runtime.history.map((entry: any) => (
+    ? runtime.history.map((entry: UnsafeAny) => (
         entry?.recipeId === 'combine-2' && entry.outputId === 'dc-1'
           ? { ...entry, outputId: SPOUSE01_COMBINE2_OUTPUT_ID, summary: SPOUSE01_COMBINE2_SUMMARY }
           : entry
@@ -198,15 +200,15 @@ function patchSpouse01CombinationRuntime(runtime: any): any {
   }
 }
 
-function patchSpouse01CombinationDialogue(dialogueLog: any): any {
+function patchSpouse01CombinationDialogue(dialogueLog: UnsafeAny): UnsafeAny {
   if (!Array.isArray(dialogueLog)) return dialogueLog
   return dialogueLog
-    .filter((entry: any) => !(
+    .filter((entry: UnsafeAny) => !(
       entry?.speaker === 'judge' &&
       typeof entry.text === 'string' &&
       entry.text.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
     ))
-    .map((entry: any) => {
+    .map((entry: UnsafeAny) => {
       if (
         typeof entry?.text === 'string' &&
         entry.text.includes('조합 결과: 오피스텔의 사람들') &&
@@ -222,14 +224,14 @@ function patchSpouse01CombinationDialogue(dialogueLog: any): any {
     })
 }
 
-function patchSpouse01JudgeObservations(judgeObservations: any): any {
+function patchSpouse01JudgeObservations(judgeObservations: UnsafeAny): UnsafeAny {
   if (!Array.isArray(judgeObservations)) return judgeObservations
   return judgeObservations
-    .filter((entry: any) => !(
+    .filter((entry: UnsafeAny) => !(
       typeof entry?.summary === 'string' &&
       entry.summary.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
     ))
-    .map((entry: any) => {
+    .map((entry: UnsafeAny) => {
       if (typeof entry?.summary === 'string' && entry.summary.includes('가족 쪽 돌봄 정황')) {
         return {
           ...entry,
@@ -253,9 +255,9 @@ function patchSpouse01PersistedCombinationState(state: GameStore): GameStore {
           combinationLab: patchSpouse01CombinationConfig(state.caseData.combinationLab),
         }
       : state.caseData,
-    combinationLabRuntime: patchSpouse01CombinationRuntime((state as any).combinationLabRuntime),
-    dialogueLog: patchSpouse01CombinationDialogue((state as any).dialogueLog),
-    judgeObservations: patchSpouse01JudgeObservations((state as any).judgeObservations),
+    combinationLabRuntime: patchSpouse01CombinationRuntime((state as UnsafeAny).combinationLabRuntime),
+    dialogueLog: patchSpouse01CombinationDialogue((state as UnsafeAny).dialogueLog),
+    judgeObservations: patchSpouse01JudgeObservations((state as UnsafeAny).judgeObservations),
   }
 }
 
@@ -268,8 +270,7 @@ function buildCriticalLeakSlipText(caseId: string | undefined, party: PartyId, d
 }
 
 /** 퍼크 효과를 게임 초기 상태에 반영 */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function applyPerks(set: (partial: any) => void): void {
+function applyPerks(set: (partial: UnsafeAny) => void): void {
   const saved = loadJudgePerks()
   const perkIds = [saved.major, saved.minor].filter(Boolean) as PerkId[]
   if (perkIds.length === 0) return
@@ -288,8 +289,8 @@ function applyPerks(set: (partial: any) => void): void {
   }
 
   // 미터 수정 (contradiction, leak, trust)
-  let meterA = { ...state.questionMeters.a }
-  let meterB = { ...state.questionMeters.b }
+  const meterA = { ...state.questionMeters.a }
+  const meterB = { ...state.questionMeters.b }
 
   for (const pid of perkIds) {
     const perk = getPerkById(pid)
@@ -972,7 +973,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         },
         meters: s.questionMeters,
         disputeVisibility: Object.fromEntries(
-          Object.entries(s.discovery.disputeVisibility).map(([id, entry]) => [id, (entry as any).visibility]),
+          Object.entries(s.discovery.disputeVisibility).map(([id, entry]) => [id, (entry as UnsafeAny).visibility]),
         ),
         transitionsThisTurn,
         readiness: s.readinessState,
@@ -1047,7 +1048,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
 
       const { investigationSuccessEvidenceIds, fullCollapseEvidenceIds } = getReadinessSets(caseId)
       const hiddenReveals = Object.values(state.discovery?.disputeVisibility ?? {})
-        .filter((entry: any) => entry.visibility === 'emerged' || entry.emergedAtTurn !== null)
+        .filter((entry: UnsafeAny) => entry.visibility === 'emerged' || entry.emergedAtTurn !== null)
         .length
 
       const readiness = aggregateReadiness(
@@ -1214,7 +1215,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
 
     return patchSpouse01PersistedCombinationState(merged)
   },
-  partialize: (state): any => ({
+  partialize: (state): UnsafeAny => ({
     // phase
     currentPhase: state.currentPhase,
     phaseHistory: state.phaseHistory,

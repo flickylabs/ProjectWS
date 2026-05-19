@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 import Emoji from '../common/Emoji'
 import { loadGeneratedCases } from '../../data/cases/caseLoader'
 import { useStore } from '../../store/useGameStore'
+import type { UnsafeAny } from '../../types/lint'
+
 
 interface Props {
   onSelectSession: (sessionType: string) => void
@@ -38,10 +40,10 @@ function loadProgress(): Record<string, { bestScore: number; stars: number }> {
   try { return JSON.parse(localStorage.getItem('solomon-case-progress') || '{}') } catch { return {} }
 }
 
-function getSessionProgress(type: string, allCases: any[], progress: Record<string, { bestScore: number; stars: number }>): SessionProgress & { avgScore: number } {
-  const cases = allCases.filter((c: any) => c.duo.relationshipType === type)
+function getSessionProgress(type: string, allCases: UnsafeAny[], progress: Record<string, { bestScore: number; stars: number }>): SessionProgress & { avgScore: number } {
+  const cases = allCases.filter((c: UnsafeAny) => c.duo.relationshipType === type)
   let cleared = 0, stars = 0, totalScore = 0
-  cases.forEach((c: any) => {
+  cases.forEach((c: UnsafeAny) => {
     const p = progress[c.caseId]
     if (p) { cleared++; stars += p.stars; totalScore += p.bestScore }
   })

@@ -50,7 +50,7 @@ export default function Phase0_CaseIntro() {
   const caseData = useStore((s) => s.caseData)
   const advancePhase = useStore((s) => s.advancePhase)
   const [step, setStep] = useState<Step>('parties')
-  const [aiReady, setAiReady] = useState(false)
+  const [_aiReady, _setAiReady] = useState(false)
 
   // 타이틀 BGM 정지 — Stage 진입 시
   useEffect(() => { stopBgm() }, [])
@@ -107,7 +107,7 @@ export default function Phase0_CaseIntro() {
       </div>
       <div className="px-5 pt-1 pb-2">
         <div className="flex items-center gap-1 justify-center">
-          {STEPS.filter(s => s !== 'history' || duo.relationshipLedger.length > 0).map((s, i) => (
+          {STEPS.filter(s => s !== 'history' || duo.relationshipLedger.length > 0).map((s, _i) => (
             <div key={s} className={`h-1 rounded-full transition-all duration-300 ${
               STEPS.indexOf(s) <= currentIdx ? 'bg-amber-500 w-8' : 'bg-gray-700 w-4'
             }`} />

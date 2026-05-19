@@ -24,6 +24,8 @@ import {
   DeviceViewer,
   SNSViewer,
 } from './EvidenceSubViewers'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 export default function PCEvidenceViewer() {
   const { locale, t } = useI18n()
@@ -82,8 +84,8 @@ export default function PCEvidenceViewer() {
     : evidence.viewerData
   const rawViewerData = (() => {
     const stageMap = locale === 'ko'
-      ? (getOriginalViewerDataByStage(caseData!.caseId, evidence.id) ?? (evidence as any).viewerDataByStage)
-      : (evidence as any).viewerDataByStage
+      ? (getOriginalViewerDataByStage(caseData!.caseId, evidence.id) ?? (evidence as UnsafeAny).viewerDataByStage)
+      : (evidence as UnsafeAny).viewerDataByStage
     if (!stageMap || typeof stageMap !== 'object') return baseViewerData
     const validKeys = Object.keys(stageMap)
       .map((k) => Number(k))
@@ -179,35 +181,35 @@ function EvidenceSubContent({
 
   switch (contentKey) {
     case 'receipt':
-      return <ReceiptViewer sheets={Array.isArray(data) ? data as any : [data]} />
+      return <ReceiptViewer sheets={Array.isArray(data) ? data as UnsafeAny : [data]} />
     case 'gps_log':
-      return <GpsLogViewer entries={Array.isArray(data) ? data as any : [data]} />
+      return <GpsLogViewer entries={Array.isArray(data) ? data as UnsafeAny : [data]} />
     case 'bank':
     case 'financial_record':
-      return <BankViewer rows={Array.isArray(data) ? data as any : [data]} />
+      return <BankViewer rows={Array.isArray(data) ? data as UnsafeAny : [data]} />
     case 'chat':
     case 'email':
-      return <ChatViewer header={(data as any).header ?? ''} messages={(data as any).messages ?? []} pages={(data as any).pages} inputStatus={(data as any).inputStatus} />
+      return <ChatViewer header={(data as UnsafeAny).header ?? ''} messages={(data as UnsafeAny).messages ?? []} pages={(data as UnsafeAny).pages} inputStatus={(data as UnsafeAny).inputStatus} />
     case 'contract':
     case 'estimate':
     case 'document':
-      return <ContractViewer title={(data as any).title ?? ''} subtitle={(data as any).subtitle ?? ''} rows={(data as any).rows ?? []} signature={(data as any).signature} />
+      return <ContractViewer title={(data as UnsafeAny).title ?? ''} subtitle={(data as UnsafeAny).subtitle ?? ''} rows={(data as UnsafeAny).rows ?? []} signature={(data as UnsafeAny).signature} />
     case 'testimony':
-      return <TestimonyViewer data={data as any} />
+      return <TestimonyViewer data={data as UnsafeAny} />
     case 'cctv':
     case 'photo':
     case 'video':
     case 'dashcam':
-      return <CCTVViewer events={Array.isArray(data) ? data as any : [data]} />
+      return <CCTVViewer events={Array.isArray(data) ? data as UnsafeAny : [data]} />
     case 'log':
     case 'platform_log':
     case 'cloud_log':
     case 'device_log':
-      return <LogViewer rows={(data as any).rows ?? []} note={(data as any).note ?? ''} title={(data as any).title ?? evidenceName} pages={(data as any).pages} />
+      return <LogViewer rows={(data as UnsafeAny).rows ?? []} note={(data as UnsafeAny).note ?? ''} title={(data as UnsafeAny).title ?? evidenceName} pages={(data as UnsafeAny).pages} />
     case 'device':
-      return <DeviceViewer ownerName={(data as any).ownerName ?? ''} sections={(data as any).sections ?? []} />
+      return <DeviceViewer ownerName={(data as UnsafeAny).ownerName ?? ''} sections={(data as UnsafeAny).sections ?? []} />
     case 'sns':
-      return <SNSViewer data={data as any} />
+      return <SNSViewer data={data as UnsafeAny} />
     default:
       return null
   }

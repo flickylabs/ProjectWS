@@ -10,9 +10,9 @@
  *   해결: 법리의 조각(원칙) / 균형의 조각(중립) / 봉합의 조각(화해)
  */
 
-import type { ProcessMetrics } from '../types'
+import type { ProcessMetrics as _ProcessMetrics } from '../types'
 import type { PerkId } from './judgePerks'
-import { createDefaultTitleLevels, createDefaultLoadout, type TitleId, type TitleLevels, type TitleLoadout } from './judgeTitleEngine'
+import { createDefaultTitleLevels, createDefaultLoadout, type TitleId as _TitleId, type TitleLevels, type TitleLoadout } from './judgeTitleEngine'
 
 // ── 조각 ID ──
 

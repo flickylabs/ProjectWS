@@ -28,10 +28,10 @@ export function buildBlueprintSystemPrompt(
   lieState: LieState = 'S0',
 ): string {
   const profile = party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
-  const opponent = party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
+  const _opponent = party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
   const judgeRef = getJudgeReference(caseData.duo, party)
   const myCall = getMyCall(caseData.duo, party)
-  const angryCall = getAngryCall(caseData.duo, party)
+  const _angryCall = getAngryCall(caseData.duo, party)
   const callForm = myCall === '자기' ? '자기야' : myCall
   const canInformalThis = canUseInformal(caseData, party)
   const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, party)
@@ -125,7 +125,7 @@ JSON { "npcResponse": "대사", "behaviorHint": "행동묘사" }
 export function buildBlueprintUserPrompt(
   blueprint: ResponseBlueprint,
   judgeQuestion: string,
-  disputeName: string,
+  _disputeName: string,
 ): string {
   return `재판관 질문: ${judgeQuestion}
 

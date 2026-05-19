@@ -11,8 +11,10 @@ import { getConfession } from '../data/confessionScripts'
 import { dispatchConfession } from './confessionDispatcher'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import type { PartyId } from '../types'
+import type { UnsafeAny } from '../types/lint'
 
-export function triggerConfessionModalIfReady(party: PartyId, store: any) {
+
+export function triggerConfessionModalIfReady(party: PartyId, store: UnsafeAny) {
   const caseData = store.caseData
   if (!caseData) return
 

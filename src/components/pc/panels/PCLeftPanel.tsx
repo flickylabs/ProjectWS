@@ -14,6 +14,8 @@ import JudgeNotebookSection from '../observation/JudgeNotebookSection'
 import JudgeObservationHistoryDrawer from '../observation/JudgeObservationHistoryDrawer'
 import { translate, useI18n, type MessageKey } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 const EVIDENCE_TYPE_LABEL_KEYS: Record<string, MessageKey> = {
   bank: 'pc.left.evidenceType.bank',
@@ -53,7 +55,7 @@ export default function PCLeftPanel() {
   const evidenceStates = useStore((s) => s.evidenceStates)
   const getCombinableEvidenceIds = useStore((s) => s.getCombinableEvidenceIds)
   const getCombinationPartnerHints = useStore((s) => s.getCombinationPartnerHints)
-  const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
+  const combinationLabRuntime = useStore((s) => (s as UnsafeAny).combinationLabRuntime)
   const migrateCombinationLabRuntime = useStore((s) => s.migrateCombinationLabRuntime)
   const combinableIds = useMemo(() => getCombinableEvidenceIds(), [getCombinableEvidenceIds, evidenceStates])
   const partnerHints = useMemo(() => getCombinationPartnerHints(), [getCombinationPartnerHints, evidenceStates, combinationLabRuntime])
@@ -329,7 +331,7 @@ function formatLocalizedCaseText(
   return t('pc.evidenceViewer.untranslatedData')
 }
 
-function buildPresentActions(
+function _buildPresentActions(
   evidence: EvidenceNode,
   focusDisputeId: string | null,
   canPresent: boolean,

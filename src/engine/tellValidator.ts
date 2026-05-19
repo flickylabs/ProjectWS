@@ -163,7 +163,7 @@ function checkSentenceShape(text: string, shape: SentenceShape): boolean {
       // 쉼표/나열 구조가 있는지 (3개 이상 항목)
       return (text.match(/,|、|·/g) ?? []).length >= 2 || /고,?\s*.+고,?\s*.+/.test(text)
 
-    case 'echo_repeat':
+    case 'echo_repeat': {
       // 같은 단어/구가 2회 이상 반복되는지
       const words = text.split(/[\s,·.?!]+/).filter(w => w.length >= 2)
       const wordSet = new Set<string>()
@@ -172,6 +172,7 @@ function checkSentenceShape(text: string, shape: SentenceShape): boolean {
         wordSet.add(w)
       }
       return false
+    }
 
     case 'conditional':
       return /만약|~라면|~다면|경우에|그랬으면|했더라면/.test(text)

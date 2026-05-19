@@ -148,7 +148,7 @@ function sectionBetween(raw, startMarker, endMarker) {
 function findCaseSection(root, caseId) {
   const filePath = batchDocPath(root, caseId)
   const raw = fs.readFileSync(filePath, 'utf8')
-  const headingRe = new RegExp(`^###\\s+.+?\\(\\`${escapeRegExp(caseId)}\\`\\)`, 'm')
+  const headingRe = new RegExp('^###\\s+.+?\\(`' + escapeRegExp(caseId) + '`\\)', 'm')
   const match = headingRe.exec(raw)
   if (!match) {
     throw new Error(`case section not found for ${caseId} in ${path.relative(root, filePath).replace(/\\/g, '/')}`)

@@ -4,6 +4,8 @@ import { useActionDispatch } from '../../hooks/useActionDispatch'
 import type { EvidenceNode } from '../../types'
 import Emoji from '../common/Emoji'
 import { getEvidenceIcon } from '../../utils/evidenceIcons'
+import type { UnsafeAny } from '../../types/lint'
+
 
 const SUB_ACTIONS: { key: string; label: string; icon: string }[] = [
   { key: 'request_original', label: '원본 요청', icon: '📋' },
@@ -43,7 +45,7 @@ export default function EvidenceBoard() {
   }, [evidenceDefinitions, evidenceStates])
 
   const handleInvestigate = (evidenceId: string, subAction: string) => {
-    dispatch({ type: 'evidence_investigate', evidenceId, subAction } as any)
+    dispatch({ type: 'evidence_investigate', evidenceId, subAction } as UnsafeAny)
   }
 
   return (

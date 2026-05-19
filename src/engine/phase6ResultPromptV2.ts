@@ -7,7 +7,7 @@
 
 import type { Phase3PromptBridgeV2 } from './phase3LogCollector'
 import { getStructureV2 } from './v2DataLoader'
-import { buildPhase3PromptBridge, deriveToneProfile, getPhase3StructuredLog } from './phase3LogCollector'
+import { buildPhase3PromptBridge, deriveToneProfile as _deriveToneProfile, getPhase3StructuredLog as _getPhase3StructuredLog } from './phase3LogCollector'
 import type { ResolvedRevealedFact } from './phase3LogCollector'
 import { buildLlmLanguageDirective, getLlmLanguageName, getLlmLocale } from '../i18n/llmLocale'
 

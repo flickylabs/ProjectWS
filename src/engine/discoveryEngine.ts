@@ -6,24 +6,26 @@
  * 4. 감정 전략 (Emotional Leverage)
  */
 import type {
-  TruthJudgment,
+  TruthJudgment as _TruthJudgment,
   PlayerJudgmentEntry,
   TruthConfrontationEvent,
   JudgmentConflictEvent,
-  AppraisalVerdict,
+  AppraisalVerdict as _AppraisalVerdict,
   EvidenceAppraisalEntry,
-  PartialTrustDetail,
-  DisputeVisibility,
+  PartialTrustDetail as _PartialTrustDetail,
+  DisputeVisibility as _DisputeVisibility,
   DisputeVisibilityEntry,
   EmergenceRoute,
   EmotionTierConfig,
   EmotionalSlipEvent,
   DiscoveryState,
 } from '../types/discovery'
-import type { EmotionTier } from '../types'
-import type { CaseData, Dispute, EvidenceNode, TruthItem, PartyId } from '../types'
+import type { EmotionTier as _EmotionTier } from '../types'
+import type { CaseData, Dispute, EvidenceNode, TruthItem as _TruthItem, PartyId } from '../types'
 import type { ClaimNode } from '../types/dialogue'
 import type { LieState } from '../types/agent'
+import type { UnsafeAny } from '../types/lint'
+
 
 // ─────────────────────────────────────────
 // 감정 티어 설정
@@ -150,7 +152,7 @@ export function checkTruthConfrontation(
 export function computeCascadeTargets(
   disputeId: string,
   evidence: EvidenceNode[],
-  allDisputes: Dispute[],
+  _allDisputes: Dispute[],
 ): string[] {
   // 이 쟁점을 proves하는 증거가 다른 어떤 쟁점도 proves하는지
   const linkedDisputeIds = new Set<string>()
@@ -339,7 +341,7 @@ function generateEmergenceRoutes(dispute: Dispute, caseData: CaseData): Emergenc
   // 경로 2: 해당 쟁점과 관련된 증인이 소환되면
   for (const tp of caseData.duo.socialGraph ?? []) {
     if (!tp.witnessedDirectly || !caseData.activeThirdParties.includes(tp.id)) continue
-    const relatedIds: string[] = (tp as any).relatedDisputeIds ?? []
+    const relatedIds: string[] = (tp as UnsafeAny).relatedDisputeIds ?? []
     if (relatedIds.includes(dispute.id)) {
       routes.push({
         type: 'witness',

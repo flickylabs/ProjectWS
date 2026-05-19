@@ -48,10 +48,13 @@ import { blockHiddenTruthLexemes, getDisclosureGuardMode } from './disclosureGua
 import { ensureDisclosurePolicyLoaded } from './disclosurePolicyLoader'
 import type { DisclosureCaseId, DisclosureChannelType, GuardContext } from '../types/disclosure'
 import { evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
+import { buildPhase6UserPrompt } from './phase6ResultPromptV2'
 import type { FreeInterrogationGuardContext } from '../types/freeInterrogationGuard'
 import { buildReleaseDialogueStyleGuide, polishNpcResponseCopy } from './npcResponsePolisher'
 import { buildLlmLanguageDirective, getLlmLocale, getLocalizedFreeQuestionBehaviorHint, getLocalizedFreeQuestionFallbackText, hasUnexpectedHangulForLocale } from '../i18n/llmLocale.ts'
 import { repairVisibleLlmTextLocale } from './llmLocaleGuard.ts'
+import type { UnsafeAny } from '../types/lint'
+
 
 interface DossierOverrideContext {
   questionId?: string
@@ -1016,7 +1019,7 @@ function buildSystemPrompt(
   }
 
   // 말투 가이드 (짧은 버전)
-  const opponentName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+  const _opponentName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
   const judgeRefGa = pp이가(judgeRef)
   const judgeRefNeun = pp은는(judgeRef)
   const speechGuideCommon = `\n\n★ 호칭 사용 규칙 (최우선):\n- 재판관에게 상대를 언급할 때: "${judgeRef}"로 지칭\n  ✅ "${judgeRef}${judgeRefGa} 그렇게 했습니다" / "${judgeRef}${judgeRefNeun} ~라고 주장하지만"\n  ❌ "${callForm}" 또는 애칭으로 재판관에게 말하기 ("자기가~", "여보가~" 등 절대 금지)\n- 상대에게 직접 말할 때: "${callForm}"으로 호칭 (예: "${callForm}, ~했잖아")\n\n★ 인용 시 높임법 규칙:\n- 재판관에게 말할 때 상대의 말/행동을 언급하면, 상대를 높이지 않는다.\n  ✅ "${judgeRef}${judgeRefGa} ~했다고 하지만" / "~한다고 하지만"\n  ❌ "${judgeRef}${judgeRefGa} ~하셨지만" (상대를 높이는 것은 잘못)\n- 재판관에게 보고하는 전체 문장은 존댓말로 끝낸다 (~습니다, ~있습니다).\n\n★ 연속 발언 시 대상 전환 규칙:\n- 재판관에게 말한 뒤 이어서 상대에게 직접 말하려면, 반드시 호칭("${callForm}", "${angryCall}" 등)으로 시작하여 대상이 바뀌었음을 명확히 한다.\n  ✅ "책임이 있습니다. ${callForm}, 약속을 지키는 게 그렇게 어려웠어?"\n  ❌ "책임이 있습니다. 약속을 지키는 게 그렇게 어려웠어?" (누구에게 하는 말인지 불명확)\n`
@@ -1275,7 +1278,6 @@ function buildUserPrompt(
     // V2 bridge가 있으면 구조화 로그 기반 프롬프트 사용
     const bridge = useGameStore.getState().phase3PromptBridge
     if (bridge) {
-      const { buildPhase6UserPrompt } = require('./phase6ResultPromptV2') as typeof import('./phase6ResultPromptV2')
       const caseData = useGameStore.getState().caseData
       const caseMeta = {
         caseId: bridge.caseId,
@@ -1419,7 +1421,8 @@ export function fixMisdirectedAddress(
   result = result.replace(/자기 자신이/g, '본인이')
 
   // 인용 복원
-  result = result.replace(/ Q(\d+) /g, (_m, i) => quotedSegments[Number(i)] ?? '')
+  const quoteSentinel = String.fromCharCode(0)
+  result = result.replace(new RegExp(`${quoteSentinel}Q(\\d+)${quoteSentinel}`, 'g'), (_m, i) => quotedSegments[Number(i)] ?? '')
 
   // ── 이름 직접 호칭 교정 ("세린아,", "지석아," 등) ──
   // Thread E에서 "이름직접호칭 WARN 5건" 보고됨
@@ -1915,7 +1918,7 @@ function enforceHaeyoMidSentence(text: string): string {
   // 쉼표 또는 마침표/종결 앞의 해요체를 합니다체로 변환
   // 패턴: 해요체 어미 + (쉼표 | 마침표 | 문장끝)
   let result = text
-  const SUFFIX = /(?=[,.]|\s|$)/
+  const _SUFFIX = /(?=[,.]|\s|$)/
   const pairs: [RegExp, string][] = [
     [/했어요/g, '했습니다'],
     [/없어요/g, '없습니다'],
@@ -2104,7 +2107,7 @@ function buildActionContract(
   }
 
   // actionType + questionType 결정
-  let actionType = action.type
+  const actionType = action.type
   let questionType: string | undefined
   if (action.type === 'question') questionType = action.questionType
   const goalKey = questionType ?? (action.type === 'trust_action' ? action.actionType : action.type)
@@ -2647,7 +2650,7 @@ async function tryBlueprintPath(
     const freshLieEntry = freshAgent.lieStateMap[disputeId]
     const newLieState = freshLieEntry?.currentState ?? prevLieState
 
-    let finalText = text
+    const finalText = text
     if (newLieState !== prevLieState) {
       const beat = getTransitionBeat(caseKey, target, disputeId, prevLieState, newLieState)
       if (beat) {
@@ -2687,7 +2690,7 @@ async function tryBlueprintPath(
         effects: {},
       },
       target,
-      stance: blueprint.stance as any,
+      stance: blueprint.stance as UnsafeAny,
       responseMode: blueprint.defenseMode === 'concession' ? 'answer_only' : 'answer_then_counter',
       answerStyle: 'factual',
       mentionedTruthIds: [],
@@ -2731,7 +2734,7 @@ async function tryBlueprintPath(
           behaviorHint: fallbackBeat.behaviorHint, effects: {},
         },
         target,
-        stance: blueprint.stance as any,
+        stance: blueprint.stance as UnsafeAny,
         responseMode: 'answer_only',
         answerStyle: 'factual',
         mentionedTruthIds: [],

@@ -88,13 +88,13 @@ function calculateInsight(ctx: VerdictContext, clearanceResult?: ClearanceResult
   }
 
   // V4 보너스: 숨겨진 쟁점 모두 발견 +15
-  const hiddenDisputes = ctx.disputes.filter((d) => d.weight === 'low' || (d as any).hidden)
+  const hiddenDisputes = ctx.disputes.filter((d) => d.weight === 'low' || (d as unknown).hidden)
   const discoveredHidden = hiddenDisputes.filter((d) => ctx.input.factFindings[d.id] && ctx.input.factFindings[d.id] !== 'pending')
   if (hiddenDisputes.length > 0 && discoveredHidden.length === hiddenDisputes.length) {
     processBonus += 15
   }
   // V4 보너스: 조합 결정적 질문 해금 +10
-  if ((pm as any).combinationDossierUnlocked > 0) {
+  if ((pm as unknown).combinationDossierUnlocked > 0) {
     processBonus += 10
   }
 
@@ -158,7 +158,7 @@ function calculateAuthority(ctx: VerdictContext): number {
   processBonus -= Math.min(6, pm.unsupportedCollapses * 6)         // -6 (최대 -6)
   processBonus -= Math.min(9, pm.interjectionAllowed * 3)          // 끼어들기 허용 -3 (최대 -9)
   // V4 보너스: 끼어들기 허용 → 반격 질문 사용 +5
-  if ((pm as any).counterQuestionUsed > 0) {
+  if ((pm as unknown).counterQuestionUsed > 0) {
     processBonus += 5
   }
 
@@ -201,7 +201,7 @@ function calculateWisdom(ctx: VerdictContext): number {
   // v2: 경로 보너스 액션 커버
   processBonus += Math.min(4, pm.bonusPathsCovered * 2)           // 보너스 경로 +2 (최대 4)
   // V4 보너스: 양쪽 S3 이상 도달 +10
-  if ((pm as any).bothSidesS3Plus) {
+  if ((pm as unknown).bothSidesS3Plus) {
     processBonus += 10
   }
 

@@ -5,6 +5,8 @@
 import type { DialogueEntry } from '../../types'
 import { getRuntimeScriptLocale } from '../../i18n/scriptLocale.ts'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
+import type { UnsafeAny } from '../../types/lint'
+
 
 interface PhaseScript {
   caseId: string
@@ -29,7 +31,7 @@ const p2Mods = import.meta.glob<true, string, unknown>(
 function extractScript(mod: unknown): PhaseScript | null {
   if (!mod || typeof mod !== 'object') return null
   // Vite JSON glob: { default: {...} } 또는 직접 {...}
-  const data = (mod as any).default ?? mod
+  const data = (mod as UnsafeAny).default ?? mod
   if (data?.caseId && Array.isArray(data?.dialogues)) return data as PhaseScript
   return null
 }
@@ -55,7 +57,7 @@ if (phase1Index.size === 0) {
   console.warn('[ScriptLoader] ⚠️ Phase 1 스크립트가 0개입니다! glob 결과:', Object.keys(p1Mods).length, '파일')
   // glob 결과 디버그
   for (const [path, mod] of Object.entries(p1Mods)) {
-    const data = (mod as any).default ?? mod
+    const data = (mod as UnsafeAny).default ?? mod
     console.log(`  ${path}: caseId=${data?.caseId}, dialogues=${data?.dialogues?.length}`)
     break // 첫 1개만
   }
@@ -69,7 +71,7 @@ export function loadPhase1Script(caseId: string): Omit<DialogueEntry, 'id'>[] | 
     console.warn(`[ScriptLoader] Phase 1 not found: ${caseId}. Available: ${[...phase1Index.keys()].slice(0, 3).join(', ')}...`)
     return null
   }
-  return script.dialogues.map((d: any) => ({
+  return script.dialogues.map((d: UnsafeAny) => ({
     speaker: d.speaker,
     text: d.text ?? '',
     relatedDisputes: d.relatedDisputes ?? [],
@@ -87,7 +89,7 @@ export function loadPhase2Script(caseId: string): Omit<DialogueEntry, 'id'>[] | 
   const key = normalizeCaseKey(caseId)
   const script = loadLocalizedPhaseScript(phase2Index.get(key), p2Mods, 'phase2', key)
   if (!script) return null
-  return script.dialogues.map((d: any) => ({
+  return script.dialogues.map((d: UnsafeAny) => ({
     speaker: d.speaker,
     text: d.text ?? '',
     relatedDisputes: d.relatedDisputes ?? [],
@@ -118,10 +120,10 @@ function loadLocalizedPhaseScript(
 }
 
 function mergePhaseScript(base: PhaseScript, overlay: Partial<PhaseScript>): PhaseScript {
-  const merged = cloneJson(base) as any
+  const merged = cloneJson(base) as UnsafeAny
   const overlayEntries = overlay.dialogues ?? []
   for (let index = 0; index < overlayEntries.length; index += 1) {
-    const overlayEntry = overlayEntries[index] as any
+    const overlayEntry = overlayEntries[index] as UnsafeAny
     const target = findDialogueTarget(merged.dialogues, overlayEntry.id, index)
     if (!target) continue
     if (hasText(overlayEntry.text)) target.text = overlayEntry.text
@@ -131,7 +133,7 @@ function mergePhaseScript(base: PhaseScript, overlay: Partial<PhaseScript>): Pha
   return merged
 }
 
-function findDialogueTarget(entries: any[], id: unknown, index: number): any | null {
+function findDialogueTarget(entries: UnsafeAny[], id: unknown, index: number): UnsafeAny | null {
   if (typeof id === 'string') {
     const found = entries.find((entry, entryIndex) => (entry.id ?? String(entryIndex)) === id)
     if (found) return found
@@ -139,7 +141,7 @@ function findDialogueTarget(entries: any[], id: unknown, index: number): any | n
   return entries[index] ?? null
 }
 
-function mergeOptions(targetOptions: any[] | undefined, overlayOptions: any[] | undefined): void {
+function mergeOptions(targetOptions: UnsafeAny[] | undefined, overlayOptions: UnsafeAny[] | undefined): void {
   if (!Array.isArray(targetOptions) || !Array.isArray(overlayOptions)) return
   const targetById = new Map(targetOptions.map((option, index) => [option.id ?? String(index), option]))
   for (let index = 0; index < overlayOptions.length; index += 1) {

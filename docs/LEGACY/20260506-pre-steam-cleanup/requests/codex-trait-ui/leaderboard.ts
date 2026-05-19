@@ -67,7 +67,7 @@ export function loadExtendedHistory(): ExtendedHistoryEntry[] {
   try {
     const raw = localStorage.getItem(HISTORY_KEY)
     if (!raw) return []
-    const arr = JSON.parse(raw) as any[]
+    const arr = JSON.parse(raw) as unknown[]
     return arr.map(migrateEntry)
   } catch { return [] }
 }
@@ -94,7 +94,7 @@ export function updateLatestAftermath(aftermath: string): void {
 }
 
 /** 기존 HistoryEntry → ExtendedHistoryEntry 마이그레이션 */
-function migrateEntry(old: any): ExtendedHistoryEntry {
+function migrateEntry(old: unknown): ExtendedHistoryEntry {
   if ('insight' in old && 'seasonId' in old) return old as ExtendedHistoryEntry
   const profile = loadProfile()
   const season = old.date ? getSeasonForDate(old.date) : getCurrentSeason()
@@ -315,7 +315,7 @@ export function saveDriftState(state: JudgeDriftState): void {
 export function getJudgeProfile(): JudgeProfile {
   const prog = loadProgressionState()
   const titleId = resolveTitle(prog.traits)
-  const titleLabel = TITLE_LABELS[titleId]
+  const _titleLabel = TITLE_LABELS[titleId]
   const maxLevel = Math.max(...Object.values(prog.traits).map(t => t.level))
   const tier = computeTier(prog.casesCompleted, maxLevel)
 
@@ -334,9 +334,9 @@ export function getJudgeProfile(): JudgeProfile {
     titleId,
     subtags: [],
     casesCompleted: prog.casesCompleted,
-    tier: tier as any,
-    majorPerk: prog.equippedMajor as any,
-    minorPerk: prog.equippedMinor as any,
+    tier: tier as unknown,
+    majorPerk: prog.equippedMajor as unknown,
+    minorPerk: prog.equippedMinor as unknown,
     isStabilized: maxLevel >= 1 && prog.casesCompleted >= 4,
   }
 }

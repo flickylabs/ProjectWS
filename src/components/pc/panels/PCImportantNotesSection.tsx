@@ -10,6 +10,8 @@ import { hasContradictionComparison } from '../../../utils/contradiction'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 import { translate, useI18n, type LocaleCode } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 export const PC_ADD_COMBINATION_NOTE_EVENT = 'pc:add-combination-note'
 
@@ -112,7 +114,7 @@ export default function PCImportantNotesSection() {
 
   // 조합 가능 발언 텍스트 — 즐겨찾기 shimmer + 힌트용
   const evidenceStates = useStore((s) => s.evidenceStates)
-  const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
+  const combinationLabRuntime = useStore((s) => (s as UnsafeAny).combinationLabRuntime)
   const statementHintMap = useMemo(() => {
     if (!combinationLabRuntime?.config?.nodes) return new Map<string, { readyCount: number; potentialCount: number }>()
     const hints = useGameStore.getState().getCombinationPartnerHints()

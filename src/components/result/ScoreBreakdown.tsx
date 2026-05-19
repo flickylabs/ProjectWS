@@ -45,8 +45,8 @@ function AnimatedGauge({ label, value, icon, desc, delay }: {
   }, [value, delay])
 
   const color = value >= 70 ? 'emerald' : value >= 40 ? 'yellow' : 'red'
-  const textColor = `text-${color}-400`
-  const barColor = `bg-${color}-600`
+  const _textColor = `text-${color}-400`
+  const _barColor = `bg-${color}-600`
 
   // Tailwind doesn't support dynamic class names, so use style
   const colorMap = { emerald: '#34d399', yellow: '#facc15', red: '#f87171' }

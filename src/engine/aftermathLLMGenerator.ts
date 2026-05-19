@@ -47,7 +47,7 @@ function localizePromptLabel(locale: LocaleCode, key: 'deferred' | 'minor' | 'mo
  * 실제 LLM 호출은 외부에서 수행합니다.
  */
 export function buildAftermathPrompt(input: AftermathLLMInput): string {
-  const { caseData, verdictInput, verdictDetails, scores, title, keyDiscoveries } = input
+  const { caseData, verdictInput, verdictDetails, scores: _scores, title: _title, keyDiscoveries } = input
   const locale = getLlmLocale()
   const language = getLlmLanguageName(locale)
   const partyA = caseData.duo.partyA
@@ -66,7 +66,7 @@ export function buildAftermathPrompt(input: AftermathLLMInput): string {
     .filter(Boolean)
     .join('\n')
 
-  const issueLines = Object.entries(verdictDetails.issueWeights)
+  const _issueLines = Object.entries(verdictDetails.issueWeights)
     .map(([issue, weight]) => `- ${issue}: ${weight <= 30 ? localizePromptLabel(locale, 'minor') : weight <= 70 ? localizePromptLabel(locale, 'moderate') : localizePromptLabel(locale, 'major')}`)
     .join('\n')
 
@@ -181,7 +181,7 @@ const TRANSLATION_PATTERNS: Array<{ pattern: RegExp; replace?: string; loggable:
 
 // 메타 레이블 — 모델이 문단 구조를 노출시키려 할 때 제거
 const META_LABEL_PATTERNS: RegExp[] = [
-  /^\*\*\s*\d+문단[^*]*\*\*[\s　]*[—:\-]?\s*/gm,
+  /^\*\*\s*\d+문단[^*]*\*\*[\s　]*[—:-]?\s*/gm,
   /^\*\*\s*(교훈|결론|정리|요약|lesson|moral|conclusion|summary|教訓|結論|要約|启示|教训|结论|总结)\s*\*\*[\s　]*[:：]?\s*/gim,
   /^\s*(교훈|결론|정리|요약|lesson|moral|conclusion|summary|教訓|結論|要約|启示|教训|结论|总结)\s*[:：]\s*/gim,
   /^\s*\[\s*(발견됨|미발견|플레이어|discovered|undiscovered|player|発見済み|未発見|已发现|未发现)\s*\]\s*/gim,
@@ -253,7 +253,7 @@ export function postProcessAftermath(raw: string, partyNames?: { a: string; b: s
   // 7. 감지된 이슈 경고 (치환 불가능한 것 포함)
   if (issues.length > 0) {
     try {
-      // eslint-disable-next-line no-console
+       
       console.warn('[aftermath post-process] issues:', issues.join(', '))
     } catch { /* noop */ }
   }

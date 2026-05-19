@@ -13,7 +13,7 @@ import { useState } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import type { CaseData, PartyId } from '../../types'
 import type { LieState } from '../../types'
-import type { DisputeDepthLayer } from '../../types'
+import type { DisputeDepthLayer as _DisputeDepthLayer } from '../../types'
 import { QuestionMeterHUD } from './StateTransitionFeedback'
 import Emoji from '../common/Emoji'
 import { getDisputeV2, getActiveLayer, getBeatRuntimeState, hasStructureV2 } from '../../engine/v2DataLoader'
@@ -653,7 +653,7 @@ function DepthLayerDisplay({ disputeId, caseData, aState }: {
     <div className="mb-2">
       <span className="text-[10px] text-gray-500 block mb-1">{copy.depth}</span>
       <div className="space-y-1">
-        {layers.map((layer, i) => {
+        {layers.map((layer, _i) => {
           const layerRank = { surface: 0, motive: 1, core: 2 }[layer.id] ?? 0
           const isUnlocked = layerRank <= activeRank
           const isCurrent = layer.id === activeLayerId

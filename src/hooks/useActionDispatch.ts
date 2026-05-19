@@ -3,33 +3,33 @@ import { useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
 import type { EventFeedbackVisualEffect } from '../store/slices/eventFeedbackSlice'
 import type { TutorialStepId } from '../store/slices/tutorialSlice'
-import { resolveDialogue, generateDynamicFallback } from '../engine/dialogueResolver'
+import { resolveDialogue as _resolveDialogue, generateDynamicFallback as _generateDynamicFallback } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
-import { pp을를, pp과와, pp이가, pp은는 } from '../engine/koreanPostposition'
+import { pp을를 as _pp을를, pp과와 as _pp과와, pp이가, pp은는 } from '../engine/koreanPostposition'
 import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getDepthSystemMessage } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playEvidenceUnlock, playEvidenceUpgrade, playInvestigationTokenWarning, playSeparation } from '../engine/soundEngine'
 import { v4Effects } from '../engine/presentationEngine'
-import { iga, eunneun } from '../utils/korean'
+import { iga, eunneun as _eunneun } from '../utils/korean'
 import { showToast, showLLMErrorBanner } from '../components/common/Toast'
 import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { getConfession } from '../data/confessionScripts'
 import { getStageAwareEvidenceQuestion } from '../data/evidencePresentationScripts'
-import { detectStatementChange } from '../engine/contradictionEngine'
+import { detectStatementChange as _detectStatementChange } from '../engine/contradictionEngine'
 import { getScriptedEvidenceDiscovery } from '../engine/scriptedTextLoader'
 import { extractDisputeSubject } from '../engine/judgeQuestionEngine'
 import {
   getScriptedContradictionPursuit,
-  getScriptedInterjection,
-  getScriptedEmotionalOverload,
+  getScriptedInterjection as _getScriptedInterjection,
+  getScriptedEmotionalOverload as _getScriptedEmotionalOverload,
   getScriptedTrustAction,
   getScriptedJudgeQuestion,
   getScriptedInterrogation,
   getScriptedJudgeContradiction,
 } from '../engine/scriptedTextLoader'
-import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
+import { runDiscoveryChecks, updateCascadeTargets as _updateCascadeTargets } from './useDiscoveryIntegration'
 import {
   clearNextConfidential,
   clearNextEvasionReading,
@@ -44,19 +44,19 @@ import {
 } from '../engine/dialogueRuntimeFlags'
 import { emitStateTransitionEvent, getTransitionLabel } from '../engine/stateTransitionHelper'
 // ── V2 스크립트 전환 엔진 ──
-import { hasV2Data, hasStructureV2, getBeatLibrary, getBeatRuntimeState, recordBeatUsed, getActiveLayer, getDisputeRole, getDisputeV2 } from '../engine/v2DataLoader'
+import { hasV2Data, hasStructureV2, getBeatLibrary, getBeatRuntimeState, recordBeatUsed, getActiveLayer, getDisputeRole, getDisputeV2 as _getDisputeV2 } from '../engine/v2DataLoader'
 import { evaluateQuestionFatigue, commitQuestionFatigue, getSessionFatigueState, setSessionFatigueState } from '../engine/questionFatigueEngine'
 import { selectTurnPresentation, deriveAngleTag, deriveResponseIntent } from '../engine/beatSelectorV2'
-import { deriveActionQuality, resolveNpcReaction, applyReactionToBlueprint } from '../engine/npcReactionV2'
-import { recordRevealedAtom, recordTurnStyle, recordKeyMoment, recordResolvedLink } from '../engine/phase3LogCollector'
+import { deriveActionQuality, resolveNpcReaction, applyReactionToBlueprint as _applyReactionToBlueprint } from '../engine/npcReactionV2'
+import { recordRevealedAtom, recordTurnStyle, recordKeyMoment as _recordKeyMoment, recordResolvedLink as _recordResolvedLink } from '../engine/phase3LogCollector'
 import {
-  isMisconceptionDispute, attemptMisconceptionTransition, getMisconceptionState,
-  deriveTriggerFromQuestion, deriveTriggerFromEvidence, deriveTriggerFromInterjection,
+  isMisconceptionDispute, attemptMisconceptionTransition as _attemptMisconceptionTransition, getMisconceptionState,
+  deriveTriggerFromQuestion, deriveTriggerFromEvidence, deriveTriggerFromInterjection as _deriveTriggerFromInterjection,
   deriveTriggerFromLink, applyMisconceptionTrigger, matchTrapSignal, shouldFeedLinkIntoMisconception,
 } from '../engine/misconceptionEngine'
 import { evaluateLinkEdges } from '../engine/linkEdgeEngine'
 import type { BeatScriptV2 } from '../types'
-import { toTrustWindowBand } from '../types'
+import { toTrustWindowBand as _toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
 import { getInterrogationMicroVfx, shouldPlayImpactBeat } from '../engine/vfxHierarchyEngine'
@@ -72,9 +72,12 @@ import {
   emitEvidencePresentResult,
   emitQuestionResult,
 } from '../telemetry/wirePoints'
+import type { UnsafeAny } from '../types/lint'
+
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
+const legacyAutoDisputeInterruptEnabled = () => false
 export function setLLMMode(_enabled: boolean) { /* AI 필수 — 항상 활성 */ }
 export function isLLMMode() { return true }
 
@@ -186,7 +189,7 @@ function addAngryLockoutNotice(
   return true
 }
 
-function getEvidenceDisplayName(def: any, runtimeState?: { deepInvestigated?: boolean } | null): string {
+function getEvidenceDisplayName(def: UnsafeAny, runtimeState?: { deepInvestigated?: boolean } | null): string {
   if (!def) return ''
   return runtimeState?.deepInvestigated ? (def.name ?? def.id) : (def.surfaceName ?? def.name ?? def.id)
 }
@@ -195,12 +198,12 @@ function normalizeEvidenceDisplayLabel(name: string): string {
   return (name ?? '').replace(/\s*\(/g, ' (').replace(/\s+\)/g, ')').replace(/\s+/g, ' ').trim()
 }
 
-function getEvidencePresentationStageLabel(evidence: any, evidenceRuntime: any): string {
+function getEvidencePresentationStageLabel(evidence: UnsafeAny, evidenceRuntime: UnsafeAny): string {
   const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
   const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
   const latestStage = stages
-    .filter((stage: any) => investigated.includes(stage.revealKey))
-    .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
+    .filter((stage: UnsafeAny) => investigated.includes(stage.revealKey))
+    .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
     .at(-1)
   return latestStage?.stage ? `조사 ${latestStage.stage}단계` : '기초 확인'
 }
@@ -230,12 +233,12 @@ function getDefaultEvidencePresentationQuestion(): string {
   return '이 증거와 관련해 설명해 주시겠습니까?'
 }
 
-function getEvidencePresentationQuestionText(caseId: string | undefined, evidence: any, evidenceRuntime: any, target: PartyId, displayName: string): string {
+function getEvidencePresentationQuestionText(caseId: string | undefined, evidence: UnsafeAny, evidenceRuntime: UnsafeAny, target: PartyId, displayName: string): string {
   const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
   const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
   const latestStage = stages
-    .filter((stage: any) => investigated.includes(stage.revealKey))
-    .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
+    .filter((stage: UnsafeAny) => investigated.includes(stage.revealKey))
+    .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
     .at(-1)
   const stageAwareQuestion = getStageAwareEvidenceQuestion({
     caseId: normalizeCaseKey(caseId ?? ''),
@@ -269,8 +272,8 @@ function formatEvidencePresentationAddress(targetName: string, questionText: str
 function buildEvidencePresentationQuestion(
   state: ReturnType<typeof useGameStore.getState>,
   target: PartyId,
-  evidence: any,
-  evidenceRuntime: any,
+  evidence: UnsafeAny,
+  evidenceRuntime: UnsafeAny,
   displayName: string,
 ): string {
   const targetName = getPartyName(state, target)
@@ -294,18 +297,18 @@ function shortenCourtBeatText(value: unknown, max = 72): string {
   return `${text.slice(0, max - 1)}…`
 }
 
-function getEvidenceBeatViewerData(evidence: any, evidenceRuntime: any): any {
+function getEvidenceBeatViewerData(evidence: UnsafeAny, evidenceRuntime: UnsafeAny): UnsafeAny {
   const byStage = evidence?.viewerDataByStage ?? {}
   const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
   const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
   const latestStage = stages
-    .filter((stage: any) => investigated.includes(stage.revealKey))
-    .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
+    .filter((stage: UnsafeAny) => investigated.includes(stage.revealKey))
+    .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
     .at(-1)?.stage
   return byStage[String(latestStage)] ?? byStage[String(investigated.length)] ?? evidence?.viewerData ?? {}
 }
 
-function evidenceBeatRowLabel(row: any): string {
+function evidenceBeatRowLabel(row: UnsafeAny): string {
   if (!row || typeof row !== 'object') return shortenCourtBeatText(row, 58)
   if (row.kind === 'testimony' || 'quote' in row || 'witnessName' in row) {
     return shortenCourtBeatText(
@@ -319,7 +322,7 @@ function evidenceBeatRowLabel(row: any): string {
   if ('storeName' in row || 'total' in row || Array.isArray(row.items)) {
     const itemSummary = Array.isArray(row.items)
       ? row.items
-          .map((item: any) => item?.name)
+          .map((item: UnsafeAny) => item?.name)
           .filter(Boolean)
           .slice(0, 2)
           .join(', ')
@@ -348,8 +351,8 @@ function evidenceBeatRowLabel(row: any): string {
   return shortenCourtBeatText(Object.values(row).filter((v) => typeof v === 'string' || typeof v === 'number').join('  '), 64)
 }
 
-function flattenEvidenceBeatRows(viewerData: any): any[] {
-  const rows: any[] = []
+function flattenEvidenceBeatRows(viewerData: UnsafeAny): UnsafeAny[] {
+  const rows: UnsafeAny[] = []
   const logRows = viewerData?.log?.rows
   if (Array.isArray(logRows)) rows.push(...logRows)
   if (Array.isArray(viewerData?.gps_log)) rows.push(...viewerData.gps_log)
@@ -357,7 +360,7 @@ function flattenEvidenceBeatRows(viewerData: any): any[] {
     for (const receipt of viewerData.receipt) rows.push(receipt)
   }
   const messages = viewerData?.chat?.messages
-  if (Array.isArray(messages)) rows.push(...messages.filter((m: any) => m?.text))
+  if (Array.isArray(messages)) rows.push(...messages.filter((m: UnsafeAny) => m?.text))
   const testimony = viewerData?.testimony
   if (testimony?.quote || testimony?.witnessName || testimony?.witnessDesc) {
     rows.push({
@@ -377,7 +380,7 @@ function flattenEvidenceBeatRows(viewerData: any): any[] {
   return rows
 }
 
-function buildEvidenceBeatRows(evidence: any, evidenceRuntime: any, resultType: 'hold' | 'crack' | 'collapse') {
+function buildEvidenceBeatRows(evidence: UnsafeAny, evidenceRuntime: UnsafeAny, resultType: 'hold' | 'crack' | 'collapse') {
   const viewerData = getEvidenceBeatViewerData(evidence, evidenceRuntime)
   const rawRows = flattenEvidenceBeatRows(viewerData)
   const preferred = rawRows.filter((row) => row?.suspicious === true)
@@ -398,7 +401,7 @@ function buildEvidenceBeatRows(evidence: any, evidenceRuntime: any, resultType: 
       highlighted: resultType !== 'hold' && index === investigated.length - 1,
       muted: resultType === 'hold',
     }))
-    .filter((row: any) => row.label)
+    .filter((row: UnsafeAny) => row.label)
   if (resultRows.length > 0) return resultRows.slice(-4)
 
   return [{
@@ -421,7 +424,7 @@ type CourtBeatEvidenceFamily =
   | 'diary'
   | 'generic'
 
-function getCourtBeatEvidenceFamily(evidenceName: string, rows: ReturnType<typeof buildEvidenceBeatRows>, evidence?: any): CourtBeatEvidenceFamily {
+function getCourtBeatEvidenceFamily(evidenceName: string, rows: ReturnType<typeof buildEvidenceBeatRows>, evidence?: UnsafeAny): CourtBeatEvidenceFamily {
   const explicitTags = [
     evidence?.type,
     evidence?.viewerType,
@@ -506,7 +509,7 @@ function buildCourtBeatRelationCopy(
   isHit: boolean,
   isDirectClash: boolean,
   hasStatementContext: boolean,
-  evidence?: any,
+  evidence?: UnsafeAny,
 ) {
   const family = getCourtBeatEvidenceFamily(evidenceName, rows, evidence)
   const label = getCourtBeatFamilyLabel(family)
@@ -590,7 +593,7 @@ function buildCourtBeatRelationCopy(
 function findImmediateCourtBeatStatement(state: ReturnType<typeof useGameStore.getState>, party: PartyId, disputeIds: string[]): string {
   const related = new Set(disputeIds)
   const log = [...state.dialogueLog].reverse()
-  const relatedPartyEntry = log.find((entry: any) => {
+  const relatedPartyEntry = log.find((entry: UnsafeAny) => {
     if (entry.isHidden || !entry.text) return false
     if (entry.speaker !== party) return false
     if (related.size === 0) return true
@@ -598,7 +601,7 @@ function findImmediateCourtBeatStatement(state: ReturnType<typeof useGameStore.g
   })
   if (relatedPartyEntry?.text) return relatedPartyEntry.text
 
-  const latestPartyEntry = log.find((entry: any) => !entry.isHidden && entry.text && entry.speaker === party)
+  const latestPartyEntry = log.find((entry: UnsafeAny) => !entry.isHidden && entry.text && entry.speaker === party)
   return latestPartyEntry?.text ?? ''
 }
 
@@ -654,8 +657,8 @@ function expandStatementHighlight(text: string, hit: string): string {
 function buildCourtBeatForEvidencePresentation(
   state: ReturnType<typeof useGameStore.getState>,
   target: PartyId,
-  evidence: any,
-  evidenceRuntime: any,
+  evidence: UnsafeAny,
+  evidenceRuntime: UnsafeAny,
   displayName: string,
   stageLabel: string,
   visibleDisputeIds: string[],
@@ -725,7 +728,7 @@ function buildCourtBeatForEvidencePresentation(
   }
 }
 
-function getEvidenceCurrentLieRank(evidence: any, lieStates: Record<string, { currentState?: string }> | undefined): number {
+function getEvidenceCurrentLieRank(evidence: UnsafeAny, lieStates: Record<string, { currentState?: string }> | undefined): number {
   const proves = Array.isArray(evidence?.proves) && evidence.proves.length > 0 ? evidence.proves : []
   const ranks = proves.map((id: string) => LIE_STATE_RANK_FOR_UNLOCK[lieStates?.[id]?.currentState ?? 'S0'] ?? 0)
   return ranks.length > 0 ? Math.max(...ranks) : 0
@@ -1980,7 +1983,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
   // NPC 응답 — V2 structure가 있으면 V2 메커닉 활성화, beat까지 있으면 스크립트 사용
   const v2CaseId = normalizeCaseKey(state.caseData?.caseId ?? '')
-  const { useBeatSelectorV2, useQuestionFatigueV2 } = useGameStore.getState().phase3Flags
+  const { useBeatSelectorV2, useQuestionFatigueV2: _useQuestionFatigueV2 } = useGameStore.getState().phase3Flags
   const v2StructureAvailable = !isFreeInterrogation && useBeatSelectorV2 && hasStructureV2(v2CaseId)
   const v2BeatAvailable = v2StructureAvailable && hasV2Data(v2CaseId)
   let v2BeatUsed = false
@@ -2007,7 +2010,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         issueRole,
         blockedVectors: [],
         angleTag: undefined,
-      } as any)
+      } as UnsafeAny)
 
       // 3. 피로도 선평가
       const fatigueAssessment = evaluateQuestionFatigue({
@@ -2030,7 +2033,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
       // 4. NPC 확률 반응 (E) — blueprint stance를 순응/저항/역공으로 흔든다
       const actionQuality = deriveActionQuality({
-        affinityGrade: affinityGrade as any,
+        affinityGrade: affinityGrade as UnsafeAny,
         questionType: action.questionType,
         angleTag,
         disputeKind: issueRole,
@@ -2052,7 +2055,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         trustWindowValue: trustValue,
         blockedVectors: [],
         quality: actionQuality,
-      }, { focusDisputeId: action.disputeId, stance: stanceGuess as any, defenseMode: 'flat_denial' as any, allowedClaimAtoms: [], forbiddenClaimAtoms: [], sentenceCount: 2, shouldCounterQuestion: false })
+      }, { focusDisputeId: action.disputeId, stance: stanceGuess as UnsafeAny, defenseMode: 'flat_denial' as UnsafeAny, allowedClaimAtoms: [], forbiddenClaimAtoms: [], sentenceCount: 2, shouldCounterQuestion: false })
 
       // 적용된 stance/defenseMode를 beat selector에 전달
       const appliedStance = npcReaction.appliedStance
@@ -2191,7 +2194,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
           issueRole,
           questionType: action.questionType,
           blueprint: { stance: appliedStance, allowedClaimAtoms: [], forbiddenClaimAtoms: [] },
-          emotionTier: emotionTier as any,
+          emotionTier: emotionTier as UnsafeAny,
           trustWindowValue: trustValue,
           fatigueLevel: fatigueAssessment.fatigueLevel,
           interjectionState: 'none',
@@ -2284,7 +2287,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
             fatigueLevel: fatigueAssessment.fatigueLevel,
             issueRole,
             trapState: 'none',
-          } as any),
+          } as UnsafeAny),
           fatigueLevel: fatigueAssessment.fatigueLevel,
           npcReaction: npcReaction.outcome,
           appliedStance,
@@ -2345,7 +2348,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   // ── 상대방 끼어들기 (구조적 반응 시스템) — V2에서 이미 처리했으면 스킵 ──
   // [차단 P-4 후속] 자동 끼어들기 별도 경로(V2 구조적 반응)도 자동 발동되어 시각 혼란 유발.
   // gameEventTriggerEngine 차단(L369·L1326)과 함께 V2 경로도 차단. 명시적 사용자 액션으로만 끼어들기 발생.
-  if (false && !v2BeatUsed) {
+  if (legacyAutoDisputeInterruptEnabled() && !v2BeatUsed) {
   const opponent: PartyId = action.target === 'a' ? 'b' : 'a'
   const freshState = useGameStore.getState()
   const isSeparated = freshState.separationTarget === action.target
@@ -2628,7 +2631,7 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       disputeId: node.conditions.disputeId,
       summary,
       confidence: stanceToConfidence[llmMeta.stance] ?? 'medium',
-      status: (stanceToStatus[llmMeta.stance] ?? 'normal') as any,
+      status: (stanceToStatus[llmMeta.stance] ?? 'normal') as UnsafeAny,
       turn: freshState.turnCount,
       isConfidential,
     }
@@ -2952,10 +2955,10 @@ function showEvasionReadingResult(party: PartyId, disputeId: string) {
 
   if (!lieEntry || !dispute) return
 
-  const intensityLabel = (lieEntry as any).lieIntensity === 'L1' ? '매우 불안정'
-    : (lieEntry as any).lieIntensity === 'L2' ? '불안정'
+  const intensityLabel = (lieEntry as UnsafeAny).lieIntensity === 'L1' ? '매우 불안정'
+    : (lieEntry as UnsafeAny).lieIntensity === 'L2' ? '불안정'
     : '강하게 방어 중'
-  const stateLabel: Record<string, string> = {
+  const _stateLabel: Record<string, string> = {
     S0: '완강히 부정', S1: '동요 중', S2: '일부 인정', S3: '책임 전가', S4: '감정 호소', S5: '인정',
   }
 
@@ -3233,7 +3236,7 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
 /** lie_collapse 미니게임 성공 시 추가 보상 처리 */
 export function applyLieCollapseSuccess(disputeId: string, party: PartyId) {
   const state = useGameStore.getState()
-  const agent = party === 'a' ? state.agentA : state.agentB
+  const _agent = party === 'a' ? state.agentA : state.agentB
 
   // 관련 잠긴 증거 1개 해금 시도
   const lockedEv = state.evidenceDefinitions.find(
@@ -3283,7 +3286,7 @@ export function applyLieCollapseFail(disputeId: string) {
 export function applyContradictionSuccess(disputeId: string, target: PartyId) {
   const state = useGameStore.getState()
   const name = target === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
-  const dispute = state.caseData?.disputes.find(d => d.id === disputeId)
+  const _dispute = state.caseData?.disputes.find(d => d.id === disputeId)
 
   // 모순 짚어냄 메시지
   state.addDialogue({
@@ -4018,7 +4021,7 @@ export function applyWitnessSlot(slotId: string): void {
   if (slot.effect.emotionDelta) {
     // 불리한 쪽의 감정 상승
     const unfavored = slot.effect.favorDirection === 'pro_a' ? 'b' : 'a'
-    changeEmotionWithPhaseTracking(unfavored as any, slot.effect.emotionDelta)
+    changeEmotionWithPhaseTracking(unfavored as UnsafeAny, slot.effect.emotionDelta)
   }
 
   if (slot.effect.lieStateNudge) {
@@ -4026,9 +4029,9 @@ export function applyWitnessSlot(slotId: string): void {
     if (slot.depth >= 3) {
       enqueueWitnessTruthProbe(pending, slot)
     } else {
-      const transitioned = state.transitionLie(party as any, dispute, 'witness_testimony')
+      const transitioned = state.transitionLie(party as UnsafeAny, dispute, 'witness_testimony')
       if (transitioned) {
-        notifyLieTransition(party as any, dispute)
+        notifyLieTransition(party as UnsafeAny, dispute)
         state.trackMetric('lieTransitions')
       }
     }

@@ -3,7 +3,7 @@
  * 타이틀 배너 + 회차 표시 + 시간 제한 + 결과 화면 + 재도전/스킵 버튼
  * 공통 3→2→1→Go! 카운트다운 포함
  */
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback as _useCallback, useEffect, useRef, useState } from 'react'
 import { useFocusTrap } from '../../../hooks/useFocusTrap'
 import { useStore } from '../../../store/useGameStore'
 import { MINIGAME_LABELS, MINIGAME_MAX_ROUNDS, MINIGAME_TOKEN_MAP } from '../../../types/minigame'
@@ -11,7 +11,7 @@ import type { MiniGameType } from '../../../types/minigame'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { playMiniGameCountdown, playMiniGameStart } from '../../../engine/soundEngine'
 
-const TOKEN_LABELS: Record<string, string> = {
+const _TOKEN_LABELS: Record<string, string> = {
   investigation: '조사 토큰',
   skill: '스킬 포인트',
   court: '법정 장악',
@@ -65,7 +65,7 @@ export default function MiniGameFrame({ children }: Props) {
   if (!activeMinigame) return null
 
   const { type, round } = activeMinigame
-  const progress = minigameProgress[type]
+  const _progress = minigameProgress[type]
   const tokenType = MINIGAME_TOKEN_MAP[type]
   const label = MINIGAME_LABELS[type]
 

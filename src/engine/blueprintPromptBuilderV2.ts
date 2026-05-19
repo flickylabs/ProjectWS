@@ -16,7 +16,7 @@ import type { CaseData, PartyId } from '../types'
 import type { Archetype } from '../types'
 import type { LieState } from '../types/agent'
 import { getMyCall, getJudgeReference, getAngryCall, canUseInformal, buildOpponentReferenceGuide } from './llmSpeechGuide'
-import { pp이가, pp은는, pp을를 } from './koreanPostposition'
+import { pp이가, pp은는, pp을를 as _pp을를 } from './koreanPostposition'
 
 /**
  * V2 시스템 프롬프트 생성

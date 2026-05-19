@@ -13,6 +13,8 @@ import { createDefaultTitleLevels, createDefaultLoadout } from '../engine/judgeT
 // 하위 호환: 기존 소비자가 import하는 타입/함수를 re-export
 import { deriveJudgeProfile, createDefaultDriftState, applyDriftUpdate, advanceAxis, toDelta } from '../engine/judgeProfileEngine'
 import type { JudgeProfile, JudgeDriftState } from '../engine/judgeProfileEngine'
+import type { UnsafeAny } from '../types/lint'
+
 export { deriveJudgeProfile, applyDriftUpdate, createDefaultDriftState }
 export type { JudgeProfile, JudgeDriftState }
 
@@ -68,7 +70,7 @@ export function loadExtendedHistory(): ExtendedHistoryEntry[] {
   try {
     const raw = localStorage.getItem(HISTORY_KEY)
     if (!raw) return []
-    const arr = JSON.parse(raw) as any[]
+    const arr = JSON.parse(raw) as UnsafeAny[]
     return dedupeHistoryEntries(arr.map(migrateEntry))
   } catch { return [] }
 }
@@ -228,7 +230,7 @@ export function updateLatestResultSnapshot(patch: Partial<VerdictResultSnapshot>
 }
 
 /** 기존 HistoryEntry → ExtendedHistoryEntry 마이그레이션 */
-function migrateEntry(old: any): ExtendedHistoryEntry {
+function migrateEntry(old: UnsafeAny): ExtendedHistoryEntry {
   if ('insight' in old && 'seasonId' in old) return old as ExtendedHistoryEntry
   const profile = loadProfile()
   const season = old.date ? getSeasonForDate(old.date) : getCurrentSeason()
@@ -503,8 +505,8 @@ export function saveDriftState(state: JudgeDriftState): void {
 export function getJudgeProfile(): JudgeProfile {
   const prog = loadProgressionState()
   return deriveJudgeProfile(loadDriftState(), undefined, {
-    major: prog.equippedMajor as any,
-    minor: prog.equippedMinor as any,
+    major: prog.equippedMajor as UnsafeAny,
+    minor: prog.equippedMinor as UnsafeAny,
   })
 }
 

@@ -176,7 +176,7 @@ export function classifyFreeQuestion(input: {
 
     // state 허용 체크
     const liveState = input.currentMisconceptionState ?? input.currentLieState
-    if (liveState && !hook.allowedAtStates.includes(liveState as any)) {
+    if (liveState && !hook.allowedAtStates.includes(liveState as UnsafeAny)) {
       scoreBreakdown.push({ hookId: hook.id, score: -999, reasons: ['state_not_allowed'] })
       continue
     }
@@ -341,6 +341,8 @@ export function renderResponse(params: {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import tonePatterns from '../data/freeQuestionTonePatterns.json'
+import type { UnsafeAny } from '../types/lint'
+
 
 type ToneSpec = typeof tonePatterns.characterTonePatterns
 const TONE_SPEC: ToneSpec = tonePatterns.characterTonePatterns as ToneSpec
@@ -358,7 +360,7 @@ function pickTonePattern(
   angleTag: AngleTag,
   reuseCount: number,
 ): { opener: string; connector: string; closer: string } | null {
-  const archetypeSpec = (TONE_SPEC as any)[archetype]
+  const archetypeSpec = (TONE_SPEC as UnsafeAny)[archetype]
   if (!archetypeSpec) return null
 
   const renderTag = normalizeRenderAngleTag(angleTag)
@@ -468,7 +470,7 @@ export function processFreeQuestionV2(input: {
   const liveState: FreeQuestionStateKey | undefined = input.currentMisconceptionState ?? input.currentLieState
 
   // state 2차 체크 (classifier에서 이미 했지만 안전장치)
-  if (liveState && !hook.allowedAtStates.includes(liveState as any)) {
+  if (liveState && !hook.allowedAtStates.includes(liveState as UnsafeAny)) {
     const refusal = pickRefusal(
       hook.refusalTemplates,
       input.runtime.refusalHistoryByHook[hook.id] ?? 0,

@@ -6,6 +6,8 @@ import { playClick } from '../../engine/soundEngine'
 import { useI18n } from '../../i18n'
 import type { DialogueEntry } from '../../types'
 import type { GamePhase } from '../../types'
+import type { UnsafeAny } from '../../types/lint'
+
 
 /** 외부에서 탭 이벤트를 트리거하기 위한 전역 콜백 */
 let globalTapHandler: (() => void) | null = null
@@ -106,7 +108,7 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
     }
 
     const next = dlgs[nextIdx]
-    console.log('[AutoDialogue] advanceToNext idx:', nextIdx, 'speaker:', next.speaker, 'choiceId:', (next as any).choiceId, 'options:', (next as any).options?.length)
+    console.log('[AutoDialogue] advanceToNext idx:', nextIdx, 'speaker:', next.speaker, 'choiceId:', (next as UnsafeAny).choiceId, 'options:', (next as UnsafeAny).options?.length)
     if (next.speaker === 'choice' && next.options && next.choiceId) {
       console.log('[AutoDialogue] → SHOWING CHOICE PANEL:', next.choiceId)
       setActiveChoiceSync({ choiceId: next.choiceId, options: next.options })

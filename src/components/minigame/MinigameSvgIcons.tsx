@@ -59,7 +59,7 @@ export function IconCardBack({ size = 36, className, style }: IconProps) {
   )
 }
 
-type CardIconId = typeof CARD_ICON_IDS[number]
+type _CardIconId = typeof CARD_ICON_IDS[number]
 export const CARD_ICON_IDS = [
   'scale', 'magnifier', 'clipboard', 'lock', 'briefcase', 'house', 'handshake',
   'flame', 'star', 'target', 'document', 'bolt', 'bulb', 'trophy',

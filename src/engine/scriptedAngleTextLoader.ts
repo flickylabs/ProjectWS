@@ -9,6 +9,8 @@ import type { ScriptedInterrogationQuestionType, ScriptedLieState, ScriptedVaria
 import type { LocaleCode } from '../i18n/locales'
 import { getRuntimeScriptLocale } from '../i18n/scriptLocale.ts'
 import { normalizeCaseKey } from '../utils/caseHelpers.ts'
+import type { UnsafeAny } from '../types/lint'
+
 
 export const GENERAL_SCRIPTED_ANGLE = 'general'
 
@@ -261,14 +263,14 @@ function readBundle<T extends { caseId: string }>(
 
 function readAngleModule<T>(path: string): T | null {
   const mod = angleMods[path]
-  const bundle = ((mod as any)?.default ?? mod) as T | null | undefined
+  const bundle = ((mod as UnsafeAny)?.default ?? mod) as T | null | undefined
   if (!bundle || typeof bundle !== 'object') return null
   return bundle
 }
 
 function mergeAngleBundle<T extends { caseId: string }>(base: T, overlay: Partial<T>, suffix: string): T {
-  const merged = cloneJson(base) as any
-  const source = overlay as any
+  const merged = cloneJson(base) as UnsafeAny
+  const source = overlay as UnsafeAny
   if (suffix === 'angle_catalog') {
     mergeAngleCatalog(merged.angles ?? [], source.angles ?? [])
   } else if (suffix === 'judge_questions') {
@@ -279,7 +281,7 @@ function mergeAngleBundle<T extends { caseId: string }>(base: T, overlay: Partia
   return merged as T
 }
 
-function mergeAngleCatalog(targetAngles: any[], overlayAngles: any[]): void {
+function mergeAngleCatalog(targetAngles: UnsafeAny[], overlayAngles: UnsafeAny[]): void {
   const targetByKey = new Map(targetAngles.map((angle) => [angleCatalogKey(angle), angle]))
   for (const overlayAngle of overlayAngles) {
     const target = targetByKey.get(angleCatalogKey(overlayAngle))
@@ -290,7 +292,7 @@ function mergeAngleCatalog(targetAngles: any[], overlayAngles: any[]): void {
   }
 }
 
-function mergeAngleVariants(targetEntries: any[], overlayEntries: any[], makeKey: (entry: any) => string): void {
+function mergeAngleVariants(targetEntries: UnsafeAny[], overlayEntries: UnsafeAny[], makeKey: (entry: UnsafeAny) => string): void {
   const targetByKey = new Map(targetEntries.map((entry) => [makeKey(entry), entry]))
   for (const overlayEntry of overlayEntries) {
     const target = targetByKey.get(makeKey(overlayEntry))

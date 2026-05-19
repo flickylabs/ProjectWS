@@ -7,10 +7,10 @@
  * beatSelectorV2와 questionFatigueEngine이 이 로더에서 데이터를 가져간다.
  */
 
-import type { TransitionBeat, PartyId } from '../types'
+import type { TransitionBeat as _TransitionBeat, PartyId as _PartyId } from '../types'
 import type { LieState } from '../types'
 import type { BeatScriptV2, IssueLayer, IssueRole, MisconceptionState } from '../types'
-import type { DisputeV2, DisputeLinkEdge, DisputeDepthLayer } from '../types'
+import type { DisputeV2, DisputeLinkEdge, DisputeDepthLayer as _DisputeDepthLayer } from '../types'
 import type { EvidenceNodeV2, EvidenceTimingMetadata } from '../types'
 import type { BeatLibraryV2 } from './beatSelectorV2'
 import { registerMisconceptionDispute } from './misconceptionEngine'

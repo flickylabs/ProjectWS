@@ -16,6 +16,8 @@ import {
   getAvailableDossierQuestions,
 } from '../../engine/v3GameLoopLoader'
 import Emoji from '../common/Emoji'
+import type { UnsafeAny } from '../../types/lint'
+
 
 interface Props {
   target: PartyId | null
@@ -88,7 +90,7 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
     const result: Record<string, LieState> = {}
     if (config) {
       for (const [dId, cfg] of Object.entries(config)) {
-        result[dId] = (cfg as any).currentState ?? 'S0'
+        result[dId] = (cfg as UnsafeAny).currentState ?? 'S0'
       }
     }
     return result

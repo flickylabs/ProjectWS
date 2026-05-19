@@ -4,7 +4,7 @@
  * 플레이어의 선택에 따라 효과를 적용한다.
  */
 import type { TestimonySlot } from '../types/witnessTestimony'
-import type { PartyId } from '../types'
+import type { PartyId as _PartyId } from '../types'
 
 export interface WitnessSessionState {
   /** 이 증인에게서 들은 슬롯 ID 목록 */

@@ -25,6 +25,8 @@ import { getFragmentLabel, getResultCopy, getRewardTitleInfo } from '../result/r
 import PCCaseBrowser from './PCCaseBrowser'
 import PCIntroSlides from './PCIntroSlides'
 import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getLocalizedPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 type HomeView = 'home' | 'general' | 'generalCases' | 'season' | 'profile' | 'leaderboard' | 'settings'
 type JudgeDeskTab = 'profile' | 'history' | 'progression'
@@ -139,7 +141,7 @@ export default function PCHomeScreen() {
   const selectedSessionMeta = generalSessions.find((session) => session.id === selectedSession) ?? null
   const selectedSessionCases = selectedSession ? getCasesForPcGeneralSession(allCases, selectedSession) : []
   const seasonProgress = buildSessionProgress(seasonCases, progressStore, bestHistoryScores)
-  const seasonHistory = useMemo(() => {
+  const _seasonHistory = useMemo(() => {
     const ids = new Set(seasonCases.map((c) => c.caseId))
     return history.filter((entry) => ids.has(entry.caseId))
   }, [history, seasonCases])
@@ -290,14 +292,14 @@ export default function PCHomeScreen() {
     setScreenConfirmCountdown(5)
   }
 
-  const openGuide = () => openPcInteractionPanel({
+  const _openGuide = () => openPcInteractionPanel({
     title: t('pc.home.modal.guide.title'),
     subtitle: t('pc.home.modal.guide.subtitle'),
     tone: 'blue',
     body: t('pc.home.modal.guide.body'),
   })
 
-  const openLive = () => openPcInteractionPanel({
+  const _openLive = () => openPcInteractionPanel({
     title: t('pc.home.modal.live.title'),
     subtitle: llmConnected ? t('pc.home.status.aiConnected') : t('pc.home.status.offline'),
     tone: llmConnected ? 'gold' : 'neutral',
@@ -649,11 +651,11 @@ function MiniStat({ label, value }: { label: string; value: string }) {
   return <div className="pc-mini-stat"><span>{label}</span><strong>{value}</strong></div>
 }
 
-function MiniActionCard({ iconId, label, subLabel }: { iconId: string; label: string; subLabel: string }) {
+function _MiniActionCard({ iconId, label, subLabel }: { iconId: string; label: string; subLabel: string }) {
   return <div className="pc-mini-action-card"><span className="pc-mini-action-card__icon"><PCSvgIcon id={iconId} size={16} /></span><strong>{label}</strong><small>{subLabel}</small></div>
 }
 
-function Achievement({ iconId, label, value }: { iconId: string; label: string; value: string }) {
+function _Achievement({ iconId, label, value }: { iconId: string; label: string; value: string }) {
   return <div className="pc-achievement-card"><span className="pc-achievement-card__icon"><PCSvgIcon id={iconId} size={26} /></span><strong>{value}</strong><small>{label}</small></div>
 }
 
@@ -1218,7 +1220,7 @@ function HistoryRewardGrid({ rewards }: { rewards: Array<{ fragmentId: string; c
           : getFragmentLabel(reward.fragmentId, locale)
         return (
           <div className="pc-history-reward-card" key={reward.fragmentId}>
-            <PCFragmentIcon fragmentId={reward.fragmentId as any} size={56} />
+            <PCFragmentIcon fragmentId={reward.fragmentId as UnsafeAny} size={56} />
             <strong>{rewardLabel ?? visual?.name ?? reward.fragmentId}</strong>
             <span>× {reward.count}</span>
           </div>

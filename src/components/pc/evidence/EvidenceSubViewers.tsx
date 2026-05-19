@@ -993,7 +993,7 @@ export function ContractViewer({ title, subtitle, rows, signature }: {
 // 4. TestimonyViewer — 증인 증언
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const BIAS_LABELS: Record<string, string> = { a: 'A편', neutral: '중립', b: 'B편' }
+const _BIAS_LABELS: Record<string, string> = { a: 'A편', neutral: '중립', b: 'B편' }
 
 function splitTestimonyTranscript(value: string) {
   const normalized = String(value ?? '').replace(/\s+/g, ' ').trim()
@@ -1213,7 +1213,7 @@ const LOG_TYPE_STYLES: Record<string, { bg: string; color: string }> = {
   miss: { bg: 'rgba(224,96,96,0.1)', color: '#e06060' },
 }
 
-const LOG_TYPE_FALLBACK_LABELS: Record<string, string> = {
+const _LOG_TYPE_FALLBACK_LABELS: Record<string, string> = {
   out: '발신',
   in: '수신·방문',
   miss: '부재중·변경',

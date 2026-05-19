@@ -6,8 +6,8 @@
  * 조건 분기 6축, red herring / misconception 대응.
  */
 
-import type { LieState } from './agent'
-import type { PartyId } from './game'
+import type { LieState as _LieState } from './agent'
+import type { PartyId as _PartyId } from './game'
 import type { AttackVector, BeatScript, EmotionTier, QuestionType } from './renewal'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

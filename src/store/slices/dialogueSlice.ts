@@ -2,6 +2,8 @@ import type { StateCreator } from 'zustand'
 import type { DialogueEntry, ClaimNode, ClaimStatus } from '../../types'
 import type { EventFeedbackItem } from './eventFeedbackSlice'
 import { isLowValueSystemDialogueText } from '../../utils/systemLogPolicy'
+import type { UnsafeAny } from '../../types/lint'
+
 
 /**
  * [B-17 D 옵션] 시스템 메시지 기반 수동 트리거 모달
@@ -48,7 +50,7 @@ export const createDialogueSlice: StateCreator<DialogueSlice, [], [], DialogueSl
       return ''
     }
     const id = `dlg-${get().nextDialogueId}`
-    const fullState = get() as any
+    const fullState = get() as UnsafeAny
     const agent = entry.speaker === 'a'
       ? fullState.agentA
       : entry.speaker === 'b'
@@ -66,7 +68,7 @@ export const createDialogueSlice: StateCreator<DialogueSlice, [], [], DialogueSl
     }))
     // 조합용 statement 노드 동기화 — 당사자 발언에서만 매칭
     if (entry.speaker === 'a' || entry.speaker === 'b') {
-      ;(get() as any).syncStatementsFromDialogue?.(entry.text ?? '')
+      ;(get() as UnsafeAny).syncStatementsFromDialogue?.(entry.text ?? '')
     }
     return id
   },

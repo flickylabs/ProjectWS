@@ -3,7 +3,7 @@
  * 기존 액션 흐름(질문/증거/증인) 후에 호출되어
  * 진실공방/증거감별/숨겨진쟁점/감정전략을 처리한다.
  */
-import { useGameStore, useStore } from '../store/useGameStore'
+import { useGameStore, useStore as _useStore } from '../store/useGameStore'
 import { pp이가 } from '../engine/koreanPostposition'
 import {
   checkTruthConfrontation,
@@ -18,8 +18,10 @@ import type { PartyId } from '../types'
 import type { DisputeVisibilityEntry, EmotionalSlipEvent } from '../types/discovery'
 import { v4Effects } from '../engine/presentationEngine'
 import { getSafeEmergenceDescription, getSafeEmergenceTitle } from '../data/safeEmergenceCopy'
+import type { UnsafeAny } from '../types/lint'
 
-function hasEvidenceStage(state: any, evidenceId: string): boolean {
+
+function hasEvidenceStage(state: UnsafeAny, evidenceId: string): boolean {
   const evidenceState = state.evidenceStates?.[evidenceId]
   return Boolean(
     evidenceState?.presented ||
@@ -28,19 +30,19 @@ function hasEvidenceStage(state: any, evidenceId: string): boolean {
   )
 }
 
-function isVisibleOrEmerged(state: any, disputeId: string): boolean {
+function isVisibleOrEmerged(state: UnsafeAny, disputeId: string): boolean {
   const visibility = state.discovery?.disputeVisibility?.[disputeId]?.visibility
   return visibility === 'visible' || visibility === 'emerged'
 }
 
-function getMaxLieRank(state: any, disputeId: string): number {
+function getMaxLieRank(state: UnsafeAny, disputeId: string): number {
   const rank: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
   const aState = state.agentA?.lieStateMap?.[disputeId]?.currentState ?? 'S0'
   const bState = state.agentB?.lieStateMap?.[disputeId]?.currentState ?? 'S0'
   return Math.max(rank[aState] ?? 0, rank[bState] ?? 0)
 }
 
-function passesSpouse01EmergenceGate(state: any, disputeId: string): boolean {
+function passesSpouse01EmergenceGate(state: UnsafeAny, disputeId: string): boolean {
   const caseId = String(state.caseData?.caseId ?? '').replace(/^case-/, '')
   if (caseId !== 'spouse-01') return true
 
@@ -61,14 +63,14 @@ function passesSpouse01EmergenceGate(state: any, disputeId: string): boolean {
   return true
 }
 
-function emergedBeforeTurn(state: any, disputeId: string): boolean {
+function emergedBeforeTurn(state: UnsafeAny, disputeId: string): boolean {
   const entry = state.discovery?.disputeVisibility?.[disputeId]
   if (!entry || (entry.visibility !== 'visible' && entry.visibility !== 'emerged')) return false
   const emergedAtTurn = entry.emergedAtTurn ?? 0
   return emergedAtTurn < (state.turnCount ?? 0)
 }
 
-function passesFriend01EmergenceGate(state: any, disputeId: string): boolean {
+function passesFriend01EmergenceGate(state: UnsafeAny, disputeId: string): boolean {
   const caseId = String(state.caseData?.caseId ?? '').replace(/^case-/, '')
   if (caseId !== 'friend-01') return true
 
@@ -160,10 +162,10 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
     // lieStates 맵 구축 (lie_state_threshold 체크용)
     const lieStatesMap = {
       a: Object.fromEntries(
-        Object.entries(agentA.lieStateMap).map(([dId, e]) => [dId, (e as any).currentState ?? 'S0']),
+        Object.entries(agentA.lieStateMap).map(([dId, e]) => [dId, (e as UnsafeAny).currentState ?? 'S0']),
       ),
       b: Object.fromEntries(
-        Object.entries(agentB.lieStateMap).map(([dId, e]) => [dId, (e as any).currentState ?? 'S0']),
+        Object.entries(agentB.lieStateMap).map(([dId, e]) => [dId, (e as UnsafeAny).currentState ?? 'S0']),
       ),
     }
 

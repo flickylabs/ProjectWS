@@ -287,7 +287,7 @@ export default function GameEventModal() {
 // 모순 감지
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTrigger; caseKey: string; partyName: string }) {
+function ContradictionModal({ event, caseKey, partyName: _partyName }: { event: GameEventTrigger; caseKey: string; partyName: string }) {
   const { locale } = useI18n()
   const copy = EVENT_COPY[locale]
   const dismiss = useStore(s => s.setPendingGameEvent)

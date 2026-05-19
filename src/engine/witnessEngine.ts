@@ -7,7 +7,7 @@
  */
 import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
-import { getRelationLabel } from './llmSpeechGuide'
+import { getRelationLabel as _getRelationLabel } from './llmSpeechGuide'
 import { WITNESS_BUDGETS } from '../data/witnessBudget'
 import { buildWitnessFewShotBlock, buildHiddenAgendaPatternBlock, type WitnessSlot } from '../data/witnessFewShotExamples'
 import { normalizeCaseKey } from '../utils/caseHelpers'
@@ -22,6 +22,8 @@ import type { CaseData } from '../types'
 import type { AgentState } from '../types'
 import type { LieState } from '../types/agent'
 import type { ThirdParty } from '../types/character'
+import type { UnsafeAny } from '../types/lint'
+
 
 /** 증인의 증언 깊이 단계 */
 export type TestimonyDepth = 'vague' | 'partial' | 'full'
@@ -307,7 +309,7 @@ The witness reveals some facts but withholds the most important details.
 
 /** 증인의 slot 문자열을 WitnessSlot 타입으로 정규화 */
 function normalizeWitnessSlot(witness: ThirdParty): WitnessSlot {
-  const raw = (witness as any).slot ?? (witness.witnessProfile as any)?.role ?? ''
+  const raw = (witness as UnsafeAny).slot ?? (witness.witnessProfile as UnsafeAny)?.role ?? ''
   if (raw === 'institutional' || raw === 'colleague' || raw === 'family' || raw === 'friend') return raw
   // 관계 기반 추론
   if (witness.relationTo && witness.witnessProfile?.relationToA?.includes('가족')) return 'family'
@@ -474,7 +476,7 @@ ${vars.witnessFewShotExamples ? `## 증언 톤 예시 (이 톤을 참고하세�
 /* ── witnessBudget 포매팅 (v4 데이터) ────── */
 
 /** 증인의 관계에서 호칭 자동 추론 */
-function inferWitnessAddress(witness: any, partyName: string, _party: 'a' | 'b'): string {
+function inferWitnessAddress(witness: UnsafeAny, partyName: string, _party: 'a' | 'b'): string {
   const wName = witness.name ?? ''
   const givenName = partyName.slice(1) // 성 제거
 

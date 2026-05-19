@@ -8,6 +8,8 @@ import {
   buildDisputePickerPayload,
 } from './PCInteractionPanel'
 import { useActionDispatch, findLinkedDialogueId } from '../../../hooks/useActionDispatch'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 type TransitionLabel = 'cracked' | 'cornered' | 'opening'
 
@@ -134,7 +136,7 @@ export default function PCGameplayOverlay() {
         questionType,
         target: choice.party,
         disputeId: choice.disputeId,
-      } as any)
+      } as UnsafeAny)
     }
 
     const openEvidenceSelection = () => {

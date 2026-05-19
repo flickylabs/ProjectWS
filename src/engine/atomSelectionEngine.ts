@@ -27,6 +27,8 @@ import type {
 import { SUBACTION_ATOM_RULES } from '../types'
 import type { QuestionType, Stance, PartyId } from '../types'
 import { getUnlockedAtoms, getEarlyRevealedAtoms } from './v3GameLoopLoader'
+import type { UnsafeAny } from '../types/lint'
+
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 공개 API
@@ -64,10 +66,10 @@ export function buildAtomPlan(input: AtomSelectionInput): BlueprintAtomPlan {
   console.log(`[AtomEngine] subAction=${subAction}, rule.allowExactAmount=${rule?.allowExactAmountByDefault}, preferredAmount=${rule?.preferredSlotModes?.amount}, mustUseTell=${mustUseTell}`)
 
   // V3: StateUnlockAtom 병합 — 현재 state 이하에서 해금된 atom을 후보에 추가
-  let allAtoms = [...policy.claimAtoms]
+  const allAtoms = [...policy.claimAtoms]
   if (input.caseId && input.party && input.currentLieState) {
     const unlockAtoms = getUnlockedAtoms(
-      input.caseId, input.party, policy.disputeId, input.currentLieState as any,
+      input.caseId, input.party, policy.disputeId, input.currentLieState as UnsafeAny,
     )
     const earlyRevealed = getEarlyRevealedAtoms(input.caseId)
     for (const ua of unlockAtoms) {
@@ -81,9 +83,9 @@ export function buildAtomPlan(input: AtomSelectionInput): BlueprintAtomPlan {
         id: ua.id,
         factText: ua.factText,
         tags: ua.tags as ClaimAtomTag[],
-        slots: ua.slots as any,
-        stanceHints: ua.stanceHints as any,
-        source: 'v3_unlock' as any,
+        slots: ua.slots as UnsafeAny,
+        stanceHints: ua.stanceHints as UnsafeAny,
+        source: 'v3_unlock' as UnsafeAny,
       })
     }
   }
@@ -229,7 +231,7 @@ function resolveSlotSelections(
   for (const atom of atoms) {
     if (!atom.slots) continue
 
-    for (const [family, slotData] of Object.entries(atom.slots) as [SlotFamily, any][]) {
+    for (const [family, slotData] of Object.entries(atom.slots) as [SlotFamily, UnsafeAny][]) {
       if (!slotData) continue
 
       // 기본 mode 결정
@@ -296,7 +298,7 @@ function resolveSlotSelections(
   return selections
 }
 
-function extractSlotValue(slot: any, mode: SlotSurfaceMode): string | null {
+function extractSlotValue(slot: UnsafeAny, mode: SlotSurfaceMode): string | null {
   // mode에 해당하는 값을 찾고, 없으면 neutral fallback
   if (slot[mode] !== undefined) return slot[mode]
   if (slot.neutral !== undefined) return slot.neutral
@@ -362,7 +364,7 @@ export function synthesizeLegacyAtoms(
  * claimAtoms가 있으면 V2, 없으면 legacy 합성.
  */
 export function normalizeClaimPolicy(
-  policy: any,
+  policy: UnsafeAny,
 ): NormalizedClaimPolicyV2 {
   // V2 데이터가 있는 경우
   if (policy.claimAtoms && Array.isArray(policy.claimAtoms) && policy.claimAtoms.length > 0) {

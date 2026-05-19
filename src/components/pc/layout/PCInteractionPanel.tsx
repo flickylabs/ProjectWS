@@ -12,6 +12,8 @@ import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 import { emitVerdictCtaCollapsed } from './verdictAdvanceEvents'
 import { translate, useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
 import { getRuntimeTextLocale, localizeRuntimeText } from '../../../i18n/runtimeText'
+import type { UnsafeAny } from '../../../types/lint'
+
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 export const PC_CLOSE_INTERACTION_PANEL_EVENT = 'pc:close-interaction-panel'
@@ -460,7 +462,7 @@ export function buildDisputePickerPayload(currentDisputeId: string): PcInteracti
 }
 
 export default function PCInteractionPanel() {
-  const { locale, t } = useI18n()
+  const { locale, t: _t } = useI18n()
   const dispatch = useActionDispatch()
   const setLastFocusedDisputeId = useStore((s) => s.setLastFocusedDisputeId)
   const setPendingEvidenceView = useStore((s) => s.setPendingEvidenceView)
@@ -921,14 +923,14 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
   const evidenceStates = useStore((s) => s.evidenceStates)
-  const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
+  const _lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
 
   if (!caseData) return null
   const evidence = caseData.evidence.find((e) => e.id === evidenceId)
   if (!evidence) return null
 
   const state = evidenceStates[evidence.id]
-  const meta = evidence.meta
+  const _meta = evidence.meta
   const disputes = caseData.disputes.filter((d) => evidence.proves.includes(d.id))
   const investigatedKeys = new Set(state?.investigatedActions ?? [])
 
@@ -943,7 +945,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   })
 
   const handleInvestigate = (revealKey: string) => {
-    dispatch({ type: 'evidence_investigate', evidenceId, subAction: revealKey } as any)
+    dispatch({ type: 'evidence_investigate', evidenceId, subAction: revealKey } as UnsafeAny)
   }
 
   // 조사 토큰: 1단계 0개, 2단계 1개, 3단계 2개

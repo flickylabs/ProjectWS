@@ -10,7 +10,7 @@
  */
 
 import type { LieState } from './agent'
-import type { Stance, QuestionType, DefenseMode, AttackVector, EmotionTier } from './renewal'
+import type { Stance, QuestionType, DefenseMode as _DefenseMode, AttackVector as _AttackVector, EmotionTier as _EmotionTier } from './renewal'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // Claim Atom

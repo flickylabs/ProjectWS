@@ -63,7 +63,7 @@ export function generateBlueprint(
 
   // 5. sentenceCount + shouldCounterQuestion
   let sentenceCount = resolveSentenceCount(stance)
-  let shouldCounterQuestion = resolveCounterQuestion(stance, input)
+  const shouldCounterQuestion = resolveCounterQuestion(stance, input)
 
   // 6. 모순 방지 가드
   const tellRequiresSecond = mustUseTell
@@ -317,7 +317,7 @@ function resolveSentenceCount(stance: Stance): 1 | 2 | 3 {
   return 1 // deny만 1문장
 }
 
-function resolveCounterQuestion(stance: Stance, input: BlueprintInput): boolean {
+function resolveCounterQuestion(stance: Stance, _input: BlueprintInput): boolean {
   // blame에서만 되묻기 허용. hedge에서 재판관에게 되묻는 것은 부자연스러움.
   return stance === 'blame'
 }

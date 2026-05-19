@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useStore } from '../../store/useGameStore'
-import Emoji from '../common/Emoji'
+import _Emoji from '../common/Emoji'
 
 export default function ShareResult() {
   const verdictScore = useStore((s) => s.verdictScore)
@@ -177,7 +177,7 @@ function renderShareImage(
   return canvas.toDataURL('image/png')
 }
 
-function buildShareText(total: number, insight: number, authority: number, wisdom: number, relationType: string): string {
+function _buildShareText(total: number, insight: number, authority: number, wisdom: number, relationType: string): string {
   const rating = getRating(total)
   const bars = (v: number) => '█'.repeat(Math.floor(v / 10)) + '░'.repeat(10 - Math.floor(v / 10))
 

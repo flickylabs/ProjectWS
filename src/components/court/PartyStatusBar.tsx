@@ -5,6 +5,8 @@ import { getArchetypeLabel } from '../../utils/archetypeLabel'
 import { Phase } from '../../types'
 import Emoji from '../common/Emoji'
 import PhaseIndicator from '../layout/PhaseIndicator'
+import type { UnsafeAny } from '../../types/lint'
+
 // EmotionGuide는 PartyDetailPopup 내부 탭으로 통합됨
 
 const EMOTION_EMOJI: Record<string, string> = {
@@ -23,12 +25,12 @@ export default function PartyStatusBar() {
   const currentPhase = useStore((s) => s.currentPhase)
   if (!caseData) return null
 
-  const remainingTurns = MAX_TURNS - turnCount
-  const estimatedScore = Math.min(100,
+  const _remainingTurns = MAX_TURNS - turnCount
+  const _estimatedScore = Math.min(100,
     processMetrics.liesCollapsed * 10 + processMetrics.evidenceDiscovered * 8
     + processMetrics.evidenceEffective * 5 + processMetrics.freeQuestionsRelevant * 3
   )
-  const isLatePhase = currentPhase === Phase.Interrogation
+  const _isLatePhase = currentPhase === Phase.Interrogation
     || currentPhase === Phase.Mediation
     || currentPhase === Phase.Verdict
 
@@ -90,7 +92,7 @@ export default function PartyStatusBar() {
   )
 }
 
-function StatPill({ icon, value, max, color }: { icon: string; value: number; max: number; color: string }) {
+function _StatPill({ icon, value, max, color }: { icon: string; value: number; max: number; color: string }) {
   return (
     <div className="flex items-center gap-1">
       <Emoji char={icon} size={14} />
@@ -101,14 +103,14 @@ function StatPill({ icon, value, max, color }: { icon: string; value: number; ma
 
 /** 캐릭터 + 감정 통합 팝업 — 탭 토글 전환 */
 function PartyDetailPopup({ party, initialTab, caseData, agent, onClose }: {
-  party: 'a' | 'b'; initialTab: 'info' | 'emotion'; caseData: any; agent: any; onClose: () => void
+  party: 'a' | 'b'; initialTab: 'info' | 'emotion'; caseData: UnsafeAny; agent: UnsafeAny; onClose: () => void
 }) {
   const [tab, setTab] = useState<'info' | 'emotion'>(initialTab)
   const profile = party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
   const nameColor = party === 'a' ? 'text-blue-400' : 'text-rose-400'
   const ringColor = party === 'a' ? 'ring-blue-500/40' : 'ring-rose-500/40'
   const emo = agent.emotionalState
-  const lieEntries = Object.entries(agent.lieStateMap) as [string, any][]
+  const lieEntries = Object.entries(agent.lieStateMap) as [string, UnsafeAny][]
   const turnCount = useGameStore.getState().turnCount
 
   const hasAnyCollapse = lieEntries.some(([, e]) => e.currentState === 'S5')
@@ -170,7 +172,7 @@ function PartyDetailPopup({ party, initialTab, caseData, agent, onClose }: {
               <div className="space-y-1 mt-3">
                 <div className="text-xs text-gray-500 mb-1">쟁점별 상태</div>
                 {lieEntries.map(([dId, entry]) => {
-                  const dispute = caseData.disputes.find((d: any) => d.id === dId)
+                  const dispute = caseData.disputes.find((d: UnsafeAny) => d.id === dId)
                   return (
                     <div key={dId} className="flex items-center justify-between text-xs bg-gray-800/40 rounded-lg px-2.5 py-2">
                       <span className="text-gray-300">{dispute?.name ?? dId}</span>
@@ -213,7 +215,7 @@ function PartyDetailPopup({ party, initialTab, caseData, agent, onClose }: {
 }
 
 /** 감정 안내 콘텐츠 — 팝업 내부 탭용 (인라인) */
-function EmotionGuideContent({ emotionValue, emotionPhase }: { emotionValue: number; emotionPhase: string }) {
+function EmotionGuideContent({ emotionValue, emotionPhase: _emotionPhase }: { emotionValue: number; emotionPhase: string }) {
   const TIERS = [
     { tier: 'calm', min: 0, max: 30, label: '침착', icon: '🛡️', desc: '방어력이 높아 거짓말을 흔들기 어렵습니다. 논리적으로 답변하여 빈틈이 적습니다.', bg: 'bg-blue-950/40', border: 'border-blue-700/40', text: 'text-blue-400', slipInfo: '' },
     { tier: 'agitated', min: 30, max: 60, label: '동요', icon: '😰', desc: '균형 상태입니다. 질문 효과가 보통이며, 안정적으로 심문을 진행할 수 있습니다.', bg: 'bg-yellow-950/40', border: 'border-yellow-700/40', text: 'text-yellow-400', slipInfo: '' },
@@ -286,7 +288,7 @@ function LockedRow({ label, hint }: { label: string; hint: string }) {
   )
 }
 
-function getEmotionLabel(phase: string) {
+function _getEmotionLabel(phase: string) {
   const map: Record<string, string> = {
     defensive: '방어적 — 신중하게 말을 고르고 있습니다',
     confident: '자신감 — 자기 주장에 확신을 가지고 있습니다',
