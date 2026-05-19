@@ -332,7 +332,7 @@ export default function PCImportantNotesSection() {
   return (
     <>
       {/* ━━━ Left panel: 발언노트 즐겨찾기 ━━━ */}
-      <section className="sec collapsible pc-important-notes-section">
+      <section className="sec collapsible pc-important-notes-section" data-tutorial-target="speech-notes">
         <div className="sec-h">
           <StarIcon size={14} filled />
           <span>{t('pc.notes.favoriteTitle')}</span>

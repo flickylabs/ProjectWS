@@ -1162,7 +1162,7 @@ export default function PCRightPanel() {
       </section>
 
       {showCombination ? (
-        <section className="sec pc-right-block pc-right-block--combination">
+        <section className="sec pc-right-block pc-right-block--combination" data-tutorial-target="combination-lab">
           <div
             className={`pc-skill-card pc-combination-card pc-right-card${hasReadyCombos ? ' is-combinable' : ''}`}
             onDragOver={(event) => event.preventDefault()}
