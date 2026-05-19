@@ -15538,7 +15538,7 @@
           "variants": [
             {
               "id": "a-e-6-late-stage1-v1",
-              "text": "汇款与借据相关的记录和我当时的判断之间差距很大。我不是没看到，是我先把另一种解释关掉了。"
+              "text": "我确实给那位汇过三次款。但只拿回了一部分，之后断掉的联系必须和借据一起看才说得清。"
             },
             {
               "id": "a-e-6-late-stage1-v2",
@@ -18867,7 +18867,7 @@
         {
           "key": "w-1|vague",
           "witnessId": "w-1",
-          "witnessName": "金世拉",
+          "witnessName": "金世罗",
           "depth": "vague",
           "stanceHint": "answer",
           "truthLevel": "hint",
@@ -18927,7 +18927,7 @@
         {
           "key": "w-1|partial",
           "witnessId": "w-1",
-          "witnessName": "金世拉",
+          "witnessName": "金世罗",
           "depth": "partial",
           "stanceHint": "answer",
           "truthLevel": "partial",
@@ -18987,7 +18987,7 @@
         {
           "key": "w-1|full",
           "witnessId": "w-1",
-          "witnessName": "金世拉",
+          "witnessName": "金世罗",
           "depth": "full",
           "stanceHint": "answer",
           "truthLevel": "full",
@@ -20379,7 +20379,7 @@
           "variants": [
             {
               "id": "contra-a-d-1-S2-v1",
-              "text": "我并不是把先前的话推翻。通讯次数和我那帖里的措辞之间的距离是真的，那一点我没有移动。"
+              "text": "我承认有些部分我没有确认到。虽然我没有确认到她的意图，但婚礼前的焦虑推动了我的判断。"
             },
             {
               "id": "contra-a-d-1-S2-v2",
@@ -21987,7 +21987,7 @@
             },
             {
               "id": "interject-a-d-1-major-v2",
-              "text": "请等一下，裁判官，请先停一下。这一段不能就这样让她一个人讲完。这一点不能就这样过去。"
+              "text": "裁判官，不能把我的不安全部说成误会！我是在婚礼前崩溃了！"
             },
             {
               "id": "interject-a-d-1-major-v3",
@@ -22740,7 +22740,7 @@
             },
             {
               "id": "overload-a-d-1-v2",
-              "text": "…对不起，…对不起，裁判官。这一段一时讲不下去。我没有顾到的部分一起涌上来。请稍等一会儿再继续。请给我一点时间。"
+              "text": "……现在我喘不过气。前朋友和未婚夫排在同一行的那个画面一直浮上来。（两轮后）……我整理好了，我会说。"
             },
             {
               "id": "overload-a-d-1-v3",
@@ -23385,7 +23385,7 @@
             },
             {
               "id": "trust-a-separation-S3-v2",
-              "text": "私下说一句，私下我承认：我心里把秀敏当成\"会再次背叛我\"的位置很多年了。这件事我必须先对自己讲清。我希望这话不被传出去。"
+              "text": "趁我的前朋友不在，我说实话。我不只是因为未婚夫的事，也是怕家里的体面被动摇，所以才先逼得那么紧。"
             },
             {
               "id": "trust-a-separation-S3-v3",

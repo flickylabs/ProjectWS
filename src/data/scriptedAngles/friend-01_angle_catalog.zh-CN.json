@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "contact_timeline",
-      "label": "无回应与反复的理由",
-      "description": "区分联系次数增加是出于执着，还是因为没有回应而反复请求确认。"
+      "label": "9天联系时间线",
+      "description": "分别确认6次通话、11条短信持续的期间、时间段和回应状态。"
     },
     {
       "disputeId": "d-1",
@@ -31,8 +31,8 @@
     {
       "disputeId": "d-2",
       "angleId": "message_sequence",
-      "label": "私下请求的压力",
-      "description": "确认未婚夫是否背着多恩私下请求崔秀敏，或把她带入私人交流。"
+      "label": "消息先后关系",
+      "description": "确认未婚夫与崔秀敏之间消息的起点、夜间时间段和回应顺序。"
     },
     {
       "disputeId": "d-2",
@@ -55,8 +55,8 @@
     {
       "disputeId": "d-3",
       "angleId": "father_request_signal",
-      "label": "回避父亲问题的地方",
-      "description": "确认宋多恩如何只把父亲的请求看作家事，并迟迟才看到让人在意的部分。"
+      "label": "父亲请求的信号",
+      "description": "在不预先定性的前提下，确认婚礼筹备问候与预告请求的措辞究竟是什么性质。"
     },
     {
       "disputeId": "d-3",
@@ -79,8 +79,8 @@
     {
       "disputeId": "d-4",
       "angleId": "severance_chat_gap",
-      "label": "借条的分量",
-      "description": "确认那是好意还是借款，以及借条和部分偿还如何支撑崔秀敏的沉默与断交理由。"
+      "label": "决裂前KakaoTalk里的空白",
+      "description": "确认过去KakaoTalk里“我来处理”这句话与断交之间的空白。"
     },
     {
       "disputeId": "d-4",
@@ -103,7 +103,7 @@
     {
       "disputeId": "d-5",
       "angleId": "first_groupchat_post",
-      "label": "未经确认的公开",
+      "label": "群聊中的最初发言",
       "description": "确认宋多恩是否在向崔秀敏求证前就发到群聊，以及公开后是否有机会更正。"
     },
     {
