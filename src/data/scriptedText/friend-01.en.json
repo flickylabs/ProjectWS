@@ -17580,52 +17580,52 @@
           "variants": [
             {
               "id": "dc-2-b-q1-mid-v1",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. I saw it that way first.",
+              "text": "The other side did bring up something private. I refused, and I tried to keep it from spreading further.",
               "behaviorHint": "She cautiously says the name she had been avoiding."
             },
             {
               "id": "dc-2-b-q1-mid-v2",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. I did not leave room for context.",
+              "text": "There was a line about meeting for coffee. I hesitated because saying it right away might break Da-eun more.",
               "behaviorHint": "The longer she speaks, the lower her voice gets."
             },
             {
               "id": "dc-2-b-q1-mid-v3",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. The order I chose was wrong.",
+              "text": "I drew a line. But I was afraid that if I showed it, Da-eun would see me as involved too.",
               "behaviorHint": "She takes responsibility first, then continues explaining."
             },
             {
               "id": "dc-2-b-q1-mid-v4",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. Fear moved before verification.",
+              "text": "The original conversation helped me, but I thought it would be cruel material for Da-eun.",
               "behaviorHint": "She wipes expression from her face to hide the wound."
             },
             {
               "id": "dc-2-b-q1-mid-v5",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. I admit the part that was mine.",
+              "text": "I was not sure the fiance's words would end as a light joke, so I tried to stop it first.",
               "behaviorHint": "After a brief pause, she brings up family."
             },
             {
               "id": "dc-2-b-q1-mid-v6",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. I avoided the harder question.",
+              "text": "I held back because bringing up that conversation might make me look like someone trying to break the wedding.",
               "behaviorHint": "She cautiously says the name she had been avoiding."
             },
             {
               "id": "dc-2-b-q1-mid-v7",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. That choice made the misunderstanding larger.",
+              "text": "I felt the fiance's tone crossed a line. Still, I could not tell Da-eun right away.",
               "behaviorHint": "The longer she speaks, the lower her voice gets."
             },
             {
               "id": "dc-2-b-q1-mid-v8",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. I understand now that silence was also a choice.",
+              "text": "There was a record of my refusal. But I thought the way I presented that record could also become violence.",
               "behaviorHint": "She takes responsibility first, then continues explaining."
             },
             {
               "id": "dc-2-b-q1-mid-v9",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. The record was not as simple as I wanted it to be.",
+              "text": "I was not sure Da-eun would believe me, so I hid even though I had the evidence.",
               "behaviorHint": "She wipes expression from her face to hide the wound."
             },
             {
               "id": "dc-2-b-q1-mid-v10",
-              "text": "The fiancé had crossed a line, and I rejected him, but I hesitated to show Da-eun. I cannot turn that into a clean excuse.",
+              "text": "I could not choose to shake Da-eun's wedding immediately just to prove my innocence.",
               "behaviorHint": "After a brief pause, she brings up family."
             }
           ]
@@ -17820,7 +17820,7 @@
           "variants": [
             {
               "id": "dc-3-b-q1-late-v1",
-              "text": "I judged it as the same pattern and warned the fiancé, though deciding alone was wrong. I saw it that way first.",
+              "text": "I saw it as the same pattern. I judged that Da-eun's father was trying to bring up another financial request.",
               "behaviorHint": "Her voice goes flatter at the most painful part."
             },
             {
@@ -17830,7 +17830,7 @@
             },
             {
               "id": "dc-3-b-q1-late-v3",
-              "text": "I judged it as the same pattern and warned the fiancé, though deciding alone was wrong. The order I chose was wrong.",
+              "text": "I knew Da-eun's father's request was not a simple favor, but a flow that could lead to a financial ask.",
               "behaviorHint": "Her gaze wavers, then fixes on one point."
             },
             {
@@ -17850,7 +17850,7 @@
             },
             {
               "id": "dc-3-b-q1-late-v7",
-              "text": "I judged it as the same pattern and warned the fiancé, though deciding alone was wrong. That choice made the misunderstanding larger.",
+              "text": "Because I could not tell Da-eun who her father really was, I chose to speak to the fiance first.",
               "behaviorHint": "After one broken breath, she speaks to the end."
             },
             {
@@ -19985,7 +19985,7 @@
             },
             {
               "id": "mediation-postpone-a-v4",
-              "text": "I understand taking time. But I do not want the group chat correction and verification of the fiancé-side facts to be delayed.",
+              "text": "I understand taking more time. But I do not want the group chat correction or checking the fiance's side to be delayed.",
               "behaviorHint": "She holds back the habit of starting from a conclusion and speaks by separating responsibility."
             },
             {
@@ -20047,7 +20047,7 @@
             },
             {
               "id": "mediation-postpone-b-v5",
-              "text": "I am fine with postponing. But we need standards: Da-eun stops public disclosure in the group chat, and I make no further contact with the fiancé.",
+              "text": "I am fine with postponing. But we need a standard where Da-eun stops public posts and I stop contacting the fiance further.",
               "behaviorHint": "She keeps her emotions down and separates the order of facts from the reason for the silence."
             },
             {
