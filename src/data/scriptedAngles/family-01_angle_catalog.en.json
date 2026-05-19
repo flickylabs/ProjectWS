@@ -7,8 +7,8 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "Scene of Reading the Paper",
-      "description": "Separate the circumstances in which Yoon Jeong-hu read the paper to his mother and tried to finish before his brother arrived.",
+      "label": "How the Will Was Drafted",
+      "description": "Check the drafting process to determine whether the mother understood the will and expressed her wishes.",
       "keywordsLocale": []
     },
     {
@@ -22,7 +22,7 @@
       "disputeId": "d-1",
       "angleId": "visit_pattern",
       "label": "Visit Frequency in Her Final Year",
-      "description": "Examine how Yoon Jung-hoo's increased visits and time spent connect to the discussion of the will.",
+      "description": "Examine how Yoon Jeong-hu's increased visits and time spent connect to the discussion of the will.",
       "keywordsLocale": []
     },
     {
@@ -43,14 +43,14 @@
       "disputeId": "d-1",
       "angleId": "paper_reading",
       "label": "The Scene of the Paper Being Read Aloud",
-      "description": "Separate the situation in which Yoon Jung-hoo read the paper aloud to their mother and tried to wrap up before his elder brother arrived.",
+      "description": "Separate the situation in which Yoon Jeong-hu read the paper aloud to their mother and tried to wrap up before his elder brother arrived.",
       "keywordsLocale": []
     },
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "Responsibility for Forgery",
-      "description": "Confirm responsibility for handling the mother's document, regardless of motive.",
+      "label": "How the Final Will Took Shape",
+      "description": "Confirm how the 60:40 will became the final version.",
       "keywordsLocale": []
     },
     {
@@ -84,8 +84,8 @@
     {
       "disputeId": "d-3",
       "angleId": "general",
-      "label": "The Older Brother's Pride and Silence",
-      "description": "Confirm whether the silence about the money was protection or deception.",
+      "label": "Funds in the Mother's Account",
+      "description": "Confirm the money that appeared to be in the mother's account and the fund transfers between the brothers.",
       "keywordsLocale": []
     },
     {
@@ -119,15 +119,15 @@
     {
       "disputeId": "d-4",
       "angleId": "general",
-      "label": "Connection to the Will Change",
-      "description": "Ask how the sensitive family circumstances connected to the judgment behind the will change.",
+      "label": "Family History in the Diary",
+      "description": "Confirm the sensitive family circumstances and silences recorded in the mother's diary.",
       "keywordsLocale": []
     },
     {
       "disputeId": "d-4",
       "angleId": "diary_discovery",
       "label": "When the Diary Was Found",
-      "description": "Ask when Yoon Jung-hoo first saw the mother's diary and what he confirmed.",
+      "description": "Ask when Yoon Jeong-hu first saw the mother's diary and what he confirmed.",
       "keywordsLocale": []
     },
     {
@@ -169,7 +169,7 @@
       "disputeId": "d-5",
       "angleId": "b_protection_control",
       "label": "Control Under the Justification of Protection",
-      "description": "Look at the responsibility Yoon Jung-hoo bears for adjusting the mother's wishes under the justification of protection.",
+      "description": "Look at the responsibility Yoon Jeong-hu bears for adjusting the mother's wishes under the justification of protection.",
       "keywordsLocale": []
     },
     {
