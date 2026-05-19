@@ -205,7 +205,7 @@ export const homeMessages = {
     "pc.resolutionConfirm.title": "지금 해상도를 유지하시겠습니까?",
   },
   en: {
-    "home.gameTitle": "Verdict Zero: Weight of Truth",
+    "home.gameTitle": "Verdict Zero: Trial of Truth",
     "home.tagline": "\"A truth beyond the law's reach—yours to weigh.\"",
     "pc.home.moreCases": "+{count} more",
     "pc.home.countdown.ready": "Ready soon",
@@ -408,7 +408,7 @@ export const homeMessages = {
     "pc.resolutionConfirm.title": "Keep this resolution?",
   },
   ja: {
-    "home.gameTitle": "ソロモンのジレンマ：真実の重み",
+    "home.gameTitle": "ソロモンのジレンマ：真実の裁き",
     "home.tagline": "\"法の及ばぬ真実、あなたの判断に委ねます。\"",
     "pc.home.moreCases": "ほか {count}件",
     "pc.home.countdown.ready": "まもなく回復",
@@ -611,7 +611,7 @@ export const homeMessages = {
     "pc.resolutionConfirm.title": "この解像度を維持しますか？",
   },
   "zh-CN": {
-    "home.gameTitle": "所罗门的困境：真相之重",
+    "home.gameTitle": "真相裁决：零点审判",
     "home.tagline": "\"法所不及之真相，由您裁断。\"",
     "pc.home.moreCases": "另 {count} 件",
     "pc.home.countdown.ready": "即将补充",
