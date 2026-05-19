@@ -8,7 +8,7 @@
       "disputeId": "d-1",
       "angleId": "general",
       "label": "紙を読み聞かせた場面",
-      "description": "ユン・ジョンフが母に紙を読み聞かせ、兄が来る前に終わらせようとした状況を切り分けて見る。"
+      "description": "母が遺言書の内容を理解し、意思を示したのか、作成過程を確認する。"
     },
     {
       "disputeId": "d-1",
@@ -26,7 +26,7 @@
       "disputeId": "d-1",
       "angleId": "caregiver_change",
       "label": "介護士の交代",
-      "description": "公証直前の担当介護士の交代が、遺言書の手続きと噛み合っていたかを問う。"
+      "description": "公証前に担当介護職員が交代したことが、遺言書の手続きと噛み合っていたのかを問う。"
     },
     {
       "disputeId": "d-1",
@@ -43,7 +43,7 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "偽造責任",
+      "label": "最終遺言書の経緯",
       "description": "動機が何であれ、母の書類に手を加えた責任を確認する。"
     },
     {
@@ -55,7 +55,7 @@
     {
       "disputeId": "d-2",
       "angleId": "original_gap",
-      "label": "自筆練習本と公証本の差",
+      "label": "自筆下書きと公証本の差",
       "description": "自筆練習本と公証本の比率に差が生じた理由を問う。"
     },
     {
@@ -103,8 +103,8 @@
     {
       "disputeId": "d-4",
       "angleId": "general",
-      "label": "遺言書変更とのつながり",
-      "description": "敏感な家族事情が、遺言書変更の判断とどうつながったのかを問う。"
+      "label": "日記帳の中の家族史",
+      "description": "母の日記帳に残された敏感な家族事情と沈黙を確認する。"
     },
     {
       "disputeId": "d-4",
