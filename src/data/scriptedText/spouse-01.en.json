@@ -9322,7 +9322,7 @@
           "variants": [
             {
               "id": "a-e-2-mid-stage1-v1",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I admit my reading may have been colored by fear, but the records themselves are not made up. The act in the record was on my husband's side, not mine."
+              "text": "I did check it myself. The same Officetel address kept repeating, so I read it as an affair route."
             },
             {
               "id": "a-e-2-mid-stage1-v2",
@@ -19675,7 +19675,7 @@
           "variants": [
             {
               "id": "trust-a-separation-S3-v1",
-              "text": "Now that we are alone, Your Honor — I admit I was the one who moved money first, even before the truth was clear. Even in this protected setting, I am putting this on record as truth."
+              "text": "Yes. If I am speaking to you alone, I will stop avoiding it. I was not only tracking his route; I was also holding on to the movement of money."
             },
             {
               "id": "trust-a-separation-S3-v2",
@@ -22069,7 +22069,7 @@
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-1-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Ms. Park, please separate when you first began checking the account from when you cancelled the joint savings account.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
@@ -22777,7 +22777,7 @@
             },
             {
               "id": "judgec-h-d4-mid-v2",
-              "text": "Ms. Park, your statements on the order of concealment, monitoring, execution, and manipulation no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Ms. Park, feeling betrayed first does not remove your responsibility for the cancellation procedure. Why did you treat those two issues as one?",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {

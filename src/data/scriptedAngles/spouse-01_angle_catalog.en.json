@@ -7,14 +7,14 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "Reason for Hiding",
-      "description": "Confirm why the visits, calls, and items were not explained to the spouse.",
+      "label": "Visit and Call Circumstances",
+      "description": "Check the Officetel visits, early-morning calls, and receipt items together as part of the same suspicion.",
       "keywordsLocale": []
     },
     {
       "disputeId": "d-1",
       "angleId": "visit_route",
-      "label": "Studio-Apartment Visit Route",
+      "label": "Officetel Visit Route",
       "description": "Confirm the time, route, and purpose of his repeated after-work visits to the same studio apartment.",
       "keywordsLocale": []
     },
@@ -36,7 +36,7 @@
       "disputeId": "d-1",
       "angleId": "affair_denial",
       "label": "Denying the Affair Suspicion",
-      "description": "Distinguish whether the studio apartment, the calls, and the items truly point to an affair.",
+      "description": "Separate whether the Officetel visits, calls, and items are actually signs of an affair.",
       "keywordsLocale": []
     },
     {
@@ -49,7 +49,7 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "Spouse Consent Excluded",
+      "label": "Circumstances of the Large Cash Withdrawal",
       "description": "Ask about the responsibility for moving a large sum without telling the spouse, even if it was personal money.",
       "keywordsLocale": []
     },
@@ -84,7 +84,7 @@
     {
       "disputeId": "h-d3",
       "angleId": "general",
-      "label": "Loss and Legal Responsibility",
+      "label": "Savings Cancellation and Transfer Circumstances",
       "description": "Separate the result of the missing money and responsibility for document handling from claims of emotional harm.",
       "keywordsLocale": []
     },

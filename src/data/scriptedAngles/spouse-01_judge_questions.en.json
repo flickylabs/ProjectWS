@@ -27,7 +27,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-general-v4",
-          "text": "Please organize what can be confirmed from records, without filling the gaps with interpretation.",
+          "text": "Please separate the receipts, call logs, and visit times into what you acknowledge here and what you still wish to dispute.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about the Officetel visits, calls, and receipts the party left unexplained from inference, and keep the answer at the fact level. Do not open older brother and niece/nephew identities before S5."
         },
         {
@@ -50,7 +50,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-general-v2",
-          "text": "Please separate the parts you directly confirmed from the parts that remained inference.",
+          "text": "Which Officetel visit records, early-morning call details, and receipts did you personally verify? Please separate those from the parts that remained inference.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about the repeated Officetel visits, early-morning calls, and receipts from inference, and keep the answer at the fact level."
         },
         {
@@ -809,7 +809,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v2",
-          "text": "Please separate what you personally did from what you only learned afterward or do not remember.",
+          "text": "Do you agree that the Officetel entries, early-morning calls, and receipts in the car all came from your side? Please lay out, in order, why you say they were unrelated to an affair.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about your denial of an affair and the silence beside it from inference, and keep the answer at the fact level. Do not open family identities before S5."
         },
         {
@@ -1601,7 +1601,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v2",
-          "text": "Please separate what you personally did from what you only learned afterward or do not remember.",
+          "text": "If the joint savings account and the personal account were separate, please explain the balance changes in each account in chronological order.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about treating the money as one's own personal fund from inference, and keep the answer at the fact level."
         },
         {
@@ -2195,7 +2195,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-general-v2",
-          "text": "Please separate the parts you directly confirmed from the parts that remained inference.",
+          "text": "Please lay out, in order, which steps you handled yourself and which you left to someone else: the cancellation request, document submission, receiving account, and transfer.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about handling the joint savings account from inference, and keep the answer at the fact level. Do not open power of attorney manipulation and full loss before S5."
         },
         {
@@ -3807,7 +3807,7 @@
       "variants": [
         {
           "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v1",
-          "text": "Mr. Lee Jun-ho, please state the facts about your cash withdrawal four months ago and the silence that followed in chronological order.",
+          "text": "Mr. Lee Jun-ho, as far as you know, please state in chronological order the timing of your cash withdrawal four months ago and Ms. Park Ji-yeon's savings cancellation and transfer.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about your cash withdrawal four months ago and the silence that followed from inference, and keep the answer at the fact level."
         },
         {
@@ -4170,7 +4170,7 @@
       "variants": [
         {
           "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v1",
-          "text": "Ms. Park Ji-yeon, please answer first when and through which material you confirmed separating your own responsibility from comparison.",
+          "text": "Ms. Park Ji-yeon, please state, in order, your own actions in the account check, authorization paperwork, transfer, and resulting loss.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about separating one's own responsibility from comparison from inference, and keep the answer at the fact level. Do not quote the question-category meta label as-is."
         },
         {
@@ -4203,7 +4203,7 @@
       "variants": [
         {
           "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v1",
-          "text": "Mr. Lee Jun-ho, please state the facts about separating your own responsibility from comparison in chronological order.",
+          "text": "Mr. Lee Jun-ho, please answer in chronological order, one line each: when your silence began, when you learned Ms. Park was checking the account, when you moved the cash, and when Ms. Park moved the savings.",
           "behaviorHint": "Fact pursuit. Have the party separate confirmed facts about separating one's own responsibility from comparison from inference, and keep the answer at the fact level. Do not quote the question-category meta label as-is."
         },
         {
