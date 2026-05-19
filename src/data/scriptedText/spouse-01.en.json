@@ -16273,7 +16273,7 @@
           "variants": [
             {
               "id": "w-3-full-v1",
-              "text": "I sent the investment chat link. I did not know it was a scam, but I was the one who sent Ji-yeon into that room.",
+              "text": "I sent the investment chat link. I did not know it was a scam, but I was the one who led Ji-yeon to that chat room.",
               "behaviorHint": "Protects her friend while fully admitting that she sent the link."
             },
             {
@@ -22872,7 +22872,7 @@
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v2",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to the hidden family circumstances behind the Officetel visits and calls. Please explain the point clearly.",
+              "text": "Mr. Lee, where the car went and the personal schedule in the text point to the same area of daily life. You can no longer put off saying who was there.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {

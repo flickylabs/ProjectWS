@@ -82,7 +82,7 @@
       },
       {
         "id": "ledger-4",
-        "description": "The start of the concealment and the actual execution of the transfer happen in a different order.",
+        "description": "The concealment began at a different point than the actual transfer.",
         "distortionDirection": "Each side first emphasizes only the sequence that favors them."
       }
     ],
@@ -2669,7 +2669,7 @@
       },
       {
         "id": "w-1-angle",
-        "label": "w-1 Officetel Security Guard Testimony Track"
+        "label": "w-1 Officetel Security Guard Testimony Lead"
       },
       {
         "id": "w-2-angle",
