@@ -356,6 +356,15 @@ export default function DiscoveryFeedbackWatcher() {
     const routeLabel = ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.'
     const surfaceOnlyEmergence = isSpousePrivateAccountWithdrawalDispute(dispute)
     const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description, disputeName)
+    // PC QA round 2 B-6: when this dispute was unlocked by another dispute reaching a
+    // truth threshold, surface that chain so the player understands "X 의심이 풀리면서
+    // Y 부상"—a natural transition rather than an out-of-nowhere new issue.
+    const unlockSourceDisputeId = (dispute as { unlockCondition?: { requireDispute?: { id?: string } } } | undefined)
+      ?.unlockCondition?.requireDispute?.id
+    const unlockSourceDispute = unlockSourceDisputeId
+      ? caseData.disputes.find((d) => d.id === unlockSourceDisputeId)
+      : null
+    const unlockSourceName = unlockSourceDispute?.name
     const isT3 = isT3ClimaxDispute(caseData.caseId, dispute as (Dispute & { tier?: string; visualImpact?: string }) | undefined)
     const playEmergenceBeat = shouldPlayImpactBeat({
       beatId: isT3 ? 'h-d3' : `emergence:${pendingEmergence.disputeId}`,
@@ -409,8 +418,12 @@ export default function DiscoveryFeedbackWatcher() {
       kind: 'emergence',
       eyebrow: '새 쟁점 발견',
       title: disputeName,
-      subtitle: playEmergenceBeat ? disputeName : '확인해야 할 범위가 넓어졌습니다',
-      body: '아직 결론이 아닙니다. 관련 기록과 진술을 더 확인해 쟁점으로 다룰지 판단하십시오.',
+      subtitle: unlockSourceName
+        ? `"${unlockSourceName}" 흐름이 풀리며 다른 면이 보입니다`
+        : playEmergenceBeat ? disputeName : '확인해야 할 범위가 넓어졌습니다',
+      body: unlockSourceName
+        ? `"${unlockSourceName}" 쟁점의 진실에 다가가면서 "${disputeName}"이(가) 새 쟁점으로 부상했습니다. 아직 결론이 아닙니다. 관련 기록과 진술을 더 확인해 쟁점으로 다룰지 판단하십시오.`
+        : '아직 결론이 아닙니다. 관련 기록과 진술을 더 확인해 쟁점으로 다룰지 판단하십시오.',
       tag: '쟁점 보드 갱신',
       tone: 'gold',
       disputeId: pendingEmergence.disputeId,
@@ -422,7 +435,9 @@ export default function DiscoveryFeedbackWatcher() {
     // 시스템 메시지 클릭 시 수동 트리거되도록 pendingFeedback 부착.
     const sysMsgId = state.addDialogue({
       speaker: 'system',
-      text: `새 쟁점이 드러났다 — ${disputeName}`,
+      text: unlockSourceName
+        ? `"${unlockSourceName}" 흐름이 풀리면서 새 쟁점이 드러났다 — ${disputeName}`
+        : `새 쟁점이 드러났다 — ${disputeName}`,
       relatedDisputes: [pendingEmergence.disputeId],
       turn: state.turnCount,
     })
