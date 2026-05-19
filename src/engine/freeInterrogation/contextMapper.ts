@@ -126,6 +126,9 @@ function emptyMapping(): FreeInterrogationMapping {
 }
 
 function resolveTarget(context: FreeInterrogationRuntimeContext, raw: string): PartyId | null {
+  const vocative = resolveDirectVocativeParty(raw, context)
+  if (vocative) return vocative
+
   // The UI target selection is explicit. Names inside the question often refer to
   // the counterpart as an object ("A에게 왜 말하지 않았나") and must not reroute
   // the question away from the selected party.
@@ -141,12 +144,26 @@ function resolveTarget(context: FreeInterrogationRuntimeContext, raw: string): P
   return null
 }
 
+function resolveDirectVocativeParty(raw: string, context: FreeInterrogationRuntimeContext): PartyId | null {
+  const partyA = context.caseData.duo.partyA.name
+  const partyB = context.caseData.duo.partyB.name
+  if (isDirectVocative(raw, partyA)) return 'a'
+  if (isDirectVocative(raw, partyB)) return 'b'
+  return null
+}
+
 function resolveAddressedParty(raw: string, context: FreeInterrogationRuntimeContext): PartyId | null {
   const partyA = context.caseData.duo.partyA.name
   const partyB = context.caseData.duo.partyB.name
   if (isDirectAddress(raw, partyA)) return 'a'
   if (isDirectAddress(raw, partyB)) return 'b'
   return null
+}
+
+function isDirectVocative(raw: string, name: string): boolean {
+  if (!name.trim()) return false
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  return new RegExp(`^\\s*${escaped}\\s*(?:씨|님)?\\s*[,，:：]`).test(raw)
 }
 
 function isDirectAddress(raw: string, name: string): boolean {
