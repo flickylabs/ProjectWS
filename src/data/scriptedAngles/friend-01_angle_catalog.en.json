@@ -57,7 +57,7 @@
       "disputeId": "d-2",
       "angleId": "private_request_pressure",
       "label": "Pressure of the Private Request",
-      "description": "Confirm any flow in which the fiance asked Ms. Choi for something behind Ms. Song's back, or pulled the conversation into private territory.",
+      "description": "Confirm whether the fiance asked Ms. Choi for something behind Ms. Song's back or drew the conversation into private territory.",
       "keywordsLocale": []
     },
     {
