@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-2",
+  "case": "spouse-01",
+  "confession_trust": {
+    "ko": "3천만 원은 제 명의 비자금입니다. 지연이에게 숨기고 네 차례 현금으로 뽑아 형 사업 자금에 넘겼습니다. 공동 적금은 아니지만 부부가 알아야 할 큰돈을 움직였습니다. 부모님 재산 문제까지 드러날까 봐 숨겼습니다.",
+    "en": "The thirty million won was my private reserve. I hid it from Jiyeon, withdrew it in cash over four transactions, and handed it toward my brother's business funds. It was not the joint savings, but I still moved a large sum my spouse deserved to know about. I hid it because I feared my parents' property issue would come out too.",
+    "ja": "三千万ウォンは私名義の私的資金です。ジヨンに隠し、四回に分けて現金で下ろして兄の事業資金に渡しました。共同積立ではありませんが、夫婦で知るべき大きな金を動かしました。両親の財産問題まで出るのが怖くて隠しました。",
+    "zh-CN": "三千万韩元是我名下的私下资金。我瞒着志娟，分四次取成现金，交给哥哥的生意资金。它不是共同存款，但仍是配偶本该知道的大钱，我却动用了。因为怕父母财产问题也被揭出，我把它藏了起来。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그 돈은 공동 적금이 아니라 내 계좌에서 형 사업 쪽으로 간 돈이야. 지연이가 알면 부모님 재산까지...",
+      "en": "That money was not from the joint savings. It went from my account toward my brother's business. If Jiyeon knew, even my parents' property...",
+      "ja": "あの金は共同積立ではなく、私の口座から兄の事業側に回った金です。ジヨンが知ったら、両親の財産まで...",
+      "zh-CN": "那笔钱不是共同存款，是从我账户流到哥哥生意那边的。志娟要是知道，连父母财产都会..."
+    },
+    "phase2": {
+      "ko": "아니, 내가 변명하려는 건...",
+      "en": "No, I am not trying to excuse it...",
+      "ja": "いや、言い訳をしたいのでは...",
+      "zh-CN": "不，我不是想找借口..."
+    },
+    "linkedDisputeId": "h-d4"
+  },
+  "admission_witness_trust": {
+    "ko": "은행 확인으로 출금 시점과 방식이 맞춰졌습니다. 네 번의 현금 출금은 제가 했고, 사용처는 형 사업 자금이었습니다. 공동 적금과는 다른 돈입니다.",
+    "en": "The bank confirmation matches the withdrawal dates and method. I made the four cash withdrawals, and the destination was my brother's business funding. It was separate from the joint savings.",
+    "ja": "銀行の確認で出金時期と方法が合いました。四回の現金出金は私が行い、使途は兄の事業資金でした。共同積立とは別の金です。",
+    "zh-CN": "银行确认的取款时间和方式都对上了。四次现金取款是我做的，用途是哥哥的生意资金。它和共同存款是不同的钱。"
+  },
+  "admission_witness_emotion": {
+    "ko": "은행 직원 말이 나오니까 더는 버틸 수 없습니다. 선의였다고 말하고 싶었지만, 지연이 모르게 큰돈을 현금으로 움직인 건 제 책임입니다.",
+    "en": "Once the bank employee's account came out, I could not hold out. I wanted to call it good intent, but moving that much cash without Jiyeon knowing is my responsibility.",
+    "ja": "銀行員の話が出た以上、もう持ちこたえられません。善意だったと言いたかったけれど、ジヨンに知らせず大金を現金で動かしたことは私の責任です。",
+    "zh-CN": "银行职员的话一出来，我就撑不住了。我想说自己是好意，但瞒着志娟动用这么大一笔现金，是我的责任。"
+  },
+  "closure_truth": {
+    "ko": "이준호 계좌의 3천만 원 출금은 공동 적금이 아니라 별도 비자금 흐름이었다. 그는 네 차례 현금 인출로 형 사업 자금 문제에 넘겼고, 배우자에게 설명하지 않은 책임이 크다.",
+    "en": "The thirty million won withdrawn from Lee Junho's account was a separate private-reserve flow, not the joint savings. He withdrew it in cash across four transactions for his brother's business funding problem, and bears serious responsibility for not explaining it to his spouse.",
+    "ja": "イ・ジュノ口座の三千万ウォン出金は共同積立ではなく、別の私的資金の流れだった。彼は四回の現金出金で兄の事業資金問題に渡しており、配偶者に説明しなかった責任は重い。",
+    "zh-CN": "李俊昊账户中的三千万韩元取款，不是共同存款，而是另行私下资金的流向。他分四次取成现金交给哥哥处理生意资金问题，未向配偶说明的责任很重。"
+  }
+}

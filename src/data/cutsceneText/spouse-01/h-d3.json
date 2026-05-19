@@ -1,0 +1,43 @@
+{
+  "disputeId": "h-d3",
+  "case": "spouse-01",
+  "confession_trust": {
+    "ko": "제가 공동 적금을 깼습니다. 준호 동의가 필요하다는 걸 알면서 위임장 서류를 제가 채워 은행에 냈습니다. 해지된 2천만 원은 투자방 계좌로 보냈고 전액 잃었습니다. 배신감이 서류 조작과 송금을 정당화하지는 않습니다.",
+    "en": "I was the one who broke the joint savings. I knew Junho's consent was required, but I filled out the power-of-attorney paperwork and submitted it to the bank. I sent the twenty million won from the closure to the investment chat account and lost it all. Feeling betrayed does not justify my document manipulation or the transfer.",
+    "ja": "共同積立を解約したのは私です。ジュノの同意が必要だと知りながら、委任状書類を私が埋めて銀行に出しました。解約された二千万ウォンは投資チャットの口座へ送り、全額失いました。裏切られた気持ちは、書類操作と送金を正当化しません。",
+    "zh-CN": "共同存款是我解约的。我明知道需要俊昊同意，却自己填了委托书文件交给银行。解约出来的两千万韩元转进了投资群账户，最后全额损失。被背叛的感觉不能正当化我处理文件和转账的行为。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그때 위임장만 제대로 보지 않았어도... 아니, 제가 채운 건 맞지만, 그 돈은 잠깐 옮겨두려던...",
+      "en": "If only that power of attorney had not been looked at so closely... no, I did fill it out, but I only meant to move the money for a while...",
+      "ja": "あの時、委任状をそこまで見られなければ... いえ、私が書いたのは確かですが、あのお金は少し移しておくつもりで...",
+      "zh-CN": "如果当时委托书没有被看得那么细... 不，是我填的没错，可那笔钱我只是想先挪一下..."
+    },
+    "phase2": {
+      "ko": "아니, 그런 식으로 말하려던 게...",
+      "en": "No, I did not mean to say it that way...",
+      "ja": "いえ、そういう言い方をするつもりでは...",
+      "zh-CN": "不，我不是想那样说..."
+    },
+    "linkedDisputeId": "h-d4"
+  },
+  "admission_witness_trust": {
+    "ko": "은행 직원이 절차상 이상한 점을 말했으니 인정하겠습니다. 위임장 서류는 제가 남편 동의처럼 꾸몄고, 그걸로 공동 적금 2천만 원을 해지했습니다.",
+    "en": "Since the bank employee described the procedural irregularity, I will admit it. I made the power-of-attorney papers look as if my husband had consented, and used them to close the twenty million won joint savings.",
+    "ja": "銀行員が手続き上の不自然さを話した以上、認めます。委任状書類は私が夫の同意があるように整え、それで共同積立二千万ウォンを解約しました。",
+    "zh-CN": "既然银行职员说出了流程上的异常，我承认。委托书文件是我做成像丈夫同意过一样，并用它解约了两千万韩元共同存款。"
+  },
+  "admission_witness_emotion": {
+    "ko": "미라가 그 말을 기억한다면 숨길 수 없습니다. 저는 내 돈부터 지키겠다며 링크 뒤 바로 움직였습니다. 두려움이 위임장 조작과 손실을 없애지는 않습니다.",
+    "en": "If Mira remembers those words, I cannot hide it. I said I would protect my money first, and I acted right after the link. Fear does not undo the power-of-attorney manipulation or the loss.",
+    "ja": "ミラがその言葉を覚えているなら、隠せません。私は自分のお金から守ると言い、リンクの後すぐ動きました。恐怖で委任状操作や損失が消えるわけではありません。",
+    "zh-CN": "如果美罗记得那句话，我就不能再藏。我说要先保护自己的钱，收到链接后立刻行动。害怕不能抹掉委托书处理和损失。"
+  },
+  "closure_truth": {
+    "ko": "공동 적금 2천만 원은 박지연이 위임장 서류를 조작해 단독 해지한 돈이다. 해지금은 투자방 계좌로 송금돼 전액 손실됐고, 절차와 처분의 주된 책임은 박지연에게 있다.",
+    "en": "The twenty million won joint savings were closed by Park Jiyeon alone through manipulated power-of-attorney paperwork. The closure funds were sent to the investment chat account and fully lost, so the primary responsibility for the process and disposal lies with Park Jiyeon.",
+    "ja": "共同積立二千万ウォンは、パク・ジヨンが委任状書類を操作して単独解約した金である。解約金は投資チャットの口座へ送金され全額失われ、手続きと処分の主たる責任はパク・ジヨンにある。",
+    "zh-CN": "两千万韩元共同存款，是朴志娟通过处理委托书文件单独解约的款项。解约款被汇入投资群账户并全额损失，流程和处置的主要责任在朴志娟。"
+  }
+}

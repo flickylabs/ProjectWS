@@ -1,0 +1,43 @@
+{
+  "disputeId": "d-1",
+  "case": "spouse-01",
+  "confession_trust": {
+    "ko": "외도가 아니었습니다. 오피스텔은 형이 사업 자료와 부모님 재산 서류를 정리하던 곳입니다. 새벽 전화도 그 일정과 돈 처리 연락이었습니다. 지연이에게 말하면 우리 결혼이 형 문제에 끌려갈까 봐 피했습니다.",
+    "en": "It was not an affair. That officetel was where my older brother was sorting business records and my parents' property papers. The late-night calls were also about those schedules and money handling. I dodged Jiyeon because I feared our marriage would be pulled into my brother's problems.",
+    "ja": "不倫ではありませんでした。あのオフィステルは、兄が事業資料と両親の財産書類を整理していた場所です。深夜の電話も、その日程と金の処理に関する連絡でした。ジヨンに話せば、私たちの結婚が兄側の問題に引き込まれると思い、曖昧に逃げました。",
+    "zh-CN": "那不是外遇。那间办公式公寓是我哥哥整理生意资料和父母财产文件的地方。凌晨电话也是在谈那边的时间和钱款处理。我怕告诉志娟后，我们的婚姻会被卷进哥哥那边的问题，所以一直含糊回避。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "그 방에 여자가 있었던 게 아니라 형 사업 서류랑 부모님 재산 얘기 때문에 새벽에도...",
+      "en": "There was no woman in that room. It was because of my brother's business papers and my parents' property, even at dawn...",
+      "ja": "あの部屋に女性がいたんじゃない。兄の事業書類と両親の財産の話で、明け方でも...",
+      "zh-CN": "那间房里不是有女人，是因为我哥哥的生意文件和父母财产的事，连凌晨都..."
+    },
+    "phase2": {
+      "ko": "아니, 지금 그 말은...",
+      "en": "No, that is not what I meant...",
+      "ja": "いや、今のはそういう意味では...",
+      "zh-CN": "不，我不是那个意思..."
+    },
+    "linkedDisputeId": "d-2"
+  },
+  "admission_witness_trust": {
+    "ko": "경비님 증언대로 그곳은 외도 상대의 방이 아니라 형 사업 서류를 처리하던 장소였습니다. 제가 새벽 전화를 숨겨 오해를 키웠습니다.",
+    "en": "As the guard testified, that was not an affair partner's room; it was where my brother's business papers were being handled. I made the misunderstanding worse by hiding the late-night calls.",
+    "ja": "警備員の証言どおり、あそこは不倫相手の部屋ではなく、兄の事業書類を処理していた場所でした。深夜の電話を隠したことで誤解を大きくしました。",
+    "zh-CN": "正如保安所说，那里不是外遇对象的房间，而是处理我哥哥生意文件的地方。我隐瞒凌晨电话，才让误会变大。"
+  },
+  "admission_witness_emotion": {
+    "ko": "그 증언을 듣고도 부인할 수 없습니다. 형 쪽 일을 집 밖으로 밀어내려다 지연이를 더 밀어냈습니다.",
+    "en": "After that testimony, I cannot deny it. While trying to keep my brother's matter outside our home, I pushed Jiyeon even farther away.",
+    "ja": "その証言を聞いた以上、否定できません。兄側のことを家の外へ押し出そうとして、ジヨンをさらに遠ざけました。",
+    "zh-CN": "听到那份证言后，我无法否认。我想把哥哥那边的事挡在家门外，却把志娟推得更远。"
+  },
+  "closure_truth": {
+    "ko": "오피스텔 방문과 새벽 통화는 외도가 아니라 형 사업과 부모님 재산 서류 처리에서 생긴 동선이었다. 이준호의 설명 회피가 의심을 키웠지만 방문 목적은 부정행위로 확인되지 않는다.",
+    "en": "The officetel visits and late-night calls came from his brother's business matters and his parents' property paperwork, not an affair. Lee Junho's avoidance deepened suspicion, but the purpose of the visits is not established as marital infidelity.",
+    "ja": "オフィステルへの訪問と深夜の通話は不倫ではなく、兄の事業と両親の財産書類の処理から生じた動線だった。イ・ジュノの説明回避が疑いを強めたが、訪問目的は不貞行為とは確認されない。",
+    "zh-CN": "办公式公寓的出入和凌晨通话，并非外遇，而是因哥哥生意和父母财产文件处理产生的动线。李俊昊回避说明加深了怀疑，但访问目的未被确认为不忠行为。"
+  }
+}

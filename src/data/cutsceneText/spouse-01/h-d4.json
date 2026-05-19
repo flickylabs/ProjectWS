@@ -1,0 +1,43 @@
+{
+  "disputeId": "h-d4",
+  "case": "spouse-01",
+  "confession_trust": {
+    "ko": "준호가 형 사업과 자기 돈을 먼저 숨겼습니다. 저는 처음부터 계좌를 몰래 봤습니다. 그는 네 달 전 비자금 3천만 원을 뽑았습니다. 저는 여섯 주 전 위임장을 조작해 적금 2천만 원을 해지했습니다. 실행은 저입니다.",
+    "en": "Junho first hid his brother's business and his own money. I had been checking accounts in secret from the beginning. Four months ago, he withdrew thirty million won from his private reserve. Six weeks ago, I manipulated the power-of-attorney paperwork and closed twenty million won in savings. I executed it.",
+    "ja": "ジュノは兄の事業と自分の金を先に隠しました。私は最初からこっそり口座を見ていました。四か月前に彼は私的資金三千万ウォンを下ろしました。六週間前に私は委任状を操作して積立二千万ウォンを解約しました。実行したのは私です。",
+    "zh-CN": "俊昊先隐瞒了哥哥生意和自己的钱。我从一开始就偷偷查看账户。四个月前，他取出三千万韩元私下资金。六周前，我处理委托书，解约了两千万韩元存款。实际执行的是我。"
+  },
+  "slip_explosive": {
+    "phase1": {
+      "ko": "숨긴 건 준호가 먼저였지만, 계좌는 내가 훨씬 전부터 봤고 위임장도 내가...",
+      "en": "Junho hid things first, but I had been checking the accounts long before that, and the power of attorney was also mine...",
+      "ja": "隠したのはジュノが先でした。でも口座は私がずっと前から見ていて、委任状も私が...",
+      "zh-CN": "先隐瞒的是俊昊，可账户我早就一直在看，委托书也是我..."
+    },
+    "phase2": {
+      "ko": "아니, 그렇게 인정하려던 건...",
+      "en": "No, I was not trying to admit it like that...",
+      "ja": "いえ、そう認めるつもりでは...",
+      "zh-CN": "不，我不是想那样承认..."
+    },
+    "linkedDisputeId": "h-d3"
+  },
+  "admission_witness_trust": {
+    "ko": "은행 직원과 미라가 순서를 맞춰 주니 인정합니다. 준호가 먼저 숨겼지만, 저는 더 전부터 계좌를 봤고 마지막은 위임장과 투자방 송금이었습니다.",
+    "en": "Since the bank employee and Mira line up the order, I admit it. Junho hid things first, but I had checked accounts earlier, and the last step was the power of attorney and the investment chat transfer.",
+    "ja": "銀行員とミラが順番をそろえているので、認めます。ジュノが先に隠しましたが、私はもっと前から口座を見ていて、最後は委任状と投資チャットへの送金でした。",
+    "zh-CN": "银行职员和美罗把顺序对上了，我承认。俊昊先隐瞒，但我更早就在看账户，最后一步是委托书和投资群转账。"
+  },
+  "admission_witness_emotion": {
+    "ko": "미라가 제 말을 기억하고 은행 직원이 서류 순서를 말하니 피할 수 없습니다. 준호가 먼저 숨겼지만, 먼저 감시하고 마지막 서류를 움직인 건 저입니다.",
+    "en": "With Mira remembering my words and the bank employee describing the document sequence, I cannot avoid it. Junho hid things first, but I monitored first and moved the final documents.",
+    "ja": "ミラが私の言葉を覚え、銀行員が書類の順番を話すなら、もう避けられません。ジュノが先に隠しましたが、先に監視し、最後の書類を動かしたのは私です。",
+    "zh-CN": "美罗记得我说过的话，银行职员又说出文件顺序，我无法回避。俊昊先隐瞒，但先监视、最后动文件的是我。"
+  },
+  "closure_truth": {
+    "ko": "은폐의 시작은 이준호의 비자금과 형 사업 문제였고, 계좌 감시는 박지연이 신혼 초부터 시작했다. 돈 실행은 이준호의 3천만 원 출금과 박지연의 2천만 원 위임장 조작 해지로 나뉜다.",
+    "en": "The concealment began with Lee Junho's private reserve and his brother's business problem, while account monitoring began with Park Jiyeon from the start of the marriage. The money movements split into Lee Junho's thirty million won withdrawal and Park Jiyeon's twenty million won closure through manipulated power-of-attorney paperwork.",
+    "ja": "隠蔽の始まりはイ・ジュノの私的資金と兄の事業問題であり、口座監視はパク・ジヨンが新婚初期から始めていた。金の実行は、イ・ジュノの三千万ウォン出金と、パク・ジヨンの二千万ウォン委任状操作による解約に分かれる。",
+    "zh-CN": "隐瞒的开端是李俊昊的私下资金和哥哥生意问题，而账户监视是朴志娟从新婚初期开始的。资金行动分为李俊昊取出三千万韩元，以及朴志娟通过处理委托书解约两千万韩元。"
+  }
+}
