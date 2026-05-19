@@ -8,6 +8,7 @@ import { hotbarMessages } from './hotbar'
 import { scriptMessages } from './scripts'
 import { layoutMessages } from './layout'
 import { tutorialMessages } from './tutorial'
+import { discoveryMessages } from './discovery'
 import type { LocaleCode } from '../locales'
 
 const ko = {
@@ -21,6 +22,7 @@ const ko = {
   ...scriptMessages["ko"],
   ...layoutMessages["ko"],
   ...tutorialMessages["ko"],
+  ...discoveryMessages["ko"],
 } as const
 
 export type MessageKey = keyof typeof ko
@@ -38,6 +40,7 @@ export const messages: Record<LocaleCode, Record<MessageKey, string>> = {
   ...scriptMessages["en"],
   ...layoutMessages["en"],
   ...tutorialMessages["en"],
+  ...discoveryMessages["en"],
   },
   ja: {
   ...commonMessages["ja"],
@@ -50,6 +53,7 @@ export const messages: Record<LocaleCode, Record<MessageKey, string>> = {
   ...scriptMessages["ja"],
   ...layoutMessages["ja"],
   ...tutorialMessages["ja"],
+  ...discoveryMessages["ja"],
   },
   'zh-CN': {
   ...commonMessages["zh-CN"],
@@ -62,5 +66,6 @@ export const messages: Record<LocaleCode, Record<MessageKey, string>> = {
   ...scriptMessages["zh-CN"],
   ...layoutMessages["zh-CN"],
   ...tutorialMessages["zh-CN"],
+  ...discoveryMessages["zh-CN"],
   },
 }

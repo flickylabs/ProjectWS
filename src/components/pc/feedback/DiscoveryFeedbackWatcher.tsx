@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useStore, useGameStore } from '../../../store/useGameStore'
 import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
 import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
-import { pp이가, pp을를 } from '../../../engine/koreanPostposition'
+import { fixPostpositions, postposition } from '../../../engine/koreanPostposition'
+import { useI18n, type MessageKey, type MessageValues } from '../../../i18n'
 import type { TruthJudgment } from '../../../types/discovery'
 import type { EventFeedbackVisualEffect } from '../../../store/slices/eventFeedbackSlice'
 import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
@@ -14,42 +15,34 @@ import type { Dispute } from '../../../types/case'
 import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
 import { shouldPlayImpactBeat } from '../../../engine/vfxHierarchyEngine'
 
-const CONTRADICTION_SURFACE_FALLBACK = '진술 흐름에서 확인할 지점이 생겼습니다. 추가 질문으로 맥락을 확인하세요.'
-const EMOTIONAL_BURST_SURFACE_FALLBACK = '감정이 격해졌습니다. 반응을 더 밀어붙일지, 잠시 정리할지 판단하세요.'
+type FeedbackT = (key: MessageKey, values?: MessageValues) => string
 
 /**
  * Discovery 9종 pending 상태를 감시해 통합 피드백 큐로 보내는 Watcher.
  * 기존 PCDiscoveryOverlay 의 각 Panel 을 큐 기반 카드로 치환.
  */
 
-const ROUTE_LABELS: Record<string, string> = {
-  evidence: '증거로 새 쟁점이 드러났습니다.',
-  truth_confrontation: '진실 공방에서 새 쟁점이 튀어나왔습니다.',
-  witness: '증인 진술이 다른 갈래를 열었습니다.',
-  lie_collapse: '거짓 붕괴로 숨은 쟁점이 드러났습니다.',
-  emotional_slip: '감정 반응에서 확인할 단서가 생겼습니다.',
-  interjection: '끼어든 발언이 새 쟁점을 열었습니다.',
+const ROUTE_LABEL_KEYS: Record<string, MessageKey> = {
+  evidence: 'pc.discovery.feedback.route.evidence',
+  truth_confrontation: 'pc.discovery.feedback.route.truthConfrontation',
+  witness: 'pc.discovery.feedback.route.witness',
+  lie_collapse: 'pc.discovery.feedback.route.lieCollapse',
+  emotional_slip: 'pc.discovery.feedback.route.emotionalSlip',
+  interjection: 'pc.discovery.feedback.route.interjection',
 }
 
-const JUDGMENT_LABELS: Record<TruthJudgment, string> = {
-  believe_a: 'A의 주장이 더 설득력 있습니다',
-  believe_b: 'B의 주장이 더 설득력 있습니다',
-  both_partial: '양쪽 모두 일부만 사실입니다',
-  undetermined: '지금은 보류 (나중에 다시 판단)',
+const DISPUTE_WEIGHT_LABEL_KEYS: Record<string, MessageKey> = {
+  high: 'pc.discovery.feedback.dispute.weight.high',
+  medium: 'pc.discovery.feedback.dispute.weight.medium',
+  low: 'pc.discovery.feedback.dispute.weight.low',
 }
 
-const DISPUTE_WEIGHT_LABELS: Record<string, string> = {
-  high: '높음',
-  medium: '보통',
-  low: '낮음',
-}
-
-const DISPUTE_AMBIGUITY_LABELS: Record<string, string> = {
-  high: '높음',
-  medium: '보통',
-  mid: '보통',
-  low: '낮음',
-  none: '낮음',
+const DISPUTE_AMBIGUITY_LABEL_KEYS: Record<string, MessageKey> = {
+  high: 'pc.discovery.feedback.dispute.ambiguity.high',
+  medium: 'pc.discovery.feedback.dispute.ambiguity.medium',
+  mid: 'pc.discovery.feedback.dispute.ambiguity.mid',
+  low: 'pc.discovery.feedback.dispute.ambiguity.low',
+  none: 'pc.discovery.feedback.dispute.ambiguity.none',
 }
 
 function isSpousePrivateAccountWithdrawalDispute(dispute: Dispute | undefined): boolean {
@@ -66,11 +59,39 @@ function isT3ClimaxDispute(caseId: string | undefined, dispute: (Dispute & { tie
     (dispute.tier === 'T3' || dispute.visualImpact === 'climactic')
 }
 
-function buildDisputeEmergenceDetails(dispute: Dispute | undefined, routeDescription: string | undefined, displayName?: string) {
-  const name = displayName ?? dispute?.name ?? '새 쟁점'
+function translateMappedLabel(t: FeedbackT, map: Record<string, MessageKey>, value: string | undefined): string | undefined {
+  if (!value) return undefined
+  const key = map[value]
+  return key ? t(key) : value
+}
+
+function fixFeedbackPostpositions(text: string): string {
+  const withQuotedParticles = text
+    .replace(/"([^"]+)"이\(가\)/g, (_match, word: string) => `"${word}"${postposition(word, '이', '가')}`)
+    .replace(/"([^"]+)"을\(를\)/g, (_match, word: string) => `"${word}"${postposition(word, '을', '를')}`)
+    .replace(/"([^"]+)"은\(는\)/g, (_match, word: string) => `"${word}"${postposition(word, '은', '는')}`)
+    .replace(/"([^"]+)"과\(와\)/g, (_match, word: string) => `"${word}"${postposition(word, '과', '와')}`)
+  return fixPostpositions(withQuotedParticles)
+}
+
+function buildJudgmentLabel(value: TruthJudgment, partyA: string, partyB: string, t: FeedbackT): string {
+  if (value === 'believe_a') return t('pc.discovery.feedback.judgment.believeParty', { party: partyA })
+  if (value === 'believe_b') return t('pc.discovery.feedback.judgment.believeParty', { party: partyB })
+  if (value === 'both_partial') return t('pc.discovery.feedback.judgment.bothPartial')
+  return t('pc.discovery.feedback.judgment.undetermined')
+}
+
+function buildDisputeEmergenceDetails(
+  dispute: Dispute | undefined,
+  routeDescription: string | undefined,
+  displayName: string | undefined,
+  t: FeedbackT,
+  tp: FeedbackT,
+) {
+  const name = displayName ?? dispute?.name ?? t('pc.discovery.feedback.dispute.defaultName')
 
   if (isSpousePrivateAccountWithdrawalDispute(dispute)) {
-    const surfaceSummary = '목돈 출금 흔적과 설명되지 않은 사용처를 확인해야 합니다.'
+    const surfaceSummary = t('pc.discovery.feedback.dispute.privateWithdrawalSummary')
     return {
       body: surfaceSummary,
       blocks: [],
@@ -83,37 +104,41 @@ function buildDisputeEmergenceDetails(dispute: Dispute | undefined, routeDescrip
   const axis = name
   const evidenceCount = dispute?.requiredEvidence?.length ?? 0
   const evidenceText = evidenceCount > 0
-    ? `관련 증거 ${evidenceCount}개와 증인/발언을 대조해 사실관계를 확정합니다.`
-    : '양측 진술과 새로 나온 단서를 대조해 사실관계를 확정합니다.'
+    ? t('pc.discovery.feedback.dispute.evidenceText.withCount', { count: evidenceCount })
+    : t('pc.discovery.feedback.dispute.evidenceText.fallback')
   const legalText = dispute?.legitimacyIssue
-    ? '절차상 책임이나 위법성도 별도 판단해야 합니다.'
-    : '현재 단계에서는 결론이 아니라 검토 범위만 추가됩니다.'
+    ? t('pc.discovery.feedback.dispute.legalText.withIssue')
+    : t('pc.discovery.feedback.dispute.legalText.fallback')
 
   const blocks = [
     {
-      title: '검토 축',
-      text: `${axis}${pp을를(axis)} 중심으로 양측 설명이 어디서 갈라지는지 확인합니다.`,
+      title: t('pc.discovery.feedback.dispute.block.axisTitle'),
+      text: tp('pc.discovery.feedback.dispute.block.axisText', { axis }),
     },
     {
-      title: '확인 방향',
+      title: t('pc.discovery.feedback.dispute.block.confirmDirection'),
       text: evidenceText,
     },
     {
-      title: dispute?.legitimacyIssue ? '절차 책임' : '판단 상태',
+      title: dispute?.legitimacyIssue
+        ? t('pc.discovery.feedback.dispute.block.procedureResponsibility')
+        : t('pc.discovery.feedback.dispute.block.judgmentStatus'),
       text: legalText,
     },
   ]
 
+  const weightLabel = translateMappedLabel(t, DISPUTE_WEIGHT_LABEL_KEYS, dispute?.weight)
+  const ambiguityLabel = translateMappedLabel(t, DISPUTE_AMBIGUITY_LABEL_KEYS, dispute?.ambiguity)
   const meta = [
-    dispute?.weight ? `중요도: ${DISPUTE_WEIGHT_LABELS[dispute.weight] ?? dispute.weight}` : null,
-    dispute?.ambiguity ? `모호성: ${DISPUTE_AMBIGUITY_LABELS[dispute.ambiguity] ?? dispute.ambiguity}` : null,
-    evidenceCount > 0 ? `필요 증거: ${evidenceCount}개` : null,
+    weightLabel ? t('pc.discovery.feedback.dispute.meta.weight', { weight: weightLabel }) : null,
+    ambiguityLabel ? t('pc.discovery.feedback.dispute.meta.ambiguity', { ambiguity: ambiguityLabel }) : null,
+    evidenceCount > 0 ? t('pc.discovery.feedback.dispute.meta.requiredEvidence', { count: evidenceCount }) : null,
   ].filter(Boolean) as string[]
 
   const routeLine = routeDescription?.trim()
   const body = routeLine
-    ? `${routeLine} 이제 "${name}"을 별도 쟁점으로 추적합니다.`
-    : `"${name}"이 별도 쟁점으로 추가되었습니다.`
+    ? tp('pc.discovery.feedback.dispute.body.withRoute', { route: routeLine, name })
+    : tp('pc.discovery.feedback.dispute.body.added', { name })
   const notebookSummary = `${axis}. ${evidenceText} ${legalText}`.slice(0, 150)
   const observationSummary = `${name} - ${axis}`
 
@@ -128,15 +153,15 @@ function compactNotebookSummary(parts: Array<string | undefined | null>, limit =
   return text.length > limit ? `${text.slice(0, limit - 1)}…` : text
 }
 
-function buildEmotionalBurstFollowUp(choice: 'press' | 'calm', hasScriptedOutburst: boolean): string {
+function buildEmotionalBurstFollowUp(choice: 'press' | 'calm', hasScriptedOutburst: boolean, t: FeedbackT): string {
   if (choice === 'press') {
     return hasScriptedOutburst
-      ? '알겠습니다. 더 돌려 말하지 않겠습니다. 숨긴 이유와 제가 한 행동을 이어서 말씀드리겠습니다.'
-      : '말씀드리겠습니다. 감정이 앞섰지만, 피하지 않고 사실관계를 이어서 말하겠습니다.'
+      ? t('pc.discovery.feedback.outburst.followUp.press.hasLine')
+      : t('pc.discovery.feedback.outburst.followUp.press.noLine')
   }
   return hasScriptedOutburst
-    ? '네. 흥분해서 앞뒤가 흐려졌습니다. 사실관계부터 다시 정리하겠습니다.'
-    : '네. 잠시 정리하겠습니다. 제가 아는 사실부터 차례대로 말하겠습니다.'
+    ? t('pc.discovery.feedback.outburst.followUp.calm.hasLine')
+    : t('pc.discovery.feedback.outburst.followUp.calm.noLine')
 }
 
 function isNarrativeReaction(text: string | undefined): boolean {
@@ -144,13 +169,15 @@ function isNarrativeReaction(text: string | undefined): boolean {
   return /(부딪힌다|드러난다|흔들린다|뒤집힌다|갈라진다|맞선다|올라오자|설명이|해석이|책임의 방향)/.test(text)
 }
 
-function buildContradictionFallbackLine(lieState: string): string {
-  if (lieState >= 'S3') return '...그건... 상황이 복잡했습니다. 제가 처음에 말씀드린 것과 다른 부분이 있었습니다.'
-  if (lieState >= 'S2') return '재판관님, 제 기억이 혼란스러웠던 것 같습니다. 다시 정리하겠습니다.'
-  return '그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.'
+function buildContradictionFallbackLine(lieState: string, t: FeedbackT): string {
+  if (lieState >= 'S3') return t('pc.discovery.feedback.contradiction.fallbackLine.s3')
+  if (lieState >= 'S2') return t('pc.discovery.feedback.contradiction.fallbackLine.s2')
+  return t('pc.discovery.feedback.contradiction.fallbackLine.s0')
 }
 
 export default function DiscoveryFeedbackWatcher() {
+  const { t } = useI18n()
+  const tp = useCallback<FeedbackT>((key, values) => fixFeedbackPostpositions(t(key, values)), [t])
   const pendingConfrontation = useStore((s) => s.discovery?.pendingConfrontation)
   const pendingConflict      = useStore((s) => s.discovery?.pendingConflict)
   const pendingEmergence     = useStore((s) => s.discovery?.pendingEmergence)
@@ -184,7 +211,7 @@ export default function DiscoveryFeedbackWatcher() {
       turnCount: state.turnCount,
       category: 'event',
       iconId: 'i-scale',
-      title: '진실 공방이 열렸다. 양측 주장을 비교해 판결을 내려야 한다.',
+      title: t('pc.discovery.feedback.confrontation.observationTitle'),
       summary: `${dispute?.name ?? pendingConfrontation.disputeId}`,
       disputeId: pendingConfrontation.disputeId,
     })
@@ -192,7 +219,7 @@ export default function DiscoveryFeedbackWatcher() {
       turnCount: state.turnCount,
       category: 'critical_contradiction',
       iconId: 'i-scale',
-      title: `진실 공방 - ${dispute?.name ?? pendingConfrontation.disputeId}`,
+      title: t('pc.discovery.feedback.confrontation.notebookTitle', { dispute: dispute?.name ?? pendingConfrontation.disputeId }),
       summary: compactNotebookSummary([
         `${partyA}: ${pendingConfrontation.claimA.summary}`,
         `${partyB}: ${pendingConfrontation.claimB.summary}`,
@@ -206,7 +233,7 @@ export default function DiscoveryFeedbackWatcher() {
 
     state.enqueueFeedback({
       kind: 'confrontation',
-      eyebrow: '진실 공방',
+      eyebrow: t('pc.discovery.feedback.confrontation.eyebrow'),
       title: dispute?.name ?? pendingConfrontation.disputeId,
       claims: {
         partyA: { name: partyA, text: pendingConfrontation.claimA.summary },
@@ -215,7 +242,7 @@ export default function DiscoveryFeedbackWatcher() {
       tone: 'gold',
       actionsLayout: 'vertical',
       actions: judgments.map((value) => ({
-        label: JUDGMENT_LABELS[value].replace('A의', `${partyA}의`).replace('B의', `${partyB}의`),
+        label: buildJudgmentLabel(value, partyA, partyB, t),
         // '지금은 보류'는 회색 톤으로 분리 (영구 판결 3종과 시각 구분)
         tone: value === 'undetermined' ? 'gray' as const : 'gold' as const,
         onSelect: () => {
@@ -231,7 +258,7 @@ export default function DiscoveryFeedbackWatcher() {
       // X 버튼 — 보류 액션과 동일 동작 (일시 보류)
       onDefer: handleDefer,
     })
-  }, [pendingConfrontation])
+  }, [pendingConfrontation, t])
 
   // 판단 충돌 (양측 contrast + VS)
   useEffect(() => {
@@ -252,28 +279,28 @@ export default function DiscoveryFeedbackWatcher() {
       pendingConflict.currentJudgment === 'believe_a' ? 'a' :
       pendingConflict.currentJudgment === 'believe_b' ? 'b' : null
 
-    let leftLabel = '기존 판단'
+    let leftLabel = t('pc.discovery.feedback.conflict.left.default')
     let leftText = ''
     if (beliefParty) {
       const partyName = beliefParty === 'a' ? partyA : partyB
       const recentStatement = [...state.dialogueLog].reverse().find((d) =>
         d.speaker === beliefParty && (d.relatedDisputes ?? []).includes(pendingConflict.disputeId)
       )
-      leftLabel = `기존 판단 · ${partyName} 쪽 주장`
-      leftText = recentStatement?.text ?? `${partyName}의 주장에 설득력을 두었습니다.`
+      leftLabel = t('pc.discovery.feedback.conflict.left.partyClaim', { party: partyName })
+      leftText = recentStatement?.text ?? t('pc.discovery.feedback.conflict.left.partyConviction', { party: partyName })
     } else if (pendingConflict.currentJudgment === 'both_partial') {
-      leftLabel = '기존 판단 · 양측 일부 사실'
-      leftText = '양측 주장에 각자 맞는 부분과 과장이 섞여 있다고 보았습니다.'
+      leftLabel = t('pc.discovery.feedback.conflict.left.bothPartialLabel')
+      leftText = t('pc.discovery.feedback.conflict.left.bothPartialText')
     } else {
-      leftLabel = '기존 판단 · 보류'
-      leftText = '추가 자료가 더 필요하다고 보았습니다.'
+      leftLabel = t('pc.discovery.feedback.conflict.left.deferredLabel')
+      leftText = t('pc.discovery.feedback.conflict.left.deferredText')
     }
 
     state.addJudgeObservation({
       turnCount: state.turnCount,
       category: 'event',
       iconId: 'i-conflict',
-      title: '기존 판단과 새 정보가 충돌하고 있다.',
+      title: t('pc.discovery.feedback.conflict.observationTitle'),
       summary: `${dispute?.name ?? pendingConflict.disputeId}`,
       disputeId: pendingConflict.disputeId,
     })
@@ -281,10 +308,10 @@ export default function DiscoveryFeedbackWatcher() {
       turnCount: state.turnCount,
       category: 'critical_contradiction',
       iconId: 'i-conflict',
-      title: `판단 충돌 - ${dispute?.name ?? pendingConflict.disputeId}`,
+      title: t('pc.discovery.feedback.conflict.notebookTitle', { dispute: dispute?.name ?? pendingConflict.disputeId }),
       summary: compactNotebookSummary([
         `${leftLabel}: ${leftText}`,
-        `새 정보: ${pendingConflict.conflictingInfo}`,
+        t('pc.discovery.feedback.conflict.notebookNewInfo', { info: pendingConflict.conflictingInfo }),
       ]),
       disputeId: pendingConflict.disputeId,
     })
@@ -296,29 +323,29 @@ export default function DiscoveryFeedbackWatcher() {
     })
     state.enqueueFeedback({
       kind: 'conflict',
-      eyebrow: '판단 충돌',
+      eyebrow: t('pc.discovery.feedback.conflict.eyebrow'),
       title: dispute?.name ?? pendingConflict.disputeId,
       ...(playConflictBeat ? {
         intensity: 'impact' as const,
         cue: 'contradiction' as const,
         visualEffects: ['screen-freeze', 'screen-shake-light'] as EventFeedbackVisualEffect[],
         effectTiming: 'before' as const,
-        bigTypography: { text: 'VS', durationMs: 1000, tone: 'amber-warning' as const },
+        bigTypography: { text: t('pc.discovery.feedback.conflict.vs'), durationMs: 1000, tone: 'amber-warning' as const },
         layoutVariant: 'split-vs' as const,
         splitContent: {
           left: { partyId: 'a' as const, label: leftLabel, text: leftText },
-          right: { partyId: 'b' as const, label: '새 충돌 정보', text: pendingConflict.conflictingInfo },
+          right: { partyId: 'b' as const, label: t('pc.discovery.feedback.conflict.newInfoLabel'), text: pendingConflict.conflictingInfo },
         },
         beatId: `conflict:${pendingConflict.disputeId}`,
       } : {}),
       contrast: {
         left:  { label: leftLabel, text: leftText },
-        right: { label: '새 충돌 정보', text: pendingConflict.conflictingInfo },
+        right: { label: t('pc.discovery.feedback.conflict.newInfoLabel'), text: pendingConflict.conflictingInfo },
       },
       tone: 'gold',
       actions: [
         {
-          label: '현재 판단 유지',
+          label: t('pc.discovery.feedback.conflict.action.keepCurrent'),
           tone: 'gray',
           onSelect: () => {
             useGameStore.getState().setPendingConflict(null)
@@ -326,7 +353,7 @@ export default function DiscoveryFeedbackWatcher() {
           },
         },
         {
-          label: '새 정보 기준으로 수정',
+          label: t('pc.discovery.feedback.conflict.action.revise'),
           tone: 'gold',
           onSelect: () => {
             const current = pendingConflict.currentJudgment
@@ -339,7 +366,7 @@ export default function DiscoveryFeedbackWatcher() {
         },
       ],
     })
-  }, [pendingConflict])
+  }, [pendingConflict, t])
 
   // 새 쟁점 발견
   useEffect(() => {
@@ -353,9 +380,9 @@ export default function DiscoveryFeedbackWatcher() {
     if (!caseData) return
     const dispute = caseData.disputes.find((d) => d.id === pendingEmergence.disputeId)
     const disputeName = getSafeEmergenceTitle(caseData.caseId, pendingEmergence.disputeId, dispute?.name ?? pendingEmergence.disputeId)
-    const routeLabel = ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.'
+    const routeLabel = t(ROUTE_LABEL_KEYS[pendingEmergence.route] ?? 'pc.discovery.feedback.route.default')
     const surfaceOnlyEmergence = isSpousePrivateAccountWithdrawalDispute(dispute)
-    const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description, disputeName)
+    const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description, disputeName, t, tp)
     // PC QA round 2 B-6: when this dispute was unlocked by another dispute reaching a
     // truth threshold, surface that chain so the player understands "X 의심이 풀리면서
     // Y 부상"—a natural transition rather than an out-of-nowhere new issue.
@@ -388,12 +415,12 @@ export default function DiscoveryFeedbackWatcher() {
             ] as EventFeedbackVisualEffect[],
             effectTiming: 'before' as const,
             bigTypography: {
-              text: '사건이 완전히 다르게 보인다',
+              text: t('pc.discovery.feedback.viewShift.hookA'),
               durationMs: 1800,
               sizeScale: 1.14,
             },
             impactSubtitle: {
-              text: '어디서부터 어긋났을까',
+              text: t('pc.discovery.feedback.viewShift.hookB'),
               durationMs: 1100,
               tone: 'amber-warning' as const,
             },
@@ -404,7 +431,7 @@ export default function DiscoveryFeedbackWatcher() {
             cue: 'truth' as const,
             visualEffects: ['screen-flash-dark', 'screen-shake-medium', 'vignette-strong'] as EventFeedbackVisualEffect[],
             effectTiming: 'during' as const,
-            bigTypography: { text: '새로운 쟁점', durationMs: 1000 },
+            bigTypography: { text: t('pc.discovery.feedback.emergence.bigType'), durationMs: 1000 },
             impactSubtitle: {
               text: disputeName,
               durationMs: 1000,
@@ -416,15 +443,15 @@ export default function DiscoveryFeedbackWatcher() {
 
     state.enqueueFeedback({
       kind: 'emergence',
-      eyebrow: '새 쟁점 발견',
+      eyebrow: t('pc.discovery.feedback.emergence.eyebrow'),
       title: disputeName,
       subtitle: unlockSourceName
-        ? `"${unlockSourceName}"${pp을를(unlockSourceName)} 확인하는 과정에서 다른 쟁점이 보입니다`
-        : playEmergenceBeat ? disputeName : '확인해야 할 범위가 넓어졌습니다',
+        ? tp('pc.discovery.feedback.emergence.subtitleChain', { sourceName: unlockSourceName })
+        : playEmergenceBeat ? disputeName : t('pc.discovery.feedback.emergence.subtitleFallback'),
       body: unlockSourceName
-        ? `"${unlockSourceName}" 쟁점을 확인하는 과정에서 "${disputeName}"${pp이가(disputeName)} 새 쟁점으로 떠올랐습니다. 아직 결론은 아닙니다. 관련 기록과 진술을 더 확인한 뒤, 쟁점으로 다룰지 판단해주세요.`
-        : '아직 결론은 아닙니다. 관련 기록과 진술을 더 확인한 뒤, 쟁점으로 다룰지 판단해주세요.',
-      tag: '쟁점 보드 갱신',
+        ? tp('pc.discovery.feedback.emergence.bodyChain', { sourceName: unlockSourceName, disputeName })
+        : t('pc.discovery.feedback.emergence.bodyFallback'),
+      tag: t('pc.discovery.feedback.emergence.tag'),
       tone: 'gold',
       disputeId: pendingEmergence.disputeId,
       // PC QA round 2: autodismiss removed — user clicks the [확인] button to advance.
@@ -436,8 +463,8 @@ export default function DiscoveryFeedbackWatcher() {
     const sysMsgId = state.addDialogue({
       speaker: 'system',
       text: unlockSourceName
-        ? `"${unlockSourceName}"${pp을를(unlockSourceName)} 확인하는 과정에서 새 쟁점이 드러났다 - ${disputeName}`
-        : `새 쟁점이 드러났다 — ${disputeName}`,
+        ? tp('pc.discovery.feedback.emergence.sysMsgChain', { sourceName: unlockSourceName, disputeName })
+        : t('pc.discovery.feedback.emergence.sysMsgFallback', { disputeName }),
       relatedDisputes: [pendingEmergence.disputeId],
       turn: state.turnCount,
     })
@@ -453,24 +480,24 @@ export default function DiscoveryFeedbackWatcher() {
       turnCount: state.turnCount,
       category: 'dispute_emergence',
       iconId: 'i-bolt',
-      title: `새 쟁점 - ${disputeName}`,
+      title: t('pc.discovery.feedback.emergence.notebookTitle', { dispute: disputeName }),
       summary: emergenceDetails.notebookSummary,
       disputeId: pendingEmergence.disputeId,
       linkedDialogueId: sysMsgId,
     })
     state.attachDialoguePendingFeedback(sysMsgId, {
       kind: 'emergence',
-      eyebrow: '새 쟁점 발견',
+      eyebrow: t('pc.discovery.feedback.emergence.eyebrow'),
       subtitle: routeLabel,
       title: disputeName,
       body: emergenceDetails.body,
       blocks: emergenceDetails.blocks,
       meta: emergenceDetails.meta,
-      tag: surfaceOnlyEmergence ? undefined : '쟁점 보드 + 재판관 수첩',
+      tag: surfaceOnlyEmergence ? undefined : t('pc.discovery.feedback.emergence.tagWithJudge'),
       tone: 'gold',
       actions: [
         {
-          label: '확인했습니다',
+          label: t('pc.discovery.feedback.emergence.action.confirm'),
           tone: 'gold',
           onSelect: () => {
             const s = useGameStore.getState()
@@ -521,8 +548,8 @@ export default function DiscoveryFeedbackWatcher() {
             const hookText = hook?.text ?? ''
             const safeHookDisputeName = getSafeEmergenceTitle(hookCaseId, pendingEmergence.disputeId, emergedDispute?.name ?? '')
             const fallbackText = safeHookDisputeName
-              ? `…사실, ${safeHookDisputeName} 건도 함께 봐주셔야 합니다.`
-              : '…사실, 그것만이 아니었습니다.'
+              ? t('pc.discovery.feedback.emergence.hookFallback.withName', { disputeName: safeHookDisputeName })
+              : t('pc.discovery.feedback.emergence.hookFallback.generic')
             const hookKey = `emergence-hook:${hookCaseId}:${pendingEmergence.disputeId}:${hookText || fallbackText}`
             const alreadyLogged = s.dialogueLog.some((d) =>
               d.text === (hookText || fallbackText)
@@ -547,7 +574,7 @@ export default function DiscoveryFeedbackWatcher() {
                 text: fallbackText,
                 relatedDisputes: [pendingEmergence.disputeId],
                 turn: s.turnCount,
-                behaviorHint: '시선이 흔들리며 잠시 멈춘다.',
+                behaviorHint: t('pc.discovery.feedback.emergence.hookFallback.behaviorHint'),
                 source: 'fallback',
               })
             }
@@ -555,7 +582,7 @@ export default function DiscoveryFeedbackWatcher() {
         },
       ],
     }, state.turnCount)
-  }, [pendingEmergence])
+  }, [pendingEmergence, t, tp])
 
   // 감정 실수 포착
   useEffect(() => {
@@ -579,28 +606,28 @@ export default function DiscoveryFeedbackWatcher() {
       : null
 
     const meta: string[] = []
-    if (sourceDispute) meta.push(`관련 쟁점: ${sourceDispute.name}`)
-    if (linkedDispute) meta.push(`연결 쟁점: ${linkedDispute.name}`)
+    if (sourceDispute) meta.push(t('pc.discovery.feedback.emotionMistake.meta.sourceDispute', { dispute: sourceDispute.name }))
+    if (linkedDispute) meta.push(t('pc.discovery.feedback.emotionMistake.meta.linkedDispute', { dispute: linkedDispute.name }))
 
     state.addJudgeObservation({
       turnCount: state.turnCount,
       category: 'slip',
       iconId: 'i-heart',
       title: pendingSlip.slipText,
-      summary: `${partyData.name} · 감정 실수 포착`,
+      summary: t('pc.discovery.feedback.emotionMistake.summary', { party: partyData.name }),
       party: pendingSlip.party,
       disputeId: pendingSlip.sourceDisputeId,
     })
     state.enqueueFeedback({
       kind: 'emotional_slip',
-      eyebrow: '감정 실수 포착',
+      eyebrow: t('pc.discovery.feedback.emotionMistake.eyebrow'),
       title: partyData.name,
       quote: pendingSlip.slipText,
       meta,
       tone: 'red',
       actions: [
         {
-          label: '지금은 넘긴다',
+          label: t('pc.discovery.feedback.action.skip'),
           tone: 'gray',
           onSelect: () => {
             useGameStore.getState().setPendingSlip(null)
@@ -608,7 +635,7 @@ export default function DiscoveryFeedbackWatcher() {
           },
         },
         {
-          label: '관찰에 기록',
+          label: t('pc.discovery.feedback.emotionMistake.action.record'),
           tone: 'red',
           onSelect: () => {
             const fresh = useGameStore.getState()
@@ -618,7 +645,7 @@ export default function DiscoveryFeedbackWatcher() {
         },
       ],
     })
-  }, [pendingSlip])
+  }, [pendingSlip, t])
 
   // Game event (contradiction / interjection / emotional_burst)
   useEffect(() => {
@@ -655,21 +682,21 @@ export default function DiscoveryFeedbackWatcher() {
               const afterAgent = effect.party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
               const afterState = afterAgent.lieStateMap[effect.disputeId]?.currentState ?? beforeState
               if (beforeState !== afterState) {
-                effectSummary.push(`거짓말 단계 ${beforeState} → ${afterState}`)
+                effectSummary.push(t('pc.discovery.feedback.contradiction.effect.lieStage', { before: beforeState, after: afterState }))
               }
               break
             }
             case 'emotion_spike':
               s.changeEmotion(effect.party, effect.delta)
-              effectSummary.push(`감정 ${effect.delta > 0 ? '+' : ''}${effect.delta}`)
+              effectSummary.push(t('pc.discovery.feedback.contradiction.effect.emotion', { delta: `${effect.delta > 0 ? '+' : ''}${effect.delta}` }))
               break
           }
         }
         s.addDialogue({
           speaker: 'judge',
           text: v3Event
-            ? `${partyName} 씨, 아까 하신 말씀과 지금 말씀이 다릅니다. 어느 쪽이 맞습니까?`
-            : `${partyName} 씨, 방금 답변이 앞선 진술과 맞지 않습니다. 정확히 말씀해 주십시오.`,
+            ? t('pc.discovery.feedback.contradiction.judgeQuestion.withEvent', { party: partyName })
+            : t('pc.discovery.feedback.contradiction.judgeQuestion.fallback', { party: partyName }),
           relatedDisputes: [ev.disputeId],
           turn: s.turnCount,
         })
@@ -677,8 +704,8 @@ export default function DiscoveryFeedbackWatcher() {
         const lie = agent.lieStateMap[ev.disputeId]?.currentState ?? 'S0'
         const reactionIsNarrative = isNarrativeReaction(v3Event?.npcReaction)
         const npcText = reactionIsNarrative
-          ? buildContradictionFallbackLine(lie)
-          : v3Event?.npcReaction ?? buildContradictionFallbackLine(lie)
+          ? buildContradictionFallbackLine(lie, t)
+          : v3Event?.npcReaction ?? buildContradictionFallbackLine(lie, t)
         s.addDialogue({ speaker: ev.party, text: npcText, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         if (reactionIsNarrative && v3Event?.npcReaction) {
           s.addDialogue({ speaker: 'system', text: v3Event.npcReaction, relatedDisputes: [ev.disputeId], turn: s.turnCount })
@@ -689,9 +716,9 @@ export default function DiscoveryFeedbackWatcher() {
           category: 'contradiction',
           iconId: 'i-bolt',
           title: ev.severity === 'critical'
-            ? `결정적 모순이 드러났다. ${partyName}의 방어가 크게 흔들린다.`
-            : '진술이 엇갈리기 시작했다. 지금 압박하면 효과적이다.',
-          summary: `${partyName} · 모순 추궁 결과`,
+            ? t('pc.discovery.feedback.contradiction.result.critical', { party: partyName })
+            : t('pc.discovery.feedback.contradiction.result.standard'),
+          summary: t('pc.discovery.feedback.contradiction.result.summary', { party: partyName }),
           party: ev.party,
           disputeId: ev.disputeId,
         })
@@ -699,7 +726,7 @@ export default function DiscoveryFeedbackWatcher() {
         if (effectSummary.length > 0) {
           useGameStore.getState().addDialogue({
             speaker: 'system',
-            text: `💥 모순 추궁이 통했습니다 — ${effectSummary.join(' / ')}`,
+            text: t('pc.discovery.feedback.contradiction.success', { effects: effectSummary.join(' / ') }),
             relatedDisputes: [ev.disputeId],
             turn: s.turnCount,
           })
@@ -713,7 +740,7 @@ export default function DiscoveryFeedbackWatcher() {
           useGameStore.getState().setEmotionalLockout(ev.party, s.turnCount + 3)
           useGameStore.getState().addDialogue({
             speaker: 'system',
-            text: `🔒 ${partyName}${pp이가(partyName)} 모순 추궁의 충격으로 답변을 거부합니다. (2턴간 질문 불가)`,
+            text: tp('pc.discovery.feedback.contradiction.blocked', { party: partyName }),
             relatedDisputes: [ev.disputeId],
             turn: s.turnCount,
           })
@@ -738,8 +765,8 @@ export default function DiscoveryFeedbackWatcher() {
             previousClaim: v3Event.statementA,
             currentClaim: v3Event.statementB,
             reason: v3Event.npcReaction,
-            previousLabel: '이전 진술',
-            currentLabel: '지금 진술',
+            previousLabel: t('pc.discovery.feedback.contradiction.previousLabel'),
+            currentLabel: t('pc.discovery.feedback.contradiction.currentLabel'),
           }
         : undefined
       if (!hasContradictionComparison(eventContradictionMeta)) {
@@ -749,19 +776,19 @@ export default function DiscoveryFeedbackWatcher() {
       }
       const contrastPayload = v3Event && isSpoilerSafeStage
         ? {
-            left:  { label: eventContradictionMeta.previousLabel ?? '이전 진술', text: eventContradictionMeta.previousClaim },
-            right: { label: eventContradictionMeta.currentLabel ?? '지금 진술', text: eventContradictionMeta.currentClaim },
+            left:  { label: eventContradictionMeta.previousLabel ?? t('pc.discovery.feedback.contradiction.previousLabel'), text: eventContradictionMeta.previousClaim },
+            right: { label: eventContradictionMeta.currentLabel ?? t('pc.discovery.feedback.contradiction.currentLabel'), text: eventContradictionMeta.currentClaim },
           }
         : undefined
       const safeFallbackBody = !isSpoilerSafeStage
-        ? `${partyName}의 진술 흐름에서 어긋남이 감지되었습니다. 모순을 찌르면 다음 단서가 열릴 수 있습니다.`
+        ? t('pc.discovery.feedback.contradiction.safeFallbackBody', { party: partyName })
         : null
 
       state.addJudgeObservation({
         turnCount: state.turnCount,
         category: 'contradiction',
         iconId: 'i-bolt',
-        title: '이전 진술과 지금 진술이 어긋난다. 모순을 찌를 기회다.',
+        title: t('pc.discovery.feedback.contradiction.observationTitle'),
         summary: `${partyName} · ${disputeName}`,
         party: ev.party,
         disputeId: ev.disputeId,
@@ -769,23 +796,23 @@ export default function DiscoveryFeedbackWatcher() {
       // [B-17 D] 자동 모달 X — 시스템 메시지 클릭 시 수동 트리거.
       const sysMsgId = state.addDialogue({
         speaker: 'system',
-        text: `진술이 엇갈렸다 — ${partyName} · ${disputeName}`,
+        text: t('pc.discovery.feedback.contradiction.sysMsg', { party: partyName, dispute: disputeName }),
         relatedDisputes: [ev.disputeId],
         turn: state.turnCount,
       })
       state.attachDialoguePendingFeedback(sysMsgId, {
         kind: 'contradiction',
-        eyebrow: '모순 발견',
+        eyebrow: t('pc.discovery.feedback.contradiction.eyebrow'),
         subtitle: `${disputeName} · ${partyName}`,
-        body: contrastPayload ? undefined : (safeFallbackBody ?? CONTRADICTION_SURFACE_FALLBACK),
+        body: contrastPayload ? undefined : (safeFallbackBody ?? t('pc.discovery.feedback.fallback.contradictionSurface')),
         contrast: contrastPayload,
-        blocks: [{ title: '왜 어긋나는지', text: eventContradictionMeta.reason }],
+        blocks: [{ title: t('pc.discovery.feedback.contradiction.reasonLabel'), text: eventContradictionMeta.reason }],
         // [TC-A2 픽스] '진술이 엇갈렸다' 시스템 메시지는 빨강 톤(공격/모순)으로 통일
         // — '추궁하기' 시스템 메시지(.is-action)와 의미·시각 모두 일치
         tone: 'alert',
         actions: [
           {
-            label: '지금은 넘긴다',
+            label: t('pc.discovery.feedback.action.skip'),
             tone: 'gray',
             onSelect: () => {
               useGameStore.getState().setPendingGameEvent(null)
@@ -794,7 +821,7 @@ export default function DiscoveryFeedbackWatcher() {
             },
           },
           {
-            label: '모순을 찌른다',
+            label: t('pc.discovery.feedback.contradiction.action.pointOut'),
             tone: 'alert',
             onSelect: () => {
               handlePointOut()
@@ -811,12 +838,12 @@ export default function DiscoveryFeedbackWatcher() {
       const interjectionText = v3Event?.interjectionLine
         ? v3Event.interjectionLine
         : ev.severity === 'major'
-          ? '재판관님, 잠깐만요. 저도 할 말이 있습니다.'
-          : '재판관님, 지금 하신 말씀은 사실과 다릅니다.'
+          ? t('pc.discovery.feedback.interject.fallback.major')
+          : t('pc.discovery.feedback.interject.fallback.minor')
 
       const handleAllow = () => {
         const s = useGameStore.getState()
-        s.addDialogue({ speaker: 'judge', text: '발언을 허용합니다.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addDialogue({ speaker: 'judge', text: t('pc.discovery.feedback.judge.allowSpeak'), relatedDisputes: [ev.disputeId], turn: s.turnCount })
         s.addDialogue({ speaker: ev.party, text: interjectionText, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         s.trackMetric('interjectionAllowed')
         s.trackMetric('counterQuestionUsed')
@@ -830,7 +857,7 @@ export default function DiscoveryFeedbackWatcher() {
         recordInterjectionChoice('block')
         s.addDialogue({
           speaker: 'judge',
-          text: `${partyName} 씨, 지금은 발언 순서가 아닙니다. 심문을 계속합니다.`,
+          text: t('pc.discovery.feedback.judge.rejectInterject', { party: partyName }),
           relatedDisputes: [ev.disputeId],
           turn: s.turnCount,
         })
@@ -842,19 +869,19 @@ export default function DiscoveryFeedbackWatcher() {
       // 끼어들기는 관찰 패널엔 추가하지 않음 (시스템 관찰과 NPC 발화 경계 보존).
       const sysMsgId = state.addDialogue({
         speaker: 'system',
-        text: `${partyName}${pp이가(partyName)} 끼어들려 한다 — ${disputeName}`,
+        text: tp('pc.discovery.feedback.interject.sysMsg', { party: partyName, dispute: disputeName }),
         relatedDisputes: [ev.disputeId],
         turn: state.turnCount,
       })
       state.attachDialoguePendingFeedback(sysMsgId, {
         kind: 'contradiction',
-        eyebrow: '끼어들기',
+        eyebrow: t('pc.discovery.feedback.interject.eyebrow'),
         subtitle: `${partyName} · ${disputeName}`,
         quote: interjectionText,
         tone: 'blue',
         actions: [
           {
-            label: '제지한다',
+            label: t('pc.discovery.feedback.interject.action.block'),
             tone: 'gray',
             onSelect: () => {
               handleBlock()
@@ -862,7 +889,7 @@ export default function DiscoveryFeedbackWatcher() {
             },
           },
           {
-            label: '허용한다',
+            label: t('pc.discovery.feedback.interject.action.allow'),
             tone: 'blue',
             onSelect: () => {
               handleAllow()
@@ -877,7 +904,7 @@ export default function DiscoveryFeedbackWatcher() {
     if (ev.type === 'emotional_burst') {
       const v3Event = ev.scriptSlot?.textId ? getOutburstEvent(caseKey, ev.scriptSlot.textId) : null
       const outburstLine = v3Event?.outburstLine
-      const outburstText = outburstLine ?? EMOTIONAL_BURST_SURFACE_FALLBACK
+      const outburstText = outburstLine ?? t('pc.discovery.feedback.fallback.emotionalBurstSurface')
 
       const emitOutburst = () => {
         const s = useGameStore.getState()
@@ -904,7 +931,7 @@ export default function DiscoveryFeedbackWatcher() {
             const afterLie = afterAgent.lieStateMap[ev.disputeId]?.currentState ?? currentLie
             after.addDialogue({
               speaker: 'system',
-              text: `감정이 격해지며 더 솔직한 진술이 나왔다 - ${disputeName} 단계 ${currentLie} → ${afterLie}`,
+              text: t('pc.discovery.feedback.outburst.lieJump', { dispute: disputeName, before: currentLie, after: afterLie }),
               relatedDisputes: [ev.disputeId],
               turn: after.turnCount,
             })
@@ -914,10 +941,10 @@ export default function DiscoveryFeedbackWatcher() {
       const handlePress = () => {
         const s = useGameStore.getState()
         emitOutburst()
-        s.addDialogue({ speaker: 'judge', text: '계속 말해보세요. 지금의 흐름을 더 확인하겠습니다.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addDialogue({ speaker: 'judge', text: t('pc.discovery.feedback.outburst.pressJudge'), relatedDisputes: [ev.disputeId], turn: s.turnCount })
         s.addDialogue({
           speaker: ev.party,
-          text: buildEmotionalBurstFollowUp('press', Boolean(outburstLine)),
+          text: buildEmotionalBurstFollowUp('press', Boolean(outburstLine), t),
           relatedDisputes: [ev.disputeId],
           turn: s.turnCount,
         })
@@ -931,7 +958,7 @@ export default function DiscoveryFeedbackWatcher() {
           turnCount: s.turnCount,
           category: 'state',
           iconId: 'i-scale',
-          title: '격앙 상태가 이어지고 있다. 사실 추궁과 동기 탐색이 더 강하게 작용할 수 있다.',
+          title: t('pc.discovery.feedback.outburst.pressObservationTitle'),
           summary: `${partyName} · ${disputeName}`,
           party: ev.party,
           disputeId: ev.disputeId,
@@ -942,10 +969,10 @@ export default function DiscoveryFeedbackWatcher() {
       const handleCalm = () => {
         const s = useGameStore.getState()
         emitOutburst()
-        s.addDialogue({ speaker: 'judge', text: '잠시 진정하고, 사실만 다시 정리해 주세요.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addDialogue({ speaker: 'judge', text: t('pc.discovery.feedback.outburst.calmJudge'), relatedDisputes: [ev.disputeId], turn: s.turnCount })
         s.addDialogue({
           speaker: ev.party,
-          text: buildEmotionalBurstFollowUp('calm', Boolean(outburstLine)),
+          text: buildEmotionalBurstFollowUp('calm', Boolean(outburstLine), t),
           relatedDisputes: [ev.disputeId],
           turn: s.turnCount,
         })
@@ -960,7 +987,7 @@ export default function DiscoveryFeedbackWatcher() {
           turnCount: s.turnCount,
           category: 'state',
           iconId: 'i-heart',
-          title: '감정이 가라앉고 있다. 공감 접근으로 다시 사실관계를 정리하기 좋은 흐름이다.',
+          title: t('pc.discovery.feedback.outburst.calmObservationTitle'),
           summary: `${partyName} · ${disputeName}`,
           party: ev.party,
           disputeId: ev.disputeId,
@@ -974,28 +1001,28 @@ export default function DiscoveryFeedbackWatcher() {
         category: 'slip',
         iconId: 'i-heart',
         title: outburstText,
-        summary: `${partyName} · 감정 폭발`,
+        summary: t('pc.discovery.feedback.outburst.summary', { party: partyName }),
         party: ev.party,
         disputeId: ev.disputeId,
       })
       state.enqueueFeedback({
         kind: 'emotional_slip',
-        eyebrow: '감정 폭발',
-        title: `${partyName}의 감정이 격해졌습니다`,
+        eyebrow: t('pc.discovery.feedback.outburst.eyebrow'),
+        title: t('pc.discovery.feedback.outburst.title', { party: partyName }),
         subtitle: `${partyName} · ${disputeName}`,
         quote: outburstLine ? outburstText : undefined,
         body: outburstLine ? undefined : outburstText,
         tone: 'red',
         actions: [
           {
-            label: '진정시킨다',
+            label: t('pc.discovery.feedback.outburst.action.calm'),
             tone: 'gray',
             onSelect: () => {
               handleCalm()
             },
           },
           {
-            label: '밀어붙인다',
+            label: t('pc.discovery.feedback.outburst.action.press'),
             tone: 'red',
             onSelect: () => {
               handlePress()
@@ -1005,7 +1032,7 @@ export default function DiscoveryFeedbackWatcher() {
       })
       return
     }
-  }, [pendingGameEvent])
+  }, [pendingGameEvent, t, tp])
 
   // 퍼크 선택
   useEffect(() => {
@@ -1031,26 +1058,26 @@ export default function DiscoveryFeedbackWatcher() {
         turnCount: state.turnCount,
         category: 'event',
         iconId: 'i-shield',
-        title: '증거 제시가 충분히 먹히지 않았다. 완충 스킬을 쓸 수 있다.',
-        summary: `${evidenceName} · 판결 완충`,
+        title: t('pc.discovery.feedback.perk.penalty.observationTitle'),
+        summary: t('pc.discovery.feedback.perk.penalty.summary', { evidence: evidenceName }),
         evidenceId: pp.evidenceId,
       })
       state.enqueueFeedback({
         kind: 'perk_choice',
-        eyebrow: '판결 완충',
+        eyebrow: t('pc.discovery.feedback.perk.penalty.eyebrow'),
         title: evidenceName,
-        body: '증거 제시가 충분히 먹히지 않았습니다. 완충 스킬로 한 번 수습할 수 있습니다.',
+        body: t('pc.discovery.feedback.perk.penalty.body'),
         tone: 'gold',
         actions: [
           {
-            label: '제시를 철회한다',
+            label: t('pc.discovery.feedback.perk.penalty.action.withdraw'),
             tone: 'gray',
             onSelect: () => {
               const s = useGameStore.getState()
               s.consumePerkUse('penaltyBufferUsesRemaining')
               s.addDialogue({
                 speaker: 'judge',
-                text: `${evidenceName} 제시는 취소합니다. 다시 구성해서 제시하세요.`,
+                text: t('pc.discovery.feedback.perk.penalty.dialogue.withdraw', { evidence: evidenceName }),
                 relatedDisputes: evidence?.proves ?? [],
                 turn: s.turnCount,
               })
@@ -1060,7 +1087,7 @@ export default function DiscoveryFeedbackWatcher() {
             },
           },
           {
-            label: '관점을 바꿔 제시한다',
+            label: t('pc.discovery.feedback.perk.penalty.action.reframe'),
             tone: 'gold',
             onSelect: () => {
               const s = useGameStore.getState()
@@ -1068,7 +1095,7 @@ export default function DiscoveryFeedbackWatcher() {
               s.changeEmotion(pp.target, -4)
               s.addDialogue({
                 speaker: 'system',
-                text: `${evidenceName}의 제시 관점을 조정해 패널티를 줄였습니다.`,
+                text: t('pc.discovery.feedback.perk.penalty.dialogue.reframe', { evidence: evidenceName }),
                 relatedDisputes: evidence?.proves ?? [],
                 turn: s.turnCount,
               })
@@ -1089,20 +1116,20 @@ export default function DiscoveryFeedbackWatcher() {
         turnCount: state.turnCount,
         category: 'event',
         iconId: 'i-search',
-        title: '같은 쟁점을 너무 오래 밀었다. 질문 각도를 초기화할 수 있다.',
+        title: t('pc.discovery.feedback.perk.fatigue.observationTitle'),
         summary: `${partyName} · ${disputeName}`,
         party: pp.party,
         disputeId: pp.disputeId,
       })
       state.enqueueFeedback({
         kind: 'perk_choice',
-        eyebrow: '집요함 추가',
+        eyebrow: t('pc.discovery.feedback.perk.fatigue.eyebrow'),
         title: `${partyName} · ${disputeName}`,
-        body: '같은 쟁점을 너무 오래 밀었습니다. 스킬을 써서 질문 각도를 초기화할 수 있습니다.',
+        body: t('pc.discovery.feedback.perk.fatigue.body'),
         tone: 'blue',
         actions: [
           {
-            label: '지금은 넘긴다',
+            label: t('pc.discovery.feedback.action.skip'),
             tone: 'gray',
             onSelect: () => {
               useGameStore.getState().setPendingPerkChoice(null)
@@ -1110,7 +1137,7 @@ export default function DiscoveryFeedbackWatcher() {
             },
           },
           {
-            label: '질문 각도 초기화',
+            label: t('pc.discovery.feedback.perk.fatigue.action.resetAngle'),
             tone: 'blue',
             onSelect: () => {
               const s = useGameStore.getState()
@@ -1118,7 +1145,7 @@ export default function DiscoveryFeedbackWatcher() {
               resetFatigueForDossier(pp.party, pp.disputeId)
               s.addDialogue({
                 speaker: 'system',
-                text: `${disputeName} 쟁점의 질문 피로도를 초기화했습니다. 다른 각도로 다시 밀 수 있습니다.`,
+                text: t('pc.discovery.feedback.perk.fatigue.dialogue.reset', { dispute: disputeName }),
                 relatedDisputes: [pp.disputeId],
                 turn: s.turnCount,
               })
@@ -1129,7 +1156,7 @@ export default function DiscoveryFeedbackWatcher() {
         ],
       })
     }
-  }, [pendingPerkChoice])
+  }, [pendingPerkChoice, t])
 
   // 증인 심문
   useEffect(() => {
@@ -1148,17 +1175,19 @@ export default function DiscoveryFeedbackWatcher() {
       category: 'event',
       iconId: 'i-witness',
       title: pc.isResummon
-        ? `${pc.witnessName}에게 이어 물을 지점이 열렸다.`
-        : `${pc.witnessName}${pp이가(pc.witnessName)} 증언대에 섰다.`,
-      summary: pc.isResummon ? '증인 재심문' : '증인 심문',
+        ? t('pc.discovery.feedback.witness.observation.resummon', { witness: pc.witnessName })
+        : tp('pc.discovery.feedback.witness.observation.first', { witness: pc.witnessName }),
+      summary: pc.isResummon
+        ? t('pc.discovery.feedback.witness.summary.resummon')
+        : t('pc.discovery.feedback.witness.summary.first'),
     })
     state.enqueueFeedback({
       kind: 'witness_choice',
-      eyebrow: '증인 심문',
+      eyebrow: t('pc.discovery.feedback.witness.eyebrow'),
       title: pc.witnessName,
       body: pc.isResummon
-        ? '앞선 답변을 바탕으로 더 좁혀 물어볼 질문을 선택하세요.'
-        : '먼저 표면 정황을 확인할 질문을 선택하세요. 답변이 이어질수록 질문이 구체화됩니다.',
+        ? t('pc.discovery.feedback.witness.body.resummon')
+        : t('pc.discovery.feedback.witness.body.first'),
       tone: 'green',
       actionsLayout: 'vertical',
       actions: pc.slots.map((slot) => ({
@@ -1170,7 +1199,7 @@ export default function DiscoveryFeedbackWatcher() {
         },
       })),
     })
-  }, [pendingWitnessChoice])
+  }, [pendingWitnessChoice, t, tp])
 
   return null
 }
