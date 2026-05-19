@@ -26,6 +26,7 @@ const BRAND_REPLACEMENTS = {
   en: [
     ["Solomon's Dilemma: The Weight of Truth", 'Verdict Zero: Trial of Truth'],
     ["Solomon's Dilemma", 'Verdict Zero'],
+    ['Solomon Courtroom', 'Verdict Zero Courtroom'],
     ['Solomon Court', 'Verdict Zero Courtroom'],
     ['The Weight of Truth', 'Trial of Truth'],
   ],

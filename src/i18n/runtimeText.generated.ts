@@ -3754,7 +3754,7 @@ export const GENERATED_RUNTIME_TEXT: Record<string, GeneratedRuntimeText> = {
     "zh-CN": "所罗门",
   },
   "솔로몬 법정": {
-    en: "Verdict Zero Courtroomroom",
+    en: "Verdict Zero Courtroom",
     ja: "真実の法廷",
     "zh-CN": "所罗门法庭",
   },
