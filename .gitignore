@@ -59,5 +59,6 @@ server/node_modules/
 
 # Detector ad-hoc outputs (verify-report.json is committed as baseline)
 /docs/localization/non-dialogue-extract/truth-leak-report.json
+/docs/localization/non-dialogue-extract/cutscene-monologue-report.json
 
 .vercel
