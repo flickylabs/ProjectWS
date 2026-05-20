@@ -19,6 +19,8 @@ import type { DisputeVisibilityEntry, EmotionalSlipEvent } from '../types/discov
 import { v4Effects } from '../engine/presentationEngine'
 import { getSafeEmergenceDescription, getSafeEmergenceTitle } from '../data/safeEmergenceCopy'
 import type { UnsafeAny } from '../types/lint'
+import { triggerCutscene } from '../components/discovery/CutsceneOverlay'
+import { shouldTriggerCutscene } from '../engine/cutsceneTriggerEngine'
 
 
 function hasEvidenceStage(state: UnsafeAny, evidenceId: string): boolean {
@@ -122,6 +124,18 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
     )
     if (slip) {
       state.setPendingSlip({ ...slip, turn: turnCount })
+
+      // truth_reveal_slip — 격앙 상태에서 진실 일부 누설 컷씬
+      const slipDispute = caseData.disputes.find((d) => d.id === slip.sourceDisputeId)
+      const slipCutscene = shouldTriggerCutscene('truth_reveal_slip', turnCount, {
+        caseId: caseData.caseId,
+        disputeId: slip.sourceDisputeId,
+        disputeName: slipDispute?.name,
+        partyId: party,
+        partyName: party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name,
+        phase: state.currentPhase,
+      })
+      if (slipCutscene) triggerCutscene(slipCutscene)
     }
   }
 

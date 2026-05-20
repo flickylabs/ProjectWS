@@ -30,6 +30,8 @@ import {
   getScriptedJudgeContradiction,
 } from '../engine/scriptedTextLoader'
 import { runDiscoveryChecks, updateCascadeTargets as _updateCascadeTargets } from './useDiscoveryIntegration'
+import { triggerCutscene } from '../components/discovery/CutsceneOverlay'
+import { shouldTriggerCutscene } from '../engine/cutsceneTriggerEngine'
 import {
   clearNextConfidential,
   clearNextEvasionReading,
@@ -2973,6 +2975,11 @@ function showEvasionReadingResult(party: PartyId, disputeId: string) {
 /** lie state 전이 이전 상태를 추적하기 위한 스냅샷 */
 const _lieStateBeforeTransition: Record<string, string> = {}
 
+// confirmWitnessTruthProbe → forceSetLieState(...,'S5') → notifyLieTransition 흐름에서
+// S5 처리(아래 newState==='S5' 블록)가 truth_reveal_trust를 중복 발동하지 않도록
+// 같은 dispatch 안에서 set 후 consume한다. 단일 동기 흐름이라 race condition 없음.
+let _suppressTrustCutsceneFor: { party: PartyId; disputeId: string } | null = null
+
 /** 전이 시도 전에 호출하여 이전 상태 저장 */
 export function snapshotLieState(party: PartyId, disputeId: string) {
   const state = useGameStore.getState()
@@ -3115,6 +3122,26 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
           behaviorHint: '핵심 사실을 더 이상 부인하지 않는다.',
           source: 'fallback',
         })
+      }
+
+      // truth_reveal_trust — 자연 S5 도달 시 발동. 증인 경로(confirmWitnessTruthProbe)에서
+      // 진입한 transition은 그쪽에서 이미 truth_reveal_witness를 발동했으므로 skip.
+      const suppressedByWitness =
+        _suppressTrustCutsceneFor?.party === party && _suppressTrustCutsceneFor?.disputeId === disputeId
+      _suppressTrustCutsceneFor = null
+      if (!suppressedByWitness) {
+        const trustCutscene = shouldTriggerCutscene('truth_reveal_trust', state.turnCount, {
+          caseId: state.caseData?.caseId,
+          disputeId,
+          disputeName: dispute?.name,
+          partyId: party,
+          partyName: name,
+          lieStateBefore: prevState,
+          lieStateAfter: 'S5',
+          route: 'trust',
+          phase: state.currentPhase,
+        })
+        if (trustCutscene) triggerCutscene(trustCutscene)
       }
     }
 
@@ -3885,10 +3912,26 @@ function confirmWitnessTruthProbe(
   }
 
   if (gate.canBreakthrough) {
+    // truth_reveal_witness — forceSetLieState 전에 발동. notifyLieTransition이
+    // S5 처리 블록으로 흘러들어가도 _suppressTrustCutsceneFor 플래그로 trust 중복 방지.
+    _suppressTrustCutsceneFor = { party: target, disputeId }
+    const witnessRoute = gate.route === 'blocked' ? undefined : gate.route
+    const witnessCutscene = shouldTriggerCutscene('truth_reveal_witness', state.turnCount, {
+      caseId: caseData.caseId,
+      disputeId,
+      disputeName,
+      partyId: target,
+      partyName: targetName,
+      route: witnessRoute,
+      witnessName,
+      phase: state.currentPhase,
+    })
+    if (witnessCutscene) triggerCutscene(witnessCutscene)
+
     snapshotLieState(target, disputeId)
     state.forceSetLieState(target, disputeId, 'S5', {
       allowS5: true,
-      breakthroughRoute: gate.route === 'blocked' ? undefined : gate.route,
+      breakthroughRoute: witnessRoute,
     })
     notifyLieTransition(target, disputeId)
     state.addJudgeObservation({
