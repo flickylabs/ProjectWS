@@ -40,8 +40,8 @@
       "dailyRoutine": "공장에서 주문을 처리하고 저녁엔 어머니 집에 들러 자신이 돌봤다는 생활을 유지해왔다.",
       "sensitivePoints": [
         "장남 정체성",
-        "공장 위기와 3억원 지원 이력",
-        "출생 비밀"
+        "공장 위기 당시 도움의 출처",
+        "장남 정체성에 관한 민감한 사정"
       ],
       "verbalTells": [
         {
@@ -76,14 +76,14 @@
       "archetype": "affect_flattening",
       "speechStyle": "감정을 최대한 억누르며 사실만 짧게 말한다. 담담해 보이지만 그 담담함이 오히려 의심을 산다. 진짜 감정은 마지막까지 드러내지 않으려 한다.",
       "pride": 5,
-      "fear": "형이 출생 비밀을 알게 되는 것 — 그것이 두렵다.",
+      "fear": "형이 오래된 가족 기록의 의미를 감당하지 못하는 것 — 그것이 두렵다.",
       "riskAppetite": 3,
       "digitalHabit": "minimal",
       "dailyRoutine": "가게를 운영하며 틈틈이 어머니에게 송금하고, 형 몰래 정기 지원금과 병원비를 대 왔다.",
       "sensitivePoints": [
         "유서 조작 사실",
         "오래된 비밀 지원",
-        "형의 출생 비밀"
+        "형에게 말하지 못한 가족 기록"
       ],
       "verbalTells": [
         {
@@ -125,7 +125,7 @@
       {
         "id": "ledger-2",
         "category": "silenced",
-        "description": "윤정후가 오래 어머니 통장으로 보낸 정기 지원금과, 윤태성의 공장 위기 때 어머니 통장을 거쳐 전달된 3억원의 존재를 윤태성은 전혀 모른다.",
+        "description": "윤태성이 어머니에게서 도움을 받아 왔다고 기억하지만, 실제 출처와 전달 순서는 아직 확인되지 않았다.",
         "isReal": true,
         "whoRemembersAccurately": "b",
         "whoDistorts": "none",
@@ -137,7 +137,7 @@
       {
         "id": "ledger-3",
         "category": "silenced",
-        "description": "윤태성의 출생 비밀 — 아버지의 친자가 아니라는 사실을 B만 알고 있다.",
+        "description": "어머니가 남긴 오래된 가족 기록을 윤정후만 알고 있다.",
         "isReal": true,
         "whoRemembersAccurately": "b",
         "whoDistorts": "none",

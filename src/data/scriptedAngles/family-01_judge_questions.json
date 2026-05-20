@@ -4974,7 +4974,7 @@
       "variants": [
         {
           "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v1",
-          "text": "윤정후 씨, 형에게 보내진 정기 지원금 가운데 본인이 직접 송금에 관여한 회차를 시간순으로 말씀해 주십시오.",
+          "text": "윤정후 씨, 형에게 이어진 지원금 흐름 가운데 본인이 알고 있는 부분을 시간순으로 말씀해 주십시오.",
           "behaviorHint": "사실 추궁. 송금 회차의 출처와 경로를 윤정후 본인 행동 단위로 답하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -5022,7 +5022,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v5",
-          "text": "윤정후 씨, 송금 빈도의 의미에 대한 진술은 미뤄 두고, 본인이 직접 송금한 사실 자체부터 답해 주십시오.",
+          "text": "윤정후 씨, 송금 빈도의 의미는 미뤄 두고, 확인 가능한 흐름부터 답해 주십시오.",
           "behaviorHint": "사실 추궁. 송금 회차의 출처와 경로를 윤정후 본인 행동 단위로 답하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -5654,7 +5654,7 @@
       "variants": [
         {
           "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v1",
-          "text": "윤정후 씨, 본인 돈을 어머니 이름으로 보이게 한 구조를 한 번에 다 설명할 필요는 없습니다. 다만 그 통로를 처음 쓰게 된 자리를 말씀해 주십시오.",
+          "text": "윤정후 씨, 어머니 명의로 보인 흐름을 한 번에 다 설명할 필요는 없습니다. 다만 그 통로를 처음 쓰게 된 자리를 말씀해 주십시오.",
           "behaviorHint": "공감 접근. 통로 설계의 무게를 인정하되, 본인이 한 일과 어머니의 인지를 분리하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -5790,7 +5790,7 @@
       "variants": [
         {
           "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v1",
-          "text": "윤정후 씨, 형의 공장 자금 위기 시기에 큰돈이 흘러간 경로 가운데 본인이 관여한 부분을 시간순으로 말씀해 주십시오.",
+          "text": "윤정후 씨, 형의 공장 자금 위기 시기에 큰돈이 흘러간 경로 가운데 본인이 알고 있는 부분을 시간순으로 말씀해 주십시오.",
           "behaviorHint": "사실 추궁. 위기 시기 자금 처리에서 윤정후가 직접 처리한 부분을 시간순으로 답하게 한다. S5 전 대납 직접 확정 표현은 피한다.",
           "tags": [
             "channel:judge_question",
