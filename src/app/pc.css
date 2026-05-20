@@ -18143,7 +18143,7 @@ body.pc-mode .pc-court-beat-stage__curtain {
 body.pc-mode .pc-court-beat-stage__spotlight {
   position: absolute;
   left: 50%;
-  top: 48%;
+  top: 50%;  /* rails 50% / card root-flex center와 정렬 일치 (사용자 어긋남 지적 2026-05-21) */
   width: min(780px, 62vw);
   height: min(340px, 42vh);
   transform: translate(-50%, -50%);
@@ -18206,7 +18206,8 @@ body.pc-mode .pc-event-feedback-card.is-focus-takeover.is-cutscene {
   width: min(760px, calc(100vw - 72px)) !important;
   min-width: min(560px, calc(100vw - 72px)) !important;
   max-width: min(760px, calc(100vw - 72px)) !important;
-  padding: 28px 38px 30px !important;
+  /* top/bottom 동일 30px — 카드 시각 중심을 정확한 중앙으로 (사용자 어긋남 지적 2026-05-21) */
+  padding: 30px 38px !important;
   border: 1px solid rgba(var(--court-beat-accent), 0.3) !important;
   border-radius: 14px !important;
   background:
@@ -18403,7 +18404,7 @@ body.pc-mode .pc-event-feedback-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: 14px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #0c0c14;
@@ -18519,6 +18520,13 @@ body.pc-mode .pc-event-feedback__body {
 }
 body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__body {
   font-size: 14.5px;
+}
+/* title 바로 다음 body는 위쪽에 얇은 구분선 — 두 영역 시각 분리 (사용자 요청 2026-05-21).
+   body가 없는 짧은 alert에는 적용 X (자동). */
+body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__title + .pc-event-feedback__body {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+  margin-top: 4px;
 }
 
 body.pc-mode .pc-event-feedback__tag {
