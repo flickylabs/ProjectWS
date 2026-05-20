@@ -50,9 +50,13 @@ export default function TruthRevealCutscene({ event, onDismiss }: Props) {
   // ── Portrait URLs (양쪽 캐릭터 + 증인 — 카메라 시스템에서 둘 다 그림) ──
   const portraitADefensive = getPcPortraitUrl(caseId, 'a', 'defensive', null)
   const portraitBDefensive = getPcPortraitUrl(caseId, 'b', 'defensive', null)
+  // slip은 3단계 표정 전환 — angry(화) → shaken(당황) → resigned(체념). 다른 variant는 단일 표정.
+  const portraitAngry = variant === 'slip' ? getPcPortraitUrl(caseId, party, 'angry', null) : null
+  const portraitShaken = variant === 'slip' ? getPcPortraitUrl(caseId, party, 'shaken', null) : null
+  const portraitResigned = variant === 'slip' ? getPcPortraitUrl(caseId, party, 'resigned', null) : null
   const portraitTarget = (() => {
     if (variant === 'trust') return getPcPortraitUrl(caseId, party, 'defensive', 'S5')
-    if (variant === 'slip') return getPcPortraitUrl(caseId, party, 'shaken', null)
+    if (variant === 'slip') return getPcPortraitUrl(caseId, party, 'shaken', null)  // fallback (3단계 stack에서 stage별 활성)
     return getPcPortraitUrl(caseId, party, 'resigned', null) // witness final
   })()
   const witnessPortrait = getWitnessPortraitUrl(caseId, event.data?.witnessId)
@@ -261,6 +265,10 @@ export default function TruthRevealCutscene({ event, onDismiss }: Props) {
             focused={party === 'a'}
             portraitDefensive={portraitADefensive}
             portraitTarget={party === 'a' ? portraitTarget : null}
+            portraitAngry={party === 'a' ? portraitAngry : null}
+            portraitShaken={party === 'a' ? portraitShaken : null}
+            portraitResigned={party === 'a' ? portraitResigned : null}
+            slipStage={slipStage}
             variant={variant}
             exprTarget={exprTarget}
             oscIndex={oscIndex}
@@ -274,6 +282,10 @@ export default function TruthRevealCutscene({ event, onDismiss }: Props) {
             focused={party === 'b'}
             portraitDefensive={portraitBDefensive}
             portraitTarget={party === 'b' ? portraitTarget : null}
+            portraitAngry={party === 'b' ? portraitAngry : null}
+            portraitShaken={party === 'b' ? portraitShaken : null}
+            portraitResigned={party === 'b' ? portraitResigned : null}
+            slipStage={slipStage}
             variant={variant}
             exprTarget={exprTarget}
             oscIndex={oscIndex}
@@ -435,27 +447,54 @@ interface CharSlotProps {
   focused: boolean
   portraitDefensive: string | null
   portraitTarget: string | null
+  portraitAngry?: string | null
+  portraitShaken?: string | null
+  portraitResigned?: string | null
+  slipStage?: 'idle' | 'explosive' | 'dismay' | 'confession'
   variant: Variant
   exprTarget: boolean
   oscIndex: number
   focusReady: boolean
 }
 
-function CharSlot({ side, focused, portraitDefensive, portraitTarget, variant, exprTarget, oscIndex, focusReady }: CharSlotProps) {
+function CharSlot({
+  side, focused, portraitDefensive, portraitTarget,
+  portraitAngry, portraitShaken, portraitResigned, slipStage,
+  variant, exprTarget, oscIndex, focusReady,
+}: CharSlotProps) {
   if (!portraitDefensive) return null
   const stackClass = focused
     ? (focusReady ? 'is-focus' : 'is-defocus')
     : 'is-peer'
-  const defensiveActive = focused
-    ? (variant === 'witness' ? oscIndex === 0 : !exprTarget)
-    : true  // peer always defensive
-  const targetActive = focused && portraitTarget && (variant === 'witness' ? oscIndex === 1 : exprTarget)
+  // slip 3단계: angry(explosive) → shaken(dismay) → resigned(confession)
+  // 각 stage 진입 시 해당 portrait 활성. 다른 variant는 기존 동작 (defensive ↔ target 토글)
+  const isSlip = variant === 'slip' && focused
+  const slipAngryActive = isSlip && slipStage === 'explosive'
+  const slipShakenActive = isSlip && slipStage === 'dismay'
+  const slipResignedActive = isSlip && (slipStage === 'confession' || slipStage === 'idle' && false)
+  // defensive: slip stage 진입 전(idle) + 다른 variant의 base
+  const defensiveActive = isSlip
+    ? slipStage === 'idle'
+    : focused
+      ? (variant === 'witness' ? oscIndex === 0 : !exprTarget)
+      : true  // peer always defensive
+  // target: trust/witness 단일 표정 (slip은 위 3 stack 사용)
+  const targetActive = !isSlip && focused && portraitTarget && (variant === 'witness' ? oscIndex === 1 : exprTarget)
   return (
     <div className={`tr-char-slot tr-char-slot-${side} ${focused ? 'is-focused' : 'is-peer-side'}`}>
       <div className={`tr-portrait-stack ${stackClass}`}>
         <img src={portraitDefensive} alt="" className={defensiveActive ? 'active' : ''} />
-        {focused && portraitTarget && (
+        {!isSlip && focused && portraitTarget && (
           <img src={portraitTarget} alt="" className={targetActive ? 'active' : ''} />
+        )}
+        {isSlip && portraitAngry && (
+          <img src={portraitAngry} alt="" className={slipAngryActive ? 'active' : ''} />
+        )}
+        {isSlip && portraitShaken && (
+          <img src={portraitShaken} alt="" className={slipShakenActive ? 'active' : ''} />
+        )}
+        {isSlip && portraitResigned && (
+          <img src={portraitResigned} alt="" className={slipResignedActive ? 'active' : ''} />
         )}
       </div>
     </div>
