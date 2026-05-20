@@ -18451,12 +18451,22 @@ body.pc-mode .pc-event-feedback-card.is-alert.is-cutscene .pc-event-feedback__qu
   margin: 0 auto !important;
 }
 
-/* Modal: 자백 유도하기 스타일 */
+/* Modal: 자백 유도하기 스타일.
+   2026-05-21 통일: text-align center로 통일 (eyebrow/subtitle/title/body 중앙).
+   구조 콘텐츠(blocks/claims/lines/quote/contrast)는 각자 text-align: left 유지. */
 body.pc-mode .pc-event-feedback-card.is-modal {
   padding: 24px 28px 22px;
   min-width: 480px;
   max-width: min(640px, calc(100vw - 64px));
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+body.pc-mode .pc-event-feedback-card.is-modal .pc-event-feedback__eyebrow,
+body.pc-mode .pc-event-feedback-card.is-modal .pc-event-feedback__subtitle,
+body.pc-mode .pc-event-feedback-card.is-modal .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.is-modal .pc-event-feedback__body {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Modal tone 변형 — 테두리만 은은한 색조 */
@@ -18516,19 +18526,17 @@ body.pc-mode .pc-event-feedback__title {
   line-height: 1.4;
   letter-spacing: -0.005em;
 }
-body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__title { font-size: 18px; }
+/* 2026-05-21 통일: is-alert title도 22px (이전 18px 축소 제거) — 모든 popup title 동일 위계. */
 
 body.pc-mode .pc-event-feedback__body {
-  font-size: 14px;
+  font-size: 14.5px;
   color: #9ea1a8;
   line-height: 1.6;
   font-weight: 400;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
-body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__body {
-  font-size: 14.5px;
-}
+/* 2026-05-21 통일: base body 14px → 14.5px (이전 is-alert만 14.5px → 전체로 확장). */
 /* title 바로 다음 body는 위쪽에 얇은 구분선 — 두 영역 시각 분리 (사용자 요청 2026-05-21).
    body가 없는 짧은 alert에는 적용 X (자동).
    3rd pass — 18+8 → 22+12 (총 ~34px). 사용자가 여전히 좁다고 지적. */
@@ -18880,16 +18888,6 @@ body.pc-mode .pc-event-feedback-card.kind-emergence {
     0 0 0 1px rgba(232, 193, 114, 0.12),
     0 30px 90px rgba(0, 0, 0, 0.72),
     0 0 46px rgba(232, 193, 114, 0.16);
-  /* 사용자 요청 2026-05-21: emergence modal 좌측 정렬 → 중앙 통일.
-     is-modal 모드(actions 보유)는 base의 text-align: left 적용받음 — 직접 override. */
-  text-align: center;
-}
-body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__eyebrow,
-body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__title,
-body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__body,
-body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__lines {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 body.pc-mode .pc-event-feedback-card.kind-emergence::before {
@@ -18904,7 +18902,7 @@ body.pc-mode .pc-event-feedback-card.kind-emergence::before {
 }
 
 body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__title {
-  font-size: 24px;
+  /* 2026-05-21 통일: 24px → 22px (base와 동일) — title 위계 평준화. */
   line-height: 1.28;
   color: #fff4dc;
 }
@@ -19852,7 +19850,8 @@ body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-evidenc
 }
 
 body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-evidence-unlock .pc-event-feedback__title {
-  font-size: 21px !important;
+  /* 2026-05-21 통일: 21px → 22px (base title 통일). */
+  font-size: 22px !important;
   line-height: 1.25 !important;
   text-align: center !important;
   color: #f2f8e8 !important;
@@ -19863,7 +19862,8 @@ body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-evidenc
   overflow: visible !important;
   text-overflow: clip !important;
   padding: 0 8% !important;
-  font-size: 14px !important;
+  /* 2026-05-21 통일: 14px → 14.5px (base body 통일). */
+  font-size: 14.5px !important;
   color: rgba(244, 236, 216, 0.92) !important;
 }
 
