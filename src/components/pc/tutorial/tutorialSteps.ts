@@ -153,19 +153,20 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
-    // PC QA round 2 A-3: spotlight the evidence detail panel once it's opened.
-    id: 'evidence-detail-open',
-    targetSelector: '[data-tutorial-target="evidence-e2-detail"]',
-    fingerPlacement: 'left',
-    messageKey: 'pc.tutorial.spouse01.evidence-detail-open',
+    // 2026-05-20 후속2 사용자 요청: 흐름 재구성 — evidence-detail-open(auto info) 제거,
+    // investigate를 먼저 수행해서 stage 1 해금 → 그 다음 view에서 실제 내용 보여줌.
+    id: 'evidence-investigate-e2',
+    targetSelector: '[data-tutorial-target="evidence-e2-investigate-action"], [data-tutorial-target="evidence-e2-detail"], [data-tutorial-target="evidence-e2-card"]',
+    cardAnchorSelector: '[data-tutorial-target="evidence-e2-detail"], [data-tutorial-target="evidence-e2-card"]',
+    fingerPlacement: 'top',
+    messageKey: 'pc.tutorial.spouse01.evidence-investigate-e2',
     completionCondition: {
       type: 'state-mutation',
-      actionType: 'auto',
+      actionType: 'evidence_investigate:e-2',
     },
   },
   {
-    // 2026-05-20: SVG viewer를 직접 열어보게 한다. 버튼 클릭 → pendingEvidenceView가 e-2로 세팅되면 완료.
-    // 2026-05-20 후속 사용자 요청: 카드가 [증거 열람] 버튼을 가리지 않도록 fingerPlacement 'right'.
+    // 2026-05-20: investigate 후 SVG viewer를 직접 열어보게 한다 (stage 1 해금된 실제 내용 표시).
     id: 'evidence-view-open',
     targetSelector: '[data-tutorial-target="evidence-e2-view-btn"], [data-tutorial-target="evidence-e2-detail"]',
     cardAnchorSelector: '[data-tutorial-target="evidence-e2-detail"]',
@@ -177,9 +178,7 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
-    // 2026-05-20 후속: SVG viewer 닫고 investigate 흐름으로 진입.
-    // 2026-05-20 후속2 사용자 요청: viewer 내용(GPS 기록 등)이 spotlight 밖이라 dimmed로
-    // 보임 → spotlightSelector로 viewer 패널 전체를 비추고 hand만 × 버튼 가리킴.
+    // viewer 내용은 spotlight 안에 — hand는 × 버튼만 가리킴.
     id: 'evidence-view-close',
     targetSelector: '[data-tutorial-target="evidence-viewer-close"]',
     spotlightSelector: '.pc-ev-panel--viewer',
@@ -188,22 +187,6 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     completionCondition: {
       type: 'click-with-state-check',
       storeSelector: (state) => state.pendingEvidenceView === null,
-    },
-  },
-  {
-    id: 'evidence-investigate-e2',
-    // Prefer the actual investigate action button (inside the evidence detail panel)
-    // so the hand points at the clickable slot, not the panel wrapper or the
-    // upstream evidence card. Falls back to the detail panel / list card.
-    targetSelector: '[data-tutorial-target="evidence-e2-investigate-action"], [data-tutorial-target="evidence-e2-detail"], [data-tutorial-target="evidence-e2-card"]',
-    // Card anchors on the detail panel (or list card) so it stays in a stable
-    // position above the panel while the hand sits on the investigate button.
-    cardAnchorSelector: '[data-tutorial-target="evidence-e2-detail"], [data-tutorial-target="evidence-e2-card"]',
-    fingerPlacement: 'top',
-    messageKey: 'pc.tutorial.spouse01.evidence-investigate-e2',
-    completionCondition: {
-      type: 'state-mutation',
-      actionType: 'evidence_investigate:e-2',
     },
   },
   {
@@ -265,24 +248,25 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
-    // 2026-05-20 사용자 요청: auto → 직접 클릭 (한번씩 눌러보게).
+    // 2026-05-20 후속2 사용자 요청: 짧은 auto(3s) — 다만 클릭 시 활성화된 drawer 닫기까지 기다림.
+    // 둘 다 PCTutorialOverlay에서 처리.
     id: 'judge-observation-intro',
     targetSelector: '[data-tutorial-target="judge-observation-section"]',
     fingerPlacement: 'right',
     messageKey: 'pc.tutorial.spouse01.judge-observation-intro',
     completionCondition: {
-      type: 'click-with-state-check',
-      // 완료 시점은 PCTutorialOverlay의 acknowledge-click 처리.
+      type: 'state-mutation',
+      actionType: 'auto',
     },
   },
   {
-    // 2026-05-20 사용자 요청: auto → 직접 클릭.
     id: 'observation-hint',
     targetSelector: '[data-tutorial-target="judge-notebook-section"]',
     fingerPlacement: 'right',
     messageKey: 'pc.tutorial.spouse01.observation-hint',
     completionCondition: {
-      type: 'click-with-state-check',
+      type: 'state-mutation',
+      actionType: 'auto',
     },
   },
   {

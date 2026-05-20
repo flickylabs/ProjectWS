@@ -81,7 +81,15 @@ function getTruthFactForDispute(caseData: CaseData, disputeId: string): string |
   return caseData.truthTable[index]?.fact ?? null
 }
 
-export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
+export default function PCRecordSummary({ onClose: onCloseProp }: { onClose: () => void }) {
+  // 2026-05-20 사용자 요청: 튜토리얼 record-summary-intro step이 modal close를 기다리도록
+  // pc:close-record-summary 이벤트 dispatch.
+  const onClose = () => {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('pc:close-record-summary'))
+    }
+    onCloseProp()
+  }
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)

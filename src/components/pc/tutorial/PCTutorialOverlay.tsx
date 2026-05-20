@@ -364,12 +364,21 @@ export default function PCTutorialOverlay() {
   // 2026-05-20 사용자 요청 변경: observation-hint / tutorial-complete의 auto timer 제거 →
   // 클릭 완료로 전환. judge-observation-intro / record-summary-intro도 click 완료.
 
-  // record-summary-intro: floating toggle 버튼 클릭 → pc:open-record-summary 이벤트 발생 시 완료.
+  // record-summary-intro: open 후 close까지 기다린 다음 완료 (modal 안 내용 확인 후 진행).
+  // 2026-05-20 후속2 사용자 요청: 그냥 넘어가는 게 아니라 close까지 wait.
   useEffect(() => {
     if (!enabled || currentStepId !== 'record-summary-intro') return
-    const handler = () => markStepComplete('record-summary-intro')
-    window.addEventListener('pc:open-record-summary', handler)
-    return () => window.removeEventListener('pc:open-record-summary', handler)
+    let opened = false
+    const onOpen = () => { opened = true }
+    const onClose = () => {
+      if (opened) markStepComplete('record-summary-intro')
+    }
+    window.addEventListener('pc:open-record-summary', onOpen)
+    window.addEventListener('pc:close-record-summary', onClose)
+    return () => {
+      window.removeEventListener('pc:open-record-summary', onOpen)
+      window.removeEventListener('pc:close-record-summary', onClose)
+    }
   }, [currentStepId, enabled, markStepComplete])
 
   // 2026-05-20 사용자 보고 fix: evidence-view-open step 활성 시 [증거 열람] 버튼이 없으면
@@ -386,7 +395,24 @@ export default function PCTutorialOverlay() {
     return () => window.clearTimeout(timer)
   }, [currentStepId, enabled, targetMissing])
 
-  // judge-observation-intro / observation-hint: 해당 섹션 안에 클릭 발생 시 완료.
+  // 2026-05-20 사용자 요청: tutorial-complete step에서 Space 키로 dismiss.
+  useEffect(() => {
+    if (!enabled || currentStepId !== 'tutorial-complete') return
+    const handler = (event: KeyboardEvent) => {
+      if (event.code !== 'Space') return
+      const target = event.target as HTMLElement | null
+      const tag = target?.tagName?.toLowerCase()
+      if (tag === 'input' || tag === 'textarea' || target?.isContentEditable) return
+      event.preventDefault()
+      markStepComplete('tutorial-complete')
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [currentStepId, enabled, markStepComplete])
+
+  // judge-observation-intro / observation-hint: 짧은 auto(3.5s)는 generic 핸들러가 처리.
+  // 다만 사용자가 섹션을 클릭하여 drawer를 열면 auto를 취소하고 7s 추가 대기 — drawer
+  // 닫기까지 시간 확보. (정확한 drawer-close 감지 대신 시간 버퍼로 단순화.)
   useEffect(() => {
     if (!enabled) return
     if (currentStepId !== 'judge-observation-intro' && currentStepId !== 'observation-hint') return
@@ -394,14 +420,19 @@ export default function PCTutorialOverlay() {
       ? '[data-tutorial-target="judge-observation-section"]'
       : '[data-tutorial-target="judge-notebook-section"]'
     const stepIdToComplete = currentStepId
+    let extendedTimer: number | null = null
     const handler = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null
-      if (target?.closest(targetSelector)) {
-        markStepComplete(stepIdToComplete)
-      }
+      if (!target?.closest(targetSelector)) return
+      // 클릭 감지 — drawer가 열렸을 가능성. 7s 후 자동 완료(닫기 시간 확보).
+      if (extendedTimer) window.clearTimeout(extendedTimer)
+      extendedTimer = window.setTimeout(() => markStepComplete(stepIdToComplete), 7000)
     }
     window.addEventListener('click', handler, true)
-    return () => window.removeEventListener('click', handler, true)
+    return () => {
+      window.removeEventListener('click', handler, true)
+      if (extendedTimer) window.clearTimeout(extendedTimer)
+    }
   }, [currentStepId, enabled, markStepComplete])
 
   // PC QA round 2 A-3: generic auto-advance for view-only intro steps (emotion-
@@ -466,18 +497,18 @@ export default function PCTutorialOverlay() {
         <div className="tutorial-blocker tutorial-blocker--full" />
       )}
 
-      <div className={`tutorial-hand-pointer is-${placement}`} style={handStyle}>
-        <TutorialHandIcon />
-      </div>
+      {currentStepId === 'tutorial-complete' ? null : (
+        <div className={`tutorial-hand-pointer is-${placement}`} style={handStyle}>
+          <TutorialHandIcon />
+        </div>
+      )}
 
       {guideCollapsed ? null : (
         <section
           key={`card-${currentStepId}`}
           className={`tutorial-message-card${collapsing ? ' is-collapsing' : ''}${currentStepId === 'tutorial-complete' ? ' is-final' : ''}`}
-          style={messageStyle}
+          style={currentStepId === 'tutorial-complete' ? undefined : messageStyle}
           data-tutorial-target={currentStepId === 'tutorial-complete' ? 'tutorial-complete' : undefined}
-          onClick={currentStepId === 'tutorial-complete' ? () => markStepComplete('tutorial-complete') : undefined}
-          role={currentStepId === 'tutorial-complete' ? 'button' : undefined}
         >
           <button
             type="button"
@@ -508,6 +539,16 @@ export default function PCTutorialOverlay() {
           </div>
           <h2>{title}</h2>
           <p>{body}</p>
+          {currentStepId === 'tutorial-complete' ? (
+            <button
+              type="button"
+              className="tutorial-message-card__confirm"
+              onClick={() => markStepComplete('tutorial-complete')}
+            >
+              <span>{t('pc.tutorial.spouse01.confirm-button' as MessageKey)}</span>
+              <kbd className="pc-event-feedback__kbd">Space</kbd>
+            </button>
+          ) : null}
         </section>
       )}
 

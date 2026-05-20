@@ -18004,7 +18004,9 @@ body.pc-mode .pc-event-feedback-root {
 body.pc-mode.pc-vfx-popup-active .pc-play-evidence-section,
 body.pc-mode.pc-vfx-popup-active .pc-judge-observation-section,
 body.pc-mode.pc-vfx-popup-active .pc-judge-observation-section--notebook,
-body.pc-mode.pc-vfx-popup-active .pc-right-block--summary {
+body.pc-mode.pc-vfx-popup-active .pc-right-block--summary,
+body.pc-mode.pc-vfx-popup-active .pc-target-block,
+body.pc-mode.pc-vfx-popup-active .pc-target-dispute-card {
   position: relative !important;
   z-index: 10500 !important;
 }
@@ -30596,6 +30598,71 @@ body.pc-mode .tutorial-message-card.is-collapsing {
   animation: tutorialCardCollapse 240ms cubic-bezier(0.5, 0, 0.75, 0) forwards;
 }
 
+/* 2026-05-20 사용자 요청: 준비 완료! 최종 step은 중앙 정렬 + 더 강조된 패널. */
+body.pc-mode .tutorial-message-card.is-final {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(540px, calc(100vw - 60px)) !important;
+  padding: 26px 60px 28px;
+  min-width: 480px;
+  max-width: 560px;
+  border: 1.5px solid rgba(232, 193, 114, 0.65);
+  border-top: 4px solid rgba(245, 207, 122, 0.92);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(40, 30, 18, 0.97), rgba(28, 22, 14, 0.98)),
+    rgba(28, 22, 14, 0.98);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.7),
+    0 0 36px rgba(212, 162, 78, 0.32),
+    inset 0 1px 0 rgba(255, 220, 160, 0.08);
+  text-align: center;
+  cursor: default;
+  transform-origin: 50% 50%;
+  animation: tutorialFinalPopup 380ms cubic-bezier(0.3, 1.4, 0.5, 1) both !important;
+}
+@keyframes tutorialFinalPopup {
+  0%   { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  60%  { transform: translate(-50%, -50%) scale(1.04); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+body.pc-mode .tutorial-message-card.is-final h2 {
+  font-size: 22px;
+  color: #f4d58d;
+  text-shadow: 0 0 12px rgba(212, 162, 78, 0.4);
+}
+body.pc-mode .tutorial-message-card.is-final p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(246, 239, 224, 0.92);
+}
+body.pc-mode .tutorial-message-card__confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 12px 24px;
+  border: 1px solid rgba(232, 193, 114, 0.55);
+  border-radius: 8px;
+  background: rgba(212, 162, 78, 0.18);
+  color: #f4d58d;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+body.pc-mode .tutorial-message-card__confirm:hover {
+  background: rgba(212, 162, 78, 0.28);
+  border-color: rgba(232, 193, 114, 0.85);
+  transform: translateY(-1px);
+}
+body.pc-mode .tutorial-message-card__confirm:active {
+  transform: scale(0.98);
+}
+
 body.pc-mode .tutorial-message-card__close-x {
   position: absolute;
   right: 12px;
@@ -31015,27 +31082,26 @@ body.pc-mode .pc-impact-typography__subtitle.tone-amber-warning {
 
 /* 2026-05-20 사용자 요청: 결정적 단서 chip → 기울어진 스탬프 형태.
    기존 pill-shaped tag → 더블 보더 사각 + -7deg 기울임 + 텍스트 잉크 느낌.
-   2026-05-20 후속 fix: chip을 .pc-court-clash__evidence 안으로 이동(JSX 변경)하여 close X와
-   겹치지 않게 evidence card 우상단에 스탬프 — "증거 위에 스탬프 찍힌" 인상 명확. */
+   2026-05-20 후속2 fix: red 톤 + close X와 분리 위해 안쪽으로 배치 (top:10/right:14). */
 body.pc-mode .pc-court-clash__chip {
   position: absolute;
-  top: -10px;
-  right: -8px;
+  top: 10px;
+  right: 14px;
   z-index: 3;
   padding: 6px 14px 5px;
-  border: 2.5px solid rgba(132, 228, 158, 0.92);
+  border: 2.5px solid rgba(240, 110, 110, 0.92);
   border-radius: 4px;
-  background: rgba(24, 64, 38, 0.18);
-  color: rgba(168, 240, 188, 0.96);
+  background: rgba(80, 22, 22, 0.22);
+  color: rgba(255, 178, 178, 0.96);
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   transform: rotate(-7deg);
   box-shadow:
-    inset 0 0 0 1px rgba(132, 228, 158, 0.38),
-    0 0 18px rgba(92, 201, 122, 0.22);
-  text-shadow: 0 0 6px rgba(92, 201, 122, 0.46);
+    inset 0 0 0 1px rgba(240, 110, 110, 0.38),
+    0 0 18px rgba(220, 80, 80, 0.28);
+  text-shadow: 0 0 6px rgba(220, 80, 80, 0.5);
   pointer-events: none;
   animation: pc-stamp-impact 540ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
   transform-origin: 70% 50%;

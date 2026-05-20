@@ -23,13 +23,12 @@ export const TUTORIAL_STEP_IDS = [
   'question-content-select',
   // PC QA round 2: evidence step split into 2 (select card → investigate)
   'evidence-select',
-  // PC QA round 2 A-3: walk the user through the evidence detail panel.
-  'evidence-detail-open',
-  // 2026-05-20 사용자 요청: SVG viewer를 직접 열어보게 한다 (open_evidence 액션).
-  'evidence-view-open',
-  // 2026-05-20 후속: viewer를 닫게 해서 investigate 흐름으로 자연 진입.
-  'evidence-view-close',
+  // 2026-05-20 후속2 사용자 요청: 흐름 재구성 — 먼저 조사로 stage 1 해금 →
+  // 그 다음 SVG viewer로 실제 내용 열람(잠긴 화면 안 보게). evidence-detail-open
+  // 인포 step은 제거(auto-advance가 무의미했고 panel 닫힘 race 원인).
   'evidence-investigate-e2',
+  'evidence-view-open',
+  'evidence-view-close',
   // PC QA round 2 A-3: introduce the combination lab after first investigation.
   'combination-intro',
   'evidence-present-e2-to-b',

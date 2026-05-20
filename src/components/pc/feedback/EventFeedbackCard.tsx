@@ -143,10 +143,10 @@ function getStateChangeCue(active: EventFeedbackItem): CourtBeatCue {
 }
 
 function getFeedbackAutoDismissMs(active: EventFeedbackItem, meta: KindMeta): number | undefined {
-  // PC QA round 2: respect explicit autoDismissMs on the feedback item only.
-  // KIND_META defaultAutoMs and courtBeat intensity-based defaults removed so all
-  // cards stay until the user clicks (manual close button is rendered when no
-  // actions are present).
+  // 2026-05-20 사용자 요청: actions/onDefer 없는 popup(= 확인 [Space] 노출)은 절대 auto-dismiss X.
+  // VFX가 빠르게 사라져 인지 못하는 문제 해결. 명시적 autoDismissMs 도 무시.
+  const hasActions = Array.isArray(active.actions) && active.actions.length > 0
+  if (!hasActions && !active.onDefer) return undefined
   return active.autoDismissMs ?? meta.defaultAutoMs
 }
 
