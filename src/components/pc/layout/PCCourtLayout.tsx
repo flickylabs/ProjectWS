@@ -520,7 +520,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
             <button
               type="button"
               className="pc-summary-floating-toggle"
-              data-tutorial-target="record-summary-button"
               onClick={() => window.dispatchEvent(new Event('pc:open-record-summary'))}
               title={t('pc.court.recordSummary')}
               aria-label={t('pc.court.recordSummary')}

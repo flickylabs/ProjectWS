@@ -17995,6 +17995,19 @@ body.pc-mode .pc-event-feedback-root {
   pointer-events: none;
 }
 
+/* 2026-05-20 사용자 요청: evidence-unlock popup 활성 시 좌/우 패널의 "연결되는 항목들"이
+   popup root backdrop(z-index 10200)에 가려져 보이지 않는 문제 해결.
+   body class pc-vfx-evidence-unlock-active 동안 좌측 증거 수첩 + 우측 재판관 관찰/수첩 +
+   기록정리 버튼을 popup root 위로 띄워 강조 효과가 실제 항목과 직접 연결되어 보이게 함.
+   popup 자체는 화면 중앙이라 좌/우 패널과 공간 겹침이 없어 사용자 인지 방해 X. */
+body.pc-mode.pc-vfx-evidence-unlock-active .pc-play-evidence-section,
+body.pc-mode.pc-vfx-evidence-unlock-active .pc-judge-observation-section,
+body.pc-mode.pc-vfx-evidence-unlock-active .pc-judge-observation-section--notebook,
+body.pc-mode.pc-vfx-evidence-unlock-active .pc-right-block--summary {
+  position: relative !important;
+  z-index: 10500 !important;
+}
+
 /* Modal 모드 — 뒷배경 진한 blur + 차단 */
 body.pc-mode .pc-event-feedback-root.is-modal {
   pointer-events: auto;

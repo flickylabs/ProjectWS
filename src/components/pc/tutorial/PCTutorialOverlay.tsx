@@ -208,6 +208,9 @@ export default function PCTutorialOverlay() {
   const markStepComplete = useStore((state) => state.markStepComplete)
   const storeSnapshot = useGameStore((state) => state)
   const [rect, setRect] = useState<SpotlightRect | null>(null)
+  // 2026-05-20: spotlightRect 별도 분리 — hand는 좁은 target에, spotlight(mask/blocker/ring)
+  // 은 더 넓은 영역에 (예: viewer 닫기 step에서 hand는 ×, spotlight는 viewer 전체).
+  const [spotlightRect, setSpotlightRect] = useState<SpotlightRect | null>(null)
   const [targetMissing, setTargetMissing] = useState(false)
   const [feedbackSeen, setFeedbackSeen] = useState(false)
   const [guideCollapsed, setGuideCollapsed] = useState(false)
@@ -234,8 +237,10 @@ export default function PCTutorialOverlay() {
   }, [])
 
   const step = useMemo(() => getTutorialStep(currentStepId), [currentStepId])
-  const placement = resolvePlacement(rect, step?.fingerPlacement ?? 'auto')
-  const messageStyle = getMessageStyle(cardRect ?? rect, placement)
+  // spotlightRect가 있으면 mask/blocker/ring/card 배치에 우선 사용. hand만 작은 target rect 따름.
+  const maskRect = spotlightRect ?? rect
+  const placement = resolvePlacement(maskRect, step?.fingerPlacement ?? 'auto')
+  const messageStyle = getMessageStyle(cardRect ?? maskRect, placement)
   const handStyle = getHandStyle(rect, placement)
   const stepNumber = getTutorialStepNumber(currentStepId)
   const bodyMessageBase = (step?.bodyVariants && matchedSelector ? step.bodyVariants[matchedSelector] : null) ?? step?.messageKey
@@ -249,6 +254,7 @@ export default function PCTutorialOverlay() {
   const updateTargetRect = useCallback(() => {
     if (!step || currentStepId === 'tutorial-complete') {
       setRect(null)
+      setSpotlightRect(null)
       setCardRect(null)
       setTargetMissing(false)
       setCycleTargetCount(1)
@@ -259,6 +265,7 @@ export default function PCTutorialOverlay() {
     const { targets, matchedSelector: matched } = findAllTutorialTargets(step.targetSelector)
     if (targets.length === 0) {
       setRect(null)
+      setSpotlightRect(null)
       setCardRect(null)
       setTargetMissing(true)
       setCycleTargetCount(1)
@@ -280,15 +287,21 @@ export default function PCTutorialOverlay() {
     setTargetMissing(false)
     const newRect = rectFromElement(target)
     setRect((prev) => (rectsApproxEqual(prev, newRect) ? prev : newRect))
+    // 2026-05-20: spotlightSelector가 있으면 mask/blocker/ring을 더 넓은 영역으로.
+    const spotlightElement = step.spotlightSelector ? findTutorialTarget(step.spotlightSelector) : null
+    const newSpotlightRect = spotlightElement ? rectFromElement(spotlightElement) : null
+    setSpotlightRect((prev) => (rectsApproxEqual(prev, newSpotlightRect) ? prev : newSpotlightRect))
     // Card placement: cardAnchorSelector wins (lets card sit outside the wrapping
     // panel/modal), then bounding rect across all targets (stable during hand cycling),
     // then the single active target.
     const anchorElement = step.cardAnchorSelector ? findTutorialTarget(step.cardAnchorSelector) : null
     const newCardRect = anchorElement
       ? rectFromElement(anchorElement)
-      : targets.length > 1
-        ? boundingRectFromTargets(targets)
-        : newRect
+      : newSpotlightRect
+        ? newSpotlightRect
+        : targets.length > 1
+          ? boundingRectFromTargets(targets)
+          : newRect
     setCardRect((prev) => (rectsApproxEqual(prev, newCardRect) ? prev : newCardRect))
   }, [currentStepId, step, cycleIndex])
 
@@ -402,12 +415,12 @@ export default function PCTutorialOverlay() {
         <defs>
           <mask id={`tutorial-mask-${maskId}`}>
             <rect x="0" y="0" width="100%" height="100%" fill="white" />
-            {rect ? (
+            {maskRect ? (
               <rect
-                x={rect.left}
-                y={rect.top}
-                width={rect.width}
-                height={rect.height}
+                x={maskRect.left}
+                y={maskRect.top}
+                width={maskRect.width}
+                height={maskRect.height}
                 rx="10"
                 fill="black"
               />
@@ -424,15 +437,15 @@ export default function PCTutorialOverlay() {
         />
       </svg>
 
-      {rect ? (
+      {maskRect ? (
         <>
-          <div className="tutorial-blocker" style={{ left: 0, top: 0, right: 0, height: rect.top }} />
-          <div className="tutorial-blocker" style={{ left: 0, top: rect.bottom, right: 0, bottom: 0 }} />
-          <div className="tutorial-blocker" style={{ left: 0, top: rect.top, width: rect.left, height: rect.height }} />
-          <div className="tutorial-blocker" style={{ left: rect.right, top: rect.top, right: 0, height: rect.height }} />
+          <div className="tutorial-blocker" style={{ left: 0, top: 0, right: 0, height: maskRect.top }} />
+          <div className="tutorial-blocker" style={{ left: 0, top: maskRect.bottom, right: 0, bottom: 0 }} />
+          <div className="tutorial-blocker" style={{ left: 0, top: maskRect.top, width: maskRect.left, height: maskRect.height }} />
+          <div className="tutorial-blocker" style={{ left: maskRect.right, top: maskRect.top, right: 0, height: maskRect.height }} />
           <div
             className={`tutorial-spotlight-ring${currentStepId === 'observation-hint' ? ' is-double-pulse' : ''}`}
-            style={{ left: rect.left, top: rect.top, width: rect.width, height: rect.height }}
+            style={{ left: maskRect.left, top: maskRect.top, width: maskRect.width, height: maskRect.height }}
           />
         </>
       ) : (

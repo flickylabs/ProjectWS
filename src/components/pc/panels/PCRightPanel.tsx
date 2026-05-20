@@ -1300,7 +1300,12 @@ export default function PCRightPanel() {
         <section className="sec pc-right-block pc-right-block--summary">
           <div className="pc-skill-card pc-summary-card pc-right-card">
             <div className="pc-skill-card__eyebrow">{t('pc.right.summary.title')}</div>
-            <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
+            <button
+              className="pc-summary-button"
+              data-tutorial-target="record-summary-button"
+              onClick={openSummaryPanel}
+              type="button"
+            >
               <span className="pc-summary-button__text">{t('pc.right.summary.record')}</span>
             </button>
           </div>

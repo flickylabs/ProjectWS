@@ -635,6 +635,20 @@ export default function EventFeedbackCard() {
     return () => window.clearTimeout(timer)
   }, [active, phase])
 
+  // 2026-05-20 사용자 요청: popup이 좌/우 패널 항목과 연결되는 cutscene인 경우 (evidence-unlock 등)
+  // 해당 패널 항목은 backdrop 위로 올려 활성 상태로 보이게 한다. body class를 부여하면
+  // pc.css에서 좌측 증거 수첩 + 우측 재판관 관찰/수첩 z-index를 popup root(10200) 위로 띄움.
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    if (!active || phase !== 'visible') return
+    const isEvidenceUnlock = active.kind === 'evidence_result' && active.tag === 'evidence-unlock'
+    if (!isEvidenceUnlock) return
+    document.body.classList.add('pc-vfx-evidence-unlock-active')
+    return () => {
+      document.body.classList.remove('pc-vfx-evidence-unlock-active')
+    }
+  }, [active, phase])
+
   // 利앷굅 議곗궗 ?⑤꼸???대┛ ?곹깭?먯꽌 ??利앷굅 而룹뵮???ъ깮?섎㈃ panel backdrop blur媛
   // 醫뚯륫 利앷굅 移대뱶? 踰덇컻瑜??먮━寃?留뚮뱺?? 而룹뵮??active???숈븞留?blur瑜??怨?蹂듦뎄?쒕떎.
   useEffect(() => {

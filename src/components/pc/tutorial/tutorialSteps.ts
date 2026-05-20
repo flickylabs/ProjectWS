@@ -24,6 +24,13 @@ export type TutorialStep = {
    * targets when omitted.
    */
   cardAnchorSelector?: string
+  /**
+   * Optional element whose rect is used for the spotlight cutout / blockers /
+   * spotlight ring. Hand position still tracks `targetSelector`. Use when the
+   * hand should point at a small element (e.g., a close × button) but the
+   * surrounding panel content should remain visible to the user.
+   */
+  spotlightSelector?: string
   completionCondition: {
     type: 'state-mutation' | 'click-with-state-check'
     storeSelector?: (state: GameStore) => boolean
@@ -171,8 +178,11 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   },
   {
     // 2026-05-20 후속: SVG viewer 닫고 investigate 흐름으로 진입.
+    // 2026-05-20 후속2 사용자 요청: viewer 내용(GPS 기록 등)이 spotlight 밖이라 dimmed로
+    // 보임 → spotlightSelector로 viewer 패널 전체를 비추고 hand만 × 버튼 가리킴.
     id: 'evidence-view-close',
     targetSelector: '[data-tutorial-target="evidence-viewer-close"]',
+    spotlightSelector: '.pc-ev-panel--viewer',
     fingerPlacement: 'bottom',
     messageKey: 'pc.tutorial.spouse01.evidence-view-close',
     completionCondition: {
@@ -232,10 +242,12 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   {
     // PC QA round 2 A-3: walk through the right-side info surfaces — record
     // summary → speech notes → judge's observation → judge's notebook.
-    // 2026-05-20 사용자 요청: 모달이 아닌 floating toggle 버튼을 가리키고 직접 클릭하게 한다.
+    // 2026-05-20 후속: 우측 패널 하단의 큰 [기록 정리] 버튼(PCRightPanel pc-summary-button)을
+    // 가리키고 직접 클릭하게 한다. fingerPlacement 'top' = 버튼 위에 카드 배치 (버튼은
+    // 우측 패널 최하단이라 'top'이 자연스러움 + 화면 좌상단 fallback 회피).
     id: 'record-summary-intro',
     targetSelector: '[data-tutorial-target="record-summary-button"]',
-    fingerPlacement: 'left',
+    fingerPlacement: 'top',
     messageKey: 'pc.tutorial.spouse01.record-summary-intro',
     completionCondition: {
       type: 'click-with-state-check',
