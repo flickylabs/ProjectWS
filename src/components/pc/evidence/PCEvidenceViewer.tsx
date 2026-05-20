@@ -109,7 +109,13 @@ export default function PCEvidenceViewer() {
             <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={20} />
           </span>
           <span className="pc-ev-header__name">{displayName}</span>
-          <button className="pc-ev-header__close" onClick={close} title={t('pc.evidenceViewer.closeTitle')} type="button">
+          <button
+            className="pc-ev-header__close"
+            data-tutorial-target={evidence.id === 'e-2' ? 'evidence-viewer-close' : undefined}
+            onClick={close}
+            title={t('pc.evidenceViewer.closeTitle')}
+            type="button"
+          >
             <PCSvgIcon id="i-plus" size={14} />
           </button>
         </div>

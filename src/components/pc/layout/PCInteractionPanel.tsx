@@ -856,7 +856,12 @@ export default function PCInteractionPanel() {
           <div className="pc-interaction-card__body pc-ev-body-wrap">
             <span>{sanitizedBody}</span>
             {payload.evidenceId ? (
-              <button className="pc-ev-viewer-btn" onClick={() => handleAction({ kind: 'open_evidence', label: translate('pc.interaction.openEvidence'), evidenceId: payload.evidenceId })} type="button">
+              <button
+                className="pc-ev-viewer-btn"
+                data-tutorial-target={payload.evidenceId === 'e-2' ? 'evidence-e2-view-btn' : undefined}
+                onClick={() => handleAction({ kind: 'open_evidence', label: translate('pc.interaction.openEvidence'), evidenceId: payload.evidenceId })}
+                type="button"
+              >
                 {translate('pc.interaction.openEvidence')}
               </button>
             ) : null}

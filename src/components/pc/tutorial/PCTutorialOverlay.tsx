@@ -348,28 +348,43 @@ export default function PCTutorialOverlay() {
     }
   }, [activeFeedback, currentStepId, feedbackSeen, markStepComplete])
 
+  // 2026-05-20 사용자 요청 변경: observation-hint / tutorial-complete의 auto timer 제거 →
+  // 클릭 완료로 전환. judge-observation-intro / record-summary-intro도 click 완료.
+
+  // record-summary-intro: floating toggle 버튼 클릭 → pc:open-record-summary 이벤트 발생 시 완료.
   useEffect(() => {
-    if (!enabled || currentStepId !== 'observation-hint') return
-    const timer = window.setTimeout(() => markStepComplete('observation-hint'), 1800)
-    return () => window.clearTimeout(timer)
+    if (!enabled || currentStepId !== 'record-summary-intro') return
+    const handler = () => markStepComplete('record-summary-intro')
+    window.addEventListener('pc:open-record-summary', handler)
+    return () => window.removeEventListener('pc:open-record-summary', handler)
   }, [currentStepId, enabled, markStepComplete])
 
+  // judge-observation-intro / observation-hint: 해당 섹션 안에 클릭 발생 시 완료.
   useEffect(() => {
-    if (!enabled || currentStepId !== 'tutorial-complete') return
-    const timer = window.setTimeout(() => markStepComplete('tutorial-complete'), 1700)
-    return () => window.clearTimeout(timer)
+    if (!enabled) return
+    if (currentStepId !== 'judge-observation-intro' && currentStepId !== 'observation-hint') return
+    const targetSelector = currentStepId === 'judge-observation-intro'
+      ? '[data-tutorial-target="judge-observation-section"]'
+      : '[data-tutorial-target="judge-notebook-section"]'
+    const stepIdToComplete = currentStepId
+    const handler = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null
+      if (target?.closest(targetSelector)) {
+        markStepComplete(stepIdToComplete)
+      }
+    }
+    window.addEventListener('click', handler, true)
+    return () => window.removeEventListener('click', handler, true)
   }, [currentStepId, enabled, markStepComplete])
 
   // PC QA round 2 A-3: generic auto-advance for view-only intro steps (emotion-
-  // trust / evidence-detail / combination / record-summary / speech-note /
-  // judge-observation). Each spotlights an info surface for a few seconds, then
-  // advances on its own. The two specific hooks above retain their original
-  // timings; this one only fires for the new intro steps.
+  // trust / evidence-detail / combination / speech-note). Each spotlights an
+  // info surface for a few seconds, then advances on its own. record-summary /
+  // judge-observation / observation-hint / tutorial-complete은 click 완료라 제외.
   useEffect(() => {
     if (!enabled || !step) return
     if (step.completionCondition.type !== 'state-mutation') return
     if (step.completionCondition.actionType !== 'auto') return
-    if (currentStepId === 'observation-hint' || currentStepId === 'tutorial-complete') return
     const timer = window.setTimeout(() => markStepComplete(step.id), 3500)
     return () => window.clearTimeout(timer)
   }, [currentStepId, enabled, markStepComplete, step])
@@ -431,9 +446,11 @@ export default function PCTutorialOverlay() {
       {guideCollapsed ? null : (
         <section
           key={`card-${currentStepId}`}
-          className={`tutorial-message-card${collapsing ? ' is-collapsing' : ''}`}
+          className={`tutorial-message-card${collapsing ? ' is-collapsing' : ''}${currentStepId === 'tutorial-complete' ? ' is-final' : ''}`}
           style={messageStyle}
           data-tutorial-target={currentStepId === 'tutorial-complete' ? 'tutorial-complete' : undefined}
+          onClick={currentStepId === 'tutorial-complete' ? () => markStepComplete('tutorial-complete') : undefined}
+          role={currentStepId === 'tutorial-complete' ? 'button' : undefined}
         >
           <button
             type="button"

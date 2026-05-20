@@ -25,6 +25,10 @@ export const TUTORIAL_STEP_IDS = [
   'evidence-select',
   // PC QA round 2 A-3: walk the user through the evidence detail panel.
   'evidence-detail-open',
+  // 2026-05-20 사용자 요청: SVG viewer를 직접 열어보게 한다 (open_evidence 액션).
+  'evidence-view-open',
+  // 2026-05-20 후속: viewer를 닫게 해서 investigate 흐름으로 자연 진입.
+  'evidence-view-close',
   'evidence-investigate-e2',
   // PC QA round 2 A-3: introduce the combination lab after first investigation.
   'combination-intro',

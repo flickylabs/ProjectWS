@@ -96,8 +96,10 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   {
     // PC QA round 2: split — show the three hotbar question slots, complete when
     // the user opens any question panel.
+    // 2026-05-20 후속 사용자 요청: 3 버튼 모두 cycling 노출 (어떤 걸 눌러도 OK 안내).
+    // findAllTutorialTargets는 첫 매치 selector만 반환하므로 attribute prefix selector로 통합.
     id: 'question-method-select',
-    targetSelector: '[data-tutorial-target="question-type-fact"], [data-tutorial-target="question-type-motive"], [data-tutorial-target="question-type-empathy"]',
+    targetSelector: '[data-tutorial-target^="question-type-"]',
     fingerPlacement: 'top',
     messageKey: 'pc.tutorial.spouse01.question-method-select',
     completionCondition: {
@@ -152,6 +154,30 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
+    // 2026-05-20: SVG viewer를 직접 열어보게 한다. 버튼 클릭 → pendingEvidenceView가 e-2로 세팅되면 완료.
+    // 2026-05-20 후속 사용자 요청: 카드가 [증거 열람] 버튼을 가리지 않도록 fingerPlacement 'right'.
+    id: 'evidence-view-open',
+    targetSelector: '[data-tutorial-target="evidence-e2-view-btn"], [data-tutorial-target="evidence-e2-detail"]',
+    cardAnchorSelector: '[data-tutorial-target="evidence-e2-detail"]',
+    fingerPlacement: 'right',
+    messageKey: 'pc.tutorial.spouse01.evidence-view-open',
+    completionCondition: {
+      type: 'click-with-state-check',
+      storeSelector: (state) => state.pendingEvidenceView === 'e-2',
+    },
+  },
+  {
+    // 2026-05-20 후속: SVG viewer 닫고 investigate 흐름으로 진입.
+    id: 'evidence-view-close',
+    targetSelector: '[data-tutorial-target="evidence-viewer-close"]',
+    fingerPlacement: 'bottom',
+    messageKey: 'pc.tutorial.spouse01.evidence-view-close',
+    completionCondition: {
+      type: 'click-with-state-check',
+      storeSelector: (state) => state.pendingEvidenceView === null,
+    },
+  },
+  {
     id: 'evidence-investigate-e2',
     // Prefer the actual investigate action button (inside the evidence detail panel)
     // so the hand points at the clickable slot, not the panel wrapper or the
@@ -203,13 +229,14 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   {
     // PC QA round 2 A-3: walk through the right-side info surfaces — record
     // summary → speech notes → judge's observation → judge's notebook.
+    // 2026-05-20 사용자 요청: 모달이 아닌 floating toggle 버튼을 가리키고 직접 클릭하게 한다.
     id: 'record-summary-intro',
-    targetSelector: '[data-tutorial-target="record-summary"], .pc-record-summary',
+    targetSelector: '[data-tutorial-target="record-summary-button"]',
     fingerPlacement: 'left',
     messageKey: 'pc.tutorial.spouse01.record-summary-intro',
     completionCondition: {
-      type: 'state-mutation',
-      actionType: 'auto',
+      type: 'click-with-state-check',
+      // 완료 시점은 PCTutorialOverlay에서 pc:open-record-summary 이벤트로 처리.
     },
   },
   {
@@ -223,33 +250,34 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
     },
   },
   {
+    // 2026-05-20 사용자 요청: auto → 직접 클릭 (한번씩 눌러보게).
     id: 'judge-observation-intro',
     targetSelector: '[data-tutorial-target="judge-observation-section"]',
     fingerPlacement: 'right',
     messageKey: 'pc.tutorial.spouse01.judge-observation-intro',
     completionCondition: {
-      type: 'state-mutation',
-      actionType: 'auto',
+      type: 'click-with-state-check',
+      // 완료 시점은 PCTutorialOverlay의 acknowledge-click 처리.
     },
   },
   {
+    // 2026-05-20 사용자 요청: auto → 직접 클릭.
     id: 'observation-hint',
     targetSelector: '[data-tutorial-target="judge-notebook-section"]',
     fingerPlacement: 'right',
     messageKey: 'pc.tutorial.spouse01.observation-hint',
     completionCondition: {
-      type: 'state-mutation',
-      actionType: 'auto',
+      type: 'click-with-state-check',
     },
   },
   {
+    // 2026-05-20 사용자 요청: auto → 메시지 카드 클릭 시 dismiss.
     id: 'tutorial-complete',
     targetSelector: '[data-tutorial-target="tutorial-complete"]',
     fingerPlacement: 'auto',
     messageKey: 'pc.tutorial.spouse01.tutorial-complete',
     completionCondition: {
-      type: 'state-mutation',
-      actionType: 'auto',
+      type: 'click-with-state-check',
     },
   },
 ]
