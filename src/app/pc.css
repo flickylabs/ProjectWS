@@ -19723,10 +19723,12 @@ body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  /* 위/아래 충분히 — 사용자 반복 요청 2026-05-21: 14px 너무 좁음. body 한 줄 popup이라도
-     breathing room 확보. dismiss 버튼은 별도라 영향 X. */
-  padding: 28px 0 !important;
-  gap: 12px !important;
+  /* 위/아래 충분히 — 사용자 반복 요청 2026-05-21 (4th pass): 28px도 좁음. 40px로 더 늘림.
+     body↔dismiss 버튼 사이는 카드 gap(22px) + 버튼 padding(14px)으로 추가 확보.
+     align-items: center는 dismiss 버튼까지 줄어들게 해서 일관성 깨짐 → stretch 유지, body만
+     자체 margin auto로 중앙 (사용자 5th pass: 확인 버튼 폭 작아짐). */
+  padding: 40px 0 !important;
+  gap: 22px !important;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0) 0%,
@@ -19843,7 +19845,9 @@ body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-evidenc
   color: rgba(244, 236, 216, 0.92) !important;
 }
 
-/* body 한 줄 작은 글씨 */
+/* body 한 줄 작은 글씨 — width fit-content + margin auto로 카드 안에서 자체 중앙.
+   기존 padding 0 16% + text-align center가 align-items: stretch와 결합되며 좌측 쏠림이
+   발생 (사용자 반복 지적 2026-05-21 4th pass). align-items: center + width auto로 명시. */
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__body,
 body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__body,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__body {
@@ -19851,8 +19855,10 @@ body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-even
   line-height: 1.35 !important;
   text-align: center !important;
   color: #f4ecd8 !important;
-  padding: 0 16% !important;
-  margin: 0 !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  width: auto !important;
+  max-width: calc(100% - 64px) !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
