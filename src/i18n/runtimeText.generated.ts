@@ -3543,10 +3543,10 @@ export const GENERATED_RUNTIME_TEXT: Record<string, GeneratedRuntimeText> = {
     ja: "商品コード",
     "zh-CN": "商品代码",
   },
-  "새 단서가 갈래를 바꿨습니다.": {
-    en: "A new clue changed the branch.",
-    ja: "新しい手がかりが分岐を変えました。",
-    "zh-CN": "新线索改变了分支。",
+  "새 단서가 흐름을 바꿨습니다.": {
+    en: "A new lead has shifted the path.",
+    ja: "新たな手がかりで流れが変化。",
+    "zh-CN": "新线索改变了走向。",
   },
   "새 쟁점": {
     en: "New Issue",

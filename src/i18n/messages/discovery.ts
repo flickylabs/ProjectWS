@@ -10,7 +10,7 @@ export const discoveryMessages = {
     "pc.discovery.feedback.route.lieCollapse": "거짓 붕괴로 숨은 쟁점이 드러났습니다.",
     "pc.discovery.feedback.route.emotionalSlip": "감정 반응에서 확인할 단서가 생겼습니다.",
     "pc.discovery.feedback.route.interjection": "끼어든 발언이 새 쟁점을 열었습니다.",
-    "pc.discovery.feedback.route.default": "새 단서가 갈래를 바꿨습니다.",
+    "pc.discovery.feedback.route.default": "새 단서가 흐름을 바꿨습니다.",
     "pc.discovery.feedback.judgment.believeParty": "{party}의 주장이 더 설득력 있습니다",
     "pc.discovery.feedback.judgment.bothPartial": "양쪽 모두 일부만 사실입니다",
     "pc.discovery.feedback.judgment.undetermined": "지금은 보류 (나중에 다시 판단)",

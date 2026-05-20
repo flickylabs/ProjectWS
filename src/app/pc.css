@@ -18880,6 +18880,16 @@ body.pc-mode .pc-event-feedback-card.kind-emergence {
     0 0 0 1px rgba(232, 193, 114, 0.12),
     0 30px 90px rgba(0, 0, 0, 0.72),
     0 0 46px rgba(232, 193, 114, 0.16);
+  /* 사용자 요청 2026-05-21: emergence modal 좌측 정렬 → 중앙 통일.
+     is-modal 모드(actions 보유)는 base의 text-align: left 적용받음 — 직접 override. */
+  text-align: center;
+}
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__eyebrow,
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__lines {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body.pc-mode .pc-event-feedback-card.kind-emergence::before {

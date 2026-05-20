@@ -488,7 +488,9 @@ export default function DiscoveryFeedbackWatcher() {
     state.attachDialoguePendingFeedback(sysMsgId, {
       kind: 'emergence',
       eyebrow: t('pc.discovery.feedback.emergence.eyebrow'),
-      subtitle: routeLabel,
+      // 사용자 요청 2026-05-21: route fallback subtitle("새 단서가 갈래를 바꿨습니다") 번역체 어색 →
+      // subtitle 영역 자체 제거. eyebrow → title → body로 흐름 단축. routeLabel은 judge observation/
+      // notebook entry에서만 유지 (이미 위에서 사용).
       title: disputeName,
       body: emergenceDetails.body,
       blocks: emergenceDetails.blocks,
