@@ -755,20 +755,18 @@ function enqueueNewEvidenceCutscene(
 
   const displayName = getEvidenceDisplayName(def, state.evidenceStates[evidenceId])
   const selector = `[data-resonance-target="evidence-${escapeAttributeSelectorValue(evidenceId)}"]`
-  const relatedNames = (state.caseData?.disputes ?? [])
-    .filter((dispute) => (def.proves ?? []).includes(dispute.id))
-    .map((dispute) => dispute.name)
-    .slice(0, 2)
 
+  // 사용자 요청 2026-05-21 (9th): 새 증거 확보 popup 내용 과다 정리 —
+  // subtitle("증거 목록 갱신") / body("좌측 증거 목록에 추가") / meta("관련 쟁점") 모두 제거.
+  // eyebrow + title + dismiss 만 노출. options로 caller가 명시 전달한 경우만 표시.
   state.enqueueFeedback({
     kind: 'evidence_result',
     eyebrow: '새 증거 확보',
-    subtitle: options.subtitle ?? '증거 목록 갱신',
+    subtitle: options.subtitle,
     title: displayName,
-    body: options.body ?? '좌측 증거 목록에 새 증거가 추가되었습니다.',
+    body: options.body,
     tone: options.tone ?? 'green',
     tag: 'evidence-unlock',
-    meta: relatedNames.length > 0 ? [`관련 쟁점: ${relatedNames.join(', ')}`] : undefined,
     autoDismissMs: options.autoDismissMs ?? 3600,
     convergeTargetSelector: selector,
   })
