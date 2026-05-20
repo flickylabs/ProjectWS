@@ -441,25 +441,10 @@ export default function DiscoveryFeedbackWatcher() {
           }
       : {}
 
-    state.enqueueFeedback({
-      kind: 'emergence',
-      eyebrow: t('pc.discovery.feedback.emergence.eyebrow'),
-      title: disputeName,
-      subtitle: unlockSourceName
-        ? tp('pc.discovery.feedback.emergence.subtitleChain', { sourceName: unlockSourceName })
-        : playEmergenceBeat ? disputeName : t('pc.discovery.feedback.emergence.subtitleFallback'),
-      body: unlockSourceName
-        ? tp('pc.discovery.feedback.emergence.bodyChain', { sourceName: unlockSourceName, disputeName })
-        : t('pc.discovery.feedback.emergence.bodyFallback'),
-      tag: t('pc.discovery.feedback.emergence.tag'),
-      tone: 'gold',
-      disputeId: pendingEmergence.disputeId,
-      // PC QA round 2: autodismiss removed — user clicks the [확인] button to advance.
-      ...emergenceBeatPayload,
-    })
-
-    // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달은 자동으로 띄우지 않고 (B-17 D 옵션),
-    // 시스템 메시지 클릭 시 수동 트리거되도록 pendingFeedback 부착.
+    // 사용자 요청 2026-05-21 (11th): 새 쟁점 발견 popup 통합.
+    // 기존: cutscene(자동) + chat 메시지 + 사용자 클릭 → modal(수동) 2단계 → 사용자 지적 "이상함".
+    // 통합: 하나의 popup만 auto-fire. content = eyebrow + title + blocks + meta + 확인[Space].
+    // 시스템 메시지는 record 용으로만 남기고 pendingFeedback 부착 X.
     const sysMsgId = state.addDialogue({
       speaker: 'system',
       text: unlockSourceName
@@ -485,26 +470,26 @@ export default function DiscoveryFeedbackWatcher() {
       disputeId: pendingEmergence.disputeId,
       linkedDialogueId: sysMsgId,
     })
-    state.attachDialoguePendingFeedback(sysMsgId, {
+    // 통합 popup auto-fire — 모든 정보를 1개 carousel에 노출.
+    void surfaceOnlyEmergence
+    state.enqueueFeedback({
       kind: 'emergence',
       eyebrow: t('pc.discovery.feedback.emergence.eyebrow'),
-      // 사용자 요청 2026-05-21: route fallback subtitle("새 단서가 갈래를 바꿨습니다") 번역체 어색 →
-      // subtitle 영역 자체 제거. eyebrow → title → body로 흐름 단축. routeLabel은 judge observation/
-      // notebook entry에서만 유지 (이미 위에서 사용).
       title: disputeName,
-      body: emergenceDetails.body,
+      // body 제거 (사용자 11th: '쟁점을 확인하는 과정에서…' 텍스트 과다).
+      // tag 제거 (사용자 11th: '쟁점 보드 + 재판관 수첩').
       blocks: emergenceDetails.blocks,
       meta: emergenceDetails.meta,
-      tag: surfaceOnlyEmergence ? undefined : t('pc.discovery.feedback.emergence.tagWithJudge'),
       tone: 'gold',
+      disputeId: pendingEmergence.disputeId,
+      ...emergenceBeatPayload,
       actions: [
         {
-          label: t('pc.discovery.feedback.emergence.action.confirm'),
+          label: '확인',  // 사용자 11th: '확인했습니다' → '확인'
           tone: 'gold',
           onSelect: () => {
             const s = useGameStore.getState()
             s.acknowledgeEmergence(pendingEmergence.disputeId)
-            s.consumeDialoguePendingFeedback(sysMsgId)
             enqueuedRef.current.delete(key)
             // [Phase E] 모달 닫힘 후 강조 시작 — 우측 쟁점 카드 + 상단 쟁점 영역 깜빡 (4초)
             // 번개 이펙트도 모달 dismiss 직후로 이동 (모달 블러로 가려지는 결함 해소).
@@ -583,7 +568,7 @@ export default function DiscoveryFeedbackWatcher() {
           },
         },
       ],
-    }, state.turnCount)
+    })
   }, [pendingEmergence, t, tp])
 
   // 감정 실수 포착

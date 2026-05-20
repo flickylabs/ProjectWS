@@ -690,8 +690,11 @@ export default function EventFeedbackCard() {
   // hasActions / onDefer 있는 경우는 무시 (선택 필요 / defer 흐름).
   useEffect(() => {
     if (!active || phase !== 'visible') return
-    const hasActions = Array.isArray(active.actions) && active.actions.length > 0
-    if (hasActions || active.onDefer) return
+    const actions = Array.isArray(active.actions) ? active.actions : []
+    // 2026-05-21 (11th): single-action modal (예: emergence "확인")도 Space로 트리거.
+    // 다중 action 또는 onDefer 흐름은 명시 선택 필요 — Space 무시.
+    if (actions.length > 1 || active.onDefer) return
+    const singleAction = actions.length === 1 ? actions[0] : null
     const handler = (event: KeyboardEvent) => {
       if (event.code !== 'Space') return
       // input/textarea/contenteditable focus 시 Space는 통과
@@ -699,7 +702,13 @@ export default function EventFeedbackCard() {
       const tag = target?.tagName?.toLowerCase()
       if (tag === 'input' || tag === 'textarea' || target?.isContentEditable) return
       event.preventDefault()
-      setPhase('leaving')
+      if (singleAction) {
+        emitFeedbackAction(active.kind, 'action_0')
+        setPhase('leaving')
+        window.setTimeout(() => singleAction.onSelect(), 280)
+      } else {
+        setPhase('leaving')
+      }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
@@ -903,7 +912,7 @@ export default function EventFeedbackCard() {
 
         {hasActions ? (
           <div className={`pc-event-feedback__actions layout-${active.actionsLayout ?? 'horizontal'}`}>
-            {active.actions!.map((action, i) => (
+            {active.actions!.map((action, i, arr) => (
               <button
                 key={`${active.id}-act-${i}`}
                 type="button"
@@ -917,7 +926,9 @@ export default function EventFeedbackCard() {
                   }, 280)
                 }}
               >
-                {localizeRuntimeText(action.label, locale)}
+                <span>{localizeRuntimeText(action.label, locale)}</span>
+                {/* 2026-05-21 (11th): single-action modal에 Space kbd 노출 — dismiss button과 통일. */}
+                {arr.length === 1 ? <kbd className="pc-event-feedback__kbd">Space</kbd> : null}
               </button>
             ))}
           </div>

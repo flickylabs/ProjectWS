@@ -18913,7 +18913,9 @@ body.pc-mode .pc-event-feedback__meta span {
 }
 
 body.pc-mode .pc-event-feedback-card.kind-emergence {
-  max-width: min(700px, calc(100vw - 64px));
+  /* 2026-05-21 (11th): 사용자 요청 — 가로로 길게. 700 → 920px로 widen.
+     3개 block(검토 축/확인 방향/판단 상태)이 각자 한 줄에 들어가도록 폭 확보. */
+  max-width: min(920px, calc(100vw - 64px));
   border-color: rgba(232, 193, 114, 0.46);
   background:
     linear-gradient(180deg, rgba(26, 22, 13, 0.98), rgba(10, 11, 17, 0.99)),
@@ -18922,6 +18924,39 @@ body.pc-mode .pc-event-feedback-card.kind-emergence {
     0 0 0 1px rgba(232, 193, 114, 0.12),
     0 30px 90px rgba(0, 0, 0, 0.72),
     0 0 46px rgba(232, 193, 114, 0.16);
+}
+
+/* 2026-05-21 (11th): "새 쟁점 발견" eyebrow 강조 — 13px → 17px + 자간 강화.
+   사용자 요청: 중요 이슈인데 작게 보임. */
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__eyebrow {
+  font-size: 17px;
+  letter-spacing: 0.18em;
+  margin-bottom: 6px;
+}
+
+/* 사용자 요청 2026-05-21 (11th): 각 block(검토 축/확인 방향/판단 상태)을 한 줄에.
+   strong(라벨) + p(텍스트) inline 배치 + 가운데 hyphen 구분. */
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__block {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  text-align: left;
+}
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__block strong {
+  display: inline;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__block strong::after {
+  content: ' —';
+  color: rgba(232, 193, 114, 0.45);
+}
+body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__block p {
+  margin: 0;
+  flex: 1 1 auto;
+  display: inline;
 }
 
 body.pc-mode .pc-event-feedback-card.kind-emergence::before {
