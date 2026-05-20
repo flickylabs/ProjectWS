@@ -716,10 +716,11 @@ body.pc-mode .pc-ev-header-left {
   text-align: center;
 }
 
+/* 2026-05-21 (8th): 사용자 요청 — 태그(chip)는 좌측 정렬. title은 중앙 유지. */
 body.pc-mode .pc-ev-header-top {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 6px;
   margin-bottom: 4px;
 }
@@ -11386,10 +11387,10 @@ body.pc-mode .pc-ev-detail__tag.is-source { background: rgba(255, 255, 255, 0.06
 body.pc-mode .pc-ev-detail__tag.is-legal { background: rgba(255, 255, 255, 0.06); color: #d8d6cf; }
 body.pc-mode .pc-ev-detail__tag.is-done { background: rgba(255, 255, 255, 0.06); color: #d8d6cf; }
 
-/* 사용자 요청 2026-05-21 (7th): 주요 쟁점 영역 중앙 정렬 (라벨 + 쟁점명 모두). */
+/* 사용자 요청 2026-05-21 (8th): "주요 쟁점" 라벨은 좌측 정렬, 쟁점 이름(내용)은 중앙 정렬.
+   라벨은 작은 안내 텍스트 — 좌측이 자연스러움. 본문 위계는 중앙으로 강조. */
 body.pc-mode .pc-ev-detail__dispute-section {
   margin-bottom: 12px;
-  text-align: center;
 }
 
 body.pc-mode .pc-ev-detail__dispute-label {
@@ -11397,6 +11398,7 @@ body.pc-mode .pc-ev-detail__dispute-label {
   font-size: 11px; font-weight: 700; color: #6a6e80;
   letter-spacing: 0.06em; text-transform: uppercase;
   margin-bottom: 4px;
+  text-align: left;
 }
 
 body.pc-mode .pc-ev-detail__dispute-names {
@@ -18565,14 +18567,8 @@ body.pc-mode .pc-event-feedback__body {
 body.pc-mode .pc-event-feedback__sentence {
   display: block;
 }
-/* title 바로 다음 body는 위쪽에 얇은 구분선 — 두 영역 시각 분리 (사용자 요청 2026-05-21).
-   body가 없는 짧은 alert에는 적용 X (자동).
-   3rd pass — 18+8 → 22+12 (총 ~34px). 사용자가 여전히 좁다고 지적. */
-body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__title + .pc-event-feedback__body {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 22px;
-  margin-top: 12px;
-}
+/* 2026-05-21 (8th): title→body divider 제거. 사용자 지적 — divider가 어색하고 다른 모달
+   (modal/cutscene)과 통일성 X. 시각 분리는 카드 gap(26px)으로만 처리 — 통일 기준. */
 
 body.pc-mode .pc-event-feedback__tag {
   display: inline-block;
@@ -18748,10 +18744,16 @@ body.pc-mode .pc-event-feedback__action.tone-gray:hover {
 }
 body.pc-mode .pc-event-feedback__dismiss {
   flex: 0 0 auto;
-  /* 사용자 요청 2026-05-21 (7th): 닫기 버튼 가로폭 = 바로 위 텍스트 영역(예: 재판관 수첩)과 동일.
-     이전 좌우 22px 마진은 시각 여백용이었으나 notebook 박스보다 좁아 보임 → 마진 제거 + 100% width. */
-  margin: 4px 0 0;
+  /* 부모(.pc-event-feedback-card)가 align-items: stretch — 그대로 stretch하되 좌우 살짝 여백 (카드 padding과 비슷한 22px).
+     2026-05-21 (8th): 일반 alert 카드는 마진 유지(꽉 채움 방지). court-clash 한정만 width 100%로 notebook 폭 매칭 — 아래 override 참고. */
+  margin: 4px 22px 0;
   padding: 12px 24px;
+}
+
+/* 2026-05-21 (8th): court-clash 모달만 닫기 버튼 가로폭 = notebook 영역 (사용자 7th 요청).
+   알림 popup은 위의 default(22px lateral margin) 유지하여 가로 꽉 채움 회피. */
+body.pc-mode .pc-event-feedback-card.is-court-clash-card .pc-event-feedback__dismiss {
+  margin: 4px 0 0;
   width: 100%;
 }
 

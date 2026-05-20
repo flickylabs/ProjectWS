@@ -14,10 +14,12 @@ const GUIDE_CUTSCENE_PANEL_CLOSE_DELAY_MS = 120
  *  - 쟁점 정리 / 선례 감각 → 쟁점 리본
  */
 export function showGuideCutscene(text: string, targetSelector: string): void {
+  // 사용자 요청 2026-05-21 (8th): guide cutscene text는 단일 알림이므로 body가 아닌 title로
+  // 전달해 22px 위계 (이전 body 14.5~15.5px로 작아 보이던 문제 해소).
   if (typeof window === 'undefined') {
     useGameStore.getState().enqueueFeedback({
       kind: 'observation',
-      body: text,
+      title: text,
       tone: 'gold',
       convergeTargetSelector: targetSelector,
     })
@@ -28,7 +30,7 @@ export function showGuideCutscene(text: string, targetSelector: string): void {
   window.setTimeout(() => {
     useGameStore.getState().enqueueFeedback({
       kind: 'observation',
-      body: text,
+      title: text,
       tone: 'gold',
       convergeTargetSelector: targetSelector,
     })

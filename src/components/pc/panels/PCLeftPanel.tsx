@@ -108,22 +108,20 @@ export default function PCLeftPanel() {
     }
     const state = evidenceStates[evidence.id]
     const label = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
-    const desc = state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description)
     const stages = evidence.investigationStages ?? []
     const investigatedKeys = new Set(state?.investigatedActions ?? [])
 
-    const bodyParts: string[] = [desc]
-    const revealedFindings = stages
-      .filter((s) => investigatedKeys.has(s.revealKey))
-      .map((s) => evidence.investigationResults[s.revealKey])
-      .filter(Boolean)
-    const hiddenCount = stages.filter((s) => !investigatedKeys.has(s.revealKey)).length
-
-    if (revealedFindings.length > 0 || hiddenCount > 0) {
-      bodyParts.push('')
-      bodyParts.push(t('pc.left.evidence.foundContent'))
-    revealedFindings.forEach((f) => bodyParts.push(`• ${formatLocalizedCaseText(f, locale, t)}`))
-      if (hiddenCount > 0) bodyParts.push(translate('pc.notes.unseen', { count: hiddenCount }))
+    // 사용자 요청 2026-05-21 (8th):
+    // - surfaceDescription 필러("X이 존재한다") 노출 X — deepInvestigated일 때만 본 설명 표시.
+    // - 발견한 내용 영역은 단계 counter ("발견한 내용: N/M")로 압축. 내용은 아래 조사 단계 stack에 노출.
+    const bodyParts: string[] = []
+    if (state?.deepInvestigated) {
+      bodyParts.push(evidence.description)
+    }
+    if (stages.length > 0) {
+      const revealedCount = stages.filter((s) => investigatedKeys.has(s.revealKey)).length
+      if (bodyParts.length > 0) bodyParts.push('')
+      bodyParts.push(`${t('pc.left.evidence.foundContent')} ${revealedCount}/${stages.length}`)
     }
 
     const actions: PcInteractionAction[] = [

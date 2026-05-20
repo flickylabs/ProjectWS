@@ -239,20 +239,20 @@ export default function PCBottomDock() {
     if (!ev) return
     const st = evidenceStates[ev.id]
     const label = localizeRuntimeText(st?.deepInvestigated ? ev.name : (ev.surfaceName ?? ev.name), locale)
-    const desc = st?.deepInvestigated ? ev.description : (ev.surfaceDescription ?? ev.description)
     const stages = ev.investigationStages ?? []
     const investigatedKeys = new Set(st?.investigatedActions ?? [])
-    const bodyParts: string[] = [desc]
-    const revealedFindings = stages
-      .filter((s) => investigatedKeys.has(s.revealKey))
-      .map((s) => ev.investigationResults[s.revealKey])
-      .filter(Boolean)
-    const hiddenCount = stages.filter((s) => !investigatedKeys.has(s.revealKey)).length
-    if (revealedFindings.length > 0 || hiddenCount > 0) {
-      bodyParts.push('')
-      bodyParts.push(t('pc.hotbar.evidence.foundContent'))
-      revealedFindings.forEach((f) => bodyParts.push(`• ${formatLocalizedCaseText(f, locale, t)}`))
-      if (hiddenCount > 0) bodyParts.push(t('pc.hotbar.evidence.hiddenCount', { count: hiddenCount }))
+    const bodyParts: string[] = []
+    // 사용자 요청 2026-05-21 (8th):
+    // - surfaceDescription "X이 존재한다" 필러 노출 X — deepInvestigated일 때만 본 설명 표시.
+    // - 발견한 내용 영역은 단계 counter ("발견한 내용: N/M")로 압축. 내용 반복은 아래 조사 단계
+    //   stack에 그대로 노출되므로 modal body에서는 제거.
+    if (st?.deepInvestigated) {
+      bodyParts.push(ev.description)
+    }
+    if (stages.length > 0) {
+      const revealedCount = stages.filter((s) => investigatedKeys.has(s.revealKey)).length
+      if (bodyParts.length > 0) bodyParts.push('')
+      bodyParts.push(`${t('pc.hotbar.evidence.foundContent')} ${revealedCount}/${stages.length}`)
     }
     const metaTags = buildEvidenceMetaTags(ev.meta, t)
 
