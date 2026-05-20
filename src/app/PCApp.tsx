@@ -19,6 +19,7 @@ import { playBgm as _playBgm } from '../engine/soundEngine'
 import PCResultScreen from '../components/pc/result/PCResultScreen'
 import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
 import PCTestConsole from '../components/pc/debug/PCTestConsole'
+import PCCutsceneDebugPanel from '../components/pc/debug/PCCutsceneDebugPanel'
 import { useActionDispatch } from '../hooks/useActionDispatch'
 import { useScreenPreset } from '../hooks/useScreenPreset'
 import { ensureSteamAuthSession, isSteamAuthRequired } from '../api/steamAuth'
@@ -222,6 +223,7 @@ export default function PCApp() {
         onDialogueTap={triggerDialogueTap}
       />
       <PcTestConsoleMount />
+      <PcCutsceneDebugMount />
     </>
   )
 }
@@ -229,6 +231,11 @@ export default function PCApp() {
 function PcTestConsoleMount() {
   const enabled = import.meta.env.DEV || import.meta.env.VITE_PC_TEST_CONSOLE === 'true'
   return enabled ? <PCTestConsole /> : null
+}
+
+function PcCutsceneDebugMount() {
+  const enabled = import.meta.env.DEV || import.meta.env.VITE_PC_TEST_CONSOLE === 'true'
+  return enabled ? <PCCutsceneDebugPanel /> : null
 }
 
 function PCLanguageMiniSelect({ className }: { className?: string }) {
