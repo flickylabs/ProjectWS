@@ -84,7 +84,7 @@ const EMOTION_MILESTONE_COPY: Record<EmotionalPhase, { title: string; body: stri
   },
   shaken: {
     title: '감정이 흔들리기 시작했습니다',
-    body: '답변의 균형이 흔들렸습니다. 기록과 진술을 이어 확인하면 빈틈을 좁힐 수 있습니다.',
+    body: '',
     tone: 'gold',
   },
   angry: {
