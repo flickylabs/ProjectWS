@@ -1,11 +1,13 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import type { AgentState } from '../../../types/agent'
 import type { CaseData } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { hasContradictionComparison } from '../../../utils/contradiction'
+import { shouldBypassSpaceDismiss } from '../../../utils/keyboardDismiss'
 import type { TruthJudgment } from '../../../types/discovery'
 import { translate } from '../../../i18n'
+import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 const LIE_STATES = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5'] as const
 
@@ -91,6 +93,27 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
   const turnCount = useStore((s) => s.turnCount)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
   const [editingJudgmentId, setEditingJudgmentId] = useState<string | null>(null)
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (editingJudgmentId) {
+        if (event.key === 'Escape') {
+          setEditingJudgmentId(null)
+        }
+        return
+      }
+      if (event.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (event.code !== 'Space') return
+      if (shouldBypassSpaceDismiss(event.target)) return
+      event.preventDefault()
+      onClose()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [editingJudgmentId, onClose])
 
   const visibleDisputes = useMemo(() => {
     if (!caseData) return []
@@ -363,7 +386,10 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
         </div>
 
         <div className="pc-record-summary__footer">
-          <button className="pc-record-summary__close-btn" onClick={onClose} type="button">{translate('pc.common.close')}</button>
+          <button className="pc-record-summary__close-btn pc-event-feedback__dismiss" onClick={onClose} type="button">
+            <span>{localizeRuntimeText('확인')}</span>
+            <kbd className="pc-event-feedback__kbd">Space</kbd>
+          </button>
         </div>
       </div>
 

@@ -10,6 +10,7 @@ import { useStore } from '../../../store/useGameStore'
 import { getOriginalViewerData, getOriginalViewerDataByStage } from '../../../data/cases/caseLoader'
 import { useI18n } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
+import { shouldBypassSpaceDismiss } from '../../../utils/keyboardDismiss'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import {
@@ -46,7 +47,14 @@ export default function PCEvidenceViewer() {
   useEffect(() => {
     if (!pendingEvidenceView) return
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
+      if (e.key === 'Escape') {
+        close()
+        return
+      }
+      if (e.code !== 'Space') return
+      if (shouldBypassSpaceDismiss(e.target)) return
+      e.preventDefault()
+      close()
     }
     document.addEventListener('keydown', handler)
     return () => document.removeEventListener('keydown', handler)
@@ -156,6 +164,17 @@ export default function PCEvidenceViewer() {
               <span>{hasUntranslatedViewerData ? t('pc.evidenceViewer.untranslatedData') : t('pc.evidenceViewer.missingData')}</span>
             </div>
           )}
+        </div>
+
+        <div className="pc-ev-dismiss-row">
+          <button
+            type="button"
+            className="pc-ev-dismiss pc-event-feedback__dismiss"
+            onClick={close}
+          >
+            <span>{localizeRuntimeText('확인', locale)}</span>
+            <kbd className="pc-event-feedback__kbd">Space</kbd>
+          </button>
         </div>
       </div>
     </>

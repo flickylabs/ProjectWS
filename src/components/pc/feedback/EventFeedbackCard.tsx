@@ -705,11 +705,9 @@ export default function EventFeedbackCard() {
   const meta = KIND_META[active.kind]
   const tone = active.tone ?? meta.tone
   const hasActions = Array.isArray(active.actions) && active.actions.length > 0
-  const autoMs = getFeedbackAutoDismissMs(active, meta)
   // 2026-05-20 사용자 요청: actions가 없는 popup은 autoDismissMs 유무와 무관하게
   // 확인 [Space] 버튼을 항상 노출 — 너무 빨리 사라지는 인지 부담 해결.
   const showConfirmButton = !hasActions && !active.onDefer
-  const manualCloseOnly = showConfirmButton && autoMs == null
 
   const cardStyle = phase === 'converging' && convergeTransform
     ? { transform: convergeTransform, opacity: 0 }

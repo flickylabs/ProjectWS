@@ -54,7 +54,6 @@ export default function TruthRevealCutscene({ event, onDismiss }: Props) {
     if (variant === 'slip') return getPcPortraitUrl(caseId, party, 'shaken', null)
     return getPcPortraitUrl(caseId, party, 'resigned', null) // witness final
   })()
-  const portraitAlt = variant === 'witness' ? getPcPortraitUrl(caseId, party, 'shaken', null) : null
 
   // ── Phase state ──
   const [focusReady, setFocusReady] = useState(false)

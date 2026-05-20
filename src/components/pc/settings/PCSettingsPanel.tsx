@@ -84,7 +84,7 @@ export default function PCSettingsPanel({ open, onClose }: Props) {
           title={t('settings.closeWithShortcut')}
         >
           <span>✕</span>
-          <kbd>Esc</kbd>
+          <kbd className="pc-event-feedback__kbd">Esc</kbd>
         </button>
       </header>
 

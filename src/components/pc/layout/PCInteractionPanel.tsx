@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { handleContradictionPursue, useActionDispatch, suppressTransitionChoice, unsuppressTransitionChoice } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
@@ -9,6 +9,7 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
+import { shouldBypassSpaceDismiss } from '../../../utils/keyboardDismiss'
 import { emitVerdictCtaCollapsed } from './verdictAdvanceEvents'
 import { translate, useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
 import { getRuntimeTextLocale, localizeRuntimeText } from '../../../i18n/runtimeText'
@@ -471,6 +472,13 @@ export default function PCInteractionPanel() {
 
   const [payload, setPayload] = useState<PcInteractionPayload | null>(null)
   const savedPayloadRef = useRef<PcInteractionPayload | null>(null)
+  const hasPayloadActions = (payload?.actions?.length ?? 0) > 0
+  const showConfirmButton = Boolean(payload) && !hasPayloadActions
+
+  const closePanel = useCallback(() => {
+    savedPayloadRef.current = null
+    setPayload(null)
+  }, [])
 
   useEffect(() => {
     const handler = (event: Event) => {
@@ -509,18 +517,20 @@ export default function PCInteractionPanel() {
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setPayload(null)
+        closePanel()
+        return
       }
+      if (!showConfirmButton || event.code !== 'Space') {
+        return
+      }
+      if (shouldBypassSpaceDismiss(event.target)) return
+      event.preventDefault()
+      closePanel()
     }
 
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [payload])
-
-  const closePanel = () => {
-    savedPayloadRef.current = null
-    setPayload(null)
-  }
+  }, [closePanel, payload, showConfirmButton])
 
   const runAfterPanelClose = (fn: () => void) => {
     closePanel()
@@ -915,6 +925,19 @@ export default function PCInteractionPanel() {
                 {localizeRuntimeText(action.label, locale)}
               </button>
             ))}
+          </div>
+        ) : null}
+
+        {showConfirmButton ? (
+          <div className="pc-interaction-card__dismiss-row">
+            <button
+              type="button"
+              className="pc-interaction-card__dismiss pc-event-feedback__dismiss"
+              onClick={closePanel}
+            >
+              <span>{localizeRuntimeText('확인', locale)}</span>
+              <kbd className="pc-event-feedback__kbd">Space</kbd>
+            </button>
           </div>
         ) : null}
       </div>
