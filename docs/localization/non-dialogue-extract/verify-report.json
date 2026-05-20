@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T03:11:24.041Z",
+  "generatedAt": "2026-05-20T03:20:21.817Z",
   "input": "",
   "glossary": "docs/localization/glossary.csv",
   "mode": "applied",
@@ -11,16 +11,16 @@
     "placeholder_issues": 0,
     "empty_translation_issues": 36920,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 16969,
+    "english_length_spike_issues": 16973,
     "glossary_issues": 0,
     "literal_english_noun_phrase_issues": 75,
-    "cross_batch_inconsistency_issues": 1773,
+    "cross_batch_inconsistency_issues": 1782,
     "japanese_particle_anomaly_issues": 4052,
     "chinese_korean_word_order_issues": 516,
     "person_name_divergence_issues": 31,
     "system_tone_remnant_issues": 0,
     "placeholder_leak_issues": 0,
-    "totalIssues": 60336
+    "totalIssues": 60349
   },
   "issueLimits": {
     "placeholder": {
@@ -39,9 +39,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 16969,
+      "total": 16973,
       "included": 1000,
-      "omitted": 15969
+      "omitted": 15973
     },
     "glossary": {
       "total": 0,
@@ -54,9 +54,9 @@
       "omitted": 0
     },
     "crossBatchInconsistency": {
-      "total": 1773,
+      "total": 1782,
       "included": 1000,
-      "omitted": 773
+      "omitted": 782
     },
     "japaneseParticleAnomaly": {
       "total": 4052,
@@ -83986,7 +83986,7 @@
           "Ms. Song Da-eun",
           "Ms. Song's"
         ],
-        "occurrences": 581,
+        "occurrences": 579,
         "examples": [
           {
             "row_number": 23899,
@@ -84099,23 +84099,15 @@
           "Ms. Song Da-eun",
           "Ms. Song's"
         ],
-        "occurrences": 693,
+        "occurrences": 688,
         "examples": [
-          {
-            "row_number": 11365,
-            "id": "applied:family-01:case_generated:duo.relationshipLedger[2].description",
-            "source": "src/data/cases/generated/family-01.json",
-            "key_path": "duo.relationshipLedger[2].description",
-            "target": "Yoon Tae-seong's birth secret: only B knows that he is not the father's biological child.",
-            "example_index": 0
-          },
           {
             "row_number": 11679,
             "id": "applied:family-01:case_generated:evidence[6].viewerDataByStage.3.device.sections[2].items[1].text",
             "source": "src/data/cases/generated/family-01.json",
             "key_path": "evidence[6].viewerDataByStage.3.device.sections[2].items[1].text",
             "target": "Tae-seong is a child with a different father from Jeong-hu. My hand trembles as I write this sentence.",
-            "example_index": 1
+            "example_index": 0
           },
           {
             "row_number": 14364,
@@ -84123,7 +84115,7 @@
             "source": "src/data/scriptedText/family-01.json",
             "key_path": "channels.dossier.entries[18].variants[7].text",
             "target": "At that time, I became the person who knew before my brother did. That alone was too heavy.",
-            "example_index": 2
+            "example_index": 1
           },
           {
             "row_number": 14414,
@@ -84131,7 +84123,7 @@
             "source": "src/data/scriptedText/family-01.json",
             "key_path": "channels.dossier.entries[20].variants[2].text",
             "target": "At first, I wanted to deny it. But the records led to the fact that my brother was not Father's biological son.",
-            "example_index": 3
+            "example_index": 2
           },
           {
             "row_number": 14472,
@@ -84139,6 +84131,14 @@
             "source": "src/data/scriptedText/family-01.json",
             "key_path": "channels.dossier.entries[23].variants[1].text",
             "target": "Your Honor, I tried to block everything because I feared my brother would hear in this courtroom that he was not Fath...",
+            "example_index": 3
+          },
+          {
+            "row_number": 18834,
+            "id": "applied:family-01:scripted_text:channels.interrogation.entries[117].variants[0].text",
+            "source": "src/data/scriptedText/family-01.json",
+            "key_path": "channels.interrogation.entries[117].variants[0].text",
+            "target": "Your Honor, our mother's diary contains entries that name people and dates, and those entries do not match the versio...",
             "example_index": 4
           }
         ]
@@ -84265,7 +84265,7 @@
           "Ms. Choi Bok-sun's",
           "Ms. Park Sun-ae's"
         ],
-        "occurrences": 858,
+        "occurrences": 855,
         "examples": [
           {
             "row_number": 11339,
@@ -84292,11 +84292,11 @@
             "example_index": 2
           },
           {
-            "row_number": 11364,
-            "id": "applied:family-01:case_generated:duo.relationshipLedger[1].description",
+            "row_number": 11365,
+            "id": "applied:family-01:case_generated:duo.relationshipLedger[2].description",
             "source": "src/data/cases/generated/family-01.json",
-            "key_path": "duo.relationshipLedger[1].description",
-            "target": "Yoon Tae-seong knows nothing about the regular support Yoon Jeong-hu long sent to the mother's account, or the ₩300M ...",
+            "key_path": "duo.relationshipLedger[2].description",
+            "target": "Yoon Tae-seong's birth secret: only B knows that he is not the father's biological child.",
             "example_index": 3
           },
           {
@@ -84321,7 +84321,7 @@
           "Ms. Park Sun-ae",
           "Ms. Park Sun-ae's"
         ],
-        "occurrences": 557,
+        "occurrences": 556,
         "examples": [
           {
             "row_number": 11338,
@@ -84356,11 +84356,11 @@
             "example_index": 3
           },
           {
-            "row_number": 11365,
-            "id": "applied:family-01:case_generated:duo.relationshipLedger[2].description",
+            "row_number": 11366,
+            "id": "applied:family-01:case_generated:duo.relationshipLedger[3].description",
             "source": "src/data/cases/generated/family-01.json",
-            "key_path": "duo.relationshipLedger[2].description",
-            "target": "Yoon Tae-seong's birth secret: only B knows that he is not the father's biological child.",
+            "key_path": "duo.relationshipLedger[3].description",
+            "target": "Both sides know that the will itself was altered to 60:40. But Yoon Tae-seong still does not know the exact ratio in ...",
             "example_index": 4
           }
         ]
@@ -84427,7 +84427,7 @@
           "Ms. Choi",
           "Ms. Song"
         ],
-        "occurrences": 2646,
+        "occurrences": 2645,
         "examples": [
           {
             "row_number": 222,
