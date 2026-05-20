@@ -18157,7 +18157,9 @@ body.pc-mode .pc-court-beat-stage__rails {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: min(860px, 72vw);
+  /* 카드 폭(760px)에 맞춰 frame 폭 축소 — frame이 카드보다 너무 커서 어긋나 보이는 문제
+     (사용자 지적 2026-05-21). 카드보다 약 40px 큰 정도가 frame outline 효과 적당. */
+  width: min(800px, calc(100vw - 56px));
   height: min(360px, 46vh);
   transform: translate(-50%, -50%);
   border-top: 1px solid rgba(var(--court-beat-accent), 0.28);
@@ -18404,7 +18406,7 @@ body.pc-mode .pc-event-feedback-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 14px;
+  gap: 20px;  /* body ↔ dismiss 버튼 / title ↔ body 시각 분리 강화 (사용자 요청 2026-05-21 3rd) */
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #0c0c14;
@@ -18523,11 +18525,11 @@ body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__body {
 }
 /* title 바로 다음 body는 위쪽에 얇은 구분선 — 두 영역 시각 분리 (사용자 요청 2026-05-21).
    body가 없는 짧은 alert에는 적용 X (자동).
-   2nd pass — 14+4 → 18+8 (총 ~26px). 너무 과하지 않게 살짝만 더. */
+   3rd pass — 18+8 → 22+12 (총 ~34px). 사용자가 여전히 좁다고 지적. */
 body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__title + .pc-event-feedback__body {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 18px;
-  margin-top: 8px;
+  padding-top: 22px;
+  margin-top: 12px;
 }
 
 body.pc-mode .pc-event-feedback__tag {
