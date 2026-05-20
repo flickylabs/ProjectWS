@@ -1,0 +1,33 @@
+key,lang,original,finding,suggested_fix,severity
+pc.tutorial.spouse01.dispute-focus-d1.title,ko,"쟁점 살펴보기",NONE,"",NONE
+pc.tutorial.spouse01.dispute-focus-d1.title,en,"Browse the Issues",NONE,"",NONE
+pc.tutorial.spouse01.dispute-focus-d1.title,ja,"争点を見てみよう",TONE,"争点を見てみましょう",P2
+pc.tutorial.spouse01.dispute-focus-d1.title,zh-CN,"查看争议点",NONE,"",NONE
+pc.tutorial.spouse01.dispute-focus-d1.body,ko,"이 사건의 쟁점들을 확인해봐요. 강조된 쟁점부터 살펴볼까요?",NONE,"",NONE
+pc.tutorial.spouse01.dispute-focus-d1.body,en,"Take a look at the issues in this case. Let's start with the highlighted one.",NONE,"",NONE
+pc.tutorial.spouse01.dispute-focus-d1.body,ja,"この事件の争点を見てみましょう。まずは強調されている争点から確認してみましょう。",NONE,"",NONE
+pc.tutorial.spouse01.dispute-focus-d1.body,zh-CN,"看看本案有哪些争议点吧。先从高亮的那个开始看起。",NONE,"",NONE
+pc.tutorial.spouse01.evidence-detail-open.title,ko,"증거 정보",NONE,"",NONE
+pc.tutorial.spouse01.evidence-detail-open.title,en,"Evidence Details",NONE,"",NONE
+pc.tutorial.spouse01.evidence-detail-open.title,ja,"証拠の詳細",NONE,"",NONE
+pc.tutorial.spouse01.evidence-detail-open.title,zh-CN,"证据信息",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-open.title,ko,"증거 내용 살펴보기",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-open.title,en,"View the Evidence",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-open.title,ja,"証拠を実際に見る",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-open.title,zh-CN,"查看证据原貌",NATURAL,"查看证据内容",P2
+pc.tutorial.spouse01.evidence-view-open.body,ko,"[증거 열람] 버튼을 눌러 증거의 실제 모습을 살펴봐요.",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-open.body,en,"Tap [Open Evidence] to see the actual evidence up close.",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-open.body,ja,"[証拠を開く] ボタンを押して、証拠の実物を見てみましょう。",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-open.body,zh-CN,"请点击 [打开证据] 按钮，亲眼看看这份证据。",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.title,ko,"증거 닫기",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.title,en,"Close the Viewer",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.title,ja,"ビューアを閉じる",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.title,zh-CN,"关闭查看器",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.body,ko,"다 봤다면 우측 상단 [×] 버튼으로 닫고 다음 단계로 가요.",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.body,en,"When you're done, tap the [×] at the top-right to close and continue.",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.body,ja,"確認が終わったら、右上の [×] ボタンで閉じて次へ進みましょう。",NONE,"",NONE
+pc.tutorial.spouse01.evidence-view-close.body,zh-CN,"看完后，请点击右上角的 [×] 按钮关闭，继续下一步。",NONE,"",NONE
+pc.tutorial.spouse01.tutorial-complete.body,ko,"준비가 끝났어요. 직접 심문을 진행하며 진실을 찾고 합당한 판결을 내려주세요. [화면을 클릭하면 시작해요]",NONE,"",NONE
+pc.tutorial.spouse01.tutorial-complete.body,en,"You're all set. Conduct the interrogation, uncover the truth, and deliver a just verdict. [Click anywhere to begin]",TONE,"You're all set. Now you can question them directly, uncover the truth, and make a fair verdict. [Click anywhere to begin]",P2
+pc.tutorial.spouse01.tutorial-complete.body,ja,"準備が整いました。直接尋問を進め、真実を明らかにして相応しい判決を下してください。[画面をクリックすると始まります]",TONE,"準備が整いました。自分で質問を進めて、真実を見つけ、ふさわしい判決を下しましょう。[画面をクリックすると始まります]",P2
+pc.tutorial.spouse01.tutorial-complete.body,zh-CN,"准备就绪。请亲自询问、揭开真相，并作出公正的裁决。[点击屏幕开始]",TONE,"准备好了。接下来亲自提问，找出真相，作出公正的裁决吧。[点击屏幕开始]",P2
