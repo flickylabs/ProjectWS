@@ -81,9 +81,12 @@ export default function TruthRevealCutscene({ event, onDismiss }: Props) {
   const confessionTrust = getConfessionTrust(caseId, disputeId, locale)
   const slipPhase1Text = getSlipPhase1(caseId, disputeId, locale)
   const slipPhase2Raw = getSlipPhase2(caseId, disputeId, locale)
-  // 사용자 요청 — slip phase 2는 "전체 진실 자백"이어야 함. 데이터의 phase 2가 짧으면
-  // confession_trust를 본격 자백 텍스트로 사용. (기존 phase 2 = "아니, 지금 그 말은..." 빈약)
-  const slipFullConfession = slipPhase2Raw.length >= 60 ? slipPhase2Raw : confessionTrust
+  // slip 3단계 구조:
+  //   stage 1 — explosive (phase 1 = 격앙 폭로)
+  //   stage 2 — dismay (phase 2 = "그게 아니라..." 짧은 당황, 본인 실수 깨달음)
+  //   stage 3 — confession (confession_trust = 체념 본격 자백, 별도 텍스트)
+  // phase 2 ≠ confession. 항상 confession_trust 사용해 두 단계 텍스트 분리.
+  const slipFullConfession = confessionTrust
   const admissionWitness = getAdmissionWitness(caseId, disputeId, route, locale)
   const closureTruth = getClosureTruth(caseId, disputeId, locale)
   const slipLinked = getSlipLinkedDisputeId(caseId, disputeId)
