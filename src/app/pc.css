@@ -18176,11 +18176,12 @@ body.pc-mode .pc-court-beat-stage__rails {
   position: absolute;
   left: 50%;
   top: 50%;
-  /* 카드 폭(760px)에 맞춰 frame 폭 축소 — frame이 카드보다 너무 커서 어긋나 보이는 문제
-     (사용자 지적 2026-05-21). 카드보다 약 40px 큰 정도가 frame outline 효과 적당.
-     2026-05-21 (7th): spacing 확대로 카드 키가 커짐 — 높이 360 → 440 (카드 320~360px 기준 안쪽 여유). */
-  width: min(800px, calc(100vw - 56px));
-  height: min(440px, 56vh);
+  /* 2026-05-21 (10th): 사용자 지적 — body가 있는 cutscene 카드(observation 등)는 ornament(상단
+     diamond) + 4~5 콘텐츠 행 + dismiss로 ~520px까지 늘어남. rails 440px이 카드 안에 들어가지
+     못해 위/아래로 카드가 튀어나오는 어긋남 발생.
+     너비 800→820 (카드 760 + 좌우 30px 여유), 높이 440→540 / 56vh→72vh로 확대. */
+  width: min(820px, calc(100vw - 56px));
+  height: min(540px, 72vh);
   transform: translate(-50%, -50%);
   border-top: 1px solid rgba(var(--court-beat-accent), 0.28);
   border-bottom: 1px solid rgba(var(--court-beat-accent), 0.18);
