@@ -183,19 +183,19 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w1-d1-core": {
       behaviorHint: "谨慎但确定",
       question: "能再详细说说住在302号的人吗？",
-      testimony: "302号是一位男性独居，但李俊浩先生来的时候，我有时会听到那家传出孩子的笑声，也会闻到饭菜味。所以我以为是朋友或亲戚。",
+      testimony: "那位住户似乎想隐瞒，所以我装作不知道，但据我了解，302号是和一个穿初中校服的孩子一起生活的。我也听见那个孩子称呼来访的人为“叔叔”。",
       topic: "询问302号住户",
     },
     "w1-d1-no-single-woman": {
       behaviorHint: "带着确信",
       question: "探访频率我明白了。那么那一层有独居女性吗？",
-      testimony: "没有，那一层没有女性独居的住户。大多是家庭住户，302号我知道是一位男性独居。",
+      testimony: "那一层好像没有女性独居的住户。女性住户大多是情侣同住，其他则多是男性独居。",
       topic: "询问该楼层住户构成",
     },
     "w1-d1-resident-info": {
       behaviorHint: "回忆着",
       question: "李俊浩先生探访的那一层住着什么样的人？",
-      testimony: "那一层大多是家庭住户。据我所知，没有女性独居的住户。",
+      testimony: "那一层住户大多是晚上工作的人，所以就算是傍晚，也经常几乎每户都关着灯。",
       topic: "询问该楼层住户",
     },
     "w1-d1-visit-freq": {
@@ -207,7 +207,7 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w2-d2-cash-pattern": {
       behaviorHint: "像确认记录一样准确地",
       question: "现金取款的模式是怎样的？一次性？还是分开取？",
-      testimony: "他在4个月里分开取款：500万、800万、700万、1000万韩元。全部是同一支行ATM，而且不做转账这一点有些特别。",
+      testimony: "他在4个月里分几次取款。500万、800万、700万、1000万韩元。金额太大，ATM取不了，所以是在柜台直接取款的。没有用账户转账，这点让我觉得有些特别。",
       topic: "询问取款模式",
     },
     "w2-d2-cash-withdrawal": {
@@ -219,7 +219,7 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w2-hd3-core": {
       behaviorHint: "记忆清晰地",
       question: "李俊浩先生后来有没有因为储蓄账户解约一事来过银行？",
-      testimony: "有。几周后他来银行，说“我从来没有解约过储蓄账户”。他表情相当震惊。那时我也觉得，“啊，问题出在委托书上”。",
+      testimony: "有。几周后，丈夫先生过来，说“我从来没有解约过储蓄账户”。他表情相当震惊。那时我也觉得，“啊，问题出在委托书上”。",
       topic: "询问之后丈夫的反应",
     },
     "w2-hd3-savings-cancel-known": {
@@ -237,7 +237,7 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w2-hd3-signature-doubt": {
       behaviorHint: "谨慎地",
       question: "签名不同，具体是哪里不同？",
-      testimony: "丈夫原本的签名更工整一些，但委托书上的签名像是潦草写成的。不过我不是笔迹鉴定专家，所以不能确定。",
+      testimony: "签名看上去感觉有点不一样，但我不是笔迹鉴定师，也不能确定。不过，毕竟他们是夫妻，文件也都齐全，我以为不会有问题。",
       topic: "询问委托书签名的问题",
     },
     "w3-aftermath-call": {
