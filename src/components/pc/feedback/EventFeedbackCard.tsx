@@ -407,7 +407,6 @@ function CourtBeatClash({ active, locale }: { active: EventFeedbackItem; locale:
 
   return (
     <div className={`pc-court-clash ${isMiss ? 'is-miss' : hasDirectPhrase ? 'is-hit' : 'is-review'}`}>
-      {beat.chipLabel ? <div className="pc-court-clash__chip">{localizeRuntimeText(beat.chipLabel, locale)}</div> : null}
       <div className="pc-court-clash__grid">
         <section className="pc-court-clash__statement">
           <div className="pc-court-clash__label">{localizeRuntimeText(statementLabel, locale)}</div>
@@ -437,6 +436,7 @@ function CourtBeatClash({ active, locale }: { active: EventFeedbackItem; locale:
         </div>
 
         <section className="pc-court-clash__evidence">
+          {beat.chipLabel ? <div className="pc-court-clash__chip">{localizeRuntimeText(beat.chipLabel, locale)}</div> : null}
           <div className="pc-court-clash__label">{localizeRuntimeText('증거', locale)} · {localizeRuntimeText(beat.evidence?.title ?? active.title, locale)}</div>
           {beat.evidence?.stageLabel ? <div className="pc-court-clash__stage">{localizeRuntimeText(beat.evidence.stageLabel, locale)}</div> : null}
           <div className="pc-court-clash__rows">

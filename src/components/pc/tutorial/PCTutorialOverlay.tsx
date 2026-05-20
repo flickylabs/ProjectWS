@@ -372,6 +372,20 @@ export default function PCTutorialOverlay() {
     return () => window.removeEventListener('pc:open-record-summary', handler)
   }, [currentStepId, enabled, markStepComplete])
 
+  // 2026-05-20 사용자 보고 fix: evidence-view-open step 활성 시 [증거 열람] 버튼이 없으면
+  // (= e-2 detail 패널이 닫힌 상태) e-2 카드를 재클릭하여 패널 복구. 진행 차단 방지.
+  useEffect(() => {
+    if (!enabled || currentStepId !== 'evidence-view-open') return
+    if (!targetMissing) return
+    const timer = window.setTimeout(() => {
+      const viewBtn = document.querySelector<HTMLElement>('[data-tutorial-target="evidence-e2-view-btn"]')
+      if (viewBtn) return // 이미 복구됨
+      const e2Card = document.querySelector<HTMLElement>('[data-tutorial-target="evidence-e2-card"]')
+      if (e2Card) e2Card.click()
+    }, 300)
+    return () => window.clearTimeout(timer)
+  }, [currentStepId, enabled, targetMissing])
+
   // judge-observation-intro / observation-hint: 해당 섹션 안에 클릭 발생 시 완료.
   useEffect(() => {
     if (!enabled) return

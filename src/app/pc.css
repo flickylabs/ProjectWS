@@ -27804,6 +27804,7 @@ body.pc-mode .pc-court-clash__phrase::after {
 }
 
 body.pc-mode .pc-court-clash__evidence {
+  position: relative;
   padding: 18px 18px 16px;
   background: rgba(28, 31, 40, 0.88);
   border-color: rgba(132, 155, 205, 0.54);
@@ -28297,8 +28298,11 @@ body.pc-mode[data-screen-bucket="S"] .pc-play-left .pc-play-evidence-section {
   max-height: 240px !important;
 }
 
+/* 2026-05-20 Q3 P1 fix: S 768px viewport에서 좌측 합계가 716px(100vh-52px)를 초과해
+   하단 잘림 위험. evidence 240 + obs 176 + nb 176 + gap 24 + notes 96 = 712 ≤ 716. */
 body.pc-mode[data-screen-bucket="S"] .pc-play-left .pc-important-notes-section {
-  min-height: 120px !important;
+  min-height: 96px !important;
+  max-height: 96px !important;
 }
 
 body.pc-mode[data-screen-bucket="XS"] .pc-play-left .pc-play-evidence-section {
@@ -28308,8 +28312,19 @@ body.pc-mode[data-screen-bucket="XS"] .pc-play-left .pc-play-evidence-section {
   max-height: 200px !important;
 }
 
+/* 2026-05-20 Q3 P1 fix: XS 640px viewport(가용 588px) — obs/notebook도 176→152로 축소,
+   notes 60px로 추가 축소. evidence 200 + obs 152 + nb 152 + gap 24 + notes 60 = 588. */
+body.pc-mode[data-screen-bucket="XS"] .pc-play-left .pc-judge-observation-section,
+body.pc-mode[data-screen-bucket="XS"] .pc-play-left .pc-judge-observation-section--notebook {
+  flex-basis: 152px !important;
+  height: 152px !important;
+  min-height: 152px !important;
+  max-height: 152px !important;
+}
+
 body.pc-mode[data-screen-bucket="XS"] .pc-play-left .pc-important-notes-section {
-  min-height: 100px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
 }
 
 /* 2026-05-04 follow-up: Court Beat clarity pass.
@@ -30999,11 +31014,13 @@ body.pc-mode .pc-impact-typography__subtitle.tone-amber-warning {
 }
 
 /* 2026-05-20 사용자 요청: 결정적 단서 chip → 기울어진 스탬프 형태.
-   기존 pill-shaped tag → 더블 보더 사각 + -7deg 기울임 + 텍스트 잉크 느낌. */
+   기존 pill-shaped tag → 더블 보더 사각 + -7deg 기울임 + 텍스트 잉크 느낌.
+   2026-05-20 후속 fix: chip을 .pc-court-clash__evidence 안으로 이동(JSX 변경)하여 close X와
+   겹치지 않게 evidence card 우상단에 스탬프 — "증거 위에 스탬프 찍힌" 인상 명확. */
 body.pc-mode .pc-court-clash__chip {
   position: absolute;
-  top: 18px;
-  right: 26px;
+  top: -10px;
+  right: -8px;
   z-index: 3;
   padding: 6px 14px 5px;
   border: 2.5px solid rgba(132, 228, 158, 0.92);
