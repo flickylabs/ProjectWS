@@ -1149,6 +1149,7 @@ const EXACT: Record<string, LocaleText> = {
     'zh-CN': '新的线索与现有说明相互衔接。仅新增了需要核查的范围。',
   },
   '이미 인정한 쟁점': { en: 'Already admitted dispute', ja: 'すでに認めた争点', 'zh-CN': '已承认的争议' },
+  '이미 자백한 쟁점': { en: 'Already confessed dispute', ja: 'すでに自白した争点', 'zh-CN': '已坦白的争议' },
   '선행 증거 제시 필요': { en: 'Prior evidence presentation required', ja: '先行証拠の提示が必要', 'zh-CN': '需要先提交前置证据' },
   '오피스텔의 사람들': { en: 'People at the Officetel', ja: 'オフィステルの人々', 'zh-CN': '公寓楼里的人' },
   '오피스텔의 사람을 짚어야겠습니다': {

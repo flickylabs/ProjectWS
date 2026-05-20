@@ -60,11 +60,13 @@ export function useValidActions(target: PartyId | null) {
   const agentB = useStore((s) => s.agentB)
   const evidenceStates = useStore((s) => s.evidenceStates)
   const discovery = useStore((s) => s.discovery)
+  const confessionDispatched = useStore((s) => s.confessionDispatched)
 
   return useMemo(() => {
     if (!caseData || !target) return { questions: [], validDisputeIds: [] }
 
     const agent = target === 'a' ? agentA : agentB
+    const confessedMap = confessionDispatched[target] ?? {}
 
     // Discovery 가시성 필터: hidden 제외 + 해당 캐릭터 관련 쟁점만
     const disputes = caseData.disputes.filter((d) => {
@@ -90,10 +92,13 @@ export function useValidActions(target: PartyId | null) {
       const validDisputes: ValidDispute[] = relevantDisputes.map((d) => {
         const lieEntry = agent.lieStateMap[d.id]
         const isCollapsed = lieEntry?.currentState === 'S5'
+        const confessed = confessedMap[d.id] === true
 
-        // 이미 완전 붕괴 → 사실 추궁/동기 탐색은 비활성 (이미 인정함)
-        if (isCollapsed && ['fact_pursuit', 'motive_search'].includes(qDef.type)) {
-          return { id: d.id, name: d.name, enabled: false, reason: '이미 인정한 쟁점' }
+        // 이미 자백한 쟁점 (S5 도달 또는 confession dispatch) → 모든 추궁 비활성.
+        // 사용자 결정: 자백 완료 쟁점은 선택 자체 불가 (이전엔 fact/motive만 disable + 공감은 가능했으나
+        // 자백 후 같은 쟁점 재추궁이 게임 흐름상 의미 없고 어색한 recap line만 만들어냄).
+        if (isCollapsed || confessed) {
+          return { id: d.id, name: d.name, enabled: false, reason: '이미 자백한 쟁점' }
         }
 
         // 해금 조건 체크
@@ -128,5 +133,5 @@ export function useValidActions(target: PartyId | null) {
     const validDisputeIds = [...lieDisputes]
 
     return { questions, validDisputeIds }
-  }, [caseData, target, agentA, agentB, evidenceStates, discovery])
+  }, [caseData, target, agentA, agentB, evidenceStates, discovery, confessionDispatched])
 }
