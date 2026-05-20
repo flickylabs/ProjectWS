@@ -553,6 +553,8 @@ body.pc-mode .pc-discovery-card__title {
   font-size: 22px;
   font-weight: 900;
   letter-spacing: -0.02em;
+  /* 사용자 요청 2026-05-21: 모달 title 중앙 정렬 통일 (evidence/default/모든 variant). */
+  text-align: center;
 }
 
 body.pc-mode .pc-interaction-card__close {
@@ -635,7 +637,8 @@ body.pc-mode .pc-discovery-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 0 28px 28px;
+  /* 사용자 요청 2026-05-21: 액션 버튼 하단 여백 축소 — 28px → 18px. */
+  padding: 0 28px 18px;
 }
 
 body.pc-mode .pc-interaction-card__action,
@@ -731,13 +734,18 @@ body.pc-mode .pc-ev-header-meta-tag {
   font-weight: 600;
 }
 
-body.pc-mode .pc-interaction-card__header--evidence .pc-interaction-card__title {
-  text-align: left;
-}
+/* 2026-05-21: text-align: center는 base __title 규칙으로 흡수 — evidence variant 별도 override 불필요. */
 
 body.pc-mode .pc-interaction-card__header--evidence .pc-ev-viewer-btn {
   margin-left: auto;
   flex-shrink: 0;
+  align-self: center;
+}
+
+/* 사용자 요청 2026-05-21: pc-ev-body-wrap 안의 증거 열람 버튼도 우측 끝으로.
+   기존 align-self: flex-start로 본문 텍스트 옆 inline 위치 → margin-left: auto로 우측. */
+body.pc-mode .pc-ev-body-wrap .pc-ev-viewer-btn {
+  margin-left: auto;
   align-self: center;
 }
 
