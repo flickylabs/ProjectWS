@@ -2520,7 +2520,7 @@
         },
         {
           "id": "a-d-1-S5-fact_pursuit-message_intent-v3",
-          "text": "My affair reading on those messages closes now; the intent was a warning about my father's fraud reaching the fiance. I will name what was real and let it stand without the cover."
+          "text": "On the wording alone, it sounded more like 'I need to tell you something,' but I read it as asking to meet. I will separate what I actually saw from what I assumed."
         },
         {
           "id": "a-d-1-S5-fact_pursuit-message_intent-v4",
@@ -5166,7 +5166,7 @@
         },
         {
           "id": "b-d-1-S5-fact_pursuit-bypass_da_eun-v3",
-          "text": "After the old breakup caused by A's father, the route through Ms. Song was closed; the fiance was the only way left to deliver the warning. I will name what was real and let it stand without the cover."
+          "text": "It was warning, not obsession, but it was my mistake not to tell Da-eun directly."
         },
         {
           "id": "b-d-1-S5-fact_pursuit-bypass_da_eun-v4",
@@ -5748,7 +5748,7 @@
         },
         {
           "id": "a-d-1-S5-fact_pursuit-unanswered_escalation-v3",
-          "text": "My harassment reading closes now; the persistence was about father's fraud forming again, not about any relationship. I will name what was real and let it stand without the cover."
+          "text": "The confirmed record is that the warning continued while there was no reply, and I treated it only as obsession."
         },
         {
           "id": "a-d-1-S5-fact_pursuit-unanswered_escalation-v4",
@@ -5773,7 +5773,7 @@
         },
         {
           "id": "a-d-1-S5-motive_search-unanswered_escalation-v2",
-          "text": "Ms. Choi's motive in pressing on through the silence was father's fraud and the same pattern again, not anything personal toward the fiance. I will name the engine of my silence and let it stand without softening."
+          "text": "The warning continued while there was no reply, and I treated it only as obsession. I will explain why I saw it that way, but only within that scope."
         },
         {
           "id": "a-d-1-S5-motive_search-unanswered_escalation-v3",
@@ -6291,7 +6291,7 @@
       "variants": [
         {
           "id": "b-d-1-S5-motive_search-unanswered_escalation-v1",
-          "text": "I escalated because father's fraud was the matter at stake, and the same pattern again was already moving while no one answered. My motive is now fully in the open, and I will not hide behind a softer one."
+          "text": "The contact was an attempt to warn about Song Da-eun's father and a money issue. I accept responsibility for going to the fiancé instead of telling her directly."
         },
         {
           "id": "b-d-1-S5-motive_search-unanswered_escalation-v2",
@@ -6328,7 +6328,7 @@
         },
         {
           "id": "b-d-1-S5-empathy_approach-unanswered_escalation-v3",
-          "text": "In every escalation, Ms. Song was carrying the wrong reading alone, and the truth about father's fraud was sitting unsaid the whole time. I will name what was paid by the other side, while I held this truth back."
+          "text": "It was warning, not obsession, but it was my mistake not to tell Da-eun directly."
         },
         {
           "id": "b-d-1-S5-empathy_approach-unanswered_escalation-v4",

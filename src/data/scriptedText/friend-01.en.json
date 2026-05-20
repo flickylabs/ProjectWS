@@ -754,7 +754,7 @@
             },
             {
               "id": "a-d-1-S5-fact-pursuit-v2",
-              "text": "The plain fact I have to set down is that Ms. Choi's contact with my fiance was not seduction but warning, and the warning was about my father's fraud history. I will not hide behind those records any longer. I will not put the wound on the other side of the room any longer."
+              "text": "I treated the fragment I saw as the whole story. Before checking anything, I had already decided she was guilty."
             },
             {
               "id": "a-d-1-S5-fact-pursuit-v3",
@@ -799,7 +799,7 @@
           "variants": [
             {
               "id": "a-d-1-S5-motive-search-v1",
-              "text": "Your Honor, I now admit my reading was driven by my own fear of being abandoned again, when in truth Ms. Choi was acting out of B's warning intent about my father's fraud. My motive was fear of being abandoned, and I will not dress it up as anything else. I will state the facts as they are, and accept the responsibility that follows."
+              "text": "When I get anxious, I reach a conclusion before asking for the reason. I did the same thing this time."
             },
             {
               "id": "a-d-1-S5-motive-search-v2",
@@ -848,7 +848,7 @@
           "variants": [
             {
               "id": "a-d-1-S5-empathy-approach-v1",
-              "text": "Your Honor, I now admit that I let an old wound speak first, when in fact Ms. Choi was warning my fiance about my father's fraud, and her contact was not seduction but warning. I admit my own actions caused real harm, and I will not put that under my pain. I will state the facts as they are, and accept the responsibility that follows."
+              "text": "If she had a reason she could not tell me, I should have asked about that first."
             },
             {
               "id": "a-d-1-S5-empathy-approach-v2",
@@ -1730,7 +1730,7 @@
           "variants": [
             {
               "id": "b-d-1-S5-empathy-approach-v1",
-              "text": "Your Honor, I now admit the truth — the contact was not seduction but warning about A's father's fraud, and the pain my silence caused Ms. Song is on me too. I admit my silence is what built the wound, and I am not going to step around that. I will state the facts as they are, and accept the responsibility that follows."
+              "text": "I became the bad person again. I knew it would happen, but I thought that was the only path."
             },
             {
               "id": "b-d-1-S5-empathy-approach-v2",
@@ -24708,7 +24708,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-1-v2",
-              "text": "Ms. Song, did you know that your father had brought up money with your fiancé?",
+              "text": "Ms. Song, did you notice money-related wording in the messages between your father and your fiancé?",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 1."
             },
             {
