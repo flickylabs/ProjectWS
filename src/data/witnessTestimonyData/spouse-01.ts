@@ -74,7 +74,9 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     effect: {
       favorDirection: 'pro_b',
       relatedDisputes: ['d-1'],
-      lieStateNudge: { party: 'a', dispute: 'd-1' },
+      // d-1(외도 의혹) 자백 영역 = 이준호(B). 박지연(A)은 오해한 쪽으로 자백 영역 X.
+      // 증인 결정타가 이준호 lieState를 흔들어 S5 자백 발동 유도 (사용자 지적 2026-05-21).
+      lieStateNudge: { party: 'b', dispute: 'd-1' },
       emotionDelta: 8,
     },
   },

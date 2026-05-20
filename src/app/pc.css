@@ -18252,11 +18252,17 @@ body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-transition_choice.is
 
 body.pc-mode .pc-event-feedback__beat-mark {
   position: absolute;
-  left: 50%;
+  /* 사용자 지적 2026-05-21: + 버튼 오른쪽 쏠림 → 카드 좌우 padding(38px)을 보정해 카드
+     box 전체 폭 중앙으로 정렬 강제. left/right 0 + margin auto는 box-sizing/transform 영향
+     없이 정확한 중앙 보장. */
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   top: -18px;  /* 절반으로 줄이면서 위치도 비례 조정 */
   width: 36px;
   height: 36px;
-  transform: translateX(-50%);
+  transform: none !important;  /* translateX(-50%) 제거 — left/right 0 + margin auto로 충분 */
   display: grid;
   place-items: center;
   pointer-events: none;
@@ -18545,6 +18551,12 @@ body.pc-mode .pc-event-feedback__tag {
   color: #d4a672;
   letter-spacing: 0;
   text-transform: none;
+}
+
+/* 사용자 요청 2026-05-21: 이 alert popup 패널에서는 모든 tag chip 제거.
+   "쟁점 보드 갱신" / "새 증인" 같은 chip이 좌측 쏠림으로 시각 정렬 깨고 정보 노이즈만 발생. */
+body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__tag {
+  display: none !important;
 }
 
 /* state_change(감정 단계 변화) alert: tag chip을 title 위 중앙으로 끌어올림 + 가운데 정렬.
@@ -19847,12 +19859,13 @@ body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-evidenc
 
 /* body 한 줄 작은 글씨 — width fit-content + margin auto로 카드 안에서 자체 중앙.
    기존 padding 0 16% + text-align center가 align-items: stretch와 결합되며 좌측 쏠림이
-   발생 (사용자 반복 지적 2026-05-21 4th pass). align-items: center + width auto로 명시. */
+   발생 (사용자 반복 지적 2026-05-21 4th pass). align-items: center + width auto로 명시.
+   font-size 13.5 → 14.5 (사용자 요청 5th: alert body 14.5px 최소 기준 통일) */
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__body,
 body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__body,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__body {
-  font-size: 13.5px !important;
-  line-height: 1.35 !important;
+  font-size: 14.5px !important;
+  line-height: 1.45 !important;
   text-align: center !important;
   color: #f4ecd8 !important;
   padding: 0 !important;
