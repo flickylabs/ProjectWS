@@ -44,7 +44,7 @@
       "occupation": "Auto Parts Shop Owner",
       "speechStyle": "He suppresses his emotions as much as possible and states only the facts, briefly. He appears calm, but that calmness itself raises suspicion. He tries not to reveal his true feelings until the end.",
       "fear": "He fears his brother learning the birth secret.",
-      "dailyRoutine": "He runs a shop and sends money to his mother whenever he can, secretly covering regular support payments and medical bills without his brother knowing.",
+      "dailyRoutine": "He yielded the family factory that their parents originally intended to pass to him to his older brother, started a small auto-parts shop himself, and while running that shop sent money to his mother whenever he could, secretly covering regular support payments and medical bills without his brother knowing.",
       "sensitivePoints": [
         "Fact of Will Manipulation",
         "Old Secret Support",
@@ -178,7 +178,7 @@
     {
       "id": "d-3",
       "name": "Source of Old Support",
-      "truthDescription": "Yoon Jeong-hu sent regular monthly support to the mother's account, and during his brother's factory crisis he also passed ₩300M through that account. Yoon Tae-seong believed the money was his mother's.",
+      "truthDescription": "When the family factory he had yielded ran into crisis in his brother's hands, Yoon Jeong-hu routed 300 million KRW through Mother's account, and even before that he had been sending monthly regular support the same way. Yoon Tae-seong believed the money was his mother's.",
       "mediationLink": "Source and Transfer Order of Support Through the Mother's Account",
       "judgmentStatement": "The key support that was believed to be the mother's money was actually Yoon Jeong-hu's money passed through the mother's account.",
       "v3UnlockPlan": {
@@ -196,7 +196,7 @@
     {
       "id": "d-4",
       "name": "Family Records and Reasons for Silence",
-      "truthDescription": "The mother's diary records that Yoon Jeong-hu is a half-sibling, and that she still saw him as an equal child and felt even more drawn to him. Yoon Jeong-hu stayed silent for fear that this truth would break his brother.",
+      "truthDescription": "The mother's diary records that Yoon Tae-seong (the older brother) is not Father's biological son, that from Mother's perspective both sons were equally her children, and that Yoon Jeong-hu, who is the biological son, yielded the family factory to his brother despite knowing this. Yoon Jeong-hu stayed silent to the end because he feared this secret would break his proud older brother.",
       "mediationLink": "Mother's Diary and the Brothers' Silence",
       "judgmentStatement": "Yoon Jeong-hu's silence had a reason: he did not want to immediately reveal the sensitive family circumstances recorded in the family records to his brother.",
       "v3UnlockPlan": {
@@ -519,7 +519,7 @@
       "investigationResults": {
         "request_original": "These records show that Yoon Jeong-hu's number of late-life visits and his stay time increased in part. It is not yet clear whether they were care visits or document discussions.",
         "check_metadata": "The caregiver change three weeks before notarization overlaps with Yoon Jeong-hu's long visits. The reason for the change needs further confirmation.",
-        "restore_context": "The increase in visits, staff change, and notary accompaniment fit into one sequence. It is time to press who was involved in the will-drafting process."
+        "restore_context": "The increase in visits, staff change, and the notary's home visit fit into one sequence. It is time to press who was involved in the will-drafting process."
       },
       "investigationStages": [
         {
@@ -1741,7 +1741,7 @@
       "investigationResults": {
         "request_original": "A handwritten diary left in a white/ivory notebook. It shows concern for her two sons and a lament that Yoon Tae-seong still has not come to his senses.",
         "check_metadata": "It contains a sentence worrying about Yoon Jeong-hu and a hint that the two brothers are not the same in every respect.",
-        "restore_context": "It includes a sentence apologizing to Yoon Jeong-hu, a definitive statement that Yoon Jeong-hu is a half-sibling, and a nuance that he was still an equal child and perhaps loved even more."
+        "restore_context": "It includes a sentence apologizing to Yoon Jeong-hu, a definitive statement that Yoon Tae-seong is not Father's biological son, the nuance that from Mother's perspective both sons were equally her children, and a record that Jeong-hu, who is the biological son, yielded the family factory to his brother despite knowing this."
       },
       "investigationStages": [
         {
@@ -1786,11 +1786,11 @@
         },
         {
           "id": "original",
-          "summary": "Confirm the concern for Yoon Jeong-hu and the hint that he is a half-sibling."
+          "summary": "Check Jeong-hu concern and the biological-son hint."
         },
         {
           "id": "context",
-          "summary": "Connect the definitive half-sibling sentence with the mother's apology."
+          "summary": "Connect the biological-son sentence, Mother's apology, and the factory-yield record."
         },
         {
           "id": "established",
@@ -1986,7 +1986,7 @@
                     "text": "I am sorry to Jeong-hu. I am afraid that if he knows, he will try to cover it up alone."
                   },
                   {
-                    "text": "Tae-seong is a child with a different father from Jeong-hu. My hand trembles as I write this sentence."
+                    "text": "Tae-seong is not Father's biological son. My hand trembles as I write this sentence."
                   },
                   {
                     "text": "Still, Tae-seong was just as much my child. I saw his weakness, and perhaps that made me care for him even more."
@@ -2014,7 +2014,7 @@
     },
     {
       "id": "t-4",
-      "fact": "The mother's diary records that Yoon Jeong-hu is a half-sibling, along with the nuance that she still saw him as an equal child and cherished him even more."
+      "fact": "The mother's diary records that Yoon Tae-seong is not Father's biological son, that from Mother's perspective both sons were equally her children, and that Yoon Jeong-hu, who is the biological son, yielded the family factory to his brother despite knowing this."
     },
     {
       "id": "t-5",
@@ -2436,7 +2436,7 @@
       "The mother had not completely lost capacity in her final years, but Yoon Jeong-hu was involved.",
       "The 60:40 will resulted from Yoon Jeong-hu altering the separate handwritten draft's ratio to reduce his own share.",
       "Yoon Jeong-hu sent regular support to his mother for a long time, and during Yoon Tae-seong's factory crisis he deposited ₩300M into the mother's account so it would be passed to Yoon Tae-seong's side.",
-      "Yoon Tae-seong is not the father's biological child, and Yoon Jeong-hu knew this and manipulated the will to protect his brother.",
+      "Yoon Tae-seong is not Father's biological son; Yoon Jeong-hu, knowing this, yielded the family factory to his brother and even altered the will to reduce his own share in order to protect his proud older brother.",
       "Neither could leave the mother as she was. Yoon Tae-seong took the inheritance for granted, and Yoon Jeong-hu tried to protect his brother by changing the mother's wishes."
     ]
   },
