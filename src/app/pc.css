@@ -637,8 +637,8 @@ body.pc-mode .pc-discovery-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  /* 사용자 요청 2026-05-21 (7th): 하단 여백 추가 축소 — 18px → 12px. */
-  padding: 0 28px 12px;
+  /* 사용자 요청 2026-05-21 (12th): 하단 여백 추가 축소 — 12 → 8px. 좌우 28px와 비슷한 수준. */
+  padding: 0 28px 8px;
 }
 
 body.pc-mode .pc-interaction-card__action,
@@ -11393,11 +11393,12 @@ body.pc-mode .pc-ev-detail__dispute-section {
   margin-bottom: 12px;
 }
 
+/* 사용자 요청 2026-05-21 (12th): "주요 쟁점" + "조사 단계" 라벨 양식 통일 (font/size/color/spacing). */
 body.pc-mode .pc-ev-detail__dispute-label {
   display: block;
-  font-size: 11px; font-weight: 700; color: #6a6e80;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  margin-bottom: 4px;
+  font-size: 12px; font-weight: 800; color: #8c8fa0;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -18949,10 +18950,7 @@ body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__block st
   margin-bottom: 0;
   white-space: nowrap;
 }
-body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__block strong::after {
-  content: ' —';
-  color: rgba(232, 193, 114, 0.45);
-}
+/* 2026-05-21 (13th): '—' 구분자 제거 — 색상(gold strong + gray p)으로만 구분. */
 body.pc-mode .pc-event-feedback-card.kind-emergence .pc-event-feedback__block p {
   margin: 0;
   flex: 1 1 auto;
@@ -19836,10 +19834,11 @@ body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene {
   ) !important;
 }
 
-/* Eye SVG / eyebrow / title / ornament 숨김 — body 한 줄만 */
+/* Eye SVG / eyebrow / ornament 숨김 — body 한 줄만 (원래 design).
+   2026-05-21 (12th BUG FIX): kind-observation은 round 8에서 body→title로 전환됨.
+   observation은 __title을 hide 목록에서 제거하여 노출. 다른 kind는 그대로. */
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__eye,
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__eyebrow,
-body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__title,
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__ornament,
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__tag,
 body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__eye,
@@ -29299,9 +29298,12 @@ body.pc-mode .pc-diary-paper__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 22px;
-  padding-bottom: 14px;
+  margin: -38px -46px 22px;
+  padding: 22px 46px 14px;
+  /* 사용자 요청 2026-05-21 (12th): header 영역 어둡게 보이는 음영 제거 — 명시적 밝은 cream bg. */
+  background: linear-gradient(180deg, #fff8e3 0%, #fdf2cf 100%);
   border-bottom: 1px dashed rgba(93, 65, 30, 0.35);
+  border-radius: 8px 8px 0 0;
   color: #76562f;
 }
 

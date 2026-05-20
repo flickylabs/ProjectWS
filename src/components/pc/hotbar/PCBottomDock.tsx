@@ -238,20 +238,16 @@ export default function PCBottomDock() {
     const ev = evidenceDefinitions.find((e) => e.id === evidenceId)
     if (!ev) return
     const st = evidenceStates[ev.id]
+    void st
     const label = localizeRuntimeText(st?.deepInvestigated ? ev.name : (ev.surfaceName ?? ev.name), locale)
     const stages = ev.investigationStages ?? []
     const investigatedKeys = new Set(st?.investigatedActions ?? [])
+    // 사용자 요청 2026-05-21 (12th): evidence modal body 완전 제거.
+    // description("X 자필 기록...") 텍스트 노출 X — title + 조사 단계 stack만 노출.
+    // body 영역에는 단계 counter("발견한 내용: N/M")만 남기고, 증거 열람 버튼이 같은 행에 붙음.
     const bodyParts: string[] = []
-    // 사용자 요청 2026-05-21 (8th):
-    // - surfaceDescription "X이 존재한다" 필러 노출 X — deepInvestigated일 때만 본 설명 표시.
-    // - 발견한 내용 영역은 단계 counter ("발견한 내용: N/M")로 압축. 내용 반복은 아래 조사 단계
-    //   stack에 그대로 노출되므로 modal body에서는 제거.
-    if (st?.deepInvestigated) {
-      bodyParts.push(ev.description)
-    }
     if (stages.length > 0) {
       const revealedCount = stages.filter((s) => investigatedKeys.has(s.revealKey)).length
-      if (bodyParts.length > 0) bodyParts.push('')
       bodyParts.push(`${t('pc.hotbar.evidence.foundContent')} ${revealedCount}/${stages.length}`)
     }
     const metaTags = buildEvidenceMetaTags(ev.meta, t)

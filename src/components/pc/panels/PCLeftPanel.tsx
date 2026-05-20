@@ -111,16 +111,12 @@ export default function PCLeftPanel() {
     const stages = evidence.investigationStages ?? []
     const investigatedKeys = new Set(state?.investigatedActions ?? [])
 
-    // 사용자 요청 2026-05-21 (8th):
-    // - surfaceDescription 필러("X이 존재한다") 노출 X — deepInvestigated일 때만 본 설명 표시.
-    // - 발견한 내용 영역은 단계 counter ("발견한 내용: N/M")로 압축. 내용은 아래 조사 단계 stack에 노출.
+    // 사용자 요청 2026-05-21 (12th): evidence modal body 완전 제거.
+    // description 텍스트 노출 X — title + 조사 단계 stack만. body는 counter만 남기고
+    // "증거 열람" 버튼이 같은 행에 inline.
     const bodyParts: string[] = []
-    if (state?.deepInvestigated) {
-      bodyParts.push(evidence.description)
-    }
     if (stages.length > 0) {
       const revealedCount = stages.filter((s) => investigatedKeys.has(s.revealKey)).length
-      if (bodyParts.length > 0) bodyParts.push('')
       bodyParts.push(`${t('pc.left.evidence.foundContent')} ${revealedCount}/${stages.length}`)
     }
 
