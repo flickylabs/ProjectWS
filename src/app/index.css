@@ -554,6 +554,40 @@ html, body {
   -webkit-backdrop-filter: blur(14px) brightness(0.55) saturate(0.7);
   background: rgba(3, 7, 18, 0.78);
 }
+/* variant별 배경 톤 — 컷씬 분위기 차별화. base는 어두운 청록 → 각 variant 색조 가산.
+   trust = 따뜻한 황금빛(자백/안도), slip = 어둡고 붉은(격앙/위협), witness = 차분한 녹빛(증인/진중) */
+.tr-cutscene-trust .tr-bg-blur {
+  backdrop-filter: blur(13px) brightness(0.62) saturate(0.85) sepia(0.18);
+  -webkit-backdrop-filter: blur(13px) brightness(0.62) saturate(0.85) sepia(0.18);
+  background: rgba(28, 18, 8, 0.72);
+}
+.tr-cutscene-trust .tr-bg-blur::after {
+  content: ''; position: absolute; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 75% 55% at 50% 38%, rgba(252, 211, 77, 0.16), transparent 70%);
+}
+.tr-cutscene-slip .tr-bg-blur {
+  backdrop-filter: blur(16px) brightness(0.42) saturate(0.65);
+  -webkit-backdrop-filter: blur(16px) brightness(0.42) saturate(0.65);
+  background: rgba(28, 6, 6, 0.82);
+}
+.tr-cutscene-slip .tr-bg-blur::after {
+  content: ''; position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 55%, rgba(239, 68, 68, 0.18), transparent 72%),
+    radial-gradient(ellipse 60% 100% at 50% 100%, rgba(0, 0, 0, 0.45), transparent 65%);
+}
+.tr-cutscene-witness .tr-bg-blur {
+  backdrop-filter: blur(13px) brightness(0.5) saturate(0.7);
+  -webkit-backdrop-filter: blur(13px) brightness(0.5) saturate(0.7);
+  background: rgba(6, 14, 10, 0.8);
+}
+.tr-cutscene-witness .tr-bg-blur::after {
+  content: ''; position: absolute; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 55% at 50% 42%, rgba(155, 168, 122, 0.14), transparent 70%);
+}
 
 /* Variant A — pin spotlight */
 .tr-pin-spotlight {
@@ -1040,15 +1074,22 @@ html, body {
 .tr-caret.is-done { display: none; }
 @keyframes tr-caret-blink { 50% { opacity: 0; } }
 
+/* cascade pill — 실제 dispute id 표시. 본체 dispute chip(pc-dispute-ribbon__chip) 톤과 통일.
+   gold tone + 16px 라운드 + normal case (한국어 uppercase 회피). */
 .tr-cascade-pill {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; gap: 8px;
   margin-top: 10px;
-  padding: 4px 10px;
-  background: rgba(91, 141, 239, 0.1);
-  border: 1px solid rgba(91, 141, 239, 0.4);
-  border-radius: 999px;
-  color: #b8cdf2;
-  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 6px 12px;
+  background: rgba(232, 193, 114, 0.12);
+  border: 1px solid rgba(232, 193, 114, 0.4);
+  border-radius: 16px;
+  color: #fff7df;
+  font-family: inherit;  /* 게임 본체 폰트 사용 (slip phase1 display font 회피) */
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: none;  /* 한국어/CJK는 uppercase X */
+  box-shadow: 0 0 0 1px rgba(232, 193, 114, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Closure */

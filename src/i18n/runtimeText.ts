@@ -876,10 +876,10 @@ const EXACT: Record<string, LocaleText> = {
     ja: '激昂に突入：次の2ターンは質問不可',
     'zh-CN': '进入激动状态：接下来 2 回合禁止提问',
   },
-  '이미 인정했습니다. 더 무엇을 더 말씀드려야 하나요.': {
-    en: 'I already admitted it. What more should I say?',
-    ja: 'すでに認めました。これ以上何を話せばよいのですか。',
-    'zh-CN': '我已经承认了。还需要我再说什么？',
+  '그 부분은 이미 말씀드린 그대로입니다. 더 보탤 말은 없네요.': {
+    en: 'That part is exactly as I already said. I have nothing more to add.',
+    ja: 'その部分はすでに申し上げたとおりです。これ以上付け加えることはありません。',
+    'zh-CN': '那部分就像我之前说过的那样。我没有更多要补充的。',
   },
   '…더 드릴 말씀이 없습니다.': {
     en: '...I have nothing more to say.',
@@ -906,10 +906,10 @@ const EXACT: Record<string, LocaleText> = {
     ja: '……付け加えることはありません。',
     'zh-CN': '……没有更多补充。',
   },
-  '이미 자백한 부분입니다. 더 드릴 말씀이 없습니다.': {
-    en: 'That part has already been confessed. I have nothing more to say.',
-    ja: 'すでに自白した部分です。これ以上お話しすることはありません。',
-    'zh-CN': '那部分已经坦白了。我没有更多要说的。',
+  '그 부분은 이미 말씀드린 그대로입니다. 더 드릴 말씀이 없습니다.': {
+    en: 'That part is exactly as I already said. I have nothing more to add.',
+    ja: 'その部分はすでに申し上げたとおりです。これ以上お話しすることはありません。',
+    'zh-CN': '那部分就像我之前说过的那样。我没有更多要补充的。',
   },
   '핵심 사실을 구체적으로 인정한다.': {
     en: 'Admits the core fact specifically.',
