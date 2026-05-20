@@ -2509,7 +2509,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     }
   }
 
-  if (action.questionType === 'fact_pursuit') {
+  // 2026-05-20 후속: 모든 question type(fact/motive/empathy)에서 step 완료.
+  if (action.questionType) {
     markTutorialStepComplete('question-content-select')
   }
   useGameStore.getState().incrementTurn()

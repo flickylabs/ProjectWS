@@ -8,10 +8,12 @@
 - 변경 파일: `src/i18n/messages/tutorial.ts` (KO / EN / JA / ZH-CN 4 블록 동기 수정)
 - 영향 흐름: spouse-01 튜토리얼 21 step (기존 19에서 evidence-view-open + evidence-view-close 2건 추가)
 
-## 검토 대상 entries (6 key × 4 lang = 24 string)
+## 검토 대상 entries (8 key × 4 lang = 32 string)
 
 | key | 종류 | 비고 |
 |---|---|---|
+| `pc.tutorial.spouse01.dispute-focus-d1.title` | 개정 | 기존 "쟁점 선택" → "쟁점 살펴보기" 류 (후속 question-dispute-select와 의미 충돌 해결) |
+| `pc.tutorial.spouse01.dispute-focus-d1.body` | 개정 | "골라주세요"(선택) → "확인해봐요"(살펴보기) 톤 전환 |
 | `pc.tutorial.spouse01.evidence-detail-open.title` | 개정 | 기존 "증거 열람" 류 → "증거 정보" 류 (신규 evidence-view-open과 충돌 회피) |
 | `pc.tutorial.spouse01.evidence-view-open.title` | 신규 | SVG viewer 직접 열기 단계 제목 |
 | `pc.tutorial.spouse01.evidence-view-open.body` | 신규 | `[증거 열람]` 대괄호 라벨 = `pc.interaction.openEvidence`와 정확 일치 검증 |

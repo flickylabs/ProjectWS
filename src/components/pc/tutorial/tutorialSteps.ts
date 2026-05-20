@@ -109,9 +109,11 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   },
   {
     // PC QA round 2: inside the opened panel — pick a dispute chip.
+    // 2026-05-20 후속: data-tutorial-target은 fact 패널에만 있어서 motive/empathy
+    // 패널에서 안내가 표시되지 않았음. class-based selector로 3 method 모두 지원.
     id: 'question-dispute-select',
-    targetSelector: '[data-tutorial-target="question-fact-panel"] .pc-question-choice__dispute-btn, [data-tutorial-target="question-fact-panel"]',
-    cardAnchorSelector: '[data-tutorial-target="question-fact-panel"]',
+    targetSelector: '.pc-question-choice__panel .pc-question-choice__dispute-btn, .pc-question-choice__panel',
+    cardAnchorSelector: '.pc-question-choice__panel',
     fingerPlacement: 'top',
     messageKey: 'pc.tutorial.spouse01.question-dispute-select',
     completionCondition: {
@@ -121,14 +123,15 @@ export const SPOUSE01_TUTORIAL_STEPS: TutorialStep[] = [
   },
   {
     // PC QA round 2: after the dispute is chosen — pick a question variant.
+    // 2026-05-20 후속: 동일하게 class-based selector로 변경.
     id: 'question-content-select',
-    targetSelector: '[data-tutorial-target="question-fact-panel"] .pc-question-choice__msg-btn--question, [data-tutorial-target="question-fact-panel"]',
-    cardAnchorSelector: '[data-tutorial-target="question-fact-panel"]',
+    targetSelector: '.pc-question-choice__panel .pc-question-choice__msg-btn--question, .pc-question-choice__panel',
+    cardAnchorSelector: '.pc-question-choice__panel',
     fingerPlacement: 'top',
     messageKey: 'pc.tutorial.spouse01.question-content-select',
     completionCondition: {
       type: 'state-mutation',
-      actionType: 'question:fact_pursuit',
+      actionType: 'question:any',
     },
   },
   {
