@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T03:20:21.817Z",
+  "generatedAt": "2026-05-20T04:01:40.040Z",
   "input": "",
   "glossary": "docs/localization/glossary.csv",
   "mode": "applied",
@@ -11,16 +11,16 @@
     "placeholder_issues": 0,
     "empty_translation_issues": 36920,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 16973,
+    "english_length_spike_issues": 16950,
     "glossary_issues": 0,
     "literal_english_noun_phrase_issues": 75,
     "cross_batch_inconsistency_issues": 1782,
-    "japanese_particle_anomaly_issues": 4052,
+    "japanese_particle_anomaly_issues": 4061,
     "chinese_korean_word_order_issues": 516,
-    "person_name_divergence_issues": 31,
+    "person_name_divergence_issues": 32,
     "system_tone_remnant_issues": 0,
     "placeholder_leak_issues": 0,
-    "totalIssues": 60349
+    "totalIssues": 60336
   },
   "issueLimits": {
     "placeholder": {
@@ -39,9 +39,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 16973,
+      "total": 16950,
       "included": 1000,
-      "omitted": 15973
+      "omitted": 15950
     },
     "glossary": {
       "total": 0,
@@ -59,9 +59,9 @@
       "omitted": 782
     },
     "japaneseParticleAnomaly": {
-      "total": 4052,
+      "total": 4061,
       "included": 1000,
-      "omitted": 3052
+      "omitted": 3061
     },
     "chineseKoreanWordOrder": {
       "total": 516,
@@ -69,8 +69,8 @@
       "omitted": 0
     },
     "personNameDivergence": {
-      "total": 31,
-      "included": 31,
+      "total": 32,
+      "included": 32,
       "omitted": 0
     },
     "systemToneRemnant": {
@@ -44693,9 +44693,9 @@
         "locale": "en",
         "ko": "재판관님, 제가 위임장을 조작해 공동 적금 2,000만 원을 해지했습니다. 그 선택을 두려움으로 설명할 수는 있어도 정당화할 수는 없습니다.",
         "variants": [
-          "Once I saw the full picture, the dashcam log and the call records lined up with caring for his nephew at his older br...",
-          "Looking back, every connection I made was bent by what I was afraid of, while the actual reason was care for his neph...",
-          "From this side of the truth, I see I let my hurt run ahead of the facts, and the facts were that he was caring for hi...",
+          "Your Honor, when I cancelled the 20 million won joint savings, I wrote my husband's signature on the power of attorne...",
+          "Your Honor, I knew it was a crime, but in that moment divorce and losing everything scared me more. I crossed the lin...",
+          "Your Honor, I regretted it every day from the moment I signed his name on the power of attorney. My hand was shaking,...",
           "The record of my own hand is this — a forged power of attorney, a twenty-million-won savings cancellation, a transfer...",
           "By the time I cancelled the joint savings with the forged power of attorney, my fear about our assets had drowned out...",
           "I did this with my own hands — forged a power of attorney, cancelled the joint savings, gave the money to an investme..."
@@ -44782,7 +44782,7 @@
         "locale": "zh-CN",
         "ko": "재판관님, 제가 위임장을 조작해 공동 적금 2,000만 원을 해지했습니다. 그 선택을 두려움으로 설명할 수는 있어도 정당화할 수는 없습니다.",
         "variants": [
-          "请允许我再说一次。解约夫妻共同存款三千万元的时候,委任书上我丈夫的签名是我自己写的。在我确信丈夫另有家室的那一刻,我相信必须赶在那笔钱流过去之前先动手。明知道伪造是犯罪,恐惧还是吞没了我的判断。那笔钱我全数投进了投资群,被诈骗一空,如...",
+          "我提前解约那笔2000万韩元的夫妻共同储蓄时，委托书上丈夫的签名是我自己写的。当时我认定丈夫在外面另有一段关系，怕这笔钱流到那边，所以抢先动了这笔钱。明知道伪造签名是犯罪，我还是被恐惧冲昏了头。后来我把钱全投进投资群，被诈骗得一分不剩...",
           "请允许我再说一次。我知道这是犯罪。当时,我满脑子只有先活下去。所以我亲手越过了那条线。希望您能理解我当时的处境。",
           "请允许我再说一次。在委任书上签字的那天起,我每天都在后悔。明知手在发抖却没有停下…这是我最羞愧的一点。希望您能理解我当时的处境。",
           "请允许我再说一次。伪造委任书,解约存款,投资诈骗损失。全都是我的错。任何判决我都甘心承受。希望您能理解我当时的处境。",
@@ -44828,9 +44828,9 @@
         "locale": "en",
         "ko": "재판관님, 그 돈을 투자방에 넣었다가 전부 잃었습니다. 수치심 때문에 끝까지 말하지 못했습니다.",
         "variants": [
-          "Your Honor, I now admit that I read the records the wrong way, and what I called an affair was him caring for his nep...",
-          "Your Honor, I now admit my suspicion was driven by my own fear, and the truth was that he was caring for his nephew a...",
-          "Your Honor, I now admit I let betrayal speak first, when in fact he was caring for his nephew at his older brother's ..."
+          "Your Honor, when I cancelled the 20 million won joint savings, I wrote my husband's signature on the power of attorne...",
+          "Your Honor, I knew it was a crime, but in that moment divorce and losing everything scared me more. I crossed the lin...",
+          "Your Honor, I regretted it every day from the moment I signed his name on the power of attorney. My hand was shaking,..."
         ],
         "occurrences": 3,
         "examples": [
@@ -44859,7 +44859,7 @@
         "locale": "zh-CN",
         "ko": "재판관님, 그 돈을 투자방에 넣었다가 전부 잃었습니다. 수치심 때문에 끝까지 말하지 못했습니다.",
         "variants": [
-          "让我换一种方式说明。提前解约那笔共同存款三千万元的时候,委任书上我丈夫的签名是我自己写的。在我确信丈夫另有家室的那一刻,我相信必须赶在那笔钱流过去之前先动手。明知道伪造是犯罪,恐惧还是吞没了我的判断。那笔钱我全数投进了投资群,被诈骗一...",
+          "我提前解约那笔2000万韩元的夫妻共同储蓄时，委托书上丈夫的签名是我自己写的。当时我认定丈夫在外面另有一段关系，怕这笔钱流到那边，所以抢先动了这笔钱。明知道伪造签名是犯罪，我还是被恐惧冲昏了头。后来我把钱全投进投资群，被诈骗得一分不剩...",
           "让我换一种方式说明。我知道这是犯罪。当时,我满脑子只有先活下去。所以我亲手越过了那条线。",
           "让我换一种方式说明。在委任书上签字的那天起,我每天都在后悔。明知手在发抖却没有停下…这是我最羞愧的一点。"
         ],
@@ -44890,9 +44890,9 @@
         "locale": "en",
         "ko": "재판관님, 외도라고 확신한 제 오독이 그 범죄로 이어졌습니다. 제 몫을 지키겠다는 말로 덮을 일이 아니었습니다.",
         "variants": [
-          "The plain fact is that the building, the hours, and the items I had labelled as proof of an affair were tied to his n...",
-          "What pushed my reading toward affair was not the records themselves but the fear I brought to them — the underlying t...",
-          "It is painful to say, but the wound I led with was built on a misreading — the truth was him quietly caring for his n..."
+          "Your Honor, when I cancelled the 20 million won joint savings, I wrote my husband's signature on the power of attorne...",
+          "Your Honor, I knew it was a crime, but in that moment divorce and losing everything scared me more. I crossed the lin...",
+          "Your Honor, I regretted it every day from the moment I signed his name on the power of attorney. My hand was shaking,..."
         ],
         "occurrences": 3,
         "examples": [
@@ -44921,7 +44921,7 @@
         "locale": "zh-CN",
         "ko": "재판관님, 외도라고 확신한 제 오독이 그 범죄로 이어졌습니다. 제 몫을 지키겠다는 말로 덮을 일이 아니었습니다.",
         "variants": [
-          "我无意辩解,但事实是这样:解约共同存款三千万元的时候,委任书上我丈夫的签名是我自己写的。在我确信丈夫另有家室的那一刻,我相信必须赶在那笔钱流过去之前先动手。明知道伪造是犯罪,恐惧还是吞没了我的判断。那笔钱我全数投进了投资群,被诈骗一空...",
+          "我提前解约那笔2000万韩元的夫妻共同储蓄时，委托书上丈夫的签名是我自己写的。当时我认定丈夫在外面另有一段关系，怕这笔钱流到那边，所以抢先动了这笔钱。明知道伪造签名是犯罪，我还是被恐惧冲昏了头。后来我把钱全投进投资群，被诈骗得一分不剩...",
           "我无意辩解,但事实是这样:我知道这是犯罪。当时,我满脑子只有先活下去。所以我亲手越过了那条线。",
           "我无意辩解,但事实是这样:在委任书上签字的那天起,我每天都在后悔。明知手在发抖却没有停下…这是我最羞愧的一点。"
         ],
@@ -44952,9 +44952,9 @@
         "locale": "en",
         "ko": "재판관님, 남편이 숨긴 책임을 핑계로 제 선택을 덮을 수는 없습니다. 제가 숨긴 이유까지 이제는 기록해야 합니다.",
         "variants": [
-          "Once I saw the full picture, the dashcam log and the call records lined up with caring for his nephew at his older br...",
-          "Looking back, every connection I made was bent by what I was afraid of, while the actual reason was care for his neph...",
-          "From this side of the truth, I see I let my hurt run ahead of the facts, and the facts were that he was caring for hi..."
+          "Your Honor, when I cancelled the 20 million won joint savings, I wrote my husband's signature on the power of attorne...",
+          "Your Honor, I knew it was a crime, but in that moment divorce and losing everything scared me more. I crossed the lin...",
+          "Your Honor, I regretted it every day from the moment I signed his name on the power of attorney. My hand was shaking,..."
         ],
         "occurrences": 3,
         "examples": [
@@ -44983,7 +44983,7 @@
         "locale": "zh-CN",
         "ko": "재판관님, 남편이 숨긴 책임을 핑계로 제 선택을 덮을 수는 없습니다. 제가 숨긴 이유까지 이제는 기록해야 합니다.",
         "variants": [
-          "让我从最开始讲起。解约夫妻共同存款三千万元的时候,委任书上我丈夫的签名是我自己写的。在我确信丈夫另有家室的那一刻,我相信必须赶在那笔钱流过去之前先动手。明知道伪造是犯罪,恐惧还是吞没了我的判断。那笔钱我全数投进了投资群,被诈骗一空,如...",
+          "我提前解约那笔2000万韩元的夫妻共同储蓄时，委托书上丈夫的签名是我自己写的。当时我认定丈夫在外面另有一段关系，怕这笔钱流到那边，所以抢先动了这笔钱。明知道伪造签名是犯罪，我还是被恐惧冲昏了头。后来我把钱全投进投资群，被诈骗得一分不剩...",
           "让我从最开始讲起。我知道这是犯罪。当时,我满脑子只有先活下去。所以我亲手越过了那条线。我不再回避。",
           "让我从最开始讲起。在委任书上签字的那天起,我每天都在后悔。明知手在发抖却没有停下…这是我最羞愧的一点。我不再回避。"
         ],
@@ -45014,9 +45014,9 @@
         "locale": "en",
         "ko": "재판관님, 제 수치심 때문에 투자 손실까지 끝까지 숨겼습니다. 그 책임을 남편에게만 돌릴 수 없습니다.",
         "variants": [
-          "Your Honor, I now admit that I read the records the wrong way, and what I called an affair was him caring for his nep...",
-          "Your Honor, I now admit my suspicion was driven by my own fear, and the truth was that he was caring for his nephew a...",
-          "Your Honor, I now admit I let betrayal speak first, when in fact he was caring for his nephew at his older brother's ..."
+          "Your Honor, when I cancelled the 20 million won joint savings, I wrote my husband's signature on the power of attorne...",
+          "Your Honor, I knew it was a crime, but in that moment divorce and losing everything scared me more. I crossed the lin...",
+          "Your Honor, I regretted it every day from the moment I signed his name on the power of attorney. My hand was shaking,..."
         ],
         "occurrences": 3,
         "examples": [
@@ -45045,7 +45045,7 @@
         "locale": "zh-CN",
         "ko": "재판관님, 제 수치심 때문에 투자 손실까지 끝까지 숨겼습니다. 그 책임을 남편에게만 돌릴 수 없습니다.",
         "variants": [
-          "提前解约那笔共同存款三千万元的时候,委任书上我丈夫的签名是我自己写的。在我确信丈夫另有家室的那一刻,我相信必须赶在那笔钱流过去之前先动手。明知道伪造是犯罪,恐惧还是吞没了我的判断。那笔钱我全数投进了投资群,被诈骗一空,如今我连正眼看裁...",
+          "我提前解约那笔2000万韩元的夫妻共同储蓄时，委托书上丈夫的签名是我自己写的。当时我认定丈夫在外面另有一段关系，怕这笔钱流到那边，所以抢先动了这笔钱。明知道伪造签名是犯罪，我还是被恐惧冲昏了头。后来我把钱全投进投资群，被诈骗得一分不剩...",
           "我知道这是犯罪。当时,我满脑子只有先活下去。所以我亲手越过了那条线。这就是事实。",
           "在委任书上签字的那天起,我每天都在后悔。明知手在发抖却没有停下…这是我最羞愧的一点。这就是事实。"
         ],
@@ -45316,9 +45316,9 @@
         "locale": "en",
         "ko": "재판관님, 수년째 남편 계좌를 확인하다가 위임장까지 손댔습니다. 그 선택을 두려움으로 설명할 수는 있어도 정당화할 수는 없습니다.",
         "variants": [
-          "Now that I have seen the full trail, the cash that left our account went straight into his older brother's personal-d...",
-          "Looking back, the silence around the money felt like guilt to me, but the silence was about his older brother's perso...",
-          "From here I can see that I let the missing explanation become a betrayal in my mind, when the explanation was simply ..."
+          "Your Honor, I had been checking my husband's account for years. It did not stop at looking through the app; when the ...",
+          "Your Honor, I knew it was a crime. In that moment, divorce and losing everything scared me more. Years of checking hi...",
+          "Your Honor, I am ashamed that I watched his account for years and even imitated his signature on the power of attorne..."
         ],
         "occurrences": 3,
         "examples": [
@@ -45378,9 +45378,9 @@
         "locale": "en",
         "ko": "재판관님, 공동 적금 2,000만 원을 제 판단으로 해지했습니다. 수치심 때문에 끝까지 말하지 못했습니다.",
         "variants": [
-          "Your Honor, I now know that the thirty million won went to his older brother for personal-debt rehabilitation, not to...",
-          "Your Honor, I now know the cash went to his older brother's personal-debt rehabilitation, and my fear filled in the r...",
-          "Your Honor, I now know the cash went to his older brother for personal-debt rehabilitation, and the wound I built aro..."
+          "Your Honor, I had been checking my husband's account for years. It did not stop at looking through the app; when the ...",
+          "Your Honor, I knew it was a crime. In that moment, divorce and losing everything scared me more. Years of checking hi...",
+          "Your Honor, I am ashamed that I watched his account for years and even imitated his signature on the power of attorne..."
         ],
         "occurrences": 3,
         "examples": [
@@ -45470,9 +45470,9 @@
         "locale": "en",
         "ko": "재판관님, 투자방에 보낸 돈은 돌아오지 않았습니다. 제 몫을 지키겠다는 말로 덮을 일이 아니었습니다.",
         "variants": [
-          "On the bank record I once treated as proof of an affair, the destination was actually his older brother's personal-de...",
-          "The reason I read that withdrawal as betrayal was my own fear; the actual reason for the withdrawal was older-brother...",
-          "It hurts to say it, but the thirty million I treated as proof of betrayal was older-brother personal-debt rehabilitat..."
+          "Your Honor, I had been checking my husband's account for years. It did not stop at looking through the app; when the ...",
+          "Your Honor, I knew it was a crime. In that moment, divorce and losing everything scared me more. Years of checking hi...",
+          "Your Honor, I am ashamed that I watched his account for years and even imitated his signature on the power of attorne..."
         ],
         "occurrences": 3,
         "examples": [
@@ -45532,9 +45532,9 @@
         "locale": "en",
         "ko": "재판관님, 남편의 3,000만 원 출금을 앞세워 제 일을 덮으려 했습니다. 제가 숨긴 이유까지 이제는 기록해야 합니다.",
         "variants": [
-          "Now that I have seen the full trail, the cash that left our account went straight into his older brother's personal-d...",
-          "Looking back, the silence around the money felt like guilt to me, but the silence was about his older brother's perso...",
-          "From here I can see that I let the missing explanation become a betrayal in my mind, when the explanation was simply ..."
+          "Your Honor, I had been checking my husband's account for years. It did not stop at looking through the app; when the ...",
+          "Your Honor, I knew it was a crime. In that moment, divorce and losing everything scared me more. Years of checking hi...",
+          "Your Honor, I am ashamed that I watched his account for years and even imitated his signature on the power of attorne..."
         ],
         "occurrences": 3,
         "examples": [
@@ -45594,9 +45594,9 @@
         "locale": "en",
         "ko": "재판관님, 계좌 감시와 서류 조작 모두 제 책임입니다. 그 책임을 남편에게만 돌릴 수 없습니다.",
         "variants": [
-          "Your Honor, I now know that the thirty million won went to his older brother for personal-debt rehabilitation, not to...",
-          "Your Honor, I now know the cash went to his older brother's personal-debt rehabilitation, and my fear filled in the r...",
-          "Your Honor, I now know the cash went to his older brother for personal-debt rehabilitation, and the wound I built aro..."
+          "Your Honor, I had been checking my husband's account for years. It did not stop at looking through the app; when the ...",
+          "Your Honor, I knew it was a crime. In that moment, divorce and losing everything scared me more. Years of checking hi...",
+          "Your Honor, I am ashamed that I watched his account for years and even imitated his signature on the power of attorne..."
         ],
         "occurrences": 3,
         "examples": [
@@ -72584,6 +72584,18 @@
         "ja": "毎日決まった時間、同じ建物。私はもう答えを察していました。 あの選択を後で取り戻すことはできません。"
       },
       {
+        "row_number": 7763,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[18].variants[2].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[18].variants[2].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
+      },
+      {
         "row_number": 7765,
         "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[18].variants[3].text",
         "category": "scripted_text",
@@ -72604,8 +72616,32 @@
         "key_path": "channels.interrogation.entries[18].variants[4].text",
         "locale": "ja",
         "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "通った先には、説明しにくい家庭の話が絡みます。"
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
+      },
+      {
+        "row_number": 7771,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[18].variants[6].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[18].variants[6].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
+      },
+      {
+        "row_number": 7773,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[18].variants[7].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[18].variants[7].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
       },
       {
         "row_number": 7775,
@@ -72618,6 +72654,18 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "不貞ではない、ということだけは強く申し上げます。"
+      },
+      {
+        "row_number": 7783,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[19].variants[2].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[19].variants[2].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
       },
       {
         "row_number": 7785,
@@ -72640,8 +72688,32 @@
         "key_path": "channels.interrogation.entries[19].variants[4].text",
         "locale": "ja",
         "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "通った先には、説明しにくい家庭の話が絡みます。"
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
+      },
+      {
+        "row_number": 7791,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[19].variants[6].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[19].variants[6].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
+      },
+      {
+        "row_number": 7793,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[19].variants[7].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[19].variants[7].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
       },
       {
         "row_number": 7795,
@@ -72654,6 +72726,18 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "不貞ではない、ということだけは強く申し上げます。"
+      },
+      {
+        "row_number": 7823,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[20].variants[2].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[20].variants[2].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
       },
       {
         "row_number": 7825,
@@ -72676,8 +72760,32 @@
         "key_path": "channels.interrogation.entries[20].variants[4].text",
         "locale": "ja",
         "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "通った先には、説明しにくい家庭の話が絡みます。"
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
+      },
+      {
+        "row_number": 7831,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[20].variants[6].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[20].variants[6].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
+      },
+      {
+        "row_number": 7833,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[20].variants[7].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[20].variants[7].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "今ここで相手を明かすことはできません。説明しづらい事情があります。"
       },
       {
         "row_number": 7835,
@@ -76890,114 +76998,6 @@
         "pattern": "noun_particle_loop",
         "snippet": "通話記録を一緒に確認",
         "ja": "イ・ジュノさん、通話記録を一緒に確認します。それが義実家との葛藤と隠蔽につながった恐れとどう関わるのか、落ち着いて説明してください。"
-      },
-      {
-        "row_number": 9870,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[1].behaviorHint",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[1].behaviorHint",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "意味を裁判官が整理",
-        "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
-      },
-      {
-        "row_number": 9871,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[1].text",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "証拠を一緒に確認",
-        "ja": "イ・ジュノさん、提出された証拠を一緒に確認します。それが義実家との葛藤と隠蔽につながった恐れとどう関わるのか、落ち着いて説明してください。"
-      },
-      {
-        "row_number": 9872,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[2].behaviorHint",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[2].behaviorHint",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "意味を裁判官が整理",
-        "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
-      },
-      {
-        "row_number": 9873,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[2].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[2].text",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "証拠を一緒に確認",
-        "ja": "イ・ジュノさん、提出された証拠を一緒に確認します。それが義実家との葛藤と隠蔽につながった恐れとどう関わるのか、落ち着いて説明してください。"
-      },
-      {
-        "row_number": 9874,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[3].behaviorHint",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[3].behaviorHint",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "意味を裁判官が整理",
-        "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
-      },
-      {
-        "row_number": 9875,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[3].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[3].text",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "通話記録を一緒に確認",
-        "ja": "イ・ジュノさん、通話記録を一緒に確認します。それが義実家との葛藤と隠蔽につながった恐れとどう関わるのか、落ち着いて説明してください。"
-      },
-      {
-        "row_number": 9876,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[4].behaviorHint",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[4].behaviorHint",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "意味を裁判官が整理",
-        "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
-      },
-      {
-        "row_number": 9877,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[3].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[3].variants[4].text",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "通話記録を一緒に確認",
-        "ja": "イ・ジュノさん、通話記録を一緒に確認します。それが義実家との葛藤と隠蔽につながった恐れとどう関わるのか、落ち着いて説明してください。"
-      },
-      {
-        "row_number": 9878,
-        "id": "applied:spouse-01:scripted_text:channels.judge_evidence_combo.entries[4].variants[0].behaviorHint",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.judge_evidence_combo.entries[4].variants[0].behaviorHint",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "意味を裁判官が整理",
-        "ja": "事件カードの手がかり確認後、証拠の組み合わせの意味を裁判官が整理する。"
       }
     ],
     "chineseKoreanWordOrder": [
@@ -83969,6 +83969,57 @@
             "source": "src/data/cases/generated/spouse-01.json",
             "key_path": "evidence[5].v3DepthPlan[1].summary",
             "target": "The flow shows Park Ji-yeon transferring ₩20M.",
+            "example_index": 4
+          }
+        ]
+      },
+      {
+        "ko_name": "부모",
+        "locale": "ja",
+        "variants": [
+          "オフィステル",
+          "メッセージ"
+        ],
+        "occurrences": 9,
+        "examples": [
+          {
+            "row_number": 543,
+            "id": "applied:spouse-01:phase1_dialogue:dialogues[17].text",
+            "source": "src/data/dialogues/phase1/spouse-01.json",
+            "key_path": "dialogues[17].text",
+            "target": "義両親の財産の件は……事実です。ですが、それは今この場とは関係のない話です。",
+            "example_index": 0
+          },
+          {
+            "row_number": 568,
+            "id": "applied:spouse-01:phase1_dialogue:dialogues[28].text",
+            "source": "src/data/dialogues/phase1/spouse-01.json",
+            "key_path": "dialogues[28].text",
+            "target": "家族？ どんな家族の話？ 裁判官、嘘です。私の夫にとって家族と言えば、遠くにいらっしゃるご両親と離婚したお兄さんだけです。あの方々にそんなものが必要なはずがありません。",
+            "example_index": 1
+          },
+          {
+            "row_number": 3009,
+            "id": "applied:spouse-01:scripted_text:channels.dossier.entries[2].variants[2].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.dossier.entries[2].variants[2].text",
+            "target": "不倫ではありませんでした。家族と子どもの事情でオフィステル訪問と通話を隠しました。その責任は認めます。",
+            "example_index": 2
+          },
+          {
+            "row_number": 8059,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[31].variants[0].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[31].variants[0].text",
+            "target": "オフィステルへの動線については、当時、説明を控えてしまいました。 正直に申し上げますと、当時の判断には言いきれない事情がありました。",
+            "example_index": 3
+          },
+          {
+            "row_number": 8821,
+            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[66].variants[1].text",
+            "source": "src/data/scriptedText/spouse-01.json",
+            "key_path": "channels.interrogation.entries[66].variants[1].text",
+            "target": "正直に申し上げますと、一定の金額が動いたことは事実です。 時系列に沿ってお答えします。",
             "example_index": 4
           }
         ]
