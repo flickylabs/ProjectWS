@@ -11,19 +11,19 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w1-d1-core": {
       behaviorHint: "cautious but certain",
       question: "Can you tell us more about the person living in unit 302?",
-      testimony: "Unit 302 is occupied by a man living alone, but when Mr. Lee Jun-ho came by, I sometimes heard a child laughing from that home. I could smell food too. I assumed he was a friend or relative.",
+      testimony: "I pretended not to notice because the resident seemed to be hiding it, but I understand that unit 302 is home to someone living with a child in a middle school uniform. I also heard the child call the visitor \"uncle.\"",
       topic: "Ask about the resident of unit 302",
     },
     "w1-d1-no-single-woman": {
       behaviorHint: "with conviction",
       question: "I understand the visit frequency. But is there a woman living alone on that floor?",
-      testimony: "No, there is no home on that floor where a woman lives alone. Most are family households, and I understand that unit 302 is occupied by a man living alone.",
+      testimony: "I do not think there are any homes on that floor where a woman lives alone. Most of the women there live as couples; otherwise, it is mostly men living alone.",
       topic: "Ask about the resident makeup of that floor",
     },
     "w1-d1-resident-info": {
       behaviorHint: "recalling the memory",
       question: "What kind of residents live on the floor Mr. Lee Jun-ho visits?",
-      testimony: "That floor is mostly family households. As far as I know, there is no home where a woman lives alone.",
+      testimony: "Many of the people on that floor work nights, so even in the evening the lights are usually off in almost every unit.",
       topic: "Ask about the residents of that floor",
     },
     "w1-d1-visit-freq": {
@@ -35,7 +35,7 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w2-d2-cash-pattern": {
       behaviorHint: "precisely, as if checking records",
       question: "What was the cash withdrawal pattern? All at once? In parts?",
-      testimony: "He withdrew it in parts over four months: ₩5M, ₩8M, ₩7M, and ₩10M. All were from ATMs at the same branch, and it was unusual that he did not use bank transfers.",
+      testimony: "He withdrew it in parts over four months: ₩5M, ₩8M, ₩7M, and ₩10M. The amounts were too large to withdraw by ATM, so he made the withdrawals directly at the teller counter. It felt a little unusual that he was not using bank transfers.",
       topic: "Ask about the withdrawal pattern",
     },
     "w2-d2-cash-withdrawal": {
@@ -47,7 +47,7 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w2-hd3-core": {
       behaviorHint: "with a clear memory",
       question: "Did Mr. Lee Jun-ho later come to the bank about the savings cancellation?",
-      testimony: "Yes. He came a few weeks later and said, \"I never cancelled the savings account.\" He looked very surprised. That was when I thought, \"Ah, the power of attorney was the problem.\"",
+      testimony: "Yes. Mr. Lee Jun-ho came a few weeks later and said, \"I never cancelled the savings account.\" He looked very surprised. That was when I thought, \"Ah, the power of attorney was the problem.\"",
       topic: "Ask about the husband’s later reaction",
     },
     "w2-hd3-savings-cancel-known": {
@@ -65,7 +65,7 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
     "w2-hd3-signature-doubt": {
       behaviorHint: "carefully",
       question: "Specifically, what was different about the signature?",
-      testimony: "The husband’s original signature was more neat and deliberate, but the signature on the power of attorney felt scribbled. But I am not a handwriting expert, so I could not be certain.",
+      testimony: "The signature did feel different, but I am not a handwriting expert, so I could not be certain. Since they were a married couple and all the required documents were there, I thought it would be fine.",
       topic: "Ask about the issue with the power-of-attorney signature",
     },
     "w3-aftermath-call": {

@@ -15931,32 +15931,32 @@
           "variants": [
             {
               "id": "w-1-full-v1",
-              "text": "As far as I know, there is no home on that floor where a woman lives alone. There are family households.",
+              "text": "As far as I know, there are no homes on that floor where a woman lives alone. Most women there live with partners, or the units are men living alone.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
               "id": "w-1-full-v2",
-              "text": "In that line, as far as I know, there are no single-woman households. There are homes with children.",
+              "text": "That floor has many night-shift residents, so the lights are often off even in the evening. That alone is not enough to call it an affair partner's home.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
               "id": "w-1-full-v3",
-              "text": "It was not an atmosphere where I would conclude it was an affair partner’s home. That floor is mostly family households.",
+              "text": "It was not an atmosphere where I would conclude it was an affair partner's home. Women there are usually in couples; otherwise, most units are men living alone.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
               "id": "w-1-full-v4",
-              "text": "There are family-unit residents on the floor where that car owner went. I do not know of a home where a woman lives alone.",
+              "text": "The resident of unit 302 seemed to be hiding it, so I pretended not to notice. Still, I know a child in a middle school uniform lives there.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
               "id": "w-1-full-v5",
-              "text": "I should be careful about giving the exact unit number, but I do not remember it as a home where a woman lives alone.",
+              "text": "I should be careful about giving personal details, but I have heard that child call the visitor \"uncle.\" That does not fit a woman living alone.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
               "id": "w-1-full-v6",
-              "text": "I cannot disclose the whole management ledger, but I believe there are no women living alone on that floor.",
+              "text": "I cannot disclose the whole management ledger, but I believe there are no women living alone on that floor. The women there are mostly living as couples.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
@@ -15966,17 +15966,17 @@
             },
             {
               "id": "w-1-full-v8",
-              "text": "There is a home on that floor where a child comes and goes. The claim that it is a woman living alone does not fit.",
+              "text": "Most units on that floor have their lights off at night because many residents work late. The floor's pattern can be misread.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
               "id": "w-1-full-v9",
-              "text": "Speaking only to what I saw as the guard, it is more accurate to view it as entry to a family household.",
+              "text": "Speaking only to what I saw as the guard, the visit looked tied to the household in unit 302, not to a separate woman living alone.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             },
             {
               "id": "w-1-full-v10",
-              "text": "My memory does not match the explanation that this was a home where a woman lived alone. There are family households.",
+              "text": "My memory does not match the explanation that this was a home where a woman lived alone. I heard the child call the visitor uncle.",
               "behaviorHint": "States the fact that corrects the misunderstanding neutrally and clearly."
             }
           ]
@@ -16102,52 +16102,52 @@
           "variants": [
             {
               "id": "w-2-full-v1",
-              "text": "Honestly, the handwriting on the signature looked different. I should have verified the account holder further then.",
+              "text": "Honestly, the signature felt different, but I am not a handwriting expert, so I could not say for certain.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v2",
-              "text": "The documents were there, but I had doubts. I proceeded because the document requirements appeared to be met.",
+              "text": "The documents were complete, and because they were spouses, I thought it would be fine to proceed.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v3",
-              "text": "The account holder was not present, and the signature felt awkward. Looking back, I should have added one more verification step.",
+              "text": "The account holder was not present, and the signature felt off, but the required documents had been submitted.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v4",
-              "text": "I proceeded because there was an ID copy and the document. But letting the handwriting difference pass is my burden.",
+              "text": "I had a feeling the signature was not quite the same, yet I treated the marital relationship and paperwork as enough.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v5",
-              "text": "For that cancellation, I should have been more careful procedurally. My decision to proceed based only on the documents remains at issue.",
+              "text": "Looking back, I relied too much on the fact that they were a married couple and the forms were in order.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v6",
-              "text": "I heard the customer’s explanation, but I could not confirm the account holder’s intent directly. That weighs on me.",
+              "text": "I cannot call it handwriting analysis. I only remember that the signature felt different.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v7",
-              "text": "At the time, I did not see a defect serious enough to refuse. But now I admit the verification was lacking.",
+              "text": "At the time, I did not think the doubt was enough to refuse, since the couple's documents were all there.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v8",
-              "text": "The authorization documents were there and the cancellation proceeded. But verification of the signature’s authenticity was not sufficient.",
+              "text": "The power-of-attorney papers existed and the cancellation proceeded, but my signature check was not firm.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v9",
-              "text": "Your Honor, there was procedural basis, but it was not a safe procedure. I admit that point.",
+              "text": "Your Honor, the procedure had documents, but my certainty about the signature was weak. I admit that point.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             },
             {
               "id": "w-2-full-v10",
-              "text": "Looking back, I should have required more confirmation from the account holder on the spot. I relied too much on the documents.",
+              "text": "I should have required more confirmation, but at the time I let it pass because the documents were complete and they were spouses.",
               "behaviorHint": "Under pressure, admits insufficient verification while also explaining work standards."
             }
           ]

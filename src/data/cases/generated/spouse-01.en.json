@@ -90,7 +90,7 @@
       {
         "id": "w-1",
         "name": "Officetel Security Guard",
-        "knowledgeScope": "Remembers a car visiting two to three times a week. Does not know the exact unit, but understands that no woman lives alone on that floor.",
+        "knowledgeScope": "Remembers a car visiting two to three times a week, knows that many residents on that floor work nights, understands that no woman lives alone there, and cautiously knows that a child lives in unit 302 despite the resident seeming to hide it.",
         "surfaceKnowledge": "A third-party witness who knows the Officetel entry frequency and the residency status on that floor.",
         "witnessProfile": {
           "occupation": "security guard",
@@ -1715,7 +1715,7 @@
       "investigationResults": {
         "request_original": "A separate account in Lee Jun-ho's name is confirmed. It is not a living-expense account shared with the spouse, and only tens of thousands of won remain in the current balance.",
         "check_metadata": "The account shows salary balances and cash accumulating little by little since ten years ago. The accumulated balance is slightly over ₩30M.",
-        "restore_context": "Over the last four months, a total of ₩30M was withdrawn in cash in the order of ₩5M, ₩8M, ₩7M, and ₩10M. This matches the split-withdrawal pattern described by the Bank Clerk, and as a result only tens of thousands of won remain in the current balance."
+        "restore_context": "Over the last four months, a total of ₩30M was withdrawn in cash in the order of ₩5M, ₩8M, ₩7M, and ₩10M. The amounts were too large for ATM withdrawal, so they were handled directly at teller counters, matching the Bank Clerk's account. As a result only tens of thousands of won remain in the current balance."
       },
       "investigationStages": [
         {
@@ -1736,7 +1736,7 @@
             "text": "Explain why you withdrew cash over the last four months in the order of ₩5M, ₩8M, ₩7M, and ₩10M."
           },
           "label": "Press Split Withdrawals",
-          "unlockHint": "Confirm the withdrawal pattern to press the fact that ₩5M, ₩8M, ₩7M, and ₩10M were withdrawn sequentially in the same manner described by the Bank Clerk."
+          "unlockHint": "Confirm the withdrawal pattern to press the fact that ₩5M, ₩8M, ₩7M, and ₩10M were withdrawn sequentially at teller counters as described by the Bank Clerk."
         }
       ],
       "partyContext": {
@@ -1764,7 +1764,7 @@
         },
         {
           "id": "context",
-          "summary": "Split-withdrawal pattern of ₩5M–₩8M–₩7M–₩10M matching the Bank Clerk's testimony."
+          "summary": "Split-withdrawal pattern of ₩5M–₩8M–₩7M–₩10M, handled at teller counters as described by the Bank Clerk."
         },
         {
           "id": "established",
@@ -1821,10 +1821,10 @@
             "desc": "Cash Withdrawal - Mapo Branch Counter"
           },
           {
-            "desc": "Cash Withdrawal - Gwanak Branch ATM"
+            "desc": "Cash Withdrawal - Gwanak Branch Counter"
           },
           {
-            "desc": "Cash Withdrawal - Mapo Branch ATM"
+            "desc": "Cash Withdrawal - Mapo Branch Counter"
           },
           {
             "desc": "Cash Withdrawal - Gangseo Branch Counter"
@@ -1897,10 +1897,10 @@
               "desc": "Cash Withdrawal - Mapo Branch Counter"
             },
             {
-              "desc": "Cash Withdrawal - Gwanak Branch ATM"
+              "desc": "Cash Withdrawal - Gwanak Branch Counter"
             },
             {
-              "desc": "Cash Withdrawal - Mapo Branch ATM"
+              "desc": "Cash Withdrawal - Mapo Branch Counter"
             },
             {
               "desc": "Cash Withdrawal - Gangseo Branch Counter"
