@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T16:08:19.265Z",
+  "generatedAt": "2026-05-20T03:11:24.041Z",
   "input": "",
   "glossary": "docs/localization/glossary.csv",
   "mode": "applied",
@@ -11,7 +11,7 @@
     "placeholder_issues": 0,
     "empty_translation_issues": 36920,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 16966,
+    "english_length_spike_issues": 16969,
     "glossary_issues": 0,
     "literal_english_noun_phrase_issues": 75,
     "cross_batch_inconsistency_issues": 1773,
@@ -20,7 +20,7 @@
     "person_name_divergence_issues": 31,
     "system_tone_remnant_issues": 0,
     "placeholder_leak_issues": 0,
-    "totalIssues": 60333
+    "totalIssues": 60336
   },
   "issueLimits": {
     "placeholder": {
@@ -39,9 +39,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 16966,
+      "total": 16969,
       "included": 1000,
-      "omitted": 15966
+      "omitted": 15969
     },
     "glossary": {
       "total": 0,
@@ -21491,7 +21491,7 @@
         "ko_length": 51,
         "en_length": 202,
         "ratio": 3.96,
-        "ko": "3,000만 원을 제가 움직였습니다. 들키면 끝장이라는 걸 알면서도 손이 멈추지 않았습니다.",
+        "ko": "2,000만 원을 제가 움직였습니다. 들키면 끝장이라는 걸 알면서도 손이 멈추지 않았습니다.",
         "en": "I cancelled the joint savings with my own hand, and I cannot hide my responsibility behind anyone else's silence. I am admitting it because the record deserves the truth, not be..."
       },
       {
@@ -21922,10 +21922,10 @@
         "case_id": "spouse-01",
         "key_path": "channels.contradiction_pursuit.entries[14].variants[6].text",
         "locale": "en",
-        "ko_length": 51,
+        "ko_length": 52,
         "en_length": 160,
-        "ratio": 3.14,
-        "ko": "남편이 따로 챙긴 목돈과 제 3,000만 원 해지는 서로 다른 축이라는 걸 받아들이겠습니다.",
+        "ratio": 3.08,
+        "ko": "남편이 따로 챙긴 목돈과 제 2,000만 원 해지는 서로 다른 책임이라는 걸 받아들이겠습니다.",
         "en": "I admit I let blame run ahead of the procedure; I will start again from the steps I myself carried out. I see now that the gap I left invited the worst reading."
       },
       {
@@ -22009,7 +22009,7 @@
         "ko_length": 46,
         "en_length": 143,
         "ratio": 3.11,
-        "ko": "남편이 챙긴 목돈도 문제지만, 제 3,000만 원 해지는 다른 선을 넘은 일입니다.",
+        "ko": "남편이 챙긴 목돈도 문제지만, 제 2,000만 원 해지는 다른 선을 넘은 일입니다.",
         "en": "The result is mine to carry — I am the one who pressed send, and no fear of mine erases that. I will not put what I did at someone else's feet."
       },
       {
@@ -23571,7 +23571,7 @@
         "locale": "en",
         "pattern": "order_of_abstract",
         "snippet": "the order of concealment",
-        "ko": "이준호 씨, 형 사정을 숨긴 것이 박지연 씨의 계좌 감시를 부른다고 생각하지 못하셨습니까.",
+        "ko": "이준호 씨, 말하지 않은 사정이 박지연 씨의 계좌 감시를 부른다고 생각하지 못하셨습니까.",
         "en": "Mr. Lee, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault."
       },
       {
@@ -23623,7 +23623,7 @@
         "locale": "en",
         "pattern": "order_of_abstract",
         "snippet": "the order of concealment",
-        "ko": "이준호 씨, 가족 안의 갈등이 두려웠다는 이유로 돈의 흐름까지 숨긴 마음을 어떻게 설명하시겠습니까.",
+        "ko": "이준호 씨, 갈등이 커질까 두려웠다는 이유로 돈의 흐름까지 숨긴 마음을 어떻게 설명하시겠습니까.",
         "en": "Mr. Lee, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault."
       },
       {
@@ -23688,7 +23688,7 @@
         "locale": "en",
         "pattern": "order_of_abstract",
         "snippet": "the order of concealment",
-        "ko": "이준호 씨, 형을 지키려는 마음이 부부 재산 신뢰를 깨뜨릴 수 있다는 점을 왜 외면하셨습니까.",
+        "ko": "이준호 씨, 누군가를 지키려는 마음이 부부 재산 신뢰를 깨뜨릴 수 있다는 점을 왜 외면하셨습니까.",
         "en": "Mr. Lee, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault."
       },
       {
@@ -23831,7 +23831,7 @@
         "locale": "en",
         "pattern": "order_of_abstract",
         "snippet": "the order of concealment",
-        "ko": "이준호 씨, 그 가족을 숨기던 마음과 현금을 꺼내던 마음은 같은 책임감이었습니까.",
+        "ko": "이준호 씨, 그 사정을 숨기던 마음과 현금을 꺼내던 마음은 같은 책임감이었습니까.",
         "en": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the order of concealment, monitoring, execution, and manipulation."
       },
       {
@@ -23883,7 +23883,7 @@
         "locale": "en",
         "pattern": "order_of_abstract",
         "snippet": "the order of concealment",
-        "ko": "이준호 씨, 가족을 숨긴 시간이 길어질수록 박지연 씨에게 말할 수 없다는 마음도 커졌습니까.",
+        "ko": "이준호 씨, 사정을 숨긴 시간이 길어질수록 박지연 씨에게 말할 수 없다는 마음도 커졌습니까.",
         "en": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the order of concealment, monitoring, execution, and manipulation."
       },
       {
@@ -24000,7 +24000,7 @@
         "locale": "en",
         "pattern": "order_of_abstract",
         "snippet": "the order of concealment",
-        "ko": "이준호 씨, 그 가족을 숨긴 첫 선택이 지금 어떤 책임감으로 남아 있습니까.",
+        "ko": "이준호 씨, 그 사정을 숨긴 첫 선택이 지금 어떤 책임감으로 남아 있습니까.",
         "en": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the order of concealment, monitoring, execution, and manipulation."
       },
       {
@@ -83929,7 +83929,7 @@
           "Ms. Park Ji-yeon's",
           "Ms. Park Mi-ra"
         ],
-        "occurrences": 518,
+        "occurrences": 517,
         "examples": [
           {
             "row_number": 38,
