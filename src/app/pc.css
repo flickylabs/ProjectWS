@@ -18495,6 +18495,10 @@ body.pc-mode .pc-event-feedback__actions {
 }
 body.pc-mode .pc-event-feedback__action,
 body.pc-mode .pc-event-feedback__dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   flex: 1 1 180px;
   min-width: 180px;
   min-height: 52px;
@@ -18508,6 +18512,25 @@ body.pc-mode .pc-event-feedback__dismiss {
   letter-spacing: 0;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+/* 2026-05-20: 확인 [Space] kbd pill — Space 키 단축 시각 표시. */
+body.pc-mode .pc-event-feedback__kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 22px;
+  padding: 0 8px;
+  border: 1px solid rgba(212, 162, 78, 0.42);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: rgba(212, 162, 78, 0.08);
+  color: #f4d58d;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
 }
 body.pc-mode .pc-event-feedback__action:hover,
 body.pc-mode .pc-event-feedback__dismiss:hover {
@@ -28170,11 +28193,13 @@ body.pc-mode .pc-play-left {
   overflow-y: hidden !important;
 }
 
+/* 2026-05-20 사용자 요청: 증거 수첩 5개 정도 표시 위해 204 → 320px 확대.
+   발언노트는 260 → 160으로 축소(±100 교환). */
 body.pc-mode .pc-play-left .pc-play-evidence-section {
-  flex: 0 0 204px !important;
-  height: 204px !important;
-  min-height: 204px !important;
-  max-height: 204px !important;
+  flex: 0 0 320px !important;
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
 }
 
 body.pc-mode .pc-play-left .pc-play-evidence-list {
@@ -28196,7 +28221,7 @@ body.pc-mode .pc-play-left {
 }
 
 body.pc-mode .pc-play-left .pc-important-notes-section {
-  min-height: 260px !important;
+  min-height: 160px !important;
 }
 
 body.pc-mode .pc-play-left .pc-judge-observation-section {
@@ -28215,16 +28240,38 @@ body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
   max-height: 176px !important;
 }
 
+/* 2026-05-20: 증거 320 / 발언노트 160 base. 작은 스크린에서 증거도 같이 축소. */
+body.pc-mode[data-screen-bucket="M"] .pc-play-left .pc-play-evidence-section {
+  flex: 0 0 280px !important;
+  height: 280px !important;
+  min-height: 280px !important;
+  max-height: 280px !important;
+}
+
 body.pc-mode[data-screen-bucket="M"] .pc-play-left .pc-important-notes-section {
-  min-height: 220px !important;
+  min-height: 140px !important;
+}
+
+body.pc-mode[data-screen-bucket="S"] .pc-play-left .pc-play-evidence-section {
+  flex: 0 0 240px !important;
+  height: 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
 }
 
 body.pc-mode[data-screen-bucket="S"] .pc-play-left .pc-important-notes-section {
-  min-height: 160px !important;
+  min-height: 120px !important;
+}
+
+body.pc-mode[data-screen-bucket="XS"] .pc-play-left .pc-play-evidence-section {
+  flex: 0 0 200px !important;
+  height: 200px !important;
+  min-height: 200px !important;
+  max-height: 200px !important;
 }
 
 body.pc-mode[data-screen-bucket="XS"] .pc-play-left .pc-important-notes-section {
-  min-height: 120px !important;
+  min-height: 100px !important;
 }
 
 /* 2026-05-04 follow-up: Court Beat clarity pass.
@@ -30913,20 +30960,36 @@ body.pc-mode .pc-impact-typography__subtitle.tone-amber-warning {
   color: #ffb347;
 }
 
+/* 2026-05-20 사용자 요청: 결정적 단서 chip → 기울어진 스탬프 형태.
+   기존 pill-shaped tag → 더블 보더 사각 + -7deg 기울임 + 텍스트 잉크 느낌. */
 body.pc-mode .pc-court-clash__chip {
   position: absolute;
-  top: 14px;
-  right: 16px;
-  z-index: 1;
-  padding: 4px 8px;
-  border: 1px solid rgba(92, 201, 122, 0.42);
-  border-radius: 999px;
-  background: rgba(24, 64, 38, 0.72);
-  color: #95e5aa;
-  font-size: 11px;
+  top: 18px;
+  right: 26px;
+  z-index: 3;
+  padding: 6px 14px 5px;
+  border: 2.5px solid rgba(132, 228, 158, 0.92);
+  border-radius: 4px;
+  background: rgba(24, 64, 38, 0.18);
+  color: rgba(168, 240, 188, 0.96);
+  font-size: 13px;
   font-weight: 900;
-  box-shadow: 0 0 18px rgba(92, 201, 122, 0.18);
-  animation: pc-impact-green-pulse 1200ms ease-out both;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transform: rotate(-7deg);
+  box-shadow:
+    inset 0 0 0 1px rgba(132, 228, 158, 0.38),
+    0 0 18px rgba(92, 201, 122, 0.22);
+  text-shadow: 0 0 6px rgba(92, 201, 122, 0.46);
+  pointer-events: none;
+  animation: pc-stamp-impact 540ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
+  transform-origin: 70% 50%;
+}
+@keyframes pc-stamp-impact {
+  0%   { transform: rotate(-2deg) scale(2.3); opacity: 0; }
+  55%  { transform: rotate(-9deg) scale(0.86); opacity: 1; }
+  78%  { transform: rotate(-6deg) scale(1.06); }
+  100% { transform: rotate(-7deg) scale(1); opacity: 1; }
 }
 
 body.pc-mode .pc-court-split-vs {

@@ -650,6 +650,25 @@ export default function EventFeedbackCard() {
   }, [active?.id, active?.kind, active?.tag])
 
   // converging/leaving 醫낅즺 ???ㅼ젣 dismiss + ?섎졃 ?寃?3踰?源쒕묀
+  // 2026-05-20 사용자 요청: Space 키로 manual-close popup dismiss.
+  // hasActions / onDefer 있는 경우는 무시 (선택 필요 / defer 흐름).
+  useEffect(() => {
+    if (!active || phase !== 'visible') return
+    const hasActions = Array.isArray(active.actions) && active.actions.length > 0
+    if (hasActions || active.onDefer) return
+    const handler = (event: KeyboardEvent) => {
+      if (event.code !== 'Space') return
+      // input/textarea/contenteditable focus 시 Space는 통과
+      const target = event.target as HTMLElement | null
+      const tag = target?.tagName?.toLowerCase()
+      if (tag === 'input' || tag === 'textarea' || target?.isContentEditable) return
+      event.preventDefault()
+      setPhase('leaving')
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [active, phase])
+
   useEffect(() => {
     if (phase !== 'converging' && phase !== 'leaving') return
     const duration = phase === 'converging' ? 520 : 260
@@ -674,7 +693,10 @@ export default function EventFeedbackCard() {
   const tone = active.tone ?? meta.tone
   const hasActions = Array.isArray(active.actions) && active.actions.length > 0
   const autoMs = getFeedbackAutoDismissMs(active, meta)
-  const manualCloseOnly = !hasActions && autoMs == null
+  // 2026-05-20 사용자 요청: actions가 없는 popup은 autoDismissMs 유무와 무관하게
+  // 확인 [Space] 버튼을 항상 노출 — 너무 빨리 사라지는 인지 부담 해결.
+  const showConfirmButton = !hasActions && !active.onDefer
+  const manualCloseOnly = showConfirmButton && autoMs == null
 
   const cardStyle = phase === 'converging' && convergeTransform
     ? { transform: convergeTransform, opacity: 0 }
@@ -859,13 +881,14 @@ export default function EventFeedbackCard() {
           </div>
         ) : null}
 
-        {manualCloseOnly ? (
+        {showConfirmButton ? (
           <button
             type="button"
             className="pc-event-feedback__dismiss"
             onClick={() => setPhase('leaving')}
           >
-            {active.courtBeat ? localizeRuntimeText('닫기', locale) : localizeRuntimeText('확인', locale)}
+            <span>{active.courtBeat ? localizeRuntimeText('닫기', locale) : localizeRuntimeText('확인', locale)}</span>
+            <kbd className="pc-event-feedback__kbd">Space</kbd>
           </button>
         ) : null}
       </div>
