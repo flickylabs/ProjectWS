@@ -265,24 +265,17 @@ function splitHighlightedText(text: string, highlight?: string) {
 
 /**
  * 사용자 요청 2026-05-21: popup body는 가급적 문장 단위로 행을 나눈다.
- * - 한글: 다./요./까?/까!/네. 등 종결 어미 + 공백 패턴
- * - 영문: . / ! / ? + 공백 + 대문자 패턴
- * - 일/중: 。 + 다음 글자 패턴
- * - 소수점(2025.11.05) / 약어는 회피 — period 뒤 공백이 있는 경우만 split.
+ * - period/!/?/。/！/？ 뒤에 공백이 따라오는 지점에서만 split (lookbehind).
+ * - 소수점(2025.11.05) / 약어는 period 뒤 공백이 없어 보존됨.
+ * - 이전 구현은 regex match만 push했다가 매치되지 않은 prefix("공증일은 2025.11.")가
+ *   누락되는 버그가 있었음 → split 방식으로 전체 텍스트 보존.
  */
 function splitBodyIntoSentences(text: string): string[] {
   if (!text) return []
-  const segments: string[] = []
-  const re = /([^.!?。！？]+[.!?。！？]+)(\s+|$)/g
-  let lastIndex = 0
-  let match: RegExpExecArray | null
-  while ((match = re.exec(text)) !== null) {
-    segments.push(match[1].trim())
-    lastIndex = re.lastIndex
-  }
-  const tail = text.slice(lastIndex).trim()
-  if (tail) segments.push(tail)
-  return segments.length > 0 ? segments : [text]
+  return text
+    .split(/(?<=[.!?。！？])\s+/)
+    .map((s) => s.trim())
+    .filter(Boolean)
 }
 
 function mapBeatPortraitEmotion(state?: string) {
@@ -491,8 +484,12 @@ function CourtBeatClash({ active, locale }: { active: EventFeedbackItem; locale:
           )}
         </div>
         <div className="pc-court-clash__reaction-copy">
-          <strong>{localizeRuntimeText(reaction?.name ?? beat.statement?.speakerName ?? localizeRuntimeText('당사자', locale), locale)}</strong>
-          <span>{getReactionStateLabel(reaction?.state, locale)}</span>
+          {/* 사용자 요청 2026-05-21 (7th): 이름과 상태(방어 등)를 한 줄에 — 하이픈 구분. */}
+          <div className="pc-court-clash__reaction-headline">
+            <strong>{localizeRuntimeText(reaction?.name ?? beat.statement?.speakerName ?? localizeRuntimeText('당사자', locale), locale)}</strong>
+            <span className="pc-court-clash__reaction-sep" aria-hidden="true">·</span>
+            <span>{getReactionStateLabel(reaction?.state, locale)}</span>
+          </div>
           {beat.reactionLine ? <p>{localizeRuntimeText(beat.reactionLine, locale)}</p> : null}
         </div>
         <div className="pc-court-clash__destination">
@@ -501,16 +498,20 @@ function CourtBeatClash({ active, locale }: { active: EventFeedbackItem; locale:
         </div>
       </div>
 
+      {/* 사용자 요청 2026-05-21 (7th): "재판관" / "재판관의 수첩" 라벨 제거.
+          두 블록이 모두 있으면 사이에 납작한 역삼각형 인과 마커 — 위 발언 → 아래 수첩 기록 흐름. */}
       {beat.judgeLine ? (
         <div className="pc-court-clash__judge">
-          <span>{localizeRuntimeText('재판관', locale)}</span>
           <p>{localizeRuntimeText(beat.judgeLine, locale)}</p>
         </div>
       ) : null}
 
+      {beat.judgeLine && beat.notebookEntry ? (
+        <div className="pc-court-clash__causation-arrow" aria-hidden="true" />
+      ) : null}
+
       {beat.notebookEntry ? (
         <div className="pc-court-clash__notebook">
-          <span>{localizeRuntimeText('재판관의 수첩', locale)}</span>
           <p>{localizeRuntimeText(beat.notebookEntry, locale)}</p>
         </div>
       ) : null}

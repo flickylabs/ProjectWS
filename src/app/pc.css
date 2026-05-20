@@ -637,8 +637,8 @@ body.pc-mode .pc-discovery-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  /* 사용자 요청 2026-05-21: 액션 버튼 하단 여백 축소 — 28px → 18px. */
-  padding: 0 28px 18px;
+  /* 사용자 요청 2026-05-21 (7th): 하단 여백 추가 축소 — 18px → 12px. */
+  padding: 0 28px 12px;
 }
 
 body.pc-mode .pc-interaction-card__action,
@@ -699,21 +699,27 @@ body.pc-mode .pc-ev-body-wrap {
   gap: 16px;
 }
 
-/* Evidence variant header */
+/* Evidence variant header — 사용자 요청 2026-05-21 (7th): title을 모달 전체 폭 중앙으로.
+   기존 row layout(left flex + close button)에서는 title이 left subcontainer 안에서만 center됨.
+   column layout으로 변경하면 title이 모달 전체 폭 기준 center 가능. close는 absolute 유지. */
 body.pc-mode .pc-interaction-card__header--evidence {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 body.pc-mode .pc-ev-header-left {
-  flex: 1;
+  flex: none;
+  width: 100%;
   min-width: 0;
+  text-align: center;
 }
 
 body.pc-mode .pc-ev-header-top {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   margin-bottom: 4px;
 }
@@ -11380,8 +11386,10 @@ body.pc-mode .pc-ev-detail__tag.is-source { background: rgba(255, 255, 255, 0.06
 body.pc-mode .pc-ev-detail__tag.is-legal { background: rgba(255, 255, 255, 0.06); color: #d8d6cf; }
 body.pc-mode .pc-ev-detail__tag.is-done { background: rgba(255, 255, 255, 0.06); color: #d8d6cf; }
 
+/* 사용자 요청 2026-05-21 (7th): 주요 쟁점 영역 중앙 정렬 (라벨 + 쟁점명 모두). */
 body.pc-mode .pc-ev-detail__dispute-section {
   margin-bottom: 12px;
+  text-align: center;
 }
 
 body.pc-mode .pc-ev-detail__dispute-label {
@@ -11393,6 +11401,7 @@ body.pc-mode .pc-ev-detail__dispute-label {
 
 body.pc-mode .pc-ev-detail__dispute-names {
   display: flex; flex-wrap: wrap; gap: 6px;
+  justify-content: center;
 }
 
 body.pc-mode .pc-ev-detail__dispute {
@@ -18166,9 +18175,10 @@ body.pc-mode .pc-court-beat-stage__rails {
   left: 50%;
   top: 50%;
   /* 카드 폭(760px)에 맞춰 frame 폭 축소 — frame이 카드보다 너무 커서 어긋나 보이는 문제
-     (사용자 지적 2026-05-21). 카드보다 약 40px 큰 정도가 frame outline 효과 적당. */
+     (사용자 지적 2026-05-21). 카드보다 약 40px 큰 정도가 frame outline 효과 적당.
+     2026-05-21 (7th): spacing 확대로 카드 키가 커짐 — 높이 360 → 440 (카드 320~360px 기준 안쪽 여유). */
   width: min(800px, calc(100vw - 56px));
-  height: min(360px, 46vh);
+  height: min(440px, 56vh);
   transform: translate(-50%, -50%);
   border-top: 1px solid rgba(var(--court-beat-accent), 0.28);
   border-bottom: 1px solid rgba(var(--court-beat-accent), 0.18);
@@ -18623,6 +18633,7 @@ body.pc-mode .pc-event-feedback__dismiss {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0;
+  box-sizing: border-box;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
@@ -18737,9 +18748,11 @@ body.pc-mode .pc-event-feedback__action.tone-gray:hover {
 }
 body.pc-mode .pc-event-feedback__dismiss {
   flex: 0 0 auto;
-  /* 부모(.pc-event-feedback-card)가 align-items: stretch — 그대로 stretch하되 좌우 살짝 여백 (카드 padding과 비슷한 22px) */
-  margin: 4px 22px 0;
+  /* 사용자 요청 2026-05-21 (7th): 닫기 버튼 가로폭 = 바로 위 텍스트 영역(예: 재판관 수첩)과 동일.
+     이전 좌우 22px 마진은 시각 여백용이었으나 notebook 박스보다 좁아 보임 → 마진 제거 + 100% width. */
+  margin: 4px 0 0;
   padding: 12px 24px;
+  width: 100%;
 }
 
 body.pc-mode .pc-interaction-card__dismiss-row,
@@ -28055,15 +28068,26 @@ body.pc-mode .pc-court-clash__portrait.state-resigned {
   border-color: rgba(124, 112, 87, 0.78);
 }
 
+/* 2026-05-21 (7th): 이름 + 상태 한 줄 — flex row + 중간 separator. */
+body.pc-mode .pc-court-clash__reaction-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 body.pc-mode .pc-court-clash__reaction-copy strong {
-  display: block;
   color: rgba(245, 226, 178, 0.92);
   font-size: 17px;
+  font-weight: 800;
+}
+
+body.pc-mode .pc-court-clash__reaction-sep {
+  color: rgba(212, 168, 67, 0.55);
+  font-size: 13px;
 }
 
 body.pc-mode .pc-court-clash__reaction-copy span {
-  display: inline-block;
-  margin-top: 2px;
   color: rgba(212, 168, 67, 0.92);
   font-size: 13px;
 }
@@ -28118,23 +28142,12 @@ body.pc-mode .pc-court-clash__stamp-svg text {
 
 body.pc-mode .pc-court-clash__judge,
 body.pc-mode .pc-court-clash__notebook {
-  padding: 14px 16px;
+  padding: 14px 18px;
 }
 
+/* 2026-05-21 (7th): 재판관 라벨 제거 후 grid 컬럼 분할 불필요 — 단순 텍스트 컨테이너. */
 body.pc-mode .pc-court-clash__judge {
-  display: grid;
-  grid-template-columns: 74px 1fr;
-  gap: 12px;
-  align-items: center;
-}
-
-body.pc-mode .pc-court-clash__judge span,
-body.pc-mode .pc-court-clash__notebook span {
-  color: rgba(212, 168, 67, 0.78);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  display: block;
 }
 
 body.pc-mode .pc-court-clash__judge p,
@@ -28142,11 +28155,23 @@ body.pc-mode .pc-court-clash__notebook p {
   margin: 0;
   color: rgba(246, 239, 221, 0.94);
   line-height: 1.55;
+  text-align: center;
 }
 
 body.pc-mode .pc-court-clash__notebook {
   border-style: double;
   background: linear-gradient(90deg, rgba(212, 168, 67, 0.12), rgba(34, 29, 22, 0.88));
+}
+
+/* 2026-05-21 (7th): 재판관 발언 → 재판관 수첩 인과 화살표 — 납작한 역삼각형. */
+body.pc-mode .pc-court-clash__causation-arrow {
+  width: 0;
+  height: 0;
+  margin: -6px auto -2px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 7px solid rgba(212, 168, 67, 0.62);
+  filter: drop-shadow(0 1px 3px rgba(212, 168, 67, 0.18));
 }
 
 @keyframes court-clash-slide-left {
