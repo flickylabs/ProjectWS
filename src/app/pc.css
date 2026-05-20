@@ -18216,8 +18216,10 @@ body.pc-mode .pc-event-feedback-card.is-focus-takeover.is-cutscene {
   width: min(760px, calc(100vw - 72px)) !important;
   min-width: min(560px, calc(100vw - 72px)) !important;
   max-width: min(760px, calc(100vw - 72px)) !important;
-  /* top/bottom 동일 30px — 카드 시각 중심을 정확한 중앙으로 (사용자 어긋남 지적 2026-05-21) */
-  padding: 30px 38px !important;
+  /* 2026-05-21 (6th): 사용자 요청 공간 확보 — 30px → 38px (top/bottom). */
+  padding: 38px 38px !important;
+  /* 카드 내 gap도 cutscene에서 더 넉넉히 — base 26px → 32px. */
+  gap: 32px !important;
   border: 1px solid rgba(var(--court-beat-accent), 0.3) !important;
   border-radius: 14px !important;
   background:
@@ -18420,7 +18422,8 @@ body.pc-mode .pc-event-feedback-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 20px;  /* body ↔ dismiss 버튼 / title ↔ body 시각 분리 강화 (사용자 요청 2026-05-21 3rd) */
+  /* 사용자 요청 2026-05-21 (6th): title/body/button 간격 너무 빽빽 → 20px → 26px. */
+  gap: 26px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #0c0c14;
@@ -18543,8 +18546,15 @@ body.pc-mode .pc-event-feedback__body {
   font-weight: 400;
   word-break: keep-all;
   overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
-/* 2026-05-21 통일: base body 14px → 14.5px (이전 is-alert만 14.5px → 전체로 확장). */
+/* 2026-05-21 통일: base body 14px → 14.5px (이전 is-alert만 14.5px → 전체로 확장).
+   문장 분리 렌더링 (splitBodyIntoSentences): 각 문장 별 행 — flex column + gap 6px. */
+body.pc-mode .pc-event-feedback__sentence {
+  display: block;
+}
 /* title 바로 다음 body는 위쪽에 얇은 구분선 — 두 영역 시각 분리 (사용자 요청 2026-05-21).
    body가 없는 짧은 alert에는 적용 X (자동).
    3rd pass — 18+8 → 22+12 (총 ~34px). 사용자가 여전히 좁다고 지적. */
@@ -19883,16 +19893,17 @@ body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feed
 body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__body,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__body {
   font-size: 14.5px !important;
-  line-height: 1.45 !important;
+  line-height: 1.55 !important;
   text-align: center !important;
   color: #f4ecd8 !important;
   padding: 0 !important;
   margin: 0 auto !important;
   width: auto !important;
   max-width: calc(100% - 64px) !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  /* 2026-05-21 (6th): 문장 분리 행 렌더링 지원 — nowrap/ellipsis 제거. */
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
   font-weight: 400 !important;
   letter-spacing: 0.01em !important;
 }

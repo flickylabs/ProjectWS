@@ -263,6 +263,28 @@ function splitHighlightedText(text: string, highlight?: string) {
   )
 }
 
+/**
+ * 사용자 요청 2026-05-21: popup body는 가급적 문장 단위로 행을 나눈다.
+ * - 한글: 다./요./까?/까!/네. 등 종결 어미 + 공백 패턴
+ * - 영문: . / ! / ? + 공백 + 대문자 패턴
+ * - 일/중: 。 + 다음 글자 패턴
+ * - 소수점(2025.11.05) / 약어는 회피 — period 뒤 공백이 있는 경우만 split.
+ */
+function splitBodyIntoSentences(text: string): string[] {
+  if (!text) return []
+  const segments: string[] = []
+  const re = /([^.!?。！？]+[.!?。！？]+)(\s+|$)/g
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+  while ((match = re.exec(text)) !== null) {
+    segments.push(match[1].trim())
+    lastIndex = re.lastIndex
+  }
+  const tail = text.slice(lastIndex).trim()
+  if (tail) segments.push(tail)
+  return segments.length > 0 ? segments : [text]
+}
+
 function mapBeatPortraitEmotion(state?: string) {
   if (state === 'shaken') return 'shaken' as const
   if (state === 'resigned') return 'resigned' as const
@@ -815,7 +837,15 @@ export default function EventFeedbackCard() {
         {active.eyebrow ? <div className="pc-event-feedback__eyebrow">{localizeRuntimeText(active.eyebrow, locale)}</div> : null}
         {active.subtitle ? <div className="pc-event-feedback__subtitle">{localizeRuntimeText(active.subtitle, locale)}</div> : null}
         {active.title ? <div className="pc-event-feedback__title">{localizeRuntimeText(active.title, locale)}</div> : null}
-        {active.body ? <div className="pc-event-feedback__body">{localizeRuntimeText(active.body, locale)}</div> : null}
+        {active.body ? (
+          <div className="pc-event-feedback__body">
+            {splitBodyIntoSentences(localizeRuntimeText(active.body, locale)).map((sentence, i, arr) => (
+              <span key={`${active.id}-sentence-${i}`} className="pc-event-feedback__sentence">
+                {sentence}{i < arr.length - 1 ? '\n' : ''}
+              </span>
+            ))}
+          </div>
+        ) : null}
         {active.bodyLines && active.bodyLines.length > 0 ? (
           <div className="pc-event-feedback__lines">
             {active.bodyLines.map((line, i) => <div key={`${active.id}-line-${i}`}>{localizeRuntimeText(line, locale)}</div>)}
