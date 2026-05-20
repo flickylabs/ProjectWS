@@ -49,3 +49,33 @@ export function hasPcPortrait(caseId: string | undefined | null, party: PartyId)
   if (!slug) return false
   return Boolean(PORTRAIT_PREFIX[slug]?.[party])
 }
+
+/**
+ * 증인 초상화 매핑. `public/assets/character/witness/{slug}-{witnessId}-{name}.png` 패턴.
+ * 3 사건 × 3 증인 = 9명 전체 PNG 에셋 존재.
+ * caseData의 witness id는 'w-1' 형식 (하이픈 포함), PNG 파일명은 'w1' 형식 — normalize 필요.
+ */
+const WITNESS_PORTRAITS: Record<string, string> = {
+  'spouse-01:w1': 'spouse-01-w1-security-guard',
+  'spouse-01:w2': 'spouse-01-w2-bank-clerk',
+  'spouse-01:w3': 'spouse-01-w3-cafe-owner',
+  'family-01:w1': 'family-01-w1-choi-boksoon',
+  'family-01:w2': 'family-01-w2-kim-youngsoo',
+  'family-01:w3': 'family-01-w3-park-soonae',
+  'friend-01:w1': 'friend-01-w1-kim-sera',
+  'friend-01:w2': 'friend-01-w2-park-junhyuk',
+  'friend-01:w3': 'friend-01-w3-oh-mikyung',
+}
+
+export function getWitnessPortraitUrl(
+  caseId: string | undefined | null,
+  witnessId: string | undefined | null,
+): string | null {
+  const slug = normalizeCaseSlug(caseId)
+  if (!slug || !witnessId) return null
+  // caseData id "w-1" → PNG 키 "w1"
+  const normalizedId = witnessId.replace('-', '')
+  const prefix = WITNESS_PORTRAITS[`${slug}:${normalizedId}`]
+  if (!prefix) return null
+  return `/assets/character/witness/${prefix}.png`
+}

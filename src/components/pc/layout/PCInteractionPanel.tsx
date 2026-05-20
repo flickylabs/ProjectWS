@@ -928,18 +928,7 @@ export default function PCInteractionPanel() {
           </div>
         ) : null}
 
-        {showConfirmButton ? (
-          <div className="pc-interaction-card__dismiss-row">
-            <button
-              type="button"
-              className="pc-interaction-card__dismiss pc-event-feedback__dismiss"
-              onClick={closePanel}
-            >
-              <span>{localizeRuntimeText('확인', locale)}</span>
-              <kbd className="pc-event-feedback__kbd">Space</kbd>
-            </button>
-          </div>
-        ) : null}
+        {/* 발언 기록 popup은 클릭/Space 자체로 dismiss — 별도 [확인 Space] 버튼 불필요 (사용자 요청 2026-05-20) */}
       </div>
     </div>,
     document.body,

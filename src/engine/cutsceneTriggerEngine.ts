@@ -50,9 +50,9 @@ export const CUTSCENE_DURATION: Record<CutsceneEvent['type'], number> = {
   dispute_emergence: 2000,
   phase_transition: 2000,
   verdict_gavel: 3000,
-  truth_reveal_trust: 9500,    // ~7s reveal + 2.5s closure
-  truth_reveal_slip: 9500,
-  truth_reveal_witness: 10000,
+  truth_reveal_trust: 13000,    // wide → focus(0.7s) + typing + closure
+  truth_reveal_slip: 16000,     // 3단계 (explosive 1.6s + dismay 1.4s + confession typing) + closure
+  truth_reveal_witness: 14000,  // focus-witness 1.8s + wide 0.6s + focus-character + typing
 }
 
 /** 쿨다운 초기화 (새 사건 시작 시 호출) */

@@ -18,8 +18,14 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import type { CutsceneEvent } from '../../engine/cutsceneTriggerEngine'
 import { CUTSCENE_DURATION } from '../../engine/cutsceneTriggerEngine'
-import { playCutsceneSfx } from '../../engine/soundEngine'
+import { playCutsceneSfx, startCutsceneHeartbeat, stopCutsceneHeartbeat } from '../../engine/soundEngine'
 import TruthRevealCutscene from './TruthRevealCutscene'
+
+const TRUTH_REVEAL_TYPES = new Set<CutsceneEvent['type']>([
+  'truth_reveal_trust',
+  'truth_reveal_slip',
+  'truth_reveal_witness',
+])
 
 // ── 외부 트리거 함수 ──────────────────────────────────
 
@@ -43,23 +49,33 @@ export default function CutsceneOverlay() {
     return () => { _listener = null }
   }, [])
 
-  // 자동 dismiss
+  // truth_reveal 컷씬은 자동 dismiss X — 사용자가 [확인 Space] / 클릭으로만 종료 (사용자 요청).
+  // 다른 짧은 컷씬은 기존대로 timeout 자동 dismiss.
   useEffect(() => {
     if (!event) return
     playCutsceneSfx(event.type)
+    const isTruthReveal = TRUTH_REVEAL_TYPES.has(event.type)
+    if (isTruthReveal) {
+      // heartbeat은 컷씬 전체에 계속 — 사용자 dismiss까지 (안전상 최대 60s)
+      startCutsceneHeartbeat(60000)
+    }
     if (timerRef.current) clearTimeout(timerRef.current)
-    timerRef.current = setTimeout(() => {
-      setEvent(null)
-      timerRef.current = null
-    }, CUTSCENE_DURATION[event.type])
+    if (!isTruthReveal) {
+      timerRef.current = setTimeout(() => {
+        setEvent(null)
+        timerRef.current = null
+      }, CUTSCENE_DURATION[event.type])
+    }
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current)
+      stopCutsceneHeartbeat()
     }
   }, [event])
 
   const dismiss = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current)
     timerRef.current = null
+    stopCutsceneHeartbeat()
     setEvent(null)
   }, [])
 

@@ -17995,12 +17995,26 @@ body.pc-mode .pc-event-feedback-root {
   pointer-events: none;
 }
 
-/* 2026-05-20 사용자 요청 (수정 2회): 모든 VFX/popup 활성 동안 좌/우 패널의 "연결되는 항목들"이
-   popup root backdrop(z-index 10200)에 가려져 보이지 않는 문제 일반 해결.
-   body class pc-vfx-popup-active 동안 좌측 증거 수첩 + 우측 재판관 관찰/수첩 + 기록정리 버튼을
-   popup root 위로 띄워 VFX(aura/resonance/jump-pulse 등)가 실제 항목과 직접 연결되어 보이게 함.
-   popup 자체는 화면 중앙이라 좌/우 패널과 공간 겹침이 없어 사용자 인지 방해 X.
+/* 2026-05-20 사용자 요청 (수정 3회): 모든 VFX/popup 활성 동안 좌/우 패널의 "연결되는 항목들"이
+   popup root backdrop(z-index 10200)에 가려져 흐릿하게 보이는 문제 일반 해결.
+
+   ▼ 핵심 원인 (3차 수정에서 발견)
+   .pc-play-panel--left / .pc-play-panel--right 자체에 backdrop-filter: blur(8px)가 적용되어
+   panel이 **새 stacking context를 강제 생성**한다 (CSS spec).
+   따라서 child section에 z-index: 10500 줘봐야 outer popup root(10200) 위로 못 올라간다 —
+   panel 자체의 z-index가 0이라 panel이 popup 뒤로 묻히기 때문.
+
+   ▼ 해결
+   popup active 동안 panel 자체를 z-index: 10500으로 띄움. 그래야 panel 내부의 section/카드도
+   popup root보다 위에 그려져 cutscene backdrop blur 영향을 안 받는다.
+
    appearing/visible/leaving phase 전체에서 유지 — active 존재 기준으로 토글. */
+body.pc-mode.pc-vfx-popup-active .pc-play-panel--left,
+body.pc-mode.pc-vfx-popup-active .pc-play-panel--right {
+  position: relative !important;
+  z-index: 10500 !important;
+}
+/* 기존 section-level boost 유지 (panel을 띄우지 못하는 경우 보조용 + 명시적 unblur 의도 보존) */
 body.pc-mode.pc-vfx-popup-active .pc-play-evidence-section,
 body.pc-mode.pc-vfx-popup-active .pc-judge-observation-section,
 body.pc-mode.pc-vfx-popup-active .pc-judge-observation-section--notebook,
@@ -18008,7 +18022,7 @@ body.pc-mode.pc-vfx-popup-active .pc-right-block--summary,
 body.pc-mode.pc-vfx-popup-active .pc-target-block,
 body.pc-mode.pc-vfx-popup-active .pc-target-dispute-card {
   position: relative !important;
-  z-index: 10500 !important;
+  z-index: 1 !important;
 }
 
 /* Modal 모드 — 뒷배경 진한 blur + 차단 */
@@ -18236,9 +18250,9 @@ body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-transition_choice.is
 body.pc-mode .pc-event-feedback__beat-mark {
   position: absolute;
   left: 50%;
-  top: -36px;
-  width: 72px;
-  height: 72px;
+  top: -18px;  /* 절반으로 줄이면서 위치도 비례 조정 */
+  width: 36px;
+  height: 36px;
   transform: translateX(-50%);
   display: grid;
   place-items: center;
@@ -18250,48 +18264,48 @@ body.pc-mode .pc-event-feedback__beat-mark {
 body.pc-mode .pc-event-feedback__beat-mark::before {
   content: '';
   position: absolute;
-  inset: 12px;
+  inset: 6px;
   border: 1px solid rgba(var(--court-beat-accent), 0.62);
   transform: rotate(45deg);
   background: rgba(7, 7, 10, 0.84);
-  box-shadow: 0 0 22px rgba(var(--court-beat-accent), 0.24);
+  box-shadow: 0 0 16px rgba(var(--court-beat-accent), 0.24);
 }
 
 body.pc-mode .pc-event-feedback__beat-mark span,
 body.pc-mode .pc-event-feedback__beat-mark i {
   position: relative;
   display: block;
-  width: 30px;
-  height: 2px;
+  width: 15px;
+  height: 1.5px;
   background: rgba(var(--court-beat-accent), 0.92);
   border-radius: 999px;
-  box-shadow: 0 0 16px rgba(var(--court-beat-accent), 0.4);
+  box-shadow: 0 0 10px rgba(var(--court-beat-accent), 0.4);
 }
 
 body.pc-mode .pc-event-feedback__beat-mark i {
   position: absolute;
-  width: 2px;
-  height: 30px;
+  width: 1.5px;
+  height: 15px;
 }
 
 body.pc-mode .pc-event-feedback-card.is-cue-evidence .pc-event-feedback__beat-mark span {
-  width: 24px;
-  height: 32px;
+  width: 12px;
+  height: 16px;
   border: 1px solid rgba(var(--court-beat-accent), 0.9);
-  border-radius: 3px;
+  border-radius: 2px;
   background: linear-gradient(180deg, rgba(var(--court-beat-accent), 0.18), rgba(0, 0, 0, 0));
 }
 
 body.pc-mode .pc-event-feedback-card.is-cue-evidence .pc-event-feedback__beat-mark i {
-  width: 16px;
+  width: 8px;
   height: 1px;
-  transform: translateY(3px);
+  transform: translateY(1.5px);
 }
 
 body.pc-mode .pc-event-feedback-card.is-cue-dispute .pc-event-feedback__beat-mark span,
 body.pc-mode .pc-event-feedback-card.is-cue-dispute .pc-event-feedback__beat-mark i {
-  width: 34px;
-  height: 3px;
+  width: 17px;
+  height: 2px;
   transform: rotate(-22deg);
 }
 
@@ -18399,12 +18413,33 @@ body.pc-mode .pc-event-feedback-card {
   transition: none;
 }
 
-/* Alert: 차분한 알림 */
+/* Alert: 차분한 알림. 짧은 메시지가 대부분이라 중앙 정렬이 깔끔 (사용자 요청 2026-05-20) */
 body.pc-mode .pc-event-feedback-card.is-alert {
   padding: 22px 28px;
   min-width: 320px;
   max-width: min(600px, calc(100vw - 48px));
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
+  text-align: center !important;
+}
+/* text-align center는 .is-cutscene으로도 동일하게 적용되어야 함 (cutscene wrapper alert 포함) */
+body.pc-mode .pc-event-feedback-card.is-alert.is-cutscene {
+  text-align: center !important;
+}
+/* 텍스트 영역 위아래 폭 — 확인 버튼(min-height 52px)의 거의 2배 vertical 영역(~96px) 차지하도록.
+   .is-cutscene 카드의 padding: 0 override를 이기기 위해 selector specificity 강화 + !important.
+   (사용자 요청 2026-05-20, 3회 — 같은 형태 패널 모두 적용) */
+body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__subtitle,
+body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__lines,
+body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__quote,
+body.pc-mode .pc-event-feedback-card.is-alert.is-cutscene .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.is-alert.is-cutscene .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.is-alert.is-cutscene .pc-event-feedback__subtitle,
+body.pc-mode .pc-event-feedback-card.is-alert.is-cutscene .pc-event-feedback__lines,
+body.pc-mode .pc-event-feedback-card.is-alert.is-cutscene .pc-event-feedback__quote {
+  padding-block: 36px !important;
+  margin: 0 auto !important;
 }
 
 /* Modal: 자백 유도하기 스타일 */
@@ -18640,8 +18675,8 @@ body.pc-mode .pc-event-feedback__action.tone-gray:hover {
 }
 body.pc-mode .pc-event-feedback__dismiss {
   flex: 0 0 auto;
-  min-width: 120px;
-  margin-top: 4px;
+  /* 부모(.pc-event-feedback-card)가 align-items: stretch — 그대로 stretch하되 좌우 살짝 여백 (카드 padding과 비슷한 22px) */
+  margin: 4px 22px 0;
   padding: 12px 24px;
 }
 

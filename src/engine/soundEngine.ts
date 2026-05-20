@@ -868,6 +868,91 @@ export function duckBgmForImpact(durationMs: number, reductionDb = -30) {
   duckBgmForCourtBeat(durationMs, targetVolume)
 }
 
+// ── Cutscene heartbeat (긴장감 강화) ──
+//
+// 두근(lub) + 두근(dub) 한 박자 = 약 0.55s. 70bpm 정도로 반복.
+// Web Audio API 합성 — kick-drum 풍 저주파 sine + 짧은 envelope.
+
+let cutsceneHeartbeatTimer: number | null = null
+let cutsceneBgmOriginalVolume: number | null = null
+
+function playHeartbeatThump(ctx: AudioContext, at: number, peak: number, lowFreq: number) {
+  // 본체 — 70Hz → 38Hz 빠른 sweep, 짧은 decay (kick 느낌)
+  const osc = ctx.createOscillator()
+  const gain = ctx.createGain()
+  osc.type = 'sine'
+  osc.frequency.setValueAtTime(lowFreq * 1.6, at)
+  osc.frequency.exponentialRampToValueAtTime(lowFreq, at + 0.06)
+  gain.gain.setValueAtTime(0.0001, at)
+  gain.gain.exponentialRampToValueAtTime(peak, at + 0.014)
+  gain.gain.exponentialRampToValueAtTime(0.0001, at + 0.28)
+  osc.connect(gain).connect(ctx.destination)
+  osc.start(at)
+  osc.stop(at + 0.3)
+  // 살짝 thick하게 만드는 sub layer
+  const sub = ctx.createOscillator()
+  const subGain = ctx.createGain()
+  sub.type = 'sine'
+  sub.frequency.setValueAtTime(lowFreq * 0.5, at)
+  subGain.gain.setValueAtTime(0.0001, at)
+  subGain.gain.exponentialRampToValueAtTime(peak * 0.55, at + 0.018)
+  subGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.22)
+  sub.connect(subGain).connect(ctx.destination)
+  sub.start(at)
+  sub.stop(at + 0.24)
+}
+
+function scheduleHeartbeatPair(ctx: AudioContext, at: number, peak: number) {
+  // lub (강) → 0.16s gap → dub (약). 다음 박자까지는 큰 gap.
+  playHeartbeatThump(ctx, at, peak, 62)
+  playHeartbeatThump(ctx, at + 0.16, peak * 0.74, 56)
+}
+
+/**
+ * 컷씬용 심장박동 SFX 시작 + BGM duck.
+ * @param durationMs 전체 지속 시간. 끝나면 자동 정지 + BGM 복원.
+ */
+export function startCutsceneHeartbeat(durationMs: number) {
+  if (!enabled) return
+  // 중복 호출 방어
+  stopCutsceneHeartbeat()
+
+  // BGM duck (컷씬 동안 -16dB)
+  if (bgmAudio && bgmEnabled) {
+    cutsceneBgmOriginalVolume = bgmAudio.volume
+    bgmAudio.volume = bgmAudio.volume * 0.16
+  }
+
+  // 70bpm — 한 박자 ≈ 0.86s. 페어는 lub+dub로 약 0.16s 폭.
+  const intervalMs = 860
+  const peak = 0.22
+
+  // 첫 박자 즉시
+  withAudioContext((ctx) => {
+    scheduleHeartbeatPair(ctx, ctx.currentTime + 0.05, peak)
+  })
+
+  cutsceneHeartbeatTimer = window.setInterval(() => {
+    withAudioContext((ctx) => {
+      scheduleHeartbeatPair(ctx, ctx.currentTime + 0.02, peak)
+    })
+  }, intervalMs)
+
+  // 안전장치 — 최대 지속시간 후 자동 정지
+  window.setTimeout(() => stopCutsceneHeartbeat(), durationMs)
+}
+
+export function stopCutsceneHeartbeat() {
+  if (cutsceneHeartbeatTimer != null) {
+    window.clearInterval(cutsceneHeartbeatTimer)
+    cutsceneHeartbeatTimer = null
+  }
+  if (bgmAudio && cutsceneBgmOriginalVolume != null) {
+    bgmAudio.volume = cutsceneBgmOriginalVolume
+    cutsceneBgmOriginalVolume = null
+  }
+}
+
 function playCourtBeatTone(
   ctx: AudioContext,
   at: number,
