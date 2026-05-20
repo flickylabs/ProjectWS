@@ -33,7 +33,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     topic: '해당 층 거주자를 묻는다',
     question: '이준호 씨가 방문하는 층에는 어떤 분들이 살고 있습니까?',
     depth: 1,
-    testimony: '그 층은 대부분 가족 세대예요. 여자 혼자 사는 집은 없는 걸로 알고 있습니다.',
+    testimony: '그 층은 대부분 야간에 일하는 분들이 많아서 저녁 시간에도 거의 모든 집이 불이 꺼져있을 때가 많습니다.',
     behaviorHint: '기억을 떠올리며',
     effect: {
       favorDirection: 'pro_b',
@@ -48,7 +48,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     topic: '그 층 거주자 구성을 묻는다',
     question: '방문 빈도는 알겠습니다. 그런데 그 층에 혼자 사는 여성이 있습니까?',
     depth: 2,
-    testimony: '아뇨, 그 층에 여자 혼자 사는 집은 없어요. 가족들이 사는 집이 대부분이고, 302호는 남자분 혼자 사시는 걸로 알고 있습니다.',
+    testimony: '그 층에 여자 혼자 사는 집은 없는 것 같아요. 여자 분들은 커플이 대부분이고, 아니면 남자 혼자 사는 분들이 대부분입니다.',
     behaviorHint: '확신을 가지고',
     conditions: {
       prevSlotRequired: 'w1-d1-visit-freq',
@@ -56,23 +56,6 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     effect: {
       favorDirection: 'pro_b',
       relatedDisputes: ['d-1'],
-    },
-  },
-  {
-    id: 'w1-d1-kid-spotted',
-    witnessId: 'w-1',
-    topic: '방문 시 동행인이 있었는지 묻는다',
-    question: '이준호 씨가 항상 혼자 왔습니까? 누군가와 함께 나오는 걸 본 적은요?',
-    depth: 2,
-    testimony: '가끔 중학생 정도 되는 아이와 같이 나오는 걸 봤어요. 아이가 교복을 입고 있을 때도 있었습니다.',
-    behaviorHint: '기억을 떠올리며 천천히',
-    conditions: {
-      prevSlotRequired: 'w1-d1-resident-info',
-    },
-    effect: {
-      favorDirection: 'pro_b',
-      relatedDisputes: ['d-1'],
-      lieStateNudge: { party: 'a', dispute: 'd-1' },
     },
   },
 
@@ -83,7 +66,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     topic: '302호 거주자에 대해 묻는다',
     question: '302호에 사는 분에 대해 좀 더 자세히 알려주시겠습니까?',
     depth: 3,
-    testimony: '302호는 남자분 혼자 사시는데, 가끔 이준호 씨가 오시면 그 집에서 아이 웃음소리가 들렸어요. 밥 냄새도 나고요. 그래서 저는 친구 분이나 친척 분인가보다 생각하고 있었습니다.',
+    testimony: '집주인 분께서 숨기시는 듯해서 모르는 척 했지만, 302호는 중학교 교복을 입은 아이와 함께 살고 계신 것으로 알고있습니다. 방문하신 분께 작은아버지라고 부르는 것도 들었구요.',
     behaviorHint: '조심스럽지만 확신',
     conditions: {
       disputeState: { id: 'd-1', minLieState: 'S2', visibility: 'any' },
@@ -158,7 +141,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     topic: '출금 패턴에 대해 묻는다',
     question: '현금 출금의 패턴이 어땠습니까? 한꺼번에? 나눠서?',
     depth: 2,
-    testimony: '4개월에 걸쳐 나눠서 출금하셨어요. 500, 800, 700, 1000만 원. 전부 같은 지점 ATM이었고, 계좌 이체를 안 하시는 게 좀 특이했습니다.',
+    testimony: '4개월에 걸쳐 나눠서 출금하셨어요. 500, 800, 700, 1000만 원. 금액이 커서 ATM으로 출금이 불가하여 창구에서 직접 출금하셨어요. 계좌 이체를 안 하시는 게 좀 특이하게 느껴졌습니다.',
     behaviorHint: '기록을 확인하듯 정확하게',
     conditions: {
       prevSlotRequired: 'w2-d2-cash-withdrawal',
@@ -176,7 +159,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     topic: '위임장 서명의 문제를 묻는다',
     question: '서명이 달랐다는 게 구체적으로 어떤 부분이었습니까?',
     depth: 2,
-    testimony: '남편 분의 원래 서명은 좀 더 또박또박한 편인데, 위임장의 서명은 흘려 쓴 느낌이었어요. 하지만 저는 필적 감정사가 아니니까 확신은 못 했습니다.',
+    testimony: '서명이 느낌상 달라보이긴 했는데, 제가 필적 감정사도 아니고 확신할 수는 없었습니다. 다만, 그래도 부부이시고 서류를 모두 갖추셨으니 문제 없을 것이라고 생각했습니다.',
     behaviorHint: '조심스럽게',
     conditions: {
       disputeState: { id: 'h-d3', visibility: 'emerged' },
@@ -197,7 +180,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     topic: '이후 남편의 반응을 묻는다',
     question: '이준호 씨가 나중에 적금 해지 건으로 은행에 온 적이 있습니까?',
     depth: 3,
-    testimony: '네, 몇 주 뒤에 오셔서 "적금을 해지한 적이 없다"고 하셨어요. 상당히 놀라신 표정이었습니다. 그때 저도 "아, 위임장이 문제였구나" 싶었습니다.',
+    testimony: '네, 몇 주 뒤에 남편 분이 오셔서 "적금을 해지한 적이 없다"고 하셨어요. 상당히 놀라신 표정이었습니다. 그때 저도 "아, 위임장이 문제였구나" 싶었습니다.',
     behaviorHint: '기억이 선명하게',
     conditions: {
       disputeState: { id: 'h-d3', visibility: 'emerged', minLieState: 'S2' },

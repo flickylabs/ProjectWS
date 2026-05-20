@@ -19,7 +19,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '단톡방 분위기를 묻는다',
     question: '그 캡처가 올라온 직후 단톡방 분위기가 어떻게 흘렀습니까?',
     depth: 1,
-    testimony: '처음엔 다들 놀랐어요. 연락 횟수만 보이니까 솔직히 저도 그분이 선 넘은 줄 알았습니다.',
+    testimony: '처음엔 다들 놀랐어요. 연락 횟수만 보이니까 솔직히 저도 수민이가 선을 넘은 걸로 생각했습니다.',
     behaviorHint: '머쓱해하며 솔직하게',
     effect: {
       favorDirection: 'pro_a',
@@ -33,7 +33,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '처음 붙은 말의 방향을 묻는다',
     question: '송다은 씨가 그 캡처를 올릴 때 어떤 식으로 설명했습니까?',
     depth: 1,
-    testimony: '그냥 기록만 올린 게 아니라, 예전에도 비슷했다는 식으로 말이 번졌습니다. 그래서 분위기가 더 한쪽으로 기울었어요.',
+    testimony: '그냥 기록만 올린 게 아니라, 예전에도 계속 비슷했다는 식으로 말이 번졌습니다. 그래서 분위기가 더 한쪽으로 쏠렸어요.',
     behaviorHint: '기억을 더듬으며',
     effect: {
       favorDirection: 'mixed',
@@ -49,7 +49,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '직접 확인한 사람이 있었는지 묻는다',
     question: '그 뒤에 최수민 씨에게 직접 사정을 물은 사람이 있었습니까?',
     depth: 2,
-    testimony: '없었습니다. 다들 캡처 보고 바로 편을 갈랐어요. 저도 그때는 분위기에 눌려서 따로 연락을 못 했습니다.',
+    testimony: '없었습니다. 다들 캡처를 보고 바로 편이 갈렸어요. 저도 그때는 분위기에 눌려서 따로 연락을 못 했습니다.',
     behaviorHint: '미안해하며',
     conditions: {
       prevSlotRequired: 'w1-d1-chat-mood',
@@ -67,7 +67,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '비난이 번진 속도를 묻는다',
     question: '그 말이 붙은 뒤 비난은 얼마나 빨리 번졌습니까?',
     depth: 2,
-    testimony: '거의 몇 분 안 걸렸어요. 송다은 씨가 “수민이가 또 내 남자한테 연락한다”고 올리자, 바로 “결혼 앞두고 왜 저러냐”는 말이 쏟아졌습니다.',
+    testimony: '몇 분 만에 벌어졌어요. 다은이가 “수민이가 내 남자한테 또 연락하고 있다”고 올리자, 바로 “결혼을 앞두고 있는데 왜 또 저러냐”는 말이 쏟아졌습니다.',
     behaviorHint: '답답해하며',
     conditions: {
       prevSlotRequired: 'w1-d1-frame-wording',
@@ -87,7 +87,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '누가 먼저 결론을 만들었는지 묻는다',
     question: '증인 기준으로 답하십시오. 그날 누가 먼저 결론을 만들어 버렸습니까?',
     depth: 3,
-    testimony: '순서가 분명했습니다. 송다은 씨가 먼저 “또 그랬다”는 식으로 단정했고, 그 말이 단톡방 기준이 돼버렸어요. 최수민 씨 쪽 얘기는 아무도 듣지 않았습니다.',
+    testimony: '순서가 분명했습니다. 다은이 얘기로만 상황을 판단했고, 그 말이 단톡방 기준이 돼버렸어요. 수민이 얘기는 아무도 듣지 않았습니다.',
     behaviorHint: '미안함을 담아 단호하게',
     conditions: {
       disputeState: { id: 'd-5', minLieState: 'S2', visibility: 'any' },
@@ -125,7 +125,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '문제 뒤 반응을 묻는다',
     question: '연락 문제가 불거진 뒤 선배 반응은 어땠습니까?',
     depth: 1,
-    testimony: '겉으로는 귀찮다는 식이었어요. 그런데 억울해서 화내는 사람보다는, 들켜서 불편해하는 쪽에 더 가까워 보였습니다.',
+    testimony: '겉으로는 귀찮다는 식이었어요. 그런데 억울해서 화내는 사람보다는, 불편해하는 쪽에 더 가까워 보였습니다.',
     behaviorHint: '눈치를 보며',
     effect: {
       favorDirection: 'pro_b',
@@ -141,7 +141,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '구체적으로 어떤 말을 했는지 묻는다',
     question: '호감이라고 하셨는데, 구체적으로 어떤 말을 했습니까?',
     depth: 2,
-    testimony: '선배가 “그 필라테스 하는 분 괜찮더라”, “다은이 몰래 커피 한 번 보자고 하면 이상하냐” 이런 말을 했습니다. 약혼한 사람이 할 말은 아니었어요.',
+    testimony: '선배가 “그 필라테스 하는 친구 괜찮더라”, “다은이 친구만 아니었어도 진작 꼬셨을 텐데” 이런 말을 했습니다. 약혼한 사람이 할 말은 아니었어요.',
     behaviorHint: '못마땅해하며',
     conditions: {
       prevSlotRequired: 'w2-d1-after-work-talk',
@@ -159,7 +159,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '왜 들킨 사람처럼 보였는지 묻는다',
     question: '왜 그렇게 보였는지, 들은 말을 기준으로 설명하십시오.',
     depth: 2,
-    testimony: '선배가 저한테 “괜히 내가 먼저 건드렸다가 일 커졌다”는 식으로 툭 말한 적이 있어요. 그래서 저는 최수민 씨 연락이 갑자기 시작된 건 아니라고 봤습니다.',
+    testimony: '선배가 저한테 “괜히 잘못 건드렸다가 일이 커졌다”는 식으로 툭 말한 적이 있어요. 그래서 저는 최수민 씨 연락이 갑자기 시작된 건 아니라고 봤습니다.',
     behaviorHint: '작게 한숨 쉬며',
     conditions: {
       prevSlotRequired: 'w2-d1-contact-reaction',
@@ -179,7 +179,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '거절 뒤에도 선을 넘었는지 묻는다',
     question: '증인 판단이 아니라 본 장면으로 답하십시오. 선배가 먼저 선을 넘었다고 볼 정황이 있었습니까?',
     depth: 3,
-    testimony: '있었습니다. 선배가 휴대폰을 보여주면서 “친구 남자친구니까 이러지 말라네” 하고 웃어넘긴 적이 있어요. 거절 답장을 받고도 “한 번쯤은 넘어오겠지”라고 했습니다. 제가 본 건 최수민 씨 집착이 아니라, 선배 쪽의 가벼운 들이댐이었습니다.',
+    testimony: '있었습니다. 선배가 휴대폰을 보여주면서 “친구 남자친구니까 이러지 말라네” 하고 웃어넘긴 적이 있어요. 거절 답장을 받고도 “도도한 척 튕기네. 결국 넘어 올 거면서”라고 했습니다. 제가 본 건 최수민 씨 집착이 아니라, 선배 쪽의 가벼운 들이댐이었습니다.',
     behaviorHint: '불쾌했던 기억을 꺼내며',
     conditions: {
       disputeState: { id: 'd-2', minLieState: 'S2', visibility: 'any' },
@@ -233,7 +233,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '울기 전 들은 말을 묻는다',
     question: '울기 전에 어떤 말이 오갔는지 들은 게 있습니까?',
     depth: 2,
-    testimony: '네. 그 남성분이 “이번만 막아주면 금방 갚겠다”고 했습니다. 그 젊은 분은 “저한테 왜 또 그러세요”라고 했고요. 한두 번 있었던 일 같지 않았습니다.',
+    testimony: '네. 그 남성분이 “한 번만 더 도와달라”고 했습니다. 그 젊은 분은 “왜 저한테 그러세요”라고 했고요. 한두 번 있었던 일 같지 않았습니다.',
     behaviorHint: '낮게 말하며',
     conditions: {
       prevSlotRequired: 'w3-d1-crying-scene',
@@ -251,7 +251,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '그 남성이 누구였는지 묻는다',
     question: '그 중년 남성이 누구였는지 나중에 알게 됐습니까?',
     depth: 2,
-    testimony: '나중에 동네에서 듣고 알았습니다. 송다은 씨 아버님이더라고요. 며칠 뒤 제가 다은 씨한테 그날 일 괜찮았냐고 묻자, “수민이랑 끝냈다”는 말만 짧게 했습니다.',
+    testimony: '나중에 듣고 다은 씨 아버님인 걸 알았습니다. 며칠 뒤 제가 다은 씨한테 요새 자주 안 오시냐고 무슨 일 있으시냐고 묻자, “수민이랑 절교했다”는 말만 짧게 했습니다.',
     behaviorHint: '난처해하며',
     conditions: {
       prevSlotRequired: 'w3-d1-money-pressure',
@@ -271,7 +271,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '과거 손절 원인을 묻는다',
     question: '그날 장면을 기준으로 보면, 과거 손절 원인은 무엇에 더 가까워 보였습니까?',
     depth: 3,
-    testimony: '제가 본 건 친구 변심이 아니라 돈 문제였습니다. 송다은 씨 아버님이 최수민 씨를 다그쳤고, 최수민 씨는 다은 씨에게 말도 못 한 채 혼자 무너졌어요. 그 뒤에 관계가 끊긴 거라면, 먼저 금을 낸 쪽은 친구가 아니라 어른 쪽에 더 가까웠습니다.',
+    testimony: '제가 본 건 돈 문제였습니다. 다은 씨 아버님이 수민 씨에게 무리한 부탁을 한 듯하고, 수민 씨 혼자 무너진 것 같아요. 이건 두 친구가 아니라 아버님 쪽에 문제가 있었다고 생각해요.',
     behaviorHint: '신중하지만 단호하게',
     conditions: {
       disputeState: { id: 'd-4', minLieState: 'S2', visibility: 'any' },

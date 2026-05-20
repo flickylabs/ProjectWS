@@ -67,7 +67,7 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
     topic: '마무리하자는 말의 맥락을 묻는다',
     question: '종이를 읽어드리던 날, 윤정후 씨가 따로 한 말이 있었습니까?',
     depth: 2,
-    testimony: '있었습니다. 윤정후 씨가 “형님 오시기 전에 마무리하자”고 했어요. 다만 그 말은 욕심이라기보다, 그날 또 큰소리 날까 봐 조심하는 느낌에 가까웠습니다.',
+    testimony: '있었습니다. 윤정후 씨가 “형님 오시기 전에 마무리하자”고 했어요. 다만 그 말은 또 큰소리 날까 봐 조심하는 느낌에 가까웠습니다.',
     behaviorHint: '신중하게 고르며',
     conditions: {
       prevSlotRequired: 'w1-d1-paper-reading',
@@ -87,15 +87,15 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
     topic: '그 과정의 실제 분위기를 묻는다',
     question: '증인 기준으로 답하십시오. 그 과정은 어머니를 몰아간 장면이었습니까, 다툼을 피하려는 장면이었습니까?',
     depth: 3,
-    testimony: '제가 옆에서 본 바로는 다툼을 피하려는 쪽이었습니다. 형님이 오시면 실제로 말소리가 커졌고, 그때마다 어머님이 어깨를 움츠리셨어요. 그래서 저는 둘째 아들이 어머니를 이용했다기보다, 겁먹지 않게 끝내려 한 걸로 봤습니다.',
+    testimony: '제가 옆에서 본 바로는 다툼을 피하려는 쪽이었습니다. 형님이 오시면 실제로 말소리가 커졌고, 그때마다 어머님이 어깨를 움츠리셨어요. 그래서 저는 둘째 아들이 어머니를 겁먹지 않게 보호하려 한 걸로 느꼈습니다.',
     behaviorHint: '조심스럽지만 분명하게',
     conditions: {
-      disputeState: { id: 'd-5', minLieState: 'S2', visibility: 'any' },
+      disputeState: { id: 'd-4', minLieState: 'S2', visibility: 'any' },
     },
     effect: {
       favorDirection: 'pro_b',
-      relatedDisputes: ['d-5', 'd-1'],
-      lieStateNudge: { party: 'a', dispute: 'd-5' },
+      relatedDisputes: ['d-4', 'd-1'],
+      lieStateNudge: { party: 'a', dispute: 'd-4' },
       emotionDelta: 10,
     },
   },
@@ -108,10 +108,10 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
   {
     id: 'w2-d1-two-visits',
     witnessId: 'w-2',
-    topic: '같은 날 두 번 온 사실을 묻는다',
-    question: '그날 같은 사람이 두 번 찾아온 일이 있었습니까?',
+    topic: '같은 날 두 번 방문한 사실을 묻는다',
+    question: '그날 같은 댁을 두 번 방문하신 일이 있었습니까?',
     depth: 1,
-    testimony: '네, 같은 분이 같은 날 두 번 오셔서 기억합니다. 흔한 일은 아닙니다.',
+    testimony: '네, 작성을 마치시고 다시 찾으셔서 같은 날 저녁에 다시 방문을 했습니다. 흔한 일은 아닙니다.',
     behaviorHint: '업무적으로 정확하게',
     effect: {
       favorDirection: 'pro_a',
@@ -123,9 +123,9 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
     id: 'w2-d1-document-balance',
     witnessId: 'w-2',
     topic: '두 서류의 인상을 묻는다',
-    question: '처음 가져온 서류와 다시 가져온 서류의 인상이 달랐습니까?',
+    question: '처음 작성한 서류와 다시 작성한 서류의 인상이 달랐습니까?',
     depth: 1,
-    testimony: '달랐습니다. 처음 것은 한쪽으로 많이 기운 느낌이었고, 다시 낸 것은 그보다 조금 균형 잡혀 보였어요.',
+    testimony: '첫 서류와 두 번째 서류의 내용이 달랐습니다. 아드님들에 대한 상속 비율이 변경되었어요.',
     behaviorHint: '차분하게',
     effect: {
       favorDirection: 'mixed',
@@ -138,10 +138,10 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
   {
     id: 'w2-d2-same-submitter',
     witnessId: 'w-2',
-    topic: '누가 다시 제출했는지 묻는다',
-    question: '두 번 다 누가 접수창구에 섰습니까?',
+    topic: '두 번째 방문 때 어머니 상태를 묻는다',
+    question: '두 번째 방문 때 어머님 상태는 어땠습니까?',
     depth: 2,
-    testimony: '두 번 다 윤정후 씨가 접수창구에 서셨습니다. 서류를 도로 챙겨갔다가 다시 가져오신 것도 그분이었습니다.',
+    testimony: '사실 두 번째 찾아뵀을 때는 어머님 상태가 좋아보이지 않았습니다. 바로 오전에 뵀는데 저를 기억하지 못하시더라구요.',
     behaviorHint: '기억이 선명하다는 듯',
     conditions: {
       prevSlotRequired: 'w2-d1-two-visits',
@@ -156,10 +156,10 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
   {
     id: 'w2-d2-ratio-change',
     witnessId: 'w-2',
-    topic: '비율이 어떻게 바뀌었는지 묻는다',
-    question: '그 차이를 숫자로 설명하십시오. 어떻게 바뀌었습니까?',
+    topic: '비율 변경에 대한 인상을 묻는다',
+    question: '두 서류 비율 변경을 보고 의심이 들지는 않았습니까?',
     depth: 2,
-    testimony: '첫 서류는 윤정후 90, 윤태성 10이었고, 두 번째는 윤정후 60, 윤태성 40으로 바뀌었습니다. 숫자만 보면 자기 몫을 줄여서 다시 낸 셈이었습니다.',
+    testimony: '다만 의심을 하지 않았던 게, 두 번째 서류보다 첫 번째 서류 내용이 좀 이상하게 느껴졌었어요. 그래서 조금 더 일반적인 수준으로 바꾸신 거구나 생각만 했습니다.',
     behaviorHint: '분명하게',
     conditions: {
       prevSlotRequired: 'w2-d1-document-balance',
@@ -176,10 +176,10 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
   {
     id: 'w2-d3-benefit-direction',
     witnessId: 'w-2',
-    topic: '수정이 누구 이익 방향이었는지 묻는다',
-    question: '그 변경을 보고 증인께서는 누구 이익 쪽으로 움직인 수정이라고 판단했습니까?',
+    topic: '수정 과정의 인상을 묻는다',
+    question: '그 변경 과정에서 증인께서 받은 인상은 어떠했습니까?',
     depth: 3,
-    testimony: '적어도 자기 몫을 늘리려는 수정은 아니었습니다. 접수창구에서 본 결과만 놓고 말하면, 윤정후 씨가 자기 비율을 90에서 60으로 낮춘 문서를 다시 낸 겁니다. 그래서 저는 그날의 수정이 탐욕 쪽이라기보다, 형이 받을 충격을 좀 줄여보려는 조정처럼 보였습니다.',
+    testimony: '사실 윤정후 씨가 기억이 희미하신 어머님께 대답을 유도하는 것처럼 느껴졌습니다. 하지만 크게 의심을 하지 않았던 게, 본인 비율을 일부러 낮출 일은 없지 않습니까? 따라서 미리 합의하신 내용일 거라 생각을 했습니다.',
     behaviorHint: '신중하지만 또렷하게',
     conditions: {
       disputeState: { id: 'd-2', minLieState: 'S2', visibility: 'any' },
@@ -203,7 +203,7 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
     topic: '정기 지원금 사정을 묻는다',
     question: '어머니가 정기적으로 들어오는 돈에 대해 하신 말이 있었습니까?',
     depth: 1,
-    testimony: '돈 걱정을 오래 하셨습니다. 그래도 작은아들이 달마다 보내주는 돈이 있어서 버틴다고 하신 적은 있어요.',
+    testimony: '돈 걱정을 오래 하셨습니다. 그래도 작은아들이 달마다 용돈을 보내줘서 버틴다고 했어요.',
     behaviorHint: '차분히 떠올리며',
     effect: {
       favorDirection: 'pro_b',
@@ -217,7 +217,7 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
     topic: '큰아들이 몰라야 한다는 말을 묻는다',
     question: '어머니가 큰아들이 몰라야 한다고 한 일이 있었습니까?',
     depth: 1,
-    testimony: '있었습니다. 어떤 일은 그 아들이 끝까지 몰라야 한다고 몇 번 말씀하셨어요. 말할 때마다 표정이 많이 무거웠습니다.',
+    testimony: '있었습니다. 어떤 일은 끝까지 몰라야 한다고 몇 번을 얘기했어요. 그래서 그게 대체 뭐냐고 물어도 말해주지는 않았어요.',
     behaviorHint: '낮게 말하며',
     effect: {
       favorDirection: 'mixed',
@@ -230,10 +230,10 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
   {
     id: 'w3-d2-money-nature',
     witnessId: 'w-3',
-    topic: '그 돈의 성격을 묻는다',
-    question: '그 돈이 어떤 성격이라고 들었습니까? 누가 누구를 돕는 돈이었습니까?',
+    topic: '큰아들 공장 위기와 해결 경위를 묻는다',
+    question: '큰아들 공장 사정에 대해 들으신 게 있습니까?',
     depth: 2,
-    testimony: '윤정후 씨가 어머니 통장으로 달마다 보내는 돈이라고 들었습니다. 그리고 3억원이 나갈 때는 “태성이 공장 쪽으로 보내는 돈”이라고 어머니가 직접 말씀하셨어요.',
+    testimony: '큰아들 공장이 어려워서 큰일이라고 하더니, 얼마 지나지 않아 다행히 해결했다고 했어요. 그래서 어떻게 해결했냐고 하니 잘 키운 아들 덕이라고만 하더라구요.',
     behaviorHint: '분명히 기억나는 부분만 짚으며',
     conditions: {
       prevSlotRequired: 'w3-d1-living-support',
@@ -251,7 +251,7 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
     topic: '왜 숨겨야 한다고 했는지 묻는다',
     question: '큰아들이 몰라야 한다고 한 이유를 들은 게 있습니까?',
     depth: 2,
-    testimony: '어머니가 정확한 말은 아끼셨지만, “태성이는 그 사실 알면 사람 무너진다”고 했어요. 그리고 “정후가 그 짐을 혼자 진다”는 말도 했습니다.',
+    testimony: '정확하게 얘기한 적은 없지만, “큰 애가 자존심이 강해서 사실을 알게 되면 무너질 거다”라고 했어요. 그리고 “둘째가 모든 짐을 혼자 짊어지고 있다”라고도 했습니다.',
     behaviorHint: '조심스럽게',
     conditions: {
       prevSlotRequired: 'w3-d1-secret-burden',
@@ -268,10 +268,10 @@ export const FAMILY_01_TESTIMONY: TestimonySlot[] = [
   {
     id: 'w3-d3-why-kept-secret',
     witnessId: 'w-3',
-    topic: '윤정후 씨가 왜 비밀을 숨겼는지 묻는다',
-    question: '증인이 들은 말을 종합하면, 윤정후 씨가 왜 그 비밀을 숨겼다고 보십니까?',
+    topic: '어머니가 두 아들에 대해 어떤 걱정을 하셨는지 묻는다',
+    question: '어머니께서 두 아들에 대해 평소 어떤 걱정을 하셨습니까?',
     depth: 3,
-    testimony: '유산 더 받으려고 숨긴 사람 말투가 아니었습니다. 어머니가 먼저 “태성이는 끝까지 몰라야 한다”고 붙잡았고, 윤정후 씨는 그 말대로 형이 무너지지 않게 막는 쪽이었어요. 그래서 저는 이 집안의 중심이 돈다툼보다 출생 비밀과 죄책감에 더 가까웠다고 봅니다.',
+    testimony: '그저 두 아들 걱정 뿐이었습니다. 큰 아들이 자꾸 사업에 집착하는 게 혹여 본인이 아버지 친자가 아닌 것을 눈치채고 성공에 목을 매는 게 아닌가 걱정을 했고, 작은 아들로부터 받은 돈까지 큰 아들에게 모두 보냈다보니 유산이라도 작은 아들에게 돌려줘야 한다고 말한 적이 있어요.',
     behaviorHint: '무겁게, 그러나 흔들림 없이',
     conditions: {
       disputeState: { id: 'd-4', minLieState: 'S2', visibility: 'any' },

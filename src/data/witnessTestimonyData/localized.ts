@@ -14,12 +14,6 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
       testimony: "Unit 302 is occupied by a man living alone, but when Mr. Lee Jun-ho came by, I sometimes heard a child laughing from that home. I could smell food too. I assumed he was a friend or relative.",
       topic: "Ask about the resident of unit 302",
     },
-    "w1-d1-kid-spotted": {
-      behaviorHint: "slowly recalling the memory",
-      question: "Did Mr. Lee Jun-ho always come alone? Have you ever seen him come out with someone?",
-      testimony: "I sometimes saw him come out with a child about middle-school age. The child was wearing a school uniform at times.",
-      topic: "Ask whether anyone accompanied him during visits",
-    },
     "w1-d1-no-single-woman": {
       behaviorHint: "with conviction",
       question: "I understand the visit frequency. But is there a woman living alone on that floor?",
@@ -106,12 +100,6 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
       testimony: "302号室は男性が一人で住んでいますが、イ・ジュノさんが来ると、その部屋から子どもの笑い声が聞こえることがありました。食事の匂いもしました。だから友人か親戚なのだろうと思っていました。",
       topic: "302号室の居住者について尋ねる",
     },
-    "w1-d1-kid-spotted": {
-      behaviorHint: "ゆっくり記憶をたどりながら",
-      question: "イ・ジュノさんはいつも一人で来ていましたか。誰かと一緒に出てくるのを見たことはありますか。",
-      testimony: "時々、中学生くらいの子どもと一緒に出てくるのを見ました。その子が制服を着ている時もありました。",
-      topic: "訪問時に同行者がいたか尋ねる",
-    },
     "w1-d1-no-single-woman": {
       behaviorHint: "確信を持って",
       question: "訪問頻度は分かりました。ですが、その階に一人で暮らす女性はいますか。",
@@ -197,12 +185,6 @@ const SPOUSE_01_OVERLAYS: CaseTestimonyOverlay = {
       question: "能再详细说说住在302号的人吗？",
       testimony: "302号是一位男性独居，但李俊浩先生来的时候，我有时会听到那家传出孩子的笑声，也会闻到饭菜味。所以我以为是朋友或亲戚。",
       topic: "询问302号住户",
-    },
-    "w1-d1-kid-spotted": {
-      behaviorHint: "慢慢回忆",
-      question: "李俊浩先生一直是一个人来的吗？你见过他和谁一起出来吗？",
-      testimony: "我有时看到他和一个中学生年纪的孩子一起出来。那孩子有时还穿着校服。",
-      topic: "询问探访时是否有同行者",
     },
     "w1-d1-no-single-woman": {
       behaviorHint: "带着确信",
