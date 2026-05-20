@@ -18522,11 +18522,12 @@ body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__body {
   font-size: 14.5px;
 }
 /* title 바로 다음 body는 위쪽에 얇은 구분선 — 두 영역 시각 분리 (사용자 요청 2026-05-21).
-   body가 없는 짧은 alert에는 적용 X (자동). */
+   body가 없는 짧은 alert에는 적용 X (자동).
+   2nd pass — 14+4 → 18+8 (총 ~26px). 너무 과하지 않게 살짝만 더. */
 body.pc-mode .pc-event-feedback-card.is-alert .pc-event-feedback__title + .pc-event-feedback__body {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 14px;
-  margin-top: 4px;
+  padding-top: 18px;
+  margin-top: 8px;
 }
 
 body.pc-mode .pc-event-feedback__tag {
@@ -19720,8 +19721,10 @@ body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  padding: 14px 0 !important;
-  gap: 2px !important;
+  /* 위/아래 충분히 — 사용자 반복 요청 2026-05-21: 14px 너무 좁음. body 한 줄 popup이라도
+     breathing room 확보. dismiss 버튼은 별도라 영향 X. */
+  padding: 28px 0 !important;
+  gap: 12px !important;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0) 0%,
