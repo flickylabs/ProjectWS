@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T04:01:40.040Z",
+  "generatedAt": "2026-05-20T04:40:02.795Z",
   "input": "",
   "glossary": "docs/localization/glossary.csv",
   "mode": "applied",
@@ -11,16 +11,16 @@
     "placeholder_issues": 0,
     "empty_translation_issues": 36920,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 16950,
+    "english_length_spike_issues": 16612,
     "glossary_issues": 0,
     "literal_english_noun_phrase_issues": 75,
     "cross_batch_inconsistency_issues": 1782,
-    "japanese_particle_anomaly_issues": 4061,
+    "japanese_particle_anomaly_issues": 4067,
     "chinese_korean_word_order_issues": 516,
     "person_name_divergence_issues": 32,
     "system_tone_remnant_issues": 0,
     "placeholder_leak_issues": 0,
-    "totalIssues": 60336
+    "totalIssues": 60004
   },
   "issueLimits": {
     "placeholder": {
@@ -39,9 +39,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 16950,
+      "total": 16612,
       "included": 1000,
-      "omitted": 15950
+      "omitted": 15612
     },
     "glossary": {
       "total": 0,
@@ -59,9 +59,9 @@
       "omitted": 782
     },
     "japaneseParticleAnomaly": {
-      "total": 4061,
+      "total": 4067,
       "included": 1000,
-      "omitted": 3061
+      "omitted": 3067
     },
     "chineseKoreanWordOrder": {
       "total": 516,
@@ -49994,6 +49994,8 @@
         "locale": "en",
         "ko": "방문이 유서 이야기와 겹친 날이 있습니다. 도움과 개입의 선을 제가 흐린 부분은 설명하겠습니다.",
         "variants": [
+          "Some of my visits overlapped with discussions about the will. I will explain where I blurred the line between helping...",
+          "There were days when my visits crossed into will discussions. I will explain the part where I made the line between a...",
           "The care-home visit log is mine; I went there because I was the one carrying her care. I will admit there were circum...",
           "The care-home visit log is mine; I went there because I was the one carrying her care. I will admit there were circum...",
           "I will not hide that the visit log is heavy with my name; that was where my evenings went. I will admit there were ci...",
@@ -50125,6 +50127,7 @@
         "locale": "en",
         "ko": "방문이 유서 이야기와 겹친 날이 있습니다. 도움과 개입의 선을 제가 흐린 부분은 설명하겠습니다. 제가 직접 설명해야 할 부분입니다.",
         "variants": [
+          "Some visits overlapped with conversations about the will. I will explain where I blurred the line between helping and...",
           "About the care-home visit log — I do not deny the spike; I went because she was asking for me. I will admit there wer...",
           "The care-home visit log is mine; I went there because I was the one carrying her care. I will admit there were circum..."
         ],
@@ -50251,6 +50254,7 @@
         "locale": "en",
         "ko": "제가 직접 설명해야 할 부분입니다. 방문이 유서 이야기와 겹친 날이 있습니다. 도움과 개입의 선을 제가 흐린 부분은 설명하겠습니다.",
         "variants": [
+          "This is something I have to explain myself. Some visits overlapped with talk about the will, and I will address where...",
           "I will not hide that the visit log is heavy with my name; that was where my evenings went. I will admit there were ci...",
           "About the care-home visit log — I do not deny the spike; I went because she was asking for me. I will admit there wer..."
         ],
@@ -50377,6 +50381,7 @@
         "locale": "en",
         "ko": "방문이 유서 이야기와 겹친 날이 있습니다. 도움과 개입의 선을 제가 흐린 부분은 설명하겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
+          "Some visits did overlap with talk about the will. I will speak only to the part left in the record and explain where ...",
           "About the care-home visit log — I do not deny the spike; I went because she was asking for me. I will admit there wer...",
           "The care-home visit log is mine; I went there because I was the one carrying her care. I will admit there were circum..."
         ],
