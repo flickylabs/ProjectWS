@@ -2638,8 +2638,8 @@
     },
     {
       "id": "e-7",
-      "name": "어머니 일기장",
-      "surfaceName": "어머니 일기장",
+      "name": "어머니의 일기장",
+      "surfaceName": "어머니의 일기장",
       "description": "공책에 남은 어머니 자필 기록. 두 아들을 걱정하는 말에서 시작해 오래된 가족 사정과 비밀에 관한 기록이 함께 남아 있다.",
       "surfaceDescription": "어머니의 자필 공책이 존재한다.",
       "type": "device",
@@ -2658,9 +2658,9 @@
       ],
       "requiredLieState": "S3",
       "investigationResults": {
-        "request_original": "평범한 공책에 남긴 자필 일기이다. 두 아들, 특히 윤태성에 대한 걱정이 보인다.",
-        "check_metadata": "윤정후에 대한 미안함과, 두 형제의 성격이 정 반대라는 내용이 담겨있다.",
-        "restore_context": "두 아들 중 한 명이 남편의 친자가 아니라는 사실, 그리고 그 사실을 두 아이 모두에게 끝까지 비밀로 두려 했다는 내용이 남아 있다. 일기에는 누구를 지칭하는지 명시되지 않는다."
+        "request_original": "평범한 공책에 남은 자필 일기다. 두 아들 걱정과 윤태성이 아직 정신을 못 차린다는 한탄이 보인다.",
+        "check_metadata": "윤정후를 걱정하는 문장과, 두 형제가 모든 면에서 같지는 않다는 암시가 보인다.",
+        "restore_context": "두 아들 중 한 명은 남편의 친아들이 아니라는 기록과 이 사실을 계속 숨기려는 생각이 남아 있다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -2760,7 +2760,7 @@
         }
       ],
       "meta": {
-        "name": "어머니 일기장",
+        "name": "어머니의 일기장",
         "type": "device",
         "viewerType": "device",
         "trustLevel": "high",
@@ -2785,7 +2785,7 @@
       ],
       "viewerData": {
         "meta": {
-          "name": "어머니 일기장",
+          "name": "어머니의 일기장",
           "type": "device",
           "viewerType": "device",
           "trustLevel": "high",
@@ -2825,7 +2825,7 @@
       "viewerDataByStage": {
         "1": {
           "meta": {
-            "name": "어머니 일기장",
+            "name": "어머니의 일기장",
             "type": "device",
             "viewerType": "device",
             "trustLevel": "high",
@@ -2864,7 +2864,7 @@
         },
         "2": {
           "meta": {
-            "name": "어머니 일기장",
+            "name": "어머니의 일기장",
             "type": "device",
             "viewerType": "device",
             "trustLevel": "high",
@@ -2917,7 +2917,7 @@
         },
         "3": {
           "meta": {
-            "name": "어머니 일기장",
+            "name": "어머니의 일기장",
             "type": "device",
             "viewerType": "device",
             "trustLevel": "high",

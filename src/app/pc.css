@@ -637,8 +637,8 @@ body.pc-mode .pc-discovery-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  /* 사용자 요청 2026-05-21 (12th): 하단 여백 추가 축소 — 12 → 8px. 좌우 28px와 비슷한 수준. */
-  padding: 0 28px 8px;
+  /* 사용자 요청 2026-05-21 (13b): 캐릭터 버튼 아래 여백 절반 — 8 → 4px. */
+  padding: 0 28px 4px;
 }
 
 body.pc-mode .pc-interaction-card__action,
@@ -29236,7 +29236,8 @@ body.pc-mode .pc-interaction-card:has(.pc-ev-detail) .pc-interaction-card__heade
 }
 
 body.pc-mode .pc-interaction-card:has(.pc-ev-detail) .pc-interaction-card__body {
-  padding: 0 32px 20px !important;
+  /* 사용자 요청 2026-05-21 (13b): '발견한 내용:' row 위쪽 여백 추가(+) / 아래쪽 감소(-). */
+  padding: 14px 32px 8px !important;
 }
 
 body.pc-mode .pc-ev-detail {
