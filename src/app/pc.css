@@ -24335,11 +24335,17 @@ body.pc-mode .pc-question-choice__panel {
   z-index: 1 !important;
 }
 
+/* 2026-05-22 panel width unification:
+   기본 구조 패널(dispute selector / interaction card / witness summon 등) 760px.
+   - Popup alerts(EventFeedbackCard.is-alert ≤600px)와 명확히 구분
+   - Evidence detail (`pc-interaction-card:has(.pc-ev-detail)`, 880px) 보다 좁게
+   - Contrast modal (`.pc-interaction-card--contrast`, 960px) 보다 좁게
+   이전 620px은 dispute selector가 evidence/witness 대비 좁아 보여 사용자 보고 */
 body.pc-mode .pc-interaction-card,
 body.pc-mode .pc-question-choice__panel {
-  width: min(620px, calc(100vw - 48px)) !important;
+  width: min(760px, calc(100vw - 48px)) !important;
   min-width: 0 !important;
-  max-width: min(620px, calc(100vw - 48px)) !important;
+  max-width: min(760px, calc(100vw - 48px)) !important;
   max-height: min(76vh, calc(100vh - 124px)) !important;
   border-radius: 14px !important;
   border: 1px solid rgba(212, 162, 78, 0.22) !important;
@@ -24434,9 +24440,13 @@ body.pc-mode .pc-dialogue-popup__close {
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   background: rgba(255, 255, 255, 0.04) !important;
   color: var(--pc-text-dim) !important;
+  font-size: 16px !important;
   display: grid !important;
   place-items: center !important;
-  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease !important;
+  /* 2026-05-22: dispute selector close 버튼이 legacy `rotate(45deg)`로 × → + 변형되어
+     interaction-card 정상 × 와 일관성 깨졌음. Track A 통일 시점에 회전 명시 제거. */
+  transform: none !important;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease !important;
 }
 
 body.pc-mode .pc-interaction-card__close:hover,
@@ -29248,7 +29258,10 @@ body.pc-mode .pc-testimony-paper__body {
 }
 
 body.pc-mode .pc-interaction-card:has(.pc-ev-detail) {
-  width: min(840px, calc(100vw - 48px)) !important;
+  /* Evidence detail = 조사 단계 stage cards + present 버튼이 들어가는 가장 큰 변형.
+     기본 760 → +120 → 880. 사용자 보고 2026-05-22 panel 너비 통일 라운드. */
+  width: min(880px, calc(100vw - 48px)) !important;
+  max-width: min(880px, calc(100vw - 48px)) !important;
 }
 
 body.pc-mode .pc-interaction-card:has(.pc-ev-detail) .pc-interaction-card__header {
