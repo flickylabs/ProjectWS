@@ -2274,10 +2274,10 @@ function tryScriptedDialoguePath(
   store: ReturnType<typeof useGameStore.getState>,
   dossierContext: DossierOverrideContext | null,
 ): ResolvedDialogue | null {
-  if (getFreeInterrogationMeta(action)) return null
-
-  // question, evidence_present만 스크립트 경로 지원
   if (action.type !== 'question' && action.type !== 'evidence_present') return null
+
+  // Mapped free-interrogation actions have already passed policy routing.
+  // Keep them eligible for scripted responses when they resolve to a concrete key.
 
   const target: PartyId = 'target' in action ? action.target : 'a'
   const agent = target === 'a' ? agentA : agentB
