@@ -1640,9 +1640,9 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "공증 당일 유언장 공증 절차가 진행됐고, 접수된 공증본은 60:40으로 정리되어 있다.",
-        "check_metadata": "공증인은 어머니가 피로하고 답변이 느렸으며, 숫자 확인 때 한 차례 쉬어 갔다고 남겼다.",
-        "restore_context": "메모에는 어머니가 숫자를 몇 번 오락가락했고, 윤정후가 절차를 밀어붙이는 듯했다는 관찰이 붙어 있다."
+        "request_original": "최초 공증 접수 이력이 기록되어 있다. 기존 비율은 기재되지 않았다.",
+        "check_metadata": "수정 접수 이력이 기록되어 있다. 최종 상속 비율 60:40임을 확인했다.",
+        "restore_context": "메모에는 어머니 상태가 좋지 않았고, 윤정후가 절차를 밀어붙이는 듯했다는 관찰이 붙어 있다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -1769,7 +1769,7 @@
           "legality": "ok",
           "legalLabel": "적법",
           "stage": 1,
-          "stageLabel": "1단계 — 공증 당일 일반 기록",
+          "stageLabel": "1단계 — 1차 공증 접수 기록",
           "sourceNote": "notary_memo / original",
           "redactions": [],
           "evidenceKind": "notaryMemo"
@@ -1778,31 +1778,34 @@
           "title": "공증인 메모 기록",
           "rows": [
             {
-              "date": "2025.11.05 14:10",
+              "date": "2025.11.05 10:10",
               "type": "in",
               "typeLabel": "접수",
-              "target": "유언장 공증 절차 개시 / 공증본 비율 60:40 확인",
+              "target": "유언장 공증 절차 개시 / 상속 비율 정리",
               "duration": "확인",
-              "suspicious": false
+              "suspicious": false,
+              "filterGroup": "first"
             },
             {
-              "date": "2025.11.05 14:25",
+              "date": "2025.11.05 10:25",
               "type": "in",
               "typeLabel": "절차",
               "target": "유언자 신분 확인 및 증인 2명 입회 기록",
               "duration": "정상",
-              "suspicious": false
+              "suspicious": false,
+              "filterGroup": "first"
             },
             {
-              "date": "2025.11.05 15:05",
+              "date": "2025.11.05 11:05",
               "type": "out",
               "typeLabel": "완료",
               "target": "공증 도장 및 보관 번호 부여",
               "duration": "완료",
-              "suspicious": false
+              "suspicious": false,
+              "filterGroup": "first"
             }
           ],
-          "note": "공증본은 접수 당시 60:40으로 정리되어 있다."
+          "note": "최초 공증 접수 이력이 정리되어 있다. 기존 비율은 기재되지 않았다."
         }
       },
       "viewerDataByStage": {
@@ -1818,7 +1821,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 1,
-            "stageLabel": "1단계 — 공증 당일 일반 기록",
+            "stageLabel": "1단계 — 1차 공증 접수 기록",
             "sourceNote": "notary_memo / original",
             "redactions": [],
             "evidenceKind": "notaryMemo"
@@ -1827,31 +1830,34 @@
             "title": "공증인 메모 기록",
             "rows": [
               {
-                "date": "2025.11.05 14:10",
+                "date": "2025.11.05 10:10",
                 "type": "in",
                 "typeLabel": "접수",
-                "target": "유언장 공증 절차 개시 / 공증본 비율 60:40 확인",
+                "target": "유언장 공증 절차 개시 / 상속 비율 정리",
                 "duration": "확인",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 14:25",
+                "date": "2025.11.05 10:25",
                 "type": "in",
                 "typeLabel": "절차",
                 "target": "유언자 신분 확인 및 증인 2명 입회 기록",
                 "duration": "정상",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 15:05",
+                "date": "2025.11.05 11:05",
                 "type": "out",
                 "typeLabel": "완료",
                 "target": "공증 도장 및 보관 번호 부여",
                 "duration": "완료",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               }
             ],
-            "note": "공증본은 접수 당시 60:40으로 정리되어 있다."
+            "note": "최초 공증 접수 이력이 정리되어 있다. 기존 비율은 기재되지 않았다."
           }
         },
         "2": {
@@ -1866,7 +1872,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 2,
-            "stageLabel": "2단계 — 어머니 상태 메모",
+            "stageLabel": "2단계 — 수정 접수 이력 확인",
             "sourceNote": "notary_memo / original",
             "redactions": [],
             "evidenceKind": "notaryMemo"
@@ -1875,47 +1881,52 @@
             "title": "공증인 메모 기록",
             "rows": [
               {
-                "date": "2025.11.05 14:10",
+                "date": "2025.11.05 10:10",
                 "type": "in",
                 "typeLabel": "접수",
-                "target": "유언장 공증 절차 개시 / 공증본 비율 60:40 확인",
+                "target": "유언장 공증 절차 개시 / 상속 비율 정리",
                 "duration": "확인",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 14:25",
+                "date": "2025.11.05 10:25",
                 "type": "in",
                 "typeLabel": "절차",
                 "target": "유언자 신분 확인 및 증인 2명 입회 기록",
                 "duration": "정상",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 15:05",
+                "date": "2025.11.05 11:05",
                 "type": "out",
                 "typeLabel": "완료",
                 "target": "공증 도장 및 보관 번호 부여",
                 "duration": "완료",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 14:32",
-                "type": "miss",
-                "typeLabel": "상태 메모",
-                "target": "유언자 피로 호소, 답변 전 휴식 요청",
-                "duration": "주의",
-                "suspicious": true
+                "date": "2025.11.05 17:05",
+                "type": "in",
+                "typeLabel": "접수",
+                "target": "공증 문서 수정을 위한 재방문 요청",
+                "duration": "정상",
+                "suspicious": false,
+                "filterGroup": "amend"
               },
               {
-                "date": "2025.11.05 14:39",
-                "type": "miss",
-                "typeLabel": "상태 메모",
-                "target": "질문 반복 시 답변 지연, 물 한 잔 요청",
-                "duration": "주의",
-                "suspicious": true
+                "date": "2025.11.05 18:57",
+                "type": "in",
+                "typeLabel": "접수",
+                "target": "수정된 유언장 공증 절차 개시 / 최종 비율 60:40 확인",
+                "duration": "확인",
+                "suspicious": false,
+                "filterGroup": "amend"
               }
             ],
-            "note": "공증 당일 어머니 상태가 좋지 않았다는 메모가 추가로 확인된다."
+            "note": "수정 접수 이력이 추가로 확인된다. 최종 상속 비율은 60:40으로 정리됐다."
           }
         },
         "3": {
@@ -1930,7 +1941,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 3,
-            "stageLabel": "3단계 — 숫자 혼선과 절차 압박",
+            "stageLabel": "3단계 — 어머니 상태와 절차 압박 메모",
             "sourceNote": "notary_memo / original",
             "redactions": [],
             "evidenceKind": "notaryMemo"
@@ -1939,63 +1950,88 @@
             "title": "공증인 메모 기록",
             "rows": [
               {
-                "date": "2025.11.05 14:10",
+                "date": "2025.11.05 10:10",
                 "type": "in",
                 "typeLabel": "접수",
-                "target": "유언장 공증 절차 개시 / 공증본 비율 60:40 확인",
+                "target": "유언장 공증 절차 개시 / 상속 비율 정리",
                 "duration": "확인",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 14:25",
+                "date": "2025.11.05 10:25",
                 "type": "in",
                 "typeLabel": "절차",
                 "target": "유언자 신분 확인 및 증인 2명 입회 기록",
                 "duration": "정상",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 15:05",
+                "date": "2025.11.05 11:05",
                 "type": "out",
                 "typeLabel": "완료",
                 "target": "공증 도장 및 보관 번호 부여",
                 "duration": "완료",
-                "suspicious": false
+                "suspicious": false,
+                "filterGroup": "first"
               },
               {
-                "date": "2025.11.05 14:32",
+                "date": "2025.11.05 17:05",
+                "type": "in",
+                "typeLabel": "접수",
+                "target": "공증 문서 수정을 위한 재방문 요청",
+                "duration": "정상",
+                "suspicious": false,
+                "filterGroup": "amend"
+              },
+              {
+                "date": "2025.11.05 18:32",
                 "type": "miss",
                 "typeLabel": "상태 메모",
                 "target": "유언자 피로 호소, 답변 전 휴식 요청",
                 "duration": "주의",
-                "suspicious": true
+                "suspicious": true,
+                "filterGroup": "status"
               },
               {
-                "date": "2025.11.05 14:39",
+                "date": "2025.11.05 18:39",
                 "type": "miss",
                 "typeLabel": "상태 메모",
                 "target": "질문 반복 시 답변 지연, 물 한 잔 요청",
                 "duration": "주의",
-                "suspicious": true
+                "suspicious": true,
+                "filterGroup": "status"
               },
               {
-                "date": "2025.11.05 14:43",
+                "date": "2025.11.05 18:43",
                 "type": "miss",
                 "typeLabel": "공증인 메모",
-                "target": "상속 비율 숫자를 다시 묻자 앞뒤 숫자를 한 차례 바꿔 말함",
+                "target": "수정 사유를 묻자 아들의 도움을 통해 말을 함",
                 "duration": "대조 필요",
-                "suspicious": true
+                "suspicious": true,
+                "filterGroup": "status"
               },
               {
-                "date": "2025.11.05 14:47",
+                "date": "2025.11.05 18:47",
                 "type": "miss",
                 "typeLabel": "공증인 메모",
                 "target": "윤정후가 “오늘 마쳐야 한다”며 절차 진행을 재촉하는 듯함",
                 "duration": "대조 필요",
-                "suspicious": true
+                "suspicious": true,
+                "filterGroup": "status"
+              },
+              {
+                "date": "2025.11.05 18:57",
+                "type": "in",
+                "typeLabel": "접수",
+                "target": "수정된 유언장 공증 절차 개시 / 최종 비율 60:40 확인",
+                "duration": "확인",
+                "suspicious": false,
+                "filterGroup": "amend"
               }
             ],
-            "note": "어머니가 숫자를 오락가락했고 윤정후가 절차를 밀어붙이는 듯했다는 관찰이 남아 있다."
+            "note": "어머니 상태가 좋지 않았고 윤정후가 절차를 밀어붙이는 듯했다는 관찰이 남아 있다."
           }
         }
       }

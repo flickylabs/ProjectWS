@@ -113,6 +113,13 @@ export interface LogRow {
   target: string
   duration: string
   suspicious: boolean
+  /**
+   * Optional filter grouping key. When present on at least one row in the
+   * log, the filter tabs switch from type-based (out/in/miss) to
+   * filterGroup-based (e.g. 'first' | 'amend' | 'status' for notaryMemo).
+   * 2026-05-21 (14th): introduced for e-5 공증인 메모 viewer — 1차/수정/상태 grouping.
+   */
+  filterGroup?: string
 }
 
 export interface LogPage {

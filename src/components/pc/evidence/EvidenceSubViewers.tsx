@@ -85,6 +85,9 @@ const VIEWER_COPY = {
     logOut: '발신',
     logIn: '수신·방문',
     logMiss: '부재중·변경',
+    logFilter_first: '1차 접수',
+    logFilter_amend: '수정 접수',
+    logFilter_status: '상태 메모',
     callLogTitle: '통화 기록 대장',
     recordLogTitle: '기록 대장',
     recordPages: '기록 페이지',
@@ -180,6 +183,9 @@ const VIEWER_COPY = {
     logOut: 'Outgoing',
     logIn: 'Incoming/Visit',
     logMiss: 'Missed/Changed',
+    logFilter_first: 'First Filing',
+    logFilter_amend: 'Amendment',
+    logFilter_status: 'Status Notes',
     callLogTitle: 'Call Log Register',
     recordLogTitle: 'Record Register',
     recordPages: 'Record pages',
@@ -275,6 +281,9 @@ const VIEWER_COPY = {
     logOut: '発信',
     logIn: '受信·訪問',
     logMiss: '不在·変更',
+    logFilter_first: '初回受付',
+    logFilter_amend: '修正受付',
+    logFilter_status: '状態メモ',
     callLogTitle: '通話記録台帳',
     recordLogTitle: '記録台帳',
     recordPages: '記録ページ',
@@ -370,6 +379,9 @@ const VIEWER_COPY = {
     logOut: '呼出',
     logIn: '呼入·访问',
     logMiss: '未接·变更',
+    logFilter_first: '初次受理',
+    logFilter_amend: '修订受理',
+    logFilter_status: '状态备注',
     callLogTitle: '通话记录台账',
     recordLogTitle: '记录台账',
     recordPages: '记录页面',
@@ -1220,6 +1232,22 @@ const _LOG_TYPE_FALLBACK_LABELS: Record<string, string> = {
 }
 
 function buildLogFilterOptions(rows: LogRow[], copy: Record<string, string>) {
+  // 2026-05-21 (14th): rows에 filterGroup이 하나라도 있으면 그 기준으로 묶음 (e-5 공증인 메모 등).
+  // 없으면 기존 type(out/in/miss) 기준 폴백.
+  const hasFilterGroup = rows.some((r) => Boolean(r.filterGroup))
+  if (hasFilterGroup) {
+    const groups = new Map<string, string>()
+    rows.forEach((r) => {
+      if (r.filterGroup && !groups.has(r.filterGroup)) {
+        const key = `logFilter_${r.filterGroup}`
+        groups.set(r.filterGroup, copy[key] ?? r.filterGroup)
+      }
+    })
+    return [
+      { key: 'all', label: copy.all },
+      ...Array.from(groups, ([key, label]) => ({ key, label })),
+    ]
+  }
   const fallbackLabels: Record<string, string> = { out: copy.logOut, in: copy.logIn, miss: copy.logMiss }
   const types = new Map<string, string>()
   rows.forEach((row) => {
@@ -1249,7 +1277,12 @@ export function LogViewer({ rows, note, title, pages: rawPages }: { rows: LogRow
   const activeTitle = page?.title ?? title
   const filterOptions = buildLogFilterOptions(activeRows, copy)
 
-  const filtered = filter === 'all' ? activeRows : activeRows.filter((r) => r.type === filter)
+  const filterByGroup = activeRows.some((r) => Boolean(r.filterGroup))
+  const filtered = filter === 'all'
+    ? activeRows
+    : (filterByGroup
+        ? activeRows.filter((r) => r.filterGroup === filter)
+        : activeRows.filter((r) => r.type === filter))
   const logTitle = activeTitle && /통화|전화/.test(activeTitle)
     ? copy.callLogTitle
     : activeTitle || copy.recordLogTitle
