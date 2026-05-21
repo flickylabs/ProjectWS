@@ -30669,10 +30669,14 @@ body.pc-mode .jp2__slot-choice small {
 }
 
 /* PC spouse-01 tutorial overlay */
+/* 2026-05-21: z-index 9990 → 10600.
+   popup active 동안 panel boost(10500) + popup card softpop(10520)가 떠있어
+   튜토리얼 카드(9992)가 blur backdrop 뒤로 묻혀 사용자가 안내를 인지 못함.
+   cutscene(10800)보다는 아래로 — 컷씬 발동 시 튜토리얼은 뒤로. */
 body.pc-mode .tutorial-overlay-root {
   position: fixed;
   inset: 0;
-  z-index: 9990;
+  z-index: 10600;
   pointer-events: none;
   color: #f6ead2;
 }
@@ -30752,7 +30756,8 @@ body.pc-mode .tutorial-hand-pointer::after {
 
 body.pc-mode .tutorial-message-card {
   position: fixed;
-  z-index: 9992;
+  /* 2026-05-21: 9992 → 10602. tutorial-overlay-root와 동일 상승폭. */
+  z-index: 10602;
   display: grid;
   gap: 10px;
   padding: 14px 50px 18px 50px;

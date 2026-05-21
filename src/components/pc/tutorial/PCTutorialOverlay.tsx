@@ -439,13 +439,17 @@ export default function PCTutorialOverlay() {
   // trust / evidence-detail / combination / speech-note). Each spotlights an
   // info surface for a few seconds, then advances on its own. record-summary /
   // judge-observation / observation-hint / tutorial-complete은 click 완료라 제외.
+  // 2026-05-21: activeFeedback popup이 떠있는 동안에는 timer 시작 안 함.
+  // (evidence-investigate-e2 → combination-intro 전환 시 popup이 떠 있는 채로
+  //  3.5s가 흘러 사용자가 조합 안내를 인지 못하고 사라지는 사고 영역.)
   useEffect(() => {
     if (!enabled || !step) return
     if (step.completionCondition.type !== 'state-mutation') return
     if (step.completionCondition.actionType !== 'auto') return
+    if (activeFeedback) return
     const timer = window.setTimeout(() => markStepComplete(step.id), 3500)
     return () => window.clearTimeout(timer)
-  }, [currentStepId, enabled, markStepComplete, step])
+  }, [activeFeedback, currentStepId, enabled, markStepComplete, step])
 
   if (!enabled || activeCase !== 'spouse-01' || !isOverlayVisible || !step) {
     return null
