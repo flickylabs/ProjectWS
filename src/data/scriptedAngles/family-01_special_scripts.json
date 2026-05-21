@@ -67,7 +67,7 @@
       "disputeId": "d-2",
       "route": "emotion",
       "preConfession": "감정이 무너져 침묵이 길어진다.",
-      "confessionMain": "정후가 자필 연습본의 90:10을 60:40으로 바꿨다는 사실을 받아들입니다. 그래도 위조 책임은 남습니다.",
+      "confessionMain": "정후가 오후 수정 공증에서 어머니 상태가 불안정한데도 진행을 재촉했다는 사실을 받아들입니다. 그래도 절차 개입 책임은 남습니다.",
       "postConfession": "자백 뒤에도 상대에게 책임을 전가하지 않도록 재판관이 확인 범위를 고정한다.",
       "tags": [
         "channel:confession",
@@ -82,7 +82,7 @@
       "disputeId": "d-2",
       "route": "trust",
       "preConfession": "재판관이 비공개 보호와 진술 범위 제한을 약속하자 목소리가 낮아진다.",
-      "confessionMain": "정후가 자필 연습본의 90:10을 60:40으로 바꿨다는 사실을 받아들입니다. 그래도 위조 책임은 남습니다.",
+      "confessionMain": "정후가 오후 수정 공증에서 어머니 상태가 불안정한데도 진행을 재촉했다는 사실을 받아들입니다. 그래도 절차 개입 책임은 남습니다.",
       "postConfession": "신뢰 경로의 자백은 면책이 아니라 사실확정용 진술로 기록한다.",
       "tags": [
         "channel:confession",
@@ -97,7 +97,7 @@
       "disputeId": "d-2",
       "route": "emotion",
       "preConfession": "감정이 무너져 침묵이 길어진다.",
-      "confessionMain": "제가 자필 연습본의 90:10을 60:40으로 고쳤습니다. 제 몫을 줄였지만, 어머니 뜻에 손댄 위조였습니다.",
+      "confessionMain": "공증 오후 수정에서 어머니가 답변을 잇지 못하시는데도 제가 진행을 빨리 끌고 갔습니다. 그 절차에 손댄 책임은 제 몫입니다.",
       "postConfession": "자백 뒤에도 상대에게 책임을 전가하지 않도록 재판관이 확인 범위를 고정한다.",
       "tags": [
         "channel:confession",
@@ -112,7 +112,7 @@
       "disputeId": "d-2",
       "route": "trust",
       "preConfession": "재판관이 비공개 보호와 진술 범위 제한을 약속하자 목소리가 낮아진다.",
-      "confessionMain": "제가 자필 연습본의 90:10을 60:40으로 고쳤습니다. 제 몫을 줄였지만, 어머니 뜻에 손댄 위조였습니다.",
+      "confessionMain": "공증 오후 수정에서 어머니가 답변을 잇지 못하시는데도 제가 진행을 빨리 끌고 갔습니다. 그 절차에 손댄 책임은 제 몫입니다.",
       "postConfession": "신뢰 경로의 자백은 면책이 아니라 사실확정용 진술로 기록한다.",
       "tags": [
         "channel:confession",
