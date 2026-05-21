@@ -5610,7 +5610,7 @@
             },
             {
               "id": "d4.taesung_half_brother_shock",
-              "factText": "배다른 자식 사실 충격",
+              "factText": "친자 정체 사실 충격",
               "tags": [
                 "emotion",
                 "shame",
@@ -12742,7 +12742,7 @@
             },
             {
               "id": "d4.junghu_half_brother_protection",
-              "factText": "윤태성 배다른 사실 보호",
+              "factText": "윤태성 친자 정체 사실 보호",
               "tags": [
                 "motive",
                 "relationship",
