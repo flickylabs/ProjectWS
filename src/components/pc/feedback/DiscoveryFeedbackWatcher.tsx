@@ -333,8 +333,14 @@ export default function DiscoveryFeedbackWatcher() {
         bigTypography: { text: t('pc.discovery.feedback.conflict.vs'), durationMs: 1000, tone: 'amber-warning' as const },
         layoutVariant: 'split-vs' as const,
         splitContent: {
-          left: { partyId: 'a' as const, label: leftLabel, text: leftText },
-          right: { partyId: 'b' as const, label: t('pc.discovery.feedback.conflict.newInfoLabel'), text: pendingConflict.conflictingInfo },
+          // 2026-05-21: left.partyId를 실제 belief party와 매핑.
+          // 사용자 보고 — "기존 판단·이준호 쪽 주장" label인데 박지연 portrait가 떴음.
+          // currentJudgment === 'believe_a' → 'a', 'believe_b' → 'b', 그 외(both_partial/
+          // undetermined)는 단독 party 없음 → undefined → 좌측 portrait 자리에 저울 아이콘.
+          // right.partyId는 항상 undefined — "새 충돌 정보" 측은 캐릭터가 아닌 재판관/시스템
+          // 정보이므로 portrait 자리에 저울 아이콘으로 표시.
+          left: { partyId: beliefParty ?? undefined, label: leftLabel, text: leftText },
+          right: { partyId: undefined, label: t('pc.discovery.feedback.conflict.newInfoLabel'), text: pendingConflict.conflictingInfo },
         },
         beatId: `conflict:${pendingConflict.disputeId}`,
       } : {}),

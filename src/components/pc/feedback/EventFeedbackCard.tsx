@@ -11,6 +11,7 @@ import type {
   EventFeedbackVisualEffect,
 } from '../../../store/slices/eventFeedbackSlice'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
+import PCSvgIcon from '../icons/PCSvgIcon'
 import { useI18n, type LocaleCode } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
 import {
@@ -325,27 +326,34 @@ function CourtBeatSplitVs({ active, locale }: { active: EventFeedbackItem; local
       text: active.contrast?.right.text,
     },
   }
-  const leftParty = content.left.partyId === 'b' ? caseData?.duo.partyB : caseData?.duo.partyA
-  const rightParty = content.right.partyId === 'a' ? caseData?.duo.partyA : caseData?.duo.partyB
-  const leftId = content.left.partyId ?? 'a'
-  const rightId = content.right.partyId ?? 'b'
+  // 2026-05-21: partyId가 명시되지 않은 측은 캐릭터 portrait 대신 저울(i-scale) 아이콘.
+  // conflict 모달의 "새 충돌 정보" / "양측 일부 사실" / "판단 보류"처럼 단독 party가 아닌
+  // 시스템·재판관 정보를 표시할 때 사용. partyId가 'a'/'b'로 명시되면 기존대로 portrait.
+  const leftPartyId = content.left.partyId
+  const rightPartyId = content.right.partyId
+  const leftParty = leftPartyId === 'b' ? caseData?.duo.partyB : leftPartyId === 'a' ? caseData?.duo.partyA : null
+  const rightParty = rightPartyId === 'a' ? caseData?.duo.partyA : rightPartyId === 'b' ? caseData?.duo.partyB : null
   const leftLabel = content.left.label ?? leftParty?.name ?? localizeRuntimeText('기존 판단', locale)
   const rightLabel = content.right.label ?? rightParty?.name ?? localizeRuntimeText('새 충돌 정보', locale)
+  const leftPanelClass = leftPartyId ? `is-party-${leftPartyId}` : 'is-system'
+  const rightPanelClass = rightPartyId ? `is-party-${rightPartyId}` : 'is-system'
 
   return (
     <div className="pc-court-split-vs">
-      <section className={`pc-court-split-vs__panel is-party-${leftId}`}>
+      <section className={`pc-court-split-vs__panel ${leftPanelClass}`}>
         <div className="pc-court-split-vs__head">
-          {caseData && leftId ? (
+          {caseData && leftPartyId ? (
             <PCCharacterPortrait
               alt={leftParty?.name ?? ''}
               caseId={caseData.caseId}
               emotion="defensive"
               fallbackSymbolId="i-person"
-              party={leftId}
+              party={leftPartyId}
               size={54}
             />
-          ) : null}
+          ) : (
+            <PCSvgIcon id="i-scale" size={54} />
+          )}
           <span>{localizeRuntimeText(leftLabel, locale)}</span>
         </div>
         <p>{localizeRuntimeText(content.left.text ?? active.contrast?.left.text ?? '', locale)}</p>
@@ -355,18 +363,20 @@ function CourtBeatSplitVs({ active, locale }: { active: EventFeedbackItem; local
         <span>VS</span>
       </div>
 
-      <section className={`pc-court-split-vs__panel is-party-${rightId}`}>
+      <section className={`pc-court-split-vs__panel ${rightPanelClass}`}>
         <div className="pc-court-split-vs__head">
-          {caseData && rightId ? (
+          {caseData && rightPartyId ? (
             <PCCharacterPortrait
               alt={rightParty?.name ?? ''}
               caseId={caseData.caseId}
               emotion="defensive"
               fallbackSymbolId="i-person"
-              party={rightId}
+              party={rightPartyId}
               size={54}
             />
-          ) : null}
+          ) : (
+            <PCSvgIcon id="i-scale" size={54} />
+          )}
           <span>{localizeRuntimeText(rightLabel, locale)}</span>
         </div>
         <p>{localizeRuntimeText(content.right.text ?? active.contrast?.right.text ?? '', locale)}</p>
