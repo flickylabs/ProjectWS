@@ -3868,6 +3868,8 @@ function confirmWitnessTruthProbe(
   target: PartyId,
   disputeId: string,
   witnessName: string,
+  witnessId: string,
+  witnessQuote?: string,
 ): void {
   const state = useGameStore.getState()
   const caseData = state.caseData
@@ -3925,7 +3927,9 @@ function confirmWitnessTruthProbe(
       partyId: target,
       partyName: targetName,
       route: witnessRoute,
+      witnessId,
       witnessName,
+      witnessQuote,
       phase: state.currentPhase,
     })
     if (witnessCutscene) triggerCutscene(witnessCutscene)
@@ -4024,7 +4028,7 @@ function enqueueWitnessTruthProbe(
         label: '당사자에게 확인',
         tone: 'gold',
         onSelect: () => {
-          window.setTimeout(() => confirmWitnessTruthProbe(target, disputeId, pending.witnessName), 320)
+          window.setTimeout(() => confirmWitnessTruthProbe(target, disputeId, pending.witnessName, pending.witnessId, slot.testimony), 320)
         },
       },
     ],
