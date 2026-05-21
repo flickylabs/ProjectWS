@@ -154,15 +154,15 @@
         ]
       },
       "d-2": {
-        "surface": "60:40 유서의 진짜 의도",
-        "truth": "윤정후는 자필 연습본의 90:10 유서를 60:40으로 조작했다. 자기 몫을 줄인 조작이지만 위조 책임은 남는다.",
-        "protectedSurface": "유서 비율 변경의 방향과 동기",
+        "surface": "60:40 공증 절차의 개입 여부",
+        "truth": "공증본 60:40은 오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 윤정후의 진행 압박 아래 확정됐다. 어머니 상태가 불안정한 가운데 정후가 공증 절차에 깊이 개입한 책임이 남는다. 동기는 본 쟁점에서 결론짓지 않는다.",
+        "protectedSurface": "공증 절차 안에서 정후의 개입 정도와 어머니 상태 작용",
         "truthLexemes": [
-          "90:10",
-          "60:40",
-          "자기 몫 축소",
-          "위조",
-          "조작"
+          "오전 1차 비율 비움",
+          "오후 수정 60:40",
+          "정후 진행 압박",
+          "어머니 상태 불안정",
+          "절차 개입 책임"
         ],
         "sourceRefs": [
           "src/data/cases/generated/family-01.json:disputes.d-2"
@@ -200,13 +200,16 @@
       },
       "d-5": {
         "surface": "어머니의 숨겨진 마음",
-        "truth": "윤태성은 유산을 당연시했고, 윤정후는 보호를 명분으로 어머니 뜻을 고쳐 두 사람 모두 어머니를 있는 그대로 두지 못했다.",
-        "protectedSurface": "두 형제가 어머니 뜻을 다룬 방식",
+        "truth": "윤태성은 유산을 당연시했고, 윤정후는 보호를 명분으로 어머니가 자필 연습본에 남긴 90:10을 공증 60:40으로 줄였다. 두 사람 모두 어머니를 있는 그대로 두지 못했다.",
+        "protectedSurface": "두 형제가 어머니 뜻을 다룬 방식과 자필 비율 변경의 동기",
         "truthLexemes": [
           "유산 당연시",
           "보호 명분",
           "어머니 뜻 왜곡",
-          "두 번 왜곡"
+          "두 번 왜곡",
+          "자필 90:10",
+          "공증 60:40으로 축소",
+          "자기 몫 양보"
         ],
         "sourceRefs": [
           "src/data/cases/generated/family-01.json:disputes.d-5"
@@ -1495,19 +1498,19 @@
         ]
       },
       "d-2": {
-        "title": "60:40 유서의 진짜 의도",
+        "title": "공증 절차의 개입",
         "draftCompleteness": "sample-complete",
         "statementFracture": [
-          "A는 60:40이 B가 더 가져가려 한 조작이라고 본다.",
-          "B는 위조 책임을 숨기면서도 조작 방향이 자기에게 불리했다는 사실을 말하지 않는다.",
-          "쟁점은 조작 사실과 조작 동기를 분리하는 데 있다."
+          "A는 60:40 자체를 B가 더 가져가려 한 조작이라고 본다.",
+          "B는 공증 절차에 개입한 책임은 인정하기 어렵지만, 그 자리의 동기까지 본 쟁점에서 말할 수는 없다.",
+          "쟁점은 공증 절차에서 정후의 개입 정도와 어머니 상태 작용을 분리하는 데 있다."
         ],
         "truthStages": [
           {
             "stage": 0,
             "name": "비율 의심 표면",
-            "surfaceClaim": "60:40 공증 유서가 어머니 뜻인지 조작인지 다툰다.",
-            "hiddenTruth": "자필 연습본은 90:10이었고 B는 자기 몫을 60으로 줄였다.",
+            "surfaceClaim": "60:40 공증 유서가 어머니 뜻인지 절차상 무엇이 작용했는지 다툰다.",
+            "hiddenTruth": "공증 절차에는 오전 1차 접수와 오후 수정 접수의 두 단계가 있었고, 그 사이 어머니 상태와 정후의 진행 압박이 작용했다.",
             "entryConditions": [
               "d-1 truthStage >= 3"
             ],
@@ -1517,9 +1520,10 @@
               "공증 절차"
             ],
             "forbiddenDisclosure": [
-              "90:10",
-              "자기 몫 축소",
-              "자필 연습본"
+              "오전 1차 비율 비움",
+              "오후 수정 재제출",
+              "어머니 상태 불안정",
+              "정후의 진행 압박"
             ],
             "validActions": [
               "fact_pursuit",
@@ -1532,11 +1536,11 @@
             "meterTriggers": {
               "emotion": "A is confident because 60 already feels unfair.",
               "trust": "B shuts down if called greedy too early.",
-              "leak": "No reveal without e-4/e-5."
+              "leak": "No reveal without e-4."
             },
             "failureResponse": {
               "npc": "B says the ratio needs context but gives none.",
-              "gameplay": "Require notary memo and handwritten draft comparison; repeat questioning does not advance."
+              "gameplay": "Require notary memo; repeat questioning does not advance."
             },
             "successUnlocks": [
               "stage 1 with e-4 Excerpt"
@@ -1545,19 +1549,19 @@
           {
             "stage": 1,
             "name": "공증인 메모 고정",
-            "surfaceClaim": "같은 날 두 문서가 기록된 기록이 있다.",
-            "hiddenTruth": "공증 절차 중에 비율이 90:10에서 60:40으로 바뀌었다.",
+            "surfaceClaim": "같은 날 오전 접수와 오후 수정 접수가 기록된 흔적이 있다.",
+            "hiddenTruth": "오전 1차 접수에는 비율 칸이 비어 있다가 오후 수정 접수에서 60:40이 확정됐고, 정후가 그 자리에서 진행을 재촉했다.",
             "entryConditions": [
               "e-4 stage >= Excerpt"
             ],
             "allowedDisclosure": [
-              "두 차례 메모",
+              "두 차례 접수 기록",
               "재제출 기록",
-              "비율 차이 가능성"
+              "오전 1차 / 오후 수정 단계 차이"
             ],
             "forbiddenDisclosure": [
-              "90:10 단정",
-              "자기 몫 축소",
+              "정후의 진행 압박 단정",
+              "어머니 상태 불안정 단정",
               "형 보호 동기"
             ],
             "validActions": [
@@ -1571,36 +1575,39 @@
               "w-2"
             ],
             "meterTriggers": {
-              "emotion": "A presses harder on forgery.",
+              "emotion": "A presses harder on procedural irregularity.",
               "trust": "B remains flat but loses denial space.",
               "leak": "B may admit a document was resubmitted."
             },
             "failureResponse": {
               "npc": "B says records can be misunderstood.",
-              "gameplay": "Prompt original comparison or witness w-2; do not reveal direction yet."
+              "gameplay": "Prompt e-4 deeper stage or witness w-2; do not reveal pressure direction yet."
             },
             "successUnlocks": [
-              "stage 2 with e-5 Original or w-2"
+              "stage 2 with e-4 Original or w-2"
             ]
           },
           {
             "stage": 2,
-            "name": "연습본 비율 반전",
-            "surfaceClaim": "자필 유언장 연습본과 공증본의 비율이 다르다.",
-            "hiddenTruth": "자필 연습본은 B 90 / A 10이었고, B가 자기 몫을 줄여 제출했다.",
+            "name": "절차 균열 확인",
+            "surfaceClaim": "공증 절차 안에서 어느 단계에 60:40이 확정됐는지가 다투어진다.",
+            "hiddenTruth": "오후 수정 단계에서 어머니가 피로와 답변 지연을 보였고, 정후가 '오늘 마쳐야 한다'며 진행을 재촉한 정황이 메모에 남아 있다.",
             "entryConditions": [
-              "e-4 stage >= Original",
-              "e-5 stage >= Original"
+              "e-4 stage >= Original"
             ],
             "allowedDisclosure": [
-              "공증본과 다른 비율",
-              "자필 연습본",
-              "변경 방향"
+              "오전 1차 비율 비움",
+              "오후 수정 60:40 확정",
+              "어머니 상태 불안정 가능성",
+              "정후의 진행 재촉 가능성"
             ],
             "forbiddenDisclosure": [
               "출생 비밀",
               "오래된 지원",
-              "형 보호 동기"
+              "형 보호 동기",
+              "자필 연습본",
+              "90:10",
+              "자기 몫 축소"
             ],
             "validActions": [
               "evidence_present",
@@ -1608,20 +1615,19 @@
               "witness_summon"
             ],
             "requiredEvidence": [
-              "e-4",
-              "e-5"
+              "e-4"
             ],
             "requiredWitness": [
               "w-2"
             ],
             "meterTriggers": {
-              "emotion": "A shock replaces pure anger.",
-              "trust": "B can admit the direction if not treated as exoneration.",
-              "leak": "B may say he reduced his own share."
+              "emotion": "A shock replaces pure anger as procedural cracks appear.",
+              "trust": "B can admit the procedural pressure if not treated as exoneration.",
+              "leak": "B may say he urged the process to finish."
             },
             "failureResponse": {
-              "npc": "B admits the numbers changed but refuses the reason.",
-              "gameplay": "Separate forgery responsibility from motive; do not auto-solve d-3/d-4."
+              "npc": "B admits the timing was tight but refuses the reason.",
+              "gameplay": "Separate procedural responsibility from motive; do not auto-solve d-3/d-4/d-5."
             },
             "successUnlocks": [
               "dc-2",
@@ -1631,21 +1637,26 @@
           },
           {
             "stage": 3,
-            "name": "위조와 보호의 충돌",
-            "surfaceClaim": "자기 몫을 줄인 조작이어도 유서를 고친 책임은 남는다.",
-            "hiddenTruth": "B는 더 큰 파국을 막으려 했다고 믿었지만 어머니 뜻을 임의로 바꾸었다.",
+            "name": "절차 개입의 책임",
+            "surfaceClaim": "공증 절차에 정후가 깊이 개입한 책임이 남는다.",
+            "hiddenTruth": "정후가 진행을 재촉한 사실과 어머니 상태가 불안정했던 정황은 인정되지만, 그 개입의 진짜 동기는 본 쟁점에서 결론짓지 않는다.",
             "entryConditions": [
               "partyB lieState >= S3 on d-2",
               "dc-2 challenge success"
             ],
             "allowedDisclosure": [
-              "자기 몫 축소",
-              "위조 책임",
-              "돈이 아닌 다른 이유"
+              "절차 개입 책임",
+              "진행 압박 인정",
+              "어머니 상태 작용",
+              "동기 분리 원칙"
             ],
             "forbiddenDisclosure": [
               "출생 비밀 직접 언급",
-              "20년 지원 전체"
+              "20년 지원 전체",
+              "자필 연습본",
+              "90:10",
+              "자기 몫 축소",
+              "형 보호 동기 확정"
             ],
             "validActions": [
               "contradiction_pursuit",
@@ -1653,20 +1664,19 @@
               "empathy_approach"
             ],
             "requiredEvidence": [
-              "e-4",
-              "e-5"
+              "e-4"
             ],
             "requiredWitness": [
               "w-2"
             ],
             "meterTriggers": {
-              "emotion": "B's flat tone cracks around responsibility.",
+              "emotion": "B's flat tone cracks around procedural responsibility.",
               "trust": "Trust rises when the judge refuses to treat motive as acquittal.",
-              "leak": "B can leak that money was not the real reason."
+              "leak": "B can hint that money was not the real reason."
             },
             "failureResponse": {
               "npc": "B says he cannot explain without hurting someone else.",
-              "gameplay": "Suggest d-3 support route or e-6 rather than forcing confession."
+              "gameplay": "Suggest d-3 support route or e-6 rather than forcing confession on motive."
             },
             "successUnlocks": [
               "d-3",
@@ -1675,20 +1685,26 @@
           },
           {
             "stage": 4,
-            "name": "조작 방향 확정",
-            "surfaceClaim": "60:40은 탐욕의 증가가 아니라 축소 조작이지만 위법성은 남는다.",
-            "hiddenTruth": "B는 자필 연습본의 90:10이 법정화되면 숨긴 가족사가 드러날까 두려워 60:40으로 고쳤다.",
+            "name": "절차 책임 확정",
+            "surfaceClaim": "60:40 공증 절차에 정후의 깊은 개입 책임이 있으나, 그 동기는 본 쟁점에서 결론짓지 않는다.",
+            "hiddenTruth": "절차 개입의 진짜 동기는 d-5에서 형 보호 명분 및 자필 연습본 흐름과 함께 드러난다.",
             "entryConditions": [
               "partyB lieState >= S4",
-              "e-4 Context + e-5 Context"
+              "e-4 Context"
             ],
             "allowedDisclosure": [
-              "자필 연습본 90:10",
-              "공증본 60:40",
-              "자기 몫 축소",
-              "위조 책임"
+              "오전 1차 비율 비움",
+              "오후 수정 60:40",
+              "어머니 상태 불안정",
+              "정후의 진행 재촉",
+              "절차 개입 책임"
             ],
             "forbiddenDisclosure": [
+              "자필 연습본",
+              "90:10",
+              "자기 몫 축소",
+              "형 보호 동기 확정",
+              "출생 비밀",
               "d-4 출생 비밀 final truth until gate"
             ],
             "validActions": [
@@ -1697,20 +1713,19 @@
               "motive_search"
             ],
             "requiredEvidence": [
-              "e-4",
-              "e-5"
+              "e-4"
             ],
             "requiredWitness": [
               "w-2"
             ],
             "meterTriggers": {
-              "emotion": "A's anger shifts from greed to betrayal.",
-              "trust": "B cooperation improves if the legal fault remains named.",
-              "leak": "B may point toward a hidden family reason."
+              "emotion": "A's anger shifts from greed to procedural betrayal.",
+              "trust": "B cooperation improves if the procedural fault remains named.",
+              "leak": "B may point toward a hidden family reason without naming it."
             },
             "failureResponse": {
-              "npc": "A says direction does not erase forgery; B agrees but withholds the protected reason.",
-              "gameplay": "Establish d-2 only. Unlock d-3; do not reveal d-4 automatically."
+              "npc": "A says procedural intrusion does not erase the outcome; B agrees but withholds the protected reason.",
+              "gameplay": "Establish d-2 on procedural responsibility only. Unlock d-3; do not reveal d-4/d-5 motive automatically."
             },
             "successUnlocks": [
               "d-2 established",
@@ -2247,14 +2262,18 @@
             "stage": 2,
             "name": "윤정후의 보호 명분",
             "surfaceClaim": "윤정후는 형을 지키려 했다는 이유로 유서 변경을 설명한다.",
-            "hiddenTruth": "B의 보호 명분은 실제였지만 어머니의 90대10 뜻을 고쳐 쓴 책임을 지우지 못한다.",
+            "hiddenTruth": "어머니가 자필 연습본에 남긴 90대10을 정후가 공증 60:40으로 줄인 흐름이 보호 명분의 대표 증거다. 보호 명분은 실제였지만 어머니 뜻을 고쳐 쓴 책임은 지우지 못한다.",
             "entryConditions": [
-              "d-4 established or e-7 Context"
+              "d-4 established or e-7 Context",
+              "e-5 stage >= Original"
             ],
             "allowedDisclosure": [
               "형 보호",
               "어머니 뜻 변경",
-              "위조 책임"
+              "위조 책임",
+              "자필 연습본",
+              "자필 90:10",
+              "공증본 60:40 축소"
             ],
             "forbiddenDisclosure": [
               "B 면책",
@@ -2266,11 +2285,12 @@
               "mediation"
             ],
             "requiredEvidence": [
+              "e-5",
               "e-7"
             ],
             "requiredWitness": [],
             "meterTriggers": {
-              "emotion": "B guilt becomes explicit.",
+              "emotion": "B guilt becomes explicit when the 90:10 trace is laid down.",
               "trust": "B accepts responsibility if motive is not flattened.",
               "leak": "B may say protection and wrongdoing were both true."
             },
@@ -2287,7 +2307,7 @@
             "stage": 3,
             "name": "어머니 뜻의 이중 왜곡",
             "surfaceClaim": "장남 당연시와 보호 명분이 어머니 뜻 위에 동시에 얹혔다.",
-            "hiddenTruth": "A는 유산을 자기 권리로 읽었고 B는 보호를 이유로 뜻을 고쳐 어머니 뜻은 두 번 왜곡됐다.",
+            "hiddenTruth": "A는 유산을 자기 권리로 읽었고, B는 보호를 이유로 자필 90:10을 공증 60:40으로 고쳐 어머니 뜻은 두 번 왜곡됐다.",
             "entryConditions": [
               "stage 1 complete",
               "stage 2 complete",
@@ -2296,7 +2316,9 @@
             "allowedDisclosure": [
               "두 책임축",
               "어머니 뜻의 왜곡",
-              "상속 기대와 보호 명분"
+              "상속 기대와 보호 명분",
+              "자필 연습본 90:10",
+              "공증본 60:40으로의 조정"
             ],
             "forbiddenDisclosure": [
               "단순 승패 결론",
@@ -2309,6 +2331,7 @@
             ],
             "requiredEvidence": [
               "e-1",
+              "e-5",
               "e-6",
               "e-7"
             ],
@@ -2332,7 +2355,7 @@
             "stage": 4,
             "name": "최종 책임 구조",
             "surfaceClaim": "두 사람 모두 어머니를 있는 그대로 두지 못했다는 결론이 가능해진다.",
-            "hiddenTruth": "윤태성의 상속 당연시와 윤정후의 보호 명분이 서로 다른 방식으로 어머니 뜻을 바꿔 놓았다.",
+            "hiddenTruth": "윤태성의 상속 당연시와 윤정후의 보호 명분이 서로 다른 방식으로 어머니 뜻을 바꿔 놓았다. 자필 90:10이 공증 60:40으로 바뀐 흐름이 그 대표 흔적이다.",
             "entryConditions": [
               "d-1 established",
               "d-2 established",
@@ -2343,7 +2366,9 @@
               "A 유산 당연시",
               "B 보호 명분",
               "유서 조작 책임",
-              "어머니 뜻 이중 왜곡"
+              "어머니 뜻 이중 왜곡",
+              "자필 연습본 90:10",
+              "공증본 60:40으로의 조정"
             ],
             "forbiddenDisclosure": [
               "확정 경로 밖의 민감한 사생활 세부"
@@ -2355,6 +2380,7 @@
             ],
             "requiredEvidence": [
               "e-1",
+              "e-5",
               "e-6",
               "e-7"
             ],

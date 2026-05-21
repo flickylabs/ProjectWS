@@ -283,20 +283,24 @@
     "d-2": {
       "hidden": {
         "ko": [
-          "자기 몫을 줄인 조작",
-          "별도 자필 유언장 연습본의 다른 비율"
+          "정후의 공증 절차 진행 압박",
+          "어머니 상태 불안정이 절차에 작용",
+          "오전 1차 비율 비움과 오후 수정 사이의 균열"
         ],
         "en": [
-          "manipulation that reduced his own share",
-          "different ratio in the separate handwritten will draft"
+          "Yoon Jeong-hu's pressure on the notarization procedure",
+          "the mother's unstable state affecting the procedure",
+          "the gap between the empty ratio at the morning intake and the afternoon amendment"
         ],
         "ja": [
-          "自分の取り分を減らす操作",
-          "別の自筆遺言書下書きの異なる比率"
+          "ユン・ジョンフによる公証手続の催促",
+          "母の不安定な状態が手続に作用したこと",
+          "午前1次受付の比率空欄と午後の修正受付の間の隔たり"
         ],
         "zh-CN": [
-          "减少自己份额的操纵",
-          "另行亲笔遗嘱草稿中的不同比例"
+          "尹正厚对公证程序的催促",
+          "母亲不稳定状态对程序的作用",
+          "上午一次受理时比例空缺与下午修订之间的落差"
         ]
       },
       "surface": {
@@ -433,19 +437,27 @@
       "hidden": {
         "ko": [
           "형을 보호한다며 어머니 뜻을 고쳐 쓰려 함",
-          "두 형제가 어머니 뜻을 왜곡"
+          "두 형제가 어머니 뜻을 왜곡",
+          "어머니 자필 비율을 공증에서 줄임",
+          "자기 몫을 양보해 자필 90이 공증 60이 됨"
         ],
         "en": [
           "rewrote the mother's wishes to protect his brother",
-          "both brothers distorted the mother's wishes"
+          "both brothers distorted the mother's wishes",
+          "shrank the mother's handwritten ratio in the notarization",
+          "yielded his own share so that the handwritten 90 became the notarized 60"
         ],
         "ja": [
           "兄を守るために母の意思を書き換えようとした",
-          "兄弟二人が母の意思を歪めた"
+          "兄弟二人が母の意思を歪めた",
+          "母の自筆比率を公証で縮小した",
+          "自分の取り分を譲って自筆90が公証60となった"
         ],
         "zh-CN": [
           "以保护哥哥为由改写母亲的意愿",
-          "两兄弟扭曲了母亲的意愿"
+          "两兄弟扭曲了母亲的意愿",
+          "在公证中缩减了母亲亲笔比例",
+          "让出自己份额使亲笔90变为公证60"
         ]
       },
       "surface": {
