@@ -24519,6 +24519,12 @@ body.pc-mode .pc-question-choice__msg-btn--question {
   text-align: left !important;
 }
 
+/* 2026-05-21: 출시 빌드에서 angle chip(경위 확인 등)을 숨길 때, msg-text가 92px 들여쓰기되지
+   않도록 단일 컬럼 grid로 전환. PCBottomDock의 SHOW_QUESTION_ANGLE_TAG 상수와 연동된다. */
+body.pc-mode .pc-question-choice__msg-btn--question.pc-question-choice__msg-btn--no-angle {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
 body.pc-mode .pc-question-choice__angle {
   display: inline-flex !important;
   align-items: center !important;

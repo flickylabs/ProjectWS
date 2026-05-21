@@ -25,6 +25,13 @@ import { localizeRuntimeText } from '../../../i18n/runtimeText'
 
 type TFunction = (key: MessageKey, values?: MessageValues) => string
 
+/**
+ * 출시 빌드에서는 질문 선택 카드의 angle chip([경위 확인] 등)을 숨긴다.
+ * dev 빌드에서는 자동 노출 — 다시 켜고 싶으면 이 상수를 `true`로 바꾸면 된다.
+ * import.meta.env.DEV: vite dev에선 true, `vite build` 산출물에선 false.
+ */
+const SHOW_QUESTION_ANGLE_TAG = import.meta.env.DEV
+
 const EMOTION_LABEL_KEYS: Record<EmotionalPhase, MessageKey> = {
   defensive: 'pc.hotbar.emotion.defensive',
   confident: 'pc.hotbar.emotion.confident',
@@ -418,8 +425,15 @@ export default function PCBottomDock() {
                     </button>
                   ) : (
                     questionOptions.map((option) => (
-                      <button className="pc-question-choice__msg-btn pc-question-choice__msg-btn--question" key={option.id} onClick={() => selectQuestionOption(option)} type="button">
-                        <span className="pc-question-choice__angle">{localizeRuntimeText(getQuestionAngleLabel(option.answerAngle, normalizeCaseKey(caseData), option.disputeId), locale)}</span>
+                      <button
+                        className={`pc-question-choice__msg-btn pc-question-choice__msg-btn--question${SHOW_QUESTION_ANGLE_TAG ? '' : ' pc-question-choice__msg-btn--no-angle'}`}
+                        key={option.id}
+                        onClick={() => selectQuestionOption(option)}
+                        type="button"
+                      >
+                        {SHOW_QUESTION_ANGLE_TAG ? (
+                          <span className="pc-question-choice__angle">{localizeRuntimeText(getQuestionAngleLabel(option.answerAngle, normalizeCaseKey(caseData), option.disputeId), locale)}</span>
+                        ) : null}
                         <span className="pc-question-choice__msg-text">{localizeRuntimeText(option.text, locale)}</span>
                       </button>
                     ))
