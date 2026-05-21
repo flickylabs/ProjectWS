@@ -63,8 +63,8 @@
     {
       "disputeId": "d-2",
       "angleId": "original_gap",
-      "label": "Difference Between the Handwritten Draft and the Notarised Copy",
-      "description": "Ask why the ratio differs between the handwritten draft and the notarised copy.",
+      "label": "Morning Intake and Afternoon Amendment Gap",
+      "description": "Ask how the ratio moved from a blank morning intake to the afternoon 60:40 amendment.",
       "keywordsLocale": []
     },
     {
@@ -77,8 +77,8 @@
     {
       "disputeId": "d-2",
       "angleId": "forgery_responsibility",
-      "label": "Responsibility for Tampering",
-      "description": "Whatever the motive, confirm the responsibility for any handling of the mother's document.",
+      "label": "Procedural Intervention Responsibility",
+      "description": "Whatever the motive, confirm responsibility for how the notarization procedure was handled.",
       "keywordsLocale": []
     },
     {

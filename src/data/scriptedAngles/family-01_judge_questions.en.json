@@ -1281,7 +1281,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-general-v4",
-          "text": "As you moved the document discrepancy toward certainty, how did you handle the possibility that there might be parts you did not know?",
+          "text": "As you moved the procedural discrepancy toward certainty, how did you handle the possibility that there might be parts you did not know?",
           "behaviorHint": "Motive probe. Have him separate the start of the ratio suspicion from the mixing in of his own expectations."
         },
         {
@@ -1649,7 +1649,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-original_gap-v5",
-          "text": "Mr. Yoon Jeong-hu, set aside interpretation of the difference between the two papers, and state only the difference you personally saw as fact.",
+          "text": "Mr. Yoon Jeong-hu, set aside interpretation of the difference between the procedure records, and state only the difference you personally saw as fact.",
           "behaviorHint": "Fact pursuit. Organize as fact Yoon Jeong-hu's direct confirmation of the difference between the two papers."
         }
       ]
@@ -1695,7 +1695,7 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-original_gap-v1",
-          "text": "Mr. Yoon Jeong-hu, why did you remain silent about how the two documents came to remain different?",
+          "text": "Mr. Yoon Jeong-hu, why did you remain silent about how the procedure records came to remain different?",
           "behaviorHint": "Motive probe. Have them answer the motive behind their silence about how the two documents came to remain different."
         },
         {
@@ -1809,12 +1809,12 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v4",
-          "text": "Mr. Yoon Tae-seong, answer only within what has been confirmed at this stage: how does the direction you first suspected diverge from the actual document discrepancy?",
+          "text": "Mr. Yoon Tae-seong, answer only within what has been confirmed at this stage: how does the direction you first suspected diverge from the actual procedural discrepancy?",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v5",
-          "text": "We will look at the conclusion implied by the document discrepancy later. First, distinguish the numbers you saw from the explanation you heard.",
+          "text": "We will look at the conclusion implied by the procedural discrepancy later. First, distinguish the numbers you saw from the explanation you heard.",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         }
       ]
@@ -1832,7 +1832,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v2",
-          "text": "Please separate the procedures you handled in the process that produced the document discrepancy from the parts you did not directly see.",
+          "text": "Please separate the procedures you handled in the process that produced the procedural discrepancy from the parts you did not directly see.",
           "behaviorHint": "Have them separate the circumstances of not explaining the document discrepancy from their own responsibility. Do not state the original ratio directly."
         },
         {
@@ -1847,7 +1847,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v5",
-          "text": "Mr. Yoon Jeong-hu, if there was a period when you left the document discrepancy unexplained, please answer first about those circumstances.",
+          "text": "Mr. Yoon Jeong-hu, if there was a period when you left the procedural discrepancy unexplained, please answer first about those circumstances.",
           "behaviorHint": "Have them separate the circumstances of not explaining the document discrepancy from their own responsibility. Do not state the original ratio directly."
         }
       ]
@@ -1860,12 +1860,12 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v1",
-          "text": "Mr. Yoon Tae-seong, please explain the judgment process by which you saw the document discrepancy yet still treated it as your younger brother's responsibility.",
+          "text": "Mr. Yoon Tae-seong, please explain the judgment process by which you saw the procedural discrepancy yet still treated it as your younger brother's responsibility.",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         },
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v2",
-          "text": "If your first suspicion and the newly confirmed document discrepancy do not align, answer how you are taking in that misalignment.",
+          "text": "If your first suspicion and the newly confirmed procedural discrepancy do not align, answer how you are taking in that misalignment.",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         },
         {
@@ -1880,7 +1880,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v5",
-          "text": "Mr. Yoon Tae-seong, if there is a part where you tied the document discrepancy and your younger brother's motive together at once, please untangle that judgment and state it.",
+          "text": "Mr. Yoon Tae-seong, if there is a part where you tied the procedural discrepancy and your younger brother's motive together at once, please untangle that judgment and state it.",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         }
       ]
@@ -1893,7 +1893,7 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v1",
-          "text": "Mr. Yoon Jeong-hu, please state why you did not explain the document discrepancy from the beginning.",
+          "text": "Mr. Yoon Jeong-hu, please state why you did not explain the procedural discrepancy from the beginning.",
           "behaviorHint": "Have them separate the circumstances of not explaining the document discrepancy from their own responsibility. Do not state the original ratio directly."
         },
         {
@@ -1908,12 +1908,12 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v4",
-          "text": "When did you know that the document discrepancy might not remain merely a procedural issue?",
+          "text": "When did you know that the procedural discrepancy might not remain merely a procedural issue?",
           "behaviorHint": "Have them separate the circumstances of not explaining the document discrepancy from their own responsibility. Do not state the original ratio directly."
         },
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v5",
-          "text": "Mr. Yoon Jeong-hu, apart from motive, please state how far you can acknowledge responsibility for hiding the document discrepancy.",
+          "text": "Mr. Yoon Jeong-hu, apart from motive, please state how far you can acknowledge responsibility for hiding the procedural discrepancy.",
           "behaviorHint": "Have them separate the circumstances of not explaining the document discrepancy from their own responsibility. Do not state the original ratio directly."
         }
       ]
@@ -1926,12 +1926,12 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v1",
-          "text": "Mr. Yoon Tae-seong, if the picture you suspected did not fit the document discrepancy, your mind may have grown even more unsettled. Please separate that confusion into facts and emotions as you speak.",
+          "text": "Mr. Yoon Tae-seong, if the picture you suspected did not fit the procedural discrepancy, your mind may have grown even more unsettled. Please separate that confusion into facts and emotions as you speak.",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v2",
-          "text": "It could not have been easy when the explanation you first trusted began to falter. Please start with what you thought the moment you faced the document discrepancy.",
+          "text": "It could not have been easy when the explanation you first trusted began to falter. Please start with what you thought the moment you faced the procedural discrepancy.",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         },
         {
@@ -1941,7 +1941,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v4",
-          "text": "Please tell me which was stronger: the feeling that made suspicion hard to release, or the feeling that made the document discrepancy hard to accept.",
+          "text": "Please tell me which was stronger: the feeling that made suspicion hard to release, or the feeling that made the procedural discrepancy hard to accept.",
           "behaviorHint": "Do not let them assume what the document discrepancy means; have them separate the verification path from their inference. Do not state the original ratio directly."
         },
         {
@@ -1959,7 +1959,7 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-b-changed_direction-v1",
-          "text": "Mr. Yoon Jeong-hu, you must have felt what kind of suspicion the document discrepancy would look like to your brother. Please tell me as much of that burden as you can now.",
+          "text": "Mr. Yoon Jeong-hu, you must have felt what kind of suspicion the procedural discrepancy would look like to your brother. Please tell me as much of that burden as you can now.",
           "behaviorHint": "Have them separate the circumstances of not explaining the document discrepancy from their own responsibility. Do not state the original ratio directly."
         },
         {
@@ -1974,7 +1974,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-changed_direction-v4",
-          "text": "Please tell me about the time when you knew the document discrepancy could not avoid suspicion, yet still did not speak.",
+          "text": "Please tell me about the time when you knew the procedural discrepancy could not avoid suspicion, yet still did not speak.",
           "behaviorHint": "Have them separate the circumstances of not explaining the document discrepancy from their own responsibility. Do not state the original ratio directly."
         },
         {
@@ -1997,7 +1997,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v2",
-          "text": "Please organize, in the order you confirmed them, the grounds that led you to see the document discrepancy as a responsibility issue.",
+          "text": "Please organize, in the order you confirmed them, the grounds that led you to see the procedural discrepancy as a responsibility issue.",
           "behaviorHint": "Have them separate the basis for turning the document discrepancy into a judgment of responsibility, focusing on records."
         },
         {
@@ -2012,7 +2012,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v5",
-          "text": "Please separate your emotions about the document discrepancy from your judgment of responsibility.",
+          "text": "Please separate your emotions about the procedural discrepancy from your judgment of responsibility.",
           "behaviorHint": "Have them separate the basis for turning the document discrepancy into a judgment of responsibility, focusing on records."
         }
       ]
@@ -2030,7 +2030,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v2",
-          "text": "If you bear responsibility for the document discrepancy, organize within what you can now say from which stage that responsibility begins.",
+          "text": "If you bear responsibility for the procedural discrepancy, organize within what you can now say from which stage that responsibility begins.",
           "behaviorHint": "Have them answer step by step about their own role and responsibility in handling their mother's document."
         },
         {
@@ -2040,7 +2040,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v4",
-          "text": "Mr. Yoon Jeong-hu, apart from motive, please state how far you can acknowledge responsibility for the document discrepancy.",
+          "text": "Mr. Yoon Jeong-hu, apart from motive, please state how far you can acknowledge responsibility for the procedural discrepancy.",
           "behaviorHint": "Have them answer step by step about their own role and responsibility in handling their mother's document."
         },
         {
@@ -2058,7 +2058,7 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v1",
-          "text": "Mr. Yoon Tae-seong, please explain your own reasons for judging the document discrepancy to be your younger brother's responsibility.",
+          "text": "Mr. Yoon Tae-seong, please explain your own reasons for judging the procedural discrepancy to be your younger brother's responsibility.",
           "behaviorHint": "Have them separate the basis for turning the document discrepancy into a judgment of responsibility, focusing on records."
         },
         {
@@ -2068,12 +2068,12 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v3",
-          "text": "If there was a point after seeing the document discrepancy where anger and legal responsibility moved together, please state it.",
+          "text": "If there was a point after seeing the procedural discrepancy where anger and legal responsibility moved together, please state it.",
           "behaviorHint": "Have them separate the basis for turning the document discrepancy into a judgment of responsibility, focusing on records."
         },
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v4",
-          "text": "Please answer how you are separating the reason you read your younger brother's motive as greed from the newly confirmed document discrepancy.",
+          "text": "Please answer how you are separating the reason you read your younger brother's motive as greed from the newly confirmed procedural discrepancy.",
           "behaviorHint": "Have them separate the basis for turning the document discrepancy into a judgment of responsibility, focusing on records."
         },
         {
@@ -2091,7 +2091,7 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v1",
-          "text": "Mr. Yoon Jeong-hu, please state why you knew about the document discrepancy yet did not explain it right away.",
+          "text": "Mr. Yoon Jeong-hu, please state why you knew about the procedural discrepancy yet did not explain it right away.",
           "behaviorHint": "Have them answer step by step about their own role and responsibility in handling their mother's document."
         },
         {
@@ -2177,7 +2177,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v5",
-          "text": "Mr. Yoon Jeong-hu, please begin by saying how the time when you could not explain the document discrepancy remains with you.",
+          "text": "Mr. Yoon Jeong-hu, please begin by saying how the time when you could not explain the procedural discrepancy remains with you.",
           "behaviorHint": "Have them answer step by step about their own role and responsibility in handling their mother's document."
         }
       ]

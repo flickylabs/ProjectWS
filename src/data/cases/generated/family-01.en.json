@@ -159,20 +159,20 @@
     },
     {
       "id": "d-2",
-      "name": "Notarized Will vs. Separate Document",
-      "truthDescription": "The notarized copy had remained 60:40 from the start, while the separate handwritten will draft shows traces of considering a different ratio. Yoon Jeong-hu remains responsible for altering the will, but it was not manipulation meant to increase his own share.",
-      "mediationLink": "Relationship Between the Notarized Will and the Handwritten Draft",
-      "judgmentStatement": "The difference between the 60:40 notarized copy and the separate handwritten draft forces a separate look at responsibility for altering the will and the motive behind it.",
+      "name": "Procedural Intervention in the Notarization",
+      "truthDescription": "The notarized 60:40 copy was finalized during the afternoon amendment after the morning intake left the ratio blank, with Jeong-hu pressing the process forward while his mother's state was unstable. His responsibility for procedural intervention remains, but this dispute does not decide whether the motive was greed or something else.",
+      "mediationLink": "Rift Between the Notarization Procedure and Mother's State",
+      "judgmentStatement": "The court separates how Jeong-hu affected Mother's state and the pace of the procedure that led to the notarized 60:40 copy.",
       "v3UnlockPlan": {
         "runtimeRule": "Unlock when d-1 reveals cracks in the notarization procedure and the mother's condition",
-        "authoredRule": "Have them check the notary's memo and the handwritten draft separately.",
-        "summary": "Confirm the 60:40 notarized copy itself and how it differs from the separate handwritten draft."
+        "authoredRule": "Have them use the notary's memo to confirm the degree of procedural intervention.",
+        "summary": "Confirm Jeong-hu's involvement and Mother's condition in the procedure that led to the notarized 60:40 copy."
       },
       "verdictOptions": {
-        "wrong": "The younger brother manipulated the notarized copy to increase his own share.",
-        "partial": "There is a difference between the notarized copy and the separate document, but motive and responsibility need further confirmation.",
-        "truth": "The notarized copy was 60:40, and the exact ratio information is confirmed only in the separate handwritten draft. Yoon Jeong-hu's responsibility for altering it must be judged separately from the direction of the manipulation.",
-        "defer": "It is still difficult to judge the relationship between the notarized copy and the separate document. Defer judgment."
+        "wrong": "The younger brother manipulated the ratio in the notarization procedure to benefit himself.",
+        "partial": "There are signs that Jeong-hu intervened deeply in the notarization procedure, but the degree of responsibility and the motive are not yet clear.",
+        "truth": "The morning intake left the ratio blank, and the afternoon amendment fixed the notarized copy at 60:40 under Jeong-hu's pressure on the procedure. His procedural intervention must be judged, while the motive behind it remains outside this dispute's conclusion.",
+        "defer": "It is still difficult to judge what operated inside the notarization procedure. Defer judgment."
       }
     },
     {
@@ -214,7 +214,7 @@
     {
       "id": "d-5",
       "name": "Mother's Hidden Feelings",
-      "truthDescription": "Yoon Tae-seong took the inheritance for granted as if it were compensation for care, while Yoon Jeong-hu tried to arrange the mother's wishes and documents in her place under the reason of protecting his brother. Neither man left the mother's wishes as they were.",
+      "truthDescription": "Yoon Tae-seong treated the inheritance as if it were the natural reward for care, while Yoon Jeong-hu tried to arrange Mother's wishes and documents in her place under the reason of protecting his brother. The clearest trace is that Jeong-hu reduced the 90:10 my mother left in her handwritten draft to the 60:40 in the notarized copy. Neither man left Mother's wishes as they were.",
       "mediationLink": "Mother's Wishes and the Two Sons' Responsibility",
       "judgmentStatement": "The two brothers each moved the mother's wishes to fit their own standards in different ways.",
       "v3UnlockPlan": {
@@ -225,8 +225,8 @@
       "verdictOptions": {
         "wrong": "The younger brother tried to use the mother to monopolize the inheritance.",
         "partial": "Both sides had problems in their relationship with their mother.",
-        "truth": "Yoon Tae-seong took the inheritance for granted, and Yoon Jeong-hu tried to rewrite the mother's wishes while claiming to protect his brother. Neither left the mother's wishes as they were.",
-        "defer": "It is difficult to judge the mother's hidden feelings. Defer judgment."
+        "truth": "Yoon Tae-seong took the inheritance for granted, and Yoon Jeong-hu rewrote Mother's wishes while claiming to protect his brother. The clearest example is the flow from the handwritten 90:10 to the notarized 60:40. Neither left Mother's wishes as they were.",
+        "defer": "It is difficult to judge Mother's hidden feelings without reading the handwritten 90:10, the old support trail, and the diary record together. Defer judgment."
       }
     }
   ],
@@ -1335,12 +1335,12 @@
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "You need to confirm what a handwritten draft different from the notarized copy means.",
-          "implication": "Yoon Tae-seong's manipulation claim must be revisited by separating the direction of the ratio from the nature of the document."
+          "questionAngle": "You need to confirm what the handwritten 90:10 draft means for Mother's hidden feelings.",
+          "implication": "Yoon Tae-seong's manipulation claim must be revisited through Mother's hidden intent, not as a d-2 procedural shortcut."
         },
         "b": {
-          "questionAngle": "He must explain why he knew about the draft that differed from the notarized copy but did not say so.",
-          "implication": "Yoon Jeong-hu must explain both his responsibility for altering the will and the fact that it was not manipulation to receive more."
+          "questionAngle": "He must explain why the 90:10 in the handwritten draft became the notarized 60:40 and why he kept that from his brother.",
+          "implication": "Yoon Jeong-hu must explain both his responsibility for changing Mother's expressed intent and the protective motive he kept hidden."
         }
       },
       "v3DepthPlan": [

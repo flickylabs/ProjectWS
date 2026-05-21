@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-05-21T09:58:13.569036+00:00",
+  "d2ForbiddenVisibleTextViolations": 0,
+  "d2ForbiddenVisibleTextByFile": {
+    "src/data/cases/generated/family-01.en.json": 0,
+    "src/data/scriptedAngles/family-01_angle_catalog.en.json": 0,
+    "src/data/scriptedAngles/family-01_judge_questions.en.json": 0,
+    "src/data/scriptedAngles/family-01_interrogation_answers.en.json": 0,
+    "src/data/scriptedText/family-01.en.json": 0
+  },
+  "d2ForbiddenScanIgnores": [
+    "id",
+    "key",
+    "angleId",
+    "behaviorHint"
+  ],
+  "disclosurePolicyEnGuardNotes": {
+    "safeSubstitutes.90:10": "a procedural gap in the notarization record",
+    "d5.stage0.failureResponse.npc": "A returns to procedural blame; B returns to protection."
+  },
+  "d5NarrativePresentSamples": [
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/761/variants/0/text",
+      "id": "a-d-5-S5-fact_pursuit-general-v1",
+      "sample": "I now admit I cannot explain everything by my own grievance — even with Jung-hoo's 90:10 reduction now on the table, my pressure on him does not lift, and the responsibility for cornering him on my own reading is mine."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/761/variants/2/text",
+      "id": "a-d-5-S5-fact_pursuit-general-v3",
+      "sample": "On the structure of responsibility I will speak plainly — Jung-hoo's reduction of his own share from 90:10 down was a will manipulation framed by protection, and even with that on the record, my own pressure on him does "
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/761/variants/3/text",
+      "id": "a-d-5-S5-fact_pursuit-general-v4",
+      "sample": "I now admit I cannot explain everything by my own grievance — even with Jung-hoo's 90:10 reduction now on the table, my pressure on him does not lift, and the responsibility for cornering him on my own reading is mine."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/761/variants/5/text",
+      "id": "a-d-5-S5-fact_pursuit-general-v6",
+      "sample": "On the structure of responsibility I will speak plainly — Jung-hoo's reduction of his own share from 90:10 down was a will manipulation framed by protection, and even with that on the record, my own pressure on him does "
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/761/variants/6/text",
+      "id": "a-d-5-S5-fact_pursuit-general-v7",
+      "sample": "I now admit I cannot explain everything by my own grievance — even with Jung-hoo's 90:10 reduction now on the table, my pressure on him does not lift, and the responsibility for cornering him on my own reading is mine."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/761/variants/8/text",
+      "id": "a-d-5-S5-fact_pursuit-general-v9",
+      "sample": "On the structure of responsibility I will speak plainly — Jung-hoo's reduction of his own share from 90:10 down was a will manipulation framed by protection, and even with that on the record, my own pressure on him does "
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/761/variants/9/text",
+      "id": "a-d-5-S5-fact_pursuit-general-v10",
+      "sample": "I now admit I cannot explain everything by my own grievance — even with Jung-hoo's 90:10 reduction now on the table, my pressure on him does not lift, and the responsibility for cornering him on my own reading is mine."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/767/variants/0/text",
+      "id": "a-d-5-S5-fact_pursuit-a_entitlement-v1",
+      "sample": "I now admit I cannot explain everything by my own grievance — even hearing that Jung-hoo reduced his own 90:10 share to 60:40, my eldest-son talk had already cornered him before I knew any of it."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/767/variants/2/text",
+      "id": "a-d-5-S5-fact_pursuit-a_entitlement-v3",
+      "sample": "On the entitlement side, my eldest-son framing pressed him without my ever seeing that the 90:10 reduction in his own hand was carried out to protect his brother's identity."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/767/variants/3/text",
+      "id": "a-d-5-S5-fact_pursuit-a_entitlement-v4",
+      "sample": "I now admit I cannot explain everything by my own grievance — even hearing that Jung-hoo reduced his own 90:10 share to 60:40, my eldest-son talk had already cornered him before I knew any of it."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/767/variants/5/text",
+      "id": "a-d-5-S5-fact_pursuit-a_entitlement-v6",
+      "sample": "On the entitlement side, my eldest-son framing pressed him without my ever seeing that the 90:10 reduction in his own hand was carried out to protect his brother's identity."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/767/variants/6/text",
+      "id": "a-d-5-S5-fact_pursuit-a_entitlement-v7",
+      "sample": "I now admit I cannot explain everything by my own grievance — even hearing that Jung-hoo reduced his own 90:10 share to 60:40, my eldest-son talk had already cornered him before I knew any of it."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/767/variants/8/text",
+      "id": "a-d-5-S5-fact_pursuit-a_entitlement-v9",
+      "sample": "On the entitlement side, my eldest-son framing pressed him without my ever seeing that the 90:10 reduction in his own hand was carried out to protect his brother's identity."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/767/variants/9/text",
+      "id": "a-d-5-S5-fact_pursuit-a_entitlement-v10",
+      "sample": "I now admit I cannot explain everything by my own grievance — even hearing that Jung-hoo reduced his own 90:10 share to 60:40, my eldest-son talk had already cornered him before I knew any of it."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/773/variants/0/text",
+      "id": "a-d-5-S5-fact_pursuit-b_protection_control-v1",
+      "sample": "I now admit I cannot explain everything by my own grievance — even with Jung-hoo's 90:10 reduction made under protection on the table, my pressure on him cannot be excused."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/773/variants/2/text",
+      "id": "a-d-5-S5-fact_pursuit-b_protection_control-v3",
+      "sample": "On both halves I will speak openly — his protective will manipulation, his reduction of his own 90:10 share, and my own pressure on him; my half of the responsibility does not soften."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/773/variants/3/text",
+      "id": "a-d-5-S5-fact_pursuit-b_protection_control-v4",
+      "sample": "I now admit I cannot explain everything by my own grievance — even with Jung-hoo's 90:10 reduction made under protection on the table, my pressure on him cannot be excused."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/773/variants/5/text",
+      "id": "a-d-5-S5-fact_pursuit-b_protection_control-v6",
+      "sample": "On both halves I will speak openly — his protective will manipulation, his reduction of his own 90:10 share, and my own pressure on him; my half of the responsibility does not soften."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/773/variants/6/text",
+      "id": "a-d-5-S5-fact_pursuit-b_protection_control-v7",
+      "sample": "I now admit I cannot explain everything by my own grievance — even with Jung-hoo's 90:10 reduction made under protection on the table, my pressure on him cannot be excused."
+    },
+    {
+      "file": "src/data/scriptedAngles/family-01_interrogation_answers.en.json",
+      "path": "answers/773/variants/8/text",
+      "id": "a-d-5-S5-fact_pursuit-b_protection_control-v9",
+      "sample": "On both halves I will speak openly — his protective will manipulation, his reduction of his own 90:10 share, and my own pressure on him; my half of the responsibility does not soften."
+    }
+  ],
+  "truthLeakMatrixEnVerified": {
+    "d-2.hidden.en": [
+      "Yoon Jeong-hu's pressure on the notarization procedure",
+      "the mother's unstable state affecting the procedure",
+      "the gap between the empty ratio at the morning intake and the afternoon amendment"
+    ],
+    "d-5.hidden.en": [
+      "shrank the mother's handwritten ratio in the notarization",
+      "yielded his own share so that the handwritten 90 became the notarized 60"
+    ]
+  },
+  "strictTruthLeakCommand": "node scripts/detect-truth-leak.cjs --strict",
+  "strictTruthLeakFindings": 0
+}

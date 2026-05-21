@@ -522,7 +522,7 @@
           "half brother": "sensitive family matter",
           "not his father's child": "sensitive identity matter",
           "Jung-hoo's money": "money from another source",
-          "90:10": "a different ratio from the notarized copy"
+          "90:10": "a procedural gap in the notarization record"
         }
       },
       "ja": {
@@ -2209,7 +2209,7 @@
               "leak": "No shortcut; final issue requires both axes."
             },
             "failureResponse": {
-              "npc": "A returns to forgery; B returns to protection.",
+              "npc": "A returns to procedural blame; B returns to protection.",
               "gameplay": "Do not let one side's confession auto-win. Require both responsibility axes."
             },
             "successUnlocks": [

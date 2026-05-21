@@ -1,0 +1,75 @@
+{
+  "changedCounts": {
+    "src/data/cases/generated/family-01.en.json": {
+      "changedLeaves": 17,
+      "byField": {
+        "name": 1,
+        "truthDescription": 2,
+        "mediationLink": 1,
+        "judgmentStatement": 1,
+        "authoredRule": 1,
+        "summary": 1,
+        "wrong": 1,
+        "partial": 1,
+        "truth": 2,
+        "defer": 2,
+        "questionAngle": 2,
+        "implication": 2
+      },
+      "textVariants": 0
+    },
+    "src/data/scriptedAngles/family-01_angle_catalog.en.json": {
+      "changedLeaves": 4,
+      "byField": {
+        "label": 2,
+        "description": 2
+      },
+      "textVariants": 0
+    },
+    "src/data/scriptedAngles/family-01_judge_questions.en.json": {
+      "changedLeaves": 27,
+      "byField": {
+        "text": 27
+      },
+      "textVariants": 27
+    },
+    "src/data/scriptedAngles/family-01_interrogation_answers.en.json": {
+      "changedLeaves": 871,
+      "byField": {
+        "text": 871
+      },
+      "textVariants": 871
+    },
+    "src/data/scriptedText/family-01.en.json": {
+      "changedLeaves": 375,
+      "byField": {
+        "text": 375
+      },
+      "textVariants": 375
+    },
+    "src/data/disclosurePolicy/family-01.json": {
+      "changedLeaves": 2,
+      "byField": {
+        "safeSubstitutes.90:10": 1,
+        "failureResponse.npc": 1
+      },
+      "textVariants": 0,
+      "scope": "EN-language guard fields only"
+    }
+  },
+  "tier1DisclosurePolicyEnFieldsChanged": 2,
+  "tier2TextVariantsChanged": 1273,
+  "d2VisibleTextCountAudited": 2375,
+  "d2UniqueVisibleTexts": 1841,
+  "templateUniformityChecks": {
+    "If other facts about the notarization process come to light, my conclusion is bound to waver too.": 48,
+    "If there was another motive behind the notarization procedure, I have to re-examine the direction of the manipulation I believed in.": 180,
+    "I'll answer about the morning intake and the afternoon amendment separately.": 18,
+    "I know the words 'responsibility for procedural intervention' weigh heavily.": 12
+  },
+  "guardedNoTemplateCollapse": true,
+  "notes": [
+    "Recurring KO procedural closers were mapped to canonical EN closers in interrogation answers.",
+    "Non-template d-2 copy was normalized only enough to remove old hard-evidence language while preserving variant diversity."
+  ]
+}
