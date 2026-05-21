@@ -1,0 +1,15 @@
+{
+  "caseId": "family-01",
+  "locale": "en",
+  "checkedAt": "2026-05-21T08:06:28.395Z",
+  "scope": "scriptedText non-S5 text/questionText spot policy lexemes plus strict script validator",
+  "forbiddenLexemes": [
+    "90:10",
+    "reduced his own share",
+    "fabrication"
+  ],
+  "nonS5ForbiddenLexemeViolations": 0,
+  "hits": [],
+  "validator": "npm run localization:scripts:validate -- --case=family-01 --locale=en --strict",
+  "validatorResult": "pass"
+}

@@ -107,8 +107,8 @@
       {
         "id": "w-2",
         "name": "Kim Yeong-su",
-        "knowledgeScope": "He knows that the notary's memo from the day of notarization recorded the mother's condition, confusion over numbers, and an observation that Yoon Jeong-hu seemed to hurry the procedure.",
-        "surfaceKnowledge": "A third-party witness who directly checked the memo notes from the day of notarization.",
+        "knowledgeScope": "He knows that the notary's memo recorded the morning intake, the afternoon amendment, Mother's condition during the amendment, and Yoon Jeong-hu's manner of moving the procedure along.",
+        "surfaceKnowledge": "A third-party witness who directly checked the notary memo records.",
         "witnessProfile": {
           "occupation": "Notary Memo Clerk",
           "relationToA": "They do not know each other.",
@@ -1042,65 +1042,65 @@
       "id": "e-4",
       "name": "Notary's Memo Notes",
       "surfaceName": "Notary's Memo Notes",
-      "description": "Procedure notes left by the notary on the day of notarization. The submitted ratio and standard procedure are confirmed first; further investigation reveals the condition and method of proceeding.",
-      "surfaceDescription": "Procedure notes from the day of notarization exist.",
+      "description": "Progress notes left by the notary. The morning intake history is confirmed first; further investigation reveals the afternoon amendment intake and the procedural concerns.",
+      "surfaceDescription": "Progress notes left by the notary.",
       "investigationResults": {
-        "request_original": "The will notarization procedure was carried out that day, and the submitted notarized copy is organized as 60:40.",
-        "check_metadata": "The notary recorded that the mother was tired, slow to answer, and took a break once during the number check.",
-        "restore_context": "The memo notes that the mother wavered over the numbers several times, and adds the observation that Yoon Jeong-hu seemed to push the procedure forward."
+        "request_original": "A record remains for the notarization process. Nothing unusual is visible at first.",
+        "check_metadata": "The amendment process and final inheritance ratio are recorded.",
+        "restore_context": "The memo adds observations that Mother was in poor condition and that Yoon Jeong-hu seemed to push the process forward."
       },
       "investigationStages": [
         {
           "question": {
-            "text": "Please check the general records from the day of notarization."
+            "text": "Please check the first notarization intake record."
           },
-          "label": "General Record"
+          "label": "Morning Intake"
         },
         {
           "question": {
-            "text": "Please check the memo stating that the mother's condition was poor."
+            "text": "Please check the afternoon amendment notarization intake."
           },
-          "label": "Condition Memo",
-          "unlockHint": "You can view the mother's condition and response speed on the day of notarization."
+          "label": "Amendment Intake",
+          "unlockHint": "The afternoon amendment intake and final 60:40 ratio become visible."
         },
         {
           "question": {
-            "text": "Please confirm the confusion over numbers and the signs that the procedure was pushed forward."
+            "text": "Please check Mother's condition and the procedure notes during the amendment."
           },
-          "label": "Procedural Pressure",
-          "unlockHint": "The notary's memo lets you question problems in how the procedure was conducted."
+          "label": "Status Memo",
+          "unlockHint": "Mother's condition during the amendment and Jeong-hu's manner of moving the process appear together."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "The notary's memo should be used to confirm the procedure and order of events on the day of notarization.",
-          "implication": "Yoon Tae-seong's procedural challenge is supported by condition records from the day of notarization."
+          "questionAngle": "The same-day afternoon amendment intake and the progress memo from that setting need to be reviewed.",
+          "implication": "Yoon Tae-seong's procedural challenge is supported by the amendment intake history and progress memo."
         },
         "b": {
-          "questionAngle": "He must explain why the procedure was hurried on the day of notarization.",
-          "implication": "Yoon Jeong-hu must answer separately about the 60:40 notarized copy and responsibility for procedural involvement."
+          "questionAngle": "He must explain why the morning intake left the ratio blank and why the amendment intake happened that same afternoon.",
+          "implication": "Yoon Jeong-hu must answer separately about the amendment intake and his responsibility for involvement at that setting."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
-          "summary": "Only the existence of the memo from the day of notarization is visible."
+          "summary": "Only the existence of the notary's memo is visible."
         },
         {
           "id": "excerpt",
-          "summary": "The submitted ratio and general procedure records are visible."
+          "summary": "Only the morning notarization intake history is visible. The ratio is blank."
         },
         {
           "id": "original",
-          "summary": "Confirm the notary's memo stating that the mother's condition was poor."
+          "summary": "Confirm the afternoon amendment intake history and final 60:40 ratio."
         },
         {
           "id": "context",
-          "summary": "Compare the confusion over numbers with signs of procedural pressure from Yoon Jeong-hu."
+          "summary": "Set Mother's condition during the amendment against the memo that Jeong-hu pressed the process."
         },
         {
           "id": "established",
-          "summary": "Organize the mother's condition that day and the procedural issues as material for judgment."
+          "summary": "Organize the morning/amendment intake flow and procedural issues as judgment material."
         }
       ],
       "v3TrustStates": [
@@ -1143,19 +1143,19 @@
           "trustLabel": "High",
           "sourceLabel": "Notary Office",
           "legalLabel": "Legal",
-          "stageLabel": "Stage 1 — General Records from Notarization Day"
+          "stageLabel": "Stage 1 - Morning Notary Intake"
         },
         "log": {
           "title": "Notary's Memo Notes",
           "rows": [
             {
               "typeLabel": "Intake",
-              "target": "Will notarization procedure opened / notarized copy ratio confirmed as 60:40",
+              "target": "Will notarization procedure opened / inheritance ratio arrangement entered",
               "duration": "Check"
             },
             {
               "typeLabel": "Procedure",
-              "target": "Testator identity confirmed and two-witness attendance recorded",
+              "target": "Testator identity confirmed and two witnesses recorded",
               "duration": "Normal"
             },
             {
@@ -1164,7 +1164,7 @@
               "duration": "Completed"
             }
           ],
-          "note": "The notarized copy was filed as 60:40 at intake."
+          "note": "The first notarization intake is organized. No prior ratio is listed."
         }
       },
       "viewerDataByStage": {
@@ -1174,19 +1174,19 @@
             "trustLabel": "High",
             "sourceLabel": "Notary Office",
             "legalLabel": "Legal",
-            "stageLabel": "Stage 1 — General Records from Notarization Day"
+            "stageLabel": "Stage 1 - Morning Notary Intake"
           },
           "log": {
             "title": "Notary's Memo Notes",
             "rows": [
               {
                 "typeLabel": "Intake",
-                "target": "Will notarization procedure opened / notarized copy ratio confirmed as 60:40",
+                "target": "Will notarization procedure opened / inheritance ratio arrangement entered",
                 "duration": "Check"
               },
               {
                 "typeLabel": "Procedure",
-                "target": "Testator identity confirmed and two-witness attendance recorded",
+                "target": "Testator identity confirmed and two witnesses recorded",
                 "duration": "Normal"
               },
               {
@@ -1195,7 +1195,7 @@
                 "duration": "Completed"
               }
             ],
-            "note": "The notarized copy was filed as 60:40 at intake."
+            "note": "The first notarization intake is organized. No prior ratio is listed."
           }
         },
         "2": {
@@ -1204,19 +1204,19 @@
             "trustLabel": "High",
             "sourceLabel": "Notary Office",
             "legalLabel": "Legal",
-            "stageLabel": "Stage 2 — Mother's Condition Memo"
+            "stageLabel": "Stage 2 - Amendment Intake History"
           },
           "log": {
             "title": "Notary's Memo Notes",
             "rows": [
               {
                 "typeLabel": "Intake",
-                "target": "Will notarization procedure opened / notarized copy ratio confirmed as 60:40",
+                "target": "Will notarization procedure opened / inheritance ratio arrangement entered",
                 "duration": "Check"
               },
               {
                 "typeLabel": "Procedure",
-                "target": "Testator identity confirmed and two-witness attendance recorded",
+                "target": "Testator identity confirmed and two witnesses recorded",
                 "duration": "Normal"
               },
               {
@@ -1225,17 +1225,17 @@
                 "duration": "Completed"
               },
               {
-                "typeLabel": "Condition Memo",
-                "target": "Testator complained of fatigue, requested a break before answering",
-                "duration": "Caution"
+                "typeLabel": "Intake",
+                "target": "Return visit requested to amend the notarized document",
+                "duration": "Normal"
               },
               {
-                "typeLabel": "Condition Memo",
-                "target": "Delayed response when question repeated, requested a glass of water",
-                "duration": "Caution"
+                "typeLabel": "Intake",
+                "target": "Amended will notarization opened / final 60:40 ratio confirmed",
+                "duration": "Check"
               }
             ],
-            "note": "An additional memo confirms that the mother's condition was poor on the day of notarization."
+            "note": "The amendment intake is additionally confirmed. The final inheritance ratio was settled at 60:40."
           }
         },
         "3": {
@@ -1244,19 +1244,19 @@
             "trustLabel": "High",
             "sourceLabel": "Notary Office",
             "legalLabel": "Legal",
-            "stageLabel": "Stage 3 — Number Confusion and Procedural Pressure"
+            "stageLabel": "Stage 3 - Mother's Condition and Procedural Pressure Memo"
           },
           "log": {
             "title": "Notary's Memo Notes",
             "rows": [
               {
                 "typeLabel": "Intake",
-                "target": "Will notarization procedure opened / notarized copy ratio confirmed as 60:40",
+                "target": "Will notarization procedure opened / inheritance ratio arrangement entered",
                 "duration": "Check"
               },
               {
                 "typeLabel": "Procedure",
-                "target": "Testator identity confirmed and two-witness attendance recorded",
+                "target": "Testator identity confirmed and two witnesses recorded",
                 "duration": "Normal"
               },
               {
@@ -1265,27 +1265,37 @@
                 "duration": "Completed"
               },
               {
-                "typeLabel": "Condition Memo",
-                "target": "Testator complained of fatigue, requested a break before answering",
+                "typeLabel": "Intake",
+                "target": "Return visit requested to amend the notarized document",
+                "duration": "Normal"
+              },
+              {
+                "typeLabel": "Status Memo",
+                "target": "Testator complained of fatigue and asked to rest before answering",
                 "duration": "Caution"
               },
               {
-                "typeLabel": "Condition Memo",
-                "target": "Delayed response when question repeated, requested a glass of water",
+                "typeLabel": "Status Memo",
+                "target": "Delayed answer when questions repeated, requested a glass of water",
                 "duration": "Caution"
               },
               {
                 "typeLabel": "Notary's Memo",
-                "target": "When asked again about the inheritance ratio, she reversed the front and back numbers once",
+                "target": "When asked the reason for the amendment, she spoke with her son helping",
                 "duration": "Needs Comparison"
               },
               {
                 "typeLabel": "Notary's Memo",
-                "target": "Yoon Jeong-hu seemed to urge the procedure along, saying, “We have to finish today.”",
+                "target": "Yoon Jeong-hu seemed to urge the process, saying, \"We have to finish today.\"",
                 "duration": "Needs Comparison"
+              },
+              {
+                "typeLabel": "Intake",
+                "target": "Amended will notarization opened / final 60:40 ratio confirmed",
+                "duration": "Check"
               }
             ],
-            "note": "An observation remains that the mother wavered over the numbers and Yoon Jeong-hu seemed to push the procedure forward."
+            "note": "Observations remain that Mother's condition was poor and Yoon Jeong-hu seemed to push the process forward."
           }
         }
       }
@@ -2123,7 +2133,7 @@
         "label": "dc-2 How the Will Was Altered",
         "summary": "Read with the notary's memo, the handwritten draft shows there was a separate draft behind the 60:40 notarized copy. How the will was altered becomes the issue.",
         "noteText": "How the Will Was Altered",
-        "judgeHint": "Check the mother's condition on the day of notarization separately from the ratio in the handwritten draft."
+        "judgeHint": "Check the mother's condition during the afternoon amendment separately from the ratio in the handwritten draft."
       },
       {
         "id": "dc-3",

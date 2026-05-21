@@ -159,7 +159,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-general-v4",
-          "text": "If you regret not challenging things sooner because of your position as the older brother, please speak to that feeling. Only then can we distinguish what you experienced directly from what you learned later.",
+          "text": "If there is regret that the position of being the elder brother kept you from pressing for answers sooner, please speak of it. Only then can we separate what you witnessed directly from what you learned later.",
           "behaviorHint": "Empathy approach. Acknowledge his pride in having cared for her all his life and his confusion over the result, and have him separate scenes he saw directly from inferences."
         },
         {
@@ -852,7 +852,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v4",
-          "text": "Please state how you checked your mother's condition on the day of notarization and how you recorded it.",
+          "text": "Please tell the court how you checked Mother's condition and how you understood it during the amendment intake.",
           "behaviorHint": "Fact probing. Have Yoon Jeong-hu answer, in chronological order, the stages of the notarization procedure and the tasks he handled personally."
         },
         {
@@ -951,7 +951,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v4",
-          "text": "If you regret not being present on the day of notarization, please speak to that feeling. Only then can we separate your inferences from facts you confirmed afterward.",
+          "text": "If you regret not being present through the afternoon amendment visit, please speak to that feeling. Only then can we separate your inferences from facts you confirmed afterward.",
           "behaviorHint": "Empathy approach. Acknowledge the older brother's sense of loss after learning of the notarization later, but have him separate documents he saw directly from circumstances he heard about."
         },
         {
@@ -1408,12 +1408,12 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v3",
-          "text": "Between the notarized 60:40 record and the memo on your mother's condition, state factually the point that raised your suspicion.",
+          "text": "Between the record that ended at 60:40 during the afternoon amendment and the memo on Mother's condition from that same setting, please state the point that raised your suspicion, centered on facts.",
           "behaviorHint": "Fact pursuit. Have him separate the route by which he saw the notary's memo, the facts written in it, and Yoon Tae-seong's interpretation."
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v4",
-          "text": "Please point out the passages you personally saw among the memo's expressions about number confusion or the procedure going forward.",
+          "text": "Please point to the passages you personally saw in the memo about Mother's fatigue or the way the procedure moved forward.",
           "behaviorHint": "Fact pursuit. Have him separate the route by which he saw the notary's memo, the facts written in it, and Yoon Tae-seong's interpretation."
         },
         {
@@ -1431,27 +1431,27 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v1",
-          "text": "Mr. Yoon Jeong-hu, please state in chronological order the procedure on that day as recorded in the notary's memo and your own explanation process.",
+          "text": "Mr. Yoon Jeong-hu, please organize in chronological order the morning intake and afternoon amendment procedures recorded in the notary's memo, along with what you said there.",
           "behaviorHint": "Fact pursuit. Have him answer in chronological order about the mother's condition on the day of notarization and Yoon Jeong-hu's procedural involvement."
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v2",
-          "text": "Please answer how you understood at the time the record that your mother was going back and forth on the numbers.",
+          "text": "Please answer how you understood at the time the record that Mother kept delaying her answers and asked for a glass of water.",
           "behaviorHint": "Fact pursuit. Have him answer in chronological order about the mother's condition on the day of notarization and Yoon Jeong-hu's procedural involvement."
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v3",
-          "text": "If the memo contains a passage suggesting you pushed the procedure forward, please state truthfully what you actually did that day.",
+          "text": "If the memo says you seemed to push the process by saying it had to be finished today, please state factually what you actually said at the amendment intake.",
           "behaviorHint": "Fact pursuit. Have him answer in chronological order about the mother's condition on the day of notarization and Yoon Jeong-hu's procedural involvement."
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v4",
-          "text": "Please separate your mother's condition on the day of notarization from what you said beside her.",
+          "text": "Please separate Mother's condition at the amendment intake from the words you said beside her.",
           "behaviorHint": "Fact pursuit. Have him answer in chronological order about the mother's condition on the day of notarization and Yoon Jeong-hu's procedural involvement."
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v5",
-          "text": "Mr. Yoon Jeong-hu, please separate the fact that the notarized version was received as 60:40 from your procedural involvement.",
+          "text": "Mr. Yoon Jeong-hu, please separate the fact that the afternoon amendment ended at 60:40 from what you personally did there.",
           "behaviorHint": "Fact pursuit. Have him answer in chronological order about the mother's condition on the day of notarization and Yoon Jeong-hu's procedural involvement."
         }
       ]
@@ -1469,12 +1469,12 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v2",
-          "text": "After seeing the record that your mother's condition was not good, explain what conclusion you immediately moved to.",
+          "text": "After seeing the record that Mother was tired during the amendment procedure, explain what conclusion you immediately moved to.",
           "behaviorHint": "Motive probe. Confirm what conclusion Yoon Tae-seong moved toward based on the notary's memo."
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v3",
-          "text": "Regarding the memo's expression that the procedure went forward, separate what you inferred from what you confirmed.",
+          "text": "Regarding the memo's signs that the process was being hurried, separate what you inferred from what you personally confirmed.",
           "behaviorHint": "Motive probe. Confirm what conclusion Yoon Tae-seong moved toward based on the notary's memo."
         },
         {
@@ -1497,17 +1497,17 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v1",
-          "text": "Mr. Yoon Jeong-hu, please state why you proceeded with the procedure even though a memo remained saying your mother's condition was not good.",
+          "text": "Mr. Yoon Jeong-hu, please explain why you continued with the amendment intake even though the memo says Mother complained of fatigue and delayed her answers.",
           "behaviorHint": "Motive probe. Ask about Yoon Jeong-hu's judgment in proceeding with the procedure despite knowing the record of poor condition."
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v2",
-          "text": "Please explain the judgment process by which you did not stop the procedure despite number confusion on the day of notarization.",
+          "text": "Please explain your judgment process in not stopping the procedure, even though the record says Mother could not keep answering during the amendment intake.",
           "behaviorHint": "Motive probe. Ask about Yoon Jeong-hu's judgment in proceeding with the procedure despite knowing the record of poor condition."
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v3",
-          "text": "If you know why the memo's expression that the procedure went forward looks unfavorable to you, please answer.",
+          "text": "If you understand why the memo's indication that you hurried the process looks unfavorable to you, please answer that directly.",
           "behaviorHint": "Motive probe. Ask about Yoon Jeong-hu's judgment in proceeding with the procedure despite knowing the record of poor condition."
         },
         {
@@ -1530,12 +1530,12 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v1",
-          "text": "Mr. Yoon Tae-seong, what feeling came first when you saw the notary's memo stating that your mother's condition was not good?",
+          "text": "Mr. Yoon Tae-seong, what feeling came first when you saw the notary's memo saying Mother grew tired and delayed her answers during the amendment procedure?",
           "behaviorHint": "Empathy approach. Separate Yoon Tae-seong's shock at seeing the record of his mother's condition from his inference."
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v2",
-          "text": "Please separate the shock of seeing the record that your mother had confused the numbers from the anger directed at your younger brother.",
+          "text": "Please separate the shock of seeing that Mother could not continue answering and asked for water from the anger that turned toward your brother.",
           "behaviorHint": "Empathy approach. Separate Yoon Tae-seong's shock at seeing the record of his mother's condition from his inference."
         },
         {
@@ -1568,7 +1568,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v2",
-          "text": "Before the record that your mother confused the numbers, please state the responsibility you feel.",
+          "text": "Please speak about the responsibility you feel before the record that Mother delayed her answers and complained of fatigue.",
           "behaviorHint": "Empathy approach. Have Yoon Jeong-hu speak to the responsibility he is trying to avoid in front of the notary's memo."
         },
         {
@@ -1578,7 +1578,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v4",
-          "text": "Mr. Yoon Jeong-hu, please explain the gap between saying you meant to protect your brother and the procedure going forward as recorded in the memo from the day of notarization.",
+          "text": "Mr. Yoon Jeong-hu, please speak about the gap between saying you meant to protect your brother and the memo's indication that you hurried the amendment intake.",
           "behaviorHint": "Empathy approach. Have Yoon Jeong-hu speak to the responsibility he is trying to avoid in front of the notary's memo."
         },
         {
@@ -3114,7 +3114,7 @@
       "variants": [
         {
           "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v1",
-          "text": "Mr. Yoon Tae-seong, you know that the position of older brother can make it difficult to accept help. Please first state how the weight of that position affected you.",
+          "text": "Mr. Yun Taeseong, you must be aware that the position of being the elder brother makes it difficult to ask for help. Please first speak of how that weight has worked on you.",
           "behaviorHint": "Empathy approach. Acknowledge the weight of the older brother's position, while having him organize from his own side the responsibility for not asking."
         },
         {
@@ -4373,7 +4373,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v2",
-          "text": "Please separate the share your mother directly acknowledged from the share you added on from your position as eldest son.",
+          "text": "Please answer by separating the share that your mother personally acknowledged from the share you yourself added as the eldest son.",
           "behaviorHint": "Fact pursuit. Separate the share Yoon Tae-seong added from the eldest-son position from the share his mother acknowledged."
         },
         {
@@ -4500,7 +4500,7 @@
       "variants": [
         {
           "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v1",
-          "text": "Mr. Yoon Tae-seong, the position of eldest son may have begun as a duty toward your mother and, at some point, settled in like a right in a way that was hard for you to notice. Where do you see the first point of that change?",
+          "text": "Mr. Yun Taeseong, the eldest son's duty toward his mother may have shifted into something like a right by an unconscious thread you would find difficult to notice yourself. Where do you locate the first moment of that change?",
           "behaviorHint": "Empathy approach. Acknowledge the mix of duty and expectation in the eldest-son role, while having him separate duty from expectation."
         },
         {

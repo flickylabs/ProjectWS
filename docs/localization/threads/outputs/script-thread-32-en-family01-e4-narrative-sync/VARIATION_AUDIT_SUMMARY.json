@@ -1,0 +1,18 @@
+{
+  "caseId": "family-01",
+  "locale": "en",
+  "checkedAt": "2026-05-21T08:06:28.372Z",
+  "scope": "scriptedText interrogation entries with >=6 variants, excluding S5",
+  "highVolumeBucketsChecked": 150,
+  "failures": [],
+  "minimumDistinctOpeners": 3,
+  "minimumDistinctClosers": 10,
+  "maximumSameFirst60PrefixShare": 0.4,
+  "templateUniformity": {
+    "KO closer: i-geon yangbo mot hamnida": "I won't give ground on this.",
+    "KO closer: han bal yangbohaedo gyeolloneun gatseumnida": "Even if I give a step, the conclusion is the same.",
+    "KO closer: geu hanmadiga je ane dugo-dugo namasseoyo": "That one line stayed with me a long time.",
+    "KO closer: geugeotppunimnida / geuge da-imnida": "That is all."
+  },
+  "result": "pass"
+}
