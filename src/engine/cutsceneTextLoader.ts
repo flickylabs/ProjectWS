@@ -71,10 +71,12 @@ export function getSlipLinkedDisputeId(caseId: string, disputeId: string): strin
 export function getAdmissionWitness(
   caseId: string,
   disputeId: string,
-  route: 'trust' | 'emotion',
+  route: 'trust' | 'emotion' | 'witness',
   locale: Locale,
 ): string {
   const file = CACHE.get(`${caseId}:${disputeId}`)
+  // 'witness' 경로 = NPC 감정/신뢰 임계점 전이지만 증인이 결정적 진실 제시 케이스.
+  // emotion 경로 텍스트("더는 버틸 수 없습니다")가 강제 인정 톤에 가장 가까워 fallback.
   const entry = route === 'trust' ? file?.admission_witness_trust : file?.admission_witness_emotion
   return pick(entry, locale)
 }

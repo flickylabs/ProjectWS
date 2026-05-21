@@ -32,7 +32,7 @@ export interface CutsceneEvent {
     // ── truth-reveal payload ──
     disputeId?: string
     partyId?: 'a' | 'b'
-    route?: 'trust' | 'emotion'           // witness breakthrough route
+    route?: 'trust' | 'emotion' | 'witness' // witness breakthrough route
     linkedDisputeId?: string               // slip cascade target
     lieStateBefore?: string
     lieStateAfter?: string
@@ -161,7 +161,7 @@ export function shouldTriggerCutscene(
           disputeName: data?.disputeName as string | undefined,
           partyId: data?.partyId as 'a' | 'b' | undefined,
           partyName: data?.partyName as string | undefined,
-          route: data?.route as 'trust' | 'emotion' | undefined,
+          route: data?.route as 'trust' | 'emotion' | 'witness' | undefined,
           linkedDisputeId: data?.linkedDisputeId as string | undefined,
           lieStateBefore: data?.lieStateBefore as string | undefined,
           lieStateAfter: data?.lieStateAfter as string | undefined,

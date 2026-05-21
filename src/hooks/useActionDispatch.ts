@@ -3945,7 +3945,11 @@ function confirmWitnessTruthProbe(
       category: 'event',
       iconId: 'i-key',
       title: '증인 진술과 당사자 반응이 맞물려 진실이 확정됐다.',
-      summary: `${disputeName} · ${gate.route === 'trust' ? '신뢰 경로' : '감정 경로'}`,
+      summary: `${disputeName} · ${
+        gate.route === 'trust' ? '신뢰 경로'
+        : gate.route === 'witness' ? '증인 경로'
+        : '감정 경로'
+      }`,
       party: target,
       disputeId,
       linkedDialogueId: findLinkedDialogueId(target),

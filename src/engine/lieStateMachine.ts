@@ -12,7 +12,7 @@ export interface TransitionResult {
 
 export interface LieTransitionContext {
   allowS5?: boolean
-  breakthroughRoute?: 'emotion' | 'trust' | 'explicit'
+  breakthroughRoute?: 'emotion' | 'trust' | 'witness' | 'explicit'
 }
 
 export function attemptLieTransition(

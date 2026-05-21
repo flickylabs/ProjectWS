@@ -1,7 +1,7 @@
 import type { AgentState, CaseData, PartyId, ThirdParty } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 
-export type TruthBreakthroughRoute = 'emotion' | 'trust' | 'explicit' | 'blocked'
+export type TruthBreakthroughRoute = 'emotion' | 'trust' | 'witness' | 'explicit' | 'blocked'
 
 export interface TruthBreakthroughGateInput {
   caseData: CaseData | null | undefined
@@ -149,7 +149,9 @@ function getRoute(agent: AgentState, trigger: string, bypass?: boolean): {
 }
 
 export function evaluateTruthBreakthroughGate(input: TruthBreakthroughGateInput): TruthBreakthroughGateResult {
-  const { route, routeReady } = getRoute(input.agent, input.trigger, input.bypass)
+  const initial = getRoute(input.agent, input.trigger, input.bypass)
+  let route: TruthBreakthroughRoute = initial.route
+  let routeReady = initial.routeReady
 
   if (route === 'explicit') {
     return {
@@ -180,6 +182,14 @@ export function evaluateTruthBreakthroughGate(input: TruthBreakthroughGateInput)
   const witnessSatisfiedBy = isWitnessConditionMet(input.caseData, input.witnessSessions, input.disputeId)
   const satisfiedBy = [...evidenceSatisfiedBy, ...witnessSatisfiedBy]
   const conditionReady = satisfiedBy.length > 0
+
+  // 증인 조건(결정적 slot 또는 2+ 관련 slot) 충족 시 route를 'witness'로 승격.
+  // 증인이 결정적 진실을 말하면 NPC 감정/신뢰 임계점과 무관하게 truth 확정.
+  // 2026-05-21 사용자 보고: 격앙(agitated) NPC에서 witness probe 진입 시 holdLine 사고.
+  if (!routeReady && witnessSatisfiedBy.length > 0) {
+    route = 'witness'
+    routeReady = true
+  }
 
   return {
     canBreakthrough: routeReady && conditionReady,
