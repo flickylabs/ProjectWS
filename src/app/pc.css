@@ -10198,30 +10198,14 @@ body.pc-mode .fixed.inset-0.z-50 .text-xs {
 /* ========================================
    Phase6/7 — 중앙 불투명 팝업
    ======================================== */
+/* 2026-05-21: 자식(Phase6_Mediation / PCVerdictReviewMontage)이 자체 fixed
+   inset:0 dim+panel을 가지므로 wrapping을 display: contents로 처리.
+   기존에는 wrapping이 fixed inset:0 + bg dim + 강제 width/border/background/
+   shadow를 자식에 부여하여 자식 panel 외부에 큰 박스 윤곽이 한 번 더 그려지는
+   시각 결함이 있었다. wrapping을 layout에서 빼면 자식이 viewport 기준으로
+   직접 그려져 외부 박스 윤곽이 사라진다. */
 body.pc-mode .pc-play-action-shell.is-fullscreen-panel {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 40 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: rgba(0, 0, 0, 0.7) !important;
-  padding: 0 !important;
-  width: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-  transform: none !important;
-  pointer-events: auto !important;
-}
-body.pc-mode .pc-play-action-shell.is-fullscreen-panel > * {
-  width: min(780px, calc(100vw - 80px)) !important;
-  max-height: calc(100vh - 100px) !important;
-  overflow-y: auto !important;
-  border-radius: 24px !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  background: rgba(13, 14, 18, 0.99) !important;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6) !important;
-  pointer-events: auto !important;
+  display: contents !important;
 }
 
 /* ========================================
