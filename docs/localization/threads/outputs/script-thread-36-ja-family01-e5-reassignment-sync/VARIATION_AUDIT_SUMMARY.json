@@ -1,0 +1,74 @@
+{
+  "caseId": "family-01",
+  "locale": "ja",
+  "branch": "codex/family01-ja-e5-sync",
+  "tierCounts": {
+    "tier1Data": {
+      "generatedCaseLeafStringsChanged": 40
+    },
+    "tier2NarrativeSplit": {
+      "scriptedTextD2VariantsChanged": 575,
+      "interrogationAnswersD2VariantsChanged": 905,
+      "specialScriptsStringsRecorded": 17,
+      "scriptedTextD5StrengtheningVariantsChanged": 3,
+      "total": 1500
+    }
+  },
+  "diversity": {
+    "scriptedTextD2Changed": {
+      "changed": 575,
+      "uniqueFirstSentences": 129,
+      "uniqueLastSentences": 129,
+      "byChannel": {
+        "interrogation": 360,
+        "contradiction_pursuit": 80,
+        "interjection": 40,
+        "emotional_overload": 20,
+        "judge_question": 60,
+        "judge_contradiction": 15
+      }
+    },
+    "interrogationAnswersD2Changed": {
+      "changed": 905,
+      "uniqueFirstSentences": 737,
+      "uniqueLastSentences": 737,
+      "byQuestionType": {
+        "fact_pursuit": 312,
+        "motive_search": 304,
+        "empathy_approach": 289
+      }
+    },
+    "specialScripts": {
+      "confessions": 4,
+      "s5RequestionResponses": 10,
+      "judgeEvidenceCombo": 1,
+      "dossierPrompts": 2
+    }
+  },
+  "templateUniformity": {
+    "status": "kept",
+    "canonicalClosers": [
+      {
+        "koRole": "procedure responsibility remains",
+        "jaCloser": "手続介入の責任は残ります"
+      },
+      {
+        "koRole": "explain only within confirmed scope",
+        "jaCloser": "その範囲内でのみ説明します"
+      },
+      {
+        "koRole": "judge confirmation required",
+        "jaCloser": "確認しなければなりません"
+      },
+      {
+        "koRole": "defendant must explain",
+        "jaCloser": "説明しなければなりません"
+      }
+    ],
+    "naturalizationNotes": [
+      "D-2 variants use procedural terms consistently: 午前 1 次受付, 午後の修正受付, 進行圧力, 母の状態.",
+      "B-side lines favor explicit subjects such as 私が and responsibility phrases such as 責任は私にあります.",
+      "A-side uncertainty keeps Japanese hedging and avoids literal old-KO inheritance."
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "caseId": "family-01",
+  "locale": "ja",
+  "branch": "codex/family01-ja-e5-sync",
+  "d2ForbiddenLexemeCheck": {
+    "status": "pass",
+    "violations": 0,
+    "checkedTerms": [
+      "自筆",
+      "手書き",
+      "90:10",
+      "90対10",
+      "90",
+      "偽造",
+      "自分の取り分を減ら",
+      "取り分",
+      "シェア",
+      "下書き",
+      "練習本",
+      "60に減ら"
+    ],
+    "checkedScopes": [
+      "generated case d-2 objects",
+      "scriptedText d-2 entries",
+      "interrogation_answers d-2 entries",
+      "special_scripts d-2 sidecar entries"
+    ]
+  },
+  "d5NarrativeCheck": {
+    "status": "pass",
+    "requiredTracePresent": true,
+    "trace": "自筆下書き 90:10 -> 公証 60:40",
+    "verifiedAnchors": [
+      "generatedCase.disputes[d-5].truthDescription",
+      "generatedCase.disputes[d-5].verdictOptions.truth",
+      "generatedCase.truthTable[t-5]",
+      "truth-leak-matrix family-01 d-5 ja"
+    ]
+  },
+  "crossDisputeCheck": {
+    "status": "pass",
+    "d1d3d4NewForbiddenLexemes": 0,
+    "note": "Touched d-1/d-3/d-4 cross-references were rewritten toward public procedure context and did not newly acquire self-draft / 90:10 / forgery language."
+  },
+  "truthLeakTool": {
+    "command": "node scripts/detect-truth-leak.cjs --strict",
+    "status": "pass",
+    "findings": 0
+  },
+  "qaLqa": {
+    "command": "npm run qa:lqa",
+    "status": "blocked_by_existing_global_baseline",
+    "failurePoint": "scripts/verify-translations.cjs --strict --scan-applied",
+    "totalReportedIssues": 59659,
+    "note": "The npm gate is repository-wide and stops before the truth-leak checker; the truth-leak checker was run separately and passed."
+  }
+}

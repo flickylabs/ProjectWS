@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "caseId": "family-01",
+  "overlayKind": "special_scripts",
+  "note": "Schema gap: runtime validator does not merge special_scripts overlays yet. This sidecar records JA translations for the 17 d-2 special_script strings changed by the e-5 reassignment sync.",
+  "confessions": [
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "route": "emotion",
+      "confessionMain": "ジョンフが午後の修正公証で、母の状態が不安定だったにもかかわらず進行を急かした事実は受け入れます。それでも手続介入の責任は残ります。"
+    },
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "route": "trust",
+      "confessionMain": "ジョンフが午後の修正公証で、母の状態が不安定だったにもかかわらず進行を急かした事実は受け入れます。それでも手続介入の責任は残ります。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "route": "emotion",
+      "confessionMain": "公証の午後修正で、母が答えを続けられないのに、私が進行を急がせました。その手続に介入した責任は私にあります。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "route": "trust",
+      "confessionMain": "公証の午後修正で、母が答えを続けられないのに、私が進行を急がせました。その手続に介入した責任は私にあります。"
+    }
+  ],
+  "s5RequestionResponses": [
+    {
+      "disputeId": "d-2",
+      "party": "a",
+      "angleId": "general",
+      "text": "すでに確定した真実を前提に、改めてお答えします。ジョンフが午後の修正公証で、母の状態が不安定だったにもかかわらず進行を急かした事実は受け入れます。それでも手続介入の責任は残ります。遺言変更についても、その範囲内でのみ申し上げます。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "b",
+      "angleId": "general",
+      "text": "すでに確定した真実を前提に、改めてお答えします。公証の午後修正で、母が答えを続けられないのに、私が進行を急がせました。その手続に介入した責任は私にあります。遺言変更についても、その範囲内でのみ説明します。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "a",
+      "angleId": "scan_sequence",
+      "text": "すでに確定した真実を前提に、改めてお答えします。ジョンフが午後の修正公証で、母の状態が不安定だったにもかかわらず進行を急かした事実は受け入れます。それでも手続介入の責任は残ります。公証人メモについても、その範囲内でのみ申し上げます。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "b",
+      "angleId": "scan_sequence",
+      "text": "すでに確定した真実を前提に、改めてお答えします。公証の午後修正で、母が答えを続けられないのに、私が進行を急がせました。その手続に介入した責任は私にあります。公証人メモについても、その範囲内でのみ説明します。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "a",
+      "angleId": "original_gap",
+      "text": "すでに確定した真実を前提に、改めてお答えします。ジョンフが午後の修正公証で、母の状態が不安定だったにもかかわらず進行を急かした事実は受け入れます。それでも手続介入の責任は残ります。公証手続の流れについても、その範囲内でのみ申し上げます。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "b",
+      "angleId": "original_gap",
+      "text": "すでに確定した真実を前提に、改めてお答えします。公証の午後修正で、母が答えを続けられないのに、私が進行を急がせました。その手続に介入した責任は私にあります。公証手続の流れについても、その範囲内でのみ説明します。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "a",
+      "angleId": "changed_direction",
+      "text": "すでに確定した真実を前提に、改めてお答えします。ジョンフが午後の修正公証で、母の状態が不安定だったにもかかわらず進行を急かした事実は受け入れます。それでも手続介入の責任は残ります。変更方向の逆説についても、その範囲内でのみ申し上げます。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "b",
+      "angleId": "changed_direction",
+      "text": "すでに確定した真実を前提に、改めてお答えします。公証の午後修正で、母が答えを続けられないのに、私が進行を急がせました。その手続に介入した責任は私にあります。変更方向の逆説についても、その範囲内でのみ説明します。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "a",
+      "angleId": "forgery_responsibility",
+      "text": "すでに確定した真実を前提に、改めてお答えします。ジョンフが午後の修正公証で、母の状態が不安定だったにもかかわらず進行を急かした事実は受け入れます。それでも手続介入の責任は残ります。手続介入の責任についても、その範囲内でのみ申し上げます。"
+    },
+    {
+      "disputeId": "d-2",
+      "party": "b",
+      "angleId": "forgery_responsibility",
+      "text": "すでに確定した真実を前提に、改めてお答えします。公証の午後修正で、母が答えを続けられないのに、私が進行を急がせました。その手続に介入した責任は私にあります。手続介入の責任についても、その範囲内でのみ説明します。"
+    }
+  ],
+  "judgeEvidenceCombo": [
+    {
+      "disputeId": "d-2",
+      "comboId": "combine-2",
+      "text": "公証手続の中で、進行順序と母の状態の痕跡が合いません。その進行順序と提出段階を確認しなければなりません。"
+    }
+  ],
+  "dossierPrompts": [
+    {
+      "disputeId": "d-2",
+      "id": "dossier-note-d-2-v2",
+      "text": "手続に介入した動機が通念的な貪欲と異なっていても、手続介入の責任は消えない。"
+    },
+    {
+      "disputeId": "d-2",
+      "id": "dossier-note-d-2-v3",
+      "text": "公証手続への進行圧力と母の状態の作用は、本人が認めた段階でのみ記録する。"
+    }
+  ]
+}
