@@ -637,8 +637,8 @@ body.pc-mode .pc-discovery-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  /* 사용자 요청 2026-05-21 (13b): 캐릭터 버튼 아래 여백 절반 — 8 → 4px. */
-  padding: 0 28px 4px;
+  /* 사용자 요청 2026-05-21 (15th): 캐릭터 버튼 아래 여백 더 축소 — 4 → 0px. */
+  padding: 0 28px 0;
 }
 
 body.pc-mode .pc-interaction-card__action,
@@ -692,10 +692,11 @@ body.pc-mode .pc-ev-viewer-btn:hover {
   border-color: rgba(212, 162, 78, 0.5);
 }
 
-/* Evidence body: 설명 + 증거열람 버튼 한 줄 */
+/* Evidence body: 설명 + 증거열람 버튼 한 줄.
+   2026-05-21 (15th): '발견한 내용: N/M' 세로 중심을 '증거 열람' 버튼 중앙과 일치 — align-items center. */
 body.pc-mode .pc-ev-body-wrap {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
 }
 
