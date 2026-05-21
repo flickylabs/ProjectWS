@@ -1,0 +1,82 @@
+{
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "tier2ConcreteTextIdsUpdated": 175,
+  "tier3JudgeQuestionIdsUpdated": 4,
+  "tier3InterrogationAnswerIdsUpdated": 24,
+  "tier3BriefExpectedInterrogationAnswerStrings": 48,
+  "tier3RepoDiffConcreteInterrogationAnswerIdsFound": 24,
+  "canonicalClosers": {
+    "이건 양보 못 합니다": {
+      "zhCN": "这一点我不能让步。",
+      "occurrencesInScriptedText": 15
+    },
+    "한 발 양보해도 결론은 같습니다": {
+      "zhCN": "即便退让一步，结论也一样。",
+      "occurrencesInScriptedText": 15
+    },
+    "그 한마디가 제 안에 두고두고 남았어요": {
+      "zhCN": "那句话在我心里久久地留着。",
+      "occurrencesInScriptedText": 14
+    },
+    "거기까지는 인정하겠습니다": {
+      "zhCN": "到这一步我可以承认。",
+      "occurrencesInScriptedText": 15
+    },
+    "괜히 감정을 더 섞고 싶지 않았어요": {
+      "zhCN": "我不想再徒添情绪。",
+      "occurrencesInScriptedText": 25
+    },
+    "제가 이유를 일일이 대지 않은 것은 맞습니다": {
+      "zhCN": "我没有把理由一条条说出来，这点没错。",
+      "occurrencesInScriptedText": 25
+    }
+  },
+  "tier3Templates": {
+    "notarizedCopyVsSeparateDocument": {
+      "zhCN": "公证本与另一份文书之间的差异，得由我来解释。仅此而已。",
+      "occurrences": 12
+    },
+    "willTouchedAdmission": {
+      "zhCN": "我不会否认自己动过那份遗嘱。仅此而已。",
+      "occurrences": 12
+    }
+  },
+  "nonS5HighVolumeBuckets": {
+    "a-d-1": {
+      "openerAnchorFamilies": 3,
+      "closerAnchorFamilies": 4,
+      "status": "pass"
+    },
+    "a-d-2": {
+      "openerAnchorFamilies": 3,
+      "closerAnchorFamilies": 4,
+      "status": "pass"
+    },
+    "a-d-3": {
+      "openerAnchorFamilies": 3,
+      "closerAnchorFamilies": 4,
+      "status": "pass"
+    },
+    "a-d-4": {
+      "openerAnchorFamilies": 3,
+      "closerAnchorFamilies": 4,
+      "status": "pass"
+    },
+    "a-d-5": {
+      "openerAnchorFamilies": 3,
+      "closerAnchorFamilies": 4,
+      "status": "pass"
+    },
+    "b-d-1_to_b-d-5": {
+      "openerAnchorFamilies": 3,
+      "closerAnchorFamilies": 5,
+      "status": "pass"
+    }
+  },
+  "notes": [
+    "Recurring KO closers are mapped to one canonical zh-CN closer each.",
+    "Variation remains in opener anchors by dispute and question type, not in repeated closer templates.",
+    "Tier 3 interrogation_answers uses exactly two zh-CN templates across all concrete ids found in the repository diff."
+  ]
+}

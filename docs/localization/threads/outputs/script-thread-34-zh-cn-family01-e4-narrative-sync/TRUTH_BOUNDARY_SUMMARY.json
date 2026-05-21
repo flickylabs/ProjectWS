@@ -1,0 +1,38 @@
+{
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "e4GeneratedCaseStageRows": {
+    "stage1": 3,
+    "stage2": 5,
+    "stage3": 9
+  },
+  "e4Stage1SurfaceLeakChecks": {
+    "contains60_40": 0,
+    "containsMotherFatigueOrDelayedAnswer": 0,
+    "containsProcedurePressure": 0
+  },
+  "retiredE4LexemeChecksPlayerFacingText": {
+    "公证当天": 0,
+    "公证当日": 0,
+    "数字混乱": 0,
+    "数字混淆": 0,
+    "程序压力": 0,
+    "一般记录": 0
+  },
+  "behaviorHintNotTouched": {
+    "remainingRetiredE4LexemeHits": 5,
+    "reason": "The brief explicitly says not to touch behaviorHint."
+  },
+  "preS5TruthLexemeFixes": {
+    "正厚的钱": {
+      "before": 2,
+      "after": 0,
+      "replacement": "另一来源的资金"
+    }
+  },
+  "zhCNOnlyGeneratedCaseMergeHangulIssues": 0,
+  "officialGeneratedCaseValidatorStatus": {
+    "status": "blocked_out_of_scope",
+    "reason": "scripts/validate-generated-case-sidecars.mjs ignores --case/--locale and validates EN/JA sidecars. Remaining failures are EN/JA family-01 e-4 stage-3 row overlays, which are outside this thread's write scope."
+  }
+}
