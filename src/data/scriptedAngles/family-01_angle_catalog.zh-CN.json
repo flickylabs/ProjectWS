@@ -43,8 +43,8 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "最终遗嘱形成经过",
-      "description": "确认60:40遗嘱是通过什么过程成为最终版本的。"
+      "label": "最终公证程序",
+      "description": "确认60:40公证本是如何经过上午受理、下午修订和在场催促成为最终版本的。"
     },
     {
       "disputeId": "d-2",
@@ -55,20 +55,20 @@
     {
       "disputeId": "d-2",
       "angleId": "original_gap",
-      "label": "亲笔遗嘱草稿与公证副本的差异",
-      "description": "追问为何亲笔遗嘱草稿与公证副本之间会出现比例差。"
+      "label": "受理记录的空白",
+      "description": "追问上午受理到下午修订之间，比例栏、母亲状态与提交顺序如何变化。"
     },
     {
       "disputeId": "d-2",
       "angleId": "changed_direction",
-      "label": "改动方向的反差",
-      "description": "改动方向与一般贪欲所推断的方向不一致——把这一处单独抽出来看。"
+      "label": "推进速度的反常",
+      "description": "把对结果方向的推断暂时放下，单独确认尹正厚催促进度的事实。"
     },
     {
       "disputeId": "d-2",
       "angleId": "forgery_responsibility",
-      "label": "对文件动手的责任",
-      "description": "无论动机为何——对母亲的文件动过手的责任，要单独确认。"
+      "label": "程序介入责任",
+      "description": "不预设动机，只确认谁在公证程序中经手、催促、提交。"
     },
     {
       "disputeId": "d-3",

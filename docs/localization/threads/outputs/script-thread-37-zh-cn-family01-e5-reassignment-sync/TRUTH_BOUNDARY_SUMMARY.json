@@ -1,0 +1,88 @@
+{
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "filesScanned": [
+    "src/data/cases/generated/family-01.zh-CN.json",
+    "src/data/scriptedAngles/family-01_angle_catalog.zh-CN.json",
+    "src/data/scriptedAngles/family-01_judge_questions.zh-CN.json",
+    "src/data/scriptedAngles/family-01_interrogation_answers.zh-CN.json",
+    "src/data/scriptedAngles/family-01_special_scripts.zh-CN.json",
+    "src/data/scriptedText/family-01.zh-CN.json"
+  ],
+  "d2ForbiddenLexemeViolations": 0,
+  "d2ForbiddenLexemeHits": [],
+  "d1D3D4NewHardEvidenceLexemeViolations": 0,
+  "d1D3D4NewHardEvidenceHits": [],
+  "d1D3D4CurrentHardEvidenceHitCount": 246,
+  "d5HardEvidenceTraceOccurrences": 10,
+  "d5HardEvidenceTraceSamples": [
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.0.text",
+      "text": "我现在承认，母亲亲笔里留下过90:10的心意，我却把它推向公证本的60:40。说是替哥哥着想，其实也是我在替母亲作决定。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.1.text",
+      "text": "亲笔90:10到公证60:40之间的落差，不只是数字变化，而是我越过母亲心意的痕迹。这个责任我不能再藏。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.2.text",
+      "text": "我把公证本整理成60:40时，心里知道那和母亲亲笔留下的90:10不一样。我以为这样能护住家里，却先伤到了母亲的意思。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.3.text",
+      "text": "现在看，90:10不是可以被我随手压成60:40的东西。那是母亲藏着的心意，我没有让它原样留下。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.4.text",
+      "text": "我现在承认，母亲亲笔里留下过90:10的心意，我却把它推向公证本的60:40。说是替哥哥着想，其实也是我在替母亲作决定。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.5.text",
+      "text": "亲笔90:10到公证60:40之间的落差，不只是数字变化，而是我越过母亲心意的痕迹。这个责任我不能再藏。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.6.text",
+      "text": "我把公证本整理成60:40时，心里知道那和母亲亲笔留下的90:10不一样。我以为这样能护住家里，却先伤到了母亲的意思。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.7.text",
+      "text": "现在看，90:10不是可以被我随手压成60:40的东西。那是母亲藏着的心意，我没有让它原样留下。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.8.text",
+      "text": "我现在承认，母亲亲笔里留下过90:10的心意，我却把它推向公证本的60:40。说是替哥哥着想，其实也是我在替母亲作决定。"
+    },
+    {
+      "file": "src/data/scriptedText/family-01.zh-CN.json",
+      "path": "channels.interrogation.entries.178.variants.9.text",
+      "text": "亲笔90:10到公证60:40之间的落差，不只是数字变化，而是我越过母亲心意的痕迹。这个责任我不能再藏。"
+    }
+  ],
+  "truthLeakDetector": {
+    "command": "node scripts/detect-truth-leak.cjs --strict",
+    "findings": 0
+  },
+  "truthLeakMatrixZhCnVerified": {
+    "d2Hidden": [
+      "尹正厚对公证程序的催促",
+      "母亲不稳定状态对程序的作用",
+      "上午一次受理时比例空缺与下午修订之间的落差"
+    ],
+    "d5Hidden": [
+      "以保护哥哥为由改写母亲的意愿",
+      "两兄弟扭曲了母亲的意愿",
+      "在公证中缩减了母亲亲笔比例",
+      "让出自己份额使亲笔90变为公证60"
+    ]
+  },
+  "claimPolicySidecarsPresent": []
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "overlayKind": "special_scripts",
+  "confessions": [
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "route": "emotion",
+      "preConfession": "情绪塌下来，沉默拉长。",
+      "confessionMain": "我接受正厚在下午修订公证时，明知母亲状态不稳定仍催促进度。可程序介入责任仍然存在。",
+      "postConfession": "自白之后，法官固定确认范围，避免把责任推给对方。"
+    },
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "route": "trust",
+      "preConfession": "法官承诺限制陈述范围后，声音低了下来。",
+      "confessionMain": "我接受正厚在下午修订公证时，明知母亲状态不稳定仍催促进度。可程序介入责任仍然存在。",
+      "postConfession": "信任路径下的自白只作为事实确认记录，不视为免责。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "route": "emotion",
+      "preConfession": "情绪塌下来，沉默拉长。",
+      "confessionMain": "下午修订公证时，母亲已经接不上回答了，我还是把进度往前推。那段程序责任归我。",
+      "postConfession": "自白之后，法官固定确认范围，避免把责任推给对方。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "route": "trust",
+      "preConfession": "法官承诺限制陈述范围后，声音低了下来。",
+      "confessionMain": "下午修订公证时，母亲已经接不上回答了，我还是把进度往前推。那段程序责任归我。",
+      "postConfession": "信任路径下的自白只作为事实确认记录，不视为免责。"
+    }
+  ],
+  "s5RequestionResponses": [
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "angleId": "general",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。我接受正厚在下午修订公证时，明知母亲状态不稳定仍催促进度。可程序介入责任仍然存在。关于公证程序，我也只在这个范围内说明。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "angleId": "general",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。下午修订公证时，母亲已经接不上回答了，我还是把进度往前推。那段程序责任归我。关于公证程序，我也只在这个范围内说明。"
+    },
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "angleId": "scan_sequence",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。我接受正厚在下午修订公证时，明知母亲状态不稳定仍催促进度。可程序介入责任仍然存在。关于公证人备忘，我也只在这个范围内说明。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "angleId": "scan_sequence",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。下午修订公证时，母亲已经接不上回答了，我还是把进度往前推。那段程序责任归我。关于公证人备忘，我也只在这个范围内说明。"
+    },
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "angleId": "original_gap",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。我接受正厚在下午修订公证时，明知母亲状态不稳定仍催促进度。可程序介入责任仍然存在。关于受理流程，我也只在这个范围内说明。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "angleId": "original_gap",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。下午修订公证时，母亲已经接不上回答了，我还是把进度往前推。那段程序责任归我。关于受理流程，我也只在这个范围内说明。"
+    },
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "angleId": "changed_direction",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。我接受正厚在下午修订公证时，明知母亲状态不稳定仍催促进度。可程序介入责任仍然存在。关于推进速度，我也只在这个范围内说明。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "angleId": "changed_direction",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。下午修订公证时，母亲已经接不上回答了，我还是把进度往前推。那段程序责任归我。关于推进速度，我也只在这个范围内说明。"
+    },
+    {
+      "party": "a",
+      "disputeId": "d-2",
+      "angleId": "forgery_responsibility",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。我接受正厚在下午修订公证时，明知母亲状态不稳定仍催促进度。可程序介入责任仍然存在。关于程序介入责任，我也只在这个范围内说明。"
+    },
+    {
+      "party": "b",
+      "disputeId": "d-2",
+      "angleId": "forgery_responsibility",
+      "afterTruthState": "S5",
+      "text": "我会按已经确认的事实重新回答。下午修订公证时，母亲已经接不上回答了，我还是把进度往前推。那段程序责任归我。关于程序介入责任，我也只在这个范围内说明。"
+    }
+  ],
+  "judgeEvidenceCombo": [
+    {
+      "id": "judgecombo-combine-2",
+      "combinationId": "combine-2",
+      "text": "公证程序内的推进顺序和母亲状态对不上。必须确认当天的流程顺序和提交节点。"
+    }
+  ],
+  "dossierPrompts": [
+    {
+      "id": "dossier-note-d-2-v2",
+      "disputeId": "d-2",
+      "text": "即使介入程序的动机不像通常的贪念，程序介入责任也不会消失。"
+    },
+    {
+      "id": "dossier-note-d-2-v3",
+      "disputeId": "d-2",
+      "text": "公证程序中的催促进度和母亲状态，只在本人承认的范围内记录。"
+    }
+  ]
+}

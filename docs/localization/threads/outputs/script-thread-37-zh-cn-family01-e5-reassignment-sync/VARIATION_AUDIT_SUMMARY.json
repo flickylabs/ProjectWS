@@ -1,0 +1,51 @@
+{
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "counts": {
+    "tier1Data": {
+      "generatedCaseSurfaceTextFields": 18,
+      "disclosurePolicyZhCnChanges": 0,
+      "truthLeakMatrixZhCnChanges": 0
+    },
+    "tier2NarrativeSplit": {
+      "scriptedTextVariants": 595,
+      "interrogationAnswerVariants": 655,
+      "judgeQuestionVariants": 150,
+      "angleCatalogRecords": 4,
+      "specialScriptEntries": 17,
+      "totalVariantLikeUpdates": 1417
+    }
+  },
+  "scriptedTextByChannel": {
+    "interrogation|d-2": 360,
+    "interrogation|d-4": 10,
+    "interrogation|d-5": 10,
+    "contradiction_pursuit|d-2": 80,
+    "interjection|d-2": 40,
+    "emotional_overload|d-2": 20,
+    "judge_question|d-2": 60,
+    "judge_contradiction|d-2": 15
+  },
+  "interrogationByDispute": {
+    "d-2": 655
+  },
+  "judgeQuestionByDispute": {
+    "d-2": 150
+  },
+  "templateUniformity": {
+    "d2CanonicalClosers": [
+      "我先按记录说，不把猜测放在前面。",
+      "这一点我会按时间顺序重新整理。",
+      "这段程序责任归我。",
+      "我承认下午修订时，是我把进度推得更快。"
+    ],
+    "d2DominantFrame": "公证程序介入 / 上午受理 / 下午修订 / 母亲状态 / 催促进度",
+    "d5DominantFrame": "亲笔90:10 -> 公证60:40"
+  },
+  "variationMaintained": {
+    "scriptedTextVariantsChanged": 595,
+    "interrogationAnswerVariantsChanged": 655,
+    "judgeQuestionVariantsChanged": 150,
+    "specialScriptEntriesCreated": 17
+  }
+}
