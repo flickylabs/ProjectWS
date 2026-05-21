@@ -2201,7 +2201,7 @@
           "claimAtoms": [
             {
               "id": "d2.taesung_original_ratio_shock",
-              "factText": "자필 연습본 90대10 충격",
+              "factText": "오전 1차 비율 공란 충격",
               "tags": [
                 "act",
                 "timeline",
@@ -2235,8 +2235,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2288,8 +2288,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2341,8 +2341,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2394,13 +2394,13 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "evidence": {
-                  "fullName": "공증인 메모 기록과 어머니 서랍 자필 연습본",
-                  "shortName": "공증인 메모과 자필 연습본",
+                  "fullName": "공증인 메모 기록과 오전 1차 비율 공란",
+                  "shortName": "공증인 메모와 절차 흐름",
                   "neutral": "그 자료"
                 }
               },
@@ -2480,8 +2480,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2533,8 +2533,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2586,8 +2586,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2605,7 +2605,7 @@
             },
             {
               "id": "d2.taesung_original_will_reframes_case",
-              "factText": "자필 연습본이 사건 재구성",
+              "factText": "오전 1차 비율 공란이 사건 재구성",
               "tags": [
                 "evidence",
                 "context",
@@ -2639,13 +2639,13 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "evidence": {
-                  "fullName": "공증인 메모 기록과 어머니 서랍 자필 연습본",
-                  "shortName": "공증인 메모과 자필 연습본",
+                  "fullName": "공증인 메모 기록과 오전 1차 비율 공란",
+                  "shortName": "공증인 메모와 절차 흐름",
                   "neutral": "그 자료"
                 }
               },
@@ -2725,8 +2725,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2743,7 +2743,7 @@
             },
             {
               "id": "d2.taesung_forgery_and_intent_split",
-              "factText": "위조 책임과 동기 분리",
+              "factText": "절차 개입 책임과 동기 분리",
               "tags": [
                 "motive",
                 "rule",
@@ -2777,8 +2777,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "rule": {
@@ -2834,8 +2834,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -2886,13 +2886,13 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "evidence": {
-                  "fullName": "공증인 메모 기록과 어머니 서랍 자필 연습본",
-                  "shortName": "공증인 메모과 자필 연습본",
+                  "fullName": "공증인 메모 기록과 오전 1차 비율 공란",
+                  "shortName": "공증인 메모와 절차 흐름",
                   "neutral": "그 자료"
                 }
               },
@@ -9390,7 +9390,7 @@
           "claimAtoms": [
             {
               "id": "d2.junghu_ratio_shift_partial_admit",
-              "factText": "90대10에서 60대40 변경 인정",
+              "factText": "오전 1차에서 오후 수정으로 비율 확정 인정",
               "tags": [
                 "act",
                 "timeline",
@@ -9424,8 +9424,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -9477,13 +9477,13 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "evidence": {
-                  "fullName": "공증인 메모 기록과 어머니 서랍 자필 연습본",
-                  "shortName": "공증인 메모과 자필 연습본",
+                  "fullName": "공증인 메모 기록과 오전 1차 비율 공란",
+                  "shortName": "공증인 메모와 절차 흐름",
                   "neutral": "그 자료"
                 }
               },
@@ -9501,7 +9501,7 @@
             },
             {
               "id": "d2.junghu_quiet_shame_over_forgery",
-              "factText": "위조 앞 조용한 수치",
+              "factText": "절차 개입 앞 조용한 수치",
               "tags": [
                 "emotion",
                 "shame",
@@ -9535,8 +9535,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -9588,13 +9588,13 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "evidence": {
-                  "fullName": "공증인 메모 기록과 어머니 서랍 자필 연습본",
-                  "shortName": "공증인 메모과 자필 연습본",
+                  "fullName": "공증인 메모 기록과 오전 1차 비율 공란",
+                  "shortName": "공증인 메모와 절차 흐름",
                   "neutral": "그 자료"
                 }
               },
@@ -9640,7 +9640,7 @@
           "claimAtoms": [
             {
               "id": "d2.junghu_forgery_responsibility_accept",
-              "factText": "위조 책임 감수 인정",
+              "factText": "절차 개입 책임 감수 인정",
               "tags": [
                 "act",
                 "rule",
@@ -9674,8 +9674,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "rule": {
@@ -9732,8 +9732,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -9785,8 +9785,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -9804,7 +9804,7 @@
             },
             {
               "id": "d2.junghu_original_will_reveals_direction",
-              "factText": "자필 연습본이 방향 드러냄",
+              "factText": "오전 1차 비율 공란이 방향 드러냄",
               "tags": [
                 "evidence",
                 "context",
@@ -9838,13 +9838,13 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "evidence": {
-                  "fullName": "공증인 메모 기록과 어머니 서랍 자필 연습본",
-                  "shortName": "공증인 메모과 자필 연습본",
+                  "fullName": "공증인 메모 기록과 오전 1차 비율 공란",
+                  "shortName": "공증인 메모와 절차 흐름",
                   "neutral": "그 자료"
                 }
               },
@@ -9924,8 +9924,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -9976,8 +9976,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -9994,7 +9994,7 @@
             },
             {
               "id": "d2.junghu_forgery_confession_weight",
-              "factText": "위조 자백 무게 인정",
+              "factText": "절차 개입 자백 무게 인정",
               "tags": [
                 "emotion",
                 "shame",
@@ -10028,8 +10028,8 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 }
               },
@@ -10080,13 +10080,13 @@
                   "neutral": "그 처리"
                 },
                 "amount": {
-                  "exact": "90대 10에서 60대 40",
-                  "rounded": "90대10→60대40",
+                  "exact": "오전 1차 비율 공란을 오후 수정에서 60대 40으로 확정",
+                  "rounded": "오전 1차 공란→오후 수정 확정",
                   "neutral": "그 비율"
                 },
                 "evidence": {
-                  "fullName": "공증인 메모 기록과 어머니 서랍 자필 연습본",
-                  "shortName": "공증인 메모과 자필 연습본",
+                  "fullName": "공증인 메모 기록과 오전 1차 비율 공란",
+                  "shortName": "공증인 메모와 절차 흐름",
                   "neutral": "그 자료"
                 }
               },
@@ -11263,7 +11263,7 @@
             },
             {
               "id": "d3.junghu_support_record_reframes_original",
-              "factText": "계좌 흐름이 자필 연습본 설명",
+              "factText": "계좌 흐름이 공증 절차 맥락 설명",
               "tags": [
                 "evidence",
                 "context",

@@ -183,13 +183,13 @@
       "defenderParty": "a",
       "defenderLieState": "S5",
       "spoilerLevel": "full",
-      "previousStatement": "60대 40 유서는 어머니 뜻 그대로라며 위조 의혹을 부인했습니다.",
-      "currentStatement": "제가 유서 문구와 비율을 고쳐 위조했다고 인정했습니다.",
-      "judgePursuitLine": "윤태성 씨, 60대 40 유서 위조를 직접 인정하는 것입니까?",
+      "previousStatement": "오후 수정 60대 40은 어머니 뜻 그대로라며 공증 절차 개입 의혹을 부인했습니다.",
+      "currentStatement": "제가 오후 수정에서 유서 문구와 비율을 고쳐 절차에 손댔다고 인정했습니다.",
+      "judgePursuitLine": "윤태성 씨, 오후 수정 60대 40에서 본인이 공증 절차에 개입한 사실을 직접 인정하는 것입니까?",
       "defenderReactionLine": "그렇습니다, 재판장님. 어머니 뜻을 지킨다고 믿었지만 제가 손을 댔습니다.",
       "options": {
         "point_out": {
-          "label": "위조 인정을 확정한다",
+          "label": "절차 개입 인정을 확정한다",
           "effect": "d-2의 핵심 진실을 전면 노출한다."
         },
         "let_go": {
@@ -249,14 +249,14 @@
       "defenderParty": "b",
       "defenderLieState": "S5",
       "spoilerLevel": "full",
-      "previousStatement": "유서 위조 의혹은 느낌일 뿐 확실한 증거는 없다고 했습니다.",
+      "previousStatement": "유서 절차 개입 의혹은 느낌일 뿐 확실한 증거는 없다고 했습니다.",
       "currentStatement": "문구가 바뀐 초안을 보고도 그 자리에서 숨겼다고 털어놨습니다.",
-      "judgePursuitLine": "윤정후 씨, 유서 위조 정황을 알고도 끝내 감춘 것입니까?",
+      "judgePursuitLine": "윤정후 씨, 유서 절차 개입 정황을 알고도 끝내 감춘 것입니까?",
       "defenderReactionLine": "네, 재판장님... 형을 바로 무너뜨릴 자신이 없어서 증거를 숨겼습니다.",
       "options": {
         "point_out": {
           "label": "은폐 사실을 지적한다",
-          "effect": "위조 정황을 숨긴 동기를 압박한다."
+          "effect": "절차 개입 정황을 숨긴 동기를 압박한다."
         },
         "let_go": {
           "label": "일단 넘긴다",
@@ -711,7 +711,7 @@
       "disputeId": "d-2",
       "partyA": {
         "name": "윤태성",
-        "statement": "유서 위조라는 말은 우리 어머니와 제 명예를 동시에 찢는 말입니다."
+        "statement": "유서 절차 개입이라는 말은 우리 어머니와 제 명예를 동시에 찢는 말입니다."
       },
       "partyB": {
         "name": "윤정후",
