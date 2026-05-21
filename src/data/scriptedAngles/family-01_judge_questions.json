@@ -1746,7 +1746,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v4",
-          "text": "공증 당일 어머니 상태를 본인이 어떻게 확인하고 어떻게 기록했는지 말씀해 주십시오.",
+          "text": "수정 접수가 진행되는 동안 어머니 상태를 본인이 어떻게 확인하고 어떻게 받아들였는지 말씀해 주십시오.",
           "behaviorHint": "사실 추궁. 공증 절차의 단계와 윤정후가 직접 처리한 작업을 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -2890,7 +2890,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v3",
-          "text": "공증본 60:40 기록과 어머니 상태 메모 사이에서 본인이 의심한 지점을 사실 중심으로 말씀해 주십시오.",
+          "text": "오후 수정 접수에서 60:40으로 마무리된 기록과 그 자리에 남은 어머니 상태 메모 사이에서, 본인이 의심한 지점을 사실 중심으로 말씀해 주십시오.",
           "behaviorHint": "사실 추궁. 공증인 메모를 본 경로와 메모에 적힌 사실, 윤태성의 해석을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -2902,7 +2902,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v4",
-          "text": "메모에 남은 숫자 혼동이나 절차 진행 표현 중 본인이 직접 본 대목을 짚어 주십시오.",
+          "text": "메모에 남은 어머니 피로나 절차 진행 표현 중 본인이 직접 본 대목을 짚어 주십시오.",
           "behaviorHint": "사실 추궁. 공증인 메모를 본 경로와 메모에 적힌 사실, 윤태성의 해석을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -2934,8 +2934,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v1",
-          "text": "윤정후 씨, 공증인 메모에 남은 당일 절차와 본인의 설명 과정을 시간순으로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
+          "text": "윤정후 씨, 공증인 메모에 남은 1차 접수와 오후 수정 접수의 절차, 그리고 본인이 그 자리에서 한 말을 시간순으로 정리해 주십시오.",
+          "behaviorHint": "사실 추궁. 수정 접수 자리에서의 어머니 상태와 윤정후가 절차에 어떻게 개입했는지 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2946,8 +2946,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v2",
-          "text": "어머니께서 숫자를 오락가락하셨다는 기록을 본인이 당시 어떻게 받아들였는지 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
+          "text": "어머니께서 답변을 자꾸 늦추시고 물 한 잔을 청하셨다는 기록을 본인이 당시 어떻게 받아들였는지 답해 주십시오.",
+          "behaviorHint": "사실 추궁. 수정 접수 자리에서의 어머니 상태와 윤정후가 절차에 어떻게 개입했는지 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2958,8 +2958,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v3",
-          "text": "메모에 본인이 절차를 밀어붙인 듯 보였다는 대목이 있다면 그날 실제 행동을 사실대로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
+          "text": "메모에 본인이 오늘 마쳐야 한다며 진행을 재촉하는 듯 보였다는 대목이 있다면, 수정 접수 자리에서 실제로 한 말을 사실대로 말씀해 주십시오.",
+          "behaviorHint": "사실 추궁. 수정 접수 자리에서의 어머니 상태와 윤정후가 절차에 어떻게 개입했는지 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2970,8 +2970,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v4",
-          "text": "공증 당일 어머니 상태와 본인이 옆에서 한 말을 분리해 설명해 주십시오.",
-          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
+          "text": "수정 접수 자리에서 어머니가 보이신 상태와, 본인이 옆에서 한 말을 분리해 설명해 주십시오.",
+          "behaviorHint": "사실 추궁. 수정 접수 자리에서의 어머니 상태와 윤정후가 절차에 어떻게 개입했는지 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2982,8 +2982,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v5",
-          "text": "윤정후 씨, 공증본이 60:40으로 접수된 사실과 본인의 절차 개입을 나눠 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
+          "text": "윤정후 씨, 오후 수정 접수에서 60:40으로 마무리된 사실과 본인이 그 자리에서 한 일을 나눠 답해 주십시오.",
+          "behaviorHint": "사실 추궁. 수정 접수 자리에서의 어머니 상태와 윤정후가 절차에 어떻게 개입했는지 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3014,7 +3014,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v2",
-          "text": "어머니 상태가 좋지 않았다는 기록을 본 뒤, 본인이 곧바로 어떤 결론으로 넘어갔는지 설명하십시오.",
+          "text": "수정 절차 중 어머니가 지치셨다는 기록을 본 뒤, 본인이 곧바로 어떤 결론으로 넘어갔는지 설명하십시오.",
           "behaviorHint": "동기 탐색. 공증인 메모를 근거로 윤태성이 어떤 결론으로 넘어갔는지 확인한다.",
           "tags": [
             "channel:judge_question",
@@ -3026,7 +3026,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v3",
-          "text": "메모에 남은 절차 진행 표현을 두고 본인이 추정한 부분과 확인한 부분을 나눠 주십시오.",
+          "text": "메모에 남은 진행 재촉 정황을 두고 본인이 추정한 부분과 직접 확인한 부분을 나눠 주십시오.",
           "behaviorHint": "동기 탐색. 공증인 메모를 근거로 윤태성이 어떤 결론으로 넘어갔는지 확인한다.",
           "tags": [
             "channel:judge_question",
@@ -3070,8 +3070,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v1",
-          "text": "윤정후 씨, 어머니 상태가 좋지 않았다는 메모가 남은 상황에서도 절차를 진행한 이유를 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
+          "text": "윤정후 씨, 어머니가 피로를 호소하시고 답변을 늦추셨다는 메모가 남은 상황에서도 수정 접수를 그대로 진행한 이유를 말씀해 주십시오.",
+          "behaviorHint": "동기 탐색. 어머니 상태 기록을 알고도 수정 접수를 끌고 간 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3082,8 +3082,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v2",
-          "text": "공증 당일 숫자 혼동이 있었는데도 본인이 절차를 멈추지 않은 판단 과정을 설명하십시오.",
-          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
+          "text": "수정 접수 자리에서 어머니가 답변을 잇지 못하셨다는 기록이 있는데도 본인이 절차를 멈추지 않은 판단 과정을 설명하십시오.",
+          "behaviorHint": "동기 탐색. 어머니 상태 기록을 알고도 수정 접수를 끌고 간 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3094,8 +3094,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v3",
-          "text": "메모에 남은 절차 진행 표현이 본인에게 불리하게 보이는 이유를 알고 있다면 답해 주십시오.",
-          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
+          "text": "메모에 본인이 진행을 재촉했다는 정황이 본인에게 불리하게 보이는 이유를 알고 있다면 답해 주십시오.",
+          "behaviorHint": "동기 탐색. 어머니 상태 기록을 알고도 수정 접수를 끌고 간 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3107,7 +3107,7 @@
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v4",
           "text": "그날 형에게 바로 말하지 않은 이유가 보호였는지 회피였는지 본인 말로 구분해 주십시오.",
-          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
+          "behaviorHint": "동기 탐색. 어머니 상태 기록을 알고도 수정 접수를 끌고 간 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3119,7 +3119,7 @@
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v5",
           "text": "윤정후 씨, 공증인 메모에 남은 불편한 대목을 지금까지 낮춰 말한 이유를 설명하십시오.",
-          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
+          "behaviorHint": "동기 탐색. 어머니 상태 기록을 알고도 수정 접수를 끌고 간 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3138,7 +3138,7 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v1",
-          "text": "윤태성 씨, 공증인 메모에 어머니 상태가 좋지 않았다는 말이 남은 것을 보며 어떤 마음이 먼저 들었습니까.",
+          "text": "윤태성 씨, 공증인 메모에 수정 절차 중 어머니가 지치셔서 답변을 늦추셨다는 말이 남은 것을 보며 어떤 마음이 먼저 들었습니까.",
           "behaviorHint": "공감 접근. 어머니 상태 기록을 본 윤태성의 충격과 추정을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -3150,7 +3150,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v2",
-          "text": "어머니가 숫자를 혼동했다는 기록을 본 충격과, 동생에게 향한 분노를 나눠 말씀해 주십시오.",
+          "text": "어머니가 답변을 잇지 못하시고 물 한 잔을 청하셨다는 기록을 본 충격과, 동생에게 향한 분노를 나눠 말씀해 주십시오.",
           "behaviorHint": "공감 접근. 어머니 상태 기록을 본 윤태성의 충격과 추정을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -3218,7 +3218,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v2",
-          "text": "어머니께서 숫자를 혼동하셨다는 기록 앞에서 본인이 느끼는 책임을 말씀해 주십시오.",
+          "text": "어머니께서 답변을 늦추시고 피로를 호소하셨다는 기록 앞에서 본인이 느끼는 책임을 말씀해 주십시오.",
           "behaviorHint": "공감 접근. 공증인 메모 앞에서 윤정후가 피하려는 책임을 말하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -3242,7 +3242,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v4",
-          "text": "윤정후 씨, 형을 보호하려 했다는 말과 공증 당일 메모에 남은 절차 진행 사이의 간격을 말씀해 주십시오.",
+          "text": "윤정후 씨, 형을 보호하려 했다는 말과 메모에 남은 수정 접수 재촉 정황 사이의 간격을 말씀해 주십시오.",
           "behaviorHint": "공감 접근. 공증인 메모 앞에서 윤정후가 피하려는 책임을 말하게 한다.",
           "tags": [
             "channel:judge_question",

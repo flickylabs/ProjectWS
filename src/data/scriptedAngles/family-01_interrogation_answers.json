@@ -46513,7 +46513,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46527,7 +46527,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46541,7 +46541,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46583,7 +46583,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46597,7 +46597,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46611,7 +46611,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46662,7 +46662,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46676,7 +46676,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46690,7 +46690,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46732,7 +46732,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46746,7 +46746,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46760,7 +46760,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46811,7 +46811,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46825,7 +46825,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46839,7 +46839,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46881,7 +46881,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46895,7 +46895,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46909,7 +46909,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46960,7 +46960,7 @@
         },
         {
           "id": "b-d-2-S3-fact_pursuit-scan_sequence-v2",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -46988,7 +46988,7 @@
         },
         {
           "id": "b-d-2-S3-fact_pursuit-scan_sequence-v4",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47002,7 +47002,7 @@
         },
         {
           "id": "b-d-2-S3-fact_pursuit-scan_sequence-v5",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47030,7 +47030,7 @@
         },
         {
           "id": "b-d-2-S3-fact_pursuit-scan_sequence-v7",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47058,7 +47058,7 @@
         },
         {
           "id": "b-d-2-S3-fact_pursuit-scan_sequence-v9",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47072,7 +47072,7 @@
         },
         {
           "id": "b-d-2-S3-fact_pursuit-scan_sequence-v10",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47109,7 +47109,7 @@
         },
         {
           "id": "b-d-2-S4-fact_pursuit-scan_sequence-v2",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47137,7 +47137,7 @@
         },
         {
           "id": "b-d-2-S4-fact_pursuit-scan_sequence-v4",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47151,7 +47151,7 @@
         },
         {
           "id": "b-d-2-S4-fact_pursuit-scan_sequence-v5",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47179,7 +47179,7 @@
         },
         {
           "id": "b-d-2-S4-fact_pursuit-scan_sequence-v7",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47207,7 +47207,7 @@
         },
         {
           "id": "b-d-2-S4-fact_pursuit-scan_sequence-v9",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -47221,7 +47221,7 @@
         },
         {
           "id": "b-d-2-S4-fact_pursuit-scan_sequence-v10",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -50983,7 +50983,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -50997,7 +50997,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51011,7 +51011,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51053,7 +51053,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51067,7 +51067,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51081,7 +51081,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51132,7 +51132,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51146,7 +51146,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51160,7 +51160,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51202,7 +51202,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51216,7 +51216,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51230,7 +51230,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51281,7 +51281,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51295,7 +51295,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51309,7 +51309,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51351,7 +51351,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51365,7 +51365,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51379,7 +51379,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51430,7 +51430,7 @@
         },
         {
           "id": "b-d-2-S3-motive_search-scan_sequence-v2",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51458,7 +51458,7 @@
         },
         {
           "id": "b-d-2-S3-motive_search-scan_sequence-v4",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51472,7 +51472,7 @@
         },
         {
           "id": "b-d-2-S3-motive_search-scan_sequence-v5",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51500,7 +51500,7 @@
         },
         {
           "id": "b-d-2-S3-motive_search-scan_sequence-v7",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51528,7 +51528,7 @@
         },
         {
           "id": "b-d-2-S3-motive_search-scan_sequence-v9",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51542,7 +51542,7 @@
         },
         {
           "id": "b-d-2-S3-motive_search-scan_sequence-v10",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51579,7 +51579,7 @@
         },
         {
           "id": "b-d-2-S4-motive_search-scan_sequence-v2",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51607,7 +51607,7 @@
         },
         {
           "id": "b-d-2-S4-motive_search-scan_sequence-v4",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51621,7 +51621,7 @@
         },
         {
           "id": "b-d-2-S4-motive_search-scan_sequence-v5",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51649,7 +51649,7 @@
         },
         {
           "id": "b-d-2-S4-motive_search-scan_sequence-v7",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51677,7 +51677,7 @@
         },
         {
           "id": "b-d-2-S4-motive_search-scan_sequence-v9",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -51691,7 +51691,7 @@
         },
         {
           "id": "b-d-2-S4-motive_search-scan_sequence-v10",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -55453,7 +55453,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55467,7 +55467,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55481,7 +55481,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55523,7 +55523,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55537,7 +55537,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55551,7 +55551,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55602,7 +55602,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55616,7 +55616,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55630,7 +55630,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55672,7 +55672,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55686,7 +55686,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55700,7 +55700,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55751,7 +55751,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-scan_sequence-v2",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55765,7 +55765,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-scan_sequence-v3",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55779,7 +55779,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-scan_sequence-v4",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55821,7 +55821,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-scan_sequence-v7",
-          "text": "그날 어머니 상태와 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
+          "text": "1차 접수와 오후 수정 접수 자리에서 보이신 어머니 상태, 그리고 제가 절차를 챙긴 방식은 따로 봐야 합니다. 메모에 남은 대목부터 확인하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55835,7 +55835,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-scan_sequence-v8",
-          "text": "공증 당일 제가 곁에 있었던 건 맞습니다. 하지만 그 기록만으로 제가 어떤 숫자를 만들었다고 말할 수는 없습니다.",
+          "text": "오전 1차 접수도 오후 수정 접수도 제가 곁에서 챙긴 건 맞습니다. 그렇다고 해서 그 기록만으로 제가 비율을 만들었다고 보기는 어렵습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55849,7 +55849,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-scan_sequence-v9",
-          "text": "메모가 말하는 건 당일 절차와 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
+          "text": "메모가 말하는 건 1차와 수정 두 차례 절차, 그리고 그 자리 어머니 상태입니다. 그 이후 문서 차이는 다른 기록까지 함께 봐야 합니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55900,7 +55900,7 @@
         },
         {
           "id": "b-d-2-S3-empathy_approach-scan_sequence-v2",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55928,7 +55928,7 @@
         },
         {
           "id": "b-d-2-S3-empathy_approach-scan_sequence-v4",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55942,7 +55942,7 @@
         },
         {
           "id": "b-d-2-S3-empathy_approach-scan_sequence-v5",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55970,7 +55970,7 @@
         },
         {
           "id": "b-d-2-S3-empathy_approach-scan_sequence-v7",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -55998,7 +55998,7 @@
         },
         {
           "id": "b-d-2-S3-empathy_approach-scan_sequence-v9",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -56012,7 +56012,7 @@
         },
         {
           "id": "b-d-2-S3-empathy_approach-scan_sequence-v10",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -56049,7 +56049,7 @@
         },
         {
           "id": "b-d-2-S4-empathy_approach-scan_sequence-v2",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -56077,7 +56077,7 @@
         },
         {
           "id": "b-d-2-S4-empathy_approach-scan_sequence-v4",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -56091,7 +56091,7 @@
         },
         {
           "id": "b-d-2-S4-empathy_approach-scan_sequence-v5",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -56119,7 +56119,7 @@
         },
         {
           "id": "b-d-2-S4-empathy_approach-scan_sequence-v7",
-          "text": "그 메모가 남아 있다면 제가 그날 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
+          "text": "그 메모가 남아 있다면 제가 수정 자리에서 멈췄어야 했다는 말도 피하기 어렵습니다. 문서 차이의 경위도 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -56147,7 +56147,7 @@
         },
         {
           "id": "b-d-2-S4-empathy_approach-scan_sequence-v9",
-          "text": "메모에 남은 숫자 혼선과 제 태도는 가볍지 않습니다. 제가 유언장에 손을 댄 사실도 부인하지 않겠습니다.",
+          "text": "메모에 어머니가 지치셨다는 말과 제가 진행을 재촉했다는 말이 함께 남은 거 — 그게 가벼운 일이 아니라는 걸 압니다. 제가 유언장에 손을 댄 사실도 부정하지 않겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -56161,7 +56161,7 @@
         },
         {
           "id": "b-d-2-S4-empathy_approach-scan_sequence-v10",
-          "text": "공증인 메모는 제가 그날 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
+          "text": "공증인 메모는 제가 수정 절차 자리에서 무엇을 놓쳤는지 보여 줍니다. 그 부분은 설명하겠습니다.",
           "behaviorHint": "윤정후이 scan_sequence 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
