@@ -10616,6 +10616,35 @@ body.pc-mode .pc-question-choice__dispute-btn:hover {
   background: rgba(212, 162, 78, 0.05);
 }
 
+/* 2026-05-21: 진실파악 완료(S5 도달)된 쟁점은 흐림 + 클릭 차단.
+   "오피스텔 방문과 새벽 전화"처럼 5/5 도달한 쟁점이 dropdown에 계속 선택 가능하게 노출되어
+   사용자가 진행 가능했던 영역 차단. badge "진실 확정" 표시로 상태 명확화. */
+body.pc-mode .pc-question-choice__dispute-btn.is-resolved,
+body.pc-mode .pc-question-choice__dispute-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.42;
+  filter: grayscale(0.4);
+  pointer-events: none;
+}
+
+body.pc-mode .pc-question-choice__dispute-btn.is-resolved:hover {
+  border-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+body.pc-mode .pc-question-choice__dispute-resolved {
+  margin-left: auto;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 162, 78, 0.32);
+  background: rgba(212, 162, 78, 0.12);
+  color: #f1d08d;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 /* Message buttons */
 body.pc-mode .pc-question-choice__messages {
   padding: 0 12px 12px;

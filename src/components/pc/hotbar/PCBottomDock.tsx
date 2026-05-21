@@ -406,11 +406,26 @@ export default function PCBottomDock() {
               {!questionChoice.disputeId ? (
                 <>
                   <p className="pc-question-choice__hint">{t('pc.hotbar.question.chooseDispute')}</p>
-                  {visibleDisputes.map((d) => (
-                    <button className="pc-question-choice__dispute-btn" key={d.id} onClick={() => selectDisputeForQuestion(d.id)} type="button">
-                      <span className="pc-question-choice__dispute-name">{localizeRuntimeText(d.name, locale)}</span>
-                    </button>
-                  ))}
+                  {visibleDisputes.map((d) => {
+                    // 2026-05-21: 진실파악 완료(어느 한쪽이라도 S5 도달)된 쟁점은 심문 dropdown에서 비활성.
+                    // 흐림 + 클릭 차단 + 라벨 "진실 확정" — 우측 패널 진실파악 단계와 정합.
+                    const stateA = agentA.lieStateMap?.[d.id]?.currentState
+                    const stateB = agentB.lieStateMap?.[d.id]?.currentState
+                    const isResolved = stateA === 'S5' || stateB === 'S5'
+                    return (
+                      <button
+                        className={`pc-question-choice__dispute-btn${isResolved ? ' is-resolved' : ''}`}
+                        key={d.id}
+                        onClick={() => { if (!isResolved) selectDisputeForQuestion(d.id) }}
+                        type="button"
+                        disabled={isResolved}
+                        aria-disabled={isResolved}
+                      >
+                        <span className="pc-question-choice__dispute-name">{localizeRuntimeText(d.name, locale)}</span>
+                        {isResolved ? <span className="pc-question-choice__dispute-resolved">{t('pc.hotbar.question.resolvedBadge')}</span> : null}
+                      </button>
+                    )
+                  })}
                 </>
               ) : (
                 <>
