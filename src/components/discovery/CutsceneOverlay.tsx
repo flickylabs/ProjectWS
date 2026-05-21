@@ -83,7 +83,7 @@ export default function CutsceneOverlay() {
 
   return (
     <div
-      className="fixed inset-0 z-[9990] flex items-center justify-center cursor-pointer"
+      className="fixed inset-0 z-[10800] flex items-center justify-center cursor-pointer"
       onClick={dismiss}
       role="button"
       tabIndex={0}

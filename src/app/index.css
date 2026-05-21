@@ -441,7 +441,11 @@ html, body {
    Design authority: tmp/cutscene-mockup-v5.html
    ==================================================================== */
 .tr-cutscene {
-  position: fixed; inset: 0; z-index: 9990;
+  /* 2026-05-21: z-index 9990 → 10800.
+     popup active 동안 .pc-play-panel--left/right가 z-index 10500 !important로 boost되어
+     (pc.css 18033) cutscene이 패널 뒤로 묻혔다가, popup dismiss(body class 제거) 시점에
+     비로소 앞으로 나오는 시각 결함 해결. panel boost(10500) + popup card(10520)보다 위. */
+  position: fixed; inset: 0; z-index: 10800;
   cursor: pointer;
   overflow: hidden;
   background: #000; /* letterbox 외부는 순흑 */
