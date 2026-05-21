@@ -26,11 +26,12 @@ import { localizeRuntimeText } from '../../../i18n/runtimeText'
 type TFunction = (key: MessageKey, values?: MessageValues) => string
 
 /**
- * 출시 빌드에서는 질문 선택 카드의 angle chip([경위 확인] 등)을 숨긴다.
- * dev 빌드에서는 자동 노출 — 다시 켜고 싶으면 이 상수를 `true`로 바꾸면 된다.
- * import.meta.env.DEV: vite dev에선 true, `vite build` 산출물에선 false.
+ * 질문 선택 카드의 angle chip([경위 확인] 등)을 dev/build 모두에서 숨긴다.
+ * 2026-05-21 사용자 추가 요청 — 심문 선택지의 angle 태그 노출은 모두 제거.
+ * (angle 개념 자체는 유지 — 라우팅/스크립트 매핑에 계속 사용.)
+ * 다시 켜고 싶으면 이 상수를 `true` 또는 `import.meta.env.DEV`로 변경.
  */
-const SHOW_QUESTION_ANGLE_TAG = import.meta.env.DEV
+const SHOW_QUESTION_ANGLE_TAG = false
 
 const EMOTION_LABEL_KEYS: Record<EmotionalPhase, MessageKey> = {
   defensive: 'pc.hotbar.emotion.defensive',
