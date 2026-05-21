@@ -195,11 +195,11 @@
         "slot": "neutral_observer",
         "name": "김영수",
         "relationTo": "neutral",
-        "knowledgeScope": "공증 당일 공증인 메모에 어머니 상태와 숫자 혼선, 윤정후가 절차를 서두른 듯한 관찰이 남은 사실을 안다.",
+        "knowledgeScope": "공증인 메모에 오전 1차 접수와 오후 수정 접수, 수정 절차 중 어머니 상태와 윤정후의 진행 태도가 남은 사실을 안다.",
         "witnessedDirectly": true,
         "bias": "neutral",
         "distortionRisk": "accurate",
-        "surfaceKnowledge": "공증 당일 메모 기록을 직접 확인한 제3자 증인이다.",
+        "surfaceKnowledge": "공증 메모 기록을 직접 확인한 제3자 증인이다.",
         "relatedDisputeIds": [
           "d-2"
         ],
@@ -1623,8 +1623,8 @@
       "id": "e-4",
       "name": "공증인 메모 기록",
       "surfaceName": "공증인 메모 기록",
-      "description": "공증 당일 공증인이 남긴 진행 메모. 접수 비율과 일반 절차가 먼저 확인되고, 추가 조사로 상태와 진행 방식이 드러난다.",
-      "surfaceDescription": "공증 당일 절차 메모가 존재한다.",
+      "description": "공증인이 남긴 진행 메모. 오전 1차 접수 이력이 먼저 확인되고, 추가 조사로 오후 수정 접수와 절차 진행 정황이 드러난다.",
+      "surfaceDescription": "공증인이 남긴 진행 메모.",
       "type": "log",
       "reliability": "hard",
       "completeness": "original",
@@ -1650,68 +1650,68 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "공증 당일 일반 기록을 확인해 주십시오.",
+            "text": "1차 공증 접수 기록을 확인해 주십시오.",
             "attackVector": "authenticity"
           },
-          "label": "일반 기록",
+          "label": "1차 접수",
           "unlockHint": null
         },
         {
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "어머니 상태가 좋지 않았다는 메모를 확인해 주십시오.",
+            "text": "오후 수정 공증 접수 이력을 확인해 주십시오.",
             "attackVector": "context"
           },
-          "label": "상태 메모",
-          "unlockHint": "공증 당일 어머니 상태와 답변 속도를 볼 수 있습니다."
+          "label": "수정 접수",
+          "unlockHint": "오후에 다시 들어온 수정 공증 접수와 최종 60:40 비율이 보입니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "숫자 혼선과 절차를 밀어붙인 정황을 확인해 주십시오.",
+            "text": "수정 절차 중 어머니 상태와 진행 정황을 확인해 주십시오.",
             "attackVector": "responsibility"
           },
-          "label": "절차 압박",
-          "unlockHint": "공증인 메모로 절차 진행 방식의 문제를 물을 수 있습니다."
+          "label": "상태 메모",
+          "unlockHint": "수정 공증 절차 중 어머니 상태와 정후의 진행 태도가 함께 드러납니다."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "공증인 메모에서 공증 당일 절차와 진행 순서를 확인해야 합니다.",
-          "implication": "윤태성의 절차 문제 제기는 공증 당일 상태 기록으로 보강된다."
+          "questionAngle": "수정 공증 접수가 같은 날 오후에 다시 진행된 경위와 그 자리에 남은 진행 메모를 봐야 합니다.",
+          "implication": "윤태성의 절차 문제 제기는 수정 접수 이력과 진행 메모로 보강된다."
         },
         "b": {
-          "questionAngle": "공증 당일 절차를 왜 서둘렀는지 설명해야 합니다.",
-          "implication": "윤정후는 공증본 60:40과 절차 개입 책임을 분리해 답해야 한다."
+          "questionAngle": "왜 오전 1차 접수에 비율을 비웠고, 같은 날 오후에 수정 접수를 진행했는지 설명해야 합니다.",
+          "implication": "윤정후는 수정 접수 경위와 그 자리에서의 개입 책임을 분리해 답해야 한다."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
           "label": "Stub",
-          "summary": "공증 당일 메모의 존재만 보인다."
+          "summary": "공증인 메모의 존재만 보인다."
         },
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "접수 비율과 일반 절차 기록이 보인다."
+          "summary": "오전 1차 공증 접수 이력만 보인다. 비율은 비어 있다."
         },
         {
           "id": "original",
           "label": "Original",
-          "summary": "어머니 상태가 좋지 않았다는 공증인 메모를 확인한다."
+          "summary": "오후 수정 공증 접수 이력과 최종 60:40 비율을 확인한다."
         },
         {
           "id": "context",
           "label": "Context",
-          "summary": "숫자 혼선과 윤정후의 절차 압박 정황을 맞춰 본다."
+          "summary": "수정 절차 중 어머니 상태와 정후의 진행 압박 메모를 맞춰 본다."
         },
         {
           "id": "established",
           "label": "Established",
-          "summary": "공증 당일 상태와 절차 문제를 판단 자료로 정리한다."
+          "summary": "1차/수정 접수 흐름과 절차 진행 문제를 판단 자료로 정리한다."
         }
       ],
       "v3TrustStates": [
