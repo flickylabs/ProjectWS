@@ -1,0 +1,542 @@
+{
+  "generatedAt": "2026-05-21T08:12:24.825Z",
+  "scope": "family-01 JA Tier 2 KO naturalization v3 plus Tier 3 scriptedAngles sweep",
+  "tierCounts": {
+    "tier1": {
+      "sourceCommit": "75391d7a",
+      "changedTextRows": 192,
+      "byFile": {
+        "src/data/scriptedAngles/family-01_interrogation_answers.json": 90,
+        "src/data/scriptedAngles/family-01_judge_questions.json": 17,
+        "src/data/scriptedText/family-01.json": 85
+      }
+    },
+    "tier2": {
+      "sourceCommit": "d957a9c7",
+      "changedTextRows": 175,
+      "byFile": {
+        "src/data/scriptedText/family-01.json": 175
+      }
+    },
+    "tier3": {
+      "sourceCommit": "9b264f0f",
+      "changedTextRows": 28,
+      "byFile": {
+        "src/data/scriptedAngles/family-01_interrogation_answers.json": 24,
+        "src/data/scriptedAngles/family-01_judge_questions.json": 4
+      },
+      "note": "24 interrogation answer records use two canonical JA templates; brief describes these as 48 strings."
+    }
+  },
+  "tier2Diversity": {
+    "changedRows": 175,
+    "uniqueOpenerAnchors": 82,
+    "uniqueCloserAnchors": 35,
+    "nonS5UniqueOpenerAnchors": 81,
+    "nonS5UniqueCloserAnchors": 34,
+    "nonS5Requirement": ">=3 opener anchors and >=3 closer anchors across high-volume non-S5 buckets",
+    "nonS5RequirementMet": true,
+    "repeatedCloserTemplateUniform": true,
+    "repeatedCloserMappings": [
+      {
+        "koCloser": "거기까지는 인정하겠습니다.",
+        "count": 15,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "そこまでは認めます。",
+            "count": 15
+          }
+        ],
+        "sampleIds": [
+          "b-d-1-S3-fact-pursuit-v10",
+          "b-d-1-S3-motive-search-v10",
+          "b-d-1-S3-empathy-approach-v10",
+          "b-d-2-S3-fact-pursuit-v10",
+          "b-d-2-S3-motive-search-v10"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "한 발 양보해도 결론은 같습니다.",
+        "count": 15,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "一歩譲っても、結論は変わりません。",
+            "count": 15
+          }
+        ],
+        "sampleIds": [
+          "a-d-1-S1-fact-pursuit-v8",
+          "a-d-1-S1-motive-search-v8",
+          "a-d-1-S1-empathy-approach-v8",
+          "a-d-2-S1-fact-pursuit-v8",
+          "a-d-2-S1-motive-search-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "그 한마디가 제 안에 두고두고 남았어요.",
+        "count": 14,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "あの一言が私の中にずっと残りました。",
+            "count": 14
+          }
+        ],
+        "sampleIds": [
+          "a-d-1-S3-fact-pursuit-v8",
+          "a-d-1-S3-motive-search-v8",
+          "a-d-1-S3-empathy-approach-v8",
+          "a-d-2-S3-motive-search-v8",
+          "a-d-2-S3-empathy-approach-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "그러고 보니 제가 비워 두었던 자리도 그제서야 눈에 들어옵니다.",
+        "count": 14,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "そう考えると、私が空けていた場所もそのとき初めて見えてきます。",
+            "count": 14
+          }
+        ],
+        "sampleIds": [
+          "a-d-1-S4-fact-pursuit-v8",
+          "a-d-1-S4-motive-search-v8",
+          "a-d-1-S4-empathy-approach-v8",
+          "a-d-2-S4-motive-search-v8",
+          "a-d-2-S4-empathy-approach-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "제가 모든 것을 다 털어놓은 것도 아닙니다.",
+        "count": 14,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "ただ、私がすべてを打ち明けたわけでもありません。",
+            "count": 14
+          }
+        ],
+        "sampleIds": [
+          "b-d-1-S1-fact-pursuit-v8",
+          "b-d-1-S1-motive-search-v8",
+          "b-d-2-S1-fact-pursuit-v8",
+          "b-d-2-S1-motive-search-v8",
+          "b-d-2-S1-empathy-approach-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "이건 양보 못 합니다.",
+        "count": 13,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "これだけは譲れません。",
+            "count": 13
+          }
+        ],
+        "sampleIds": [
+          "a-d-1-S0-fact-pursuit-v7",
+          "a-d-1-S0-motive-search-v7",
+          "a-d-2-S0-fact-pursuit-v7",
+          "a-d-2-S0-motive-search-v7",
+          "a-d-2-S0-empathy-approach-v7"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "그렇다고 전부를 단정지어 말씀드리진 않겠습니다.",
+        "count": 12,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "だからといって、すべてを断定して申し上げるつもりはございません。",
+            "count": 12
+          }
+        ],
+        "sampleIds": [
+          "a-d-1-S1-empathy-approach-v6",
+          "a-d-2-S1-fact-pursuit-v6",
+          "a-d-2-S1-empathy-approach-v6",
+          "a-d-3-S1-fact-pursuit-v6",
+          "a-d-3-S1-motive-search-v6"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "말을 고르는 이유가 있습니다.",
+        "count": 10,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "言葉を選ぶ理由があります。",
+            "count": 10
+          }
+        ],
+        "sampleIds": [
+          "b-d-1-S2-motive-search-v8",
+          "b-d-1-S2-empathy-approach-v8",
+          "b-d-2-S2-motive-search-v8",
+          "b-d-2-S2-empathy-approach-v8",
+          "b-d-3-S2-motive-search-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "일부 책임은 제게 있습니다.",
+        "count": 10,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "一部の責任は私にあります。",
+            "count": 10
+          }
+        ],
+        "sampleIds": [
+          "b-d-1-S3-motive-search-v8",
+          "b-d-1-S3-empathy-approach-v8",
+          "b-d-2-S3-motive-search-v8",
+          "b-d-2-S3-empathy-approach-v8",
+          "b-d-3-S3-motive-search-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "지금은 그 선에서 말하겠습니다.",
+        "count": 10,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "今は、その範囲でお話しします。",
+            "count": 10
+          }
+        ],
+        "sampleIds": [
+          "b-d-1-S0-motive-search-v8",
+          "b-d-1-S0-empathy-approach-v8",
+          "b-d-2-S0-motive-search-v8",
+          "b-d-2-S0-empathy-approach-v8",
+          "b-d-3-S0-motive-search-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "저희 형이 다칠까 봐 두려웠습니다.",
+        "count": 8,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "兄が傷つくのが怖かったのです。",
+            "count": 8
+          }
+        ],
+        "sampleIds": [
+          "b-d-1-S4-motive-search-v8",
+          "b-d-1-S4-empathy-approach-v8",
+          "b-d-2-S4-motive-search-v8",
+          "b-d-2-S4-empathy-approach-v8",
+          "b-d-3-S4-motive-search-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "그건 인정합니다.",
+        "count": 4,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "そこは認めます。",
+            "count": 4
+          }
+        ],
+        "sampleIds": [
+          "dc-1-b-q2-mid-v7",
+          "dc-5-a-q1-early-v9",
+          "contra-a-d-4-S3-v7",
+          "contradict-a-2-v4"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "지금은 그 사실부터 봐야 합니다.",
+        "count": 4,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "今は、その事実から見なければなりません。",
+            "count": 4
+          }
+        ],
+        "sampleIds": [
+          "a-d-2-S0-fact-pursuit-v8",
+          "a-d-3-S0-empathy-approach-v8",
+          "a-d-4-S0-empathy-approach-v8",
+          "a-d-5-S0-empathy-approach-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "그 대목에서 제 말도 거칠어졌습니다.",
+        "count": 3,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "そのくだりで、私の言葉も荒くなりました。",
+            "count": 3
+          }
+        ],
+        "sampleIds": [
+          "a-d-2-S2-empathy-approach-v8",
+          "a-d-4-S2-empathy-approach-v8",
+          "a-d-5-S2-empathy-approach-v8"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "제 입장은 아직 그대로입니다.",
+        "count": 3,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "私の立場はまだ変わりません。",
+            "count": 3
+          }
+        ],
+        "sampleIds": [
+          "a-d-2-S0-fact-pursuit-v6",
+          "a-d-4-S0-fact-pursuit-v6",
+          "a-d-4-S0-motive-search-v6"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "그렇다고 모든 것을 단정짓진 않겠습니다.",
+        "count": 2,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "だからといって、すべてを決めつけるつもりはありません。",
+            "count": 2
+          }
+        ],
+        "sampleIds": [
+          "a-d-1-S1-fact-pursuit-v6",
+          "a-d-1-S1-motive-search-v6"
+        ],
+        "templateUniform": true
+      },
+      {
+        "koCloser": "저희 가족이 더 무너질까 봐 두려웠습니다.",
+        "count": 2,
+        "uniqueJaClosers": 1,
+        "jaClosers": [
+          {
+            "text": "家族がこれ以上壊れるのが怖かったのです。",
+            "count": 2
+          }
+        ],
+        "sampleIds": [
+          "b-d-4-S4-motive-search-v8",
+          "b-d-4-S4-empathy-approach-v8"
+        ],
+        "templateUniform": true
+      }
+    ],
+    "highVolumeBuckets": [
+      {
+        "bucket": "a-d-4-S0-",
+        "count": 9,
+        "openerAnchors": 9,
+        "closerAnchors": 6
+      },
+      {
+        "bucket": "a-d-4-S1-",
+        "count": 9,
+        "openerAnchors": 9,
+        "closerAnchors": 5
+      },
+      {
+        "bucket": "a-d-2-S1-",
+        "count": 7,
+        "openerAnchors": 7,
+        "closerAnchors": 3
+      },
+      {
+        "bucket": "a-d-1-S1-",
+        "count": 6,
+        "openerAnchors": 6,
+        "closerAnchors": 3
+      },
+      {
+        "bucket": "a-d-2-S0-",
+        "count": 6,
+        "openerAnchors": 6,
+        "closerAnchors": 4
+      },
+      {
+        "bucket": "a-d-3-S1-",
+        "count": 6,
+        "openerAnchors": 6,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "a-d-5-S1-",
+        "count": 6,
+        "openerAnchors": 6,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "other",
+        "count": 6,
+        "openerAnchors": 6,
+        "closerAnchors": 3
+      },
+      {
+        "bucket": "b-d-1-S3-",
+        "count": 5,
+        "openerAnchors": 5,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "b-d-2-S3-",
+        "count": 5,
+        "openerAnchors": 5,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "b-d-3-S3-",
+        "count": 5,
+        "openerAnchors": 5,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "b-d-4-S3-",
+        "count": 5,
+        "openerAnchors": 5,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "b-d-5-S3-",
+        "count": 5,
+        "openerAnchors": 5,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "a-d-1-S0-",
+        "count": 4,
+        "openerAnchors": 4,
+        "closerAnchors": 3
+      },
+      {
+        "bucket": "a-d-3-S0-",
+        "count": 4,
+        "openerAnchors": 4,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "a-d-4-S4-",
+        "count": 4,
+        "openerAnchors": 4,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "a-d-5-S0-",
+        "count": 4,
+        "openerAnchors": 4,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "a-d-1-S3-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "a-d-1-S4-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "a-d-2-S4-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 2
+      },
+      {
+        "bucket": "a-d-3-S2-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 3
+      },
+      {
+        "bucket": "a-d-3-S3-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "a-d-3-S4-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "a-d-4-S3-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "a-d-5-S3-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "a-d-5-S4-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "b-d-1-S1-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "b-d-2-S1-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "b-d-3-S1-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "b-d-4-S1-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      },
+      {
+        "bucket": "b-d-5-S1-",
+        "count": 3,
+        "openerAnchors": 3,
+        "closerAnchors": 1
+      }
+    ]
+  }
+}

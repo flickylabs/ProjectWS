@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-05-21T08:12:24.828Z",
+  "scope": "family-01 JA narrative sync",
+  "nonS5ForbiddenLexemeViolations": 0,
+  "evidence": [
+    {
+      "command": "npm run localization:scripts:validate -- --case=family-01 --locale=ja --strict",
+      "result": "PASS",
+      "detail": "script locale validation ok; locales=ja; strict=yes"
+    },
+    {
+      "command": "node scripts/detect-truth-leak.cjs --strict",
+      "result": "PASS",
+      "detail": "truth leak findings: 0; byLang ja=0"
+    }
+  ],
+  "notes": [
+    "Removed non-S5 dialogue leaks caught during validation: 3億ウォン and 実子ではない were softened in JA scriptedText non-S5 rows.",
+    "Generated case truth/solution sections still contain deliberate truth-surface terms, which are outside non-S5 dialogue leak checks.",
+    "Remaining localization:cases:validate failure is EN/zh-CN family-01 e-4 stage-3 overlay coverage, not JA text."
+  ]
+}

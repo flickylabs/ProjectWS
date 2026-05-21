@@ -281,7 +281,7 @@ const VIEWER_COPY = {
     logOut: '発信',
     logIn: '受信·訪問',
     logMiss: '不在·変更',
-    logFilter_first: '初回受付',
+    logFilter_first: '一次受付',
     logFilter_amend: '修正受付',
     logFilter_status: '状態メモ',
     callLogTitle: '通話記録台帳',
