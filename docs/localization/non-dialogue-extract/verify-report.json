@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T15:20:49.521Z",
+  "generatedAt": "2026-05-21T06:26:31.315Z",
   "input": "",
   "glossary": "docs/localization/glossary.csv",
   "mode": "applied",
@@ -11,16 +11,16 @@
     "placeholder_issues": 0,
     "empty_translation_issues": 36920,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 16612,
+    "english_length_spike_issues": 16577,
     "glossary_issues": 0,
     "literal_english_noun_phrase_issues": 75,
     "cross_batch_inconsistency_issues": 1782,
-    "japanese_particle_anomaly_issues": 4067,
+    "japanese_particle_anomaly_issues": 4072,
     "chinese_korean_word_order_issues": 516,
     "person_name_divergence_issues": 32,
     "system_tone_remnant_issues": 0,
     "placeholder_leak_issues": 0,
-    "totalIssues": 60004
+    "totalIssues": 59974
   },
   "issueLimits": {
     "placeholder": {
@@ -39,9 +39,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 16612,
+      "total": 16577,
       "included": 1000,
-      "omitted": 15612
+      "omitted": 15577
     },
     "glossary": {
       "total": 0,
@@ -59,9 +59,9 @@
       "omitted": 782
     },
     "japaneseParticleAnomaly": {
-      "total": 4067,
+      "total": 4072,
       "included": 1000,
-      "omitted": 3067
+      "omitted": 3072
     },
     "chineseKoreanWordOrder": {
       "total": 516,
@@ -48177,7 +48177,7 @@
       {
         "row_number": 15064,
         "locale": "en",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다.",
         "variants": [
           "Your Honor, the notary's procedural notes show that key confirmations were skipped over too quickly. I will set down ...",
           "Your Honor, the notary's procedural notes show that key confirmations were skipped over too quickly. I will set down ...",
@@ -48223,7 +48223,7 @@
       {
         "row_number": 15064,
         "locale": "ja",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다.",
         "variants": [
           "公証人のメモは相手の側のものですが、私の解釈で扱った経緯から説明します。 公証人のメモを見て私の判断が早く決まった面は、ここで受け止めます。",
           "公証人のメモは相手の側のものですが、私の解釈で扱った経緯から説明します。 相手の説明とは別に、私の側の経緯から積みます。",
@@ -48267,7 +48267,7 @@
       {
         "row_number": 15064,
         "locale": "zh-CN",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다.",
         "variants": [
           "长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。",
           "在这里我不会让步。长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。我已经把话放在桌面上。"
@@ -48309,7 +48309,7 @@
       {
         "row_number": 15066,
         "locale": "en",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
         "variants": [
           "Reading the notary's procedural notes, several standard confirmations look noticeably thin on that day. I will set do...",
           "Your Honor, the notary's procedural notes show that key confirmations were skipped over too quickly. I will set down ...",
@@ -48352,7 +48352,7 @@
       {
         "row_number": 15066,
         "locale": "ja",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
         "variants": [
           "公証人のメモを見て私が結論を急いだ部分から、先に整理します。 直接確かめた箇所と推測で補った箇所を分けて答えます。",
           "公証人のメモは相手の側のものですが、私の解釈で扱った経緯から説明します。 介護の積み重ねが私の解釈を押した部分は、率直にお話しします。"
@@ -48394,7 +48394,7 @@
       {
         "row_number": 15066,
         "locale": "zh-CN",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
         "variants": [
           "我必须把这点说清楚。长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。",
           "长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。"
@@ -48436,7 +48436,7 @@
       {
         "row_number": 15068,
         "locale": "en",
-        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다.",
+        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다.",
         "variants": [
           "The procedural notes, Your Honor, do not record the careful sequence one would expect for a document of this weight. ...",
           "Reading the notary's procedural notes, several standard confirmations look noticeably thin on that day. I will set do...",
@@ -48479,7 +48479,7 @@
       {
         "row_number": 15068,
         "locale": "ja",
-        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다.",
+        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다.",
         "variants": [
           "公証人のメモに対して私が組み立てた読みを、まずお伝えします。 責任の範囲を引き受けたうえで、まだ控えている背景があります。",
           "公証人のメモを見て私が結論を急いだ部分から、先に整理します。 相手の沈黙が長かった分、最悪の絵が先に出てしまったのは事実です。"
@@ -48521,7 +48521,7 @@
       {
         "row_number": 15068,
         "locale": "zh-CN",
-        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다.",
+        "ko": "양쪽 말을 함께 놓고 봐야 합니다. 메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다.",
         "variants": [
           "在这里我不会让步。长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。我已经把话放在桌面上。",
           "我必须把这点说清楚。长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。"
@@ -48563,7 +48563,7 @@
       {
         "row_number": 15072,
         "locale": "en",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
           "Reading the notary's procedural notes, several standard confirmations look noticeably thin on that day. I will set do...",
           "Your Honor, the notary's procedural notes show that key confirmations were skipped over too quickly. I will set down ...",
@@ -48606,7 +48606,7 @@
       {
         "row_number": 15072,
         "locale": "ja",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
           "公証人のメモを見て私が結論を急いだ部分から、先に整理します。 判断を固めた背景にあった不安を、ここで隠しません。",
           "公証人のメモは相手の側のものですが、私の解釈で扱った経緯から説明します。 公証人のメモの前で、私の判断にまだ説明が残ることを認めます。"
@@ -48648,7 +48648,7 @@
       {
         "row_number": 15072,
         "locale": "zh-CN",
-        "ko": "메모를 보면 어머니가 숫자를 오락가락했고 동생이 절차를 밀어붙인 듯한 정황이 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+        "ko": "메모를 보면 어머니가 답변을 잇지 못하시고 피로를 호소하셨다는 말, 그리고 동생이 진행을 재촉했다는 정황이 남습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
           "我必须把这点说清楚。长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。这是我的立场。",
           "长期资金往来的台账和母亲晚年的真实情况之间，差距已经无法回避。份额安排有变这一点必须由经手人解释。"
@@ -50506,7 +50506,7 @@
       {
         "row_number": 15254,
         "locale": "en",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다.",
         "variants": [
           "The notary's procedural notes — I will not pretend the procedure was perfect, but I did not steer it. There were circ...",
           "The notary's procedural notes — I will not pretend the procedure was perfect, but I did not steer it. There were circ...",
@@ -50550,7 +50550,7 @@
       {
         "row_number": 15254,
         "locale": "ja",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다.",
         "variants": [
           "公証人のメモに私の名で残った行動から、認める順序で並べます。 公証人のメモに残った行為の順序を、まず日付順で並べます。",
           "公証人のメモに私の名で残った行動から、認める順序で並べます。 公証人のメモに表れた範囲は認め、それ以外は控えます。",
@@ -50594,7 +50594,7 @@
       {
         "row_number": 15254,
         "locale": "zh-CN",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다.",
         "variants": [
           "长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。",
           "把顺序拉回到事实，长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。剩下的请按程序来。"
@@ -50636,7 +50636,7 @@
       {
         "row_number": 15256,
         "locale": "en",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다. 제가 직접 설명해야 할 부분입니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다. 제가 직접 설명해야 할 부분입니다.",
         "variants": [
           "About the procedural notes — yes, the procedure was uneven; but the unevenness was not arranged by me. There were cir...",
           "The notary's procedural notes — I will not pretend the procedure was perfect, but I did not steer it. There were circ..."
@@ -50678,7 +50678,7 @@
       {
         "row_number": 15256,
         "locale": "ja",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다. 제가 직접 설명해야 할 부분입니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다. 제가 직접 설명해야 할 부분입니다.",
         "variants": [
           "公証人のメモのうち、私が直接した行為に当たる部分を先にお出しします。 公証人のメモに対する解釈と、私の行為そのものは別に扱います。",
           "公証人のメモに私の名で残った行動から、認める順序で並べます。 公証人のメモを踏まえて、私の側の説明を改めて整えます。"
@@ -50720,7 +50720,7 @@
       {
         "row_number": 15256,
         "locale": "zh-CN",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다. 제가 직접 설명해야 할 부분입니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다. 제가 직접 설명해야 할 부분입니다.",
         "variants": [
           "请容我先说一句。长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。我能说的就到这里。",
           "长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。"
@@ -50762,7 +50762,7 @@
       {
         "row_number": 15258,
         "locale": "en",
-        "ko": "제가 직접 설명해야 할 부분입니다. 어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다.",
+        "ko": "제가 직접 설명해야 할 부분입니다. 어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다.",
         "variants": [
           "Reading the procedural notes back, I admit the day was rushed; I did not push for that rush. There were circumstances...",
           "About the procedural notes — yes, the procedure was uneven; but the unevenness was not arranged by me. There were cir..."
@@ -50804,7 +50804,7 @@
       {
         "row_number": 15258,
         "locale": "ja",
-        "ko": "제가 직접 설명해야 할 부분입니다. 어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다.",
+        "ko": "제가 직접 설명해야 할 부분입니다. 어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다.",
         "variants": [
           "公証人のメモの中身は資料の通りで、私はその枠で答えます。 責任の範囲を引き受けたうえで、まだ控えている背景があります。",
           "公証人のメモのうち、私が直接した行為に当たる部分を先にお出しします。 公証人のメモに残った沈黙は、私の側の弱さでもあったと受け止めます。"
@@ -50846,7 +50846,7 @@
       {
         "row_number": 15258,
         "locale": "zh-CN",
-        "ko": "제가 직접 설명해야 할 부분입니다. 어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다.",
+        "ko": "제가 직접 설명해야 할 부분입니다. 어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다.",
         "variants": [
           "把顺序拉回到事实，长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。剩下的请按程序来。",
           "请容我先说一句。长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。我能说的就到这里。"
@@ -50888,7 +50888,7 @@
       {
         "row_number": 15262,
         "locale": "en",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
           "About the procedural notes — yes, the procedure was uneven; but the unevenness was not arranged by me. There were cir...",
           "The notary's procedural notes — I will not pretend the procedure was perfect, but I did not steer it. There were circ..."
@@ -50930,7 +50930,7 @@
       {
         "row_number": 15262,
         "locale": "ja",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
           "公証人のメモのうち、私が直接した行為に当たる部分を先にお出しします。 相手の不安を軽く見たわけではないとお伝えします。",
           "公証人のメモに私の名で残った行動から、認める順序で並べます。 公証人のメモを読み直すと、私の選択にまだ説明が残ることが分かります。"
@@ -50972,7 +50972,7 @@
       {
         "row_number": 15262,
         "locale": "zh-CN",
-        "ko": "어머니께서 숫자를 혼동하셨고 제가 절차를 밀어붙인 듯 보인다는 메모까지 남았습니다. 그 부분을 부인하지 않겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+        "ko": "어머니께서 답변을 늦추시고 물 한 잔을 청하셨다는 기록, 그리고 제가 진행을 재촉한 듯 보인다는 메모까지 남았습니다. 그 부분을 부정하지 않겠습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
         "variants": [
           "请容我先说一句。长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。我能说的就到这里。",
           "长期资金往来的台账的方向我做过整理，这一点我承认。我做的范围比当初讲的要深。"
@@ -84155,23 +84155,15 @@
           "Ms. Song Da-eun",
           "Ms. Song's"
         ],
-        "occurrences": 688,
+        "occurrences": 687,
         "examples": [
-          {
-            "row_number": 11679,
-            "id": "applied:family-01:case_generated:evidence[6].viewerDataByStage.3.device.sections[2].items[1].text",
-            "source": "src/data/cases/generated/family-01.json",
-            "key_path": "evidence[6].viewerDataByStage.3.device.sections[2].items[1].text",
-            "target": "Tae-seong is a child with a different father from Jeong-hu. My hand trembles as I write this sentence.",
-            "example_index": 0
-          },
           {
             "row_number": 14364,
             "id": "applied:family-01:scripted_text:channels.dossier.entries[18].variants[7].text",
             "source": "src/data/scriptedText/family-01.json",
             "key_path": "channels.dossier.entries[18].variants[7].text",
             "target": "At that time, I became the person who knew before my brother did. That alone was too heavy.",
-            "example_index": 1
+            "example_index": 0
           },
           {
             "row_number": 14414,
@@ -84179,7 +84171,7 @@
             "source": "src/data/scriptedText/family-01.json",
             "key_path": "channels.dossier.entries[20].variants[2].text",
             "target": "At first, I wanted to deny it. But the records led to the fact that my brother was not Father's biological son.",
-            "example_index": 2
+            "example_index": 1
           },
           {
             "row_number": 14472,
@@ -84187,7 +84179,7 @@
             "source": "src/data/scriptedText/family-01.json",
             "key_path": "channels.dossier.entries[23].variants[1].text",
             "target": "Your Honor, I tried to block everything because I feared my brother would hear in this courtroom that he was not Fath...",
-            "example_index": 3
+            "example_index": 2
           },
           {
             "row_number": 18834,
@@ -84195,6 +84187,14 @@
             "source": "src/data/scriptedText/family-01.json",
             "key_path": "channels.interrogation.entries[117].variants[0].text",
             "target": "Your Honor, our mother's diary contains entries that name people and dates, and those entries do not match the versio...",
+            "example_index": 3
+          },
+          {
+            "row_number": 18984,
+            "id": "applied:family-01:scripted_text:channels.interrogation.entries[123].variants[5].text",
+            "source": "src/data/scriptedText/family-01.json",
+            "key_path": "channels.interrogation.entries[123].variants[5].text",
+            "target": "Reading the diary now in good faith, our mother wrote about the burden of my birth, the old regular support, and the ...",
             "example_index": 4
           }
         ]
@@ -84321,7 +84321,7 @@
           "Ms. Choi Bok-sun's",
           "Ms. Park Sun-ae's"
         ],
-        "occurrences": 855,
+        "occurrences": 853,
         "examples": [
           {
             "row_number": 11339,
