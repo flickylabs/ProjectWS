@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>PC 패널 시스템 v1 — 2026-05-22 정리 방향</title>
+<style>
+  :root {
+    --pc-gold: #d4a24e;
+    --pc-gold-light: #e8c172;
+    --pc-text: #ede3cc;
+    --pc-text-dim: #b5a888;
+    --pc-text-muted: #857b68;
+    --pc-bg: #07070c;
+    --pc-wood-dark: #12141a;
+    --pc-panel-border: rgba(212, 162, 78, 0.22);
+    --pc-panel-grad-from: rgba(24, 26, 32, 0.96);
+    --pc-panel-grad-to: rgba(13, 14, 18, 0.98);
+    --pc-panel-shadow: 0 18px 42px rgba(0, 0, 0, 0.46);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #0a0a10;
+    color: var(--pc-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  body { padding: 48px 24px 80px; }
+  .doc {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--pc-gold-light);
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  h1 + .sub {
+    color: var(--pc-text-muted);
+    font-size: 13px;
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--pc-gold-light);
+    margin: 56px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(212, 162, 78, 0.18);
+    letter-spacing: -0.005em;
+  }
+  h2 .pin {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pc-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-left: 10px;
+  }
+  p { margin: 0 0 12px; }
+  code {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: rgba(212, 162, 78, 0.08);
+    color: var(--pc-gold-light);
+  }
+  .tier-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .tier {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.06);
+  }
+  .tier:first-child { border-top: 0; padding-top: 0; }
+  .tier-meta { color: var(--pc-text-dim); }
+  .tier-meta .name {
+    color: var(--pc-gold-light);
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .tier-meta .width {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 22px;
+    color: var(--pc-text);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 8px 0 16px;
+  }
+  .tier-meta .uses {
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--pc-text-dim);
+  }
+  .tier-meta .uses .label {
+    color: var(--pc-text-muted);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  .tier-canvas {
+    background: linear-gradient(180deg, #15161c 0%, #0a0b0f 100%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 32px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .scale-mark {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--pc-text-muted);
+    background: rgba(0,0,0,0.4);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* ─── 공통 패널 베이스 (Track A) ─── */
+  .panel {
+    position: relative;
+    border-radius: 14px;
+    border: 1px solid var(--pc-panel-border);
+    background: linear-gradient(180deg, var(--pc-panel-grad-from), var(--pc-panel-grad-to));
+    box-shadow:
+      0 18px 42px rgba(0, 0, 0, 0.46),
+      0 0 0 1px rgba(212, 162, 78, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+  }
+  /* 2026-05-22 v3.2: .panel을 위쪽으로 약간 확장 — pin 아이콘의 중앙이 패널 영역 안에 들어오도록.
+     · margin-top: -12 → 패널의 시각적 top edge가 12px 위로
+     · padding-top: 12 → 자식(header) 내부 padding은 그대로지만 새 top 기준으로 12px 아래에서 시작 → 폰트 절대 위치 유지
+     pin은 top: -18, center at -6 (relative to wrap). 패널 top이 -12에 위치 → pin center가 panel top 안쪽 6px → 캡처됨. */
+  .panel {
+    margin-top: -12px;
+    padding-top: 12px;
+  }
+
+  /* 2026-05-22 v3 — 사용자 피드백 통일 라운드:
+     · header 1행 patterns: [subtitle/eyebrow/tags LEFT] [TITLE centered] [close/marker RIGHT]
+     · grid-template-columns: 1fr auto 1fr → col 1=col 3 stretch 같으므로 col 2(title)는 진짜 정중앙
+     · 모든 panel은 동일 header pattern + 동일 typography. 차이는 좌측 메타(subtitle/tags) 콘텐츠뿐.
+     · 특징 marker(◆ for state_change, ⚖ for fact_pursuit)는 top border 위에 pin 형식으로 배치 — 헤더 row와 독립. */
+  .panel-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+    min-height: 56px;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(212, 162, 78, 0.16);
+    background: rgba(8, 9, 12, 0.48);
+  }
+  .panel-header__left {
+    grid-column: 1;
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .panel-header__title {
+    grid-column: 2;
+    justify-self: center;
+    font-size: 18px;
+    font-weight: 850;
+    color: var(--pc-text);
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+  .panel-header__right {
+    grid-column: 3;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(232, 193, 114, 0.78);
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+  .panel-close {
+    /* 위치는 .panel-header__right 슬롯 안에서 결정됨 */
+  }
+
+  /* 2026-05-22 v3.1: panel-pin 시스템 재작업.
+     · .panel-wrap에 position: relative — .panel-pin은 .panel 외부에 sibling으로 배치되어 overflow: hidden 영향 X
+     · 사이즈 24px (이전 32) — 텍스트 overlap 방지
+     · top: -18px — 75% 위쪽 노출, 25%만 패널 안쪽 (사용자 요청 "윗쪽으로 약간 치우치게")
+     · 모든 pin은 diamond(45deg 회전) — 마름모 통일. 내부 콘텐츠는 -45deg 역회전으로 상하 정정. */
+  .panel-wrap { position: relative; }
+  .panel-pin {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    transform: translateX(-50%) rotate(45deg);
+    display: grid;
+    place-items: center;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 162, 78, 0.55);
+    background: linear-gradient(135deg, #1d1d25, #0f1118);
+    color: var(--pc-gold-light);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+  }
+  .panel-pin > span,
+  .panel-pin > img,
+  .panel-pin > svg {
+    display: block;
+    transform: rotate(-45deg);
+  }
+  .panel-pin > img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    filter: brightness(1.1);
+  }
+  .panel-pin > svg {
+    width: 13px;
+    height: 13px;
+    color: var(--pc-gold-light);
+  }
+  .panel-close {
+    width: 32px; height: 32px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--pc-text-dim);
+    font-size: 16px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .panel-body {
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.58;
+    color: #d8d6cf;
+  }
+  .panel-hint {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(232, 193, 114, 0.78);
+    margin: 0 0 10px;
+  }
+  .panel-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 14px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 162, 78, 0.16);
+    background: rgba(255, 255, 255, 0.035);
+    color: #e0ddd6;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: left;
+    cursor: pointer;
+  }
+  .panel-btn:hover {
+    border-color: rgba(212, 162, 78, 0.38);
+    background: rgba(212, 162, 78, 0.1);
+  }
+  .panel-actions {
+    display: flex;
+    gap: 8px;
+    padding: 0 20px 20px;
+  }
+  .panel-actions .panel-btn { margin-top: 0; }
+  .panel-actions .panel-btn--primary {
+    background: rgba(212, 162, 78, 0.12);
+    border-color: rgba(212, 162, 78, 0.45);
+    color: var(--pc-gold-light);
+    justify-content: center;
+  }
+  .panel-tags {
+    display: flex; gap: 6px;
+    padding: 14px 20px 0;
+    flex-wrap: wrap;
+  }
+  .panel-tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    background: rgba(212, 162, 78, 0.1);
+    border: 1px solid rgba(212, 162, 78, 0.22);
+    color: var(--pc-gold-light);
+  }
+
+  /* 2026-05-22 v3: popup도 structural과 동일 typography 토큰 + 헤더 패턴 사용.
+     popup만의 특징은: (a) 헤더 아래 본문이 중앙 정렬 / (b) [확인 Space] dismiss footer.
+     이전 popup__* 클래스는 별도 22px title, 14.5px body로 인플레됐었음 — v3에서 18/13으로 일치. */
+  /* 2026-05-22 v3.1: popup text color — `#9ea1a8` blue-grey 제거 → 따뜻한 화이트.
+     사용자 보고: title/body가 푸른 계열로 보여 안 어울림. structural title과 동일 톤(var(--pc-text-dim)). */
+  .popup-body {
+    padding: 22px 24px 6px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--pc-text-dim);
+  }
+  .popup-body .popup-eyebrow + .popup-title { margin-top: 6px; }
+  .popup-eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(232, 193, 114, 0.78);
+  }
+  .popup-title {
+    font-size: 18px;
+    font-weight: 850;
+    color: var(--pc-text);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .popup-message {
+    margin-top: 14px;
+    color: var(--pc-text-dim);
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+  .popup-dismiss-row {
+    display: flex;
+    justify-content: center;
+    padding: 16px 24px 22px;
+  }
+  .popup-dismiss-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 162, 78, 0.45);
+    background: rgba(212, 162, 78, 0.08);
+    color: var(--pc-gold-light);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .popup-dismiss-btn .kbd {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(212, 162, 78, 0.32);
+    background: rgba(212, 162, 78, 0.06);
+    color: var(--pc-gold-light);
+  }
+
+  /* 2026-05-22 v3: width 2-tier로 단순화 (이전 5-tier).
+     · 640 compact — popup (alert / modal)
+     · 760 standard — structural (dispute / witness / evidence / contrast)
+     사용자 보고: 사이즈가 5단(600/640/760/880/960)으로 너무 제각각 → 2단으로 통합. */
+  .tier--alert     .panel-wrap { width: 640px; }
+  .tier--popup     .panel-wrap { width: 640px; }
+  .tier--struct    .panel-wrap { width: 760px; }
+  .tier--evidence  .panel-wrap { width: 760px; }
+  .tier--contrast  .panel-wrap { width: 760px; }
+
+  /* Witness card */
+  .witness-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    margin-top: 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .witness-card__avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a2118, #1a1410);
+    display: grid; place-items: center;
+    color: var(--pc-gold-light);
+    font-size: 18px;
+  }
+  .witness-card__info { flex: 1; min-width: 0; }
+  .witness-card__name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--pc-text);
+  }
+  .witness-card__meta {
+    font-size: 11px;
+    color: var(--pc-text-muted);
+    margin-top: 2px;
+  }
+  .witness-card__btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(92, 201, 122, 0.32);
+    background: rgba(92, 201, 122, 0.08);
+    color: #aedeb6;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .witness-card.is-locked { opacity: 0.5; }
+  .witness-card.is-locked .witness-card__btn {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--pc-text-muted);
+  }
+
+  /* Evidence stage */
+  .ev-tag-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 12px;
+    color: var(--pc-text-dim);
+  }
+  .ev-tag-row .left { display: flex; gap: 8px; align-items: center; }
+  .ev-viewer-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 162, 78, 0.45);
+    background: rgba(212, 162, 78, 0.08);
+    color: var(--pc-gold-light);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .ev-section { padding: 14px 20px 4px; }
+  .ev-section .label {
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pc-text-muted);
+    margin-bottom: 8px;
+  }
+  .ev-section .focus {
+    color: var(--pc-gold-light);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0;
+  }
+  /* 2026-05-22 v2 (B안): 주요 쟁점 inline도 3-col grid.
+     `1fr auto 1fr` — col 1과 col 3가 동일 stretch → col 2 content가 진짜 패널 중심에 위치.
+     label은 col 1 좌측에 붙음 (justify-self: start). content는 col 2 진짜 중앙.
+     이전 flex justify-content: center는 label과 content를 group center → content 중심선이 흔들렸음. */
+  .ev-section--inline {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 20px;
+  }
+  .ev-section--inline .label {
+    grid-column: 1;
+    justify-self: start;
+    margin-bottom: 0;
+  }
+  .ev-section--inline .focus {
+    grid-column: 2;
+    padding: 0;
+  }
+
+  /* 2026-05-22 v3.1: Character portrait — 실제 게임처럼 face image (mockup에서는 stylized circle).
+     mismatch(disabled) variant: opacity + grayscale로 dim. */
+  .portrait-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 50% 40%, #6a5f4e 0%, #3a322a 55%, #1a1610 100%);
+    border: 1.5px solid rgba(212, 162, 78, 0.45);
+    display: grid;
+    place-items: center;
+    color: var(--pc-text);
+    font-size: 14px;
+    font-weight: 800;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .portrait-avatar::after {
+    /* 머리/어깨 silhouette 힌트 */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 35%, rgba(255,220,180,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(40,30,20,0.6) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Evidence present buttons — screenshot 8 기준 mirror layout.
+     · is-a (LEFT, 박지연): 파란 3px left border, portrait 좌측, text 우측
+     · is-b (RIGHT, 이준호): 빨간 3px right border, text 좌측, portrait 우측 (row-reverse) */
+  .ev-present-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 14px 20px 18px;
+  }
+  .ev-present-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 162, 78, 0.16);
+    background: rgba(18, 19, 24, 0.55);
+    color: var(--pc-text);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  }
+  .ev-present-btn.is-a {
+    border-left: 3px solid rgba(91, 141, 239, 0.85);
+    box-shadow: -3px 0 18px -2px rgba(91, 141, 239, 0.28);
+    /* portrait LEFT, text following */
+  }
+  .ev-present-btn.is-b {
+    border-right: 3px solid rgba(224, 96, 96, 0.85);
+    box-shadow: 3px 0 18px -2px rgba(224, 96, 96, 0.28);
+    flex-direction: row-reverse;
+    /* text LEFT, portrait RIGHT */
+  }
+  .ev-present-btn.is-mismatch {
+    opacity: 0.42;
+    cursor: not-allowed;
+    filter: grayscale(0.8);
+    border-style: dashed;
+  }
+  .ev-present-btn__text {
+    flex: 1;
+    min-width: 0;
+  }
+  .ev-present-btn.is-b .ev-present-btn__text {
+    text-align: right;
+  }
+
+  /* Evidence header — tag chip + '증거' label */
+  .evidence-tag-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .evidence-tag-label {
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(232, 193, 114, 0.78);
+  }
+  .evidence-tag-chips {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .panel-tag.tag--compact {
+    /* 라운드 줄이고 세로 여백 minimal — 음영(padding) 거의 없음 */
+    border-radius: 5px;
+    padding: 1px 7px;
+    line-height: 1.3;
+  }
+  .ev-stage {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 12.5px;
+    color: var(--pc-text);
+  }
+  .ev-stage .check {
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    border: 1px solid rgba(92, 201, 122, 0.45);
+    background: rgba(92, 201, 122, 0.12);
+    color: #aedeb6;
+    display: grid; place-items: center;
+    font-size: 11px;
+  }
+
+  /* Contrast VS */
+  .vs-wrap { padding: 18px 24px 20px; }
+  .vs-intro {
+    font-size: 13px;
+    color: #c9c6bc;
+    margin-bottom: 14px;
+  }
+  .vs-row {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 14px;
+    align-items: stretch;
+  }
+  .vs-side {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 14px 16px;
+  }
+  .vs-side .vs-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pc-text-muted);
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .vs-side .vs-quote {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--pc-text);
+  }
+  .vs-mid {
+    display: grid; place-items: center;
+    color: var(--pc-gold-light);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+
+  /* 정보 노출용 패널의 confirm row — 모순 추궁 같은 info-only modal에 사용. */
+  .panel-dismiss-row {
+    display: flex;
+    justify-content: center;
+    padding: 4px 20px 20px;
+  }
+  .panel-dismiss-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 162, 78, 0.45);
+    background: rgba(212, 162, 78, 0.08);
+    color: var(--pc-gold-light);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .panel-dismiss-btn .kbd {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(212, 162, 78, 0.32);
+    background: rgba(212, 162, 78, 0.06);
+    color: var(--pc-gold-light);
+  }
+
+  /* Tokens table */
+  .tokens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 32px;
+    margin-top: 20px;
+  }
+  .tokens dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 6px;
+    column-gap: 12px;
+    font-size: 12.5px;
+  }
+  .tokens dt { color: var(--pc-text-muted); }
+  .tokens dd {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    color: var(--pc-text);
+    font-size: 12px;
+  }
+
+  /* Notes */
+  .note {
+    background: rgba(212, 162, 78, 0.04);
+    border-left: 3px solid rgba(212, 162, 78, 0.3);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--pc-text-dim);
+  }
+  .note strong { color: var(--pc-gold-light); }
+
+  /* Decision summary */
+  .decision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .decision-card {
+    border-radius: 10px;
+    border: 1px solid rgba(212, 162, 78, 0.16);
+    background: rgba(212, 162, 78, 0.04);
+    padding: 14px 16px;
+  }
+  .decision-card .head {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--pc-gold-light);
+    margin-bottom: 6px;
+  }
+  .decision-card .body {
+    font-size: 12.5px;
+    color: var(--pc-text-dim);
+    line-height: 1.6;
+  }
+  .decision-card .body code { font-size: 11px; }
+
+  hr {
+    margin: 56px 0 0;
+    border: 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.06);
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared SVG symbols — game-accurate icons referenced by .panel-pin > svg > use -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- i-witness: 핫바 '증인 소환' SVG (person silhouette + speech bubble + oath hand) -->
+    <symbol id="i-witness" viewBox="0 0 48 48">
+      <circle cx="24" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <path d="M12 38c0-8 5-13 12-13s12 5 12 13" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M34 10h10v7h-6l-2 3v-3h-2v-7z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+      <line x1="36" y1="13" x2="42" y2="13" stroke="currentColor" stroke-width="2" opacity=".7"/>
+      <line x1="36" y1="15" x2="40" y2="15" stroke="currentColor" stroke-width="2" opacity=".7"/>
+      <path d="M8 22v-6l3-2v8z" fill="none" stroke="currentColor" stroke-width="2.4" opacity=".6"/>
+    </symbol>
+    <!-- i-doc: 좌측 패널 '증거 수첩' icon (folded document) -->
+    <symbol id="i-doc" viewBox="0 0 24 24">
+      <path d="M6 2h8l6 6v14H6z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M14 2v6h6M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </symbol>
+    <!-- i-eye: '재판관의 관찰' icon (eye + pupil) -->
+    <symbol id="i-eye" viewBox="0 0 24 24">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="doc">
+
+<h1>PC 패널 시스템 v3 — 사이즈/폰트/컬러 표준 통일</h1>
+<div class="sub">
+  2026-05-22 사용자 피드백 6건 반영. 2-tier 너비(640/760) · 헤더 1행 패턴 · 타이포 통일 · marker pin · evidence 버튼 컬러 복원.<br>
+  <small style="color:#d9a654;">⏳ mockup 작업 — 코드 적용 대기</small>
+</div>
+
+<h2>1. 너비 2단 계층 <span class="pin">640 · 760</span></h2>
+<p>
+  v2의 5단(600/640/760/880/960)이 사용자 보고 "사이즈가 제각각"이라 v3에서 <strong>2단으로 단순화</strong>.
+  · <strong>640</strong> = popup (alert / modal) — cinematic 짧은 메시지
+  · <strong>760</strong> = structural (dispute / witness / evidence / contrast) — 모든 정보 surface 통일.
+  evidence는 이전 880 → 760로 좁아짐(stages 세로 stack OK), contrast는 이전 960 → 760로 좁아짐(VS 좌/우는 더 컴팩트하게).
+</p>
+
+<div class="tier-grid">
+
+  <!-- Tier 1: Popup Alert (600) -->
+  <div class="tier tier--alert">
+    <div class="tier-meta">
+      <div class="name">Popup Alert</div>
+      <div class="width">640px</div>
+      <div class="uses">
+        <span class="label">CSS hook</span>
+        <code>.pc-event-feedback-card.is-alert</code>
+        <span class="label">용례</span>
+        · 추가 질문 없음<br>
+        · 방어가 흔들린다<br>
+        · 조합 가능한 쌍 안내
+        <span class="label">특징</span>
+        · 헤더 1행 (eyebrow LEFT · title CENTER)<br>
+        · body 중앙 정렬<br>
+        · 확인 [Space] dismiss
+      </div>
+    </div>
+    <div class="tier-canvas" style="padding-top: 40px;">
+      <span class="scale-mark">w 640</span>
+      <div class="panel-wrap">
+        <!-- ◇ pin with "-" — alert/info type marker -->
+        <div class="panel-pin"><span>−</span></div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header__left">
+              <span class="panel-eyebrow">증인 심문</span>
+            </div>
+            <div class="panel-header__title">추가 질문 없음</div>
+            <div class="panel-header__right"></div>
+          </div>
+          <div class="popup-body">
+            <div class="popup-message">더 이상 물어볼 것이 없습니다</div>
+          </div>
+          <div class="popup-dismiss-row">
+            <button class="popup-dismiss-btn">
+              확인 <span class="kbd">Space</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 2: Popup Modal (640) -->
+  <div class="tier tier--popup">
+    <div class="tier-meta">
+      <div class="name">Popup Modal</div>
+      <div class="width">640px</div>
+      <div class="uses">
+        <span class="label">CSS hook</span>
+        <code>.pc-event-feedback-card.is-modal</code>
+        <span class="label">용례</span>
+        · 신뢰 창 열림<br>
+        · 핵심 증언 포착<br>
+        · 자백 유도하기 결과
+        <span class="label">특징</span>
+        · ◆ marker (top border pin)<br>
+        · 헤더 1행 (eyebrow LEFT · title CENTER)<br>
+        · 확인 [Space] dismiss
+      </div>
+    </div>
+    <div class="tier-canvas" style="padding-top: 40px;">
+      <span class="scale-mark">w 640</span>
+      <div class="panel-wrap">
+        <!-- ◆ pin OUT of .panel — overflow: hidden 영향 X. state_change 특징 marker. -->
+        <div class="panel-pin"><span>+</span></div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header__left">
+              <span class="panel-eyebrow">신뢰 상태 변화</span>
+            </div>
+            <div class="panel-header__title">신뢰 창이 열렸습니다</div>
+            <div class="panel-header__right"></div>
+          </div>
+          <div class="popup-body">
+            <div class="popup-message">
+              공감 접근으로 확인할 수 있는 범위가 넓어졌습니다.<br>
+              아직 자백은 아니므로 낮은 단계 질문부터 이어가십시오.
+            </div>
+          </div>
+          <div class="popup-dismiss-row">
+            <button class="popup-dismiss-btn">
+              확인 <span class="kbd">Space</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 3: Structural (760) -->
+  <div class="tier tier--struct">
+    <div class="tier-meta">
+      <div class="name">Structural — Dispute</div>
+      <div class="width">760px</div>
+      <div class="uses">
+        <span class="label">CSS hook</span>
+        <code>.pc-question-choice__panel</code>
+        <span class="label">용례</span>
+        · 사실 추궁 / 동기 탐색 / 공감 접근 dispute selector
+        <span class="label">특징</span>
+        · ⚖ marker (선택적)<br>
+        · 헤더 1행 (subtitle "심문 방식" LEFT · title CENTER · × RIGHT)<br>
+        · 버튼 list body
+      </div>
+    </div>
+    <div class="tier-canvas" style="padding-top: 40px;">
+      <span class="scale-mark">w 760</span>
+      <div class="panel-wrap">
+        <!-- ⚖ scale PNG (assets: /icons/ornament/scale-balance.png) — 심문 방식 패널 type 식별. -->
+        <div class="panel-pin"><img src="../public/icons/ornament/scale-balance.png" alt=""></div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header__left">
+              <span class="panel-eyebrow">심문 방식</span>
+            </div>
+            <div class="panel-header__title">사실 추궁 — 모순에 집중하기</div>
+            <div class="panel-header__right">
+              <button class="panel-close">×</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <p class="panel-hint">쟁점을 선택하세요</p>
+            <button class="panel-btn">오피스텔 방문과 새벽 전화</button>
+            <button class="panel-btn">남편 명의 계좌의 목돈 출금</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 3b: Structural (witness variant, 760) -->
+  <div class="tier tier--struct">
+    <div class="tier-meta">
+      <div class="name">Structural — Witness</div>
+      <div class="width">760px</div>
+      <div class="uses">
+        <span class="label">CSS hook</span>
+        <code>.pc-interaction-card</code> + <code>.pc-witness-panel</code>
+        <span class="label">용례</span>
+        증인 소환 surface
+        <span class="label">특징</span>
+        · 헤더 1행 (title CENTER만)<br>
+        · 좌측 subtitle 안내문 <strong style="color:#e88e8e">제거</strong> (사용자 요청)<br>
+        · body = witness card list
+      </div>
+    </div>
+    <div class="tier-canvas" style="padding-top: 40px;">
+      <span class="scale-mark">w 760</span>
+      <div class="panel-wrap">
+        <!-- 증인 hotbar icon — 실제 게임 i-witness SVG (person + speech bubble + oath hand) -->
+        <div class="panel-pin"><svg><use href="#i-witness"/></svg></div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header__left"></div>
+            <div class="panel-header__title">증인 소환</div>
+            <div class="panel-header__right">
+              <button class="panel-close">×</button>
+            </div>
+          </div>
+          <div class="panel-body" style="padding: 8px 20px 16px;">
+            <div class="witness-card">
+              <div class="witness-card__avatar">👤</div>
+              <div class="witness-card__info">
+                <div class="witness-card__name">오피스텔 경비</div>
+                <div class="witness-card__meta">관련인 · 1주일에 2~3번 방문하는 차량을 기억한다</div>
+              </div>
+              <button class="witness-card__btn">추가 심문</button>
+            </div>
+            <div class="witness-card is-locked">
+              <div class="witness-card__avatar">?</div>
+              <div class="witness-card__info">
+                <div class="witness-card__name">???</div>
+                <div class="witness-card__meta">관련인 · 잠김 — 조합으로 단서를 확보해야 소환할 수 있습니다</div>
+              </div>
+              <button class="witness-card__btn">잠김</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 4: Evidence Detail (760) -->
+  <div class="tier tier--evidence">
+    <div class="tier-meta">
+      <div class="name">Evidence Detail</div>
+      <div class="width">760px</div>
+      <div class="uses">
+        <span class="label">CSS hook</span>
+        <code>.pc-interaction-card:has(.pc-ev-detail)</code>
+        <span class="label">용례</span>
+        증거 정보 + 조사 단계 + 발언대 제출 통합 surface
+        <span class="label">특징</span>
+        · 헤더 1행 (tag chips LEFT · title CENTER · × RIGHT)<br>
+        · 주요 쟁점 inline (label LEFT · content CENTER)<br>
+        · 발언대 dual button: <strong style="color:#7e9ed8">is-a 파란 left border</strong> · <strong style="color:#d87e7e">is-b 빨간 right border</strong> + 32×32 portrait
+      </div>
+    </div>
+    <div class="tier-canvas" style="padding-top: 40px;">
+      <span class="scale-mark">w 760</span>
+      <div class="panel-wrap">
+        <!-- 증거 수첩 icon — 좌측 패널 헤더의 i-doc SVG (folded document) -->
+        <div class="panel-pin"><svg><use href="#i-doc"/></svg></div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header__left">
+              <div class="evidence-tag-group">
+                <span class="evidence-tag-label">증거</span>
+                <div class="evidence-tag-chips">
+                  <span class="panel-tag tag--compact">기록</span>
+                  <span class="panel-tag tag--compact">보통</span>
+                  <span class="panel-tag tag--compact">기관</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel-header__title">통화기록</div>
+            <div class="panel-header__right">
+              <button class="panel-close">×</button>
+            </div>
+          </div>
+          <div class="ev-tag-row">
+            <div class="left">발견한 내용: 3/3</div>
+            <button class="ev-viewer-btn">증거 열람</button>
+          </div>
+          <!-- 주요 쟁점: label LEFT + content TRUE center (3-col grid) -->
+          <div class="ev-section ev-section--inline">
+            <span class="label">주요 쟁점</span>
+            <span class="focus">오피스텔 방문과 새벽 전화</span>
+          </div>
+          <div class="ev-section">
+            <!-- 조사 단계 label도 좌측 정렬 — 주요 쟁점과 같은 열 -->
+            <div class="label" style="text-align: left;">조사 단계</div>
+            <div class="ev-stage"><span class="check">✓</span><span>통화 목록을 조회했다. 같은 시간대에 반복된 통화 흔적이 보인다.</span></div>
+            <div class="ev-stage"><span class="check">✓</span><span>저장된 연락처와 대조했다. 등록되지 않은 번호 한 곳과 자주 통화한 것으로 확인된다.</span></div>
+            <div class="ev-stage"><span class="check">✓</span><span>한 가지 어긋난다. 외도로 보기에는 매번 통화 시간이 너무 짧다.</span></div>
+          </div>
+          <!-- screenshot 8 기준 mirror layout — A: portrait LEFT, B: portrait RIGHT (row-reverse via CSS) -->
+          <div class="ev-present-row">
+            <button class="ev-present-btn is-a is-mismatch">
+              <span class="portrait-avatar"></span>
+              <span class="ev-present-btn__text">박지연 (대상 아님)</span>
+            </button>
+            <button class="ev-present-btn is-b">
+              <span class="portrait-avatar"></span>
+              <span class="ev-present-btn__text">이준호에게 제시</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 5: Contrast (760) -->
+  <div class="tier tier--contrast">
+    <div class="tier-meta">
+      <div class="name">Contrast Modal</div>
+      <div class="width">760px</div>
+      <div class="uses">
+        <span class="label">CSS hook</span>
+        <code>.pc-interaction-card.pc-interaction-card--contrast</code>
+        <span class="label">용례</span>
+        · 모순 추궁<br>
+        · 판단 충돌<br>
+        · 좌/우 입장 비교
+        <span class="label">특징</span>
+        · 헤더 1행 (eyebrow LEFT · title CENTER · × RIGHT)<br>
+        · 좌/우 진술 + VS<br>
+        · info-only modal → 확인 [Space] dismiss
+      </div>
+    </div>
+    <div class="tier-canvas" style="padding-top: 40px;">
+      <span class="scale-mark">w 760</span>
+      <div class="panel-wrap">
+        <!-- 재판관의 관찰 i-eye SVG — contradiction/모순 추궁 marker (관찰의 통찰 의미) -->
+        <div class="panel-pin"><svg><use href="#i-eye"/></svg></div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header__left">
+              <span class="panel-eyebrow">모순 추궁</span>
+            </div>
+            <div class="panel-header__title">진술이 어긋난다</div>
+            <div class="panel-header__right">
+              <button class="panel-close">×</button>
+            </div>
+          </div>
+          <div class="vs-wrap" style="padding-bottom: 12px;">
+            <div class="vs-intro" style="text-align: center;">두 진술이 같은 사실을 두고 서로 다른 방향을 가리킨다.</div>
+            <div class="vs-row">
+              <div class="vs-side">
+                <div class="vs-label">기존 판단 — 이준호</div>
+                <div class="vs-quote">"그날은 회식이 길어져서 늦었습니다. 새벽 전화는 다른 이유였다고만 말씀드리겠습니다."</div>
+              </div>
+              <div class="vs-mid">VS</div>
+              <div class="vs-side">
+                <div class="vs-label">새 충돌 정보 — 통화기록</div>
+                <div class="vs-quote">"같은 시간대에 등록되지 않은 번호와 짧은 통화가 반복된 흔적이 확인된다."</div>
+              </div>
+            </div>
+          </div>
+          <!-- 정보 노출만 하는 modal에는 [확인 Space] dismiss row. top padding 축소(16→6). -->
+          <div class="popup-dismiss-row" style="padding-top: 6px;">
+            <button class="popup-dismiss-btn">
+              확인 <span class="kbd">Space</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<h2>2. 디자인 토큰 <span class="pin">Track A 통일 — pc.css line 24326~</span></h2>
+
+<div class="tokens">
+  <div>
+    <h3 style="font-size:12px; color:var(--pc-text-muted); letter-spacing:0.08em; text-transform:uppercase; font-weight:700; margin:0 0 10px;">Typography</h3>
+    <dl>
+      <dt>Subtitle / Hint</dt><dd>11px / 800 / upper / 0.12em</dd>
+      <dt>Title (structural)</dt><dd>18px / 850 / -0.01em</dd>
+      <dt>Title (popup)</dt><dd>22px / 700 / -0.005em</dd>
+      <dt>Body (structural)</dt><dd>13px / 400 / 1.58</dd>
+      <dt>Body (popup)</dt><dd>14.5px / 400 / 1.6</dd>
+      <dt>Button</dt><dd>13px / 700 / 1.45</dd>
+      <dt>Tag chip</dt><dd>10.5px / 800 / 0.06em</dd>
+      <dt>kbd hint</dt><dd>10.5px mono</dd>
+    </dl>
+  </div>
+  <div>
+    <h3 style="font-size:12px; color:var(--pc-text-muted); letter-spacing:0.08em; text-transform:uppercase; font-weight:700; margin:0 0 10px;">Layout</h3>
+    <dl>
+      <dt>Panel radius</dt><dd>14px</dd>
+      <dt>Panel border</dt><dd>1px rgba(212,162,78,0.22)</dd>
+      <dt>Header padding</dt><dd>16px 20px · min-h 56px</dd>
+      <dt>Body padding</dt><dd>16px 20px</dd>
+      <dt>Actions padding</dt><dd>0 20px 20px</dd>
+      <dt>Button radius</dt><dd>10px · min-h 44px</dd>
+      <dt>Tag chip radius</dt><dd>999px</dd>
+      <dt>Close button</dt><dd>32×32 · radius 10px</dd>
+    </dl>
+  </div>
+</div>
+
+
+<h2>3. v3 통일 결정 <span class="pin">사용자 6건 피드백 반영</span></h2>
+
+<div class="decision-grid">
+  <div class="decision-card">
+    <div class="head">① 헤더 1행 패턴 통일</div>
+    <div class="body">
+      모든 패널 = <code>grid-template-columns: 1fr auto 1fr</code><br>
+      · LEFT (col 1, 1fr): subtitle/eyebrow/tags <strong>좌측 정렬</strong><br>
+      · CENTER (col 2, auto): title <strong>진짜 중앙</strong> (1fr 대칭으로 viewport 중심선)<br>
+      · RIGHT (col 3, 1fr): close × 또는 marker, 우측 정렬<br>
+      이전: eyebrow 위 / title 아래 vertical stack → 한 줄로 합쳐 세로 폭 절약 + 시각 통일.
+    </div>
+  </div>
+
+  <div class="decision-card">
+    <div class="head">② 너비 5단 → 2단 (640 / 760)</div>
+    <div class="body">
+      popup = 640 / structural = 760. 이전 600/640/760/880/960 5단이 "제각각"이라 단순화.<br>
+      evidence + contrast가 760으로 좁아짐 — stages는 세로 stack, VS는 컴팩트 quote.<br>
+      <small style="color:#d9a654;">⏳ 적용 시 contrast wide layout이 좁아질 수 있음 — 검토 필요</small>
+    </div>
+  </div>
+
+  <div class="decision-card">
+    <div class="head">③ Typography 통일</div>
+    <div class="body">
+      이전 popup title 22px / body 14.5px → structural 18px / 13px로 일치.<br>
+      모든 패널 동일 토큰:<br>
+      · subtitle 11/800/uppercase/gold<br>
+      · title 18/850/white<br>
+      · body 13/400<br>
+      · button 13/700
+    </div>
+  </div>
+
+  <div class="decision-card">
+    <div class="head">④ 컬러 #7 기준 (dispute selector 톤)</div>
+    <div class="body">
+      bg dark gradient · border <code>rgba(212,162,78,0.22)</code> · subtitle muted gold · title warm white. 모든 패널 동일.
+    </div>
+  </div>
+
+  <div class="decision-card">
+    <div class="head">⑤ Marker pin (선택적)</div>
+    <div class="body">
+      <code>.panel-pin</code> 신규 — top border 위에 절반 overlap.<br>
+      · ◆ diamond = state_change modal (신뢰 창 등)<br>
+      · ⚖ scale = 심문 방식 패널 (선택)<br>
+      헤더 row와 독립. 패널 type 식별용.
+    </div>
+  </div>
+
+  <div class="decision-card">
+    <div class="head">⑥ Evidence 발언대 버튼 컬러 복원</div>
+    <div class="body">
+      실제 게임 <code>.pc-ev-detail__present-btn</code> 매핑:<br>
+      · is-a (박지연/A) = 파란 3px left border + 좌측 glow<br>
+      · is-b (이준호/B) = 빨간 3px right border + 우측 glow<br>
+      · 32×32 원형 portrait + gold border<br>
+      v2의 plain 버튼 → v3 게임-정확 복원.
+    </div>
+  </div>
+
+  <div class="decision-card">
+    <div class="head">⑦ Witness subtitle 제거</div>
+    <div class="body">
+      "적절한 시점에 소환해야 핵심 증언을 들을 수 있습니다" 안내문 <strong>완전 제거</strong>.<br>
+      title "증인 소환"만 헤더에 노출 — body의 witness card가 정보 충분.
+    </div>
+  </div>
+
+  <div class="decision-card">
+    <div class="head">⑧ Info-only 패널 [확인 Space]</div>
+    <div class="body">
+      모순 추궁처럼 액션 버튼 없는 패널에 일관된 dismiss row 추가. popup의 [확인 Space] 패턴을 structural에도 동일 적용.
+    </div>
+  </div>
+</div>
+
+
+<h2>4. v2 적용 영역 — 코드 변경 대상</h2>
+
+<div class="note">
+  <strong>⑤ 진짜 중앙 정렬 (B안 3-col grid)</strong> — <code>pc.css</code>의 Track A header rule을
+  <code>display: grid; grid-template-columns: 32px 1fr 32px</code>로 변환. icon은 col 1 (32px zone 안에서 자체 22×22 중앙),
+  text wrapper는 col 2 (진짜 중앙), close는 col 3. icon 유무와 무관하게 title 중심선이 viewport 정중앙과 일치.<br>
+  영향 면 — 모든 structural 패널 (dispute selector / witness summon / evidence / contrast).
+</div>
+
+<div class="note">
+  <strong>⑥ Evidence character portrait 유지</strong> — 코드는 이미 <code>PCInteractionPanel.tsx</code>의
+  evidence 변형에서 portrait 사용 중. 본 mockup v1에서 누락되어 있어서 v2에 복원만. 코드 변경 불필요.
+</div>
+
+<div class="note">
+  <strong>⑦ 주요 쟁점 inline + 3-col grid</strong> — <code>EvidenceDetailSection</code>의 "주요 쟁점" 섹션:
+  <code>display: grid; grid-template-columns: 1fr auto 1fr</code>로 label 좌측 / content 진짜 중앙 / 우측 균형 spacer.
+  세로 폭 ~30px 절약 + content 중심선 정확.
+</div>
+
+<div class="note">
+  <strong>⑧ Info-only modal dismiss</strong> — contrast modal(<code>pc-interaction-card--contrast</code>)이
+  actions 없이 정보만 노출하는 경우 자동 [확인 Space] dismiss row 추가. <code>PCInteractionPanel.tsx</code>
+  payload에 <code>variant: 'info-only'</code> 또는 actions 0건 + contrast=true 조건으로 분기.
+</div>
+
+<div class="note" style="border-left-color: rgba(100, 180, 100, 0.5);">
+  <strong>코드 적용 우선순위:</strong> ⑤ (높음, CSS 한 줄) → ⑦ (중, EvidenceDetailSection 컴포넌트 1곳) → ⑧ (중, PCInteractionPanel 분기 1곳). ⑥은 기존 코드 keep.
+</div>
+
+</div>
+</body>
+</html>
