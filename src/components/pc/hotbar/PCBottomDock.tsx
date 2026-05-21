@@ -15,7 +15,7 @@ import PCDeferredVerdictIcon from './PCDeferredVerdictIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import FreeInterrogationInput from '../../freeInterrogation/FreeQuestionInput'
 import { isFreeInterrogationEnabled } from '../../../engine/freeInterrogation'
-import { buildGeneratedQuestionAngleOptions, getQuestionAngleLabel, getUnlockedQuestionAngleIds } from '../../../engine/questionAngleEngine'
+import { getQuestionAngleLabel, getUnlockedQuestionAngleIds } from '../../../engine/questionAngleEngine'
 import { getScriptedJudgeQuestionOptions, type ScriptedJudgeQuestionOption } from '../../../engine/scriptedTextLoader'
 import { emitVerdictCtaCollapsed, PC_VERDICT_CTA_COLLAPSED_EVENT } from '../layout/verdictAdvanceEvents'
 import { requestVerdictAdvance } from '../layout/verdictAdvancePrompt'
@@ -169,6 +169,9 @@ export default function PCBottomDock() {
       calledWitnesses,
     })
     const seed = turnCount + questionChoice.disputeId.charCodeAt(questionChoice.disputeId.length - 1)
+    // 재판관 질문은 항상 사전 작성된 scripted 질문지에서만 선택.
+    // 자동 생성된 템플릿(buildGeneratedQuestionAngleOptions)은 scripted answer와
+    // 매핑되지 않아 무응답으로 떨어진다 — 2026-05-21 사용자 보고 d-2 사고.
     const scriptedOptions = getScriptedJudgeQuestionOptions(
       normalizeCaseKey(caseData),
       questionChoice.disputeId,
@@ -182,25 +185,8 @@ export default function PCBottomDock() {
         includeOtherDepths: false,
       },
     )
-    const generatedOptions = buildGeneratedQuestionAngleOptions({
-      caseId: normalizeCaseKey(caseData),
-      caseData,
-      disputeId: questionChoice.disputeId,
-      questionType: questionChoice.type,
-      target: pcTargetParty,
-      evidenceStates,
-      calledWitnesses,
-      limit: 3,
-      seed,
-    }).map((option) => ({
-      ...option,
-      disputeId: questionChoice.disputeId!,
-      questionType: questionChoice.type,
-      depth,
-      targetParty: pcTargetParty,
-    }))
     const byText = new Map<string, ScriptedJudgeQuestionOption>()
-    for (const option of [...scriptedOptions, ...generatedOptions]) {
+    for (const option of scriptedOptions) {
       const key = option.text.replace(/\s+/g, ' ').trim()
       if (!byText.has(key)) byText.set(key, option)
     }
