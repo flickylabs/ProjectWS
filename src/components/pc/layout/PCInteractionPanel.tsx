@@ -815,33 +815,59 @@ export default function PCInteractionPanel() {
   const wrapperClass = softPopup ? 'pc-interaction-softpop' : 'pc-interaction-overlay'
   const cardExtra = `${softPopup ? ' pc-interaction-card--softpop' : ''}${payload.contrast ? ' pc-interaction-card--contrast' : ''}`
 
+  // 2026-05-22 v3.3: panel-pin marker — 패널 type 식별 + cue color modifier.
+  //   - evidence  → i-doc + --evidence (warm gold)
+  //   - witness   → i-witness + --witness (mint)
+  //   - contrast  → i-eye + --contrast (red — 모순)
+  //   default/feature/dialogue/softPopup은 pin 없이 깔끔하게 유지.
+  const pinIconId = payload.variant === 'evidence' ? 'i-doc'
+    : payload.variant === 'witness' ? 'i-witness'
+    : payload.contrast ? 'i-eye'
+    : null
+  const pinVariantClass = payload.variant === 'evidence' ? 'pc-panel-pin--evidence'
+    : payload.variant === 'witness' ? 'pc-panel-pin--witness'
+    : payload.contrast ? 'pc-panel-pin--contrast'
+    : ''
+  const showPin = !softPopup && payload.variant !== 'dialogue' && pinIconId !== null
+
   return createPortal(
     <div className={wrapperClass} onClick={softPopup ? undefined : closePanel}>
-      <div
-        className={`pc-interaction-card tone-${payload.tone ?? 'neutral'}${payload.variant === 'feature' ? ' pc-interaction-card--feature' : ''}${cardExtra}`}
-        onClick={(event) => event.stopPropagation()}
-      >
+      <div className="pc-panel-wrap" onClick={(event) => event.stopPropagation()}>
+        {showPin ? (
+          <div className={`pc-panel-pin ${pinVariantClass}`} aria-hidden="true">
+            <PCSvgIcon id={pinIconId!} size={13} />
+          </div>
+        ) : null}
+        <div
+          className={`pc-interaction-card tone-${payload.tone ?? 'neutral'}${payload.variant === 'feature' ? ' pc-interaction-card--feature' : ''}${cardExtra}`}
+          onClick={(event) => event.stopPropagation()}
+        >
         {payload.variant === 'dialogue' ? null : payload.variant === 'evidence' ? (
           <div className="pc-interaction-card__header pc-interaction-card__header--evidence">
-            <div className="pc-ev-header-left">
-              <div className="pc-ev-header-top">
-                {payload.evidenceTypeLabel ? <span className="pc-ev-header-type">{localizeRuntimeText(payload.evidenceTypeLabel, locale)}</span> : null}
-                {payload.evidenceMetaTags?.map((tag) => (
-                  <span className="pc-ev-header-meta-tag" key={tag}>{localizeRuntimeText(tag, locale)}</span>
-                ))}
+            <div className="pc-interaction-card__header-left">
+              <div className="evidence-tag-group">
+                <span className="evidence-tag-label">{translate('pc.interaction.evidenceTagLabel')}</span>
+                <div className="evidence-tag-chips">
+                  {payload.evidenceTypeLabel ? (
+                    <span className="panel-tag tag--compact">{localizeRuntimeText(payload.evidenceTypeLabel, locale)}</span>
+                  ) : null}
+                  {payload.evidenceMetaTags?.map((tag) => (
+                    <span className="panel-tag tag--compact" key={tag}>{localizeRuntimeText(tag, locale)}</span>
+                  ))}
+                </div>
               </div>
-              <div className="pc-interaction-card__title">{localizeRuntimeText(payload.title, locale)}</div>
             </div>
+            <div className="pc-interaction-card__title">{localizeRuntimeText(payload.title, locale)}</div>
             <button className="pc-interaction-card__close" onClick={closePanel} type="button">
               &times;
             </button>
           </div>
         ) : (
           <div className="pc-interaction-card__header">
-            <div>
+            <div className="pc-interaction-card__header-left">
               {payload.subtitle ? <div className="pc-interaction-card__subtitle">{localizeRuntimeText(payload.subtitle, locale)}</div> : null}
-              <div className="pc-interaction-card__title">{localizeRuntimeText(payload.title, locale)}</div>
             </div>
+            <div className="pc-interaction-card__title">{localizeRuntimeText(payload.title, locale)}</div>
             <button className="pc-interaction-card__close" onClick={closePanel} type="button">
               &times;
             </button>
@@ -928,7 +954,23 @@ export default function PCInteractionPanel() {
           </div>
         ) : null}
 
+        {/* 2026-05-22 v3: contrast variant info-only modal에 [확인 Space] dismiss row 추가.
+            useEffect Space handler가 이미 wire되어 있어 키 입력은 작동 — 시각 단서로만 노출. */}
+        {payload.contrast && !hasPayloadActions ? (
+          <div className="pc-interaction-card__dismiss-row">
+            <button
+              type="button"
+              className="pc-interaction-card__dismiss-btn"
+              onClick={closePanel}
+            >
+              <span>{translate('pc.common.confirm')}</span>
+              <kbd className="pc-interaction-card__kbd">Space</kbd>
+            </button>
+          </div>
+        ) : null}
+
         {/* 발언 기록 popup은 클릭/Space 자체로 dismiss — 별도 [확인 Space] 버튼 불필요 (사용자 요청 2026-05-20) */}
+        </div>
       </div>
     </div>,
     document.body,

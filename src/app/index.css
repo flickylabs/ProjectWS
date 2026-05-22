@@ -1088,7 +1088,10 @@ html, body {
   border: 1px solid rgba(232, 193, 114, 0.4);
   border-radius: 16px;
   color: #fff7df;
-  font-family: inherit;  /* 게임 본체 폰트 사용 (slip phase1 display font 회피) */
+  /* 2026-05-22 v3.3: 부모 .tr-bubble-slip.phase-2는 명조체(serif) display font인데 inherit 시
+     chip "단서 → d-1" 텍스트가 serif로 렌더링됨. 사용자 보고: "폰트가 너무 이상함".
+     게임 본체 sans-serif(Pretendard 등)로 명시 — '확인' 버튼 등 UI 폰트와 동일 톤. */
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.4px;

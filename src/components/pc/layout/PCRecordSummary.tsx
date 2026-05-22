@@ -303,6 +303,10 @@ export default function PCRecordSummary({ onClose: onCloseProp }: { onClose: () 
   return (
     <div className="pc-record-summary" data-tutorial-target="record-summary">
       <div className="pc-record-summary__backdrop" onClick={onClose} />
+      <div className="pc-panel-wrap pc-panel-wrap--record-summary">
+        <div className="pc-panel-pin pc-panel-pin--evidence" aria-hidden="true">
+          <PCSvgIcon id="i-doc" size={13} />
+        </div>
       <div className="pc-record-summary__panel">
         <div className="pc-record-summary__header">
           <PCSvgIcon id="i-doc" size={20} />
@@ -399,6 +403,7 @@ export default function PCRecordSummary({ onClose: onCloseProp }: { onClose: () 
             <kbd className="pc-event-feedback__kbd">Space</kbd>
           </button>
         </div>
+      </div>
       </div>
 
       {caseData && editingJudgment ? (

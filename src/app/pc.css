@@ -1004,6 +1004,28 @@ body.pc-mode .pc-dispute-ribbon__popover-copy--truth {
   font-style: normal;
 }
 
+/* 2026-05-22 v3.3: S5 도달 시 truth fact 위에 "진실 확정" eyebrow chip 노출.
+   사용자 보고: 컷씬으로 진실이 밝혀졌을 때 "심문과 증거로 진실을 밝혀내세요" 대신 명확한 확정 신호 필요. */
+body.pc-mode .pc-dispute-ribbon__truth-revealed-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  margin-bottom: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(142, 240, 172, 0.32);
+  background: rgba(142, 240, 172, 0.08);
+  color: rgba(180, 240, 196, 0.92);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.pc-mode .pc-dispute-ribbon__truth-revealed-tag > svg {
+  color: rgba(142, 240, 172, 0.92);
+}
+
 body.pc-mode .pc-dispute-ribbon__evidence-list {
   display: flex;
   flex-wrap: wrap;
@@ -11552,13 +11574,16 @@ body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
   transform: scale(1.02);
 }
 
-/* B(이준호, 오른쪽 버튼) — 우측 빨간 3px 라인 + 오른쪽으로 퍼지는 빨간 glow */
+/* B(이준호, 오른쪽 버튼) — 우측 빨간 3px 라인 + 오른쪽으로 퍼지는 빨간 glow.
+   2026-05-22 v3: row-reverse로 portrait 우측 배치 — screenshot 8 mirror layout 복원.
+   is-a는 portrait LEFT(자연 정렬), is-b는 portrait RIGHT(row-reverse). */
 body.pc-mode .pc-ev-detail__present-btn.is-b {
   border-right: 3px solid rgba(224, 96, 96, 0.85);
   box-shadow:
     var(--pc-panel-shadow),
     var(--pc-panel-inset),
     3px 0 18px -2px rgba(224, 96, 96, 0.28);
+  flex-direction: row-reverse;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
   color: #ffffff;
@@ -13653,33 +13678,28 @@ body.pc-mode .pc-mediation-entry::before {
   content: none;
 }
 
+/* 2026-05-22 v3.3: 원형 58px mark는 panel-pin 마름모로 교체되어 불필요. legacy hook 호환만 유지. */
 body.pc-mode .pc-mediation-entry__mark {
-  width: 58px;
-  height: 58px;
-  margin: -4px auto 0;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid rgba(232, 193, 114, 0.42);
-  background:
-    radial-gradient(circle, rgba(232, 193, 114, 0.2), rgba(232, 193, 114, 0.03) 64%),
-    rgba(12, 12, 18, 0.92);
-  color: var(--pc-gold-light);
-  box-shadow: 0 0 28px rgba(212, 162, 78, 0.18);
+  display: none !important;
 }
 
 body.pc-mode .pc-mediation-entry__eyebrow {
-  color: var(--pc-gold);
+  /* 2026-05-22 v3.3: structural eyebrow 표준(11/800/0.12em) 통일. 기존 900/0.16em 톤 다운. */
+  color: rgba(232, 193, 114, 0.78);
   font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.16em;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 6px;
 }
 
 body.pc-mode .pc-mediation-entry h2 {
   margin: 0;
+  /* 2026-05-22 v3.3: 26/900 → 18/850 — popup/structural title 표준 통일. */
   color: var(--pc-text);
-  font-size: 26px;
-  font-weight: 900;
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.25;
   letter-spacing: -0.01em;
 }
 
@@ -13687,7 +13707,7 @@ body.pc-mode .pc-mediation-entry p {
   margin: 0;
   color: var(--pc-text-dim);
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.58;
 }
 
 body.pc-mode .pc-mediation-entry__warning,
@@ -13713,21 +13733,25 @@ body.pc-mode .pc-mediation-entry__tag {
   font-size: 12px;
   font-weight: 700;
 }
-body.pc-mode .pc-mediation-entry__tag.is-visible {
-  background: rgba(212, 162, 78, 0.12);
+/* 2026-05-22 v3.3: chip 컬러 분열 해소 — visible/hidden 모두 동일 골드 톤 + 카운트로만 구분.
+   이전 hidden=빨강 chip이 warning box 빨강과 중복돼 화면에 빨강 3겹 누적되던 문제 해결. */
+body.pc-mode .pc-mediation-entry__tag.is-visible,
+body.pc-mode .pc-mediation-entry__tag.is-hidden {
+  background: rgba(212, 162, 78, 0.1);
   color: var(--pc-gold-light, #e8c172);
-  border: 1px solid rgba(212, 162, 78, 0.32);
+  border: 1px solid rgba(212, 162, 78, 0.22);
 }
 body.pc-mode .pc-mediation-entry__tag.is-hidden {
-  background: rgba(224, 96, 96, 0.1);
-  color: #e89696;
-  border: 1px solid rgba(224, 96, 96, 0.3);
+  /* 미발견 쟁점은 약간 dim — 골드 채도 낮춤 */
+  opacity: 0.72;
 }
 
+/* 2026-05-22 v3.3: warning box 빨강 강도 톤 다운 — gradient 제거, border만 옅은 빨강.
+   사용자 보고: "색이 너무 많이 들어가서 튀어보임". 정보 전달은 유지하되 시각 노이즈 감소. */
 body.pc-mode .pc-mediation-entry__warning {
-  border: 1px solid rgba(224, 96, 96, 0.32);
-  background: linear-gradient(180deg, rgba(92, 38, 38, 0.28), rgba(26, 16, 20, 0.72));
-  box-shadow: inset 3px 0 0 rgba(238, 111, 111, 0.7);
+  border: 1px solid rgba(224, 96, 96, 0.24);
+  background: rgba(38, 18, 22, 0.42);
+  box-shadow: none;
 }
 
 body.pc-mode .pc-mediation-entry__ready {
@@ -13757,40 +13781,41 @@ body.pc-mode .pc-mediation-entry__actions {
   margin-top: 4px;
 }
 
+/* 2026-05-22 v3.3: 버튼 톤 다른 panel actions(.pc-interaction-card__action)와 통일.
+   primary gradient + 무거운 shadow → 차분한 골드 outline. secondary는 동일 베이스에 약간 dim.
+   font-weight 900 → 700, height 44px / radius 10px / font-size 13px로 panel 표준 매핑. */
 body.pc-mode .pc-mediation-entry__actions button {
   height: 44px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 900;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-}
-
-body.pc-mode .pc-mediation-entry__actions button:hover {
-  transform: translateY(-1px);
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
 }
 
 body.pc-mode .pc-mediation-entry__secondary {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.045);
-  color: #ede3cc;
+  border: 1px solid rgba(212, 162, 78, 0.16);
+  background: rgba(255, 255, 255, 0.035);
+  color: #e0ddd6;
 }
 
 body.pc-mode .pc-mediation-entry__secondary:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(212, 162, 78, 0.38);
+  background: rgba(212, 162, 78, 0.1);
+  color: #ffffff;
 }
 
 body.pc-mode .pc-mediation-entry__primary {
-  border: 1px solid rgba(232, 193, 114, 0.48);
-  background: linear-gradient(135deg, rgba(154, 108, 28, 0.96), rgba(232, 193, 114, 0.98));
-  color: #0c0c14;
-  box-shadow: 0 12px 30px rgba(212, 162, 78, 0.18);
+  border: 1px solid rgba(212, 162, 78, 0.45);
+  background: rgba(212, 162, 78, 0.12);
+  color: var(--pc-gold-light);
+  box-shadow: none;
 }
 
 body.pc-mode .pc-mediation-entry__primary:hover {
-  border-color: rgba(250, 224, 150, 0.64);
-  background: linear-gradient(135deg, rgba(176, 124, 36, 0.98), rgba(248, 216, 142, 1));
+  border-color: rgba(212, 162, 78, 0.6);
+  background: rgba(212, 162, 78, 0.2);
+  color: #ffffff;
 }
 
 body.pc-mode .pc-mediation__card {
@@ -18467,7 +18492,8 @@ body.pc-mode .pc-event-feedback-card {
 body.pc-mode .pc-event-feedback-card.is-alert {
   padding: 28px 32px;
   min-width: 320px;
-  max-width: min(600px, calc(100vw - 48px));
+  /* 2026-05-22 v3: popup width = 640으로 통일 (이전 alert만 600). modal과 동일 폭. */
+  max-width: min(640px, calc(100vw - 48px));
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
   text-align: center !important;
 }
@@ -18540,11 +18566,12 @@ body.pc-mode .pc-event-feedback-card.is-phase-leaving {
 }
 
 body.pc-mode .pc-event-feedback__eyebrow {
-  font-size: 13px;
+  /* 2026-05-22 v3: 11/800으로 통일 — structural panel subtitle과 동일 위계. */
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 700;
-  color: #d9a654;
+  font-weight: 800;
+  color: rgba(232, 193, 114, 0.78);
   margin-bottom: 2px;
 }
 body.pc-mode .pc-event-feedback-card.tone-red .pc-event-feedback__eyebrow    { color: #a08080; }
@@ -18553,24 +18580,27 @@ body.pc-mode .pc-event-feedback-card.tone-blue .pc-event-feedback__eyebrow   { c
 body.pc-mode .pc-event-feedback-card.tone-neutral .pc-event-feedback__eyebrow{ color: #8a8d95; }
 
 body.pc-mode .pc-event-feedback__subtitle {
-  font-size: 13px;
-  color: #9ea1a8;
+  /* 2026-05-22 v3: 13 → 11px, color blue-grey → warm beige. structural subtitle과 동일 톤. */
+  font-size: 11px;
+  color: var(--pc-text-dim);
   letter-spacing: 0;
   font-weight: 400;
 }
 body.pc-mode .pc-event-feedback__title {
-  font-size: 22px;
-  font-weight: 700;
-  color: #ebe5d5;
-  line-height: 1.4;
-  letter-spacing: -0.005em;
+  /* 2026-05-22 v3: 22 → 18px, weight 700 → 850. structural title과 통일 (mockup-v3.2 tokens). */
+  font-size: 18px;
+  font-weight: 850;
+  color: var(--pc-text);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
-/* 2026-05-21 통일: is-alert title도 22px (이전 18px 축소 제거) — 모든 popup title 동일 위계. */
 
 body.pc-mode .pc-event-feedback__body {
-  font-size: 14.5px;
-  color: #9ea1a8;
-  line-height: 1.6;
+  /* 2026-05-22 v3: 14.5 → 13px, color #9ea1a8 → var(--pc-text-dim).
+     사용자 보고: "푸른 계열(#9ea1a8 blue-grey) 안 어울림" — warm beige로 교체. */
+  font-size: 13px;
+  color: var(--pc-text-dim);
+  line-height: 1.58;
   font-weight: 400;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -18578,8 +18608,6 @@ body.pc-mode .pc-event-feedback__body {
   flex-direction: column;
   gap: 6px;
 }
-/* 2026-05-21 통일: base body 14px → 14.5px (이전 is-alert만 14.5px → 전체로 확장).
-   문장 분리 렌더링 (splitBodyIntoSentences): 각 문장 별 행 — flex column + gap 6px. */
 body.pc-mode .pc-event-feedback__sentence {
   display: block;
 }
@@ -24335,12 +24363,12 @@ body.pc-mode .pc-question-choice__panel {
   z-index: 1 !important;
 }
 
-/* 2026-05-22 panel width unification:
-   기본 구조 패널(dispute selector / interaction card / witness summon 등) 760px.
-   - Popup alerts(EventFeedbackCard.is-alert ≤600px)와 명확히 구분
-   - Evidence detail (`pc-interaction-card:has(.pc-ev-detail)`, 880px) 보다 좁게
-   - Contrast modal (`.pc-interaction-card--contrast`, 960px) 보다 좁게
-   이전 620px은 dispute selector가 evidence/witness 대비 좁아 보여 사용자 보고 */
+/* 2026-05-22 panel system v3: width 2-tier 통일 (640 popup / 760 structural).
+   이전 5-tier(600/640/760/880/960)를 단순화. evidence 880→760 / contrast 960→760으로
+   좁아짐 — stages는 세로 stack, VS는 컴팩트 quote로 자연스럽게 적합.
+   사용자 보고: "사이즈가 너무 제각각" → 2단으로 통합.
+   - 640 (popup): EventFeedbackCard.is-alert/is-modal 라인에서 별도 관리
+   - 760 (structural): dispute / witness / evidence / contrast 모두 동일 */
 body.pc-mode .pc-interaction-card,
 body.pc-mode .pc-question-choice__panel {
   width: min(760px, calc(100vw - 48px)) !important;
@@ -24356,6 +24384,11 @@ body.pc-mode .pc-question-choice__panel {
     inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
   color: var(--pc-text) !important;
   overflow: hidden !important;
+  /* panel-pin이 패널 외부에 sibling으로 배치되므로 위치 기준이 되는 wrapper(.pc-interaction-overlay /
+     .pc-question-choice)에 position: relative가 필요. 또한 -12px margin-top + 12px padding-top으로
+     pin 중앙(top: -18 + radius 12)이 패널 안쪽 6px에 들어와 자연스럽게 overlap. */
+  margin-top: -12px !important;
+  padding-top: 12px !important;
 }
 
 body.pc-mode .pc-interaction-card {
@@ -24363,14 +24396,266 @@ body.pc-mode .pc-interaction-card {
   flex-direction: column !important;
 }
 
-body.pc-mode .pc-interaction-card.pc-interaction-card--contrast {
-  width: min(960px, calc(100vw - 48px)) !important;
-  max-width: min(1040px, calc(100vw - 48px)) !important;
-}
+/* 2026-05-22 v3: contrast/evidence width override 제거 — 760 base 통일.
+   이전 contrast 960 / evidence(has(.pc-ev-detail)) 880 모두 760으로 흡수. */
 
 body.pc-mode .pc-question-choice__panel {
   overflow-y: auto !important;
   overflow-x: hidden !important;
+}
+
+/* 2026-05-22 v3: panel-pin 시스템.
+   패널 type별 24×24 마름모(45deg) marker. .pc-interaction-card / .pc-question-choice__panel은
+   overflow: hidden 이라서 pin이 안에 못 들어가므로, JSX에서 .pc-panel-wrap을 panel과 sibling으로
+   배치하고 그 안에 .pc-panel-pin + .pc-interaction-card(또는 panel)을 형제로 둠.
+   - wrap이 position: relative
+   - pin은 absolute, top: -18, translateX(-50%) + rotate(45deg)
+   - 내부 콘텐츠는 rotate(-45deg)로 다시 정면 정렬
+   - panel 자체는 margin-top: -12 / padding-top: 12로 pin 중앙이 패널 안쪽 6px에 자연스럽게 overlap
+   pin 매핑:
+     · alert(popup info) = "−" / modal(popup state_change) = "+"
+     · dispute selector = scale PNG (i-scale)
+     · witness summon  = i-witness SVG
+     · evidence detail = i-doc SVG
+     · contrast(모순 추궁/판단 충돌) = i-eye SVG */
+body.pc-mode .pc-panel-wrap {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.pc-mode .pc-panel-pin {
+  /* 2026-05-22 v3.3: type별 cue color — beat-mark(EventFeedbackCard focusTakeover)의 cue color
+     시그널과 의미적 정합. panel-pin은 정적 type 표지(작은 24px)이고 beat-mark은 dynamic climax
+     강조(36px + 강한 glow). 둘 다 마름모 + cue color 공통, 강도 차이로 위계 구분. */
+  --pc-pin-accent: 232, 193, 114;  /* default gold */
+  position: absolute !important;
+  top: -18px !important;
+  left: 50% !important;
+  z-index: 3 !important;
+  width: 24px !important;
+  height: 24px !important;
+  transform: translateX(-50%) rotate(45deg) !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(var(--pc-pin-accent), 0.55) !important;
+  background: linear-gradient(135deg, #1d1d25, #0f1118) !important;
+  color: rgba(var(--pc-pin-accent), 1) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.55),
+    0 0 12px rgba(var(--pc-pin-accent), 0.18) !important;
+  pointer-events: none !important;
+}
+
+/* type별 cue color — beat-mark와 동일 매핑.
+   evidence/dispute = gold tones / witness = mint / contrast(모순) = red / popup-modal(state_change) = red */
+body.pc-mode .pc-panel-pin--evidence   { --pc-pin-accent: 232, 193, 114; }   /* warm gold */
+body.pc-mode .pc-panel-pin--witness    { --pc-pin-accent: 130, 220, 176; }   /* mint */
+body.pc-mode .pc-panel-pin--contrast   { --pc-pin-accent: 238, 110, 110; }   /* red — 모순 */
+body.pc-mode .pc-panel-pin--dispute    { --pc-pin-accent: 255, 208, 96; }    /* bright gold */
+body.pc-mode .pc-panel-pin--popup-modal { --pc-pin-accent: 238, 110, 110; }  /* red — state_change */
+body.pc-mode .pc-panel-pin--popup-alert { --pc-pin-accent: 232, 193, 114; }  /* soft gold — info */
+body.pc-mode .pc-panel-pin--evidence-unlock { --pc-pin-accent: 142, 240, 172; }  /* mint — evidence-unlock cutscene climax */
+body.pc-mode .pc-panel-pin--observation { --pc-pin-accent: 142, 240, 172; }  /* mint — observation cutscene */
+
+/* cue별 cue color — beat-mark의 court-beat-accent와 동일 매핑 */
+body.pc-mode .pc-panel-pin--cue-evidence      { --pc-pin-accent: 142, 240, 172; }  /* mint */
+body.pc-mode .pc-panel-pin--cue-witness       { --pc-pin-accent: 130, 220, 176; }  /* mint */
+body.pc-mode .pc-panel-pin--cue-emotion       { --pc-pin-accent: 238, 110, 110; }  /* red */
+body.pc-mode .pc-panel-pin--cue-contradiction { --pc-pin-accent: 238, 110, 110; }  /* red */
+body.pc-mode .pc-panel-pin--cue-dispute       { --pc-pin-accent: 255, 208, 96; }   /* bright gold */
+body.pc-mode .pc-panel-pin--cue-truth         { --pc-pin-accent: 232, 193, 114; }  /* warm gold */
+body.pc-mode .pc-panel-pin--cue-notebook      { --pc-pin-accent: 232, 193, 114; }  /* warm gold */
+body.pc-mode .pc-panel-pin--cue-choice        { --pc-pin-accent: 232, 193, 114; }  /* warm gold */
+
+/* --beat modifier: focusTakeover climax 강조 — 36px + 강한 glow로 일반 popup pin(24px)과 위계 구분 */
+body.pc-mode .pc-panel-pin--beat {
+  width: 36px !important;
+  height: 36px !important;
+  top: -20px !important;
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.6),
+    0 0 24px rgba(var(--pc-pin-accent), 0.42) !important;
+}
+body.pc-mode .pc-panel-pin--beat > svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* 2026-05-22 v3.3: Tier C 변형 — PCEvidenceViewer / PCRecordSummary wrap 보정.
+   원본 panel이 자체적으로 fixed/relative centering을 가지고 있어 wrap을 단순 삽입하면 positioning 깨짐.
+   wrap이 새로운 fixed 컨테이너 역할을 하고, 내부 panel은 relative로 strip해서 wrap이 중앙 정렬. */
+body.pc-mode .pc-panel-wrap--evidence-viewer {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 50 !important;
+  width: min(680px, calc(100vw - 48px)) !important;
+  display: block !important;
+}
+body.pc-mode .pc-panel-wrap--evidence-viewer .pc-ev-panel {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+body.pc-mode .pc-panel-wrap--record-summary {
+  /* parent .pc-record-summary는 flex center, wrap이 컨텐츠 width만 차지하여 자연 중앙. */
+  position: relative !important;
+  width: min(560px, calc(100vw - 48px)) !important;
+  display: block !important;
+}
+body.pc-mode .pc-panel-wrap--record-summary .pc-record-summary__panel {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+body.pc-mode .pc-panel-pin > span,
+body.pc-mode .pc-panel-pin > img,
+body.pc-mode .pc-panel-pin > svg {
+  display: block !important;
+  transform: rotate(-45deg) !important;
+}
+
+body.pc-mode .pc-panel-pin > img {
+  width: 14px !important;
+  height: 14px !important;
+  object-fit: contain !important;
+  filter: brightness(1.1) !important;
+}
+
+body.pc-mode .pc-panel-pin > svg {
+  width: 13px !important;
+  height: 13px !important;
+  color: rgba(var(--pc-pin-accent), 1) !important;
+}
+
+/* 2026-05-22 v3: header-left 자체 — flex 정렬 + 텍스트 자연 wrap. */
+body.pc-mode .pc-interaction-card__header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+/* 2026-05-22 v3: evidence 헤더 — gold "증거" label + compact chip 묶음.
+   기존 pc-ev-header-* 클래스를 떠나서 새 패턴 도입 (mockup-v3.2 line 1015~ 기준).
+   - evidence-tag-label: 11px / 800 / uppercase / gold (subtitle 톤)
+   - evidence-tag-chips: 4px gap 컴팩트 묶음
+   - panel-tag.tag--compact: padding 1px 7px, radius 5px, line-height 1.3 (음영 minimal) */
+body.pc-mode .evidence-tag-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+body.pc-mode .evidence-tag-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(232, 193, 114, 0.78);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+body.pc-mode .evidence-tag-chips {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+body.pc-mode .panel-tag.tag--compact {
+  padding: 1px 7px;
+  border-radius: 5px;
+  line-height: 1.3;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background: rgba(212, 162, 78, 0.1);
+  border: 1px solid rgba(212, 162, 78, 0.22);
+  color: var(--pc-gold-light);
+  white-space: nowrap;
+}
+
+/* 2026-05-22 v3: evidence "주요 쟁점" 영역 — label LEFT + content TRUE CENTER.
+   3-col grid (1fr/auto/1fr): col 1 label, col 2 content, col 3 빈 칸 (1fr 대칭으로 col 2 중앙). */
+body.pc-mode .pc-ev-detail__dispute-section {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: baseline !important;
+  gap: 12px !important;
+  padding: 8px 20px !important;
+  margin-bottom: 0 !important;
+}
+
+body.pc-mode .pc-ev-detail__dispute-section > .pc-ev-detail__dispute-label {
+  grid-column: 1 !important;
+  justify-self: start !important;
+  margin-bottom: 0 !important;
+}
+
+body.pc-mode .pc-ev-detail__dispute-section > .pc-ev-detail__dispute-names {
+  grid-column: 2 !important;
+  justify-self: center !important;
+}
+
+/* 2026-05-22 v3: 조사 단계 label도 LEFT 정렬로 통일 — 주요 쟁점과 같은 열 정합. */
+body.pc-mode .pc-ev-detail__stages-label {
+  text-align: left !important;
+}
+
+/* 2026-05-22 v3: contrast info-only modal의 [확인 Space] dismiss row.
+   popup의 popup-dismiss-row 패턴과 비슷하나 padding-top을 6px로 줄여 본문과 자연 연결. */
+body.pc-mode .pc-interaction-card__dismiss-row {
+  display: flex;
+  justify-content: center;
+  padding: 6px 20px 22px;
+  flex-shrink: 0;
+}
+
+body.pc-mode .pc-interaction-card__dismiss-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 162, 78, 0.45);
+  background: rgba(212, 162, 78, 0.08);
+  color: var(--pc-gold-light);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+body.pc-mode .pc-interaction-card__dismiss-btn:hover {
+  background: rgba(212, 162, 78, 0.16);
+  border-color: rgba(212, 162, 78, 0.6);
+  color: #ffffff;
+}
+
+body.pc-mode .pc-interaction-card__kbd {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 10.5px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(212, 162, 78, 0.32);
+  background: rgba(212, 162, 78, 0.06);
+  color: var(--pc-gold-light);
 }
 
 body.pc-mode .pc-dialogue-popup {
@@ -24394,8 +24679,24 @@ body.pc-mode .slot-dropdown {
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.44), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
 
+/* 2026-05-22 v3: 헤더 1행 grid 패턴 통일 — 1fr / auto / 1fr.
+   · LEFT (col 1, 1fr): subtitle/eyebrow/tag-group, justify-self: start
+   · CENTER (col 2, auto): title — 1fr/1fr 대칭으로 panel viewport 진짜 중앙
+   · RIGHT (col 3, 1fr): close × 또는 빈 칸, justify-self: end
+   이전: subtitle 위 / title 아래 vertical stack → 한 줄로 합쳐 세로 폭 절약 + 시각 통일.
+   dialogue-popup__header-row는 identity + controls 2-column 별도 구조로 grid 미적용. */
 body.pc-mode .pc-interaction-card__header,
-body.pc-mode .pc-question-choice__header,
+body.pc-mode .pc-question-choice__header {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 16px !important;
+  min-height: 56px !important;
+  padding: 16px 20px !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.16) !important;
+  background: rgba(8, 9, 12, 0.48) !important;
+}
+
 body.pc-mode .pc-dialogue-popup__header-row {
   min-height: 56px !important;
   padding: 16px 20px !important;
@@ -24408,8 +24709,36 @@ body.pc-mode .pc-interaction-card__header--evidence {
   padding: 16px 20px !important;
 }
 
+/* grid slot 배치 — JSX에서 .pc-interaction-card__header-left / .pc-question-choice__header-left
+   wrapper로 LEFT 콘텐츠를 묶어 전달. title은 CENTER (col 2), close는 RIGHT (col 3). */
+body.pc-mode .pc-interaction-card__header > .pc-interaction-card__header-left,
+body.pc-mode .pc-question-choice__header > .pc-question-choice__header-left {
+  grid-column: 1 !important;
+  justify-self: start !important;
+  align-self: center !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+body.pc-mode .pc-interaction-card__header > .pc-interaction-card__title,
+body.pc-mode .pc-question-choice__header > .pc-question-choice__title {
+  grid-column: 2 !important;
+  justify-self: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+body.pc-mode .pc-interaction-card__header > .pc-interaction-card__close,
+body.pc-mode .pc-question-choice__header > .pc-question-choice__close {
+  grid-column: 3 !important;
+  justify-self: end !important;
+}
+
 body.pc-mode .pc-interaction-card__subtitle,
 body.pc-mode .pc-question-choice__hint,
+body.pc-mode .pc-question-choice__subtitle,
 body.pc-mode .pc-dialogue-popup__turn,
 body.pc-mode .pc-dialogue-popup__dispute-label {
   font-size: 11px !important;
@@ -24418,6 +24747,14 @@ body.pc-mode .pc-dialogue-popup__dispute-label {
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   color: rgba(232, 193, 114, 0.78) !important;
+}
+
+/* 2026-05-22 v3: header subtitle은 margin 없음 — body 영역의 hint(margin 0 0 10px)와 구분.
+   header-left 슬롯 내부 한 줄 정렬용. */
+body.pc-mode .pc-question-choice__subtitle {
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
 }
 
 body.pc-mode .pc-interaction-card__title,
@@ -24524,6 +24861,19 @@ body.pc-mode .slot-dropdown__item:hover {
 body.pc-mode .pc-question-choice__hint {
   margin: 0 0 10px !important;
   padding: 0 !important;
+}
+
+/* 2026-05-22 v3.3: scripted options 고갈 시 안내 메시지 — 'fallback 기본 질문' 버튼 제거 후 대체. */
+body.pc-mode .pc-question-choice__empty {
+  margin: 12px 4px !important;
+  padding: 14px 16px !important;
+  border-radius: 10px !important;
+  border: 1px dashed rgba(212, 162, 78, 0.22) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  color: var(--pc-text-dim) !important;
+  font-size: 13px !important;
+  line-height: 1.58 !important;
+  text-align: center !important;
 }
 
 body.pc-mode .pc-question-choice__dispute-name,

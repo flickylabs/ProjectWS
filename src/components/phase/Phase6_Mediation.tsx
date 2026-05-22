@@ -60,8 +60,10 @@ export default function Phase6_Mediation() {
   return (
     <div className="pc-mediation pc-mediation--entry">
       <section className="pc-mediation-entry" role="dialog" aria-modal="true" aria-labelledby="pc-mediation-entry-title">
-        <div className="pc-mediation-entry__mark" aria-hidden="true">
-          <PCSvgIcon id="i-scale" size={30} />
+        {/* 2026-05-22 v3.3: 원형 58px mark → 24px 마름모 panel-pin으로 통합. dispute cue color(밝은 골드)
+            로 verdict 진입 의미 표지. 다른 모달 marker와 시각 정렬. */}
+        <div className="pc-panel-pin pc-panel-pin--dispute" aria-hidden="true">
+          <PCSvgIcon id="i-scale" size={13} />
         </div>
         <div className="pc-mediation-entry__eyebrow">{t('pc.mediation.entry.eyebrow')}</div>
         <h2 id="pc-mediation-entry-title">{t('pc.mediation.entry.title')}</h2>

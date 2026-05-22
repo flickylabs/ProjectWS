@@ -249,6 +249,12 @@ export default function PCDisputeRibbon() {
               {activeLieState}
             </span>
           </div>
+          {activeTruthFact ? (
+            <div className="pc-dispute-ribbon__truth-revealed-tag" aria-hidden="true">
+              <PCSvgIcon id="i-shield" size={11} />
+              <span>{t('pc.disputeRibbon.truthRevealed')}</span>
+            </div>
+          ) : null}
           <p className={`pc-dispute-ribbon__popover-copy${activeTruthFact ? ' pc-dispute-ribbon__popover-copy--truth' : ' pc-dispute-ribbon__popover-copy--muted'}`}>
             {activeTruthFact ? localizeRuntimeText(activeTruthFact, locale) : t('pc.disputeRibbon.revealTruth')}
           </p>

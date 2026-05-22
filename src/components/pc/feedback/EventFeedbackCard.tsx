@@ -279,6 +279,58 @@ function splitBodyIntoSentences(text: string): string[] {
     .filter(Boolean)
 }
 
+/**
+ * 2026-05-22 v3.3: focusTakeover beat-mark의 cue별 아이콘 매핑.
+ * panel-pin 마름모 + cue color + 명확 아이콘으로 통일. 기존 +/X/직사각형 막대 추상 형상 제거.
+ */
+function getBeatPinIcon(cue: CourtBeatCue): string {
+  switch (cue) {
+    case 'evidence': return 'i-doc'
+    case 'witness': return 'i-witness'
+    case 'emotion': return 'i-heart'
+    case 'contradiction': return 'i-eye'
+    case 'truth': return 'i-scale'
+    case 'dispute': return 'i-gavel'
+    case 'notebook': return 'i-doc'
+    case 'choice': return 'i-scale'
+    default: return 'i-scale'
+  }
+}
+
+/**
+ * 2026-05-22 v3.3: 일반 popup(alert/modal)의 kind별 아이콘 매핑.
+ * 사용자 결정: ± 단순 글리프 대신 kind 의미를 시각적으로 명확 전달.
+ */
+function getPopupPinIcon(kind: EventFeedbackKind, modal: boolean): string {
+  if (modal) {
+    switch (kind) {
+      case 'state_change': return 'i-heart'
+      case 'transition_choice': return 'i-scale'
+      case 'witness_choice': return 'i-witness'
+      case 'emergence': return 'i-scale'
+      case 'contradiction':
+      case 'confrontation': return 'i-eye'
+      case 'evidence_result': return 'i-doc'
+      case 'emotional_slip': return 'i-heart'
+      case 'conflict': return 'i-eye'
+      case 'perk_choice': return 'i-bulb'
+      case 'observation': return 'i-eye'
+      case 'info': return 'i-bulb'
+      default: return 'i-bulb'
+    }
+  }
+  // alert
+  switch (kind) {
+    case 'state_change': return 'i-heart'
+    case 'evidence_result': return 'i-doc'
+    case 'emotional_slip': return 'i-heart'
+    case 'observation': return 'i-eye'
+    case 'conflict': return 'i-eye'
+    case 'info': return 'i-bulb'
+    default: return 'i-bulb'
+  }
+}
+
 function mapBeatPortraitEmotion(state?: string) {
   if (state === 'shaken') return 'shaken' as const
   if (state === 'resigned') return 'resigned' as const
@@ -793,10 +845,26 @@ export default function EventFeedbackCard() {
         data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
+        {/* 2026-05-22 v3.3: focusTakeover beat-mark도 panel-pin 마름모 시스템에 통합.
+            기존 막대/추상 형상(span+i) → cue별 명확 아이콘. 36px 크기는 --beat modifier가 유지하여
+            popup pin(24px) 대비 climax 강조감 보존. cue color는 기존 --court-beat-accent와 동일. */}
         {focusTakeover && !evidenceUnlockCutscene ? (
-          <div className="pc-event-feedback__beat-mark" aria-hidden="true">
-            <span />
-            <i />
+          <div
+            className={`pc-panel-pin pc-panel-pin--beat pc-panel-pin--cue-${activeBeat.cue}`}
+            aria-hidden="true"
+          >
+            <PCSvgIcon id={getBeatPinIcon(activeBeat.cue)} size={18} />
+          </div>
+        ) : null}
+        {/* 2026-05-22 v3.3: 일반 popup(alert/modal)에 24×24 마름모 pin marker — kind별 아이콘.
+            modal(선택 필요)은 cue color, alert(정보 노출)은 soft gold. cutscene/focusTakeover/
+            courtBeat은 이미 beat-mark/eye/evidence-mark이 자리 — 위계 중복 회피. */}
+        {!cutscene && !focusTakeover && !active.courtBeat ? (
+          <div
+            className={`pc-panel-pin pc-panel-pin--popup ${modal ? 'pc-panel-pin--popup-modal' : 'pc-panel-pin--popup-alert'}`}
+            aria-hidden="true"
+          >
+            <PCSvgIcon id={getPopupPinIcon(active.kind, modal)} size={13} />
           </div>
         ) : null}
         {/* X 踰꾪듉 ??onDefer ?뺤쓽??移대뱶留?(?? 吏꾩떎 怨듬갑 ?쇱떆 蹂대쪟). ?대┃ ??onDefer ??移대뱶 ?レ쓬. */}
@@ -821,33 +889,21 @@ export default function EventFeedbackCard() {
             ×
           </button>
         ) : null}
-        {/* kind-observation: ?곷떒 Eye SVG (?ъ갑 ?쒓컙 媛뺤“, ?묎쾶) */}
-        {cutscene && active.kind === 'observation' ? (
-          <div className="pc-event-feedback__eye" aria-hidden="true">
-            <svg viewBox="0 0 64 32" width="52" height="26">
-              <defs>
-                <radialGradient id="efb-eye-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="rgba(232,193,114,0.9)" />
-                  <stop offset="60%" stopColor="rgba(232,193,114,0.35)" />
-                  <stop offset="100%" stopColor="rgba(232,193,114,0)" />
-                </radialGradient>
-              </defs>
-              <path
-                d="M 3 16 Q 32 2 61 16 Q 32 30 3 16 Z"
-                fill="none"
-                stroke="rgba(232,193,114,0.85)"
-                strokeWidth="1.1"
-              />
-              <circle cx="32" cy="16" r="7" fill="url(#efb-eye-glow)" />
-              <circle cx="32" cy="16" r="4" fill="rgba(232,193,114,0.98)" />
-              <circle cx="32" cy="16" r="1.6" fill="#0a0906" />
-              <circle cx="33" cy="15" r="0.7" fill="rgba(255,245,215,0.95)" />
-            </svg>
+        {/* 2026-05-22 v3.3: observation eye SVG도 panel-pin 마름모 시스템에 통합.
+            기존 52×26 길쭉한 눈 SVG → 24×24 마름모 + i-eye. cue color는 mint (observation의 메타).
+            focusTakeover라 위 beat-mark이 이미 노출되는 케이스는 이 조건이 안 들어옴 (cutscene만 해당). */}
+        {cutscene && active.kind === 'observation' && !focusTakeover ? (
+          <div className="pc-panel-pin pc-panel-pin--observation" aria-hidden="true">
+            <PCSvgIcon id="i-eye" size={13} />
           </div>
         ) : null}
+        {/* 2026-05-22 v3.3: evidence-unlock cutscene marker도 panel-pin 마름모 시스템에 통합.
+            이전 evidence-mark은 34×42 직사각형 stylized로 panel-pin 마름모와 시각 분열 발생.
+            mint cue color(evidence)는 --evidence-unlock modifier로 강조 — focusTakeover 외곽
+            green glow와 함께 climax 분위기 형성. */}
         {evidenceUnlockCutscene ? (
-          <div className="pc-event-feedback__evidence-mark" aria-hidden="true">
-            <span />
+          <div className="pc-panel-pin pc-panel-pin--evidence-unlock" aria-hidden="true">
+            <PCSvgIcon id="i-doc" size={13} />
           </div>
         ) : null}
         {active.courtBeat ? (

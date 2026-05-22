@@ -110,7 +110,11 @@ export default function PCEvidenceViewer() {
     <>
       <div className="pc-ev-backdrop" onClick={close} />
 
-      <div className="pc-ev-panel pc-ev-panel--viewer">
+      <div className="pc-panel-wrap pc-panel-wrap--evidence-viewer">
+        <div className="pc-panel-pin pc-panel-pin--evidence" aria-hidden="true">
+          <PCSvgIcon id="i-doc" size={13} />
+        </div>
+        <div className="pc-ev-panel pc-ev-panel--viewer">
         {/* Header */}
         <div className="pc-ev-header">
           <span className="pc-ev-header__icon">
@@ -175,6 +179,7 @@ export default function PCEvidenceViewer() {
             <span>{localizeRuntimeText('확인', locale)}</span>
             <kbd className="pc-event-feedback__kbd">Space</kbd>
           </button>
+        </div>
         </div>
       </div>
     </>
