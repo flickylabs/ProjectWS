@@ -1990,9 +1990,9 @@
     {
       "id": "e-7",
       "name": "공동 적금 해지 서류",
-      "surfaceName": "공동 적금 해지 서류",
-      "description": "공동 적금 해지 서류와 처리 기록. A가 해지 절차를 어떻게 진행했는지 가리키는 자료.",
-      "surfaceDescription": "공동 적금 해지 처리 서류.",
+      "surfaceName": "공동 적금 처리 서류",
+      "description": "공동 적금 처리 서류와 처리 기록. A가 적금 관련 절차를 어떻게 진행했는지 가리키는 자료.",
+      "surfaceDescription": "공동 적금 처리 서류.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -2007,7 +2007,7 @@
       ],
       "requiredLieState": "S3",
       "investigationResults": {
-        "request_original": "공동 적금 해지 서류와 위임장이다. 해지 금액은 2,000만원.",
+        "request_original": "공동 적금 처리 서류와 위임장이다. 거래 금액은 2,000만원.",
         "check_metadata": "위임장의 이준호 서명이 본인 필적이 아닌 것으로 의심된다. 박지연이 대필한 흔적이 있다.",
         "restore_context": "박지연이 위임장을 조작하여 이준호 동의 없이 공동 적금 2,000만원을 해지한 범죄 행위의 증거이다."
       },
@@ -2609,7 +2609,7 @@
       {
         "id": "e-7",
         "type": "evidence",
-        "label": "e-7 공동 적금 해지 서류",
+        "label": "e-7 공동 적금 처리 서류",
         "sourceRef": "e-7",
         "linkedDisputeIds": [
           "h-d3"
@@ -2872,7 +2872,7 @@
           "e-7"
         ],
         "cost": 2,
-        "discoveryText": "투자방 송금 기록과 공동 적금 해지 서류가 동일 날짜·금액으로 연결된다.",
+        "discoveryText": "투자방 송금 기록과 공동 적금 처리 서류가 동일 날짜·금액으로 연결된다.",
         "outputId": "dc-4",
         "resultType": "upgrade"
       },
