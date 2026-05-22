@@ -13,7 +13,7 @@
         "evidenceId": "e-1",
         "name": "영수증 묶음 (5장)",
         "surfaceName": "영수증 묶음 5장",
-        "surfaceDescription": "차 안에서 발견된 여러 영수증. 일부 품목 때문에 외도 의심이 시작된다.",
+        "surfaceDescription": "차 안에서 발견된 영수증 5장.",
         "descriptionTruth": [
           "조카 학용품",
           "삼촌이 챙겨주는",
@@ -33,7 +33,7 @@
         "evidenceId": "e-2",
         "name": "블랙박스 GPS / 네비 즐겨찾기",
         "surfaceName": "블랙박스 GPS 기록",
-        "surfaceDescription": "반복된 정차 좌표와 이동 패턴을 보여주는 차량 기록.",
+        "surfaceDescription": "차량 GPS 정차 기록.",
         "descriptionTruth": [
           "형 오피스텔",
           "친형 거주지",
@@ -53,7 +53,7 @@
         "evidenceId": "e-3",
         "name": "통화기록",
         "surfaceName": "통화기록",
-        "surfaceDescription": "새벽 시간대 같은 번호와 반복 통화가 남아 있는 기록.",
+        "surfaceDescription": "통신사 통화 내역.",
         "descriptionTruth": [
           "형과의 새벽 통화",
           "친형 명의",
@@ -72,7 +72,7 @@
         "evidenceId": "e-4",
         "name": "발신자 미상 문자",
         "surfaceName": "발신자 미상 문자",
-        "surfaceDescription": "발신자가 확인되지 않은 번호와의 반복 교신 기록.",
+        "surfaceDescription": "미등록 번호의 문자.",
         "descriptionTruth": [
           "형",
           "조카 학교 알림",
@@ -96,7 +96,7 @@
         "evidenceId": "e-5",
         "name": "이준호의 개인 계좌 출금 내역",
         "surfaceName": "개인 계좌 출금 내역",
-        "surfaceDescription": "이준호 명의 개인 계좌에서 큰 금액이 현금으로 출금된 기록.",
+        "surfaceDescription": "남편 명의 별도 계좌 거래 내역.",
         "descriptionTruth": [
           "비자금",
           "형에게 전달",
@@ -115,8 +115,8 @@
       "e-6": {
         "evidenceId": "e-6",
         "name": "투자방 텔레그램 + 송금 기록",
-        "surfaceName": "투자방 텔레그램 기록",
-        "surfaceDescription": "박지연이 참여한 투자방 대화와 송금 흐름을 보여주는 기록.",
+        "surfaceName": "투자방 텔레그램",
+        "surfaceDescription": "투자방 대화와 송금 1건.",
         "descriptionTruth": [
           "박지연 사기",
           "투자 사기",
@@ -136,7 +136,7 @@
         "evidenceId": "e-7",
         "name": "공동 적금 해지 서류",
         "surfaceName": "공동 적금 해지 서류",
-        "surfaceDescription": "공동 적금 해지 절차와 제출 서류의 흔적.",
+        "surfaceDescription": "공동 적금 해지 처리 서류.",
         "descriptionTruth": [
           "위임장 조작",
           "박지연 단독 해지",
@@ -156,7 +156,7 @@
     "disputes": {
       "d-1": {
         "surface": "오피스텔 방문과 새벽 전화",
-        "truth": "형의 오피스텔 방문 / 조카 돌봄 / 형과의 긴급 연락",
+        "truth": "오피스텔 방문은 친형 오피스텔에서 조카(중2)를 돌보는 것이었다. 새벽 전화는 형과의 긴급 연락.",
         "protectedSurface": "방문 이유와 통화 맥락",
         "truthLexemes": [
           "형",
@@ -169,8 +169,8 @@
         ]
       },
       "d-2": {
-        "surface": "개인 비자금 출금",
-        "truth": "형 빚을 돕기 위한 개인 비자금 3,000만원 현금 전달",
+        "surface": "남편 명의 계좌의 목돈 출금",
+        "truth": "이준호는 아내 몰래 10년 가까이 모아 둔 본인 명의 별도 계좌의 비자금 3,000만원을 최근 4개월 동안 500만원, 800만원, 700만원, 1,000만원 순서로 현금 출금했다. 형이 개인회생 중이라 계좌 입금이 곤란해 현금으로 전달했다는 설명이며, 공동 적금과는 무관한 개인 자금이다.",
         "protectedSurface": "개인 계좌 출금의 사용처",
         "truthLexemes": [
           "형 빚",
@@ -182,8 +182,8 @@
         ]
       },
       "h-d3": {
-        "surface": "공동 적금 2,000만원 해지",
-        "truth": "박지연의 위임장 조작과 투자 사기 손실",
+        "surface": "공동 적금 2,000만원 해지 경위",
+        "truth": "공동 적금이 만기 전에 해지된 흔적이 확인됐다. 해지 과정에서 배우자 동의 여부와 위임장 진위 문제가 남아 있으며, 해지금 2,000만원의 실제 행선지도 아직 확인해야 한다.",
         "protectedSurface": "공동 적금 해지 경위",
         "truthLexemes": [
           "위임장 조작",
@@ -192,20 +192,6 @@
         ],
         "sourceRefs": [
           "src/data/cases/generated/spouse-01.json:disputes.h-d3"
-        ]
-      },
-      "h-d4": {
-        "surface": "은폐와 선제행동의 순서",
-        "truth": "숨김은 B 먼저, 계좌 감시는 A 먼저, 범죄 행위는 A의 위임장 조작",
-        "protectedSurface": "누가 무엇을 먼저 숨겼는지",
-        "truthLexemes": [
-          "위임장 조작",
-          "형 상황 은폐",
-          "개인 비자금",
-          "계좌 감시"
-        ],
-        "sourceRefs": [
-          "src/data/cases/generated/spouse-01.json:disputes.h-d4"
         ]
       }
     },
@@ -368,78 +354,55 @@
         "全部亏损"
       ]
     },
-    "paraphraseLexemes": {
-      "en": [
-        "brother's child",
-        "school costs for the child",
-        "supporting his brother's family",
-        "signed for someone else",
-        "wired to his brother",
-        "lost everything in the investment"
-      ],
-      "ja": [
-        "兄の子",
-        "子どもの学費",
-        "兄一家を支えた",
-        "他人の代わりに署名",
-        "兄へ送金",
-        "投資で全損"
-      ],
-      "zh-CN": [
-        "哥哥的孩子",
-        "孩子的学费",
-        "支援哥哥一家",
-        "替别人签字",
-        "汇给哥哥",
-        "投资全损"
-      ]
-    },
-    "uiSurfaceMap": {
-      "en": {
-        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
-        "truthGate": "S5",
-        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
-        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
-        "safeSubstitutes": {
-          "brother": "family member",
-          "niece": "child",
-          "school notice": "schedule notice",
-          "power of attorney manipulation": "document handling issue",
-          "investment fraud": "investment loss issue"
-        }
+    "paraphraseLexemes": [
+      {
+        "label": "어린 친척",
+        "dimension": "paraphrase"
       },
-      "ja": {
-        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
-        "truthGate": "S5",
-        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
-        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
-        "safeSubstitutes": {
-          "兄": "家族",
-          "姪": "子ども",
-          "学校通知": "予定通知",
-          "委任状偽造": "書類処理の経緯",
-          "投資詐欺": "投資損失の経緯"
-        }
+      {
+        "label": "친 가족",
+        "dimension": "paraphrase"
       },
-      "zh-CN": {
-        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
-        "truthGate": "S5",
-        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
-        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
-        "safeSubstitutes": {
-          "哥哥": "家人",
-          "侄女": "孩子",
-          "学校通知": "日程通知",
-          "委托书造假": "文件处理经过",
-          "投资诈骗": "投资损失经过"
-        }
+      {
+        "label": "혈육",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "친 혈육",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "가족의 한 사람",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "돌봐 드",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "생필품을 사다",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "가족을 돕는",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "빚 대신",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "따로 모은 돈",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "몰래 마련한 돈",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "가족을 돕는 일이 급",
+        "dimension": "paraphrase"
       }
-    },
-    "notes": [
-      "Tier A locale blocks are populated for wrapper-gated script translation.",
-      "KO forbiddenLexemes remains canonical for current runtime guard.",
-      "evidence.name is not localized in v1; translate surfaceName only.",
-      "behaviorHint remains KO-only until the Tier B policy decision lands."
     ]
   },
   "channelAuthority": {
@@ -464,18 +427,6 @@
       },
       {
         "channel": "judge_witness_summon",
-        "authority": "surface-only",
-        "truthLexemePolicy": "blocked",
-        "evidenceStagePolicy": "does-not-expand-authority"
-      },
-      {
-        "channel": "system_message",
-        "authority": "surface-only",
-        "truthLexemePolicy": "blocked",
-        "evidenceStagePolicy": "does-not-expand-authority"
-      },
-      {
-        "channel": "dossier",
         "authority": "surface-only",
         "truthLexemePolicy": "blocked",
         "evidenceStagePolicy": "does-not-expand-authority"
@@ -801,147 +752,99 @@
     "gatePolicy": "route-and-stage-gated-player-discovered-only",
     "entries": {
       "combine-1": {
-        "sourceText": "영수증 구매 위치와 블랙박스 정차 좌표가 일치한다. 오피스텔 근처에서만 구매한 패턴이 확정된다.",
+        "sourceText": "영수증 구매 위치와 블랙박스 정차 좌표가 같은 오피스텔로 묶인다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
           "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-1": "Excerpt",
-            "e-2": "Excerpt"
+            "e-1": "excerpt",
+            "e-2": "original"
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "구매 위치와 차량 동선의 반복 패턴이 맞물립니다."
-      },
-      "combine-2": {
-        "sourceText": "영수증의 중학교 참고서와 발신자 미상 문자의 학교 알림이 같은 돌봄 정황으로 이어진다.",
-        "truthLexemes": [
-          "형",
-          "가은이",
-          "중학생 조카",
-          "조카 학교 알림"
-        ],
-        "gate": {
-          "allowedChannels": [
-            "player_discovered"
-          ],
-          "route": "evidence_combine",
-          "requiredEvidenceStages": {
-            "e-1": "Context",
-            "e-4": "Original"
-          },
-          "requiredTruthStage": {
-            "d-1": 3
-          },
-          "autoSurfaceAllowed": false
-        },
-        "surfaceFallback": "영수증의 품목과 문자 일정이 같은 생활 맥락을 가리킵니다."
+        "surfaceFallback": "영수증과 GPS 위치 패턴을 비교 분석 중."
       },
       "combine-3": {
-        "sourceText": "새벽 통화 상대로 나간 돈의 흐름이 맞물린다. 이준호 개인 비자금 3,000만원이 형 쪽으로 움직인 경로가 드러난다.",
+        "sourceText": "투자방 송금 기록과 공동 적금 해지 서류가 동일 날짜·금액으로 연결된다.",
         "truthLexemes": [
           "형 쪽",
           "비자금"
         ],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
           "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-3": "Original",
-            "e-5": "Original"
-          },
-          "requiredTruthStage": {
-            "d-2": 2
+            "e-6": "original",
+            "e-7": "original"
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "새벽 통화와 개인 계좌 출금의 시점이 맞물립니다."
+        "surfaceFallback": "공동 적금 해지 → 동일 금액 송금 흐름을 비교 중."
       },
       "combine-4": {
-        "sourceText": "공동 적금 해지 서류의 3,000만원 중 2,000만원이 투자방 송금 내역으로 이어진다. 위임장 조작으로 빠진 돈 중 투자 피해액의 행선지가 확정된다.",
+        "sourceText": "B의 문자 스레드와 별도 계좌 출금 패턴이 같은 시기 형 가족 영역과 겹친다.",
         "truthLexemes": [
           "위임장 조작"
         ],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
           "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-6": "Original",
-            "e-7": "Original"
-          },
-          "requiredTruthStage": {
-            "h-d3": 3
+            "e-4": "original",
+            "e-5": "original"
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "공동 적금 해지 금액과 투자방 송금 금액이 맞물립니다."
+        "surfaceFallback": "B의 별도 계좌와 문자 스레드를 대조 중."
       },
       "combine-5": {
-        "sourceText": "박지연의 '제 몫을 지키려 했다'는 말과 위조된 위임장이 같은 방향을 가리킨다. 3,000만원 해지가 자각된 행위였음이 드러난다.",
+        "sourceText": "해지 서류의 위임장 서명과 A의 자기방어 진술이 정합되며 단독 해지 행위가 확정된다.",
         "truthLexemes": [
           "위조된 위임장"
         ],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
-          "route": "statement_evidence_combine",
+          "route": "statement_combine",
           "requiredEvidenceStages": {
-            "e-7": "Context"
+            "e-7": "original"
           },
           "requiredTruthStage": {
-            "h-d3": 3
+            "h-d3": 2
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "박지연의 방어 발언과 공동 적금 해지 서류가 같은 방향을 가리킵니다."
+        "surfaceFallback": "위임장 진위 + A 진술을 대조 중."
       },
       "combine-6": {
-        "sourceText": "이준호가 말한 '가족'이 형이었다. 문자 내용이 돌봄 관계를 증명한다.",
+        "sourceText": "B의 가족 관련 진술과 학교 알림 문자가 형/조카 정황으로 모인다.",
         "truthLexemes": [
           "형",
           "돌봄"
         ],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "dossier"
           ],
-          "route": "statement_evidence_combine",
+          "route": "statement_combine",
           "requiredEvidenceStages": {
-            "e-4": "Original"
-          },
-          "requiredLieState": {
-            "partyB": "S3"
-          },
-          "requiredTruthStage": {
-            "d-1": 3
+            "e-4": "original"
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "이준호가 말한 그 사정과 문자 내용이 같은 맥락을 가리킵니다."
-      },
-      "combine-7": {
-        "sourceText": "\"가족 쪽 일\"이라는 말과 \"제 몫을 지키려 했다\"는 말을 나란히 놓으면, 서로에게 먼저 말하지 않은 이유가 겹친다.",
-        "truthLexemes": [],
-        "gate": {
-          "allowedChannels": [
-            "player_discovered"
-          ],
-          "route": "statement_statement_combine",
-          "requiredTruthStage": {
-            "d-1": 2,
-            "h-d3": 2
-          },
-          "autoSurfaceAllowed": false
-        },
-        "surfaceFallback": "두 사람의 방어 발언이 서로 숨긴 이유를 비춥니다."
+        "surfaceFallback": "B의 가족 관련 진술과 문자를 대조 중."
       }
     }
   },
@@ -967,9 +870,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "외도 의심 표면",
-            "surfaceClaim": "반복 오피스텔 방문과 새벽 통화가 외도처럼 보인다.",
-            "hiddenTruth": "오피스텔 방문은 형네 돌봄 동선이고 새벽 통화는 긴급 연락이다.",
+            "name": "외도 의심 / B의 부정",
+            "surfaceClaim": "외도 의심 / B의 부정",
+            "hiddenTruth": "형/조카 돌봄",
             "entryConditions": [
               "case start",
               "d-1 visible"
@@ -988,28 +891,22 @@
             ],
             "validActions": [
               "fact_pursuit",
-              "empathy_approach"
+              "motive_search"
             ],
             "requiredEvidence": [],
             "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "A pressure rises if fact_pursuit repeats without evidence.",
-              "trust": "B trust drops if accused before any surface evidence is established.",
-              "leak": "none"
-            },
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "A repeats suspicion; B avoids detail.",
               "gameplay": "No truthStage advance. Prompt should point to evidence investigation, not repeat-button progress."
-            },
-            "successUnlocks": [
-              "stage 1 when e-1/e-2/e-3 surface patterns are identified"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "정황 패턴 고정",
-            "surfaceClaim": "영수증, GPS, 통화 기록이 한 방향으로 겹친다.",
-            "hiddenTruth": "같은 패턴은 외도가 아니라 특정 가족 돌봄 루틴일 수 있다.",
+            "name": "가족 쪽 일이라는 모호한 표현",
+            "surfaceClaim": "가족 쪽 일이라는 모호한 표현",
+            "hiddenTruth": "형/조카 돌봄",
             "entryConditions": [
               "e-1 stage >= Excerpt or investigationStage >= 1",
               "e-2 stage >= Excerpt or investigationStage >= 1",
@@ -1028,33 +925,28 @@
               "돌봄 관계"
             ],
             "validActions": [
-              "fact_pursuit",
-              "motive_search"
+              "motive_search",
+              "evidence_query"
             ],
             "requiredEvidence": [
               "e-1",
-              "e-2",
-              "e-3"
+              "e-2"
             ],
             "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "A becomes more certain; B becomes defensive.",
-              "trust": "B cooperation improves if judge separates facts from accusation.",
-              "leak": "B may say '가족 일' only after pressure + rapport threshold."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [
+              "e-3"
+            ],
             "failureResponse": {
               "npc": "B says it is complicated but does not name the family member.",
               "gameplay": "Suggest motive_search or e-4 investigation instead of allowing direct truth."
-            },
-            "successUnlocks": [
-              "stage 2 when B uses a generic family excuse or e-4 appears"
-            ]
+            }
           },
           {
             "stage": 2,
-            "name": "모호한 가족 사정",
-            "surfaceClaim": "B has a family-related reason but refuses detail.",
-            "hiddenTruth": "The family member is his brother and the protected child is his niece.",
+            "name": "챙겨야 할 사람이 있다",
+            "surfaceClaim": "챙겨야 할 사람이 있다",
+            "hiddenTruth": "친형/조카 돌봄 + 개인회생",
             "entryConditions": [
               "partyB lieState >= S2 on d-1",
               "or e-4 stage >= Excerpt",
@@ -1073,32 +965,28 @@
               "돌봄 부탁"
             ],
             "validActions": [
-              "motive_search",
-              "empathy_approach",
-              "evidence_present"
+              "evidence_query",
+              "empathy_approach"
             ],
             "requiredEvidence": [
+              "e-3",
               "e-4"
             ],
             "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "B anxiety rises on direct accusation; A anger rises if family excuse sounds evasive.",
-              "trust": "empathy_approach can preserve B cooperation.",
-              "leak": "If pressure is high and e-4 is at Excerpt, B may leak '가족 쪽 일' but not '형/조카'."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [
+              "dc-1"
+            ],
             "failureResponse": {
               "npc": "B retreats into '복잡합니다' or '가족 일입니다'.",
               "gameplay": "No direct reveal. UI should indicate that the issue needs evidence depth, not more button presses."
-            },
-            "successUnlocks": [
-              "stage 3 when e-4 Original/Context is reached or dc-1 challenge succeeds"
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "돌봄 프레임 반전",
-            "surfaceClaim": "The suspected affair route can be explained by protected family care.",
-            "hiddenTruth": "B hid care for his brother's child because of conflict with in-laws.",
+            "name": "형 사정 / 시댁 갈등",
+            "surfaceClaim": "형 사정 / 시댁 갈등",
+            "hiddenTruth": "조카(중2) 돌봄 + 회생",
             "entryConditions": [
               "e-4 stage >= Original",
               "e-1 stage >= Context",
@@ -1115,40 +1003,30 @@
               "d-2 money purpose remains blocked unless d-2 gate opens"
             ],
             "validActions": [
-              "evidence_present",
-              "contradiction_pursuit",
-              "empathy_approach"
+              "empathy_approach",
+              "evidence_query"
             ],
             "requiredEvidence": [
-              "e-1",
-              "e-2",
-              "e-3",
               "e-4"
             ],
             "requiredWitness": [
               "w-1"
             ],
-            "meterTriggers": {
-              "emotion": "A shock replaces certainty; B guilt becomes visible.",
-              "trust": "B cooperation rises if the judge protects the child's privacy.",
-              "leak": "B can reveal hidden reason if trust is sufficient or contradiction is clean."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [
+              "dc-2",
+              "d-2"
+            ],
             "failureResponse": {
               "npc": "B admits only that the accusation is wrong, not the protected person.",
               "gameplay": "Require witness or deeper evidence before final truthStage."
-            },
-            "successUnlocks": [
-              "dc-1",
-              "w-1",
-              "d-2 visibility candidate",
-              "stage 4"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "핵심 진실 확정",
-            "surfaceClaim": "The visit and call pattern no longer supports the affair claim.",
-            "hiddenTruth": "The pattern was brother/niece care and urgent contact, while B still bears responsibility for hiding it.",
+            "name": "형·조카·회생 부분 인정",
+            "surfaceClaim": "형·조카·회생 부분 인정",
+            "hiddenTruth": "민감 정보 (학교/생리)",
             "entryConditions": [
               "partyB lieState >= S5 or dc-1 challenge success",
               "w-1 confirms route or evidence combination combine-2/combine-6 is gated true"
@@ -1162,35 +1040,37 @@
               "surface-only channels must still avoid direct truth lexemes in prompts and generic UI labels"
             ],
             "validActions": [
-              "confession_attempt",
-              "witness_summon",
-              "contradiction_pursuit"
+              "empathy_approach"
             ],
-            "requiredEvidence": [
-              "e-4"
-            ],
-            "requiredWitness": [
-              "w-1"
-            ],
-            "meterTriggers": {
-              "emotion": "A shame and betrayal conflict becomes the next pressure point.",
-              "trust": "B can cooperate on d-2 if privacy was protected.",
-              "leak": "Additional issue hint: money movement, d-2."
-            },
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "If pushed without privacy handling, B becomes defensive and d-2 unlock should be delayed.",
               "gameplay": "Truth established only for d-1; do not auto-solve d-2/h-d3."
-            },
-            "successUnlocks": [
-              "d-1 truth judgment option becomes reliable",
-              "d-2 unlock path becomes available",
-              "mediation can separate affair mistake from hiding responsibility"
-            ]
+            }
+          },
+          {
+            "stage": 5,
+            "name": "진실 완전 인정",
+            "surfaceClaim": "진실 완전 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       },
       "d-2": {
-        "title": "개인 비자금 출금",
+        "title": "남편 명의 계좌의 목돈 출금",
         "draftCompleteness": "sample-complete",
         "statementFracture": [
           "박지연은 큰 현금 출금을 외도나 은닉 비용으로 의심한다.",
@@ -1200,9 +1080,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "목돈 출금 표면",
-            "surfaceClaim": "개인 계좌에서 큰 현금이 빠져나갔고 사용처가 불분명하다.",
-            "hiddenTruth": "이준호는 개인 비자금 3,000만원을 개인회생 중인 형에게 현금으로 전달했다.",
+            "name": "큰돈 출금 의심 / 계좌 존재 부정",
+            "surfaceClaim": "큰돈 출금 의심 / 계좌 존재 부정",
+            "hiddenTruth": "비자금 + 형 지원",
             "entryConditions": [
               "d-1 truthStage >= 3 또는 partyA d-1 lieState >= S3",
               "e-5가 새 자금 흐름 단서로 등장"
@@ -1221,30 +1101,24 @@
             ],
             "validActions": [
               "fact_pursuit",
-              "evidence_present"
+              "evidence_query"
             ],
             "requiredEvidence": [
               "e-5"
             ],
             "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "박지연의 분노는 금액이 구체화될수록 오른다. 이준호는 사용처를 외도 비용처럼 단정당하면 방어가 강해진다.",
-              "trust": "재판관이 금액, 계좌 성격, 사용처를 분리해 물으면 이준호의 협조 태도가 유지된다.",
-              "leak": "없음. 이 단계에서는 출금 사실 이상의 진실어를 내보내지 않는다."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "이준호는 개인 돈이었다고 반복하고, 박지연은 숨긴 돈이라는 점만 다시 밀어붙인다.",
               "gameplay": "truthStage는 오르지 않는다. 다음 안내는 반복 추궁이 아니라 금액·계좌·사용처 분리를 가리켜야 한다."
-            },
-            "successUnlocks": [
-              "e-5 금액과 계좌 성격이 고정되면 stage 1 진입"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "금액과 방식 고정",
-            "surfaceClaim": "3,000만원대 현금 출금 자체는 확인된다.",
-            "hiddenTruth": "현금 방식은 형의 개인회생 사정 때문에 선택됐다.",
+            "name": "출금 흐름 / 큰돈 빠진 적 없다",
+            "surfaceClaim": "출금 흐름 / 큰돈 빠진 적 없다",
+            "hiddenTruth": "비자금 + 형 지원",
             "entryConditions": [
               "e-5 stage >= Excerpt 또는 investigationStage >= 1",
               "이준호가 출금 사실을 일부 인정"
@@ -1261,32 +1135,25 @@
               "형에게 현금 전달"
             ],
             "validActions": [
-              "fact_pursuit",
-              "motive_search",
-              "evidence_present"
+              "evidence_query",
+              "motive_search"
             ],
             "requiredEvidence": [
               "e-5"
             ],
             "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "금액이 확정되면 박지연의 충격이 커지고, 이준호는 현금 방식 질문에서 위축된다.",
-              "trust": "출금 사실만 먼저 고정하면 이준호가 다음 질문을 받아들일 여지가 생긴다.",
-              "leak": "이준호가 '급한 사정'까지 말할 수 있지만 수혜자는 말하지 않는다."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "이준호는 출금만 인정하고 사용처는 사생활로 남긴다.",
               "gameplay": "반복 fact_pursuit가 아니라 motive_search 또는 d-1 가족 사정과의 연결을 제안해야 한다."
-            },
-            "successUnlocks": [
-              "이준호가 가족 관련 일반 명분을 꺼내거나 e-3/e-5 시점 연결이 잡히면 stage 2 진입"
-            ]
+            }
           },
           {
             "stage": 2,
-            "name": "가족 지원 명분",
-            "surfaceClaim": "이준호는 돈이 외도나 사적 유흥이 아니라 가족 일 때문이었다고 말한다.",
-            "hiddenTruth": "상대는 친형이고, 개인회생 때문에 현금 전달 방식이 선택됐다.",
+            "name": "가정 외부로 흘러간 돈 / 가족 쪽 급한 일",
+            "surfaceClaim": "가정 외부로 흘러간 돈 / 가족 쪽 급한 일",
+            "hiddenTruth": "형에게 현금 전달 + 개인회생",
             "entryConditions": [
               "partyB lieState >= S2 on d-2",
               "e-3 Original과 e-5 Original의 시점 연결 일부 충족",
@@ -1306,32 +1173,28 @@
             ],
             "validActions": [
               "motive_search",
-              "empathy_approach",
-              "evidence_present"
+              "empathy_approach"
             ],
             "requiredEvidence": [
               "e-5"
             ],
-            "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "이준호의 죄책감이 드러나고, 박지연의 분노는 절차 책임을 분리해 줄 때만 낮아진다.",
-              "trust": "empathy_approach는 이준호가 가족 관계를 말할 준비를 만들 수 있다.",
-              "leak": "'가족 일'이나 '도움'은 가능하지만 형·개인회생은 아직 금지한다."
-            },
+            "requiredWitness": [
+              "w-2"
+            ],
+            "meterTriggers": {},
+            "successUnlocks": [
+              "dc-3"
+            ],
             "failureResponse": {
               "npc": "이준호는 가족 사정이라고만 말하고 박지연은 또 다른 핑계라고 받아친다.",
               "gameplay": "반복 압박만으로 h-d3를 열지 않는다. 깨끗한 자금 경로 증거 또는 모순 지적이 필요하다."
-            },
-            "successUnlocks": [
-              "e-5 Original/Context와 B S3 또는 d-1 가족 맥락이 붙으면 stage 3 진입",
-              "d-2가 stage 2 이상이면 h-d3 역공 경로가 후보가 된다."
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "형에게 간 돈",
-            "surfaceClaim": "돈은 외도 비용이 아니지만 배우자에게 숨겨진 큰 결정이었다.",
-            "hiddenTruth": "이준호는 형의 사정을 돕기 위해 개인 비자금 3,000만원을 현금으로 전달했다.",
+            "name": "가족 쪽으로 갔다 / 형에게 갔다",
+            "surfaceClaim": "가족 쪽으로 갔다 / 형에게 갔다",
+            "hiddenTruth": "회생 + 정확 금액 + 공동 적금과의 분리",
             "entryConditions": [
               "partyB lieState >= S3 on d-2",
               "e-5 stage >= Original",
@@ -1347,35 +1210,29 @@
               "h-d3의 위임장 조작 진실어"
             ],
             "validActions": [
-              "evidence_present",
-              "contradiction_pursuit",
-              "motive_search"
+              "empathy_approach",
+              "evidence_query"
             ],
             "requiredEvidence": [
-              "e-5",
-              "e-3"
+              "e-5"
             ],
-            "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "박지연의 확신은 외도에서 재정 배신으로 이동하고, 이준호는 죄책감이 커진다.",
-              "trust": "동기와 절차 위반을 분리해 물으면 이준호의 협조가 유지된다.",
-              "leak": "모순이 명확하거나 신뢰가 충분할 때 이준호가 형 사정을 일부 드러낼 수 있다."
-            },
+            "requiredWitness": [
+              "w-2"
+            ],
+            "meterTriggers": {},
+            "successUnlocks": [
+              "h-d3"
+            ],
             "failureResponse": {
               "npc": "이준호는 가족을 도운 건 맞다고만 하고 정확한 수혜자나 금액 책임은 피한다.",
               "gameplay": "최종 d-2 진실 전에는 원본 계좌 기록 또는 모순 지적을 요구한다."
-            },
-            "successUnlocks": [
-              "dc-4 또는 동등한 자금 경로 dossier",
-              "stage 4",
-              "박지연이 피해자 프레임을 반복하면 h-d3 반격 경로"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "선의와 월권 분리",
-            "surfaceClaim": "돈은 외도 비용이 아니었지만, 혼자 결정한 책임은 남는다.",
-            "hiddenTruth": "이준호는 공동 적금이 아닌 개인 비자금을 형에게 전달했지만, 배우자에게 말하지 않은 중대한 재정 결정을 했다.",
+            "name": "회생 / 4개월 분할",
+            "surfaceClaim": "회생 / 4개월 분할",
+            "hiddenTruth": "정확 사용처 분리",
             "entryConditions": [
               "partyB lieState >= S5 또는 d-2 challenge success",
               "e-5 Original/Context 확인",
@@ -1391,33 +1248,37 @@
               "d-2만으로 h-d3나 h-d4를 자동 해결하지 않음"
             ],
             "validActions": [
-              "confession_attempt",
-              "contradiction_pursuit",
-              "mediation"
+              "empathy_approach"
             ],
-            "requiredEvidence": [
-              "e-5"
-            ],
+            "requiredEvidence": [],
             "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "박지연의 분노는 외도보다 재정 신뢰 문제로 재정렬된다.",
-              "trust": "이준호의 동기를 변명으로 처리하지 않을 때 다음 순서 쟁점 협조가 열린다.",
-              "leak": "다음 쟁점 힌트는 박지연의 자금 이동과 공동 적금 서류로 이동한다."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "동기를 면책처럼 처리하면 박지연이 강하게 반발하고 h-d3가 명확성이 아니라 역공으로 열린다.",
               "gameplay": "d-2 진실만 확정한다. h-d3나 h-d4는 자동 해결하지 않는다."
-            },
-            "successUnlocks": [
-              "d-2 truth judgment option becomes reliable",
-              "h-d3 unlock path becomes available",
-              "h-d4 can later compare hiding and execution order"
-            ]
+            }
+          },
+          {
+            "stage": 5,
+            "name": "완전 인정",
+            "surfaceClaim": "완전 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       },
       "h-d3": {
-        "title": "공동 적금 2,000만원 해지",
+        "title": "공동 적금 2,000만원 해지 경위",
         "draftCompleteness": "sample-complete",
         "statementFracture": [
           "박지연은 남편의 배신에 반응했을 뿐이라고 말하지만, 공동 적금 서류는 박지연의 독립된 실행을 보여준다.",
@@ -1427,9 +1288,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "사라진 적금 표면",
-            "surfaceClaim": "공동 적금이 해지됐고 3,000만원의 행선지가 불분명하다.",
-            "hiddenTruth": "박지연은 이준호 동의 없이 위임장 경로를 조작해 공동 적금을 해지했고, 그 돈을 투자방에 보냈다가 잃었다.",
+            "name": "공동 적금 잔액 변화",
+            "surfaceClaim": "공동 적금 잔액 변화",
+            "hiddenTruth": "박지연 단독 해지 + 위임장 위조",
             "entryConditions": [
               "d-2 truthStage >= 2 또는 이준호의 역공으로 h-d3 공개",
               "e-6 또는 e-7 등장"
@@ -1448,33 +1309,22 @@
             ],
             "validActions": [
               "fact_pursuit",
-              "evidence_present"
+              "evidence_query"
             ],
-            "requiredEvidence": [
-              "e-6",
-              "e-7"
-            ],
-            "requiredWitness": [
-              "w-2"
-            ],
-            "meterTriggers": {
-              "emotion": "박지연의 수치심이 방어로 바뀌고, 이준호는 서류 문제를 과도하게 몰아붙이려 한다.",
-              "trust": "서류 근거 없이 범죄어를 꺼내면 박지연의 협조가 급락한다.",
-              "leak": "없음. 이 단계에서는 돈 이동과 서류 존재만 다룬다."
-            },
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "박지연은 그 서류와 거리를 두고, 이준호는 서류가 이상하다는 말만 반복한다.",
               "gameplay": "truthStage는 오르지 않는다. 문서와 돈의 행선지 증거를 요구해야 한다."
-            },
-            "successUnlocks": [
-              "e-7 존재와 e-6 송금 흐름이 함께 보이면 stage 1 진입"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "해지와 송금 연결",
-            "surfaceClaim": "공동 적금 해지와 투자방 송금의 금액과 시점이 맞물린다.",
-            "hiddenTruth": "박지연은 이준호 동의를 우회해 공동 적금을 투자 경로로 옮겼다.",
+            "name": "들은 적 있다 / 동의한 적 없다",
+            "surfaceClaim": "들은 적 있다 / 동의한 적 없다",
+            "hiddenTruth": "박지연 단독 해지 + 위임장 위조",
             "entryConditions": [
               "e-7 stage >= Excerpt",
               "e-6 stage >= Excerpt",
@@ -1492,35 +1342,24 @@
               "사기 전액 손실"
             ],
             "validActions": [
-              "fact_pursuit",
-              "evidence_present",
-              "motive_search"
+              "evidence_query"
             ],
             "requiredEvidence": [
-              "e-6",
               "e-7"
             ],
-            "requiredWitness": [
-              "w-2"
-            ],
-            "meterTriggers": {
-              "emotion": "박지연의 분노가 수치심으로 섞이기 시작하고, 이준호는 비난으로 앞서간다.",
-              "trust": "동기보다 순서를 먼저 물으면 박지연이 방어를 덜 올린다.",
-              "leak": "박지연은 '급했다'나 '제 몫'까지 말할 수 있지만 조작은 인정하지 않는다."
-            },
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "박지연은 돈이 움직인 사실만 흐리게 인정하고 해지 방식은 피한다.",
               "gameplay": "반복 추궁 대신 서류 진위 확인이나 motive_search를 제안해야 한다."
-            },
-            "successUnlocks": [
-              "박지연이 배신 공포 동기를 말하거나 서류 진위가 쟁점화되면 stage 2 진입"
-            ]
+            }
           },
           {
             "stage": 2,
-            "name": "배신 공포와 자기방어",
-            "surfaceClaim": "박지연은 남편이 이미 가정을 버렸다고 믿어서 자기 몫을 지키려 했다고 말한다.",
-            "hiddenTruth": "그 공포는 동기를 설명하지만 동의 우회와 손실 은폐를 정당화하지 못한다.",
+            "name": "해지 절차 관여 / 위임장 진위 문제",
+            "surfaceClaim": "해지 절차 관여 / 위임장 진위 문제",
+            "hiddenTruth": "위임장 위조 + 투자방 송금",
             "entryConditions": [
               "partyA lieState >= S2 on h-d3",
               "e-6/e-7 표면이 잡힌 뒤 motive_search 또는 empathy_approach 사용",
@@ -1539,32 +1378,28 @@
             ],
             "validActions": [
               "motive_search",
-              "empathy_approach",
-              "evidence_present"
+              "evidence_query"
             ],
             "requiredEvidence": [
-              "e-6",
               "e-7"
             ],
-            "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "박지연의 두려움과 수치심이 동시에 취약점이 된다.",
-              "trust": "empathy_approach는 피해자 프레임을 무너뜨리기보다 사실 고백으로 연결해야 한다.",
-              "leak": "동기는 새지만 방식은 새지 않는다."
-            },
+            "requiredWitness": [
+              "w-2"
+            ],
+            "meterTriggers": {},
+            "successUnlocks": [
+              "dc-7"
+            ],
             "failureResponse": {
               "npc": "박지연은 남편이 먼저 자신을 불안하게 만들었다고 반복한다.",
               "gameplay": "동기 인정만으로 완료 처리하지 않는다. 해지 방식 증거가 필요하다."
-            },
-            "successUnlocks": [
-              "e-7 Original/Context 또는 은행 직원 압박으로 권한 문제가 잡히면 stage 3 진입"
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "서류 권한의 균열",
-            "surfaceClaim": "질문은 왜 돈을 옮겼는가에서 그럴 권한이 있었는가로 바뀐다.",
-            "hiddenTruth": "박지연은 위임장 경로를 조작하거나 부적절하게 사용해 공동 적금을 해지했다.",
+            "name": "위임장 본인이 만들었다",
+            "surfaceClaim": "위임장 본인이 만들었다",
+            "hiddenTruth": "투자방 송금 + 사기 손실",
             "entryConditions": [
               "e-7 stage >= Original 또는 Context",
               "w-2 또는 은행 절차 challenge 성공",
@@ -1581,35 +1416,31 @@
               "e-6 deep route 또는 자백 전 투자 사기 전액 손실"
             ],
             "validActions": [
-              "evidence_present",
-              "contradiction_pursuit",
-              "witness_summon"
+              "evidence_query",
+              "motive_search"
             ],
             "requiredEvidence": [
+              "e-6",
               "e-7"
             ],
             "requiredWitness": [
-              "w-2"
+              "w-2",
+              "w-3"
             ],
-            "meterTriggers": {
-              "emotion": "문서 용어가 구체화되면 박지연의 수치심이 크게 오른다.",
-              "trust": "공포와 서류 책임을 분리하면 박지연이 일부 인정할 수 있다.",
-              "leak": "박지연은 서류를 챙긴 사실을 일부 인정하고, 이준호는 동의하지 않았음을 말할 수 있다."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [
+              "dc-4"
+            ],
             "failureResponse": {
               "npc": "박지연은 집안일을 처리한 것뿐이라고 축소한다.",
               "gameplay": "최종 방식 진실 전에는 증인 또는 e-7 deep detail이 필요하다."
-            },
-            "successUnlocks": [
-              "stage 4",
-              "d-2도 진행된 상태라면 h-d4 선후 분리 경로"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "조작과 손실 확정",
-            "surfaceClaim": "공동 적금 문제는 부부 불신만이 아니라 서류 위반과 손실을 포함한다.",
-            "hiddenTruth": "박지연은 위임장을 조작하거나 악용해 공동 적금 2,000만원을 해지했고, 전액을 투자방에 송금했다가 사기로 잃었다.",
+            "name": "투자방 송금 / 운영자 잠적",
+            "surfaceClaim": "투자방 송금 / 운영자 잠적",
+            "hiddenTruth": "사기 수치심 / 은폐",
             "entryConditions": [
               "partyA lieState >= S5 또는 h-d3 challenge success",
               "e-6 Original/Context와 e-7 Original/Context 확인",
@@ -1625,271 +1456,36 @@
               "d-2 비교 없이 h-d4 선후를 자동 확정하지 않음"
             ],
             "validActions": [
-              "confession_attempt",
-              "witness_summon",
-              "contradiction_pursuit"
+              "empathy_approach"
             ],
             "requiredEvidence": [
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "requiredWitness": [
-              "w-2"
+              "w-3"
             ],
-            "meterTriggers": {
-              "emotion": "박지연은 피해자 프레임에서 수치심과 체념으로 이동한다.",
-              "trust": "동기는 기록하되 방식은 면책하지 않을 때 최종 고백이 안정된다.",
-              "leak": "다음 힌트는 숨김·감시·실행·범죄를 분리하는 h-d4로 이어진다."
-            },
+            "meterTriggers": {},
+            "successUnlocks": [],
             "failureResponse": {
               "npc": "손실만 물으면 박지연은 사기 피해자 프레임으로 다시 들어간다.",
               "gameplay": "h-d3 진실만 확정한다. A/B 책임을 자동 동률화하지 않는다."
-            },
-            "successUnlocks": [
-              "h-d3 truth judgment option becomes reliable",
-              "d-2 truthStage >= 3이면 h-d4 unlock path becomes available"
-            ]
-          }
-        ]
-      },
-      "h-d4": {
-        "title": "은폐와 선제행동의 순서",
-        "draftCompleteness": "sample-complete",
-        "statementFracture": [
-          "두 사람 모두 상대가 먼저 신뢰를 깼다고 말하지만, 각자가 말하는 '먼저'의 기준이 다르다.",
-          "이준호는 가족 돈 문제를 먼저 숨겼고, 박지연은 감시와 서류·자금 실행으로 넘어갔다.",
-          "최종 쟁점은 숨김, 감시, 현금 출금, 공동 적금 해지, 서류 위반을 한 줄 승패로 합치지 않는 데 있다."
-        ],
-        "truthStages": [
+            }
+          },
           {
-            "stage": 0,
-            "name": "선후 공방 표면",
-            "surfaceClaim": "두 사람 모두 상대가 먼저 신뢰를 깼다고 주장한다.",
-            "hiddenTruth": "숨김, 감시, 현금 이동, 공동 적금 해지, 서류 위반은 서로 다른 축이다.",
-            "entryConditions": [
-              "d-2 truthStage >= 2",
-              "h-d3 truthStage >= 2",
-              "또는 e-7 등장 뒤 hiddenDisputePlan 공개"
-            ],
-            "allowedDisclosure": [
-              "누가 먼저 숨겼나",
-              "누가 먼저 돈을 움직였나",
-              "선후 관계 다툼",
-              "각자 다른 기준을 사용함"
-            ],
-            "forbiddenDisclosure": [
-              "숨김은 B 먼저",
-              "계좌 감시는 A 먼저",
-              "범죄 행위는 A",
-              "위임장 조작"
-            ],
+            "stage": 5,
+            "name": "완전 인정",
+            "surfaceClaim": "완전 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
             "validActions": [
-              "fact_pursuit",
-              "motive_search"
+              "fact_pursuit"
             ],
-            "requiredEvidence": [
-              "e-5",
-              "e-6",
-              "e-7"
-            ],
+            "requiredEvidence": [],
             "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "먼저라는 말을 단일 승패로 다루면 양쪽 감정이 동시에 오른다.",
-              "trust": "재판관이 축을 먼저 나눠 주면 양쪽 모두 다음 질문을 받아들인다.",
-              "leak": "없음. 이 단계에서는 최종 선후를 확정하지 않는다."
-            },
-            "failureResponse": {
-              "npc": "각자 상대가 먼저였다는 버전만 반복한다.",
-              "gameplay": "truthStage는 오르지 않는다. 어느 축의 선후를 묻는지 먼저 정리해야 한다."
-            },
-            "successUnlocks": [
-              "증거 타임라인을 비난 없이 배열하면 stage 1 진입"
-            ]
-          },
-          {
-            "stage": 1,
-            "name": "타임라인 조각 정렬",
-            "surfaceClaim": "돈 기록과 서류 기록을 시간순으로 놓을 수 있다.",
-            "hiddenTruth": "이준호의 은폐, 박지연의 감시, 이준호의 현금 출금, 박지연의 공동 적금 해지는 서로 다른 지점에 있다.",
-            "entryConditions": [
-              "e-5 Excerpt 또는 Original",
-              "e-6 Excerpt 또는 Original",
-              "e-7 Excerpt 또는 Original"
-            ],
-            "allowedDisclosure": [
-              "출금 시점",
-              "송금 시점",
-              "해지 시점",
-              "먼저/나중의 기준 분리"
-            ],
-            "forbiddenDisclosure": [
-              "형 사정 은폐가 먼저였음 확정",
-              "위임장 조작 범죄 확정",
-              "사기 손실 뒤 의혹을 키웠다는 최종 정리"
-            ],
-            "validActions": [
-              "fact_pursuit",
-              "evidence_present"
-            ],
-            "requiredEvidence": [
-              "e-5",
-              "e-6",
-              "e-7"
-            ],
-            "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "사실 배열은 감정 대립을 낮추지만 각자의 수치심을 새로 건드린다.",
-              "trust": "이 단계에서는 비난보다 사실 질문이 협조를 얻기 쉽다.",
-              "leak": "각자 일부 시점은 인정할 수 있지만 최종 책임 프레임은 새지 않는다."
-            },
-            "failureResponse": {
-              "npc": "박지연은 배신을 먼저 말하고, 이준호는 서류 위반을 먼저 말한다.",
-              "gameplay": "동기 판단보다 증거 비교를 제안해야 한다."
-            },
-            "successUnlocks": [
-              "각자의 예외 논리가 분리되면 stage 2 진입"
-            ]
-          },
-          {
-            "stage": 2,
-            "name": "각자의 예외 논리",
-            "surfaceClaim": "이준호는 가족 구제를, 박지연은 자기 방어를 내세운다.",
-            "hiddenTruth": "두 동기 모두 사정은 되지만, 혼자 결정한 책임을 없애지는 못한다.",
-            "entryConditions": [
-              "partyA 또는 partyB lieState >= S2 on h-d4",
-              "타임라인 증거가 보인 뒤 motive_search 사용",
-              "d-2와 h-d3가 각각 truthStage >= 2"
-            ],
-            "allowedDisclosure": [
-              "가족 구제 명분",
-              "자기 방어 명분",
-              "각자 예외를 만들었다",
-              "말하지 않은 이유가 다름"
-            ],
-            "forbiddenDisclosure": [
-              "형 사정 은폐가 먼저였음 확정",
-              "계좌 감시가 먼저였음 확정",
-              "범죄 행위는 A 쪽이라는 최종 정리"
-            ],
-            "validActions": [
-              "motive_search",
-              "empathy_approach",
-              "mediation"
-            ],
-            "requiredEvidence": [
-              "e-5",
-              "e-6",
-              "e-7"
-            ],
-            "requiredWitness": [],
-            "meterTriggers": {
-              "emotion": "동기를 들어 주면 양쪽 감정은 낮아지지만, 동기를 면책으로 처리하면 다시 오른다.",
-              "trust": "mediation은 최종 선후 질문을 받을 만큼의 협조를 만든다.",
-              "leak": "각자 자기 명분은 새지만 전체 순서는 새지 않는다."
-            },
-            "failureResponse": {
-              "npc": "두 사람 모두 자기 예외가 더 정당했다고 다툰다.",
-              "gameplay": "공감만으로 진행하지 않는다. 선후 증거 또는 모순 지적이 필요하다."
-            },
-            "successUnlocks": [
-              "타임라인 모순 또는 dc-5 challenge로 축 분리가 강제되면 stage 3 진입"
-            ]
-          },
-          {
-            "stage": 3,
-            "name": "숨김과 실행의 분리",
-            "surfaceClaim": "먼저 숨긴 일과 먼저 돈을 실행한 일은 다른 판단이다.",
-            "hiddenTruth": "이준호는 형 관련 사정을 먼저 숨겼고, 박지연은 먼저 감시했으며, 각자의 자금 실행과 서류 위반은 별도 축이다.",
-            "entryConditions": [
-              "d-2 truthStage >= 3",
-              "h-d3 truthStage >= 3",
-              "e-5/e-6/e-7 Original 또는 Context",
-              "dc-5 challenge 또는 contradiction_pursuit 성공"
-            ],
-            "allowedDisclosure": [
-              "각 축을 분리해야 함",
-              "숨김과 실행은 다름",
-              "계좌 감시와 송금 실행은 다름",
-              "절차 위반과 동기는 다름"
-            ],
-            "forbiddenDisclosure": [
-              "surface-only 채널의 최종 선후 직접어",
-              "h-d3 stage 4 또는 자백 전 범죄 책임 확정 문구"
-            ],
-            "validActions": [
-              "contradiction_pursuit",
-              "evidence_present",
-              "mediation"
-            ],
-            "requiredEvidence": [
-              "e-5",
-              "e-6",
-              "e-7"
-            ],
-            "requiredWitness": [
-              "w-2"
-            ],
-            "meterTriggers": {
-              "emotion": "박지연의 수치심과 이준호의 죄책감이 서로 다른 지점에서 정점에 닿는다.",
-              "trust": "양쪽 모두 따로 기록된다고 느낄 때 최종 인정으로 갈 수 있다.",
-              "leak": "이준호는 먼저 숨겼다는 점을, 박지연은 먼저 감시하거나 서류를 다룬 점을 일부 인정할 수 있다."
-            },
-            "failureResponse": {
-              "npc": "한쪽 인정이 다른 쪽 공격 도구가 되면 둘 다 다시 방어로 돌아간다.",
-              "gameplay": "균형 잡힌 모순 처리가 필요하다. 한쪽 압박만으로 h-d4를 완료하지 않는다."
-            },
-            "successUnlocks": [
-              "stage 4",
-              "최종 판결에서 동기·은폐·실행·위법성을 분리할 수 있음"
-            ]
-          },
-          {
-            "stage": 4,
-            "name": "분리된 책임 확정",
-            "surfaceClaim": "최종 쟁점은 누가 단순히 더 나쁜가가 아니라 각 축에서 무엇을 먼저 했는가다.",
-            "hiddenTruth": "숨김은 이준호가 먼저, 계좌 감시는 박지연이 먼저, 현금 출금은 이준호 쪽, 공동 적금 해지와 위임장 조작은 박지연 쪽 책임으로 분리된다.",
-            "entryConditions": [
-              "h-d4 challenge success 또는 양측 관련 h-d4 자백 S5",
-              "d-2 truthStage >= 4",
-              "h-d3 truthStage >= 4",
-              "e-5/e-6/e-7 모두 Established 또는 동등한 최종 종합 경로"
-            ],
-            "allowedDisclosure": [
-              "NPC 자백에서는 분리된 순서 언급 가능",
-              "player-discovered final synthesis에서는 분리 책임 언급 가능",
-              "판결 후 자유 공개"
-            ],
-            "forbiddenDisclosure": [
-              "surface-only 채널은 플레이어 경로 전 최종 진실어를 일반 힌트로 쓰지 않음",
-              "d-2와 h-d3가 모두 확정되기 전 최종 순서를 보여주지 않음"
-            ],
-            "validActions": [
-              "confession_attempt",
-              "mediation",
-              "evidence_present"
-            ],
-            "requiredEvidence": [
-              "e-5",
-              "e-6",
-              "e-7"
-            ],
-            "requiredWitness": [
-              "w-2",
-              "w-3"
-            ],
-            "meterTriggers": {
-              "emotion": "최종 인정은 비난 루프를 낮추고 판결 단계로 이동시킨다.",
-              "trust": "신뢰는 용서가 아니라 정확한 기록을 받아들이는 태도로 바뀐다.",
-              "leak": "새 쟁점 없음. 판결 프레임을 준비한다."
-            },
-            "failureResponse": {
-              "npc": "재판관이 모든 축을 하나의 비난 점수로 합치면 양쪽 모두 방어 프레임으로 회귀한다.",
-              "gameplay": "최종 진실은 종합으로만 열린다. 한 사람의 자백만으로 전체 순서를 확정하지 않는다."
-            },
-            "successUnlocks": [
-              "h-d4 truth judgment option becomes reliable",
-              "verdict can assign separated responsibility rather than single winner framing"
-            ]
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       }
@@ -1910,5 +1506,3 @@
     ]
   }
 }
-
-

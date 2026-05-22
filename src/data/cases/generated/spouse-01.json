@@ -131,30 +131,6 @@
         "currentlyResolved": "unresolved",
         "emotionalResidue": "strong",
         "connectionToCurrent": "direct"
-      },
-      {
-        "id": "ledger-3",
-        "category": "silenced",
-        "description": "B는 개인 비자금에서 3,000만원을 형에게 현금 전달했고, A는 위임장을 조작해 공동 적금 2,000만원을 해지한 뒤 전액을 투자방에 넣었다가 잃었다.",
-        "isReal": true,
-        "whoRemembersAccurately": "both",
-        "whoDistorts": "none",
-        "distortionDirection": "",
-        "currentlyResolved": "surface_only",
-        "emotionalResidue": "strong",
-        "connectionToCurrent": "direct"
-      },
-      {
-        "id": "ledger-4",
-        "category": "confirmed",
-        "description": "숨김의 시작과 실제 송금 실행의 순서는 서로 다르다.",
-        "isReal": true,
-        "whoRemembersAccurately": "both",
-        "whoDistorts": "both",
-        "distortionDirection": "각자 자기에게 유리한 선후만 먼저 강조한다.",
-        "currentlyResolved": "unresolved",
-        "emotionalResidue": "strong",
-        "connectionToCurrent": "direct"
       }
     ],
     "socialGraph": [
@@ -199,8 +175,8 @@
         "distortionRisk": "accurate",
         "surfaceKnowledge": "A의 위임장 조작 힌트를 제공하는 제3자 증인이다.",
         "relatedDisputeIds": [
-          "h-d3",
-          "h-d4"
+          "d-2",
+          "h-d3"
         ],
         "witnessProfile": {
           "age": 32,
@@ -217,7 +193,8 @@
         },
         "unlockedByDossier": [
           "dc-3",
-          "dc-4"
+          "dc-4",
+          "dc-7"
         ]
       },
       {
@@ -231,8 +208,7 @@
         "distortionRisk": "strategic",
         "surfaceKnowledge": "A의 투자 사기 경위와 링크 전달 사실을 아는 지인 증인이다.",
         "relatedDisputeIds": [
-          "h-d3",
-          "h-d4"
+          "h-d3"
         ],
         "witnessProfile": {
           "age": 37,
@@ -248,8 +224,7 @@
           "hiddenAgenda": "자신이 링크를 보낸 책임이 불거질까 봐 표현을 조심한다."
         },
         "unlockedByDossier": [
-          "dc-3",
-          "dc-5"
+          "dc-4"
         ]
       }
     ]
@@ -334,7 +309,7 @@
       "id": "h-d3",
       "name": "공동 적금 2,000만원 해지 경위",
       "truth": true,
-      "truthDescription": "공동 적금이 만기 전에 해지된 흔적이 확인됐다. 해지 과정에서 배우자 동의 여부와 위임장 진위 문제가 남아 있으며, 해지금 2,000만원의 실제 행선지도 아직 확인해야 한다. 이제 공동 적금 해지 경위와 절차 책임을 별도 쟁점으로 추적한다.",
+      "truthDescription": "공동 적금이 만기 전에 해지된 흔적이 확인됐다. 해지 과정에서 배우자 동의 여부와 위임장 진위 문제가 남아 있으며, 해지금 2,000만원의 실제 행선지도 아직 확인해야 한다.",
       "quadrant": "a_only",
       "requiredEvidence": [
         "e-6"
@@ -370,52 +345,6 @@
         "defer": "해지 경위가 불분명하다. 판단을 유보한다."
       },
       "wrongTruths": {}
-    },
-    {
-      "id": "h-d4",
-      "name": "은폐와 선제행동의 순서",
-      "truth": true,
-      "truthDescription": "숨김은 B가 먼저(개인 비자금 3천만+형 상황 은폐), 계좌 감시는 A가 먼저(신혼 초), 돈 실행은 동시기(B 4개월 전 3천만 현금 출금, A 6주 전 공동 적금 2천만 위임장 조작 해지), 범죄 행위는 A(위임장 조작).",
-      "quadrant": "shared_misconception",
-      "requiredEvidence": [
-        "e-5",
-        "e-6",
-        "e-7"
-      ],
-      "correctResponsibility": {
-        "a": 50,
-        "b": 50
-      },
-      "ambiguity": "high",
-      "weight": "high",
-      "mediationLink": "숨김과 실행의 선후",
-      "legitimacyIssue": true,
-      "judgmentStatement": "숨김의 선후와 범죄 행위의 유무는 서로 다른 차원이다.",
-      "hidden": true,
-      "v3Visibility": "hidden",
-      "unlockCondition": {
-        "requireDispute": [
-          {
-            "id": "d-2",
-            "minState": "S3"
-          },
-          {
-            "id": "h-d3",
-            "minState": "S3"
-          }
-        ],
-        "note": "d-2 + h-d3 모두 책임 전가 단계 후 자동"
-      },
-      "v3UnlockPlan": {
-        "runtimeRule": "A/B 어느 쪽이든 d-2 S3 + h-d3 S3 모두 도달 시 자동 해금",
-        "authoredRule": "d-2와 h-d3 모두 공개된 후 자동 발현"
-      },
-      "verdictOptions": {
-        "wrong": "이준호가 먼저 비밀을 만들었으므로, 박지연의 행동은 자구책이었다.",
-        "partial": "양쪽 모두 숨긴 것이 있지만, 선후 관계를 가리기 어렵다.",
-        "truth": "숨김은 이준호가 먼저, 계좌 감시는 박지연이 먼저. 범죄 행위(위임장 조작)는 박지연 쪽이다.",
-        "defer": "누가 먼저인지 판단할 근거가 부족하다. 유보한다."
-      }
     }
   ],
   "evidence": [
@@ -424,7 +353,7 @@
       "name": "영수증 묶음 (5장)",
       "surfaceName": "영수증 묶음 5장",
       "description": "남편의 차에서 발견한 영수증 목록이다. 영수증 내역 중 여성용 물품이 있어 아내의 의심이 시작됐다.",
-      "surfaceDescription": "남편의 차에서 발견한 영수증 묶음이다.",
+      "surfaceDescription": "차 안에서 발견된 영수증 5장.",
       "type": "log",
       "reliability": "hard",
       "completeness": "original",
@@ -749,470 +678,6 @@
             "suspicious": true
           }
         ]
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "영수증 묶음 5장",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 편의점·뷰티 2장",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "receipt": [
-            {
-              "storeName": "CU 관악봉천점",
-              "storeAddr": "서울 관악구 봉천로 234",
-              "date": "2026.02.18 (화) 19:23",
-              "items": [
-                {
-                  "name": "빙그레 바나나맛우유",
-                  "code": "880104",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "삼각김밥 불고기",
-                  "code": "880211",
-                  "unitPrice": "1,500",
-                  "qty": 2,
-                  "amount": "3,000"
-                },
-                {
-                  "name": "핫식스 250ml",
-                  "code": "880309",
-                  "unitPrice": "900",
-                  "qty": 1,
-                  "amount": "900"
-                }
-              ],
-              "subtotal": "5,400",
-              "tax": "491",
-              "total": "5,400",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            },
-            {
-              "storeName": "올리브영 봉천역점",
-              "storeAddr": "서울 관악구 봉천로 212 2F",
-              "date": "2026.02.15 (토) 14:07",
-              "items": [
-                {
-                  "name": "에뛰드 픽싱틴트 #05",
-                  "code": "410381",
-                  "unitPrice": "12,000",
-                  "qty": 1,
-                  "amount": "12,000"
-                },
-                {
-                  "name": "매직 헤어롤 32mm 세트",
-                  "code": "410552",
-                  "unitPrice": "9,500",
-                  "qty": 1,
-                  "amount": "9,500"
-                },
-                {
-                  "name": "이니스프리 그린티씨드세럼",
-                  "code": "410752",
-                  "unitPrice": "28,000",
-                  "qty": 1,
-                  "amount": "28,000"
-                },
-                {
-                  "name": "쏘내추럴 코튼패드 80매",
-                  "code": "410104",
-                  "unitPrice": "3,500",
-                  "qty": 1,
-                  "amount": "3,500"
-                }
-              ],
-              "subtotal": "53,000",
-              "tax": "4,818",
-              "total": "53,000",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": true
-            }
-          ]
-        },
-        "2": {
-          "meta": {
-            "name": "영수증 묶음 5장",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 편의점·생활용품 추가 (4장)",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "receipt": [
-            {
-              "storeName": "CU 관악봉천점",
-              "storeAddr": "서울 관악구 봉천로 234",
-              "date": "2026.02.18 (화) 19:23",
-              "items": [
-                {
-                  "name": "빙그레 바나나맛우유",
-                  "code": "880104",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "삼각김밥 불고기",
-                  "code": "880211",
-                  "unitPrice": "1,500",
-                  "qty": 2,
-                  "amount": "3,000"
-                },
-                {
-                  "name": "핫식스 250ml",
-                  "code": "880309",
-                  "unitPrice": "900",
-                  "qty": 1,
-                  "amount": "900"
-                }
-              ],
-              "subtotal": "5,400",
-              "tax": "491",
-              "total": "5,400",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            },
-            {
-              "storeName": "올리브영 봉천역점",
-              "storeAddr": "서울 관악구 봉천로 212 2F",
-              "date": "2026.02.15 (토) 14:07",
-              "items": [
-                {
-                  "name": "에뛰드 픽싱틴트 #05",
-                  "code": "410381",
-                  "unitPrice": "12,000",
-                  "qty": 1,
-                  "amount": "12,000"
-                },
-                {
-                  "name": "매직 헤어롤 32mm 세트",
-                  "code": "410552",
-                  "unitPrice": "9,500",
-                  "qty": 1,
-                  "amount": "9,500"
-                },
-                {
-                  "name": "이니스프리 그린티씨드세럼",
-                  "code": "410752",
-                  "unitPrice": "28,000",
-                  "qty": 1,
-                  "amount": "28,000"
-                },
-                {
-                  "name": "쏘내추럴 코튼패드 80매",
-                  "code": "410104",
-                  "unitPrice": "3,500",
-                  "qty": 1,
-                  "amount": "3,500"
-                }
-              ],
-              "subtotal": "53,000",
-              "tax": "4,818",
-              "total": "53,000",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": true
-            },
-            {
-              "storeName": "GS25 관악중앙점",
-              "storeAddr": "서울 관악구 관악로 142",
-              "date": "2026.02.08 (토) 21:45",
-              "items": [
-                {
-                  "name": "컵라면 진라면매운맛",
-                  "code": "880022",
-                  "unitPrice": "1,200",
-                  "qty": 1,
-                  "amount": "1,200"
-                },
-                {
-                  "name": "삼각김밥 참치마요",
-                  "code": "880215",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "코카콜라 500ml",
-                  "code": "880301",
-                  "unitPrice": "1,800",
-                  "qty": 1,
-                  "amount": "1,800"
-                },
-                {
-                  "name": "핫도그 클래식",
-                  "code": "880401",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                }
-              ],
-              "subtotal": "6,500",
-              "tax": "591",
-              "total": "6,500",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            },
-            {
-              "storeName": "다이소 봉천점",
-              "storeAddr": "서울 관악구 봉천로 201 1F",
-              "date": "2026.02.05 (수) 16:12",
-              "items": [
-                {
-                  "name": "미니 손거울",
-                  "code": "530101",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "머리끈 세트",
-                  "code": "530205",
-                  "unitPrice": "1,000",
-                  "qty": 2,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "제도 샤프 0.5mm",
-                  "code": "530610",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "스프링 노트 B5",
-                  "code": "530712",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                }
-              ],
-              "subtotal": "8,000",
-              "tax": "727",
-              "total": "8,000",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": true
-            }
-          ]
-        },
-        "3": {
-          "meta": {
-            "name": "영수증 묶음 5장",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 전체 5장 (서점 포함)",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "receipt": [
-            {
-              "storeName": "CU 관악봉천점",
-              "storeAddr": "서울 관악구 봉천로 234",
-              "date": "2026.02.18 (화) 19:23",
-              "items": [
-                {
-                  "name": "빙그레 바나나맛우유",
-                  "code": "880104",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "삼각김밥 불고기",
-                  "code": "880211",
-                  "unitPrice": "1,500",
-                  "qty": 2,
-                  "amount": "3,000"
-                },
-                {
-                  "name": "핫식스 250ml",
-                  "code": "880309",
-                  "unitPrice": "900",
-                  "qty": 1,
-                  "amount": "900"
-                }
-              ],
-              "subtotal": "5,400",
-              "tax": "491",
-              "total": "5,400",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            },
-            {
-              "storeName": "올리브영 봉천역점",
-              "storeAddr": "서울 관악구 봉천로 212 2F",
-              "date": "2026.02.15 (토) 14:07",
-              "items": [
-                {
-                  "name": "에뛰드 픽싱틴트 #05",
-                  "code": "410381",
-                  "unitPrice": "12,000",
-                  "qty": 1,
-                  "amount": "12,000"
-                },
-                {
-                  "name": "매직 헤어롤 32mm 세트",
-                  "code": "410552",
-                  "unitPrice": "9,500",
-                  "qty": 1,
-                  "amount": "9,500"
-                },
-                {
-                  "name": "이니스프리 그린티씨드세럼",
-                  "code": "410752",
-                  "unitPrice": "28,000",
-                  "qty": 1,
-                  "amount": "28,000"
-                },
-                {
-                  "name": "쏘내추럴 코튼패드 80매",
-                  "code": "410104",
-                  "unitPrice": "3,500",
-                  "qty": 1,
-                  "amount": "3,500"
-                }
-              ],
-              "subtotal": "53,000",
-              "tax": "4,818",
-              "total": "53,000",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": true
-            },
-            {
-              "storeName": "GS25 관악중앙점",
-              "storeAddr": "서울 관악구 관악로 142",
-              "date": "2026.02.08 (토) 21:45",
-              "items": [
-                {
-                  "name": "컵라면 진라면매운맛",
-                  "code": "880022",
-                  "unitPrice": "1,200",
-                  "qty": 1,
-                  "amount": "1,200"
-                },
-                {
-                  "name": "삼각김밥 참치마요",
-                  "code": "880215",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "코카콜라 500ml",
-                  "code": "880301",
-                  "unitPrice": "1,800",
-                  "qty": 1,
-                  "amount": "1,800"
-                },
-                {
-                  "name": "핫도그 클래식",
-                  "code": "880401",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                }
-              ],
-              "subtotal": "6,500",
-              "tax": "591",
-              "total": "6,500",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            },
-            {
-              "storeName": "다이소 봉천점",
-              "storeAddr": "서울 관악구 봉천로 201 1F",
-              "date": "2026.02.05 (수) 16:12",
-              "items": [
-                {
-                  "name": "미니 손거울",
-                  "code": "530101",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "머리끈 세트",
-                  "code": "530205",
-                  "unitPrice": "1,000",
-                  "qty": 2,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "제도 샤프 0.5mm",
-                  "code": "530610",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "스프링 노트 B5",
-                  "code": "530712",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                }
-              ],
-              "subtotal": "8,000",
-              "tax": "727",
-              "total": "8,000",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": true
-            },
-            {
-              "storeName": "교보문고 강남점",
-              "storeAddr": "서울 서초구 강남대로 465",
-              "date": "2026.02.12 (수) 18:30",
-              "items": [
-                {
-                  "name": "중등 수학 1-1 기본+응용",
-                  "code": "978891",
-                  "unitPrice": "16,000",
-                  "qty": 1,
-                  "amount": "16,000"
-                },
-                {
-                  "name": "중학 국어 독해력 1단계",
-                  "code": "978892",
-                  "unitPrice": "13,000",
-                  "qty": 1,
-                  "amount": "13,000"
-                }
-              ],
-              "subtotal": "29,000",
-              "tax": "0",
-              "total": "29,000",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": true
-            }
-          ]
-        }
       }
     },
     {
@@ -1220,7 +685,7 @@
       "name": "블랙박스 GPS / 네비 즐겨찾기",
       "surfaceName": "블랙박스 GPS 기록",
       "description": "매일 같은 좌표에 정차. 오피스텔 주소 확인. A가 B 차에서 확인.",
-      "surfaceDescription": "차량 GPS에 같은 좌표 반복 정차 기록이 있다.",
+      "surfaceDescription": "차량 GPS 정차 기록.",
       "type": "device",
       "reliability": "hard",
       "completeness": "original",
@@ -1510,499 +975,6 @@
             "suspicious": true
           }
         ]
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "블랙박스 GPS 기록",
-            "type": "device",
-            "viewerType": "device",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 시각/속도/좌표만",
-            "sourceNote": "institutional / original",
-            "redactions": [
-              "location"
-            ]
-          },
-          "gps_log": [
-            {
-              "timestamp": "02.18 18:32",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 18:45",
-              "lat": "37.5412",
-              "lng": "126.9119",
-              "speed": "42 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 18:58",
-              "lat": "37.5185",
-              "lng": "126.9278",
-              "speed": "35 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:05",
-              "lat": "37.5092",
-              "lng": "126.9310",
-              "speed": "28 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:12",
-              "lat": "37.4985",
-              "lng": "126.9448",
-              "speed": "15 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:14",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 21:47",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 21:48",
-              "lat": "37.4968",
-              "lng": "126.9455",
-              "speed": "8 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:02",
-              "lat": "37.5092",
-              "lng": "126.9310",
-              "speed": "45 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:15",
-              "lat": "37.5258",
-              "lng": "126.9138",
-              "speed": "38 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:28",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 14:01",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 14:18",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 16:42",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.12 18:05",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.12 18:22",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.12 20:55",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.08 21:20",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "??",
-              "suspicious": false
-            }
-          ]
-        },
-        "2": {
-          "meta": {
-            "name": "블랙박스 GPS 기록",
-            "type": "device",
-            "viewerType": "device",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 위치 연계 공개",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "gps_log": [
-            {
-              "timestamp": "02.18 18:32",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 (마포구 망원동)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 18:45",
-              "lat": "37.5412",
-              "lng": "126.9119",
-              "speed": "42 km/h",
-              "location": "여의대로 합류",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 18:58",
-              "lat": "37.5185",
-              "lng": "126.9278",
-              "speed": "35 km/h",
-              "location": "노량진역 부근",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:05",
-              "lat": "37.5092",
-              "lng": "126.9310",
-              "speed": "28 km/h",
-              "location": "상도터널 진입",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:12",
-              "lat": "37.4985",
-              "lng": "126.9448",
-              "speed": "15 km/h",
-              "location": "관악구 봉천동 진입",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:14",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 21:47",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "(주차 유지)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 21:48",
-              "lat": "37.4968",
-              "lng": "126.9455",
-              "speed": "8 km/h",
-              "location": "봉천동 출발",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:02",
-              "lat": "37.5092",
-              "lng": "126.9310",
-              "speed": "45 km/h",
-              "location": "상도터널 통과",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:15",
-              "lat": "37.5258",
-              "lng": "126.9138",
-              "speed": "38 km/h",
-              "location": "여의도 방면",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:28",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 도착",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 14:01",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 출발",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 14:18",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 16:42",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "(주차 유지)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.12 18:05",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 출발",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.12 18:22",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.12 20:55",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "(주차 유지)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.08 21:20",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": false
-            }
-          ]
-        },
-        "3": {
-          "meta": {
-            "name": "블랙박스 GPS 기록",
-            "type": "device",
-            "viewerType": "device",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 시간 패턴 강조",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "gps_log": [
-            {
-              "timestamp": "02.18 18:32",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 (마포구 망원동)",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 18:45",
-              "lat": "37.5412",
-              "lng": "126.9119",
-              "speed": "42 km/h",
-              "location": "여의대로 합류",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 18:58",
-              "lat": "37.5185",
-              "lng": "126.9278",
-              "speed": "35 km/h",
-              "location": "노량진역 부근",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:05",
-              "lat": "37.5092",
-              "lng": "126.9310",
-              "speed": "28 km/h",
-              "location": "상도터널 진입",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 19:12",
-              "lat": "37.4985",
-              "lng": "126.9448",
-              "speed": "15 km/h",
-              "location": "관악구 봉천동 진입",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.18 19:14",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.18 21:47",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "(주차 유지 — 2시간 32분)",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.18 21:48",
-              "lat": "37.4968",
-              "lng": "126.9455",
-              "speed": "8 km/h",
-              "location": "봉천동 출발",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.18 22:02",
-              "lat": "37.5092",
-              "lng": "126.9310",
-              "speed": "45 km/h",
-              "location": "상도터널 통과",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:15",
-              "lat": "37.5258",
-              "lng": "126.9138",
-              "speed": "38 km/h",
-              "location": "여의도 방면",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.18 22:28",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 도착",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 14:01",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 출발",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.15 14:18",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.15 16:42",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "(주차 유지 — 2시간 24분)",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.12 18:05",
-              "lat": "37.5565",
-              "lng": "126.9097",
-              "speed": "0 km/h",
-              "location": "자택 출발",
-              "suspicious": false
-            },
-            {
-              "timestamp": "02.12 18:22",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.12 20:55",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "(주차 유지 — 2시간 32분)",
-              "suspicious": true
-            },
-            {
-              "timestamp": "02.08 21:20",
-              "lat": "37.4962",
-              "lng": "126.9461",
-              "speed": "0 km/h",
-              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
-              "suspicious": true
-            }
-          ]
-        }
       }
     },
     {
@@ -2010,7 +982,7 @@
       "name": "통화기록",
       "surfaceName": "통화기록",
       "description": "새벽 시간대 같은 번호 반복. 낮에도 짧은 통화 다수. 통화 상대=1명.",
-      "surfaceDescription": "새벽 시간대 같은 번호 반복 통화 기록이 있다.",
+      "surfaceDescription": "통신사 통화 내역.",
       "type": "log",
       "reliability": "hard",
       "completeness": "original",
@@ -2271,412 +1243,6 @@
           ],
           "note": "010-****-3847 번호로의 야간 통화가 반복적으로 확인됨. 다만 통화 시간은 대부분 3분 이하, 최장도 5분 미만."
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "통화기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 ─ 시각·번호·통화시간",
-            "sourceNote": "institutional / original",
-            "redactions": [
-              "target_label"
-            ]
-          },
-          "log": {
-            "rows": [
-              {
-                "date": "02.05 00:12",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "3분 12초",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 22:35",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "010-****-7720",
-                "duration": "1분 05초",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 19:08",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "4분 28초",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 14:22",
-                "type": "miss",
-                "typeLabel": "부재중",
-                "target": "070-****-3310",
-                "duration": "-",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 08:15",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "02-****-3441",
-                "duration": "1분 30초",
-                "suspicious": false
-              },
-              {
-                "date": "02.03 21:15",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "2분 47초",
-                "suspicious": false
-              },
-              {
-                "date": "02.03 18:40",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "02-****-3441",
-                "duration": "2분 10초",
-                "suspicious": false
-              },
-              {
-                "date": "02.03 12:10",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-7720",
-                "duration": "0분 45초",
-                "suspicious": false
-              },
-              {
-                "date": "02.02 20:50",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "3분 55초",
-                "suspicious": false
-              },
-              {
-                "date": "02.02 07:32",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "010-****-7720",
-                "duration": "1분 20초",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 12:15",
-                "type": "miss",
-                "typeLabel": "부재중",
-                "target": "070-****-1120",
-                "duration": "-",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 10:45",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "02-****-3441",
-                "duration": "3분 05초",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 09:30",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "1분 48초",
-                "suspicious": false
-              },
-              {
-                "date": "01.31 23:48",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "4분 12초",
-                "suspicious": false
-              }
-            ],
-            "note": "같은 번호와 반복적으로 주고받은 통화 흔적이 보인다."
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "통화기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 ─ 통화 상대 식별과 미등록 번호 확인",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "log": {
-            "rows": [
-              {
-                "date": "02.05 00:12",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "3분 12초",
-                "suspicious": true
-              },
-              {
-                "date": "02.04 22:35",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "010-****-7720 (아내)",
-                "duration": "1분 05초",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 19:08",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "4분 28초",
-                "suspicious": true
-              },
-              {
-                "date": "02.04 14:22",
-                "type": "miss",
-                "typeLabel": "부재중",
-                "target": "070-****-3310",
-                "duration": "-",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 08:15",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "02-****-3441 (직장)",
-                "duration": "1분 30초",
-                "suspicious": false
-              },
-              {
-                "date": "02.03 21:15",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "2분 47초",
-                "suspicious": true
-              },
-              {
-                "date": "02.03 18:40",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "02-****-3441 (직장)",
-                "duration": "2분 10초",
-                "suspicious": false
-              },
-              {
-                "date": "02.03 12:10",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-7720 (아내)",
-                "duration": "0분 45초",
-                "suspicious": false
-              },
-              {
-                "date": "02.02 20:50",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "3분 55초",
-                "suspicious": true
-              },
-              {
-                "date": "02.02 07:32",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "010-****-7720 (아내)",
-                "duration": "1분 20초",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 12:15",
-                "type": "miss",
-                "typeLabel": "부재중",
-                "target": "070-****-1120",
-                "duration": "-",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 10:45",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "02-****-3441 (직장)",
-                "duration": "3분 05초",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 09:30",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "1분 48초",
-                "suspicious": true
-              },
-              {
-                "date": "01.31 23:48",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "4분 12초",
-                "suspicious": true
-              }
-            ],
-            "note": "등록되지 않은 번호(010-****-3847)와 반복 통화가 확인된다."
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "통화기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 ─ 통화 길이 패턴 분석",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "log": {
-            "rows": [
-              {
-                "date": "02.05 00:12",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "3분 12초",
-                "suspicious": true
-              },
-              {
-                "date": "02.04 22:35",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "010-****-7720 (아내)",
-                "duration": "1분 05초",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 19:08",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "4분 28초",
-                "suspicious": true
-              },
-              {
-                "date": "02.04 14:22",
-                "type": "miss",
-                "typeLabel": "부재중",
-                "target": "070-****-3310",
-                "duration": "-",
-                "suspicious": false
-              },
-              {
-                "date": "02.04 08:15",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "02-****-3441 (직장)",
-                "duration": "1분 30초",
-                "suspicious": false
-              },
-              {
-                "date": "02.03 21:15",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "2분 47초",
-                "suspicious": true
-              },
-              {
-                "date": "02.03 18:40",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "02-****-3441 (직장)",
-                "duration": "2분 10초",
-                "suspicious": false
-              },
-              {
-                "date": "02.03 12:10",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-7720 (아내)",
-                "duration": "0분 45초",
-                "suspicious": false
-              },
-              {
-                "date": "02.02 20:50",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "3분 55초",
-                "suspicious": true
-              },
-              {
-                "date": "02.02 07:32",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "010-****-7720 (아내)",
-                "duration": "1분 20초",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 12:15",
-                "type": "miss",
-                "typeLabel": "부재중",
-                "target": "070-****-1120",
-                "duration": "-",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 10:45",
-                "type": "in",
-                "typeLabel": "수신",
-                "target": "02-****-3441 (직장)",
-                "duration": "3분 05초",
-                "suspicious": false
-              },
-              {
-                "date": "02.01 09:30",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "1분 48초",
-                "suspicious": true
-              },
-              {
-                "date": "01.31 23:48",
-                "type": "out",
-                "typeLabel": "발신",
-                "target": "010-****-3847",
-                "duration": "4분 12초",
-                "suspicious": true
-              }
-            ],
-            "note": "010-****-3847 번호 통화가 반복적이지만, 통화 시간이 대부분 3분 이하. 외도로 보기에는 짧다."
-          }
-        }
       }
     },
     {
@@ -2684,7 +1250,7 @@
       "name": "발신자 미상 문자",
       "surfaceName": "발신자 미상 문자",
       "description": "발신자 불명의 문자 스레드. 지역번호는 익숙하지만 명의가 확인되지 않는 번호와의 반복 교신.",
-      "surfaceDescription": "이름이 등록되지 않은 번호와 문자 스레드가 남아 있다.",
+      "surfaceDescription": "미등록 번호의 문자.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -2746,25 +1312,6 @@
           "implication": "이 번호를 굳이 숨겨 온 이유에 가족 쪽 사정이 얽혀 있을 수 있다."
         }
       },
-      "meta": {
-        "name": "발신자 미상 문자",
-        "type": "chat",
-        "viewerType": "chat",
-        "trustLevel": "mid",
-        "trustLabel": "보통",
-        "source": "b",
-        "sourceLabel": "B측",
-        "legality": "ok",
-        "legalLabel": "적법",
-        "stage": 4,
-        "stageLabel": "핵심 공개",
-        "sourceNote": "self_possessed / original",
-        "redactions": [
-          "조카 이름 비공개",
-          "학교명 및 학년 마스킹",
-          "생리 관련 직접 표현 봉인"
-        ]
-      },
       "v3DepthPlan": [
         {
           "id": "stub",
@@ -2819,12 +1366,25 @@
           "summary": "외도 서사를 뒤집는 맥락 증거로 전환"
         }
       ],
-      "v3SealTargets": [
-        "조카 이름",
-        "학교명",
-        "학년",
-        "생리 관련 직접 표현"
-      ],
+      "meta": {
+        "name": "발신자 미상 문자",
+        "type": "chat",
+        "viewerType": "chat",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "b",
+        "sourceLabel": "B측",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 4,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "self_possessed / original",
+        "redactions": [
+          "조카 이름 비공개",
+          "학교명 및 학년 마스킹",
+          "생리 관련 직접 표현 봉인"
+        ]
+      },
       "viewerData": {
         "meta": {
           "name": "발신자 미상 문자",
@@ -2915,255 +1475,6 @@
             }
           ]
         }
-      },
-      "viewerDataByStage": {
-        "0": {
-          "meta": {
-            "name": "발신자 미상 문자",
-            "type": "chat",
-            "viewerType": "chat",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "b",
-            "sourceLabel": "B측",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 4,
-            "stageLabel": "1단계 ─ 발신자 미상, 짧은 발췌",
-            "sourceNote": "self_possessed / original",
-            "redactions": [
-              "조카 이름 비공개",
-              "학교명 및 학년 마스킹",
-              "생리 관련 직접 표현 봉인"
-            ]
-          },
-          "chat": {
-            "header": "발신자 미상",
-            "messages": [
-              {
-                "side": "left",
-                "sender": "***",
-                "text": "오늘도 부탁해."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "알겠어."
-              },
-              {
-                "side": "left",
-                "sender": "***",
-                "text": "항상 고마워."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "뭘."
-              },
-              {
-                "side": "left",
-                "sender": "***",
-                "text": "오늘 혼자 있으니 밥 좀 부탁."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "알겠어 이따 들를게."
-              },
-              {
-                "type": "note",
-                "text": "※ 조사 1회만 수행됨. 발신자는 확인되지 않았습니다."
-              }
-            ]
-          }
-        },
-        "1": {
-          "meta": {
-            "name": "발신자 미상 문자",
-            "type": "chat",
-            "viewerType": "chat",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "b",
-            "sourceLabel": "B측",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 4,
-            "stageLabel": "2단계 ─ 번호 노출, 의심 문구 확인",
-            "sourceNote": "self_possessed / original",
-            "redactions": [
-              "조카 이름 비공개",
-              "학교명 및 학년 마스킹",
-              "생리 관련 직접 표현 봉인"
-            ]
-          },
-          "chat": {
-            "header": "010-****-3847",
-            "messages": [
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "나야. 당분간 이 번호로 연락할께."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "응 알겠어."
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "내 이름으로 저장은 하지마. 나중에 문제가 될 수 있어."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "…알았어."
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "오늘도 부탁해."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "알겠어 이따 들를게."
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "항상 고마워."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "뭘."
-              },
-              {
-                "type": "note",
-                "text": "※ 조사 2회 수행. 발신 번호 지역·앞자리는 익숙하지만 명의는 미상(번호부 미저장)."
-              }
-            ]
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "발신자 미상 문자",
-            "type": "chat",
-            "viewerType": "chat",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "b",
-            "sourceLabel": "B측",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 4,
-            "stageLabel": "핵심 공개",
-            "sourceNote": "self_possessed / original",
-            "redactions": [
-              "조카 이름 비공개",
-              "학교명 및 학년 마스킹",
-              "생리 관련 직접 표현 봉인"
-            ]
-          },
-          "chat": {
-            "header": "010-****-3847",
-            "messages": [
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "오늘도 7시쯤 갈께."
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "매번 고마워. 이번 주도 시간이 어렵네."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "뭐 필요한 건 없어?"
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "아, 그때 얘기한 틴트랑 스타킹."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "응, 사갈께."
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "그런데 정말 매번 괜찮아? 집에서는 뭐라 안해?"
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "어차피 요새 사이도 안좋아서 관심도 없어. 걱정 마."
-              }
-            ]
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "발신자 미상 문자",
-            "type": "chat",
-            "viewerType": "chat",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "b",
-            "sourceLabel": "B측",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 4,
-            "stageLabel": "맥락 복원",
-            "sourceNote": "self_possessed / original",
-            "redactions": [
-              "조카 이름 비공개",
-              "학교명 및 학년 마스킹",
-              "생리 관련 직접 표현 봉인"
-            ]
-          },
-          "chat": {
-            "header": "010-****-3847",
-            "messages": [
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "얘기 들었어. 고맙고 미안해."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "괜찮아. 그맘때 애들이 다 그렇지 뭘."
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "이번에 시험 성적 때문에 스트레스를 좀 받았나봐."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "그럼 내가 공부를 좀 봐줄까?"
-              },
-              {
-                "side": "left",
-                "sender": "010-****-3847",
-                "text": "그럴 시간이 어딨어. 마음만으로도 고마워."
-              },
-              {
-                "side": "right",
-                "sender": "이준호",
-                "text": "일단 참고서 좀 사갈께. 해보고 결정하지 뭐."
-              }
-            ]
-          }
-        }
       }
     },
     {
@@ -3171,7 +1482,7 @@
       "name": "이준호의 개인 계좌 출금 내역",
       "surfaceName": "개인 계좌 출금 내역",
       "description": "이준호 본인 명의 별도 계좌의 거래 내역. 장기간 별도로 관리된 자금과 최근 큰 현금 출금 흔적이 남아 있다.",
-      "surfaceDescription": "아내에게 공유되지 않은 별도 계좌와 현재 수만 원대 잔액이 보인다.",
+      "surfaceDescription": "남편 명의 별도 계좌 거래 내역.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -3362,156 +1673,6 @@
             "suspicious": true
           }
         ]
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "이준호의 개인 계좌 출금 내역",
-            "type": "bank",
-            "viewerType": "bank",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 - 별도 계좌와 현재 잔액",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "bank": [
-            {
-              "date": "2016.03.02",
-              "desc": "계좌 개설 - 이준호 명의 별도 자유입출금 계좌",
-              "amount": "0",
-              "balance": "0",
-              "suspicious": false
-            },
-            {
-              "date": "2026.02.22",
-              "desc": "잔액 조회 - 배우자에게 공유되지 않은 별도 계좌",
-              "amount": "조회",
-              "balance": "48,600",
-              "suspicious": true
-            }
-          ]
-        },
-        "2": {
-          "meta": {
-            "name": "이준호의 개인 계좌 출금 내역",
-            "type": "bank",
-            "viewerType": "bank",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 - 10년간 적립 내역",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "bank": [
-            {
-              "date": "2016.03.25",
-              "desc": "정기이체 - 급여 잔액 소액 적립",
-              "amount": "+120,000",
-              "balance": "120,000",
-              "suspicious": false
-            },
-            {
-              "date": "2018.11.30",
-              "desc": "현금 입금 - 명절·상여 잔액 적립",
-              "amount": "+300,000",
-              "balance": "6,850,000",
-              "suspicious": false
-            },
-            {
-              "date": "2021.08.10",
-              "desc": "정기이체 - 월 생활비 잔액 적립",
-              "amount": "+150,000",
-              "balance": "17,420,000",
-              "suspicious": false
-            },
-            {
-              "date": "2024.12.31",
-              "desc": "장기 적립 누계 - 10년간 소액 축적분",
-              "amount": "+12,628,600",
-              "balance": "30,048,600",
-              "suspicious": true
-            },
-            {
-              "date": "2026.02.22",
-              "desc": "잔액 조회 - 최근 출금 후 남은 잔액",
-              "amount": "조회",
-              "balance": "48,600",
-              "suspicious": true
-            }
-          ]
-        },
-        "3": {
-          "meta": {
-            "name": "이준호의 개인 계좌 출금 내역",
-            "type": "bank",
-            "viewerType": "bank",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 - 4개월 분할 출금",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "bank": [
-            {
-              "date": "2025.09.30",
-              "desc": "장기 적립 누계 - 10년간 모은 별도 자금",
-              "amount": "+30,048,600",
-              "balance": "30,048,600",
-              "suspicious": false
-            },
-            {
-              "date": "2025.10.18",
-              "desc": "현금 인출 - 마포지점 창구",
-              "amount": "-5,000,000",
-              "balance": "25,048,600",
-              "suspicious": true
-            },
-            {
-              "date": "2025.11.22",
-              "desc": "현금 인출 - 관악지점 ATM",
-              "amount": "-8,000,000",
-              "balance": "17,048,600",
-              "suspicious": true
-            },
-            {
-              "date": "2025.12.20",
-              "desc": "현금 인출 - 마포지점 ATM",
-              "amount": "-7,000,000",
-              "balance": "10,048,600",
-              "suspicious": true
-            },
-            {
-              "date": "2026.01.24",
-              "desc": "현금 인출 - 강서지점 창구",
-              "amount": "-10,000,000",
-              "balance": "48,600",
-              "suspicious": true
-            },
-            {
-              "date": "2026.02.22",
-              "desc": "잔액 조회 - 분할 출금 후 현재 잔액",
-              "amount": "조회",
-              "balance": "48,600",
-              "suspicious": true
-            }
-          ]
-        }
       }
     },
     {
@@ -3519,7 +1680,7 @@
       "name": "투자방 텔레그램 + 송금 기록",
       "surfaceName": "투자방 텔레그램",
       "description": "박지연이 공동 적금 해지액 2,000만원을 투자방 안내 계좌로 송금한 뒤, 수익 인증과 출금 지연이 이어진 텔레그램 대화 기록.",
-      "surfaceDescription": "투자방 텔레그램 대화와 송금 흐름이 함께 남아 있는 캡처 묶음. 단계가 올라갈수록 입금, 초기 수익 인증, 먹튀 정황이 분리되어 드러난다.",
+      "surfaceDescription": "투자방 대화와 송금 1건.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -3824,371 +1985,6 @@
             }
           ]
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "투자방 텔레그램",
-            "type": "chat",
-            "viewerType": "chat",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "a",
-            "sourceLabel": "A측",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "투자방 소개 및 수익 자랑",
-            "sourceNote": "self_possessed / original",
-            "redactions": []
-          },
-          "chat": {
-            "header": "텔레그램 · VIP 투자클럽",
-            "inputStatus": "1단계 공개",
-            "pages": [
-              {
-                "label": "1",
-                "header": "텔레그램 · VIP 투자클럽 · 01 투자방 소개",
-                "messages": [
-                  {
-                    "side": "left",
-                    "sender": "운영자(제이슨)",
-                    "text": "이번 달 수익률 180% 달성. 지금 들어오시면 원금 보장 이벤트 적용됩니다."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "김**",
-                    "text": "지난달 500 넣어서 1,400 됐어요."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "이**",
-                    "text": "진짜 대박... 나도 추가 입금함"
-                  },
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "처음 입금하려면 어디로 보내면 되나요?"
-                  }
-                ]
-              }
-            ],
-            "messages": [
-              {
-                "side": "left",
-                "sender": "운영자(제이슨)",
-                "text": "이번 달 수익률 180% 달성. 지금 들어오시면 원금 보장 이벤트 적용됩니다."
-              },
-              {
-                "side": "left",
-                "sender": "김**",
-                "text": "지난달 500 넣어서 1,400 됐어요."
-              },
-              {
-                "side": "left",
-                "sender": "이**",
-                "text": "진짜 대박... 나도 추가 입금함"
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "처음 입금하려면 어디로 보내면 되나요?"
-              }
-            ]
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "투자방 텔레그램",
-            "type": "chat",
-            "viewerType": "chat",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "a",
-            "sourceLabel": "A측",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "입금 및 초기 수익 인증",
-            "sourceNote": "self_possessed / original",
-            "redactions": []
-          },
-          "chat": {
-            "header": "텔레그램 · VIP 투자클럽",
-            "inputStatus": "2단계 공개",
-            "pages": [
-              {
-                "label": "1",
-                "header": "텔레그램 · VIP 투자클럽 · 01 투자방 소개",
-                "messages": [
-                  {
-                    "side": "left",
-                    "sender": "운영자(제이슨)",
-                    "text": "이번 달 수익률 180% 달성. 지금 들어오시면 원금 보장 이벤트 적용됩니다."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "김**",
-                    "text": "지난달 500 넣어서 1,400 됐어요."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "이**",
-                    "text": "진짜 대박... 나도 추가 입금함"
-                  },
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "처음 입금하려면 어디로 보내면 되나요?"
-                  }
-                ]
-              },
-              {
-                "label": "2",
-                "header": "텔레그램 · VIP 투자클럽 · 02 입금 및 초기 수익 인증",
-                "messages": [
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "2,000만원 입금했습니다. 확인 부탁드려요."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "운영자(제이슨)",
-                    "text": "확인됐습니다. 3일 내 첫 수익금 입금 예정입니다."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "운영자(제이슨)",
-                    "text": "초기 수익 8% 반영됐습니다. 추가 입금하면 VIP 비율로 전환됩니다."
-                  },
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "조금 더 기다리면 회복할 수 있겠죠?"
-                  }
-                ]
-              }
-            ],
-            "messages": [
-              {
-                "side": "left",
-                "sender": "운영자(제이슨)",
-                "text": "이번 달 수익률 180% 달성. 지금 들어오시면 원금 보장 이벤트 적용됩니다."
-              },
-              {
-                "side": "left",
-                "sender": "김**",
-                "text": "지난달 500 넣어서 1,400 됐어요."
-              },
-              {
-                "side": "left",
-                "sender": "이**",
-                "text": "진짜 대박... 나도 추가 입금함"
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "처음 입금하려면 어디로 보내면 되나요?"
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "2,000만원 입금했습니다. 확인 부탁드려요."
-              },
-              {
-                "side": "left",
-                "sender": "운영자(제이슨)",
-                "text": "확인됐습니다. 3일 내 첫 수익금 입금 예정입니다."
-              },
-              {
-                "side": "left",
-                "sender": "운영자(제이슨)",
-                "text": "초기 수익 8% 반영됐습니다. 추가 입금하면 VIP 비율로 전환됩니다."
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "조금 더 기다리면 회복할 수 있겠죠?"
-              }
-            ]
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "투자방 텔레그램",
-            "type": "chat",
-            "viewerType": "chat",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "a",
-            "sourceLabel": "A측",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "먹튀 및 피해 확정",
-            "sourceNote": "self_possessed / original",
-            "redactions": []
-          },
-          "chat": {
-            "header": "텔레그램 · VIP 투자클럽",
-            "inputStatus": "3단계 공개",
-            "pages": [
-              {
-                "label": "1",
-                "header": "텔레그램 · VIP 투자클럽 · 01 투자방 소개",
-                "messages": [
-                  {
-                    "side": "left",
-                    "sender": "운영자(제이슨)",
-                    "text": "이번 달 수익률 180% 달성. 지금 들어오시면 원금 보장 이벤트 적용됩니다."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "김**",
-                    "text": "지난달 500 넣어서 1,400 됐어요."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "이**",
-                    "text": "진짜 대박... 나도 추가 입금함"
-                  },
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "처음 입금하려면 어디로 보내면 되나요?"
-                  }
-                ]
-              },
-              {
-                "label": "2",
-                "header": "텔레그램 · VIP 투자클럽 · 02 입금 및 초기 수익 인증",
-                "messages": [
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "2,000만원 입금했습니다. 확인 부탁드려요."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "운영자(제이슨)",
-                    "text": "확인됐습니다. 3일 내 첫 수익금 입금 예정입니다."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "운영자(제이슨)",
-                    "text": "초기 수익 8% 반영됐습니다. 추가 입금하면 VIP 비율로 전환됩니다."
-                  },
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "조금 더 기다리면 회복할 수 있겠죠?"
-                  }
-                ]
-              },
-              {
-                "label": "3",
-                "header": "텔레그램 · VIP 투자클럽 · 03 출금 지연과 피해 확정",
-                "messages": [
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "3일 지났는데 아직 입금이 안 됐어요."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "김**",
-                    "text": "제이슨님 연락이 안 됩니다."
-                  },
-                  {
-                    "type": "note",
-                    "side": "left",
-                    "sender": "시스템",
-                    "text": "운영자가 채팅방을 나갔습니다."
-                  },
-                  {
-                    "side": "left",
-                    "sender": "영자",
-                    "text": "저도 출금 신청 막혔어요."
-                  },
-                  {
-                    "side": "right",
-                    "sender": "박지연",
-                    "text": "왜 방이 사라졌어요? 제 돈 돌려주세요."
-                  }
-                ]
-              }
-            ],
-            "messages": [
-              {
-                "side": "left",
-                "sender": "운영자(제이슨)",
-                "text": "이번 달 수익률 180% 달성. 지금 들어오시면 원금 보장 이벤트 적용됩니다."
-              },
-              {
-                "side": "left",
-                "sender": "김**",
-                "text": "지난달 500 넣어서 1,400 됐어요."
-              },
-              {
-                "side": "left",
-                "sender": "이**",
-                "text": "진짜 대박... 나도 추가 입금함"
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "처음 입금하려면 어디로 보내면 되나요?"
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "2,000만원 입금했습니다. 확인 부탁드려요."
-              },
-              {
-                "side": "left",
-                "sender": "운영자(제이슨)",
-                "text": "확인됐습니다. 3일 내 첫 수익금 입금 예정입니다."
-              },
-              {
-                "side": "left",
-                "sender": "운영자(제이슨)",
-                "text": "초기 수익 8% 반영됐습니다. 추가 입금하면 VIP 비율로 전환됩니다."
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "조금 더 기다리면 회복할 수 있겠죠?"
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "3일 지났는데 아직 입금이 안 됐어요."
-              },
-              {
-                "side": "left",
-                "sender": "김**",
-                "text": "제이슨님 연락이 안 됩니다."
-              },
-              {
-                "type": "note",
-                "side": "left",
-                "sender": "시스템",
-                "text": "운영자가 채팅방을 나갔습니다."
-              },
-              {
-                "side": "left",
-                "sender": "영자",
-                "text": "저도 출금 신청 막혔어요."
-              },
-              {
-                "side": "right",
-                "sender": "박지연",
-                "text": "왜 방이 사라졌어요? 제 돈 돌려주세요."
-              }
-            ]
-          }
-        }
       }
     },
     {
@@ -4196,15 +1992,14 @@
       "name": "공동 적금 해지 서류",
       "surfaceName": "공동 적금 해지 서류",
       "description": "공동 적금 해지 서류와 처리 기록. A가 해지 절차를 어떻게 진행했는지 가리키는 자료.",
-      "surfaceDescription": "공동 적금이 만기 전에 해지된 서류가 남아 있다.",
+      "surfaceDescription": "공동 적금 해지 처리 서류.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "institutional",
       "legitimacy": "lawful",
       "proves": [
-        "h-d3",
-        "h-d4"
+        "h-d3"
       ],
       "isTrap": false,
       "requires": [
@@ -4427,12 +2222,12 @@
     },
     {
       "requires": [
-        "e-3",
-        "e-4"
+        "e-6",
+        "e-7"
       ],
       "upgradesTo": "hard",
       "proves": [
-        "d-1"
+        "h-d3"
       ]
     },
     {
@@ -4443,27 +2238,6 @@
       "upgradesTo": "hard",
       "proves": [
         "d-2"
-      ]
-    },
-    {
-      "requires": [
-        "e-5",
-        "e-6"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "h-d4"
-      ]
-    },
-    {
-      "requires": [
-        "e-6",
-        "e-7"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "h-d3",
-        "h-d4"
       ]
     }
   ],
@@ -4526,7 +2300,7 @@
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "direct_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S3",
@@ -4561,6 +2335,16 @@
         {
           "from": "S2",
           "to": "S3",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
           "trigger": "direct_question"
         }
       ]
@@ -4597,41 +2381,6 @@
           "from": "S4",
           "to": "S5",
           "trigger": "direct_question"
-        }
-      ]
-    },
-    {
-      "disputeId": "h-d4",
-      "lieType": "LT-1",
-      "lieIntensity": "L2",
-      "lieMotive": "face_saving",
-      "initialState": "S0",
-      "collapseViaTrust": true,
-      "transitions": [
-        {
-          "from": "S0",
-          "to": "S1",
-          "trigger": "direct_question"
-        },
-        {
-          "from": "S1",
-          "to": "S2",
-          "trigger": "motive_question"
-        },
-        {
-          "from": "S2",
-          "to": "S3",
-          "trigger": "empathy_question"
-        },
-        {
-          "from": "S3",
-          "to": "S4",
-          "trigger": "direct_question"
-        },
-        {
-          "from": "S4",
-          "to": "S5",
-          "trigger": "empathy_question"
         }
       ]
     }
@@ -4741,41 +2490,6 @@
           "trigger": "direct_question"
         }
       ]
-    },
-    {
-      "disputeId": "h-d4",
-      "lieType": "LT-1",
-      "lieIntensity": "L2",
-      "lieMotive": "face_saving",
-      "initialState": "S0",
-      "collapseViaTrust": true,
-      "transitions": [
-        {
-          "from": "S0",
-          "to": "S1",
-          "trigger": "direct_question"
-        },
-        {
-          "from": "S1",
-          "to": "S2",
-          "trigger": "motive_question"
-        },
-        {
-          "from": "S2",
-          "to": "S3",
-          "trigger": "empathy_question"
-        },
-        {
-          "from": "S3",
-          "to": "S4",
-          "trigger": "direct_question"
-        },
-        {
-          "from": "S4",
-          "to": "S5",
-          "trigger": "empathy_question"
-        }
-      ]
     }
   ],
   "solutions": {
@@ -4794,9 +2508,7 @@
   },
   "activeLedgerEntries": [
     "ledger-1",
-    "ledger-2",
-    "ledger-3",
-    "ledger-4"
+    "ledger-2"
   ],
   "activeThirdParties": [
     "w-1",
@@ -4810,8 +2522,7 @@
   ],
   "monetaryDisputeIds": [
     "d-2",
-    "h-d3",
-    "h-d4"
+    "h-d3"
   ],
   "combinationLab": {
     "analysisPointsBase": 5,
@@ -4820,7 +2531,7 @@
       {
         "id": "e-1",
         "type": "evidence",
-        "label": "e-1 카드 명세서",
+        "label": "e-1 영수증 묶음 5장",
         "sourceRef": "e-1",
         "linkedDisputeIds": [
           "d-1"
@@ -4833,7 +2544,7 @@
       {
         "id": "e-2",
         "type": "evidence",
-        "label": "e-2 오피스텔 출입 기록",
+        "label": "e-2 블랙박스 GPS 기록",
         "sourceRef": "e-2",
         "linkedDisputeIds": [
           "d-1"
@@ -4846,7 +2557,7 @@
       {
         "id": "e-3",
         "type": "evidence",
-        "label": "e-3 새벽 통화기록",
+        "label": "e-3 통화기록",
         "sourceRef": "e-3",
         "linkedDisputeIds": [
           "d-1"
@@ -4872,11 +2583,10 @@
       {
         "id": "e-5",
         "type": "evidence",
-        "label": "e-5 개인 계좌의 큰 금액 출금",
+        "label": "e-5 개인 계좌 출금 내역",
         "sourceRef": "e-5",
         "linkedDisputeIds": [
-          "d-2",
-          "h-d4"
+          "d-2"
         ],
         "linkedEvidenceIds": [
           "e-5"
@@ -4886,11 +2596,10 @@
       {
         "id": "e-6",
         "type": "evidence",
-        "label": "e-6 투자방 텔레그램 + 2,000만 원 송금",
+        "label": "e-6 투자방 텔레그램",
         "sourceRef": "e-6",
         "linkedDisputeIds": [
-          "h-d3",
-          "h-d4"
+          "h-d3"
         ],
         "linkedEvidenceIds": [
           "e-6"
@@ -4900,10 +2609,10 @@
       {
         "id": "e-7",
         "type": "evidence",
-        "label": "e-7 통화·출입·계좌 이동 대조표",
+        "label": "e-7 공동 적금 해지 서류",
         "sourceRef": "e-7",
         "linkedDisputeIds": [
-          "h-d4"
+          "h-d3"
         ],
         "linkedEvidenceIds": [
           "e-7"
@@ -4946,8 +2655,7 @@
         "label": "w-1 오피스텔 경비 증언 축",
         "sourceRef": "w-1",
         "linkedDisputeIds": [
-          "d-1",
-          "d-2"
+          "d-1"
         ],
         "visibility": "base"
       },
@@ -4958,7 +2666,7 @@
         "sourceRef": "w-2",
         "linkedDisputeIds": [
           "d-2",
-          "h-d4"
+          "h-d3"
         ],
         "visibility": "base"
       },
@@ -4981,7 +2689,8 @@
         ],
         "linkedEvidenceIds": [
           "e-1",
-          "e-2"
+          "e-2",
+          "e-4"
         ],
         "visibility": "derived"
       },
@@ -4990,10 +2699,10 @@
         "type": "derived_note",
         "label": "dc-2 시댁 얘기만 나오면 싸움",
         "linkedDisputeIds": [
-          "d-1"
+          "d-1",
+          "d-2"
         ],
         "linkedEvidenceIds": [
-          "e-3",
           "e-4"
         ],
         "visibility": "derived"
@@ -5001,9 +2710,9 @@
       {
         "id": "dc-3",
         "type": "derived_note",
-        "label": "dc-3 3,000만 원의 권한",
+        "label": "dc-3 이준호의 비밀 개인 계좌",
         "linkedDisputeIds": [
-          "h-d3"
+          "d-2"
         ],
         "linkedEvidenceIds": [
           "e-4",
@@ -5014,40 +2723,25 @@
       {
         "id": "dc-4",
         "type": "derived_note",
-        "label": "dc-4 2,000만 원의 수치",
+        "label": "dc-4 돌이키고 싶은 2,000만 원",
         "linkedDisputeIds": [
-          "d-2"
+          "h-d3"
         ],
         "linkedEvidenceIds": [
-          "e-6"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "dc-5",
-        "type": "derived_note",
-        "label": "dc-5 6,000만 원의 순서",
-        "linkedDisputeIds": [
-          "h-d4"
-        ],
-        "linkedEvidenceIds": [
-          "e-5",
           "e-6",
           "e-7"
         ],
         "visibility": "derived"
       },
       {
-        "id": "dc-6",
+        "id": "dc-7",
         "type": "derived_note",
-        "label": "dc-6 가족 쪽 정황",
+        "label": "dc-7 공동 적금 2,000만 원의 해지",
         "linkedDisputeIds": [
-          "d-1",
-          "d-2"
+          "h-d3"
         ],
         "linkedEvidenceIds": [
-          "e-1",
-          "e-4"
+          "e-7"
         ],
         "visibility": "derived"
       }
@@ -5056,9 +2750,9 @@
       {
         "id": "dc-1",
         "label": "dc-1 오피스텔의 사람들",
-        "summary": "외도라는 첫 인상을 가족 쪽 사정으로 다시 보게 만드는 카드",
+        "summary": "외도 서사를 가족 돌봄 서사로 뒤집는 첫 반전 카드.",
         "nodeType": "derived_note",
-        "noteText": "오피스텔의 사람들",
+        "noteText": "영수증 + 블랙박스 GPS가 같은 오피스텔 좌표로 묶이고, 그 층에 여자 혼자 사는 집이 없다는 경비 증언이 더해진다. 외도 frame이 무너지는 첫 단서.",
         "effects": [
           {
             "kind": "unlock_note",
@@ -5073,14 +2767,14 @@
             }
           }
         ],
-        "judgeHint": "이제 오피스텔 경비를 증인으로 불러 동선을 확정하실 수 있습니다."
+        "judgeHint": "오피스텔 경비(w-1)를 증인으로 부를 수 있게 됨."
       },
       {
         "id": "dc-2",
         "label": "dc-2 시댁 얘기만 나오면 싸움",
-        "summary": "B가 입을 닫게 만드는 두려움의 정체를 가늠하는 카드",
+        "summary": "B가 형/조카 정황을 말하지 않은 동기를 드러내는 카드. 시댁 갈등 공포 frame.",
         "nodeType": "derived_note",
-        "noteText": "시댁 얘기만 나오면 싸움",
+        "noteText": "B가 시댁 이야기가 나올 때마다 입을 닫는 데에는 ledger-2 silenced 영역의 무게가 있다. 외도가 아니라는 진실을 말하지 못한 동기.",
         "effects": [
           {
             "kind": "unlock_note",
@@ -5094,36 +2788,18 @@
             }
           }
         ],
-        "judgeHint": "이 감정 패턴을 이준호 씨에게 직접 추궁하시거나 발신자 미상 문자(e-4)를 제시하면 구체적 사연이 드러날 것입니다."
+        "judgeHint": "dc-2 감정 패턴을 B에 직접 추궁하거나 e-4 제시."
       },
       {
         "id": "dc-3",
-        "label": "dc-3 3,000만 원의 권한",
-        "summary": "공동 적금 해지의 권한이 누구에게 있었는지, 위임장 처리가 정당했는지를 묻는 카드",
+        "label": "dc-3 이준호의 비밀 개인 계좌",
+        "summary": "B가 10년간 별도로 운용한 개인 비자금 계좌. 형 지원 frame의 자금 출처.",
         "nodeType": "derived_note",
-        "noteText": "3,000만 원의 권한",
+        "noteText": "이준호 본인 명의의 별도 계좌. 10년간 누적 3,000만 원 → 최근 4개월 동안 4회 분할 현금 출금. 형이 개인회생 중이라 계좌 입금이 곤란해 현금으로 전달.",
         "effects": [
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-3"
-          },
-          {
-            "kind": "unlock_dispute",
-            "unlockNodeId": "h-d3"
-          }
-        ],
-        "judgeHint": "은행 직원을 증인으로 불러 공동 적금 해지 절차와 위임장 진위를 확인해 보십시오."
-      },
-      {
-        "id": "dc-4",
-        "label": "dc-4 2,000만 원의 수치",
-        "summary": "이준호 씨의 개인 자금이 어디로, 왜 빠져나갔는지 묻는 카드",
-        "nodeType": "derived_note",
-        "noteText": "2,000만 원의 수치",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "dc-4"
           },
           {
             "kind": "upgrade_dispute",
@@ -5134,46 +2810,47 @@
             }
           }
         ],
-        "judgeHint": "이제 이준호 씨 가족 쪽 상황을 직접 확인하거나, 동기 탐색으로 숨긴 이유를 물어볼 수 있습니다."
+        "judgeHint": "은행 직원(w-2)을 증인으로 부를 수 있게 됨 — 창구 출금 증언 가능."
       },
       {
-        "id": "dc-5",
-        "label": "dc-5 6,000만 원의 순서",
-        "summary": "숨김의 시작과 실제 송금 실행을 분리하는 카드",
+        "id": "dc-4",
+        "label": "dc-4 돌이키고 싶은 2,000만 원",
+        "summary": "A가 위임장 위조로 해지한 공동 적금 2,000만 원을 투자방에 송금한 뒤 사기로 잃은 영역. 후회와 수치심 frame.",
         "nodeType": "derived_note",
-        "noteText": "6,000만 원의 순서",
+        "noteText": "A가 박미라(w-3)의 텔레그램 VIP 투자클럽 링크 전달 후 해지액 2,000만 원 전액을 운영자 계좌로 송금. 운영자 잠적 후 전액 손실.",
         "effects": [
           {
             "kind": "unlock_note",
-            "unlockNodeId": "dc-5"
+            "unlockNodeId": "dc-4"
           },
           {
             "kind": "unlock_dispute",
-            "unlockNodeId": "h-d4"
+            "unlockNodeId": "h-d3"
           }
         ],
-        "judgeHint": "박미라 증인이 투자방 가입 경로를 결정적으로 채워줄 것입니다."
+        "judgeHint": "박미라(w-3)를 증인으로 부를 수 있게 됨."
       },
       {
-        "id": "dc-6",
-        "label": "dc-6 가족 쪽 정황",
-        "summary": "영수증의 참고서와 문자 속 학교 알림을 함께 보며 가족 쪽 정황을 분리하는 카드",
+        "id": "dc-7",
+        "label": "dc-7 공동 적금 2,000만 원의 해지",
+        "summary": "A가 위임장을 위조하여 공동 적금을 단독 해지한 절차 자체에 초점을 둔 카드. 송금 행선지(dc-4)와는 분리.",
         "nodeType": "derived_note",
-        "noteText": "가족 쪽 정황",
+        "noteText": "○○은행 공동 적금 (월 50만×36개월) 2026.01.18 중도 해지 → 2,012만 원 박지연 개인계좌 즉시 입금. 위임장의 이준호 서명이 본인 필적 아님.",
         "effects": [
           {
             "kind": "unlock_note",
-            "unlockNodeId": "dc-6"
+            "unlockNodeId": "dc-7"
           },
           {
-            "kind": "upgrade_evidence",
-            "evidenceUpgrade": {
-              "evidenceId": "e-4",
-              "toReliability": "hard"
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "h-d3",
+              "weight": "high",
+              "ambiguity": "low"
             }
           }
         ],
-        "judgeHint": "문자와 구매 품목이 같은 가족 쪽 정황을 가리킵니다. 누구와 관련된 일인지와 왜 숨겼는지를 따로 확인해야 합니다."
+        "judgeHint": "은행 직원(w-2)에게 위임장 처리 경위 추궁 가능."
       }
     ],
     "recipes": [
@@ -5184,52 +2861,41 @@
           "e-2"
         ],
         "cost": 1,
-        "discoveryText": "영수증 구매 위치와 블랙박스 정차 좌표가 일치한다. 오피스텔 근처에서만 구매한 패턴이 확정된다.",
+        "discoveryText": "영수증 구매 위치와 블랙박스 정차 좌표가 같은 오피스텔로 묶인다.",
         "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
-        "id": "combine-2",
-        "inputs": [
-          "e-1",
-          "e-4"
-        ],
-        "cost": 1,
-        "discoveryText": "영수증 묶음 속 중학교 참고서와 문자에 섞인 학교 알림이 가족 쪽 정황으로 맞물린다.",
-        "outputId": "dc-6",
-        "resultType": "dossier"
-      },
-      {
         "id": "combine-3",
-        "inputs": [
-          "e-5",
-          "e-6"
-        ],
-        "cost": 1,
-        "discoveryText": "이준호 씨의 개인 계좌 출금과 박지연 씨의 투자방 송금 시점이 맞물립니다. 두 자금 흐름이 서로 다른 책임 축인지 확인해야 합니다.",
-        "outputId": "dc-4",
-        "resultType": "dispute"
-      },
-      {
-        "id": "combine-4",
         "inputs": [
           "e-6",
           "e-7"
         ],
-        "cost": 1,
-        "discoveryText": "공동 적금 해지액과 투자방 송금액이 정확히 일치한다. 빠져나간 돈의 행선지가 확정된다.",
+        "cost": 2,
+        "discoveryText": "투자방 송금 기록과 공동 적금 해지 서류가 동일 날짜·금액으로 연결된다.",
+        "outputId": "dc-4",
+        "resultType": "upgrade"
+      },
+      {
+        "id": "combine-4",
+        "inputs": [
+          "e-4",
+          "e-5"
+        ],
+        "cost": 2,
+        "discoveryText": "B의 문자 스레드와 별도 계좌 출금 패턴이 같은 시기 형 가족 영역과 겹친다.",
         "outputId": "dc-3",
         "resultType": "upgrade"
       },
       {
         "id": "combine-5",
         "inputs": [
-          "stmt-a-protect",
-          "e-7"
+          "e-7",
+          "stmt-a-protect"
         ],
-        "cost": 1,
-        "discoveryText": "박지연 씨의 '제 몫을 지키려 했다'는 말과 위임장 처리 정황이 같은 방향을 가리킨다. 공동 적금 해지가 우발이 아니라 자각된 행위였음이 드러난다.",
-        "outputId": "dc-3",
+        "cost": 2,
+        "discoveryText": "해지 서류의 위임장 서명과 A의 자기방어 진술이 정합되며 단독 해지 행위가 확정된다.",
+        "outputId": "dc-7",
         "resultType": "dossier"
       },
       {
@@ -5239,20 +2905,9 @@
           "e-4"
         ],
         "cost": 1,
-        "discoveryText": "가족 쪽 일이라는 해명이 문자 내용과 맞물립니다. 상대가 누구인지와 돌봄 범위를 직접 확인할 필요가 있습니다.",
+        "discoveryText": "B의 가족 관련 진술과 학교 알림 문자가 형/조카 정황으로 모인다.",
         "outputId": "dc-2",
         "resultType": "dossier"
-      },
-      {
-        "id": "combine-7",
-        "inputs": [
-          "stmt-b-family",
-          "stmt-a-protect"
-        ],
-        "cost": 1,
-        "discoveryText": "\"가족 쪽 일\"이라는 말과 \"제 몫을 지키려 했다\"는 말을 나란히 놓으면, 서로에게 먼저 말하지 않은 이유가 겹친다.",
-        "outputId": "dc-5",
-        "resultType": "upgrade"
       }
     ]
   },
@@ -5316,18 +2971,10 @@
     "hiddenDisputes": [
       {
         "id": "h-d3",
-        "name": "공동 적금 2,000만원 해지의 목적",
+        "name": "공동 적금 2,000만원 해지 경위",
         "unlockPlan": {
-          "runtimeRule": "e-6 제시 시 해금",
-          "authoredRule": "e-6이 Excerpt 이상이 되거나 A에게 동기탐색 2회가 누적되면 생성"
-        }
-      },
-      {
-        "id": "h-d4",
-        "name": "신뢰 위반의 책임",
-        "unlockPlan": {
-          "runtimeRule": "h-d3 해금 + e-7 제시 시 해금",
-          "authoredRule": "h-d3 생성 후 e-7이 Original 이상이 되거나 e-5+e-6으로 Reframe Lead가 생기면 생성"
+          "runtimeRule": "d-2 발견 후 공동 적금/위임장 단서 조사 시 해금",
+          "authoredRule": "d-2 발견 뒤 어느 쪽 심문이든 공동 적금과 위임장 조작 단서가 드러나면 생성"
         }
       }
     ],
@@ -5442,104 +3089,84 @@
             "implication": "A의 계산을 먼저 본다."
           }
         ]
-      },
-      {
-        "id": "L-5",
-        "name": "Reframe Lead",
-        "leadType": "Reframe",
-        "firstInputs": [
-          "e-5",
-          "e-6"
-        ],
-        "secondInputs": [
-          "L-5",
-          "e-7"
-        ],
-        "dossierCardId": "dc-5",
-        "interpretationChoices": [
-          {
-            "id": "L-5-A",
-            "text": "남편이 더 큰돈을 먼저 무너뜨렸다",
-            "implication": "금액 크기 기준 책임 서사다."
-          },
-          {
-            "id": "L-5-B",
-            "text": "아내가 먼저 돈을 움직여 신뢰를 깼다",
-            "implication": "실행 순서 기준 책임 서사다."
-          },
-          {
-            "id": "L-5-C",
-            "text": "거울형 거짓말 구조다",
-            "implication": "상호 붕괴와 대칭 구조를 본다."
-          }
-        ]
       }
     ],
     "authorityPlacements": [
       {
         "action": "원본 제출 명령",
         "recommendedMoment": "d-1 초반 e-1/e-3 Excerpt 시점",
-        "purpose": "감정이 아니라 패턴으로 의심을 고정"
+        "purpose": "감정이 아니라 패턴으로 의심을 고정.",
+        "contextDispute": "d-1"
       },
       {
         "action": "원본 제출 명령",
         "recommendedMoment": "e-4 등장 직후",
-        "purpose": "발신자 미상 문자와 일정 알림을 원본으로 확보"
+        "purpose": "발신자 미상 문자와 일정 알림을 원본으로 확보.",
+        "contextDispute": "d-1"
       },
       {
         "action": "원본 제출 명령",
         "recommendedMoment": "h-d3 등장 직후 e-6 축",
-        "purpose": "A의 투자방 2,000만 원 송금을 확정"
+        "purpose": "A의 2,000만 원 송금을 확정.",
+        "contextDispute": "h-d3"
       },
       {
         "action": "정확히 답변하십시오",
         "recommendedMoment": "B가 \"가족 쪽 일\" 같은 모호어를 반복할 때",
-        "purpose": "형, 조카, 3,000만 원 같은 실체 명사 강제"
+        "purpose": "형, 조카, 3,000만 원 같은 실체 명사 강제.",
+        "contextDispute": "d-1"
       },
       {
         "action": "분리심문",
         "recommendedMoment": "e-4 Original 직후 B",
-        "purpose": "avoidant인 B를 더 빨리 무너뜨림"
+        "purpose": "avoidant인 B를 더 빨리 무너뜨림.",
+        "contextDispute": "d-1"
       },
       {
         "action": "분리심문",
         "recommendedMoment": "e-6 Excerpt 직후 A",
-        "purpose": "A의 피해자 프레임을 줄이고 동기를 드러냄"
+        "purpose": "A의 피해자 프레임을 줄이고 동기를 드러냄.",
+        "contextDispute": "h-d3"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-4 인증 후",
-        "purpose": "오피스텔 방문 대상은 형네였다고 기록"
+        "purpose": "오피스텔 방문 대상은 형네였다고 기록.",
+        "contextDispute": "d-1"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-5 인증 후",
-        "purpose": "개인 비자금 3,000만 원 현금 출금 기록"
+        "purpose": "B의 개인 비자금 3,000만 원 흐름 기록.",
+        "contextDispute": "d-2"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-6 인증 후",
-        "purpose": "A의 투자방 2,000만 원 송금 기록"
+        "purpose": "A의 2,000만 원 투자방 송금 기록.",
+        "contextDispute": "h-d3"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-7 Established 후",
-        "purpose": "숨김 시작과 송금 실행의 선후 분리 기록"
+        "purpose": "숨김 시작(B)과 비밀 송금 실행(A)의 선후 분리 기록.",
+        "contextDispute": "h-d3"
       },
       {
         "action": "선처 창구",
         "recommendedMoment": "dc-3 또는 dc-4 직후",
-        "purpose": "B는 죄책감, A는 수치심을 더 빨리 인정"
+        "purpose": "B는 죄책감, A는 수치심을 더 빨리 인정."
       },
       {
         "action": "발언 제지 / 기록 제외",
         "recommendedMoment": "A가 딴살림 단정만 반복하거나 B가 A를 조롱할 때",
-        "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리"
+        "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리."
       },
       {
         "action": "민감정보 봉인 해제",
         "recommendedMoment": "돌봄 해석을 택했지만 실체가 부족할 때 또는 dc-1 직전",
-        "purpose": "외도 오해를 확실히 꺾되 미성년자 사생활 리스크 관리"
+        "purpose": "외도 오해를 확실히 꺾되 미성년자 사생활 리스크 관리.",
+        "contextDispute": "d-1"
       }
     ],
     "sensitiveSealTargets": [
@@ -5551,13 +3178,13 @@
           "학년",
           "생리 관련 직접 표현"
         ],
-        "risk": "미성년자 사생활을 너무 일찍 열면 인도성 점수 하락과 B의 추가 체념이 발생할 수 있다."
+        "risk": "공정성은 올라가지만 인도성 점수 하락 가능 너무 이르면 B가 더 깊게 닫힐 수 있음"
       }
     ],
     "officialRecordRecommendations": [
       "B의 오피스텔 방문 대상은 형과 조카였다.",
-      "B는 개인 비자금 3,000만 원을 배우자에게 숨기고 형에게 현금으로 전달했다.",
-      "A는 남편 외도를 확신한 뒤 위임장을 조작해 공동 적금 2,000만 원을 해지하고, 전액을 투자방에 송금했다.",
+      "B는 개인 비자금 3,000만 원을 배우자 동의 없이 형에게 현금으로 전달했다.",
+      "A는 남편의 외도를 확신한 뒤 위임장을 위조해 공동 적금 2,000만 원을 해지하고, 전액을 투자방에 송금했다가 사기로 잃었다.",
       "숨김은 B가 먼저 시작했고 실제 비밀 송금은 A가 먼저 실행했다.",
       "두 사람 모두 말 못할 이유가 있었지만 둘 다 공동 재산을 혼자 움직였다."
     ]

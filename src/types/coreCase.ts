@@ -569,6 +569,28 @@ export const DossierChallengesSchema = z.object({
   b: z.object({ questions: z.array(DossierChallengeQuestionSchema) }).optional(),
 })
 
+/** dossier card 발동 효과. case JSON combinationLab.outputs[].effects[]와 정합. */
+export const DossierEffectSchema = z.discriminatedUnion('kind', [
+  z.object({ kind: z.literal('unlock_note'), unlockNodeId: z.string().min(1) }),
+  z.object({
+    kind: z.literal('upgrade_dispute'),
+    disputeUpgrade: z.object({
+      disputeId: z.string().min(1),
+      weight: z.enum(['low', 'medium', 'high']).optional(),
+      ambiguity: z.enum(['none', 'low', 'high']).optional(),
+    }),
+  }),
+  z.object({ kind: z.literal('unlock_dispute'), unlockNodeId: z.string().min(1) }),
+  z.object({
+    kind: z.literal('upgrade_evidence'),
+    evidenceUpgrade: z.object({
+      evidenceId: z.string().min(1),
+      toReliability: z.enum(['hard', 'soft']),
+    }),
+  }),
+])
+export type DossierEffect = z.infer<typeof DossierEffectSchema>
+
 export const CoreDossierCardSchema = z.object({
   id: z.string().min(1),
   label: LocalizedStringSchema,
@@ -585,6 +607,8 @@ export const CoreDossierCardSchema = z.object({
   noteText: LocalizedStringSchema,
   successConditionSummary: z.array(LocalizedStringSchema),
   successEffects: z.array(LocalizedStringSchema),
+  /** 카드 발동 시 실제 게임 효과 (case JSON combinationLab.outputs[].effects[]와 정합). */
+  effects: z.array(DossierEffectSchema).optional(),
   judgeHint: LocalizedStringSchema.optional(),
   challenges: DossierChallengesSchema,
 })

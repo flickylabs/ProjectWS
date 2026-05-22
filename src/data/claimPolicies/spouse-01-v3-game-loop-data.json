@@ -4,14 +4,14 @@
     {
       "id": "dc-1",
       "name": "오피스텔의 사람들",
-      "description": "외도 서사를 가족 돌봄 서사로 뒤집는 첫 반전 카드다.",
+      "description": "외도 서사를 가족 돌봄 서사로 뒤집는 첫 반전 카드.",
       "evidenceIds": [
+        "e-1",
         "e-2",
         "e-4"
       ],
       "relatedDisputes": [
-        "d-1",
-        "h-d4"
+        "d-1"
       ],
       "subjectParty": "b",
       "leadId": "L-1",
@@ -20,7 +20,7 @@
         "B에게 공감접근 또는 분리심문 사용"
       ],
       "successEffects": [
-        "d-1 핵심 사실 \"외도 아님\" 잠정 인정 가능",
+        "d-1 핵심 사실 \"외도 아님\" 잠정 인정",
         "B가 시댁 불화와 조카 사정을 직접 언급"
       ],
       "challenges": [
@@ -29,13 +29,13 @@
           "questions": [
             {
               "id": "dc-1.b.q1",
-              "text": "그 오피스텔에 있던 사람이 외도 상대가 아니라 형과 조카라면, 왜 지금까지 한마디도 못 했습니까?",
+              "text": "그 오피스텔에 외도와 다른 집안 사정이 있었다면, 왜 지금까지 한마디도 못 했습니까?",
               "lockedHint": "발신자 미상 문자와 일정 알림이 원본 수준까지 열려야 질문이 보인다.",
               "attackVector": "context",
               "requiredLieState": "S2",
               "onSuccess": {
                 "blockVector": "context",
-                "revealAtom": "spouse-v3-01:b:d-1:S3:0",
+                "revealAtom": "spouse-01:b:d-1:S3:0",
                 "lieAdvance": true
               }
             }
@@ -46,23 +46,23 @@
     {
       "id": "dc-2",
       "name": "시댁 얘기만 나오면 싸움",
-      "description": "왜 숨겼는가를 외도 은폐가 아니라 시댁 불화 공포로 정리하는 카드다.",
+      "description": "B가 형/조카 정황을 말하지 않은 동기를 드러내는 카드. 시댁 갈등 공포 frame.",
       "evidenceIds": [
-        "e-3",
         "e-4"
       ],
       "relatedDisputes": [
-        "d-1"
+        "d-1",
+        "d-2"
       ],
       "subjectParty": "b",
       "leadId": "L-2",
       "successConditionSummary": [
-        "L-2 완성",
-        "정확히 답변하십시오 사용 또는 B의 모호어 제거 상태"
+        "stmt-b-family + e-4 unlock",
+        "B에게 동기 추궁 + 공감 접근 누적"
       ],
       "successEffects": [
-        "d-1의 왜 숨겼나 칸이 채워진다",
-        "민감정보 봉인 해제 없이도 시댁 불화 맥락 일부 확보"
+        "B가 시댁 갈등 공포 동기 직접 인정",
+        "e-4 reliability 강화 (hard)"
       ],
       "challenges": [
         {
@@ -71,12 +71,12 @@
             {
               "id": "dc-2.b.q1",
               "text": "숨긴 이유가 외도가 아니라면, 당신은 아내보다 시댁과의 싸움을 더 두려워한 겁니까?",
-              "lockedHint": "B가 모호어를 버리고 숨김의 이유를 설명하기 시작해야 열린다.",
-              "attackVector": "context",
+              "lockedHint": "e-4 Original + B 동기 압박 누적 후 등장.",
+              "attackVector": "motive",
               "requiredLieState": "S3",
               "onSuccess": {
-                "blockVector": "context",
-                "revealAtom": "spouse-v3-01:b:d-1:S4:1",
+                "blockVector": "motive",
+                "revealAtom": "spouse-01:b:d-1:S4:0",
                 "lieAdvance": true
               }
             }
@@ -86,8 +86,8 @@
     },
     {
       "id": "dc-3",
-      "name": "3,000만 원의 권한",
-      "description": "공동 적금 2,000만 원을 혼자 형에게 보낼 권리가 있었는지 정면으로 묻는 카드다.",
+      "name": "이준호의 비밀 개인 계좌",
+      "description": "B가 10년간 별도로 운용한 개인 비자금 계좌. 형 지원 frame의 자금 출처.",
       "evidenceIds": [
         "e-4",
         "e-5"
@@ -98,12 +98,12 @@
       "subjectParty": "b",
       "leadId": "L-3",
       "successConditionSummary": [
-        "L-3 완성",
-        "e-5가 Original 이상"
+        "e-4 Original + e-5 Original",
+        "B에게 동기 추궁 누적"
       ],
       "successEffects": [
-        "d-2가 S4~S5로 진전",
-        "B가 빚 상환 이유와 자기정당화의 한계를 함께 인정"
+        "d-2 핵심 사실 \"비자금 + 형 지원\" 잠정 인정",
+        "B가 형 + 회생 + 현금 전달 직접 언급"
       ],
       "challenges": [
         {
@@ -111,25 +111,25 @@
           "questions": [
             {
               "id": "dc-3.b.q1",
-              "text": "공동 적금 2,000만 원을 형에게 줄 권리가 정말 당신 혼자에게 있었습니까?",
-              "lockedHint": "3,000만 원 해지와 형 계좌 이체가 원본 수준까지 열려야 보인다.",
-              "attackVector": "authenticity",
+              "text": "아내 동의 없이 본인 명의 계좌의 큰돈을 형에게 현금으로 옮긴 결정의 무게를 어떻게 보십니까?",
+              "lockedHint": "e-5 Original + B의 가족 사정 인정 후 등장.",
+              "attackVector": "responsibility",
               "requiredLieState": "S3",
               "onSuccess": {
-                "blockVector": "authenticity",
-                "revealAtom": "spouse-v3-01:b:d-2:S4:0",
+                "blockVector": "responsibility",
+                "revealAtom": "spouse-01:b:d-2:S4:0",
                 "lieAdvance": true
               }
             },
             {
               "id": "dc-3.b.q2",
-              "text": "가족을 돕는 일이었다 해도, 배우자 동의 없이 공동 적금을 깬 책임은 인정합니까?",
-              "lockedHint": "B가 3,000만 원 전액 이체 사실을 이미 인정해야 마지막 질문이 열린다.",
-              "attackVector": "context",
+              "text": "개인 비자금이라 해도 부부 공동의 가계와 분리된 결정 자체가 정당한지 답해 주십시오.",
+              "lockedHint": "h-d3 단계 진행 후 진실 분리 frame과 함께 등장.",
+              "attackVector": "legitimacy",
               "requiredLieState": "S4",
               "onSuccess": {
-                "blockVector": "context",
-                "revealAtom": "spouse-v3-01:b:d-2:S5:0",
+                "blockVector": "legitimacy",
+                "revealAtom": "spouse-01:b:d-2:S5:0",
                 "lieAdvance": true
               }
             }
@@ -139,10 +139,11 @@
     },
     {
       "id": "dc-4",
-      "name": "2,000만 원의 수치",
-      "description": "A가 남편의 진실을 확인하기도 전에 2,000만 원을 옮긴 이유를 정면으로 묻는 카드다.",
+      "name": "돌이키고 싶은 2,000만 원",
+      "description": "A가 위임장 위조로 해지한 공동 적금 2,000만 원을 투자방에 송금한 뒤 사기로 잃은 영역. 후회와 수치심 frame.",
       "evidenceIds": [
-        "e-6"
+        "e-6",
+        "e-7"
       ],
       "relatedDisputes": [
         "h-d3"
@@ -150,12 +151,12 @@
       "subjectParty": "a",
       "leadId": "L-4",
       "successConditionSummary": [
-        "L-4 완성",
-        "A에게 동기탐색 누적 2회 이상"
+        "e-6 Original + e-7 Original",
+        "A에게 공감 접근 누적"
       ],
       "successEffects": [
-        "h-d3가 생성되거나 심화",
-        "A의 수치심과 사기 피해 고백이 열린다"
+        "h-d3 핵심 사실 \"투자방 송금 + 사기 손실\" 잠정 인정",
+        "A가 사기 + 수치심 + 은폐 직접 언급"
       ],
       "challenges": [
         {
@@ -163,25 +164,25 @@
           "questions": [
             {
               "id": "dc-4.a.q1",
-              "text": "남편의 진실을 확인하기도 전에 2,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
-              "lockedHint": "2,000만 원 송금 축과 A의 방어 발언이 함께 붙어야 열린다.",
-              "attackVector": "context",
+              "text": "남편의 진실을 확인하기 전에 2,000만 원을 먼저 움직인 이유가 결국 이혼 대비였습니까?",
+              "lockedHint": "e-6 Original + A의 자기방어 frame 인정 후 등장.",
+              "attackVector": "motive",
               "requiredLieState": "S2",
               "onSuccess": {
-                "blockVector": "context",
-                "revealAtom": "spouse-v3-01:a:h-d3:S3:0",
+                "blockVector": "motive",
+                "revealAtom": "spouse-01:a:h-d3:S3:0",
                 "lieAdvance": true
               }
             },
             {
               "id": "dc-4.a.q2",
-              "text": "그 2,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
-              "lockedHint": "A가 송금 동기를 어느 정도 인정해야 두 번째 질문이 열린다.",
-              "attackVector": "authenticity",
+              "text": "그 2,000만 원을 보내고 사기당한 사실까지 숨긴 건 수치심 때문이었습니까?",
+              "lockedHint": "h-d3 S3 도달 후 등장.",
+              "attackVector": "emotion",
               "requiredLieState": "S3",
               "onSuccess": {
-                "blockVector": "authenticity",
-                "revealAtom": "spouse-v3-01:a:h-d3:S4:0",
+                "blockVector": "emotion",
+                "revealAtom": "spouse-01:a:h-d3:S5:0",
                 "lieAdvance": true
               }
             }
@@ -190,57 +191,49 @@
       ]
     },
     {
-      "id": "dc-5",
-      "name": "5,000만 원의 순서",
-      "description": "누가 먼저 숨겼는지와 누가 먼저 돈을 움직였는지를 같은 질문 안에서 분리해 묻는 최종 카드다.",
+      "id": "dc-7",
+      "name": "공동 적금 2,000만 원의 해지",
+      "description": "A가 위임장을 위조하여 공동 적금을 단독 해지한 절차 자체에 초점을 둔 카드. 송금 행선지(dc-4)와는 분리.",
       "evidenceIds": [
-        "e-5",
-        "e-6",
         "e-7"
       ],
       "relatedDisputes": [
-        "h-d4"
+        "h-d3"
       ],
-      "subjectParty": "both",
-      "leadId": "L-5",
+      "subjectParty": "a",
       "successConditionSummary": [
-        "L-5 완성",
-        "e-7이 Original 이상"
+        "e-7 Original + 필적 검증",
+        "A에게 절차 책임 추궁"
       ],
       "successEffects": [
-        "h-d4 해금",
-        "평의의 무슨 일이 있었나와 왜 숨겼나 두 칸이 함께 채워진다"
+        "A의 위임장 위조 + 단독 해지 사실 인정",
+        "h-d3 절차 책임 frame 확정"
       ],
       "challenges": [
-        {
-          "targetParty": "b",
-          "questions": [
-            {
-              "id": "dc-5.b.q1",
-              "text": "숨김은 누가 먼저 시작했고, 돈은 누가 먼저 움직였습니까?",
-              "lockedHint": "e-7 시간축이 열려야 순서 질문이 가능하다.",
-              "attackVector": "authenticity",
-              "requiredLieState": "S2",
-              "onSuccess": {
-                "blockVector": "authenticity",
-                "revealAtom": "spouse-v3-01:b:h-d4:S3:0",
-                "lieAdvance": true
-              }
-            }
-          ]
-        },
         {
           "targetParty": "a",
           "questions": [
             {
-              "id": "dc-5.a.q1",
-              "text": "남편이 먼저 숨겼다고 해도, 실제 비밀 송금 실행은 당신이 먼저였다는 점까지 인정합니까?",
-              "lockedHint": "A가 2,000만 원 송금을 일부 인정한 뒤에야 열린다.",
-              "attackVector": "context",
+              "id": "dc-7.a.q1",
+              "text": "이준호 씨 동의 없이 위임장으로 공동 적금을 해지한 행위, 절차 책임을 어떻게 보십니까?",
+              "lockedHint": "e-7 Authenticated 이상 + A의 해지 절차 관여 인정 후 등장.",
+              "attackVector": "legitimacy",
               "requiredLieState": "S2",
               "onSuccess": {
-                "blockVector": "context",
-                "revealAtom": "spouse-v3-01:a:h-d4:S3:0",
+                "blockVector": "legitimacy",
+                "revealAtom": "spouse-01:a:h-d3:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-7.a.q2",
+              "text": "위임장 서명이 본인 필적이 아니라는 점을 인정하시는 겁니까?",
+              "lockedHint": "필적 감정 결과가 challenged/authenticated 단계 후 등장.",
+              "attackVector": "fact",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "fact",
+                "revealAtom": "spouse-01:a:h-d3:S4:0",
                 "lieAdvance": true
               }
             }
@@ -554,76 +547,340 @@
   },
   "transitionBeats": [
     {
-      "id": "spouse-v3-01-beat-b-d1-s1-s2",
+      "id": "spouse-v3-01-beat-a-d-1-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"정황상 의심\"이라는 말로 단정에서 한 발 비켜선다.",
+      "behaviorHint": "숨을 짧게 들이마시고 시선을 옆으로 흘린다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-1-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "이준호는 가족이라는 단어를 한 번 흘리고 다시 입을 다문다.",
+      "behaviorHint": "답이 짧아지고 시선이 아래로 떨어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-1-s1-s2",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"나도 준비할 수밖에 없었다\"는 말로 단정에서 동기 쪽으로 이동한다.",
+      "behaviorHint": "말의 속도가 빨라지고 손이 책상을 두 번 톡톡 친다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-1-s1-s2",
       "caseId": "spouse-v3-01",
       "party": "b",
       "disputeId": "d-1",
       "fromState": "S1",
       "toState": "S2",
-      "primaryBeatType": "evidence_hit",
-      "line": "이준호는 더 숨기기 어려워졌다는 걸 알면서도 가족 일이라는 말만 먼저 꺼낸다.",
-      "behaviorHint": "답이 짧아지고 시선이 아래로 떨어진다."
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"챙겨야 할 사람이 있었다\"는 말까지 꺼낸다.",
+      "behaviorHint": "처음으로 시선이 재판관을 향한다."
     },
     {
-      "id": "spouse-v3-01-beat-b-d1-s2-s3",
+      "id": "spouse-v3-01-beat-a-d-1-s2-s3",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "박지연은 \"그쪽에 사정이 있었을 수 있다\"는 말로 frame을 흔든다.",
+      "behaviorHint": "숨을 길게 내쉬고 시선이 아래로 떨어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-1-s2-s3",
       "caseId": "spouse-v3-01",
       "party": "b",
       "disputeId": "d-1",
       "fromState": "S2",
       "toState": "S3",
-      "primaryBeatType": "partial",
-      "line": "이준호는 형네 일이었고 시댁 얘기만 꺼내면 더 크게 싸울 게 뻔해서 말을 못 했다고 털어놓는다.",
-      "behaviorHint": "변명보다 이유 설명이 길어진다."
+      "primaryBeatType": "evidence_hit",
+      "line": "이준호는 \"형 사정이 있었다\"고 말한다. 시댁이라는 단어가 처음 등장한다.",
+      "behaviorHint": "말끝에 숨이 짧게 갈라진다."
     },
     {
-      "id": "spouse-v3-01-beat-b-d2-s2-s3",
+      "id": "spouse-v3-01-beat-a-d-1-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "박지연의 어깨가 처음으로 내려간다.",
+      "behaviorHint": "\"내가 그렇게 단정했다\"는 말이 흘러나온다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-1-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"조카가 중2\"라고 말한다.",
+      "behaviorHint": "처음으로 호흡이 깊어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-1-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "박지연이 마지막 단정을 내려놓는다.",
+      "behaviorHint": "손이 책상 위에서 멈춘다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-1-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "이준호는 처음으로 모든 말을 끝까지 잇는다.",
+      "behaviorHint": "시선이 재판관을 정면으로 향한다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-2-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"분명히 어디론가 흘러나간 돈\"이라고 표현한다.",
+      "behaviorHint": "영수증 묶음 쪽으로 시선이 잠깐 머문다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-2-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"큰돈이 빠진 적은 없다\"고 말한다.",
+      "behaviorHint": "답이 평소보다 한 박자 늦다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-2-s1-s2",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"외도가 아니라도 우리 가정 밖으로 나간 돈\"이라고 말한다.",
+      "behaviorHint": "단정의 톤이 처음으로 흔들린다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-2-s1-s2",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"가족 쪽에 일이 있었다\"고 말한다.",
+      "behaviorHint": "말 끝이 옅게 흐려진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-2-s2-s3",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"그쪽으로 갔든 어쨌든 나는 모르고 있었다\"고 말한다.",
+      "behaviorHint": "숨을 짧게 들이마신다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-2-s2-s3",
       "caseId": "spouse-v3-01",
       "party": "b",
       "disputeId": "d-2",
       "fromState": "S2",
       "toState": "S3",
-      "primaryBeatType": "confession",
-      "line": "이준호는 3,000만 원 전부 형 빚을 막는 데 썼다고 인정하지만 그때는 그 방법밖에 없었다고 덧붙인다.",
-      "behaviorHint": "숫자를 말하는 목소리는 단단하지만 마지막 문장 끝이 흔들린다."
+      "primaryBeatType": "evidence_hit",
+      "line": "이준호는 처음으로 \"형에게 갔다\"는 말을 꺼낸다.",
+      "behaviorHint": "숨이 길어진다."
     },
     {
-      "id": "spouse-v3-01-beat-a-hd3-s2-s3",
+      "id": "spouse-v3-01-beat-a-d-2-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "박지연은 한숨과 함께 \"그쪽도 사정이 있었겠다\"고 말한다.",
+      "behaviorHint": "손이 책상 위에서 한 번 멈췄다 다시 움직인다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-2-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"형이 개인회생 중이라 계좌로 못 받았다\"고 말한다.",
+      "behaviorHint": "말이 처음으로 끝까지 이어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-2-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "박지연은 두 자금의 차이를 인정한다.",
+      "behaviorHint": "어깨가 한 번 더 내려간다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-2-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "이준호는 4회 금액을 차례로 읊는다.",
+      "behaviorHint": "시선이 흔들리지 않는다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-h-d3-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "h-d3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"그건 내 일이 아니다\"라고 말한다.",
+      "behaviorHint": "시선이 짧게 옆을 향한다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-h-d3-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "h-d3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"동의한 적 없다\"고 단호하게 말한다.",
+      "behaviorHint": "말끝이 처음으로 단단해진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-h-d3-s1-s2",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "h-d3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"내 몫을 지키려 했다\"고 말한다.",
+      "behaviorHint": "숨이 짧고 빨라진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-h-d3-s1-s2",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "h-d3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "이준호는 위임장 서명이 본인 필적이 아닌 것 같다고 말한다.",
+      "behaviorHint": "서류를 한 번 다시 들춰본다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-h-d3-s2-s3",
       "caseId": "spouse-v3-01",
       "party": "a",
       "disputeId": "h-d3",
       "fromState": "S2",
       "toState": "S3",
-      "primaryBeatType": "confession",
-      "line": "박지연은 혹시 몰라 제 몫을 지키려 2,000만 원을 보냈고 결국 다 날렸다고 인정한다.",
-      "behaviorHint": "금액 부분에서 속도가 느려진다."
+      "primaryBeatType": "evidence_hit",
+      "line": "박지연은 \"위임장은 내가 만들었다\"고 말한다.",
+      "behaviorHint": "처음으로 입술을 길게 다물었다 연다."
     },
     {
-      "id": "spouse-v3-01-beat-a-hd4-s2-s3",
-      "caseId": "spouse-v3-01",
-      "party": "a",
-      "disputeId": "h-d4",
-      "fromState": "S2",
-      "toState": "S3",
-      "primaryBeatType": "counter_shift",
-      "line": "박지연은 먼저 숨긴 쪽은 남편이었다고 되받아치지만 실제 송금이 먼저 실행된 건 자기 쪽이었다는 사실도 부정하지 못한다.",
-      "behaviorHint": "상대 비난과 자기 인정이 한 문장 안에서 충돌한다."
-    },
-    {
-      "id": "spouse-v3-01-beat-b-hd4-s2-s3",
+      "id": "spouse-v3-01-beat-b-h-d3-s2-s3",
       "caseId": "spouse-v3-01",
       "party": "b",
-      "disputeId": "h-d4",
+      "disputeId": "h-d3",
       "fromState": "S2",
       "toState": "S3",
       "primaryBeatType": "partial",
-      "line": "이준호는 자신이 먼저 숨긴 건 맞지만 먼저 돈을 움직인 건 박지연 쪽이었다고 힘겹게 선을 긋는다.",
-      "behaviorHint": "고개를 끄덕인 뒤 바로 반박 문장을 이어 붙인다."
+      "line": "이준호는 \"이 일을 알게 된 건 사건 후였다\"고 말한다.",
+      "behaviorHint": "숨이 길어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-h-d3-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "h-d3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "박지연이 \"그 돈은 투자방에 갔다\"고 말한다.",
+      "behaviorHint": "어깨가 처음으로 내려간다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-h-d3-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "h-d3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"그쪽도 무서웠을 거다\"라고 말한다.",
+      "behaviorHint": "호흡이 한 번 깊어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-h-d3-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "h-d3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "박지연이 마지막 단어 \"수치심\"을 꺼낸다.",
+      "behaviorHint": "손이 책상 끝을 잡는다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-h-d3-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "h-d3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "이준호는 사실 관계를 한 번 더 정리한다.",
+      "behaviorHint": "시선이 재판관에게 고정된다."
     }
   ],
   "evidenceProgressions": [
     {
       "evidenceId": "e-1",
-      "name": "카드 명세서",
+      "name": "영수증 묶음 5장",
       "depthStages": [
         {
           "id": "stub",
@@ -682,7 +939,7 @@
     },
     {
       "evidenceId": "e-2",
-      "name": "오피스텔 주차 출입 기록",
+      "name": "블랙박스 GPS 기록",
       "depthStages": [
         {
           "id": "stub",
@@ -741,7 +998,7 @@
     },
     {
       "evidenceId": "e-3",
-      "name": "새벽 통화기록",
+      "name": "통화기록",
       "depthStages": [
         {
           "id": "stub",
@@ -864,7 +1121,7 @@
     },
     {
       "evidenceId": "e-5",
-      "name": "공동 적금 해지 내역 + 형 계좌 이체",
+      "name": "개인 계좌 출금 내역",
       "depthStages": [
         {
           "id": "stub",
@@ -923,7 +1180,7 @@
     },
     {
       "evidenceId": "e-6",
-      "name": "A의 투자방 텔레그램 + 2,000만 원 송금 기록",
+      "name": "투자방 텔레그램",
       "depthStages": [
         {
           "id": "stub",
@@ -982,7 +1239,7 @@
     },
     {
       "evidenceId": "e-7",
-      "name": "통화·출입·계좌 이동 대조표",
+      "name": "공동 적금 해지 서류",
       "depthStages": [
         {
           "id": "stub",
@@ -1151,121 +1408,93 @@
           "implication": "A의 계산을 먼저 본다."
         }
       ]
-    },
-    {
-      "id": "L-5",
-      "name": "Reframe Lead",
-      "leadType": "Reframe",
-      "firstInputs": [
-        "e-5",
-        "e-6"
-      ],
-      "secondInputs": [
-        "L-5",
-        "e-7"
-      ],
-      "dossierCardId": "dc-5",
-      "interpretationChoices": [
-        {
-          "id": "L-5-A",
-          "text": "남편이 더 큰돈을 먼저 무너뜨렸다",
-          "implication": "금액 크기 기준 책임 서사다."
-        },
-        {
-          "id": "L-5-B",
-          "text": "아내가 먼저 돈을 움직여 신뢰를 깼다",
-          "implication": "실행 순서 기준 책임 서사다."
-        },
-        {
-          "id": "L-5-C",
-          "text": "거울형 거짓말 구조다",
-          "implication": "상호 붕괴와 대칭 구조를 본다."
-        }
-      ]
     }
   ],
   "authorityPlacements": [
     {
       "action": "원본 제출 명령",
       "recommendedMoment": "d-1 초반 e-1/e-3 Excerpt 시점",
-      "purpose": "감정이 아니라 패턴으로 의심을 고정"
+      "purpose": "감정이 아니라 패턴으로 의심을 고정.",
+      "contextDispute": "d-1"
     },
     {
       "action": "원본 제출 명령",
       "recommendedMoment": "e-4 등장 직후",
-      "purpose": "발신자 미상 문자와 일정 알림을 원본으로 확보"
+      "purpose": "발신자 미상 문자와 일정 알림을 원본으로 확보.",
+      "contextDispute": "d-1"
     },
     {
       "action": "원본 제출 명령",
       "recommendedMoment": "h-d3 등장 직후 e-6 축",
-      "purpose": "A의 2,000만 원 송금을 확정"
+      "purpose": "A의 2,000만 원 송금을 확정.",
+      "contextDispute": "h-d3"
     },
     {
       "action": "정확히 답변하십시오",
       "recommendedMoment": "B가 \"가족 쪽 일\" 같은 모호어를 반복할 때",
-      "purpose": "형, 조카, 3,000만 원 같은 실체 명사 강제"
+      "purpose": "형, 조카, 3,000만 원 같은 실체 명사 강제.",
+      "contextDispute": "d-1"
     },
     {
       "action": "분리심문",
       "recommendedMoment": "e-4 Original 직후 B",
-      "purpose": "avoidant인 B를 더 빨리 무너뜨림"
+      "purpose": "avoidant인 B를 더 빨리 무너뜨림.",
+      "contextDispute": "d-1"
     },
     {
       "action": "분리심문",
       "recommendedMoment": "e-6 Excerpt 직후 A",
-      "purpose": "A의 피해자 프레임을 줄이고 동기를 드러냄"
+      "purpose": "A의 피해자 프레임을 줄이고 동기를 드러냄.",
+      "contextDispute": "h-d3"
     },
     {
       "action": "잠정 인정",
       "recommendedMoment": "e-4 인증 후",
-      "purpose": "오피스텔 방문 대상은 형네였다고 기록"
+      "purpose": "오피스텔 방문 대상은 형네였다고 기록.",
+      "contextDispute": "d-1"
     },
     {
       "action": "잠정 인정",
       "recommendedMoment": "e-5 인증 후",
-      "purpose": "공동 적금 2,000만 원 이동 기록"
+      "purpose": "B의 개인 비자금 3,000만 원 흐름 기록.",
+      "contextDispute": "d-2"
     },
     {
       "action": "잠정 인정",
       "recommendedMoment": "e-6 인증 후",
-      "purpose": "A의 2,000만 원 송금 기록"
+      "purpose": "A의 2,000만 원 투자방 송금 기록.",
+      "contextDispute": "h-d3"
     },
     {
       "action": "잠정 인정",
       "recommendedMoment": "e-7 Established 후",
-      "purpose": "숨김 시작과 송금 실행의 선후 분리 기록"
+      "purpose": "숨김 시작(B)과 비밀 송금 실행(A)의 선후 분리 기록.",
+      "contextDispute": "h-d3"
     },
     {
       "action": "선처 창구",
       "recommendedMoment": "dc-3 또는 dc-4 직후",
-      "purpose": "B는 죄책감, A는 수치심을 더 빨리 인정"
+      "purpose": "B는 죄책감, A는 수치심을 더 빨리 인정."
     },
     {
       "action": "발언 제지 / 기록 제외",
       "recommendedMoment": "A가 딴살림 단정만 반복하거나 B가 A를 조롱할 때",
-      "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리"
+      "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리."
     },
     {
       "action": "민감정보 봉인 해제",
       "recommendedMoment": "돌봄 해석을 택했지만 실체가 부족할 때 또는 dc-1 직전",
-      "purpose": "외도 오해를 확실히 꺾되 미성년자 사생활 리스크 관리"
+      "purpose": "외도 오해를 확실히 꺾되 미성년자 사생활 리스크 관리.",
+      "contextDispute": "d-1"
     }
   ],
   "hiddenDisputePlans": [
     {
       "disputeId": "h-d3",
-      "name": "아내의 2,000만 원 송금은 자기방어인가, 이혼 대비 은닉인가",
+      "name": "공동 적금 2,000만원 해지 경위",
       "unlockPlan": {
-        "runtimeRule": "e-6 제시 시 해금",
-        "authoredRule": "e-6이 Excerpt 이상이 되거나 A에게 동기탐색 2회가 누적되면 생성"
-      }
-    },
-    {
-      "disputeId": "h-d4",
-      "name": "누가 먼저 신뢰를 깼는가",
-      "unlockPlan": {
-        "runtimeRule": "h-d3 해금 + e-7 제시 시 해금",
-        "authoredRule": "h-d3 생성 후 e-7이 Original 이상이 되거나 e-5+e-6으로 Reframe Lead가 생기면 생성"
+        "runtimeRule": "d-2 발견 후 공동 적금/위임장 단서 조사 시 해금",
+        "authoredRule": "d-2 발견 뒤 어느 쪽 심문이든 공동 적금과 위임장 조작 단서가 드러나면 생성"
       }
     }
   ],
@@ -1291,8 +1520,8 @@
   ],
   "officialRecordRecommendations": [
     "B의 오피스텔 방문 대상은 형과 조카였다.",
-    "B는 공동 적금 2,000만 원을 배우자 동의 없이 형에게 보냈다.",
-    "A는 남편의 외도를 확신한 뒤 2,000만 원을 따로 송금했다.",
+    "B는 개인 비자금 3,000만 원을 배우자 동의 없이 형에게 현금으로 전달했다.",
+    "A는 남편의 외도를 확신한 뒤 위임장을 위조해 공동 적금 2,000만 원을 해지하고, 전액을 투자방에 송금했다가 사기로 잃었다.",
     "숨김은 B가 먼저 시작했고 실제 비밀 송금은 A가 먼저 실행했다.",
     "두 사람 모두 말 못할 이유가 있었지만 둘 다 공동 재산을 혼자 움직였다."
   ]

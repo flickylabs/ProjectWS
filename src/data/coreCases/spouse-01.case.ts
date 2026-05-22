@@ -1668,6 +1668,13 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         ko('d-1 핵심 사실 "외도 아님" 잠정 인정'),
         ko('B가 시댁 불화와 조카 사정을 직접 언급'),
       ],
+      effects: [
+        { kind: 'unlock_note', unlockNodeId: 'dc-1' },
+        {
+          kind: 'upgrade_dispute',
+          disputeUpgrade: { disputeId: 'd-1', weight: 'high', ambiguity: 'low' },
+        },
+      ],
       judgeHint: ko('오피스텔 경비(w-1)를 증인으로 부를 수 있게 됨.'),
       challenges: {
         b: {
@@ -1697,6 +1704,25 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       linkedDisputes: ['d-1', 'd-2'],
       linkedParty: 'b',
       linkedEvidence: ['e-4'],
+      leadLine: {
+        id: 'L-2',
+        name: ko('Context Lead'),
+        leadType: 'Context',
+        firstInputs: ['e-3', 'stmt-b-family'],
+        secondInputs: ['L-2', 'e-4', 'w-1-angle'],
+        interpretationChoices: [
+          {
+            id: 'L-2-A',
+            text: ko('외도는 아니지만 창피해서 숨겼다'),
+            implication: ko('B의 수치심을 먼저 본다.'),
+          },
+          {
+            id: 'L-2-B',
+            text: ko('시댁 불화를 피하려 숨겼다'),
+            implication: ko('관계 공포 축을 연다.'),
+          },
+        ],
+      },
       noteText: ko(
         'B가 시댁 이야기가 나올 때마다 입을 닫는 데에는 ledger-2 silenced 영역의 무게가 있다. 외도가 아니라는 진실을 말하지 못한 동기.',
       ),
@@ -1707,6 +1733,13 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       successEffects: [
         ko('B가 시댁 갈등 공포 동기 직접 인정'),
         ko('e-4 reliability 강화 (hard)'),
+      ],
+      effects: [
+        { kind: 'unlock_note', unlockNodeId: 'dc-2' },
+        {
+          kind: 'upgrade_evidence',
+          evidenceUpgrade: { evidenceId: 'e-4', toReliability: 'hard' },
+        },
       ],
       judgeHint: ko('dc-2 감정 패턴을 B에 직접 추궁하거나 e-4 제시.'),
       challenges: {
@@ -1737,6 +1770,25 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       linkedDisputes: ['d-2'],
       linkedParty: 'b',
       linkedEvidence: ['e-4', 'e-5'],
+      leadLine: {
+        id: 'L-3',
+        name: ko('Beneficiary Lead'),
+        leadType: 'Beneficiary',
+        firstInputs: ['e-4', 'e-5'],
+        secondInputs: ['L-3', 'stmt-b-repay', 'w-1-angle'],
+        interpretationChoices: [
+          {
+            id: 'L-3-A',
+            text: ko('형네를 실제로 살리려 한 돈이다'),
+            implication: ko('선의와 구제 논리를 본다.'),
+          },
+          {
+            id: 'L-3-B',
+            text: ko('형의 무책임을 대신 떠안은 월권이다'),
+            implication: ko('공동재산 책임을 본다.'),
+          },
+        ],
+      },
       noteText: ko(
         '이준호 본인 명의의 별도 계좌. 10년간 누적 3,000만 원 → 최근 4개월 동안 4회 분할 현금 출금. 형이 개인회생 중이라 계좌 입금이 곤란해 현금으로 전달.',
       ),
@@ -1747,6 +1799,13 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       successEffects: [
         ko('d-2 핵심 사실 "비자금 + 형 지원" 잠정 인정'),
         ko('B가 형 + 회생 + 현금 전달 직접 언급'),
+      ],
+      effects: [
+        { kind: 'unlock_note', unlockNodeId: 'dc-3' },
+        {
+          kind: 'upgrade_dispute',
+          disputeUpgrade: { disputeId: 'd-2', weight: 'high', ambiguity: 'low' },
+        },
       ],
       judgeHint: ko('은행 직원(w-2)을 증인으로 부를 수 있게 됨 — 창구 출금 증언 가능.'),
       challenges: {
@@ -1789,6 +1848,25 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       linkedDisputes: ['h-d3'],
       linkedParty: 'a',
       linkedEvidence: ['e-6', 'e-7'],
+      leadLine: {
+        id: 'L-4',
+        name: ko('Emotion Lead'),
+        leadType: 'Emotion',
+        firstInputs: ['e-6', 'stmt-a-protect'],
+        secondInputs: ['L-4', 'w-3-angle'],
+        interpretationChoices: [
+          {
+            id: 'L-4-A',
+            text: ko('배신 공포 속 자기방어다'),
+            implication: ko('A의 공포를 먼저 본다.'),
+          },
+          {
+            id: 'L-4-B',
+            text: ko('이혼 대비 은닉이다'),
+            implication: ko('A의 계산을 먼저 본다.'),
+          },
+        ],
+      },
       noteText: ko(
         'A가 박미라(w-3)의 텔레그램 VIP 투자클럽 링크 전달 후 해지액 2,000만 원 전액을 운영자 계좌로 송금. 운영자 잠적 후 전액 손실.',
       ),
@@ -1799,6 +1877,10 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       successEffects: [
         ko('h-d3 핵심 사실 "투자방 송금 + 사기 손실" 잠정 인정'),
         ko('A가 사기 + 수치심 + 은폐 직접 언급'),
+      ],
+      effects: [
+        { kind: 'unlock_note', unlockNodeId: 'dc-4' },
+        { kind: 'unlock_dispute', unlockNodeId: 'h-d3' },
       ],
       judgeHint: ko('박미라(w-3)를 증인으로 부를 수 있게 됨.'),
       challenges: {
@@ -1853,6 +1935,13 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       successEffects: [
         ko('A의 위임장 위조 + 단독 해지 사실 인정'),
         ko('h-d3 절차 책임 frame 확정'),
+      ],
+      effects: [
+        { kind: 'unlock_note', unlockNodeId: 'dc-7' },
+        {
+          kind: 'upgrade_dispute',
+          disputeUpgrade: { disputeId: 'h-d3', weight: 'high', ambiguity: 'low' },
+        },
       ],
       judgeHint: ko('은행 직원(w-2)에게 위임장 처리 경위 추궁 가능.'),
       challenges: {

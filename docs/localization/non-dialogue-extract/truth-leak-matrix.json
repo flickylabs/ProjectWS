@@ -19,25 +19,38 @@
           "친형 오피스텔에서 조카를 돌봄",
           "조카 돌봄",
           "형과의 긴급 연락",
-          "가족 돌봄"
+          "가족 돌봄",
+          "시댁 갈등 공포",
+          "형 가족 돌봄",
+          "중2 여학생"
         ],
         "en": [
           "niece care at his older brother's Officetel",
           "care for his niece",
           "urgent contact with his brother",
-          "family care"
+          "family care",
+          "fear of in-law conflict",
+          "caring for older brother family",
+          "niece care",
+          "middle school girl"
         ],
         "ja": [
           "実兄のオフィステルで姪の世話",
           "姪の世話",
           "兄との緊急連絡",
-          "家族の世話"
+          "家族の世話",
+          "婚家との葛藤への恐れ",
+          "兄の家族の世話",
+          "中学2年女子"
         ],
         "zh-CN": [
           "在亲哥哥的韩式商住公寓照顾侄女",
           "照顾侄女",
           "与哥哥的紧急联系",
-          "照顾家人"
+          "照顾家人",
+          "对婆家冲突的恐惧",
+          "照顾哥哥的家人",
+          "初二女学生"
         ]
       },
       "surface": {
@@ -130,22 +143,42 @@
         "ko": [
           "공동 적금 무단 해지",
           "박지연 단독 해지",
-          "본인 동의 없이 해지"
+          "본인 동의 없이 해지",
+          "투자방 송금 손실",
+          "사기 수치심",
+          "위임장 위조",
+          "제이슨",
+          "VIP 투자클럽"
         ],
         "en": [
           "unilateral joint savings cancellation",
           "secret joint savings cancellation",
-          "joint savings cancelled without consent"
+          "joint savings cancelled without consent",
+          "investment scam loss",
+          "fraud shame",
+          "forged proxy form",
+          "Jason",
+          "VIP Investment Club"
         ],
         "ja": [
           "共同積立預金の無断解約",
           "パク・ジヨン単独での解約",
-          "本人の同意なしの解約"
+          "本人の同意なしの解約",
+          "投資詐欺の損失",
+          "詐欺の羞恥",
+          "委任状偽造",
+          "ジェイソン",
+          "VIP投資クラブ"
         ],
         "zh-CN": [
           "私自取消共同储蓄",
           "未经同意取消共同储蓄",
-          "朴智妍单方面取消共同储蓄"
+          "朴智妍单方面取消共同储蓄",
+          "投资诈骗损失",
+          "诈骗的羞耻",
+          "伪造委托书",
+          "杰森",
+          "VIP投资俱乐部"
         ]
       },
       "surface": {
@@ -168,67 +201,6 @@
           "共同储蓄账户",
           "余额变化",
           "账户查看"
-        ]
-      }
-    },
-    "h-d4": {
-      "hidden": {
-        "ko": [
-          "위임장 조작",
-          "투자 사기",
-          "투자방 송금 손실",
-          "형사 절차"
-        ],
-        "en": [
-          "power of attorney forgery",
-          "forged power of attorney",
-          "investment scam",
-          "investment scam transfer loss",
-          "criminal procedure"
-        ],
-        "ja": [
-          "委任状の偽造",
-          "委任状偽造",
-          "投資詐欺",
-          "投資詐欺による送金損失",
-          "刑事手続"
-        ],
-        "zh-CN": [
-          "委托书伪造",
-          "伪造委托书",
-          "投资诈骗",
-          "投资诈骗的转账损失",
-          "刑事程序"
-        ]
-      },
-      "surface": {
-        "ko": [
-          "침묵",
-          "계좌 감시",
-          "자금 이동",
-          "양쪽 책임",
-          "자료 확인"
-        ],
-        "en": [
-          "silence",
-          "account monitoring",
-          "fund movement",
-          "responsibility on both sides",
-          "record check"
-        ],
-        "ja": [
-          "沈黙",
-          "口座確認",
-          "資金移動",
-          "双方の責任",
-          "資料確認"
-        ],
-        "zh-CN": [
-          "沉默",
-          "账户查看",
-          "资金流动",
-          "双方责任",
-          "资料确认"
         ]
       }
     }
