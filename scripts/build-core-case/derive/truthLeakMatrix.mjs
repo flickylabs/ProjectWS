@@ -87,15 +87,24 @@ function buildCaseEntry(authority, existingCaseEntry) {
         ...(surfaceZh ? { 'zh-CN': surfaceZh } : {}),
       }
     }
-    const intentTags = authority.truthLeakOverride?.perDispute?.[d.id]?.designIntentTags
-      ?? authority.truthLeakOverride?.designIntentTags
-    // Per-dispute _designIntentTags (exDispute already declared above)
-    const exIntentTags = exDispute?._designIntentTags
-    if (Array.isArray(intentTags) && intentTags.length > 0) {
-      entry._designIntentTags = intentTags
-    } else if (Array.isArray(exIntentTags)) {
-      entry._designIntentTags = exIntentTags
-    }
+    // _designIntentTags = baseline matrix 영역 ∪ Authority case-wide ∪ Authority per-dispute (union)
+    //
+    // Phase 3 friend-01 회귀 학습: 이전 정책은 Authority 영역이 baseline을 덮어썼다.
+    //   - baseline matrix의 dispute별 `continuity:evidence_combo` 같은 scriptedText variant tag와
+    //     sync된 tag가 Authority truthLeakOverride.designIntentTags 변경 시 누락 → detect-truth-leak
+    //     P0 finding 회귀.
+    // 새 정책 (union): baseline _designIntentTags는 무조건 보존. Authority는 case-wide + per-dispute로
+    //   추가만 가능. 작성자가 truthLeakOverride.designIntentTags = [...new tags]로 의도해도 baseline
+    //   tag (`continuity:*` 등)는 자동 carry-over.
+    const baselineTags = Array.isArray(exDispute?._designIntentTags) ? exDispute._designIntentTags : []
+    const caseWideTags = Array.isArray(authority.truthLeakOverride?.designIntentTags)
+      ? authority.truthLeakOverride.designIntentTags
+      : []
+    const perDisputeTags = Array.isArray(authority.truthLeakOverride?.perDispute?.[d.id]?.designIntentTags)
+      ? authority.truthLeakOverride.perDispute[d.id].designIntentTags
+      : []
+    const mergedTags = dedupeKeepOrder([...baselineTags, ...caseWideTags, ...perDisputeTags])
+    if (mergedTags.length > 0) entry._designIntentTags = mergedTags
     out[d.id] = entry
   }
   return out

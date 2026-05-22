@@ -158,6 +158,7 @@ function loadCaseScanContext(caseId) {
     scripted: readJson(path.join(ROOT, 'src', 'data', 'scriptedText', `${caseId}.json`)),
     policy: readJson(path.join(ROOT, 'src', 'data', 'disclosurePolicy', `${caseId}.json`)),
     emergenceHooks: readEmergenceHooks(caseId),
+    truthLeakMatrix: readJson(path.join(ROOT, 'docs', 'localization', 'non-dialogue-extract', 'truth-leak-matrix.json')),
   };
 }
 
@@ -799,11 +800,28 @@ function getEvidenceTruthLexemes(ctx, evidenceId) {
   if (!evidenceId) return [];
   const fromPolicy = ctx.policy.surfaceMap?.evidence?.[evidenceId] || {};
   const ev = findEvidence(ctx.caseData, evidenceId) || {};
+
+  // Phase 3 회귀 보강 (evidence.description surface-safe 심화):
+  //   evidence가 proves하는 모든 dispute의 matrix hidden keyword (KO) 영역도 추가.
+  //   - Phase 3 friend-01 회귀: e-3 description "돈 문제" / e-6 description "투자 명목" stage 0 노출.
+  //   - surfaceMap.evidence[id].truthLexemes / descriptionTruth에 미등록 시 기존 검출 누락.
+  //   - matrix hidden은 dispute별 정밀 phrase 단위라 evidence의 stage 0 영역에 노출되면 안전 위반.
+  const matrixHidden = [];
+  const matrixCase = ctx.truthLeakMatrix?.[ctx.caseId];
+  if (matrixCase && Array.isArray(ev.proves)) {
+    for (const disputeId of ev.proves) {
+      const disputeNode = matrixCase[disputeId];
+      const koHidden = disputeNode?.hidden?.ko;
+      if (Array.isArray(koHidden)) matrixHidden.push(...koHidden);
+    }
+  }
+
   return unique([
     ...(fromPolicy.truthLexemes || []),
     ...(fromPolicy.descriptionTruth || []),
     ...(ev.descriptionTruth || []),
     ...(ev.name && ev.name !== ev.surfaceName ? [ev.name] : []),
+    ...matrixHidden,
   ]);
 }
 

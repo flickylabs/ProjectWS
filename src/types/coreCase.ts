@@ -739,9 +739,11 @@ export const TruthLeakOverrideSchema = z.object({
     z.object({
       hidden: LocalizedKeywordSetSchema.optional(),
       surface: LocalizedKeywordSetSchema.optional(),
+      /** dispute별 _designIntentTags 추가 (case-wide designIntentTags와 union). */
+      designIntentTags: z.array(z.string()).optional(),
     })
   ),
-  /** matrix._designIntentTags whitelist 추가. */
+  /** matrix._designIntentTags whitelist 추가 (전체 dispute 공통). baseline matrix의 기존 _designIntentTags와 union 처리. */
   designIntentTags: z.array(z.string()).optional(),
 })
 export type TruthLeakOverride = z.infer<typeof TruthLeakOverrideSchema>
@@ -980,6 +982,44 @@ export function validateCoreCaseReferences(authority: CoreCaseAuthority): CoreCa
         message: `recipe ${recipe.id}.outputId=${recipe.outputId} not in evidence or dossier`,
         path: `combinationRecipes[${recipe.id}].outputId`,
       })
+    }
+  }
+
+  // dispute chain 순서 (forward-only) + 순환 방지
+  //
+  // 룰: dispute array index N의 unlockCondition.requireDispute는 index < N만 참조 가능.
+  // 즉 disputes array 순서가 chain 의미 순서를 정의한다 (d-1 entry → d-5 final).
+  // 이를 강제하면 순환 자동 없음 (forward-only edge → DAG).
+  //
+  // Phase 3 학습: dispute swap 시 chain 영역 회귀 가능 (PowerShell 인코딩 사고로 발견된 사례).
+  // 신규 사건 작성 시 처음부터 d-1 → d-N 정렬 작성 권장.
+  const disputeIndex = new Map<string, number>()
+  authority.disputes.forEach((d, idx) => disputeIndex.set(d.id, idx))
+  for (let i = 0; i < authority.disputes.length; i++) {
+    const dispute = authority.disputes[i]
+    if (!dispute.unlockCondition?.requireDispute) continue
+    const reqs = Array.isArray(dispute.unlockCondition.requireDispute)
+      ? dispute.unlockCondition.requireDispute
+      : [dispute.unlockCondition.requireDispute]
+    for (const req of reqs) {
+      const reqIdx = disputeIndex.get(req.id)
+      if (reqIdx === undefined) continue // ID 존재 검증은 아래 영역에서 처리
+      if (reqIdx >= i) {
+        issues.push({
+          severity: 'error',
+          area: 'dispute.unlockCondition.order',
+          message: `dispute ${dispute.id} (index=${i}) requires ${req.id} (index=${reqIdx}) — unlock chain must be forward-only (array order = chain order)`,
+          path: `disputes[${dispute.id}].unlockCondition.requireDispute`,
+        })
+      }
+      if (req.id === dispute.id) {
+        issues.push({
+          severity: 'error',
+          area: 'dispute.unlockCondition.selfReference',
+          message: `dispute ${dispute.id} unlock-requires itself — self-reference forbidden`,
+          path: `disputes[${dispute.id}].unlockCondition.requireDispute`,
+        })
+      }
     }
   }
 
