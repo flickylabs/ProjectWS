@@ -35535,7 +35535,7 @@
             },
             {
               "id": "a-d-3-S3-fact-pursuit-v6",
-              "text": "재판관님, 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 이제는 일부 정황을 인정할 수밖에 없습니다.",
+              "text": "재판관님, 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 이제는 일부 정황을 인정할 수밖에 없습니다.",
               "behaviorHint": "처음으로 말속도가 늦어진다. 그러나 책임은 곧 제 동생 쪽으로 돌린다.",
               "tags": [
                 "channel:interrogation",
@@ -35580,7 +35580,7 @@
             },
             {
               "id": "a-d-3-S3-fact-pursuit-v7",
-              "text": "형인 제가 보기엔 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그래서 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 하지만 책임 방향은 여전히 제 동생에게 있습니다.",
+              "text": "형인 제가 보기엔 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그래서 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 하지만 책임 방향은 여전히 제 동생에게 있습니다.",
               "behaviorHint": "제 동생을 향해 턱을 들고 반격한다. 감정이 말 사이로 새어 나온다.",
               "tags": [
                 "channel:interrogation",
@@ -35624,7 +35624,7 @@
             },
             {
               "id": "a-d-3-S3-fact-pursuit-v8",
-              "text": "2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그 점을 빼면 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 그 한마디가 제 안에 두고두고 남았어요.",
+              "text": "2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그 점을 빼면 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 그 한마디가 제 안에 두고두고 남았어요.",
               "behaviorHint": "증언 대목에서 눈빛이 흔들린다. 곧 서열을 앞세워 버틴다.",
               "tags": [
                 "channel:interrogation",
@@ -35669,7 +35669,7 @@
             },
             {
               "id": "a-d-3-S3-fact-pursuit-v9",
-              "text": "저는 이 대목을 가볍게 넘길 수 없습니다. 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 그래서 저는 더 세게 묻는 겁니다.",
+              "text": "저는 이 대목을 가볍게 넘길 수 없습니다. 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 그래서 저는 더 세게 묻는 겁니다.",
               "behaviorHint": "목소리가 커지며 상대 말을 끊을 듯 나선다. 분노가 책임 전가로 바뀐다.",
               "tags": [
                 "channel:interrogation",
@@ -35713,7 +35713,7 @@
             },
             {
               "id": "a-d-3-S3-fact-pursuit-v10",
-              "text": "오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 그렇게 이어진 정황은 지금도 설명이 필요합니다. 제 판단이 거기서 굳었습니다.",
+              "text": "오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 그렇게 이어진 정황은 지금도 설명이 필요합니다. 제 판단이 거기서 굳었습니다.",
               "behaviorHint": "한 박자 쉬고 낮게 덧붙인다. 의심을 놓지 못한다.",
               "tags": [
                 "channel:interrogation",
@@ -36867,7 +36867,7 @@
             },
             {
               "id": "a-d-3-S4-fact-pursuit-v6",
-              "text": "재판관님, 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 이 대목에서는 감정이 앞서는 걸 숨기기 어렵습니다.",
+              "text": "재판관님, 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 이 대목에서는 감정이 앞서는 걸 숨기기 어렵습니다.",
               "behaviorHint": "고개를 숙였다가 갑자기 들어 올린다. 분노와 자책이 같이 올라온다.",
               "tags": [
                 "channel:interrogation",
@@ -36912,7 +36912,7 @@
             },
             {
               "id": "a-d-3-S4-fact-pursuit-v7",
-              "text": "형인 제가 보기엔 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그래서 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 그 말을 하면서도 제 책임이 보입니다.",
+              "text": "형인 제가 보기엔 2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그래서 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 그 말을 하면서도 제 책임이 보입니다.",
               "behaviorHint": "말끝이 잠기고 어깨가 내려간다. 오래 버틴 자부심이 흔들린다.",
               "tags": [
                 "channel:interrogation",
@@ -36957,7 +36957,7 @@
             },
             {
               "id": "a-d-3-S4-fact-pursuit-v8",
-              "text": "2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그 점을 빼면 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 그러고 보니 제가 비워 두었던 자리도 그제서야 눈에 들어옵니다.",
+              "text": "2018년 사업장 자금까지 연결되니 말문이 막혔습니다. 그 점을 빼면 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 그러고 보니 제가 비워 두었던 자리도 그제서야 눈에 들어옵니다.",
               "behaviorHint": "눈을 피하지 못한 채 천천히 말한다. 처음으로 빈칸을 인정한다.",
               "tags": [
                 "channel:interrogation",
@@ -37002,7 +37002,7 @@
             },
             {
               "id": "a-d-3-S4-fact-pursuit-v9",
-              "text": "저는 이 대목을 가볍게 넘길 수 없습니다. 오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 그래도 화가 완전히 가라앉진 않습니다.",
+              "text": "저는 이 대목을 가볍게 넘길 수 없습니다. 오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 그래도 화가 완전히 가라앉진 않습니다.",
               "behaviorHint": "주먹을 쥐었다 풀며 감정을 억누른다. 목소리는 거칠다.",
               "tags": [
                 "channel:interrogation",
@@ -37047,7 +37047,7 @@
             },
             {
               "id": "a-d-3-S4-fact-pursuit-v10",
-              "text": "오래된 계좌 흐름을 보고서야 돈의 출처가 흔들렸습니다. 그렇게 이어진 정황은 지금도 설명이 필요합니다. 이제는 원망만으로 버티기 어렵습니다.",
+              "text": "오래된 송금 내역 묶음을 보고서야 돈의 출처가 흔들렸습니다. 그렇게 이어진 정황은 지금도 설명이 필요합니다. 이제는 원망만으로 버티기 어렵습니다.",
               "behaviorHint": "마지막에 시선이 바닥으로 내려간다. 원망보다 자책이 길게 남는다.",
               "tags": [
                 "channel:interrogation",
@@ -53921,7 +53921,7 @@
             },
             {
               "id": "a-d-4-S5-fact-pursuit-v6",
-              "text": "재판관님, 정후가 아버지와 혈연이 다르다는 사실을 이제 받아들입니다. 어머니 일기장에 남은 문장이 그 현실을 보여 줍니다. 그 책임은 제가 인정하겠습니다.",
+              "text": "재판관님, 정후가 아버지와 혈연이 다르다는 사실을 이제 받아들입니다. 오래된 노트 사본에 남은 문장이 그 현실을 보여 줍니다. 그 책임은 제가 인정하겠습니다.",
               "behaviorHint": "어깨 힘이 빠지고 말속도가 늦어진다. 더는 상대만 탓하지 않는다.",
               "tags": [
                 "channel:interrogation",
@@ -53964,7 +53964,7 @@
             },
             {
               "id": "a-d-4-S5-fact-pursuit-v7",
-              "text": "어머니 일기장에 남은 문장이 그 현실을 보여 줍니다. 그래서 이제는 정후가 아버지와 혈연이 다르다는 사실을 이제 받아들입니다. 그 말까지 제가 감당하겠습니다.",
+              "text": "오래된 노트 사본에 남은 문장이 그 현실을 보여 줍니다. 그래서 이제는 정후가 아버지와 혈연이 다르다는 사실을 이제 받아들입니다. 그 말까지 제가 감당하겠습니다.",
               "behaviorHint": "입술을 한 번 깨물고 인정한다. 분노가 수치심으로 바뀐다.",
               "tags": [
                 "channel:interrogation",
@@ -54008,7 +54008,7 @@
             },
             {
               "id": "a-d-4-S5-fact-pursuit-v8",
-              "text": "어머니 일기장에 남은 문장이 그 현실을 보여 줍니다. 그 점을 외면하지 않겠습니다. 이제는 제 몫도 피하지 않겠습니다.",
+              "text": "오래된 노트 사본에 남은 문장이 그 현실을 보여 줍니다. 그 점을 외면하지 않겠습니다. 이제는 제 몫도 피하지 않겠습니다.",
               "behaviorHint": "시선을 손등에 둔 채 털어놓는다. 형이라는 말이 무겁게 들린다.",
               "tags": [
                 "channel:interrogation",
@@ -54095,7 +54095,7 @@
             },
             {
               "id": "a-d-4-S5-fact-pursuit-v10",
-              "text": "정후가 아버지와 혈연이 다르다는 사실을 이제 받아들입니다. 어머니 일기장에 남은 문장이 그 현실을 보여 줍니다. 그래서 그렇게 기록해 주십시오.",
+              "text": "정후가 아버지와 혈연이 다르다는 사실을 이제 받아들입니다. 오래된 노트 사본에 남은 문장이 그 현실을 보여 줍니다. 그래서 그렇게 기록해 주십시오.",
               "behaviorHint": "길게 숨을 내쉬고 고개를 끄덕인다. 인정 뒤의 피로가 남는다.",
               "tags": [
                 "channel:interrogation",
@@ -54349,7 +54349,7 @@
             },
             {
               "id": "a-d-4-S5-motive-search-v6",
-              "text": "재판관님, 어머니 일기장 내용을 이해하고 나니 제 분노의 방향도 달라졌습니다. 숨긴 이유가 저를 무너뜨리지 않으려는 데 있었다는 걸 압니다. 그 책임은 제가 인정하겠습니다.",
+              "text": "재판관님, 오래된 노트 사본 내용을 이해하고 나니 제 분노의 방향도 달라졌습니다. 숨긴 이유가 저를 무너뜨리지 않으려는 데 있었다는 걸 압니다. 그 책임은 제가 인정하겠습니다.",
               "behaviorHint": "어깨 힘이 빠지고 말속도가 늦어진다. 더는 상대만 탓하지 않는다.",
               "tags": [
                 "channel:interrogation",
@@ -54436,7 +54436,7 @@
             },
             {
               "id": "a-d-4-S5-motive-search-v8",
-              "text": "제가 숨긴 마음까지 인정합니다. 어머니 일기장 내용을 이해하고 나니 제 분노의 방향도 달라졌습니다. 이제는 제 몫도 피하지 않겠습니다.",
+              "text": "제가 숨긴 마음까지 인정합니다. 오래된 노트 사본 내용을 이해하고 나니 제 분노의 방향도 달라졌습니다. 이제는 제 몫도 피하지 않겠습니다.",
               "behaviorHint": "시선을 손등에 둔 채 털어놓는다. 형이라는 말이 무겁게 들린다.",
               "tags": [
                 "channel:interrogation",
@@ -54479,7 +54479,7 @@
             },
             {
               "id": "a-d-4-S5-motive-search-v9",
-              "text": "어머니 일기장 내용을 이해하고 나니 제 분노의 방향도 달라졌습니다. 그 이유를 더는 변명하지 않겠습니다. 그걸 인정하는 게 늦었습니다.",
+              "text": "오래된 노트 사본 내용을 이해하고 나니 제 분노의 방향도 달라졌습니다. 그 이유를 더는 변명하지 않겠습니다. 그걸 인정하는 게 늦었습니다.",
               "behaviorHint": "낮은 목소리로 끝까지 문장을 완성한다. 책임을 피해 가지 않는다.",
               "tags": [
                 "channel:interrogation",
@@ -61818,7 +61818,7 @@
             },
             {
               "id": "b-d-4-S5-fact-pursuit-v6",
-              "text": "재판관님, 어머니 일기장을 보고 제 오래된 가족 사정을 알게 됐습니다. 그 사실을 혼자 안고 있었습니다. 이제는 피하지 않겠습니다.",
+              "text": "재판관님, 오래된 노트 사본을 보고 제 오래된 가족 사정을 알게 됐습니다. 그 사실을 혼자 안고 있었습니다. 이제는 피하지 않겠습니다.",
               "behaviorHint": "작게 고개를 끄덕인다. 인정은 낮고 느리게 이어진다.",
               "tags": [
                 "channel:interrogation",
@@ -61905,7 +61905,7 @@
             },
             {
               "id": "b-d-4-S5-fact-pursuit-v8",
-              "text": "말을 아낀 것도 제 선택이었습니다. 어머니 일기장을 보고 제 오래된 가족 사정을 알게 됐습니다. 늦었지만 끝까지 말하겠습니다.",
+              "text": "말을 아낀 것도 제 선택이었습니다. 오래된 노트 사본을 보고 제 오래된 가족 사정을 알게 됐습니다. 늦었지만 끝까지 말하겠습니다.",
               "behaviorHint": "눈꺼풀이 천천히 내려간다. 숨겨 온 사실을 끝까지 말한다.",
               "tags": [
                 "channel:interrogation",
@@ -61948,7 +61948,7 @@
             },
             {
               "id": "b-d-4-S5-fact-pursuit-v9",
-              "text": "어머니 일기장을 보고 제 오래된 가족 사정을 알게 됐습니다. 숨긴 대가도 제 몫입니다.",
+              "text": "오래된 노트 사본을 보고 제 오래된 가족 사정을 알게 됐습니다. 숨긴 대가도 제 몫입니다.",
               "behaviorHint": "목소리는 여전히 낮지만 문장은 분명하다. 책임을 받아들인다.",
               "tags": [
                 "channel:interrogation",
@@ -87965,7 +87965,7 @@
           "variants": [
             {
               "id": "b-e-7-early-self-v1",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -88012,7 +88012,7 @@
             },
             {
               "id": "b-e-7-early-self-v2",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -88059,7 +88059,7 @@
             },
             {
               "id": "b-e-7-early-self-v3",
-              "text": "양쪽 말을 함께 놓고 봐야 합니다. 어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "양쪽 말을 함께 놓고 봐야 합니다. 오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -88106,7 +88106,7 @@
             },
             {
               "id": "b-e-7-early-self-v4",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -88153,7 +88153,7 @@
             },
             {
               "id": "b-e-7-early-self-v5",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -118697,7 +118697,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "기록확인",
-          "stageQuestion": "공증인 메모 기록을 봐 주십시오.",
+          "stageQuestion": "인증 절차 메모를 봐 주십시오.",
           "requiredLieState": "S2",
           "relatedDisputes": [
             "d-2"
@@ -120290,7 +120290,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "기록확인",
-          "stageQuestion": "공증인 메모 기록을 봐 주십시오.",
+          "stageQuestion": "인증 절차 메모를 봐 주십시오.",
           "requiredLieState": "S2",
           "relatedDisputes": [
             "d-2"
@@ -121943,7 +121943,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "기록확인",
-          "stageQuestion": "공증인 메모 기록을 봐 주십시오.",
+          "stageQuestion": "인증 절차 메모를 봐 주십시오.",
           "requiredLieState": "S2",
           "relatedDisputes": [
             "d-2"
@@ -123586,7 +123586,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "기록확인",
-          "stageQuestion": "공증인 메모 기록을 봐 주십시오.",
+          "stageQuestion": "인증 절차 메모를 봐 주십시오.",
           "requiredLieState": "S2",
           "relatedDisputes": [
             "d-2"
@@ -125209,7 +125209,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "기록확인",
-          "stageQuestion": "공증인 메모 기록을 봐 주십시오.",
+          "stageQuestion": "인증 절차 메모를 봐 주십시오.",
           "requiredLieState": "S2",
           "relatedDisputes": [
             "d-2"
@@ -126922,7 +126922,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "기록확인",
-          "stageQuestion": "공증인 메모 기록을 봐 주십시오.",
+          "stageQuestion": "인증 절차 메모를 봐 주십시오.",
           "requiredLieState": "S2",
           "relatedDisputes": [
             "d-2"
@@ -138685,7 +138685,7 @@
           "key": "a|e-6|early|request_original",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "early",
           "investigationStage": "request_original",
           "stageLabel": "내역확인",
@@ -139222,7 +139222,7 @@
           "key": "a|e-6|early|check_metadata",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "early",
           "investigationStage": "check_metadata",
           "stageLabel": "흐름대조",
@@ -139759,7 +139759,7 @@
           "key": "a|e-6|early|restore_context",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "early",
           "investigationStage": "restore_context",
           "stageLabel": "숨김추궁",
@@ -140296,7 +140296,7 @@
           "key": "a|e-6|mid|request_original",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "mid",
           "investigationStage": "request_original",
           "stageLabel": "내역확인",
@@ -140843,7 +140843,7 @@
           "key": "a|e-6|mid|check_metadata",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "mid",
           "investigationStage": "check_metadata",
           "stageLabel": "흐름대조",
@@ -141390,7 +141390,7 @@
           "key": "a|e-6|mid|restore_context",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "mid",
           "investigationStage": "restore_context",
           "stageLabel": "숨김추궁",
@@ -141937,7 +141937,7 @@
           "key": "a|e-6|late|request_original",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "late",
           "investigationStage": "request_original",
           "stageLabel": "내역확인",
@@ -142454,7 +142454,7 @@
           "key": "a|e-6|late|check_metadata",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "late",
           "investigationStage": "check_metadata",
           "stageLabel": "흐름대조",
@@ -142971,7 +142971,7 @@
           "key": "a|e-6|late|restore_context",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "late",
           "investigationStage": "restore_context",
           "stageLabel": "숨김추궁",
@@ -143488,7 +143488,7 @@
           "key": "b|e-6|early|request_original",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "early",
           "investigationStage": "request_original",
           "stageLabel": "내역확인",
@@ -144025,7 +144025,7 @@
           "key": "b|e-6|early|check_metadata",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "early",
           "investigationStage": "check_metadata",
           "stageLabel": "흐름대조",
@@ -144562,7 +144562,7 @@
           "key": "b|e-6|early|restore_context",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "early",
           "investigationStage": "restore_context",
           "stageLabel": "숨김추궁",
@@ -145099,7 +145099,7 @@
           "key": "b|e-6|mid|request_original",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "mid",
           "investigationStage": "request_original",
           "stageLabel": "내역확인",
@@ -145656,7 +145656,7 @@
           "key": "b|e-6|mid|check_metadata",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "mid",
           "investigationStage": "check_metadata",
           "stageLabel": "흐름대조",
@@ -146213,7 +146213,7 @@
           "key": "b|e-6|mid|restore_context",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "mid",
           "investigationStage": "restore_context",
           "stageLabel": "숨김추궁",
@@ -146770,7 +146770,7 @@
           "key": "b|e-6|late|request_original",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "late",
           "investigationStage": "request_original",
           "stageLabel": "내역확인",
@@ -147317,7 +147317,7 @@
           "key": "b|e-6|late|check_metadata",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "late",
           "investigationStage": "check_metadata",
           "stageLabel": "흐름대조",
@@ -147864,7 +147864,7 @@
           "key": "b|e-6|late|restore_context",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "오래된 계좌 흐름",
+          "evidenceName": "오래된 송금 내역 묶음",
           "lieBand": "late",
           "investigationStage": "restore_context",
           "stageLabel": "숨김추궁",
@@ -148411,7 +148411,7 @@
           "key": "a|e-7|early|request_original",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "early",
           "investigationStage": "request_original",
           "stageLabel": "자필확인",
@@ -148948,7 +148948,7 @@
           "key": "a|e-7|early|check_metadata",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "early",
           "investigationStage": "check_metadata",
           "stageLabel": "문장대조",
@@ -149485,7 +149485,7 @@
           "key": "a|e-7|early|restore_context",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "early",
           "investigationStage": "restore_context",
           "stageLabel": "동기복원",
@@ -150022,7 +150022,7 @@
           "key": "a|e-7|mid|request_original",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "mid",
           "investigationStage": "request_original",
           "stageLabel": "자필확인",
@@ -150569,7 +150569,7 @@
           "key": "a|e-7|mid|check_metadata",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "mid",
           "investigationStage": "check_metadata",
           "stageLabel": "문장대조",
@@ -151116,7 +151116,7 @@
           "key": "a|e-7|mid|restore_context",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "mid",
           "investigationStage": "restore_context",
           "stageLabel": "동기복원",
@@ -151663,7 +151663,7 @@
           "key": "a|e-7|late|request_original",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "late",
           "investigationStage": "request_original",
           "stageLabel": "자필확인",
@@ -152180,7 +152180,7 @@
           "key": "a|e-7|late|check_metadata",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "late",
           "investigationStage": "check_metadata",
           "stageLabel": "문장대조",
@@ -152697,7 +152697,7 @@
           "key": "a|e-7|late|restore_context",
           "party": "a",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "late",
           "investigationStage": "restore_context",
           "stageLabel": "동기복원",
@@ -153214,7 +153214,7 @@
           "key": "b|e-7|early|request_original",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "early",
           "investigationStage": "request_original",
           "stageLabel": "자필확인",
@@ -153227,7 +153227,7 @@
           "variants": [
             {
               "id": "b-e-7-early-request_original-v1",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153279,7 +153279,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v2",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153331,7 +153331,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v3",
-              "text": "양쪽 말을 함께 놓고 봐야 합니다. 어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "양쪽 말을 함께 놓고 봐야 합니다. 오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153383,7 +153383,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v4",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153435,7 +153435,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v5",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153487,7 +153487,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v6",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153539,7 +153539,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v7",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153591,7 +153591,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v8",
-              "text": "양쪽 말을 함께 놓고 봐야 합니다. 어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "양쪽 말을 함께 놓고 봐야 합니다. 오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153643,7 +153643,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v9",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153695,7 +153695,7 @@
             },
             {
               "id": "b-e-7-early-request_original-v10",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153751,7 +153751,7 @@
           "key": "b|e-7|early|check_metadata",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "early",
           "investigationStage": "check_metadata",
           "stageLabel": "문장대조",
@@ -153764,7 +153764,7 @@
           "variants": [
             {
               "id": "b-e-7-early-check_metadata-v1",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153816,7 +153816,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v2",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153868,7 +153868,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v3",
-              "text": "양쪽 말을 함께 놓고 봐야 합니다. 어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "양쪽 말을 함께 놓고 봐야 합니다. 오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153920,7 +153920,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v4",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -153972,7 +153972,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v5",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154024,7 +154024,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v6",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154076,7 +154076,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v7",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154128,7 +154128,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v8",
-              "text": "양쪽 말을 함께 놓고 봐야 합니다. 어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "양쪽 말을 함께 놓고 봐야 합니다. 오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154180,7 +154180,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v9",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154232,7 +154232,7 @@
             },
             {
               "id": "b-e-7-early-check_metadata-v10",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154288,7 +154288,7 @@
           "key": "b|e-7|early|restore_context",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "early",
           "investigationStage": "restore_context",
           "stageLabel": "동기복원",
@@ -154301,7 +154301,7 @@
           "variants": [
             {
               "id": "b-e-7-early-restore_context-v1",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154353,7 +154353,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v2",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154405,7 +154405,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v3",
-              "text": "양쪽 말을 함께 놓고 봐야 합니다. 어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "양쪽 말을 함께 놓고 봐야 합니다. 오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154457,7 +154457,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v4",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154509,7 +154509,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v5",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154561,7 +154561,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v6",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154613,7 +154613,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v7",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 양쪽 말을 함께 놓고 봐야 합니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154665,7 +154665,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v8",
-              "text": "양쪽 말을 함께 놓고 봐야 합니다. 어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "양쪽 말을 함께 놓고 봐야 합니다. 오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154717,7 +154717,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v9",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154769,7 +154769,7 @@
             },
             {
               "id": "b-e-7-early-restore_context-v10",
-              "text": "어머니 일기장을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
+              "text": "오래된 노트 사본을 보면 형 걱정과 제 걱정이 함께 있습니다. 쉽게 꺼낼 수 있는 말이 아니었습니다. 기록에 남은 범위까지만 말씀드리겠습니다.",
               "behaviorHint": "증거의 겉면에서 확인되는 사실만 붙잡고 핵심 진실은 단계에 맞춰 늦춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -154825,7 +154825,7 @@
           "key": "b|e-7|mid|request_original",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "mid",
           "investigationStage": "request_original",
           "stageLabel": "자필확인",
@@ -155382,7 +155382,7 @@
           "key": "b|e-7|mid|check_metadata",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "mid",
           "investigationStage": "check_metadata",
           "stageLabel": "문장대조",
@@ -155939,7 +155939,7 @@
           "key": "b|e-7|mid|restore_context",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "mid",
           "investigationStage": "restore_context",
           "stageLabel": "동기복원",
@@ -156496,7 +156496,7 @@
           "key": "b|e-7|late|request_original",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "late",
           "investigationStage": "request_original",
           "stageLabel": "자필확인",
@@ -157043,7 +157043,7 @@
           "key": "b|e-7|late|check_metadata",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "late",
           "investigationStage": "check_metadata",
           "stageLabel": "문장대조",
@@ -157590,7 +157590,7 @@
           "key": "b|e-7|late|restore_context",
           "party": "b",
           "evidenceId": "e-7",
-          "evidenceName": "어머니 일기장 사진",
+          "evidenceName": "오래된 노트 사본 사진",
           "lieBand": "late",
           "investigationStage": "restore_context",
           "stageLabel": "동기복원",
@@ -173898,7 +173898,7 @@
             },
             {
               "id": "dc-4-b-q1-late-v9",
-              "text": "재판관님, 저는 어머니 일기장을 본 사람이고, 형에게 말하지 않은 사람입니다. 변명하지 않겠습니다.",
+              "text": "재판관님, 저는 오래된 노트 사본을 본 사람이고, 형에게 말하지 않은 사람입니다. 변명하지 않겠습니다.",
               "behaviorHint": "침묵 뒤에 가장 무거운 사실을 놓는다.",
               "tags": [
                 "channel:dossier",
@@ -182035,7 +182035,7 @@
             },
             {
               "id": "w-2-vague-v2",
-              "text": "공증인 메모 기록에는 어머니 상태와 절차 진행이 함께 남아 있습니다. 세부는 메모를 봐야 합니다.",
+              "text": "인증 절차 메모에는 어머니 상태와 절차 진행이 함께 남아 있습니다. 세부는 메모를 봐야 합니다.",
               "behaviorHint": "절차상 표현을 고르며 조심스럽게 말한다.",
               "tags": [
                 "channel:witness",
@@ -185369,7 +185369,7 @@
             },
             {
               "id": "shared_fault-v3",
-              "text": "윤태성은 동생이 더 가지려 했다는 의심을 내려놓아야 했고, 윤정후는 덜 가지려 했다는 이유만으로 문서를 고친 책임이 사라지지 않는다는 말을 받아들여야 했다. 판결 뒤 두 사람은 오래된 계좌 흐름을 처음부터 다시 보며, 어머니 돈이라고 믿은 것과 동생 돈이었던 것을 나눠 적었다. 그 작업은 화해라기보다 상처의 목록을 정확히 쓰는 일에 가까웠다. 그래도 예전처럼 모르는 사실 위에서 서로를 몰아붙이는 일은 줄어들었다.",
+              "text": "윤태성은 동생이 더 가지려 했다는 의심을 내려놓아야 했고, 윤정후는 덜 가지려 했다는 이유만으로 문서를 고친 책임이 사라지지 않는다는 말을 받아들여야 했다. 판결 뒤 두 사람은 오래된 송금 내역 묶음을 처음부터 다시 보며, 어머니 돈이라고 믿은 것과 동생 돈이었던 것을 나눠 적었다. 그 작업은 화해라기보다 상처의 목록을 정확히 쓰는 일에 가까웠다. 그래도 예전처럼 모르는 사실 위에서 서로를 몰아붙이는 일은 줄어들었다.",
               "behaviorHint": "돈의 실체와 위조 책임을 함께 정리한다.",
               "tags": [
                 "channel:aftermath",
@@ -185876,7 +185876,7 @@
             },
             {
               "id": "procedural_caution-v4",
-              "text": "법원은 어머니 일기장과 계좌 흐름이 감정적으로 강한 자료일수록 더 엄격히 다뤄야 한다고 봤다. 형제 중 누구도 그 자료를 상대를 무너뜨리는 무기로 쓰지 못하게, 열람 범위와 제출 순서가 따로 정해졌다. 유서 변경의 책임은 피할 수 없지만, 출생 비밀과 어머니의 말년 상태는 별도 보호 절차 없이 공개하지 않기로 했다. 이 결말은 시원한 판결보다 안전한 다음 단계를 택한 결말이었다.",
+              "text": "법원은 오래된 노트 사본과 계좌 흐름이 감정적으로 강한 자료일수록 더 엄격히 다뤄야 한다고 봤다. 형제 중 누구도 그 자료를 상대를 무너뜨리는 무기로 쓰지 못하게, 열람 범위와 제출 순서가 따로 정해졌다. 유서 변경의 책임은 피할 수 없지만, 출생 비밀과 어머니의 말년 상태는 별도 보호 절차 없이 공개하지 않기로 했다. 이 결말은 시원한 판결보다 안전한 다음 단계를 택한 결말이었다.",
               "behaviorHint": "민감 증거 취급과 열람 제한을 강조한다.",
               "tags": [
                 "channel:aftermath",
@@ -236524,7 +236524,7 @@
           "variants": [
             {
               "id": "judgeec-dc-2-b-q1-soft-v1",
-              "text": "공증인 메모 기록을 보면 오전 1차 접수와 오후 수정 접수 사이에 절차가 다시 진행된 정황이 남아 있습니다. 윤정후 씨, 왜 그 절차를 다시 끌고 갔습니까.",
+              "text": "인증 절차 메모를 보면 오전 1차 접수와 오후 수정 접수 사이에 절차가 다시 진행된 정황이 남아 있습니다. 윤정후 씨, 왜 그 절차를 다시 끌고 갔습니까.",
               "behaviorHint": "재판관이 줄인 유서 콤보를 차분히 제시한다. 증거의 연결을 먼저 설명하게 하는 톤이다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -236572,7 +236572,7 @@
             },
             {
               "id": "judgeec-dc-2-b-q1-soft-v2",
-              "text": "공증인 메모 기록은 같은 날 절차가 두 번 진행된 흐름을 보이고, 오전 1차 접수는 어머니가 답변을 잇지 못하신 자리를 보여 줍니다. 윤정후 씨, 그 경위를 말씀해 주십시오.",
+              "text": "인증 절차 메모은 같은 날 절차가 두 번 진행된 흐름을 보이고, 오전 1차 접수는 어머니가 답변을 잇지 못하신 자리를 보여 줍니다. 윤정후 씨, 그 경위를 말씀해 주십시오.",
               "behaviorHint": "재판관이 줄인 유서 콤보를 차분히 제시한다. 증거의 연결을 먼저 설명하게 하는 톤이다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -236620,7 +236620,7 @@
             },
             {
               "id": "judgeec-dc-2-b-q1-soft-v3",
-              "text": "공증인 메모 기록은 윤정후 씨가 단순히 더 받으려 한 개입이 아니었음을 보여 줍니다. 그럼 왜 그 절차를 다시 끌고 갔습니까.",
+              "text": "인증 절차 메모은 윤정후 씨가 단순히 더 받으려 한 개입이 아니었음을 보여 줍니다. 그럼 왜 그 절차를 다시 끌고 갔습니까.",
               "behaviorHint": "재판관이 줄인 유서 콤보를 차분히 제시한다. 증거의 연결을 먼저 설명하게 하는 톤이다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -237020,7 +237020,7 @@
           "variants": [
             {
               "id": "judgeec-dc-2-b-q1-hard-v1",
-              "text": "공증인 메모 기록과 오전 1차 접수가 윤정후 씨의 절차 개입을 가리킵니다. 어머니가 답변을 잇지 못하신 자리에서 진행을 빨리 끌고 정리한 이유를 지금 말씀해 주십시오.",
+              "text": "인증 절차 메모과 오전 1차 접수가 윤정후 씨의 절차 개입을 가리킵니다. 어머니가 답변을 잇지 못하신 자리에서 진행을 빨리 끌고 정리한 이유를 지금 말씀해 주십시오.",
               "behaviorHint": "재판관이 줄인 유서 콤보를 근거로 즉답을 요구한다. 회피를 끊는 톤이다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -244286,7 +244286,7 @@
             },
             {
               "id": "judgew-w-2-mid-v2",
-              "text": "공증인 메모 기록이 쟁점입니다. 김영수 씨를 불러 1차/수정 접수 절차와 그 자리에서 어머니 상태가 어땠는지 따져 보겠습니다.",
+              "text": "인증 절차 메모이 쟁점입니다. 김영수 씨를 불러 1차/수정 접수 절차와 그 자리에서 어머니 상태가 어땠는지 따져 보겠습니다.",
               "behaviorHint": "재판관이 김영수 증언의 필요성을 분명히 제시한다. 갈린 진술을 정리하는 톤이다.",
               "tags": [
                 "channel:judge_witness_summon",
@@ -244563,7 +244563,7 @@
             },
             {
               "id": "judgew-w-2-hard-v3",
-              "text": "김영수 씨, 공증인 메모 기록의 순서를 차분히 말씀해 주셔야 합니다.",
+              "text": "김영수 씨, 인증 절차 메모의 순서를 차분히 말씀해 주셔야 합니다.",
               "behaviorHint": "재판관이 김영수 증인을 즉시 소환한다. 정황 해석을 멈추고 기록을 세우는 톤이다.",
               "tags": [
                 "channel:judge_witness_summon",
