@@ -6,6 +6,8 @@ import { Phase } from '../../types'
 import Emoji from '../common/Emoji'
 import PhaseIndicator from '../layout/PhaseIndicator'
 import type { UnsafeAny } from '../../types/lint'
+import { isPartyFieldExposed, type UiExposureRuntimeContext } from '../../engine/coreCaseAuthorityLoader'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 
 // EmotionGuide는 PartyDetailPopup 내부 탭으로 통합됨
 
@@ -114,8 +116,28 @@ function PartyDetailPopup({ party, initialTab, caseData, agent, onClose }: {
   const turnCount = useGameStore.getState().turnCount
 
   const hasAnyCollapse = lieEntries.some(([, e]) => e.currentState === 'S5')
+  const hasAllCollapse = lieEntries.length > 0 && lieEntries.every(([, e]) => e.currentState === 'S5')
   const hasShaken = emo.phase === 'shaken' || emo.phase === 'angry' || emo.phase === 'resigned'
   const advancedTurns = turnCount >= 5
+  const resolvedDisputeIds = new Set(
+    lieEntries.filter(([, e]) => e.currentState === 'S5').map(([id]) => id),
+  )
+
+  // η: Authority.uiExposure.fieldPolicy 게이트 (Authority 부재 시 DEFAULT_FIELD_GATE fallback).
+  // line 168 Critical P0 (fear가 hasShaken만으로 노출) → after_any_collapse 정책으로 강화.
+  const caseKey = normalizeCaseKey(caseData)
+  const fieldPrefix = party === 'a' ? 'partyA' : 'partyB'
+  const exposureCtx: UiExposureRuntimeContext = {
+    advancedTurns,
+    hasShaken,
+    hasAnyCollapse,
+    hasAllCollapse,
+    verdictDelivered: false,
+    resolvedDisputeIds,
+  }
+  const fearExposure = isPartyFieldExposed(caseKey, `${fieldPrefix}.fear`, exposureCtx)
+  const speechStyleExposure = isPartyFieldExposed(caseKey, `${fieldPrefix}.speechStyle`, exposureCtx)
+  const sensitiveExposure = isPartyFieldExposed(caseKey, `${fieldPrefix}.sensitivePoints`, exposureCtx)
 
   return (
     <div className="fixed inset-0 z-50 bg-gray-950/80 flex items-center justify-center px-4" onClick={onClose}>
@@ -161,12 +183,12 @@ function PartyDetailPopup({ party, initialTab, caseData, agent, onClose }: {
           {tab === 'info' && (
             <div className="animate-fade-in">
               <InfoRow label="성격" value={getArchetypeLabel(profile.archetype)} />
-              {advancedTurns
+              {speechStyleExposure.exposed
                 ? <InfoRow label="말투" value={profile.speechStyle} />
-                : <LockedRow label="말투" hint="5턴 이상 진행 시 해금" />}
-              {hasShaken
+                : <LockedRow label="말투" hint={speechStyleExposure.lockedHint ?? '5턴 이상 진행 시 해금'} />}
+              {fearExposure.exposed
                 ? <InfoRow label="두려움" value={profile.fear} />
-                : <LockedRow label="두려움" hint="감정 변화 유발 시 해금" />}
+                : <LockedRow label="두려움" hint={fearExposure.lockedHint ?? '거짓말 완전 붕괴 시 해금'} />}
 
               {/* 쟁점별 상태 */}
               <div className="space-y-1 mt-3">
@@ -185,7 +207,7 @@ function PartyDetailPopup({ party, initialTab, caseData, agent, onClose }: {
               </div>
 
               {/* 민감 포인트 */}
-              {hasAnyCollapse ? (
+              {sensitiveExposure.exposed ? (
                 <div className="mt-3">
                   <div className="text-xs text-gray-500 mb-1">민감 포인트</div>
                   <div className="flex flex-wrap gap-1">
@@ -196,7 +218,7 @@ function PartyDetailPopup({ party, initialTab, caseData, agent, onClose }: {
                 </div>
               ) : (
                 <div className="mt-3">
-                  <LockedRow label="민감 포인트" hint="거짓말 붕괴 달성 시 해금" />
+                  <LockedRow label="민감 포인트" hint={sensitiveExposure.lockedHint ?? '거짓말 완전 붕괴 시 해금'} />
                 </div>
               )}
             </div>

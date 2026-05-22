@@ -23,6 +23,7 @@ import { snapshotForSession, clearSessionSnapshot } from '../api/agentManager'
 import { registerSpouse01Data } from '../data/claimPolicies/spouse-01'
 import { registerFamily01Data } from '../data/claimPolicies/family-01'
 import { registerFriend01Data } from '../data/claimPolicies/friend-01'
+import { ensureCoreCaseAuthorityLoaded } from '../engine/coreCaseAuthorityLoader'
 import { aggregateReadiness, resetEmergenceCount } from '../engine/readinessEngine'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { resetTellTracker } from '../engine/tellValidator'
@@ -1186,6 +1187,10 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       if (caseKey === 'spouse-01') registerSpouse01Data()
       if (caseKey === 'family-01') registerFamily01Data()
       if (caseKey === 'friend-01') registerFriend01Data()
+      // Authority(.case.ts) preload — Step 4 engine 마이그레이션 (uiExposure / paraphraseRules / answerFrame)
+      if (caseKey === 'spouse-01' || caseKey === 'family-01' || caseKey === 'friend-01') {
+        void ensureCoreCaseAuthorityLoaded(caseKey).catch(() => {})
+      }
       } catch (err) {
         console.error('[Solomon] 리뉴얼 데이터 등록 실패 (게임은 계속 진행 가능):', err)
       }

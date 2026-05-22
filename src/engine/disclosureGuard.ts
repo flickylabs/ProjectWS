@@ -1,4 +1,5 @@
 import { getCachedDisclosurePolicy, type DisclosurePolicy } from './disclosurePolicyLoader'
+import { getAuthorityParaphraseRules } from './coreCaseAuthorityLoader'
 import type {
   DisclosureCaseId,
   DisclosureChannelType,
@@ -17,7 +18,12 @@ type LexemeRule = {
   matcher?: (text: string, context: GuardContext) => boolean
 }
 
-const PARAPHRASE_RULES: Record<DisclosureCaseId, LexemeRule[]> = {
+/**
+ * legacy fallback rules. Authority(.case.ts).freeInterrogation.paraphraseRules가
+ * 로드되면 그쪽 우선. family-01/friend-01은 아직 Authority 마이그레이션 X — 그대로 사용.
+ * spouse-01도 Authority preload 전 fallback용으로 유지 (Authority와 내용 동일).
+ */
+const LEGACY_PARAPHRASE_RULES: Record<DisclosureCaseId, LexemeRule[]> = {
   'spouse-01': [
     { label: '어린 친척' },
     { label: '친 가족' },
@@ -194,7 +200,7 @@ function shouldScanContext(context: GuardContext): boolean {
 
 function buildLexemeRules(policy: DisclosurePolicy | null, context: GuardContext): LexemeRule[] {
   const fromPolicy = resolvePolicyLexemes(policy, context).map((label) => ({ label }))
-  const fromParaphrase = (PARAPHRASE_RULES[context.caseId] ?? [])
+  const fromParaphrase = resolveParaphraseRules(context.caseId)
     .filter((rule) => !rule.channels || rule.channels.includes(context.channel))
 
   const byLabel = new Map<string, LexemeRule>()
@@ -203,6 +209,33 @@ function buildLexemeRules(policy: DisclosurePolicy | null, context: GuardContext
     if (!byLabel.has(rule.label)) byLabel.set(rule.label, rule)
   }
   return [...byLabel.values()]
+}
+
+/**
+ * Authority(.case.ts).freeInterrogation.paraphraseRules가 로드되어 있으면 그 데이터를 채택.
+ * 부재 시 LEGACY_PARAPHRASE_RULES fallback. matcherPattern (string)은 RegExp로 컴파일.
+ */
+function resolveParaphraseRules(caseId: DisclosureCaseId): LexemeRule[] {
+  const authorityRules = getAuthorityParaphraseRules(caseId)
+  if (authorityRules && authorityRules.length > 0) {
+    return authorityRules.map<LexemeRule>((rule) => ({
+      label: rule.label,
+      channels: rule.channels as DisclosureChannelType[] | undefined,
+      matcher: rule.matcherPattern
+        ? compileMatcher(rule.matcherPattern)
+        : undefined,
+    }))
+  }
+  return LEGACY_PARAPHRASE_RULES[caseId] ?? []
+}
+
+function compileMatcher(pattern: string): (text: string) => boolean {
+  try {
+    const re = new RegExp(pattern)
+    return (text) => re.test(text)
+  } catch {
+    return (text) => text.includes(pattern)
+  }
 }
 
 function resolvePolicyLexemes(policy: DisclosurePolicy | null, context: GuardContext): string[] {

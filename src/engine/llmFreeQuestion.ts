@@ -25,6 +25,8 @@ import { getTruthThrottle, getArchetypeGuide } from './blueprintPromptBuilderV2'
 import { callFreeInterrogationApiText, evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
 import { selectFreeInterrogationFallbackText } from './freeInterrogation/fallback'
 import { buildFreeInterrogationRuntimeBrief } from './freeInterrogation/publicInfo'
+import { getAnswerFrame } from './coreCaseAuthorityLoader'
+import type { LieState as CoreLieState, LocaleCode as CoreLocaleCode } from '../types/coreCase'
 import type { CaseData, PartyId, QuestionType } from '../types'
 import type { AgentState } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
@@ -270,6 +272,19 @@ async function generateResponse(
   let disputeInfo = ''
   if (lieEntry && dispute) {
     disputeInfo = `현재 쟁점: "${dispute.name}" (lieState: ${lieEntry.currentState})`
+
+    // θ: Authority.disputes[*].truthStages[lieState].{a,b}.answerFrame inject (spouse-01 등 Authority 보유 케이스).
+    // Authority 부재 시 null — disputeInfo 무변.
+    const authorityFrame = getAnswerFrame(
+      normalizeCaseKey(caseData),
+      focusedDisputeId,
+      lieEntry.currentState as CoreLieState,
+      target,
+      locale as CoreLocaleCode,
+    )
+    if (authorityFrame) {
+      disputeInfo += `\n응답 frame (단계별 진실 노출 정책): ${authorityFrame}`
+    }
   }
 
   // ── 게임 맥락 채우기 ──

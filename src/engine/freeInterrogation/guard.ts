@@ -1,5 +1,6 @@
 import { blockHiddenTruthLexemes } from '../disclosureGuard'
 import { ensureDisclosurePolicyLoaded, getCachedDisclosurePolicy, type DisclosurePolicy } from '../disclosurePolicyLoader'
+import { getAuthorityParaphraseRules } from '../coreCaseAuthorityLoader'
 import { detectFreeInterrogationHeuristics } from './heuristic'
 import { selectFreeInterrogationFallbackText } from './fallback'
 import type {
@@ -21,7 +22,12 @@ type LexemeRule = {
   matcher?: (text: string) => boolean
 }
 
-const SUPPLEMENTAL_PARAPHRASE_RULES: Record<FreeInterrogationGuardContext['caseId'], LexemeRule[]> = {
+/**
+ * legacy fallback rules. Authority(.case.ts).freeInterrogation.paraphraseRules가
+ * 로드되면 그쪽 우선. family-01/friend-01은 아직 Authority 마이그레이션 X — 그대로 사용.
+ * spouse-01도 Authority preload 전 fallback용으로 유지 (Authority와 내용 동일).
+ */
+const LEGACY_SUPPLEMENTAL_RULES: Record<FreeInterrogationGuardContext['caseId'], LexemeRule[]> = {
   'spouse-01': [
     { label: '어린 친척', dimension: 'paraphrase' },
     { label: '친 가족', dimension: 'paraphrase' },
@@ -263,7 +269,7 @@ function buildLexemeRules(policy: DisclosurePolicy | null, context: FreeInterrog
     label,
     dimension: 'hidden_truth_lexeme',
   }))
-  const supplementalRules = SUPPLEMENTAL_PARAPHRASE_RULES[context.caseId] ?? []
+  const supplementalRules = resolveSupplementalRules(context.caseId)
   const byLabel = new Map<string, LexemeRule>()
 
   for (const rule of [...policyRules, ...supplementalRules]) {
@@ -272,6 +278,31 @@ function buildLexemeRules(policy: DisclosurePolicy | null, context: FreeInterrog
   }
 
   return [...byLabel.values()]
+}
+
+/**
+ * Authority(.case.ts).freeInterrogation.paraphraseRules가 로드되어 있으면 그 데이터를 채택.
+ * 부재 시 LEGACY_SUPPLEMENTAL_RULES fallback.
+ */
+function resolveSupplementalRules(caseId: FreeInterrogationGuardContext['caseId']): LexemeRule[] {
+  const authorityRules = getAuthorityParaphraseRules(caseId)
+  if (authorityRules && authorityRules.length > 0) {
+    return authorityRules.map<LexemeRule>((rule) => ({
+      label: rule.label,
+      dimension: rule.dimension,
+      matcher: rule.matcherPattern ? compileMatcher(rule.matcherPattern) : undefined,
+    }))
+  }
+  return LEGACY_SUPPLEMENTAL_RULES[caseId] ?? []
+}
+
+function compileMatcher(pattern: string): (text: string) => boolean {
+  try {
+    const re = new RegExp(pattern)
+    return (text) => re.test(text)
+  } catch {
+    return (text) => text.includes(pattern)
+  }
 }
 
 function collectPolicyLexemes(policy: DisclosurePolicy | null, context: FreeInterrogationGuardContext): string[] {
