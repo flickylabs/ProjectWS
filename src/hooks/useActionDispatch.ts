@@ -3916,10 +3916,19 @@ function confirmWitnessTruthProbe(
   }
 
   if (gate.canBreakthrough) {
-    // truth_reveal_witness — forceSetLieState 전에 발동. notifyLieTransition이
-    // S5 처리 블록으로 흘러들어가도 _suppressTrustCutsceneFor 플래그로 trust 중복 방지.
-    _suppressTrustCutsceneFor = { party: target, disputeId }
+    // 2026-05-22 v3.3: 사용자 보고 영역(slip)과 동일 패턴 — cutscene 발동 = 진실 확정.
+    // 이전엔 cutscene 트리거 후 forceSetLieState 순서였는데, edge case에서 lieState 변경이
+    // 실패하면 cutscene만 보이고 S5 sync 깨질 위험. forceSetLieState를 cutscene 트리거 앞으로
+    // 이동해 "S5 확정 후에만 cutscene이 발동"을 코드 흐름으로도 보장. _suppressTrustCutsceneFor
+    // 플래그는 forceSetLieState 직전에 설정 — notifyLieTransition이 흘러들어가도 trust 중복 방지.
     const witnessRoute = gate.route === 'blocked' ? undefined : gate.route
+    _suppressTrustCutsceneFor = { party: target, disputeId }
+    snapshotLieState(target, disputeId)
+    state.forceSetLieState(target, disputeId, 'S5', {
+      allowS5: true,
+      breakthroughRoute: witnessRoute,
+    })
+
     const witnessCutscene = shouldTriggerCutscene('truth_reveal_witness', state.turnCount, {
       caseId: caseData.caseId,
       disputeId,
@@ -3934,11 +3943,6 @@ function confirmWitnessTruthProbe(
     })
     if (witnessCutscene) triggerCutscene(witnessCutscene)
 
-    snapshotLieState(target, disputeId)
-    state.forceSetLieState(target, disputeId, 'S5', {
-      allowS5: true,
-      breakthroughRoute: witnessRoute,
-    })
     notifyLieTransition(target, disputeId)
     state.addJudgeObservation({
       turnCount: state.turnCount,

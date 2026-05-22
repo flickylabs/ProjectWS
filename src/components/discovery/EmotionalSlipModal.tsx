@@ -1,7 +1,7 @@
 /**
  * 감정 실수 모달 — 격앙 상태에서 NPC가 실수로 자백했을 때
  */
-import { useStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { useI18n, type LocaleCode } from '../../i18n'
 import { localizeRuntimeText } from '../../i18n/runtimeText'
 
@@ -68,6 +68,17 @@ export default function EmotionalSlipModal() {
 
   const handleAccept = () => {
     addEmotionalSlip(slip)
+    // 2026-05-22 v3.3: cutscene이 발동된 시점에 이미 forceSetLieState(S5)가 호출되지만,
+    // 이중 안전으로 modal accept에서도 동일 처리. modal 닫기를 위해 pendingSlip clear.
+    const dispute = caseData.disputes.find((d) => d.id === slip.sourceDisputeId)
+    if (dispute) {
+      const truthOwner: 'a' | 'b' =
+        dispute.quadrant === 'a_only' ? 'a'
+        : dispute.quadrant === 'b_only' ? 'b'
+        : slip.party
+      useGameStore.getState().forceSetLieState(truthOwner, slip.sourceDisputeId, 'S5', { allowS5: true })
+    }
+    setPendingSlip(null)
   }
 
   const handleDismiss = () => {

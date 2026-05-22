@@ -135,7 +135,20 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
         partyName: party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name,
         phase: state.currentPhase,
       })
-      if (slipCutscene) triggerCutscene(slipCutscene)
+      if (slipCutscene) {
+        // 2026-05-22 v3.3 사용자 보고: 컷씬이 발동됐는데 lieState가 S5로 안 올라가서 같은
+        // 쟁점을 계속 심문할 수 있는 버그. 컷씬 = 진실 누설 확정이므로 truthOwner 측 lieState를
+        // S5로 강제 승격. PCBottomDock의 isResolved(stateA||stateB === 'S5') 체크가 양측
+        // 어느 한쪽이라도 S5면 dropdown disabled하므로 truthOwner 한 쪽만 변경해도 충분.
+        if (slipDispute) {
+          const truthOwner: PartyId =
+            slipDispute.quadrant === 'a_only' ? 'a'
+            : slipDispute.quadrant === 'b_only' ? 'b'
+            : party
+          state.forceSetLieState(truthOwner, slip.sourceDisputeId, 'S5', { allowS5: true })
+        }
+        triggerCutscene(slipCutscene)
+      }
     }
   }
 

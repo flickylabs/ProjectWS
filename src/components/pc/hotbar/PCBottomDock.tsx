@@ -271,9 +271,9 @@ export default function PCBottomDock() {
 
   const openWitnessPanel = useCallback(() => {
     if (!caseData || !hasWitness) return
+    // 2026-05-22 v3: subtitle "적절한 시점에 소환해야..." 제거 — title + witness card 정보로 충분.
     openPcInteractionPanel({
       title: t('pc.hotbar.slot.witness.label'),
-      subtitle: t('pc.hotbar.slot.witness.subtitle'),
       tone: 'gold',
       variant: 'witness',
       body: '',
@@ -379,9 +379,15 @@ export default function PCBottomDock() {
       {questionChoice ? (
         <div className="pc-question-choice">
           <div className="pc-question-choice__backdrop" onClick={() => setQuestionChoice(null)} />
-          <div className="pc-question-choice__panel" data-tutorial-target={questionChoice.type === 'fact_pursuit' ? 'question-fact-panel' : undefined}>
+          <div className="pc-panel-wrap">
+            <div className="pc-panel-pin pc-panel-pin--dispute" aria-hidden="true">
+              <PCSvgIcon id="i-scale" size={14} />
+            </div>
+            <div className="pc-question-choice__panel" data-tutorial-target={questionChoice.type === 'fact_pursuit' ? 'question-fact-panel' : undefined}>
             <div className="pc-question-choice__header">
-              <PCSvgIcon id={questionChoice.type === 'fact_pursuit' ? 'i-gavel' : questionChoice.type === 'motive_search' ? 'i-eye' : 'i-heart'} size={18} />
+              <div className="pc-question-choice__header-left">
+                <span className="pc-question-choice__subtitle">{t('pc.hotbar.popup.questionSubtitle')}</span>
+              </div>
               <span className="pc-question-choice__title">
                 {t(QUESTION_TITLE_KEYS[questionChoice.type])}
               </span>
@@ -422,9 +428,10 @@ export default function PCBottomDock() {
                   </button>
                   <p className="pc-question-choice__hint">{t('pc.hotbar.question.chooseQuestion')}</p>
                   {questionOptions.length === 0 ? (
-                    <button className="pc-question-choice__msg-btn" onClick={() => selectQuestionOption()} type="button">
-                      <span className="pc-question-choice__msg-text">{t('pc.hotbar.question.defaultQuestion')}</span>
-                    </button>
+                    /* 2026-05-22 v3.3: '기본 질문으로 진행' fallback 제거 — scripted only 정책 위반.
+                       depth-cap(이미 4회 질문) 또는 angle 미해금으로 scripted options 0개일 때, 무응답
+                       위험이 있는 generated fallback 대신 안내 메시지 + 쟁점 재선택 유도. */
+                    <p className="pc-question-choice__empty">{t('pc.hotbar.question.exhausted')}</p>
                   ) : (
                     questionOptions.map((option) => (
                       <button
@@ -443,6 +450,7 @@ export default function PCBottomDock() {
                 </>
               )}
             </div>
+            </div>
           </div>
         </div>
       ) : null}
@@ -451,23 +459,30 @@ export default function PCBottomDock() {
       {freeInterrogationEnabled && freeQuestionOpen ? (
         <div className="pc-question-choice">
           <div className="pc-question-choice__backdrop" onClick={() => setFreeQuestionOpen(false)} />
-          <div className="pc-question-choice__panel">
-            <div className="pc-question-choice__header">
-              <PCSvgIcon id="i-chat" size={18} />
-              <span className="pc-question-choice__title">{t('pc.hotbar.slot.free.title')}</span>
-              <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button" aria-label={t('pc.hotbar.close')}>
-                &times;
-              </button>
+          <div className="pc-panel-wrap">
+            <div className="pc-panel-pin pc-panel-pin--dispute" aria-hidden="true">
+              <PCSvgIcon id="i-scale" size={14} />
             </div>
-            <div className="pc-question-choice__disputes">
-              <p className="pc-question-choice__hint">{t('pc.hotbar.question.enterFreeQuestion')}</p>
-              <FreeInterrogationInput
-                activeDisputeId={activeDisputeId}
-                autoFocusRef={freeQuestionRef}
-                className="pc-free-question-form"
-                onDone={() => setFreeQuestionOpen(false)}
-                target={pcTargetParty}
-              />
+            <div className="pc-question-choice__panel">
+              <div className="pc-question-choice__header">
+                <div className="pc-question-choice__header-left">
+                  <span className="pc-question-choice__subtitle">{t('pc.hotbar.popup.questionSubtitle')}</span>
+                </div>
+                <span className="pc-question-choice__title">{t('pc.hotbar.slot.free.title')}</span>
+                <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button" aria-label={t('pc.hotbar.close')}>
+                  &times;
+                </button>
+              </div>
+              <div className="pc-question-choice__disputes">
+                <p className="pc-question-choice__hint">{t('pc.hotbar.question.enterFreeQuestion')}</p>
+                <FreeInterrogationInput
+                  activeDisputeId={activeDisputeId}
+                  autoFocusRef={freeQuestionRef}
+                  className="pc-free-question-form"
+                  onDone={() => setFreeQuestionOpen(false)}
+                  target={pcTargetParty}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -477,30 +492,37 @@ export default function PCBottomDock() {
       {evidenceChoice ? (
         <div className="pc-question-choice">
           <div className="pc-question-choice__backdrop" onClick={() => setEvidenceChoice(false)} />
-          <div className="pc-question-choice__panel">
-            <div className="pc-question-choice__header">
-              <PCSvgIcon id="i-doc" size={18} />
-              <span className="pc-question-choice__title">{t('pc.hotbar.slot.evidence.title')}</span>
-              <button className="pc-question-choice__close" onClick={() => setEvidenceChoice(false)} type="button" aria-label={t('pc.hotbar.close')}>
-                &times;
-              </button>
+          <div className="pc-panel-wrap">
+            <div className="pc-panel-pin pc-panel-pin--evidence" aria-hidden="true">
+              <PCSvgIcon id="i-doc" size={14} />
             </div>
-            <div className="pc-question-choice__disputes">
-              {unlockedEvidence.length === 0 ? (
-                <p className="pc-question-choice__hint">{t('pc.hotbar.evidence.none')}</p>
-              ) : (
-                <>
-                  <p className="pc-question-choice__hint">{t('pc.hotbar.evidence.choose')}</p>
-                  {unlockedEvidence.map((ev) => (
-                    <button className={`pc-question-choice__dispute-btn${combinableIds.has(ev.id) ? ' is-combinable' : ''}`} key={ev.id} onClick={() => selectEvidence(ev.id)} type="button">
-                      <span className="pc-question-choice__dispute-icon">
-                        <PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} />
-                      </span>
-                      <span className="pc-question-choice__dispute-name">{localizeRuntimeText(ev.surfaceName ?? ev.name, locale)}</span>
-                    </button>
-                  ))}
-                </>
-              )}
+            <div className="pc-question-choice__panel">
+              <div className="pc-question-choice__header">
+                <div className="pc-question-choice__header-left">
+                  <span className="pc-question-choice__subtitle">{t('pc.hotbar.popup.evidenceSubtitle')}</span>
+                </div>
+                <span className="pc-question-choice__title">{t('pc.hotbar.slot.evidence.title')}</span>
+                <button className="pc-question-choice__close" onClick={() => setEvidenceChoice(false)} type="button" aria-label={t('pc.hotbar.close')}>
+                  &times;
+                </button>
+              </div>
+              <div className="pc-question-choice__disputes">
+                {unlockedEvidence.length === 0 ? (
+                  <p className="pc-question-choice__hint">{t('pc.hotbar.evidence.none')}</p>
+                ) : (
+                  <>
+                    <p className="pc-question-choice__hint">{t('pc.hotbar.evidence.choose')}</p>
+                    {unlockedEvidence.map((ev) => (
+                      <button className={`pc-question-choice__dispute-btn${combinableIds.has(ev.id) ? ' is-combinable' : ''}`} key={ev.id} onClick={() => selectEvidence(ev.id)} type="button">
+                        <span className="pc-question-choice__dispute-icon">
+                          <PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} />
+                        </span>
+                        <span className="pc-question-choice__dispute-name">{localizeRuntimeText(ev.surfaceName ?? ev.name, locale)}</span>
+                      </button>
+                    ))}
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
