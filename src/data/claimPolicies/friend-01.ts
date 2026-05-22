@@ -1,28 +1,28 @@
 /**
- * friend-01 데이터 등록 (v3 fallback + DossierCards)
+ * friend-01 데이터 등록 (v3 fallback + Structure V2)
+ *
+ * 2026-05-23 코어 시스템 Phase 3 마이그레이션 — friend-01-v3-game-loop-data.json이
+ * Authority(src/data/coreCases/friend-01.case.ts) 에서 derive되어 spouse-01/family-01과 동일 패턴으로 import.
+ * 기존 friend-01-dossier-cards.json은 deprecated (v3 안에 통합됨).
  */
 import { registerClaimPolicies } from '../claimPolicyLoader'
 import { registerV3GameLoopData } from '../../engine/v3GameLoopLoader'
 import { registerStructureV2 } from '../../engine/v2DataLoader'
 import runtimeCase from '../cases/generated/friend-01.json'
+import v3GameLoopData from './friend-01-v3-game-loop-data.json'
 import structureV2 from './friend-01-structure-v2.json'
-import dossierData from './friend-01-dossier-cards.json'
-import { buildV3FallbackClaimPolicies } from './v3FallbackClaimPolicies'
-import { ensureV3RuntimeGameLoopData } from './v3FallbackGameLoopData'
 import gameEvents from './friend-01-game-events.json'
 import v2Atoms from './friend-01-v2-atoms.json'
+import { buildV3FallbackClaimPolicies } from './v3FallbackClaimPolicies'
+import { ensureV3RuntimeGameLoopData } from './v3FallbackGameLoopData'
 import type { UnsafeAny } from '../../types/lint'
 
 
 export function registerFriend01Data(): void {
   console.log('[Renewal] friend-01 data registration start')
 
-  const runtimeV3Data = ensureV3RuntimeGameLoopData(runtimeCase as UnsafeAny, {
-    caseId: 'friend-01',
-    dossierCards: (dossierData as UnsafeAny).dossierCards,
-    events: gameEvents,
-    transitionBeats: (gameEvents as UnsafeAny).transitionBeats,
-  } as UnsafeAny)
+  const v3WithEvents = { ...v3GameLoopData, events: gameEvents } as UnsafeAny
+  const runtimeV3Data = ensureV3RuntimeGameLoopData(runtimeCase as UnsafeAny, v3WithEvents)
   registerClaimPolicies('friend-01', buildV3FallbackClaimPolicies(runtimeCase as UnsafeAny, runtimeV3Data as UnsafeAny))
   // v2-atoms 신규 데이터로 fallback을 덮어씀 (R5 WARN 해소)
   registerClaimPolicies('friend-01', (v2Atoms as UnsafeAny).claimPolicies)
@@ -30,5 +30,5 @@ export function registerFriend01Data(): void {
 
   registerStructureV2(structureV2 as UnsafeAny)
 
-  console.log('[Renewal] friend-01 registration complete (v3 fallback + DossierCards)')
+  console.log('[Renewal] friend-01 registration complete')
 }

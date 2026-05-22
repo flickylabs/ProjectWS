@@ -535,7 +535,14 @@
           "联系意图",
           "联系未婚夫"
         ]
-      }
+      },
+      "_designIntentTags": [
+        "band:late",
+        "archetype:confess",
+        "reveal:full",
+        "channel:aftermath",
+        "continuity:evidence_combo"
+      ]
     },
     "d-2": {
       "hidden": {
@@ -585,7 +592,14 @@
           "信息往来",
           "先后关系"
         ]
-      }
+      },
+      "_designIntentTags": [
+        "band:late",
+        "archetype:confess",
+        "reveal:full",
+        "channel:aftermath",
+        "continuity:evidence_combo"
+      ]
     },
     "d-3": {
       "hidden": {
@@ -640,11 +654,10 @@
         ]
       },
       "_designIntentTags": [
-        "lieBand:late",
-        "stance:confess",
+        "band:late",
+        "archetype:confess",
         "reveal:full",
-        "continuity:dossier_late_admition",
-        "continuity:collapse",
+        "channel:aftermath",
         "continuity:evidence_combo"
       ]
     },
@@ -698,12 +711,11 @@
         ]
       },
       "_designIntentTags": [
-        "lieBand:late",
-        "stance:confess",
+        "band:late",
+        "archetype:confess",
         "reveal:full",
-        "continuity:dossier_late_admition",
-        "continuity:collapse",
-        "gating:gated"
+        "channel:aftermath",
+        "continuity:evidence_combo"
       ]
     },
     "d-5": {
@@ -750,7 +762,14 @@
           "共同朋友反应",
           "传播路径"
         ]
-      }
+      },
+      "_designIntentTags": [
+        "band:late",
+        "archetype:confess",
+        "reveal:full",
+        "channel:aftermath",
+        "continuity:evidence_combo"
+      ]
     }
   }
 }

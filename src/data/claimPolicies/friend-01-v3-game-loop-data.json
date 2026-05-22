@@ -1,0 +1,1484 @@
+{
+  "caseId": "friend-01",
+  "dossierCards": [
+    {
+      "id": "dc-1",
+      "name": "확인 없이 매도한 건 누구인가",
+      "description": "단톡방에서의 단정과 공개 매도 책임을 송다은 측에서 직접 추궁하는 첫 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-5"
+      ],
+      "subjectParty": "a",
+      "leadId": "L-1",
+      "successConditionSummary": [
+        "e-1이 Original 이상",
+        "e-2가 Excerpt 이상",
+        "A에게 시간 순서 추궁 누적"
+      ],
+      "successEffects": [
+        "d-5 핵심 사실 \"확인 없는 매도\" 잠정 인정",
+        "A가 공개 매도 시점 인정"
+      ],
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-1.a.q1",
+              "text": "수민 씨에게 직접 묻기도 전에 단톡방에 먼저 올린 이유가, 사실 확인보다 분노를 먼저 퍼뜨리고 싶어서였던 것 아닙니까?",
+              "lockedHint": "연락 기록과 단톡방 발언이 함께 열려야 보입니다.",
+              "attackVector": "timeline",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "friend-01:a:d-5:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-1.b.q1",
+              "text": "이번에도 스스로 악역이 되면 또 같은 낙인이 반복된다는 걸 알면서, 왜 끝까지 침묵했습니까?",
+              "lockedHint": "단톡방 캡처와 대조표가 함께 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "friend-01:b:d-5:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-2",
+      "name": "먼저 넘은 선",
+      "description": "예비신랑이 먼저 경계를 넘었다는 반전을 열어 최수민의 연락 해석을 뒤집는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-2",
+      "successConditionSummary": [
+        "e-4가 Original 이상",
+        "B에게 시간 순서 추궁 누적"
+      ],
+      "successEffects": [
+        "d-2 선후관계 뒤집힘",
+        "d-3 해금에 필요한 설명 경로 열림"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-2.b.q1",
+              "text": "예비신랑이 먼저 선을 넘었다면, 왜 다은이에게 바로 이 대화를 보여주지 않았습니까?",
+              "lockedHint": "예비신랑 메시지 원본과 연락 기록을 함께 대조해야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "friend-01:b:d-2:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-3",
+      "name": "같은 부탁",
+      "description": "현재 문자와 과거 송금 흐름을 붙여 아버지의 반복 패턴을 확정하는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-3",
+      "successConditionSummary": [
+        "e-5가 Original 이상",
+        "e-6이 Original 이상",
+        "d-2가 S3 이상"
+      ],
+      "successEffects": [
+        "송다은 아버지의 현재 접근이 과거와 연결됨",
+        "d-4 해금에 필요한 반복 패턴 확정"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-3.b.q1",
+              "text": "같은 돈 부탁을 다시 봤다면, 왜 이번에도 혼자 막는 쪽을 택했습니까?",
+              "lockedHint": "현재 문자와 과거 송금 흐름이 함께 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "friend-01:b:d-3:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-4",
+      "name": "손절의 값",
+      "description": "과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였음을 드러내는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-4"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-4",
+      "successConditionSummary": [
+        "e-3이 Original 이상",
+        "e-6이 Original 이상",
+        "d-3이 S2 이상"
+      ],
+      "successEffects": [
+        "과거 손절의 빈칸이 사기 피해 맥락으로 채워짐",
+        "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러남"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-4.b.q1",
+              "text": "다은이 아버지가 당신 돈을 가져간 뒤에도, 왜 그 사실만은 다은이에게 끝내 말하지 못했습니까?",
+              "lockedHint": "과거 카톡과 송금 기록이 함께 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "friend-01:b:d-4:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-5",
+      "name": "낙인의 순서",
+      "description": "누가 먼저 공개적으로 최수민을 낙인찍었는지와 왜 같은 구조가 반복됐는지를 묻는 최종 카드. 송다은의 공개 매도 책임 중심.",
+      "evidenceIds": [
+        "e-2",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-5"
+      ],
+      "subjectParty": "a",
+      "successConditionSummary": [
+        "e-7이 Original 이상",
+        "d-3과 d-4가 S3 이상",
+        "단톡방 발언의 시간 순서 확인"
+      ],
+      "successEffects": [
+        "d-5가 최종 쟁점으로 정리됨",
+        "정정과 사과가 필요한 지점이 명확해짐"
+      ],
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-5.a.q1",
+              "text": "아버지 얘기까지 나온 지금, 단톡방에 글을 올린 그 행위가 명예훼손이라는 점을 인정합니까?",
+              "lockedHint": "단톡방 캡처와 대조표가 함께 열려야 보입니다.",
+              "attackVector": "legitimacy",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "legitimacy",
+                "revealAtom": "friend-01:a:d-5:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-5.b.q1",
+              "text": "이번에도 스스로 악역이 되면 같은 낙인이 반복된다는 걸 알면서, 왜 끝까지 혼자 버텼습니까?",
+              "lockedHint": "반복 패턴 대조표가 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "friend-01:b:d-5:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {},
+    "b": {}
+  },
+  "events": {
+    "contradictions": [],
+    "interjections": [],
+    "emotionalOutbursts": []
+  },
+  "transitionBeats": [
+    {
+      "id": "friend-01-beat-a-d-1-s0-s1",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"결혼 앞이라 더 흔들렸다\"는 말로 단정에서 한 발 비켜선다.",
+      "behaviorHint": "숨을 짧게 들이마시고 시선을 옆으로 흘린다."
+    },
+    {
+      "id": "friend-01-beat-b-d-1-s0-s1",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"가벼운 안부는 아니었다\"고 말한다.",
+      "behaviorHint": "휴대폰 모서리를 손끝으로 천천히 문지른다."
+    },
+    {
+      "id": "friend-01-beat-a-d-1-s1-s2",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"그때는 멈추게 하는 게 먼저였다\"고 말한다.",
+      "behaviorHint": "말의 속도가 빨라지고 손이 책상을 두 번 톡톡 친다."
+    },
+    {
+      "id": "friend-01-beat-b-d-1-s1-s2",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"직접 말할 길이 없었다\"고 말한다.",
+      "behaviorHint": "짧게 끊어 말하던 리듬이 깨진다."
+    },
+    {
+      "id": "friend-01-beat-a-d-1-s2-s3",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "송다은은 \"다른 이유가 있었을 수도 있다\"고 말한다.",
+      "behaviorHint": "숨을 길게 내쉬고 시선이 아래로 떨어진다."
+    },
+    {
+      "id": "friend-01-beat-b-d-1-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "최수민은 \"송다은 아버지가 같은 흐름에 있다\"고 말한다.",
+      "behaviorHint": "손등 힘줄이 도드라질 만큼 주먹이 잠깐 조여진다."
+    },
+    {
+      "id": "friend-01-beat-a-d-1-s3-s4",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "송다은의 어깨가 처음으로 내려간다.",
+      "behaviorHint": "\"내가 그렇게 단정했다\"는 말이 흘러나온다."
+    },
+    {
+      "id": "friend-01-beat-b-d-1-s3-s4",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"예전에 같은 일이 있었다\"고 말한다.",
+      "behaviorHint": "손가락이 서로 맞물린 채 느리게 조여진다."
+    },
+    {
+      "id": "friend-01-beat-a-d-1-s4-s5",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "송다은이 마지막 단정을 내려놓는다.",
+      "behaviorHint": "손이 책상 위에서 멈춘다."
+    },
+    {
+      "id": "friend-01-beat-b-d-1-s4-s5",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "최수민은 처음으로 모든 말을 끝까지 잇는다.",
+      "behaviorHint": "끝까지 평정을 지키려다 마지막 문장에서 숨이 한 번 꺾인다."
+    },
+    {
+      "id": "friend-01-beat-a-d-2-s0-s1",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"그 사람이 어떻게 답했는지는 따로 묻지 않았다\"고 말한다.",
+      "behaviorHint": "시선이 짧게 옆을 향한다."
+    },
+    {
+      "id": "friend-01-beat-b-d-2-s0-s1",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"따로 온 연락이 있긴 했다\"고 말한다.",
+      "behaviorHint": "엄지로 손톱 끝을 천천히 누른다."
+    },
+    {
+      "id": "friend-01-beat-a-d-2-s1-s2",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"메시지가 오갔다는 건 인정하지만\"이라고 말한다.",
+      "behaviorHint": "단정의 톤이 처음으로 흔들린다."
+    },
+    {
+      "id": "friend-01-beat-b-d-2-s1-s2",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"제가 그 자리를 만들지는 않았다\"고 말한다.",
+      "behaviorHint": "말을 끊어 삼킨 뒤 입술을 다물고, 시선을 옆으로 비킨다."
+    },
+    {
+      "id": "friend-01-beat-a-d-2-s2-s3",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "송다은은 \"그 사람이 먼저 그랬다면 제가 모를 일이었다\"고 말한다.",
+      "behaviorHint": "숨을 짧게 들이마신다."
+    },
+    {
+      "id": "friend-01-beat-b-d-2-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "최수민은 \"예비신랑이 먼저 커피 보자 했다\"고 담담하게 말한다.",
+      "behaviorHint": "목소리는 낮게 유지되지만 손등 힘줄이 도드라질 만큼 주먹이 잠깐 조여진다."
+    },
+    {
+      "id": "friend-01-beat-a-d-2-s3-s4",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "송다은의 시선이 흔들린다.",
+      "behaviorHint": "\"이게 사실이라면 내가 더 무너진다\"는 말이 흘러나온다."
+    },
+    {
+      "id": "friend-01-beat-b-d-2-s3-s4",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"더는 모른 척할 수 없었다\"고 말한다.",
+      "behaviorHint": "입가가 굳고, 말끝을 내리기 전 목울대가 한 번 움직인다."
+    },
+    {
+      "id": "friend-01-beat-a-d-2-s4-s5",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "송다은이 사실 관계를 인정한다.",
+      "behaviorHint": "손이 책상 끝에서 멈춘다."
+    },
+    {
+      "id": "friend-01-beat-b-d-2-s4-s5",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "최수민은 거절 문구를 정확히 옮긴다.",
+      "behaviorHint": "시선이 처음으로 송다은을 정면으로 향한다."
+    },
+    {
+      "id": "friend-01-beat-a-d-3-s0-s1",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"가족이라 완전히 잘라 말하기 어려웠다\"고 말한다.",
+      "behaviorHint": "말을 재빨리 덧붙이던 습관이 끊긴다."
+    },
+    {
+      "id": "friend-01-beat-b-d-3-s0-s1",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"과거와 닮은 순서를 봤다\"고 말한다.",
+      "behaviorHint": "손바닥을 무릎에 붙인 채 손가락만 작게 접었다 편다."
+    },
+    {
+      "id": "friend-01-beat-a-d-3-s1-s2",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"아버지가 부탁한 건 맞지만 제가 설계한 건 아니다\"라고 말한다.",
+      "behaviorHint": "턱을 들지만 시선은 옆으로 흐른다."
+    },
+    {
+      "id": "friend-01-beat-b-d-3-s1-s2",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"예비신랑에게 확인하려 했다\"고 밝힌다.",
+      "behaviorHint": "말의 속도가 늦어진다."
+    },
+    {
+      "id": "friend-01-beat-a-d-3-s2-s3",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "송다은은 \"결혼 자금 명목으로 돈을 꺼낼 흐름은 알고 있었다\"고 말한다.",
+      "behaviorHint": "손목이 떨리고, 숨을 들이쉴 때 어깨가 크게 들썩인다."
+    },
+    {
+      "id": "friend-01-beat-b-d-3-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"예전부터 같은 말을 들어 봤다\"며 숨을 삼킨다.",
+      "behaviorHint": "어깨가 살짝 움츠러들고, 문장 중간에서 목소리가 갈라진다."
+    },
+    {
+      "id": "friend-01-beat-a-d-3-s3-s4",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"수민이가 알면 끝날까 두려웠다\"고 말한다.",
+      "behaviorHint": "양손을 꽉 맞잡은 채 무릎 위에서 한 번 크게 비틀어 쥔다."
+    },
+    {
+      "id": "friend-01-beat-b-d-3-s3-s4",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"결혼 자금이 표적이 될 수 있다고 판단했다\"고 말한다.",
+      "behaviorHint": "고개가 천천히 내려가고, 양손이 무릎 위에서 힘없이 풀린다."
+    },
+    {
+      "id": "friend-01-beat-a-d-3-s4-s5",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "송다은이 마지막 단어를 받아낸다.",
+      "behaviorHint": "손이 무릎 위로 내려간다."
+    },
+    {
+      "id": "friend-01-beat-b-d-3-s4-s5",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "최수민은 패턴을 정확히 옮긴다.",
+      "behaviorHint": "시선이 한 점에 박힌다."
+    },
+    {
+      "id": "friend-01-beat-a-d-4-s0-s1",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"집안 일로 멀어진 부분은 있었다\"고 말한다.",
+      "behaviorHint": "펼친 손가락이 굳고, 문장 끝에서 숨을 짧게 삼킨다."
+    },
+    {
+      "id": "friend-01-beat-b-d-4-s0-s1",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"말하면 더 커질 얘기가 있었다\"고 눌러 말한다.",
+      "behaviorHint": "입술 안쪽을 깨문 뒤, 종이 모서리를 손끝으로 문지른다."
+    },
+    {
+      "id": "friend-01-beat-a-d-4-s1-s2",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"아버지 일이 끼어 있었다는 건 안다\"고 말한다.",
+      "behaviorHint": "손목이 떨리고, 시선이 영수증 묶음에 머문다."
+    },
+    {
+      "id": "friend-01-beat-b-d-4-s1-s2",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"그때 갚지 못한 돈이 있었다\"고 말한다.",
+      "behaviorHint": "팔꿈치가 몸쪽으로 붙고, 대답 전 긴 침묵이 내려앉는다."
+    },
+    {
+      "id": "friend-01-beat-a-d-4-s2-s3",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"아버지가 갚지 못한 돈이 있었다는 건 알고 있다\"고 말한다.",
+      "behaviorHint": "양손을 꽉 맞잡은 채 무릎 위에서 한 번 크게 비틀어 쥔다."
+    },
+    {
+      "id": "friend-01-beat-b-d-4-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"다은이가 무너질 것 같아 참았다\"고 말한다.",
+      "behaviorHint": "가장 아픈 대목에서 오히려 표정 변화가 사라지고 시선이 한 점에 박힌다."
+    },
+    {
+      "id": "friend-01-beat-a-d-4-s3-s4",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"끝까지 피해자인 척했다\"고 말한다.",
+      "behaviorHint": "눈가가 붉어지고, 손등을 누르는 손끝이 미세하게 떨린다."
+    },
+    {
+      "id": "friend-01-beat-b-d-4-s3-s4",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"조용히 사라지는 쪽을 택했다\"고 고백한다.",
+      "behaviorHint": "등이 의자에 붙은 채 굳고, 끝 문장은 거의 속삭임처럼 나온다."
+    },
+    {
+      "id": "friend-01-beat-a-d-4-s4-s5",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "송다은이 마지막으로 \"그걸 인정하면 결혼이 무너질까 봐\"라고 말한다.",
+      "behaviorHint": "손이 무릎 위로 내려간다."
+    },
+    {
+      "id": "friend-01-beat-b-d-4-s4-s5",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "최수민은 거의 평정한 목소리로 진실을 옮긴다.",
+      "behaviorHint": "표정 변화가 사라지고 시선이 한 점에 박힌다."
+    },
+    {
+      "id": "friend-01-beat-a-d-5-s0-s1",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"판단이 섞인 문장도 있었다\"고 말한다.",
+      "behaviorHint": "눈을 크게 뜬 채 화면을 내려다보고, 손가락이 멈춘다."
+    },
+    {
+      "id": "friend-01-beat-b-d-5-s0-s1",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"다은이가 무너질까 봐 입을 닫았다\"고 작게 덧붙인다.",
+      "behaviorHint": "눈을 마주치지 못한 채 목을 한 번 가다듬는다."
+    },
+    {
+      "id": "friend-01-beat-a-d-5-s1-s2",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"확인보다 멈추게 하는 게 먼저였다\"고 둘러댄다.",
+      "behaviorHint": "말을 빠르게 붙이다가, 재판관 쪽 시선 앞에서 턱이 굳는다."
+    },
+    {
+      "id": "friend-01-beat-b-d-5-s1-s2",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"자기 설명을 뒤로 밀었다\"고 밝힌다.",
+      "behaviorHint": "짧게 고개를 젓고, 말끝에서 손바닥을 무릎에 눌러 붙인다."
+    },
+    {
+      "id": "friend-01-beat-a-d-5-s2-s3",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "송다은은 \"확인 없이 먼저 올린 건 맞다\"고 인정한다.",
+      "behaviorHint": "인정하는 문장을 꺼낸 직후 턱을 치켜들고 바로 자기 판단을 방어한다."
+    },
+    {
+      "id": "friend-01-beat-b-d-5-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"집안을 무너뜨리는 사람이 될까 봐 겁났다\"고 흔들린다.",
+      "behaviorHint": "눈가가 붉어지고, 손등을 누르는 손끝이 미세하게 떨린다."
+    },
+    {
+      "id": "friend-01-beat-a-d-5-s3-s4",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "송다은은 \"글을 올린 손이 먼저였다\"고 무너진다.",
+      "behaviorHint": "손목이 떨리고, 숨을 들이쉴 때 어깨가 크게 들썩인다."
+    },
+    {
+      "id": "friend-01-beat-b-d-5-s3-s4",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "최수민은 \"두 번 다 같은 구조가 됐다\"고 말한다.",
+      "behaviorHint": "숨이 한 번 깊어진다."
+    },
+    {
+      "id": "friend-01-beat-a-d-5-s4-s5",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "송다은이 마지막 단어를 받아낸다.",
+      "behaviorHint": "반박을 준비하듯 입을 열었다가 닫고, 손에 쥔 휴대폰 화면만 오래 내려다본다."
+    },
+    {
+      "id": "friend-01-beat-b-d-5-s4-s5",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "최수민은 \"두 번 다 같은 구조를 만든 책임이 있다\"고 인정한다.",
+      "behaviorHint": "시선이 처음으로 송다은을 향한다."
+    }
+  ],
+  "evidenceProgressions": [
+    {
+      "evidenceId": "e-1",
+      "name": "예비신랑 연락 기록",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "연락 기록 존재만 보임."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "발신 횟수와 부재중 중심으로 보임."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "일부 문자 원문으로 사적 연락 오해를 낮춤."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "다은 관련 사유와 과거 반복 암시가 확인됨."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "연락 의도를 경고 가능성까지 놓고 판단할 수 있다."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "송다은이 캡처 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "원본 통화기록 대조 중."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "통신사 기록과 일치 확인."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "최수민이 연락 의도에 대해 이의 제기."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "집착 해석은 원문 대조가 필요하다."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-2",
+      "name": "공통 대화방 캡처",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "단톡방 캡처 1건 존재 표시."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "송다은의 최초 발언만 보임."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "공통 친구 동조 메시지까지 모두 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "직접 확인 전 단톡방 공개 순서가 복원됨."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "확인 없는 공개 매도 시작점이 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "최수민이 캡처 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "단톡방 원본 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "메시지 시각과 작성자 모두 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "송다은이 사실 알림 frame을 주장."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "자료는 인증되지만 매도 해석은 mediation 영역."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-3",
+      "name": "예전 관계가 끊기기 전 대화",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "과거 대화 1건 존재 표시."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "\"돈 문제는 내가 알아서 정리할게\" 문구만 보임."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "\"넌 돈만 엮이면 사람이 달라진다\" 답신까지 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "이 대화 직후 2년간 연락 두절 흐름이 복원됨."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "최수민이 숨긴 돈 문제의 실체가 송다은 아버지의 사기였다는 사실은 봉인 단계 후 노출."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "최수민이 카톡 캡처 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "메신저 원본 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "대화 시각과 작성자 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "송다은이 변심 해석을 주장."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "데이터는 인증되지만 손절 원인은 e-6 대조 후 확정."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-4",
+      "name": "예비신랑 메시지와 답장",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "예비신랑과 최수민 사이 메시지 1건 존재 표시."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "\"다은이 몰래 커피 한 번 보자\" 일부만 보임."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "\"이상형\" 메시지 + 최수민의 \"친구 남자친구니까 이러지 마\" 거절까지 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "이 시점이 최수민의 9일간 연락 시작 직전임이 복원됨."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "예비신랑이 먼저 선을 넘었고 최수민은 거절한 쪽이었다고 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "최수민이 캡처 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "메신저 원본 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "대화 시각과 발신자 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "송다은이 예비신랑 책임 영역에 이의."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "선후관계는 인증되지만 해석은 d-1 reframe과 함께 처리."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-5",
+      "name": "아버지와 예비신랑의 문자",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "아버지가 예비신랑에게 보낸 문자 1건 존재 표시."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "\"결혼 전에 잠깐만 도와주면 금방 돌려준다\" 발췌만 보임."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "\"사위 될 사람이면 이 정도는 믿어야지\" 추가 + 발송 시각 모두 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "최수민의 9일간 연락 시기와 정확히 겹친다는 흐름 복원."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "송다은 아버지가 결혼 자금 명목으로 돈을 꺼내려 했다고 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "최수민 또는 재판관 측 포착."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "예비신랑 휴대폰 원본 확인."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "발신자 + 시각이 모두 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "송다은이 단순 인사 frame을 주장."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "자료는 인증되지만 사기 인지 영역은 봉인 단계."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-6",
+      "name": "과거 송금 기록과 문자",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "과거 이체 내역 1건 존재 표시."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "\"급한 투자금이니 한 달만 쓰고 갚겠다\" 문자 일부만 보임."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "이체 금액 + 송다은 아버지의 미상환 + \"조금만 더 기다려라\" 흐름 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "\"다은이한테는 말하지 마라\"는 문자 흐름이 복원됨."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "과거 손절의 진짜 원인이 송다은 아버지의 차용금 미상환이었다고 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "최수민이 통장 사본 + 문자 캡처 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "은행 원본 + 메신저 원본 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "이체 시각 + 발신자 모두 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "송다은이 단순 부탁 frame을 주장."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "자료는 인증되지만 사기 평가는 mediation 영역."
+        }
+      ],
+      "sealTargets": [
+        "구체적 송금 금액",
+        "송다은 아버지 실명",
+        "은행 계좌번호"
+      ]
+    },
+    {
+      "evidenceId": "e-7",
+      "name": "두 시점 대조표",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "대조표 1건 존재 표시."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "과거 문구와 현재 문구 일부만 정렬."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "두 시점의 송금 부탁 문구가 거의 동일함이 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "두 시점 사이 최수민이 혼자 끊고 사라진 타이밍 패턴이 복원됨."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "송다은 아버지의 돈 접근 패턴이 반복되며 최수민이 이번에도 혼자 막으려 했다고 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "재판관 측 정리 또는 최수민 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "과거·현재 문구 정렬 + 시간 흐름 검증."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "두 시점 문구 + 시점 모두 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "송다은이 우연한 유사 frame을 주장."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "패턴은 인증되지만 책임 분리는 mediation 영역."
+        }
+      ],
+      "sealTargets": []
+    }
+  ],
+  "leadLines": [
+    {
+      "id": "L-1",
+      "name": "Timeline Lead",
+      "leadType": "Timeline",
+      "firstInputs": [
+        "e-1",
+        "e-2"
+      ],
+      "secondInputs": [
+        "L-1",
+        "e-7"
+      ],
+      "dossierCardId": "dc-1",
+      "interpretationChoices": [
+        {
+          "id": "L-1-A",
+          "text": "최수민이 집착한 것이다",
+          "implication": "d-1을 집착으로 밀어붙인다."
+        },
+        {
+          "id": "L-1-B",
+          "text": "송다은이 먼저 프레이밍한 것이다",
+          "implication": "d-5와 연결된다."
+        },
+        {
+          "id": "L-1-C",
+          "text": "확인이 더 필요하다",
+          "implication": "중립 유지."
+        }
+      ]
+    },
+    {
+      "id": "L-2",
+      "name": "Context Lead",
+      "leadType": "Context",
+      "firstInputs": [
+        "e-1",
+        "e-4"
+      ],
+      "secondInputs": [
+        "L-2",
+        "e-5"
+      ],
+      "dossierCardId": "dc-2",
+      "interpretationChoices": [
+        {
+          "id": "L-2-A",
+          "text": "예비신랑이 먼저 선을 넘었다",
+          "implication": "d-2를 확정한다."
+        },
+        {
+          "id": "L-2-B",
+          "text": "그래도 최수민이 연락을 이어간 건 문제다",
+          "implication": "d-1의 방식 적절성을 묻는다."
+        },
+        {
+          "id": "L-2-C",
+          "text": "예비신랑의 책임을 더 따져야 한다",
+          "implication": "제3자 책임 부각."
+        }
+      ]
+    },
+    {
+      "id": "L-3",
+      "name": "Beneficiary Lead",
+      "leadType": "Beneficiary",
+      "firstInputs": [
+        "e-5",
+        "e-6"
+      ],
+      "secondInputs": [
+        "L-3",
+        "e-7"
+      ],
+      "dossierCardId": "dc-3",
+      "interpretationChoices": [
+        {
+          "id": "L-3-A",
+          "text": "송다은 아버지의 돈 문제 패턴이 맞다",
+          "implication": "d-3, d-4를 확정한다."
+        },
+        {
+          "id": "L-3-B",
+          "text": "아버지 사정이 있었을 수도 있다",
+          "implication": "송다은의 입장을 고려한다."
+        },
+        {
+          "id": "L-3-C",
+          "text": "최수민이 직접 말했어야 한다",
+          "implication": "침묵의 책임을 묻는다."
+        }
+      ]
+    },
+    {
+      "id": "L-4",
+      "name": "Emotion Lead",
+      "leadType": "Emotion",
+      "firstInputs": [
+        "e-3",
+        "e-6"
+      ],
+      "secondInputs": [
+        "L-4",
+        "e-7"
+      ],
+      "dossierCardId": "dc-4",
+      "interpretationChoices": [
+        {
+          "id": "L-4-A",
+          "text": "최수민의 연락은 경고였다",
+          "implication": "사건 전체를 재해석한다."
+        },
+        {
+          "id": "L-4-B",
+          "text": "경고였어도 방식이 잘못됐다",
+          "implication": "최수민의 방식 책임을 남긴다."
+        },
+        {
+          "id": "L-4-C",
+          "text": "두 사람 모두 확인 전에 단정했다",
+          "implication": "공동 책임."
+        }
+      ]
+    }
+  ],
+  "authorityPlacements": [
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "d-1 초반 e-1 Excerpt 시점",
+      "purpose": "연락 기록의 실제 내용을 확인하여 집착 여부를 판단.",
+      "contextDispute": "d-1"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "d-2 해금 직후 e-4 축",
+      "purpose": "예비신랑의 선 넘는 메시지 원본 확보.",
+      "contextDispute": "d-2"
+    },
+    {
+      "action": "증인 소환",
+      "recommendedMoment": "d-2 S2 이후",
+      "purpose": "박준혁(w-2)을 통해 예비신랑의 행동 패턴 확인.",
+      "contextDispute": "d-2"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "d-3 해금 직후 e-5 축",
+      "purpose": "송다은 아버지의 문자 원본 확보.",
+      "contextDispute": "d-3"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "d-4 해금 직후 e-6 축",
+      "purpose": "과거 송금 영수증 + 미상환 문자 원본 확보.",
+      "contextDispute": "d-4"
+    },
+    {
+      "action": "증인 소환",
+      "recommendedMoment": "d-4 S1 이후",
+      "purpose": "오미경(w-3)을 통해 과거 돈 거래 목격 사실 확인.",
+      "contextDispute": "d-4"
+    },
+    {
+      "action": "증인 소환",
+      "recommendedMoment": "d-5 해금 시점",
+      "purpose": "김세라(w-1)를 통해 단톡방 분위기와 송다은의 최초 발언 경위 확인.",
+      "contextDispute": "d-5"
+    },
+    {
+      "action": "대조 명령",
+      "recommendedMoment": "e-7 해금 시점",
+      "purpose": "과거·현재 패턴 대조표 작성."
+    },
+    {
+      "action": "정확히 답변하십시오",
+      "recommendedMoment": "B가 \"가족 사정\"이라는 모호어를 반복할 때",
+      "purpose": "아버지 + 사기 영역으로 들어가는 단어 강제.",
+      "contextDispute": "d-4"
+    },
+    {
+      "action": "당사자 대질",
+      "recommendedMoment": "d-5 S2 이후",
+      "purpose": "확인 없이 단정한 경위를 양측이 직접 마주하며 확인.",
+      "contextDispute": "d-5"
+    },
+    {
+      "action": "선처 창구",
+      "recommendedMoment": "dc-4 또는 dc-5 직후",
+      "purpose": "A는 분노/단정 책임, B는 침묵의 무게를 함께 진다."
+    },
+    {
+      "action": "발언 제지 / 기록 제외",
+      "recommendedMoment": "A가 단톡방 매도를 사실 알림 frame으로만 반복할 때",
+      "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리."
+    },
+    {
+      "action": "민감정보 봉인 해제",
+      "recommendedMoment": "d-4 S2 이후 핵심 영역만 조건부 노출",
+      "purpose": "과거 사기 사실을 정합 영역까지만 열되 구체 금액·아버지 실명은 봉인 유지.",
+      "contextDispute": "d-4"
+    }
+  ],
+  "hiddenDisputePlans": [
+    {
+      "disputeId": "d-3",
+      "name": "아버지의 돈 접근 패턴",
+      "unlockPlan": {
+        "runtimeRule": "d-2 S3 이상 도달 시 (예비신랑 접근 확인) 해금",
+        "authoredRule": "d-2에서 예비신랑의 접근이 확인된 뒤 최수민이 경고 이유를 밝히면 송다은 아버지 패턴 부상"
+      }
+    },
+    {
+      "disputeId": "d-4",
+      "name": "과거 손절과 아버지의 사기",
+      "unlockPlan": {
+        "runtimeRule": "d-3 S3 이상 도달 시 (현재 패턴 확정) 해금",
+        "authoredRule": "송다은 아버지의 현재 패턴이 확인된 뒤 과거에도 같은 일이 있었다는 사실 부상"
+      }
+    },
+    {
+      "disputeId": "d-5",
+      "name": "단톡방 매도와 명예훼손",
+      "unlockPlan": {
+        "runtimeRule": "d-3 S3 + d-4 S3 모두 도달 시 (현재 + 과거 패턴 확정) 해금",
+        "authoredRule": "송다은 아버지 패턴과 과거 차용금 미상환이 모두 드러난 뒤 현재 명예훼손 구조 부상"
+      }
+    }
+  ],
+  "sensitiveSealTargets": [
+    {
+      "evidenceId": "e-6",
+      "label": "과거 송금 기록과 문자",
+      "targets": [
+        "구체적 송금 금액",
+        "송다은 아버지 실명",
+        "은행 계좌번호"
+      ],
+      "recommendedTiming": [
+        "d-4 S2 이상 도달 시 핵심 영역만 조건부 노출",
+        "dc-4 직전"
+      ],
+      "risks": [
+        "너무 이르면 송다은이 감정 폭발로 심문이 중단될 수 있음",
+        "구체적 금액 노출은 인도성 점수 하락 가능"
+      ]
+    }
+  ],
+  "officialRecordRecommendations": [
+    "최수민의 9일간 연락은 집착이 아니라 송다은 아버지의 돈 접근을 결혼 직전 예비신랑에게 경고하려던 것이었다.",
+    "예비신랑이 먼저 최수민에게 선 넘는 접근을 했고, 최수민은 거절한 쪽이었다.",
+    "송다은 아버지의 돈 접근 패턴은 과거와 현재가 같았다.",
+    "과거 손절의 진짜 원인은 송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기였다.",
+    "송다은이 확인 없이 단톡방에서 최수민을 먼저 매도했고, 최수민은 또 악역을 자처하는 구조가 반복됐다."
+  ]
+}
