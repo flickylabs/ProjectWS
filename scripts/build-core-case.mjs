@@ -110,6 +110,16 @@ async function main() {
   const args = parseArgs(process.argv)
   const caseId = args.case
 
+  // 'template'은 skeleton, derive 차단. 신규 사건은 새 caseId로 복사 후 작성.
+  if (caseId === 'template' && args.write) {
+    console.error(
+      '✗ "template" is a skeleton — derive blocked.\n' +
+        '  Copy src/data/coreCases/template.case.ts to your new case (e.g. {newCaseId}.case.ts),\n' +
+        '  update meta.caseId + export name, then run with --case {newCaseId}.',
+    )
+    process.exit(2)
+  }
+
   // 1. Authority load + schema parse + cross-ref
   console.log(`▼ loading Authority for case=${caseId}`)
   const { authority, validation } = await loadAuthority(caseId, ROOT)
