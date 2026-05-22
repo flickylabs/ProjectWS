@@ -1,0 +1,1565 @@
+{
+  "caseId": "family-01",
+  "dossierCards": [
+    {
+      "id": "dc-1",
+      "name": "말년의 종이",
+      "description": "말년의 방문 패턴과 읽어주던 종이가 치매 이용인지, 불안한 보호인지 가르는 첫 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-1",
+      "successConditionSummary": [
+        "e-2와 e-3이 Original 이상",
+        "윤정후가 d-1에서 S2 이상으로 진입"
+      ],
+      "successEffects": [
+        "d-1 핵심 사실 \"부분 판단능력 + B 개입\" 잠정 인정",
+        "형을 피하려 서둘렀다는 동기 frame 노출"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-1.b.q1",
+              "text": "윤정후 씨, 공증 직전 방문이 급증했고 어머니에게 종이를 읽어드린 정황까지 있는데, 왜 형이 오기 전에 끝내려 하셨습니까?",
+              "lockedHint": "요양원 방문기록과 전 요양보호사 증언이 원본 수준으로 열려야 질문이 보입니다.",
+              "attackVector": "timeline",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "family-01:b:d-1:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-1.b.q2",
+              "text": "어머니 판단이 완전히 없었다고까지는 보기 어렵다면, 어디까지는 돕고 어디서부터는 대신 결정한 것입니까?",
+              "lockedHint": "B가 개입 자체를 더는 부인하지 못해야 마지막 질문이 열립니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "family-01:b:d-1:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-2",
+      "name": "줄인 유서",
+      "description": "공증 오후 수정의 존재를 넘어서, 절차 안에서 어떤 흐름이 만들어졌는지를 묻는 카드.",
+      "evidenceIds": [
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-2",
+      "successConditionSummary": [
+        "e-4가 Original 이상",
+        "d-1이 S3 이상이어서 d-2가 열린 상태"
+      ],
+      "successEffects": [
+        "d-2 핵심 사실 \"오전 1차 비율 공란 → 오후 수정 60:40 확정\" 잠정 인정",
+        "절차 개입의 동기 축이 d-5로 이동 준비"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-2.b.q1",
+              "text": "윤정후 씨, 같은 날 오전 1차 비율 공란과 오후 수정본 60:40이 공증 절차 안에 모두 남아 있는데, 왜 흐름을 새로 정리한 서류를 다시 제출하셨습니까?",
+              "lockedHint": "공증인 메모 기록과 오전 1차 비율 공란이 함께 확보돼야 보입니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "family-01:b:d-2:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-2.b.q2",
+              "text": "절차 개입이라는 책임을 감수하면서까지 오후 수정에서 60:40으로 확정한 이유가 본 쟁점에서 결론짓지 않더라도, 다음 쟁점에서 답하실 준비는 되어 있습니까?",
+              "lockedHint": "공증 절차 개입을 이미 인정한 뒤에야 마지막 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:b:d-2:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-3",
+      "name": "20년의 돈",
+      "description": "어머니 돈처럼 보였던 흐름을 윤정후 개인의 희생으로 뒤집는 지원 실체 카드.",
+      "evidenceIds": [
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-3",
+      "successConditionSummary": [
+        "e-6이 Original 이상",
+        "d-2가 S3 이상으로 진전되어 d-3이 열린 상태"
+      ],
+      "successEffects": [
+        "d-3 핵심 사실 \"20년간 윤정후 돈 + 통장 경유\" 잠정 인정",
+        "형 자존심 동기 + d-4 출생 비밀 영역 unlock 준비"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-3.b.q1",
+              "text": "윤정후 씨, 장기간 정기 지원금과 형 공장 자금 상당수가 실제로는 당신 돈이었다는 점, 이제도 부인하십니까?",
+              "lockedHint": "오래된 계좌 흐름이 원본 수준으로 확보돼야 질문이 보입니다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family-01:b:d-3:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-3.b.q2",
+              "text": "형이 평생 어머니가 도와준 줄 믿게 둔 이유가, 결국 형 자존심을 먼저 지키려는 것이었습니까?",
+              "lockedHint": "돈의 출처를 더는 숨길 수 없게 된 뒤에야 두 번째 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:b:d-3:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-4",
+      "name": "감춘 이유",
+      "description": "유서 조작과 20년 지원의 끝에 있던 출생 비밀의 이유를 직접 묻는 심층 카드.",
+      "evidenceIds": [
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "d-4"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-4",
+      "successConditionSummary": [
+        "e-7이 Context 이상",
+        "d-3이 S3 이상으로 진전되어 d-4가 열린 상태"
+      ],
+      "successEffects": [
+        "d-4 핵심 사실 \"출생 비밀 + 정후 사전 인지 + 친자 양보\" 잠정 인정",
+        "침묵의 동기가 보호 명분으로 정리"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-4.b.q1",
+              "text": "윤정후 씨, 형의 오랜 가족 사정을 언제 알게 되었고, 그 뒤 왜 혼자 감당하려 하셨습니까?",
+              "lockedHint": "어머니 일기장 핵심 문장과 20년 지원 맥락이 함께 붙어야 질문이 보입니다.",
+              "attackVector": "timeline",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "family-01:b:d-4:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-4.b.q2",
+              "text": "형이 그 사실을 알면 삶의 기반이 무너질까 두려워, 결국 법정까지 가지 않게 하려 했다는 말입니까?",
+              "lockedHint": "B가 가족 사정의 존재를 더는 부인하지 못해야 마지막 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:b:d-4:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-5",
+      "name": "어머니의 뜻",
+      "description": "장남 당연시와 보호 명분을 한 자리에 올려, 누가 어떤 방식으로 어머니 뜻을 바꿨는지 정리하는 최종 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-6",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "d-5"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-5",
+      "successConditionSummary": [
+        "d-3이 S3 이상이고 d-4가 S3 이상",
+        "e-6과 e-7이 모두 Context 이상"
+      ],
+      "successEffects": [
+        "d-5 unlock 후 윤태성의 유산 당연시와 윤정후의 보호 명분이 함께 기록",
+        "최종 평의에서 \"누가 어떤 방식으로 어머니 뜻을 바꿨나\" frame 이동"
+      ],
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-5.a.q1",
+              "text": "윤태성 씨, 동생 돈이었다는 사실을 몰랐다 해도 장남이니 더 받아야 한다고 여긴 마음까지는 부인하지 않으십니까?",
+              "lockedHint": "20년 지원 축이 열린 뒤에야 A 대상 질문이 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:a:d-5:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-5.b.q1",
+              "text": "윤정후 씨, 형을 지키려 했다는 이유가 있더라도 어머니가 남긴 비율을 당신이 고쳐 쓴 책임까지 없어지는 건 아니지 않습니까?",
+              "lockedHint": "출생 비밀 축이 열린 뒤에야 B 대상 질문이 보입니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "family-01:b:d-5:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-5.b.q2",
+              "text": "결국 두 형제 모두 어머니를 있는 그대로 두지 못했다는 말, 이제는 인정하십니까?",
+              "lockedHint": "윤태성과 윤정후의 책임축이 모두 한 번씩 열린 뒤에야 마지막 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:b:d-5:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {},
+    "b": {}
+  },
+  "events": {
+    "contradictions": [],
+    "interjections": [],
+    "emotionalOutbursts": []
+  },
+  "transitionBeats": [
+    {
+      "id": "family-01-beat-a-d-1-s0-s1",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"어머니가 제대로 판단했다고 보기 어렵다\"고 말한다.",
+      "behaviorHint": "주먹이 잠깐 풀렸다 다시 쥐어진다."
+    },
+    {
+      "id": "family-01-beat-b-d-1-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"어머니가 직접 말씀하셨다\"는 말을 짧게 덧붙인다.",
+      "behaviorHint": "호흡이 한 박자 늦어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-1-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"그 시점이 그렇게 겹치는 게 우연일 리 없다\"고 말한다.",
+      "behaviorHint": "서류 한 장을 손가락으로 톡톡 친다."
+    },
+    {
+      "id": "family-01-beat-b-d-1-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"어머니가 직접 비율을 말씀하셨다\"고 말한다.",
+      "behaviorHint": "답이 짧고 정확해진다."
+    },
+    {
+      "id": "family-01-beat-a-d-1-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"왜 나를 빼고 끝냈는지부터 답해라\"고 말한다.",
+      "behaviorHint": "목소리가 한 톤 낮아진다."
+    },
+    {
+      "id": "family-01-beat-b-d-1-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"형이 같이 있으면 어머니가 더 흐트러질 것 같았다\"고 말한다.",
+      "behaviorHint": "처음으로 시선이 형 쪽을 향한다."
+    },
+    {
+      "id": "family-01-beat-a-d-1-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"판단 능력 이야기와 동생 개입은 따로 봐야겠다\"고 말한다.",
+      "behaviorHint": "어깨가 처음으로 살짝 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d-1-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"어머니 뜻 위에 내 판단이 얹혔다\"고 말한다.",
+      "behaviorHint": "말이 처음으로 끝까지 이어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-1-s4-s5",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤태성은 마지막 단정을 내려놓는다.",
+      "behaviorHint": "손이 책상 위에서 멈춘다."
+    },
+    {
+      "id": "family-01-beat-b-d-1-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 처음으로 말끝을 흐리지 않는다.",
+      "behaviorHint": "시선이 재판관을 정면으로 향한다."
+    },
+    {
+      "id": "family-01-beat-a-d-2-s0-s1",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"그 과정에서 뭔가 정상적이지 않았을 거다\"라고 말한다.",
+      "behaviorHint": "손이 한 번 책상을 친다."
+    },
+    {
+      "id": "family-01-beat-b-d-2-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"수정은 있었지만 어머니 뜻 안에서였다\"고 말한다.",
+      "behaviorHint": "답이 평소보다 한 박자 늦다."
+    },
+    {
+      "id": "family-01-beat-a-d-2-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"그 메모가 다 남아 있다면 두 문서가 따로 있다는 뜻\"이라고 말한다.",
+      "behaviorHint": "메모를 향해 시선이 길어진다."
+    },
+    {
+      "id": "family-01-beat-b-d-2-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"오전엔 비율이 비어 있었다\"고 말한다.",
+      "behaviorHint": "처음으로 시선이 메모를 향한다."
+    },
+    {
+      "id": "family-01-beat-a-d-2-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"그 시간에 어머니가 어떤 상태였는지 알고 싶다\"고 말한다.",
+      "behaviorHint": "목소리가 처음으로 낮아진다."
+    },
+    {
+      "id": "family-01-beat-b-d-2-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"그날 어머니가 많이 흐트러져 있었다\"고 말한다.",
+      "behaviorHint": "숨이 길어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-2-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"절차 안에서 동생이 한 일은 분명히 남는다\"고 말한다.",
+      "behaviorHint": "어깨가 한 번 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d-2-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"절차에 손댄 책임은 진다\"고 말한다.",
+      "behaviorHint": "말이 처음으로 끝까지 이어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-2-s4-s5",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤태성은 \"동기는 다음 쟁점에서 보자\"고 말한다.",
+      "behaviorHint": "손이 책상 위에서 멈춘다."
+    },
+    {
+      "id": "family-01-beat-b-d-2-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 \"동기는 다음에 답하겠다\"고 말한다.",
+      "behaviorHint": "시선이 재판관을 향한다."
+    },
+    {
+      "id": "family-01-beat-a-d-3-s0-s1",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"공장 일 때 어머니가 큰돈을 보내주셨다\"고 말한다.",
+      "behaviorHint": "자부심이 묻어난다."
+    },
+    {
+      "id": "family-01-beat-b-d-3-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"어머니 통장에서 무언가 움직였다는 건 안다\"고 말한다.",
+      "behaviorHint": "짧고 정확한 답이 이어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-3-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"이걸 어떻게 받아들이라는 말이냐\"고 말한다.",
+      "behaviorHint": "자료를 두 번 다시 본다."
+    },
+    {
+      "id": "family-01-beat-b-d-3-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"그 흐름 중 상당수가 내 돈\"이라고 말한다.",
+      "behaviorHint": "처음으로 형 쪽을 보지 않는다."
+    },
+    {
+      "id": "family-01-beat-a-d-3-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 한참 침묵 후 \"정말 내가 모르고 살았다는 말이냐\"고 말한다.",
+      "behaviorHint": "처음으로 어깨가 굽는다."
+    },
+    {
+      "id": "family-01-beat-b-d-3-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"형이 모르게 한 것은 내가 결정한 일\"이라고 말한다.",
+      "behaviorHint": "말끝이 처음으로 단단해진다."
+    },
+    {
+      "id": "family-01-beat-a-d-3-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"내가 평생 어머니 돈인 줄 알고 받았다\"고 말한다.",
+      "behaviorHint": "숨이 길게 흘러나온다."
+    },
+    {
+      "id": "family-01-beat-b-d-3-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"형 자존심을 먼저 지키려 했다\"고 말한다.",
+      "behaviorHint": "호흡이 한 번 깊어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-3-s4-s5",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤태성이 처음으로 동생 이름을 부드럽게 부른다.",
+      "behaviorHint": "손이 한 번 길게 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d-3-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 \"20년\"이라고 말끝에 짧게 덧붙인다.",
+      "behaviorHint": "시선이 처음으로 형을 마주한다."
+    },
+    {
+      "id": "family-01-beat-a-d-4-s0-s1",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"어머니가 우리를 똑같이 보셨다는 건 안다\"고 말한다.",
+      "behaviorHint": "말이 처음으로 조심스러워진다."
+    },
+    {
+      "id": "family-01-beat-b-d-4-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"그 한 줄 때문에 형에게 말하지 못한 게 있다\"고 말한다.",
+      "behaviorHint": "말끝이 짧아진다."
+    },
+    {
+      "id": "family-01-beat-a-d-4-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 일기장 영역에서 처음으로 말끝을 흐린다.",
+      "behaviorHint": "호흡이 짧아진다."
+    },
+    {
+      "id": "family-01-beat-b-d-4-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"어머니가 그걸 가장 걱정하셨다\"고 말한다.",
+      "behaviorHint": "시선이 책상 위 일기 사진을 향한다."
+    },
+    {
+      "id": "family-01-beat-a-d-4-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"왜 그렇게 적으셨는지 듣고 싶다\"고 말한다.",
+      "behaviorHint": "손이 일기 사진 위에서 멈춘다."
+    },
+    {
+      "id": "family-01-beat-b-d-4-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤정후는 \"어머니가 두 아들 모두에게 모르게 하길 원하셨다\"고 말한다.",
+      "behaviorHint": "처음으로 말끝이 정확해진다."
+    },
+    {
+      "id": "family-01-beat-a-d-4-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 한참 말이 없다가 \"동생이 혼자 그걸 안고 있었구나\"라고 말한다.",
+      "behaviorHint": "어깨가 처음으로 깊이 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d-4-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"형이 무너지지 않게 하려고 그랬다\"고 말한다.",
+      "behaviorHint": "말의 속도가 처음으로 평소대로 돌아온다."
+    },
+    {
+      "id": "family-01-beat-a-d-4-s4-s5",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤태성이 처음으로 동생의 손등을 짧게 만진다.",
+      "behaviorHint": "호흡이 깊고 길어진다."
+    },
+    {
+      "id": "family-01-beat-b-d-4-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 \"이 비밀이 형을 무너뜨릴까 봐 그랬다\"고 말한다.",
+      "behaviorHint": "시선이 어머니 일기로 향한다."
+    },
+    {
+      "id": "family-01-beat-a-d-5-s0-s1",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"어머니가 동생을 더 보셨다 해도, 모신 건 내 쪽\"이라고 말한다.",
+      "behaviorHint": "어조에 자부심이 묻어난다."
+    },
+    {
+      "id": "family-01-beat-b-d-5-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"어머니가 남긴 비중과 공증본이 같지는 않았다\"고 말한다.",
+      "behaviorHint": "답이 짧게 끊긴다."
+    },
+    {
+      "id": "family-01-beat-a-d-5-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"그 차이가 어디서 왔는지 답해라\"고 말한다.",
+      "behaviorHint": "숨이 짧아진다."
+    },
+    {
+      "id": "family-01-beat-b-d-5-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"내가 다른 방향으로 다듬었다\"고 말한다.",
+      "behaviorHint": "말끝에 처음으로 무게가 실린다."
+    },
+    {
+      "id": "family-01-beat-a-d-5-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 \"동생이 자기 몫을 줄이는 방향으로 다듬었다는 게 사실이냐\"고 말한다.",
+      "behaviorHint": "표정이 멈춘다."
+    },
+    {
+      "id": "family-01-beat-b-d-5-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"형을 보호한다는 명분이 내 명분이었다\"고 말한다.",
+      "behaviorHint": "처음으로 말끝이 길게 이어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-5-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 한숨과 함께 \"두 번 왜곡됐다는 말이 맞다\"고 말한다.",
+      "behaviorHint": "손이 무릎 위에서 멈춘다."
+    },
+    {
+      "id": "family-01-beat-b-d-5-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 \"내가 결국 어머니의 마음을 줄였다\"고 말한다.",
+      "behaviorHint": "호흡이 깊어진다."
+    },
+    {
+      "id": "family-01-beat-a-d-5-s4-s5",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤태성은 처음으로 자필 사진을 끝까지 들여다본다.",
+      "behaviorHint": "어깨가 한참 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d-5-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 \"어머니 뜻을 있는 그대로 두지 못한 것은 내가 한 일\"이라고 말한다.",
+      "behaviorHint": "시선이 형을 향한다."
+    }
+  ],
+  "evidenceProgressions": [
+    {
+      "evidenceId": "e-1",
+      "name": "분배 비율이 적힌 서류 사본",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "유서 사본의 존재와 공증 도장만 보인다."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "정해진 비율과 두 상속인 역할이 보인다."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "작성일, 공증인, 재산 항목, 문구 전문을 확인한다."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "요양 시점과 공증 절차를 맞춰 보며 의심의 방향을 좁힌다."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "공증 사본의 효력과 다른 문서 존재 여부를 분리해 판단한다."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "윤태성이 공증 유서 사본을 제출했다."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "공증 번호와 작성일을 기관 기록과 대조한다."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "공증 도장과 접수 기록이 서로 맞다."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "윤정후 측은 이전 문서 존재 가능성을 두고 의미를 다툰다."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "사본 자체는 진짜지만 최종 의사 해석은 추가 자료가 필요하다."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-2",
+      "name": "요양원 방문기록",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "방문 기록 존재만 보인다."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "공증 전 3주간 방문 횟수 증가가 보인다."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "일자별 방문자 + 체류 시간 + 담당자 변경 기록 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "담당자 교체와 공증 시점이 같은 기간에 모인다."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "방문 패턴과 절차 전환이 한 흐름으로 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "요양원 측 방문기록 사본 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "방문자 서명과 일지 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "기록이 기관 일지와 일치 확인."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "방문 자체가 개입 의도를 뜻하지는 않는다는 이의."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "방문 사실은 인증되나 의도 해석은 별도 자료 필요."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-3",
+      "name": "전 요양보호사 음성증언",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "녹음 파일 존재만 보인다."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "정후의 방문과 형에 대한 언급 일부가 들린다."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "종이를 읽어드리는 장면과 \"형 오기 전에\" 발화 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "방문기록 e-2와 시점이 정합되며 절차 개입 정황 복원."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "정후가 유서 절차에 들어간 정황이 증언으로 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "전 요양보호사 본인이 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "녹음 시점과 근무 일자 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "근무 기간과 발화 정황 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "증언 단편만으로 강요 판단은 어렵다는 이의."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "증언 사실은 인증되나 절차 강요까지의 해석은 별도 평가."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-4",
+      "name": "공증인 메모 기록",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "공증 메모 1건 존재만 보인다."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "오전 1차 접수의 비율 공란이 보인다."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "오전 공란 + 오후 수정 60:40 확정 + 어머니 상태 메모 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "정후의 진행 압박과 어머니 상태 흐름이 메모로 복원."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "공증 절차 안에서의 개입 흐름이 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "공증사무소 측 메모 사본 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "공증 일지와 메모 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "메모와 공증 일지가 일치 확인."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "수정 자체가 절차 개입이라 단정할 수 없다는 이의."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "메모는 인증되나 동기 판단은 별도 영역."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-5",
+      "name": "어머니 자필 유언장 연습본",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "자필 연습본 존재만 보인다."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "연습본과 공증본의 차이만 추상적으로 보인다."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "자필 본의 분배 흔적과 작성 시점 일부가 보인다."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "자필 본과 공증 메모, 어머니 일기장이 함께 정리된다."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "자필 90:10 비율이 공증 60:40으로 줄어든 흐름이 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "윤정후 측에서 유품 자료로 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "필적 감정 + 작성 시점 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "어머니 필적과 일치 확인."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "연습본의 효력 범위를 두고 의미를 다툰다."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "자필은 인증되나 공증본과의 관계 해석은 d-5 단계로."
+        }
+      ],
+      "sealTargets": [
+        "자필 비율 정확 수치 (90:10)",
+        "자기 몫 축소 방향"
+      ]
+    },
+    {
+      "evidenceId": "e-6",
+      "name": "오래된 계좌 흐름",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "어머니 통장과 형 쪽 입금 1건 존재만 보인다."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "월 단위 정기 지원금 흐름이 보인다."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "20년간 송금 패턴 + 공장 위기 3억원 큰 자금 이동 확인."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "윤정후 계좌 출금 → 어머니 통장 → 윤태성 쪽 입금 흐름 복원."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "20년간 지원의 실제 출처가 윤정후 돈이라고 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "은행 측 계좌 자료 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "계좌 간 송금 흐름과 시점 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "각 단계 송금 시각과 금액이 모두 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "어머니 자금과 동생 자금의 구분이 흐릿하다는 이의."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "흐름은 인증되나 동기 영역은 d-4 단계로 분리."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-7",
+      "name": "어머니 일기장",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "일기장 존재만 보인다."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "두 아들에 대한 어머니의 짤막한 글이 보인다."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "정후에 대한 미안함과 두 아들 동등 언급이 확인된다."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "출생 비밀 영역의 핵심 문장과 침묵 동기가 복원된다."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "어머니 일기장의 사실이 공식기록 채택 (민감 정보 봉인 정책 별도)."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "윤정후 측에서 유품으로 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "어머니 필적 감정 + 작성 시점 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "필적·시점 모두 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "일기장 일부 문장만으로 출생 사실 단정은 어렵다는 이의."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "문장은 인증되나 친부 실명은 봉인 정책 유지."
+        }
+      ],
+      "sealTargets": [
+        "친부 실명",
+        "구체적 출생 경위",
+        "아버지 피는 아니다 직접 표현"
+      ]
+    }
+  ],
+  "leadLines": [
+    {
+      "id": "L-1",
+      "name": "Timeline Lead",
+      "leadType": "Timeline",
+      "firstInputs": [
+        "e-2",
+        "e-3"
+      ],
+      "secondInputs": [
+        "L-1",
+        "e-1"
+      ],
+      "dossierCardId": "dc-1",
+      "interpretationChoices": [
+        {
+          "id": "L-1-A",
+          "text": "치매 이용이다",
+          "implication": "전면 무효 frame으로 밀어붙인다."
+        },
+        {
+          "id": "L-1-B",
+          "text": "어머니 뜻을 옮긴 도움이다",
+          "implication": "도움 frame을 유지한다."
+        },
+        {
+          "id": "L-1-C",
+          "text": "도움과 개입의 경계 영역",
+          "implication": "두 동기를 분리해 본다."
+        }
+      ]
+    },
+    {
+      "id": "L-2",
+      "name": "Procedural Lead",
+      "leadType": "Procedural",
+      "firstInputs": [
+        "e-4"
+      ],
+      "secondInputs": [
+        "L-2",
+        "w-2"
+      ],
+      "dossierCardId": "dc-2",
+      "interpretationChoices": [
+        {
+          "id": "L-2-A",
+          "text": "탐욕 조작이다",
+          "implication": "자기 몫 늘림 frame."
+        },
+        {
+          "id": "L-2-B",
+          "text": "다른 동기의 절차 개입이다",
+          "implication": "동기는 d-5에서."
+        },
+        {
+          "id": "L-2-C",
+          "text": "정상 절차 안의 수정이다",
+          "implication": "정상 진행 frame 유지."
+        }
+      ]
+    },
+    {
+      "id": "L-3",
+      "name": "Beneficiary Lead",
+      "leadType": "Beneficiary",
+      "firstInputs": [
+        "e-6"
+      ],
+      "secondInputs": [
+        "L-3",
+        "w-3"
+      ],
+      "dossierCardId": "dc-3",
+      "interpretationChoices": [
+        {
+          "id": "L-3-A",
+          "text": "어머니 통제 수단이었다",
+          "implication": "A 측 해석."
+        },
+        {
+          "id": "L-3-B",
+          "text": "형을 살리려 한 희생이다",
+          "implication": "B 측 해석."
+        },
+        {
+          "id": "L-3-C",
+          "text": "형 자존심을 지키려는 통로",
+          "implication": "보호 명분 영역."
+        }
+      ]
+    },
+    {
+      "id": "L-4",
+      "name": "Context Lead",
+      "leadType": "Context",
+      "firstInputs": [
+        "e-7"
+      ],
+      "secondInputs": [
+        "L-4",
+        "e-6"
+      ],
+      "dossierCardId": "dc-4",
+      "interpretationChoices": [
+        {
+          "id": "L-4-A",
+          "text": "단순 폭로 소재다",
+          "implication": "표면적 해석."
+        },
+        {
+          "id": "L-4-B",
+          "text": "유서 조작 동기의 핵심이다",
+          "implication": "보호 명분 영역."
+        }
+      ]
+    },
+    {
+      "id": "L-5",
+      "name": "Closure Lead",
+      "leadType": "Closure",
+      "firstInputs": [
+        "e-1",
+        "e-6"
+      ],
+      "secondInputs": [
+        "L-5",
+        "e-7"
+      ],
+      "dossierCardId": "dc-5",
+      "interpretationChoices": [
+        {
+          "id": "L-5-A",
+          "text": "한쪽의 책임이 더 크다",
+          "implication": "단일 책임 frame."
+        },
+        {
+          "id": "L-5-B",
+          "text": "어머니 뜻을 두 번 비틀었다",
+          "implication": "양측 책임 명시."
+        }
+      ]
+    }
+  ],
+  "authorityPlacements": [
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "d-1 초반 e-1/e-2 Excerpt 시점",
+      "purpose": "감정이 아니라 패턴으로 의심을 고정.",
+      "contextDispute": "d-1"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "e-3 등장 직후",
+      "purpose": "전 요양보호사 음성증언을 원본으로 확보.",
+      "contextDispute": "d-1"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "d-2 등장 직후 e-4 축",
+      "purpose": "공증인 메모의 오전/오후 분리 흐름을 확정.",
+      "contextDispute": "d-2"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "d-3 등장 후 e-6 축",
+      "purpose": "20년 송금 흐름과 공장 위기 3억원 전달 경로를 확정.",
+      "contextDispute": "d-3"
+    },
+    {
+      "action": "정확히 답변하십시오",
+      "recommendedMoment": "B가 \"가족 사정\"이라는 모호어를 반복할 때",
+      "purpose": "일기장 영역으로 들어가는 단어 강제.",
+      "contextDispute": "d-4"
+    },
+    {
+      "action": "분리심문",
+      "recommendedMoment": "e-3 Original 직후 B",
+      "purpose": "affect_flattening인 B를 도움/개입 경계에서 흔든다.",
+      "contextDispute": "d-1"
+    },
+    {
+      "action": "분리심문",
+      "recommendedMoment": "e-6 Excerpt 직후 A",
+      "purpose": "A의 자존심 frame을 줄이고 출처 진실에 접근.",
+      "contextDispute": "d-3"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-3 인증 후",
+      "purpose": "윤정후의 유서 절차 개입 사실을 부분 기록.",
+      "contextDispute": "d-1"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-4 인증 후",
+      "purpose": "오전 공란 → 오후 60:40 흐름 기록.",
+      "contextDispute": "d-2"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-6 인증 후",
+      "purpose": "20년 정기 지원금의 실제 출처를 기록.",
+      "contextDispute": "d-3"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-7 Established 후",
+      "purpose": "어머니 일기장 영역의 사실 부분 기록 (친부 실명은 봉인 유지).",
+      "contextDispute": "d-4"
+    },
+    {
+      "action": "선처 창구",
+      "recommendedMoment": "dc-3 또는 dc-4 직후",
+      "purpose": "A는 자존심 회복 방향, B는 침묵의 무게를 함께 진다."
+    },
+    {
+      "action": "발언 제지 / 기록 제외",
+      "recommendedMoment": "A가 인격 공격으로 동생 신뢰도를 깎으려 할 때",
+      "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리."
+    },
+    {
+      "action": "민감정보 봉인 해제",
+      "recommendedMoment": "d-4 S4 이후 핵심 영역만 조건부 노출",
+      "purpose": "출생 비밀을 정합 영역까지만 열되 친부 실명은 봉인 유지.",
+      "contextDispute": "d-4"
+    }
+  ],
+  "hiddenDisputePlans": [
+    {
+      "disputeId": "d-3",
+      "name": "오래된 지원의 출처",
+      "unlockPlan": {
+        "runtimeRule": "d-2에서 절차 개입이 드러나면 해금",
+        "authoredRule": "유서 비율의 배경을 오래된 계좌 흐름으로 확인하게 한다."
+      }
+    },
+    {
+      "disputeId": "d-4",
+      "name": "가족 기록과 침묵의 이유",
+      "unlockPlan": {
+        "runtimeRule": "오래된 지원의 출처가 확인되면 해금",
+        "authoredRule": "돈의 출처를 숨긴 이유가 어머니 일기장 쪽으로 이어진다."
+      }
+    },
+    {
+      "disputeId": "d-5",
+      "name": "어머니의 숨겨진 마음",
+      "unlockPlan": {
+        "runtimeRule": "d-3과 d-4가 모두 충분히 드러나면 해금",
+        "authoredRule": "오래된 지원과 가족 기록이 모두 드러난 뒤 최종 책임 구조가 열린다."
+      }
+    }
+  ],
+  "sensitiveSealTargets": [
+    {
+      "evidenceId": "e-5",
+      "label": "어머니 자필 유언장 연습본",
+      "targets": [
+        "자필 비율 정확 수치 (90:10)",
+        "자기 몫 축소 방향"
+      ],
+      "recommendedTiming": [
+        "d-5 S5 도달 후만 노출",
+        "d-4 진실 노출 이후 dc-5 직전"
+      ],
+      "risks": [
+        "너무 이르면 d-3 / d-4 추리 의미 무력화",
+        "S5 이전 노출 시 자기 몫 축소 동기 leak"
+      ]
+    },
+    {
+      "evidenceId": "e-7",
+      "label": "어머니 일기장",
+      "targets": [
+        "친부 실명",
+        "구체적 출생 경위",
+        "아버지 피는 아니다 직접 표현"
+      ],
+      "recommendedTiming": [
+        "d-4 S4 이후 조건부 노출",
+        "출생 비밀 영역 처음 진입 시점"
+      ],
+      "risks": [
+        "너무 이르면 윤태성 정체성 충격이 절차적 회복 불가",
+        "아버지 실명까지 공개되면 인도성 점수 하락"
+      ]
+    }
+  ],
+  "officialRecordRecommendations": [
+    "어머니의 판단 능력은 완전히 상실되지 않았으나, 윤정후의 개입이 유서 작성에 영향을 미쳤다.",
+    "공증본 60:40은 오전 1차 공란 → 오후 수정 단계에서 윤정후의 진행 압박 아래 확정됐다.",
+    "윤정후 돈이 어머니 통장을 거쳐 20년간 월 정기 지원금으로 보내졌고, 공장 위기 시에는 3억원이 같은 경로로 전달됐다.",
+    "어머니 일기장은 윤태성이 아버지의 친자가 아니라는 사실, 두 아들 모두 동등한 자식이라는 어머니의 마음, 그리고 친자인 윤정후의 사전 인지와 가업 공장 양보를 함께 기록한다.",
+    "어머니가 자필 연습본에 남긴 90:10을 윤정후가 공증 60:40으로 줄였다. 두 형제 모두 어머니 뜻을 있는 그대로 두지 못한 책임이 있다."
+  ]
+}

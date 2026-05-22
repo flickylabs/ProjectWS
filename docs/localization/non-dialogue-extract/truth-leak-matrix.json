@@ -250,7 +250,13 @@
           "疗养院探访记录",
           "前护理员证言"
         ]
-      }
+      },
+      "_designIntentTags": [
+        "band:late",
+        "archetype:confess",
+        "reveal:full",
+        "channel:aftermath"
+      ]
     },
     "d-2": {
       "hidden": {
@@ -300,7 +306,13 @@
           "比例差异",
           "公证人笔记"
         ]
-      }
+      },
+      "_designIntentTags": [
+        "band:late",
+        "archetype:confess",
+        "reveal:full",
+        "channel:aftermath"
+      ]
     },
     "d-3": {
       "hidden": {
@@ -352,7 +364,10 @@
         ]
       },
       "_designIntentTags": [
-        "continuity:evidence_combo"
+        "band:late",
+        "archetype:confess",
+        "reveal:full",
+        "channel:aftermath"
       ]
     },
     "d-4": {
@@ -403,7 +418,13 @@
           "母亲笔记",
           "公证程序"
         ]
-      }
+      },
+      "_designIntentTags": [
+        "band:late",
+        "archetype:confess",
+        "reveal:full",
+        "channel:aftermath"
+      ]
     },
     "d-5": {
       "hidden": {
@@ -459,10 +480,10 @@
         ]
       },
       "_designIntentTags": [
-        "stance:confess",
+        "band:late",
+        "archetype:confess",
         "reveal:full",
-        "continuity:dossier_late_admition",
-        "continuity:collapse"
+        "channel:aftermath"
       ]
     }
   },

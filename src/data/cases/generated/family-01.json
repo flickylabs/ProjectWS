@@ -15,12 +15,10 @@
     ],
     "twistModule": "TW-family-v4-1",
     "difficulty": "hard",
-    "title": "치매 어머니의 유서",
-    "anchorTruth": "공증본 60:40은 처음부터 그 비율로 남아 있었지만, 별도 자필 연습본과 오래된 계좌 흐름, 어머니 일기장이 유서 변경의 맥락을 다시 세운다.",
+    "anchorTruth": "공증본 60:40은 어머니 자필 연습본의 90:10을 윤정후가 절차 안에서 줄인 결과다. 윤정후는 형이 아버지의 친자가 아니라는 비밀을 알고도 가업 공장을 양보했고, 그 뒤 20년 동안 어머니 통장을 거쳐 형 쪽으로 월 정기금과 공장 위기 3억원을 보내왔다. 형은 그 돈이 어머니 돈인 줄 알았다.",
     "emotionalBait": "동생을 평생 못마땅해하던 윤태성은, 치매 어머니가 남긴 유서에서 자기 몫이 40퍼센트라는 걸 보고 무너진다. 동생은 끝까지 담담하다. 그래서 더 수상해 보인다.",
-    "resolutionDilemma": "유언장에 손댄 책임, 어머니의 판단 능력, 형제 사이에 숨겨진 오래된 부담을 함께 판단해야 한다.",
-    "familyRelation": "siblings",
-    "triggerAmplifier": "초반에는 유서 비율과 요양원 방문 기록이 윤정후의 개입처럼 보인다. 그러나 공증인 메모와 자필 연습본, 오래된 계좌 흐름, 어머니 일기장이 차례로 열리면 사건의 중심은 단순한 유산 다툼을 넘어선다."
+    "resolutionDilemma": "유언장에 손댄 책임, 어머니의 판단 능력, 형제 사이에 숨겨진 오래된 부담을 함께 판단해야 한다. 자기 몫을 줄이는 방향으로 절차에 개입한 동생과, 평생 돌봄을 보상으로 여겨 온 형 중 누가 어떤 무게를 진다.",
+    "title": "치매 어머니의 유서"
   },
   "duo": {
     "duoId": "duo-family-v4-01",
@@ -34,20 +32,20 @@
       "archetype": "confrontational",
       "speechStyle": "목소리를 높여 상대를 누르고, 형이라는 위치를 먼저 내세운다. 불리해지면 동생의 인격을 깎아내리며 질문 자체를 무력화하려 든다.",
       "pride": 8,
-      "fear": "평생 장남이라 믿었던 자기 정체성이 무너지는 것 — 그것이 두렵다.",
+      "fear": "평생 장남이라 믿었던 자기 정체성이 무너지는 것을 가장 두려워한다.",
       "riskAppetite": 7,
       "digitalHabit": "minimal",
       "dailyRoutine": "공장에서 주문을 처리하고 저녁엔 어머니 집에 들러 자신이 돌봤다는 생활을 유지해왔다.",
       "sensitivePoints": [
-        "장남 정체성",
-        "공장 위기 당시 도움의 출처",
-        "장남 정체성에 관한 민감한 사정"
+        "장남이라는 자기 위치",
+        "공장 위기 당시 어디서 돈이 들어왔는지",
+        "자기 정체성에 관한 오래된 가족 사정"
       ],
       "verbalTells": [
         {
           "type": "rank_pull",
           "trigger": "cornered",
-          "pattern": "불리해지면 '형인 내가 모시고 살았다'며 서열을 내세워 논점을 돌린다."
+          "pattern": "불리해지면 \"형인 내가 모시고 살았다\"며 서열을 내세워 논점을 돌린다."
         },
         {
           "type": "character_attack",
@@ -76,13 +74,13 @@
       "archetype": "affect_flattening",
       "speechStyle": "감정을 최대한 억누르며 사실만 짧게 말한다. 담담해 보이지만 그 담담함이 오히려 의심을 산다. 진짜 감정은 마지막까지 드러내지 않으려 한다.",
       "pride": 5,
-      "fear": "형이 오래된 가족 기록의 의미를 감당하지 못하는 것 — 그것이 두렵다.",
+      "fear": "형이 오래된 가족 기록의 의미를 감당하지 못하는 것을 가장 두려워한다.",
       "riskAppetite": 3,
       "digitalHabit": "minimal",
       "dailyRoutine": "본래 부모님이 자신에게 물려주려던 가업 공장을 형에게 양보하고 본인은 작은 자동차부품 가게로 시작했으며, 그 가게를 운영하며 틈틈이 어머니에게 송금하고 형 몰래 정기 지원금과 병원비를 대 왔다.",
       "sensitivePoints": [
-        "유서 조작 사실",
-        "오래된 비밀 지원",
+        "자필 연습본의 비율을 줄인 책임",
+        "형 몰래 20년간 이어간 비밀 지원",
         "형에게 말하지 못한 가족 기록"
       ],
       "verbalTells": [
@@ -125,7 +123,7 @@
       {
         "id": "ledger-2",
         "category": "silenced",
-        "description": "윤태성이 어머니에게서 도움을 받아 왔다고 기억하지만, 실제 출처와 전달 순서는 아직 확인되지 않았다.",
+        "description": "윤태성이 어머니에게서 도움을 받아 왔다고 기억하지만, 실제 출처와 전달 순서는 윤정후가 어머니 통장을 거쳐 보낸 돈이었다.",
         "isReal": true,
         "whoRemembersAccurately": "b",
         "whoDistorts": "none",
@@ -137,7 +135,7 @@
       {
         "id": "ledger-3",
         "category": "silenced",
-        "description": "어머니가 남긴 오래된 가족 기록을 윤정후만 알고 있다.",
+        "description": "어머니가 남긴 오래된 가족 기록(출생 비밀 영역)을 윤정후만 알고 있다.",
         "isReal": true,
         "whoRemembersAccurately": "b",
         "whoDistorts": "none",
@@ -148,7 +146,7 @@
       },
       {
         "id": "ledger-4",
-        "category": "confirmed",
+        "category": "distorted",
         "description": "유서가 60:40으로 손대어진 사실 자체는 양측 다 안다. 하지만 별도 자필 연습본의 정확한 비율은 윤태성이 아직 모른다.",
         "isReal": true,
         "whoRemembersAccurately": "b",
@@ -225,10 +223,10 @@
         "slot": "close_friend",
         "name": "박순애",
         "relationTo": "a",
-        "knowledgeScope": "어머니의 오래된 친구로, 어머니가 생전에 '정후가 매달 돈을 보내준다', '태성이 공장이 어려울 때 정후 돈으로 막았다'고 말한 적 있다.",
+        "knowledgeScope": "어머니로부터 두 아들에 대한 속마음을 자주 들었다. 정후가 매달 돈을 보낸다는 말과 태성이 공장 도움이 어디서 왔는지에 대해 어머니의 발화를 기억한다.",
         "witnessedDirectly": false,
         "bias": "pro_a",
-        "distortionRisk": "strategic",
+        "distortionRisk": "biased",
         "surfaceKnowledge": "어머니로부터 두 아들에 대한 속마음을 들은 지인 증인이다.",
         "relatedDisputeIds": [
           "d-3",
@@ -236,7 +234,7 @@
         ],
         "witnessProfile": {
           "age": 69,
-          "occupation": "퇴직",
+          "occupation": "어머니의 오랜 지인",
           "relationToA": "어머니 친구로 태성이를 어릴 때부터 안다.",
           "relationToB": "어머니 입을 통해서만 안다.",
           "sentimentToA": 20,
@@ -245,7 +243,7 @@
           "addressJudge": "재판관님",
           "addressA": "태성이",
           "addressB": "정후",
-          "hiddenAgenda": "어머니의 비밀(출생 비밀)을 자기도 알고 있었는지 모호하게 넘기려 한다."
+          "hiddenAgenda": "윤태성에 대한 동정심이 강해 일부 정보를 자기 해석으로 포장한다."
         },
         "unlockedByDossier": [
           "dc-3",
@@ -269,7 +267,7 @@
       "name": "유서 작성과 판단 능력",
       "truth": true,
       "truthDescription": "윤정후는 어머니 말년에 자주 방문하며 유서 내용을 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.",
-      "quadrant": "both",
+      "quadrant": "both_know",
       "requiredEvidence": [
         "e-2",
         "e-3"
@@ -278,7 +276,7 @@
         "a": 30,
         "b": 70
       },
-      "ambiguity": "medium",
+      "ambiguity": "low",
       "weight": "high",
       "mediationLink": "말년 유서 작성 과정의 적법성",
       "legitimacyIssue": true,
@@ -320,8 +318,7 @@
       },
       "v3UnlockPlan": {
         "runtimeRule": "d-1에서 공증 절차와 어머니 상태의 균열이 드러나면 해금",
-        "authoredRule": "공증인 메모로 절차 개입 정도를 확인하게 한다.",
-        "summary": "공증본 60:40에 도달한 절차에서 정후의 개입과 어머니 상태를 확인한다."
+        "authoredRule": "공증인 메모로 절차 개입 정도를 확인하게 한다."
       },
       "verdictOptions": {
         "wrong": "동생이 자기 몫을 늘리기 위해 공증 절차에서 비율을 조작했다.",
@@ -343,7 +340,7 @@
         "a": 60,
         "b": 40
       },
-      "ambiguity": "medium",
+      "ambiguity": "low",
       "weight": "high",
       "mediationLink": "어머니 통장을 거친 지원의 출처와 전달 순서",
       "legitimacyIssue": false,
@@ -357,9 +354,8 @@
         }
       },
       "v3UnlockPlan": {
-        "runtimeRule": "d-2에서 유서 변경 경위가 드러나면 해금",
-        "authoredRule": "유서 비율의 배경을 오래된 계좌 흐름으로 확인하게 한다.",
-        "summary": "어머니 통장을 거친 지원의 출처와 전달 순서를 확인한다."
+        "runtimeRule": "d-2에서 절차 개입이 드러나면 해금",
+        "authoredRule": "유서 비율의 배경을 오래된 계좌 흐름으로 확인하게 한다."
       },
       "verdictOptions": {
         "wrong": "동생이 정기 지원금을 빌미로 어머니를 통제했다.",
@@ -396,8 +392,7 @@
       },
       "v3UnlockPlan": {
         "runtimeRule": "오래된 지원의 출처가 확인되면 해금",
-        "authoredRule": "돈의 출처를 숨긴 이유가 어머니 일기장 쪽으로 이어진다.",
-        "summary": "가족 기록 속 민감한 사정과 침묵의 이유를 확인한다."
+        "authoredRule": "돈의 출처를 숨긴 이유가 어머니 일기장 쪽으로 이어진다."
       },
       "verdictOptions": {
         "wrong": "동생이 가족 사정을 이용해 형을 유산에서 배제하려 했다.",
@@ -411,7 +406,7 @@
       "name": "어머니의 숨겨진 마음",
       "truth": true,
       "truthDescription": "윤태성은 유산을 돌봄의 보상처럼 당연시했고, 윤정후는 형을 보호한다는 이유로 어머니 뜻과 문서를 대신 정리하려 했다. 어머니가 자필 연습본에 남긴 90:10을 정후가 공증 60:40으로 줄인 것이 그 대표 흔적이다. 두 사람 모두 어머니 뜻을 있는 그대로 두지 못했다.",
-      "quadrant": "both",
+      "quadrant": "both_know",
       "requiredEvidence": [
         "e-5",
         "e-6",
@@ -442,8 +437,7 @@
       },
       "v3UnlockPlan": {
         "runtimeRule": "d-3과 d-4가 모두 충분히 드러나면 해금",
-        "authoredRule": "오래된 지원과 가족 기록이 모두 드러난 뒤 최종 책임 구조가 열린다.",
-        "summary": "어머니 뜻을 누가 어떻게 움직였는지 최종 책임을 비교한다."
+        "authoredRule": "오래된 지원과 가족 기록이 모두 드러난 뒤 최종 책임 구조가 열린다."
       },
       "verdictOptions": {
         "wrong": "동생이 어머니를 이용해 유산을 독점하려 했다.",
@@ -659,194 +653,14 @@
           ],
           "signature": "유언자: 윤○○ (인) — 공증인: 배○○ — 증인: 김○○, 박○○"
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "60:40 유서 사본",
-            "type": "contract",
-            "viewerType": "contract",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 공증 사본과 비율",
-            "sourceNote": "institutional / original",
-            "redactions": [
-              "상속인 실명 일부"
-            ]
-          },
-          "contract": {
-            "title": "유언장 사본",
-            "subtitle": "공증사무소 접수본 — 2025년 11월 초",
-            "rows": [
-              {
-                "date": "유언자",
-                "content": "윤○○ (모친)",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "상속인 1",
-                "content": "차남 ○○○ — 전체 재산의 60%",
-                "amount": "60%",
-                "missing": false
-              },
-              {
-                "date": "상속인 2",
-                "content": "장남 ○○○ — 전체 재산의 40%",
-                "amount": "40%",
-                "missing": false
-              },
-              {
-                "date": "공증",
-                "content": "공증 도장 확인",
-                "amount": "",
-                "missing": false
-              }
-            ],
-            "signature": "유언자: 윤○○ (인) — 공증인: 배○○"
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "60:40 유서 사본",
-            "type": "contract",
-            "viewerType": "contract",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 작성일과 재산 항목",
-            "sourceNote": "institutional / original",
-            "redactions": [
-              "세부 주소 일부"
-            ]
-          },
-          "contract": {
-            "title": "유언장 사본",
-            "subtitle": "공증사무소 제2026-0183호 — 2025년 11월 5일",
-            "rows": [
-              {
-                "date": "유언자",
-                "content": "윤○○ (모친, 1948년생)",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "상속인 1",
-                "content": "윤정후 (차남) — 전체 재산의 60%",
-                "amount": "60%",
-                "missing": false
-              },
-              {
-                "date": "상속인 2",
-                "content": "윤태성 (장남) — 전체 재산의 40%",
-                "amount": "40%",
-                "missing": false
-              },
-              {
-                "date": "재산",
-                "content": "마포구 아파트와 ○○은행 예금이 대상",
-                "amount": "약 5억대",
-                "missing": false
-              },
-              {
-                "date": "공증",
-                "content": "공증인 배○○ 배석 / 증인 2명 입회",
-                "amount": "",
-                "missing": false
-              }
-            ],
-            "signature": "유언자: 윤○○ (인) — 공증인: 배○○"
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "60:40 유서 사본",
-            "type": "contract",
-            "viewerType": "contract",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 전문과 공증 정보",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "contract": {
-            "title": "유   언   장",
-            "subtitle": "공증사무소 제2026-0183호 — 2025년 11월 5일",
-            "rows": [
-              {
-                "date": "유언자",
-                "content": "윤○○ (모친, 1948년생)",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "상속인 1",
-                "content": "윤정후 (차남) — 전체 재산의 60%",
-                "amount": "60%",
-                "missing": false
-              },
-              {
-                "date": "상속인 2",
-                "content": "윤태성 (장남) — 전체 재산의 40%",
-                "amount": "40%",
-                "missing": false
-              },
-              {
-                "date": "부동산",
-                "content": "마포구 ○○로 24 아파트",
-                "amount": "시가 약 4억",
-                "missing": false
-              },
-              {
-                "date": "예금",
-                "content": "○○은행 정기예금 및 보통예금",
-                "amount": "약 1억 2천만원",
-                "missing": false
-              },
-              {
-                "date": "기타",
-                "content": "귀금속류 및 동산",
-                "amount": "미산정",
-                "missing": false
-              },
-              {
-                "date": "공증",
-                "content": "공증인 배○○ 배석 / 증인 2명 입회",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "비고",
-                "content": "“정후가 나를 마지막까지 보살폈으니 마땅하다”",
-                "amount": "",
-                "missing": false
-              }
-            ],
-            "signature": "유언자: 윤○○ (인) — 공증인: 배○○ — 증인: 김○○, 박○○"
-          }
-        }
       }
     },
     {
       "id": "e-2",
       "name": "요양원 방문기록",
       "surfaceName": "요양원 방문기록",
-      "description": "윤정후가 말년에 유독 자주 드나든 기록과, 공증 3주 전 담당 요양보호사가 바뀐 날짜가 같이 확인된다.",
-      "surfaceDescription": "요양원 방문 기록이 존재한다.",
+      "description": "말년 방문 빈도와 담당자 교체 시점을 보여주는 기관 기록. 공증 전 윤정후의 방문이 급증한다.",
+      "surfaceDescription": "말년 방문 빈도와 담당자 교체 시점을 보여주는 기관 기록.",
       "type": "log",
       "reliability": "hard",
       "completeness": "original",
@@ -1091,289 +905,16 @@
           ],
           "note": "10월 이후 B 방문이 급증했다. 요양보호사 교체(10.14)와 공증(11.05) 사이 장시간 방문이 이어졌고, 윤태성의 방문은 같은 기간 2회에 그쳤다."
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "요양원 방문기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 방문 빈도 일부",
-            "sourceNote": "institutional / original",
-            "redactions": [
-              "방문자 실명 일부",
-              "정확한 날짜 일부"
-            ]
-          },
-          "log": {
-            "rows": [
-              {
-                "date": "09월 초",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "차남 ○○○",
-                "duration": "1~2시간대",
-                "suspicious": false
-              },
-              {
-                "date": "09월 중순",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "차남 ○○○",
-                "duration": "1~2시간대",
-                "suspicious": false
-              },
-              {
-                "date": "09월 말",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "장남 ○○○",
-                "duration": "1시간 미만",
-                "suspicious": false
-              },
-              {
-                "date": "10월 초",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "차남 ○○○",
-                "duration": "3시간대",
-                "suspicious": true
-              },
-              {
-                "date": "10월 초",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "차남 ○○○",
-                "duration": "2시간대",
-                "suspicious": true
-              }
-            ],
-            "note": "차남의 방문 시간이 10월 초부터 길어진다. 돌봄 때문인지 서류 논의 때문인지는 이 단계만으로 단정하기 어렵다."
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "요양원 방문기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 교체 시점 포함",
-            "sourceNote": "institutional / original",
-            "redactions": [
-              "교체 담당자 실명"
-            ]
-          },
-          "log": {
-            "rows": [
-              {
-                "date": "09.05",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "2시간 10분",
-                "suspicious": false
-              },
-              {
-                "date": "09.12",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "1시간 40분",
-                "suspicious": false
-              },
-              {
-                "date": "09.20",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤태성",
-                "duration": "45분",
-                "suspicious": false
-              },
-              {
-                "date": "10.01",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "3시간 20분",
-                "suspicious": true
-              },
-              {
-                "date": "10.08",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "2시간",
-                "suspicious": true
-              },
-              {
-                "date": "10.14",
-                "type": "miss",
-                "typeLabel": "변경",
-                "target": "담당 요양보호사 교체",
-                "duration": "—",
-                "suspicious": true
-              },
-              {
-                "date": "10.15",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "4시간",
-                "suspicious": true
-              },
-              {
-                "date": "10.22",
-                "type": "in",
-                "typeLabel": "동행",
-                "target": "윤정후 + 공증인",
-                "duration": "1시간",
-                "suspicious": true
-              }
-            ],
-            "note": "공증 전 3주 동안 방문 빈도, 담당자 교체, 공증인 동행 항목이 같은 기간에 모인다. 아직 방문 목적 자체는 확정되지 않는다."
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "요양원 방문기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 전체 방문대장",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "log": {
-            "rows": [
-              {
-                "date": "09.05",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "2시간 10분",
-                "suspicious": false
-              },
-              {
-                "date": "09.12",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "1시간 40분",
-                "suspicious": false
-              },
-              {
-                "date": "09.20",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤태성",
-                "duration": "45분",
-                "suspicious": false
-              },
-              {
-                "date": "10.01",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "3시간 20분",
-                "suspicious": true
-              },
-              {
-                "date": "10.08",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "2시간",
-                "suspicious": true
-              },
-              {
-                "date": "10.14",
-                "type": "miss",
-                "typeLabel": "변경",
-                "target": "담당 요양보호사 교체 (최○○ → 박○○)",
-                "duration": "—",
-                "suspicious": true
-              },
-              {
-                "date": "10.15",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "4시간",
-                "suspicious": true
-              },
-              {
-                "date": "10.18",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "2시간 30분",
-                "suspicious": true
-              },
-              {
-                "date": "10.22",
-                "type": "in",
-                "typeLabel": "동행",
-                "target": "윤정후 + 공증인",
-                "duration": "1시간",
-                "suspicious": true
-              },
-              {
-                "date": "10.25",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤정후",
-                "duration": "3시간",
-                "suspicious": true
-              },
-              {
-                "date": "11.02",
-                "type": "in",
-                "typeLabel": "방문",
-                "target": "윤태성",
-                "duration": "30분",
-                "suspicious": false
-              },
-              {
-                "date": "11.05",
-                "type": "in",
-                "typeLabel": "공증",
-                "target": "윤정후 + 공증인 + 증인 2명",
-                "duration": "40분",
-                "suspicious": true
-              }
-            ],
-            "note": "10월 이후 B 방문이 급증했다. 요양보호사 교체(10.14)와 공증(11.05) 사이 장시간 방문이 이어졌고, 윤태성의 방문은 같은 기간 2회에 그쳤다."
-          }
-        }
       }
     },
     {
       "id": "e-3",
       "name": "전 요양보호사 음성증언",
       "surfaceName": "전 요양보호사 음성증언",
-      "description": "'정후 씨가 어머님한테 종이를 자주 읽어드렸고, 형님 오기 전엔 끝내자고 조심스러워했다'는 증언.",
-      "surfaceDescription": "전 요양보호사의 증언이 존재한다.",
-      "type": "testimony",
-      "reliability": "medium",
+      "description": "말년 어머니 곁에서 유서 관련 행동을 목격한 제3자의 음성증언.",
+      "surfaceDescription": "유서 관련 행동을 목격한 제3자의 음성증언.",
+      "type": "audio",
+      "reliability": "soft",
       "completeness": "partial",
       "provenance": "self_possessed",
       "legitimacy": "lawful",
@@ -1381,7 +922,10 @@
         "d-1"
       ],
       "isTrap": false,
-      "requires": [],
+      "requires": [
+        "e-2"
+      ],
+      "requiredLieState": "S1",
       "investigationResults": {
         "request_original": "전 요양보호사가 윤정후가 어머니에게 종이를 읽어드리는 모습을 직접 봤다고 진술했다.",
         "check_metadata": "증언자의 근무 기간은 공증 전 방문 집중 시기와 겹친다. '형님 오기 전'이라는 표현도 확인된다.",
@@ -1526,106 +1070,15 @@
           "directWitness": true,
           "relatedRef": "요양보호사 교체 2025.10.14 / 공증 2025.11.05"
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "전 요양보호사 음성증언",
-            "type": "testimony",
-            "viewerType": "testimony",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "witness",
-            "sourceLabel": "증인",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 목격 요지만",
-            "sourceNote": "self_possessed / partial",
-            "redactions": [
-              "증인 실명",
-              "정확한 근무 기간"
-            ]
-          },
-          "testimony": {
-            "witnessName": "○○○",
-            "witnessDesc": "전 담당 요양보호사",
-            "quote": "작은아들분이 어머님께 종이를 읽어드리는 모습을 여러 번 봤습니다.",
-            "confidence": "mid",
-            "confidenceLabel": "보통",
-            "bias": "neutral",
-            "biasLabel": "중립",
-            "directWitness": true,
-            "relatedRef": "공증 전후 근무자"
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "전 요양보호사 음성증언",
-            "type": "testimony",
-            "viewerType": "testimony",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "witness",
-            "sourceLabel": "증인",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 근무 기간과 핵심 발언",
-            "sourceNote": "self_possessed / partial",
-            "redactions": [
-              "증인 이름 일부"
-            ]
-          },
-          "testimony": {
-            "witnessName": "최 씨",
-            "witnessDesc": "전 담당 요양보호사 (2024.03~2025.10 근무)",
-            "quote": "정후 씨가 어머님한테 종이를 자주 읽어드렸어요. 형님 오기 전에는 끝내자고 조심스러워하셨습니다.",
-            "confidence": "mid",
-            "confidenceLabel": "보통",
-            "bias": "neutral",
-            "biasLabel": "중립",
-            "directWitness": true,
-            "relatedRef": "요양보호사 교체 시점과 공증 전 집중 방문 시기"
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "전 요양보호사 음성증언",
-            "type": "testimony",
-            "viewerType": "testimony",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "witness",
-            "sourceLabel": "증인",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 전체 녹취 요약",
-            "sourceNote": "self_possessed / partial",
-            "redactions": []
-          },
-          "testimony": {
-            "witnessName": "최복순",
-            "witnessDesc": "전 담당 요양보호사 (2024.03~2025.10.14 근무)",
-            "quote": "정후 씨가 어머님한테 종이를 자주 읽어드렸어요. 내용은 또렷이 못 들었지만, 형님 오기 전에는 끝내자고 조심스러워하셨어요. 어머님이 힘들어하시면 그만하자고 했고, 어머님이 먼저 물으시면 그때 더 설명했어요. 그런데 저는 10월에 갑자기 교체됐습니다. 이유는 듣지 못했습니다.",
-            "confidence": "mid",
-            "confidenceLabel": "보통",
-            "bias": "neutral",
-            "biasLabel": "중립",
-            "directWitness": true,
-            "relatedRef": "요양보호사 교체 2025.10.14 / 공증 2025.11.05"
-          }
-        }
       }
     },
     {
       "id": "e-4",
       "name": "공증인 메모 기록",
       "surfaceName": "공증인 메모 기록",
-      "description": "공증인이 남긴 진행 메모. 오전 1차 접수 이력이 먼저 확인되고, 추가 조사로 오후 수정 접수와 절차 진행 정황이 드러난다.",
-      "surfaceDescription": "공증인이 남긴 진행 메모.",
-      "type": "log",
+      "description": "공증 당일 절차를 남긴 공증인 메모 기록. 오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 60:40으로 확정된 흐름이 남아 있다.",
+      "surfaceDescription": "공증 당일 절차를 남긴 공증인 메모 기록.",
+      "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "institutional",
@@ -1634,11 +1087,7 @@
         "d-2"
       ],
       "isTrap": false,
-      "requires": [
-        "e-1",
-        "e-2"
-      ],
-      "requiredLieState": "S2",
+      "requires": [],
       "investigationResults": {
         "request_original": "공증 진행에 대한 기록이 남아있다. 별다른 이상은 없어보인다.",
         "check_metadata": "공증 수정 과정과 최종 상속 비율이 기재되어 있다.",
@@ -1807,242 +1256,15 @@
           ],
           "note": "최초 공증 접수 이력이 정리되어 있다. 기존 비율은 기재되지 않았다."
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "공증인 메모 기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "공증사무소",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 1차 공증 접수 기록",
-            "sourceNote": "notary_memo / original",
-            "redactions": [],
-            "evidenceKind": "notaryMemo"
-          },
-          "log": {
-            "title": "공증인 메모 기록",
-            "rows": [
-              {
-                "date": "2025.11.05 10:10",
-                "type": "in",
-                "typeLabel": "접수",
-                "target": "유언장 공증 절차 개시 / 상속 비율 정리",
-                "duration": "확인",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 10:25",
-                "type": "in",
-                "typeLabel": "절차",
-                "target": "유언자 신분 확인 및 증인 2명 입회 기록",
-                "duration": "정상",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 11:05",
-                "type": "out",
-                "typeLabel": "완료",
-                "target": "공증 도장 및 보관 번호 부여",
-                "duration": "완료",
-                "suspicious": false,
-                "filterGroup": "first"
-              }
-            ],
-            "note": "최초 공증 접수 이력이 정리되어 있다. 기존 비율은 기재되지 않았다."
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "공증인 메모 기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "공증사무소",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 수정 접수 이력 확인",
-            "sourceNote": "notary_memo / original",
-            "redactions": [],
-            "evidenceKind": "notaryMemo"
-          },
-          "log": {
-            "title": "공증인 메모 기록",
-            "rows": [
-              {
-                "date": "2025.11.05 10:10",
-                "type": "in",
-                "typeLabel": "접수",
-                "target": "유언장 공증 절차 개시 / 상속 비율 정리",
-                "duration": "확인",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 10:25",
-                "type": "in",
-                "typeLabel": "절차",
-                "target": "유언자 신분 확인 및 증인 2명 입회 기록",
-                "duration": "정상",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 11:05",
-                "type": "out",
-                "typeLabel": "완료",
-                "target": "공증 도장 및 보관 번호 부여",
-                "duration": "완료",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 17:05",
-                "type": "in",
-                "typeLabel": "접수",
-                "target": "공증 문서 수정을 위한 재방문 요청",
-                "duration": "정상",
-                "suspicious": false,
-                "filterGroup": "amend"
-              },
-              {
-                "date": "2025.11.05 18:57",
-                "type": "in",
-                "typeLabel": "접수",
-                "target": "수정된 유언장 공증 절차 개시 / 최종 비율 60:40 확인",
-                "duration": "확인",
-                "suspicious": false,
-                "filterGroup": "amend"
-              }
-            ],
-            "note": "수정 접수 이력이 추가로 확인된다. 최종 상속 비율은 60:40으로 정리됐다."
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "공증인 메모 기록",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "공증사무소",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 어머니 상태와 절차 압박 메모",
-            "sourceNote": "notary_memo / original",
-            "redactions": [],
-            "evidenceKind": "notaryMemo"
-          },
-          "log": {
-            "title": "공증인 메모 기록",
-            "rows": [
-              {
-                "date": "2025.11.05 10:10",
-                "type": "in",
-                "typeLabel": "접수",
-                "target": "유언장 공증 절차 개시 / 상속 비율 정리",
-                "duration": "확인",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 10:25",
-                "type": "in",
-                "typeLabel": "절차",
-                "target": "유언자 신분 확인 및 증인 2명 입회 기록",
-                "duration": "정상",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 11:05",
-                "type": "out",
-                "typeLabel": "완료",
-                "target": "공증 도장 및 보관 번호 부여",
-                "duration": "완료",
-                "suspicious": false,
-                "filterGroup": "first"
-              },
-              {
-                "date": "2025.11.05 17:05",
-                "type": "in",
-                "typeLabel": "접수",
-                "target": "공증 문서 수정을 위한 재방문 요청",
-                "duration": "정상",
-                "suspicious": false,
-                "filterGroup": "amend"
-              },
-              {
-                "date": "2025.11.05 18:32",
-                "type": "miss",
-                "typeLabel": "상태 메모",
-                "target": "유언자 피로 호소, 답변 전 휴식 요청",
-                "duration": "주의",
-                "suspicious": true,
-                "filterGroup": "status"
-              },
-              {
-                "date": "2025.11.05 18:39",
-                "type": "miss",
-                "typeLabel": "상태 메모",
-                "target": "질문 반복 시 답변 지연, 물 한 잔 요청",
-                "duration": "주의",
-                "suspicious": true,
-                "filterGroup": "status"
-              },
-              {
-                "date": "2025.11.05 18:43",
-                "type": "miss",
-                "typeLabel": "공증인 메모",
-                "target": "수정 사유를 묻자 아들의 도움을 통해 말을 함",
-                "duration": "대조 필요",
-                "suspicious": true,
-                "filterGroup": "status"
-              },
-              {
-                "date": "2025.11.05 18:47",
-                "type": "miss",
-                "typeLabel": "공증인 메모",
-                "target": "윤정후가 “오늘 마쳐야 한다”며 절차 진행을 재촉하는 듯함",
-                "duration": "대조 필요",
-                "suspicious": true,
-                "filterGroup": "status"
-              },
-              {
-                "date": "2025.11.05 18:57",
-                "type": "in",
-                "typeLabel": "접수",
-                "target": "수정된 유언장 공증 절차 개시 / 최종 비율 60:40 확인",
-                "duration": "확인",
-                "suspicious": false,
-                "filterGroup": "amend"
-              }
-            ],
-            "note": "어머니 상태가 좋지 않았고 윤정후가 절차를 밀어붙이는 듯했다는 관찰이 남아 있다."
-          }
-        }
       }
     },
     {
       "id": "e-5",
       "name": "어머니 자필 유언장 연습본",
       "surfaceName": "어머니 자필 유언장 연습본",
-      "description": "어머니 서랍에서 나온 흰 봉투 속 자필 유언장 연습본. 공증본과 별도로 작성된 연습본이며, 구체 비율은 최종 단계에서 확인된다.",
-      "surfaceDescription": "어머니가 남긴 자필 유언장 연습본이 존재한다.",
-      "type": "contract",
+      "description": "어머니가 남긴 자필 유언장 연습본. 공증본과 별개로 분배 방향이 적힌 흔적이 있다.",
+      "surfaceDescription": "어머니가 남긴 자필 유언장 연습본. 구체 비율은 단계 조사로 확인된다.",
+      "type": "document",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "self_possessed",
@@ -2052,7 +1274,7 @@
       ],
       "isTrap": false,
       "requires": [
-        "e-4"
+        "e-7"
       ],
       "requiredLieState": "S5",
       "investigationResults": {
@@ -2060,7 +1282,7 @@
         "check_metadata": "여러 번 고쳐 쓴 흔적과 공증 전 작성일이 확인된다. 공증본 60:40과 별도의 초안임이 드러난다.",
         "restore_context": "연습본 마지막 장에는 윤정후 90%, 윤태성 10%라고 적혀 있다. 이 비율 정보는 공증인 메모가 아니라 이 자필 연습본에서만 확인된다."
       },
-      "subjectParty": "b",
+      "subjectParty": "both",
       "investigationStages": [
         {
           "stage": 1,
@@ -2219,181 +1441,24 @@
           ],
           "signature": "작성자: 윤○○ / 자필 연습본"
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "어머니 자필 유언장 연습본",
-            "type": "contract",
-            "viewerType": "contract",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "b",
-            "sourceLabel": "B측 제출",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 자필 연습본 존재",
-            "sourceNote": "self_possessed / handwritten_draft",
-            "redactions": [
-              "정확한 비율 숫자"
-            ],
-            "evidenceKind": "handwrittenDraft"
-          },
-          "contract": {
-            "title": "어머니 자필 유언장 연습본",
-            "subtitle": "흰 봉투 속 자필 초안",
-            "rows": [
-              {
-                "date": "문서 형태",
-                "content": "흰 봉투 속 자필 유언장 연습본",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "확인 내용",
-                "content": "두 아들 이름과 재산 항목 일부 확인",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "비율 부분",
-                "content": "숫자 부분은 접힌 자국과 가림 처리",
-                "amount": "가림",
-                "missing": true
-              }
-            ],
-            "signature": "작성자: 윤○○ / 자필 연습본"
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "어머니 자필 유언장 연습본",
-            "type": "contract",
-            "viewerType": "contract",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "b",
-            "sourceLabel": "B측 제출",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 공증본과 별도 초안",
-            "sourceNote": "self_possessed / handwritten_draft",
-            "redactions": [
-              "정확한 비율 숫자"
-            ],
-            "evidenceKind": "handwrittenDraft"
-          },
-          "contract": {
-            "title": "어머니 자필 유언장 연습본",
-            "subtitle": "공증 전 작성 흔적",
-            "rows": [
-              {
-                "date": "문서 형태",
-                "content": "흰 봉투 속 자필 유언장 연습본",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "확인 내용",
-                "content": "두 아들 이름과 재산 항목 일부 확인",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "비율 부분",
-                "content": "숫자 부분은 접힌 자국과 가림 처리",
-                "amount": "가림",
-                "missing": true
-              },
-              {
-                "date": "작성 시점",
-                "content": "공증 전 여러 차례 고쳐 쓴 흔적",
-                "amount": "",
-                "missing": false
-              },
-              {
-                "date": "비교 대상",
-                "content": "공증본 60:40과 별도로 작성된 연습본",
-                "amount": "",
-                "missing": false
-              }
-            ],
-            "signature": "작성자: 윤○○ / 자필 연습본"
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "어머니 자필 유언장 연습본",
-            "type": "contract",
-            "viewerType": "contract",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "b",
-            "sourceLabel": "B측 제출",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 마지막 장 비율 확인",
-            "sourceNote": "self_possessed / handwritten_draft",
-            "redactions": [],
-            "evidenceKind": "handwrittenDraft"
-          },
-          "contract": {
-            "title": "어머니 자필 유언장 연습본",
-            "subtitle": "자필 연습본 마지막 장",
-            "rows": [
-              {
-                "date": "연습본 마지막 장",
-                "content": "윤정후에게 남긴 비율",
-                "amount": "90%",
-                "missing": false
-              },
-              {
-                "date": "연습본 마지막 장",
-                "content": "윤태성에게 남긴 비율",
-                "amount": "10%",
-                "missing": false
-              },
-              {
-                "date": "공증본 대조",
-                "content": "공증본에는 처음부터 60:40으로 정리되어 있음",
-                "amount": "60:40",
-                "missing": false
-              },
-              {
-                "date": "확인 메모",
-                "content": "90:10 정보는 공증인 메모가 아니라 이 자필 연습본에서만 확인됨",
-                "amount": "",
-                "missing": false
-              }
-            ],
-            "signature": "작성자: 윤○○ / 자필 연습본 원본대조"
-          }
-        }
       }
     },
     {
       "id": "e-6",
       "name": "오래된 계좌 흐름",
       "surfaceName": "오래된 계좌 흐름",
-      "description": "어머니 통장을 거친 반복 입금과 큰돈 이동 기록. 단계별로 출처와 전달 순서가 분리되어 열린다.",
-      "surfaceDescription": "오래된 계좌 흐름 기록이 존재한다.",
-      "type": "bank",
+      "description": "장기간 반복된 송금과 특정 시점의 큰 자금 이동을 보여주는 은행 자료.",
+      "surfaceDescription": "장기간 반복된 송금과 특정 시점의 큰 자금 이동을 보여주는 은행 자료.",
+      "type": "financial_record",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "institutional",
       "legitimacy": "lawful",
       "proves": [
-        "d-3",
-        "d-5"
+        "d-3"
       ],
       "isTrap": false,
-      "requires": [
-        "e-4"
-      ],
-      "requiredLieState": "S2",
+      "requires": [],
       "investigationResults": {
         "request_original": "윤정후가 어머니 통장으로 월 단위 입금을 이어 온 흐름이 보인다.",
         "check_metadata": "어머니 통장에서 윤태성 또는 공장 쪽으로 3억원이 입금된 기록이 확인된다.",
@@ -2545,159 +1610,32 @@
             "suspicious": false
           }
         ]
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "오래된 계좌 흐름",
-            "type": "bank",
-            "viewerType": "bank",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "은행 원장",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 월 단위 입금",
-            "sourceNote": "bank_statement / original",
-            "redactions": [],
-            "evidenceKind": "accountFlow"
-          },
-          "bank": [
-            {
-              "date": "2023.01~2025.09",
-              "desc": "윤정후 → 어머니 통장 월 단위 입금",
-              "amount": "+800,000~1,500,000원 / 월",
-              "balance": "월 단위 반복 입금",
-              "suspicious": true
-            },
-            {
-              "date": "2025.09.25",
-              "desc": "윤정후 → 어머니 통장",
-              "amount": "+1,200,000원",
-              "balance": "마지막 월 단위 입금",
-              "suspicious": false
-            }
-          ]
-        },
-        "2": {
-          "meta": {
-            "name": "오래된 계좌 흐름",
-            "type": "bank",
-            "viewerType": "bank",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "은행 원장",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 어머니 통장에서 공장 쪽 3억원",
-            "sourceNote": "bank_statement / original",
-            "redactions": [],
-            "evidenceKind": "accountFlow"
-          },
-          "bank": [
-            {
-              "date": "2023.01~2025.09",
-              "desc": "윤정후 → 어머니 통장 월 단위 입금",
-              "amount": "+800,000~1,500,000원 / 월",
-              "balance": "월 단위 반복 입금",
-              "suspicious": true
-            },
-            {
-              "date": "2025.09.25",
-              "desc": "윤정후 → 어머니 통장",
-              "amount": "+1,200,000원",
-              "balance": "마지막 월 단위 입금",
-              "suspicious": false
-            },
-            {
-              "date": "2018.03.08",
-              "desc": "어머니 통장 → 윤태성 공장 운영계좌",
-              "amount": "-300,000,000원",
-              "balance": "공장 긴급자금",
-              "suspicious": true
-            }
-          ]
-        },
-        "3": {
-          "meta": {
-            "name": "오래된 계좌 흐름",
-            "type": "bank",
-            "viewerType": "bank",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "org",
-            "sourceLabel": "은행 원장",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 목돈 출처와 전달 순서",
-            "sourceNote": "bank_statement / original",
-            "redactions": [],
-            "evidenceKind": "accountFlow"
-          },
-          "bank": [
-            {
-              "date": "2018.03.04",
-              "desc": "윤정후 → 어머니 통장 목돈 입금",
-              "amount": "+300,000,000원",
-              "balance": "출처 확인",
-              "suspicious": true
-            },
-            {
-              "date": "2018.03.08",
-              "desc": "어머니 통장 → 윤태성 공장 운영계좌",
-              "amount": "-300,000,000원",
-              "balance": "공장 긴급자금",
-              "suspicious": true
-            },
-            {
-              "date": "2023.01~2025.09",
-              "desc": "윤정후 → 어머니 통장 월 단위 입금",
-              "amount": "+800,000~1,500,000원 / 월",
-              "balance": "월 단위 반복 입금",
-              "suspicious": true
-            },
-            {
-              "date": "2025.09.25",
-              "desc": "윤정후 → 어머니 통장",
-              "amount": "+1,200,000원",
-              "balance": "마지막 월 단위 입금",
-              "suspicious": false
-            }
-          ]
-        }
       }
     },
     {
       "id": "e-7",
-      "name": "어머니의 일기장",
-      "surfaceName": "어머니의 일기장",
-      "description": "공책에 남은 어머니 자필 기록. 두 아들을 걱정하는 말에서 시작해 오래된 가족 사정과 비밀에 관한 기록이 함께 남아 있다.",
-      "surfaceDescription": "어머니의 자필 공책이 존재한다.",
-      "type": "device",
+      "name": "어머니 일기장",
+      "surfaceName": "어머니 일기장",
+      "description": "어머니의 흰색 자필 공책. 윤태성이 아버지의 친자가 아니라는 사실, 두 아들 모두 똑같은 자식이라는 기록, 윤정후의 사전 인지가 함께 적혀 있다.",
+      "surfaceDescription": "어머니의 흰색 자필 공책 사진이 존재한다.",
+      "type": "document",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "self_possessed",
-      "legitimacy": "lawful",
+      "legitimacy": "privacy_concern",
       "proves": [
         "d-4",
         "d-5"
       ],
       "isTrap": false,
-      "requires": [
-        "e-6"
-      ],
-      "requiredLieState": "S3",
+      "requires": [],
+      "requiredLieState": "S2",
       "investigationResults": {
         "request_original": "평범한 공책에 남은 자필 일기다. 두 아들 걱정과 윤태성이 아직 정신을 못 차린다는 한탄이 보인다.",
         "check_metadata": "윤정후를 걱정하는 문장과, 두 형제가 모든 면에서 같지는 않다는 암시가 보인다.",
         "restore_context": "두 아들 중 한 명은 남편의 친아들이 아니라는 기록과 이 사실을 계속 숨기려는 생각이 남아 있다."
       },
-      "subjectParty": "both",
+      "subjectParty": "b",
       "investigationStages": [
         {
           "stage": 1,
@@ -2813,11 +1751,6 @@
         ],
         "evidenceKind": "diary"
       },
-      "v3SealTargets": [
-        "아버지 실명",
-        "가족 사정 구체 경위",
-        "어머니 일기장 사적 기록"
-      ],
       "viewerData": {
         "meta": {
           "name": "어머니의 일기장",
@@ -2856,172 +1789,79 @@
             }
           ]
         }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "어머니의 일기장",
-            "type": "device",
-            "viewerType": "device",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "b",
-            "sourceLabel": "B측 제출",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "1단계 — 흰 공책의 첫 기록",
-            "sourceNote": "handwritten_notebook / photo_copy",
-            "redactions": [
-              "가족 사정 전문"
-            ],
-            "evidenceKind": "diary"
-          },
-          "device": {
-            "ownerName": "어머니의 일기장",
-            "sections": [
-              {
-                "title": "2024년 3월 7일",
-                "id": "diary-2024-spring",
-                "items": [
-                  {
-                    "text": "태성이도 정후도 둘다 걱정이다. 둘이 서로를 너무 모른다.",
-                    "suspicious": false
-                  },
-                  {
-                    "text": "태성이는 아직도 정신을 못 차린다. 공장 일도, 제 마음도 남 탓부터 하려 한다.",
-                    "suspicious": true
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "어머니의 일기장",
-            "type": "device",
-            "viewerType": "device",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "b",
-            "sourceLabel": "B측 제출",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 2,
-            "stageLabel": "2단계 — 윤정후 걱정과 암시",
-            "sourceNote": "handwritten_notebook / photo_copy",
-            "redactions": [
-              "가족 사정 확정 문장"
-            ],
-            "evidenceKind": "diary"
-          },
-          "device": {
-            "ownerName": "어머니의 일기장",
-            "sections": [
-              {
-                "title": "2024년 3월 7일",
-                "id": "diary-2024-spring",
-                "items": [
-                  {
-                    "text": "태성이도 정후도 둘다 걱정이다. 둘이 서로를 너무 모른다.",
-                    "suspicious": false
-                  },
-                  {
-                    "text": "태성이는 아직도 정신을 못 차린다. 공장 일도, 제 마음도 남 탓부터 하려 한다.",
-                    "suspicious": true
-                  }
-                ]
-              },
-              {
-                "title": "2024년 12월 18일",
-                "id": "diary-2024-winter",
-                "items": [
-                  {
-                    "text": "정후는 어려서부터 속이 깊다. 자기가 다 짊어지려는 얼굴이라 더 마음이 쓰인다.",
-                    "suspicious": true
-                  },
-                  {
-                    "text": "형제인데도 어쩜 이렇게 다른지... 그래도 반은 내 피가 섞였는데도 이렇게 성격이 정 반대일 수 있는 걸까?",
-                    "suspicious": true
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "어머니의 일기장",
-            "type": "device",
-            "viewerType": "device",
-            "trustLevel": "high",
-            "trustLabel": "높음",
-            "source": "b",
-            "sourceLabel": "B측 제출",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 3,
-            "stageLabel": "3단계 — 접힌 장의 핵심 문장",
-            "sourceNote": "handwritten_notebook / photo_copy",
-            "redactions": [
-              "아버지 실명 비공개"
-            ],
-            "evidenceKind": "diary"
-          },
-          "device": {
-            "ownerName": "어머니의 일기장",
-            "sections": [
-              {
-                "title": "2024년 3월 7일",
-                "id": "diary-2024-spring",
-                "items": [
-                  {
-                    "text": "태성이도 정후도 둘다 걱정이다. 둘이 서로를 너무 모른다.",
-                    "suspicious": false
-                  },
-                  {
-                    "text": "태성이는 아직도 정신을 못 차린다. 공장 일도, 제 마음도 남 탓부터 하려 한다.",
-                    "suspicious": true
-                  }
-                ]
-              },
-              {
-                "title": "2024년 12월 18일",
-                "id": "diary-2024-winter",
-                "items": [
-                  {
-                    "text": "정후는 어려서부터 속이 깊다. 자기가 다 짊어지려는 얼굴이라 더 마음이 쓰인다.",
-                    "suspicious": true
-                  },
-                  {
-                    "text": "형제인데도 어쩜 이렇게 다른지... 그래도 반은 내 피가 섞였는데도 이렇게 성격이 정 반대일 수 있는 걸까?",
-                    "suspicious": true
-                  }
-                ]
-              },
-              {
-                "title": "2025년 4월 11일",
-                "id": "diary-2025-spring",
-                "items": [
-                  {
-                    "text": "오랜 비밀이 떠오를 때마다 마음이 무겁다. 두 아이 모두 모르게 묻어 둔 일이다.",
-                    "suspicious": true
-                  },
-                  {
-                    "text": "두 아이 중 하나는 남편의 친아들이 아니다. 이 사실은 나와 남편만이 알고 있고, 두 아이 모두 모른다.",
-                    "suspicious": true
-                  },
-                  {
-                    "text": "끝까지 둘 다 모르는 편이 나을 것 같다. 진실이 드러나면 한 명은 자신의 정체에 무너지고, 한 명은 형제를 잃을지도 모른다.",
-                    "suspicious": true
-                  }
-                ]
-              }
-            ]
-          }
-        }
       }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-2"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    },
+    {
+      "requires": [
+        "e-4",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-5",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    },
+    {
+      "requires": [
+        "e-6",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    },
+    {
+      "requires": [
+        "e-5",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    },
+    {
+      "requires": [
+        "e-1",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-2",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2"
+      ]
     }
   ],
   "truthTable": [
@@ -3030,18 +1870,18 @@
       "fact": "어머니는 말년에 판단 능력이 완전히 상실되지는 않았으나, 윤정후의 개입이 유서 작성에 영향을 미쳤다.",
       "isTrue": true,
       "weight": 9,
-      "quadrant": "both"
+      "quadrant": "both_know"
     },
     {
       "id": "t-2",
-      "fact": "공증본은 60:40이었고, 별도 자필 유언장 연습본에서 공증본과 다른 정확한 비율이 확인된다. 윤정후는 유언장에 손댔지만 더 받으려 한 조작은 아니었다.",
+      "fact": "공증본은 60:40이었고, 별도 자필 유언장 연습본은 90:10이다. 윤정후는 절차에 손댔지만 더 받으려 한 조작은 아니라 자기 몫을 줄이는 방향이었다.",
       "isTrue": true,
       "weight": 10,
       "quadrant": "b_only"
     },
     {
       "id": "t-3",
-      "fact": "윤정후 돈이 어머니 통장을 거쳐 월 단위로 들어갔고, 공장 위기 때 3억원도 같은 경로로 전달됐다.",
+      "fact": "윤정후 돈이 어머니 통장을 거쳐 월 단위로 들어갔고, 공장 위기 때 3억원도 같은 경로로 전달됐다. 윤태성은 그 돈이 어머니 돈인 줄 안다.",
       "isTrue": true,
       "weight": 10,
       "quadrant": "b_only"
@@ -3058,7 +1898,7 @@
       "fact": "둘 다 어머니 뜻을 있는 그대로 두지 못했다. 윤태성은 유산을 당연시했고, 윤정후는 형을 보호하려 유언장에 손댔다.",
       "isTrue": true,
       "weight": 8,
-      "quadrant": "both"
+      "quadrant": "both_know"
     }
   ],
   "lieConfigA": [
@@ -3078,17 +1918,17 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "motive_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "hard_evidence"
+          "trigger": "empathy_question"
         },
         {
           "from": "S3",
           "to": "S4",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         },
         {
           "from": "S4",
@@ -3113,11 +1953,21 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "motive_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
           "to": "S3",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
           "trigger": "direct_question"
         }
       ]
@@ -3143,7 +1993,7 @@
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "motive_question"
+          "trigger": "empathy_question"
         },
         {
           "from": "S3",
@@ -3153,15 +2003,15 @@
         {
           "from": "S4",
           "to": "S5",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         }
       ]
     },
     {
       "disputeId": "d-4",
-      "lieType": "LT-6",
-      "lieIntensity": "L3",
-      "lieMotive": "third_party_protection",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
@@ -3173,12 +2023,12 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "direct_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "hard_evidence"
+          "trigger": "empathy_question"
         },
         {
           "from": "S3",
@@ -3188,7 +2038,7 @@
         {
           "from": "S4",
           "to": "S5",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         }
       ]
     },
@@ -3208,22 +2058,22 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "motive_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "empathy_question"
+          "trigger": "motive_question"
         },
         {
           "from": "S3",
           "to": "S4",
-          "trigger": "direct_question"
+          "trigger": "empathy_question"
         },
         {
           "from": "S4",
           "to": "S5",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         }
       ]
     }
@@ -3232,7 +2082,7 @@
     {
       "disputeId": "d-1",
       "lieType": "LT-6",
-      "lieIntensity": "L2",
+      "lieIntensity": "L3",
       "lieMotive": "third_party_protection",
       "initialState": "S0",
       "collapseViaTrust": false,
@@ -3245,17 +2095,17 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "motive_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "hard_evidence"
+          "trigger": "empathy_question"
         },
         {
           "from": "S3",
           "to": "S4",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         },
         {
           "from": "S4",
@@ -3267,7 +2117,7 @@
     {
       "disputeId": "d-2",
       "lieType": "LT-2",
-      "lieIntensity": "L3",
+      "lieIntensity": "L1",
       "lieMotive": "self_protection",
       "initialState": "S0",
       "collapseViaTrust": false,
@@ -3280,17 +2130,17 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "motive_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "hard_evidence"
+          "trigger": "motive_question"
         },
         {
           "from": "S3",
           "to": "S4",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         },
         {
           "from": "S4",
@@ -3315,12 +2165,12 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "motive_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
           "to": "S3",
-          "trigger": "hard_evidence"
+          "trigger": "motive_question"
         },
         {
           "from": "S3",
@@ -3330,7 +2180,7 @@
         {
           "from": "S4",
           "to": "S5",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         }
       ]
     },
@@ -3345,12 +2195,12 @@
         {
           "from": "S0",
           "to": "S1",
-          "trigger": "motive_question"
+          "trigger": "direct_question"
         },
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "direct_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
@@ -3365,15 +2215,15 @@
         {
           "from": "S4",
           "to": "S5",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         }
       ]
     },
     {
       "disputeId": "d-5",
-      "lieType": "LT-2",
+      "lieType": "LT-6",
       "lieIntensity": "L2",
-      "lieMotive": "self_protection",
+      "lieMotive": "third_party_protection",
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
@@ -3385,7 +2235,7 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "motive_question"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
@@ -3395,28 +2245,28 @@
         {
           "from": "S3",
           "to": "S4",
-          "trigger": "hard_evidence"
+          "trigger": "empathy_question"
         },
         {
           "from": "S4",
           "to": "S5",
-          "trigger": "empathy_question"
+          "trigger": "direct_question"
         }
       ]
     }
   ],
   "solutions": {
-    "유서적법성판단": [
-      "치매 어머니의 유서 작성 당시 판단 능력을 전문 감정으로 확인하고, 공증 절차의 적법성을 다시 판단한다.",
-      "윤정후의 유서 조작 행위는 위법이지만 동기를 참작하여 별도 자필 연습본의 법적 효력을 함께 검토한다."
+    "분배책임분리": [
+      "자필 연습본 90:10과 공증본 60:40 사이의 거리를 별도 책임으로 분리하고, 형의 돌봄 비중과 동생의 양보 비중을 함께 기록한다.",
+      "20년 정기 지원금과 공장 위기 3억원 전달 흐름을 어머니 자금과 분리해 정리한다."
     ],
-    "재산분배재조정": [
-      "자필 연습본과 공증본 60:40의 법적 효력을 비교하고, 오래된 지원 내역을 참작한 공정한 분배를 재산정한다.",
-      "윤정후가 어머니 통장으로 넣고 윤태성의 공장 자금으로 전달된 3억원은 별도 정산 대상으로 분리한다."
+    "가족기록봉인경계": [
+      "출생 비밀 영역은 형의 정체성 회복 단계까지 봉인하되, 정후의 침묵 동기는 사건 안에서 인정한다.",
+      "친부 실명·구체적 출생 경위는 민감 정보 봉인 정책을 유지한다."
     ],
-    "가족관계회복": [
-      "출생 비밀의 공개 범위를 당사자 동의 하에 결정하고, 형제 관계 복원을 위한 조율 절차를 마련한다.",
-      "어머니의 진정한 뜻을 두 아들이 함께 이해하는 과정을 중재한다."
+    "형제관계회복절차": [
+      "자존심·돌봄의 과거 frame과 양보·침묵의 과거 frame을 함께 펼쳐, 양측 책임축을 동시에 기록한다.",
+      "어머니 뜻이 두 번 비틀린 흐름을 인정하고, 향후 가족 결정의 사전 합의 절차를 다시 세운다."
     ]
   },
   "activeLedgerEntries": [
@@ -3433,9 +2283,13 @@
   "baseEvidenceIds": [
     "e-1",
     "e-2",
-    "e-3"
+    "e-4"
   ],
-  "monetaryDisputeIds": [],
+  "monetaryDisputeIds": [
+    "d-2",
+    "d-3",
+    "d-5"
+  ],
   "combinationLab": {
     "analysisPointsBase": 5,
     "analysisPointRefundOnFirstHidden": 1,
@@ -3443,7 +2297,7 @@
       {
         "id": "e-1",
         "type": "evidence",
-        "label": "e-1 60:40 유서 사본",
+        "label": "e-1 분배 비율이 적힌 서류 사본",
         "sourceRef": "e-1",
         "linkedDisputeIds": [
           "d-1",
@@ -3512,8 +2366,7 @@
         "label": "e-6 오래된 계좌 흐름",
         "sourceRef": "e-6",
         "linkedDisputeIds": [
-          "d-3",
-          "d-5"
+          "d-3"
         ],
         "linkedEvidenceIds": [
           "e-6"
@@ -3599,8 +2452,8 @@
       },
       {
         "id": "dc-1",
-        "type": "derived_note",
-        "label": "dc-1 유서 작성 개입 정황",
+        "type": "derived_evidence",
+        "label": "dc-1 말년의 종이",
         "linkedDisputeIds": [
           "d-1"
         ],
@@ -3613,47 +2466,43 @@
       },
       {
         "id": "dc-2",
-        "type": "derived_note",
-        "label": "dc-2 자기 몫을 줄인 조작의 이유",
+        "type": "derived_evidence",
+        "label": "dc-2 줄인 유서",
         "linkedDisputeIds": [
           "d-2"
         ],
         "linkedEvidenceIds": [
-          "e-4",
-          "e-5"
+          "e-4"
         ],
         "visibility": "derived"
       },
       {
         "id": "dc-3",
-        "type": "derived_note",
-        "label": "dc-3 형이 모르던 오래된 지원",
+        "type": "derived_evidence",
+        "label": "dc-3 20년의 돈",
         "linkedDisputeIds": [
           "d-3"
         ],
         "linkedEvidenceIds": [
-          "e-5",
           "e-6"
         ],
         "visibility": "derived"
       },
       {
         "id": "dc-4",
-        "type": "derived_note",
+        "type": "note",
         "label": "dc-4 감춘 이유",
         "linkedDisputeIds": [
           "d-4"
         ],
         "linkedEvidenceIds": [
-          "e-5",
-          "e-6",
           "e-7"
         ],
         "visibility": "derived"
       },
       {
         "id": "dc-5",
-        "type": "derived_note",
+        "type": "derived_evidence",
         "label": "dc-5 어머니의 뜻",
         "linkedDisputeIds": [
           "d-5"
@@ -3669,10 +2518,10 @@
     "outputs": [
       {
         "id": "dc-1",
-        "label": "dc-1 유서 작성 개입 정황",
-        "summary": "유서 비율과 방문 기록이 함께 움직입니다. 작성 과정에서 누가 곁에 있었는지 확인해야 합니다.",
-        "nodeType": "derived_note",
-        "noteText": "유서 작성 개입 정황",
+        "label": "dc-1 말년의 종이",
+        "summary": "말년의 방문 패턴과 읽어주던 종이가 치매 이용인지, 불안한 보호인지 가르는 첫 카드.",
+        "nodeType": "derived_evidence",
+        "noteText": "방문 급증 + 종이를 읽어드린 정황 + 형 오기 전 발화가 한 흐름으로 모여 도움과 개입의 경계가 드러난다.",
         "effects": [
           {
             "kind": "unlock_note",
@@ -3687,14 +2536,14 @@
             }
           }
         ],
-        "judgeHint": "유서 작성 당시 판단 능력과 개입 경계를 더 깊이 추궁하거나, 요양보호사 증언으로 보강할 수 있습니다."
+        "judgeHint": "전 요양보호사(w-1)를 증인으로 부를 수 있게 됨."
       },
       {
         "id": "dc-2",
-        "label": "dc-2 유언장에 손댄 경위",
-        "summary": "공증인 메모와 자필 연습본을 함께 보면, 공증본 60:40 뒤에 별도 연습본이 있었고 유언장에 손댄 경위가 쟁점이 됩니다.",
-        "nodeType": "derived_note",
-        "noteText": "유언장에 손댄 경위",
+        "label": "dc-2 줄인 유서",
+        "summary": "공증 오후 수정의 존재를 넘어서, 절차 안에서 어떤 흐름이 만들어졌는지를 묻는 카드.",
+        "nodeType": "derived_evidence",
+        "noteText": "오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 60:40으로 확정된 흐름이 공증인 메모로 남아 있다. 절차에 손댄 책임이 드러나는 카드.",
         "effects": [
           {
             "kind": "unlock_note",
@@ -3709,32 +2558,36 @@
             }
           }
         ],
-        "judgeHint": "공증 당일 어머니 상태와 자필 연습본의 비율을 분리해 확인하십시오."
+        "judgeHint": "공증인 메모 담당(w-2)을 증인으로 부를 수 있게 됨."
       },
       {
         "id": "dc-3",
-        "label": "dc-3 오래된 지원의 출처",
-        "summary": "자필 연습본의 비율과 오래된 계좌 흐름이 이어집니다. 어머니 통장을 거친 돈의 출처를 확인해야 합니다.",
-        "nodeType": "derived_note",
-        "noteText": "오래된 지원의 출처",
+        "label": "dc-3 20년의 돈",
+        "summary": "어머니 돈처럼 보였던 흐름을 윤정후 개인의 희생으로 뒤집는 지원 실체 카드.",
+        "nodeType": "derived_evidence",
+        "noteText": "윤정후 계좌 → 어머니 통장 → 윤태성 쪽으로 20년간 흘러간 월 정기 지원금과 공장 위기 3억원의 실체. 형이 모르게 한 결정의 동기가 d-4로 이어진다.",
         "effects": [
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-3"
           },
           {
-            "kind": "unlock_dispute",
-            "unlockNodeId": "d-3"
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-3",
+              "weight": "high",
+              "ambiguity": "low"
+            }
           }
         ],
-        "judgeHint": "새 쟁점 '오래된 지원의 출처'가 드러났습니다. 돈의 출처와 전달 순서를 확인하십시오."
+        "judgeHint": "어머니의 오랜 지인(w-3)을 증인으로 부를 수 있게 됨."
       },
       {
         "id": "dc-4",
-        "label": "dc-4 가족 기록과 침묵의 이유",
-        "summary": "오래된 계좌 흐름과 일기장이 형제의 침묵을 같은 방향으로 가리킵니다. 민감한 가족 사정을 확인해야 합니다.",
-        "nodeType": "derived_note",
-        "noteText": "가족 기록과 침묵의 이유",
+        "label": "dc-4 감춘 이유",
+        "summary": "유서 조작과 20년 지원의 끝에 있던 출생 비밀의 이유를 직접 묻는 심층 카드.",
+        "nodeType": "note",
+        "noteText": "어머니 일기장의 출생 비밀 + 두 아들 동등 기록 + 윤정후의 사전 인지 + 친자 양보 영역. 침묵의 동기가 형의 정체성 보호로 정리된다.",
         "effects": [
           {
             "kind": "unlock_note",
@@ -3742,28 +2595,32 @@
           },
           {
             "kind": "unlock_dispute",
-            "unlockNodeId": "d-4"
+            "unlockNodeId": "d-5"
           }
         ],
-        "judgeHint": "새 쟁점 '가족 기록과 침묵의 이유'가 드러났습니다. 기록의 의미와 침묵의 범위를 확인하십시오."
+        "judgeHint": "민감 정보 봉인 정책 영역 — 친부 실명 노출은 별도 절차."
       },
       {
         "id": "dc-5",
-        "label": "dc-5 어머니의 숨겨진 마음",
-        "summary": "유서 비율과 어머니 기록이 함께 흔들립니다. 두 형제가 각자 어머니 뜻을 어떻게 움직였는지 확인해야 합니다.",
-        "nodeType": "derived_note",
-        "noteText": "어머니의 숨겨진 마음",
+        "label": "dc-5 어머니의 뜻",
+        "summary": "장남 당연시와 보호 명분을 한 자리에 올려, 누가 어떤 방식으로 어머니 뜻을 바꿨는지 정리하는 최종 카드.",
+        "nodeType": "derived_evidence",
+        "noteText": "자필 연습본 90:10이 공증 60:40으로 줄어든 흐름과 20년 지원 + 출생 비밀이 함께 정리되며 양측의 책임축이 동시에 드러난다.",
         "effects": [
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-5"
           },
           {
-            "kind": "unlock_dispute",
-            "unlockNodeId": "d-5"
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-5",
+              "weight": "high",
+              "ambiguity": "high"
+            }
           }
         ],
-        "judgeHint": "새 쟁점 '어머니의 숨겨진 마음'이 드러났습니다. 각자의 해석과 개입을 분리하십시오."
+        "judgeHint": "양측 책임축 정리 카드. 자필 비율 노출은 d-5 S5에서."
       }
     ],
     "recipes": [
@@ -3774,8 +2631,9 @@
           "e-2"
         ],
         "cost": 1,
-        "discoveryText": "유서의 60:40 비율과 말년 방문 기록이 겹친다. 유서 작성 과정에 윤정후가 곁에 있었는지 다시 확인해야 한다.",
-        "outputId": "dc-1"
+        "discoveryText": "공증본 비율과 방문 시점이 같은 기간으로 겹친다.",
+        "outputId": "dc-1",
+        "resultType": "upgrade"
       },
       {
         "id": "combine-2",
@@ -3783,9 +2641,10 @@
           "e-4",
           "e-5"
         ],
-        "cost": 1,
-        "discoveryText": "공증인 메모와 자필 연습본의 내용이 어긋난다. 공증본 60:40과 별도 연습본의 관계를 본인에게 물어야 한다.",
-        "outputId": "dc-2"
+        "cost": 3,
+        "discoveryText": "공증인 메모의 절차 흐름과 자필 연습본의 분배 흔적이 한 줄로 정리된다.",
+        "outputId": "dc-5",
+        "resultType": "upgrade"
       },
       {
         "id": "combine-3",
@@ -3793,9 +2652,10 @@
           "e-5",
           "e-6"
         ],
-        "cost": 1,
-        "discoveryText": "자필 연습본의 비율과 오래된 계좌 흐름이 같은 손에서 만난다. 어머니 통장을 거친 돈의 출처를 다시 짚어야 한다.",
-        "outputId": "dc-3"
+        "cost": 2,
+        "discoveryText": "자필 분배 흔적과 오래된 송금 흐름이 같은 출처로 묶인다.",
+        "outputId": "dc-3",
+        "resultType": "upgrade"
       },
       {
         "id": "combine-4",
@@ -3803,9 +2663,10 @@
           "e-6",
           "e-7"
         ],
-        "cost": 1,
-        "discoveryText": "오래된 계좌 흐름과 일기장 기록이 같은 침묵을 가리킨다. 윤정후가 무엇을 떠안고 있었는지 물어야 한다.",
-        "outputId": "dc-4"
+        "cost": 2,
+        "discoveryText": "오래된 자금 흐름과 어머니 일기장의 핵심 문장이 침묵의 동기로 모인다.",
+        "outputId": "dc-4",
+        "resultType": "upgrade"
       },
       {
         "id": "combine-5",
@@ -3815,7 +2676,8 @@
         ],
         "cost": 1,
         "discoveryText": "윤정후의 차단 발언과 공증인 메모 기록이 맞물린다. 유언장에 손댄 경위를 따져야 한다.",
-        "outputId": "dc-2"
+        "outputId": "dc-2",
+        "resultType": "dossier"
       },
       {
         "id": "combine-6",
@@ -3825,7 +2687,8 @@
         ],
         "cost": 1,
         "discoveryText": "어머니 뜻이라는 말 뒤에 오래된 지원 흐름이 있다. 어머니 통장을 거친 돈의 출처를 짚어야 한다.",
-        "outputId": "dc-3"
+        "outputId": "dc-3",
+        "resultType": "dossier"
       },
       {
         "id": "combine-7",
@@ -3833,9 +2696,10 @@
           "e-5",
           "e-7"
         ],
-        "cost": 1,
+        "cost": 2,
         "discoveryText": "자필 연습본과 어머니 일기장의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 물어야 한다.",
-        "outputId": "dc-4"
+        "outputId": "dc-4",
+        "resultType": "upgrade"
       },
       {
         "id": "combine-8",
@@ -3843,9 +2707,10 @@
           "e-1",
           "e-7"
         ],
-        "cost": 1,
+        "cost": 2,
         "discoveryText": "유서 비율과 어머니 일기장의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.",
-        "outputId": "dc-5"
+        "outputId": "dc-5",
+        "resultType": "upgrade"
       },
       {
         "id": "combine-9",
@@ -3855,7 +2720,8 @@
         ],
         "cost": 1,
         "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 어머니 일기장의 기록이 충돌한다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 짚어야 한다.",
-        "outputId": "dc-5"
+        "outputId": "dc-5",
+        "resultType": "dossier"
       },
       {
         "id": "combine-10",
@@ -3865,7 +2731,8 @@
         ],
         "cost": 1,
         "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 오래된 계좌 흐름을 합치면, 돈과 침묵을 함께 떠안은 동생의 동기가 보인다.",
-        "outputId": "dc-3"
+        "outputId": "dc-3",
+        "resultType": "dossier"
       },
       {
         "id": "combine-11",
@@ -3874,8 +2741,9 @@
           "e-3"
         ],
         "cost": 1,
-        "discoveryText": "요양원 방문기록의 증가 시점과 전 요양보호사가 종이를 읽어드린 시점이 겹친다.",
-        "outputId": "dc-1"
+        "discoveryText": "방문 빈도와 전 요양보호사 증언 시점이 절차 직전 흐름으로 정렬된다.",
+        "outputId": "dc-2",
+        "resultType": "upgrade"
       },
       {
         "id": "combine-12",
@@ -3885,7 +2753,8 @@
         ],
         "cost": 1,
         "discoveryText": "'모시고 산 건 나인데 왜 40이냐'와 윤정후의 차단 발언을 맞대면, 비율 뒤에 숨은 사정이 있다는 흐름이 보인다.",
-        "outputId": "dc-2"
+        "outputId": "dc-2",
+        "resultType": "dossier"
       }
     ]
   },
@@ -3948,35 +2817,27 @@
     },
     "hiddenDisputes": [
       {
-        "id": "d-2",
-        "name": "유서 조작의 방향",
-        "unlockPlan": {
-          "runtimeRule": "B d-1 S2 도달 시 해금",
-          "authoredRule": "윤정후가 d-1 심문에서 S2에 도달하면 공증인 메모 기록으로 새 쟁점 부상"
-        }
-      },
-      {
         "id": "d-3",
         "name": "오래된 지원의 출처",
         "unlockPlan": {
-          "runtimeRule": "d-2 S3 도달 시 해금",
-          "authoredRule": "유서 조작 동기가 드러나면서 오래된 지원 이야기가 부상"
+          "runtimeRule": "d-2에서 절차 개입이 드러나면 해금",
+          "authoredRule": "유서 비율의 배경을 오래된 계좌 흐름으로 확인하게 한다."
         }
       },
       {
         "id": "d-4",
-        "name": "출생 비밀과 유서 조작의 연결",
+        "name": "가족 기록과 침묵의 이유",
         "unlockPlan": {
-          "runtimeRule": "d-3 S2 도달 시 해금",
-          "authoredRule": "오래된 지원의 출처가 드러나면서 출생 비밀 쟁점 부상"
+          "runtimeRule": "오래된 지원의 출처가 확인되면 해금",
+          "authoredRule": "돈의 출처를 숨긴 이유가 어머니 일기장 쪽으로 이어진다."
         }
       },
       {
         "id": "d-5",
         "name": "어머니의 숨겨진 마음",
         "unlockPlan": {
-          "runtimeRule": "d-3 S3 + d-4 S2 모두 도달 시 자동 해금",
-          "authoredRule": "오래된 지원과 출생 비밀이 모두 드러난 뒤 최종 쟁점 발현"
+          "runtimeRule": "d-3과 d-4가 모두 충분히 드러나면 해금",
+          "authoredRule": "오래된 지원과 가족 기록이 모두 드러난 뒤 최종 책임 구조가 열린다."
         }
       }
     ],
@@ -3986,115 +2847,140 @@
         "name": "Timeline Lead",
         "leadType": "Timeline",
         "firstInputs": [
-          "e-1",
-          "e-2"
+          "e-2",
+          "e-3"
         ],
         "secondInputs": [
           "L-1",
-          "e-3",
-          "w-1-angle"
+          "e-1"
         ],
         "dossierCardId": "dc-1",
         "interpretationChoices": [
           {
             "id": "L-1-A",
-            "text": "윤정후가 치매 어머니를 이용해 유서를 조작했다",
-            "implication": "d-1을 윤정후의 악의적 개입으로 밀어붙인다."
+            "text": "치매 이용이다",
+            "implication": "전면 무효 frame으로 밀어붙인다."
           },
           {
             "id": "L-1-B",
-            "text": "윤정후는 어머니 뜻을 확인하며 조심스럽게 진행했다",
-            "implication": "요양보호사 증언과 잘 이어진다."
+            "text": "어머니 뜻을 옮긴 도움이다",
+            "implication": "도움 frame을 유지한다."
           },
           {
             "id": "L-1-C",
-            "text": "치매 정도를 더 확인해야 한다",
-            "implication": "판단을 유보한다."
+            "text": "도움과 개입의 경계 영역",
+            "implication": "두 동기를 분리해 본다."
           }
         ]
       },
       {
         "id": "L-2",
-        "name": "Forgery Lead",
-        "leadType": "Context",
+        "name": "Procedural Lead",
+        "leadType": "Procedural",
         "firstInputs": [
-          "e-4",
-          "stmt-b-silence"
+          "e-4"
         ],
         "secondInputs": [
           "L-2",
-          "e-5",
-          "w-2-angle"
+          "w-2"
         ],
-        "dossierCardId": "dc-1",
+        "dossierCardId": "dc-2",
         "interpretationChoices": [
           {
             "id": "L-2-A",
-            "text": "조작은 조작이다, 동기와 무관하게 위법이다",
-            "implication": "윤정후의 법적 책임을 먼저 본다."
+            "text": "탐욕 조작이다",
+            "implication": "자기 몫 늘림 frame."
           },
           {
             "id": "L-2-B",
-            "text": "자기 몫을 줄인 조작이라면 동기가 다르다",
-            "implication": "조작 방향의 의미를 연다."
+            "text": "다른 동기의 절차 개입이다",
+            "implication": "동기는 d-5에서."
+          },
+          {
+            "id": "L-2-C",
+            "text": "정상 절차 안의 수정이다",
+            "implication": "정상 진행 frame 유지."
           }
         ]
       },
       {
         "id": "L-3",
-        "name": "Support Lead",
+        "name": "Beneficiary Lead",
         "leadType": "Beneficiary",
         "firstInputs": [
-          "e-5",
           "e-6"
         ],
         "secondInputs": [
           "L-3",
-          "stmt-b-mother",
-          "w-3-angle"
+          "w-3"
         ],
-        "dossierCardId": "dc-2",
+        "dossierCardId": "dc-3",
         "interpretationChoices": [
           {
             "id": "L-3-A",
-            "text": "오래 몰래 도운 것은 선의다",
-            "implication": "윤정후의 희생을 먼저 본다."
+            "text": "어머니 통제 수단이었다",
+            "implication": "A 측 해석."
           },
           {
             "id": "L-3-B",
-            "text": "어머니 돈으로 위장한 것 자체가 기만이다",
-            "implication": "윤태성의 자존심과 알 권리를 본다."
+            "text": "형을 살리려 한 희생이다",
+            "implication": "B 측 해석."
+          },
+          {
+            "id": "L-3-C",
+            "text": "형 자존심을 지키려는 통로",
+            "implication": "보호 명분 영역."
           }
         ]
       },
       {
         "id": "L-4",
-        "name": "Secret Lead",
-        "leadType": "Reframe",
+        "name": "Context Lead",
+        "leadType": "Context",
         "firstInputs": [
-          "e-6",
           "e-7"
         ],
         "secondInputs": [
           "L-4",
-          "w-3-angle"
+          "e-6"
         ],
-        "dossierCardId": "dc-3",
+        "dossierCardId": "dc-4",
         "interpretationChoices": [
           {
             "id": "L-4-A",
-            "text": "가족 안쪽 사정을 지키려 한 보호였다",
-            "implication": "윤정후의 전체 행동이 형 보호로 재맥락화된다."
+            "text": "단순 폭로 소재다",
+            "implication": "표면적 해석."
           },
           {
             "id": "L-4-B",
-            "text": "형에게 알 권리가 있다",
-            "implication": "출생 비밀 은폐 자체의 문제를 본다."
+            "text": "유서 조작 동기의 핵심이다",
+            "implication": "보호 명분 영역."
+          }
+        ]
+      },
+      {
+        "id": "L-5",
+        "name": "Closure Lead",
+        "leadType": "Closure",
+        "firstInputs": [
+          "e-1",
+          "e-6"
+        ],
+        "secondInputs": [
+          "L-5",
+          "e-7"
+        ],
+        "dossierCardId": "dc-5",
+        "interpretationChoices": [
+          {
+            "id": "L-5-A",
+            "text": "한쪽의 책임이 더 크다",
+            "implication": "단일 책임 frame."
           },
           {
-            "id": "L-4-C",
-            "text": "어머니의 뜻을 두 아들 모두 왜곡했다",
-            "implication": "상호 책임 구조를 본다."
+            "id": "L-5-B",
+            "text": "어머니 뜻을 두 번 비틀었다",
+            "implication": "양측 책임 명시."
           }
         ]
       }
@@ -4102,155 +2988,112 @@
     "authorityPlacements": [
       {
         "action": "원본 제출 명령",
-        "recommendedMoment": "d-1 초반 e-1/e-3 Excerpt 시점",
-        "purpose": "유서 사본과 요양보호사 증언의 원본 확보"
+        "recommendedMoment": "d-1 초반 e-1/e-2 Excerpt 시점",
+        "purpose": "감정이 아니라 패턴으로 의심을 고정.",
+        "contextDispute": "d-1"
       },
       {
         "action": "원본 제출 명령",
-        "recommendedMoment": "e-4 등장 직후",
-        "purpose": "공증인 메모 기록 원본 확보"
+        "recommendedMoment": "e-3 등장 직후",
+        "purpose": "전 요양보호사 음성증언을 원본으로 확보.",
+        "contextDispute": "d-1"
       },
       {
         "action": "원본 제출 명령",
-        "recommendedMoment": "오래된 지원의 출처 등장 직후 e-6 축",
-        "purpose": "오래된 계좌 흐름을 은행 기록으로 확보"
+        "recommendedMoment": "d-2 등장 직후 e-4 축",
+        "purpose": "공증인 메모의 오전/오후 분리 흐름을 확정.",
+        "contextDispute": "d-2"
+      },
+      {
+        "action": "원본 제출 명령",
+        "recommendedMoment": "d-3 등장 후 e-6 축",
+        "purpose": "20년 송금 흐름과 공장 위기 3억원 전달 경로를 확정.",
+        "contextDispute": "d-3"
       },
       {
         "action": "정확히 답변하십시오",
-        "recommendedMoment": "윤정후가 답변 범위를 좁히는 차단 표현을 반복할 때",
-        "purpose": "조작 경위, 지원 이유, 일기장 내용 같은 실체 명사 강제"
+        "recommendedMoment": "B가 \"가족 사정\"이라는 모호어를 반복할 때",
+        "purpose": "일기장 영역으로 들어가는 단어 강제.",
+        "contextDispute": "d-4"
       },
       {
         "action": "분리심문",
-        "recommendedMoment": "e-5 Original 직후 B",
-        "purpose": "affect_flattening인 윤정후를 더 빨리 무너뜨림"
+        "recommendedMoment": "e-3 Original 직후 B",
+        "purpose": "affect_flattening인 B를 도움/개입 경계에서 흔든다.",
+        "contextDispute": "d-1"
       },
       {
         "action": "분리심문",
-        "recommendedMoment": "e-7 Excerpt 직후 A",
-        "purpose": "출생 비밀에 대한 윤태성의 즉각 반응을 관찰"
+        "recommendedMoment": "e-6 Excerpt 직후 A",
+        "purpose": "A의 자존심 frame을 줄이고 출처 진실에 접근.",
+        "contextDispute": "d-3"
+      },
+      {
+        "action": "잠정 인정",
+        "recommendedMoment": "e-3 인증 후",
+        "purpose": "윤정후의 유서 절차 개입 사실을 부분 기록.",
+        "contextDispute": "d-1"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-4 인증 후",
-        "purpose": "공증 당일 어머니 상태와 절차 진행 메모 기록"
+        "purpose": "오전 공란 → 오후 60:40 흐름 기록.",
+        "contextDispute": "d-2"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-6 인증 후",
-        "purpose": "오래된 계좌 흐름과 3억원 전달 순서"
+        "purpose": "20년 정기 지원금의 실제 출처를 기록.",
+        "contextDispute": "d-3"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-7 Established 후",
-        "purpose": "출생 비밀과 유서 조작 동기의 연결 기록"
+        "purpose": "어머니 일기장 영역의 사실 부분 기록 (친부 실명은 봉인 유지).",
+        "contextDispute": "d-4"
       },
       {
         "action": "선처 창구",
-        "recommendedMoment": "dc-2 또는 dc-3 직후",
-        "purpose": "윤정후는 형 보호의 부담, 윤태성은 정체성 충격을 더 빨리 인정"
+        "recommendedMoment": "dc-3 또는 dc-4 직후",
+        "purpose": "A는 자존심 회복 방향, B는 침묵의 무게를 함께 진다."
       },
       {
         "action": "발언 제지 / 기록 제외",
-        "recommendedMoment": "윤태성이 동생 인격 공격만 반복하거나 윤정후가 침묵으로 일관할 때",
-        "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리"
+        "recommendedMoment": "A가 인격 공격으로 동생 신뢰도를 깎으려 할 때",
+        "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리."
       },
       {
         "action": "민감정보 봉인 해제",
-        "recommendedMoment": "출생 비밀 해석을 택했지만 실체가 부족할 때 또는 dc-3 직전",
-        "purpose": "출생 비밀을 확실히 열되 윤태성의 정체성 충격 리스크 관리"
+        "recommendedMoment": "d-4 S4 이후 핵심 영역만 조건부 노출",
+        "purpose": "출생 비밀을 정합 영역까지만 열되 친부 실명은 봉인 유지.",
+        "contextDispute": "d-4"
       }
     ],
     "sensitiveSealTargets": [
       {
+        "evidenceId": "e-5",
+        "targets": [
+          "자필 비율 정확 수치 (90:10)",
+          "자기 몫 축소 방향"
+        ],
+        "risk": "너무 이르면 d-3 / d-4 추리 의미 무력화 S5 이전 노출 시 자기 몫 축소 동기 leak"
+      },
+      {
         "evidenceId": "e-7",
         "targets": [
-          "아버지 실명",
-          "출생 비밀 구체적 경위",
-          "어머니 일기장 사적 기록"
+          "친부 실명",
+          "구체적 출생 경위",
+          "아버지 피는 아니다 직접 표현"
         ],
-        "risk": "출생 비밀을 너무 일찍 열면 윤태성의 정체성 붕괴와 재판 진행 불가 상태가 발생할 수 있다."
+        "risk": "너무 이르면 윤태성 정체성 충격이 절차적 회복 불가 아버지 실명까지 공개되면 인도성 점수 하락"
       }
     ],
     "officialRecordRecommendations": [
-      "어머니는 말년에 판단 능력이 완전히 상실되지 않았으나 윤정후의 개입이 있었다.",
-      "60:40 유서는 윤정후가 별도 자필 연습본의 비율에서 자기 몫을 줄여 손댄 결과다.",
-      "윤정후는 오랫동안 어머니에게 정기 지원금을 보냈고, 윤태성의 공장 위기 때 3억원을 어머니 통장으로 넣어 윤태성 쪽에 전달되게 했다.",
-      "윤태성은 아버지의 친자가 아니며 윤정후는 이 사실을 알고도 가업 공장을 형에게 양보했고, 자존심 강한 형을 보호하기 위해 유서까지 손대 자기 몫을 줄였다.",
-      "둘 다 어머니를 있는 그대로 두지 못했다. 윤태성은 유산을 당연시했고 윤정후는 어머니 뜻을 고쳐 형을 보호하려 했다."
+      "어머니의 판단 능력은 완전히 상실되지 않았으나, 윤정후의 개입이 유서 작성에 영향을 미쳤다.",
+      "공증본 60:40은 오전 1차 공란 → 오후 수정 단계에서 윤정후의 진행 압박 아래 확정됐다.",
+      "윤정후 돈이 어머니 통장을 거쳐 20년간 월 정기 지원금으로 보내졌고, 공장 위기 시에는 3억원이 같은 경로로 전달됐다.",
+      "어머니 일기장은 윤태성이 아버지의 친자가 아니라는 사실, 두 아들 모두 동등한 자식이라는 어머니의 마음, 그리고 친자인 윤정후의 사전 인지와 가업 공장 양보를 함께 기록한다.",
+      "어머니가 자필 연습본에 남긴 90:10을 윤정후가 공증 60:40으로 줄였다. 두 형제 모두 어머니 뜻을 있는 그대로 두지 못한 책임이 있다."
     ]
-  },
-  "evidenceCombinations": [
-    {
-      "requires": [
-        "e-1",
-        "e-2"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-1"
-      ]
-    },
-    {
-      "requires": [
-        "e-4",
-        "e-5"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-2"
-      ]
-    },
-    {
-      "requires": [
-        "e-5",
-        "e-6"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-3"
-      ]
-    },
-    {
-      "requires": [
-        "e-6",
-        "e-7"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-4",
-        "d-5"
-      ]
-    },
-    {
-      "requires": [
-        "e-5",
-        "e-7"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-4"
-      ]
-    },
-    {
-      "requires": [
-        "e-1",
-        "e-7"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-5"
-      ]
-    },
-    {
-      "requires": [
-        "e-2",
-        "e-3"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-1"
-      ]
-    }
-  ]
+  }
 }

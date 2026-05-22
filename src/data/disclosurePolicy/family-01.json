@@ -12,8 +12,8 @@
       "e-1": {
         "evidenceId": "e-1",
         "name": "60:40 유서 사본",
-        "surfaceName": "문제의 서류 사본",
-        "surfaceDescription": "어머니 사망 전 작성된 문제의 서류 사본. 문면상 분배 방식과 절차 흔적이 보인다.",
+        "surfaceName": "분배 비율이 적힌 서류 사본",
+        "surfaceDescription": "어머니의 유서 사본이 존재한다.",
         "descriptionTruth": [],
         "truthLexemes": [],
         "sourceRefs": [
@@ -99,7 +99,7 @@
       "e-6": {
         "evidenceId": "e-6",
         "name": "오래된 계좌 흐름",
-        "surfaceName": "오래된 송금 내역 묶음",
+        "surfaceName": "오래된 계좌 흐름",
         "surfaceDescription": "장기간 반복된 송금과 특정 시점의 큰 자금 이동을 보여주는 은행 자료.",
         "descriptionTruth": [
           "월 단위 정기 지원금",
@@ -141,7 +141,7 @@
     "disputes": {
       "d-1": {
         "surface": "유서 작성과 판단 능력",
-        "truth": "어머니 판단능력은 전면 상실이 아니었지만 윤정후의 개입이 유서 작성에 영향을 미쳤다.",
+        "truth": "윤정후는 어머니 말년에 자주 방문하며 유서 내용을 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.",
         "protectedSurface": "말년 유서 작성 경위와 개입 정도",
         "truthLexemes": [
           "정후 개입",
@@ -154,8 +154,8 @@
         ]
       },
       "d-2": {
-        "surface": "60:40 공증 절차의 개입 여부",
-        "truth": "공증본 60:40은 오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 윤정후의 진행 압박 아래 확정됐다. 어머니 상태가 불안정한 가운데 정후가 공증 절차에 깊이 개입한 책임이 남는다. 동기는 본 쟁점에서 결론짓지 않는다.",
+        "surface": "공증 절차의 개입",
+        "truth": "공증본 60:40은 오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 정후의 진행 압박 아래 확정됐다. 어머니 상태가 불안정한 가운데 정후가 공증 절차에 깊이 개입한 책임이 남는다. 다만 그 개입이 더 받으려 한 조작인지 다른 동기인지는 본 쟁점에서 결론짓지 않는다.",
         "protectedSurface": "공증 절차 안에서 정후의 개입 정도와 어머니 상태 작용",
         "truthLexemes": [
           "오전 1차 비율 비움",
@@ -170,7 +170,7 @@
       },
       "d-3": {
         "surface": "오래된 지원의 출처",
-        "truth": "윤정후는 어머니에게 월 단위 정기 지원금을 보냈고, 공장 위기 때는 3억원을 어머니 통장에 넣어 윤태성 쪽으로 전달되게 했다.",
+        "truth": "윤정후는 본인이 양보한 가업 공장이 형의 손에서 위기에 빠지자 3억원을 어머니 통장을 거쳐 전달했고, 그 이전부터 월 단위 정기 지원금도 같은 방식으로 보내 왔다. 윤태성은 그 돈이 어머니 돈이라고 믿고 있었다.",
         "protectedSurface": "장기 지원금의 실제 출처",
         "truthLexemes": [
           "정기 지원금",
@@ -184,8 +184,8 @@
         ]
       },
       "d-4": {
-        "surface": "출생 비밀과 침묵의 이유",
-        "truth": "윤태성은 아버지의 친자가 아니며, 윤정후는 이를 알고 형의 정체성을 지키려 유서 조작까지 감수했다.",
+        "surface": "가족 기록과 침묵의 이유",
+        "truth": "어머니 일기장에는 윤태성이 아버지의 친자가 아니라는 사실, 어머니 입장에서는 두 아들 모두 똑같은 자식이라는 기록, 그리고 친자인 윤정후가 그 사실을 알고도 가업 공장을 형에게 양보했다는 사실이 남아 있다. 윤정후는 이 비밀이 자존심 강한 형을 무너뜨릴까 봐 끝까지 침묵했다.",
         "protectedSurface": "오래된 가족 사정과 침묵의 이유",
         "truthLexemes": [
           "출생 비밀",
@@ -200,7 +200,7 @@
       },
       "d-5": {
         "surface": "어머니의 숨겨진 마음",
-        "truth": "윤태성은 유산을 당연시했고, 윤정후는 보호를 명분으로 어머니가 자필 연습본에 남긴 90:10을 공증 60:40으로 줄였다. 두 사람 모두 어머니를 있는 그대로 두지 못했다.",
+        "truth": "윤태성은 유산을 돌봄의 보상처럼 당연시했고, 윤정후는 형을 보호한다는 이유로 어머니 뜻과 문서를 대신 정리하려 했다. 어머니가 자필 연습본에 남긴 90:10을 정후가 공증 60:40으로 줄인 것이 그 대표 흔적이다. 두 사람 모두 어머니 뜻을 있는 그대로 두지 못했다.",
         "protectedSurface": "두 형제가 어머니 뜻을 다룬 방식과 자필 비율 변경의 동기",
         "truthLexemes": [
           "유산 당연시",
@@ -224,10 +224,7 @@
           "정후가 종이를 읽어드림",
           "형 오기 전 끝내려 함"
         ],
-        "sourceStatus": "caseData socialGraph witness",
-        "sourceRefs": [
-          "src/data/cases/generated/family-01.json:duo.socialGraph.w-1"
-        ]
+        "sourceStatus": "caseData socialGraph witness"
       },
       "w-2": {
         "name": "김영수",
@@ -236,10 +233,7 @@
           "같은 날 두 문서 메모",
           "마지막 재제출자가 윤정후"
         ],
-        "sourceStatus": "caseData socialGraph witness",
-        "sourceRefs": [
-          "src/data/cases/generated/family-01.json:duo.socialGraph.w-2"
-        ]
+        "sourceStatus": "caseData socialGraph witness"
       },
       "w-3": {
         "name": "박순애",
@@ -249,10 +243,7 @@
           "태성이는 몰라야 한다",
           "출생 비밀을 알고 있을 가능성"
         ],
-        "sourceStatus": "caseData socialGraph witness",
-        "sourceRefs": [
-          "src/data/cases/generated/family-01.json:duo.socialGraph.w-3"
-        ]
+        "sourceStatus": "caseData socialGraph witness"
       }
     }
   },
@@ -485,78 +476,67 @@
         "哥哥的身份"
       ]
     },
-    "paraphraseLexemes": {
-      "en": [
-        "hidden parentage",
-        "separate bloodline",
-        "not blood-related",
-        "Yoon Jung-hoo's hidden funding",
-        "changed inheritance ratio",
-        "protect his brother's identity"
-      ],
-      "ja": [
-        "隠された親子関係",
-        "別の血筋",
-        "血がつながっていない",
-        "別資金",
-        "相続比率変更",
-        "兄を守るため"
-      ],
-      "zh-CN": [
-        "隐藏的亲子关系",
-        "不同血脉",
-        "没有血缘",
-        "另一笔钱",
-        "继承比例变更",
-        "保护哥哥身份"
-      ]
-    },
-    "uiSurfaceMap": {
-      "en": {
-        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
-        "truthGate": "S5",
-        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
-        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
-        "safeSubstitutes": {
-          "birth secret": "old family matter",
-          "half brother": "sensitive family matter",
-          "not his father's child": "sensitive identity matter",
-          "Jung-hoo's money": "money from another source",
-          "90:10": "a procedural gap in the notarization record"
-        }
+    "paraphraseLexemes": [
+      {
+        "label": "오래된 가족 사정",
+        "dimension": "paraphrase"
       },
-      "ja": {
-        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
-        "truthGate": "S5",
-        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
-        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
-        "safeSubstitutes": {
-          "出生の秘密": "古い家族事情",
-          "異父": "話しづらい家の事情",
-          "実子ではない": "アイデンティティに関わる敏感な事情",
-          "正厚の金": "別の出所の金",
-          "90:10": "公証本と異なる比率"
-        }
+      {
+        "label": "말하기 어려운 집안 사정",
+        "dimension": "paraphrase"
       },
-      "zh-CN": {
-        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
-        "truthGate": "S5",
-        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
-        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
-        "safeSubstitutes": {
-          "出生秘密": "陈年家庭隐情",
-          "同母异父": "难以启齿的家事",
-          "不是亲生子": "涉及身份的敏感情况",
-          "正厚的钱": "另一来源的钱",
-          "90:10": "与公证本不同的比例"
-        }
+      {
+        "label": "정체성에 관한 민감한 사정",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "오래 이어진 정기 지원",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "다른 출처의 돈",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "공증본과 다른 비율",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "변경 방향",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "비율을 바꾼 이유",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "상대에게 알려지길 피하려",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "과거 자금 지원",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "도와드린 흐름",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "말 못한 사정이 있어",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "집안 어른의 사정",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "오랜 결심",
+        "dimension": "paraphrase"
+      },
+      {
+        "label": "형 모르게 마련한 돈",
+        "dimension": "paraphrase"
       }
-    },
-    "notes": [
-      "Tier A locale blocks are populated for wrapper-gated script translation.",
-      "KO forbiddenLexemes remains canonical for current runtime guard.",
-      "evidence.name is not localized in v1; translate surfaceName only.",
-      "behaviorHint remains KO-only until the Tier B policy decision lands."
     ]
   },
   "channelAuthority": {
@@ -581,18 +561,6 @@
       },
       {
         "channel": "judge_witness_summon",
-        "authority": "surface-only",
-        "truthLexemePolicy": "blocked",
-        "evidenceStagePolicy": "does-not-expand-authority"
-      },
-      {
-        "channel": "system_message",
-        "authority": "surface-only",
-        "truthLexemePolicy": "blocked",
-        "evidenceStagePolicy": "does-not-expand-authority"
-      },
-      {
-        "channel": "dossier",
         "authority": "surface-only",
         "truthLexemePolicy": "blocked",
         "evidenceStagePolicy": "does-not-expand-authority"
@@ -964,28 +932,20 @@
     ]
   },
   "discoveryText": {
-    "defaultPolicy": {
-      "autoSurfaceAllowed": false,
-      "protectedChannelsUseSurfaceFallback": true,
-      "playerDiscoveredRequiresRouteGate": true
-    },
-    "entries": [
-      {
-        "id": "combine-1",
-        "inputs": [
-          "e-1",
-          "e-2"
-        ],
-        "truthTerms": [
-          "윤정후 개입"
-        ],
+    "gatePolicy": "route-and-stage-gated-player-discovered-only",
+    "entries": {
+      "combine-1": {
+        "sourceText": "공증본 비율과 방문 시점이 같은 기간으로 겹친다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-1": "Excerpt",
-            "e-2": "Excerpt"
+            "e-1": "excerpt",
+            "e-2": "excerpt"
           },
           "requiredTruthStage": {
             "d-1": 1
@@ -994,49 +954,38 @@
         },
         "surfaceFallback": "유서 비율과 방문 시점이 겹친다."
       },
-      {
-        "id": "combine-2",
-        "inputs": [
-          "e-4",
-          "e-5"
-        ],
-        "truthTerms": [
-          "90:10",
-          "60:40",
-          "자기 몫 축소"
-        ],
+      "combine-2": {
+        "sourceText": "공증인 메모의 절차 흐름과 자필 연습본의 분배 흔적이 한 줄로 정리된다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-4": "Original",
-            "e-5": "Original"
+            "e-4": "original",
+            "e-5": "original"
           },
           "requiredTruthStage": {
-            "d-2": 2
+            "d-5": 3
           },
           "autoSurfaceAllowed": false
         },
         "surfaceFallback": "두 유서의 비율이 서로 다르다."
       },
-      {
-        "id": "combine-3",
-        "inputs": [
-          "e-5",
-          "e-6"
-        ],
-        "truthTerms": [
-          "오래된 정기 지원금",
-          "윤정후 돈"
-        ],
+      "combine-3": {
+        "sourceText": "자필 분배 흔적과 오래된 송금 흐름이 같은 출처로 묶인다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-5": "Context",
-            "e-6": "Original"
+            "e-5": "context",
+            "e-6": "original"
           },
           "requiredTruthStage": {
             "d-3": 2
@@ -1045,23 +994,18 @@
         },
         "surfaceFallback": "유품 문서의 비율과 오래된 자금 흐름이 연결된다."
       },
-      {
-        "id": "combine-4",
-        "inputs": [
-          "e-6",
-          "e-7"
-        ],
-        "truthTerms": [
-          "출생 비밀",
-          "형을 지켜왔다"
-        ],
+      "combine-4": {
+        "sourceText": "오래된 자금 흐름과 어머니 일기장의 핵심 문장이 침묵의 동기로 모인다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-6": "Context",
-            "e-7": "Context"
+            "e-6": "context",
+            "e-7": "context"
           },
           "requiredTruthStage": {
             "d-4": 3
@@ -1070,21 +1014,17 @@
         },
         "surfaceFallback": "오래된 자금 흐름과 일기장 기록 사이에 숨은 이유가 보인다."
       },
-      {
-        "id": "combine-5",
-        "inputs": [
-          "stmt-b-silence",
-          "e-4"
-        ],
-        "truthTerms": [
-          "자기 몫을 줄인 이유"
-        ],
+      "combine-5": {
+        "sourceText": "윤정후의 차단 발언과 공증인 메모 기록이 맞물린다. 유언장에 손댄 경위를 따져야 한다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "statement_combine",
           "requiredEvidenceStages": {
-            "e-4": "Context"
+            "e-4": "context"
           },
           "requiredTruthStage": {
             "d-2": 2
@@ -1093,46 +1033,37 @@
         },
         "surfaceFallback": "윤정후가 말을 피한 이유와 공증 기록이 맞물린다."
       },
-      {
-        "id": "combine-6",
-        "inputs": [
-          "stmt-b-mother",
-          "e-6"
-        ],
-        "truthTerms": [
-          "20년간 윤정후가 보낸 돈"
-        ],
+      "combine-6": {
+        "sourceText": "어머니 뜻이라는 말 뒤에 오래된 지원 흐름이 있다. 어머니 통장을 거친 돈의 출처를 짚어야 한다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "statement_combine",
           "requiredEvidenceStages": {
-            "e-6": "Original"
+            "e-6": "original"
           },
           "requiredTruthStage": {
             "d-3": 2
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "어머니의 뜻이라는 말 뒤에 오래된 자금 흐름 흐름이 있다."
+        "surfaceFallback": "어머니의 뜻이라는 말 뒤에 오래된 자금 흐름이 있다."
       },
-      {
-        "id": "combine-7",
-        "inputs": [
-          "e-5",
-          "e-7"
-        ],
-        "truthTerms": [
-          "출생 비밀",
-          "90대10"
-        ],
+      "combine-7": {
+        "sourceText": "자필 연습본과 어머니 일기장의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 물어야 한다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-5": "Original",
-            "e-7": "Context"
+            "e-5": "original",
+            "e-7": "context"
           },
           "requiredTruthStage": {
             "d-4": 3
@@ -1141,23 +1072,18 @@
         },
         "surfaceFallback": "유품 문서와 어머니 기록을 함께 보면 변경 과정의 위험이 보인다."
       },
-      {
-        "id": "combine-8",
-        "inputs": [
-          "e-1",
-          "e-7"
-        ],
-        "truthTerms": [
-          "장남 당연시",
-          "보호 명분"
-        ],
+      "combine-8": {
+        "sourceText": "유서 비율과 어머니 일기장의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-1": "Context",
-            "e-7": "Context"
+            "e-1": "context",
+            "e-7": "context"
           },
           "requiredTruthStage": {
             "d-5": 2
@@ -1166,21 +1092,17 @@
         },
         "surfaceFallback": "유서 비율과 어머니 기록을 함께 보면 두 사람의 해석이 갈린다."
       },
-      {
-        "id": "combine-9",
-        "inputs": [
-          "stmt-a-heir",
-          "e-7"
-        ],
-        "truthTerms": [
-          "어머니 뜻을 자기 방식으로 바꿈"
-        ],
+      "combine-9": {
+        "sourceText": "형의 '모시고 산 건 나인데'라는 말과 어머니 일기장의 기록이 충돌한다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 짚어야 한다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "statement_combine",
           "requiredEvidenceStages": {
-            "e-7": "Context"
+            "e-7": "context"
           },
           "requiredTruthStage": {
             "d-5": 2
@@ -1189,21 +1111,17 @@
         },
         "surfaceFallback": "윤태성의 상속 감정과 어머니 기록이 부딪힌다."
       },
-      {
-        "id": "combine-10",
-        "inputs": [
-          "stmt-a-heir",
-          "e-6"
-        ],
-        "truthTerms": [
-          "돈과 비밀을 떠안은 동생"
-        ],
+      "combine-10": {
+        "sourceText": "형의 '모시고 산 건 나인데'라는 말과 오래된 계좌 흐름을 합치면, 돈과 침묵을 함께 떠안은 동생의 동기가 보인다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "statement_combine",
           "requiredEvidenceStages": {
-            "e-6": "Context"
+            "e-6": "context"
           },
           "requiredTruthStage": {
             "d-3": 3
@@ -1212,23 +1130,18 @@
         },
         "surfaceFallback": "상속 감정과 오래된 자금 흐름을 함께 볼 필요가 있다."
       },
-      {
-        "id": "combine-11",
-        "inputs": [
-          "e-2",
-          "e-3"
-        ],
-        "truthTerms": [
-          "종이를 읽어드림",
-          "형 오기 전"
-        ],
+      "combine-11": {
+        "sourceText": "방문 빈도와 전 요양보호사 증언 시점이 절차 직전 흐름으로 정렬된다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "evidence_combine",
           "requiredEvidenceStages": {
-            "e-2": "Original",
-            "e-3": "Original"
+            "e-2": "original",
+            "e-3": "original"
           },
           "requiredTruthStage": {
             "d-1": 2
@@ -1237,30 +1150,23 @@
         },
         "surfaceFallback": "방문 빈도와 증언 시점이 겹친다."
       },
-      {
-        "id": "combine-12",
-        "inputs": [
-          "stmt-a-heir",
-          "stmt-b-silence"
-        ],
-        "truthTerms": [
-          "비율 뒤에 숨은 사정"
-        ],
+      "combine-12": {
+        "sourceText": "'모시고 산 건 나인데 왜 40이냐'와 윤정후의 차단 발언을 맞대면, 비율 뒤에 숨은 사정이 있다는 흐름이 보인다.",
+        "truthLexemes": [],
         "gate": {
           "allowedChannels": [
-            "player_discovered"
+            "evidence_present",
+            "dossier"
           ],
+          "route": "statement_combine",
           "requiredTruthStage": {
             "d-2": 1
-          },
-          "requiredLieState": {
-            "partyB": "S2"
           },
           "autoSurfaceAllowed": false
         },
         "surfaceFallback": "상속 감정과 침묵 사이에 설명되지 않은 간격이 있다."
       }
-    ]
+    }
   },
   "issueProgression": {
     "principles": {
@@ -1284,9 +1190,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "전면 무효 표면",
-            "surfaceClaim": "60:40 공증 유서가 말년 어머니의 진정한 판단인지 다툰다.",
-            "hiddenTruth": "어머니 판단능력은 전면 상실이 아니었지만 윤정후 개입은 실제로 있었다.",
+            "name": "전면 무효 frame / 어머니 뜻 주장",
+            "surfaceClaim": "전면 무효 frame / 어머니 뜻 주장",
+            "hiddenTruth": "부분 판단능력 + 동생 개입",
             "entryConditions": [
               "case start"
             ],
@@ -1313,19 +1219,19 @@
               "trust": "B trust falls if accused of exploiting dementia without evidence.",
               "leak": "No truth leak; repeat questioning should stall."
             },
+            "successUnlocks": [
+              "stage 1 when e-2 or e-3 appears"
+            ],
             "failureResponse": {
               "npc": "A repeats that the will cannot be trusted; B says the mother had her own will.",
               "gameplay": "No truthStage advance. Prompt the player toward visit records or testimony."
-            },
-            "successUnlocks": [
-              "stage 1 when e-2 or e-3 appears"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "방문 패턴 고정",
-            "surfaceClaim": "윤정후의 말년 방문이 늘었고 공증 시점과 겹친다.",
-            "hiddenTruth": "방문 증가는 유서 논의와 연결되지만 그 자체로 강요를 뜻하지는 않는다.",
+            "name": "판단 능력 의심 / 유서 논의 인정",
+            "surfaceClaim": "판단 능력 의심 / 유서 논의 인정",
+            "hiddenTruth": "방문 패턴 의미",
             "entryConditions": [
               "e-2 stage >= Excerpt"
             ],
@@ -1341,8 +1247,7 @@
             ],
             "validActions": [
               "fact_pursuit",
-              "evidence_present",
-              "contradiction_pursuit"
+              "evidence_query"
             ],
             "requiredEvidence": [
               "e-2"
@@ -1353,19 +1258,19 @@
               "trust": "Neutral questioning keeps B cooperative.",
               "leak": "B may admit visits increased but not motive."
             },
+            "successUnlocks": [
+              "e-3"
+            ],
             "failureResponse": {
               "npc": "B says visiting often is not the same as forcing a will.",
               "gameplay": "Suggest comparing visit dates with testimony instead of pressing the same button."
-            },
-            "successUnlocks": [
-              "stage 2 with e-3 Original or w-1"
-            ]
+            }
           },
           {
             "stage": 2,
-            "name": "읽어준 종이",
-            "surfaceClaim": "전 요양보호사 증언으로 윤정후가 종이를 읽어드린 장면이 붙는다.",
-            "hiddenTruth": "윤정후는 어머니 뜻을 확인한다는 명분으로 유서 절차에 깊이 들어갔다.",
+            "name": "시점 겹침 / 종이를 읽어드림",
+            "surfaceClaim": "시점 겹침 / 종이를 읽어드림",
+            "hiddenTruth": "도움과 개입의 경계",
             "entryConditions": [
               "e-3 stage >= Original",
               "or witness w-1 summoned"
@@ -1381,9 +1286,8 @@
               "출생 비밀"
             ],
             "validActions": [
-              "evidence_present",
-              "witness_summon",
-              "contradiction_pursuit"
+              "evidence_query",
+              "witness_summon"
             ],
             "requiredEvidence": [
               "e-2",
@@ -1397,21 +1301,19 @@
               "trust": "B cooperates if the judge separates assistance from exploitation.",
               "leak": "B can leak that he wanted to finish before A arrived, but not why."
             },
+            "successUnlocks": [
+              "dc-1"
+            ],
             "failureResponse": {
               "npc": "B admits helping with words but denies deciding for the mother.",
               "gameplay": "Advance requires the witness/detail route; repeated accusation only raises emotion."
-            },
-            "successUnlocks": [
-              "dc-1",
-              "stage 3",
-              "d-2 visibility candidate"
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "도움과 개입의 경계",
-            "surfaceClaim": "어머니 뜻을 돕는 행동과 대신 결정한 행동을 분리해야 한다.",
-            "hiddenTruth": "윤정후는 형과의 충돌을 피하려 서둘렀고, 어머니 의사에 자기 판단을 얹었다.",
+            "name": "형 오기 전 / 충돌 회피",
+            "surfaceClaim": "형 오기 전 / 충돌 회피",
+            "hiddenTruth": "자기 판단을 얹음",
             "entryConditions": [
               "partyB lieState >= S3 on d-1",
               "dc-1 challenge success"
@@ -1428,11 +1330,9 @@
             ],
             "validActions": [
               "contradiction_pursuit",
-              "empathy_approach",
-              "dossier_challenge"
+              "empathy_approach"
             ],
             "requiredEvidence": [
-              "e-2",
               "e-3"
             ],
             "requiredWitness": [
@@ -1443,20 +1343,19 @@
               "trust": "Empathy lets B admit boundary-crossing without full collapse.",
               "leak": "B may hint that A being present would have made everything worse."
             },
+            "successUnlocks": [
+              "d-2"
+            ],
             "failureResponse": {
               "npc": "B says he only tried to avoid a fight.",
               "gameplay": "Point to d-2 unlock route; do not reveal the will direction yet."
-            },
-            "successUnlocks": [
-              "d-2",
-              "stage 4"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "부분 판단과 개입 확정",
-            "surfaceClaim": "유서 전면 무효와 완전한 적법 사이의 중간 결론이 가능해진다.",
-            "hiddenTruth": "어머니 판단능력은 완전히 사라지지 않았으나 윤정후 개입은 유서 적법성 문제를 남긴다.",
+            "name": "판단과 개입 분리",
+            "surfaceClaim": "판단과 개입 분리",
+            "hiddenTruth": "개입 책임 확정",
             "entryConditions": [
               "partyB lieState >= S4 or dc-1 final challenge success"
             ],
@@ -1469,31 +1368,39 @@
               "d-2/d-3/d-4 final truth auto-solve"
             ],
             "validActions": [
-              "mediation",
-              "contradiction_pursuit",
-              "evidence_present"
+              "empathy_approach"
             ],
-            "requiredEvidence": [
-              "e-1",
-              "e-2",
-              "e-3"
-            ],
-            "requiredWitness": [
-              "w-1"
-            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
             "meterTriggers": {
               "emotion": "A loses the simple invalidity frame.",
               "trust": "B trust can rise if responsibility is stated precisely.",
               "leak": "No automatic reveal of d-2; only unlock readiness."
             },
-            "failureResponse": {
-              "npc": "A tries to return to total invalidity; B hides behind the mother's will.",
-              "gameplay": "Mark d-1 as established only. Do not auto-resolve d-2."
-            },
             "successUnlocks": [
               "d-1 established",
               "d-2 active"
-            ]
+            ],
+            "failureResponse": {
+              "npc": "A tries to return to total invalidity; B hides behind the mother's will.",
+              "gameplay": "Mark d-1 as established only. Do not auto-resolve d-2."
+            }
+          },
+          {
+            "stage": 5,
+            "name": "단정 책임 인정",
+            "surfaceClaim": "단정 책임 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       },
@@ -1508,9 +1415,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "비율 의심 표면",
-            "surfaceClaim": "60:40 공증 유서가 어머니 뜻인지 절차상 무엇이 작용했는지 다툰다.",
-            "hiddenTruth": "공증 절차에는 오전 1차 접수와 오후 수정 접수의 두 단계가 있었고, 그 사이 어머니 상태와 정후의 진행 압박이 작용했다.",
+            "name": "절차 조작 의심 / 정상 진행 주장",
+            "surfaceClaim": "절차 조작 의심 / 정상 진행 주장",
+            "hiddenTruth": "오전 공란 → 오후 60:40 확정",
             "entryConditions": [
               "d-1 truthStage >= 3"
             ],
@@ -1527,10 +1434,10 @@
             ],
             "validActions": [
               "fact_pursuit",
-              "evidence_present"
+              "evidence_query"
             ],
             "requiredEvidence": [
-              "e-1"
+              "e-4"
             ],
             "requiredWitness": [],
             "meterTriggers": {
@@ -1538,19 +1445,19 @@
               "trust": "B shuts down if called greedy too early.",
               "leak": "No reveal without e-4."
             },
+            "successUnlocks": [
+              "stage 1 with e-4 Excerpt"
+            ],
             "failureResponse": {
               "npc": "B says the ratio needs context but gives none.",
               "gameplay": "Require notary memo; repeat questioning does not advance."
-            },
-            "successUnlocks": [
-              "stage 1 with e-4 Excerpt"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "공증인 메모 고정",
-            "surfaceClaim": "같은 날 오전 접수와 오후 수정 접수가 기록된 흔적이 있다.",
-            "hiddenTruth": "오전 1차 접수에는 비율 칸이 비어 있다가 오후 수정 접수에서 60:40이 확정됐고, 정후가 그 자리에서 진행을 재촉했다.",
+            "name": "매끄럽지 않은 절차 / 약간의 수정",
+            "surfaceClaim": "매끄럽지 않은 절차 / 약간의 수정",
+            "hiddenTruth": "오전/오후 분리",
             "entryConditions": [
               "e-4 stage >= Excerpt"
             ],
@@ -1565,8 +1472,7 @@
               "형 보호 동기"
             ],
             "validActions": [
-              "evidence_present",
-              "contradiction_pursuit"
+              "evidence_query"
             ],
             "requiredEvidence": [
               "e-4"
@@ -1579,19 +1485,19 @@
               "trust": "B remains flat but loses denial space.",
               "leak": "B may admit a document was resubmitted."
             },
+            "successUnlocks": [
+              "stage 2 with e-4 Original or w-2"
+            ],
             "failureResponse": {
               "npc": "B says records can be misunderstood.",
               "gameplay": "Prompt e-4 deeper stage or witness w-2; do not reveal pressure direction yet."
-            },
-            "successUnlocks": [
-              "stage 2 with e-4 Original or w-2"
-            ]
+            }
           },
           {
             "stage": 2,
-            "name": "절차 균열 확인",
-            "surfaceClaim": "공증 절차 안에서 어느 단계에 60:40이 확정됐는지가 다투어진다.",
-            "hiddenTruth": "오후 수정 단계에서 어머니가 피로와 답변 지연을 보였고, 정후가 '오늘 마쳐야 한다'며 진행을 재촉한 정황이 메모에 남아 있다.",
+            "name": "오전 1차 / 오후 수정본",
+            "surfaceClaim": "오전 1차 / 오후 수정본",
+            "hiddenTruth": "진행 압박 + 어머니 상태",
             "entryConditions": [
               "e-4 stage >= Original"
             ],
@@ -1610,9 +1516,9 @@
               "자기 몫 축소"
             ],
             "validActions": [
-              "evidence_present",
-              "contradiction_pursuit",
-              "witness_summon"
+              "evidence_query",
+              "witness_summon",
+              "contradiction_pursuit"
             ],
             "requiredEvidence": [
               "e-4"
@@ -1625,21 +1531,19 @@
               "trust": "B can admit the procedural pressure if not treated as exoneration.",
               "leak": "B may say he urged the process to finish."
             },
+            "successUnlocks": [
+              "dc-2"
+            ],
             "failureResponse": {
               "npc": "B admits the timing was tight but refuses the reason.",
               "gameplay": "Separate procedural responsibility from motive; do not auto-solve d-3/d-4/d-5."
-            },
-            "successUnlocks": [
-              "dc-2",
-              "stage 3",
-              "d-3 visibility candidate"
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "절차 개입의 책임",
-            "surfaceClaim": "공증 절차에 정후가 깊이 개입한 책임이 남는다.",
-            "hiddenTruth": "정후가 진행을 재촉한 사실과 어머니 상태가 불안정했던 정황은 인정되지만, 그 개입의 진짜 동기는 본 쟁점에서 결론짓지 않는다.",
+            "name": "오후 수정 마무리 / 어머니 상태 불안정",
+            "surfaceClaim": "오후 수정 마무리 / 어머니 상태 불안정",
+            "hiddenTruth": "절차 개입 책임 (동기는 d-5)",
             "entryConditions": [
               "partyB lieState >= S3 on d-2",
               "dc-2 challenge success"
@@ -1659,7 +1563,6 @@
               "형 보호 동기 확정"
             ],
             "validActions": [
-              "contradiction_pursuit",
               "motive_search",
               "empathy_approach"
             ],
@@ -1674,20 +1577,19 @@
               "trust": "Trust rises when the judge refuses to treat motive as acquittal.",
               "leak": "B can hint that money was not the real reason."
             },
+            "successUnlocks": [
+              "d-3"
+            ],
             "failureResponse": {
               "npc": "B says he cannot explain without hurting someone else.",
               "gameplay": "Suggest d-3 support route or e-6 rather than forcing confession on motive."
-            },
-            "successUnlocks": [
-              "d-3",
-              "stage 4"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "절차 책임 확정",
-            "surfaceClaim": "60:40 공증 절차에 정후의 깊은 개입 책임이 있으나, 그 동기는 본 쟁점에서 결론짓지 않는다.",
-            "hiddenTruth": "절차 개입의 진짜 동기는 d-5에서 형 보호 명분 및 자필 연습본 흐름과 함께 드러난다.",
+            "name": "절차 개입 책임 / 동기 분리",
+            "surfaceClaim": "절차 개입 책임 / 동기 분리",
+            "hiddenTruth": "동기는 다음 쟁점",
             "entryConditions": [
               "partyB lieState >= S4",
               "e-4 Context"
@@ -1708,29 +1610,39 @@
               "d-4 출생 비밀 final truth until gate"
             ],
             "validActions": [
-              "mediation",
-              "contradiction_pursuit",
-              "motive_search"
+              "empathy_approach"
             ],
-            "requiredEvidence": [
-              "e-4"
-            ],
-            "requiredWitness": [
-              "w-2"
-            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
             "meterTriggers": {
               "emotion": "A's anger shifts from greed to procedural betrayal.",
               "trust": "B cooperation improves if the procedural fault remains named.",
               "leak": "B may point toward a hidden family reason without naming it."
             },
-            "failureResponse": {
-              "npc": "A says procedural intrusion does not erase the outcome; B agrees but withholds the protected reason.",
-              "gameplay": "Establish d-2 on procedural responsibility only. Unlock d-3; do not reveal d-4/d-5 motive automatically."
-            },
             "successUnlocks": [
               "d-2 established",
               "d-3 active"
-            ]
+            ],
+            "failureResponse": {
+              "npc": "A says procedural intrusion does not erase the outcome; B agrees but withholds the protected reason.",
+              "gameplay": "Establish d-2 on procedural responsibility only. Unlock d-3; do not reveal d-4/d-5 motive automatically."
+            }
+          },
+          {
+            "stage": 5,
+            "name": "절차 책임 확정",
+            "surfaceClaim": "절차 책임 확정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       },
@@ -1745,9 +1657,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "어머니 돈 표면",
-            "surfaceClaim": "윤태성은 과거 지원이 어머니 돈이었다고 믿는다.",
-            "hiddenTruth": "지원금 상당수는 윤정후 돈이었다.",
+            "name": "어머니 돈 frame / 본인 일 아니다",
+            "surfaceClaim": "어머니 돈 frame / 본인 일 아니다",
+            "hiddenTruth": "윤정후 돈 + 어머니 통장 경유",
             "entryConditions": [
               "d-2 truthStage >= 3"
             ],
@@ -1763,28 +1675,30 @@
             ],
             "validActions": [
               "fact_pursuit",
-              "empathy_approach"
+              "evidence_query"
             ],
-            "requiredEvidence": [],
+            "requiredEvidence": [
+              "e-6"
+            ],
             "requiredWitness": [],
             "meterTriggers": {
               "emotion": "A defends his pride through his mother's help.",
               "trust": "B avoids the subject to protect A's pride.",
               "leak": "No reveal until e-6 route."
             },
+            "successUnlocks": [
+              "stage 1 with e-6 Excerpt"
+            ],
             "failureResponse": {
               "npc": "A insists the money came through his mother; B says nothing useful.",
               "gameplay": "Point toward bank records rather than letting repeated interrogation advance."
-            },
-            "successUnlocks": [
-              "stage 1 with e-6 Excerpt"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "송금 패턴 고정",
-            "surfaceClaim": "장기간 반복 송금과 특정 시점의 큰 자금 이동이 보인다.",
-            "hiddenTruth": "윤정후가 어머니 통장으로 정기 지원금를 보내고 A 공장 위기도 떠받쳤다.",
+            "name": "공장 위기 큰돈 / 어머니 통장 흐름",
+            "surfaceClaim": "공장 위기 큰돈 / 어머니 통장 흐름",
+            "hiddenTruth": "윤정후 돈 직접 송금",
             "entryConditions": [
               "e-6 stage >= Excerpt"
             ],
@@ -1799,8 +1713,8 @@
               "출생 비밀"
             ],
             "validActions": [
-              "evidence_present",
-              "fact_pursuit"
+              "evidence_query",
+              "motive_search"
             ],
             "requiredEvidence": [
               "e-6"
@@ -1811,19 +1725,19 @@
               "trust": "B may cooperate if the judge avoids humiliation language.",
               "leak": "B can admit he sent money regularly."
             },
+            "successUnlocks": [
+              "stage 2 with e-6 Original or w-3"
+            ],
             "failureResponse": {
               "npc": "B confirms transfers but says the purpose is private.",
               "gameplay": "Require context or witness w-3; no automatic d-4 reveal."
-            },
-            "successUnlocks": [
-              "stage 2 with e-6 Original or w-3"
-            ]
+            }
           },
           {
             "stage": 2,
-            "name": "실제 출처 반전",
-            "surfaceClaim": "어머니 돈처럼 보였던 지원의 실제 출처가 흔들린다.",
-            "hiddenTruth": "정기 지원금와 A의 공장 위기 자금 상당수는 윤정후 돈이었다.",
+            "name": "계좌 자료 / 형 쪽으로 흘러간 본인 돈",
+            "surfaceClaim": "계좌 자료 / 형 쪽으로 흘러간 본인 돈",
+            "hiddenTruth": "20년 송금 패턴",
             "entryConditions": [
               "e-6 stage >= Original",
               "or witness w-3 confirms mother's words"
@@ -1838,8 +1752,7 @@
               "자필 연습본 90대10의 전체 이유"
             ],
             "validActions": [
-              "evidence_present",
-              "witness_summon",
+              "evidence_query",
               "contradiction_pursuit"
             ],
             "requiredEvidence": [
@@ -1853,20 +1766,19 @@
               "trust": "B trust rises if the judge protects A from public humiliation.",
               "leak": "B can say he did not want A to know the source."
             },
+            "successUnlocks": [
+              "dc-3"
+            ],
             "failureResponse": {
               "npc": "A says he needs proof it was not mother's money.",
               "gameplay": "Need Original/Context evidence depth; repeat pressure only hardens A."
-            },
-            "successUnlocks": [
-              "dc-3",
-              "stage 3"
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "숨긴 이유",
-            "surfaceClaim": "윤정후가 돈의 출처를 숨긴 이유가 쟁점이 된다.",
-            "hiddenTruth": "B는 형이 동생 도움을 견디지 못할까 봐 어머니 이름 뒤에 숨어 지원했다.",
+            "name": "동생 돈 + 형 모르게",
+            "surfaceClaim": "동생 돈 + 형 모르게",
+            "hiddenTruth": "형 자존심 동기 (d-4 미해금)",
             "entryConditions": [
               "partyB lieState >= S3 on d-3",
               "dc-3 challenge success"
@@ -1881,9 +1793,8 @@
               "친자가 아니다"
             ],
             "validActions": [
-              "motive_search",
               "empathy_approach",
-              "contradiction_pursuit"
+              "motive_search"
             ],
             "requiredEvidence": [
               "e-6"
@@ -1896,20 +1807,19 @@
               "trust": "Empathy unlocks motive without forcing birth-secret reveal.",
               "leak": "B may say there was more than pride involved."
             },
+            "successUnlocks": [
+              "d-4"
+            ],
             "failureResponse": {
               "npc": "B says it was better that A believed it came from mother.",
               "gameplay": "Open d-4 route, but keep its core sealed until e-7 gate."
-            },
-            "successUnlocks": [
-              "d-4 visibility candidate",
-              "stage 4"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "20년의 짐 확정",
-            "surfaceClaim": "돈의 출처와 숨김의 이유가 함께 정리된다.",
-            "hiddenTruth": "윤정후는 20년간 돈과 형의 체면을 함께 떠안았고, 이 구조가 자필 연습본 90:10의 현실적 근거가 된다.",
+            "name": "자존심 무너짐 / 형 자존심 동기",
+            "surfaceClaim": "자존심 무너짐 / 형 자존심 동기",
+            "hiddenTruth": "공장 양보·출생 비밀 (d-4 대기)",
             "entryConditions": [
               "e-6 stage >= Context",
               "partyB lieState >= S4"
@@ -1924,35 +1834,45 @@
               "d-4 final birth-secret wording until e-7 gate"
             ],
             "validActions": [
-              "mediation",
-              "evidence_present",
-              "motive_search"
+              "empathy_approach"
             ],
-            "requiredEvidence": [
-              "e-6"
-            ],
-            "requiredWitness": [
-              "w-3"
-            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
             "meterTriggers": {
               "emotion": "A experiences status shock.",
               "trust": "B can cooperate if support is not treated as moral victory.",
               "leak": "B may point toward the deeper reason for hiding."
             },
-            "failureResponse": {
-              "npc": "A struggles to accept the source; B refuses to make it a debt ledger.",
-              "gameplay": "Establish d-3. Unlock d-4; do not auto-solve d-5."
-            },
             "successUnlocks": [
               "d-3 established",
               "d-4 active",
               "d-5 readiness flag"
-            ]
+            ],
+            "failureResponse": {
+              "npc": "A struggles to accept the source; B refuses to make it a debt ledger.",
+              "gameplay": "Establish d-3. Unlock d-4; do not auto-solve d-5."
+            }
+          },
+          {
+            "stage": 5,
+            "name": "20년 진실 인정",
+            "surfaceClaim": "20년 진실 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       },
       "d-4": {
-        "title": "출생 비밀과 침묵의 이유",
+        "title": "가족 기록과 침묵의 이유",
         "draftCompleteness": "sample-complete",
         "statementFracture": [
           "A는 자신이 장남이라는 정체성을 전제로 분노한다.",
@@ -1962,9 +1882,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "오래된 가족 사정 표면",
-            "surfaceClaim": "어머니 기록에 두 아들과 유서 비율을 둘러싼 민감한 사정이 보인다.",
-            "hiddenTruth": "윤태성은 아버지의 친자가 아니며 윤정후는 이를 알고 있었다.",
+            "name": "가족 사정 부정 / 가족 일 모호",
+            "surfaceClaim": "가족 사정 부정 / 가족 일 모호",
+            "hiddenTruth": "출생 비밀",
             "entryConditions": [
               "d-3 truthStage >= 3"
             ],
@@ -1980,7 +1900,7 @@
             ],
             "validActions": [
               "fact_pursuit",
-              "evidence_present"
+              "evidence_query"
             ],
             "requiredEvidence": [
               "e-7"
@@ -1991,19 +1911,19 @@
               "trust": "B becomes less verbal, not more.",
               "leak": "No direct leak; only family-situation hints."
             },
+            "successUnlocks": [
+              "stage 1 with e-7 Excerpt"
+            ],
             "failureResponse": {
               "npc": "B says the diary is private and cannot be explained in pieces.",
               "gameplay": "Require e-7 investigation depth; do not reveal by repeated questioning."
-            },
-            "successUnlocks": [
-              "stage 1 with e-7 Excerpt"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "일기장 단서",
-            "surfaceClaim": "어머니 일기장에 유서 비율과 두 아들에 관한 고민이 남아 있다.",
-            "hiddenTruth": "일기장에는 태성의 출생 비밀과 정후의 사전 인지가 연결되어 있다.",
+            "name": "어머니의 평등 마음 / 말하지 못한 부분",
+            "surfaceClaim": "어머니의 평등 마음 / 말하지 못한 부분",
+            "hiddenTruth": "일기 한 줄",
             "entryConditions": [
               "e-7 stage >= Excerpt"
             ],
@@ -2018,8 +1938,8 @@
               "배다른"
             ],
             "validActions": [
-              "evidence_present",
-              "motive_search"
+              "motive_search",
+              "evidence_query"
             ],
             "requiredEvidence": [
               "e-7"
@@ -2030,19 +1950,19 @@
               "trust": "B trust falls if the judge says the secret too soon.",
               "leak": "B may ask to seal the record first."
             },
+            "successUnlocks": [
+              "stage 2 with e-7 Original/Context"
+            ],
             "failureResponse": {
               "npc": "B insists the record should not be read aloud yet.",
               "gameplay": "Prompt sensitive-seal handling or context investigation."
-            },
-            "successUnlocks": [
-              "stage 2 with e-7 Original/Context"
-            ]
+            }
           },
           {
             "stage": 2,
-            "name": "비밀의 존재",
-            "surfaceClaim": "일기장 맥락상 윤태성의 정체성과 관련된 비밀이 드러난다.",
-            "hiddenTruth": "윤태성은 아버지의 친자가 아니며 B는 이 사실을 오래전에 알았다.",
+            "name": "오랜 가족 사정 / 어머니의 우려",
+            "surfaceClaim": "오랜 가족 사정 / 어머니의 우려",
+            "hiddenTruth": "한쪽이 무너짐 / 형제 멀어짐",
             "entryConditions": [
               "e-7 stage >= Context",
               "sealed-sensitive-route confirmed"
@@ -2057,9 +1977,8 @@
               "구체적 출생 경위"
             ],
             "validActions": [
-              "evidence_present",
-              "empathy_approach",
-              "motive_search"
+              "evidence_query",
+              "witness_summon"
             ],
             "requiredEvidence": [
               "e-7"
@@ -2072,20 +1991,19 @@
               "trust": "B can speak only if the judge narrows disclosure scope.",
               "leak": "B may acknowledge knowing before the will dispute."
             },
+            "successUnlocks": [
+              "dc-4"
+            ],
             "failureResponse": {
               "npc": "A attacks the source; B retreats into silence.",
               "gameplay": "Require balanced handling. Do not let identity shock skip d-2/d-3 responsibility."
-            },
-            "successUnlocks": [
-              "dc-4",
-              "stage 3"
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "유서 변경과 연결",
-            "surfaceClaim": "출생 비밀이 유서 조작의 동기와 연결된다.",
-            "hiddenTruth": "자필 연습본 90:10이 법정으로 가면 A가 왜 10인지 파고들고, 그 끝에서 출생 비밀이 터질 수 있었다.",
+            "name": "두 아들 똑같다 / 친자 아님 + 어머니 결정",
+            "surfaceClaim": "두 아들 똑같다 / 친자 아님 + 어머니 결정",
+            "hiddenTruth": "공장 양보 동기",
             "entryConditions": [
               "d-2 truthStage >= 4",
               "d-3 truthStage >= 3",
@@ -2101,12 +2019,10 @@
               "사생활 세부"
             ],
             "validActions": [
-              "contradiction_pursuit",
-              "motive_search",
-              "empathy_approach"
+              "empathy_approach",
+              "contradiction_pursuit"
             ],
             "requiredEvidence": [
-              "e-5",
               "e-7"
             ],
             "requiredWitness": [
@@ -2117,20 +2033,19 @@
               "trust": "A trust is unstable; judge must separate fact from humiliation.",
               "leak": "B can confess motive but not unnecessary private details."
             },
+            "successUnlocks": [
+              "d-5"
+            ],
             "failureResponse": {
               "npc": "B says he changed the number because the original would destroy A.",
               "gameplay": "Connect to d-2 but keep legal responsibility explicit."
-            },
-            "successUnlocks": [
-              "stage 4",
-              "d-5 visibility candidate"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "침묵의 이유 확정",
-            "surfaceClaim": "윤정후의 침묵은 돈보다 형의 정체성을 지키려는 선택이었다.",
-            "hiddenTruth": "윤정후는 윤태성의 출생 비밀을 알고 숨겼고, 그 비밀이 법정 다툼으로 번지지 않게 하려 유서까지 고쳤다.",
+            "name": "동생 혼자 진 시간 / 친자 양보",
+            "surfaceClaim": "동생 혼자 진 시간 / 친자 양보",
+            "hiddenTruth": "친부 실명 (봉인 유지)",
             "entryConditions": [
               "partyB lieState >= S5 or dc-4 final challenge success"
             ],
@@ -2144,29 +2059,39 @@
               "불필요한 사생활 세부"
             ],
             "validActions": [
-              "mediation",
-              "motive_search",
-              "confession_attempt"
+              "empathy_approach"
             ],
-            "requiredEvidence": [
-              "e-7"
-            ],
-            "requiredWitness": [
-              "w-3"
-            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
             "meterTriggers": {
               "emotion": "A identity shock needs containment.",
               "trust": "B cooperation depends on not turning protection into absolution.",
               "leak": "Full truth allowed only in confession/player-discovered route."
             },
-            "failureResponse": {
-              "npc": "A rejects the premise; B admits silence but not absolution.",
-              "gameplay": "Establish d-4. Do not auto-decide final responsibility without d-5."
-            },
             "successUnlocks": [
               "d-4 established",
               "d-5 active"
-            ]
+            ],
+            "failureResponse": {
+              "npc": "A rejects the premise; B admits silence but not absolution.",
+              "gameplay": "Establish d-4. Do not auto-decide final responsibility without d-5."
+            }
+          },
+          {
+            "stage": 5,
+            "name": "함께 진다",
+            "surfaceClaim": "함께 진다",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       },
@@ -2181,9 +2106,9 @@
         "truthStages": [
           {
             "stage": 0,
-            "name": "상호 비난 표면",
-            "surfaceClaim": "윤태성과 윤정후 모두 상대가 어머니를 이용했다고 주장한다.",
-            "hiddenTruth": "두 사람 모두 어머니 뜻을 자기 방식으로 바꾸거나 해석했다.",
+            "name": "장남 당연시 / 어머니 뜻 정리",
+            "surfaceClaim": "장남 당연시 / 어머니 뜻 정리",
+            "hiddenTruth": "양측 책임 구조",
             "entryConditions": [
               "d-3 truthStage >= 3",
               "d-4 truthStage >= 3"
@@ -2198,29 +2123,30 @@
               "두 번 왜곡 단정"
             ],
             "validActions": [
-              "fact_pursuit",
-              "mediation"
+              "fact_pursuit"
             ],
-            "requiredEvidence": [],
+            "requiredEvidence": [
+              "e-1"
+            ],
             "requiredWitness": [],
             "meterTriggers": {
               "emotion": "Both parties defend their identity.",
               "trust": "Trust depends on balanced framing.",
               "leak": "No shortcut; final issue requires both axes."
             },
+            "successUnlocks": [
+              "stage 1"
+            ],
             "failureResponse": {
               "npc": "A returns to procedural blame; B returns to protection.",
               "gameplay": "Do not let one side's confession auto-win. Require both responsibility axes."
-            },
-            "successUnlocks": [
-              "stage 1"
-            ]
+            }
           },
           {
             "stage": 1,
-            "name": "윤태성의 당연시",
-            "surfaceClaim": "윤태성은 모시고 산 장남으로서 더 받아야 한다는 마음을 붙든다.",
-            "hiddenTruth": "A의 전면 무효 주장은 상처와 자부심뿐 아니라 유산 당연시에서 출발했다.",
+            "name": "동생 비중 가능성 / 자필 본인 비중",
+            "surfaceClaim": "동생 비중 가능성 / 자필 본인 비중",
+            "hiddenTruth": "비율 차이 존재",
             "entryConditions": [
               "d-3 established or e-6 Context"
             ],
@@ -2234,35 +2160,33 @@
               "B 면책"
             ],
             "validActions": [
-              "empathy_approach",
-              "contradiction_pursuit",
-              "mediation"
+              "fact_pursuit",
+              "evidence_query"
             ],
             "requiredEvidence": [
-              "e-6"
+              "e-1",
+              "e-7"
             ],
-            "requiredWitness": [
-              "w-3"
-            ],
+            "requiredWitness": [],
             "meterTriggers": {
               "emotion": "A becomes less loud but more wounded.",
               "trust": "A can admit entitlement if not mocked.",
               "leak": "A may reveal he felt 40 was a denial of his life."
             },
-            "failureResponse": {
-              "npc": "A says caring for mother should count.",
-              "gameplay": "Frame as one responsibility axis, not final verdict."
-            },
             "successUnlocks": [
               "dc-5.a.q1",
               "stage 2"
-            ]
+            ],
+            "failureResponse": {
+              "npc": "A says caring for mother should count.",
+              "gameplay": "Frame as one responsibility axis, not final verdict."
+            }
           },
           {
             "stage": 2,
-            "name": "윤정후의 보호 명분",
-            "surfaceClaim": "윤정후는 형을 지키려 했다는 이유로 유서 변경을 설명한다.",
-            "hiddenTruth": "어머니가 자필 연습본에 남긴 90대10을 정후가 공증 60:40으로 줄인 흐름이 보호 명분의 대표 증거다. 보호 명분은 실제였지만 어머니 뜻을 고쳐 쓴 책임은 지우지 못한다.",
+            "name": "비중 차이 의미 / 방향 변경",
+            "surfaceClaim": "비중 차이 의미 / 방향 변경",
+            "hiddenTruth": "자필 → 공증 축소",
             "entryConditions": [
               "d-4 established or e-7 Context",
               "e-5 stage >= Original"
@@ -2280,34 +2204,34 @@
               "A만 이용 주체로 단정"
             ],
             "validActions": [
-              "motive_search",
-              "contradiction_pursuit",
-              "mediation"
+              "evidence_query",
+              "contradiction_pursuit"
             ],
             "requiredEvidence": [
-              "e-5",
+              "e-1",
               "e-7"
             ],
-            "requiredWitness": [],
+            "requiredWitness": [
+              "w-3"
+            ],
             "meterTriggers": {
               "emotion": "B guilt becomes explicit when the 90:10 trace is laid down.",
               "trust": "B accepts responsibility if motive is not flattened.",
               "leak": "B may say protection and wrongdoing were both true."
             },
+            "successUnlocks": [
+              "dc-5"
+            ],
             "failureResponse": {
               "npc": "B says protecting A did not make the document lawful.",
               "gameplay": "Require A axis too; do not close verdict on B motive alone."
-            },
-            "successUnlocks": [
-              "dc-5.b.q1",
-              "stage 3"
-            ]
+            }
           },
           {
             "stage": 3,
-            "name": "어머니 뜻의 이중 왜곡",
-            "surfaceClaim": "장남 당연시와 보호 명분이 어머니 뜻 위에 동시에 얹혔다.",
-            "hiddenTruth": "A는 유산을 자기 권리로 읽었고, B는 보호를 이유로 자필 90:10을 공증 60:40으로 고쳐 어머니 뜻은 두 번 왜곡됐다.",
+            "name": "자기 쪽으로 줄임 / 보호 명분",
+            "surfaceClaim": "자기 쪽으로 줄임 / 보호 명분",
+            "hiddenTruth": "자필 수치 (S4까지 봉인)",
             "entryConditions": [
               "stage 1 complete",
               "stage 2 complete",
@@ -2325,15 +2249,11 @@
               "어느 한쪽 면책"
             ],
             "validActions": [
-              "mediation",
-              "contradiction_pursuit",
-              "evidence_present"
+              "motive_search",
+              "empathy_approach"
             ],
             "requiredEvidence": [
-              "e-1",
-              "e-5",
-              "e-6",
-              "e-7"
+              "e-5"
             ],
             "requiredWitness": [
               "w-3"
@@ -2343,19 +2263,19 @@
               "trust": "Balanced confrontation preserves both cooperation states.",
               "leak": "Final framing can surface only after both axes are present."
             },
+            "successUnlocks": [
+              "stage 4"
+            ],
             "failureResponse": {
               "npc": "Each party uses the other's fault to hide their own.",
               "gameplay": "Prompt the player to present the missing axis instead of repeating final accusation."
-            },
-            "successUnlocks": [
-              "stage 4"
-            ]
+            }
           },
           {
             "stage": 4,
-            "name": "최종 책임 구조",
-            "surfaceClaim": "두 사람 모두 어머니를 있는 그대로 두지 못했다는 결론이 가능해진다.",
-            "hiddenTruth": "윤태성의 상속 당연시와 윤정후의 보호 명분이 서로 다른 방식으로 어머니 뜻을 바꿔 놓았다. 자필 90:10이 공증 60:40으로 바뀐 흐름이 그 대표 흔적이다.",
+            "name": "두 번 왜곡 / 보호 명분 책임",
+            "surfaceClaim": "두 번 왜곡 / 보호 명분 책임",
+            "hiddenTruth": "자필 90:10 수치 노출 준비",
             "entryConditions": [
               "d-1 established",
               "d-2 established",
@@ -2374,32 +2294,45 @@
               "확정 경로 밖의 민감한 사생활 세부"
             ],
             "validActions": [
-              "mediation",
-              "confession_attempt",
-              "final_argument"
+              "empathy_approach"
             ],
             "requiredEvidence": [
-              "e-1",
-              "e-5",
-              "e-6",
-              "e-7"
+              "e-5"
             ],
-            "requiredWitness": [
-              "w-3"
-            ],
+            "requiredWitness": [],
             "meterTriggers": {
               "emotion": "A and B both shift from accusation to consequence.",
               "trust": "Final trust is not agreement; it is willingness to hear the record.",
               "leak": "No hidden issue remains except sealed private details."
             },
-            "failureResponse": {
-              "npc": "One side tries to turn the finding into total blame again.",
-              "gameplay": "Close d-5 only if both responsibility axes are already established."
-            },
             "successUnlocks": [
               "d-5 established",
               "final mediation frame"
-            ]
+            ],
+            "failureResponse": {
+              "npc": "One side tries to turn the finding into total blame again.",
+              "gameplay": "Close d-5 only if both responsibility axes are already established."
+            }
+          },
+          {
+            "stage": 5,
+            "name": "자필 90:10 + 공증 60:40 축소 인정",
+            "surfaceClaim": "자필 90:10 + 공증 60:40 축소 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [
+              "e-5",
+              "e-6",
+              "e-7"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           }
         ]
       }

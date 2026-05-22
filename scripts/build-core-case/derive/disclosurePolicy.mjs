@@ -53,11 +53,12 @@ function deriveSurfaceMapEvidence(authority, existing) {
     // 통합 forbiddenKeywords 어그리게이트는 너무 광역이라 scripted text가 "가족" 등 일상어로
     // P0 차단됨). 기존 데이터 보존이 우선, 없으면 Authority aggregate fallback.
     const aggregated = collectTruthLexemesForEvidence(authority, e)
-    const truthLexemes = ex.truthLexemes && ex.truthLexemes.length > 0 ? ex.truthLexemes : aggregated
-    const descriptionTruth =
-      ex.descriptionTruth && ex.descriptionTruth.length > 0
-        ? ex.descriptionTruth
-        : aggregated.slice(0, 4)
+    // 빈 배열도 명시적 디자인 결정으로 보존 — Array.isArray로 정의 여부만 확인 (length 0 영역은
+    // 디자이너가 의도적으로 비운 surface-pure evidence를 의미. family-01 e-1 영역이 대표).
+    const truthLexemes = Array.isArray(ex.truthLexemes) ? ex.truthLexemes : aggregated
+    const descriptionTruth = Array.isArray(ex.descriptionTruth)
+      ? ex.descriptionTruth
+      : aggregated.slice(0, 4)
     out[e.id] = {
       evidenceId: e.id,
       name: ko(e.name),
@@ -94,14 +95,13 @@ function deriveSurfaceMapDisputes(authority, existing) {
   const out = {}
   for (const d of authority.disputes) {
     const ex = existingD[d.id] ?? {}
-    // 같은 정책: 기존 truthLexemes 우선, 없으면 Authority aggregate
+    // 같은 정책: 기존 truthLexemes 우선 (빈 배열도 보존), 없으면 Authority aggregate
     const aggregated = collectDisputeForbidden(d, 'ko')
     out[d.id] = {
       surface: ko(d.name),
       truth: ko(d.truthDescription),
       protectedSurface: ex.protectedSurface ?? ko(d.name),
-      truthLexemes:
-        ex.truthLexemes && ex.truthLexemes.length > 0 ? ex.truthLexemes : aggregated,
+      truthLexemes: Array.isArray(ex.truthLexemes) ? ex.truthLexemes : aggregated,
       sourceRefs: [`src/data/cases/generated/${authority.meta.caseId}.json:disputes.${d.id}`],
     }
   }
@@ -265,6 +265,14 @@ function mergeIssueProgression(derived, existing) {
       if (exSt.allowedDisclosure) st.allowedDisclosure = exSt.allowedDisclosure
       if (exSt.forbiddenDisclosure) st.forbiddenDisclosure = exSt.forbiddenDisclosure
       if (exSt.failureResponse && !st.failureResponse) st.failureResponse = exSt.failureResponse
+      // meterTriggers / successUnlocks: Authority schema가 carry 하지 않거나 fragment 영역.
+      // 기존 사람 작성 영역이 더 풍부하면 보존 (Authority 빈 값이 덮어쓰지 않게).
+      if (exSt.meterTriggers && Object.keys(st.meterTriggers ?? {}).length === 0) {
+        st.meterTriggers = exSt.meterTriggers
+      }
+      if (Array.isArray(exSt.successUnlocks) && exSt.successUnlocks.length > 0 && (!Array.isArray(st.successUnlocks) || st.successUnlocks.length === 0)) {
+        st.successUnlocks = exSt.successUnlocks
+      }
     }
   }
   // 기존 dispute가 derived에 없으면 (e.g. h-d4 폐기), 기존 dispute는 제외 (Authority 권위)
