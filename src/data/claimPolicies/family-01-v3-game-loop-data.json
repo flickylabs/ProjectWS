@@ -906,7 +906,7 @@
     },
     {
       "evidenceId": "e-2",
-      "name": "요양원 방문기록",
+      "name": "시설 방문 기록",
       "depthStages": [
         {
           "id": "stub",
@@ -965,7 +965,7 @@
     },
     {
       "evidenceId": "e-3",
-      "name": "전 요양보호사 음성증언",
+      "name": "전 돌봄 직원 음성",
       "depthStages": [
         {
           "id": "stub",
@@ -1024,7 +1024,7 @@
     },
     {
       "evidenceId": "e-4",
-      "name": "공증인 메모 기록",
+      "name": "인증 절차 메모",
       "depthStages": [
         {
           "id": "stub",
@@ -1083,7 +1083,7 @@
     },
     {
       "evidenceId": "e-5",
-      "name": "어머니 자필 유언장 연습본",
+      "name": "자필 메모 사본",
       "depthStages": [
         {
           "id": "stub",
@@ -1145,7 +1145,7 @@
     },
     {
       "evidenceId": "e-6",
-      "name": "오래된 계좌 흐름",
+      "name": "오래된 송금 내역 묶음",
       "depthStages": [
         {
           "id": "stub",
@@ -1204,7 +1204,7 @@
     },
     {
       "evidenceId": "e-7",
-      "name": "어머니 일기장",
+      "name": "오래된 노트 사본",
       "depthStages": [
         {
           "id": "stub",
@@ -1523,7 +1523,7 @@
   "sensitiveSealTargets": [
     {
       "evidenceId": "e-5",
-      "label": "어머니 자필 유언장 연습본",
+      "label": "자필 메모 사본",
       "targets": [
         "자필 비율 정확 수치 (90:10)",
         "자기 몫 축소 방향"
@@ -1539,7 +1539,7 @@
     },
     {
       "evidenceId": "e-7",
-      "label": "어머니 일기장",
+      "label": "오래된 노트 사본",
       "targets": [
         "친부 실명",
         "구체적 출생 경위",

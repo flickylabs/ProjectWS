@@ -1882,8 +1882,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'e-2',
       name: ko('요양원 방문기록'),
-      /* baseline 동기화 — surface 분리 polish는 Phase 2 scripted text fix에서. */
-      surfaceName: ko('요양원 방문기록'),
+      surfaceName: ko('시설 방문 기록'),
       description: ko('말년 방문 빈도와 담당자 교체 시점을 보여주는 기관 기록. 공증 전 윤정후의 방문이 급증한다.'),
       surfaceDescription: ko('말년 방문 빈도와 담당자 교체 시점을 보여주는 기관 기록.'),
       type: 'log',
@@ -1923,7 +1922,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'e-3',
       name: ko('전 요양보호사 음성증언'),
-      surfaceName: ko('전 요양보호사 음성증언'),
+      surfaceName: ko('전 돌봄 직원 음성'),
       /* description은 surface-safe 영역 (P0 gate 회피). 절차 정황은 depthStages context 단계에서 노출. */
       description: ko('말년 어머니 곁에서 유서 관련 행동을 목격한 제3자의 음성증언.'),
       surfaceDescription: ko('유서 관련 행동을 목격한 제3자의 음성증언.'),
@@ -1965,9 +1964,9 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'e-4',
       name: ko('공증인 메모 기록'),
-      surfaceName: ko('공증인 메모 기록'),
-      description: ko('공증 당일 절차를 남긴 공증인 메모 기록. 오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 60:40으로 확정된 흐름이 남아 있다.'),
-      surfaceDescription: ko('공증 당일 절차를 남긴 공증인 메모 기록.'),
+      surfaceName: ko('인증 절차 메모'),
+      description: ko('공증 당일 절차를 남긴 인증 절차 메모. 오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 60:40으로 확정된 흐름이 남아 있다.'),
+      surfaceDescription: ko('공증 당일 절차를 남긴 인증 절차 메모.'),
       type: 'institutional_note',
       reliability: 'hard',
       completeness: 'original',
@@ -2005,7 +2004,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'e-5',
       name: ko('어머니 자필 유언장 연습본'),
-      surfaceName: ko('어머니 자필 유언장 연습본'),
+      surfaceName: ko('자필 메모 사본'),
       /* description은 surface-safe — 구체 비율 수치는 depthStages established 단계에서만 노출. */
       description: ko('어머니가 남긴 자필 유언장 연습본. 공증본과 별개로 분배 방향이 적힌 흔적이 있다.'),
       surfaceDescription: ko('어머니가 남긴 자필 유언장 연습본. 구체 비율은 단계 조사로 확인된다.'),
@@ -2058,8 +2057,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'e-6',
       name: ko('오래된 계좌 흐름'),
-      /* baseline 동기화 (name=surface) — scriptedText 회귀 회피. Phase 2 polish에서 surface 분리. */
-      surfaceName: ko('오래된 계좌 흐름'),
+      surfaceName: ko('오래된 송금 내역 묶음'),
       /* description은 surface-safe — 구체 출처/금액은 depthStages context/established 단계에서만 노출. */
       description: ko('장기간 반복된 송금과 특정 시점의 큰 자금 이동을 보여주는 은행 자료.'),
       surfaceDescription: ko('장기간 반복된 송금과 특정 시점의 큰 자금 이동을 보여주는 은행 자료.'),
@@ -2100,7 +2098,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'e-7',
       name: ko('어머니 일기장'),
-      surfaceName: ko('어머니 일기장'),
+      surfaceName: ko('오래된 노트 사본'),
       description: ko('어머니의 흰색 자필 공책. 윤태성이 아버지의 친자가 아니라는 사실, 두 아들 모두 똑같은 자식이라는 기록, 윤정후의 사전 인지가 함께 적혀 있다.'),
       surfaceDescription: ko('어머니의 흰색 자필 공책 사진이 존재한다.'),
       type: 'document',
@@ -2670,7 +2668,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       inputs: ['e-6', 'e-7'],
       cost: 2,
       outputId: 'dc-4',
-      discoveryText: ko('오래된 자금 흐름과 어머니 일기장의 핵심 문장이 침묵의 동기로 모인다.'),
+      discoveryText: ko('오래된 송금 내역 묶음과 오래된 노트 사본의 핵심 문장이 침묵의 동기로 모인다.'),
       route: 'evidence_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
@@ -2685,7 +2683,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       inputs: ['stmt-b-silence', 'e-4'],
       cost: 1,
       outputId: 'dc-2',
-      discoveryText: ko('윤정후의 차단 발언과 공증인 메모 기록이 맞물린다. 유언장에 손댄 경위를 따져야 한다.'),
+      discoveryText: ko('윤정후의 차단 발언과 인증 절차 메모가 맞물린다. 유언장에 손댄 경위를 따져야 한다.'),
       route: 'statement_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
@@ -2715,7 +2713,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       inputs: ['e-5', 'e-7'],
       cost: 2,
       outputId: 'dc-4',
-      discoveryText: ko('자필 연습본과 어머니 일기장의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 물어야 한다.'),
+      discoveryText: ko('자필 연습본과 오래된 노트 사본의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 물어야 한다.'),
       route: 'evidence_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
@@ -2730,7 +2728,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       inputs: ['e-1', 'e-7'],
       cost: 2,
       outputId: 'dc-5',
-      discoveryText: ko('유서 비율과 어머니 일기장의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.'),
+      discoveryText: ko('유서 비율과 오래된 노트 사본의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.'),
       route: 'evidence_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
@@ -2745,7 +2743,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       inputs: ['stmt-a-heir', 'e-7'],
       cost: 1,
       outputId: 'dc-5',
-      discoveryText: ko("형의 '모시고 산 건 나인데'라는 말과 어머니 일기장의 기록이 충돌한다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 짚어야 한다."),
+      discoveryText: ko("형의 '모시고 산 건 나인데'라는 말과 오래된 노트 사본의 기록이 충돌한다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 짚어야 한다."),
       route: 'statement_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
@@ -2760,7 +2758,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       inputs: ['stmt-a-heir', 'e-6'],
       cost: 1,
       outputId: 'dc-3',
-      discoveryText: ko("형의 '모시고 산 건 나인데'라는 말과 오래된 계좌 흐름을 합치면, 돈과 침묵을 함께 떠안은 동생의 동기가 보인다."),
+      discoveryText: ko("형의 '모시고 산 건 나인데'라는 말과 오래된 송금 내역 묶음을 합치면, 돈과 침묵을 함께 떠안은 동생의 동기가 보인다."),
       route: 'statement_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],

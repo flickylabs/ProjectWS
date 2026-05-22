@@ -23,7 +23,7 @@
       "e-2": {
         "evidenceId": "e-2",
         "name": "요양원 방문기록",
-        "surfaceName": "요양원 방문기록",
+        "surfaceName": "시설 방문 기록",
         "surfaceDescription": "말년 방문 빈도와 담당자 교체 시점을 보여주는 기관 기록.",
         "descriptionTruth": [
           "윤정후 방문 급증",
@@ -42,7 +42,7 @@
       "e-3": {
         "evidenceId": "e-3",
         "name": "전 요양보호사 음성증언",
-        "surfaceName": "전 요양보호사 음성증언",
+        "surfaceName": "전 돌봄 직원 음성",
         "surfaceDescription": "유서 관련 행동을 목격한 제3자의 음성증언.",
         "descriptionTruth": [
           "정후가 종이를 읽어드림",
@@ -61,8 +61,8 @@
       "e-4": {
         "evidenceId": "e-4",
         "name": "공증인 메모 기록",
-        "surfaceName": "공증인 메모 기록",
-        "surfaceDescription": "공증 당일 절차를 남긴 공증인 메모 기록.",
+        "surfaceName": "인증 절차 메모",
+        "surfaceDescription": "공증 당일 절차를 남긴 인증 절차 메모.",
         "descriptionTruth": [
           "어머니 상태 불안정",
           "숫자 혼선과 절차 압박 정황"
@@ -79,7 +79,7 @@
       "e-5": {
         "evidenceId": "e-5",
         "name": "어머니 자필 유언장 연습본",
-        "surfaceName": "어머니 자필 유언장 연습본",
+        "surfaceName": "자필 메모 사본",
         "surfaceDescription": "어머니가 남긴 자필 유언장 연습본. 구체 비율은 단계 조사로 확인된다.",
         "descriptionTruth": [
           "정후 90%",
@@ -99,7 +99,7 @@
       "e-6": {
         "evidenceId": "e-6",
         "name": "오래된 계좌 흐름",
-        "surfaceName": "오래된 계좌 흐름",
+        "surfaceName": "오래된 송금 내역 묶음",
         "surfaceDescription": "장기간 반복된 송금과 특정 시점의 큰 자금 이동을 보여주는 은행 자료.",
         "descriptionTruth": [
           "월 단위 정기 지원금",
@@ -120,7 +120,7 @@
       "e-7": {
         "evidenceId": "e-7",
         "name": "어머니 일기장",
-        "surfaceName": "어머니 일기장",
+        "surfaceName": "오래된 노트 사본",
         "surfaceDescription": "어머니의 흰색 자필 공책 사진이 존재한다.",
         "descriptionTruth": [
           "윤정후가 배다른 자식이라는 기록",
@@ -995,7 +995,7 @@
         "surfaceFallback": "유품 문서의 비율과 오래된 자금 흐름이 연결된다."
       },
       "combine-4": {
-        "sourceText": "오래된 자금 흐름과 어머니 일기장의 핵심 문장이 침묵의 동기로 모인다.",
+        "sourceText": "오래된 송금 내역 묶음과 오래된 노트 사본의 핵심 문장이 침묵의 동기로 모인다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
@@ -1015,7 +1015,7 @@
         "surfaceFallback": "오래된 자금 흐름과 일기장 기록 사이에 숨은 이유가 보인다."
       },
       "combine-5": {
-        "sourceText": "윤정후의 차단 발언과 공증인 메모 기록이 맞물린다. 유언장에 손댄 경위를 따져야 한다.",
+        "sourceText": "윤정후의 차단 발언과 인증 절차 메모가 맞물린다. 유언장에 손댄 경위를 따져야 한다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
@@ -1053,7 +1053,7 @@
         "surfaceFallback": "어머니의 뜻이라는 말 뒤에 오래된 자금 흐름이 있다."
       },
       "combine-7": {
-        "sourceText": "자필 연습본과 어머니 일기장의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 물어야 한다.",
+        "sourceText": "자필 연습본과 오래된 노트 사본의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 물어야 한다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
@@ -1073,7 +1073,7 @@
         "surfaceFallback": "유품 문서와 어머니 기록을 함께 보면 변경 과정의 위험이 보인다."
       },
       "combine-8": {
-        "sourceText": "유서 비율과 어머니 일기장의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.",
+        "sourceText": "유서 비율과 오래된 노트 사본의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
@@ -1093,7 +1093,7 @@
         "surfaceFallback": "유서 비율과 어머니 기록을 함께 보면 두 사람의 해석이 갈린다."
       },
       "combine-9": {
-        "sourceText": "형의 '모시고 산 건 나인데'라는 말과 어머니 일기장의 기록이 충돌한다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 짚어야 한다.",
+        "sourceText": "형의 '모시고 산 건 나인데'라는 말과 오래된 노트 사본의 기록이 충돌한다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 짚어야 한다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
@@ -1112,7 +1112,7 @@
         "surfaceFallback": "윤태성의 상속 감정과 어머니 기록이 부딪힌다."
       },
       "combine-10": {
-        "sourceText": "형의 '모시고 산 건 나인데'라는 말과 오래된 계좌 흐름을 합치면, 돈과 침묵을 함께 떠안은 동생의 동기가 보인다.",
+        "sourceText": "형의 '모시고 산 건 나인데'라는 말과 오래된 송금 내역 묶음을 합치면, 돈과 침묵을 함께 떠안은 동생의 동기가 보인다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
