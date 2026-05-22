@@ -29,7 +29,7 @@ import {
 
 const ko = (text: string): LocalizedString => ({ ko: text, en: null, ja: null, 'zh-CN': null })
 
-const i18n = (
+const _i18n = (
   koText: string,
   enText: string,
   jaText: string,

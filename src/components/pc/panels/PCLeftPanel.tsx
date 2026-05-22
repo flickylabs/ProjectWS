@@ -316,7 +316,7 @@ function buildEvidenceMetaTags(
   return tags
 }
 
-function formatLocalizedCaseText(
+function _formatLocalizedCaseText(
   value: string,
   locale: string,
   t: (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string,

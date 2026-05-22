@@ -64,7 +64,7 @@ export default function TruthRevealCutscene({ event, onDismiss }: Props) {
   // ── Phase state ──
   const [focusReady, setFocusReady] = useState(false)
   const [exprTarget, setExprTarget] = useState(false)
-  const [phase2Visible, setPhase2Visible] = useState(false)
+  const [_phase2Visible, _setPhase2Visible] = useState(false)
   const [phase1ShakeOn, setPhase1ShakeOn] = useState(false)
   const [closureOpen, setClosureOpen] = useState(false)
   const [oscIndex, setOscIndex] = useState(0) // 0 = target, 1 = alt (witness only)

@@ -30,7 +30,7 @@ import {
 const ko = (text: string): LocalizedString => ({ ko: text, en: null, ja: null, 'zh-CN': null })
 
 /** 4언어 모두 받아 LocalizedString 생성 (truth-leak matrix와 sync 필요한 키워드 영역용). */
-const i18n = (
+const _i18n = (
   koText: string,
   enText: string,
   jaText: string,

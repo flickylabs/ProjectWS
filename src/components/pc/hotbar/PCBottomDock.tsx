@@ -79,7 +79,7 @@ function buildEvidenceMetaTags(meta: { trustLevel?: string; source?: string } | 
   return tags
 }
 
-function formatLocalizedCaseText(value: string, locale: string, t: TFunction): string {
+function _formatLocalizedCaseText(value: string, locale: string, t: TFunction): string {
   void t
   return localizeRuntimeText(value, locale as Parameters<typeof localizeRuntimeText>[1])
 }
