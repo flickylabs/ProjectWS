@@ -18356,7 +18356,7 @@
           "variants": [
             {
               "id": "interject-a-d-1-major-v1",
-              "text": "No, that is not something I should have to hear! After hiding everything like that, is it over just because you now say I was the sensitive one?!"
+              "text": "No, that is not something I should have to hear! After hiding everything, now you think it ends if you make me out to be the oversensitive one?!"
             },
             {
               "id": "interject-a-d-1-major-v2",
@@ -18368,7 +18368,7 @@
             },
             {
               "id": "interject-a-d-1-major-v4",
-              "text": "No, when you say it that way, I get treated like a crazy person all over again! You should start with what you hid back then!"
+              "text": "No, if you frame it that way, I get treated like a crazy person all over again! You should start with what you hid back then!"
             },
             {
               "id": "interject-a-d-1-major-v5",
@@ -18388,7 +18388,7 @@
             },
             {
               "id": "interject-a-d-1-major-v9",
-              "text": "Lee Junho! Staying quiet does not make your responsibility disappear. Say why I judged it that way too!"
+              "text": "Lee Junho! Staying quiet does not make your responsibility disappear. Say why I reached that conclusion too!"
             },
             {
               "id": "interject-a-d-1-major-v10",
@@ -18411,7 +18411,7 @@
             },
             {
               "id": "interject-a-d-2-minor-v3",
-              "text": "If I may, Your Honor — that withdrawal did not appear in our marriage as a small detail. I am not trying to derail anything; I only wanted this small correction on the record."
+              "text": "Is it not true that my husband moved the money first without saying why? That fact cannot simply be brushed aside."
             },
             {
               "id": "interject-a-d-2-minor-v4",
@@ -18450,11 +18450,11 @@
           "variants": [
             {
               "id": "interject-a-d-2-major-v1",
-              "text": "No, after moving the money like that, why am I the only one being cornered! Are you saying I should have just sat still?!"
+              "text": "No, after moving the money that way, why am I the only one being cornered! Are you saying I should have just sat still?!"
             },
             {
               "id": "interject-a-d-2-major-v2",
-              "text": "Lee Junho! You hid where that money went right to the end, so why are you making only me look strange!"
+              "text": "Lee Junho! You never even said where that money went, and now you are making only me look strange!"
             },
             {
               "id": "interject-a-d-2-major-v3",
@@ -18474,11 +18474,11 @@
             },
             {
               "id": "interject-a-d-2-major-v7",
-              "text": "Do not dress it up like that! The real problem is that I only found out later the money was gone!"
+              "text": "Do not dress it up that way! The real problem is that I found out only later that the money had been taken out!"
             },
             {
               "id": "interject-a-d-2-major-v8",
-              "text": "No, if I had not asked, you would have kept it from me to the end, wouldn't you!"
+              "text": "No, if I had not asked, you would not have said anything at all, would you!"
             },
             {
               "id": "interject-a-d-2-major-v9",
@@ -18544,7 +18544,7 @@
           "variants": [
             {
               "id": "interject-a-h-d3-major-v1",
-              "text": "Your Honor, I was not trying to do that! My husband drove me to the edge first!"
+              "text": "Your Honor, that was not what I meant! My husband drove me to the edge first!"
             },
             {
               "id": "interject-a-h-d3-major-v2",
@@ -18560,7 +18560,7 @@
             },
             {
               "id": "interject-a-h-d3-major-v5",
-              "text": "Stop saying it that way! Do not make it sound like I planned this all by myself!"
+              "text": "Stop framing it that way! Do not make me out to be someone who schemed all of this on my own!"
             },
             {
               "id": "interject-a-h-d3-major-v6",
@@ -18580,7 +18580,7 @@
             },
             {
               "id": "interject-a-h-d3-major-v10",
-              "text": "Lee Junho! I fell apart like that because I thought you had given up on our home first!"
+              "text": "Lee Junho! I fell apart because I thought you had given up on us first!"
             }
           ]
         },
@@ -18599,7 +18599,7 @@
             },
             {
               "id": "interject-a-h-d4-minor-v3",
-              "text": "That judgment needs care. Hiding something, watching someone, and carrying something out should not be lumped together."
+              "text": "We should be careful about jumping straight to a conclusion. Hiding something, watching someone, and carrying something out should not be lumped together."
             },
             {
               "id": "interject-a-h-d4-minor-v4",
@@ -18646,7 +18646,7 @@
             },
             {
               "id": "interject-a-h-d4-major-v3",
-              "text": "No, the order of events is not that simple! Hiding something and acting on it should not be lumped together!"
+              "text": "No, that sequence is not something you can treat so simply! Hiding something and acting on it should not be lumped together!"
             },
             {
               "id": "interject-a-h-d4-major-v4",
@@ -18654,7 +18654,7 @@
             },
             {
               "id": "interject-a-h-d4-major-v5",
-              "text": "Do not say it that way! It is true that you hid the family matter and the money problem first!"
+              "text": "Do not talk about it that way! It is true that you hid your side of things and the money issue first!"
             },
             {
               "id": "interject-a-h-d4-major-v6",
@@ -18685,7 +18685,7 @@
           "variants": [
             {
               "id": "interject-b-d-1-minor-v1",
-              "text": "Hold on, Your Honor. My wife is speaking only from the result. That visit alone is not enough to draw such a conclusion."
+              "text": "Hold on, Your Honor. My wife is talking only about the outcome. That visit alone is not something to conclude on immediately."
             },
             {
               "id": "interject-b-d-1-minor-v2",
@@ -18701,7 +18701,7 @@
             },
             {
               "id": "interject-b-d-1-minor-v5",
-              "text": "I would like to correct that point. The fact that there was a visit does not mean it was immediately an affair."
+              "text": "I want to correct the idea that the visit should be called an affair. The fact that there was a visit does not mean it was immediately an affair."
             },
             {
               "id": "interject-b-d-1-minor-v6",
@@ -18736,7 +18736,7 @@
             },
             {
               "id": "interject-b-d-1-major-v2",
-              "text": "Park Jiyeon! How can you decide it like that without hearing me to the end!"
+              "text": "Park Jiyeon! How can you decide right away without even hearing me out!"
             },
             {
               "id": "interject-b-d-1-major-v3",
@@ -18748,7 +18748,7 @@
             },
             {
               "id": "interject-b-d-1-major-v5",
-              "text": "Park Jiyeon! If you push me like that without hearing me to the end, how am I supposed to speak!"
+              "text": "Park Jiyeon! If you corner me without even hearing me out, how am I supposed to speak!"
             },
             {
               "id": "interject-b-d-1-major-v6",
@@ -18756,7 +18756,7 @@
             },
             {
               "id": "interject-b-d-1-major-v7",
-              "text": "You cannot say it that way! That erases why I went there in the first place!"
+              "text": "You cannot frame it that way! That erases why I went there in the first place!"
             },
             {
               "id": "interject-b-d-1-major-v8",
@@ -18830,7 +18830,7 @@
             },
             {
               "id": "interject-b-d-2-major-v2",
-              "text": "Park Jiyeon! Do not just hold on to that money issue. You need to say why you judged it that way too!"
+              "text": "Park Jiyeon! Do not just hold on to that money issue. You need to say why you reached that conclusion too!"
             },
             {
               "id": "interject-b-d-2-major-v3",
@@ -18877,7 +18877,7 @@
             },
             {
               "id": "interject-b-h-d3-minor-v2",
-              "text": "I would like to put that point in order. It is my responsibility that I sensed something was off and still did not check."
+              "text": "I want to address the fact that I did not check. It is my responsibility that I sensed something was off and let it pass."
             },
             {
               "id": "interject-b-h-d3-minor-v3",
@@ -18924,7 +18924,7 @@
             },
             {
               "id": "interject-b-h-d3-major-v2",
-              "text": "Park Jiyeon! If you submitted papers with my name on them like that, you should have told me!"
+              "text": "Park Jiyeon! If you submitted papers with my name on them, you should have told me!"
             },
             {
               "id": "interject-b-h-d3-major-v3",
@@ -18948,7 +18948,7 @@
             },
             {
               "id": "interject-b-h-d3-major-v8",
-              "text": "No, do you know how much I fell apart when I realized that savings account had been drained like that!"
+              "text": "No, do you know how much I fell apart when I learned that savings account had been drained that way!"
             },
             {
               "id": "interject-b-h-d3-major-v9",
@@ -18971,7 +18971,7 @@
             },
             {
               "id": "interject-b-h-d4-minor-v2",
-              "text": "That point needs to be viewed separately. The beginning of the hiding and the handling of the papers are not the same question."
+              "text": "The two matters need to be viewed separately. Starting to hide things and handling the papers are not the same question."
             },
             {
               "id": "interject-b-h-d4-minor-v3",
