@@ -25956,7 +25956,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-1.a.q1-mid-v1",
-              "text": "We will look at the Contact Logs and the Group Chat Screenshot together. Ms. Song, this bears on turning contact records into a public stigma. Explain the choice and its order.",
+              "text": "The contact logs only show the number of contacts, while the group chat screenshot shows how Ms. Song interpreted that number as obsession. Why did you conclude it was obsession?",
               "behaviorHint": "Card combining the Contact Logs and the Group Chat Screenshot. It asks about turning contact records into a public stigma while keeping the inquiry limited to the record."
             },
             {
@@ -25976,7 +25976,7 @@
             },
             {
               "id": "judgecombo-dc-1.a.q1-mid-v5",
-              "text": "We will look at the Contact Logs and the Group Chat Screenshot together. Ms. Song, this bears on turning contact records into a public stigma. Explain the choice and its order.",
+              "text": "Looking at the contact logs and the group chat screenshot together, the label of obsession came first. Ms. Song, do you still see it as obsession?",
               "behaviorHint": "Card combining the Contact Logs and the Group Chat Screenshot. It asks about turning contact records into a public stigma while keeping the inquiry limited to the record."
             }
           ]
@@ -26027,7 +26027,7 @@
             },
             {
               "id": "judgecombo-dc-1.a.q1-hard-v5",
-              "text": "We will look at the Contact Logs and the Group Chat Screenshot together. Ms. Song, this bears on turning contact records into a public stigma. Answer the responsibility directly.",
+              "text": "Looking at the contact logs and the group chat screenshot together, you branded someone as obsessive based only on the number of contacts. Please answer responsibly now for the judgment of obsession that spread even into the group chat.",
               "behaviorHint": "Card combining the Contact Logs and the Group Chat Screenshot. It asks about turning contact records into a public stigma while keeping the inquiry limited to the record."
             }
           ]
@@ -26376,12 +26376,12 @@
             },
             {
               "id": "judgecombo-dc-3.b.q1-soft-v4",
-              "text": "We will look at the Comparison Chart and the father-related messages together. Ms. Choi, this bears on trying to block the repeated money pattern alone. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "Looking at the current messages and the past transfer records together, this is hard to see as simple concern, and there are signs that the same method repeated. Ms. Choi, please explain.",
               "behaviorHint": "Card combining the Comparison Chart and the father-related messages. It asks about trying to block the repeated money pattern alone while keeping the inquiry limited to the record."
             },
             {
               "id": "judgecombo-dc-3.b.q1-soft-v5",
-              "text": "We will look at the Comparison Chart and the father-related messages together. Ms. Choi, this bears on trying to block the repeated money pattern alone. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "Looking at the current messages and the past money flow together, the circumstances fit with Ms. Choi trying to block it alone again. Ms. Choi, why did you try to stop it alone again?",
               "behaviorHint": "Card combining the Comparison Chart and the father-related messages. It asks about trying to block the repeated money pattern alone while keeping the inquiry limited to the record."
             }
           ]
@@ -26468,7 +26468,7 @@
             },
             {
               "id": "judgecombo-dc-3.b.q1-hard-v2",
-              "text": "We will look at the Comparison Chart and the father-related messages together. Ms. Choi, this bears on trying to block the repeated money pattern alone. Answer the responsibility directly.",
+              "text": "Looking at the current messages and the past transfer records together, if you recognized the same method, you should have explained it to Ms. Song more step by step. Ms. Choi, why did you not tell her?",
               "behaviorHint": "Card combining the Comparison Chart and the father-related messages. It asks about trying to block the repeated money pattern alone while keeping the inquiry limited to the record."
             },
             {
@@ -26534,7 +26534,7 @@
             },
             {
               "id": "judgecombo-dc-3.a.q1-soft-v5",
-              "text": "We will look at the Comparison Chart and the father-related messages together. Ms. Song, this bears on rejecting the overlap in the father's money pattern. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "Looking at the current request and the past harm together, the two incidents do not look separate. Ms. Song, please state your own judgment.",
               "behaviorHint": "Card combining the Comparison Chart and the father-related messages. It asks about rejecting the overlap in the father's money pattern while keeping the inquiry limited to the record."
             }
           ]
@@ -26585,7 +26585,7 @@
             },
             {
               "id": "judgecombo-dc-3.a.q1-mid-v5",
-              "text": "We will look at the Comparison Chart and the father-related messages together. Ms. Song, this bears on rejecting the overlap in the father's money pattern. Explain the choice and its order.",
+              "text": "Looking at the current messages and the past transfer records together, it is confirmed that the same method repeated. Ms. Song, even so, why did you try not to suspect your father?",
               "behaviorHint": "Card combining the Comparison Chart and the father-related messages. It asks about rejecting the overlap in the father's money pattern while keeping the inquiry limited to the record."
             }
           ]
@@ -26686,7 +26686,7 @@
             },
             {
               "id": "judgecombo-dc-4.b.q1-soft-v5",
-              "text": "We will look at the old KakaoTalk chat and the past transfer records together. Ms. Choi, this bears on hiding the old financial harm and remaining the villain. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "The words missing from the old conversation and the transfer records fit together. Ms. Choi, why did you remain the villain then?",
               "behaviorHint": "Card combining the old KakaoTalk chat and the past transfer records. It asks about hiding the old financial harm and remaining the villain while keeping the inquiry limited to the record."
             }
           ]
@@ -26766,7 +26766,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4.b.q1-hard-v1",
-              "text": "We will look at the old KakaoTalk chat and the past transfer records together. Ms. Choi, this bears on hiding the old financial harm and remaining the villain. Answer the responsibility directly.",
+              "text": "Looking at the old KakaoTalk chat and the transfer records together, the real reason for cutting ties is confirmed. Ms. Choi, answer for the responsibility you hid.",
               "behaviorHint": "Card combining the old KakaoTalk chat and the past transfer records. It asks about hiding the old financial harm and remaining the villain while keeping the inquiry limited to the record."
             },
             {
@@ -26816,7 +26816,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4.a.q1-soft-v1",
-              "text": "We will look at the old KakaoTalk chat and the past transfer records together. Ms. Song, this bears on filling the old fallout with blame before checking the money flow. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "The old KakaoTalk chat has the point where the explanation stops, and the transfer records show the money flow after that. Ms. Song, why did you not check it to the end?",
               "behaviorHint": "Card combining the old KakaoTalk chat and the past transfer records. It asks about filling the old fallout with blame before checking the money flow while keeping the inquiry limited to the record."
             },
             {
@@ -26831,12 +26831,12 @@
             },
             {
               "id": "judgecombo-dc-4.a.q1-soft-v4",
-              "text": "We will look at the old KakaoTalk chat and the past transfer records together. Ms. Song, this bears on filling the old fallout with blame before checking the money flow. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "Looking at the old KakaoTalk chat and the transfer records together, it is hard to see the break simply as a change of heart. Ms. Song, please answer.",
               "behaviorHint": "Card combining the old KakaoTalk chat and the past transfer records. It asks about filling the old fallout with blame before checking the money flow while keeping the inquiry limited to the record."
             },
             {
               "id": "judgecombo-dc-4.a.q1-soft-v5",
-              "text": "We will look at the old KakaoTalk chat and the past transfer records together. Ms. Song, this bears on filling the old fallout with blame before checking the money flow. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "The old conversation and the transfer records fit together. Ms. Song, why did you think Ms. Choi changed first?",
               "behaviorHint": "Card combining the old KakaoTalk chat and the past transfer records. It asks about filling the old fallout with blame before checking the money flow while keeping the inquiry limited to the record."
             }
           ]
@@ -26921,7 +26921,7 @@
             },
             {
               "id": "judgecombo-dc-4.a.q1-hard-v2",
-              "text": "We will look at the old KakaoTalk chat and the past transfer records together. Ms. Song, this bears on filling the old fallout with blame before checking the money flow. Answer the responsibility directly.",
+              "text": "Looking at the old KakaoTalk chat and the transfer records together, you cast Ms. Choi as the villain without checking the money issue. Ms. Song, why did you believe the judgment that Ms. Choi was at fault?",
               "behaviorHint": "Card combining the old KakaoTalk chat and the past transfer records. It asks about filling the old fallout with blame before checking the money flow while keeping the inquiry limited to the record."
             },
             {
@@ -26931,7 +26931,7 @@
             },
             {
               "id": "judgecombo-dc-4.a.q1-hard-v4",
-              "text": "We will look at the old KakaoTalk chat and the past transfer records together. Ms. Song, this bears on filling the old fallout with blame before checking the money flow. Answer the responsibility directly.",
+              "text": "Looking at the old KakaoTalk chat and the transfer records together, the past harm under the name of investment is confirmed. Ms. Song, why did you not check it to the end?",
               "behaviorHint": "Card combining the old KakaoTalk chat and the past transfer records. It asks about filling the old fallout with blame before checking the money flow while keeping the inquiry limited to the record."
             },
             {
@@ -26977,7 +26977,7 @@
             },
             {
               "id": "judgecombo-dc-5.a.q1-soft-v3",
-              "text": "We will look at the Group Chat Screenshot and the Comparison Chart together. Ms. Song, this bears on posting before verification and repeating the stigma. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "The screenshot preserves the scene where the stigma spread, and the comparison chart lays out the process of repeated silence. Ms. Song, please answer.",
               "behaviorHint": "Card combining the Group Chat Screenshot and the Comparison Chart. It asks about posting before verification and repeating the stigma while keeping the inquiry limited to the record."
             },
             {
@@ -27069,12 +27069,12 @@
           "variants": [
             {
               "id": "judgecombo-dc-5.a.q1-hard-v1",
-              "text": "We will look at the Group Chat Screenshot and the Comparison Chart together. Ms. Song, this bears on posting before verification and repeating the stigma. Answer the responsibility directly.",
+              "text": "Looking at the group chat screenshot and the comparison chart together, the order shows that Ms. Song attached the stigma first. Answer for that responsibility.",
               "behaviorHint": "Card combining the Group Chat Screenshot and the Comparison Chart. It asks about posting before verification and repeating the stigma while keeping the inquiry limited to the record."
             },
             {
               "id": "judgecombo-dc-5.a.q1-hard-v2",
-              "text": "We will look at the Group Chat Screenshot and the Comparison Chart together. Ms. Song, this bears on posting before verification and repeating the stigma. Answer the responsibility directly.",
+              "text": "You posted in the group chat before asking directly, and the comparison chart confirms a repeated pattern where judgment came before verification. Ms. Song, explain.",
               "behaviorHint": "Card combining the Group Chat Screenshot and the Comparison Chart. It asks about posting before verification and repeating the stigma while keeping the inquiry limited to the record."
             },
             {
@@ -27120,7 +27120,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-5.b.q1-soft-v1",
-              "text": "We will look at the Group Chat Screenshot and the Comparison Chart together. Ms. Choi, this bears on letting silence and stigma move together again. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "The group chat screenshot preserves the scene where the stigma spread, and the comparison chart lays out the process of the same silence repeating. Ms. Choi, why did you endure it alone to the end?",
               "behaviorHint": "Card combining the Group Chat Screenshot and the Comparison Chart. It asks about letting silence and stigma move together again while keeping the inquiry limited to the record."
             },
             {
@@ -27130,7 +27130,7 @@
             },
             {
               "id": "judgecombo-dc-5.b.q1-soft-v3",
-              "text": "We will look at the Group Chat Screenshot and the Comparison Chart together. Ms. Choi, this bears on letting silence and stigma move together again. Answer calmly, without forcing a conclusion beyond the record.",
+              "text": "The screenshot preserves the result caused by misunderstanding, and the comparison chart lays out how the same misunderstanding repeated. Ms. Choi, please answer.",
               "behaviorHint": "Card combining the Group Chat Screenshot and the Comparison Chart. It asks about letting silence and stigma move together again while keeping the inquiry limited to the record."
             },
             {
@@ -27191,7 +27191,7 @@
             },
             {
               "id": "judgecombo-dc-5.b.q1-mid-v5",
-              "text": "We will look at the Group Chat Screenshot and the Comparison Chart together. Ms. Choi, this bears on letting silence and stigma move together again. Explain the choice and its order.",
+              "text": "Looking at the public misunderstanding and the repeated silence together, it is confirmed that Ms. Choi endured it alone again. Ms. Choi, answer now.",
               "behaviorHint": "Card combining the Group Chat Screenshot and the Comparison Chart. It asks about letting silence and stigma move together again while keeping the inquiry limited to the record."
             }
           ]
@@ -27242,7 +27242,7 @@
             },
             {
               "id": "judgecombo-dc-5.b.q1-hard-v5",
-              "text": "We will look at the Group Chat Screenshot and the Comparison Chart together. Ms. Choi, this bears on letting silence and stigma move together again. Answer the responsibility directly.",
+              "text": "Looking at the group chat screenshot and the comparison chart together, the process of Ms. Choi enduring it alone to the end is confirmed. Please state the reason and responsibility clearly.",
               "behaviorHint": "Card combining the Group Chat Screenshot and the Comparison Chart. It asks about letting silence and stigma move together again while keeping the inquiry limited to the record."
             }
           ]
