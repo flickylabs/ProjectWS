@@ -25228,7 +25228,7 @@
             },
             {
               "id": "judgeq-d-1-motive-search-1-v3",
-              "text": "Mr. Yoon Jeong-hu, calmly explain why your visits increased so suddenly in her final years.",
+              "text": "Mr. Yoon Jeong-hu, explain why your visits suddenly increased in her final years.",
               "behaviorHint": "It asks for the first reason behind the facts. It lowers defenses and opens the way into the choice."
             },
             {
@@ -25581,12 +25581,12 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-4-v1",
-              "text": "Mr. Yoon Jeong-hu, even if you say the amendment was not for your own gain, why did you cross the line into procedural intervention?",
+              "text": "Mr. Yoon Jeong-hu, even if it was not just for your own gain, why did you cross the line into the procedure?",
               "behaviorHint": "It asks for the decisive reason and responsibility so they can no longer turn away. The question tries to straighten out where fact and interpretation diverge."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-4-v2",
-              "text": "Mr. Yoon Tae-seong, why did you completely rule out the possibility that Mr. Yoon Jeong-hu's reason for changing the document was not only greed?",
+              "text": "Mr. Yoon Tae-seong, why did you finally rule out that Mr. Yoon Jeong-hu may have changed the document for more than greed?",
               "behaviorHint": "It asks for the decisive reason and responsibility so they can no longer turn away. The question tries to straighten out where fact and interpretation diverge."
             },
             {
@@ -25685,7 +25685,7 @@
             },
             {
               "id": "judgeq-d-2-motive_search-3-v2",
-              "text": "Mr. Yoon Tae-seong, did holding on to this as an inheritance dispute make you feel less shaken?",
+              "text": "Mr. Yoon Tae-seong, did treating this only as an inheritance dispute make you feel less shaken?",
               "behaviorHint": "It touches directly on fear and pride inside the relationship. This stage draws out the anxiety that sat outside the words."
             },
             {
@@ -25812,7 +25812,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-empathy_approach-3-v1",
-              "text": "Mr. Yoon Jeong-hu, do you mean you were afraid Mr. Yoon Tae-seong would keep digging if he saw the procedural record?",
+              "text": "Mr. Yoon Jeong-hu, did you fear Mr. Yoon Tae-seong would keep digging if he learned about that notarization?",
               "behaviorHint": "It touches directly on the fear pressed down behind the facts. This stage lets them speak about the fear of the relationship falling apart."
             },
             {
@@ -25850,7 +25850,7 @@
             },
             {
               "id": "judgeq-d-2-empathy_approach-4-v2",
-              "text": "Mr. Yoon Tae-seong, what is greater: the feeling that you cannot forgive Mr. Yoon Jeong-hu, or the hurt of being left out?",
+              "text": "Mr. Yoon Tae-seong, which is greater: not forgiving Mr. Yoon Jeong-hu, or the hurt of being left out?",
               "behaviorHint": "It makes them choose the heaviest emotion. The question lets them see for themselves what remains larger: responsibility or hurt."
             },
             {
@@ -25982,7 +25982,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-4-v2",
-              "text": "Mr. Yoon Tae-seong, why did you harden your belief that your mother trusted only you, even while misunderstanding the source of that help?",
+              "text": "Mr. Yoon Tae-seong, even after misunderstanding the source of that help, why did you become more certain that Mother trusted only you?",
               "behaviorHint": "It asks for the decisive reason and responsibility so they can no longer turn away. The question tries to straighten out where fact and interpretation diverge."
             },
             {
@@ -26010,7 +26010,7 @@
           "variants": [
             {
               "id": "judgeq-d-3-motive_search-1-v1",
-              "text": "Mr. Yoon Jeong-hu, why did you leave those transfers under the name of filial duty and never disclose them to the end?",
+              "text": "Mr. Yoon Jeong-hu, why did you keep those transfers under filial duty and never reveal them in the end?",
               "behaviorHint": "It opens the way to why they could not speak immediately, rather than the fact itself. The question prods at the first hesitation."
             },
             {
@@ -26147,7 +26147,7 @@
             },
             {
               "id": "judgeq-d-3-empathy_approach-1-v2",
-              "text": "Mr. Yoon Tae-seong, when you think of yourself receiving help back then, what feeling comes first?",
+              "text": "Mr. Yoon Tae-seong, when you think back to yourself receiving help back then, what feeling comes first?",
               "behaviorHint": "It asks for the first emotional reaction rather than a judgment. The question lowers their defenses a little and draws out the feeling underneath."
             },
             {
@@ -26157,7 +26157,7 @@
             },
             {
               "id": "judgeq-d-3-empathy-approach-1-v4",
-              "text": "Mr. Yoon Tae-seong, when you think of yourself receiving help back then, what do you feel?",
+              "text": "Mr. Yoon Tae-seong, when you think back to yourself receiving help back then, what do you feel?",
               "behaviorHint": "It asks for the first emotional reaction rather than a judgment. The question lowers their defenses a little."
             },
             {
@@ -26246,7 +26246,7 @@
             },
             {
               "id": "judgeq-d-3-empathy_approach-4-v2",
-              "text": "Mr. Yoon Tae-seong, which is stronger: the wish to know the truth, or the wish to keep pretending not to know?",
+              "text": "Mr. Yoon Tae-seong, which is stronger: the wish to know the truth, or the wish to keep pretending not to know in the end?",
               "behaviorHint": "It makes them choose the heaviest emotion. The question lets them see for themselves what remains larger: responsibility or hurt."
             },
             {
@@ -26411,7 +26411,7 @@
             },
             {
               "id": "judgeq-d-4-motive-search-1-v2",
-              "text": "Mr. Yoon Tae-seong, tell me why you felt only you had been left out.",
+              "text": "Mr. Yoon Tae-seong, please explain why you felt only you had been left out.",
               "behaviorHint": "It asks for the first reason behind the facts. It lowers defenses and opens the way into the choice."
             },
             {
@@ -26492,7 +26492,7 @@
             },
             {
               "id": "judgeq-d-4-motive-search-3-v5",
-              "text": "Mr. Yoon Jeong-hu, did you lower the number because you expected Mr. Yoon Tae-seong to dig until the end?",
+              "text": "Mr. Yoon Jeong-hu, did you lower the number because you expected Mr. Yoon Tae-seong to keep digging?",
               "behaviorHint": "It touches on fear and pride inside the relationship. It draws out the reasons that sat outside the words."
             }
           ]
@@ -26725,7 +26725,7 @@
             },
             {
               "id": "judgec-d-1-mid-v5",
-              "text": "Mr. Yoon Jeong-hu, you keep minimizing what it meant to finish before Mr. Yoon Tae-seong arrived. Speak calmly.",
+              "text": "Mr. Yoon Jeong-hu, you keep minimizing what it meant to finish before Mr. Yoon Tae-seong arrived. Please tell us what you were actually trying to finish.",
               "behaviorHint": "The Judge clearly points out the changed position and demands the reason. Tone keeps evasion from dragging on."
             }
           ]
@@ -26742,12 +26742,12 @@
             },
             {
               "id": "judgec-d-1-hard-v2",
-              "text": "Mr. Yoon Tae-seong, you were certain about Mother's condition, then admitted some possibility. Why did you push it that far?",
+              "text": "Mr. Yoon Tae-seong, you were certain about Mother's condition, then admitted some possibility. Even so, why did you push that certainty at first?",
               "behaviorHint": "The Judge cuts off avoidance of responsibility and demands a key answer. Tone fixes the contradiction in the court record."
             },
             {
               "id": "judgec-d-1-hard-v3",
-              "text": "Mr. Yoon Jeong-hu, clarify whether this had entered a procedure or not. Speak calmly about your own actions.",
+              "text": "Mr. Yoon Jeong-hu, clarify further whether it had entered the procedure or not. Tell us in order what you yourself did.",
               "behaviorHint": "The Judge cuts off avoidance of responsibility and demands a key answer. Tone fixes the contradiction in the court record."
             },
             {
@@ -26821,7 +26821,7 @@
             },
             {
               "id": "judgec-d-2-mid-v5",
-              "text": "Mr. Yoon Jeong-hu, whatever the circumstances, responsibility remains for the document having changed. Answer that judgment.",
+              "text": "Mr. Yoon Jeong-hu, whatever the circumstances, responsibility remains for the document having changed. Answer why you decided to change the document.",
               "behaviorHint": "The Judge clearly points out the changed position and demands the reason. Tone keeps evasion from dragging on."
             }
           ]
@@ -26838,7 +26838,7 @@
             },
             {
               "id": "judgec-d-2-hard-v2",
-              "text": "Mr. Yoon Tae-seong, the record conflicts with your judgment that Mr. Yoon Jeong-hu acted only from greed. Why were you so certain?",
+              "text": "Mr. Yoon Tae-seong, the record conflicts with your claim that Mr. Yoon Jeong-hu acted only from greed. What was your basis?",
               "behaviorHint": "The Judge cuts off avoidance of responsibility and demands a key answer. Tone fixes the contradiction in the court record."
             },
             {
@@ -26870,7 +26870,7 @@
             },
             {
               "id": "judgec-d-3-soft-v2",
-              "text": "Mr. Yoon Tae-seong, you moved from saying you believed it was Mother's money to admitting you did not know the source. Why do you say that?",
+              "text": "Mr. Yoon Tae-seong, your account changed from saying you believed it was Mother's money to admitting you did not know the source. Please explain why that explanation changed.",
               "behaviorHint": "The Judge quietly points out where the texture of the statement changed. Tone leaves room for self-organization."
             },
             {
@@ -26880,7 +26880,7 @@
             },
             {
               "id": "judgec-d-3-soft-v4",
-              "text": "Both of you changed your memory of the money's source. Summarize who judged what, and why.",
+              "text": "Both of you, your memories differ over the money's source. Summarize what basis each of you had for remembering it differently.",
               "behaviorHint": "The Judge quietly points out where the texture of the statement changed. Tone leaves room for self-organization."
             },
             {
@@ -27045,7 +27045,7 @@
             },
             {
               "id": "judgec-d-4-hard-v5",
-              "text": "Mr. Yoon Jeong-hu, your silence did not protect Mr. Yoon Tae-seong; it deepened suspicion. Explain that judgment now.",
+              "text": "Mr. Yoon Jeong-hu, your silence did not protect Mr. Yoon Tae-seong; it deepened suspicion. Explain now why you chose not to speak.",
               "behaviorHint": "The Judge cuts off avoidance of responsibility and demands a key answer. Tone fixes the contradiction in the court record."
             }
           ]
@@ -27062,7 +27062,7 @@
           "variants": [
             {
               "id": "judgeec-dc-1-b-q1-soft-v1",
-              "text": "Taken together, the will copy, final-years visit record, and Choi Bok-sun's voice testimony show that the timing of increased visits overlaps with the scene of reading papers. Mr. Yoon Jeong-hu, calmly explain why you tried to finish before Mr. Yoon Tae-seong arrived.",
+              "text": "Together, the will copy, final-years visit record, and Choi Bok-sun's voice testimony show that increased visits overlap with the scene of reading papers aloud. Mr. Yoon Jeong-hu, explain in order why you tried to finish before Mr. Yoon Tae-seong arrived.",
               "behaviorHint": "The Judge calmly presents the final-years papers combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -27077,7 +27077,7 @@
             },
             {
               "id": "judgeec-dc-1-b-q1-soft-v4",
-              "text": "The record of increased final-years visits and the testimony that you read papers aloud lead to one conclusion. Mr. Yoon Jeong-hu, summarize the purpose of those visits.",
+              "text": "The record of increased final-years visits and the testimony that papers were read aloud line up in the same direction. Mr. Yoon Jeong-hu, summarize the purpose of those visits.",
               "behaviorHint": "The Judge calmly presents the final-years papers combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -27171,7 +27171,7 @@
             },
             {
               "id": "judgeec-dc-1-b-q2-soft-v3",
-              "text": "There is both the circumstance that Mother had difficulty reading alone and the indication that Mr. Yoon Jeong-hu hurried the procedure. Mr. Yoon Jeong-hu, distinguish the two calmly.",
+              "text": "Mother had trouble reading alone, and there are signs Mr. Yoon Jeong-hu hurried the procedure. Mr. Yoon Jeong-hu, distinguish help from intervention.",
               "behaviorHint": "The Judge calmly presents the final-years papers combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -27204,7 +27204,7 @@
             },
             {
               "id": "judgeec-dc-1-b-q2-mid-v3",
-              "text": "Even if Mother's wishes remained, if Mr. Yoon Jeong-hu set the wording and order, the responsibility changes. Explain that boundary calmly.",
+              "text": "Even if Mother's wishes remained, if Mr. Yoon Jeong-hu set the wording and order, the responsibility changes. State how far you were involved.",
               "behaviorHint": "The Judge clearly points out the direction of the final-years papers combo. Tone leaves no room to postpone."
             },
             {
@@ -27232,7 +27232,7 @@
             },
             {
               "id": "judgeec-dc-1-b-q2-hard-v2",
-              "text": "The will's result, the visit process, and Choi Bok-sun's testimony all point to Mr. Yoon Jeong-hu's judgment. Answer clearly what you decided in Mother's place.",
+              "text": "The will's result, the visit process, and Choi Bok-sun's testimony are asking whether Mr. Yoon Jeong-hu was involved in the decision. Answer clearly what you decided in Mother's place.",
               "behaviorHint": "The Judge demands an immediate answer based on the final-years papers combo. Tone cuts off evasion."
             },
             {
@@ -27242,7 +27242,7 @@
             },
             {
               "id": "judgeec-dc-1-b-q2-hard-v4",
-              "text": "Mr. Yoon Jeong-hu, the record is asking not about someone standing beside Mother, but about someone setting the direction. Calmly acknowledge your role.",
+              "text": "Mr. Yoon Jeong-hu, the record is asking not about someone standing beside Mother, but about someone setting the direction. Clearly acknowledge your role.",
               "behaviorHint": "The Judge demands an immediate answer based on the final-years papers combo. Tone cuts off evasion."
             },
             {
@@ -27280,7 +27280,7 @@
             },
             {
               "id": "judgeec-dc-2-b-q1-soft-v5",
-              "text": "Looking at Mother's handwritten draft from the drawer together with the notarized copy reveals the direction of the change. Mr. Yoon Jeong-hu, start by explaining the judgment that lowered your share.",
+              "text": "Looking at Mother's initial draft from the drawer together with the notarized copy confirms that the procedure was carried out again. Mr. Yoon Jeong-hu, start by explaining why you led the proceedings there.",
               "behaviorHint": "The Judge calmly presents the reduced-will combo. Tone first asks for the evidence links to be explained."
             }
           ]
@@ -27326,7 +27326,7 @@
           "variants": [
             {
               "id": "judgeec-dc-2-b-q1-hard-v1",
-              "text": "The Notarization Procedure Memo and the handwritten draft point to Mr. Yoon Jeong-hu's change. Explain now why Mr. Yoon Jeong-hu's share fell from 90 to 60, leaving 40 to Mr. Yoon Tae-seong.",
+              "text": "The Notarization Procedure Memo and the morning first-intake record are asking whether Mr. Yoon Jeong-hu intervened in the procedure. Explain now why you hurried and organized the proceedings when Mother could not continue answering.",
               "behaviorHint": "The Judge demands an immediate answer based on the reduced-will combo. Tone cuts off evasion."
             },
             {
@@ -27346,7 +27346,7 @@
             },
             {
               "id": "judgeec-dc-2-b-q1-hard-v5",
-              "text": "Mr. Yoon Jeong-hu, the record points not to greed, but to another concealment. Admit that you changed the document because of that concealment and explain.",
+              "text": "Mr. Yoon Jeong-hu, the record is asking whether there was a hidden reason beyond simple greed. Admit and explain that you changed the document because of that.",
               "behaviorHint": "The Judge demands an immediate answer based on the reduced-will combo. Tone cuts off evasion."
             }
           ]
@@ -27425,7 +27425,7 @@
           "variants": [
             {
               "id": "judgeec-dc-2-b-q2-hard-v1",
-              "text": "Mr. Yoon Jeong-hu, the fact that you reduced your own share does not make the forgery disappear. The Notarization Procedure Memo and handwritten draft remain. What were you trying to prevent?",
+              "text": "Mr. Yoon Jeong-hu, saying you did not seek your own gain does not erase your procedural intervention. The notary's memo and the morning first-intake record remain. What were you trying to prevent?",
               "behaviorHint": "The Judge demands an immediate answer based on the reduced-will combo. Tone cuts off evasion."
             },
             {
@@ -27478,7 +27478,7 @@
             },
             {
               "id": "judgeec-dc-3-b-q1-soft-v5",
-              "text": "The handwritten draft and older transfer-history bundle make the court ask again about the source of money that looked like Mother's. Mr. Yoon Jeong-hu, speak calmly.",
+              "text": "The handwritten draft and account flow make the court ask again about the source of money that looked like Mother's. Mr. Yoon Jeong-hu, tell us where the money came from.",
               "behaviorHint": "The Judge calmly presents the twenty-year money combo. Tone first asks for the evidence links to be explained."
             }
           ]
@@ -27539,12 +27539,12 @@
             },
             {
               "id": "judgeec-dc-3-b-q1-hard-v4",
-              "text": "Mr. Yoon Jeong-hu, without clarifying the source of the money, Mother's wishes cannot be judged properly either. Speak calmly about the remittance flow.",
+              "text": "Mr. Yoon Jeong-hu, without clarifying the source of the money, Mother's wishes cannot be judged properly either. State the remittance flow without omissions.",
               "behaviorHint": "The Judge demands an immediate answer based on the twenty-year money combo. Tone cuts off evasion."
             },
             {
               "id": "judgeec-dc-3-b-q1-hard-v5",
-              "text": "The older transfer-history bundle explains why the handwritten draft leaned that way. Mr. Yoon Jeong-hu, now acknowledge the judgment to hide your own burden.",
+              "text": "Why the handwritten draft leaned to one side fits with the account flow. Mr. Yoon Jeong-hu, acknowledge that you hid your own burden and became involved in the decision.",
               "behaviorHint": "The Judge demands an immediate answer based on the twenty-year money combo. Tone cuts off evasion."
             }
           ]
@@ -27656,7 +27656,7 @@
           "variants": [
             {
               "id": "judgeec-dc-4-b-q1-soft-v1",
-              "text": "Taken together, the older transfer-history bundle and Older notebook copy show the continuing pattern in which Mr. Yoon Jeong-hu carried both money and family history. Mr. Yoon Jeong-hu, when did you learn that fact?",
+              "text": "Together, the long-running account flow and Mother's records show Mr. Yoon Jeong-hu had carried both money issues and family history. Mr. Yoon Jeong-hu, when did you learn that?",
               "behaviorHint": "The Judge calmly presents the hidden-reason combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -27666,7 +27666,7 @@
             },
             {
               "id": "judgeec-dc-4-b-q1-soft-v3",
-              "text": "The source of the money and Older notebook copy fit together, revealing the reason for Mr. Yoon Jeong-hu's silence. Explain from the moment you first learned it.",
+              "text": "The source of the money and Mother's records fit together and show why Mr. Yoon Jeong-hu stayed silent. Explain from the moment you first learned it.",
               "behaviorHint": "The Judge calmly presents the hidden-reason combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -27676,7 +27676,7 @@
             },
             {
               "id": "judgeec-dc-4-b-q1-soft-v5",
-              "text": "Mr. Yoon Jeong-hu, the older transfer-history bundle and Older notebook copy are different materials, but they point to the same burden. Since when did you know that burden?",
+              "text": "Mr. Yoon Jeong-hu, the account flow and Mother's records are different materials, but they show the same burden. Since when did you know about that burden?",
               "behaviorHint": "The Judge calmly presents the hidden-reason combo. Tone first asks for the evidence links to be explained."
             }
           ]
@@ -27699,7 +27699,7 @@
             },
             {
               "id": "judgeec-dc-4-b-q1-mid-v3",
-              "text": "The money flow and Older notebook copy lead in one direction. Mr. Yoon Jeong-hu, state the point you feared Mr. Yoon Tae-seong would discover.",
+              "text": "The movement of money and Mother's records line up in the same direction. Mr. Yoon Jeong-hu, tell us what you were afraid Mr. Yoon Tae-seong would learn.",
               "behaviorHint": "The Judge clearly points out the direction of the hidden-reason combo. Tone leaves no room to postpone."
             },
             {
@@ -27737,12 +27737,12 @@
             },
             {
               "id": "judgeec-dc-4-b-q1-hard-v4",
-              "text": "Mr. Yoon Jeong-hu, the materials show the hidden fact before they show any protective reason. Calmly answer why you did not tell Mr. Yoon Tae-seong.",
+              "text": "Mr. Yoon Jeong-hu, the materials show the hidden fact before they show any protective explanation. Answer why you did not tell Mr. Yoon Tae-seong.",
               "behaviorHint": "The Judge demands an immediate answer based on the hidden-reason combo. Tone cuts off evasion."
             },
             {
               "id": "judgeec-dc-4-b-q1-hard-v5",
-              "text": "The older transfer-history bundle and Older notebook copy both point to Mr. Yoon Jeong-hu's silence. State now who that silence was for.",
+              "text": "The account flow and Mother's records are both asking why Mr. Yoon Jeong-hu stayed silent. Please say now for whose sake you did not speak.",
               "behaviorHint": "The Judge demands an immediate answer based on the hidden-reason combo. Tone cuts off evasion."
             }
           ]
@@ -27760,12 +27760,12 @@
             },
             {
               "id": "judgeec-dc-4-b-q2-soft-v2",
-              "text": "The older transfer-history bundle and Older notebook copy show that the inheritance issue could spread into a family-history issue. Mr. Yoon Jeong-hu, were you afraid of that?",
+              "text": "The old flow of money and Mother's records show that the inheritance issue could spread into a family-history issue. Mr. Yoon Jeong-hu, were you afraid of that possibility?",
               "behaviorHint": "The Judge calmly presents the hidden-reason combo. Tone first asks for the evidence links to be explained."
             },
             {
               "id": "judgeec-dc-4-b-q2-soft-v3",
-              "text": "When Older notebook copy and the older transfer-history bundle fit together, the will issue leads to a deeper question. Mr. Yoon Jeong-hu, state whether you tried to stop that question.",
+              "text": "When Mother's records and the account flow fit together, the will issue spreads into a deeper question. Mr. Yoon Jeong-hu, state whether you tried to stop questions from spreading beyond the will.",
               "behaviorHint": "The Judge calmly presents the hidden-reason combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -27775,7 +27775,7 @@
             },
             {
               "id": "judgeec-dc-4-b-q2-soft-v5",
-              "text": "The older transfer-history bundle and Older notebook copy ask why you did not want the will issue to reach court. Mr. Yoon Jeong-hu, explain calmly.",
+              "text": "The account flow and Mother's records are asking why you did not want the will issue to go as far as court. Mr. Yoon Jeong-hu, explain that reason.",
               "behaviorHint": "The Judge calmly presents the hidden-reason combo. Tone first asks for the evidence links to be explained."
             }
           ]
@@ -27798,7 +27798,7 @@
             },
             {
               "id": "judgeec-dc-4-b-q2-mid-v3",
-              "text": "Mr. Yoon Jeong-hu, the will change connects to a judgment that would keep Mr. Yoon Tae-seong from asking why the handwritten draft existed. Do you acknowledge that link?",
+              "text": "Mr. Yoon Jeong-hu, your will-procedure intervention is tied to keeping Mr. Yoon Tae-seong from asking why that notarization happened. Do you acknowledge that link?",
               "behaviorHint": "The Judge clearly points out the direction of the hidden-reason combo. Tone leaves no room to postpone."
             },
             {
@@ -27826,7 +27826,7 @@
             },
             {
               "id": "judgeec-dc-4-b-q2-hard-v2",
-              "text": "The older transfer-history bundle and Older notebook copy show that avoiding court stood at the end of the will change. Mr. Yoon Jeong-hu, you must take responsibility for that judgment.",
+              "text": "The account flow and Mother's records show the will change ended in an attempt to avoid court. Mr. Yoon Jeong-hu, you must take responsibility for that decision.",
               "behaviorHint": "The Judge demands an immediate answer based on the hidden-reason combo. Tone cuts off evasion."
             },
             {
@@ -27887,7 +27887,7 @@
           "variants": [
             {
               "id": "judgeec-dc-5-a-q1-mid-v1",
-              "text": "Mr. Yoon Tae-seong, if after seeing the older transfer-history bundle and Older notebook copy you still speak first of the eldest son's share, you must state your standard for judgment. Why were you so certain?",
+              "text": "Mr. Yoon Tae-seong, if after seeing the account flow and Mother's records you still speak first of the eldest son's share, you must state your standard. What made you certain of that share?",
               "behaviorHint": "The Judge clearly points out the direction of the Mother's Wishes combo. Tone leaves no room to postpone."
             },
             {
@@ -27963,7 +27963,7 @@
             },
             {
               "id": "judgeec-dc-5-b-q1-soft-v3",
-              "text": "The three materials show why Mr. Yoon Jeong-hu hid it, but they also leave the fact that Mother's wishes were changed. Explain that part.",
+              "text": "The three materials show why Mr. Yoon Jeong-hu hid it, but they also leave the fact that Mother's wishes were changed. Explain the part where the document was changed.",
               "behaviorHint": "The Judge calmly presents the Mother's Wishes combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -27973,7 +27973,7 @@
             },
             {
               "id": "judgeec-dc-5-b-q1-soft-v5",
-              "text": "Mr. Yoon Jeong-hu, both the statement that you tried to protect him and the responsibility for changing the document remain. With the three materials before you, speak calmly.",
+              "text": "Mr. Yoon Jeong-hu, trying to protect him and responsibility for changing the document both remain. With the three materials before you, state your own responsibility.",
               "behaviorHint": "The Judge calmly presents the Mother's Wishes combo. Tone first asks for the evidence links to be explained."
             }
           ]
@@ -28052,7 +28052,7 @@
           "variants": [
             {
               "id": "judgeec-dc-5-b-q2-soft-v1",
-              "text": "Looking at the changed will copy, older transfer-history bundle, and Older notebook copy together, the flow shows that both people read Mother's wishes in their own way. Both of you, answer calmly.",
+              "text": "Looking at the changed will copy, account flow, and Mother's records together, the circumstances show that both people read Mother's wishes in their own way. Both of you, answer separately how you understood Mother's wishes.",
               "behaviorHint": "The Judge calmly presents the Mother's Wishes combo. Tone first asks for the evidence links to be explained."
             },
             {
@@ -28154,7 +28154,7 @@
           "variants": [
             {
               "id": "judgew-w-1-soft-v1",
-              "text": "I will call Ms. Choi Bok-sun. We will calmly confirm when the final-years visits increased and the scene where the paper was read aloud.",
+              "text": "I will call Ms. Choi Bok-sun. We will confirm in order when the final-years visits increased and the scene where the paper was read aloud.",
               "behaviorHint": "The Judge calmly calls witness Choi Bok-sun. The tone first identifies the issue her testimony reaches."
             },
             {
@@ -28238,7 +28238,7 @@
             },
             {
               "id": "judgew-w-1-hard-v5",
-              "text": "Ms. Choi Bok-sun, from now on we will calmly confirm the scene just before the will was written.",
+              "text": "Ms. Choi Bok-sun, we will now confirm in order the scene just before the will was written.",
               "behaviorHint": "The Judge immediately summons witness Choi Bok-sun. The tone stops circumstantial interpretation and establishes the record."
             }
           ]
@@ -28250,7 +28250,7 @@
           "variants": [
             {
               "id": "judgew-w-2-soft-v1",
-              "text": "I will call Mr. Kim Yeong-su. We will calmly confirm the sequence in the notarization procedure memo from that day and the procedural record.",
+              "text": "I will call Mr. Kim Yeong-su. We will compare the notary's memo sequence from that day with the procedural record.",
               "behaviorHint": "The Judge calmly calls witness Kim Yeong-su. The tone first identifies the issue his testimony reaches."
             },
             {
@@ -28324,7 +28324,7 @@
             },
             {
               "id": "judgew-w-2-hard-v3",
-              "text": "Mr. Kim Yeong-su, you must calmly tell us the sequence shown in the notarization procedure memo.",
+              "text": "Mr. Kim Yeong-su, you must accurately state the Notarization Procedure Memo sequence.",
               "behaviorHint": "The Judge immediately summons witness Kim Yeong-su. The tone stops circumstantial interpretation and establishes the record."
             },
             {
@@ -28346,7 +28346,7 @@
           "variants": [
             {
               "id": "judgew-w-3-soft-v1",
-              "text": "I will call Ms. Park Sun-ae. We will calmly confirm the transfers the mother mentioned and the funds for Mr. Yoon Tae-seong's business.",
+              "text": "I will call Ms. Park Sun-ae. We will confirm one by one the transfers Mother mentioned and Mr. Yoon Tae-seong's business funds.",
               "behaviorHint": "The Judge calmly calls witness Park Sun-ae. The tone first identifies the issue her testimony reaches."
             },
             {
@@ -28420,7 +28420,7 @@
             },
             {
               "id": "judgew-w-3-hard-v3",
-              "text": "Ms. Park Sun-ae, you must calmly speak about the money you heard from the mother and what she said about her two sons.",
+              "text": "Ms. Park Sun-ae, you must accurately tell us about the money you heard from Mother and what she said about her two sons.",
               "behaviorHint": "The Judge immediately summons witness Park Sun-ae. The tone stops circumstantial interpretation and establishes the record."
             },
             {
