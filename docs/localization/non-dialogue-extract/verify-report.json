@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-23T18:03:20.713Z",
+  "generatedAt": "2026-05-23T18:22:38.310Z",
   "input": "",
   "glossary": "docs/localization/glossary.csv",
   "mode": "applied",
@@ -11,16 +11,16 @@
     "placeholder_issues": 0,
     "empty_translation_issues": 36905,
     "cjk_in_english_issues": 0,
-    "english_length_spike_issues": 14869,
+    "english_length_spike_issues": 14857,
     "glossary_issues": 0,
-    "literal_english_noun_phrase_issues": 23,
-    "cross_batch_inconsistency_issues": 1360,
-    "japanese_particle_anomaly_issues": 4047,
+    "literal_english_noun_phrase_issues": 22,
+    "cross_batch_inconsistency_issues": 1358,
+    "japanese_particle_anomaly_issues": 4031,
     "chinese_korean_word_order_issues": 489,
     "person_name_divergence_issues": 26,
     "system_tone_remnant_issues": 0,
     "placeholder_leak_issues": 0,
-    "totalIssues": 57719
+    "totalIssues": 57688
   },
   "issueLimits": {
     "placeholder": {
@@ -39,9 +39,9 @@
       "omitted": 0
     },
     "englishLengthSpike": {
-      "total": 14869,
+      "total": 14857,
       "included": 1000,
-      "omitted": 13869
+      "omitted": 13857
     },
     "glossary": {
       "total": 0,
@@ -49,19 +49,19 @@
       "omitted": 0
     },
     "literalEnglishNounPhrase": {
-      "total": 23,
-      "included": 23,
+      "total": 22,
+      "included": 22,
       "omitted": 0
     },
     "crossBatchInconsistency": {
-      "total": 1360,
+      "total": 1358,
       "included": 1000,
-      "omitted": 360
+      "omitted": 358
     },
     "japaneseParticleAnomaly": {
-      "total": 4047,
+      "total": 4031,
       "included": 1000,
-      "omitted": 3047
+      "omitted": 3031
     },
     "chineseKoreanWordOrder": {
       "total": 489,
@@ -20655,20 +20655,6 @@
         "en": "After the verdict, what remained for Park Ji-yeon was the weight of a single signature, heavier than the money lost. The Judge noted Lee Jun-ho's avoidance and his concealment o..."
       },
       {
-        "row_number": 1809,
-        "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[0].variants[4].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.aftermath.entries[0].variants[4].text",
-        "locale": "en",
-        "ko_length": 158,
-        "en_length": 414,
-        "ratio": 2.62,
-        "ko": "박지연은 '저도 버림받을까 두려웠다'고 마지막까지 말했지만, 판결은 그 두려움이 선을 넘은 선택의 방패가 될 수 없다고 정리했다. 이준호는 그쪽 일을 숨긴 책임을 인정하며 관련 갈등을 따로 정리하겠다고 했다. 부부는 한동안 별거하며 공동재산 회복과 법적 절차를 따로 진행하기로 했다.",
-        "en": "Park Ji-yeon kept saying, \"I was afraid I would be abandoned too,\" but the judgment made clear that fear could not become a shield for a crime. Lee Jun-ho admitted his responsib..."
-      },
-      {
         "row_number": 1810,
         "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[1].variants[0].text",
         "category": "scripted_text",
@@ -20709,20 +20695,6 @@
         "ratio": 2.6,
         "ko": "이 결과에서 재판관은 사건의 시작을 이준호의 침묵과 비자금을 숨긴 것으로 보았다. 박지연의 적금 문제는 별도 책임으로 남았지만, 이준호가 형 사정과 현금 전달을 계속 숨기며 외도처럼 보이게 만든 점이 더 크게 잡혔다. 그는 뒤늦게 형과 조카 이야기를 모두 꺼냈고, 박지연은 그 설명을 들으면서도 이미 무너진 신뢰 앞에...",
         "en": "In this outcome, the Judge saw the beginning of the case in Lee Jun-ho's silence and his concealment of slush funds. Park Ji-yeon's savings issue remained a separate responsibil..."
-      },
-      {
-        "row_number": 1818,
-        "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[2].variants[3].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.aftermath.entries[2].variants[3].text",
-        "locale": "en",
-        "ko_length": 148,
-        "en_length": 385,
-        "ratio": 2.6,
-        "ko": "한 사람만 피해자라고 부르기 어려운 결말이었다. 이준호의 침묵은 외도 오해를 키웠고, 박지연의 선제행동은 선을 넘은 선택과 손실로 이어졌다. 두 사람은 합의 이혼과 관계 회복 상담을 모두 열어 둔 채, 먼저 그쪽을 도운 것과 공동재산 관리를 문서로 정리하기로 했다.",
-        "en": "It was an ending where it was difficult to call only one person the victim. Lee Jun-ho's silence grew the misunderstanding of an affair, and Park Ji-yeon's preemptive action led..."
       },
       {
         "row_number": 1819,
@@ -23089,23 +23061,38 @@
         "ratio": 3.67,
         "ko": "처가 식구 앞에서 가장 노릇도 못 한 것 같아 부끄러웠습니다. 그래서 더 말을 못 했습니다.",
         "en": "I was the one who closed my mouth first, and the cancellation that followed is something I have to live alongside, not on top of. I am laying down the defense; the rest is respo..."
+      },
+      {
+        "row_number": 2273,
+        "id": "applied:spouse-01:scripted_text:channels.contradiction_pursuit.entries[27].variants[1].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.contradiction_pursuit.entries[27].variants[1].text",
+        "locale": "en",
+        "ko_length": 41,
+        "en_length": 188,
+        "ratio": 4.59,
+        "ko": "제 이름이 서류에 들어갔다는 걸 알았을 때 화보다 창피함이 먼저 왔습니다.",
+        "en": "I was the one who closed my mouth first, and the cancellation that followed is something I have to live alongside, not on top of. Please do not soften this for me — I would rath..."
+      },
+      {
+        "row_number": 2275,
+        "id": "applied:spouse-01:scripted_text:channels.contradiction_pursuit.entries[27].variants[2].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.contradiction_pursuit.entries[27].variants[2].text",
+        "locale": "en",
+        "ko_length": 52,
+        "en_length": 179,
+        "ratio": 3.44,
+        "ko": "제가 먼저 숨겼다는 말, 피하지 않겠습니다. 그래도 제 침묵이 이렇게 돌아올 줄은 몰랐습니다.",
+        "en": "I was the one who closed my mouth first, and the cancellation that followed is something I have to live alongside, not on top of. I will not put what I did at someone else's feet."
       }
     ],
     "glossary": [],
     "literalEnglishNounPhrase": [
-      {
-        "row_number": 1821,
-        "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[3].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.aftermath.entries[3].variants[1].text",
-        "locale": "en",
-        "pattern": "abstract_matter",
-        "snippet": "time a problem",
-        "ko": "결론은 책임을 묻는 데서 끝나지 않았다. 재판관은 이준호에게는 숨겨 온 돈 문제를 투명하게 드러내라고, 박지연에게는 숨은 돈을 쫓는 대신 피해 회복 절차를 밟으라고 권했다. 관련자 문제와 속아 잃은 돈, 무너진 부부 관계가 한꺼번에 놓인 자리에서 두 사람은 처음으로 함께 해결해야 할 문제를 마주했다.",
-        "en": "The conclusion did not end in punishment alone. To Lee Jun-ho the Judge advised laying out family matters transparently; to Park Ji-yeon, taking the recovery procedure for the l..."
-      },
       {
         "row_number": 9439,
         "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[10].variants[2].text",
@@ -27883,68 +27870,6 @@
             "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[53].variants[7].text",
             "source": "src/data/scriptedText/spouse-01.json",
             "key_path": "channels.interrogation.entries[53].variants[7].text"
-          }
-        ]
-      },
-      {
-        "row_number": 8361,
-        "locale": "en",
-        "ko": "재판관님, 남편의 3,000만 원 출금을 앞세워 제가 따로 움직인 돈과 서류 문제를 덮으려 했습니다. 제가 숨긴 이유까지 이제는 기록해야 합니다.",
-        "variants": [
-          "Your Honor, I had been checking my husband's account for years. It did not stop at looking through the app; when the ...",
-          "Your Honor, I knew it was a crime. In that moment, divorce and losing everything scared me more. Years of checking hi...",
-          "Your Honor, I am ashamed that I watched his account for years and even imitated his signature on the power of attorne..."
-        ],
-        "occurrences": 3,
-        "examples": [
-          {
-            "row_number": 8361,
-            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[51].variants[8].text",
-            "source": "src/data/scriptedText/spouse-01.json",
-            "key_path": "channels.interrogation.entries[51].variants[8].text"
-          },
-          {
-            "row_number": 8381,
-            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[52].variants[8].text",
-            "source": "src/data/scriptedText/spouse-01.json",
-            "key_path": "channels.interrogation.entries[52].variants[8].text"
-          },
-          {
-            "row_number": 8401,
-            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[53].variants[8].text",
-            "source": "src/data/scriptedText/spouse-01.json",
-            "key_path": "channels.interrogation.entries[53].variants[8].text"
-          }
-        ]
-      },
-      {
-        "row_number": 8361,
-        "locale": "zh-CN",
-        "ko": "재판관님, 남편의 3,000만 원 출금을 앞세워 제가 따로 움직인 돈과 서류 문제를 덮으려 했습니다. 제가 숨긴 이유까지 이제는 기록해야 합니다.",
-        "variants": [
-          "让我从最开始讲起。我已经看了我丈夫的账户好几年。委任书上的签名…也是我写的。我不再回避。",
-          "让我从最开始讲起。我知道这是犯罪。可是那一刻,比起犯罪,我更害怕的是离婚。我不再回避。",
-          "让我从最开始讲起。盯着账户看了好几年,连委任书签名都模仿,我自己的过错太重…连在这里说出来都让我害怕。我不再回避。"
-        ],
-        "occurrences": 3,
-        "examples": [
-          {
-            "row_number": 8361,
-            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[51].variants[8].text",
-            "source": "src/data/scriptedText/spouse-01.json",
-            "key_path": "channels.interrogation.entries[51].variants[8].text"
-          },
-          {
-            "row_number": 8381,
-            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[52].variants[8].text",
-            "source": "src/data/scriptedText/spouse-01.json",
-            "key_path": "channels.interrogation.entries[52].variants[8].text"
-          },
-          {
-            "row_number": 8401,
-            "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[53].variants[8].text",
-            "source": "src/data/scriptedText/spouse-01.json",
-            "key_path": "channels.interrogation.entries[53].variants[8].text"
           }
         ]
       },
@@ -62867,6 +62792,92 @@
             "key_path": "channels.evidence_present.entries[137].variants[0].text"
           }
         ]
+      },
+      {
+        "row_number": 27595,
+        "locale": "en",
+        "ko": "몇백만 원씩 오간 기록과 일부 상환 뒤 연락이 끊긴 정황이 남아 있습니다. 제가 몰랐던 일입니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+        "variants": [
+          "If I am being honest with the court, Your Honor, the past transfer record is older than this case, and I will not pus...",
+          "Your Honor, the past transfer record is older than this case, and I will not push it past what it shows. I admit my r...",
+          "If I am being honest with the court, Your Honor, the past transfer record is older than this case, and I will not pus...",
+          "If I am being honest with the court, Your Honor, the past transfer record is older than this case, and I will not pus..."
+        ],
+        "occurrences": 8,
+        "examples": [
+          {
+            "row_number": 27595,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[135].variants[1].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[135].variants[1].text"
+          },
+          {
+            "row_number": 27605,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[135].variants[6].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[135].variants[6].text"
+          },
+          {
+            "row_number": 27615,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[136].variants[1].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[136].variants[1].text"
+          },
+          {
+            "row_number": 27625,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[136].variants[6].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[136].variants[6].text"
+          },
+          {
+            "row_number": 27635,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[137].variants[1].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[137].variants[1].text"
+          }
+        ]
+      },
+      {
+        "row_number": 27595,
+        "locale": "ja",
+        "ko": "몇백만 원씩 오간 기록과 일부 상환 뒤 연락이 끊긴 정황이 남아 있습니다. 제가 몰랐던 일입니다. 양쪽 말을 함께 놓고 봐야 합니다.",
+        "variants": [
+          "過去の送金記録と当時のテキストを見て私が結論を急いだ部分から、先に整理します。 直接確かめた箇所と推測で補った箇所を分けて答えます。",
+          "過去の送金記録と当時のテキストは相手の側のものですが、私の解釈で扱った経緯から説明します。 生活の積み重ねが私の解釈を押した部分は、率直にお話しします。"
+        ],
+        "occurrences": 8,
+        "examples": [
+          {
+            "row_number": 27595,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[135].variants[1].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[135].variants[1].text"
+          },
+          {
+            "row_number": 27605,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[135].variants[6].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[135].variants[6].text"
+          },
+          {
+            "row_number": 27615,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[136].variants[1].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[136].variants[1].text"
+          },
+          {
+            "row_number": 27625,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[136].variants[6].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[136].variants[6].text"
+          },
+          {
+            "row_number": 27635,
+            "id": "applied:friend-01:scripted_text:channels.evidence_present.entries[137].variants[1].text",
+            "source": "src/data/scriptedText/friend-01.json",
+            "key_path": "channels.evidence_present.entries[137].variants[1].text"
+          }
+        ]
       }
     ],
     "japaneseParticleAnomaly": [
@@ -65091,18 +65102,6 @@
         "ja": "正面から話すのではなく、その選択を取った背景にはどのような恐れや計算がありましたか。"
       },
       {
-        "row_number": 1805,
-        "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[0].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.aftermath.entries[0].variants[0].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "では",
-        "ja": "判決のあと、パク・ジヨンは長く顔を上げられなかった。イ・ジュノの隠蔽も軽い過ちではなかったが、裁判官は委任状の操作と投資損失の経緯への送金をより重く見た。イ・ジュノは家族と子どもの話をこれ以上隠さないと言い、パク・ジヨンは失った金より先に崩れた信頼をどう受け止めるかに向き合うことになった。"
-      },
-      {
         "row_number": 1811,
         "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[1].variants[1].text",
         "category": "scripted_text",
@@ -65151,18 +65150,6 @@
         "ja": "判決は二人双方の責任を分けて記した。イ・ジュノは家族と子どもを隠しながら個人の裏資金3,000万ウォンを一人で動かし、パク・ジヨンは裏切られる恐怖を理由に委任状を作って共同積立預金2,000万ウォンを解約した。法廷を出たあと、夫婦は金を回復する問題よりも、互いに事実を言わなかった習慣から断たなければならないという言葉を長く思い返した。"
       },
       {
-        "row_number": 1818,
-        "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[2].variants[3].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.aftermath.entries[2].variants[3].text",
-        "locale": "ja",
-        "pattern": "noun_particle_loop",
-        "snippet": "管理を文書で整理",
-        "ja": "一人だけを被害者と呼ぶのは難しい結末だった。イ・ジュノの沈黙は不倫の誤解を育て、パク・ジヨンの先手行動は犯罪と損失につながった。二人は協議離婚と関係回復相談の両方を開いたまま、まず家族の家族を助けたことと共同財産の管理を文書で整理することにした。"
-      },
-      {
         "row_number": 1819,
         "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[2].variants[4].text",
         "category": "scripted_text",
@@ -65173,18 +65160,6 @@
         "pattern": "repeated_particle",
         "snippet": "には",
         "ja": "裁判官は、隠蔽の始まり、資金の実行、委任状の操作を一本の線には結びつけなかった。だから結論も、一人の勝利では終わらなかった。イ・ジュノは「家の事情を処理する」という言葉で配偶者を排除した責任を、パク・ジヨンは「見捨てられるのが怖かった」という言葉で書類操作を覆おうとした責任を、それぞれ受け入れた。"
-      },
-      {
-        "row_number": 1821,
-        "id": "applied:spouse-01:scripted_text:channels.aftermath.entries[3].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.aftermath.entries[3].variants[1].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "では",
-        "ja": "裁判官は処罰一色ではなく、双方の保護と再発防止を中心に判決を組んだ。当面の住み分けと支援機関の関与が提案された。"
       },
       {
         "row_number": 1827,
@@ -66747,18 +66722,6 @@
         "ja": "この記録は私の責任で生じたものです。ただ、個人的な欲でやったことではありません。"
       },
       {
-        "row_number": 3384,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[108].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[108].variants[5].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "この資料が私の行動から出たものなのは事実です。ただ、その行動には別の事情がありました。"
-      },
-      {
         "row_number": 3388,
         "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[108].variants[7].text",
         "category": "scripted_text",
@@ -67225,18 +67188,6 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "この記録は私の責任で生じたものです。ただ、個人的な欲でやったことではありません。"
-      },
-      {
-        "row_number": 3782,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[126].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[126].variants[5].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "この資料が私の行動から出たものなのは事実です。ただ、その行動には別の事情がありました。"
       },
       {
         "row_number": 3786,
@@ -67707,18 +67658,6 @@
         "ja": "相手の動きを私が代弁する立場にはありません。"
       },
       {
-        "row_number": 4291,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[150].variants[2].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[150].variants[2].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "では",
-        "ja": "積立は別の事情で解約したんです。私が一人で仕組んだことではありません。"
-      },
-      {
         "row_number": 4297,
         "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[150].variants[5].text",
         "category": "scripted_text",
@@ -67873,18 +67812,6 @@
         "pattern": "repeated_particle",
         "snippet": "でを",
         "ja": "その動きは私のものです。意図までを今ここで一度にはお話しできません。"
-      },
-      {
-        "row_number": 4387,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[155].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[155].variants[0].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "その記録には私の動きが映っています。順序を踏まえてお話しします。"
       },
       {
         "row_number": 4389,
@@ -68125,18 +68052,6 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "当時の動線は私のものでした。事情までは整理が要ります。"
-      },
-      {
-        "row_number": 4703,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[1].variants[3].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[1].variants[3].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "では",
-        "ja": "参考書の話まで出るなら、別の事情も話さなければなりません。私が読む本ではありませんでした。"
       },
       {
         "row_number": 4717,
@@ -68715,18 +68630,6 @@
         "ja": "おかしく見えるかもしれないことは分かっています。ただ、何の理由もなくしたことではありません。"
       },
       {
-        "row_number": 5189,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[53].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[53].variants[0].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "中学生用の参考書まで聞かれると、今は答えにくいです。それを説明するには、別の事情まで話さなければなりません。"
-      },
-      {
         "row_number": 5193,
         "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[53].variants[2].text",
         "category": "scripted_text",
@@ -68821,18 +68724,6 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "この記録は私の責任で生じたものです。ただ、個人的な欲でやったことではありません。"
-      },
-      {
-        "row_number": 5220,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[54].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[54].variants[5].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "この資料が私の行動から出たものなのは事実です。ただ、その行動には別の事情がありました。"
       },
       {
         "row_number": 5224,
@@ -69411,18 +69302,6 @@
         "ja": "この記録は私の責任で生じたものです。ただ、個人的な欲でやったことではありません。"
       },
       {
-        "row_number": 5618,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[72].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[72].variants[5].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "この資料が私の行動から出たものなのは事実です。ただ、その行動には別の事情がありました。"
-      },
-      {
         "row_number": 5622,
         "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[72].variants[7].text",
         "category": "scripted_text",
@@ -69985,18 +69864,6 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "この記録は私の責任で生じたものです。ただ、個人的な欲でやったことではありません。"
-      },
-      {
-        "row_number": 6016,
-        "id": "applied:spouse-01:scripted_text:channels.evidence_present.entries[90].variants[5].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.evidence_present.entries[90].variants[5].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "この資料が私の行動から出たものなのは事実です。ただ、その行動には別の事情がありました。"
       },
       {
         "row_number": 6020,
@@ -72255,18 +72122,6 @@
         "ja": "差し支えのない範囲では、相手をいたずらに傷つけたくありません。"
       },
       {
-        "row_number": 7823,
-        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[27].variants[9].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.interrogation.entries[27].variants[9].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "では",
-        "ja": "裁判官、別の事情を隠したのは事実ですが、不貞ではありません。隠したことと不貞は別に見るべきです。"
-      },
-      {
         "row_number": 7825,
         "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[28].variants[0].text",
         "category": "scripted_text",
@@ -73117,18 +72972,6 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "通帳からまとまった額を引き出した件は、私の側で動きました。 差し支えのない範囲では、当時の判断には言いきれない事情がありました。"
-      },
-      {
-        "row_number": 8567,
-        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[61].variants[1].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.interrogation.entries[61].variants[1].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "では",
-        "ja": "差し支えのない範囲では、一定の金額が動いたことは事実です。 当時の判断には言いきれない事情がありました。"
       },
       {
         "row_number": 8569,
@@ -74079,18 +73922,6 @@
         "ja": "共同口座にはそのまま手をつけていない、という言葉に、私は嘘をつきました。 これ以上は、整理して申し上げます。"
       },
       {
-        "row_number": 9045,
-        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[83].variants[0].text",
-        "category": "scripted_text",
-        "source": "src/data/scriptedText/spouse-01.json",
-        "case_id": "spouse-01",
-        "key_path": "channels.interrogation.entries[83].variants[0].text",
-        "locale": "ja",
-        "pattern": "repeated_particle",
-        "snippet": "には",
-        "ja": "共同口座にはそのまま手をつけていない、という言葉に、私は嘘をつきました。 少し踏み込んで申し上げますと、責められるよりも、まずは聞いていただきたかったのです。"
-      },
-      {
         "row_number": 9049,
         "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[83].variants[2].text",
         "category": "scripted_text",
@@ -74869,6 +74700,186 @@
         "pattern": "repeated_particle",
         "snippet": "では",
         "ja": "差し支えのない範囲では、解約の経緯は私には覚えがありません。 相手をいたずらに傷つけたくありません。"
+      },
+      {
+        "row_number": 9379,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[98].variants[7].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[98].variants[7].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "には",
+        "ja": "解約の経緯は私には覚えがありません。 妻にも別途、後で説明するつもりでした。"
+      },
+      {
+        "row_number": 9387,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[99].variants[1].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[99].variants[1].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "には",
+        "ja": "少し踏み込んでお話しすると、解約の経緯は私には覚えがありません。 時系列に沿ってお答えします。"
+      },
+      {
+        "row_number": 9399,
+        "id": "applied:spouse-01:scripted_text:channels.interrogation.entries[99].variants[7].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.interrogation.entries[99].variants[7].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "には",
+        "ja": "解約の経緯は私には覚えがありません。 妻にも別途、後で説明するつもりでした。"
+      },
+      {
+        "row_number": 9424,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[0].variants[0].behaviorHint",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[0].variants[0].behaviorHint",
+        "locale": "ja",
+        "pattern": "noun_particle_loop",
+        "snippet": "当事者が自分で整理",
+        "ja": "裁判官が言葉の調子が変わった地点を静かに指摘する。当事者が自分で整理して話す余地を残すトーン。"
+      },
+      {
+        "row_number": 9426,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[0].variants[1].behaviorHint",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[0].variants[1].behaviorHint",
+        "locale": "ja",
+        "pattern": "noun_particle_loop",
+        "snippet": "当事者が自分で整理",
+        "ja": "裁判官が言葉の調子が変わった地点を静かに指摘する。当事者が自分で整理して話す余地を残すトーン。"
+      },
+      {
+        "row_number": 9428,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[0].variants[2].behaviorHint",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[0].variants[2].behaviorHint",
+        "locale": "ja",
+        "pattern": "noun_particle_loop",
+        "snippet": "当事者が自分で整理",
+        "ja": "裁判官が言葉の調子が変わった地点を静かに指摘する。当事者が自分で整理して話す余地を残すトーン。"
+      },
+      {
+        "row_number": 9435,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[10].variants[0].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[10].variants[0].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "がは",
+        "ja": "お二人、隠し始めた時とお金が実際に動いた時を混ぜると責任素材がはっきりしません。それぞれのポイントで最初だったことを明らかにします。"
+      },
+      {
+        "row_number": 9451,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[11].variants[3].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[11].variants[3].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "お二人、二つの大きな経済的損失を相手が最初だった理由で覆うことはできません。それぞれがしたことを今教えてください。"
+      },
+      {
+        "row_number": 9457,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[1].variants[1].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[1].variants[1].text",
+        "locale": "ja",
+        "pattern": "noun_particle_loop",
+        "snippet": "行動を一緒に説明",
+        "ja": "パク・ジヨンさん、情況解釈だけで不倫だと確信したら根拠と後の行動を一緒に説明しなければなりません。"
+      },
+      {
+        "row_number": 9459,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[1].variants[2].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[1].variants[2].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "では",
+        "ja": "お二人、お互いを隠して断定しただけでは、この状況が大きくなった過程を説明するのは難しいです。誰から先に始まったのか教えてください。"
+      },
+      {
+        "row_number": 9461,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[1].variants[3].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[1].variants[3].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "には",
+        "ja": "イ・ジュノさん、他の関係者の話を遅く付けたように見えないようにするには、初めて沈黙した理由を今明らかにしなければなりません。"
+      },
+      {
+        "row_number": 9465,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[2].variants[0].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[2].variants[0].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "はで",
+        "ja": "イ・ジュノさん、オフィステルにいた人が他の関係者だったという点をこれ以上遅らせることはできません。その場に誰がいたのか、今答えてください。"
+      },
+      {
+        "row_number": 9494,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[5].variants[0].behaviorHint",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[5].variants[0].behaviorHint",
+        "locale": "ja",
+        "pattern": "noun_particle_loop",
+        "snippet": "閲覧経路を同時に釘付",
+        "ja": "裁判官が用途と閲覧経路を同時に釘付けにする。これ以上先送りできないという強い信号を出す質問。"
+      },
+      {
+        "row_number": 9496,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[5].variants[1].behaviorHint",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[5].variants[1].behaviorHint",
+        "locale": "ja",
+        "pattern": "noun_particle_loop",
+        "snippet": "閲覧経路を同時に釘付",
+        "ja": "裁判官が用途と閲覧経路を同時に釘付けにする。これ以上先送りできないという強い信号を出す質問。"
+      },
+      {
+        "row_number": 9497,
+        "id": "applied:spouse-01:scripted_text:channels.judge_contradiction.entries[5].variants[1].text",
+        "category": "scripted_text",
+        "source": "src/data/scriptedText/spouse-01.json",
+        "case_id": "spouse-01",
+        "key_path": "channels.judge_contradiction.entries[5].variants[1].text",
+        "locale": "ja",
+        "pattern": "repeated_particle",
+        "snippet": "がで",
+        "ja": "パク・ジヨンさん、出金をどのように知ったか明らかにしなければこの問題を打ち立てることができません。確認経緯を隠さないでください。"
       }
     ],
     "chineseKoreanWordOrder": [
