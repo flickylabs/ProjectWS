@@ -18119,6 +18119,49 @@ body.pc-mode .pc-event-feedback__close:hover {
   border-color: rgba(212, 162, 78, 0.55);
   color: #e8c172;
 }
+
+/* 2026-05-24: allowAutoDismiss popup 카운트다운 도넛 — title row 우측 끝(확인 버튼 우측 세로선 위치).
+   stroke-dashoffset depletion + rotation 동시 — "타이머가 다 차서 사라지는" 시각 신호. */
+body.pc-mode .pc-event-feedback__autodismiss-donut {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+body.pc-mode .pc-event-feedback__autodismiss-donut svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  animation: pc-autodismiss-donut-spin var(--countdown-ms, 3000ms) linear forwards;
+}
+body.pc-mode .pc-event-feedback__autodismiss-donut-bg {
+  fill: none;
+  stroke: rgba(212, 162, 78, 0.18);
+  stroke-width: 3;
+}
+body.pc-mode .pc-event-feedback__autodismiss-donut-fg {
+  fill: none;
+  stroke: rgba(232, 193, 114, 0.85);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 75.4;
+  stroke-dashoffset: 0;
+  animation: pc-autodismiss-donut-deplete var(--countdown-ms, 3000ms) linear forwards;
+}
+@keyframes pc-autodismiss-donut-deplete {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 75.4; }
+}
+@keyframes pc-autodismiss-donut-spin {
+  from { transform: rotate(-90deg); }
+  to { transform: rotate(270deg); }
+}
 body.pc-mode .pc-event-feedback-root.is-modal.is-phase-leaving,
 body.pc-mode .pc-event-feedback-root.is-modal.is-phase-converging {
   animation: pc-efb-backdrop-out 0.25s ease forwards;

@@ -863,6 +863,9 @@ function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
       party: target,
       archetype,
       convergeToTag: true,
+      // 2026-05-24: archetype 관찰은 비중요 정보 popup — 3초 카운트다운 도넛 후 자동 소멸.
+      allowAutoDismiss: true,
+      autoDismissMs: 3000,
     })
   }
 

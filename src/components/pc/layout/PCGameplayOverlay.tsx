@@ -184,6 +184,9 @@ export default function PCGameplayOverlay() {
       tone: meta.tone,
       party: choice.party,
       disputeId: choice.disputeId,
+      // 2026-05-24: 상태 전이 알림은 비중요 정보 popup — 3초 카운트다운 도넛 후 자동 소멸.
+      allowAutoDismiss: true,
+      autoDismissMs: 3000,
     })
     // 관찰 패널 기록 — 전환 상황 발생 + 제시된 선택지
     ovState.addJudgeObservation({

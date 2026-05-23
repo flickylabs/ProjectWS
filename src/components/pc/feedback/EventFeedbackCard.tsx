@@ -228,39 +228,36 @@ function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile
   return { level: 'none', cue: 'silent', destination: 'none' }
 }
 
-function expandHighlightToReadablePhrase(text: string, highlight: string): string {
-  const index = text.indexOf(highlight)
-  if (index < 0) return highlight
-  const startBreaks = ['.', '!', '?', '。', '！', '？', '\n']
-  const endBreaks = ['.', '!', '?', '。', '！', '？', '\n']
-
-  let start = 0
-  for (const marker of startBreaks) {
-    const markerIndex = text.lastIndexOf(marker, index - 1)
-    if (markerIndex >= start) start = markerIndex + marker.length
-  }
-
-  let end = text.length
-  const highlightEnd = index + highlight.length
-  for (const marker of endBreaks) {
-    const markerIndex = text.indexOf(marker, highlightEnd)
-    if (markerIndex >= 0 && markerIndex + marker.length < end) {
-      end = markerIndex + marker.length
-    }
-  }
-
-  return text.slice(start, end).trim() || highlight
+/**
+ * 2026-05-24 사용자 요청: allowAutoDismiss + autoDismissMs 지정된 popup의 title row 우측에
+ * 작은 카운트다운 도넛 표시. SVG circle 두 겹 — 배경(고정 faint) + 전경(stroke 비워지며 회전).
+ * 사용자가 "타이머가 다 차서 사라지는" 인지 가능하도록 시각화.
+ * key={active.id}로 popup 전환마다 애니메이션 reset.
+ */
+function AutoDismissDonut({ autoDismissMs }: { autoDismissMs: number }) {
+  const style = { '--countdown-ms': `${autoDismissMs}ms` } as CSSProperties
+  return (
+    <span className="pc-event-feedback__autodismiss-donut" aria-hidden="true" style={style}>
+      <svg viewBox="0 0 32 32">
+        <circle className="pc-event-feedback__autodismiss-donut-bg" cx="16" cy="16" r="12" />
+        <circle className="pc-event-feedback__autodismiss-donut-fg" cx="16" cy="16" r="12" />
+      </svg>
+    </span>
+  )
 }
+
+// 2026-05-24 사용자 결정 (Option A): phrase 확장 폐기. keyword 그대로만 강조.
+// 이전: 문장 경계까지 확장(.!?。！？\n) → '방금 진술' 영역이 시끄러움.
+// 이제: 키워드 정확한 매치만 표시.
 function splitHighlightedText(text: string, highlight?: string) {
   if (!highlight) return <>{text}</>
-  const expandedHighlight = expandHighlightToReadablePhrase(text, highlight)
-  const index = text.indexOf(expandedHighlight)
+  const index = text.indexOf(highlight)
   if (index < 0) return <>{text}</>
   return (
     <>
       {text.slice(0, index)}
-      <span className="pc-court-clash__phrase is-broken">{expandedHighlight}</span>
-      {text.slice(index + expandedHighlight.length)}
+      <span className="pc-court-clash__phrase is-broken">{highlight}</span>
+      {text.slice(index + highlight.length)}
     </>
   )
 }
@@ -847,6 +844,11 @@ export default function EventFeedbackCard() {
         data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
+        {/* 2026-05-24: allowAutoDismiss opt-in popup의 카운트다운 도넛 — title row 우측 끝,
+            확인 버튼 우측 세로선 위치. key={active.id}로 popup 전환마다 애니메이션 reset. */}
+        {active.allowAutoDismiss && active.autoDismissMs ? (
+          <AutoDismissDonut key={`${active.id}-donut`} autoDismissMs={active.autoDismissMs} />
+        ) : null}
         {/* 2026-05-22 v3.3: focusTakeover beat-mark도 panel-pin 마름모 시스템에 통합.
             기존 막대/추상 형상(span+i) → cue별 명확 아이콘. 36px 크기는 --beat modifier가 유지하여
             popup pin(24px) 대비 climax 강조감 보존. cue color는 기존 --court-beat-accent와 동일. */}
