@@ -21668,12 +21668,12 @@
           "variants": [
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v1",
-              "text": "Ms. Park, please tell us who went to the bank on the day the joint savings account cancellation began.",
+              "text": "Ms. Park, please start by telling us who went to the bank on the day the joint savings account was canceled.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v2",
-              "text": "Ms. Park, how did you check your name and his name before holding the cancellation documents in your hands?",
+              "text": "Ms. Park, how did you verify both account holders' names for the savings cancellation?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
@@ -21688,7 +21688,7 @@
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v5",
-              "text": "Ms. Park, did you see the withdrawal of the savings as a simple procedure, or as an action you personally carried out?",
+              "text": "Ms. Park, was that withdrawal a scheduled standard procedure, or did you personally carry out an early cancellation?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             }
           ]
