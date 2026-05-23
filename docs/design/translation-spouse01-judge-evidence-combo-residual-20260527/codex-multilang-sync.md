@@ -35,7 +35,7 @@ KO `src/data/scriptedText/spouse-01.json`의 `judge_evidence_combo` channel **17
 - **17 unique entries** (동형 X) — 1:1 ID 매핑
 - dispute combo: dc-1 (외도 의심), dc-2 (자금/통화), dc-3 (출금), dc-4 (투자방), dc-5 (다중)
 - 재판관 청유 어미 톤 (soft / mid / hard)
-- ★ **e-7 lockedName 회피 처리 포함** — dc-5-a-q1 (soft-v2, soft-v5) 2건은 "공동 적금 해지 서류" → "공동 적금 처리 서류" (surfaceName) 치환
+- ★ **e-7 surfaceName 정책 변경 반영** — surfaceName = lockedName 통일 ("공동 적금 해지 서류"). 이전 잠정 처리 ("공동 적금 처리 서류") 폐기. main commit `1b9481eb` 참조.
 
 ### 1.1. 영향 파일
 
@@ -94,9 +94,9 @@ main commit `99d2fdc1`의 git show 결과로 KO diff 확인.
 | ID | 톤 | KO (변경 후) |
 |----|----|--------------|
 | judgecombo-dc-5-b-q1-soft-v2 | soft | 이준호 씨, 현금 출금과 박지연 씨의 투자방 송금, 공동 적금 해지는 각각 다른 흐름으로 보입니다. 어떤 순서였는지 하나씩 짚어 주시겠습니까. |
-| judgecombo-dc-5-b-q1-soft-v4 | soft | 이준호 씨, 현금 출금은 이준호 씨 쪽 자료에서, 공동 적금 처리 서류는 박지연 씨 쪽 자료에서 확인됩니다. 두 내용을 구분해서 설명해 주십시오. |
-| judgecombo-dc-5-a-q1-soft-v2 | soft | 박지연 씨, 출금 내역과 송금 기록, 공동 적금 처리 서류를 함께 보면 누가 먼저 숨겼는지, 누가 먼저 돈을 움직였는지가 각각 확인됩니다. 본인의 행동을 그 순서에 맞춰 말씀해 주십시오. |
-| judgecombo-dc-5-a-q1-soft-v5 | soft | 박지연 씨, 두 큰돈의 순서를 보려면 본인 송금과 공동 적금 처리 서류를 따로 보아야 합니다. 두 자료가 어떤 순서로 이어졌는지 설명해 주십시오. |
+| judgecombo-dc-5-b-q1-soft-v4 | soft | 이준호 씨, 현금 출금은 이준호 씨 쪽 자료에서, 공동 적금 해지 서류는 박지연 씨 쪽 자료에서 확인됩니다. 두 내용을 구분해서 설명해 주십시오. |
+| judgecombo-dc-5-a-q1-soft-v2 | soft | 박지연 씨, 출금 내역과 송금 기록, 공동 적금 해지 서류를 함께 보면 누가 먼저 숨겼는지, 누가 먼저 돈을 움직였는지가 각각 확인됩니다. 본인의 행동을 그 순서에 맞춰 말씀해 주십시오. |
+| judgecombo-dc-5-a-q1-soft-v5 | soft | 박지연 씨, 두 큰돈의 순서를 보려면 본인 송금과 공동 적금 해지 서류를 따로 보아야 합니다. 두 자료가 어떤 순서로 이어졌는지 설명해 주십시오. |
 
 ---
 
@@ -153,19 +153,19 @@ main commit `99d2fdc1`의 git show 결과로 KO diff 확인.
 | "통화기록" | "call records" | "通話記録" | "通话记录" |
 | "투자방 텔레그램" | "the investment-chat Telegram" | "投資チャットのテレグラム" | "投资群组的 Telegram" |
 | "송금 기록" | "transfer records" | "送金記録" | "转账记录" |
-| **"공동 적금 처리 서류"** (★ surfaceName) | "joint-savings processing document" | "共同積金処理書類" | "共同储蓄处理文件" |
-| **"공동 적금 해지"** (dispute name, dc-5-b-q1-soft-v2 한정) | "the joint-savings termination" | "共同積金の解約" | "共同储蓄解约" |
+| **"공동 적금 해지 서류"** (★ surfaceName = lockedName 통일, main commit `1b9481eb`) | "joint-savings cancellation documents" | "共同積立解約書類" | "共同储蓄解约文件" |
+| **"공동 적금 해지"** (dispute name, dc-5-b-q1-soft-v2 한정) | "the joint-savings termination" | "共同積立の解約" | "共同储蓄解约" |
 
 ### 3.7. 진실 누설 회피 (★ 본 batch 핵심)
 
-본 batch에서는 **dc-5-a-q1 (soft-v2, soft-v5) 2건**에 e-7 lockedName "공동 적금 해지 서류" 사용 시 P0 hard 회귀 발생. 위 표대로 **"공동 적금 처리 서류"** (surfaceName) 사용.
+본 batch는 **e-7 surfaceName 정책 변경** (main commit `1b9481eb`) 반영. surfaceName = lockedName = "공동 적금 해지 서류" 통일. dc-5 entries 4건 모두 "공동 적금 해지 서류" 자연 표현 사용. qa-runtime-gate locked evidence name leak 검출은 `ev.name === ev.surfaceName` 조건으로 자동 skip.
 
-| 위치 | 사용 표현 | 비고 |
-|------|-----------|------|
-| dc-5-b-q1-soft-v2 | "공동 적금 해지" (행위 명사) | dispute name 일부 인용. lockedName 명사구 매칭 X. 통과 영역. |
-| dc-5-b-q1-soft-v4 | "공동 적금 처리 서류" | surfaceName |
-| dc-5-a-q1-soft-v2 | "공동 적금 처리 서류" | surfaceName (P0 회피) |
-| dc-5-a-q1-soft-v5 | "공동 적금 처리 서류" | surfaceName (P0 회피) |
+| 위치 | 사용 표현 |
+|------|-----------|
+| dc-5-b-q1-soft-v2 | "공동 적금 해지" (행위 명사) |
+| dc-5-b-q1-soft-v4 | "공동 적금 해지 서류" |
+| dc-5-a-q1-soft-v2 | "공동 적금 해지 서류" |
+| dc-5-a-q1-soft-v5 | "공동 적금 해지 서류" |
 
 hidden keyword (가족/형/회생/사기/조작/위법 등) 신규 도입 X.
 
