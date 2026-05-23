@@ -14,6 +14,9 @@ Thumbs.db
 .idea/
 .claude/
 
+# Ephemeral working scripts (정찰/apply/build 일회성 도구)
+scripts/tmp/
+
 # Node / build output
 node_modules/
 dist/
