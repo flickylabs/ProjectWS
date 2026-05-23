@@ -9710,23 +9710,23 @@
           "variants": [
             {
               "id": "a-e-5-late-both-v1",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Both of us moved here, and I will set down each part as it actually happened."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-both-v2",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. There are steps from both sides in this, and I will not collapse them into one."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. We need to look at both sides together."
             },
             {
               "id": "a-e-5-late-both-v3",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. My step and her step are different in shape, and I will keep them separate."
+              "text": "We need to look at both sides together. My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-both-v4",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. We both touched this, and I will own only the part that was mine."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-both-v5",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. The record is mixed, and I will not paint it as one-sided."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. I will speak only to what remains in the record."
             }
           ]
         },
@@ -9740,23 +9740,23 @@
           "variants": [
             {
               "id": "b-e-6-early-self-v1",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I am the one who acted on this side, and I will own that part."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-self-v2",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. The hand that did it was mine, and I will not push it onto anyone else."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and that is the part I need to explain myself."
             },
             {
               "id": "b-e-6-early-self-v3",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. What I did, I did myself, and I will answer for it."
+              "text": "That is the part I need to explain myself. The transfer record is mine, and I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-self-v4",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will not hide that the action came from me."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-self-v5",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. It was my own choice, and I will set it down as such."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and I will only speak to the part that remains in the record."
             }
           ]
         },
@@ -13412,43 +13412,43 @@
           "variants": [
             {
               "id": "b-e-4-late-stage1-v1",
-              "text": "About the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. I am the one who acted on this side, and I will own that part."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v2",
-              "text": "If I am being honest with the court, about the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. The hand that did it was mine, and I will not push it onto anyone else."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v3",
-              "text": "Speaking plainly to the bench, about the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. What I did, I did myself, and I will answer for it."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v4",
-              "text": "About the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. I will not hide that the action came from me."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v5",
-              "text": "If I am being honest with the court, about the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. It was my own choice, and I will set it down as such."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v6",
-              "text": "Speaking plainly to the bench, about the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. My own step is what is on the record, and I accept that."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v7",
-              "text": "About the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. I will not dress up my own part to look smaller than it was."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v8",
-              "text": "If I am being honest with the court, about the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. The act was mine, and I am ready for the consequences."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v9",
-              "text": "Speaking plainly to the bench, about the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. I will state plainly that I was the one who moved."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             },
             {
               "id": "b-e-4-late-stage1-v10",
-              "text": "About the fiance's messages, I will not stretch what they say beyond what is on the screen. I will lay down what I can without dragging private family ground into a place it does not belong. I am the one who carried it out, and I do not deny it."
+              "text": "The first disclosed conversation alone does not settle the sequence. The later original text must be checked too."
             }
           ]
         },
@@ -14924,43 +14924,43 @@
           "variants": [
             {
               "id": "a-e-5-late-stage1-v1",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Both of us moved here, and I will set down each part as it actually happened."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage1-v2",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. There are steps from both sides in this, and I will not collapse them into one."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. We need to look at both sides together."
             },
             {
               "id": "a-e-5-late-stage1-v3",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. My step and her step are different in shape, and I will keep them separate."
+              "text": "We need to look at both sides together. My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage1-v4",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. We both touched this, and I will own only the part that was mine."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage1-v5",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. The record is mixed, and I will not paint it as one-sided."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. I will speak only to what remains in the record."
             },
             {
               "id": "a-e-5-late-stage1-v6",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. I am the one who moved on my side, and she is the one who moved on hers."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage1-v7",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Neither of us is wholly outside this; I will say what each of us did."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. We need to look at both sides together."
             },
             {
               "id": "a-e-5-late-stage1-v8",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. I will draw the line between what I did and what she did, openly."
+              "text": "We need to look at both sides together. My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage1-v9",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Both hands are in this trail, and I will name them in turn."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage1-v10",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. The shared steps and the separate steps are not the same; I will keep them apart."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. I will speak only to what remains in the record."
             }
           ]
         },
@@ -14980,43 +14980,43 @@
           "variants": [
             {
               "id": "a-e-5-late-stage2-v1",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Both of us moved here, and I will set down each part as it actually happened."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage2-v2",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. There are steps from both sides in this, and I will not collapse them into one."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. We need to look at both sides together."
             },
             {
               "id": "a-e-5-late-stage2-v3",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. My step and her step are different in shape, and I will keep them separate."
+              "text": "We need to look at both sides together. My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage2-v4",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. We both touched this, and I will own only the part that was mine."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage2-v5",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. The record is mixed, and I will not paint it as one-sided."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. I will speak only to what remains in the record."
             },
             {
               "id": "a-e-5-late-stage2-v6",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. I am the one who moved on my side, and she is the one who moved on hers."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage2-v7",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Neither of us is wholly outside this; I will say what each of us did."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. We need to look at both sides together."
             },
             {
               "id": "a-e-5-late-stage2-v8",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. I will draw the line between what I did and what she did, openly."
+              "text": "We need to look at both sides together. My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage2-v9",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Both hands are in this trail, and I will name them in turn."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage2-v10",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. The shared steps and the separate steps are not the same; I will keep them apart."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. I will speak only to what remains in the record."
             }
           ]
         },
@@ -15036,43 +15036,43 @@
           "variants": [
             {
               "id": "a-e-5-late-stage3-v1",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Both of us moved here, and I will set down each part as it actually happened."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage3-v2",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. There are steps from both sides in this, and I will not collapse them into one."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. We need to look at both sides together."
             },
             {
               "id": "a-e-5-late-stage3-v3",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. My step and her step are different in shape, and I will keep them separate."
+              "text": "We need to look at both sides together. My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage3-v4",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. We both touched this, and I will own only the part that was mine."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage3-v5",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. The record is mixed, and I will not paint it as one-sided."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. I will speak only to what remains in the record."
             },
             {
               "id": "a-e-5-late-stage3-v6",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. I am the one who moved on my side, and she is the one who moved on hers."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage3-v7",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Neither of us is wholly outside this; I will say what each of us did."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. We need to look at both sides together."
             },
             {
               "id": "a-e-5-late-stage3-v8",
-              "text": "If I am being honest with the court, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. I will draw the line between what I did and what she did, openly."
+              "text": "We need to look at both sides together. My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage3-v9",
-              "text": "Speaking plainly to the bench, Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. Both hands are in this trail, and I will name them in turn."
+              "text": "My father brought up money with my fiance. Choi Sumin's reason for contacting him fits here too."
             },
             {
               "id": "a-e-5-late-stage3-v10",
-              "text": "Your Honor, the texts from my father are something I never wanted brought into this room, but here they are. I will separate what I personally did from what I assumed about Su-min, and place each on its own line. The shared steps and the separate steps are not the same; I will keep them apart."
+              "text": "My father brought up money with my fiance, and Choi Sumin's reason for contacting him fits here too. I will speak only to what remains in the record."
             }
           ]
         },
@@ -15586,43 +15586,43 @@
           "variants": [
             {
               "id": "b-e-6-early-stage1-v1",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I am the one who acted on this side, and I will own that part."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage1-v2",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. The hand that did it was mine, and I will not push it onto anyone else."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and that is the part I need to explain myself."
             },
             {
               "id": "b-e-6-early-stage1-v3",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. What I did, I did myself, and I will answer for it."
+              "text": "That is the part I need to explain myself. The transfer record is mine, and I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage1-v4",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will not hide that the action came from me."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage1-v5",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. It was my own choice, and I will set it down as such."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and I will only speak to the part that remains in the record."
             },
             {
               "id": "b-e-6-early-stage1-v6",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. My own step is what is on the record, and I accept that."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage1-v7",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will not dress up my own part to look smaller than it was."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and that is the part I need to explain myself."
             },
             {
               "id": "b-e-6-early-stage1-v8",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. The act was mine, and I am ready for the consequences."
+              "text": "That is the part I need to explain myself. The transfer record is mine, and I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage1-v9",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will state plainly that I was the one who moved."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage1-v10",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I am the one who carried it out, and I do not deny it."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and I will only speak to the part that remains in the record."
             }
           ]
         },
@@ -15641,43 +15641,43 @@
           "variants": [
             {
               "id": "b-e-6-early-stage2-v1",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I am the one who acted on this side, and I will own that part."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage2-v2",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. The hand that did it was mine, and I will not push it onto anyone else."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and that is the part I need to explain myself."
             },
             {
               "id": "b-e-6-early-stage2-v3",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. What I did, I did myself, and I will answer for it."
+              "text": "That is the part I need to explain myself. The transfer record is mine, and I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage2-v4",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will not hide that the action came from me."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage2-v5",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. It was my own choice, and I will set it down as such."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and I will only speak to the part that remains in the record."
             },
             {
               "id": "b-e-6-early-stage2-v6",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. My own step is what is on the record, and I accept that."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage2-v7",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will not dress up my own part to look smaller than it was."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and that is the part I need to explain myself."
             },
             {
               "id": "b-e-6-early-stage2-v8",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. The act was mine, and I am ready for the consequences."
+              "text": "That is the part I need to explain myself. The transfer record is mine, and I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage2-v9",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will state plainly that I was the one who moved."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage2-v10",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I am the one who carried it out, and I do not deny it."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and I will only speak to the part that remains in the record."
             }
           ]
         },
@@ -15696,43 +15696,43 @@
           "variants": [
             {
               "id": "b-e-6-early-stage3-v1",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I am the one who acted on this side, and I will own that part."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage3-v2",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. The hand that did it was mine, and I will not push it onto anyone else."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and that is the part I need to explain myself."
             },
             {
               "id": "b-e-6-early-stage3-v3",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. What I did, I did myself, and I will answer for it."
+              "text": "That is the part I need to explain myself. The transfer record is mine, and I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage3-v4",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will not hide that the action came from me."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage3-v5",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. It was my own choice, and I will set it down as such."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and I will only speak to the part that remains in the record."
             },
             {
               "id": "b-e-6-early-stage3-v6",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. My own step is what is on the record, and I accept that."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage3-v7",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will not dress up my own part to look smaller than it was."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and that is the part I need to explain myself."
             },
             {
               "id": "b-e-6-early-stage3-v8",
-              "text": "If I am being honest with the court, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. The act was mine, and I am ready for the consequences."
+              "text": "That is the part I need to explain myself. The transfer record is mine, and I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage3-v9",
-              "text": "Speaking plainly to the bench, about the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I will state plainly that I was the one who moved."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away."
             },
             {
               "id": "b-e-6-early-stage3-v10",
-              "text": "About the past transfer record, I am pointing to what is on paper, not to what I assume. I am not going to fold the whole story into one sentence; I will hold the line at what is visible. I am the one who carried it out, and I do not deny it."
+              "text": "The transfer record is mine. I did not have the courage to tell Daeun about that right away, and I will only speak to the part that remains in the record."
             }
           ]
         },
