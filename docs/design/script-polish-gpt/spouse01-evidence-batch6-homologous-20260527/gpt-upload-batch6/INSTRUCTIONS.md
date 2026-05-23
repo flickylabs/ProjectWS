@@ -93,4 +93,17 @@ Group N (archetype key):
 8. **자기지시**: NPC 1인칭 발화에서 "본인/자신" 회피 (저/제 자연)
 9. **진실 누설**: late-stage2/3 가족 영역은 자백 frame 보존 / 구체 hidden (형/회생/사기 등) 신규 도입 X
 
+
+
+---
+
+## ★ 출력 파일 요청 (대화창 paste 부담 회피)
+
+```
+완성된 polish 결과를 **markdown 파일 (.md)로 저장하여 다운로드 링크를 제공해 주세요**.
+파일명: `{batch-name}-result.md` (예: family01-interrogation-A-result.md)
+파일 내용은 위 "출력 형식" 그대로 (헤더 + 각 entry polish 결과).
+대화창 응답에는 간단한 요약(처리된 entry 수 / 우려 사항)만 표시하고 자세한 polish 결과는 파일로 다운로드 받게 해 주세요.
+```
+
 작업을 시작해 주세요.
