@@ -24129,7 +24129,7 @@
             },
             {
               "id": "judgeq-d-1-motive_search-3-v5",
-              "text": "Ms. Song, why did you keep giving so little weight to the possibility of the other person's explanation?",
+              "text": "Ms. Song, why did you never leave room for the other person to explain themselves?",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 3."
             }
           ]
@@ -24195,7 +24195,7 @@
             },
             {
               "id": "judgeq-d-1-empathy_approach-1-v5",
-              "text": "Ms. Song, why did this feel so serious with the wedding approaching?",
+              "text": "Ms. Song, with the wedding approaching, why did that matter feel so significant?",
               "behaviorHint": "The judge acknowledges the emotional pressure without losing sight of responsibility. Adjust the question intensity for depth 1."
             }
           ]
@@ -24218,7 +24218,7 @@
             },
             {
               "id": "judgeq-d-1-empathy_approach-2-v3",
-              "text": "Both of you, calmly explain where each of you could no longer rely on the other.",
+              "text": "Both of you, explain what each of you felt you could no longer expect from the other.",
               "behaviorHint": "The judge acknowledges the emotional pressure without losing sight of responsibility. Adjust the question intensity for depth 2."
             },
             {
@@ -24340,7 +24340,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-2-v1",
-              "text": "Ms. Choi, at what point did you make your refusal clear?",
+              "text": "Ms. Choi, when those burdensome remarks were exchanged, explain how you drew a line.",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 2."
             },
             {
@@ -24657,7 +24657,7 @@
             },
             {
               "id": "judgeq-d-2-empathy_approach-3-v5",
-              "text": "Ms. Song, did any part of you blame yourself while seeing your fiancé's wrongdoing?",
+              "text": "Ms. Song, when you saw your fiancé's wrongdoing, did you ever blame yourself?",
               "behaviorHint": "The judge acknowledges the emotional pressure without losing sight of responsibility. Adjust the question intensity for depth 3."
             }
           ]
@@ -25208,7 +25208,7 @@
             },
             {
               "id": "judgeq-d-4-fact_pursuit-4-v3",
-              "text": "Both of you, how do you each accept the true cost of the old break?",
+              "text": "Both of you, how do you each understand the real cost of that old break?",
               "behaviorHint": "The judge first fixes the verifiable facts and chronology. Adjust the question intensity for depth 4."
             },
             {
@@ -25251,7 +25251,7 @@
             },
             {
               "id": "judgeq-d-4-motive_search-1-v5",
-              "text": "Ms. Song, why did you never ask Ms. Choi until the end?",
+              "text": "Ms. Song, why did you never ask Ms. Choi in the end?",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 1."
             }
           ]
@@ -25330,7 +25330,7 @@
           "variants": [
             {
               "id": "judgeq-d-4-motive_search-4-v1",
-              "text": "Ms. Choi, who do you think was ultimately protected by your choice to hide it to the end?",
+              "text": "Ms. Choi, who do you think your choice to keep it hidden in the end ultimately protected?",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 4."
             },
             {
@@ -25345,12 +25345,12 @@
             },
             {
               "id": "judgeq-d-4-motive_search-4-v4",
-              "text": "Ms. Choi, explain why the choice to put yourself in a difficult position repeated.",
+              "text": "Ms. Choi, explain why you repeatedly made choices that put yourself at a disadvantage.",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 4."
             },
             {
               "id": "judgeq-d-4-motive_search-4-v5",
-              "text": "Ms. Song, why did you so quickly believe the conclusion that made you lose Ms. Choi?",
+              "text": "Ms. Song, why were you quick to believe the conclusion that cost you Ms. Choi?",
               "behaviorHint": "The judge narrows the question to the judgment behind the act and the reason that was hidden. Adjust the question intensity for depth 4."
             }
           ]
@@ -25567,7 +25567,7 @@
             },
             {
               "id": "judgec-d-1-hard-v2",
-              "text": "Ms. Song, the record now turns on the contact records, the warning claim, and the stigma of obsession. Answer the core point directly.",
+              "text": "Ms. Song, you judged the other person before checking the records. On what basis were you so certain?",
               "behaviorHint": "The Judge narrows the contradiction to the contact records, the warning claim, and the stigma of obsession and requires a direct answer without revealing more than the record supports."
             },
             {
@@ -25626,7 +25626,7 @@
           "variants": [
             {
               "id": "judgec-d-2-mid-v1",
-              "text": "Ms. Choi, the record now turns on the fiancé's overstepping message and Su-min's silence. Explain the choice now.",
+              "text": "Ms. Choi, if the nature of the reply was different, why was that difference not apparent right away? Explain the basis for saying the reply was different.",
               "behaviorHint": "The Judge narrows the contradiction to the fiancé's overstepping message and Su-min's silence and requires a direct answer without revealing more than the record supports."
             },
             {
@@ -25759,7 +25759,7 @@
             },
             {
               "id": "judgec-d-3-hard-v2",
-              "text": "Ms. Song, the record now turns on the father's money approach and the repeated pattern. Answer the core point directly.",
+              "text": "Ms. Song, if you ignored the records to protect your family, you are responsible for that choice as well.",
               "behaviorHint": "The Judge narrows the contradiction to the father's money approach and the repeated pattern and requires a direct answer without revealing more than the record supports."
             },
             {
@@ -25786,7 +25786,7 @@
           "variants": [
             {
               "id": "judgec-d-4-soft-v1",
-              "text": "Ms. Choi, the record now turns on the old fallout, the transfer records, and the cost of silence. Set out the missing explanation calmly.",
+              "text": "Ms. Choi, the break that looked like a change of heart is tied to the fact that money was lost. Why were you unable to say so in the end?",
               "behaviorHint": "The Judge narrows the contradiction to the old fallout, the transfer records, and the cost of silence and requires a direct answer without revealing more than the record supports."
             },
             {
@@ -25860,7 +25860,7 @@
             },
             {
               "id": "judgec-d-4-hard-v3",
-              "text": "both of you, the record now turns on the old fallout, the transfer records, and the cost of silence. Answer the core point directly.",
+              "text": "Both of you, I will treat the order of the old loss under the pretext of investment and the break as a baseline fact. Answer according to that sequence.",
               "behaviorHint": "The Judge narrows the contradiction to the old fallout, the transfer records, and the cost of silence and requires a direct answer without revealing more than the record supports."
             },
             {
@@ -27328,7 +27328,7 @@
             },
             {
               "id": "judgewitness-w-1-mid-v5",
-              "text": "I will call Ms. Kim Se-ra. If there was shameful agreement, she must say that part as well.",
+              "text": "I will call Ms. Kim Se-ra. If she went along with it, she must say so even if it is shameful.",
               "behaviorHint": "Kim Se-ra: A mutual-friend witness who knows the group chat atmosphere and how Song Da-eun first framed the issue. hiddenAgenda=She is ashamed that she also joined in criticizing Choi Su-min."
             }
           ]
@@ -27410,7 +27410,7 @@
             },
             {
               "id": "judgewitness-w-2-soft-v5",
-              "text": "Through Mr. Park Jun-hyeok, I will calmly confirm the order of the fiancé's contact.",
+              "text": "Through Mr. Park Jun-hyeok, I will confirm the sequence of the fiancé's communications.",
               "behaviorHint": "Park Jun-hyeok: A third-party witness who knows the fiancé's behavior pattern. hiddenAgenda=He is cautious because his workplace relationship with the fiancé may become uncomfortable."
             }
           ]
@@ -27533,7 +27533,7 @@
             },
             {
               "id": "judgewitness-w-3-soft-v5",
-              "text": "Through Ms. Oh Mi-gyeong, I will calmly confirm the cause of the old break.",
+              "text": "Through Ms. Oh Mi-gyeong, I will confirm what caused the old break.",
               "behaviorHint": "Oh Mi-gyeong: A third-party witness who saw the past money dealings between Song Da-eun's father and Choi Su-min. hiddenAgenda=None."
             }
           ]
