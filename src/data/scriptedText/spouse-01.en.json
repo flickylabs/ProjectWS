@@ -20876,27 +20876,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-1-v1",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, can you tell me in chronological order the days when the car headed to the officetel after the store closed?",
               "behaviorHint": "Fix the surface facts first. This question establishes the basic order of who saw what, where, and how."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-1-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, what were your first thoughts when you saw the record of repeated entry and exit from the same officetel?",
               "behaviorHint": "Fix the surface facts first. This question establishes the basic order of who saw what, where, and how."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-1-v3",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Both of you, please tell us the exact moment when your visit to the officetel and your early morning phone call first overlapped.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; start with a basic question."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-1-v4",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, can you first explain why the route to the same building at the same time was repeated?",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; start with a basic question."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-1-v5",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, after discovering those movements, what did you check before immediately concluding that it was an affair?",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; start with a basic question."
             }
           ]
@@ -20909,27 +20909,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-2-v1",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, you made short calls to the same number every morning. Could you tell me who the person on the other end of the phone was?",
               "behaviorHint": "Narrow the question to the details that make up the context. Separate time from contact partner to find instability."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-2-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, please tell us how you continued to have the same suspicions after seeing the visit records and even calling early in the morning.",
               "behaviorHint": "Narrow the question to the details that make up the context. Separate time from contact partner to find instability."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-2-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, didn't you think that misunderstandings could increase if you hide the location without revealing the person you're talking to?",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-2-v4",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, have you considered the possibility of another explanation by matching the call time and officetel visit records?",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-2-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Both of you, please look at the dates where the same number and the same place overlap and sort out where your interpretations differed.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             }
           ]
@@ -20942,27 +20942,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-3-v1",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, please explain who needed that item and why you had to buy it yourself.",
               "behaviorHint": "At first, do not directly demand the key person; narrow only the gap in the circumstances of the purchase."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-3-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, please share with us scenes and data the basis for your belief that there was another woman there.",
               "behaviorHint": "Now aim directly at the key person and the reality of the scene. This stage makes them state the target and purpose, not a presumption."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-3-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, please explain in detail who bought the item and why.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-3-v4",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, please tell us why you were unable to shake off the suspicion of an affair even after checking the text message from an unknown sender.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-3-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Both of you, please explain to the best of your knowledge why the purchase of goods and the officetel movement were linked to the same suspicion.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             }
           ]
@@ -20975,27 +20975,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-4-v1",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, if you went to the officetel for personal reasons, please answer why you hid it from Ms. Park until the end.",
               "behaviorHint": "Ask for the decisive reason so they can no longer deflect. This question sets the final basis for the concealment and the assumption straight."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-4-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, please answer why you did not consider other explanations even after checking the officetel visit and early morning phone call.",
               "behaviorHint": "Ask for the decisive reason so they can no longer deflect. This question sets the final basis for the concealment and the assumption straight."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-4-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, did you know that even if there were circumstances that were not revealed, such hiding could be seen as an affair? Answer now.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-4-v4",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, please reveal when the vague circumstances became clear to you that it was an affair.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-1-fact_pursuit-4-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the Officetel visits and early-morning calls.",
+              "text": "Both of you, now answer separately where one's hiding and the other's assertiveness pushed each other further.",
               "behaviorHint": "Confirm the surface facts; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -21008,22 +21008,22 @@
           "variants": [
             {
               "id": "judgeq-d-1-motive_search-1-v1",
-              "text": "Mr. Lee, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, what was the biggest burden that made it difficult to talk about other people involved at home?",
               "behaviorHint": "Open the doorway to why they could not speak, rather than the fact itself. This question prods the initial hesitation."
             },
             {
               "id": "judgeq-d-1-motive_search-1-v2",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, could you tell us what went through your mind when you saw the records, but instead of asking questions right away, you checked further on your own?",
               "behaviorHint": "Open the doorway to why they could not speak, rather than the fact itself. This question prods the initial hesitation."
             },
             {
               "id": "judgeq-d-1-motive_search-1-v3",
-              "text": "Mr. Lee, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, if you thought that it explained why you went there, why did you postpone the core circumstances?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; start with a basic question."
             },
             {
               "id": "judgeq-d-1-motive_search-1-v4",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, while your doubts were growing, was there a reason why you looked at more data without asking Mr. Lee?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; start with a basic question."
             },
             {
@@ -21041,27 +21041,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-motive_search-2-v1",
-              "text": "Mr. Lee, can you explain why revealing the circumstances behind it felt more frightening than admitting you had concealed the location?",
+              "text": "Mr. Lee, could you tell us why you were more afraid of revealing the circumstances behind it rather than the location?",
               "behaviorHint": "Ask for the direct cause that made concealment and suspicion grow. This flow makes the reason one step more concrete."
             },
             {
               "id": "judgeq-d-1-motive_search-2-v2",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, please tell us why you were inclined to look for traces rather than resolve doubts.",
               "behaviorHint": "Ask for the direct cause that made concealment and suspicion grow. This flow makes the reason one step more concrete."
             },
             {
               "id": "judgeq-d-1-motive_search-2-v3",
-              "text": "Mr. Lee, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, how did the experience of being afraid that the past conflict would escalate again lead to this silence?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-1-motive_search-2-v4",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, why did the conclusion that you were having an affair become stronger the more you checked?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-1-motive_search-2-v5",
-              "text": "Both of you, in relation to the Officetel visits and early-morning calls, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please each answer why it took so long for one of you to speak and the other not to ask.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             }
           ]
@@ -21074,22 +21074,22 @@
           "variants": [
             {
               "id": "judgeq-d-1-motive_search-3-v1",
-              "text": "Mr. Lee, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, did you intentionally hide the circumstances of other people involved for fear that Ms. Park would react strongly?",
               "behaviorHint": "Directly touch the fear inside the relationship. This question makes them speak separately about in-laws conflict and the anxiety of being abandoned."
             },
             {
               "id": "judgeq-d-1-motive_search-3-v2",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, when you looked at the officetel records, was the first feeling that came to you was a sense of betrayal or anxiety about being abandoned?",
               "behaviorHint": "Directly touch the fear inside the relationship. This question makes them speak separately about in-laws conflict and the anxiety of being abandoned."
             },
             {
               "id": "judgeq-d-1-motive_search-3-v3",
-              "text": "Mr. Lee, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, if it was about taking care of someone, have you never thought that you should have spoken up?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             },
             {
               "id": "judgeq-d-1-motive_search-3-v4",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, rather than waiting for another explanation from his silence, please tell us why you were convinced that it was an affair.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             },
             {
@@ -21107,27 +21107,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-motive_search-4-v1",
-              "text": "Mr. Lee, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, even if there was a reason you went there, please explain your responsibility for not telling Ms. Park until the end.",
               "behaviorHint": "Ask for the reason behind the choice, not an excuse. Aim squarely at why they went so far as to exclude or assume about the other person."
             },
             {
               "id": "judgeq-d-1-motive_search-4-v2",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, if you had to believe it was an affair to get through that time, please tell us why.",
               "behaviorHint": "Ask for the reason behind the choice, not an excuse. Aim squarely at why they went so far as to exclude or assume about the other person."
             },
             {
               "id": "judgeq-d-1-motive_search-4-v3",
-              "text": "Mr. Lee, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, please reveal the point where your decision based on personal circumstances changed into a choice you did not explain to your spouse.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-1-motive_search-4-v4",
-              "text": "Ms. Park, in relation to the Officetel visits and early-morning calls, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, please answer why you were so sure and why you pushed toward an affair.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-1-motive_search-4-v5",
-              "text": "Both of you, in relation to the Officetel visits and early-morning calls, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please answer now whether you can cover up your choice to exclude the other person by saying you were afraid.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -21140,22 +21140,22 @@
           "variants": [
             {
               "id": "judgeq-d-1-empathy_approach-1-v1",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, when you think of officetel work, can you tell us who the first person comes to mind?",
               "behaviorHint": "Ask for the first emotional reaction rather than a judgment. This question lowers defenses slightly and draws out the inner feeling."
             },
             {
               "id": "judgeq-d-1-empathy_approach-1-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, please tell us what your first reaction was when you first saw that record.",
               "behaviorHint": "Ask for the first emotional reaction rather than a judgment. This question lowers defenses slightly and draws out the inner feeling."
             },
             {
               "id": "judgeq-d-1-empathy_approach-1-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, which one is more memorable: the scene where you take care of the lives of other people involved or the scene where you remain silent after returning home?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; start with a basic question."
             },
             {
               "id": "judgeq-d-1-empathy_approach-1-v4",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, could you tell us what the first feeling was after hearing the early morning phone call?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; start with a basic question."
             },
             {
@@ -21173,7 +21173,7 @@
           "variants": [
             {
               "id": "judgeq-d-1-empathy_approach-2-v1",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, when was there a moment when you felt guilty after hiding it and returning home?",
               "behaviorHint": "Ask about guilt and anxiety within the flow of time. This question makes them recall where the emotion grew."
             },
             {
@@ -21183,17 +21183,17 @@
             },
             {
               "id": "judgeq-d-1-empathy_approach-2-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, did you feel that you helped someone and that you deceived Ms. Park at the same time?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-1-empathy_approach-2-v4",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, has there ever been a time when you wanted to ask Mr. Lee, but backed away because you were more afraid of the answer?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-1-empathy_approach-2-v5",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Both of you, please tell me how your feelings of trying to hide it for fear of being hurt and your feelings of trying to make sure you were not hurt were conflicting.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             }
           ]
@@ -21206,27 +21206,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-empathy_approach-3-v1",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, are you saying that you were afraid that the moment you brought up the story of other people involved, the relationship between the couple would break down further?",
               "behaviorHint": "Directly touch the fear pressed down behind the facts. This stage makes them speak to the fear that the relationship would collapse."
             },
             {
               "id": "judgeq-d-1-empathy_approach-3-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, not only because of the circumstances of the affair, but also because you were afraid that your life would fall apart?",
               "behaviorHint": "Directly touch the fear pressed down behind the facts. This stage makes them speak to the fear that the relationship would collapse."
             },
             {
               "id": "judgeq-d-1-empathy_approach-3-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, didn't you feel like you should talk to Ms. Park on your way back from work?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             },
             {
               "id": "judgeq-d-1-empathy_approach-3-v4",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, didn't you feel that the more evidence you held on to, the more distant you were from Mr. Lee?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             },
             {
               "id": "judgeq-d-1-empathy_approach-3-v5",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Both of you, please tell us where your words of protecting each other actually led you into isolation.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; draw out the concealed context."
             }
           ]
@@ -21239,27 +21239,27 @@
           "variants": [
             {
               "id": "judgeq-d-1-empathy_approach-4-v1",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, what weighs more heavily on you now: your feelings of trying to protect someone or the guilt of hurting Ms. Park?",
               "behaviorHint": "Make them choose the heaviest emotion. This question makes them see for themselves whether responsibility or hurt remains larger."
             },
             {
               "id": "judgeq-d-1-empathy_approach-4-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, which was bigger: your desire to find the truth or your desire to not be abandoned?",
               "behaviorHint": "Make them choose the heaviest emotion. This question makes them see for themselves whether responsibility or hurt remains larger."
             },
             {
               "id": "judgeq-d-1-empathy_approach-4-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Mr. Lee, if you thought of other people's situations first at that time, what do you think you should say first to Ms. Park now?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-1-empathy_approach-4-v4",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Ms. Park, do you admit here and now the anxiety that was behind your conclusion that it was an affair?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-1-empathy_approach-4-v5",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the Officetel visits and early-morning calls.",
+              "text": "Both of you, please tell us what each of you actually felt regarding the officetel issue.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -21272,17 +21272,17 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-1-v1",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, do you admit that a large amount of money was withdrawn in cash from your personal account?",
               "behaviorHint": "First fix the fact of withdrawal and the timing of awareness. This question sets each side's position on when the money flow became known."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-1-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Ms. Park, could you tell us in detail how you followed the confirmation process after first seeing the withdrawal traces?",
               "behaviorHint": "First fix the fact of withdrawal and the timing of awareness. This question sets each side's position on when the money flow became known."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-1-v3",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Both of you, please guess when you two first became aware of the individual account withdrawal and joint property issues.",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             },
             {
@@ -21292,7 +21292,7 @@
             },
             {
               "id": "judgeq-d-2-fact_pursuit-1-v5",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Ms. Park, when you looked at the withdrawal records, why did you decide that it was money that was secretly transferred rather than simple spending?",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             }
           ]
@@ -21305,27 +21305,27 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-2-v1",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, please answer whether the reason you took out the money in cash rather than bank transfer was due to your personal circumstances.",
               "behaviorHint": "Make the method and basis of judgment concrete. Ask separately why it was cash and why it looked suspicious."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-2-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Ms. Park, what is the basis for your belief that this money was connected to other aspects of life only through cash withdrawal?",
               "behaviorHint": "Make the method and basis of judgment concrete. Ask separately why it was cash and why it looked suspicious."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-2-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, if there were circumstances that required payment in cash, why did you hide those circumstances from Ms. Park?",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-2-v4",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Ms. Park, what conclusion did you come to while matching the withdrawal date and officetel records?",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-2-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Both of you, please tell me how you both view the money being taken out, its source, and how it was used.",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; line up the gaps between evidence and statements."
             }
           ]
@@ -21338,12 +21338,12 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-3-v1",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, please reveal to whom the cash was actually delivered and for what urgent circumstances it was used.",
               "behaviorHint": "Narrow in on the money's final destination and the method of verification. This stage sets both the destination after withdrawal and the tracking route."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-3-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Ms. Park, please tell us in what order you checked your account and call records after seeing the withdrawal.",
               "behaviorHint": "Narrow in on the money's final destination and the method of verification. This stage sets both the destination after withdrawal and the tracking route."
             },
             {
@@ -21358,7 +21358,7 @@
             },
             {
               "id": "judgeq-d-2-fact_pursuit-3-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Both of you, please answer why withdrawal of personal reserve funds and suspicion of infidelity are on the same line.",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; draw out the concealed context."
             }
           ]
@@ -21376,22 +21376,22 @@
             },
             {
               "id": "judgeq-d-2-fact_pursuit-4-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Ms. Park, please tell us how much your anxiety grew while chasing those withdrawals and what actions it led to.",
               "behaviorHint": "Make it impossible to hide the amount and purpose. Ask how far unilateral handling and persistent checking each went."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-4-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, even if you had urgent circumstances, how do you view your responsibility for skipping the procedure? Please answer.",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-4-v4",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Ms. Park, even after confirming the withdrawals of Ms. Park and Mr. Lee, please reveal the details of how you hid your own money movements.",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-2-fact_pursuit-4-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the large withdrawal from the husband's account.",
+              "text": "Both of you, please explain how one side's cash withdrawal and the other side's preemptive response increased each other's suspicions.",
               "behaviorHint": "Confirm the surface facts; narrow the circumstances of the large withdrawal and the spouse's exclusion; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -21404,22 +21404,22 @@
           "variants": [
             {
               "id": "judgeq-d-2-motive_search-1-v1",
-              "text": "Mr. Lee, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, what was the most immediate fear that prevented you from opening up about your money issues to Ms. Park?",
               "behaviorHint": "Ask separately for the direct reason they could not open up the money issue and the direct reason they kept checking."
             },
             {
               "id": "judgeq-d-2-motive_search-1-v2",
-              "text": "Ms. Park, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, could you tell us why you continued to check without asking right away when you saw that a large amount of money was missing?",
               "behaviorHint": "Ask separately for the direct reason they could not open up the money issue and the direct reason they kept checking."
             },
             {
               "id": "judgeq-d-2-motive_search-1-v3",
-              "text": "Mr. Lee, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, what is the basis for deciding that you do not need to notify your spouse of lump sum withdrawals from a separate account?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             },
             {
               "id": "judgeq-d-2-motive_search-1-v4",
-              "text": "Ms. Park, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, did you first think about protecting yourself after seeing the withdrawal records?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             },
             {
@@ -21442,17 +21442,17 @@
             },
             {
               "id": "judgeq-d-2-motive_search-2-v2",
-              "text": "Ms. Park, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, please tell us, in terms of scenes and sequences, why that withdrawal felt like a betrayal rather than a simple mistake.",
               "behaviorHint": "Clarify the two axes of family protection and betrayal. This stage digs into the emotional basis of the choice."
             },
             {
               "id": "judgeq-d-2-motive_search-2-v3",
-              "text": "Mr. Lee, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, what reaction were you most afraid of when you told the situation?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-2-motive_search-2-v4",
-              "text": "Ms. Park, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, since when did looking at withdrawal records become more of a preparation than a fact-checking?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; line up the gaps between evidence and statements."
             },
             {
@@ -21475,7 +21475,7 @@
             },
             {
               "id": "judgeq-d-2-motive_search-3-v2",
-              "text": "Ms. Park, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, at what point did checking your money become something that was difficult for you to stop?",
               "behaviorHint": "Ask directly why concealment came first and why they could not stop checking."
             },
             {
@@ -21485,12 +21485,12 @@
             },
             {
               "id": "judgeq-d-2-motive_search-3-v4",
-              "text": "Ms. Park, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, and Mr. Lee, when you saw their secret withdrawals, why did you feel like you had to protect your own money rather than asking the other person about it?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; draw out the concealed context."
             },
             {
               "id": "judgeq-d-2-motive_search-3-v5",
-              "text": "Both of you, in relation to the large withdrawal from the husband's account, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, two of you, please tell us about the moment when each of you began to judge the other to the exclusion of the other in money matters.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; draw out the concealed context."
             }
           ]
@@ -21508,12 +21508,12 @@
             },
             {
               "id": "judgeq-d-2-motive_search-4-v2",
-              "text": "Ms. Park, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, why did you go beyond the line of questioning Mr. Lee when you felt like you had to protect your part?",
               "behaviorHint": "Make them explain why they pushed ahead despite knowing the choice could become overreach or obsession."
             },
             {
               "id": "judgeq-d-2-motive_search-4-v3",
-              "text": "Mr. Lee, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, even if it was necessary to hand over cash, do you think the silence that followed was justified?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; organize the point so responsibility cannot be avoided."
             },
             {
@@ -21523,7 +21523,7 @@
             },
             {
               "id": "judgeq-d-2-motive_search-4-v5",
-              "text": "Both of you, in relation to the large withdrawal from the husband's account, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please answer whether simply saying that you had good intentions and fear reduces your liability for the money you hid from the other person.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the circumstances of the large withdrawal and the spouse's exclusion; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -21536,27 +21536,27 @@
           "variants": [
             {
               "id": "judgeq-d-2-empathy_approach-1-v1",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, the moment you took out that money, what first came to mind was the urgent situation, or was it about Ms. Park at home?",
               "behaviorHint": "Ask for the emotional starting point at the moment the money moved. Draw out the heart's first reaction before the facts."
             },
             {
               "id": "judgeq-d-2-empathy_approach-1-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Ms. Park, can you tell us whether fear came before anger when you first saw the withdrawal records?",
               "behaviorHint": "Ask for the emotional starting point at the moment the money moved. Draw out the heart's first reaction before the facts."
             },
             {
               "id": "judgeq-d-2-empathy_approach-1-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, was there a scene where you felt heavy while carrying cash?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             },
             {
               "id": "judgeq-d-2-empathy_approach-1-v4",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Ms. Park, please tell me whether your hands stiffened first or the calculations in your head began after seeing that record.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             },
             {
               "id": "judgeq-d-2-empathy_approach-1-v5",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the large withdrawal from the husband's account.",
+              "text": "Both of you, please leave judgment behind and tell us what emotion came to you first when you saw the money.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             }
           ]
@@ -21584,12 +21584,12 @@
             },
             {
               "id": "judgeq-d-2-empathy_approach-2-v4",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Ms. Park, the more you look at the withdrawal records, the more your heart wavers in trusting Mr. Lee.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-d-2-empathy_approach-2-v5",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the large withdrawal from the husband's account.",
+              "text": "Both of you, please point out a moment when your fear surrounding money became greater than your power to talk to the other person.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; line up the gaps between evidence and statements."
             }
           ]
@@ -21602,17 +21602,17 @@
           "variants": [
             {
               "id": "judgeq-d-2-empathy_approach-3-v1",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, was there a time when you felt both the desire to take care of an urgent situation and the guilt of deceiving Ms. Park?",
               "behaviorHint": "This stage makes them speak directly and separately about the guilt of deceiving the other person and the fear that life would collapse."
             },
             {
               "id": "judgeq-d-2-empathy_approach-3-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Ms. Park, after seeing that money, did you feel anxious that your relationship would break down and your life would collapse?",
               "behaviorHint": "This stage makes them speak directly and separately about the guilt of deceiving the other person and the fear that life would collapse."
             },
             {
               "id": "judgeq-d-2-empathy_approach-3-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, how do you still have time to act normally at home even after handing over that money?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; draw out the concealed context."
             },
             {
@@ -21635,22 +21635,22 @@
           "variants": [
             {
               "id": "judgeq-d-2-empathy_approach-4-v1",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, what was your longest thought on the way home after handling the cash?",
               "behaviorHint": "Ask, in emotional language, for the thought that remains heaviest and the reason they ultimately could not stop."
             },
             {
               "id": "judgeq-d-2-empathy_approach-4-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Ms. Park, can you now tell us how you felt about not being able to stop checking even after the withdrawal was revealed?",
               "behaviorHint": "Ask, in emotional language, for the thought that remains heaviest and the reason they ultimately could not stop."
             },
             {
               "id": "judgeq-d-2-empathy_approach-4-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Mr. Lee, do you admit that you left Ms. Park alone and anxious because you felt the need to look into the situation?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-d-2-empathy_approach-4-v4",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the large withdrawal from the husband's account.",
+              "text": "Ms. Park, after seeing Ms. Park and his withdrawals, when did you become most determined to protect your own money?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; organize the point so responsibility cannot be avoided."
             },
             {
@@ -21668,27 +21668,27 @@
           "variants": [
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v1",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, please tell us who went to the bank on the day the joint savings account cancellation began.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, how did you check your name and his name before holding the cancellation documents in your hands?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Mr. Lee, when was the first time you heard about the cancellation of the joint savings account, and did you ever agree to it?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v4",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Both of you, please first set the date when the joint savings account was canceled and when you both became aware of that fact.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-1-v5",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, did you see the withdrawal of the savings as a simple procedure, or as an action you personally carried out?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             }
           ]
@@ -21701,17 +21701,17 @@
           "variants": [
             {
               "id": "judgeq-h-d3-fact_pursuit-2-v1",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, please tell us who prepared the cancellation documents and whether his consent was actually obtained.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-2-v2",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Mr. Lee, please answer by sharing the date and circumstances and whether you have ever heard an explanation that there was consent.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-2-v3",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Both of you, please separately organize the cancellation documents and who checked what during the process of creating them.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
@@ -21721,7 +21721,7 @@
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-2-v5",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Mr. Lee, what was the first thing you suspected when you belatedly found out about the cancellation of the joint savings account?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             }
           ]
@@ -21734,12 +21734,12 @@
           "variants": [
             {
               "id": "judgeq-h-d3-fact_pursuit-3-v1",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, please tell us clearly how his name was included in the cancellation documents and what part you wrote yourself.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-3-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, please reveal in order the date and amount that the canceled money was transferred to the investment chat.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             },
             {
@@ -21749,12 +21749,12 @@
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-3-v4",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Both of you, please clarify any questions about the cancellation document process and where the investment chat remittance record first came into contact.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-3-v5",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, do you acknowledge here that you signed on behalf of Mr. Lee?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             }
           ]
@@ -21767,27 +21767,27 @@
           "variants": [
             {
               "id": "judgeq-h-d3-fact_pursuit-4-v1",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, did you act knowing that handling the cancellation documents without authorization may carry legal consequences?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-4-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, please answer why you did not disclose it to Mr. Lee even after the investment chat lost money.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-4-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Mr. Lee, what did you try to check first after finding out that Ms. Park had handled the documents without authorization?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-4-v4",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Both of you, please answer separately whether his silence and her handling of cancellation documents can be seen as the same responsibility.",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-fact_pursuit-4-v5",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the joint savings cancellation procedure.",
+              "text": "Ms. Park, do you think that feeling like you were a victim allows you to use his signature instead?",
               "behaviorHint": "Confirm the surface facts; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -21805,7 +21805,7 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-1-v2",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, was the reason you decided to terminate your contract due to anxiety about being abandoned or financial issues? Please tell me.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
@@ -21815,12 +21815,12 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-1-v4",
-              "text": "Both of you, in relation to the joint savings cancellation procedure, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please explain when the talk about protecting money turned into behavior where you don't trust each other.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-motive_search-1-v5",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, please tell us how your desire to protect your share led you to handle the documents without authorization.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             }
           ]
@@ -21838,22 +21838,22 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-2-v2",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, please answer whether there was actually a decision to prepare for divorce and, if so, when it was decided.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d3-motive_search-2-v3",
-              "text": "Mr. Lee, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, do you believe that the hidden circumstances stimulated her preemptive action?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d3-motive_search-2-v4",
-              "text": "Both of you, in relation to the joint savings cancellation procedure, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please tell us why you have lumped the suspicion of infidelity and the cancellation of your savings account as one incident.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d3-motive_search-2-v5",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, and Mr. Lee, please explain why you chose to move with money first, instead of asking them first.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             }
           ]
@@ -21866,7 +21866,7 @@
           "variants": [
             {
               "id": "judgeq-h-d3-motive_search-3-v1",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, why did the thought of protecting one's share move into action to replace his signature?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             },
             {
@@ -21876,17 +21876,17 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-3-v3",
-              "text": "Mr. Lee, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, did you see any signs that Ms. Park was distrusting the couple's assets even before she withdrew the money?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d3-motive_search-3-v4",
-              "text": "Both of you, in relation to the joint savings cancellation procedure, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, how do you two view the point where each of your secrets has led to the other's bigger secret?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d3-motive_search-3-v5",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, even if you were afraid, the choice to touch the documents was your own action. How do you accept that?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             }
           ]
@@ -21904,22 +21904,22 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-4-v2",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, please make it clear that you could not stop even though you knew it could cause legal consequences.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-motive_search-4-v3",
-              "text": "Mr. Lee, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, do you agree that even if there were hidden circumstances, what happened during the cancellation documents process cannot be justified?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-motive_search-4-v4",
-              "text": "Both of you, in relation to the joint savings cancellation procedure, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, to what extent do you think you can explain your actions that crossed the line by citing the other person's fault?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-motive_search-4-v5",
-              "text": "Ms. Park, in relation to the joint savings cancellation procedure, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, why were you so sure and why did you push to the conclusion that you had to take out the money first?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -21932,12 +21932,12 @@
           "variants": [
             {
               "id": "judgeq-h-d3-empathy_approach-1-v1",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, what was the first feeling that arose on the day you held the savings cancellation documents?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-empathy_approach-1-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, were your hands shaking in front of the bank teller, or had you already made up your mind?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
@@ -21947,12 +21947,12 @@
             },
             {
               "id": "judgeq-h-d3-empathy_approach-1-v4",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the joint savings cancellation procedure.",
+              "text": "Both of you, please first tell us what that money meant to you as a couple.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             },
             {
               "id": "judgeq-h-d3-empathy_approach-1-v5",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, can you tell us how much you felt like a victim at that time?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; start with a basic question."
             }
           ]
@@ -21965,7 +21965,7 @@
           "variants": [
             {
               "id": "judgeq-h-d3-empathy_approach-2-v1",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, first tell us about your fear of being abandoned, and then we will move on to the moment you touched the documents.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
@@ -21975,7 +21975,7 @@
             },
             {
               "id": "judgeq-h-d3-empathy_approach-2-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Mr. Lee, and Ms. Park, do you think that his silence had an influence on the fact that Ms. Park came to her own conclusion amid anxiety?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; line up the gaps between evidence and statements."
             },
             {
@@ -21998,7 +21998,7 @@
           "variants": [
             {
               "id": "judgeq-h-d3-empathy_approach-3-v1",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, please tell us when there was a time when you felt a great deal of shame after sending money to an investment chat.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             },
             {
@@ -22018,7 +22018,7 @@
             },
             {
               "id": "judgeq-h-d3-empathy_approach-3-v5",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, while looking at the investment chat records, was there a moment when you felt that you were on the wrong path?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             }
           ]
@@ -22036,22 +22036,22 @@
             },
             {
               "id": "judgeq-h-d3-empathy_approach-4-v2",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, the first thing that came to mind after losing money was Mr. Lee or was it your fault?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-empathy_approach-4-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Mr. Lee, please tell us whether you want to continue your relationship even after finding out about her actions.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-empathy_approach-4-v4",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the joint savings cancellation procedure.",
+              "text": "Both of you, please each reveal what was the most embarrassing thing you said late in this incident.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d3-empathy_approach-4-v5",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the joint savings cancellation procedure.",
+              "text": "Ms. Park, how do you accept the fact that the time you hid it out of shame left Mr. Lee with even greater pain?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -22069,22 +22069,22 @@
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-1-v2",
-              "text": "Ms. Park, please separate when you first began checking the account from when you cancelled the joint savings account.",
+              "text": "Ms. Park, please tell us when you first started checking your account and when you canceled the joint savings account.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-1-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Mr. Lee, please tell us when you hid that personal matter and when you took out the cash.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-1-v4",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, let's start by guessing who hid what first rather than who betrayed first.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-1-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, please tell me at what point you both visited the officetel, checked the account, and made unauthorized withdrawals.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             }
           ]
@@ -22097,27 +22097,27 @@
           "variants": [
             {
               "id": "judgeq-h-d4-fact_pursuit-2-v1",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, for the two of you, please explain the account verification, individual account withdrawal, and joint savings cancellation by date.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-2-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Ms. Park, please tell us when the actual remittance was made and what you confirmed before then.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-2-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Mr. Lee, please answer from memory whether the withdrawal of personal funds came before or after the cancellation of the joint savings account.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-2-v4",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, for the two of you, the order in which emotions take precedence and the order in which money moves may be different. Please restate it on that premise.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-2-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, please divide the person who hid it first and the person who touched the documents first without grouping them with the same word.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             }
           ]
@@ -22130,27 +22130,27 @@
           "variants": [
             {
               "id": "judgeq-h-d4-fact_pursuit-3-v1",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, please reply again by sorting your personal withdrawal history, investment chat remittance record, and savings account cancellation documents in chronological order.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-3-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Ms. Park, and Mr. Lee, please answer whether they personally carried out the cancellation of the joint savings even if they hid it first.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-3-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Mr. Lee, Mr. Lee, do you think your earlier concealment and Ms. Park handling the documents carry the same responsibility?",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-3-v4",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, please tell us how your joint losses occurred, broken down in terms of amount and actions.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-3-v5",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, please answer who first started the hiding circumstances and where the execution of the money being taken was confirmed first.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             }
           ]
@@ -22163,22 +22163,22 @@
           "variants": [
             {
               "id": "judgeq-h-d4-fact_pursuit-4-v1",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, now you need to say what each of you did first rather than saying that the other person came first.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-4-v2",
-              "text": "Ms. Park, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Ms. Park, and Mr. Lee, even if there was silence, do you acknowledge that the issue of processing the cancellation documents and executing the remittance were your own actions?",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-4-v3",
-              "text": "Mr. Lee, please separate what you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Mr. Lee, do you admit that you hid it first, separate from her actions in handling the documents?",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d4-fact_pursuit-4-v4",
-              "text": "Both of you, please separate what each of you saw, did, and assumed, and set out the chronology of the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, do not mix up the order to reduce responsibility, but answer each question for concealment, withdrawal, termination, and loss.",
               "behaviorHint": "Confirm the surface facts; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
@@ -22196,17 +22196,17 @@
           "variants": [
             {
               "id": "judgeq-h-d4-motive_search-1-v1",
-              "text": "Both of you, in relation to the order of concealment, monitoring, execution, and manipulation, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please distinguish whether the reason you felt you were ahead of the other was because of the actual date or an emotional memory.",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
               "id": "judgeq-h-d4-motive_search-1-v2",
-              "text": "Ms. Park, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, why did the feeling that Ms. Park and Mr. Lee hid it first lead to the decision to move the money first?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
               "id": "judgeq-h-d4-motive_search-1-v3",
-              "text": "Mr. Lee, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, didn't you think that undisclosed circumstances could lead to verification of her account?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
@@ -22216,7 +22216,7 @@
             },
             {
               "id": "judgeq-h-d4-motive_search-1-v5",
-              "text": "Both of you, in relation to the order of concealment, monitoring, execution, and manipulation, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, why did you mix up your feelings of being hurt and the actions you took first?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             }
           ]
@@ -22229,12 +22229,12 @@
           "variants": [
             {
               "id": "judgeq-h-d4-motive_search-2-v1",
-              "text": "Ms. Park, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, why did the feeling of being betrayed lead to the decision to withdraw the money first?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d4-motive_search-2-v2",
-              "text": "Mr. Lee, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, how would you explain why you hid the details of money exchanged because you were afraid that the conflict would escalate?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
@@ -22244,12 +22244,12 @@
             },
             {
               "id": "judgeq-h-d4-motive_search-2-v4",
-              "text": "Both of you, in relation to the order of concealment, monitoring, execution, and manipulation, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please tell me why you think my actions are justified because the other person is hiding it.",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
               "id": "judgeq-h-d4-motive_search-2-v5",
-              "text": "Both of you, in relation to the order of concealment, monitoring, execution, and manipulation, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please identify the point in this incident where fear turned into a desire to avoid responsibility.",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             }
           ]
@@ -22262,12 +22262,12 @@
           "variants": [
             {
               "id": "judgeq-h-d4-motive_search-3-v1",
-              "text": "Ms. Park, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, and Mr. Lee, please explain why you used the fact that you hid it first as the reason for the problem of processing the cancellation documents.",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-motive_search-3-v2",
-              "text": "Mr. Lee, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, why did you ignore the fact that the desire to protect someone can break trust in marital assets?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
@@ -22277,12 +22277,12 @@
             },
             {
               "id": "judgeq-h-d4-motive_search-3-v4",
-              "text": "Both of you, in relation to the order of concealment, monitoring, execution, and manipulation, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please answer why you tried to put the weight of the beginning of hiding and actions that entail legal responsibility on the same scale.",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-motive_search-3-v5",
-              "text": "Both of you, in relation to the order of concealment, monitoring, execution, and manipulation, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please tell me what kind of responsibility the feeling that I was the victim was ultimately covering up.",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             }
           ]
@@ -22295,12 +22295,12 @@
           "variants": [
             {
               "id": "judgeq-h-d4-motive_search-4-v1",
-              "text": "Ms. Park, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Ms. Park, why did feeling hurt lead you to the conclusion that it was okay to touch the documents?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d4-motive_search-4-v2",
-              "text": "Mr. Lee, in relation to the order of concealment, monitoring, execution, and manipulation, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, even if there is an explanation that you went there, to what extent do you accept responsibility for continuing to exclude your spouse?",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
@@ -22310,7 +22310,7 @@
             },
             {
               "id": "judgeq-h-d4-motive_search-4-v4",
-              "text": "Both of you, in relation to the order of concealment, monitoring, execution, and manipulation, please each explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Both of you, please tell me why it is uncomfortable for both of you to reveal your relationship.",
               "behaviorHint": "Ask about the judgment and fear behind the action; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
@@ -22328,7 +22328,7 @@
           "variants": [
             {
               "id": "judgeq-h-d4-empathy_approach-1-v1",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, when you say that the other person came first, please tell us what the underlying feeling is.",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
@@ -22338,7 +22338,7 @@
             },
             {
               "id": "judgeq-h-d4-empathy_approach-1-v3",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Mr. Lee, were your feelings of hiding the situation and your feelings of taking out the cash coming from the same sense of responsibility?",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             },
             {
@@ -22348,7 +22348,7 @@
             },
             {
               "id": "judgeq-h-d4-empathy_approach-1-v5",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, please think about and tell us if there are any areas in your relationship that have become clouded because of your resentment toward each other.",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; start with a basic question."
             }
           ]
@@ -22371,7 +22371,7 @@
             },
             {
               "id": "judgeq-h-d4-empathy_approach-2-v3",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, please tell us how your choice to go it alone led to financial loss.",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; line up the gaps between evidence and statements."
             },
             {
@@ -22394,17 +22394,17 @@
           "variants": [
             {
               "id": "judgeq-h-d4-empathy_approach-3-v1",
-              "text": "Ms. Park, please describe the feelings and fears that were hardest for you to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Ms. Park, when you think of Ms. Park and his silence, do you still view your own actions less seriously?",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-empathy_approach-3-v2",
-              "text": "Mr. Lee, please describe the feelings and fears that were hardest for you to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Mr. Lee, as you considered Ms. Park handling the documents without authorization, didn't you think of the silence you created yourself?",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
               "id": "judgeq-h-d4-empathy_approach-3-v3",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, why did it become more difficult for the two of you to say your own responsibility after each of you blamed the other person first?",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; draw out the concealed context."
             },
             {
@@ -22437,12 +22437,12 @@
             },
             {
               "id": "judgeq-h-d4-empathy_approach-4-v3",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, tried to protect each other, but what do you think was the reason that made the other person feel more lonely as a result?",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
               "id": "judgeq-h-d4-empathy_approach-4-v4",
-              "text": "Both of you, please each describe the feelings and fears that were hardest to admit regarding the order of concealment, monitoring, execution, and manipulation.",
+              "text": "Both of you, first of all, please answer what your actions are that you need to acknowledge first, rather than singling out the person who did something wrong.",
               "behaviorHint": "Open emotional pressure to deepen the statement; separate concealment, monitoring, execution, and manipulation, then fix the chronology; organize the point so responsibility cannot be avoided."
             },
             {
@@ -22462,27 +22462,27 @@
           "variants": [
             {
               "id": "judgec-d-1-soft-v1",
-              "text": "Mr. Lee, your earlier and current accounts of the Officetel visits and early-morning calls differ. Please organize the gap calmly before we proceed.",
+              "text": "Mr. Lee, at first you explained your visit to the officetel as a daily routine, but now you are saying that there were different circumstances. Please sort out the difference.",
               "behaviorHint": "The Judge quietly points out where the texture of the words changed. The tone leaves room for the party to organize and speak for themselves."
             },
             {
               "id": "judgec-d-1-soft-v2",
-              "text": "Ms. Park, your earlier and current accounts of the Officetel visits and early-morning calls differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, at first you decided it was an affair, but now you are in the position that you accepted it that way due to the circumstances. Please tell us why your judgment has changed.",
               "behaviorHint": "The Judge quietly points out where the texture of the words changed. The tone leaves room for the party to organize and speak for themselves."
             },
             {
               "id": "judgec-d-1-soft-v3",
-              "text": "Both of you, your earlier and current accounts of the Officetel visits and early-morning calls differ. Please organize the gap calmly before we proceed.",
+              "text": "Both of you, one of the two people said that there were other reasons for going there, while the other believes that it was an affair. Please explain why you viewed the same material differently.",
               "behaviorHint": "The Judge quietly points out where the texture of the words changed. The tone leaves room for the party to organize and speak for themselves."
             },
             {
               "id": "judgec-d-1-soft-v4",
-              "text": "Mr. Lee, your earlier and current accounts of the Officetel visits and early-morning calls differ. Please organize the gap calmly before we proceed.",
+              "text": "Mr. Lee, you mentioned the early morning phone call and the officetel visit separately, but now you are tying them into the same context as the unsaid circumstances. Please clarify what is missing.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-d-1-soft-v5",
-              "text": "Ms. Park, your earlier and current accounts of the Officetel visits and early-morning calls differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, at first you used expressions that were close to certainty, but now you have retreated to the point that you lacked confirmation. Please explain the change.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             }
           ]
@@ -22493,27 +22493,27 @@
           "variants": [
             {
               "id": "judgec-d-1-mid-v1",
-              "text": "Mr. Lee, your statements on the Officetel visits and early-morning calls no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Mr. Lee, if there were other circumstances that led to your visit there, you must also answer why you hid it. Don't leave the reason for hiding it blank.",
               "behaviorHint": "The Judge directly separates the missing explanation from the added interpretation. This stage presses them so vague wording can no longer carry the answer."
             },
             {
               "id": "judgec-d-1-mid-v2",
-              "text": "Ms. Park, your statements on the Officetel visits and early-morning calls no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Ms. Park, if you are convinced that it was an affair based on your interpretation of the circumstances, you must explain the basis and subsequent actions.",
               "behaviorHint": "The Judge directly separates the missing explanation from the added interpretation. This stage presses them so vague wording can no longer carry the answer."
             },
             {
               "id": "judgec-d-1-mid-v3",
-              "text": "Both of you, your statements on the Officetel visits and early-morning calls no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Both of you, it's difficult to explain how this situation grew just by the two of you hiding from each other and making conclusions. Please tell me who started it first.",
               "behaviorHint": "The Judge directly separates the missing explanation from the added interpretation. This stage presses them so vague wording can no longer carry the answer."
             },
             {
               "id": "judgec-d-1-mid-v4",
-              "text": "Mr. Lee, your statements on the Officetel visits and early-morning calls no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Mr. Lee, if you don't want to look like you added the story of other people involved later, you need to reveal the reason for your initial silence now.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
               "id": "judgec-d-1-mid-v5",
-              "text": "Ms. Park, your statements on the Officetel visits and early-morning calls no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Ms. Park, seeing the circumstances and concluding that it was an affair are two different things. Why were you so confident and pushed forward?",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             }
           ]
@@ -22524,27 +22524,27 @@
           "variants": [
             {
               "id": "judgec-d-1-hard-v1",
-              "text": "Mr. Lee, the contradiction on the Officetel visits and early-morning calls can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Mr. Lee, we can no longer postpone the fact that the person in the officetel was someone else. Now answer who was there.",
               "behaviorHint": "The Judge pushes so the concealment and assumption can no longer be separated. The tone is firm, making them speak first to the parts that hurt their own case."
             },
             {
               "id": "judgec-d-1-hard-v2",
-              "text": "Ms. Park, the contradiction on the Officetel visits and early-morning calls can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Ms. Park, if you do not disclose the reason why you concluded that it was an affair, your subsequent actions cannot be explained solely from the victim's perspective. Why were you so sure?",
               "behaviorHint": "The Judge pushes so the concealment and assumption can no longer be separated. The tone is firm, making them speak first to the parts that hurt their own case."
             },
             {
               "id": "judgec-d-1-hard-v3",
-              "text": "Both of you, the contradiction on the Officetel visits and early-morning calls can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Both of you, you can't go any further by just repeating the interpretation of the situation. Please tell me now what you were hiding and why you were so certain.",
               "behaviorHint": "The Judge pushes so the concealment and assumption can no longer be separated. The tone is firm, making them speak first to the parts that hurt their own case."
             },
             {
               "id": "judgec-d-1-hard-v4",
-              "text": "Mr. Lee, the contradiction on the Officetel visits and early-morning calls can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Mr. Lee, Mr. Lee, even if there were other reasons for his visit there, he remains responsible for excluding Ms. Park. Acknowledge and answer that responsibility.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
               "id": "judgec-d-1-hard-v5",
-              "text": "Ms. Park, the contradiction on the Officetel visits and early-morning calls can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Ms. Park, please tell us why you were unable to dispel suspicion of an affair even after confirming the identity of the text message from an unknown sender.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             }
           ]
@@ -22555,27 +22555,27 @@
           "variants": [
             {
               "id": "judgec-d-2-soft-v1",
-              "text": "Mr. Lee, your earlier and current accounts of the large withdrawal from the husband's account differ. Please organize the gap calmly before we proceed.",
+              "text": "Mr. Lee, at first you said it was a personal withdrawal, but now you say it was money delivered to that party. Please continue the missing explanation.",
               "behaviorHint": "The Judge calmly points out that both the reason for the money and the route by which it was seen have changed."
             },
             {
               "id": "judgec-d-2-soft-v2",
-              "text": "Ms. Park, your earlier and current accounts of the large withdrawal from the husband's account differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, you talk about the withdrawal as if you happened to see it by chance, but it is even revealed that you confirmed it repeatedly. From what point did you continue to watch?",
               "behaviorHint": "The Judge calmly points out that both the reason for the money and the route by which it was seen have changed."
             },
             {
               "id": "judgec-d-2-soft-v3",
-              "text": "Both of you, your earlier and current accounts of the large withdrawal from the husband's account differ. Please organize the gap calmly before we proceed.",
+              "text": "Both of you, have different interpretations of the fact that the money was taken out. Please get the facts right first.",
               "behaviorHint": "The Judge calmly points out that both the reason for the money and the route by which it was seen have changed."
             },
             {
               "id": "judgec-d-2-soft-v4",
-              "text": "Mr. Lee, your earlier and current accounts of the large withdrawal from the husband's account differ. Please organize the gap calmly before we proceed.",
+              "text": "Mr. Lee, please explain whether the reason you were late in revealing the purpose of the cash withdrawal was because of your own circumstances or because you were afraid of her reaction.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-d-2-soft-v5",
-              "text": "Ms. Park, your earlier and current accounts of the large withdrawal from the husband's account differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, there is a difference between discovering the withdrawal and proceeding to verify it separately. Please tell me the extent of your research.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             }
           ]
@@ -22586,7 +22586,7 @@
           "variants": [
             {
               "id": "judgec-d-2-mid-v1",
-              "text": "Mr. Lee, your statements on the large withdrawal from the husband's account no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Mr. Lee, if you initially said it was for personal reasons and later corrected yourself by saying that the money went to a separate use, there is a huge difference. Please tell us exactly who you sent it to and for what reason.",
               "behaviorHint": "The Judge lays out the missing axes one by one: personal money, family money, and the monitoring route. The tone presses to reduce evasion."
             },
             {
@@ -22596,12 +22596,12 @@
             },
             {
               "id": "judgec-d-2-mid-v3",
-              "text": "Both of you, your statements on the large withdrawal from the husband's account no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Both of you, mixing personal reserve funds together with trust issues between a couple blurs who is responsible. Please answer each action separately.",
               "behaviorHint": "The Judge lays out the missing axes one by one: personal money, family money, and the monitoring route. The tone presses to reduce evasion."
             },
             {
               "id": "judgec-d-2-mid-v4",
-              "text": "Mr. Lee, your statements on the large withdrawal from the husband's account no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Mr. Lee, if you helped for other reasons, you should first explain why you hid the details and only paid in cash. Please explain the reason in detail.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
@@ -22617,22 +22617,22 @@
           "variants": [
             {
               "id": "judgec-d-2-hard-v1",
-              "text": "Mr. Lee, the contradiction on the large withdrawal from the husband's account can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Mr. Lee, you keep delaying the purpose of cash withdrawal. Answer clearly now who you passed it to and why.",
               "behaviorHint": "The Judge pins down both use and access route at the same time. The question strongly signals that it cannot be delayed any further."
             },
             {
               "id": "judgec-d-2-hard-v2",
-              "text": "Ms. Park, the contradiction on the large withdrawal from the husband's account can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Ms. Park, we cannot raise this issue unless you reveal how you knew about the withdrawal. Do not hide the verification details.",
               "behaviorHint": "The Judge pins down both use and access route at the same time. The question strongly signals that it cannot be delayed any further."
             },
             {
               "id": "judgec-d-2-hard-v3",
-              "text": "Both of you, the contradiction on the large withdrawal from the husband's account can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Both of you, it is not appropriate for the two of you to only blame the other party without mentioning how the money was used and how it was confirmed. Please tell us honestly what you did.",
               "behaviorHint": "The Judge pins down both use and access route at the same time. The question strongly signals that it cannot be delayed any further."
             },
             {
               "id": "judgec-d-2-hard-v4",
-              "text": "Mr. Lee, the contradiction on the large withdrawal from the husband's account can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Mr. Lee, please tell me now to whom you gave that money and under what circumstances. We can't put it off any longer.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
@@ -22648,27 +22648,27 @@
           "variants": [
             {
               "id": "judgec-h-d3-soft-v1",
-              "text": "Ms. Park, your earlier and current accounts of the joint savings cancellation procedure differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, at first you said it was a procedure to protect your savings, but now it has been revealed that it was done in place of his signature. Please summarize the original facts.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d3-soft-v2",
-              "text": "Ms. Park, your earlier and current accounts of the joint savings cancellation procedure differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, your position changed from explaining that it was a simple defense to admitting document handling. Please tell us why it has changed.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d3-soft-v3",
-              "text": "Mr. Lee, your earlier and current accounts of the joint savings cancellation procedure differ. Please organize the gap calmly before we proceed.",
+              "text": "Mr. Lee, please tell us when you became aware that Ms. Park had prepared the documents and the fact that you did not consent to them.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d3-soft-v4",
-              "text": "Both of you, your earlier and current accounts of the joint savings cancellation procedure differ. Please organize the gap calmly before we proceed.",
+              "text": "Both of you, although the suspicion of infidelity and the problem with the savings account cancellation procedure may have started with the same feelings, the actions are separate. Please sort out the difference first.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d3-soft-v5",
-              "text": "Ms. Park, your earlier and current accounts of the joint savings cancellation procedure differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, her position that she was trying to prevent damage and her actions in writing his name on the document are placed together. Please explain in between.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             }
           ]
@@ -22679,17 +22679,17 @@
           "variants": [
             {
               "id": "judgec-h-d3-mid-v1",
-              "text": "Ms. Park, your statements on the joint savings cancellation procedure no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Ms. Park, your position as a person who has already been betrayed does not excuse handling the documents without authorization. Tell us why you crossed that line.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
               "id": "judgec-h-d3-mid-v2",
-              "text": "Ms. Park, your statements on the joint savings cancellation procedure no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Ms. Park, the position has changed from claiming that Ms. Park and Mr. Lee hid it first to admitting that they did it themselves. Please tell us your motivation.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
               "id": "judgec-h-d3-mid-v3",
-              "text": "Mr. Lee, your statements on the joint savings cancellation procedure no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Mr. Lee, if you did not consent, you must clearly state when and how you confirmed that fact.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
@@ -22699,7 +22699,7 @@
             },
             {
               "id": "judgec-h-d3-mid-v5",
-              "text": "Ms. Park, your statements on the joint savings cancellation procedure no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Ms. Park, if you had any intention of preparing for divorce, why did you proceed by signing instead of following the normal process?",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             }
           ]
@@ -22710,27 +22710,27 @@
           "variants": [
             {
               "id": "judgec-h-d3-hard-v1",
-              "text": "Ms. Park, the contradiction on the joint savings cancellation procedure can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Ms. Park, admits that she wrote his name on the cancellation documents, but is trying to lower her responsibility. Why did you carry out that action?",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
               "id": "judgec-h-d3-hard-v2",
-              "text": "Ms. Park, the contradiction on the joint savings cancellation procedure can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Ms. Park, please answer now where and how the joint savings went and what you hid from the results. Please don't blame it on Mr. Lee.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
               "id": "judgec-h-d3-hard-v3",
-              "text": "Mr. Lee, the contradiction on the joint savings cancellation procedure can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Mr. Lee, please answer clearly that there was no consent as the document handling by Ms. Park has been confirmed.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
               "id": "judgec-h-d3-hard-v4",
-              "text": "Both of you, the contradiction on the joint savings cancellation procedure can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Both of you, for the two of you, hiding and actions that cross the line have different weights. Don't shift blame for cancellation procedure problems onto other issues.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
               "id": "judgec-h-d3-hard-v5",
-              "text": "Ms. Park, the contradiction on the joint savings cancellation procedure can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Ms. Park, just saying you were afraid does not explain the problem with the cancellation process. Why did you do something that crossed that line?",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             }
           ]
@@ -22741,27 +22741,27 @@
           "variants": [
             {
               "id": "judgec-h-d4-soft-v1",
-              "text": "Both of you, your earlier and current accounts of the order of concealment, monitoring, execution, and manipulation differ. Please organize the gap calmly before we proceed.",
+              "text": "Both of you, said at first that you were the other person first, but now you are divided into what you hid and what you did. Please organize the two orders separately.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d4-soft-v2",
-              "text": "Ms. Park, your earlier and current accounts of the order of concealment, monitoring, execution, and manipulation differ. Please organize the gap calmly before we proceed.",
+              "text": "Ms. Park, there is also the fact that Ms. Park and Mr. Lee hid it first and that it was they who actually executed the documents. How do you view this?",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d4-soft-v3",
-              "text": "Mr. Lee, your earlier and current accounts of the order of concealment, monitoring, execution, and manipulation differ. Please organize the gap calmly before we proceed.",
+              "text": "Mr. Lee, separate from Mr. Lee and her document handling, please first sort out the part where you hid your personal matters.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d4-soft-v4",
-              "text": "Both of you, your earlier and current accounts of the order of concealment, monitoring, execution, and manipulation differ. Please organize the gap calmly before we proceed.",
+              "text": "Both of you, the hurt feelings and the fact that you moved the money are two different things. Please take the difference into account.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             },
             {
               "id": "judgec-h-d4-soft-v5",
-              "text": "Both of you, your earlier and current accounts of the order of concealment, monitoring, execution, and manipulation differ. Please organize the gap calmly before we proceed.",
+              "text": "Both of you, before talking about the couple's combined losses, please guess how each money disappeared.",
               "behaviorHint": "Calmly point out the change in statement and leave room for self-correction."
             }
           ]
@@ -22772,12 +22772,12 @@
           "variants": [
             {
               "id": "judgec-h-d4-mid-v1",
-              "text": "Both of you, your statements on the order of concealment, monitoring, execution, and manipulation no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Both of you, if you mix up when you started hiding and when the money actually moved, it becomes unclear who is responsible. Please indicate where each person came first.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
               "id": "judgec-h-d4-mid-v2",
-              "text": "Ms. Park, feeling betrayed first does not remove your responsibility for the cancellation procedure. Why did you treat those two issues as one?",
+              "text": "Ms. Park, the feeling of being betrayed does not cover the responsibility for the cancellation procedure issue. Why did you combine the two issues into one?",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
@@ -22787,7 +22787,7 @@
             },
             {
               "id": "judgec-h-d4-mid-v4",
-              "text": "Both of you, your statements on the order of concealment, monitoring, execution, and manipulation no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Both of you, are delaying the order of your actions by putting the other person's mistakes first. Please tell us the actual date and action.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
@@ -22803,7 +22803,7 @@
           "variants": [
             {
               "id": "judgec-h-d4-hard-v1",
-              "text": "Both of you, the contradiction on the order of concealment, monitoring, execution, and manipulation can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Both of you, are trying to separate yourself from responsibility. What you hide and what you do are two different things. Please answer who acted in the first place and why.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
@@ -22813,17 +22813,17 @@
             },
             {
               "id": "judgec-h-d4-hard-v3",
-              "text": "Mr. Lee, the contradiction on the order of concealment, monitoring, execution, and manipulation can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Mr. Lee, even if Mr. Lee and her responsibility is revealed, the fact that they hid their personal matters first does not disappear. Acknowledge and respond.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
               "id": "judgec-h-d4-hard-v4",
-              "text": "Both of you, the contradiction on the order of concealment, monitoring, execution, and manipulation can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Both of you, cannot cover up two large economic losses just because the other person came first. Now tell me what each of you did.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
               "id": "judgec-h-d4-hard-v5",
-              "text": "Both of you, the contradiction on the order of concealment, monitoring, execution, and manipulation can no longer be deferred. Answer directly and take responsibility for the part that hurts your position.",
+              "text": "Both of you, if you don't reveal the order, we can't determine responsibility. Answer each for concealment, withdrawal, termination, and loss.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             }
           ]
@@ -23562,17 +23562,17 @@
           "variants": [
             {
               "id": "judgewit-w-1-soft-v1",
-              "text": "I will call the Officetel Security Guard. We will calmly begin by confirming when and how often the vehicle entered.",
+              "text": "I will call the security officer of the officetel. We will first confirm when the vehicle entered and how often it repeated.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             },
             {
               "id": "judgewit-w-1-soft-v2",
-              "text": "I will first ask the Officetel Security Guard. We will match the occupancy of that floor and the visit frequency against the records and memory.",
+              "text": "I will begin with the security officer of the officetel. We will compare the occupancy on that floor and the visit frequency against the records and your memory.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             },
             {
               "id": "judgewit-w-1-soft-v3",
-              "text": "I will call the Officetel Security Guard. We will confirm the actual entry scenes before interpreting the circumstances.",
+              "text": "I will call the security officer of the officetel. We will confirm the actual entry scenes before interpreting the circumstances.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             },
             {
@@ -23582,7 +23582,7 @@
             },
             {
               "id": "judgewit-w-1-soft-v5",
-              "text": "We will use the Officetel Security Guard’s memory to confirm who lived on that floor and what pattern the visits followed.",
+              "text": "Through the security officer of the officetel, we will confirm who lived on that floor and how the visits repeated.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             }
           ]
@@ -23593,12 +23593,12 @@
           "variants": [
             {
               "id": "judgewit-w-1-mid-v1",
-              "text": "We need testimony from the Officetel Security Guard. Since your interpretations diverge, I will verify the entry frequency and the situation on that floor directly.",
+              "text": "We need testimony from the security officer of the officetel. Since your interpretations differ, we will confirm the entry frequency and the situation on that floor.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             },
             {
               "id": "judgewit-w-1-mid-v2",
-              "text": "I will call the Officetel Security Guard. To decide whether the officetel visits point to an affair or another circumstance, we need to hear the on-site memory.",
+              "text": "I will call the security officer of the officetel. We need the on-site memory to determine whether the officetel visits should be read as signs of an affair or another matter.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             },
             {
@@ -23608,12 +23608,12 @@
             },
             {
               "id": "judgewit-w-1-mid-v4",
-              "text": "Officetel Security Guard, please separate what you remember seeing about the visiting vehicle from who lived on that floor.",
+              "text": "Security officer of the officetel, please separate what you remember about the visiting vehicle from who lived on that floor.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             },
             {
               "id": "judgewit-w-1-mid-v5",
-              "text": "Through the Officetel Security Guard, I will narrow down why the same place kept recurring. This cannot remain guesswork.",
+              "text": "Through the security officer of the officetel, we will narrow down why the same place was visited repeatedly. This can no longer rest on speculation alone.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             }
           ]
@@ -23624,7 +23624,7 @@
           "variants": [
             {
               "id": "judgewit-w-1-hard-v1",
-              "text": "I will call the Officetel Security Guard at once. These entries can no longer be treated as mere circumstantial interpretation.",
+              "text": "I will call the security officer of the officetel immediately. That entry can no longer be handled only as an interpretation of the circumstances.",
               "behaviorHint": "The Judge first states how the Officetel Security Guard’s testimony will bear on vehicle entry frequency and who lived on that floor."
             },
             {
@@ -23655,17 +23655,17 @@
           "variants": [
             {
               "id": "judgewit-w-2-soft-v1",
-              "text": "I will call the Bank Clerk. We will calmly confirm the joint savings cancellation procedure and how the documents were accepted.",
+              "text": "I will call the bank teller. We will confirm the joint savings cancellation procedure and how the cancellation documents were received.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             },
             {
               "id": "judgewit-w-2-soft-v2",
-              "text": "I will first ask the Bank Clerk. We will hear how account holder verification was handled and what documents were submitted.",
+              "text": "I will begin with the bank teller. We will hear how the account holder was verified and what documents were received.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             },
             {
               "id": "judgewit-w-2-soft-v3",
-              "text": "I will call the Bank Clerk. We will review the flow of how the cancellation documents were processed, centered on the records.",
+              "text": "I will call the bank teller. We will confirm, based on the records, how the cancellation documents were processed.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             },
             {
@@ -23675,7 +23675,7 @@
             },
             {
               "id": "judgewit-w-2-soft-v5",
-              "text": "We will begin by examining, through the Bank Clerk’s professional memory, where the documents seemed irregular.",
+              "text": "Through the bank teller's work memory, we will first examine what was unusual in the documents.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             }
           ]
@@ -23686,7 +23686,7 @@
           "variants": [
             {
               "id": "judgewit-w-2-mid-v1",
-              "text": "We need testimony from the Bank Clerk. Since the cancellation document procedure is now at issue, I will hear directly about intake and verification.",
+              "text": "We need testimony from the bank teller. Since the cancellation document procedure is at issue, we will hear how receipt and verification were handled.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             },
             {
@@ -23701,7 +23701,7 @@
             },
             {
               "id": "judgewit-w-2-mid-v4",
-              "text": "Bank Clerk, please distinguish the verification procedure at the time the cancellation documents were accepted from the parts that were lacking.",
+              "text": "Bank teller, please tell us the verification procedure at the time the cancellation documents were received, and any unusual details.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             },
             {
@@ -23717,7 +23717,7 @@
           "variants": [
             {
               "id": "judgewit-w-2-hard-v1",
-              "text": "I will call the Bank Clerk at once. The cancellation documents and procedure can no longer be left unclear.",
+              "text": "I will call the bank teller immediately. The cancellation documents and procedure can no longer be left unclear.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             },
             {
@@ -23727,7 +23727,7 @@
             },
             {
               "id": "judgewit-w-2-hard-v3",
-              "text": "The Bank Clerk’s testimony will settle how the documents were handled. We must confirm the authenticity of the cancellation documents now.",
+              "text": "We will establish the document handling process through the bank teller's testimony. The authenticity of the cancellation documents must be confirmed now.",
               "behaviorHint": "The Judge first states how the Bank Clerk’s testimony will bear on the power-of-attorney savings cancellation procedure and possible verification gaps."
             },
             {
@@ -23748,7 +23748,7 @@
           "variants": [
             {
               "id": "judgewit-w-3-soft-v1",
-              "text": "I will call Ms. Park Mi-ra. We will calmly hear how the investment chat link was delivered and what Ms. Park Ji-yeon said.",
+              "text": "I will call Ms. Park Mira. We will hear how the investment chat link was delivered and what Park Ji-yeon said.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             },
             {
@@ -23758,12 +23758,12 @@
             },
             {
               "id": "judgewit-w-3-soft-v3",
-              "text": "I will call Ms. Park Mi-ra. We will examine the link between the investment chat on Telegram and Ms. Park Ji-yeon’s statement about protecting her money.",
+              "text": "I will call Ms. Park Mira. We will examine how the Telegram investment chat and her statement that she would protect the money first connected.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             },
             {
               "id": "judgewit-w-3-soft-v4",
-              "text": "Ms. Park Mi-ra, please come in. You must calmly state how the link was sent and what you heard at the time.",
+              "text": "Ms. Park Mira, please come in. Calmly tell us how the link was delivered and what you heard at the time.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             },
             {
@@ -23779,7 +23779,7 @@
           "variants": [
             {
               "id": "judgewit-w-3-mid-v1",
-              "text": "We need testimony from Ms. Park Mi-ra. I will confirm directly the order between the investment chat link and the decision to transfer money.",
+              "text": "We need testimony from Ms. Park Mira. We will confirm the order of the investment chat link and the decision to transfer money.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             },
             {
@@ -23794,7 +23794,7 @@
             },
             {
               "id": "judgewit-w-3-mid-v4",
-              "text": "Ms. Park Mi-ra, please separate the fact that you sent the link from Ms. Park Ji-yeon’s statement.",
+              "text": "Ms. Park Mira, please separate the fact that you sent the link from her statement.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             },
             {
@@ -23815,7 +23815,7 @@
             },
             {
               "id": "judgewit-w-3-hard-v2",
-              "text": "I will call Ms. Park Mi-ra at once. We will immediately confirm the link between Ms. Park Ji-yeon’s statement about protecting her money and the transfer to the investment chat.",
+              "text": "I will call Ms. Park Mira immediately. We will directly confirm the connection between her statement that she would protect the money first and the investment chat transfer.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             },
             {
@@ -23825,12 +23825,12 @@
             },
             {
               "id": "judgewit-w-3-hard-v4",
-              "text": "Ms. Park Mi-ra, please state clearly now when you sent the link and what Ms. Park Ji-yeon said first.",
+              "text": "Ms. Park Mira, please tell us in detail when you sent the link and what Park Ji-yeon said at the time.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             },
             {
               "id": "judgewit-w-3-hard-v5",
-              "text": "I will call Ms. Park Mi-ra. To judge the money flow in this case, we need to hear directly how it entered the investment chat.",
+              "text": "I will call Ms. Park Mira. To judge the money flow in this case, we need to hear directly how it entered the investment chat.",
               "behaviorHint": "The Judge first states how Park Mi-ra’s testimony will bear on the investment chat link and Park Ji-yeon’s prior statement about transferring money."
             }
           ]
