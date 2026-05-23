@@ -395,6 +395,21 @@ export default function PCTutorialOverlay() {
     return () => window.clearTimeout(timer)
   }, [currentStepId, enabled, targetMissing])
 
+  // 2026-05-24 사용자 보고 fix (Option A): evidence-investigate-e2 step 활성 시 e-2 detail이
+  // 닫힌 상태(= investigate-action 버튼 부재)면 e-2 card를 재클릭하여 detail 패널 복구.
+  // 사용자가 이전 step에서 잘못 클릭해 detail이 닫혔어도 step 10 진행 가능.
+  useEffect(() => {
+    if (!enabled || currentStepId !== 'evidence-investigate-e2') return
+    if (!targetMissing) return
+    const timer = window.setTimeout(() => {
+      const detail = document.querySelector<HTMLElement>('[data-tutorial-target="evidence-e2-detail"]')
+      if (detail) return // 이미 detail 열림
+      const e2Card = document.querySelector<HTMLElement>('[data-tutorial-target="evidence-e2-card"]')
+      if (e2Card) e2Card.click()
+    }, 300)
+    return () => window.clearTimeout(timer)
+  }, [currentStepId, enabled, targetMissing])
+
   // 2026-05-20 사용자 요청: tutorial-complete step에서 Space 키로 dismiss.
   useEffect(() => {
     if (!enabled || currentStepId !== 'tutorial-complete') return

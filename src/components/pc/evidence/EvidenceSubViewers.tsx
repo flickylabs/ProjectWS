@@ -101,7 +101,7 @@ const VIEWER_COPY = {
     visitLogAria: '방문 및 처리 기록',
     dateTime: '일자·시각',
     category: '분류',
-    counterNumber: '상대·번호',
+    counterNumber: '상대 번호',
     targetContent: '대상·내용',
     callDurationMessage: '통화시간·메시지',
     duration: '소요시간',
