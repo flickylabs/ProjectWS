@@ -1374,7 +1374,7 @@
             },
             {
               "id": "b-d-1-S3-fact-pursuit-v10",
-              "text": "Your Honor, it is true I hid another matter, but it was not an affair. Hiding something and having an affair should be seen separately."
+              "text": "Your Honor, it is true I hid the matter I had to help with separately, but it was not an affair. Hiding that matter and having an affair should be viewed separately."
             }
           ]
         },
@@ -2546,7 +2546,7 @@
             },
             {
               "id": "a-d-2-S5-fact-pursuit-v9",
-              "text": "Your Honor, I had been checking my husband's account for years. It did not stop at looking through the app; when the 20 million won joint savings was cancelled, my hand went onto the power of attorney too, and I wrote the signature myself."
+              "text": "Your Honor, I tried to use my husband's 30 million won withdrawal to cover up the money I had moved separately and the paperwork issue. Now the reasons I hid them also need to go on record."
             },
             {
               "id": "a-d-2-S5-fact-pursuit-v10",
@@ -2595,7 +2595,7 @@
             },
             {
               "id": "a-d-2-S5-motive-search-v9",
-              "text": "Your Honor, I knew it was a crime. In that moment, divorce and losing everything scared me more. Years of checking his account turned into touching the paperwork because my fear was stronger than my guilt. That is not an excuse."
+              "text": "Your Honor, I tried to use my husband's 30 million won withdrawal to cover up the money I had moved separately and the paperwork issue. Now the reasons I hid them also need to go on record."
             },
             {
               "id": "a-d-2-S5-motive-search-v10",
@@ -2644,7 +2644,7 @@
             },
             {
               "id": "a-d-2-S5-empathy-approach-v9",
-              "text": "Your Honor, I am ashamed that I watched his account for years and even imitated his signature on the power of attorney. My wrongdoing feels so large that I am afraid even to say it here."
+              "text": "Your Honor, I tried to use my husband's 30 million won withdrawal to cover up the money I had moved separately and the paperwork issue. Now the reasons I hid them also need to go on record."
             },
             {
               "id": "a-d-2-S5-empathy-approach-v10",
@@ -3008,7 +3008,7 @@
             },
             {
               "id": "b-d-2-S2-motive-search-v2",
-              "text": "What kept me silent about the cash was knowing that a single explanation would unlock a whole chain of family questions I was not ready to face. I admit that I leaned on \"personal\" or \"family\" to dodge harder questions. I will admit the middle layer and leave the core for the proper time."
+              "text": "It was less my own matter than something I had to step in and help with immediately."
             },
             {
               "id": "b-d-2-S2-motive-search-v3",
@@ -4082,7 +4082,7 @@
           "variants": [
             {
               "id": "a-h-d3-S3-empathy-approach-v1",
-              "text": "Your Honor, as the money moved, fear and resolve were both in me, but what I did with my own hands stays exactly as it is. I now see that my hurt became its own pressure on him. I admit that holding the line on every point was its own kind of harm."
+              "text": "I know I crossed a line. But at that time... surviving came first."
             },
             {
               "id": "a-h-d3-S3-empathy-approach-v2",
@@ -5760,7 +5760,7 @@
             },
             {
               "id": "a-h-d4-S3-fact-pursuit-v4",
-              "text": "Your Honor, hiding, surveillance, the moving of money, and the line that was crossed have to be set down as separate items. I now see that I leaned on suspicion more than on what was actually in the records. I admit that the wall I had built no longer holds against the records."
+              "text": "It did not end with me checking first; in the end, I crossed the line first. That is true."
             },
             {
               "id": "a-h-d4-S3-fact-pursuit-v5",
@@ -5780,7 +5780,7 @@
             },
             {
               "id": "a-h-d4-S3-fact-pursuit-v9",
-              "text": "It matters which act came first and which followed, and I will keep them in the order the records actually show. I now see that I leaned on suspicion more than on what was actually in the records. I admit that the rest of my position is harder to defend than I made it sound."
+              "text": "Your Honor, it is still hard to hear it put that definitively. Even so, it was difficult to see that and stay still."
             },
             {
               "id": "a-h-d4-S3-fact-pursuit-v10",
@@ -5797,7 +5797,7 @@
           "variants": [
             {
               "id": "a-h-d4-S3-motive-search-v1",
-              "text": "Your Honor, who started hiding first and who started watching the accounts first are not the same question, and I will answer for my own part. I now see that I let one possibility drown out every other one. I admit that holding the line on every point was its own kind of harm."
+              "text": "My husband did wrong by hiding things, but I did something I should not have done. I was scared and thought I had to take out my share first."
             },
             {
               "id": "a-h-d4-S3-motive-search-v2",
@@ -5805,7 +5805,7 @@
             },
             {
               "id": "a-h-d4-S3-motive-search-v3",
-              "text": "Each of us made choices for reasons of our own, and I will speak only to the ones that came from me. I now see that I let one possibility drown out every other one. I admit that, at this stage, the gaps in my account are wider than the answers."
+              "text": "Just confirming it was not enough to reassure me. So I moved first myself, and that choice crossed the line."
             },
             {
               "id": "a-h-d4-S3-motive-search-v4",
@@ -5829,7 +5829,7 @@
             },
             {
               "id": "a-h-d4-S3-motive-search-v9",
-              "text": "Each of us made choices for reasons of our own, and I will speak only to the ones that came from me. I now see that I let one possibility drown out every other one. I admit that the rest of my position is harder to defend than I made it sound."
+              "text": "Your Honor, it is still hard to hear it put that far. I am not saying I did the right thing, but fear pushed my judgment."
             },
             {
               "id": "a-h-d4-S3-motive-search-v10",
@@ -5878,7 +5878,7 @@
             },
             {
               "id": "a-h-d4-S3-empathy-approach-v9",
-              "text": "Each week I spent piecing this together quietly, the harder it became to talk to him about anything at all. I now see that my hurt became its own pressure on him. I admit that the rest of my position is harder to defend than I made it sound."
+              "text": "Your Honor, when you put it that far, it is still hard for me. Even so, that wound did not settle easily."
             },
             {
               "id": "a-h-d4-S3-empathy-approach-v10",
@@ -6777,7 +6777,7 @@
           "variants": [
             {
               "id": "b-h-d4-S4-fact-pursuit-v1",
-              "text": "Your Honor, hiding, account-checking, and the moving of money happened at different times for each of us, and I will set them down separately. I admit that my reasons for staying quiet are not the same as a clean record. I admit that my earlier answers were closer to a wall than to the truth."
+              "text": "The way the paperwork was handled will be hard to avoid legal responsibility for. But I think my silence is what drove things that far."
             },
             {
               "id": "b-h-d4-S4-fact-pursuit-v2",
@@ -7116,7 +7116,7 @@
             },
             {
               "id": "b-e-1-mid-self-v4",
-              "text": "If the study guide is brought up too, I have to talk about another matter. It was not a book for me."
+              "text": "If the study guide comes up too, I will have to explain why that book was needed. It was not a book for me."
             },
             {
               "id": "b-e-1-mid-self-v5",
@@ -8411,7 +8411,7 @@
             },
             {
               "id": "a-e-1-early-stage3-v6",
-              "text": "It was hard to take this clue as pointing to some other circumstance. I felt my husband had hidden too much."
+              "text": "It was hard to take this clue as pointing to any reason other than an affair. I felt my husband had hidden too much."
             },
             {
               "id": "a-e-1-early-stage3-v7",
@@ -8832,7 +8832,7 @@
           "variants": [
             {
               "id": "b-e-1-early-stage3-v1",
-              "text": "If you ask even about the middle school study guide, it is hard for me to answer now. To explain that, I would have to talk about another matter too."
+              "text": "If you ask even about the middle school study guide, it is hard for me to answer now. To explain why that book was needed, I would have to bring up someone else too."
             },
             {
               "id": "b-e-1-early-stage3-v2",
@@ -8901,7 +8901,7 @@
             },
             {
               "id": "b-e-1-mid-stage1-v6",
-              "text": "It is true that this material came from my actions. But there were other circumstances behind those actions."
+              "text": "It is true that this material came from what I did. But at the time, there was something I could not simply ignore."
             },
             {
               "id": "b-e-1-mid-stage1-v7",
@@ -8979,7 +8979,7 @@
           "variants": [
             {
               "id": "b-e-1-mid-stage3-v1",
-              "text": "I bought even the study guide because of another matter. Not telling her was my responsibility."
+              "text": "I bought the study guide because there was someone who needed that book. Not saying so was my responsibility."
             },
             {
               "id": "b-e-1-mid-stage3-v2",
@@ -9293,7 +9293,7 @@
             },
             {
               "id": "a-e-2-early-stage3-v6",
-              "text": "It was hard to take this clue as pointing to some other circumstance. I felt my husband had hidden too much."
+              "text": "It was hard to take this clue as pointing to any reason other than an affair. I felt my husband had hidden too much."
             },
             {
               "id": "a-e-2-early-stage3-v7",
@@ -9783,7 +9783,7 @@
             },
             {
               "id": "b-e-2-mid-stage1-v6",
-              "text": "It is true that this material came from my actions. But there were other circumstances behind those actions."
+              "text": "It is true that this material came from what I did. But there was a schedule that required me to go to that place."
             },
             {
               "id": "b-e-2-mid-stage1-v7",
@@ -9812,7 +9812,7 @@
           "variants": [
             {
               "id": "b-e-2-mid-stage2-v1",
-              "text": "I went to the same place repeatedly because of another schedule. I need to be careful about the details."
+              "text": "I went to the same place repeatedly because there was something separate I had to check there. I need to be careful about the details."
             },
             {
               "id": "b-e-2-mid-stage2-v2",
@@ -9832,7 +9832,7 @@
             },
             {
               "id": "b-e-2-mid-stage2-v6",
-              "text": "I will only say it was a different schedule. Someone else's circumstances are involved, so it is difficult to say more."
+              "text": "I will only say there was something separate I had to check there. Someone else's circumstances are involved, so it is difficult to say more."
             },
             {
               "id": "b-e-2-mid-stage2-v7",
@@ -10175,7 +10175,7 @@
             },
             {
               "id": "a-e-3-early-stage3-v6",
-              "text": "It was hard to take this clue as pointing to some other circumstance. I felt my husband had hidden too much."
+              "text": "It was hard to take this clue as pointing to any reason other than an affair. I felt my husband had hidden too much."
             },
             {
               "id": "a-e-3-early-stage3-v7",
@@ -10596,7 +10596,7 @@
           "variants": [
             {
               "id": "b-e-3-early-stage3-v1",
-              "text": "If you ask even about the short calls, it is hard for me to answer now. If I reveal the number, I would have to talk about other circumstances too."
+              "text": "If you ask even about the short calls, it is hard for me to answer now. If I reveal the number, I would have to explain why I contacted that person too."
             },
             {
               "id": "b-e-3-early-stage3-v2",
@@ -10665,7 +10665,7 @@
             },
             {
               "id": "b-e-3-mid-stage1-v6",
-              "text": "It is true that this material came from my actions. But there were other circumstances behind those actions."
+              "text": "It is true that this material came from what I did. But at the time, I thought that number must not be revealed."
             },
             {
               "id": "b-e-3-mid-stage1-v7",
@@ -10714,7 +10714,7 @@
             },
             {
               "id": "b-e-3-mid-stage2-v6",
-              "text": "I will only say there were other circumstances. Someone else's circumstances are involved, so it is difficult to say more."
+              "text": "I will only say it was difficult for me to reveal that number. Someone else's circumstances are involved, so it is difficult to say more."
             },
             {
               "id": "b-e-3-mid-stage2-v7",
@@ -11057,7 +11057,7 @@
             },
             {
               "id": "a-e-4-early-stage3-v6",
-              "text": "It was hard to take this clue as pointing to some other circumstance. I felt my husband had hidden too much."
+              "text": "It was hard to take this clue as pointing to any reason other than an affair. I felt my husband had hidden too much."
             },
             {
               "id": "a-e-4-early-stage3-v7",
@@ -11547,7 +11547,7 @@
             },
             {
               "id": "b-e-4-mid-stage1-v6",
-              "text": "It is true that this material came from my actions. But there were other circumstances behind those actions."
+              "text": "It is true that this material came from what I did. But I was afraid saving that number would expose someone else too."
             },
             {
               "id": "b-e-4-mid-stage1-v7",
@@ -11576,7 +11576,7 @@
           "variants": [
             {
               "id": "b-e-4-mid-stage2-v1",
-              "text": "I did not save the number because I was afraid another matter would get bigger. I need to be careful about the details."
+              "text": "I did not save the number because I was afraid the person I contacted through it would be exposed. I need to be careful about the details."
             },
             {
               "id": "b-e-4-mid-stage2-v2",
@@ -11596,7 +11596,7 @@
             },
             {
               "id": "b-e-4-mid-stage2-v6",
-              "text": "I will only say it was because I was afraid another matter would get bigger. Someone else's circumstances are involved, so it is difficult to say more."
+              "text": "I will only say it was because I was afraid the person I contacted through that number would be exposed. Someone else's circumstances are involved, so it is difficult to say more."
             },
             {
               "id": "b-e-4-mid-stage2-v7",
@@ -11939,7 +11939,7 @@
             },
             {
               "id": "a-e-5-early-stage3-v6",
-              "text": "It was hard to take this clue as pointing to some other circumstance. I felt my husband had hidden too much."
+              "text": "It was hard to take this clue as pointing to any reason other than an affair. I felt my husband had hidden too much."
             },
             {
               "id": "a-e-5-early-stage3-v7",
@@ -12360,7 +12360,7 @@
           "variants": [
             {
               "id": "b-e-5-early-stage3-v1",
-              "text": "If you ask where the cash finally went, it is hard for me to answer right now. If I say the money's destination, other circumstances will inevitably become known."
+              "text": "If you ask where the cash finally went, it is hard for me to answer right now. If I say where I sent the money, that side's circumstances will inevitably become known."
             },
             {
               "id": "b-e-5-early-stage3-v2",
@@ -12429,7 +12429,7 @@
             },
             {
               "id": "b-e-5-mid-stage1-v6",
-              "text": "It is true that this material came from my actions. But there were other circumstances behind those actions."
+              "text": "It is true that this material came from me taking out the money. But that money had a use I had to take care of."
             },
             {
               "id": "b-e-5-mid-stage1-v7",
@@ -12507,7 +12507,7 @@
           "variants": [
             {
               "id": "b-e-5-mid-stage3-v1",
-              "text": "I withdrew that money to deal with other circumstances. Not telling her was my responsibility."
+              "text": "I took that money out because there was somewhere separate I had to send it. Not saying so was my responsibility."
             },
             {
               "id": "b-e-5-mid-stage3-v2",
@@ -13593,7 +13593,7 @@
             },
             {
               "id": "a-e-7-early-request_original-v3",
-              "text": "I closed the savings account because of other circumstances. It was not something I planned alone."
+              "text": "I closed the savings account because I thought it would be resolved once I talked with my husband. It was not something I planned alone."
             },
             {
               "id": "a-e-7-early-request_original-v4",
@@ -13683,7 +13683,7 @@
           "variants": [
             {
               "id": "a-e-7-early-restore_context-v1",
-              "text": "Your Honor, the joint savings cancellation paperwork bears my hand, and I will lay out what I did. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. I am the one who acted, and I will own that part."
+              "text": "If you push it as something that crossed the line like that, it becomes even harder for me to speak."
             },
             {
               "id": "a-e-7-early-restore_context-v2",
@@ -13719,7 +13719,7 @@
             },
             {
               "id": "a-e-7-early-restore_context-v10",
-              "text": "Your Honor, the joint savings cancellation paperwork bears my hand, and I will lay out what I did. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. I am the one who carried it out, and I do not deny it."
+              "text": "If you immediately decide it was something that crossed the line, why I made that judgment disappears."
             }
           ]
         },
@@ -13830,7 +13830,7 @@
           "variants": [
             {
               "id": "a-e-7-mid-restore_context-v1",
-              "text": "Your Honor, the joint savings cancellation paperwork bears my hand, and I will lay out what I did. I admit my reading may have been colored by fear, but the records themselves are not made up. I am the one who acted, and I will own that part."
+              "text": "It scares me when you call it something that crossed the line. I thought my husband would eventually agree."
             },
             {
               "id": "a-e-7-mid-restore_context-v2",
@@ -14124,7 +14124,7 @@
           "variants": [
             {
               "id": "b-e-7-early-restore_context-v1",
-              "text": "Hearing it described as a crime leaves me even more stunned. I never gave that consent."
+              "text": "Being pressed that far leaves me even more stunned. I never gave that consent."
             },
             {
               "id": "b-e-7-early-restore_context-v2",
@@ -14279,7 +14279,7 @@
             },
             {
               "id": "b-e-7-mid-restore_context-v3",
-              "text": "The joint savings cancellation paperwork — I know my wife handled it. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. What is captured there is his action, and I am only the one who found it."
+              "text": "If you are weighing legal responsibility, I also have to talk about what I hid first."
             },
             {
               "id": "b-e-7-mid-restore_context-v4",
@@ -15374,7 +15374,7 @@
             },
             {
               "id": "dc-4-a-q2-mid-v3",
-              "text": "I was ashamed to admit I had lost the money, and I was afraid the document and money issues would open together.",
+              "text": "I was afraid that if I said I had been deceived, the paperwork and money issues would open up together.",
               "behaviorHint": "Admit some facts while mixing shame with anxiety."
             },
             {
@@ -16333,11 +16333,11 @@
           "variants": [
             {
               "id": "a_primary_fault-v1",
-              "text": "After the verdict, Park Ji-yeon could not lift her head for a long while. Lee Jun-ho's concealment was not a minor fault, but the Judge weighed the document handling issue and the investment-scam transfer more heavily. Lee Jun-ho said he would no longer hide the matter of his family member and child, and Park Ji-yeon had to face how she would bear the trust that had collapsed before the lost money."
+              "text": "After the verdict, Park Ji-yeon kept her head down. Lee Jun-ho's concealment was not minor, but the Judge weighed Park Ji-yeon's document handling and transfer to the investment chat room more heavily. Lee Jun-ho said he would stop hiding that side's story, and Park Ji-yeon faced the broken trust before the lost money."
             },
             {
               "id": "a_primary_fault-v2",
-              "text": "Even after the courtroom settled, the couple still could not face each other right away. The judge found that manipulating documents and withdrawing the joint savings was more damaging than silence kept for someone else. Lee Jun-ho said he would address his brother's matter openly, and Park Ji-yeon left slowly, looking back on the moment her anxiety turned into a crime."
+              "text": "Even after the courtroom settled, the couple could not face each other. The Judge found that touching the documents and withdrawing the joint savings did more damage than silence kept for someone else. Lee Jun-ho said he would address that side's matter openly, and Park Ji-yeon left while recalling when anxiety became a choice that crossed the line."
             },
             {
               "id": "a_primary_fault-v3",
@@ -16349,7 +16349,7 @@
             },
             {
               "id": "a_primary_fault-v5",
-              "text": "Park Ji-yeon kept saying, \"I was afraid I would be abandoned too,\" but the judgment made clear that fear could not become a shield for a crime. Lee Jun-ho admitted his responsibility for hiding the matter involving his brother and nephew and said he would handle the in-law conflict separately. The couple agreed to live apart for a while and pursue recovery of joint property separately from the criminal process."
+              "text": "Park Ji-yeon kept saying, \"I was afraid I would be abandoned too,\" but the judgment said fear could not shield a choice that crossed the line. Lee Jun-ho admitted hiding that side's matter and said he would settle the related conflict separately. The couple agreed to live apart for a while and handle joint property recovery and legal procedures separately."
             }
           ]
         },
@@ -16397,7 +16397,7 @@
             },
             {
               "id": "shared_fault-v4",
-              "text": "It was an ending where it was difficult to call only one person the victim. Lee Jun-ho's silence grew the misunderstanding of an affair, and Park Ji-yeon's preemptive action led to a crime and a loss. Keeping both consensual divorce and relationship recovery counseling open, the two first agreed to document the help given to his that household and the management of marital property."
+              "text": "It was hard to call only one person the victim. Lee Jun-ho's silence deepened the affair misunderstanding, and Park Ji-yeon's preemptive action led to a choice that crossed the line and a loss. Leaving both divorce by agreement and relationship counseling open, the two first agreed to document the help given to that side and the management of joint property."
             },
             {
               "id": "shared_fault-v5",
@@ -16411,11 +16411,11 @@
           "variants": [
             {
               "id": "protective_resolution-v1",
-              "text": "The Judge spoke of recovery before any winner. The family situation could no longer be held as a secret, and the loss from the failed investment was something the couple needed to handle together, the Judge said. A coolness still remained between the two leaving the courtroom, but at the words \"you must look in the same direction now,\" both fell silent for a long time."
+              "text": "The Judge spoke of recovery before victory or defeat. That side's matter could no longer stay secret, and the money lost in the investment chat room was something the couple had to handle together. A chill remained as they left the courtroom, but when told they had to look in the same direction for the first time, both stayed silent."
             },
             {
               "id": "protective_resolution-v2",
-              "text": "The conclusion did not end in punishment alone. To Lee Jun-ho the Judge advised laying out family matters transparently; to Park Ji-yeon, taking the recovery procedure for the loss instead of chasing hidden money. Standing all at once with the family situation, the loss, and the broken marriage, the two faced for the first time a problem they had to solve together."
+              "text": "The conclusion did not end with assigning responsibility. The Judge advised Lee Jun-ho to make the hidden money issue transparent, and Park Ji-yeon to use the loss recovery process instead of chasing hidden money. With the related parties, the money lost after being deceived, and the broken marriage all on the table, the two faced, for the first time, an issue they had to solve together."
             },
             {
               "id": "protective_resolution-v3",
@@ -16437,7 +16437,7 @@
           "variants": [
             {
               "id": "procedural_caution-v1",
-              "text": "The Judge made clear that altering an power of attorney is a crime that cannot be smoothed over by relationship dispute. At the same time, noting that Lee Jun-ho's silence had pushed Park Ji-yeon to the edge, the Judge did not close the door on relationship recovery, separate from punishment. The two went back carrying not so much the paperwork acknowledging fault as the words they still had to say to each other."
+              "text": "The Judge warned that the power of attorney issue was too serious to cover as a relationship dispute. He also noted that Lee Jun-ho's silence had driven Park Ji-yeon to the edge, and kept the door open for repair apart from legal responsibility. The two went home carrying words they had to explain to each other before any papers admitting fault."
             },
             {
               "id": "procedural_caution-v2",
@@ -17174,7 +17174,7 @@
             },
             {
               "id": "contra-a-h-d3-S1-v6",
-              "text": "It is not that my account is shifting; the steps I took are visible in the documents. Please do not read my caution as a sign of guilt."
+              "text": "Please do not see me as someone who crossed the line just because I gathered the documents. At the time, I thought of it as checking."
             },
             {
               "id": "contra-a-h-d3-S1-v7",
@@ -20114,7 +20114,7 @@
             },
             {
               "id": "trust-b-separation-S3-v5",
-              "text": "Alone with you, Your Honor, I will admit it — what I hid was a private family matter, and I owe my spouse that admission. I owe my spouse this admission, even more than I owe it to this room."
+              "text": "If I may say this privately, the hidden money also went to that side. It was a use separate from an affair."
             },
             {
               "id": "trust-b-separation-S3-v6",
