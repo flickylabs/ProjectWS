@@ -178,6 +178,9 @@ export interface EventFeedbackItem {
   actions?: EventFeedbackAction[]
   /** 자동 소멸 지연(ms). 미지정 시 kind별 기본값 (card 쪽에서 결정) */
   autoDismissMs?: number
+  /** actions/onDefer 없는 popup의 기본 정책(확인 [Space] 강제 + auto-dismiss 차단)을 opt-out.
+   *  true 시 [확인 Space] 미노출 + autoDismissMs 정상 적용. 단순 정보성 가이드용. */
+  allowAutoDismiss?: boolean
   /** observation 전용: 해당 파티의 archetype 태그로 수렴 애니메이션 재생 */
   convergeToTag?: boolean
   /** 가이드 컷씬: 임의의 타겟 selector로 수렴 + 수렴 완료 후 타겟 3번 깜빡 */

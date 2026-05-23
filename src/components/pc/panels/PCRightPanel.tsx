@@ -257,7 +257,7 @@ export default function PCRightPanel() {
     setComboSlots([a ?? null, b ?? null])
     setAutoMatchPanelOpen(false)
     setAutoMatchConfirming(false)
-    showGuideCutscene(t('pc.right.toast.autoMatched'), '.pc-combination-card')
+    showGuideCutscene(t('pc.right.toast.autoMatched'), '.pc-combination-card', { autoDismissMs: 3000 })
   }, [canAutoMatch, readyLabRecipes, store, t])
 
   // config가 null이면 caseData에서 직접 초기화 시도

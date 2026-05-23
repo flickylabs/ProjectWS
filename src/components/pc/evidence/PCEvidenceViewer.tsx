@@ -95,12 +95,36 @@ export default function PCEvidenceViewer() {
       ? (getOriginalViewerDataByStage(caseData!.caseId, evidence.id) ?? (evidence as UnsafeAny).viewerDataByStage)
       : (evidence as UnsafeAny).viewerDataByStage
     if (!stageMap || typeof stageMap !== 'object') return baseViewerData
-    const validKeys = Object.keys(stageMap)
+    const validKeysAsc = Object.keys(stageMap)
       .map((k) => Number(k))
       .filter((k) => !Number.isNaN(k) && k <= currentStage)
-      .sort((a, b) => b - a)
-    if (validKeys.length === 0) return baseViewerData
-    return stageMap[String(validKeys[0])] ?? baseViewerData
+      .sort((a, b) => a - b)
+    if (validKeysAsc.length === 0) return baseViewerData
+    const latest = stageMap[String(validKeysAsc[validKeysAsc.length - 1])] ?? baseViewerData
+    // chat/email 타입: 모든 해금된 단계의 메시지를 pages로 누적 노출 (단계 상승 후 이전 단계 회람 가능)
+    if ((evidence.type === 'chat' || evidence.type === 'email') && validKeysAsc.length > 1) {
+      const latestChat = (latest as UnsafeAny)?.chat
+      if (latestChat && Array.isArray(latestChat.messages)) {
+        const pages = validKeysAsc
+          .map((k) => {
+            const stageData = stageMap[String(k)] as UnsafeAny
+            const stageChat = stageData?.chat
+            if (!stageChat || !Array.isArray(stageChat.messages)) return null
+            const stageLabel = stageData?.meta?.stageLabel
+            return {
+              label: stageLabel ?? t('pc.evidenceViewer.stageLabel', { current: k + 1, total: stageCount }),
+              header: stageChat.header,
+              messages: stageChat.messages,
+            }
+          })
+          .filter((p): p is NonNullable<typeof p> => p !== null)
+        return {
+          ...(latest as Record<string, unknown>),
+          chat: { ...latestChat, pages },
+        }
+      }
+    }
+    return latest
   })()
   const viewerData = locale === 'ko' || !containsHangulDeep(rawViewerData) ? rawViewerData : null
   const hasSubViewer = Boolean(viewerData)

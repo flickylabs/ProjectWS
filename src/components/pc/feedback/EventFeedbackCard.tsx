@@ -146,8 +146,9 @@ function getStateChangeCue(active: EventFeedbackItem): CourtBeatCue {
 function getFeedbackAutoDismissMs(active: EventFeedbackItem, meta: KindMeta): number | undefined {
   // 2026-05-20 사용자 요청: actions/onDefer 없는 popup(= 확인 [Space] 노출)은 절대 auto-dismiss X.
   // VFX가 빠르게 사라져 인지 못하는 문제 해결. 명시적 autoDismissMs 도 무시.
+  // 2026-05-24 예외: allowAutoDismiss opt-in 시 autoDismissMs 정상 적용 (조합 자동배치 등 단순 정보성 가이드).
   const hasActions = Array.isArray(active.actions) && active.actions.length > 0
-  if (!hasActions && !active.onDefer) return undefined
+  if (!hasActions && !active.onDefer && !active.allowAutoDismiss) return undefined
   return active.autoDismissMs ?? meta.defaultAutoMs
 }
 
@@ -801,7 +802,8 @@ export default function EventFeedbackCard() {
   const hasActions = Array.isArray(active.actions) && active.actions.length > 0
   // 2026-05-20 사용자 요청: actions가 없는 popup은 autoDismissMs 유무와 무관하게
   // 확인 [Space] 버튼을 항상 노출 — 너무 빨리 사라지는 인지 부담 해결.
-  const showConfirmButton = !hasActions && !active.onDefer
+  // 2026-05-24 예외: allowAutoDismiss opt-in 시 [확인 Space] 미노출 (auto-dismiss 정상).
+  const showConfirmButton = !hasActions && !active.onDefer && !active.allowAutoDismiss
 
   const cardStyle = phase === 'converging' && convergeTransform
     ? { transform: convergeTransform, opacity: 0 }

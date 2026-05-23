@@ -12,27 +12,31 @@ const GUIDE_CUTSCENE_PANEL_CLOSE_DELAY_MS = 120
  *  - 조합 가능 쌍 준비 / 자동 배치 → 조합 영역
  *  - Dossier 해금 → 증거 영역
  *  - 쟁점 정리 / 선례 감각 → 쟁점 리본
+ *
+ * options.autoDismissMs 지정 시 [확인 Space] 미노출 + 해당 ms 후 자동 소멸 (allowAutoDismiss opt-in).
  */
-export function showGuideCutscene(text: string, targetSelector: string): void {
+export function showGuideCutscene(
+  text: string,
+  targetSelector: string,
+  options?: { autoDismissMs?: number },
+): void {
   // 사용자 요청 2026-05-21 (8th): guide cutscene text는 단일 알림이므로 body가 아닌 title로
   // 전달해 22px 위계 (이전 body 14.5~15.5px로 작아 보이던 문제 해소).
+  const autoDismissMs = options?.autoDismissMs
+  const enqueuePayload = {
+    kind: 'observation' as const,
+    title: text,
+    tone: 'gold' as const,
+    convergeTargetSelector: targetSelector,
+    ...(autoDismissMs !== undefined ? { autoDismissMs, allowAutoDismiss: true } : {}),
+  }
   if (typeof window === 'undefined') {
-    useGameStore.getState().enqueueFeedback({
-      kind: 'observation',
-      title: text,
-      tone: 'gold',
-      convergeTargetSelector: targetSelector,
-    })
+    useGameStore.getState().enqueueFeedback(enqueuePayload)
     return
   }
 
   window.dispatchEvent(new Event(PC_CLOSE_INTERACTION_PANEL_EVENT))
   window.setTimeout(() => {
-    useGameStore.getState().enqueueFeedback({
-      kind: 'observation',
-      title: text,
-      tone: 'gold',
-      convergeTargetSelector: targetSelector,
-    })
+    useGameStore.getState().enqueueFeedback(enqueuePayload)
   }, GUIDE_CUTSCENE_PANEL_CLOSE_DELAY_MS)
 }
