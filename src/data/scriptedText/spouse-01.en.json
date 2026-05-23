@@ -22932,7 +22932,7 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-soft-v2",
-              "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to the in-laws conflict and the fear that led to concealment.",
+              "text": "Mr. Lee, the early-morning calls from the same number and the texts from an unknown sender point to the same matter. Would you explain why you were unable to tell Ms. Park about it to the end?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -22947,7 +22947,7 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-soft-v5",
-              "text": "Mr. Lee, let us look at Call Logs together. Please calmly explain how they relate to the in-laws conflict and the fear that led to concealment.",
+              "text": "Mr. Lee, when the call logs and texts from an unknown sender are placed side by side, it seems a different burden weighed more heavily than an affair. Would you tell us what that was?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -22957,12 +22957,12 @@
           "variants": [
             {
               "id": "judgecombo-dc-2-b-q1-mid-v1",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to the in-laws conflict and the fear that led to concealment. Please explain the point clearly.",
+              "text": "Mr. Lee, the early-morning calls and texts from an unknown sender point to the same matter. You must now state what you continued to hide because you feared the clash it would cause.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v2",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to the in-laws conflict and the fear that led to concealment. Please explain the point clearly.",
+              "text": "Mr. Lee, the call counterpart and the texts from an unknown sender overlap. You can no longer dismiss this as simple contact.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -22972,12 +22972,12 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v4",
-              "text": "Mr. Lee, Call Logs narrow the issue to the in-laws conflict and the fear that led to concealment. Please explain the point clearly.",
+              "text": "Mr. Lee, with the texts from an unknown sender and the call logs before us, saying only that it was not an affair seems insufficient. Why did you conceal the circumstances behind that until the end?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v5",
-              "text": "Mr. Lee, Call Logs narrow the issue to the in-laws conflict and the fear that led to concealment. Please explain the point clearly.",
+              "text": "Mr. Lee, the call logs and texts from an unknown sender make it doubtful that the reason you hid them was merely routine contact. Saying only that you were afraid cannot stand in for an explanation.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -22987,7 +22987,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-2-b-q1-hard-v1",
-              "text": "Mr. Lee, Call Logs directly point to the in-laws conflict and the fear that led to concealment. Answer without evasion.",
+              "text": "Mr. Lee, the call logs and texts from an unknown sender directly point to the circumstances you concealed. Tell the court now what you were hiding about that situation.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -22997,7 +22997,7 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-hard-v3",
-              "text": "Mr. Lee, Call Logs directly point to the in-laws conflict and the fear that led to concealment. Answer without evasion.",
+              "text": "Mr. Lee, with the call logs and texts from an unknown sender before us, you must also explain why you concealed going there until the end. Answer now.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -23007,7 +23007,7 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-hard-v5",
-              "text": "Mr. Lee, Call Logs directly point to the in-laws conflict and the fear that led to concealment. Answer without evasion.",
+              "text": "Mr. Lee, now that the texts from an unknown sender and the early-morning call logs are before us, saying you were afraid does not erase the concealment. Tell us now what you were afraid of.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23017,7 +23017,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-3-b-q1-soft-v1",
-              "text": "Mr. Lee, let us look at Withdrawal Records together. Please calmly explain how they relate to authority over the joint savings and the lack of spouse consent.",
+              "text": "Mr. Lee, let us look at the texts from an unknown sender together with the withdrawals from your personal account. Would you explain why you never told Ms. Park that you had moved a large sum for a separate purpose?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -23032,12 +23032,12 @@
             },
             {
               "id": "judgecombo-dc-3-b-q1-soft-v4",
-              "text": "Mr. Lee, let us look at Withdrawal Records together. Please calmly explain how they relate to authority over the joint savings and the lack of spouse consent.",
+              "text": "Mr. Lee, if the messages reflected some other circumstance, would you explain why you were unable to tell Ms. Park about it?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-soft-v5",
-              "text": "Mr. Lee, let us look at Withdrawal Records together. Please calmly explain how they relate to authority over the joint savings and the lack of spouse consent.",
+              "text": "Mr. Lee, looking at the texts from an unknown sender and the withdrawal records, even if there was a separate urgent matter, moving a large sum on your own calls for an explanation. Please explain the line between those matters calmly.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23052,12 +23052,12 @@
             },
             {
               "id": "judgecombo-dc-3-b-q1-mid-v2",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to authority over the joint savings and the lack of spouse consent. Please explain the point clearly.",
+              "text": "Mr. Lee, the fact that cash left your personal account is a separate issue. You cannot cover it by calling it personal use.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-mid-v3",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to authority over the joint savings and the lack of spouse consent. Please explain the point clearly.",
+              "text": "Mr. Lee, if there were other circumstances, you must be even clearer about the nature of that money. Answer in a way that does not let it blur into the suspicion over the joint savings.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -23262,7 +23262,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v2",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram directly point to the motive for moving ₩20M before confirming the truth. Answer without evasion.",
+              "text": "Ms. Park, the investment-chat Telegram and transfer records show that you acted first before seeking confirmation from Mr. Lee. Acknowledge that judgment and answer.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
