@@ -7207,7 +7207,7 @@
             },
             {
               "id": "a-e-1-mid-other-v5",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I admit my reading may have been colored by fear, but the records themselves are not made up. I am presenting what he did, and what I did with it I will state separately."
+              "text": "The items now go from household goods to books. That means this was not a one-off purchase, does it not?"
             }
           ]
         },
@@ -7373,7 +7373,7 @@
             },
             {
               "id": "a-e-2-mid-other-v3",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I admit my reading may have been colored by fear, but the records themselves are not made up. What is captured there is his action, and I am only the one who found it."
+              "text": "He even saved the address as a favorite. If it were somewhere he only happened to pass by, he would not have left it in favorites."
             },
             {
               "id": "a-e-2-mid-other-v4",
@@ -7406,7 +7406,7 @@
             },
             {
               "id": "a-e-2-late-other-v4",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I still do not fully know whether it was an affair or a personal matter. But it is clear that he hid it."
             },
             {
               "id": "a-e-2-late-other-v5",
@@ -7497,7 +7497,7 @@
             },
             {
               "id": "b-e-3-late-self-v5",
-              "text": "That number on the call log — I will explain who it belongs to. There were circumstances I will explain, but they were not what my wife is reading them as. It was my own choice, and I will set it down as such."
+              "text": "If you look as far as the message thread, it will show whose number that was and why it was urgent."
             }
           ]
         },
@@ -8378,7 +8378,7 @@
             },
             {
               "id": "a-e-1-early-stage2-v10",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "This was not a single scene; it was a pattern. The circumstances kept piling up and pushed me there."
             }
           ]
         },
@@ -8419,7 +8419,7 @@
             },
             {
               "id": "a-e-1-early-stage3-v8",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. That is his step, and I will speak only to what I observed."
+              "text": "Even with this clue, it was hard to believe until I heard it from my husband himself. For a while, I could not get out from under that suspicion."
             },
             {
               "id": "a-e-1-early-stage3-v9",
@@ -8427,7 +8427,7 @@
             },
             {
               "id": "a-e-1-early-stage3-v10",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "Even if the material pointed to another meaning, at that time I could not judge it properly."
             }
           ]
         },
@@ -8444,7 +8444,7 @@
             },
             {
               "id": "a-e-1-mid-stage1-v2",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I admit my reading may have been colored by fear, but the records themselves are not made up. I did not do that step myself; it was on the other side."
+              "text": "I will not hide what I did after seeing the material. Even so, at the time it was hard to take it any other way."
             },
             {
               "id": "a-e-1-mid-stage1-v3",
@@ -8468,7 +8468,7 @@
             },
             {
               "id": "a-e-1-mid-stage1-v8",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I admit my reading may have been colored by fear, but the records themselves are not made up. That is his step, and I will speak only to what I observed."
+              "text": "Because my husband said nothing, I believed the side the material seemed to show. I held onto that thought for a while."
             },
             {
               "id": "a-e-1-mid-stage1-v9",
@@ -8599,11 +8599,11 @@
             },
             {
               "id": "a-e-1-late-stage1-v4",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I understand now that the meaning I attached to the material was larger than the material itself. For a while, I could not let go of that thought."
             },
             {
               "id": "a-e-1-late-stage1-v5",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I will set down what I did with my own hands separately from what I suspected of him. I am presenting what he did, and what I did with it I will state separately."
+              "text": "The moment I saw that material, I could not judge it properly. That is why I was late to see another possibility."
             },
             {
               "id": "a-e-1-late-stage1-v6",
@@ -8640,7 +8640,7 @@
             },
             {
               "id": "a-e-1-late-stage2-v2",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I will set down what I did with my own hands separately from what I suspected of him. I did not do that step myself; it was on the other side."
+              "text": "The timing of the contacts and the wording fit together more urgently than I expected. Looking at the material, the conclusion I drew starts to shake."
             },
             {
               "id": "a-e-1-late-stage2-v3",
@@ -8648,7 +8648,7 @@
             },
             {
               "id": "a-e-1-late-stage2-v4",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I did push my husband instead of asking about other possibilities. For a while, I held onto my conclusion."
             },
             {
               "id": "a-e-1-late-stage2-v5",
@@ -8656,7 +8656,7 @@
             },
             {
               "id": "a-e-1-late-stage2-v6",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I will set down what I did with my own hands separately from what I suspected of him. The hand that moved on that record was not mine."
+              "text": "It is true that I fixed that context as an affair. But my husband still bears responsibility for not saying in time why he bought it."
             },
             {
               "id": "a-e-1-late-stage2-v7",
@@ -8701,7 +8701,7 @@
             },
             {
               "id": "a-e-1-late-stage3-v5",
-              "text": "Your Honor, I found those receipts in his car, and the items were not for our household. I will set down what I did with my own hands separately from what I suspected of him. I am presenting what he did, and what I did with it I will state separately."
+              "text": "I reached a conclusion too quickly. Still, my husband also bears responsibility for not saying in time why he bought it."
             },
             {
               "id": "a-e-1-late-stage3-v6",
@@ -8791,7 +8791,7 @@
             },
             {
               "id": "b-e-1-early-stage2-v3",
-              "text": "Those receipts in the car — I am the one who paid for them. I do not deny the record, but I would rather not lay out the reason in long form right now. What I did, I did myself, and I will answer for it."
+              "text": "There are circumstances behind how this happened. It is hard to explain in detail right now."
             },
             {
               "id": "b-e-1-early-stage2-v4",
@@ -8844,7 +8844,7 @@
             },
             {
               "id": "b-e-1-early-stage3-v4",
-              "text": "Those receipts in the car — I am the one who paid for them. I do not deny the record, but I would rather not lay out the reason in long form right now. I will not hide that the action came from me."
+              "text": "There are complicated circumstances behind why I acted that way. For now, I ask you not to treat it as settled."
             },
             {
               "id": "b-e-1-early-stage3-v5",
@@ -8897,7 +8897,7 @@
             },
             {
               "id": "b-e-1-mid-stage1-v5",
-              "text": "Those receipts in the car — I am the one who paid for them. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. It was my own choice, and I will set it down as such."
+              "text": "What I did is true. I had circumstances, so I stepped in. That is why my explanation came late."
             },
             {
               "id": "b-e-1-mid-stage1-v6",
@@ -8905,7 +8905,7 @@
             },
             {
               "id": "b-e-1-mid-stage1-v7",
-              "text": "Those receipts in the car — I am the one who paid for them. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. I will not dress up my own part to look smaller than it was."
+              "text": "I admit it is my side of the record. At the time, I thought I had to handle it."
             },
             {
               "id": "b-e-1-mid-stage1-v8",
@@ -9044,7 +9044,7 @@
             },
             {
               "id": "b-e-1-late-stage1-v5",
-              "text": "Those receipts in the car — I am the one who paid for them. There were circumstances I will explain, but they were not what my wife is reading them as. It was my own choice, and I will set it down as such."
+              "text": "Yes. That record contains my own circumstances. It is also true that my wife did not know."
             },
             {
               "id": "b-e-1-late-stage1-v6",
@@ -9154,7 +9154,7 @@
             },
             {
               "id": "b-e-1-late-stage3-v8",
-              "text": "Those receipts in the car — I am the one who paid for them. There were circumstances I will explain, but they were not what my wife is reading them as. The act was mine, and I am ready for the consequences."
+              "text": "That reference book was something I bought for the child. I should have told the truth from the beginning."
             },
             {
               "id": "b-e-1-late-stage3-v9",
@@ -9260,7 +9260,7 @@
             },
             {
               "id": "a-e-2-early-stage2-v10",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "This was not a single scene; it was a pattern. The circumstances kept piling up and pushed me there."
             }
           ]
         },
@@ -9301,7 +9301,7 @@
             },
             {
               "id": "a-e-2-early-stage3-v8",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. That is his step, and I will speak only to what I observed."
+              "text": "Even with this clue, it was hard to believe until I heard it from my husband himself. For a while, I could not get out from under that suspicion."
             },
             {
               "id": "a-e-2-early-stage3-v9",
@@ -9309,7 +9309,7 @@
             },
             {
               "id": "a-e-2-early-stage3-v10",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "Even if the material pointed to another meaning, at that time I could not judge it properly."
             }
           ]
         },
@@ -9326,7 +9326,7 @@
             },
             {
               "id": "a-e-2-mid-stage1-v2",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I admit my reading may have been colored by fear, but the records themselves are not made up. I did not do that step myself; it was on the other side."
+              "text": "I will not hide what I did after seeing the material. Even so, at the time it was hard to take it any other way."
             },
             {
               "id": "a-e-2-mid-stage1-v3",
@@ -9350,7 +9350,7 @@
             },
             {
               "id": "a-e-2-mid-stage1-v8",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I admit my reading may have been colored by fear, but the records themselves are not made up. That is his step, and I will speak only to what I observed."
+              "text": "Because my husband said nothing, I believed the side the material seemed to show. I held onto that thought for a while."
             },
             {
               "id": "a-e-2-mid-stage1-v9",
@@ -9481,11 +9481,11 @@
             },
             {
               "id": "a-e-2-late-stage1-v4",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I understand now that the meaning I attached to the material was larger than the material itself. For a while, I could not let go of that thought."
             },
             {
               "id": "a-e-2-late-stage1-v5",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I will set down what I did with my own hands separately from what I suspected of him. I am presenting what he did, and what I did with it I will state separately."
+              "text": "The moment I saw that material, I could not judge it properly. That is why I was late to see another possibility."
             },
             {
               "id": "a-e-2-late-stage1-v6",
@@ -9530,7 +9530,7 @@
             },
             {
               "id": "a-e-2-late-stage2-v4",
-              "text": "Your Honor, the dashcam GPS led to the same studio apartment address again and again. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I did push my husband instead of asking about other possibilities. For a while, I held onto my conclusion."
             },
             {
               "id": "a-e-2-late-stage2-v5",
@@ -9673,7 +9673,7 @@
             },
             {
               "id": "b-e-2-early-stage2-v3",
-              "text": "That address on the dashcam is correct; I did go there. I do not deny the record, but I would rather not lay out the reason in long form right now. What I did, I did myself, and I will answer for it."
+              "text": "There are circumstances behind how this happened. It is hard to explain in detail right now."
             },
             {
               "id": "b-e-2-early-stage2-v4",
@@ -9726,7 +9726,7 @@
             },
             {
               "id": "b-e-2-early-stage3-v4",
-              "text": "That address on the dashcam is correct; I did go there. I do not deny the record, but I would rather not lay out the reason in long form right now. I will not hide that the action came from me."
+              "text": "There are complicated circumstances behind why I acted that way. For now, I ask you not to treat it as settled."
             },
             {
               "id": "b-e-2-early-stage3-v5",
@@ -9779,7 +9779,7 @@
             },
             {
               "id": "b-e-2-mid-stage1-v5",
-              "text": "That address on the dashcam is correct; I did go there. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. It was my own choice, and I will set it down as such."
+              "text": "What I did is true. I had circumstances, so I went there myself. That is why my explanation came late."
             },
             {
               "id": "b-e-2-mid-stage1-v6",
@@ -9787,7 +9787,7 @@
             },
             {
               "id": "b-e-2-mid-stage1-v7",
-              "text": "That address on the dashcam is correct; I did go there. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. I will not dress up my own part to look smaller than it was."
+              "text": "I admit it is my side of the record. At the time, I thought I had to go there myself."
             },
             {
               "id": "b-e-2-mid-stage1-v8",
@@ -9926,7 +9926,7 @@
             },
             {
               "id": "b-e-2-late-stage1-v5",
-              "text": "That address on the dashcam is correct; I did go there. There were circumstances I will explain, but they were not what my wife is reading them as. It was my own choice, and I will set it down as such."
+              "text": "Yes. That record contains my own circumstances. It is also true that my wife did not know."
             },
             {
               "id": "b-e-2-late-stage1-v6",
@@ -9987,7 +9987,7 @@
             },
             {
               "id": "b-e-2-late-stage2-v8",
-              "text": "That address on the dashcam is correct; I did go there. There were circumstances I will explain, but they were not what my wife is reading them as. The act was mine, and I am ready for the consequences."
+              "text": "That record contains matters concerning my family. I could not tell my wife about them."
             },
             {
               "id": "b-e-2-late-stage2-v9",
@@ -10036,7 +10036,7 @@
             },
             {
               "id": "b-e-2-late-stage3-v8",
-              "text": "That address on the dashcam is correct; I did go there. There were circumstances I will explain, but they were not what my wife is reading them as. The act was mine, and I am ready for the consequences."
+              "text": "After work, I stopped by my older brother's place and took care of the child's dinner. I should have told the truth from the beginning."
             },
             {
               "id": "b-e-2-late-stage3-v9",
@@ -10142,7 +10142,7 @@
             },
             {
               "id": "a-e-3-early-stage2-v10",
-              "text": "Your Honor, his call log shows late-night calls to and from the same number. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "This was not a single scene; it was a pattern. The circumstances kept piling up and pushed me there."
             }
           ]
         },
@@ -10183,7 +10183,7 @@
             },
             {
               "id": "a-e-3-early-stage3-v8",
-              "text": "Your Honor, his call log shows late-night calls to and from the same number. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. That is his step, and I will speak only to what I observed."
+              "text": "Even with this clue, it was hard to believe until I heard it from my husband himself. For a while, I could not get out from under that suspicion."
             },
             {
               "id": "a-e-3-early-stage3-v9",
@@ -10191,7 +10191,7 @@
             },
             {
               "id": "a-e-3-early-stage3-v10",
-              "text": "Your Honor, his call log shows late-night calls to and from the same number. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "Even if the material pointed to another meaning, at that time I could not judge it properly."
             }
           ]
         },
@@ -10208,7 +10208,7 @@
             },
             {
               "id": "a-e-3-mid-stage1-v2",
-              "text": "Your Honor, his call log shows late-night calls to and from the same number. I admit my reading may have been colored by fear, but the records themselves are not made up. I did not do that step myself; it was on the other side."
+              "text": "I will not hide what I did after seeing the material. Even so, at the time it was hard to take it any other way."
             },
             {
               "id": "a-e-3-mid-stage1-v3",
@@ -10232,7 +10232,7 @@
             },
             {
               "id": "a-e-3-mid-stage1-v8",
-              "text": "Your Honor, his call log shows late-night calls to and from the same number. I admit my reading may have been colored by fear, but the records themselves are not made up. That is his step, and I will speak only to what I observed."
+              "text": "Because my husband said nothing, I believed the side the material seemed to show. I held onto that thought for a while."
             },
             {
               "id": "a-e-3-mid-stage1-v9",
@@ -10363,11 +10363,11 @@
             },
             {
               "id": "a-e-3-late-stage1-v4",
-              "text": "Your Honor, his call log shows late-night calls to and from the same number. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I understand now that the meaning I attached to the material was larger than the material itself. For a while, I could not let go of that thought."
             },
             {
               "id": "a-e-3-late-stage1-v5",
-              "text": "Your Honor, his call log shows late-night calls to and from the same number. I will set down what I did with my own hands separately from what I suspected of him. I am presenting what he did, and what I did with it I will state separately."
+              "text": "The moment I saw that material, I could not judge it properly. That is why I was late to see another possibility."
             },
             {
               "id": "a-e-3-late-stage1-v6",
@@ -10555,7 +10555,7 @@
             },
             {
               "id": "b-e-3-early-stage2-v3",
-              "text": "That number on the call log — I will explain who it belongs to. I do not deny the record, but I would rather not lay out the reason in long form right now. What I did, I did myself, and I will answer for it."
+              "text": "There are circumstances behind how this happened. It is hard to explain in detail right now."
             },
             {
               "id": "b-e-3-early-stage2-v4",
@@ -10608,7 +10608,7 @@
             },
             {
               "id": "b-e-3-early-stage3-v4",
-              "text": "That number on the call log — I will explain who it belongs to. I do not deny the record, but I would rather not lay out the reason in long form right now. I will not hide that the action came from me."
+              "text": "There are complicated circumstances behind why I acted that way. For now, I ask you not to treat it as settled."
             },
             {
               "id": "b-e-3-early-stage3-v5",
@@ -10661,7 +10661,7 @@
             },
             {
               "id": "b-e-3-mid-stage1-v5",
-              "text": "That number on the call log — I will explain who it belongs to. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. It was my own choice, and I will set it down as such."
+              "text": "What I did is true. I had circumstances, so I made contact. That is why my explanation came late."
             },
             {
               "id": "b-e-3-mid-stage1-v6",
@@ -10669,7 +10669,7 @@
             },
             {
               "id": "b-e-3-mid-stage1-v7",
-              "text": "That number on the call log — I will explain who it belongs to. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. I will not dress up my own part to look smaller than it was."
+              "text": "I admit it is my side of the record. At the time, I thought I had to make contact."
             },
             {
               "id": "b-e-3-mid-stage1-v8",
@@ -10808,7 +10808,7 @@
             },
             {
               "id": "b-e-3-late-stage1-v5",
-              "text": "That number on the call log — I will explain who it belongs to. There were circumstances I will explain, but they were not what my wife is reading them as. It was my own choice, and I will set it down as such."
+              "text": "Yes. That record contains my own circumstances. It is also true that my wife did not know."
             },
             {
               "id": "b-e-3-late-stage1-v6",
@@ -10869,7 +10869,7 @@
             },
             {
               "id": "b-e-3-late-stage2-v8",
-              "text": "That number on the call log — I will explain who it belongs to. There were circumstances I will explain, but they were not what my wife is reading them as. The act was mine, and I am ready for the consequences."
+              "text": "That record contains matters concerning my family. I could not tell my wife about them."
             },
             {
               "id": "b-e-3-late-stage2-v9",
@@ -10918,7 +10918,7 @@
             },
             {
               "id": "b-e-3-late-stage3-v8",
-              "text": "That number on the call log — I will explain who it belongs to. There were circumstances I will explain, but they were not what my wife is reading them as. The act was mine, and I am ready for the consequences."
+              "text": "I took calls even at dawn because of family matters. I should have told the truth from the beginning."
             },
             {
               "id": "b-e-3-late-stage3-v9",
@@ -11024,7 +11024,7 @@
             },
             {
               "id": "a-e-4-early-stage2-v10",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "This was not a single scene; it was a pattern. The circumstances kept piling up and pushed me there."
             }
           ]
         },
@@ -11065,7 +11065,7 @@
             },
             {
               "id": "a-e-4-early-stage3-v8",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. That is his step, and I will speak only to what I observed."
+              "text": "Even with this clue, it was hard to believe until I heard it from my husband himself. For a while, I could not get out from under that suspicion."
             },
             {
               "id": "a-e-4-early-stage3-v9",
@@ -11073,7 +11073,7 @@
             },
             {
               "id": "a-e-4-early-stage3-v10",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. The record reflects his choice, not mine."
+              "text": "Even if the material pointed to another meaning, at that time I could not judge it properly."
             }
           ]
         },
@@ -11090,7 +11090,7 @@
             },
             {
               "id": "a-e-4-mid-stage1-v2",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I admit my reading may have been colored by fear, but the records themselves are not made up. I did not do that step myself; it was on the other side."
+              "text": "I will not hide what I did after seeing the material. Even so, at the time it was hard to take it any other way."
             },
             {
               "id": "a-e-4-mid-stage1-v3",
@@ -11114,7 +11114,7 @@
             },
             {
               "id": "a-e-4-mid-stage1-v8",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I admit my reading may have been colored by fear, but the records themselves are not made up. That is his step, and I will speak only to what I observed."
+              "text": "Because my husband said nothing, I believed the side the material seemed to show. I held onto that thought for a while."
             },
             {
               "id": "a-e-4-mid-stage1-v9",
@@ -11245,11 +11245,11 @@
             },
             {
               "id": "a-e-4-late-stage1-v4",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I understand now that the meaning I attached to the material was larger than the material itself. For a while, I could not let go of that thought."
             },
             {
               "id": "a-e-4-late-stage1-v5",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I will set down what I did with my own hands separately from what I suspected of him. I am presenting what he did, and what I did with it I will state separately."
+              "text": "The moment I saw that material, I could not judge it properly. That is why I was late to see another possibility."
             },
             {
               "id": "a-e-4-late-stage1-v6",
@@ -11294,7 +11294,7 @@
             },
             {
               "id": "a-e-4-late-stage2-v4",
-              "text": "Your Honor, the text from that unknown sender is in his phone, and the wording is not casual. I will set down what I did with my own hands separately from what I suspected of him. My role here is the one who pieced the records together, not the one who took the step."
+              "text": "I did push my husband instead of asking about other possibilities. For a while, I held onto my conclusion."
             },
             {
               "id": "a-e-4-late-stage2-v5",
@@ -11437,7 +11437,7 @@
             },
             {
               "id": "b-e-4-early-stage2-v3",
-              "text": "The text from that unknown sender did come to me. I do not deny the record, but I would rather not lay out the reason in long form right now. What I did, I did myself, and I will answer for it."
+              "text": "There are circumstances behind how this happened. It is hard to explain in detail right now."
             },
             {
               "id": "b-e-4-early-stage2-v4",
@@ -11490,7 +11490,7 @@
             },
             {
               "id": "b-e-4-early-stage3-v4",
-              "text": "The text from that unknown sender did come to me. I do not deny the record, but I would rather not lay out the reason in long form right now. I will not hide that the action came from me."
+              "text": "There are complicated circumstances behind why I acted that way. For now, I ask you not to treat it as settled."
             },
             {
               "id": "b-e-4-early-stage3-v5",
@@ -11690,7 +11690,7 @@
             },
             {
               "id": "b-e-4-late-stage1-v5",
-              "text": "The text from that unknown sender did come to me. There were circumstances I will explain, but they were not what my wife is reading them as. It was my own choice, and I will set it down as such."
+              "text": "Yes. That record contains my own circumstances. It is also true that my wife did not know."
             },
             {
               "id": "b-e-4-late-stage1-v6",
@@ -11751,7 +11751,7 @@
             },
             {
               "id": "b-e-4-late-stage2-v8",
-              "text": "The text from that unknown sender did come to me. There were circumstances I will explain, but they were not what my wife is reading them as. The act was mine, and I am ready for the consequences."
+              "text": "That record contains matters concerning my family. I could not tell my wife about them."
             },
             {
               "id": "b-e-4-late-stage2-v9",
@@ -11800,7 +11800,7 @@
             },
             {
               "id": "b-e-4-late-stage3-v8",
-              "text": "The text from that unknown sender did come to me. There were circumstances I will explain, but they were not what my wife is reading them as. The act was mine, and I am ready for the consequences."
+              "text": "I went there because I was taking care of my older brother and his child. I should have told the truth from the beginning."
             },
             {
               "id": "b-e-4-late-stage3-v9",
@@ -11906,7 +11906,7 @@
             },
             {
               "id": "a-e-5-early-stage2-v10",
-              "text": "This was not one scene but a flow. Those connected circumstances drove me."
+              "text": "This was not a single scene; it was a pattern. The circumstances kept piling up and pushed me there."
             }
           ]
         },
@@ -11947,7 +11947,7 @@
             },
             {
               "id": "a-e-5-early-stage3-v8",
-              "text": "Even with this clue, it was hard to believe until I heard it from my husband. That judgment continued for a while."
+              "text": "Even with this clue, it was hard to believe until I heard it from my husband himself. For a while, I could not get out from under that suspicion."
             },
             {
               "id": "a-e-5-early-stage3-v9",
@@ -11955,7 +11955,7 @@
             },
             {
               "id": "a-e-5-early-stage3-v10",
-              "text": "Even if the material pointed to another meaning, I was already in no state to judge calmly."
+              "text": "Even if the material pointed to another meaning, at that time I could not judge it properly."
             }
           ]
         },
@@ -11972,7 +11972,7 @@
             },
             {
               "id": "a-e-5-mid-stage1-v2",
-              "text": "I will not hide what I did after seeing the material. Still, at that time I had no choice but to see it that way."
+              "text": "I will not hide what I did after seeing the material. Even so, at the time it was hard to take it any other way."
             },
             {
               "id": "a-e-5-mid-stage1-v3",
@@ -11996,7 +11996,7 @@
             },
             {
               "id": "a-e-5-mid-stage1-v8",
-              "text": "Since my husband would not speak, I believed the direction the material seemed to indicate. That judgment continued for a while."
+              "text": "Because my husband said nothing, I believed the side the material seemed to show. I held onto that thought for a while."
             },
             {
               "id": "a-e-5-mid-stage1-v9",
@@ -12127,11 +12127,11 @@
             },
             {
               "id": "a-e-5-late-stage1-v4",
-              "text": "I now know the meaning I attached was bigger than the material itself. That judgment continued for a while."
+              "text": "I understand now that the meaning I attached to the material was larger than the material itself. For a while, I could not let go of that thought."
             },
             {
               "id": "a-e-5-late-stage1-v5",
-              "text": "The moment I saw that material, it was already hard to judge calmly. That is why I saw other possibilities late."
+              "text": "The moment I saw that material, I could not judge it properly. That is why I was late to see another possibility."
             },
             {
               "id": "a-e-5-late-stage1-v6",
@@ -12176,7 +12176,7 @@
             },
             {
               "id": "a-e-5-late-stage2-v4",
-              "text": "There was a part where I cornered my husband instead of asking about other possibilities. That judgment continued for a while."
+              "text": "I did push my husband instead of asking about other possibilities. For a while, I held onto my conclusion."
             },
             {
               "id": "a-e-5-late-stage2-v5",
@@ -12319,7 +12319,7 @@
             },
             {
               "id": "b-e-5-early-stage2-v3",
-              "text": "The thirty million won cash withdrawal from my personal funds is real. I do not deny the record, but I would rather not lay out the reason in long form right now. My step and his step are different in shape, and I will keep them separate."
+              "text": "There are circumstances behind how this happened. It is hard to explain in detail right now."
             },
             {
               "id": "b-e-5-early-stage2-v4",
@@ -12372,7 +12372,7 @@
             },
             {
               "id": "b-e-5-early-stage3-v4",
-              "text": "The thirty million won cash withdrawal from my personal funds is real. I do not deny the record, but I would rather not lay out the reason in long form right now. We both touched this, and I will own only the part that was mine."
+              "text": "There are complicated circumstances behind why I acted that way. For now, I ask you not to treat it as settled."
             },
             {
               "id": "b-e-5-early-stage3-v5",
@@ -12572,7 +12572,7 @@
             },
             {
               "id": "b-e-5-late-stage1-v5",
-              "text": "The thirty million won cash withdrawal from my personal funds is real. There were circumstances I will explain, but they were not what my wife is reading them as. The record is mixed, and I will not paint it as one-sided."
+              "text": "Yes. That record contains my own circumstances. It is also true that my wife did not know."
             },
             {
               "id": "b-e-5-late-stage1-v6",
@@ -12633,7 +12633,7 @@
             },
             {
               "id": "b-e-5-late-stage2-v8",
-              "text": "The thirty million won cash withdrawal from my personal funds is real. There were circumstances I will explain, but they were not what my wife is reading them as. I will draw the line between what I did and what he did, openly."
+              "text": "That record contains matters concerning my family. I could not tell my wife about them."
             },
             {
               "id": "b-e-5-late-stage2-v9",
@@ -12682,7 +12682,7 @@
             },
             {
               "id": "b-e-5-late-stage3-v8",
-              "text": "The thirty million won cash withdrawal from my personal funds is real. There were circumstances I will explain, but they were not what my wife is reading them as. I will draw the line between what I did and what he did, openly."
+              "text": "I withdrew 30 million won in cash and moved it to a third party. I should have told the truth from the beginning."
             },
             {
               "id": "b-e-5-late-stage3-v9",
@@ -13201,7 +13201,7 @@
             },
             {
               "id": "b-e-6-early-check_metadata-v3",
-              "text": "About the investment chat group — that was not me, but I was aware of it. I do not deny the record, but I would rather not lay out the reason in long form right now. What is captured there is his action, and I am only the one who found it."
+              "text": "If the transfer timing was that close, it is almost strange that I did not notice."
             },
             {
               "id": "b-e-6-early-check_metadata-v4",
@@ -13209,7 +13209,7 @@
             },
             {
               "id": "b-e-6-early-check_metadata-v5",
-              "text": "About the investment chat group — that was not me, but I was aware of it. I do not deny the record, but I would rather not lay out the reason in long form right now. I am presenting what he did, and what I did with it I will state separately."
+              "text": "I did not know whose words led my wife to make such a major decision."
             },
             {
               "id": "b-e-6-early-check_metadata-v6",
@@ -13250,7 +13250,7 @@
             },
             {
               "id": "b-e-6-early-restore_context-v3",
-              "text": "About the investment chat group — that was not me, but I was aware of it. I do not deny the record, but I would rather not lay out the reason in long form right now. What is captured there is his action, and I am only the one who found it."
+              "text": "If that was the money that disappeared, now it also explains why the savings account had been emptied."
             },
             {
               "id": "b-e-6-early-restore_context-v4",
@@ -13274,7 +13274,7 @@
             },
             {
               "id": "b-e-6-early-restore_context-v9",
-              "text": "About the investment chat group — that was not me, but I was aware of it. I do not deny the record, but I would rather not lay out the reason in long form right now. My side of this is reading the record, not making it."
+              "text": "I did not know my wife had been cornered. The hidden loss is a shock."
             },
             {
               "id": "b-e-6-early-restore_context-v10",
@@ -13376,7 +13376,7 @@
             },
             {
               "id": "b-e-6-mid-check_metadata-v10",
-              "text": "About the investment chat group — that was not me, but I was aware of it. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. The record reflects his choice, not mine."
+              "text": "Now I can see a little why my wife pushed me so hard."
             }
           ]
         },
@@ -13646,7 +13646,7 @@
             },
             {
               "id": "a-e-7-early-check_metadata-v4",
-              "text": "Your Honor, the joint savings cancellation paperwork bears my hand, and I will lay out what I did. I am not jumping to conclusions on a single record alone, but the pattern is hard to call coincidence. I will not hide that the action came from me."
+              "text": "Saying that I wrote it for someone else is too much of a leap. I cannot accept that."
             },
             {
               "id": "a-e-7-early-check_metadata-v5",
@@ -14275,7 +14275,7 @@
             },
             {
               "id": "b-e-7-mid-restore_context-v2",
-              "text": "The joint savings cancellation paperwork — I know my wife handled it. I will admit there were circumstances behind it, though I am not yet ready to set them down in full. I did not do that step myself; it was on the other side."
+              "text": "I bear responsibility for my wife being cornered. But she should not have used my name."
             },
             {
               "id": "b-e-7-mid-restore_context-v3",
