@@ -17220,7 +17220,7 @@
           "variants": [
             {
               "id": "dc-1-a-q1-mid-v1",
-              "text": "I brought that conclusion into the group chat before checking with Su-min. I saw it that way first.",
+              "text": "I reached my own conclusion first and posted it in the group chat. I know I made it public before checking.",
               "behaviorHint": "Right after admitting it, she adds her own reason."
             },
             {
@@ -17490,7 +17490,7 @@
             },
             {
               "id": "dc-1-b-q1-late-v7",
-              "text": "I was trying to warn that Da-eun's father might repeat the same money approach. That choice made the misunderstanding larger.",
+              "text": "I was afraid that if I brought up Ms. Song Da-eun's father myself, Ms. Song Da-eun would fall apart, so I kept talking around it.",
               "behaviorHint": "After one broken breath, she speaks to the end."
             },
             {
@@ -17675,7 +17675,7 @@
             },
             {
               "id": "dc-2-b-q1-late-v8",
-              "text": "By staying silent, I let the order of contact look reversed; that is also my responsibility. I understand now that silence was also a choice.",
+              "text": "I thought first about the shock Ms. Song Da-eun would receive rather than proving my innocence. My choice to spare her that shock ended up deceiving everyone.",
               "behaviorHint": "Her gaze wavers, then fixes on one point."
             },
             {
@@ -17835,7 +17835,7 @@
             },
             {
               "id": "dc-3-b-q1-late-v4",
-              "text": "I judged it as the same pattern and warned the fiancé, though deciding alone was wrong. Fear moved before verification.",
+              "text": "When I saw the circumstances fitting together, I thought someone could lose money again.",
               "behaviorHint": "She lowers her head, acknowledging the cost of her silence."
             },
             {
@@ -17865,7 +17865,7 @@
             },
             {
               "id": "dc-3-b-q1-late-v10",
-              "text": "I judged it as the same pattern and warned the fiancé, though deciding alone was wrong. I cannot turn that into a clean excuse.",
+              "text": "In the end, I used protection as an excuse and decided alone again. I also acknowledge the responsibility for deciding alone.",
               "behaviorHint": "She brings out words long pressed down, in a low voice."
             }
           ]
@@ -17895,7 +17895,7 @@
             },
             {
               "id": "dc-3-a-q1-early-v4",
-              "text": "Even seeing the overlap, I wanted to believe it was a misunderstanding because it involved my father. Fear moved before verification.",
+              "text": "I did not want to go as far as suspecting my father. That is why I tried to stop it first.",
               "behaviorHint": "She answers quickly, holding anger down."
             },
             {
@@ -18025,7 +18025,7 @@
             },
             {
               "id": "dc-3-a-q1-late-v6",
-              "text": "I can no longer cover it with the word misunderstanding; I looked away from the record too long. I avoided the harder question.",
+              "text": "If I called it a misunderstanding, I could hold myself together. But the records cannot be closed with that word.",
               "behaviorHint": "Her shoulders loosen, and her voice drops."
             },
             {
@@ -18260,7 +18260,7 @@
             },
             {
               "id": "dc-4-a-q1-early-v5",
-              "text": "Back then, I only thought Su-min was avoiding me and did not check the money issue. I admit the part that was mine.",
+              "text": "I had heard there was a money problem, but I did not look into it carefully.",
               "behaviorHint": "Her jaw tightens as if an old memory has been pulled forward."
             },
             {
@@ -18280,7 +18280,7 @@
             },
             {
               "id": "dc-4-a-q1-early-v9",
-              "text": "Back then, I only thought Su-min was avoiding me and did not check the money issue. The record was not as simple as I wanted it to be.",
+              "text": "Even then, I rushed to a conclusion first. I let the money issue pass without checking it properly.",
               "behaviorHint": "She answers quickly, holding anger down."
             },
             {
@@ -18305,7 +18305,7 @@
             },
             {
               "id": "dc-4-a-q1-mid-v2",
-              "text": "I avoided the uncomfortable questions about my father and money, so the misunderstanding hardened. I did not leave room for context.",
+              "text": "I felt Ms. Choi Su-min was hiding something, but I did not ask properly.",
               "behaviorHint": "She speaks faster to hide her shame."
             },
             {
@@ -18375,7 +18375,7 @@
             },
             {
               "id": "dc-4-a-q1-late-v4",
-              "text": "I blamed Su-min for the blank in the old fallout because I gave up verifying it. Fear moved before verification.",
+              "text": "If I had asked properly then, Ms. Choi Su-min would not have been left as the sole villain.",
               "behaviorHint": "With her eyes lowered, she holds on to her own responsibility."
             },
             {
@@ -18395,7 +18395,7 @@
             },
             {
               "id": "dc-4-a-q1-late-v8",
-              "text": "I blamed Su-min for the blank in the old fallout because I gave up verifying it. I understand now that silence was also a choice.",
+              "text": "I put my own wound first and covered over why the money problem happened. That was wrong.",
               "behaviorHint": "Regret rises first, stretching the pauses between sentences."
             },
             {
@@ -18435,7 +18435,7 @@
             },
             {
               "id": "dc-5-a-q1-early-v4",
-              "text": "I did post in the group chat first, before checking the facts with Su-min. Fear moved before verification.",
+              "text": "My anger came first, and I pushed verification aside. I will not deny that I put off checking.",
               "behaviorHint": "She answers quickly, holding anger down."
             },
             {
@@ -18610,7 +18610,7 @@
             },
             {
               "id": "dc-5-b-q1-early-v3",
-              "text": "I thought staying silent would hurt fewer people, so I endured it alone again. The order I chose was wrong.",
+              "text": "I thought explaining it would touch a deeper wound. So I held back my words.",
               "behaviorHint": "Her gaze drops as she cuts her sentence short."
             },
             {
@@ -18665,7 +18665,7 @@
             },
             {
               "id": "dc-5-b-q1-mid-v2",
-              "text": "I stayed the villain because I feared Da-eun would collapse if I brought up her father. I did not leave room for context.",
+              "text": "In the past, I chose to endure it, and this time I made the same choice. That does not mean it was right.",
               "behaviorHint": "The longer she speaks, the lower her voice gets."
             },
             {
@@ -18700,7 +18700,7 @@
             },
             {
               "id": "dc-5-b-q1-mid-v9",
-              "text": "I stayed the villain because I feared Da-eun would collapse if I brought up her father. The record was not as simple as I wanted it to be.",
+              "text": "It was not because I was used to being the villain; I was more afraid that Ms. Song Da-eun would come to suspect her father.",
               "behaviorHint": "She wipes expression from her face to hide the wound."
             },
             {
@@ -18755,7 +18755,7 @@
             },
             {
               "id": "dc-5-b-q1-late-v8",
-              "text": "My silence made the same stigma repeat; trying to protect her hurt everyone instead. I understand now that silence was also a choice.",
+              "text": "Because I did not speak, Ms. Song Da-eun judged it again through the same frame. I failed to cut off that repetition in time.",
               "behaviorHint": "Her gaze wavers, then fixes on one point."
             },
             {
