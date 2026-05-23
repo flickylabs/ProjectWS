@@ -22837,27 +22837,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-1-b-q1-soft-v1",
-              "text": "Mr. Lee, let us look at Officetel Entry Logs together. Please calmly explain how they relate to the hidden family circumstances behind the Officetel visits and calls.",
+              "text": "Mr. Lee, let's look at the GPS coordinates and the unknown-sender text together. Since the time and place overlap, please explain who was inside that officetel.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v2",
-              "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to the hidden family circumstances behind the Officetel visits and calls.",
+              "text": "Mr. Lee, the stopped address from the GPS and the unknown-sender text overlap at the same place. Who were you looking after there that day?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v3",
-              "text": "Mr. Lee, let us look at Officetel Entry Logs together. Please calmly explain how they relate to the hidden family circumstances behind the Officetel visits and calls.",
+              "text": "Mr. Lee, the visit record points to the officetel, and the unknown-sender text shows another person's daily life. Please explain where those two records meet.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v4",
-              "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to the hidden family circumstances behind the Officetel visits and calls.",
+              "text": "Mr. Lee, the coordinates alone raise suspicion of an affair, but the text also reveals another person's presence. Please tell us who that person was.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v5",
-              "text": "Mr. Lee, let us look at Officetel Entry Logs together. Please calmly explain how they relate to the hidden family circumstances behind the Officetel visits and calls.",
+              "text": "Mr. Lee, the officetel entry record and the unknown-sender text narrow down the place and the person. Please explain what happened then.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -22867,27 +22867,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-1-b-q1-mid-v1",
-              "text": "Mr. Lee, Officetel Entry Logs narrow the issue to the hidden family circumstances behind the Officetel visits and calls. Please explain the point clearly.",
+              "text": "Mr. Lee, the GPS coordinates and the unknown-sender text fall in the same time frame. You can no longer explain the officetel visit while leaving out the matter you did not disclose.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v2",
-              "text": "Mr. Lee, where the car went and the personal schedule in the text point to the same area of daily life. You can no longer put off saying who was there.",
+              "text": "Mr. Lee, where the car went and the personal schedule in the text overlap in the same area of daily life. You can no longer put off saying who was there.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v3",
-              "text": "Mr. Lee, Officetel Entry Logs narrow the issue to the hidden family circumstances behind the Officetel visits and calls. Please explain the point clearly.",
+              "text": "Mr. Lee, the officetel record may raise suspicion of an affair, but the unknown-sender text also shows traces of someone being looked after. Explain how those two accounts fit together.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v4",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to the hidden family circumstances behind the Officetel visits and calls. Please explain the point clearly.",
+              "text": "Mr. Lee, because the GPS address and the time of the unknown-sender text overlap, you cannot dismiss it as a simple visit. Answer who you went there for.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v5",
-              "text": "Mr. Lee, Officetel Entry Logs narrow the issue to the hidden family circumstances behind the Officetel visits and calls. Please explain the point clearly.",
+              "text": "Mr. Lee, the GPS record and the unknown-sender text show traces of a life kept hidden in the officetel. You must state whose life it was.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -22897,27 +22897,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-1-b-q1-hard-v1",
-              "text": "Mr. Lee, Officetel Entry Logs directly point to the hidden family circumstances behind the Officetel visits and calls. Answer without evasion.",
+              "text": "Mr. Lee, taken together, the GPS and unknown-sender text leave one fact. Answer now: who was in that officetel?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v2",
-              "text": "Mr. Lee, the submitted evidence directly point to the hidden family circumstances behind the Officetel visits and calls. Answer without evasion.",
+              "text": "Mr. Lee, taken together, the coordinates and text identify someone. State now whether it was an affair or another matter.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v3",
-              "text": "Mr. Lee, the submitted evidence directly point to the hidden family circumstances behind the Officetel visits and calls. Answer without evasion.",
+              "text": "Mr. Lee, with the GPS coordinates and unknown-sender text on record, you cannot talk only about the place and leave out the person. State who was there.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v4",
-              "text": "Mr. Lee, Officetel Entry Logs directly point to the hidden family circumstances behind the Officetel visits and calls. Answer without evasion.",
+              "text": "Mr. Lee, the officetel record and unknown-sender text have both been confirmed. Tell us who you were hiding.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v5",
-              "text": "Mr. Lee, the submitted evidence directly point to the hidden family circumstances behind the Officetel visits and calls. Answer without evasion.",
+              "text": "Mr. Lee, the two records lead to the same place on the same night. Acknowledge what happened there now.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23107,27 +23107,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-3-b-q2-soft-v1",
-              "text": "Mr. Lee, let us look at Withdrawal Records together. Please calmly explain how they relate to responsibility for disposing of the joint savings without consent.",
+              "text": "Mr. Lee, the unknown-sender text and withdrawal records reveal a money trail you kept hidden. Please explain how you view your responsibility for excluding Ms. Park.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v2",
-              "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to responsibility for disposing of the joint savings without consent.",
+              "text": "Mr. Lee, if the cash withdrawals were tied to the unknown-sender text, there may be room to see them as well-intentioned. Still, explain why you did not tell Ms. Park.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v3",
-              "text": "Mr. Lee, let us look at Withdrawal Records together. Please calmly explain how they relate to responsibility for disposing of the joint savings without consent.",
+              "text": "Mr. Lee, even if the unknown-sender text and withdrawal records confirm a hidden money trail, separately moving a large sum within a marriage remains an issue. Where did you draw that line?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v4",
-              "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to responsibility for disposing of the joint savings without consent.",
+              "text": "Mr. Lee, the other matter suggested by the text lines up with the withdrawal records. At that moment, did it not occur to you that you should discuss it with Ms. Park?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v5",
-              "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to responsibility for disposing of the joint savings without consent.",
+              "text": "Mr. Lee, if the unknown-sender text and cash withdrawals were meant to help with a difficult situation, explain why you had to hide it.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23137,27 +23137,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-3-b-q2-mid-v1",
-              "text": "Mr. Lee, Withdrawal Records narrow the issue to responsibility for disposing of the joint savings without consent. Please explain the point clearly.",
+              "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm a money trail to a separate destination. But that does not explain your decision to exclude Ms. Park. Answer that point.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v2",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to responsibility for disposing of the joint savings without consent. Please explain the point clearly.",
+              "text": "Mr. Lee, the text and withdrawal records confirm how the money was handled. Then answer why you handled it alone.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v3",
-              "text": "Mr. Lee, Withdrawal Records narrow the issue to responsibility for disposing of the joint savings without consent. Please explain the point clearly.",
+              "text": "Mr. Lee, with the unknown-sender text and withdrawal records in front of us, good intentions alone cannot cover the question of authority. State why you did not tell Ms. Park.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v4",
-              "text": "Mr. Lee, the submitted evidence narrow the issue to responsibility for disposing of the joint savings without consent. Please explain the point clearly.",
+              "text": "Mr. Lee, apart from the facts shown by the unknown-sender text and withdrawal records, breaking trust within the marriage is a separate issue. Address that point.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v5",
-              "text": "Mr. Lee, Withdrawal Records narrow the issue to responsibility for disposing of the joint savings without consent. Please explain the point clearly.",
+              "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm that the money led elsewhere. That makes the intent behind the concealment clearer. Do not evade responsibility.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23167,27 +23167,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-3-b-q2-hard-v1",
-              "text": "Mr. Lee, Withdrawal Records directly point to responsibility for disposing of the joint savings without consent. Answer without evasion.",
+              "text": "Mr. Lee, even if there was another matter behind the unknown-sender text and withdrawals, your responsibility for excluding Ms. Park does not disappear. Answer why you decided alone.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v2",
-              "text": "Mr. Lee, Withdrawal Records directly point to responsibility for disposing of the joint savings without consent. Answer without evasion.",
+              "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm that you decided and acted. Acknowledge the good intention separately from the procedural breach.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v3",
-              "text": "Mr. Lee, the submitted evidence directly point to responsibility for disposing of the joint savings without consent. Answer without evasion.",
+              "text": "Mr. Lee, with the unknown-sender text and personal withdrawal on record, you cannot cover moving a large sum behind your spouse's back by calling it another matter. State your judgment.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v4",
-              "text": "Mr. Lee, Withdrawal Records directly point to responsibility for disposing of the joint savings without consent. Answer without evasion.",
+              "text": "Mr. Lee, now that the unknown-sender text and withdrawal records are confirmed, explain how you skipped marital consent on the grounds that you were helping with that matter.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v5",
-              "text": "Mr. Lee, the submitted evidence directly point to responsibility for disposing of the joint savings without consent. Answer without evasion.",
+              "text": "Mr. Lee, the unknown-sender text and withdrawal records make it hard to deny that you knew and acted. Do not minimize your responsibility; answer.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23287,27 +23287,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q2-soft-v1",
-              "text": "Ms. Park, let us look at Transfer Records and Investment Chat Telegram together. Please calmly explain how they relate to the investment chat transfer, the loss, and the shame that followed.",
+              "text": "Ms. Park, the investment chat Telegram and transfer records show the sequence from sending the money to the loss. Was shame the reason you hid that fact?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v2",
-              "text": "Ms. Park, let us look at Transfer Records and Investment Chat Telegram together. Please calmly explain how they relate to the investment chat transfer, the loss, and the shame that followed.",
+              "text": "Ms. Park, the investment chat Telegram and transfer records show that the transfer led to a loss. Please tell us what kept you from telling Mr. Lee then.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v3",
-              "text": "Ms. Park, let us look at Transfer Records and Investment Chat Telegram together. Please calmly explain how they relate to the investment chat transfer, the loss, and the shame that followed.",
+              "text": "Ms. Park, the continued investment chat and the transfer records show a period when you tried to handle it alone. Why did you hide it?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v4",
-              "text": "Ms. Park, let us look at Transfer Records and Investment Chat Telegram together. Please calmly explain how they relate to the investment chat transfer, the loss, and the shame that followed.",
+              "text": "Ms. Park, looking at the investment chat Telegram and transfer records, did you have both the reluctance to admit the loss and the wish to stand as the victim?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v5",
-              "text": "Ms. Park, let us look at Transfer Records and Investment Chat Telegram together. Please calmly explain how they relate to the investment chat transfer, the loss, and the shame that followed.",
+              "text": "Ms. Park, when you saw the investment chat Telegram and transfer records, which feeling was stronger: shame or fear?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23317,27 +23317,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q2-mid-v1",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram narrow the issue to the investment chat transfer, the loss, and the shame that followed. Please explain the point clearly.",
+              "text": "Ms. Park, the investment chat Telegram and transfer records also show the time during which you hid the loss. Shame alone cannot explain it.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v2",
-              "text": "Ms. Park, Transfer Records narrow the issue to the investment chat transfer, the loss, and the shame that followed. Please explain the point clearly.",
+              "text": "Ms. Park, even with the transfer record on file, you focused only on Mr. Lee's withdrawal. Why did you leave out your own loss?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v3",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram narrow the issue to the investment chat transfer, the loss, and the shame that followed. Please explain the point clearly.",
+              "text": "Ms. Park, the investment chat Telegram and transfer records are not merely signs that you were deceived. They are records showing that you entered the chat and sent the money yourself. You need to explain that choice.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v4",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram narrow the issue to the investment chat transfer, the loss, and the shame that followed. Please explain the point clearly.",
+              "text": "Ms. Park, if you hide the investment chat Telegram and transfer records while putting only Mr. Lee's responsibility forward, the issue is distorted. State what you did.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v5",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram narrow the issue to the investment chat transfer, the loss, and the shame that followed. Please explain the point clearly.",
+              "text": "Ms. Park, the investment chat Telegram and transfer records show a money trail hidden behind shame. You can no longer speak only about emotions.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -23347,27 +23347,27 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q2-hard-v1",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram directly point to the investment chat transfer, the loss, and the shame that followed. Answer without evasion.",
+              "text": "Ms. Park, the investment chat Telegram and transfer records reveal your own actions leading up to the loss. Answer why you hid them.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v2",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram directly point to the investment chat transfer, the loss, and the shame that followed. Answer without evasion.",
+              "text": "Ms. Park, with the transfer record in evidence, you cannot evade this. Explain why you hid the investment chat loss and focused only on Mr. Lee's personal-account withdrawal.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v3",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram directly point to the investment chat transfer, the loss, and the shame that followed. Answer without evasion.",
+              "text": "Ms. Park, with the investment chat Telegram and transfer records in evidence, even if there was shame, the fact remains that you hid the transfer and the loss. Explain how it happened.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v4",
-              "text": "Ms. Park, Transfer Records and Investment Chat Telegram directly point to the investment chat transfer, the loss, and the shame that followed. Answer without evasion.",
+              "text": "Ms. Park, with the investment chat Telegram and transfer records in evidence, saying you were trying to prevent harm is not enough. State how much money you lost.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v5",
-              "text": "Ms. Park, Investment Chat Telegram directly point to the investment chat transfer, the loss, and the shame that followed. Answer without evasion.",
+              "text": "Ms. Park, the investment chat record and transfer record form a single sequence. Acknowledge the hidden loss and answer.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
