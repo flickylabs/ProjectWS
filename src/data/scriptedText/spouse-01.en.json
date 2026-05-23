@@ -20975,7 +20975,7 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-4-v1",
-              "text": "Mr. Lee, if you went to the officetel for personal reasons, please answer why you hid it from Ms. Park until the end.",
+              "text": "Mr. Lee, if you went to the officetel for personal reasons, please answer why you kept hiding it from Ms. Park.",
               "behaviorHint": "Ask for the decisive reason so they can no longer deflect. This question sets the final basis for the concealment and the assumption straight."
             },
             {
@@ -21061,7 +21061,7 @@
             },
             {
               "id": "judgeq-d-1-motive_search-2-v5",
-              "text": "Both of you, please each answer why it took so long for one of you to speak and the other not to ask.",
+              "text": "Both of you, please each answer why the period in which one of you stayed silent and the other did not ask lasted so long.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; line up the gaps between evidence and statements."
             }
           ]
@@ -21122,7 +21122,7 @@
             },
             {
               "id": "judgeq-d-1-motive_search-4-v4",
-              "text": "Ms. Park, please answer why you were so sure and why you pushed toward an affair.",
+              "text": "Ms. Park, answer the basis for your certainty and why you pushed toward an affair.",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the meaning of the Officetel visit and early-morning call; organize the point so responsibility cannot be avoided."
             },
             {
@@ -21503,7 +21503,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-motive_search-4-v1",
-              "text": "Mr. Lee, in relation to the large withdrawal from the husband's account, please explain why you acted as you did, without folding it into the other party’s fault.",
+              "text": "Mr. Lee, even if there was an urgent reason, please answer why you pushed ahead without your spouse's consent.",
               "behaviorHint": "Make them explain why they pushed ahead despite knowing the choice could become overreach or obsession."
             },
             {
@@ -21886,7 +21886,7 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-3-v5",
-              "text": "Ms. Park, even if you were afraid, the choice to touch the documents was your own action. How do you accept that?",
+              "text": "Ms. Park, even if you were afraid, touching the documents was an action you took yourself. How do you accept that choice?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; draw out the concealed context."
             }
           ]
@@ -21919,7 +21919,7 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-4-v5",
-              "text": "Ms. Park, why were you so sure and why did you push to the conclusion that you had to take out the money first?",
+              "text": "Ms. Park, what basis made you certain, and why did you push the conclusion that the money had to be taken out first?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             }
           ]
@@ -22467,7 +22467,7 @@
             },
             {
               "id": "judgec-d-1-soft-v2",
-              "text": "Ms. Park, at first you decided it was an affair, but now you are in the position that you accepted it that way due to the circumstances. Please tell us why your judgment has changed.",
+              "text": "Ms. Park, at first you concluded it was an affair, but now you say you read the circumstances as pointing to an affair. Please explain why your statement has changed.",
               "behaviorHint": "The Judge quietly points out where the texture of the words changed. The tone leaves room for the party to organize and speak for themselves."
             },
             {
@@ -22513,7 +22513,7 @@
             },
             {
               "id": "judgec-d-1-mid-v5",
-              "text": "Ms. Park, seeing the circumstances and concluding that it was an affair are two different things. Why were you so confident and pushed forward?",
+              "text": "Ms. Park, seeing the circumstances and deciding it was an affair are different things. What made you certain enough to push forward?",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             }
           ]
@@ -22529,12 +22529,12 @@
             },
             {
               "id": "judgec-d-1-hard-v2",
-              "text": "Ms. Park, if you do not disclose the reason why you concluded that it was an affair, your subsequent actions cannot be explained solely from the victim's perspective. Why were you so sure?",
+              "text": "Ms. Park, unless you state why you concluded it was an affair, your later actions cannot be explained from the victim's position alone. What basis did you have for being certain?",
               "behaviorHint": "The Judge pushes so the concealment and assumption can no longer be separated. The tone is firm, making them speak first to the parts that hurt their own case."
             },
             {
               "id": "judgec-d-1-hard-v3",
-              "text": "Both of you, you can't go any further by just repeating the interpretation of the situation. Please tell me now what you were hiding and why you were so certain.",
+              "text": "Both of you, repeating interpretations of the circumstances will not take this any further. Please state now what you hid and why you drew that conclusion.",
               "behaviorHint": "The Judge pushes so the concealment and assumption can no longer be separated. The tone is firm, making them speak first to the parts that hurt their own case."
             },
             {
@@ -22803,7 +22803,7 @@
           "variants": [
             {
               "id": "judgec-h-d4-hard-v1",
-              "text": "Both of you, are trying to separate yourself from responsibility. What you hide and what you do are two different things. Please answer who acted in the first place and why.",
+              "text": "Both of you are trying to separate out your own responsibility. What was hidden and what was carried out are separate issues. Please answer who took that action first and why.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
@@ -22917,7 +22917,7 @@
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v5",
-              "text": "Mr. Lee, the two records lead to the same place on the same night. Acknowledge what happened there now.",
+              "text": "Mr. Lee, the two records show the same night and the same place. Acknowledge now what happened there.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -22947,7 +22947,7 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-soft-v5",
-              "text": "Mr. Lee, when the call logs and texts from an unknown sender are placed side by side, it seems a different burden weighed more heavily than an affair. Would you tell us what that was?",
+              "text": "Mr. Lee, when the call logs and unknown-sender texts are placed side by side, they show another burden was greater than an affair. Would you tell us what that was?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
@@ -22972,7 +22972,7 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v4",
-              "text": "Mr. Lee, looking at the messages from an unknown sender and the call records, saying only that it was not an affair is not enough. Why did you conceal the circumstances beyond that to the end?",
+              "text": "Mr. Lee, looking at the messages from an unknown sender and the call records, saying only that it was not an affair is not enough. Why did you keep concealing the circumstances beyond that?",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -22987,7 +22987,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-2-b-q1-hard-v1",
-              "text": "Mr. Lee, the call logs and texts from an unknown sender directly point to the circumstances you concealed. Tell the court now what you were hiding about that situation.",
+              "text": "Mr. Lee, the call logs and texts from an unknown sender are tied to the circumstances you kept hidden. Tell the court now what you were hiding.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -22997,7 +22997,7 @@
             },
             {
               "id": "judgecombo-dc-2-b-q1-hard-v3",
-              "text": "Mr. Lee, with the call records and messages from an unknown sender before us, you must also explain why you concealed the fact that you went there to the end. Answer at once.",
+              "text": "Mr. Lee, now that the call records and messages from an unknown sender have been confirmed, you must also explain why you still kept hidden the fact that you went there. Answer at once.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -23017,7 +23017,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-3-b-q1-soft-v1",
-              "text": "Mr. Lee, let us look at the messages from an unknown sender together with the withdrawal records from your personal account. Please explain why you were unable to tell Ms. Park to the end that you had moved a large sum for a separate purpose.",
+              "text": "Mr. Lee, let us look at the messages from an unknown sender together with the withdrawal records from your personal account. Please explain why you remained unable to tell Ms. Park that you had moved a large sum for a separate purpose.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -23137,7 +23137,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-3-b-q2-mid-v1",
-              "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm a money trail to a separate destination. But that does not explain your decision to exclude Ms. Park. Answer that point.",
+              "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm a money trail to a separate destination. But your decision to exclude Ms. Park still requires explanation. Please answer why.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -23152,7 +23152,7 @@
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v4",
-              "text": "Mr. Lee, apart from the facts shown by the unknown-sender text and withdrawal records, breaking trust within the marriage is a separate issue. Address that point.",
+              "text": "Mr. Lee, apart from the facts shown by the unknown-sender text and withdrawal records, breaking trust within the marriage is another issue. Address that aspect as well.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
@@ -23262,7 +23262,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v2",
-              "text": "Ms. Park, the investment-chat Telegram and transfer records show that you acted first before seeking confirmation from Mr. Lee. Acknowledge that judgment and answer.",
+              "text": "Ms. Park, the investment-chat Telegram and transfer records confirm that you acted first before seeking confirmation from Mr. Lee. Acknowledge the choice to act first without confirmation and answer.",
               "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
