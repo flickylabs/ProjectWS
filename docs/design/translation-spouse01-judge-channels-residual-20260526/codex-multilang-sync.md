@@ -209,17 +209,17 @@ Witness summon 호명 ("오피스텔 경비님" / "은행 직원님" / "박미�
 | judgeq-h-d3-motive_search-3-v5 | 박지연 씨, 두려움이 있었다 해도 서류에 손댄 선택은 직접 한 행동입니다. 그 점을 어떻게 받아들이십니까. |
 | judgeq-h-d3-motive_search-4-v2 | 박지연 씨, 법적으로 문제될 수 있다는 걸 알면서도 멈추지 못한 마음을 숨김없이 밝히십시오. |
 | judgeq-h-d3-motive_search-4-v3 | 이준호 씨, 숨긴 사정이 있었다 해도 해지 서류 절차에서 벌어진 일까지 정당화될 수 없다는 점에 동의하십니까. |
-| judgeq-h-d3-motive_search-4-v4 | 두 분, 상대의 잘못을 이유로 자신이 선을 넘은 행동을 어디까지 설명할 수 있다고 보십니까. |
+| judgeq-h-d3-motive_search-4-v4 | 두 분, 상대의 잘못을 이유로 본인이 선을 넘은 행동을 어디까지 설명할 수 있다고 보십니까. |
 | judgeq-h-d3-motive_search-4-v5 | 박지연 씨, 왜 그렇게 확신했고, 돈을 먼저 빼야 한다는 결론까지 밀어붙였습니까. |
 | judgeq-h-d3-empathy_approach-1-v1 | 박지연 씨, 적금 해지 서류를 쥐고 있던 날 가장 먼저 올라온 감정이 무엇이었습니까. |
 | judgeq-h-d3-empathy_approach-1-v2 | 박지연 씨, 은행 창구 앞에서 손이 떨렸습니까, 아니면 이미 마음을 굳힌 상태였습니까. |
 | judgeq-h-d3-empathy_approach-1-v4 | 두 분, 그 돈이 부부 사이에서 어떤 의미였는지 먼저 각자 말씀해 주십시오. |
-| judgeq-h-d3-empathy_approach-1-v5 | 박지연 씨, 그때 자신을 피해자라고 느낀 마음이 얼마나 컸는지 들려주시겠습니까. |
+| judgeq-h-d3-empathy_approach-1-v5 | 박지연 씨, 그때 본인을 피해자라고 느낀 마음이 얼마나 컸는지 들려주시겠습니까. |
 | judgeq-h-d3-empathy_approach-2-v1 | 박지연 씨, 버려질까 봐 두려웠던 마음을 먼저 말씀해 주시고, 그 뒤 서류에 손댄 순간으로 넘어가겠습니다. |
 | judgeq-h-d3-empathy_approach-2-v3 | 이준호 씨, 박지연 씨가 불안 속에서 혼자 결론을 내리게 된 데 이준호 씨의 침묵이 영향을 줬다고 보십니까. |
 | judgeq-h-d3-empathy_approach-3-v1 | 박지연 씨, 투자방에 송금한 뒤 수치심을 크게 느낀 때가 언제였는지 말씀해 주십시오. |
 | judgeq-h-d3-empathy_approach-3-v5 | 박지연 씨, 투자방 기록을 보면서 스스로도 잘못된 길이라고 느낀 순간이 있었습니까. |
-| judgeq-h-d3-empathy_approach-4-v2 | 박지연 씨, 돈을 잃은 뒤 가장 먼저 떠오른 것은 이준호 씨였습니까, 자신의 책임이었습니까. |
+| judgeq-h-d3-empathy_approach-4-v2 | 박지연 씨, 돈을 잃은 뒤 가장 먼저 떠오른 것은 이준호 씨였습니까, 본인의 책임이었습니까. |
 | judgeq-h-d3-empathy_approach-4-v3 | 이준호 씨, 박지연 씨의 행동을 알게 된 뒤에도 부부 관계를 유지하고 싶은 것인지 말씀해 주십시오. |
 | judgeq-h-d3-empathy_approach-4-v4 | 두 분, 이 사건에서 가장 부끄러워 늦게 말한 사실이 무엇인지 각자 밝히십시오. |
 | judgeq-h-d3-empathy_approach-4-v5 | 박지연 씨, 수치심 때문에 숨긴 시간이 이준호 씨에게 더 큰 아픔을 남겼다는 점을 어떻게 받아들이십니까. |
@@ -260,7 +260,7 @@ Witness summon 호명 ("오피스텔 경비님" / "은행 직원님" / "박미�
 | judgeq-h-d4-empathy_approach-1-v3 | 이준호 씨, 그 사정을 숨기던 마음과 현금을 꺼내던 마음은 같은 책임감에서 나온 것이었습니까. |
 | judgeq-h-d4-empathy_approach-1-v5 | 두 분, 서로에 대한 원망 때문에 선후 관계가 흐려진 부분이 있는지 생각해 보시고 말씀해 주십시오. |
 | judgeq-h-d4-empathy_approach-2-v3 | 두 분, 각자 혼자 버티려던 선택이 어떻게 재정 손실로 이어졌는지 말씀해 주십시오. |
-| judgeq-h-d4-empathy_approach-3-v1 | 박지연 씨, 이준호 씨의 침묵을 떠올릴 때 아직도 자신의 행동을 덜 무겁게 보게 됩니까. |
+| judgeq-h-d4-empathy_approach-3-v1 | 박지연 씨, 이준호 씨의 침묵을 떠올릴 때 아직도 본인의 행동을 덜 무겁게 보게 됩니까. |
 | judgeq-h-d4-empathy_approach-3-v2 | 이준호 씨, 박지연 씨가 서류에 손댄 일을 보면서도 스스로 먼저 만든 침묵이 떠오르지는 않았습니까. |
 | judgeq-h-d4-empathy_approach-3-v3 | 두 분, 각자 상대 탓을 먼저 말하고 나면 자기 책임을 말하기가 왜 더 어려워졌습니까. |
 | judgeq-h-d4-empathy_approach-4-v3 | 두 분, 서로를 지키려 했는데 결과적으로 상대를 더 외롭게 만든 원인이 무엇이라고 보십니까. |
