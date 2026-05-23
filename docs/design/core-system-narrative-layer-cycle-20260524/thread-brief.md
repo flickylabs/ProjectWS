@@ -1,8 +1,9 @@
 # Core System Narrative Layer Cycle — Thread Brief
 
-작성일: 2026-05-24
-주체: Codex worktree 또는 ClaudeCode 새 세션 (메인 세션 외 별도 스레드)
+작성일: 2026-05-24 (2026-05-24 update: 본 세션 통합 결정)
+주체: **본 세션(메인 CT) 통합 진행** — narrative trigger 설계는 사용자 의사결정 빈도 높음, 분리 효과 제한
 범위: 다중 cycle 작업 (1 cycle ≠ 본 brief 전체 완료)
+현 상태: 권위 가이드 문서로 유지. 본 세션 context 압박 발생 시 그때 분기 검토.
 
 ---
 
@@ -69,18 +70,24 @@ per-emergence 단위:
    - 코드 위치 (case.ts, claimPolicies, scriptedAngles, useActionDispatch unlock 경로)
    - 현재 발동 조건 (evidenceIds, lieState, witnessIds 등)
 
-2. **Narrative event 설계**
-   - 권위 trigger 타입 중 1 선택 (조합 결과 / 질문 답변 / 증인 답변)
-   - NPC 발화 또는 judge reactive query 대사 1~3 문장 작성
+2. **Multi-trigger 후보 설계 (2~3개)** — 사용자 권위 (2026-05-24 elaboration 2)
+   - 권위 trigger 타입 중 **2~3 후보** 선택. 단일 trigger는 narrative 빈약 영역만 예외
+   - 각 trigger별 narrative 분리 작성:
+     - Ex1) 증거 질문 답변 중 거짓말 → 상대 NPC 끼어듦 → 판사 catch + reactive query
+     - Ex2) 증거 조합 → 조합 결과 표시 → 판사 질문 → 답변 중 emergence
+     - Ex3) 감정 동요/격앙 상태 → NPC 돌발 발화
+   - **First-fired wins** 보장: 한 trigger로 발동되면 나머지 후보는 disabled (게임 종료까지). 중복 발동 금지
    - 발화 시점: trigger 직전 → narrative dialogue → 1.5초 후 emergence VFX
    - 임팩트 등장: cutscene 또는 강조 popup (단순 toast X)
 
-3. **ScriptedText 작성 (KO)**
+3. **ScriptedText 작성 (KO)** — multi-trigger 별 분리
    - `src/data/scriptedText/{case}.json`에 새 entry 추가
+   - id naming: `emerge-{emergenceId}-via-{triggerType}-v{N}` (trigger별 구분)
    - tags: `channel:emergence_narrative`, `speaker:{npc/judge}`, `listener:judge`, `register:formal` 등
 
-4. **데이터 wiring**
-   - emergence trigger에 narrative event ID 부착
+4. **데이터 wiring + first-fired-wins**
+   - Core System derive 단계: 각 emergence에 `narrativeTriggers: TriggerCandidate[]` 배열 부착
+   - runtime: 첫 firing 시 emergence에 `firedTrigger` 마킹 → 나머지 후보 평가 skip
    - useActionDispatch 또는 emergence 처리 경로에서 narrative dispatch 후 unlock
 
 5. **VFX 연출 wiring**
