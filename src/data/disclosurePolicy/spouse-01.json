@@ -135,8 +135,8 @@
       "e-7": {
         "evidenceId": "e-7",
         "name": "공동 적금 해지 서류",
-        "surfaceName": "공동 적금 처리 서류",
-        "surfaceDescription": "공동 적금 처리 서류.",
+        "surfaceName": "공동 적금 해지 서류",
+        "surfaceDescription": "공동 적금 해지 서류.",
         "descriptionTruth": [
           "위임장 조작",
           "박지연 단독 해지",
@@ -769,7 +769,7 @@
         "surfaceFallback": "영수증과 GPS 위치 패턴을 비교 분석 중."
       },
       "combine-3": {
-        "sourceText": "투자방 송금 기록과 공동 적금 처리 서류가 동일 날짜·금액으로 연결된다.",
+        "sourceText": "투자방 송금 기록과 공동 적금 해지 서류가 동일 날짜·금액으로 연결된다.",
         "truthLexemes": [
           "형 쪽",
           "비자금"

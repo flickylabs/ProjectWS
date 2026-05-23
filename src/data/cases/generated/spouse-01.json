@@ -1990,9 +1990,9 @@
     {
       "id": "e-7",
       "name": "공동 적금 해지 서류",
-      "surfaceName": "공동 적금 처리 서류",
-      "description": "공동 적금 처리 서류와 처리 기록. A가 적금 관련 절차를 어떻게 진행했는지 가리키는 자료.",
-      "surfaceDescription": "공동 적금 처리 서류.",
+      "surfaceName": "공동 적금 해지 서류",
+      "description": "공동 적금 해지 서류와 처리 기록. A가 적금 관련 절차를 어떻게 진행했는지 가리키는 자료.",
+      "surfaceDescription": "공동 적금 해지 서류.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -2609,7 +2609,7 @@
       {
         "id": "e-7",
         "type": "evidence",
-        "label": "e-7 공동 적금 처리 서류",
+        "label": "e-7 공동 적금 해지 서류",
         "sourceRef": "e-7",
         "linkedDisputeIds": [
           "h-d3"
@@ -2872,7 +2872,7 @@
           "e-7"
         ],
         "cost": 2,
-        "discoveryText": "투자방 송금 기록과 공동 적금 처리 서류가 동일 날짜·금액으로 연결된다.",
+        "discoveryText": "투자방 송금 기록과 공동 적금 해지 서류가 동일 날짜·금액으로 연결된다.",
         "outputId": "dc-4",
         "resultType": "upgrade"
       },

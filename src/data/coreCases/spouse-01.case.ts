@@ -1475,11 +1475,11 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'e-7',
       name: ko('공동 적금 해지 서류'),
-      surfaceName: ko('공동 적금 처리 서류'),
+      surfaceName: ko('공동 적금 해지 서류'),
       description: ko(
-        '공동 적금 처리 서류와 처리 기록. A가 적금 관련 절차를 어떻게 진행했는지 가리키는 자료.',
+        '공동 적금 해지 서류와 처리 기록. A가 적금 관련 절차를 어떻게 진행했는지 가리키는 자료.',
       ),
-      surfaceDescription: ko('공동 적금 처리 서류.'),
+      surfaceDescription: ko('공동 적금 해지 서류.'),
       type: 'contract',
       reliability: 'hard',
       completeness: 'original',
@@ -1501,7 +1501,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         },
       },
       depthStages: [
-        { id: 'stub', summary: ko('공동 적금 처리 서류 1건 존재 표시.') },
+        { id: 'stub', summary: ko('공동 적금 해지 서류 1건 존재 표시.') },
         { id: 'excerpt', summary: ko('거래일과 2,012만원만 보임.') },
         { id: 'original', summary: ko('해지일 + 위임장 + 박지연 개인계좌 즉시 입금까지 확인.') },
         { id: 'context', summary: ko('위임장의 이준호 서명이 본인 필적과 불일치 (대필 흔적) 복원.') },
@@ -1999,7 +1999,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       inputs: ['e-6', 'e-7'],
       cost: 2,
       outputId: 'dc-4',
-      discoveryText: ko('투자방 송금 기록과 공동 적금 처리 서류가 동일 날짜·금액으로 연결된다.'),
+      discoveryText: ko('투자방 송금 기록과 공동 적금 해지 서류가 동일 날짜·금액으로 연결된다.'),
       route: 'evidence_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
