@@ -226060,6 +226060,573 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-e-5",
+          "evidenceId": "e-5",
+          "variants": [
+            {
+              "id": "emerge-e5-via-a-interject-v1",
+              "text": "재판관님. 오피스텔만 문제가 아닙니다. 남편 통장에서 큰돈이 빠져나간 정황도 있습니다.",
+              "behaviorHint": "참고 있던 말을 더는 삼키지 못하고 끊어 들어온다. 분노가 앞서지만 말끝은 최대한 눌러 잡는다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:재판관님",
+                "judgeAddressState:defined",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:charged",
+                "continuity:interjection",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-react-v1",
+              "text": "박지연 씨, 방금 말씀하신 큰돈 출금 정황은 어떻게 알게 된 겁니까.",
+              "behaviorHint": "갑작스러운 끼어들기를 막지 않고, 새로 나온 말의 출처부터 차분히 확인한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:박지연_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:reactive_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:fact_check",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-response-v1",
+              "text": "남편이 저 몰래 관리하던 계좌에서 그냥 넘길 수 없는 큰 금액의 출금 내역들이 있었습니다.",
+              "behaviorHint": "방금 내뱉은 말을 스스로도 의식하고 잠깐 위축된다. 그래도 사실 확인이 필요하다는 태도는 물러서지 않는다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:past",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-b-shock-v1",
+              "text": "자기야... 그 계좌를 알고있었어? 그건 내가 따로...",
+              "behaviorHint": "들킨 부분을 부정하지 못하고 말이 끊긴다. 자기 통장이 노출된 사실에 동요한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:자기야",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:shock",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-rebuke-v1",
+              "text": "지금 그게 중요해? 빠져나간 돈부터 설명해.",
+              "behaviorHint": "남편의 동요를 보면서 오히려 의심이 더 굳어진다. 화제를 본론으로 되돌린다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:rebuke",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-decree-v1",
+              "text": "그렇다면 본 법정에 이준호 씨의 개인 계좌 출금 내역을 정식 등재합니다.",
+              "behaviorHint": "새로 드러난 자금 흐름을 별도 검토 대상으로 확정한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:npc_interjection",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-query-v1",
+              "text": "이준호 씨, 통화기록과 발신자 미상 문자를 함께 보겠습니다. 일정한 간격으로 연락이 이어진 만큼, 그 시기에 따로 움직인 자금이 있었는지 말씀해 주시겠습니까.",
+              "behaviorHint": "두 자료를 비교한 뒤, 자금 이동 여부에 집중하여 묻는다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:combo_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:evidence_combo",
+                "clue:clue-cash-pattern",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-3",
+                "evidence:e-4",
+                "evidence:e-5",
+                "clue:clue-cash-pattern"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-b-response-v1",
+              "text": "…개인적으로 따로 관리하던 통장이 있긴 합니다. 다만 그 내역까지 지금 다 설명드리기는 곤란합니다.",
+              "behaviorHint": "처음에는 부인하려다, 증거의 흐름을 보고 한 발 물러선다. 통장 존재만 인정하고 자세한 설명은 피한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:guarded_admission",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-a-aware-v1",
+              "text": "이제야 말하는 거야? 그 통장에서 큰 돈도 빠져나갔잖아.",
+              "behaviorHint": "사실이 드러나는 순간, 의심해 오던 것이 확정되는 느낌을 받는다. 안도와 허무가 섞인다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-decree-v1",
+              "text": "방금 진술에 따라 본 법정에 이준호 씨의 개인 계좌 출금 내역을 정식 등재합니다.",
+              "behaviorHint": "피고의 시인을 근거로 새 증거를 법정 기록에 올린다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:combination_result",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-outburst-v1",
+              "text": "그럼 제 계좌 출금 내역까지 전부 내놓으라는 겁니까? 제가 돈을 빼 쓴 내역이 있다고 해서 전부 이상한 일은 아니잖습니까!",
+              "behaviorHint": "압박을 견디다 못해 목소리가 올라간다. 방어하려다 스스로 숨기던 단어를 흘린다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:emotional_outburst",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:angry_deflection",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-catch-v1",
+              "text": "이준호 씨, 방금 스스로 말씀하신 계좌 출금 내역이 실제로 존재한다는 뜻입니까.",
+              "behaviorHint": "본인이 흘린 단어를 놓치지 않고 즉시 되짚는다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_catch",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:catch_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-b-admit-v1",
+              "text": "…네, 제 개인 계좌에서 출금된 내역이 있습니다.",
+              "behaviorHint": "방금 말을 주워 담을 수 없다는 걸 깨닫고 짧게 인정한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:broken",
+                "continuity:admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-a-react-v1",
+              "text": "이제야 말하는 거야? 그래놓고 내가 괜한 의심을 한다고 나만 이상한 사람 만들고 있었잖아.",
+              "behaviorHint": "쌓아온 의심이 사실로 드러난 순간, 분노보다 그동안의 억울함에 대한 응어리가 먼저 터진다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-decree-v1",
+              "text": "그 진술을 근거로 본 법정에 이준호 씨의 개인 계좌 출금 내역을 정식 등재합니다.",
+              "behaviorHint": "돌발 발화를 공식 증거 흐름으로 전환한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:emotional_outburst",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-decree-v1",
+              "text": "이준호 씨, 현재까지 제출된 문자와 통화 정황만으로도 자금 흐름을 따로 확인할 필요가 있습니다. 본 법정은 이준호 씨의 개인 계좌 출금 내역을 정식 검토 대상으로 등재합니다.",
+              "behaviorHint": "더 미루지 않고 법정이 직접 검토 범위를 넓힌다. 감정 없이 절차적으로 선언한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_auto_mention",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "responseMode:judge_formal_decree",
+                "trigger:judge_auto_mention",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-b-respond-v1",
+              "text": "…네, 그 내역이 있는 건 인정합니다.",
+              "behaviorHint": "이미 피할 수 없다고 판단한 듯 짧고 건조하게 시인한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:short_admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:judge_auto_mention",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -341,6 +341,9 @@ function deriveEvidence(authority, existing) {
         : {}),
       ...(ex.meta ? { meta: ex.meta } : {}),
       ...(ex.viewerData ? { viewerData: ex.viewerData } : {}),
+      ...(ex.viewerDataByStage ? { viewerDataByStage: ex.viewerDataByStage } : {}),
+      // Core narrative wrapper (Cycle 1+) — Authority가 권위, runtime은 그대로 통과.
+      ...(e.narrativeTriggers ? { narrativeTriggers: e.narrativeTriggers } : {}),
     }
   })
 }

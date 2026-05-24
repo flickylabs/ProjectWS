@@ -1428,6 +1428,74 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('B가 형에게 빌려준 돈이라고 주장.') },
         { id: 'misread', summary: ko('데이터는 인증되지만 사용 목적은 맥락과 심문으로 확정.') },
       ],
+      /** Core narrative wrapper (Cycle 1 sample) — emergence 시점 multi-trigger 후보.
+       *  4 후보 (3 active + 1 fallback). First-Fired-Wins.
+       *  ScriptedText: src/data/scriptedText/spouse-01.json channels.emergence_narrative.entries[key=emerge-e-5]
+       *  권위: feedback-new-dispute-evidence-narrative-justification
+       *  Brief: docs/design/core-narrative-cycle1-spouse01-e5-emergence-20260524/
+       */
+      narrativeTriggers: [
+        {
+          id: 'e5-via-a-interjection',
+          type: 'npc_interjection',
+          source: 'a',
+          preconditions: [
+            { disputeLieState: { 'd-1': 'S2+' } },
+            { partyDistrust: { a: { min: 50 } } },
+          ],
+          scriptedRefs: [
+            'emerge-e5-via-a-interject-v1',
+            'emerge-e5-via-a-interject-judge-react-v1',
+            'emerge-e5-via-a-interject-a-response-v1',
+            'emerge-e5-via-a-interject-b-shock-v1',
+            'emerge-e5-via-a-interject-a-rebuke-v1',
+            'emerge-e5-via-a-interject-judge-decree-v1',
+          ],
+          vfxProfile: 'standard',
+        },
+        {
+          id: 'e5-via-combo-cash-pattern',
+          type: 'combination_result',
+          recipeId: 'clue-cash-pattern',
+          preconditions: { disputeLieState: { 'd-2': 'S1+' } },
+          scriptedRefs: [
+            'emerge-e5-via-combo-judge-query-v1',
+            'emerge-e5-via-combo-b-response-v1',
+            'emerge-e5-via-combo-a-aware-v1',
+            'emerge-e5-via-combo-judge-decree-v1',
+          ],
+          vfxProfile: 'standard',
+        },
+        {
+          id: 'e5-via-b-angry-outburst',
+          type: 'emotional_outburst',
+          source: 'b',
+          preconditions: {
+            partyPhase: { b: ['shaken', 'angry'] },
+            disputeLieState: { 'd-2': 'S2+' },
+            contextAction: 'question.fact_pursuit.b',
+          },
+          scriptedRefs: [
+            'emerge-e5-via-b-angry-outburst-v1',
+            'emerge-e5-via-b-angry-judge-catch-v1',
+            'emerge-e5-via-b-angry-b-admit-v1',
+            'emerge-e5-via-b-angry-a-react-v1',
+            'emerge-e5-via-b-angry-judge-decree-v1',
+          ],
+          vfxProfile: 'emphasis',
+        },
+        {
+          id: 'e5-via-judge-auto-mention',
+          type: 'judge_auto_mention',
+          source: 'judge',
+          preconditions: { turnsAfterEligible: 5 },
+          scriptedRefs: [
+            'emerge-e5-via-judge-auto-decree-v1',
+            'emerge-e5-via-judge-auto-b-respond-v1',
+          ],
+          vfxProfile: 'standard',
+        },
+      ],
     },
     {
       id: 'e-6',

@@ -39,10 +39,16 @@ const PartyEmotionalPhaseSchema = z.enum(['defensive', 'confident', 'shaken', 'a
 export const NarrativeTriggerPreconditionsSchema = z.object({
   /** dispute별 최소 lieState. 다중 dispute 시 모두 만족 필요 (AND). */
   disputeLieState: z.record(z.string(), LieStateThresholdSchema).optional(),
-  /** 파티별 distrust 최소값 (0~100). */
-  partyDistrust: z.record(z.enum(['a', 'b']), z.object({ min: z.number().min(0).max(100) })).optional(),
-  /** 파티별 emotional phase — 배열 중 하나 만족 (파티 내 OR, 파티 간 AND). */
-  partyPhase: z.record(z.enum(['a', 'b']), z.array(PartyEmotionalPhaseSchema)).optional(),
+  /** 파티별 distrust 최소값 (0~100). partial — 명시된 파티만 평가. */
+  partyDistrust: z.object({
+    a: z.object({ min: z.number().min(0).max(100) }).optional(),
+    b: z.object({ min: z.number().min(0).max(100) }).optional(),
+  }).optional(),
+  /** 파티별 emotional phase — 배열 중 하나 만족 (파티 내 OR, 파티 간 AND). partial — 명시된 파티만 평가. */
+  partyPhase: z.object({
+    a: z.array(PartyEmotionalPhaseSchema).optional(),
+    b: z.array(PartyEmotionalPhaseSchema).optional(),
+  }).optional(),
   /** 활성 액션 context — 특정 액션 직후만 유효. 매칭 패턴 (예: 'evidence_present.b.d-1', 'question.fact_pursuit.consecutive2+'). */
   contextAction: z.string().optional(),
   /** legacy 조건 만족 후 N턴 대기. judge_auto_mention fallback 전용. */

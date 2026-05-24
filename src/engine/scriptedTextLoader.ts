@@ -961,6 +961,33 @@ export function getScriptedJudgeContradiction(
 
 /** 범용 채널 조회 헬퍼
  *  [B1·B2 픽스] extraContext 옵셔널 — targetParty 등 selector 가중치 제공 */
+/**
+ * Core narrative — emergence_narrative channel에서 variant id로 직접 entry 조회.
+ *
+ * 일반 channel은 key + variants 선택 패턴이지만, emergence_narrative는 시퀀스 entries라
+ * variant.id로 직접 lookup. 한 emergence(예: e-5)의 17 variants 중 특정 id 반환.
+ */
+export function getEmergenceVariantById(
+  caseId: string, evidenceId: string, variantId: string,
+): { id: string; text: string; behaviorHint: string; tags: string[] } | null {
+  const bundle = loadBundle(caseId)
+  if (!bundle) return null
+  const ch = (bundle.channels as UnsafeAny)['emergence_narrative']
+  if (!ch?.entries) return null
+  const entry = ch.entries.find(
+    (e: UnsafeAny) => e.evidenceId === evidenceId || e.key === `emerge-${evidenceId}`,
+  )
+  if (!entry?.variants?.length) return null
+  const variant = entry.variants.find((v: UnsafeAny) => v.id === variantId)
+  if (!variant) return null
+  return {
+    id: variant.id,
+    text: variant.text,
+    behaviorHint: variant.behaviorHint ?? '',
+    tags: Array.isArray(variant.tags) ? variant.tags : [],
+  }
+}
+
 function getFromChannel(
   caseId: string, channel: string, key: string,
   extraContext?: Partial<VariantSelectionContext>,

@@ -1673,7 +1673,92 @@
             "suspicious": true
           }
         ]
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e5-via-a-interjection",
+          "type": "npc_interjection",
+          "source": "a",
+          "preconditions": [
+            {
+              "disputeLieState": {
+                "d-1": "S2+"
+              }
+            },
+            {
+              "partyDistrust": {
+                "a": {
+                  "min": 50
+                }
+              }
+            }
+          ],
+          "scriptedRefs": [
+            "emerge-e5-via-a-interject-v1",
+            "emerge-e5-via-a-interject-judge-react-v1",
+            "emerge-e5-via-a-interject-a-response-v1",
+            "emerge-e5-via-a-interject-b-shock-v1",
+            "emerge-e5-via-a-interject-a-rebuke-v1",
+            "emerge-e5-via-a-interject-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e5-via-combo-cash-pattern",
+          "type": "combination_result",
+          "preconditions": {
+            "disputeLieState": {
+              "d-2": "S1+"
+            }
+          },
+          "recipeId": "clue-cash-pattern",
+          "scriptedRefs": [
+            "emerge-e5-via-combo-judge-query-v1",
+            "emerge-e5-via-combo-b-response-v1",
+            "emerge-e5-via-combo-a-aware-v1",
+            "emerge-e5-via-combo-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e5-via-b-angry-outburst",
+          "type": "emotional_outburst",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-2": "S2+"
+            },
+            "partyPhase": {
+              "b": [
+                "shaken",
+                "angry"
+              ]
+            },
+            "contextAction": "question.fact_pursuit.b"
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-b-angry-outburst-v1",
+            "emerge-e5-via-b-angry-judge-catch-v1",
+            "emerge-e5-via-b-angry-b-admit-v1",
+            "emerge-e5-via-b-angry-a-react-v1",
+            "emerge-e5-via-b-angry-judge-decree-v1"
+          ],
+          "vfxProfile": "emphasis"
+        },
+        {
+          "id": "e5-via-judge-auto-mention",
+          "type": "judge_auto_mention",
+          "source": "judge",
+          "preconditions": {
+            "turnsAfterEligible": 5
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-judge-auto-decree-v1",
+            "emerge-e5-via-judge-auto-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     },
     {
       "id": "e-6",

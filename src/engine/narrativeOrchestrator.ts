@@ -15,11 +15,13 @@
 import { useGameStore } from '../store/useGameStore'
 import type { EvidenceNode } from '../types/case'
 import type { PartyId, LieState } from '../types/coreCase'
+import type { Speaker } from '../types/dialogue'
 import type {
   NarrativeTriggerFireResult,
   GameStateSnapshot,
 } from '../types/narrativeTrigger'
 import { evaluateNarrativeTriggers, evaluateFallback } from './narrativeTriggerEngine'
+import { getEmergenceVariantById } from './scriptedTextLoader'
 import { localizeRuntimeText } from '../i18n/runtimeText'
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -98,7 +100,8 @@ export function buildActionContext(action: {
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
- * ScriptedText 시퀀스를 dialogue로 발행. Phase 4 foundation은 단순 dialogue.
+ * ScriptedText 시퀀스를 dialogue로 발행. 각 entry의 tags에서 speaker 추출.
+ * KO base + locale overlay (en/ja/zh-CN)는 loadBundle이 locale-aware로 처리.
  *
  * 호출자 책임:
  *  - evidence unlock 유지 (revert X)
@@ -109,23 +112,38 @@ export function dispatchNarrativeSequence(
   fireResult: NarrativeTriggerFireResult,
   options: { emergenceId: string; relatedDisputes?: string[] },
 ): void {
-  const state = useGameStore.getState() as UnknownDialogueDispatcher
-  const turn = (state as { turnCount?: number }).turnCount ?? 0
+  const state = useGameStore.getState() as UnknownDialogueDispatcher & {
+    caseData?: { caseId?: string }
+    turnCount?: number
+  }
+  const turn = state.turnCount ?? 0
+  const caseId = state.caseData?.caseId
+  if (!caseId) return
+
   for (const scriptedId of fireResult.scriptedSequence) {
-    // ScriptedText id를 dialogue speaker로 매핑하기 위해 store/script-loader 참조 필요.
-    // Phase 4 foundation: 시스템 메시지로 표시 (id를 placeholder text로).
-    // Phase 4-E에서 실제 ScriptedText 로드 + speaker 추출로 교체.
+    const variant = getEmergenceVariantById(caseId, options.emergenceId, scriptedId)
+    if (!variant) continue
+    const speaker = extractSpeakerFromTags(variant.tags)
     state.addDialogue?.({
-      speaker: 'system',
-      text: `[narrative:${fireResult.triggerType}] ${scriptedId}`,
+      speaker,
+      text: variant.text,
+      behaviorHint: variant.behaviorHint || undefined,
       relatedDisputes: options.relatedDisputes ?? [],
       turn,
     })
   }
 }
 
+function extractSpeakerFromTags(tags: string[]): Speaker {
+  const speakerTag = tags.find((t) => t.startsWith('speaker:'))
+  if (!speakerTag) return 'system'
+  const value = speakerTag.split(':')[1]
+  if (value === 'a' || value === 'b' || value === 'judge' || value === 'witness') return value
+  return 'system'
+}
+
 interface UnknownDialogueDispatcher {
-  addDialogue?: (entry: { speaker: string; text: string; relatedDisputes?: string[]; turn: number }) => void
+  addDialogue?: (entry: { speaker: Speaker; text: string; behaviorHint?: string; relatedDisputes?: string[]; turn: number }) => void
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
