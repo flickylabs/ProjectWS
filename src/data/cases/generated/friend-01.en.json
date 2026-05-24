@@ -4255,7 +4255,7 @@
       },
       {
         "id": "dc-1",
-        "label": "dc-1 Who maligned her without checking?"
+        "label": "dc-1 Grounds for the Group Chat Post"
       },
       {
         "id": "dc-4",
@@ -4283,7 +4283,7 @@
       },
       {
         "id": "dc-1",
-        "label": "dc-1 Who Condemned Without Checking?",
+        "label": "dc-1 Grounds for the Group Chat Post",
         "summary": "Who maligned a friend in the group chat first without checking directly?",
         "noteText": "Weren’t you the one who condemned your friend in the group chat before checking directly?",
         "judgeHint": "A new issue has emerged: “Group Chat Smear and Defamation.” Trace how it spread."

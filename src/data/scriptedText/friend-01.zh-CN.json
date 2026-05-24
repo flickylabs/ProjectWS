@@ -27739,6 +27739,277 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-dc-1",
+          "dossierCardId": "dc-1",
+          "variants": [
+            {
+              "id": "emerge-dc1-via-combo-judge-query-v1",
+              "text": "根据刚才对照的联系记录和群聊截图，群聊发帖时间早于向崔秀敏女士直接确认的时间。宋多恩女士，请确认这个先后关系。",
+              "behaviorHint": "材料刚刚对上后，法官平静确认时间顺序。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-a-response-v1",
+              "text": "先发帖这一点是事实，裁判官。但当时联系已经持续了几天，不是我可以就这样放过去的情况。",
+              "behaviorHint": "A先为结论辩解，然后只承认时间点这一事实。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-b-react-v1",
+              "text": "记录就是这样，裁判官。我没有得到机会，先解释一件别人甚至还没有问过我的事。",
+              "behaviorHint": "B用低声调只补充事实，留下没有得到说明机会的感觉。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-judge-decree-v1",
+              "text": "以联系记录和群聊截图之间的时间差为依据，本法庭将[群聊帖子的依据]登记为线索。",
+              "behaviorHint": "法官按程序把材料中的时间差转化为线索。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-b-interject-v1",
+              "text": "多恩，你是真的确认过才说的吗？",
+              "behaviorHint": "B用朋友间的称呼短暂插话，不显露情绪。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "interrupt:true",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-judge-query-v1",
+              "text": "我会记录崔秀敏女士刚才的发言。宋多恩女士，请回答，你在群聊发帖时，是否还没有向崔秀敏女士直接确认。",
+              "behaviorHint": "法官接住B的话，同时向A询问确认时间点。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-judge-decree-v1",
+              "text": "刚才提出的确认时间问题，我会另行审查。将[群聊帖子的依据]作为新的线索添加。",
+              "behaviorHint": "法官只分离出插话中提出的确认时间点，并将其转化为线索。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-a-confess-v1",
+              "text": "说实话，是情绪先走在了前面，我确实先发了帖子。可是我当时……只能那样看。",
+              "behaviorHint": "A先下结论的说话方式因情绪短暂崩开。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-judge-catch-v1",
+              "text": "这听起来像是在承认，相关帖子是在没有准确确认的情况下写下的。宋多恩女士，你要更正刚才的回答吗？",
+              "behaviorHint": "法官中立确认听起来像承认的表达。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-judge-decree-v1",
+              "text": "宋多恩女士刚才的回答，使发帖前是否确认成为争点。将[群聊帖子的依据]登记为线索并进行审查。",
+              "behaviorHint": "法官把刚才回答中的发帖前确认问题转化为线索。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-judge-query-v1",
+              "text": "群聊发言与向崔秀敏女士确认的时间之间，先后关系还没有整理清楚。宋多恩女士，请说明你先在群聊发帖的经过。",
+              "behaviorHint": "法官直接整理停滞的论点。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-a-response-v1",
+              "text": "如果只把发帖这件事单独拿出来看，我会显得很不利，裁判官。但当时，联系持续这件事本身就是危险信号，我不能什么都不做。",
+              "behaviorHint": "A为了不承认不利的时间点而防御性发言。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-judge-decree-v1",
+              "text": "把已提交的联系记录和群聊截图放在一起看，需要确认发帖经过。将[群聊帖子的依据]列入线索清单。",
+              "behaviorHint": "法官基于已经提交的材料更新线索清单。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }
