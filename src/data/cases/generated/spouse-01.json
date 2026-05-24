@@ -2297,6 +2297,16 @@
   "evidenceCombinations": [
     {
       "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2"
+      ]
+    },
+    {
+      "requires": [
         "e-1",
         "e-2"
       ],
@@ -2766,6 +2776,19 @@
         "visibility": "base"
       },
       {
+        "id": "dc-cash-clue",
+        "type": "derived_note",
+        "label": "dc-cash-clue 정기 자금 이동의 흔적",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-3",
+          "e-4"
+        ],
+        "visibility": "derived"
+      },
+      {
         "id": "dc-1",
         "type": "derived_note",
         "label": "dc-1 오피스텔의 사람들",
@@ -2832,6 +2855,20 @@
       }
     ],
     "outputs": [
+      {
+        "id": "dc-cash-clue",
+        "label": "dc-cash-clue 정기 자금 이동의 흔적",
+        "summary": "통화기록과 발신자 미상 문자가 정기 송금 흐름으로 모인다. e-5 등재 직전 단서 카드 — Cycle 1 narrative emergence Trigger 2 진입점.",
+        "nodeType": "derived_note",
+        "noteText": "통화기록의 분할 통화 패턴과 발신자 미상 문자의 정기 요청이 같은 시기에 겹친다. 이 흐름은 자금 이동을 동반할 가능성이 높다 — 본인 명의 계좌 출금 내역 확인이 필요한 시점.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-cash-clue"
+          }
+        ],
+        "judgeHint": "자금 이동 정황을 본 법정이 검토할 단서가 모였다."
+      },
       {
         "id": "dc-1",
         "label": "dc-1 오피스텔의 사람들",
@@ -2939,6 +2976,17 @@
       }
     ],
     "recipes": [
+      {
+        "id": "clue-cash-pattern",
+        "inputs": [
+          "e-3",
+          "e-4"
+        ],
+        "cost": 1,
+        "discoveryText": "통화기록의 분할 통화 패턴과 발신자 미상 문자의 정기 요청이 같은 시기에 겹친다. 정기 자금 이동의 흔적.",
+        "outputId": "dc-cash-clue",
+        "resultType": "upgrade"
+      },
       {
         "id": "combine-1",
         "inputs": [
@@ -3064,6 +3112,31 @@
       }
     ],
     "leadLines": [
+      {
+        "id": "L-cash-clue",
+        "name": "Cash Pattern Lead",
+        "leadType": "Pattern",
+        "firstInputs": [
+          "e-3",
+          "e-4"
+        ],
+        "secondInputs": [
+          "L-cash-clue"
+        ],
+        "dossierCardId": "dc-cash-clue",
+        "interpretationChoices": [
+          {
+            "id": "L-cash-clue-A",
+            "text": "정기적인 자금 이동 흐름이다",
+            "implication": "e-5 등재 흐름을 연다."
+          },
+          {
+            "id": "L-cash-clue-B",
+            "text": "단순히 빈도가 높은 통신일 뿐이다",
+            "implication": "판단을 유보한다."
+          }
+        ]
+      },
       {
         "id": "L-1",
         "name": "Timeline Lead",

@@ -1695,8 +1695,68 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     },
   ],
 
-  /* ----- dossierCards (5개: dc-1, dc-2, dc-3 rename, dc-4 rename, dc-7 신규) — 사용자 결정 8건 모두 반영 ----- */
+  /* ----- dossierCards (6개: dc-1, dc-2, dc-3 rename, dc-4 rename, dc-7 신규, dc-cash-clue 추가 [Cycle 1 narrative emergence Trigger 2]) ----- */
   dossierCards: [
+    {
+      id: 'dc-cash-clue',
+      label: ko('정기 자금 이동의 흔적'),
+      description: ko('통화기록과 발신자 미상 문자가 정기 송금 흐름으로 모인다. e-5 등재 직전 단서 카드 — Cycle 1 narrative emergence Trigger 2 진입점.'),
+      type: 'derived_note',
+      linkedDisputes: ['d-2'],
+      linkedParty: 'b',
+      linkedEvidence: ['e-3', 'e-4'],
+      leadLine: {
+        id: 'L-cash-clue',
+        name: ko('Cash Pattern Lead'),
+        leadType: 'Pattern',
+        firstInputs: ['e-3', 'e-4'],
+        secondInputs: ['L-cash-clue'],
+        interpretationChoices: [
+          {
+            id: 'L-cash-clue-A',
+            text: ko('정기적인 자금 이동 흐름이다'),
+            implication: ko('e-5 등재 흐름을 연다.'),
+          },
+          {
+            id: 'L-cash-clue-B',
+            text: ko('단순히 빈도가 높은 통신일 뿐이다'),
+            implication: ko('판단을 유보한다.'),
+          },
+        ],
+      },
+      noteText: ko(
+        '통화기록의 분할 통화 패턴과 발신자 미상 문자의 정기 요청이 같은 시기에 겹친다. 이 흐름은 자금 이동을 동반할 가능성이 높다 — 본인 명의 계좌 출금 내역 확인이 필요한 시점.',
+      ),
+      successConditionSummary: [
+        ko('e-3 Original 이상'),
+        ko('e-4 Original 이상'),
+      ],
+      successEffects: [
+        ko('e-5 narrative emergence Trigger 2 진입 가능'),
+      ],
+      effects: [
+        { kind: 'unlock_note', unlockNodeId: 'dc-cash-clue' },
+      ],
+      judgeHint: ko('자금 이동 정황을 본 법정이 검토할 단서가 모였다.'),
+      challenges: {
+        b: {
+          questions: [
+            {
+              id: 'dc-cash-clue.b.q1',
+              text: ko('통화와 문자가 정기적으로 같은 시기에 겹친 이유를 설명해 주십시오.'),
+              lockedHint: ko('통화기록과 발신자 미상 문자가 모두 Original 이상이어야 보인다.'),
+              attackVector: 'fact',
+              requiredLieState: 'S1',
+              onSuccess: {
+                blockVector: 'fact',
+                revealAtom: 'spouse-01:b:d-2:S2:0',
+                lieAdvance: true,
+              },
+            },
+          ],
+        },
+      },
+    },
     {
       id: 'dc-1',
       label: ko('오피스텔의 사람들'),
@@ -2045,8 +2105,24 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     },
   ],
 
-  /* ----- combinationRecipes — recipe 재구성 (사용자 결정 8건 반영) ----- */
+  /* ----- combinationRecipes — recipe 재구성 (사용자 결정 8건 반영) + clue-cash-pattern (Cycle 1) ----- */
   combinationRecipes: [
+    {
+      id: 'clue-cash-pattern',
+      /** Cycle 1 narrative emergence Trigger 2 — e-3 + e-4 → dc-cash-clue ("정기 자금 이동의 흔적").
+       *  이 사건 카드가 등장하면 e-5 narrative gate의 Trigger 2 (combination_result) recipeId 매칭. */
+      inputs: ['e-3', 'e-4'],
+      cost: 1,
+      outputId: 'dc-cash-clue',
+      discoveryText: ko('통화기록의 분할 통화 패턴과 발신자 미상 문자의 정기 요청이 같은 시기에 겹친다. 정기 자금 이동의 흔적.'),
+      route: 'evidence_combine',
+      gate: {
+        allowedChannels: ['evidence_present', 'dossier'],
+        requiredEvidenceStages: { 'e-3': 'original', 'e-4': 'original' },
+        autoSurfaceAllowed: false,
+      },
+      surfaceFallback: ko('통화기록과 발신자 미상 문자의 시기 정합을 대조 중.'),
+    },
     {
       id: 'combine-1',
       inputs: ['e-1', 'e-2'],

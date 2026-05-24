@@ -2,6 +2,46 @@
   "caseId": "spouse-v3-01",
   "dossierCards": [
     {
+      "id": "dc-cash-clue",
+      "name": "정기 자금 이동의 흔적",
+      "description": "통화기록과 발신자 미상 문자가 정기 송금 흐름으로 모인다. e-5 등재 직전 단서 카드 — Cycle 1 narrative emergence Trigger 2 진입점.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-cash-clue",
+      "successConditionSummary": [
+        "e-3 Original 이상",
+        "e-4 Original 이상"
+      ],
+      "successEffects": [
+        "e-5 narrative emergence Trigger 2 진입 가능"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-cash-clue.b.q1",
+              "text": "통화와 문자가 정기적으로 같은 시기에 겹친 이유를 설명해 주십시오.",
+              "lockedHint": "통화기록과 발신자 미상 문자가 모두 Original 이상이어야 보인다.",
+              "attackVector": "fact",
+              "requiredLieState": "S1",
+              "onSuccess": {
+                "blockVector": "fact",
+                "revealAtom": "spouse-01:b:d-2:S2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "dc-1",
       "name": "오피스텔의 사람들",
       "description": "외도 서사를 가족 돌봄 서사로 뒤집는 첫 반전 카드.",
@@ -1298,6 +1338,31 @@
     }
   ],
   "leadLines": [
+    {
+      "id": "L-cash-clue",
+      "name": "Cash Pattern Lead",
+      "leadType": "Pattern",
+      "firstInputs": [
+        "e-3",
+        "e-4"
+      ],
+      "secondInputs": [
+        "L-cash-clue"
+      ],
+      "dossierCardId": "dc-cash-clue",
+      "interpretationChoices": [
+        {
+          "id": "L-cash-clue-A",
+          "text": "정기적인 자금 이동 흐름이다",
+          "implication": "e-5 등재 흐름을 연다."
+        },
+        {
+          "id": "L-cash-clue-B",
+          "text": "단순히 빈도가 높은 통신일 뿐이다",
+          "implication": "판단을 유보한다."
+        }
+      ]
+    },
     {
       "id": "L-1",
       "name": "Timeline Lead",
