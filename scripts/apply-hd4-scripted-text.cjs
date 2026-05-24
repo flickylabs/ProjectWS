@@ -132,7 +132,52 @@ function buildEntry(channel, entries, gptEntry) {
   if (channel === 'judge_question') {
     return buildJudgeQuestionEntry(entries, gptEntry)
   }
+  if (channel === 'judge_evidence_combo') {
+    return buildJudgeEvidenceComboEntry(entries, gptEntry)
+  }
   return buildDisputeEntry(channel, entries, gptEntry)
+}
+
+/**
+ * judge_evidence_combo 채널 — entry는 dossierCardId + questionId + tone 기반.
+ * key 형식: 'dc-N.{party}.q{N}|{soft|mid|hard}'. dc-3 template 사용.
+ */
+function buildJudgeEvidenceComboEntry(entries, gptEntry) {
+  const questionId = gptEntry.questionId || extractQuestionIdFromKey(gptEntry.key)
+  const tone = gptEntry.tone || extractToneFromKey(gptEntry.key) || 'soft'
+  // dc-3.b.q1 또는 dc-3.b.q2 template — tone 매칭
+  const template = entries.find(
+    (e) => e.dossierCardId === 'dc-3' && e.tone === tone &&
+      (questionId?.endsWith('.q2') ? e.questionId === 'dc-3.b.q2' : e.questionId === 'dc-3.b.q1'),
+  ) ?? entries.find((e) => e.dossierCardId === 'dc-3' && e.tone === tone)
+    ?? entries.find((e) => e.dossierCardId === 'dc-3')
+  if (!template) {
+    throw new Error(`[judge_evidence_combo] no dc-3 template for tone=${tone}`)
+  }
+
+  return {
+    key: gptEntry.key,
+    dossierCardId: 'dc-8',
+    questionId,
+    tone,
+    variants: gptEntry.variants.map((v, idx) => {
+      const templateVariant = template.variants[idx] ?? template.variants[0]
+      return {
+        id: v.id,
+        text: v.text,
+        behaviorHint: v.behaviorHint ?? '',
+        tags: rewriteTags(templateVariant.tags, 'dossier'),
+        sourceRefs: ['dossier:dc-8'],
+      }
+    }),
+  }
+}
+
+function extractToneFromKey(key) {
+  if (!key) return null
+  const last = key.split('|').pop()
+  if (last === 'soft' || last === 'mid' || last === 'hard') return last
+  return null
 }
 
 /**
