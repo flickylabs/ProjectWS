@@ -1,0 +1,60 @@
+{
+  "batch": 8,
+  "channel": "aftermath",
+  "entries": [
+    {
+      "key": "aftermath|h-d4|S5|v1",
+      "party": "system",
+      "targetParty": "both",
+      "disputeId": "h-d4",
+      "lieState": "S5",
+      "questionType": "aftermath",
+      "angle": "truth_resolution",
+      "stanceHint": "closure",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "aftermath-h-d4-S5-truth-resolution-v1",
+          "text": "사건이 끝난 뒤, 박지연은 비자금을 더 이상 배신의 증거로만 볼 수 없었다. 그 돈은 신혼 초기부터 자신의 난임 치료비를 위해 모인 돈이었다. 이준호는 그 돈을 형 사건 뒤 형에게 쓰기 전까지도 아내에게 말하지 못한 책임을 남겼다.",
+          "behaviorHint": "사건 종결 후 두 사람의 진실 인식을 차분히 정리하는 내레이션이다.",
+          "stageGate": "S5 aftermath 권위 준수 — 난임 치료비, 신혼 초기, 형 사건 후 전환, 부부 침묵 직접 명시 가능.",
+          "naturalKoreanNotes": "비자금의 오해와 원래 목적을 구체적으로 대비하되, 종결 후 회상 톤으로 과한 감상 표현을 줄임."
+        },
+        {
+          "id": "aftermath-h-d4-S5-truth-resolution-v2",
+          "text": "법정 밖으로 나온 뒤에도 박지연에게 난임 치료비라는 말은 쉽게 가라앉지 않았다. 그 돈은 자신을 위한 준비였지만, 이준호가 끝까지 말하지 않은 준비이기도 했다. 이준호는 그 침묵이 관계를 지킨 것이 아니라 더 오래 닫아 둔 것임을 알게 됐다.",
+          "behaviorHint": "오해의 순서를 정리한 뒤 침묵의 여운으로 마무리한다.",
+          "stageGate": "S5 aftermath 권위 준수 — 비자금의 원래 목적과 부부 침묵의 결과를 완전 노출 단계에서 정리.",
+          "naturalKoreanNotes": "‘말하지 않은 준비’, ‘더 오래 닫아 둔 것’처럼 사건 행동에 붙은 표현으로 정돈. 직역체와 시적 과장을 피함."
+        }
+      ]
+    },
+    {
+      "key": "aftermath|h-d4|S5|v2",
+      "party": "system",
+      "targetParty": "both",
+      "disputeId": "h-d4",
+      "lieState": "S5",
+      "questionType": "aftermath",
+      "angle": "mutual_responsibility",
+      "stanceHint": "reflective",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "aftermath-h-d4-S5-mutual-responsibility-v1",
+          "text": "박지연은 자신이 닫아 둔 화제가 부부 침묵의 한 축이었다는 사실을 인정한다. 이준호는 배려라는 말로 의사 친구 상담과 보험 상담, 가입으로 이어지지 않은 견적까지 혼자 붙들고 있던 일을 덮을 수 없다고 받아들인다. 남은 사과는 누가 더 아팠는지가 아니라, 왜 가장 중요한 말을 서로에게 하지 못했는지에서 시작된다.",
+          "behaviorHint": "두 사람의 책임을 나누되, 이준호에게 더 큰 침묵의 책임이 남는 톤이다.",
+          "stageGate": "S5 aftermath 권위 준수 — 부부 침묵의 한 축, 의사 친구 상담, 보험 상담, 가입 없음, 회피 책임을 직접 정리.",
+          "naturalKoreanNotes": "A 30 / B 70 책임 비중을 반영해 A의 화제 회피와 B의 단독 조사를 분리. 추상 대비 대신 구체 행위로 서술."
+        },
+        {
+          "id": "aftermath-h-d4-S5-mutual-responsibility-v2",
+          "text": "이준호가 모은 돈은 처음엔 박지연을 위한 난임 치료비였고, 형 사건이 생긴 뒤 형에게 쓰였다. 박지연은 그 화제를 피한 자신의 책임을 인정했지만, 이준호가 혼자 결정한 시간까지 없던 일로 넘기지는 않았다. 두 사람의 침묵은 같은 집 안에서 서로 다른 문제로 커져 있었다.",
+          "behaviorHint": "서로 다른 책임을 한 문장씩 짚고, 사건의 정서적 결론으로 닫는다.",
+          "stageGate": "S5 aftermath 권위 준수 — 난임 치료비와 회피 책임을 완전 자백 이후 정리, 기존 hidden keyword 미사용.",
+          "naturalKoreanNotes": "S5에서 허용된 자금 전환을 간단히 짚고, A의 회피 책임과 B의 단독 결정을 균형 있게 배치. 과한 감상 표현은 줄임."
+        }
+      ]
+    }
+  ]
+}
