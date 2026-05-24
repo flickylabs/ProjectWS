@@ -16,11 +16,12 @@ import { useGameStore } from '../store/useGameStore'
 import type { EvidenceNode } from '../types/case'
 import type { PartyId, LieState } from '../types/coreCase'
 import type { Speaker } from '../types/dialogue'
-import type {
-  NarrativeTriggerFireResult,
-  GameStateSnapshot,
-} from '../types/narrativeTrigger'
-import { evaluateNarrativeTriggers, evaluateFallback } from './narrativeTriggerEngine'
+import type { NarrativeTriggerFireResult } from '../types/narrativeTrigger'
+import {
+  evaluateNarrativeTriggers,
+  evaluateFallback,
+  type GameStateSnapshot,
+} from './narrativeTriggerEngine'
 import { getEmergenceVariantById } from './scriptedTextLoader'
 import { localizeRuntimeText } from '../i18n/runtimeText'
 
