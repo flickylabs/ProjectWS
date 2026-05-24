@@ -1,0 +1,767 @@
+[
+  {
+    "id": "emerge-e4-via-cascade-judge-mention-v1",
+    "lang": "en",
+    "text": "After reviewing the [Call Record], this court notes text messages from the same number during the period under review. Mr. Lee Jun-ho, please explain what those exchanges concerned."
+  },
+  {
+    "id": "emerge-e4-via-cascade-judge-mention-v1",
+    "lang": "ja",
+    "text": "本法廷は[通話記録]の検討中、同じ番号からのメッセージのやり取りがあった事情を確認しました。イ・ジュノさん、その交信内容について説明してください。"
+  },
+  {
+    "id": "emerge-e4-via-cascade-judge-mention-v1",
+    "lang": "zh-CN",
+    "text": "本法庭在审查[通话记录]时，确认同一号码还有短信往来的情况。李俊浩先生，请说明这些往来内容。"
+  },
+  {
+    "id": "emerge-e4-via-cascade-b-response-v1",
+    "lang": "en",
+    "text": "Your Honor, those messages came because of circumstances on that side... It is difficult for me to explain."
+  },
+  {
+    "id": "emerge-e4-via-cascade-b-response-v1",
+    "lang": "ja",
+    "text": "判事様、あれは先方の事情で届いたメッセージで……説明するのは難しいです。"
+  },
+  {
+    "id": "emerge-e4-via-cascade-b-response-v1",
+    "lang": "zh-CN",
+    "text": "审判官，那些短信是因为对方那边的情况发来的……我很难说明。"
+  },
+  {
+    "id": "emerge-e4-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the evidence [Unidentified Sender Text]."
+  },
+  {
+    "id": "emerge-e4-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は証拠[発信者不明のメッセージ]を正式に登録します。"
+  },
+  {
+    "id": "emerge-e4-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记证据[发信人不明的短信]。"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-v1",
+    "lang": "en",
+    "text": "Your Honor, it was not only calls. Messages went back and forth with that number repeatedly."
+  },
+  {
+    "id": "emerge-e4-via-a-interject-v1",
+    "lang": "ja",
+    "text": "判事様、通話だけではありません。その番号とはメッセージも何度も行き来していました。"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-v1",
+    "lang": "zh-CN",
+    "text": "审判官，不只是通话。那个号码也经常有短信往来。"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-judge-react-v1",
+    "lang": "en",
+    "text": "Ms. Park, can you submit the text message thread to this court?"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-judge-react-v1",
+    "lang": "ja",
+    "text": "パク・ジヨンさん、そのメッセージスレッドを提出できますか。"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-judge-react-v1",
+    "lang": "zh-CN",
+    "text": "朴智妍女士，你能提交那条短信对话吗？"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-a-response-v1",
+    "lang": "en",
+    "text": "Yes, Your Honor. I have screenshots from my phone ready. The times overlap with the call times as well."
+  },
+  {
+    "id": "emerge-e4-via-a-interject-a-response-v1",
+    "lang": "ja",
+    "text": "はい、判事様。携帯のスクリーンショットを用意しています。通話時刻とも重なっています。"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-a-response-v1",
+    "lang": "zh-CN",
+    "text": "可以，审判官。我已经准备了手机截图，时间也和通话时间重叠。"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the evidence [Unidentified Sender Text]."
+  },
+  {
+    "id": "emerge-e4-via-a-interject-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は証拠[発信者不明のメッセージ]を正式に登録します。"
+  },
+  {
+    "id": "emerge-e4-via-a-interject-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记证据[发信人不明的短信]。"
+  },
+  {
+    "id": "emerge-e4-via-b-interject-v1",
+    "lang": "en",
+    "text": "Your Honor, those were just messages that came because of circumstances on that side..."
+  },
+  {
+    "id": "emerge-e4-via-b-interject-v1",
+    "lang": "ja",
+    "text": "判事様、あれは先方の事情で来ていたメッセージで……"
+  },
+  {
+    "id": "emerge-e4-via-b-interject-v1",
+    "lang": "zh-CN",
+    "text": "审判官，那只是因为对方那边的情况发来的短信……"
+  },
+  {
+    "id": "emerge-e4-via-b-interject-a-pursue-v1",
+    "lang": "en",
+    "text": "Circumstances on that side? Then who is that number?"
+  },
+  {
+    "id": "emerge-e4-via-b-interject-a-pursue-v1",
+    "lang": "ja",
+    "text": "先方の事情？ じゃあ、その番号は誰なの？"
+  },
+  {
+    "id": "emerge-e4-via-b-interject-a-pursue-v1",
+    "lang": "zh-CN",
+    "text": "对方那边的情况？那这个号码到底是谁？"
+  },
+  {
+    "id": "emerge-e4-via-b-interject-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the [Unidentified Sender Text] thread as evidence. We will proceed to the next issue."
+  },
+  {
+    "id": "emerge-e4-via-b-interject-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は[発信者不明のメッセージ]のスレッドを証拠として正式に登録します。次に進みます。"
+  },
+  {
+    "id": "emerge-e4-via-b-interject-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式将[发信人不明的短信]对话登记为证据，并继续下一步程序。"
+  },
+  {
+    "id": "emerge-e4-via-judge-auto-decree-v1",
+    "lang": "en",
+    "text": "Together with the call materials, this court adds the [Unidentified Sender Text] materials as evidence for review."
+  },
+  {
+    "id": "emerge-e4-via-judge-auto-decree-v1",
+    "lang": "ja",
+    "text": "通話資料と併せて、[発信者不明のメッセージ]資料も証拠として追加します。"
+  },
+  {
+    "id": "emerge-e4-via-judge-auto-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭将与通话资料一并追加[发信人不明的短信]资料作为证据进行审查。"
+  },
+  {
+    "id": "emerge-e4-via-judge-auto-b-respond-v1",
+    "lang": "en",
+    "text": "Yes, Your Honor. I will accept that."
+  },
+  {
+    "id": "emerge-e4-via-judge-auto-b-respond-v1",
+    "lang": "ja",
+    "text": "はい、判事様。受け入れます。"
+  },
+  {
+    "id": "emerge-e4-via-judge-auto-b-respond-v1",
+    "lang": "zh-CN",
+    "text": "是，审判官。我接受。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-judge-query-v1",
+    "lang": "en",
+    "text": "The receipt records and GPS data now form a single movement path. Mr. Lee Jun-ho, please explain the factual circumstances of that route."
+  },
+  {
+    "id": "emerge-dc1-via-combo-judge-query-v1",
+    "lang": "ja",
+    "text": "領収書とGPS記録が一つの動線として結びつきました。イ・ジュノさん、その事実関係を説明してください。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-judge-query-v1",
+    "lang": "zh-CN",
+    "text": "收据和GPS记录已经连成一条动线。李俊浩先生，请说明这条动线的事实情况。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-b-response-v1",
+    "lang": "en",
+    "text": "I... had other business there, so I stopped by."
+  },
+  {
+    "id": "emerge-dc1-via-combo-b-response-v1",
+    "lang": "ja",
+    "text": "……そこには、別の用事があって立ち寄りました。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-b-response-v1",
+    "lang": "zh-CN",
+    "text": "……我在那里有别的事，所以顺路去了一下。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-a-react-v1",
+    "lang": "en",
+    "text": "Your Honor, I have never heard that explanation even once. That is clearly the route of an affair."
+  },
+  {
+    "id": "emerge-dc1-via-combo-a-react-v1",
+    "lang": "ja",
+    "text": "判事様、そんな話は一度も聞いたことがありません。これは明らかに不倫の動線です。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-a-react-v1",
+    "lang": "zh-CN",
+    "text": "审判官，我从来没听过这种说法。那条动线很明显就是外遇动线。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the clue [The People at the Officetel]."
+  },
+  {
+    "id": "emerge-dc1-via-combo-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は手がかり[オフィステルの人々]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc1-via-combo-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记线索[公寓里的人们]。"
+  },
+  {
+    "id": "emerge-dc1-via-cascade-judge-mention-v1",
+    "lang": "en",
+    "text": "The [Unidentified Sender Text], receipt records, and GPS data connect to a movement path from the same period. This court will review that connection together."
+  },
+  {
+    "id": "emerge-dc1-via-cascade-judge-mention-v1",
+    "lang": "ja",
+    "text": "本法廷は[発信者不明のメッセージ]、領収書、GPS記録が同じ時期の動線につながっていると見ます。"
+  },
+  {
+    "id": "emerge-dc1-via-cascade-judge-mention-v1",
+    "lang": "zh-CN",
+    "text": "本法庭认为，[发信人不明的短信]、收据和GPS记录连接到了同一时期的动线。"
+  },
+  {
+    "id": "emerge-dc1-via-cascade-a-response-v1",
+    "lang": "en",
+    "text": "Your Honor, there are too many overlaps to dismiss this as coincidence."
+  },
+  {
+    "id": "emerge-dc1-via-cascade-a-response-v1",
+    "lang": "ja",
+    "text": "判事様、偶然で片づけるには重なりすぎています。"
+  },
+  {
+    "id": "emerge-dc1-via-cascade-a-response-v1",
+    "lang": "zh-CN",
+    "text": "审判官，要说是巧合，重合的地方太多了。"
+  },
+  {
+    "id": "emerge-dc1-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the clue [The People at the Officetel]."
+  },
+  {
+    "id": "emerge-dc1-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は手がかり[オフィステルの人々]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc1-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记线索[公寓里的人们]。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-v1",
+    "lang": "en",
+    "text": "There can be other reasons to visit a place like that. You cannot simply conclude it was an affair."
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-v1",
+    "lang": "ja",
+    "text": "別の事情があって訪れることもあります。それだけで不倫と決めつけることはできません。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-v1",
+    "lang": "zh-CN",
+    "text": "也可能是因为别的情况才去那里，不能直接认定是外遇。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-judge-react-v1",
+    "lang": "en",
+    "text": "Mr. Lee Jun-ho, please explain what you mean by 'other reasons.'"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-judge-react-v1",
+    "lang": "ja",
+    "text": "イ・ジュノさん、その「別の事情」が何なのか説明してください。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-judge-react-v1",
+    "lang": "zh-CN",
+    "text": "李俊浩先生，请说明你所说的“别的情况”是什么。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-b-elaborate-v1",
+    "lang": "en",
+    "text": "Your Honor, there is an unavoidable situation on the family side... It is difficult to go into detail."
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-b-elaborate-v1",
+    "lang": "ja",
+    "text": "判事様、家族側にやむを得ない事情があって……詳しいことは話しにくいです。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-b-elaborate-v1",
+    "lang": "zh-CN",
+    "text": "审判官，家庭方面有不得已的情况……细节我很难说。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the clue [The People at the Officetel]."
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は手がかり[オフィステルの人々]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc1-via-b-interject-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记线索[公寓里的人们]。"
+  },
+  {
+    "id": "emerge-dc1-via-judge-auto-decree-v1",
+    "lang": "en",
+    "text": "This court will review the receipt, GPS, and text materials together and officially register the clue [The People at the Officetel]."
+  },
+  {
+    "id": "emerge-dc1-via-judge-auto-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は領収書、GPS、メッセージをまとめ、手がかり[オフィステルの人々]として正式に登録します。"
+  },
+  {
+    "id": "emerge-dc1-via-judge-auto-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭将收据、GPS和短信合并审查，正式登记线索[公寓里的人们]。"
+  },
+  {
+    "id": "emerge-dc1-via-judge-auto-a-respond-v1",
+    "lang": "en",
+    "text": "Yes, Your Honor. I will accept that."
+  },
+  {
+    "id": "emerge-dc1-via-judge-auto-a-respond-v1",
+    "lang": "ja",
+    "text": "はい、判事様。受け入れます。"
+  },
+  {
+    "id": "emerge-dc1-via-judge-auto-a-respond-v1",
+    "lang": "zh-CN",
+    "text": "是，审判官。我接受。"
+  },
+  {
+    "id": "emerge-w1-via-cascade-judge-mention-v1",
+    "lang": "en",
+    "text": "Based on the clue [The People at the Officetel], testimony from someone who can confirm on-site entry is necessary. The officetel security guard may be summoned as a witness."
+  },
+  {
+    "id": "emerge-w1-via-cascade-judge-mention-v1",
+    "lang": "ja",
+    "text": "手がかり[オフィステルの人々]を踏まえると、現場への出入りを確認できる人物の証言が必要です。オフィステルの警備員を証人として召喚できる状態にします。"
+  },
+  {
+    "id": "emerge-w1-via-cascade-judge-mention-v1",
+    "lang": "zh-CN",
+    "text": "基于线索[公寓里的人们]，有必要取得能够确认现场出入情况的人员证言。公寓保安可以作为证人被传唤。"
+  },
+  {
+    "id": "emerge-w1-via-cascade-a-acknowledge-v1",
+    "lang": "en",
+    "text": "I agree, Your Honor. The guard can confirm whether my husband entered the building."
+  },
+  {
+    "id": "emerge-w1-via-cascade-a-acknowledge-v1",
+    "lang": "ja",
+    "text": "同意します、判事様。警備員の方なら、夫が出入りしたか確認できるはずです。"
+  },
+  {
+    "id": "emerge-w1-via-cascade-a-acknowledge-v1",
+    "lang": "zh-CN",
+    "text": "我同意，审判官。保安应该能确认我丈夫是否进出过那里。"
+  },
+  {
+    "id": "emerge-w1-via-cascade-judge-summon-v1",
+    "lang": "en",
+    "text": "This court officially marks the officetel security guard as available for summons as a witness."
+  },
+  {
+    "id": "emerge-w1-via-cascade-judge-summon-v1",
+    "lang": "ja",
+    "text": "本法廷はオフィステルの警備員を証人として召喚可能な状態として正式に登録します。"
+  },
+  {
+    "id": "emerge-w1-via-cascade-judge-summon-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记公寓保安证人处于可传唤状态。"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-v1",
+    "lang": "en",
+    "text": "Your Honor, my dashcam has footage of my husband greeting the security guard. The guard should recognize him."
+  },
+  {
+    "id": "emerge-w1-via-a-interject-v1",
+    "lang": "ja",
+    "text": "判事様、ドラレコに夫が警備員の方と挨拶している場面があります。あの方なら夫のことを見分けられるはずです。"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-v1",
+    "lang": "zh-CN",
+    "text": "审判官，行车记录仪里有我丈夫和保安打招呼的画面。保安应该能认出我丈夫。"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-judge-react-v1",
+    "lang": "en",
+    "text": "Ms. Park, can you submit the guard's identifying information and work details?"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-judge-react-v1",
+    "lang": "ja",
+    "text": "パク・ジヨンさん、警備員の身元情報と勤務情報を提出できますか。"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-judge-react-v1",
+    "lang": "zh-CN",
+    "text": "朴智妍女士，你能提交保安的身份信息和工作信息吗？"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-a-confirm-v1",
+    "lang": "en",
+    "text": "Yes, Your Honor. The security office at that building is staffed regularly, so it can be confirmed."
+  },
+  {
+    "id": "emerge-w1-via-a-interject-a-confirm-v1",
+    "lang": "ja",
+    "text": "はい、判事様。あの建物の警備室には常時勤務者がいます。確認できます。"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-a-confirm-v1",
+    "lang": "zh-CN",
+    "text": "可以，审判官。那栋楼的保安室一直有人值班，可以确认。"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-judge-summon-v1",
+    "lang": "en",
+    "text": "This court officially marks the officetel security guard as available for summons as a witness."
+  },
+  {
+    "id": "emerge-w1-via-a-interject-judge-summon-v1",
+    "lang": "ja",
+    "text": "本法廷はオフィステルの警備員を証人として召喚可能な状態として正式に登録します。"
+  },
+  {
+    "id": "emerge-w1-via-a-interject-judge-summon-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记公寓保安证人处于可传唤状态。"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-v1",
+    "lang": "en",
+    "text": "Then call the security guard. He will know how absurd it is that I am being suspected of an affair."
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-v1",
+    "lang": "ja",
+    "text": "だったら警備員を呼んでください。私が不倫だと誤解されていることが、どれだけ馬鹿げているか分かるはずです。"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-v1",
+    "lang": "zh-CN",
+    "text": "那就叫保安来吧。他会知道我被误会有外遇这件事有多荒唐。"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-judge-catch-v1",
+    "lang": "en",
+    "text": "Mr. Lee Jun-ho, are you saying the guard's testimony would be favorable to you? Are you directly requesting the summons?"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-judge-catch-v1",
+    "lang": "ja",
+    "text": "イ・ジュノさん、警備員の証言があなたに有利だという意味ですか。直接召喚を求めるのですか。"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-judge-catch-v1",
+    "lang": "zh-CN",
+    "text": "李俊浩先生，你的意思是保安的证言会对你有利吗？你是在直接请求传唤吗？"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-b-admit-v1",
+    "lang": "en",
+    "text": "I will leave that to your judgment, Your Honor..."
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-b-admit-v1",
+    "lang": "ja",
+    "text": "……判事様のご判断に委ねます。"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-b-admit-v1",
+    "lang": "zh-CN",
+    "text": "……我听凭审判官判断。"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-judge-summon-v1",
+    "lang": "en",
+    "text": "This court officially marks the officetel security guard as available for summons as a witness."
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-judge-summon-v1",
+    "lang": "ja",
+    "text": "本法廷はオフィステルの警備員を証人として召喚可能な状態として正式に登録します。"
+  },
+  {
+    "id": "emerge-w1-via-b-outburst-judge-summon-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记公寓保安证人处于可传唤状态。"
+  },
+  {
+    "id": "emerge-w1-via-judge-auto-summon-v1",
+    "lang": "en",
+    "text": "To confirm on-site entry, testimony from a person at the scene is necessary. This court officially registers the possibility of summoning the officetel security guard."
+  },
+  {
+    "id": "emerge-w1-via-judge-auto-summon-v1",
+    "lang": "ja",
+    "text": "現場への出入りを確認するため、現場関係者の証言を確保する必要があります。本法廷はオフィステルの警備員を召喚できる可能性を正式に登録します。"
+  },
+  {
+    "id": "emerge-w1-via-judge-auto-summon-v1",
+    "lang": "zh-CN",
+    "text": "为了确认现场出入情况，有必要取得现场人员的证言。本法庭正式登记传唤公寓保安的可能性。"
+  },
+  {
+    "id": "emerge-w1-via-judge-auto-a-respond-v1",
+    "lang": "en",
+    "text": "Yes, Your Honor. I will accept that."
+  },
+  {
+    "id": "emerge-w1-via-judge-auto-a-respond-v1",
+    "lang": "ja",
+    "text": "はい、判事様。受け入れます。"
+  },
+  {
+    "id": "emerge-w1-via-judge-auto-a-respond-v1",
+    "lang": "zh-CN",
+    "text": "是，审判官。我接受。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-judge-query-v1",
+    "lang": "en",
+    "text": "Mr. Lee Jun-ho, your repeated avoidance of family-related topics is now linked with the text-message circumstances. Please explain the motive behind this pattern of shutting down."
+  },
+  {
+    "id": "emerge-dc2-via-combo-judge-query-v1",
+    "lang": "ja",
+    "text": "イ・ジュノさん、あなたが家族に関する話題を避けることと、メッセージの事情が結びついて見えます。口を閉ざすそのパターンの動機を説明してください。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-judge-query-v1",
+    "lang": "zh-CN",
+    "text": "李俊浩先生，你回避谈及家庭相关话题的情况，正与短信情况产生关联。请说明你总是闭口不谈这种模式的动机。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-b-response-v1",
+    "lang": "en",
+    "text": "...It is difficult for me to say, Your Honor."
+  },
+  {
+    "id": "emerge-dc2-via-combo-b-response-v1",
+    "lang": "ja",
+    "text": "……申し上げにくいです、判事様。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-b-response-v1",
+    "lang": "zh-CN",
+    "text": "……我很难说出口，审判官。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-a-react-v1",
+    "lang": "en",
+    "text": "Your Honor, I clearly felt that pattern too."
+  },
+  {
+    "id": "emerge-dc2-via-combo-a-react-v1",
+    "lang": "ja",
+    "text": "判事様、私もそのパターンをはっきり感じていました。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-a-react-v1",
+    "lang": "zh-CN",
+    "text": "审判官，我也清楚感觉到了这种模式。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the clue [The In-Laws Topic Always Becomes a Fight]."
+  },
+  {
+    "id": "emerge-dc2-via-combo-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は手がかり[婚家の話題が出るたび口論]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc2-via-combo-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记线索[一提婆家就吵架]。"
+  },
+  {
+    "id": "emerge-dc2-via-cascade-judge-mention-v1",
+    "lang": "en",
+    "text": "The clue [The People at the Officetel] and Mr. Lee Jun-ho's avoidance pattern connect into a new line of review. This court will treat it as a separate clue."
+  },
+  {
+    "id": "emerge-dc2-via-cascade-judge-mention-v1",
+    "lang": "ja",
+    "text": "手がかり[オフィステルの人々]とイ・ジュノさんの回避パターンは、新たな検討の筋につながっています。本法廷はこれを別個の手がかりとして扱います。"
+  },
+  {
+    "id": "emerge-dc2-via-cascade-judge-mention-v1",
+    "lang": "zh-CN",
+    "text": "线索[公寓里的人们]与李俊浩先生的回避模式相连，构成了新的审查路径。本法庭将其作为单独线索处理。"
+  },
+  {
+    "id": "emerge-dc2-via-cascade-a-response-v1",
+    "lang": "en",
+    "text": "Your Honor, I have confirmed the same pattern several times as well."
+  },
+  {
+    "id": "emerge-dc2-via-cascade-a-response-v1",
+    "lang": "ja",
+    "text": "判事様、私も同じパターンを何度も確認しています。"
+  },
+  {
+    "id": "emerge-dc2-via-cascade-a-response-v1",
+    "lang": "zh-CN",
+    "text": "审判官，我也多次确认过同样的模式。"
+  },
+  {
+    "id": "emerge-dc2-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the clue [The In-Laws Topic Always Becomes a Fight]."
+  },
+  {
+    "id": "emerge-dc2-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は手がかり[婚家の話題が出るたび口論]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc2-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记线索[一提婆家就吵架]。"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-v1",
+    "lang": "en",
+    "text": "Stop bringing up my family already!"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-v1",
+    "lang": "ja",
+    "text": "うちの家族の話はもうやめてくれ！"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-v1",
+    "lang": "zh-CN",
+    "text": "我家的事就别再提了！"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-judge-catch-v1",
+    "lang": "en",
+    "text": "Mr. Lee Jun-ho, the very topic you are avoiding will be reviewed as a clue."
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-judge-catch-v1",
+    "lang": "ja",
+    "text": "イ・ジュノさん、あなたが回避しているその話題自体を手がかりとして検討します。"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-judge-catch-v1",
+    "lang": "zh-CN",
+    "text": "李俊浩先生，你正在回避的那个话题本身，将作为线索进行审查。"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-b-admit-v1",
+    "lang": "en",
+    "text": "...I'm sorry, Your Honor. It is still difficult for me to say more."
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-b-admit-v1",
+    "lang": "ja",
+    "text": "……すみません、判事様。これ以上はまだ難しいです。"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-b-admit-v1",
+    "lang": "zh-CN",
+    "text": "……对不起，审判官。我还是很难再说下去。"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-judge-decree-v1",
+    "lang": "en",
+    "text": "This court officially registers the clue [The In-Laws Topic Always Becomes a Fight]."
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-judge-decree-v1",
+    "lang": "ja",
+    "text": "本法廷は手がかり[婚家の話題が出るたび口論]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc2-via-b-outburst-judge-decree-v1",
+    "lang": "zh-CN",
+    "text": "本法庭正式登记线索[一提婆家就吵架]。"
+  },
+  {
+    "id": "emerge-dc2-via-judge-auto-decree-v1",
+    "lang": "en",
+    "text": "Mr. Lee Jun-ho's statements repeatedly avoid family-related topics. This court will organize that pattern as the separate clue [The In-Laws Topic Always Becomes a Fight]."
+  },
+  {
+    "id": "emerge-dc2-via-judge-auto-decree-v1",
+    "lang": "ja",
+    "text": "イ・ジュノさんの陳述では家族に関する話題の回避が繰り返されています。本法廷はそのパターンを別個の手がかり[婚家の話題が出るたび口論]として整理します。"
+  },
+  {
+    "id": "emerge-dc2-via-judge-auto-decree-v1",
+    "lang": "zh-CN",
+    "text": "李俊浩先生的陈述反复回避家庭相关话题。本法庭将这一模式整理为单独线索[一提婆家就吵架]。"
+  },
+  {
+    "id": "emerge-dc2-via-judge-auto-a-respond-v1",
+    "lang": "en",
+    "text": "Yes, Your Honor. I will accept that."
+  },
+  {
+    "id": "emerge-dc2-via-judge-auto-a-respond-v1",
+    "lang": "ja",
+    "text": "はい、判事様。受け入れます。"
+  },
+  {
+    "id": "emerge-dc2-via-judge-auto-a-respond-v1",
+    "lang": "zh-CN",
+    "text": "是，审判官。我接受。"
+  }
+]

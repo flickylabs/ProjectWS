@@ -1,0 +1,290 @@
+[
+  {
+    "id": "emerge-dc7-via-combo-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters the clue [Cancellation of the ₩20M Joint Savings]."
+  },
+  {
+    "id": "emerge-dc7-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters the clue [Cancellation of the ₩20M Joint Savings]."
+  },
+  {
+    "id": "emerge-dc7-via-b-interject-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters the clue [Cancellation of the ₩20M Joint Savings]."
+  },
+  {
+    "id": "emerge-dc7-via-judge-auto-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "The discussion of how the joint savings was cancelled has accumulated sufficiently. This court formally enters the clue [Cancellation of the ₩20M Joint Savings]."
+  },
+  {
+    "id": "emerge-dc4-via-combo-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters the clue [The ₩20M I Wish I Could Take Back]."
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-mention-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "Looking at the previously entered [Telegram Investment Room] together with the cancellation documents, the final flow of the canceled funds now has to be resolved. This court will review the outcome of the funds after the transfer as a follow-up clue."
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters the clue [The ₩20M I Wish I Could Take Back]."
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "field": "behaviorHint",
+    "newValue": "Fixes the follow-up funds outcome as an independent clue. The Judge declares it plainly, without emotion."
+  },
+  {
+    "id": "emerge-dc4-via-a-outburst-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters the clue [The ₩20M I Wish I Could Take Back]."
+  },
+  {
+    "id": "emerge-dc4-via-judge-auto-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "The outcome of the funds after the investment-room transfer has still not been resolved. This court additionally enters the clue [The ₩20M I Wish I Could Take Back]."
+  },
+  {
+    "id": "emerge-dc3-via-combo-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters [Mr. Lee Jun-ho's Hidden Personal Account] as a clue."
+  },
+  {
+    "id": "emerge-dc3-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters [Mr. Lee Jun-ho's Hidden Personal Account] as a clue."
+  },
+  {
+    "id": "emerge-dc3-via-cascade-judge-decree-v1",
+    "lang": "en",
+    "field": "behaviorHint",
+    "newValue": "Confirms the connected money clues as a separate clue."
+  },
+  {
+    "id": "emerge-dc3-via-a-interject-judge-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court formally enters [Mr. Lee Jun-ho's Hidden Personal Account] as a clue."
+  },
+  {
+    "id": "emerge-dc3-via-judge-auto-decree-v1",
+    "lang": "en",
+    "field": "text",
+    "newValue": "This court finds that the unknown-sender text message and the withdrawal flow from the account in the husband's name are sufficiently aligned. This court formally enters [Mr. Lee Jun-ho's Hidden Personal Account] as a clue."
+  },
+  {
+    "id": "emerge-w2hd3-via-cascade-judge-mention-v1",
+    "lang": "en",
+    "field": "behaviorHint",
+    "newValue": "The Judge quietly points out only that A's claim of injury connects to the already opened clue."
+  },
+  {
+    "id": "emerge-dc7-via-combo-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は手がかり[2000万ウォン共同貯蓄の解約]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc7-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は手がかり[2000万ウォン共同貯蓄の解約]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc7-via-b-interject-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は手がかり[2000万ウォン共同貯蓄の解約]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc7-via-judge-auto-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "共同貯蓄がどのように解約されたのかについての議論は十分に積み重なりました。本法廷は手がかり[2000万ウォン共同貯蓄の解約]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc4-via-combo-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は手がかり[取り戻したい2000万ウォン]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-mention-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "すでに登録された[投資チャットルーム]を解約書類とあわせて見ると、解約された資金の最終的な流れを整理する必要があります。本法廷は、送金後の資金の行方を後続の手がかりとして検討します。"
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は手がかり[取り戻したい2000万ウォン]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "field": "behaviorHint",
+    "newValue": "後続の資金結果を独立した手がかりとして固定する。裁判官は感情を交えず、淡々と宣言する。"
+  },
+  {
+    "id": "emerge-dc4-via-a-outburst-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は手がかり[取り戻したい2000万ウォン]を正式に登録します。"
+  },
+  {
+    "id": "emerge-dc4-via-judge-auto-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "投資チャットルームへの送金後、資金がどうなったのかはまだ整理されていません。本法廷は追加で手がかり[取り戻したい2000万ウォン]を登録します。"
+  },
+  {
+    "id": "emerge-dc3-via-combo-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は[イ・ジュノ氏の隠された個人口座]を手がかりとして正式に登録します。"
+  },
+  {
+    "id": "emerge-dc3-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は[イ・ジュノ氏の隠された個人口座]を手がかりとして正式に登録します。"
+  },
+  {
+    "id": "emerge-dc3-via-cascade-judge-decree-v1",
+    "lang": "ja",
+    "field": "behaviorHint",
+    "newValue": "関連する金銭面の論点を別の手がかりとして確認する。"
+  },
+  {
+    "id": "emerge-dc3-via-a-interject-judge-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は[イ・ジュノ氏の隠された個人口座]を手がかりとして正式に登録します。"
+  },
+  {
+    "id": "emerge-dc3-via-judge-auto-decree-v1",
+    "lang": "ja",
+    "field": "text",
+    "newValue": "本法廷は、差出人不明のメッセージと夫名義口座からの出金の流れが十分に一致していると判断します。本法廷は[イ・ジュノ氏の隠された個人口座]を手がかりとして正式に登録します。"
+  },
+  {
+    "id": "emerge-w2hd3-via-cascade-judge-mention-v1",
+    "lang": "ja",
+    "field": "behaviorHint",
+    "newValue": "Aの「傷ついた」という訴えがすでに開かれた手がかりとつながっていることだけを、裁判官が静かに指摘する。"
+  },
+  {
+    "id": "emerge-dc7-via-combo-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式登记线索[2000万韩元共同储蓄的解约]。"
+  },
+  {
+    "id": "emerge-dc7-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式登记线索[2000万韩元共同储蓄的解约]。"
+  },
+  {
+    "id": "emerge-dc7-via-b-interject-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式登记线索[2000万韩元共同储蓄的解约]。"
+  },
+  {
+    "id": "emerge-dc7-via-judge-auto-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "关于共同储蓄如何被解约的讨论已经充分积累。本庭正式登记线索[2000万韩元共同储蓄的解约]。"
+  },
+  {
+    "id": "emerge-dc4-via-combo-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式登记线索[想要追回的2000万韩元]。"
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-mention-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "结合已经登记的[投资聊天室]和解约文件来看，被解约资金的最终流向现在必须得到厘清。本庭将把转账后的资金结果作为后续线索审查。"
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式登记线索[想要追回的2000万韩元]。"
+  },
+  {
+    "id": "emerge-dc4-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "behaviorHint",
+    "newValue": "将后续资金结果固定为独立线索。法官平静地宣告，不带情绪。"
+  },
+  {
+    "id": "emerge-dc4-via-a-outburst-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式登记线索[想要追回的2000万韩元]。"
+  },
+  {
+    "id": "emerge-dc4-via-judge-auto-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "投资聊天室转账后的资金结果仍未得到厘清。本庭追加登记线索[想要追回的2000万韩元]。"
+  },
+  {
+    "id": "emerge-dc3-via-combo-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式将[李俊浩隐藏的个人账户]登记为线索。"
+  },
+  {
+    "id": "emerge-dc3-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式将[李俊浩隐藏的个人账户]登记为线索。"
+  },
+  {
+    "id": "emerge-dc3-via-cascade-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "behaviorHint",
+    "newValue": "将相互关联的资金问题确认为单独线索。"
+  },
+  {
+    "id": "emerge-dc3-via-a-interject-judge-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭正式将[李俊浩隐藏的个人账户]登记为线索。"
+  },
+  {
+    "id": "emerge-dc3-via-judge-auto-decree-v1",
+    "lang": "zh-CN",
+    "field": "text",
+    "newValue": "本庭认为，无名发信人的短信与丈夫名义账户的取款流向已经充分吻合。本庭正式将[李俊浩隐藏的个人账户]登记为线索。"
+  },
+  {
+    "id": "emerge-w2hd3-via-cascade-judge-mention-v1",
+    "lang": "zh-CN",
+    "field": "behaviorHint",
+    "newValue": "法官只是平静指出，A关于受到伤害的陈述与已经开启的线索相连接。"
+  }
+]
