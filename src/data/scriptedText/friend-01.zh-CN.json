@@ -27739,6 +27739,321 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-w-1",
+          "witnessId": "w-1",
+          "variants": [
+            {
+              "id": "emerge-w1-via-cascade-judge-decree-v1",
+              "text": "根据此前登记的线索[群聊帖子的依据]，有必要单独确认群聊发言和当时的反应。传唤金世罗女士。",
+              "behaviorHint": "裁判官直接点出此前登记的线索名称，但保留判断，只平静宣布必要的确认程序。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:procedural",
+                "summonVerb:call"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-cascade-a-react-v1",
+              "text": "……连世罗也要吗，裁判官？不，如果世罗在场，那时群聊里的气氛就能解释清楚。",
+              "behaviorHint": "她一瞬间露出不安，但马上断定证人会支撑自己的立场。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:shaken_assertive",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-cascade-b-react-v1",
+              "text": "能确认的话就好，裁判官。需要听听当时在场的人怎么说。",
+              "behaviorHint": "她没有显露情绪，只简短表示接受。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:flat_acceptance",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-judge-mention-v1",
+              "text": "宋多恩女士的发言在群聊里是按什么顺序扩散的，将向当时在场的人确认。",
+              "behaviorHint": "裁判官中立整理材料所指向的发言顺序，并提出还需要进一步确认。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:neutral_inquiry",
+                "summonVerb:verify"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-a-react-v1",
+              "text": "……那件事群聊里的朋友们都看到了，裁判官。世罗当时也在。",
+              "behaviorHint": "她短短承认，同时把朋友们的目击当成支撑自己判断的依据抓住。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:guarded_agreement",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-judge-decree-v1",
+              "text": "本法庭将金世罗女士登记为证人。将确认群聊发言的顺序和当时的反应。",
+              "behaviorHint": "裁判官承接前面的反应，正式确定证人登记。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:formal_decree",
+                "summonVerb:register"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-b-context-v1",
+              "text": "那时群聊里大家都是同样的反应。我也不可能在那里一个人说别的话。",
+              "behaviorHint": "她的声音低而平，却绕开正面情绪，提到当时聊天室里的压力。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:flat_context",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-judge-decree-v1",
+              "text": "崔秀敏女士提到的当时聊天室反应，需要直接确认。相关内容将通过证人确认。请金世罗女士出庭。",
+              "behaviorHint": "裁判官不长篇引用崔秀敏的话，只抓住需要确认的点来推进程序。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:reactive_neutral",
+                "summonVerb:invite"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-a-react-v1",
+              "text": "……是，裁判官。世罗全都知道。当时不是只有我一个人那样看。",
+              "behaviorHint": "她掩住动摇，迅速把证人拉作自己一方的依据。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:defensive_assertive",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-judge-mention-v1",
+              "text": "需要当时在群聊里的人作出陈述。仅凭当事人的记忆，难以充分确认发言顺序。",
+              "behaviorHint": "裁判官整理停滞的环节，平静提出需要外部陈述。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:procedural_fallback",
+                "summonVerb:stateNeed"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-a-react-v1",
+              "text": "……是，裁判官。世罗当时在场。她应该也能说明群聊里的反应。",
+              "behaviorHint": "她对法庭主动确认的程序短暂停顿，但很快同意并整理自己的立场。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:hesitant_agreement",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-b-react-v1",
+              "text": "能确认的话就好。那间聊天室里的反应，我不能替别人说。",
+              "behaviorHint": "她没有多余的情绪表达，只承认需要确认。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:flat_acceptance",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-judge-decree-v1",
+              "text": "将听取金世罗女士的陈述。按顺序确认群聊中的发言和反应。",
+              "behaviorHint": "裁判官以程序方式确认可以传唤证人的状态，并缩小下一步确认范围。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:formal_decree",
+                "summonVerb:hearStatement"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

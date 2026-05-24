@@ -27287,6 +27287,321 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-w-1",
+          "witnessId": "w-1",
+          "variants": [
+            {
+              "id": "emerge-w1-via-cascade-judge-decree-v1",
+              "text": "先に登録された手がかり[グループチャット投稿の根拠]を見ると、グループチャットでの発言と当時の反応を別途確認する必要があります。キム・セラ氏を召喚いたします。",
+              "behaviorHint": "裁判官は先に登録された手がかり名を直接示しつつ判断は保留し、必要な確認手続きだけを落ち着いて宣言する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:procedural",
+                "summonVerb:call"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-cascade-a-react-v1",
+              "text": "……セラまでですか、裁判官？ いえ、セラがいれば、その時のグループチャットの空気は説明できるはずです。",
+              "behaviorHint": "一瞬不安が見えるが、すぐに証人が自分の立場を支えるはずだと断定する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:shaken_assertive",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-cascade-b-react-v1",
+              "text": "確認されるなら助かります、裁判官。その場にいた人の言葉が必要です。",
+              "behaviorHint": "感情を出さず、短く受け入れる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:flat_acceptance",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-judge-mention-v1",
+              "text": "ソン・ダウン氏の発言がグループチャットでどの順序で広がったのか、当時その場にいた人物に確認します。",
+              "behaviorHint": "裁判官は資料が示す発言の順序を中立的に整理し、追加確認の必要性を示す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:neutral_inquiry",
+                "summonVerb:verify"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-a-react-v1",
+              "text": "……それはグループチャットにいた友人たちがみんな見ていました、裁判官。セラもその場にいました。",
+              "behaviorHint": "短く認めながらも、友人たちの目撃を自分の判断の根拠のようにつかむ。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:guarded_agreement",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-judge-decree-v1",
+              "text": "本法廷でキム・セラ氏を証人として登録します。グループチャットでの発言の順序と当時の反応を確認します。",
+              "behaviorHint": "裁判官は直前の反応を受け、証人登録を確定する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:formal_decree",
+                "summonVerb:register"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-b-context-v1",
+              "text": "あの時のグループチャットでは、みんな同じ反応でした。そこで私だけが別の話を持ち出せる場でもありませんでした。",
+              "behaviorHint": "声は低く平坦だが、当時のチャット内の圧力を遠回しに持ち出す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:flat_context",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-judge-decree-v1",
+              "text": "チェ・スミン氏が言及した当時のチャット内の反応は、直接確認が必要です。関連内容は証人を通じて確認します。キム・セラ氏にお越しいただきます。",
+              "behaviorHint": "裁判官はチェ・スミンの言葉を長く引用せず、確認が必要な点だけを捉えて手続きを進める。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:reactive_neutral",
+                "summonVerb:invite"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-a-react-v1",
+              "text": "……はい、裁判官。セラが全部知っています。あの時、私だけがそう見ていたわけではありませんでした。",
+              "behaviorHint": "動揺を隠しながら、証人を自分側の根拠として素早く引き寄せる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:defensive_assertive",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-judge-mention-v1",
+              "text": "グループチャットに同席していた人物の陳述が必要です。当事者たちの記憶だけでは、発言の順序を十分に確認することは困難です。",
+              "behaviorHint": "裁判官は進行が止まった地点を整理し、外部の陳述が必要であることを落ち着いて提起する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:procedural_fallback",
+                "summonVerb:stateNeed"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-a-react-v1",
+              "text": "……はい、裁判官。セラはその場にいました。グループチャットの反応も説明できるはずです。",
+              "behaviorHint": "法廷側からの確認手続きに一瞬ためらうが、すぐに同意して自分の立場を整える。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:hesitant_agreement",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-b-react-v1",
+              "text": "確認されるなら助かります。あのチャット内の反応まで、私が代わりに話すことはできません。",
+              "behaviorHint": "不要な感情表現をせず、確認の必要性だけを認める。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:flat_acceptance",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-judge-decree-v1",
+              "text": "キム・セラ氏の陳述を聴取します。グループチャットでの発言と反応を順に確認します。",
+              "behaviorHint": "裁判官は証人を呼べる状態になったことを手続きとして確定し、次の確認範囲を絞る。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:formal_decree",
+                "summonVerb:hearStatement"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -27953,6 +27953,321 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-w-1",
+          "witnessId": "w-1",
+          "variants": [
+            {
+              "id": "emerge-w1-via-cascade-judge-decree-v1",
+              "text": "Looking at the previously registered clue [Grounds for the Group Chat Post], we need to separately confirm the group chat remarks and the reactions at the time. We summon Ms. Kim Se-ra.",
+              "behaviorHint": "The judge points directly to the previously registered clue name, withholds judgment, and calmly states only the needed confirmation procedure.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:procedural",
+                "summonVerb:call"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-cascade-a-react-v1",
+              "text": "...Even Sera, Your Honor? No, if Sera is here, she can explain the atmosphere in the group chat at the time.",
+              "behaviorHint": "A flash of anxiety shows, but she quickly insists the witness will support her position.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:shaken_assertive",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-cascade-b-react-v1",
+              "text": "I would like that confirmed, Your Honor. We need the words of someone who was there.",
+              "behaviorHint": "She gives brief agreement without showing emotion.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:cascade_from_card",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "priorCard:dc-1",
+                "tone:flat_acceptance",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-judge-mention-v1",
+              "text": "We will confirm with someone who was there at the time how Ms. Song Da-eun's remarks spread through the group chat and in what order.",
+              "behaviorHint": "The judge neutrally summarizes the order of remarks indicated by the materials and presents the need for additional confirmation.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:neutral_inquiry",
+                "summonVerb:verify"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-a-react-v1",
+              "text": "...All the friends in the group chat saw that, Your Honor. Sera was there too.",
+              "behaviorHint": "She briefly acknowledges it while holding onto the friends' observation as if it supports her own judgment.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:guarded_agreement",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-combo-judge-decree-v1",
+              "text": "We register Ms. Kim Se-ra as a witness before this court. We will confirm the order of the group chat remarks and the reactions at the time.",
+              "behaviorHint": "The judge accepts the preceding response and finalizes witness registration.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "comboRecipeId:combine-8",
+                "tone:formal_decree",
+                "summonVerb:register"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-b-context-v1",
+              "text": "At that time, everyone in the group chat reacted the same way. It was not a place where I could bring up something different on my own.",
+              "behaviorHint": "Her voice is low and flat, but she indirectly brings up the pressure inside the chat at the time.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:flat_context",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-judge-decree-v1",
+              "text": "The group chat reactions Ms. Choi Su-min mentioned at that time require direct confirmation. We will verify the related matter through a witness, Ms. Kim Se-ra.",
+              "behaviorHint": "The judge does not quote Choi Su-min at length and proceeds by isolating only the point that needs confirmation.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:reactive_neutral",
+                "summonVerb:invite"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-npc-a-react-v1",
+              "text": "...Yes, Your Honor. Sera knows all of it. I was not the only one who saw it that way then.",
+              "behaviorHint": "She hides her agitation and quickly pulls the witness in as support for her side.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:defensive_assertive",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-judge-mention-v1",
+              "text": "A statement is needed from someone who was in the group chat. The parties' memories alone are not enough to confirm the order of the remarks.",
+              "behaviorHint": "The judge organizes the stalled point and calmly raises the need for an outside statement.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:procedural_fallback",
+                "summonVerb:stateNeed"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-a-react-v1",
+              "text": "...Yes, Your Honor. Sera was there. She should be able to explain the group chat reactions too.",
+              "behaviorHint": "She hesitates for a moment at the court's own confirmation procedure, then agrees and restates her position.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:hesitant_agreement",
+                "archetype:premature_summary"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-b-react-v1",
+              "text": "I would like that confirmed. I cannot speak on behalf of the reactions in that chat room.",
+              "behaviorHint": "She acknowledges only the need for confirmation, without unnecessary emotional expression.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "target:witness:w-1",
+                "tone:flat_acceptance",
+                "archetype:affect_flattening"
+              ]
+            },
+            {
+              "id": "emerge-w1-via-fallback-judge-decree-v1",
+              "text": "We will hear Ms. Kim Se-ra's statement. We will confirm, in order, the remarks and reactions that occurred in the group chat.",
+              "behaviorHint": "The judge procedurally confirms that the witness can now be called and narrows the scope of the next confirmation.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-1",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "target:witness:w-1",
+                "tone:formal_decree",
+                "summonVerb:hearStatement"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }
