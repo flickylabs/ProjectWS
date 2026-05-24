@@ -25882,7 +25882,7 @@
         {
           "key": "dc-1.a.q1|soft",
           "dossierCardId": "dc-1",
-          "dossierCardName": "The surface of obsession",
+          "dossierCardName": "Grounds for the Group Chat Post",
           "questionId": "dc-1.a.q1",
           "tone": "soft",
           "relatedDisputes": [
@@ -25933,7 +25933,7 @@
         {
           "key": "dc-1.a.q1|mid",
           "dossierCardId": "dc-1",
-          "dossierCardName": "The surface of obsession",
+          "dossierCardName": "Grounds for the Group Chat Post",
           "questionId": "dc-1.a.q1",
           "tone": "mid",
           "relatedDisputes": [
@@ -25984,7 +25984,7 @@
         {
           "key": "dc-1.a.q1|hard",
           "dossierCardId": "dc-1",
-          "dossierCardName": "The surface of obsession",
+          "dossierCardName": "Grounds for the Group Chat Post",
           "questionId": "dc-1.a.q1",
           "tone": "hard",
           "relatedDisputes": [
@@ -26035,7 +26035,7 @@
         {
           "key": "dc-1.b.q1|soft",
           "dossierCardId": "dc-1",
-          "dossierCardName": "The surface of obsession",
+          "dossierCardName": "Grounds for the Group Chat Post",
           "questionId": "dc-1.b.q1",
           "tone": "soft",
           "relatedDisputes": [
@@ -26086,7 +26086,7 @@
         {
           "key": "dc-1.b.q1|mid",
           "dossierCardId": "dc-1",
-          "dossierCardName": "The surface of obsession",
+          "dossierCardName": "Grounds for the Group Chat Post",
           "questionId": "dc-1.b.q1",
           "tone": "mid",
           "relatedDisputes": [
@@ -26137,7 +26137,7 @@
         {
           "key": "dc-1.b.q1|hard",
           "dossierCardId": "dc-1",
-          "dossierCardName": "The surface of obsession",
+          "dossierCardName": "Grounds for the Group Chat Post",
           "questionId": "dc-1.b.q1",
           "tone": "hard",
           "relatedDisputes": [
@@ -27949,6 +27949,277 @@
             {
               "id": "contradict-b-3plus-v5",
               "text": "These are gaps I made. I will accept, as my own responsibility, even the reasons Da-eun came to misread me."
+            }
+          ]
+        }
+      ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-dc-1",
+          "dossierCardId": "dc-1",
+          "variants": [
+            {
+              "id": "emerge-dc1-via-combo-judge-query-v1",
+              "text": "Looking at the contact records and group chat capture just compared, the group chat post was made before Ms. Choi Su-min was asked directly. Ms. Song Da-eun, please confirm this sequence of events.",
+              "behaviorHint": "Immediately after the materials connect, the judge calmly verifies the time order.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-a-response-v1",
+              "text": "It is true that I posted first, Your Honor. But by then the contact had already gone on for several days, and it was not a situation I could just let pass.",
+              "behaviorHint": "A defends the conclusion first, then acknowledges only the timing fact.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-b-react-v1",
+              "text": "The record stands as it is, Your Honor. I was not given a chance to explain first about something no one had even asked me.",
+              "behaviorHint": "B adds only the fact in a low tone, leaving the sense that no chance to explain was given.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-judge-decree-v1",
+              "text": "Based on the time gap between the contact records and the group chat capture, this court registers [Grounds for the Group Chat Post] as a clue.",
+              "behaviorHint": "The judge procedurally turns the time gap in the materials into a clue.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-b-interject-v1",
+              "text": "Da-eun, did you actually check before saying that?",
+              "behaviorHint": "B briefly cuts in with a friend's form of address and does not display emotion.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "interrupt:true",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-judge-query-v1",
+              "text": "I will enter Ms. Choi Su-min's statement just now into the record. Ms. Song Da-eun, answer whether the group chat post was made before you confirmed directly with Ms. Choi Su-min.",
+              "behaviorHint": "The judge receives B's words but asks A about the timing of confirmation.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-judge-decree-v1",
+              "text": "I will separately review the question of confirmation timing that was just raised. I add [Grounds for the Group Chat Post] as a new clue.",
+              "behaviorHint": "The judge separates only the confirmation-timing issue raised by the interruption and turns it into a clue.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-a-confess-v1",
+              "text": "Honestly, my emotions got ahead of me, and I did post first. Still, at the time... that was the only way I could see it.",
+              "behaviorHint": "A's conclusion-first speech briefly breaks under emotion.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-judge-catch-v1",
+              "text": "It sounds as though you are acknowledging that the related post was written without accurate confirmation. Ms. Song Da-eun, do you wish to correct your answer just now?",
+              "behaviorHint": "The judge neutrally verifies a phrasing that sounds like an admission.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-judge-decree-v1",
+              "text": "Ms. Song Da-eun's answer just now makes pre-posting confirmation a point of issue. I will register [Grounds for the Group Chat Post] as a clue for review.",
+              "behaviorHint": "The judge turns the issue of pre-posting confirmation in the answer just given into a clue.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-judge-query-v1",
+              "text": "The sequence between the group chat statement and the timing of confirmation with Ms. Choi Su-min has not yet been organized. Ms. Song Da-eun, please explain the circumstances under which you posted in the group chat first.",
+              "behaviorHint": "The judge directly organizes a stalled point.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-a-response-v1",
+              "text": "If the act of posting is separated out, it will make me look unfavorable, Your Honor. But at the time, the continued contact itself was a warning sign, and I couldn't stay still.",
+              "behaviorHint": "A speaks defensively to avoid acknowledging the unfavorable timing.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-judge-decree-v1",
+              "text": "Looking at the submitted contact records and group chat capture together, the circumstances of the post need confirmation. I place [Grounds for the Group Chat Post] on the clue list.",
+              "behaviorHint": "The judge updates the clue list based on the materials already submitted.",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
             }
           ]
         }

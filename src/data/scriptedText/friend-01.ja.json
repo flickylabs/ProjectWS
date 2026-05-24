@@ -25216,7 +25216,7 @@
         {
           "key": "dc-1.a.q1|soft",
           "dossierCardId": "dc-1",
-          "dossierCardName": "執着の表側",
+          "dossierCardName": "グループチャット投稿の根拠",
           "questionId": "dc-1.a.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -25267,7 +25267,7 @@
         {
           "key": "dc-1.a.q1|mid",
           "dossierCardId": "dc-1",
-          "dossierCardName": "執着の表側",
+          "dossierCardName": "グループチャット投稿の根拠",
           "questionId": "dc-1.a.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -25318,7 +25318,7 @@
         {
           "key": "dc-1.a.q1|hard",
           "dossierCardId": "dc-1",
-          "dossierCardName": "執着の表側",
+          "dossierCardName": "グループチャット投稿の根拠",
           "questionId": "dc-1.a.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -25369,7 +25369,7 @@
         {
           "key": "dc-1.b.q1|soft",
           "dossierCardId": "dc-1",
-          "dossierCardName": "執着の表側",
+          "dossierCardName": "グループチャット投稿の根拠",
           "questionId": "dc-1.b.q1",
           "tone": "soft",
           "evidenceIds": [
@@ -25420,7 +25420,7 @@
         {
           "key": "dc-1.b.q1|mid",
           "dossierCardId": "dc-1",
-          "dossierCardName": "執着の表側",
+          "dossierCardName": "グループチャット投稿の根拠",
           "questionId": "dc-1.b.q1",
           "tone": "mid",
           "evidenceIds": [
@@ -25471,7 +25471,7 @@
         {
           "key": "dc-1.b.q1|hard",
           "dossierCardId": "dc-1",
-          "dossierCardName": "執着の表側",
+          "dossierCardName": "グループチャット投稿の根拠",
           "questionId": "dc-1.b.q1",
           "tone": "hard",
           "evidenceIds": [
@@ -27283,6 +27283,277 @@
             {
               "id": "contradict-b-3plus-v5",
               "text": "言葉が動いた分、私の側の責任の輪郭も明瞭になります。"
+            }
+          ]
+        }
+      ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-dc-1",
+          "dossierCardId": "dc-1",
+          "variants": [
+            {
+              "id": "emerge-dc1-via-combo-judge-query-v1",
+              "text": "先ほど照合された連絡記録とグループチャットのキャプチャを見ると、グループチャットへの投稿時刻はチェ・スミンさんに直接確認する前です。ソン・ダウンさん、この前後関係を確認してください。",
+              "behaviorHint": "資料がかみ合った直後、裁判官が時間の順序を落ち着いて確認する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-a-response-v1",
+              "text": "投稿した時点が先だったのは事実です、裁判官。でも当時はすでに数日間連絡が続いていて、私がそのまま流せる状況ではありませんでした。",
+              "behaviorHint": "Aは先に結論を守り、その後で時点の事実だけ認める。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-b-react-v1",
+              "text": "記録はそのままです、裁判官。私は、聞かれてもいないことを先に説明する機会をもらえませんでした。",
+              "behaviorHint": "Bは低い調子で事実だけを添え、説明の機会がなかった感覚を残す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-combo-judge-decree-v1",
+              "text": "連絡記録とグループチャットのキャプチャの時刻差を根拠に、本法廷に[グループチャット投稿の根拠]を手がかりとして登録します。",
+              "behaviorHint": "裁判官が資料の時間差を手続き上の手がかりにする。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:combination_result",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-b-interject-v1",
+              "text": "ダウンさん、ちゃんと確認してから言ったんですか。",
+              "behaviorHint": "Bが友人への呼び方で短く割って入り、感情は出さない。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "interrupt:true",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-judge-query-v1",
+              "text": "チェ・スミンさんの今の発言は記録します。ソン・ダウンさん、グループチャットに投稿した時点がチェ・スミンさんに直接確認する前だったのか答えてください。",
+              "behaviorHint": "裁判官がBの言葉を受けつつ、Aに確認時点を尋ねる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-npc-judge-decree-v1",
+              "text": "今提起された確認時点の問題は別途検討します。[グループチャット投稿の根拠]を新しい手がかりとして追加します。",
+              "behaviorHint": "裁判官が割り込み発言から出た確認時点だけを分離し、手がかりにする。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:npc_interjection",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-a-confess-v1",
+              "text": "正直、感情が先に立って、投稿を先にしてしまいました。それでも私は、当時は……そう見るしかありませんでした。",
+              "behaviorHint": "Aの結論型の話し方が、感情によって一瞬崩れる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-judge-catch-v1",
+              "text": "関連する投稿が正確な確認なしに書かれた点を認めているように聞こえます。ソン・ダウンさん、今の答えを訂正しますか。",
+              "behaviorHint": "裁判官が自白のように聞こえる表現を中立的に確認する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-outburst-judge-decree-v1",
+              "text": "ソン・ダウンさんの今の答えで、投稿前の確認有無が争点になりました。[グループチャット投稿の根拠]を手がかりとして登録し、検討します。",
+              "behaviorHint": "裁判官が今の答えに含まれる投稿前の確認有無を手がかりにする。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:emotional_outburst",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-judge-query-v1",
+              "text": "グループチャットでの発言とチェ・スミンさんに確認した時点との前後関係が、まだ整理されていません。ソン・ダウンさん、先にグループチャットへ投稿した経緯を話してください。",
+              "behaviorHint": "裁判官が停滞した論点を直接整理する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:party",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-a-response-v1",
+              "text": "投稿したことだけを切り離せば、私が不利に見えるはずです、裁判官。でも当時は、連絡が続いていること自体が危険なサインで、黙ってはいられませんでした。",
+              "behaviorHint": "Aが不利な時点を認めまいとして防御的に話す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-dc1-via-fallback-judge-decree-v1",
+              "text": "提出された連絡記録とグループチャットのキャプチャを合わせて見ると、投稿の経緯を確認する必要があります。[グループチャット投稿の根拠]を手がかりリストに載せます。",
+              "behaviorHint": "裁判官が提出済み資料をもとに手がかりリストを更新する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "trigger:judge_auto_mention",
+                "emerge:dc-1",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
             }
           ]
         }
