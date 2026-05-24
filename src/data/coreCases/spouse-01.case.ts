@@ -30,6 +30,11 @@ import {
   w3NarrativeTriggers,
   hd3NarrativeTriggers,
   w2NarrativeTriggers,
+  // Cycle 3 (외도 line)
+  e4NarrativeTriggers,
+  dc1NarrativeTriggers,
+  w1NarrativeTriggers,
+  dc2NarrativeTriggers,
 } from './spouse-01.narrative'
 
 /* ============================================================================
@@ -1396,6 +1401,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ko('너무 이르면 B가 더 깊게 닫힐 수 있음'),
         ],
       },
+      narrativeTriggers: e4NarrativeTriggers,
     },
     {
       id: 'e-5',
@@ -1632,6 +1638,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w1NarrativeTriggers,
     },
     {
       id: 'w-2',
@@ -1837,6 +1844,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc1NarrativeTriggers,
     },
     {
       id: 'dc-2',
@@ -1903,6 +1911,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc2NarrativeTriggers,
     },
     {
       id: 'dc-3',
