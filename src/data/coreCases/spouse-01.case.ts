@@ -21,6 +21,16 @@ import {
   type LocalizedString,
   type LocalizedKeywordSet,
 } from '../../types/coreCase'
+import {
+  dc3NarrativeTriggers,
+  e7NarrativeTriggers,
+  dc7NarrativeTriggers,
+  e6NarrativeTriggers,
+  dc4NarrativeTriggers,
+  w3NarrativeTriggers,
+  hd3NarrativeTriggers,
+  w2NarrativeTriggers,
+} from './spouse-01.narrative'
 
 /* ============================================================================
  * Helpers — KO 권위 작성을 간결화하는 유틸. translate pass 후 외국어 채워짐.
@@ -1209,6 +1219,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: hd3NarrativeTriggers,
     },
   ],
 
@@ -1539,6 +1550,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('숨기려 한 건 맞지만 은닉은 아니었다는 이의.') },
         { id: 'misread', summary: ko('사기 피해 자체는 인증되지만 자기방어/은닉 해석은 열려 있음.') },
       ],
+      narrativeTriggers: e6NarrativeTriggers,
     },
     {
       id: 'e-7',
@@ -1582,6 +1594,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('A가 자기방어였다고 동기 frame을 주장.') },
         { id: 'misread', summary: ko('해지 사실은 인증되지만 책임 분리는 mediation 영역.') },
       ],
+      narrativeTriggers: e7NarrativeTriggers,
     },
   ],
 
@@ -1659,6 +1672,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w2NarrativeTriggers,
     },
     {
       id: 'w-3',
@@ -1692,6 +1706,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w3NarrativeTriggers,
     },
   ],
 
@@ -1966,6 +1981,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc3NarrativeTriggers,
     },
     {
       id: 'dc-4',
@@ -2041,6 +2057,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc4NarrativeTriggers,
     },
     {
       id: 'dc-7',
@@ -2102,6 +2119,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc7NarrativeTriggers,
     },
   ],
 

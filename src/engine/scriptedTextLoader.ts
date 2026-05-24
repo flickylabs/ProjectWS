@@ -965,26 +965,42 @@ export function getScriptedJudgeContradiction(
  * Core narrative — emergence_narrative channel에서 variant id로 직접 entry 조회.
  *
  * 일반 channel은 key + variants 선택 패턴이지만, emergence_narrative는 시퀀스 entries라
- * variant.id로 직접 lookup. 한 emergence(예: e-5)의 17 variants 중 특정 id 반환.
+ * variant.id로 직접 lookup.
+ *
+ * Cycle 1: evidence emergence만 (entry.evidenceId 또는 key=emerge-{id}).
+ * Cycle 2: dossierCard/witness/dispute emergence도 지원. variant id가 case 내 unique
+ *  하므로 모든 entries를 평면 검색 (성능 영향 미미 — 한 case의 emergence entries는
+ *  현재 9개 수준). emergenceId param은 hint 용도로 우선 매칭하되 미발견 시 fallback
+ *  으로 전체 검색.
  */
 export function getEmergenceVariantById(
-  caseId: string, evidenceId: string, variantId: string,
+  caseId: string, emergenceId: string, variantId: string,
 ): { id: string; text: string; behaviorHint: string; tags: string[] } | null {
   const bundle = loadBundle(caseId)
   if (!bundle) return null
   const ch = (bundle.channels as UnsafeAny)['emergence_narrative']
   if (!ch?.entries) return null
-  const entry = ch.entries.find(
-    (e: UnsafeAny) => e.evidenceId === evidenceId || e.key === `emerge-${evidenceId}`,
+  // 1차: emergenceId hint으로 entry 우선 매칭
+  const matched = ch.entries.find(
+    (e: UnsafeAny) =>
+      e.evidenceId === emergenceId ||
+      e.dossierCardId === emergenceId ||
+      e.witnessId === emergenceId ||
+      e.disputeId === emergenceId ||
+      e.key === `emerge-${emergenceId}`,
   )
-  if (!entry?.variants?.length) return null
-  const variant = entry.variants.find((v: UnsafeAny) => v.id === variantId)
-  if (!variant) return null
+  const hit =
+    matched?.variants?.find?.((v: UnsafeAny) => v.id === variantId) ??
+    // 2차: 평면 검색 (witness w-2의 disputeContext 분기, composite emergenceId 등)
+    ch.entries
+      .flatMap((e: UnsafeAny) => (Array.isArray(e.variants) ? e.variants : []))
+      .find((v: UnsafeAny) => v.id === variantId)
+  if (!hit) return null
   return {
-    id: variant.id,
-    text: variant.text,
-    behaviorHint: variant.behaviorHint ?? '',
-    tags: Array.isArray(variant.tags) ? variant.tags : [],
+    id: hit.id,
+    text: hit.text,
+    behaviorHint: hit.behaviorHint ?? '',
+    tags: Array.isArray(hit.tags) ? hit.tags : [],
   }
 }
 
