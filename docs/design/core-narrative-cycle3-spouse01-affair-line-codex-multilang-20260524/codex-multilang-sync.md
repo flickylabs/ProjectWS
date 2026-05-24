@@ -1,20 +1,23 @@
 # Codex Thread — spouse-01 Cycle 3 외도 line 다국어 sync
 
 작성일: 2026-05-24
-주체: Codex worktree (baseline anchor 영역)
+주체: Codex / ChatGPT (외부 AI 도구) — 사용자가 폴더 업로드 + prompt paste 방식
 범위: 채널 `emergence_narrative` 의 Cycle 3 entry — e-4 (12 variants) + dc-1 (13) + w-1 (13) + dc-2 (13) = 51 variants × 3 lang = **153 entry sync**
 
 ---
 
-## §0. 진입 조건
+## §0. 사용 방식
+
+본 의뢰서는 **외부 AI 도구 (ChatGPT / OpenAI Codex web 등)** 에 사용자가 직접 전달하는 방식. worktree spawn 또는 새 ClaudeCode 세션 불필요.
 
 | 항목 | 조건 |
 |---|---|
-| worktree spawn | `git worktree add -b codex/spouse01-cycle3-affair-line-multilang ../ws-spouse01-cycle3-affair-line-multilang main` |
-| safe.directory | `git config --global --add safe.directory $worktree_path` 필수 |
-| 작업 시작 전 | `git status --short` clean |
-| PowerShell 회피 | Write/Edit tool로만 변경 (인코딩 mojibake 회피) |
-| 산출 | branch `codex/spouse01-cycle3-affair-line-multilang` push |
+| 사용 도구 | ChatGPT / OpenAI Codex web Project 또는 채팅 첨부 |
+| 입력 | 본 폴더 파일 6개 모두 업로드 (사용자가 ZIP 또는 개별) |
+| Prompt | §7 paste-ready prompt 참조 |
+| 출력 형식 | JSON 응답 (`output-cycle3-multilang.json`, 153 entry 배열) |
+| 산출 처리 | 사용자가 JSON 응답 다운로드 → `result/output-cycle3-multilang.json` 저장 → 메인 Claude 세션에 알림 |
+| 메인 Claude 후속 | spouse-01.{en,ja,zh-CN}.json 에 apply + tsc + build + qa:fast + commit + push |
 
 ---
 
@@ -22,7 +25,7 @@
 
 Core System narrative wrapper layer Cycle 3 — spouse-01 외도 line (d-1 영역).
 
-- KO commit: main HEAD `6308113c` 시점에 51 entry (`src/data/scriptedText/spouse-01.json` channels.emergence_narrative.entries) 적용 완료
+- KO commit: main HEAD `cb770125` 시점에 51 entry (`src/data/scriptedText/spouse-01.json` channels.emergence_narrative.entries) 적용 완료 + '단서 → 단서' 명칭 일괄 변경 반영
 - 본 작업: EN/JA/ZH-CN sync 51 entry × 3 lang = 153 entry 작성
 - Brief: `docs/design/core-narrative-cycle3-spouse01-affair-line-20260524/` 정독 권장 (특히 gpt-pro-brief.md + spouse01-tone-samples.md + 진실 노출 정책)
 
@@ -31,9 +34,9 @@ Core System narrative wrapper layer Cycle 3 — spouse-01 외도 line (d-1 영�
 | 영역 | id | 자연 명칭 | trigger 수 | KO entry |
 |---|---|---|---|---|
 | 증거 | `e-4` | 발신자 미상 문자 | 4 (cascade / a-interject / b-interject / fallback) | 12 |
-| 사건 카드 | `dc-1` | 오피스텔의 사람들 | 4 (combo / cascade / b-interject / fallback) | 13 |
+| 단서 | `dc-1` | 오피스텔의 사람들 | 4 (combo / cascade / b-interject / fallback) | 13 |
 | 증인 | `w-1` | 오피스텔 경비 (호출 가능 surface) | 4 (cascade / a-interject / b-outburst / fallback) | 13 |
-| 사건 카드 | `dc-2` | 시댁 얘기만 나오면 싸움 (cross-line d-1+d-2) | 4 (combo / cascade / b-outburst / fallback) | 13 |
+| 단서 | `dc-2` | 시댁 얘기만 나오면 싸움 (cross-line d-1+d-2) | 4 (combo / cascade / b-outburst / fallback) | 13 |
 
 ### 외도 line cascade chain
 
@@ -45,7 +48,7 @@ e-3 (initial) → e-4 → dc-1 → w-1
 
 ---
 
-## §2. KO baseline (main HEAD `6308113c`)
+## §2. KO baseline (main HEAD `cb770125`)
 
 ### 영향 파일
 
@@ -74,14 +77,14 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 | 13 | **dc-1** | combination_result | emerge-dc1-via-combo-judge-query-v1 | judge→b | combine-1 — 영수증·GPS 단일 동선 묶임, 사실 관계 설명 요청 |
 | 14 | dc-1 | combination_result | emerge-dc1-via-combo-b-response-v1 | b→judge | 거기 다른 일 있어 들름 (한 박자 늦게) |
 | 15 | dc-1 | combination_result | emerge-dc1-via-combo-a-react-v1 | a→judge | 한 번도 들어본 적 없음, 외도 동선 분명 |
-| 16 | dc-1 | combination_result | emerge-dc1-via-combo-judge-decree-v1 | judge→all | [오피스텔의 사람들] 사건 카드 정식 등재 |
+| 16 | dc-1 | combination_result | emerge-dc1-via-combo-judge-decree-v1 | judge→all | [오피스텔의 사람들] 단서 정식 등재 |
 | 17 | dc-1 | cascade_from_card | emerge-dc1-via-cascade-judge-mention-v1 | judge→all | priorCard:e-4 — 문자·영수증·GPS 같은 시기 동선 연결 |
 | 18 | dc-1 | cascade_from_card | emerge-dc1-via-cascade-a-response-v1 | a→judge | 우연으로 넘기기엔 너무 많음 (의심 강화) |
-| 19 | dc-1 | cascade_from_card | emerge-dc1-via-cascade-judge-decree-v1 | judge→all | [오피스텔의 사람들] 사건 카드 정식 등재 |
+| 19 | dc-1 | cascade_from_card | emerge-dc1-via-cascade-judge-decree-v1 | judge→all | [오피스텔의 사람들] 단서 정식 등재 |
 | 20 | dc-1 | npc_interjection (b) | emerge-dc1-via-b-interject-v1 | b→all | 다른 사정 있어 방문할 수 있음, 외도 단정 X |
 | 21 | dc-1 | npc_interjection (b) | emerge-dc1-via-b-interject-judge-react-v1 | judge→b | '다른 사정'이 무엇인지 설명 요청 |
 | 22 | dc-1 | npc_interjection (b) | emerge-dc1-via-b-interject-b-elaborate-v1 | b→judge | 가족 쪽 어쩔 수 없는 사정, 자세한 건 어려움 |
-| 23 | dc-1 | npc_interjection (b) | emerge-dc1-via-b-interject-judge-decree-v1 | judge→all | [오피스텔의 사람들] 사건 카드 정식 등재 |
+| 23 | dc-1 | npc_interjection (b) | emerge-dc1-via-b-interject-judge-decree-v1 | judge→all | [오피스텔의 사람들] 단서 정식 등재 |
 | 24 | dc-1 | judge_auto_mention | emerge-dc1-via-judge-auto-decree-v1 | judge→all | 4턴 fallback — 영수증·GPS·문자 묶어 [오피스텔의 사람들] 단서 등재 |
 | 25 | dc-1 | judge_auto_mention | emerge-dc1-via-judge-auto-a-respond-v1 | a→judge | 예, 받아들이겠습니다 |
 | 26 | **w-1** | cascade_from_card | emerge-w1-via-cascade-judge-mention-v1 | judge→all | priorCard:dc-1 — 현장 출입 확인 인물 확보 필요, 오피스텔 경비 소환 가능 |
@@ -100,14 +103,14 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 | 39 | **dc-2** | combination_result | emerge-dc2-via-combo-judge-query-v1 | judge→b | combine-6 — 이준호 씨의 가족 언급 회피 + 문자 연관성, 입 닫는 패턴 동기 설명 요청 |
 | 40 | dc-2 | combination_result | emerge-dc2-via-combo-b-response-v1 | b→judge | …말씀드리기 어렵습니다 (긴 침묵) |
 | 41 | dc-2 | combination_result | emerge-dc2-via-combo-a-react-v1 | a→judge | 저도 그 패턴 분명히 느끼고 있었음 |
-| 42 | dc-2 | combination_result | emerge-dc2-via-combo-judge-decree-v1 | judge→all | [시댁 얘기만 나오면 싸움] 사건 카드 정식 등재 |
+| 42 | dc-2 | combination_result | emerge-dc2-via-combo-judge-decree-v1 | judge→all | [시댁 얘기만 나오면 싸움] 단서 정식 등재 |
 | 43 | dc-2 | cascade_from_card | emerge-dc2-via-cascade-judge-mention-v1 | judge→all | priorCard:dc-1 — [오피스텔의 사람들] 단서와 이준호 씨 회피 패턴 연결한 새로운 접근, 별도 카드 |
 | 44 | dc-2 | cascade_from_card | emerge-dc2-via-cascade-a-response-v1 | a→judge | 저도 동일 패턴 여러 차례 확인 |
-| 45 | dc-2 | cascade_from_card | emerge-dc2-via-cascade-judge-decree-v1 | judge→all | [시댁 얘기만 나오면 싸움] 사건 카드 정식 등재 |
+| 45 | dc-2 | cascade_from_card | emerge-dc2-via-cascade-judge-decree-v1 | judge→all | [시댁 얘기만 나오면 싸움] 단서 정식 등재 |
 | 46 | dc-2 | emotional_outburst (b) | emerge-dc2-via-b-outburst-v1 | b→all | B 격앙 — "우리 집 얘기는 이제 그만 좀!" (본인 가족 자기 시점 호칭) |
 | 47 | dc-2 | emotional_outburst (b) | emerge-dc2-via-b-outburst-judge-catch-v1 | judge→b | 본인이 회피하는 그 화제 자체를 단서로 검토 |
 | 48 | dc-2 | emotional_outburst (b) | emerge-dc2-via-b-outburst-b-admit-v1 | b→judge | …죄송합니다, 더 어려움 (위축) |
-| 49 | dc-2 | emotional_outburst (b) | emerge-dc2-via-b-outburst-judge-decree-v1 | judge→all | [시댁 얘기만 나오면 싸움] 사건 카드 정식 등재 |
+| 49 | dc-2 | emotional_outburst (b) | emerge-dc2-via-b-outburst-judge-decree-v1 | judge→all | [시댁 얘기만 나오면 싸움] 단서 정식 등재 |
 | 50 | dc-2 | judge_auto_mention | emerge-dc2-via-judge-auto-decree-v1 | judge→all | 4턴 fallback — 이준호 씨 진술 가족 화제 회피 반복, 별도 단서 카드 정리 |
 | 51 | dc-2 | judge_auto_mention | emerge-dc2-via-judge-auto-a-respond-v1 | a→judge | 예, 받아들이겠습니다 |
 
@@ -172,9 +175,47 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 - ✗ JA: "婚家" (아내 시점)
 - ✗ ZH-CN: "婆家" (아내 시점)
 
-⚠ dc-2 사건 카드명 자체 `[시댁 얘기만 나오면 싸움]` = 시스템 narrator 영역으로 OK (재판관/시스템이 부르는 카드명, NPC 본인 발화 영역 X). 다국어 카드명도 일관 — 판사 발화에서는 시스템 카드명 인용 시 사용. 단 B 본인 발화 entry에서만 자기 시점 호칭 사용.
+⚠ dc-2 단서명 자체 `[시댁 얘기만 나오면 싸움]` = 시스템 narrator 영역으로 OK (재판관/시스템이 부르는 카드명, NPC 본인 발화 영역 X). 다국어 카드명도 일관 — 판사 발화에서는 시스템 카드명 인용 시 사용. 단 B 본인 발화 entry에서만 자기 시점 호칭 사용.
 
-### 3.6. 진실 노출 정책 (본 cycle 가장 위험 영역)
+### 3.6. 단서(clue) 명칭 정책 — 신규 권위
+
+`feedback_dossier_card_renamed_to_clue.md` 권위 (family-01 cycle 5 결정, 2026-05-24).
+
+player-visible text 영역에서 **'dossier card / 사건 카드'** → **'단서'** 명칭 변경. 본 cycle KO entry는 이미 baseline `cb770125`에서 "단서"로 적용 완료. 다국어 sync도 동일 명칭 사용:
+
+| KO | EN | JA | ZH-CN |
+|---|---|---|---|
+| 단서 | clue | 手がかり | 线索 |
+| ✗ "사건 카드" 사용 X | ✗ "case card" 사용 X | ✗ "事件カード" 사용 X | ✗ "案件卡" 사용 X |
+
+#### 증거(evidence) vs 단서(clue) 경계 — 다국어 핵심
+
+두 영역은 게임 메커니즘상 다른 layer로 구분:
+
+- **증거 (evidence, e-1 ~ e-N)** = 사건 raw artifact (영수증, 통화기록, 송금 내역 등)
+- **단서 (clue, dc-1 ~ dc-N)** = 증거 묶어 만든 추론 결과 (예: "오피스텔의 사람들", "시댁 얘기만 나오면 싸움")
+
+다국어 사전:
+| KO | EN | JA | ZH-CN |
+|---|---|---|---|
+| 증거 | evidence | 証拠 | 证据 |
+| 단서 | clue | 手がかり | 线索 |
+
+다국어 번역 시 두 layer 경계 흐리는 표현 회피:
+- ✗ EN: "this clue is actually a piece of evidence" (layer 혼동)
+- ✗ JA: "この手がかりは証拠の一部" (layer 혼동)
+- ✗ ZH-CN: "这条线索其实是证据的一部分" (layer 혼동)
+
+본 cycle 단서 등재 영역 (judge decree entry 7건) 다국어 번역 예시:
+
+| KO | EN | JA | ZH-CN |
+|---|---|---|---|
+| "본 법정에 [오피스텔의 사람들] 단서를 정식 등재합니다." | "This court officially registers the clue [The People at the Officetel]." | "本法廷は手がかり[オフィステルの人々]を正式に登録します。" | "本法庭正式登记线索[公寓里的人们]。" |
+| "본 법정에 [시댁 얘기만 나오면 싸움] 단서를 정식 등재합니다." | "This court officially registers the clue [The In-Laws Topic Always Becomes a Fight]." | "本法廷は手がかり[婚家の話題が出るたび口論]を正式に登録します。" | "本法庭正式登记线索[一提婆家就吵架]。" |
+
+⚠ 단서 명칭은 본 cycle 신규 적용 영역. 기존 Cycle 1/2 외국어 entry는 별도 sync cycle에서 일괄 변경 예정 (본 cycle 외).
+
+### 3.7. 진실 노출 정책 (본 cycle 가장 위험 영역)
 
 `design_spouse01_truth_disclosure_policy` 권위 엄격 준수.
 
@@ -191,72 +232,49 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 
 ---
 
-## §4. 작업 단계
+## §4. 작업 산출 — JSON 응답 형식
 
-1. worktree spawn (위 §0)
-2. KO baseline 확인:
-   ```
-   git show main:src/data/scriptedText/spouse-01.json | grep -B2 -A40 "emerge-e-4\|emerge-dc-1\|emerge-w-1\|emerge-dc-2"
-   ```
-3. 외국어 파일에 본 batch 51 entry 추가:
-   - `src/data/scriptedText/spouse-01.en.json` channels.emergence_narrative.entries 배열에 4 새 key 추가 (emerge-e-4 / emerge-dc-1 / emerge-w-1 / emerge-dc-2)
-   - `src/data/scriptedText/spouse-01.ja.json` 동일
-   - `src/data/scriptedText/spouse-01.zh-CN.json` 동일
-4. 각 entry는 KO와 동일 구조 (id 동일, text 번역, behaviorHint 번역, tags 그대로, sourceRefs 그대로)
-5. 각 key 영역 구조 (KO 기준):
-   ```json
-   { "key": "emerge-e-4", "evidenceId": "e-4", "variants": [12 entry] }
-   { "key": "emerge-dc-1", "dossierCardId": "dc-1", "variants": [13 entry] }
-   { "key": "emerge-w-1", "witnessId": "w-1", "variants": [13 entry] }
-   { "key": "emerge-dc-2", "dossierCardId": "dc-2", "variants": [13 entry] }
-   ```
+본 의뢰서를 받은 AI(Codex/ChatGPT)는 **JSON 응답 1개 파일** (`output-cycle3-multilang.json`) 작성. 153 entry 배열 (51 entry × 3 lang).
 
-### tag 처리
+각 entry 구조:
 
-- tag values는 번역 X (`channel:emergence_narrative`, `speaker:a`, `trigger:cascade_from_card`, `priorCard:e-3` 등 그대로)
-- `callTerm:박지연_씨` / `callTerm:이준호_씨` / `callTerm:재판관님` 같은 한국어 token도 그대로 유지 (시스템 lookup용)
-- `comboRecipeId:combine-1` / `comboRecipeId:combine-6` 도 그대로 유지
-- `triggerSource:a` / `triggerSource:b` / `triggerSource:judge` 도 그대로 유지
+```json
+{
+  "id": "emerge-e4-via-cascade-judge-mention-v1",
+  "lang": "en",
+  "text": "{번역된 text}",
+  "behaviorHint": "{번역된 behaviorHint, 없으면 생략}"
+}
+```
+
+### tag 처리 영역
+
+외국어 entry의 tags는 KO와 동일 — 사용자 측에서 자동 복사 (메인 Claude 처리). AI는 `id` / `lang` / `text` / `behaviorHint` 만 응답하면 됨.
+
+### 153 entry 분포
+
+| lang | emerge-e-4 | emerge-dc-1 | emerge-w-1 | emerge-dc-2 | 합계 |
+|---|---|---|---|---|---|
+| en | 12 | 13 | 13 | 13 | 51 |
+| ja | 12 | 13 | 13 | 13 | 51 |
+| zh-CN | 12 | 13 | 13 | 13 | 51 |
+| **합계** | **36** | **39** | **39** | **39** | **153** |
 
 ---
 
-## §5. 검증
+## §5. 메인 Claude 후속 (Codex 응답 도착 시)
 
-```
-git status --short  # 외국어 3 file만 modified 기대
-npx tsc --noEmit
-npm run build  # tsc -b --force + vite build
-npm run -s qa:fast 2>&1 | tail -20
-```
+사용자가 JSON 응답을 `docs/design/core-narrative-cycle3-spouse01-affair-line-codex-multilang-20260524/result/output-cycle3-multilang.json` 에 저장하고 메인 세션에 알리면:
 
-bundle merge 검증:
-```
-node -e "JSON.parse(require('fs').readFileSync('src/data/scriptedText/spouse-01.en.json','utf8'))"
-node -e "JSON.parse(require('fs').readFileSync('src/data/scriptedText/spouse-01.ja.json','utf8'))"
-node -e "JSON.parse(require('fs').readFileSync('src/data/scriptedText/spouse-01.zh-CN.json','utf8'))"
-```
-
-### qa:fast PASS 필수 (강화 권위)
-
-Cycle 2 사고 패턴 회피 — qa:fast가 surface-name gate / truth-leak gate 등 게임 정책 위반 검출. P0 발견 시 main session에 보고 + sync.md §3.5 진실 노출 영역 재검토.
+1. 메인 Claude가 `spouse-01.{en,ja,zh-CN}.json` channels.emergence_narrative.entries 에 4 새 key 추가 (id 매핑으로 KO tags 자동 복사)
+2. `npx tsc --noEmit` PASS
+3. `npm run build` PASS
+4. `npm run -s qa:fast` RELEASE READY (static P0=0, route P0=0)
+5. commit + push
 
 ---
 
-## §6. 산출
-
-```
-git add src/data/scriptedText/spouse-01.en.json \
-        src/data/scriptedText/spouse-01.ja.json \
-        src/data/scriptedText/spouse-01.zh-CN.json
-git commit -m "i18n(spouse-01): sync Cycle 3 외도 line — e-4 + dc-1 + w-1 + dc-2 emergence narrative (51 variants × 3 lang)"
-git push -u origin codex/spouse01-cycle3-affair-line-multilang
-```
-
-main session이 fast-forward merge 처리.
-
----
-
-## §7. 자매 cycle (참고)
+## §6. 자매 cycle (참고)
 
 본 cycle은 spouse-01 외도 line **단일 batch**. 자매 batch 없음.
 
@@ -264,4 +282,33 @@ main session이 fast-forward merge 처리.
 - `family-01` cycle (worktree `ws-family-01-cycle`, branch `family-01-cycle`) — family-01.{lang}.json만 변경, 본 sync와 충돌 X
 - `friend-01` cycle (worktree `ws-friend-01-cycle`, branch `friend-01-cycle`) — friend-01.{lang}.json만 변경, 본 sync와 충돌 X
 
-본 Codex worktree는 spouse-01.{lang}.json만 변경 → 다른 cycle worktree와 ScriptedText file 영역 완전 분리.
+본 sync는 spouse-01.{lang}.json만 변경 → 다른 cycle 영역과 ScriptedText file 영역 완전 분리.
+
+---
+
+## §7. 사용자가 외부 AI에 paste할 Prompt
+
+본 폴더 6개 파일 (README.md / codex-multilang-sync.md / feedback × 4) 을 ChatGPT/Codex Project에 업로드한 후, 아래 prompt 그대로 paste:
+
+```
+첨부한 codex-multilang-sync.md 의뢰서대로 spouse-01 Cycle 3 외도 line
+emergence narrative 외국어 sync 153 entry 작성.
+
+- KO baseline: src/data/scriptedText/spouse-01.json 의 emerge-e-4 / emerge-dc-1 / emerge-w-1 / emerge-dc-2 4 key 51 variants
+  (본 폴더 §2 표 참조 — 의뢰서 §2가 51 entry 풀 list)
+- 다국어 번역 원칙 (§3.1~3.7 정독 필수):
+  * 판사 격식 (Your Honor / 判事様 / 审判官)
+  * NPC dynamics (A/B 톤 차별)
+  * cascade_from_card entity 호명 일관 (§3.3 표 baseline)
+  * 본인 가족 호칭 자기 시점 (B 발화에 in-laws/婚家/婆家 X — §3.5)
+  * 단서 명칭 (clue / 手がかり / 线索, evidence와 layer 구분 — §3.6)
+  * 진실 노출 정책 엄격 (친형/조카/회생 다국어 surface X — §3.7)
+- 출력 형식: JSON 배열, 각 entry: {id, lang, text, behaviorHint?}
+- 153 entry (51 × en/ja/zh-CN)
+- 응답 파일명: output-cycle3-multilang.json
+```
+
+AI 응답 도착 후:
+1. 응답 JSON을 `result/output-cycle3-multilang.json` 에 저장
+2. 메인 Claude 세션에 "Cycle 3 다국어 응답 도착" 알림
+3. 메인 Claude가 spouse-01.{en,ja,zh-CN}.json 에 자동 apply + 검증 + commit + push
