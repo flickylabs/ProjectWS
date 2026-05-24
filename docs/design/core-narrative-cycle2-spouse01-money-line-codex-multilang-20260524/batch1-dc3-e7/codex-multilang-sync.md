@@ -31,7 +31,9 @@ Core System narrative wrapper layer Cycle 2 (자금 흐름 line) 첫 batch.
 | 영역 | id | 자연 명칭 | trigger 수 | KO entry |
 |---|---|---|---|---|
 | 사건 카드 | `dc-3` | 이준호의 비밀 개인 계좌 | 4 (combo / cascade / npc / fallback) | 13 |
-| 증거 | `e-7` | 공동 적금 해지 서류 | 4 (cascade / combo / npc / fallback) | 12 |
+| 증거 | `e-7` | 공동 적금 해지 서류 | 4 (cascade-mention / cascade-analysis / npc / fallback) | 12 |
+
+⚠ **검토 단계 수정 반영**: e-7 의 두 번째 trigger 는 `combination_result` 가 아닌 `cascade_from_card` 의 *분석 액션 분기* (cascade-analysis). 별도 계좌 출금 흐름 검토 중 자연 연속으로 공동 적금 해지 흐름이 드러나는 형태.
 
 ---
 
@@ -45,39 +47,35 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 
 `emergence_narrative` 채널은 Cycle 1에서 도입됨 (emerge-e-5 17 entry 기존 존재). 본 batch는 같은 channel의 entries 배열에 dc-3 + e-7 keys 추가.
 
-### 25 entry 구조
-
-⚠ **entry id list는 메인 Claude 세션이 GPT Pro 응답 도착 후 본 영역에 채워서 사용자에게 전달.**
-
-채우기 전 placeholder:
+### 25 entry 구조 (main HEAD `d885ac5f` 적용 완료, KO baseline 확정)
 
 | Trigger | # | ID | speaker→listener | 핵심 KO (1줄 요약) |
 |---|---|---|---|---|
-| **dc-3** combination_result | 1 | emerge-dc3-via-combo-judge-query-v1 | 판사→B | `{GPT 응답으로 채움}` |
-| dc-3 combination_result | 2 | emerge-dc3-via-combo-b-response-v1 | B→판사 | `{...}` |
-| dc-3 combination_result | 3 | emerge-dc3-via-combo-a-react-v1 | A→판사 | `{...}` |
-| dc-3 combination_result | 4 | emerge-dc3-via-combo-judge-decree-v1 | 판사→전체 | `{...}` |
-| **dc-3** cascade_from_card | 5 | emerge-dc3-via-cascade-judge-mention-v1 | 판사→B | `{...}` (priorCard:dc-cash-clue) |
-| dc-3 cascade_from_card | 6 | emerge-dc3-via-cascade-b-response-v1 | B→판사 | `{...}` |
-| dc-3 cascade_from_card | 7 | emerge-dc3-via-cascade-judge-decree-v1 | 판사→전체 | `{...}` |
-| **dc-3** npc_interjection | 8 | emerge-dc3-via-a-interject-v1 | A→판사 | `{...}` |
-| dc-3 npc_interjection | 9 | emerge-dc3-via-a-interject-judge-react-v1 | 판사→A | `{...}` |
-| dc-3 npc_interjection | 10 | emerge-dc3-via-a-interject-a-response-v1 | A→판사 | `{...}` |
-| dc-3 npc_interjection | 11 | emerge-dc3-via-a-interject-judge-decree-v1 | 판사→전체 | `{...}` |
-| **dc-3** judge_auto_mention | 12 | emerge-dc3-via-judge-auto-decree-v1 | 판사→B | `{...}` |
-| dc-3 judge_auto_mention | 13 | emerge-dc3-via-judge-auto-b-respond-v1 | B→판사 | `{...}` |
-| **e-7** cascade_from_card | 14 | emerge-e7-via-cascade-judge-mention-v1 | 판사→전체 | `{...}` (priorCard:dc-3) |
-| e-7 cascade_from_card | 15 | emerge-e7-via-cascade-b-response-v1 | B→판사 | `{...}` |
-| e-7 cascade_from_card | 16 | emerge-e7-via-cascade-judge-decree-v1 | 판사→전체 | `{...}` |
-| **e-7** combination_result | 17 | emerge-e7-via-combo-judge-analyze-v1 | 판사→전체 | `{...}` |
-| e-7 combination_result | 18 | emerge-e7-via-combo-b-acknowledge-v1 | B→판사 | `{...}` |
-| e-7 combination_result | 19 | emerge-e7-via-combo-judge-decree-v1 | 판사→전체 | `{...}` |
-| **e-7** npc_interjection | 20 | emerge-e7-via-b-interject-v1 | B→판사 | `{...}` |
-| e-7 npc_interjection | 21 | emerge-e7-via-b-interject-judge-react-v1 | 판사→B | `{...}` |
-| e-7 npc_interjection | 22 | emerge-e7-via-b-interject-b-elaborate-v1 | B→판사 | `{...}` |
-| e-7 npc_interjection | 23 | emerge-e7-via-b-interject-judge-decree-v1 | 판사→전체 | `{...}` |
-| **e-7** judge_auto_mention | 24 | emerge-e7-via-judge-auto-decree-v1 | 판사→전체 | `{...}` |
-| e-7 judge_auto_mention | 25 | emerge-e7-via-judge-auto-a-respond-v1 | A→판사 | `{...}` |
+| **dc-3** combination_result | 1 | emerge-dc3-via-combo-judge-query-v1 | 판사→B | 발신자 미상 문자 + 개인 계좌 출금 함께 검토, 별도 계좌 성격 질의 |
+| dc-3 combination_result | 2 | emerge-dc3-via-combo-b-response-v1 | B→판사 | 개인 관리 통장 인정, 사용처 보류 |
+| dc-3 combination_result | 3 | emerge-dc3-via-combo-a-react-v1 | A→판사 | 별도 계좌 존재 처음 들음 |
+| dc-3 combination_result | 4 | emerge-dc3-via-combo-judge-decree-v1 | 판사→전체 | [이준호의 비밀 개인 계좌] 사건 카드 정식 등재 |
+| **dc-3** cascade_from_card | 5 | emerge-dc3-via-cascade-judge-mention-v1 | 판사→B | priorCard:dc-cash-clue — [정기 자금 이동의 흔적] + 남편 명의 출금 cascade, 별도 계좌 운영 경위 질의 |
+| dc-3 cascade_from_card | 6 | emerge-dc3-via-cascade-b-response-v1 | B→판사 | 별도 관리 계좌 인정, 사용처 보류 |
+| dc-3 cascade_from_card | 7 | emerge-dc3-via-cascade-judge-decree-v1 | 판사→전체 | [이준호의 비밀 개인 계좌] 사건 카드 정식 등재 |
+| **dc-3** npc_interjection | 8 | emerge-dc3-via-a-interject-v1 | A→판사 | A 적극 끼어듦 — 남편 미공개 별도 계좌 출금 확인 요청 |
+| dc-3 npc_interjection | 9 | emerge-dc3-via-a-interject-judge-react-v1 | 판사→A | 별도 계좌 인지 경위 질의 |
+| dc-3 npc_interjection | 10 | emerge-dc3-via-a-interject-a-response-v1 | A→판사 | 남편 가방에서 통장 우연 목격 진술 |
+| dc-3 npc_interjection | 11 | emerge-dc3-via-a-interject-judge-decree-v1 | 판사→전체 | [이준호의 비밀 개인 계좌] 사건 카드 정식 등재 |
+| **dc-3** judge_auto_mention | 12 | emerge-dc3-via-judge-auto-decree-v1 | 판사→B | 5턴 fallback — 자료 흐름 충분 인정 + [이준호의 비밀 개인 계좌] 등재 |
+| dc-3 judge_auto_mention | 13 | emerge-dc3-via-judge-auto-b-respond-v1 | B→판사 | 계좌 존재 인정 |
+| **e-7** cascade_from_card | 14 | emerge-e7-via-cascade-judge-mention-v1 | 판사→전체 | priorCard:dc-3 — 남편 측 자금 정리 후 공동 적금 해지 절차 문서 제출 요청 |
+| e-7 cascade_from_card | 15 | emerge-e7-via-cascade-b-response-v1 | B→판사 | 해지 절차 본인 동의 없이 진행 단호 |
+| e-7 cascade_from_card | 16 | emerge-e7-via-cascade-judge-decree-v1 | 판사→전체 | [공동 적금 해지 서류] 정식 등재 |
+| **e-7** cascade_from_card (분석 분기) | 17 | emerge-e7-via-cascade-analysis-judge-query-v1 | 판사→전체 | priorCard:dc-3 — 별도 계좌 출금 검토 중 공동 적금 만기 전 해지 흔적 동시 발견, 위임장 서명 진위 확인 필요 |
+| e-7 cascade_from_card (분석 분기) | 18 | emerge-e7-via-cascade-analysis-b-acknowledge-v1 | B→판사 | 절차 동의한 적 없음 단호 |
+| e-7 cascade_from_card (분석 분기) | 19 | emerge-e7-via-cascade-analysis-judge-decree-v1 | 판사→전체 | [공동 적금 해지 서류] 정식 등재 |
+| **e-7** npc_interjection | 20 | emerge-e7-via-b-interject-v1 | B→판사 | B 적극 끼어듦 — 위임장 서명 본인 필적 아님 단호 |
+| e-7 npc_interjection | 21 | emerge-e7-via-b-interject-judge-react-v1 | 판사→B | 해지 서류 본 법정 제출 가능 여부 확인 |
+| e-7 npc_interjection | 22 | emerge-e7-via-b-interject-b-elaborate-v1 | B→판사 | 은행 서명 비교 절차 요청 |
+| e-7 npc_interjection | 23 | emerge-e7-via-b-interject-judge-decree-v1 | 판사→전체 | [공동 적금 해지 서류] 정식 등재 |
+| **e-7** judge_auto_mention | 24 | emerge-e7-via-judge-auto-decree-v1 | 판사→전체 | 5턴 fallback — 공동 적금 해지 경위 검토 필수, 해지 서류 등재 후 다음 절차 |
+| e-7 judge_auto_mention | 25 | emerge-e7-via-judge-auto-a-respond-v1 | A→판사 | 절차 수용 |
 
 ---
 

@@ -32,37 +32,35 @@ Brief: `docs/design/core-narrative-cycle2-spouse01-money-line-20260524/batch3-dc
 
 ---
 
-## §2. KO baseline (main HEAD)
+## §2. KO baseline (main HEAD `d885ac5f` 적용 완료)
 
-⚠ **entry id list는 메인 Claude 세션이 GPT Pro 응답 도착 후 본 영역에 채워서 사용자에게 전달.**
-
-| Trigger | # | ID | speaker→listener | 핵심 KO |
+| Trigger | # | ID | speaker→listener | 핵심 KO (1줄 요약) |
 |---|---|---|---|---|
-| **dc-4** combination_result | 1 | emerge-dc4-via-combo-judge-query-v1 | 판사→A | `{GPT 응답으로 채움}` |
-| dc-4 combination_result | 2 | emerge-dc4-via-combo-a-response-v1 | A→판사 | `{...}` |
-| dc-4 combination_result | 3 | emerge-dc4-via-combo-judge-decree-v1 | 판사→전체 | `{...}` |
-| **dc-4** cascade_from_card | 4 | emerge-dc4-via-cascade-judge-mention-v1 | 판사→A | `{...}` (priorCard:e-6) |
-| dc-4 cascade_from_card | 5 | emerge-dc4-via-cascade-a-response-v1 | A→판사 | `{...}` |
-| dc-4 cascade_from_card | 6 | emerge-dc4-via-cascade-judge-decree-v1 | 판사→전체 | `{...}` |
-| **dc-4** emotional_outburst | 7 | emerge-dc4-via-a-outburst-v1 | A→판사 | `{...}` |
-| dc-4 emotional_outburst | 8 | emerge-dc4-via-a-outburst-judge-catch-v1 | 판사→A | `{...}` |
-| dc-4 emotional_outburst | 9 | emerge-dc4-via-a-outburst-a-admit-v1 | A→판사 | `{...}` |
-| dc-4 emotional_outburst | 10 | emerge-dc4-via-a-outburst-judge-decree-v1 | 판사→전체 | `{...}` |
-| **dc-4** judge_auto_mention | 11 | emerge-dc4-via-judge-auto-decree-v1 | 판사→전체 | `{...}` |
-| dc-4 judge_auto_mention | 12 | emerge-dc4-via-judge-auto-a-respond-v1 | A→판사 | `{...}` |
-| **w-3** cascade_from_card | 13 | emerge-w3-via-cascade-judge-mention-v1 | 판사→A | `{...}` (priorCard:dc-4) |
-| w-3 cascade_from_card | 14 | emerge-w3-via-cascade-a-acknowledge-v1 | A→판사 | `{...}` |
-| w-3 cascade_from_card | 15 | emerge-w3-via-cascade-judge-summon-v1 | 판사→전체 | `{...}` |
-| **w-3** npc_interjection | 16 | emerge-w3-via-b-interject-v1 | B→판사 | `{...}` |
-| w-3 npc_interjection | 17 | emerge-w3-via-b-interject-judge-react-v1 | 판사→A | `{...}` |
-| w-3 npc_interjection | 18 | emerge-w3-via-b-interject-a-response-v1 | A→판사 | `{...}` |
-| w-3 npc_interjection | 19 | emerge-w3-via-b-interject-judge-summon-v1 | 판사→전체 | `{...}` |
-| **w-3** emotional_outburst | 20 | emerge-w3-via-a-outburst-v1 | A→판사 | `{...}` (박미라 이름 흘림) |
-| w-3 emotional_outburst | 21 | emerge-w3-via-a-outburst-judge-catch-v1 | 판사→A | `{...}` |
-| w-3 emotional_outburst | 22 | emerge-w3-via-a-outburst-a-admit-v1 | A→판사 | `{...}` |
-| w-3 emotional_outburst | 23 | emerge-w3-via-a-outburst-judge-summon-v1 | 판사→전체 | `{...}` |
-| **w-3** judge_auto_mention | 24 | emerge-w3-via-judge-auto-summon-v1 | 판사→전체 | `{...}` |
-| w-3 judge_auto_mention | 25 | emerge-w3-via-judge-auto-a-respond-v1 | A→판사 | `{...}` |
+| **dc-4** combination_result | 1 | emerge-dc4-via-combo-judge-query-v1 | 판사→A | 해지 서류 + 투자방 송금 기록 날짜/금액 일치, 해지액의 투자방 운영자 계좌 이동 이후 흐름 질의 |
+| dc-4 combination_result | 2 | emerge-dc4-via-combo-a-response-v1 | A→판사 | 돈 돌아오지 않음, 약속 수익도 전부 사라짐 (자기 폭로) |
+| dc-4 combination_result | 3 | emerge-dc4-via-combo-judge-decree-v1 | 판사→전체 | [돌이키고 싶은 2,000만 원] 사건 카드 정식 등재 |
+| **dc-4** cascade_from_card | 4 | emerge-dc4-via-cascade-judge-mention-v1 | 판사→A | priorCard:e-6 — 송금 기록 + 해지 서류 종합, 해지액 마지막 흐름 정리 필요 |
+| dc-4 cascade_from_card | 5 | emerge-dc4-via-cascade-a-response-v1 | A→판사 | 결과 수용 (수치) |
+| dc-4 cascade_from_card | 6 | emerge-dc4-via-cascade-judge-decree-v1 | 판사→전체 | [돌이키고 싶은 2,000만 원] 사건 카드 정식 등재 |
+| **dc-4** emotional_outburst | 7 | emerge-dc4-via-a-outburst-v1 | A→판사 | A 격앙 자기 폭로 — 돈 다 잃었음, 사기였음, 인정 못해 숨겼음 |
+| dc-4 emotional_outburst | 8 | emerge-dc4-via-a-outburst-judge-catch-v1 | 판사→A | 방금 진술을 해지액 결과 직접 인정으로 수용 |
+| dc-4 emotional_outburst | 9 | emerge-dc4-via-a-outburst-a-admit-v1 | A→판사 | 전부 본인 책임 수용 |
+| dc-4 emotional_outburst | 10 | emerge-dc4-via-a-outburst-judge-decree-v1 | 판사→전체 | [돌이키고 싶은 2,000만 원] 사건 카드 정식 등재 |
+| **dc-4** judge_auto_mention | 11 | emerge-dc4-via-judge-auto-decree-v1 | 판사→전체 | 5턴 fallback — 송금 이후 자금 결과 미정리, [돌이키고 싶은 2,000만 원] 추가 등재 |
+| dc-4 judge_auto_mention | 12 | emerge-dc4-via-judge-auto-a-respond-v1 | A→판사 | 수용 |
+| **w-3** cascade_from_card | 13 | emerge-w3-via-cascade-judge-mention-v1 | 판사→A | priorCard:dc-4 — 투자방 링크 전달 경위 확인, 전달자 존재 여부 질의 |
+| w-3 cascade_from_card | 14 | emerge-w3-via-cascade-a-acknowledge-v1 | A→판사 | 지인 한 명 있었음 시인 |
+| w-3 cascade_from_card | 15 | emerge-w3-via-cascade-judge-summon-v1 | 판사→전체 | 해당 인물 증인 호출 절차 허가 |
+| **w-3** npc_interjection | 16 | emerge-w3-via-b-interject-v1 | B→판사 | B 적극 끼어듦 — 투자방 소개자 신원 밝힘 요청 |
+| w-3 npc_interjection | 17 | emerge-w3-via-b-interject-judge-react-v1 | 판사→A | 링크 전달자 신원 본 법정 통보 요청 |
+| w-3 npc_interjection | 18 | emerge-w3-via-b-interject-a-response-v1 | A→판사 | 본인 지인 한 명 시인 |
+| w-3 npc_interjection | 19 | emerge-w3-via-b-interject-judge-summon-v1 | 판사→전체 | 해당 인물 증인 호출 절차 허가 |
+| **w-3** emotional_outburst | 20 | emerge-w3-via-a-outburst-v1 | A→판사 | A 격앙 — "미라가 보내준 링크" 이름 흘림, 책임 분산 톤 |
+| w-3 emotional_outburst | 21 | emerge-w3-via-a-outburst-judge-catch-v1 | 판사→A | 미라 씨 확인 필요 여부 판단 통보 |
+| w-3 emotional_outburst | 22 | emerge-w3-via-a-outburst-a-admit-v1 | A→판사 | 미라 씨 호출 요청 수용 |
+| w-3 emotional_outburst | 23 | emerge-w3-via-a-outburst-judge-summon-v1 | 판사→전체 | 박미라 씨 증인 호출 절차 허가 |
+| **w-3** judge_auto_mention | 24 | emerge-w3-via-judge-auto-summon-v1 | 판사→전체 | 5턴 fallback — 투자방 링크 출처 확인 더 미룰 수 없음, 관련 인물 증인 호출 절차 개방 |
+| w-3 judge_auto_mention | 25 | emerge-w3-via-judge-auto-a-respond-v1 | A→판사 | 수용 |
 
 ---
 

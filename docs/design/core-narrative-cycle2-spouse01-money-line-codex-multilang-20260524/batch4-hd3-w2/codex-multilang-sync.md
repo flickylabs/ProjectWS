@@ -34,34 +34,32 @@ Brief: `docs/design/core-narrative-cycle2-spouse01-money-line-20260524/batch4-hd
 
 ---
 
-## §2. KO baseline (main HEAD)
+## §2. KO baseline (main HEAD `d885ac5f` 적용 완료)
 
-⚠ **entry id list는 메인 Claude 세션이 GPT Pro 응답 도착 후 본 영역에 채워서 사용자에게 전달.**
-
-| Trigger | # | ID | speaker→listener | 핵심 KO |
+| Trigger | # | ID | speaker→listener | 핵심 KO (1줄 요약) |
 |---|---|---|---|---|
-| **h-d3** npc_interjection | 1 | emerge-hd3-via-b-interject-v1 | B→판사 | `{GPT 응답으로 채움}` |
-| h-d3 npc_interjection | 2 | emerge-hd3-via-b-interject-judge-react-v1 | 판사→B | `{...}` |
-| h-d3 npc_interjection | 3 | emerge-hd3-via-b-interject-b-response-v1 | B→판사 | `{...}` |
-| h-d3 npc_interjection | 4 | emerge-hd3-via-b-interject-judge-decree-v1 | 판사→전체 | `{...}` |
-| **h-d3** combination_result | 5 | emerge-hd3-via-combo-judge-query-v1 | 판사→A | `{...}` |
-| h-d3 combination_result | 6 | emerge-hd3-via-combo-a-response-v1 | A→판사 | `{...}` |
-| h-d3 combination_result | 7 | emerge-hd3-via-combo-judge-decree-v1 | 판사→전체 | `{...}` |
-| **h-d3** emotional_outburst | 8 | emerge-hd3-via-a-outburst-v1 | A→판사 | `{...}` |
-| h-d3 emotional_outburst | 9 | emerge-hd3-via-a-outburst-judge-catch-v1 | 판사→A | `{...}` |
-| h-d3 emotional_outburst | 10 | emerge-hd3-via-a-outburst-a-admit-v1 | A→판사 | `{...}` |
-| h-d3 emotional_outburst | 11 | emerge-hd3-via-a-outburst-judge-decree-v1 | 판사→전체 | `{...}` |
-| **h-d3** judge_auto_mention | 12 | emerge-hd3-via-judge-auto-decree-v1 | 판사→전체 | `{...}` |
-| h-d3 judge_auto_mention | 13 | emerge-hd3-via-judge-auto-a-respond-v1 | A→판사 | `{...}` |
-| **w-2(h-d3)** cascade_from_card | 14 | emerge-w2hd3-via-cascade-judge-mention-v1 | 판사→전체 | `{...}` (priorCard:dc-7) |
-| w-2(h-d3) cascade_from_card | 15 | emerge-w2hd3-via-cascade-a-acknowledge-v1 | A→판사 | `{...}` |
-| w-2(h-d3) cascade_from_card | 16 | emerge-w2hd3-via-cascade-judge-summon-v1 | 판사→전체 | `{...}` |
-| **w-2(h-d3)** npc_interjection | 17 | emerge-w2hd3-via-b-interject-v1 | B→판사 | `{...}` |
-| w-2(h-d3) npc_interjection | 18 | emerge-w2hd3-via-b-interject-judge-react-v1 | 판사→B | `{...}` |
-| w-2(h-d3) npc_interjection | 19 | emerge-w2hd3-via-b-interject-b-elaborate-v1 | B→판사 | `{...}` |
-| w-2(h-d3) npc_interjection | 20 | emerge-w2hd3-via-b-interject-judge-summon-v1 | 판사→전체 | `{...}` |
-| **w-2(h-d3)** judge_auto_mention | 21 | emerge-w2hd3-via-judge-auto-summon-v1 | 판사→전체 | `{...}` |
-| w-2(h-d3) judge_auto_mention | 22 | emerge-w2hd3-via-judge-auto-a-respond-v1 | A→판사 | `{...}` |
+| **h-d3** npc_interjection | 1 | emerge-hd3-via-b-interject-v1 | B→판사 | B 적극 끼어듦 — 별도 계좌만으로 설명 안 되는 부부 공동 적금 잔액 변화 짚음 |
+| h-d3 npc_interjection | 2 | emerge-hd3-via-b-interject-judge-react-v1 | 판사→B | 변화 확인 시점/경위 질의 |
+| h-d3 npc_interjection | 3 | emerge-hd3-via-b-interject-b-response-v1 | B→판사 | 통장 정리 중 발견 — 만기 전 해지, 본인 동의 절차와 불일치 |
+| h-d3 npc_interjection | 4 | emerge-hd3-via-b-interject-judge-decree-v1 | 판사→전체 | [공동 적금 2,000만원 해지 경위] 별도 쟁점 추가 |
+| **h-d3** combination_result | 5 | emerge-hd3-via-combo-judge-query-v1 | 판사→A | 해지 서류 + 앞선 설명 종합, 절차 진행 경위 별도 쟁점 확인 |
+| h-d3 combination_result | 6 | emerge-hd3-via-combo-a-response-v1 | A→판사 | 사정 있어 어쩔 수 없었음 |
+| h-d3 combination_result | 7 | emerge-hd3-via-combo-judge-decree-v1 | 판사→전체 | [공동 적금 2,000만원 해지 경위] 별도 쟁점 추가 |
+| **h-d3** emotional_outburst | 8 | emerge-hd3-via-a-outburst-v1 | A→판사 | A 격앙 — 남편 별도 계좌 얘기에 반박, 공동 적금 손댈 수밖에 없었음 흘림 (HEAD `63eb67bf` polish 반영 — "하시는데" → "하는데") |
+| h-d3 emotional_outburst | 9 | emerge-hd3-via-a-outburst-judge-catch-v1 | 판사→A | 방금 언급한 공동 적금 처리 경위 별도 검토 통보 |
+| h-d3 emotional_outburst | 10 | emerge-hd3-via-a-outburst-a-admit-v1 | A→판사 | 절차 답변 수용 |
+| h-d3 emotional_outburst | 11 | emerge-hd3-via-a-outburst-judge-decree-v1 | 판사→전체 | [공동 적금 2,000만원 해지 경위] 별도 쟁점 추가 |
+| **h-d3** judge_auto_mention | 12 | emerge-hd3-via-judge-auto-decree-v1 | 판사→전체 | 5턴 fallback — 양측 자금 흐름 정리 후 해지 경위 확인 필요, [공동 적금 2,000만원 해지 경위] 별도 쟁점 추가 |
+| h-d3 judge_auto_mention | 13 | emerge-hd3-via-judge-auto-a-respond-v1 | A→판사 | 수용 |
+| **w-2(h-d3)** cascade_from_card | 14 | emerge-w2hd3-via-cascade-judge-mention-v1 | 판사→전체 | priorCard:dc-7 — 해지 절차 객관적 확인 필요, 은행 측 증언으로 위임장 처리 경위 검토 |
+| w-2(h-d3) cascade_from_card | 15 | emerge-w2hd3-via-cascade-a-acknowledge-v1 | A→판사 | 절차 수용 |
+| w-2(h-d3) cascade_from_card | 16 | emerge-w2hd3-via-cascade-judge-summon-v1 | 판사→전체 | 해당 은행 직원 위임장 처리 경위 증언 호출 가능 절차 허가 |
+| **w-2(h-d3)** npc_interjection | 17 | emerge-w2hd3-via-b-interject-v1 | B→판사 | B 적극 끼어듦 — 위임장 처리 경위 객관적 증언 요청 |
+| w-2(h-d3) npc_interjection | 18 | emerge-w2hd3-via-b-interject-judge-react-v1 | 판사→B | 구체적으로 어떤 증언 요청인지 확인 |
+| w-2(h-d3) npc_interjection | 19 | emerge-w2hd3-via-b-interject-b-elaborate-v1 | B→판사 | 해지 절차 담당 은행 직원 증언 — 서류 확인 절차 진위 짚어 줄 것 요청 |
+| w-2(h-d3) npc_interjection | 20 | emerge-w2hd3-via-b-interject-judge-summon-v1 | 판사→전체 | 해당 은행 직원 위임장 처리 경위 증언 호출 가능 절차 허가 |
+| **w-2(h-d3)** judge_auto_mention | 21 | emerge-w2hd3-via-judge-auto-summon-v1 | 판사→전체 | 5턴 fallback — 위임장 처리 경위 확인 더 미룰 수 없음, 은행 측 직원 호출 절차 증언 청취 |
+| w-2(h-d3) judge_auto_mention | 22 | emerge-w2hd3-via-judge-auto-a-respond-v1 | A→판사 | 수용 |
 
 ---
 
