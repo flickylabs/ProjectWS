@@ -2227,7 +2227,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
   dossierCards: [
     {
       id: 'dc-1',
-      label: ko('확인 없이 매도한 건 누구인가'),
+      label: ko('단톡방 글의 근거'),
       description: ko('단톡방에서의 단정과 공개 매도 책임을 송다은 측에서 직접 추궁하는 첫 카드.'),
       type: 'derived_note',
       linkedDisputes: ['d-5'],
