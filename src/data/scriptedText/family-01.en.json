@@ -17891,7 +17891,7 @@
         {
           "key": "dc-2.b.q1|early",
           "dossierCardId": "dc-2",
-          "cardName": "abbreviated will",
+          "cardName": "amended will",
           "questionId": "dc-2.b.q1",
           "questionText": "Mr. Jeong-hoo Yoon, I still have both the handwritten practice copy and the 60/40 notarized copy written on the same day, so why did you resubmit the documents with your portion reduced?",
           "targetParty": "b",
@@ -17962,7 +17962,7 @@
         {
           "key": "dc-2.b.q1|mid",
           "dossierCardId": "dc-2",
-          "cardName": "abbreviated will",
+          "cardName": "amended will",
           "questionId": "dc-2.b.q1",
           "questionText": "Mr. Jeong-hoo Yoon, I still have both the handwritten practice copy and the 60/40 notarized copy written on the same day, so why did you resubmit the documents with your portion reduced?",
           "targetParty": "b",
@@ -18033,7 +18033,7 @@
         {
           "key": "dc-2.b.q1|late",
           "dossierCardId": "dc-2",
-          "cardName": "abbreviated will",
+          "cardName": "amended will",
           "questionId": "dc-2.b.q1",
           "questionText": "Mr. Jeong-hoo Yoon, I still have both the handwritten practice copy and the 60/40 notarized copy written on the same day, so why did you resubmit the documents with your portion reduced?",
           "targetParty": "b",
@@ -18104,7 +18104,7 @@
         {
           "key": "dc-2.b.q2|early",
           "dossierCardId": "dc-2",
-          "cardName": "abbreviated will",
+          "cardName": "amended will",
           "questionId": "dc-2.b.q2",
           "questionText": "If money wasn't the reason you changed to 60:40, even taking on the responsibility of forgery, then what were you trying to stop?",
           "targetParty": "b",
@@ -18175,7 +18175,7 @@
         {
           "key": "dc-2.b.q2|mid",
           "dossierCardId": "dc-2",
-          "cardName": "abbreviated will",
+          "cardName": "amended will",
           "questionId": "dc-2.b.q2",
           "questionText": "If money wasn't the reason you changed to 60:40, even taking on the responsibility of forgery, then what were you trying to stop?",
           "targetParty": "b",
@@ -18246,7 +18246,7 @@
         {
           "key": "dc-2.b.q2|late",
           "dossierCardId": "dc-2",
-          "cardName": "abbreviated will",
+          "cardName": "amended will",
           "questionId": "dc-2.b.q2",
           "questionText": "If money wasn't the reason you changed to 60:40, even taking on the responsibility of forgery, then what were you trying to stop?",
           "targetParty": "b",

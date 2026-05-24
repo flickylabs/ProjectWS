@@ -130,7 +130,7 @@ Current registry status: NONE.
 
 - Source `dc-1` `말년의 종이` (evidence `e-1+e-2+e-3`, dispute `d-1`) has **no generated `combinationLab.outputs[]` entry** that matches its content. The closest recipe-level inputs are `combine-11 e-2+e-3`, but its current output target is generated `dc-2` `형이 모르던 20년의 돈` content.
 - Generated `dc-3` `60대 40이 아니었다면` is an **extra bridge note with no exact claim/script dossier-card counterpart**. It is reachable through `combine-7`, `combine-10`, and `combine-12`; it is referenced by `duo.socialGraph` `w-2` and `v3Design.leadLines` `L-4`; and it unlocks dispute `d-4`.
-- Generated `dc-1` is conceptually source `dc-2` `줄인 유서`. Generated `dc-2` is conceptually source `dc-3` `20년의 돈`. The dossier id namespace is offset against the source-of-truth.
+- Generated `dc-1` is conceptually source `dc-2` `수정된 유언장` (Cycle 5 rename, previously `줄인 유서`). Generated `dc-2` is conceptually source `dc-3` `20년의 돈`. The dossier id namespace is offset against the source-of-truth.
 - Generated `dc-4` (`감춘 이유`) and `dc-5` (`어머니의 뜻`) already align with their source counterparts.
 - `v3Design.leadLines` `L-2` / `L-3` / `L-4` carry semantic offsets that mirror the generated id offset.
 
