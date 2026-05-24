@@ -35,6 +35,11 @@ import {
   dc1NarrativeTriggers,
   w1NarrativeTriggers,
   dc2NarrativeTriggers,
+  // Cycle 4 (h-d4 line — 비자금 원래 목적)
+  e8NarrativeTriggers,
+  e9NarrativeTriggers,
+  dc8NarrativeTriggers,
+  hd4NarrativeTriggers,
 } from './spouse-01.narrative'
 
 /* ============================================================================
@@ -1555,6 +1560,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: hd4NarrativeTriggers,
     },
   ],
 
@@ -1980,6 +1986,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('외도 frame과 혼자 알아본 frame 두 해석이 충돌.') },
         { id: 'misread', summary: ko('검색 자체는 인증되지만 의도 해석은 심문과 맥락으로 확정.') },
       ],
+      narrativeTriggers: e8NarrativeTriggers,
     },
     /* ============================================================
      * evidence e-9 — 보험 상담 기록 (가입 X) (Cycle 4 plot revision 신규)
@@ -2029,6 +2036,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('A가 수익자 의심을 제기 / B가 의학 영역 대비라고 주장.') },
         { id: 'misread', summary: ko('상담 사실은 인증되지만 진짜 의도는 심문과 맥락으로 확정.') },
       ],
+      narrativeTriggers: e9NarrativeTriggers,
     },
   ],
 
@@ -2647,6 +2655,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc8NarrativeTriggers,
     },
   ],
 

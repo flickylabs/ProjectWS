@@ -802,3 +802,287 @@ export const dc2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     vfxProfile: 'standard',
   },
 ]
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Cycle 4 — h-d4 line (비자금의 원래 목적 = 박지연 난임 치료비) — 4 emergence
+// e-8 (휴대폰 의학 검색) / e-9 (보험사 견적) / dc-8 (이준호의 또 다른 침묵) / h-d4 (쟁점)
+//
+// Brief: docs/design/core-narrative-cycle4-spouse01-hd4-line-20260524/
+// 권위: [[design_spouse01_truth_disclosure_policy]] (박지연 난임/치료비 단어는 h-d4
+//      b-outburst 1 entry에만 surface — 가장 위험 영역)
+//      / [[feedback_judge_dispassionate_action_focused]] (Cycle 7 도입 — 평가 어휘 회피)
+//
+// h-d4 cascade chain (가장 긴 chain, 4단계):
+//   dc-3 (Cycle 2) → e-8 → e-9 → dc-8 → h-d4
+//
+// 모든 emergence는 d-2 S5 자백 (비자금 사용처 = 형) 전제.
+// frame 충돌: A 외도 frame 강화 (e-8→e-9→dc-8) → h-d4에서 결정적 역전 (난임 치료비 진실)
+// 책임 비중: B 70 / A 30 (B 침묵·독단 우위, A 화제 회피 일부 책임)
+// ═════════════════════════════════════════════════════════════════════════════
+
+// ─────────────────────────────────────────────────────────────────────────────
+// e-8 "이준호 휴대폰의 의학 검색 기록" (CoreEvidence) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const e8NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'e8-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-3',
+      disputeLieState: { 'd-2': 'S5+' },
+    },
+    scriptedRefs: [
+      'emerge-e8-via-cascade-judge-mention-v1',
+      'emerge-e8-via-cascade-b-response-v1',
+      'emerge-e8-via-cascade-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e8-via-a-interject',
+    type: 'npc_interjection',
+    source: 'a',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S5+' },
+      partyDistrust: { a: { min: 50 } },
+      contextAction: 'question.fact_pursuit.b',
+    },
+    scriptedRefs: [
+      'emerge-e8-via-a-interject-v1',
+      'emerge-e8-via-a-interject-judge-react-v1',
+      'emerge-e8-via-a-interject-a-response-v1',
+      'emerge-e8-via-a-interject-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e8-via-b-outburst',
+    type: 'emotional_outburst',
+    source: 'b',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S5+' },
+      partyPhase: { b: ['shaken', 'angry'] },
+    },
+    scriptedRefs: [
+      'emerge-e8-via-b-outburst-v1',
+      'emerge-e8-via-b-outburst-judge-catch-v1',
+      'emerge-e8-via-b-outburst-b-admit-v1',
+      'emerge-e8-via-b-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'e8-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: {
+      requirePriorCardFired: 'dc-3',
+      disputeLieState: { 'd-2': 'S5+' },
+      turnsAfterEligible: 5,
+    },
+    scriptedRefs: [
+      'emerge-e8-via-judge-auto-decree-v1',
+      'emerge-e8-via-judge-auto-b-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// e-9 "이준호의 보험사 견적 자료 (가입 없음)" (CoreEvidence) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const e9NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'e9-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'e-8',
+      disputeLieState: { 'd-2': 'S5+' },
+    },
+    scriptedRefs: [
+      'emerge-e9-via-cascade-judge-mention-v1',
+      'emerge-e9-via-cascade-b-response-v1',
+      'emerge-e9-via-cascade-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e9-via-a-interject',
+    type: 'npc_interjection',
+    source: 'a',
+    preconditions: [
+      { requirePriorCardFired: 'e-8', partyDistrust: { a: { min: 50 } }, contextAction: 'evidence_present.b' },
+      { requirePriorCardFired: 'e-8', partyDistrust: { a: { min: 50 } }, contextAction: 'question.fact_pursuit.b' },
+    ],
+    scriptedRefs: [
+      'emerge-e9-via-a-interject-v1',
+      'emerge-e9-via-a-interject-judge-react-v1',
+      'emerge-e9-via-a-interject-a-response-v1',
+      'emerge-e9-via-a-interject-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e9-via-b-submit',
+    type: 'npc_interjection',
+    source: 'b',
+    preconditions: {
+      requirePriorCardFired: 'e-8',
+      partyPhase: { b: ['defensive', 'shaken'] },
+    },
+    scriptedRefs: [
+      'emerge-e9-via-b-submit-v1',
+      'emerge-e9-via-b-submit-judge-react-v1',
+      'emerge-e9-via-b-submit-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e9-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: {
+      requirePriorCardFired: 'e-8',
+      turnsAfterEligible: 3,
+    },
+    scriptedRefs: [
+      'emerge-e9-via-judge-auto-decree-v1',
+      'emerge-e9-via-judge-auto-b-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// dc-8 "이준호의 또 다른 침묵" (CoreDossierCard) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const dc8NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'dc8-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-7',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S5+' },
+    },
+    scriptedRefs: [
+      'emerge-dc8-via-combo-judge-query-v1',
+      'emerge-dc8-via-combo-b-response-v1',
+      'emerge-dc8-via-combo-a-react-v1',
+      'emerge-dc8-via-combo-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'dc8-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'e-9',
+      disputeLieState: { 'd-2': 'S5+' },
+    },
+    scriptedRefs: [
+      'emerge-dc8-via-cascade-judge-mention-v1',
+      'emerge-dc8-via-cascade-b-response-v1',
+      'emerge-dc8-via-cascade-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'dc8-via-b-outburst',
+    type: 'emotional_outburst',
+    source: 'b',
+    preconditions: {
+      requirePriorCardFired: 'e-9',
+      partyPhase: { b: ['shaken', 'angry'] },
+    },
+    scriptedRefs: [
+      'emerge-dc8-via-b-outburst-v1',
+      'emerge-dc8-via-b-outburst-judge-catch-v1',
+      'emerge-dc8-via-b-outburst-b-admit-v1',
+      'emerge-dc8-via-b-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'dc8-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: {
+      requirePriorCardFired: 'e-9',
+      turnsAfterEligible: 4,
+    },
+    scriptedRefs: [
+      'emerge-dc8-via-judge-auto-decree-v1',
+      'emerge-dc8-via-judge-auto-a-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// h-d4 "비자금의 원래 목적" (CoreDispute, hidden, legitimacyIssue) — 4 candidates
+// ⚠ 본 cycle 최고 민감 영역. b-outburst (T2) 1 trigger만 진실 단어 (난임/치료비/
+//   의사 친구 등) surface 허용. 나머지 T1/T3/T4는 frame 충돌 직면까지만.
+//   T2/T3는 부부 직접 발화 (S5 자백 영역 호칭 — "자기야" 반말).
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const hd4NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'hd4-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-8',
+      disputeLieState: { 'd-2': 'S5+' },
+    },
+    scriptedRefs: [
+      'emerge-hd4-via-cascade-judge-query-v1',
+      'emerge-hd4-via-cascade-b-response-v1',
+      'emerge-hd4-via-cascade-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'hd4-via-b-outburst',
+    type: 'emotional_outburst',
+    source: 'b',
+    preconditions: {
+      requirePriorCardFired: 'dc-8',
+      partyPhase: { b: ['resigned', 'shaken'] },
+    },
+    scriptedRefs: [
+      'emerge-hd4-via-b-outburst-v1',
+      'emerge-hd4-via-b-outburst-judge-catch-v1',
+      'emerge-hd4-via-b-outburst-b-admit-more-v1',
+      'emerge-hd4-via-b-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'hd4-via-a-confront',
+    type: 'npc_interjection',
+    source: 'a',
+    preconditions: {
+      requirePriorCardFired: 'dc-8',
+      partyPhase: { a: ['shaken', 'angry'] },
+    },
+    scriptedRefs: [
+      'emerge-hd4-via-a-confront-v1',
+      'emerge-hd4-via-a-confront-judge-react-v1',
+      'emerge-hd4-via-a-confront-b-response-v1',
+      'emerge-hd4-via-a-confront-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'hd4-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: {
+      requirePriorCardFired: 'dc-8',
+      turnsAfterEligible: 5,
+    },
+    scriptedRefs: [
+      'emerge-hd4-via-judge-auto-decree-v1',
+      'emerge-hd4-via-judge-auto-b-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
