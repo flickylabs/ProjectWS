@@ -20201,27 +20201,27 @@
             {
               "id": "judgecombo-dc-1-b-q1-soft-v1",
               "text": "Mr. Lee, let's look at the GPS coordinates and the unknown-sender text together. Since the time and place overlap, please explain who was inside that officetel.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v2",
               "text": "Mr. Lee, the stopped address from the GPS and the unknown-sender text overlap at the same place. Who were you looking after there that day?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v3",
               "text": "Mr. Lee, the visit record points to the officetel, and the unknown-sender text shows another person's daily life. Please explain where those two records meet.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v4",
               "text": "Mr. Lee, if we look only at the coordinates, they may appear to raise suspicion of an affair, but when we include the message content, it is also confirmed that someone else was there. Please explain who that person was.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-soft-v5",
               "text": "Mr. Lee, the officetel entry record and the unknown-sender text narrow down the place and the person. Please explain what happened then.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20231,27 +20231,27 @@
             {
               "id": "judgecombo-dc-1-b-q1-mid-v1",
               "text": "Mr. Lee, the GPS coordinates and the unknown-sender text fall in the same time frame. You can no longer explain the officetel visit while leaving out the matter you did not disclose.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v2",
               "text": "Mr. Lee, where the car went and the personal schedule in the text overlap in the same area of daily life. You can no longer put off saying who was there.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v3",
               "text": "Mr. Lee, the officetel record alone may raise suspicion of an affair, but when we also look at the messages from an unknown sender, there are signs that you were looking after someone. Please explain how we should connect the two.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v4",
               "text": "Mr. Lee, because the GPS address and the time of the unknown-sender text overlap, you cannot dismiss it as a simple visit. Answer who you went there for.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-mid-v5",
               "text": "Mr. Lee, the GPS record and the unknown-sender text show traces of a life kept hidden in the officetel. You must state whose life it was.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20261,27 +20261,27 @@
             {
               "id": "judgecombo-dc-1-b-q1-hard-v1",
               "text": "Mr. Lee, taken together, the GPS and unknown-sender text leave one fact. Answer now: who was in that officetel?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v2",
               "text": "Mr. Lee, taken together, the coordinates and text identify someone. State now whether it was an affair or another matter.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v3",
               "text": "Mr. Lee, with the GPS coordinates and unknown-sender text on record, you cannot talk only about the place and leave out the person. State who was there.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v4",
               "text": "Mr. Lee, the officetel record and unknown-sender text have both been confirmed. Tell us who you were hiding.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-1-b-q1-hard-v5",
               "text": "Mr. Lee, the two records show the same night and the same place. Acknowledge now what happened there.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20291,27 +20291,27 @@
             {
               "id": "judgecombo-dc-2-b-q1-soft-v1",
               "text": "Mr. Lee, let us look at Call Logs together. Please calmly explain how they relate to the in-laws conflict and the fear that led to concealment.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-soft-v2",
               "text": "Mr. Lee, the early-morning calls from the same number and the texts from an unknown sender point to the same matter. Would you explain why you were unable to tell Ms. Park about it to the end?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-soft-v3",
               "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to the in-laws conflict and the fear that led to concealment.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-soft-v4",
               "text": "Mr. Lee, let us look at Call Logs together. Please calmly explain how they relate to the in-laws conflict and the fear that led to concealment.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-soft-v5",
               "text": "Mr. Lee, when the call logs and unknown-sender texts are placed side by side, they show another burden was greater than an affair. Would you tell us what that was?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20321,27 +20321,27 @@
             {
               "id": "judgecombo-dc-2-b-q1-mid-v1",
               "text": "Mr. Lee, the early-morning calls and messages from an unknown sender are bound up with the same circumstance. You must now disclose what you kept hidden because you feared conflict.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v2",
               "text": "Mr. Lee, the call counterpart and the texts from an unknown sender overlap. You can no longer dismiss this as simple contact.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v3",
               "text": "Mr. Lee, Call Logs narrow the issue to the in-laws conflict and the fear that led to concealment. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v4",
               "text": "Mr. Lee, looking at the messages from an unknown sender and the call records, saying only that it was not an affair is not enough. Why did you keep concealing the circumstances beyond that?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-mid-v5",
               "text": "Mr. Lee, the call logs and texts from an unknown sender make it doubtful that the reason you hid them was merely routine contact. Saying only that you were afraid cannot stand in for an explanation.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20351,27 +20351,27 @@
             {
               "id": "judgecombo-dc-2-b-q1-hard-v1",
               "text": "Mr. Lee, the call logs and texts from an unknown sender are tied to the circumstances you kept hidden. Tell the court now what you were hiding.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-hard-v2",
               "text": "Mr. Lee, the submitted evidence directly point to the in-laws conflict and the fear that led to concealment. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-hard-v3",
               "text": "Mr. Lee, now that the call records and messages from an unknown sender have been confirmed, you must also explain why you still kept hidden the fact that you went there. Answer at once.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-hard-v4",
               "text": "Mr. Lee, the submitted evidence directly point to the in-laws conflict and the fear that led to concealment. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-2-b-q1-hard-v5",
               "text": "Mr. Lee, now that the texts from an unknown sender and the early-morning call logs are before us, saying you were afraid does not erase the concealment. Tell us now what you were afraid of.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20381,27 +20381,27 @@
             {
               "id": "judgecombo-dc-3-b-q1-soft-v1",
               "text": "Mr. Lee, let us look at the messages from an unknown sender together with the withdrawal records from your personal account. Please explain why you remained unable to tell Ms. Park that you had moved a large sum for a separate purpose.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-soft-v2",
               "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to authority over the joint savings and the lack of spouse consent.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-soft-v3",
               "text": "Mr. Lee, let us look at the submitted evidence together. Please calmly explain how they relate to authority over the joint savings and the lack of spouse consent.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-soft-v4",
               "text": "Mr. Lee, if the messages reflected some other circumstance, would you explain why you were unable to tell Ms. Park about it?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-soft-v5",
               "text": "Mr. Lee, looking at the messages from an unknown sender and the withdrawal records, even if there was a separate urgent circumstance, the fact that you moved a large sum separately requires explanation. Please distinguish that circumstance from the actual movement of money and explain.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20411,27 +20411,27 @@
             {
               "id": "judgecombo-dc-3-b-q1-mid-v1",
               "text": "Mr. Lee, the submitted evidence narrow the issue to authority over the joint savings and the lack of spouse consent. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-mid-v2",
               "text": "Mr. Lee, the fact that cash left your personal account is a separate issue. You cannot cover it by calling it personal use.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-mid-v3",
               "text": "Mr. Lee, if there were other circumstances, you must be even clearer about the nature of that money. Answer in a way that does not let it blur into the suspicion over the joint savings.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-mid-v4",
               "text": "Mr. Lee, the submitted evidence narrow the issue to authority over the joint savings and the lack of spouse consent. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-mid-v5",
               "text": "Mr. Lee, the submitted evidence narrow the issue to authority over the joint savings and the lack of spouse consent. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20441,27 +20441,27 @@
             {
               "id": "judgecombo-dc-3-b-q1-hard-v1",
               "text": "Mr. Lee, the messages from an unknown sender and the withdrawal records are connected as the same flow of money. Answer now: to whom did that money go, and why?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-hard-v2",
               "text": "Mr. Lee, Withdrawal Records directly point to authority over the joint savings and the lack of spouse consent. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-hard-v3",
               "text": "Mr. Lee, the submitted evidence directly point to authority over the joint savings and the lack of spouse consent. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-hard-v4",
               "text": "Mr. Lee, Withdrawal Records directly point to authority over the joint savings and the lack of spouse consent. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q1-hard-v5",
               "text": "Mr. Lee, the submitted evidence directly point to authority over the joint savings and the lack of spouse consent. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20471,27 +20471,27 @@
             {
               "id": "judgecombo-dc-3-b-q2-soft-v1",
               "text": "Mr. Lee, when the messages from an unknown sender and the withdrawal records are viewed together, a hidden money flow is confirmed. Please explain how you accept responsibility for excluding Ms. Park.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v2",
               "text": "Mr. Lee, if the cash withdrawals were tied to the unknown-sender text, there may be room to see them as well-intentioned. Still, explain why you did not tell Ms. Park.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v3",
               "text": "Mr. Lee, even if the unknown-sender text and withdrawal records confirm a hidden money trail, separately moving a large sum within a marriage remains an issue. Where did you draw that line?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v4",
               "text": "Mr. Lee, the other matter suggested by the text lines up with the withdrawal records. At that moment, did it not occur to you that you should discuss it with Ms. Park?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-soft-v5",
               "text": "Mr. Lee, if the unknown-sender text and cash withdrawals were meant to help with a difficult situation, explain why you had to hide it.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20501,27 +20501,27 @@
             {
               "id": "judgecombo-dc-3-b-q2-mid-v1",
               "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm a money trail to a separate destination. But your decision to exclude Ms. Park still requires explanation. Please answer why.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v2",
               "text": "Mr. Lee, the text and withdrawal records confirm how the money was handled. Then answer why you handled it alone.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v3",
               "text": "Mr. Lee, with the unknown-sender text and withdrawal records in front of us, good intentions alone cannot cover the question of authority. State why you did not tell Ms. Park.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v4",
               "text": "Mr. Lee, apart from the facts shown by the unknown-sender text and withdrawal records, breaking trust within the marriage is another issue. Address that aspect as well.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-mid-v5",
               "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm that the money led elsewhere. That makes the intent behind the concealment clearer. Do not evade responsibility.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20531,27 +20531,27 @@
             {
               "id": "judgecombo-dc-3-b-q2-hard-v1",
               "text": "Mr. Lee, even if there was another matter behind the unknown-sender text and withdrawals, your responsibility for excluding Ms. Park does not disappear. Answer why you decided alone.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v2",
               "text": "Mr. Lee, the unknown-sender text and withdrawal records confirm that you decided and acted. Acknowledge the good intention separately from the procedural breach.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v3",
               "text": "Mr. Lee, with the unknown-sender text and personal withdrawal on record, you cannot cover moving a large sum behind your spouse's back by calling it another matter. State your judgment.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v4",
               "text": "Mr. Lee, now that the unknown-sender text and withdrawal records are confirmed, explain how you skipped marital consent on the grounds that you were helping with that matter.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-3-b-q2-hard-v5",
               "text": "Mr. Lee, the unknown-sender text and withdrawal records make it hard to deny that you knew and acted. Do not minimize your responsibility; answer.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20561,27 +20561,27 @@
             {
               "id": "judgecombo-dc-4-a-q1-soft-v1",
               "text": "Ms. Park, let us look at the investment-chat Telegram and transfer records together. Please tell us why you moved your own money first before hearing Mr. Lee's explanation.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-soft-v2",
               "text": "Ms. Park, let us look at Investment Chat Telegram together. Please calmly explain how they relate to the motive for moving ₩20M before confirming the truth.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-soft-v3",
               "text": "Ms. Park, the encouragement in the investment-chat Telegram and the transfer records are bound up with the decision you made that same day. Please tell us what calculation you made then.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-soft-v4",
               "text": "Ms. Park, let us look at Transfer Records together. Please calmly explain how they relate to the motive for moving ₩20M before confirming the truth.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-soft-v5",
               "text": "Ms. Park, let us look at Transfer Records and Investment Chat Telegram together. Please calmly explain how they relate to the motive for moving ₩20M before confirming the truth.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20591,27 +20591,27 @@
             {
               "id": "judgecombo-dc-4-a-q1-mid-v1",
               "text": "Ms. Park, Transfer Records and Investment Chat Telegram narrow the issue to the motive for moving ₩20M before confirming the truth. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-mid-v2",
               "text": "Ms. Park, the submitted evidence narrow the issue to the motive for moving ₩20M before confirming the truth. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-mid-v3",
               "text": "Ms. Park, looking at the investment-chat Telegram and transfer records confirms the flow in which you yourself moved the money first. Why did you disclose that fact belatedly?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-mid-v4",
               "text": "Ms. Park, Transfer Records and Investment Chat Telegram narrow the issue to the motive for moving ₩20M before confirming the truth. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-mid-v5",
               "text": "Ms. Park, the submitted evidence narrow the issue to the motive for moving ₩20M before confirming the truth. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20621,27 +20621,27 @@
             {
               "id": "judgecombo-dc-4-a-q1-hard-v1",
               "text": "Ms. Park, Transfer Records and Investment Chat Telegram directly point to the motive for moving ₩20M before confirming the truth. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v2",
               "text": "Ms. Park, the investment-chat Telegram and transfer records confirm that you acted first before seeking confirmation from Mr. Lee. Acknowledge the choice to act first without confirmation and answer.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v3",
               "text": "Ms. Park, Investment Chat Telegram directly point to the motive for moving ₩20M before confirming the truth. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v4",
               "text": "Ms. Park, Transfer Records and Investment Chat Telegram directly point to the motive for moving ₩20M before confirming the truth. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v5",
               "text": "Ms. Park, the submitted evidence directly point to the motive for moving ₩20M before confirming the truth. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20651,27 +20651,27 @@
             {
               "id": "judgecombo-dc-4-a-q2-soft-v1",
               "text": "Ms. Park, the investment chat Telegram and transfer records show the sequence from sending the money to the loss. Was shame the reason you hid that fact?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v2",
               "text": "Ms. Park, the investment chat Telegram and transfer records show that the transfer led to a loss. Please tell us what kept you from telling Mr. Lee then.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v3",
               "text": "Ms. Park, the continued investment chat and the transfer records show a period when you tried to handle it alone. Why did you hide it?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v4",
               "text": "Ms. Park, looking at the investment chat Telegram and transfer records, did you have both the reluctance to admit the loss and the wish to stand as the victim?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v5",
               "text": "Ms. Park, when you saw the investment chat Telegram and transfer records, which feeling was stronger: shame or fear?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20681,27 +20681,27 @@
             {
               "id": "judgecombo-dc-4-a-q2-mid-v1",
               "text": "Ms. Park, the investment chat Telegram and transfer records also show the time during which you hid the loss. Shame alone cannot explain it.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v2",
               "text": "Ms. Park, even with the transfer record on file, you focused only on Mr. Lee's withdrawal. Why did you leave out your own loss?",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v3",
               "text": "Ms. Park, the investment chat Telegram and transfer records are not merely signs that you were deceived. They are records showing that you entered the chat and sent the money yourself. You need to explain that choice.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v4",
               "text": "Ms. Park, if you hide the investment chat Telegram and transfer records while putting only Mr. Lee's responsibility forward, the issue is distorted. State what you did.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v5",
               "text": "Ms. Park, the investment chat Telegram and transfer records show a money trail hidden behind shame. You can no longer speak only about emotions.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20711,27 +20711,27 @@
             {
               "id": "judgecombo-dc-4-a-q2-hard-v1",
               "text": "Ms. Park, looking at the investment-chat Telegram and transfer records confirms your own conduct that led to the loss. Answer why you hid it.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v2",
               "text": "Ms. Park, with the transfer record in evidence, you cannot evade this. Explain why you hid the investment chat loss and focused only on Mr. Lee's personal-account withdrawal.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v3",
               "text": "Ms. Park, with the investment chat Telegram and transfer records in evidence, even if there was shame, the fact remains that you hid the transfer and the loss. Explain how it happened.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v4",
               "text": "Ms. Park, with the investment chat Telegram and transfer records in evidence, saying you were trying to prevent harm is not enough. State how much money you lost.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v5",
               "text": "Ms. Park, the investment chat record and transfer record form a single sequence. Acknowledge the hidden loss and answer.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20741,27 +20741,27 @@
             {
               "id": "judgecombo-dc-5-b-q1-soft-v1",
               "text": "Mr. Lee, let us look at Withdrawal Records, Transfer Records, Joint Savings Processing Papers, and Investment Chat Telegram together. Please calmly explain how they relate to Lee Jun-ho’s first concealment and the separate order of the money movements.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-soft-v2",
               "text": "Mr. Lee, the cash withdrawals, Ms. Park's investment-chat transfer, and the joint-savings cancellation documents each appear to show different flows. Please walk us through their order, one by one.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-soft-v3",
               "text": "Mr. Lee, let us look at Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers together. Please calmly explain how they relate to Lee Jun-ho’s first concealment and the separate order of the money movements.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-soft-v4",
               "text": "Mr. Lee, the cash withdrawals are confirmed in materials from your side, while the joint-savings cancellation documents are confirmed in materials from Ms. Park's side. Please distinguish the two and explain.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-soft-v5",
               "text": "Mr. Lee, let us look at Withdrawal Records, Transfer Records, Joint Savings Cancellation Papers, and Investment Chat Telegram together. Please calmly explain how they relate to Lee Jun-ho’s first concealment and the separate order of the money movements.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20771,27 +20771,27 @@
             {
               "id": "judgecombo-dc-5-b-q1-mid-v1",
               "text": "Mr. Lee, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers narrow the issue to Lee Jun-ho’s first concealment and the separate order of the money movements. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-mid-v2",
               "text": "Mr. Lee, Joint Savings Cancellation Papers narrow the issue to Lee Jun-ho’s first concealment and the separate order of the money movements. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-mid-v3",
               "text": "Mr. Lee, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers narrow the issue to Lee Jun-ho’s first concealment and the separate order of the money movements. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-mid-v4",
               "text": "Mr. Lee, the submitted evidence narrow the issue to Lee Jun-ho’s first concealment and the separate order of the money movements. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-mid-v5",
               "text": "Mr. Lee, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers narrow the issue to Lee Jun-ho’s first concealment and the separate order of the money movements. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20801,27 +20801,27 @@
             {
               "id": "judgecombo-dc-5-b-q1-hard-v1",
               "text": "Mr. Lee, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers directly point to Lee Jun-ho’s first concealment and the separate order of the money movements. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-hard-v2",
               "text": "Mr. Lee, the submitted evidence directly point to Lee Jun-ho’s first concealment and the separate order of the money movements. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-hard-v3",
               "text": "Mr. Lee, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers directly point to Lee Jun-ho’s first concealment and the separate order of the money movements. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-hard-v4",
               "text": "Mr. Lee, Withdrawal Records and Joint Savings Cancellation Papers directly point to Lee Jun-ho’s first concealment and the separate order of the money movements. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-b-q1-hard-v5",
               "text": "Mr. Lee, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers directly point to Lee Jun-ho’s first concealment and the separate order of the money movements. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20831,27 +20831,27 @@
             {
               "id": "judgecombo-dc-5-a-q1-soft-v1",
               "text": "Ms. Park, let us look at Withdrawal Records, Transfer Records, Joint Savings Cancellation Papers, and Investment Chat Telegram together. Please calmly explain how they relate to Park Ji-yeon’s execution of the transfer and the order of the two money flows.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-soft-v2",
               "text": "Ms. Park, when we look at the withdrawal records, transfer records, and joint-savings cancellation documents together, we can confirm separately who hid things first and who moved the money first. Please explain your own conduct in that order.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-soft-v3",
               "text": "Ms. Park, let us look at Investment Chat Telegram together. Please calmly explain how they relate to Park Ji-yeon’s execution of the transfer and the order of the two money flows.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-soft-v4",
               "text": "Ms. Park, let us look at Withdrawal Records and Transfer Records together. Please calmly explain how they relate to Park Ji-yeon’s execution of the transfer and the order of the two money flows.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-soft-v5",
               "text": "Ms. Park, to see the order of the two large sums, we need to look separately at your own transfer and the joint-savings cancellation documents. Please explain in what order those two materials connect.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20861,27 +20861,27 @@
             {
               "id": "judgecombo-dc-5-a-q1-mid-v1",
               "text": "Ms. Park, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers narrow the issue to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-mid-v2",
               "text": "Ms. Park, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers narrow the issue to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-mid-v3",
               "text": "Ms. Park, Joint Savings Cancellation Papers and Investment Chat Telegram narrow the issue to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-mid-v4",
               "text": "Ms. Park, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers narrow the issue to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-mid-v5",
               "text": "Ms. Park, Withdrawal Records and Joint Savings Cancellation Papers narrow the issue to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Please explain the point clearly.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         },
@@ -20891,27 +20891,27 @@
             {
               "id": "judgecombo-dc-5-a-q1-hard-v1",
               "text": "Ms. Park, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers directly point to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-hard-v2",
               "text": "Ms. Park, Joint Savings Cancellation Papers directly point to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-hard-v3",
               "text": "Ms. Park, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers directly point to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-hard-v4",
               "text": "Ms. Park, Withdrawal Records and Transfer Records directly point to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             },
             {
               "id": "judgecombo-dc-5-a-q1-hard-v5",
               "text": "Ms. Park, Withdrawal Records, Transfer Records, and Joint Savings Cancellation Papers directly point to Park Ji-yeon’s execution of the transfer and the order of the two money flows. Answer without evasion.",
-              "behaviorHint": "After checking the case-card clue, the Judge summarizes the meaning of the evidence combination."
+              "behaviorHint": "After checking the clue, the Judge summarizes the meaning of the evidence combination."
             }
           ]
         }
