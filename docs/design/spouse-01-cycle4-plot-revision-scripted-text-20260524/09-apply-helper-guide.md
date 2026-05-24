@@ -146,10 +146,39 @@ helper script는 위 tags를 그대로 복사 + `h-d3` → `h-d4`로 token 교�
 
 ---
 
-## helper script 제한 영역
+## 채널별 template 매칭 메커니즘 (helper script 보강 — 2026-05-24)
 
-- **dossier 채널의 일부 entry** (예: `dc-8.b.q1|early/mid/late`)는 h-d3가 아니라 dc-7 또는 dc-3 등 다른 dossier card의 패턴 사용. helper script는 fallback으로 가능한 한 가까운 매치 사용. dossier entry 작성 시 직접 검토 권장.
-- **evidence_present 채널**도 e-8/e-9는 신규 evidence. e-7 또는 e-5의 evidence_present entry 패턴 참조.
-- **mediation / aftermath** 채널은 h-d3에 0~8 entry. 영역에 따라 다른 dispute의 entry를 fallback.
+### dispute 기반 채널 (interrogation / judge_question / judge_evidence_combo / judge_contradiction / contradiction_pursuit / mediation / aftermath)
 
-이런 영역은 helper script가 fallback으로 작동하므로 결과를 직접 spot check 권장.
+- **template**: `disputeId === 'h-d3'` entry
+- **매칭 우선순위**: party + lieState + questionType → party + lieState → party → 첫 h-d3 entry
+- **tags 교체**: `h-d3` → `h-d4` token 교체
+
+### dossier 채널 (`buildDossierEntry`)
+
+- **template**: `dossierCardId === 'dc-3'` entry (B 측 challenge, h-d4와 가장 인접한 자금 영역)
+- **key 형식**: `dc-8.b.q1|early/mid/late` 또는 `dc-8.b.q2|early/mid/late`
+- **매칭 우선순위**: dc-3 + targetParty + lieBand + questionId='dc-3.b.q1' → dc-3 + lieBand → 첫 dc-3 entry
+- **tags 교체**: `dc-3` → `dc-8` token 교체 (questionId 포함 자동 처리)
+- **필드 분기**: dossierCardId / questionId / questionText / targetParty / lieBand / requiredLieState 등 dossier 전용 영역
+- **lieBand 자동 추출**: input key 마지막 segment가 early/mid/late이면 그대로, 없으면 gptEntry.lieBand 사용
+- **sourceRefs**: `dossier:dc-8`
+
+### evidence_present 채널 (`buildEvidencePresentEntry`)
+
+- **template**: e-5 우선 (B subject, h-d4 인접 자금 자료) → e-3 → e-7 → e-4 순서 fallback
+- **key 형식**: `{party}|e-8|early/mid/late` 또는 `{party}|e-9|early/mid/late`
+- **매칭 우선순위**: 같은 party + 같은 lieBand + 후보 evidence 중 첫 매치 → 마지막 fallback any
+- **tags 교체**: template의 evidenceId (e.g. 'e-5') → 신규 (e-8/e-9) token 교체
+- **lieBand 자동 정규화**: input key의 early/mid/late 그대로 / lieState=S0~S5이면 S0~S1→early, S2~S3→mid, S4~S5→late 매핑
+- **sourceRefs**: `evidence:e-8` 또는 `evidence:e-9`
+
+### 그 외 (judge_witness_summon 등)
+
+- 본 의뢰서 spec에 포함되지 않은 채널은 helper script 지원 X. 필요 시 직접 spouse-01.json 편집.
+
+## helper script 사용 시 점검
+
+- batch 적용 후 신규 entry의 tags에서 dispute/dossier/evidence token이 정확히 교체됐는지 spot check
+- 특히 dossier challenge의 `questionId:dc-8.b.q1` 영역과 case.ts의 dc-8.challenges.b.questions 정의 일치 여부 확인
+- evidence_present 시 e-8/e-9의 subjectParty=`b` 영역이 template의 영역과 일치하는지 확인

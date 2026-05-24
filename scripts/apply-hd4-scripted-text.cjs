@@ -40,10 +40,11 @@ function parseArgs(argv) {
 }
 
 /**
- * h-d3 template 찾기 — disputeId='h-d3' + 같은 party + 같은 lieState + 같은 questionType (또는 가능한 한 가장 가까운 매치)
+ * dispute 기반 channel template 찾기 — disputeId='h-d3' + 같은 party + 같은 lieState + 같은 questionType
+ * (interrogation / judge_question / judge_evidence_combo / judge_contradiction / contradiction_pursuit /
+ *  evidence_present / mediation / aftermath 등)
  */
 function findHd3Template(channel, entries, target) {
-  // 1. exact match (party + lieState + questionType)
   const exact = entries.find(
     (e) =>
       e.disputeId === 'h-d3' &&
@@ -53,34 +54,168 @@ function findHd3Template(channel, entries, target) {
   )
   if (exact) return exact
 
-  // 2. partial — same disputeId + same party + same lieState (any questionType)
   const sameLieState = entries.find(
     (e) => e.disputeId === 'h-d3' && e.party === target.party && e.lieState === target.lieState,
   )
   if (sameLieState) return sameLieState
 
-  // 3. fallback — same disputeId + same party (any lieState)
   const sameParty = entries.find(
     (e) => e.disputeId === 'h-d3' && e.party === target.party,
   )
   if (sameParty) return sameParty
 
-  // 4. last resort — any h-d3 entry
   return entries.find((e) => e.disputeId === 'h-d3') ?? null
 }
 
 /**
- * tags 영역의 dispute: 라벨을 h-d3 → h-d4로 교체
+ * dossier 채널 template — dossierCard 기반 (dc-3 또는 dc-4를 dc-8 template으로 사용)
+ * dossier entry 형식: { key: 'dc-N.b.qN|lieBand', dossierCardId, questionId, questionText, targetParty, requiredLieState, lieBand, ... }
+ * GPT 시안의 input questionId (예: 'dc-8.b.q1')에서 lieBand (early/mid/late)를 매칭.
  */
-function rewriteTags(tags) {
+function findDossierTemplate(entries, gptEntry) {
+  // GPT input의 questionId나 key에서 lieBand 추출 (early/mid/late)
+  const lieBand = gptEntry.lieBand || extractLieBandFromKey(gptEntry.key) || 'mid'
+  const targetParty = gptEntry.targetParty || gptEntry.party || 'b'
+
+  // dc-3 dossier card의 동일 lieBand entry를 1순위 — dc-8과 가장 유사한 challenge 패턴 (B 측, h-d4 link)
+  const preferred = entries.find(
+    (e) =>
+      e.dossierCardId === 'dc-3' &&
+      e.targetParty === targetParty &&
+      e.lieBand === lieBand &&
+      e.questionId === 'dc-3.b.q1',
+  )
+  if (preferred) return preferred
+
+  // fallback — dc-4 dossier card (h-d3 link, B 측 X but A 측)
+  const fallback = entries.find(
+    (e) => e.dossierCardId === 'dc-3' && e.lieBand === lieBand,
+  ) || entries.find((e) => e.dossierCardId === 'dc-3')
+  return fallback ?? null
+}
+
+function extractLieBandFromKey(key) {
+  if (!key) return null
+  const parts = key.split('|')
+  const last = parts[parts.length - 1]
+  if (last === 'early' || last === 'mid' || last === 'late') return last
+  return null
+}
+
+/**
+ * tags 영역의 dispute / dossier 라벨을 h-d3/dc-3 → h-d4/dc-8 로 교체
+ */
+function rewriteTags(tags, mode) {
   if (!Array.isArray(tags)) return tags
-  return tags.map((t) => (typeof t === 'string' ? t.replace(/h-d3/g, 'h-d4') : t))
+  return tags.map((t) => {
+    if (typeof t !== 'string') return t
+    if (mode === 'dossier') {
+      // dc-3 → dc-8, questionId:dc-3.b.q1 → dc-8.b.q1 등
+      return t.replace(/dc-3/g, 'dc-8')
+    }
+    // dispute 기반 채널 (interrogation 등)
+    return t.replace(/h-d3/g, 'h-d4')
+  })
 }
 
 /**
  * GPT 시안 entry를 spouse-01.json 형식 entry로 변환
+ * channel에 따라 dispute / dossier / evidence_present template 분기
  */
 function buildEntry(channel, entries, gptEntry) {
+  if (channel === 'dossier') {
+    return buildDossierEntry(entries, gptEntry)
+  }
+  if (channel === 'evidence_present') {
+    return buildEvidencePresentEntry(entries, gptEntry)
+  }
+  return buildDisputeEntry(channel, entries, gptEntry)
+}
+
+function buildEvidencePresentEntry(entries, gptEntry) {
+  // GPT input의 evidenceId 또는 key에서 추출
+  const evidenceId = gptEntry.evidenceId || extractEvidenceIdFromKey(gptEntry.key)
+  if (!evidenceId) {
+    throw new Error(`[evidence_present] evidenceId not found in entry: ${gptEntry.key}`)
+  }
+  // lieBand 정규화 — S0~S5 형식 또는 early/mid/late 형식 모두 지원
+  const lieBand = gptEntry.lieBand || normalizeLieBand(gptEntry.key, gptEntry.lieState)
+  const party = gptEntry.party
+
+  // 같은 party + 같은 lieBand + B subject (e-8/e-9는 B subject) 인 evidence template 찾기
+  // 1순위 e-5 (B subject, h-d4 영역 인접), fallback e-3/e-7
+  const candidates = ['e-5', 'e-3', 'e-7', 'e-4']
+  let template = null
+  for (const candId of candidates) {
+    template = entries.find(
+      (e) => (e.evidenceId === candId || e.key?.startsWith(`${party}|${candId}|`)) &&
+        e.lieBand === lieBand && (e.party === party || e.key?.startsWith(`${party}|`))
+    )
+    if (template) break
+  }
+  if (!template) {
+    // last resort — same party + same lieBand any evidence
+    template = entries.find((e) => e.party === party && e.lieBand === lieBand)
+  }
+  if (!template) {
+    throw new Error(`[evidence_present] no template found for party=${party} lieBand=${lieBand}`)
+  }
+
+  const newEntry = {
+    key: gptEntry.key,
+    party,
+    evidenceId,
+    lieBand,
+    subjectRole: gptEntry.subjectRole ?? template.subjectRole,
+    stanceHint: gptEntry.stanceHint ?? template.stanceHint,
+    truthLevel: gptEntry.truthLevel ?? template.truthLevel,
+    subjectParty: gptEntry.subjectParty ?? template.subjectParty ?? 'b',
+    variants: gptEntry.variants.map((v, idx) => {
+      const templateVariant = template.variants[idx] ?? template.variants[0]
+      return {
+        id: v.id,
+        text: v.text,
+        behaviorHint: v.behaviorHint ?? '',
+        tags: rewriteTagsForEvidence(templateVariant.tags, template.evidenceId || extractEvidenceIdFromKey(template.key), evidenceId),
+        sourceRefs: [`evidence:${evidenceId}`],
+      }
+    }),
+  }
+  return newEntry
+}
+
+function extractEvidenceIdFromKey(key) {
+  if (!key) return null
+  // 'b|e-8|mid' → 'e-8'
+  const m = key.match(/^[ab]\|(e-\d+)\|/)
+  return m ? m[1] : null
+}
+
+function normalizeLieBand(key, lieState) {
+  // key에 early/mid/late 있으면 그대로
+  if (key) {
+    const last = key.split('|').pop()
+    if (last === 'early' || last === 'mid' || last === 'late') return last
+  }
+  // lieState → lieBand 매핑 (S0/S1=early, S2/S3=mid, S4/S5=late)
+  if (lieState) {
+    const n = Number(String(lieState).replace('S', ''))
+    if (n <= 1) return 'early'
+    if (n <= 3) return 'mid'
+    return 'late'
+  }
+  return 'mid'
+}
+
+function rewriteTagsForEvidence(tags, fromEvidenceId, toEvidenceId) {
+  if (!Array.isArray(tags) || !fromEvidenceId) return tags
+  return tags.map((t) => {
+    if (typeof t !== 'string') return t
+    return t.replace(new RegExp(fromEvidenceId, 'g'), toEvidenceId)
+  })
+}
+
+function buildDisputeEntry(channel, entries, gptEntry) {
   const target = {
     party: gptEntry.party,
     lieState: gptEntry.lieState,
@@ -91,7 +226,6 @@ function buildEntry(channel, entries, gptEntry) {
     throw new Error(`[${channel}] no h-d3 template found for party=${target.party} lieState=${target.lieState} questionType=${target.questionType}`)
   }
 
-  // 신규 entry — template metadata 복사 + GPT 영역으로 덮어쓰기
   const newEntry = {
     key: gptEntry.key,
     party: gptEntry.party,
@@ -106,12 +240,53 @@ function buildEntry(channel, entries, gptEntry) {
         id: v.id,
         text: v.text,
         behaviorHint: v.behaviorHint ?? '',
-        tags: rewriteTags(templateVariant.tags),
+        tags: rewriteTags(templateVariant.tags, 'dispute'),
         sourceRefs: ['dispute:h-d4'],
       }
     }),
   }
   return newEntry
+}
+
+function buildDossierEntry(entries, gptEntry) {
+  const template = findDossierTemplate(entries, gptEntry)
+  if (!template) {
+    throw new Error(`[dossier] no dc-3 template found for ${gptEntry.key}`)
+  }
+
+  // GPT 시안의 questionId / questionText / lieBand 사용. 없으면 key에서 추출.
+  const questionId = gptEntry.questionId || extractQuestionIdFromKey(gptEntry.key)
+  const lieBand = gptEntry.lieBand || extractLieBandFromKey(gptEntry.key) || template.lieBand
+
+  const newEntry = {
+    key: gptEntry.key,
+    dossierCardId: 'dc-8',
+    questionId,
+    questionText: gptEntry.questionText ?? template.questionText,
+    targetParty: gptEntry.targetParty ?? template.targetParty ?? 'b',
+    requiredLieState: gptEntry.requiredLieState ?? template.requiredLieState,
+    lieBand,
+    stanceHint: gptEntry.stanceHint ?? template.stanceHint,
+    truthLevel: gptEntry.truthLevel ?? template.truthLevel,
+    variants: gptEntry.variants.map((v, idx) => {
+      const templateVariant = template.variants[idx] ?? template.variants[0]
+      return {
+        id: v.id,
+        text: v.text,
+        behaviorHint: v.behaviorHint ?? '',
+        tags: rewriteTags(templateVariant.tags, 'dossier'),
+        sourceRefs: ['dossier:dc-8'],
+      }
+    }),
+  }
+  return newEntry
+}
+
+function extractQuestionIdFromKey(key) {
+  if (!key) return null
+  // 'dc-8.b.q1|early' → 'dc-8.b.q1'
+  const m = key.match(/^(dc-[\w.-]+\.[ab]\.q\d+)/)
+  return m ? m[1] : null
 }
 
 function main() {
