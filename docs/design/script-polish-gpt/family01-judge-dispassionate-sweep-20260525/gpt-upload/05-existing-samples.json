@@ -1,0 +1,113 @@
+{
+  "description": "family-01 judge channel 자연화 reference samples (변환 톤 일관성용)",
+  "samples": [
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact_pursuit-1-v1",
+      "key": "d-1|fact_pursuit|1",
+      "text": "윤정후 씨, 유서가 작성되던 무렵 어머니를 얼마나 자주 찾아뵈었는지부터 말씀해 주십시오."
+    },
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact_pursuit-1-v2",
+      "key": "d-1|fact_pursuit|1",
+      "text": "윤태성 씨, 그 시기 어머니 상태가 평소와 달라졌다고 느낀 장면부터 말씀해 주십시오."
+    },
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact-pursuit-1-v3",
+      "key": "d-1|fact_pursuit|1",
+      "text": "윤정후 씨, 공증 전 어머니 방에 들른 날짜를 순서대로 말씀해 주십시오."
+    },
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact-pursuit-1-v4",
+      "key": "d-1|fact_pursuit|1",
+      "text": "윤태성 씨, 어머니 판단이 흐렸다고 본 첫 장면은 무엇입니까."
+    },
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact-pursuit-1-v5",
+      "key": "d-1|fact_pursuit|1",
+      "text": "두 분, 유서 이야기가 처음 나온 시점을 각자 정리해 주십시오."
+    },
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact_pursuit-2-v1",
+      "key": "d-1|fact_pursuit|2",
+      "text": "윤정후 씨, 어머니께 유서 내용을 읽어드린 횟수와 그 이유는 무엇입니까."
+    },
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact_pursuit-2-v2",
+      "key": "d-1|fact_pursuit|2",
+      "text": "윤태성 씨, 요양보호사 교체와 공증 시점이 겹친다고 보신 근거는 무엇입니까."
+    },
+    {
+      "channel": "judge_question",
+      "id": "judgeq-d-1-fact-pursuit-2-v3",
+      "key": "d-1|fact_pursuit|2",
+      "text": "윤정후 씨, 종이를 읽어드린 날과 공증 일정은 어떻게 이어졌습니까."
+    },
+    {
+      "channel": "judge_contradiction",
+      "id": "judgec-d-1-soft-v1",
+      "key": "d-1|soft",
+      "text": "윤정후 씨, 단순 방문에서 유서 대화 인정으로 입장이 바뀌었습니다. 어디까지가 사실입니까."
+    },
+    {
+      "channel": "judge_contradiction",
+      "id": "judgec-d-1-soft-v2",
+      "key": "d-1|soft",
+      "text": "윤태성 씨, 전면 무효 주장과 일부 의사 인정 사이의 차이를 설명해 주십시오."
+    },
+    {
+      "channel": "judge_contradiction",
+      "id": "judgec-d-1-soft-v3",
+      "key": "d-1|soft",
+      "text": "윤정후 씨, 돕기만 했다는 말과 일정까지 챙겼다는 말은 다릅니다. 왜 달라졌습니까."
+    },
+    {
+      "channel": "judge_contradiction",
+      "id": "judgec-d-1-soft-v4",
+      "key": "d-1|soft",
+      "text": "두 분, 어머니 판단을 두고 각자 말을 좁히고 있습니다. 기준을 명확히 해 주십시오."
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "id": "judgeec-dc-1-b-q1-soft-v1",
+      "key": "dc-1.b.q1|soft",
+      "text": "유서 사본과 말년 방문기록, 최복순 씨의 음성증언을 함께 보면 방문이 늘어난 시기와 종이를 읽어드린 장면이 겹칩니다. 윤정후 씨, 왜 윤태성 씨가 오기 전에 마치려 했는지 순서대로 말씀해 주십시오."
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "id": "judgeec-dc-1-b-q1-soft-v2",
+      "key": "dc-1.b.q1|soft",
+      "text": "방문기록은 윤정후 씨가 말년에 자주 들른 흐름을 보이고, 최복순 씨 증언은 종이를 읽어드린 장면을 보탭니다. 윤정후 씨, 그 순서를 설명해 주십시오."
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "id": "judgeec-dc-1-b-q1-soft-v3",
+      "key": "dc-1.b.q1|soft",
+      "text": "유서 사본만 보면 결과가 보이고, 방문기록과 요양보호사 증언을 붙이면 작성 과정이 보입니다. 윤정후 씨, 그때 윤태성 씨를 피하려 했습니까."
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "id": "judgeec-dc-1-b-q1-soft-v4",
+      "key": "dc-1.b.q1|soft",
+      "text": "말년 방문이 늘어난 기록과 종이를 읽어드렸다는 증언은 같은 방향으로 맞물립니다. 윤정후 씨, 그 방문의 목적을 정리해 주십시오."
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "id": "judgeec-dc-1-b-q1-soft-v5",
+      "key": "dc-1.b.q1|soft",
+      "text": "유서가 남은 시기와 윤정후 씨의 방문 흐름, 최복순 씨가 들은 말이 맞물립니다. 윤정후 씨, 왜 서둘렀는지 말씀해 주십시오."
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "id": "judgeec-dc-1-b-q1-mid-v1",
+      "key": "dc-1.b.q1|mid",
+      "text": "방문기록과 최복순 씨 증언을 나란히 보면 단순 문병으로 보기 어렵습니다. 윤정후 씨, 종이를 읽어드린 이유와 윤태성 씨를 피한 이유를 나누어 말씀해 주십시오."
+    }
+  ]
+}
