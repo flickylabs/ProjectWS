@@ -61,6 +61,7 @@ import type { BeatScriptV2 } from '../types'
 import { toTrustWindowBand as _toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
+import { attemptNarrativeForEvidence, buildActionContext } from '../engine/narrativeOrchestrator'
 import { getInterrogationMicroVfx, shouldPlayImpactBeat } from '../engine/vfxHierarchyEngine'
 import { hasContradictionComparison } from '../utils/contradiction'
 import { getAvailableSlots } from '../engine/witnessTestimonyResolver'
@@ -1070,9 +1071,28 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   if (evDidTransition) {
     const unlockedByProgress = useGameStore.getState().refreshEvidenceUnlocks?.() ?? []
     for (const unlockedId of unlockedByProgress) {
-      const fresh = useGameStore.getState()
-      const def = fresh.evidenceDefinitions.find((e) => e.id === unlockedId)
+      const fresh = useGameStore.getState() as UnsafeAny
+      const def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === unlockedId)
       if (!def) continue
+      // Core narrative gate — narrativeTriggers 정의된 evidence는 trigger fire 시에만 surface
+      const evState = fresh.evidenceStates[def.id]
+      const attempt = attemptNarrativeForEvidence({
+        evidenceDef: def,
+        currentTurn: state.turnCount,
+        lastActionContext: buildActionContext(action),
+        firedTrigger: evState?.narrativeFiredTrigger,
+        legacyEligibleTurn: evState?.narrativeLegacyEligibleTurn,
+      })
+      if (attempt === null) {
+        // narrative trigger 미발동 — unlock revert + legacy eligible turn 첫 기록
+        fresh.revertEvidenceUnlock?.(def.id, state.turnCount)
+        continue
+      }
+      if (attempt) {
+        // fire 성공 — 마킹 후 등재 흐름 진행
+        fresh.markNarrativeFired?.(def.id, attempt.triggerId)
+      }
+      // attempt === undefined: narrativeTriggers 미정의 → legacy 즉시 등재 흐름
       const newDisplayName = getEvidenceDisplayName(def, fresh.evidenceStates[def.id])
       enqueueNewEvidenceCutscene(def.id, {
         body: `${newDisplayName}${pp이가(newDisplayName)} 진실 단계 변화로 확보되었습니다.`,
@@ -2319,9 +2339,25 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   if (didTransition) {
     const unlockedByProgress = useGameStore.getState().refreshEvidenceUnlocks?.() ?? []
     for (const unlockedId of unlockedByProgress) {
-      const fresh = useGameStore.getState()
-      const def = fresh.evidenceDefinitions.find((e) => e.id === unlockedId)
+      const fresh = useGameStore.getState() as UnsafeAny
+      const def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === unlockedId)
       if (!def) continue
+      // Core narrative gate — narrativeTriggers 정의된 evidence는 trigger fire 시에만 surface
+      const evState = fresh.evidenceStates[def.id]
+      const attempt = attemptNarrativeForEvidence({
+        evidenceDef: def,
+        currentTurn: state.turnCount,
+        lastActionContext: buildActionContext(action),
+        firedTrigger: evState?.narrativeFiredTrigger,
+        legacyEligibleTurn: evState?.narrativeLegacyEligibleTurn,
+      })
+      if (attempt === null) {
+        fresh.revertEvidenceUnlock?.(def.id, state.turnCount)
+        continue
+      }
+      if (attempt) {
+        fresh.markNarrativeFired?.(def.id, attempt.triggerId)
+      }
       const displayName = getEvidenceDisplayName(def, fresh.evidenceStates[def.id])
       enqueueNewEvidenceCutscene(unlockedId, {
         body: `${displayName}${pp이가(displayName)} 진실 단계 변화로 확보되었습니다.`,

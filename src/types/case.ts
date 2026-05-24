@@ -183,6 +183,10 @@ export interface EvidenceNode {
       implication: string
     }
   }
+  /** Core narrative wrapper (Cycle 1+) — emergence 시점 multi-trigger 후보.
+   *  CoreEvidenceSchema에서 정의된 NarrativeTriggerCandidate[]가 build step을 통해 runtime EvidenceNode로 전달됨.
+   *  미지정 시 legacy 즉시 unlock (호환). */
+  narrativeTriggers?: import('./narrativeTrigger').NarrativeTriggerCandidate[]
 }
 
 export interface EvidenceCombination {

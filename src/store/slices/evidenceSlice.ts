@@ -44,6 +44,14 @@ export interface EvidenceSlice {
   refreshEvidenceUnlocks: () => string[]
   addDerivedEvidence: (node: EvidenceNode, unlock?: boolean) => void
   patchEvidenceDefinition: (evidenceId: string, patch: Partial<EvidenceNode>) => void
+  /**
+   * Core narrative gate — refreshEvidenceUnlocks가 unlock으로 표시한 증거 중,
+   * narrative trigger 평가에서 fire 실패 시 unlock을 revert하고 legacyEligibleTurn 기록.
+   * 다음 액션 사이클에서 재평가될 때 narrative trigger가 다시 평가됨.
+   */
+  revertEvidenceUnlock: (evidenceId: string, legacyEligibleTurn: number) => void
+  /** Core narrative gate — fire 성공 시 narrativeFiredTrigger 마킹 (이후 후보 평가 skip). */
+  markNarrativeFired: (evidenceId: string, triggerId: string) => void
 }
 
 export interface CombinationPartnerHint {
@@ -179,6 +187,35 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
       evidenceStates: {
         ...evidenceStates,
         [evidenceId]: { ...state, confidentialSource: true },
+      },
+    })
+  },
+
+  revertEvidenceUnlock: (evidenceId, legacyEligibleTurn) => {
+    const { evidenceStates } = get()
+    const state = evidenceStates[evidenceId]
+    if (!state) return
+    set({
+      evidenceStates: {
+        ...evidenceStates,
+        [evidenceId]: {
+          ...state,
+          unlocked: false,
+          // 첫 eligible turn만 기록 (이후 N턴 fallback 계산 기준점)
+          narrativeLegacyEligibleTurn: state.narrativeLegacyEligibleTurn ?? legacyEligibleTurn,
+        },
+      },
+    })
+  },
+
+  markNarrativeFired: (evidenceId, triggerId) => {
+    const { evidenceStates } = get()
+    const state = evidenceStates[evidenceId]
+    if (!state) return
+    set({
+      evidenceStates: {
+        ...evidenceStates,
+        [evidenceId]: { ...state, narrativeFiredTrigger: triggerId },
       },
     })
   },
