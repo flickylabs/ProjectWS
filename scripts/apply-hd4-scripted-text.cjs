@@ -129,7 +129,64 @@ function buildEntry(channel, entries, gptEntry) {
   if (channel === 'evidence_present') {
     return buildEvidencePresentEntry(entries, gptEntry)
   }
+  if (channel === 'judge_question') {
+    return buildJudgeQuestionEntry(entries, gptEntry)
+  }
   return buildDisputeEntry(channel, entries, gptEntry)
+}
+
+/**
+ * judge_question 채널 전용 — entry는 disputeId + questionType + depth 형식.
+ * variants는 a/b/both target 섞임 가능. variant.tags의 targetParty token으로 호명 결정.
+ */
+function buildJudgeQuestionEntry(entries, gptEntry) {
+  const questionType = gptEntry.questionType ?? 'fact_pursuit'
+  const depth = gptEntry.depth ?? 1
+  // h-d3의 같은 questionType + depth template
+  const template = entries.find(
+    (e) => e.disputeId === 'h-d3' && e.questionType === questionType && e.depth === depth,
+  ) ?? entries.find((e) => e.disputeId === 'h-d3' && e.questionType === questionType)
+    ?? entries.find((e) => e.disputeId === 'h-d3')
+  if (!template) {
+    throw new Error(`[judge_question] no h-d3 template for questionType=${questionType} depth=${depth}`)
+  }
+
+  const newEntry = {
+    key: gptEntry.key,
+    disputeId: 'h-d4',
+    questionType,
+    depth,
+    truthLevel: gptEntry.truthLevel ?? template.truthLevel,
+    variants: gptEntry.variants.map((v, idx) => {
+      const templateVariant = template.variants[idx] ?? template.variants[0]
+      const targetParty = v.targetParty ?? 'a'
+      return {
+        id: v.id,
+        text: v.text,
+        behaviorHint: v.behaviorHint ?? '',
+        tags: rewriteJudgeQuestionTags(templateVariant.tags, targetParty, depth),
+        sourceRefs: ['dispute:h-d4'],
+      }
+    }),
+  }
+  return newEntry
+}
+
+/**
+ * judge_question tags rewrite — disputeId / depth / targetParty / callTerm / counterpartyRef 정확 교체
+ */
+function rewriteJudgeQuestionTags(tags, targetParty, depth) {
+  if (!Array.isArray(tags)) return tags
+  const partyName = targetParty === 'a' ? '박지연_씨' : (targetParty === 'b' ? '이준호_씨' : '두_분')
+  return tags.map((t) => {
+    if (typeof t !== 'string') return t
+    let s = t.replace(/h-d3/g, 'h-d4')
+    if (s.startsWith('targetParty:')) s = `targetParty:${targetParty}`
+    else if (s.startsWith('callTerm:')) s = `callTerm:${partyName}`
+    else if (s.startsWith('counterpartyRef:')) s = `counterpartyRef:${partyName}`
+    else if (s.startsWith('depth:')) s = `depth:${depth}`
+    return s
+  })
 }
 
 function buildEvidencePresentEntry(entries, gptEntry) {

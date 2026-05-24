@@ -1,0 +1,454 @@
+{
+  "batch": 2,
+  "channel": "judge_question",
+  "entries": [
+    {
+      "key": "judge|h-d4|S0|a|fact_pursuit",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S0",
+      "questionType": "fact_pursuit",
+      "angle": "surface_use",
+      "stanceHint": "surface_probe",
+      "truthLevel": "none",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S0-a-fact-pursuit-v1",
+          "text": "박지연 씨, 비자금의 사용처는 형에게 간 돈으로 들으셨습니다. 그 외에 다른 목적을 들은 적이 있습니까?",
+          "behaviorHint": "재판관이 A가 알고 있는 표면 사실부터 확인한다.",
+          "stageGate": "S0 judge surface 준수 — 형에게 간 돈과 다른 목적 인지 여부만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "A의 모름 frame을 유지하며 결론을 앞서 말하지 않음."
+        },
+        {
+          "id": "judge-h-d4-S0-a-fact-pursuit-v2",
+          "text": "박지연 씨, 지금까지 알고 계신 비자금의 사용처를 본인 입장에서 정리해 주십시오.",
+          "behaviorHint": "재판관이 사용처 인식을 짧게 정리하게 한다.",
+          "stageGate": "S0 judge surface 준수 — 사용처 확인에 한정, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "피해자 위치에서 답할 여지를 남기되 질문은 간결하게 유지."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S0|b|fact_pursuit",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S0",
+      "questionType": "fact_pursuit",
+      "angle": "just_saved_money",
+      "stanceHint": "surface_probe",
+      "truthLevel": "none",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S0-b-fact-pursuit-v1",
+          "text": "이준호 씨, 그 돈은 그냥 모아 둔 돈이고 나중에 형에게 쓴 돈이라는 입장을 유지하십니까?",
+          "behaviorHint": "재판관이 B의 기존 설명을 반복시켜 표면 진술을 고정한다.",
+          "stageGate": "S0 judge surface 준수 — 그냥 모은 돈과 사용처 frame만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "B avoidant 답변을 유도하되 숨은 결론은 언급하지 않음."
+        },
+        {
+          "id": "judge-h-d4-S0-b-fact-pursuit-v2",
+          "text": "이준호 씨, 별도 계좌의 돈에 처음부터 정해 둔 목적은 없었다는 말씀이 맞습니까?",
+          "behaviorHint": "재판관이 목적 부정 입장을 직접 확인한다.",
+          "stageGate": "S0 judge surface 준수 — 목적 부정 여부만 확인, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘맞습니까’로 입장 확인 톤을 살리고 추궁 강도를 낮춤."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S1|a|fact_pursuit",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S1",
+      "questionType": "fact_pursuit",
+      "angle": "ten_year_pattern",
+      "stanceHint": "pattern_probe",
+      "truthLevel": "hint",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S1-a-fact-pursuit-v1",
+          "text": "박지연 씨, 10년 가까이 누적된 돈이라는 점을 알고 나서도 최종 사용처만으로 설명이 충분하다고 보십니까?",
+          "behaviorHint": "재판관이 기간의 길이를 짚고 A의 판단 변화를 확인한다.",
+          "stageGate": "S1 judge surface 준수 — 10년 누적과 다른 이유 가능성만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "권위의 기간 단서를 사용하되 목적을 특정하지 않음."
+        },
+        {
+          "id": "judge-h-d4-S1-a-fact-pursuit-v2",
+          "text": "박지연 씨, 오래 모인 돈이라는 사실 때문에 다른 이유가 있었을 수 있다고 보신 계기는 무엇입니까?",
+          "behaviorHint": "재판관이 의심이 생긴 지점을 묻는다.",
+          "stageGate": "S1 judge surface 준수 — 오래 모인 돈과 다른 이유만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "추상 표현을 줄이고 ‘오래 모인 돈’이라는 구체 단서로 질문."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S1|b|fact_pursuit",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S1",
+      "questionType": "fact_pursuit",
+      "angle": "timeline_gap",
+      "stanceHint": "pattern_probe",
+      "truthLevel": "hint",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S1-b-fact-pursuit-v1",
+          "text": "이준호 씨, 처음부터 형에게 줄 돈은 아니었다면, 왜 그렇게 오래 따로 모으기 시작했습니까?",
+          "behaviorHint": "재판관이 S1의 시기 분리 지점을 압박한다.",
+          "stageGate": "S1 judge surface 준수 — 처음부터 형 아님과 장기 누적만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "B가 진짜 이유를 미루는 답을 할 수 있도록 ‘왜’만 열어 둠."
+        },
+        {
+          "id": "judge-h-d4-S1-b-fact-pursuit-v2",
+          "text": "이준호 씨, 형 일은 나중에 생긴 일이라고 하셨습니다. 그 이전의 적립 이유를 어디까지 설명하실 수 있습니까?",
+          "behaviorHint": "재판관이 사용처 이전의 시간을 분리한다.",
+          "stageGate": "S1 judge surface 준수 — 나중에 생긴 일과 이전 적립 이유만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘어디까지’로 회피형 캐릭터의 부분 인정 여지를 만듦."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S2|a|e8_evidence_query",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S2",
+      "questionType": "evidence_query",
+      "angle": "e8_medical_search",
+      "stanceHint": "evidence_probe",
+      "truthLevel": "hint",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S2-a-e8-evidence-query-v1",
+          "text": "박지연 씨, 휴대폰 의학 검색 기록을 보았을 때 그 자료가 형 일과 다른 영역이라고 받아들이셨습니까?",
+          "behaviorHint": "재판관이 자료와 기존 사용처의 분리만 확인한다.",
+          "stageGate": "S2 judge surface 준수 — 휴대폰 의학 검색과 형 일과 다른 영역만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "e-8 표면 정보만 활용하고 결론은 A의 답변에 남김."
+        },
+        {
+          "id": "judge-h-d4-S2-a-e8-evidence-query-v2",
+          "text": "박지연 씨, 휴대폰 검색 기록을 처음에는 어떻게 해석했고 지금은 어디까지 다르게 보십니까?",
+          "behaviorHint": "재판관이 A의 해석 변화에 초점을 둔다.",
+          "stageGate": "S2 judge surface 준수 — 검색 기록과 해석 변화만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "처음/지금 대비로 A의 피해자 frame 전환을 자연스럽게 유도."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S2|b|e8_evidence_query",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S2",
+      "questionType": "evidence_query",
+      "angle": "e8_medical_search",
+      "stanceHint": "evidence_probe",
+      "truthLevel": "hint",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S2-b-e8-evidence-query-v1",
+          "text": "이준호 씨, 휴대폰 검색 기록이 본인 것이라는 점을 인정하십니까. 그 기록이 남은 이유를 어떻게 설명하시겠습니까?",
+          "behaviorHint": "재판관이 인증된 자료와 설명 공백을 함께 짚는다.",
+          "stageGate": "S2 judge surface 준수 — 휴대폰 검색 기록과 본인 인정만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "B가 큰 사실은 인정하되 용도는 미루는 답을 할 수 있게 설계."
+        },
+        {
+          "id": "judge-h-d4-S2-b-e8-evidence-query-v2",
+          "text": "이준호 씨, 그 검색이 단순한 정보 확인이었다면 왜 반복해서 이어졌는지 설명해 주십시오.",
+          "behaviorHint": "재판관이 B의 축소 설명을 검토하게 한다.",
+          "stageGate": "S2 judge surface 준수 — 검색 반복과 정보 확인 여부만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘단순한 정보 확인’이라는 완충 표현으로 직접 결론을 피함."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S2|a|e9_evidence_query",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S2",
+      "questionType": "evidence_query",
+      "angle": "e9_insurance_estimate",
+      "stanceHint": "evidence_probe",
+      "truthLevel": "hint",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S2-a-e9-evidence-query-v1",
+          "text": "박지연 씨, 보험사 견적 자료와 가입 흔적이 없다는 점을 함께 보았을 때 어떤 의문이 생겼습니까?",
+          "behaviorHint": "재판관이 견적과 미가입 사실만 제시한다.",
+          "stageGate": "S2 judge surface 준수 — 보험사 견적 자료와 가입 없음만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "e-9 표면 정보로만 새 의문을 열어 둠."
+        },
+        {
+          "id": "judge-h-d4-S2-a-e9-evidence-query-v2",
+          "text": "박지연 씨, 여러 보험 상담 기록이 사용처 설명과 맞지 않는다고 본 이유를 말씀해 주십시오.",
+          "behaviorHint": "재판관이 A가 자료의 불일치를 직접 설명하게 한다.",
+          "stageGate": "S2 judge surface 준수 — 보험 상담과 사용처 설명의 차이만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘맞지 않는다고 본 이유’로 답변 가능한 구체 질문을 구성."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S2|b|e9_evidence_query",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S2",
+      "questionType": "evidence_query",
+      "angle": "e9_insurance_estimate",
+      "stanceHint": "evidence_probe",
+      "truthLevel": "hint",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S2-b-e9-evidence-query-v1",
+          "text": "이준호 씨, 보험 상담은 받았지만 가입까지 가지 않았다는 사실을 어떻게 설명하시겠습니까?",
+          "behaviorHint": "재판관이 미가입 지점을 중심으로 짧게 추궁한다.",
+          "stageGate": "S2 judge surface 준수 — 보험 상담과 가입 안 함만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "권위의 표면 단어만 사용하고 용도는 B의 답변에 남김."
+        },
+        {
+          "id": "judge-h-d4-S2-b-e9-evidence-query-v2",
+          "text": "여러 견적만 남고 계약이 없는 이유를 본인 말로 정리해 주십시오.",
+          "behaviorHint": "재판관이 자료의 끝이 비어 있는 점을 묻는다.",
+          "stageGate": "S2 judge surface 준수 — 견적과 계약 없음만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘본인 말로’로 B의 직접 설명을 유도하되 법정 톤을 유지."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S3|a|motive_search",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S3",
+      "questionType": "motive_search",
+      "angle": "birth_related_research",
+      "stanceHint": "transition_probe",
+      "truthLevel": "partial",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S3-a-motive-search-v1",
+          "text": "박지연 씨, 그 자료들이 출산 관련 조사였다는 설명을 들은 뒤 가장 먼저 든 생각은 무엇입니까?",
+          "behaviorHint": "재판관이 A의 인식 전환과 첫 반응을 묻는다.",
+          "stageGate": "S3 judge 권위 준수 — 출산 관련 조사 frame만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "S3 허용 범위 안에서 A의 침잠 반응을 끌어내는 질문."
+        },
+        {
+          "id": "judge-h-d4-S3-a-motive-search-v2",
+          "text": "이준호 씨가 그 영역을 혼자 알아봤다는 사실을 받아들인 지금, 무엇이 가장 걸리십니까?",
+          "behaviorHint": "재판관이 A가 받아들인 사실의 감정적 무게를 묻는다.",
+          "stageGate": "S3 judge 권위 준수 — 혼자 알아본 사실만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "A가 피해자 위치에서 벗어나 자기 판단을 정리할 여지를 남김."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S3|b|motive_search",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S3",
+      "questionType": "motive_search",
+      "angle": "alone_research_reason",
+      "stanceHint": "transition_probe",
+      "truthLevel": "partial",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S3-b-motive-search-v1",
+          "text": "이준호 씨, 혼자 알아보고 의사 친구에게 상담하고 보험도 알아본 이유를 말씀해 주십시오.",
+          "behaviorHint": "재판관이 B의 부분 자백 범위를 한 문장으로 묶는다.",
+          "stageGate": "S3 judge 권위 준수 — 혼자 알아봄, 의사 친구 상담, 보험 상담만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "S3에서 허용된 상담 범위만 열고 최종 목적은 직접 말하지 않음."
+        },
+        {
+          "id": "judge-h-d4-S3-b-motive-search-v2",
+          "text": "박지연 씨에게 부담을 주지 않으려 했다는 설명과 혼자 알아본 결정 사이를 정리해 주십시오.",
+          "behaviorHint": "재판관이 배려와 침묵 사이의 간극을 묻는다.",
+          "stageGate": "S3 judge 권위 준수 — 부담 회피와 혼자 알아봄 frame만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘말하지 않은 방식’의 책임을 묻되 강한 법적 단어는 피함."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S3|a|empathy_approach",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S3",
+      "questionType": "empathy_approach",
+      "angle": "recognition_shift",
+      "stanceHint": "soft_probe",
+      "truthLevel": "partial",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S3-a-empathy-approach-v1",
+          "text": "박지연 씨, 그 사람이 그걸 혼자 알아봤었구나, 라고 받아들이는 순간 어떤 생각이 들었습니까?",
+          "behaviorHint": "재판관이 압박을 낮추고 A의 인식 변화를 말하게 한다.",
+          "stageGate": "S3 judge 권위 준수 — transitionBeat의 인식 문장만 활용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "인용형 질문으로 A의 침잠한 반응을 자연스럽게 유도."
+        },
+        {
+          "id": "judge-h-d4-S3-a-empathy-approach-v2",
+          "text": "처음 의심했던 방향과 지금 드러난 자료 사이에서 본인의 판단을 어떻게 정리하십니까?",
+          "behaviorHint": "재판관이 A가 스스로 판단 변화를 설명하도록 기다린다.",
+          "stageGate": "S3 judge 권위 준수 — 자료 해석 변화만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "추상적 반성 대신 처음 의심과 현재 자료라는 답변 가능한 축을 제시."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S3|b|empathy_approach",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S3",
+      "questionType": "empathy_approach",
+      "angle": "burden_avoidance",
+      "stanceHint": "soft_probe",
+      "truthLevel": "partial",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S3-b-empathy-approach-v1",
+          "text": "이준호 씨, 부담을 주지 않으려 했다는 말이 왜 침묵으로 이어졌는지 설명해 주십시오.",
+          "behaviorHint": "재판관이 선의와 침묵 사이의 간극을 부드럽게 묻는다.",
+          "stageGate": "S3 judge 권위 준수 — 부담 회피와 침묵 frame만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "B의 자기방어를 유도하면서도 법정 질문의 간결함을 유지."
+        },
+        {
+          "id": "judge-h-d4-S3-b-empathy-approach-v2",
+          "text": "박지연 씨를 배려하려는 마음이었다면 왜 말하지 않는 방식이 되었습니까?",
+          "behaviorHint": "재판관이 배려라는 설명의 한계를 짚는다.",
+          "stageGate": "S3 judge 권위 준수 — 부담을 주지 않으려 한 동기만 질문, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "구체 인물 호칭을 써서 ‘상대’ 같은 모호 지시를 피함."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S4|a|empathy_approach",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S4",
+      "questionType": "empathy_approach",
+      "angle": "closed_topic_responsibility",
+      "stanceHint": "responsibility_probe",
+      "truthLevel": "partial",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S4-a-empathy-approach-v1",
+          "text": "박지연 씨, 그 화제를 본인이 닫아 두었다고 인정하셨습니다. 그 회피가 두 사람의 돈 문제에 어떤 영향을 줬다고 보십니까?",
+          "behaviorHint": "재판관이 A의 회피 책임을 돈 문제와 연결해 묻는다.",
+          "stageGate": "S4 judge surface 유지 — 화제 회피 책임을 질문하되 직접 결론은 반복하지 않음.",
+          "naturalKoreanNotes": "S4 진입 후에도 직접 명명보다 ‘그 화제’로 문맥을 이어 감."
+        },
+        {
+          "id": "judge-h-d4-S4-a-empathy-approach-v2",
+          "text": "말하지 않은 것이 본인만의 방어였는지, 두 사람 사이에 어떤 문제를 만들었는지 생각해보고 말씀해 주십시오.",
+          "behaviorHint": "재판관이 A가 스스로 책임 범위를 정리하도록 시간을 준다.",
+          "stageGate": "S4 judge surface 유지 — 회피와 침묵의 영향만 질문, 단계 제한 없음.",
+          "naturalKoreanNotes": "자기지시형 표현을 피하고 ‘말하지 않은 것’이라는 구체 행동으로 정리."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S4|b|motive_search",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S4",
+      "questionType": "motive_search",
+      "angle": "original_purpose",
+      "stanceHint": "responsibility_probe",
+      "truthLevel": "partial",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S4-b-motive-search-v1",
+          "text": "이준호 씨, 이제 비자금의 본 목적을 직접 말씀하실 단계입니다. 보험 상담과 의학 검색이 왜 같은 흐름에 있었습니까?",
+          "behaviorHint": "재판관이 S4의 본 목적 진술을 요구하되 결론을 먼저 말하지 않는다.",
+          "stageGate": "S4 judge surface 유지 — 본 목적과 자료의 연결만 질문, 직접 결론은 B 발화에 남김.",
+          "naturalKoreanNotes": "재판관이 답을 대신 말하지 않고 B의 자백을 유도하는 구조."
+        },
+        {
+          "id": "judge-h-d4-S4-b-motive-search-v2",
+          "text": "처음 목적을 숨긴 이유와 나중 사용처를 따로 말씀해 주십시오.",
+          "behaviorHint": "재판관이 목적과 사용처를 분리해 진술하도록 요구한다.",
+          "stageGate": "S4 judge surface 유지 — 처음 목적과 나중 사용처의 분리만 질문, 단계 제한 없음.",
+          "naturalKoreanNotes": "양극 추상 대비 대신 사건 단어로 분리해 다국어 번역 안전성을 높임."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S5|a|fact_pursuit",
+      "party": "judge",
+      "targetParty": "a",
+      "disputeId": "h-d4",
+      "lieState": "S5",
+      "questionType": "fact_pursuit",
+      "angle": "final_responsibility",
+      "stanceHint": "wrap_up",
+      "truthLevel": "full",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S5-a-fact-pursuit-v1",
+          "text": "박지연 씨, 이제 비자금의 처음 목적과 본인의 회피 책임을 함께 보게 됐습니다. 어느 부분을 인정하십니까?",
+          "behaviorHint": "재판관이 최종 판단 전 A의 책임 범위를 정리하게 한다.",
+          "stageGate": "S5 완전 인정 단계 준수 — 처음 목적 수용과 회피 책임을 정리, 직접 결론 반복은 줄임.",
+          "naturalKoreanNotes": "후반부 법정 톤에 맞춰 ‘어느 부분을 인정하십니까’로 간결하게 마무리."
+        },
+        {
+          "id": "judge-h-d4-S5-a-fact-pursuit-v2",
+          "text": "두 분의 침묵이 같은 돈 문제로 이어졌다는 점을 어떻게 받아들이십니까?",
+          "behaviorHint": "재판관이 부부 침묵을 한 묶음으로 정리하도록 묻는다.",
+          "stageGate": "S5 완전 인정 단계 준수 — 부부 침묵의 한 축과 회피 책임 frame 사용.",
+          "naturalKoreanNotes": "S5 통합 단계에 맞춰 판단보다 수용과 책임 정리에 초점."
+        }
+      ]
+    },
+    {
+      "key": "judge|h-d4|S5|b|fact_pursuit",
+      "party": "judge",
+      "targetParty": "b",
+      "disputeId": "h-d4",
+      "lieState": "S5",
+      "questionType": "fact_pursuit",
+      "angle": "final_account",
+      "stanceHint": "wrap_up",
+      "truthLevel": "full",
+      "surfaceOnly": true,
+      "variants": [
+        {
+          "id": "judge-h-d4-S5-b-fact-pursuit-v1",
+          "text": "이준호 씨, 신혼 초기부터 모은 돈이 나중에 형에게 전환된 흐름을 순서대로 말씀해 주십시오.",
+          "behaviorHint": "재판관이 완전 자백 단계에서 시간 순서를 정리하게 한다.",
+          "stageGate": "S5 완전 인정 단계 준수 — 신혼 초기와 형 사건 후 전환 흐름을 정리, 직접 결론 반복은 줄임.",
+          "naturalKoreanNotes": "사건 순서 확인용 문장으로 구성해 과장된 감정 표현을 피함."
+        },
+        {
+          "id": "judge-h-d4-S5-b-fact-pursuit-v2",
+          "text": "처음 목적을 말하지 않은 책임과 자금을 돌려쓴 책임을 각각 말씀해 주십시오.",
+          "behaviorHint": "재판관이 B의 침묵과 자금 전환 책임을 분리한다.",
+          "stageGate": "S5 완전 인정 단계 준수 — 완전 자백 이후 책임 분리 질문, 단계 제한 없음.",
+          "naturalKoreanNotes": "‘각각’으로 답변 형식을 명확히 해 다국어 번역 시 의미가 흔들리지 않게 함."
+        }
+      ]
+    }
+  ]
+}
