@@ -108,7 +108,7 @@
       {
         "id": "w-2",
         "name": "朴俊赫",
-        "knowledgeScope": "作为未婚夫公司的后辈，我知道未婚夫首先接触的是崔秀敏。",
+        "knowledgeScope": "他是未婚夫金泰允公司的后辈，也是崔秀敏的普拉提学员。曾在公司偶然听到未婚夫到处炫耀的说法，并告诉过崔秀敏。",
         "surfaceKnowledge": "他是第三方见证人，了解未婚夫的行为模式。",
         "witnessProfile": {
           "occupation": "公司职员",
@@ -117,7 +117,7 @@
           "speechStyle": "说话要简洁，注重事实，避免做出不必要的判断。",
           "addressJudge": "法官",
           "addressA": "那位",
-          "addressB": "崔秀敏女士",
+          "addressB": "秀敏老师",
           "hiddenAgenda": "我很担心我和未来丈夫的工作关系可能会变得不舒服。"
         }
       },

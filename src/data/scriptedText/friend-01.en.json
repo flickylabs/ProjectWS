@@ -27953,6 +27953,273 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-w-2",
+          "witnessId": "w-2",
+          "variants": [
+            {
+              "id": "emerge-w2-via-cascade-judge-decree-v1",
+              "text": "Regarding the previously registered clue [Why Not Say It Right Away?], the court needs a witness who can confirm the conduct on the fiance's side. I will call Mr. Park Jun-hyeok as a witness.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-cascade-a-react-v1",
+              "text": "...Even someone from the fiance's company? If he is Kim Tae-yun's junior, he may have heard only one side of it.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-cascade-b-react-v1",
+              "text": "It would be good to have that confirmed. I have nothing more to add.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:b",
+                "speakerRole:party",
+                "archetype:affect_flattening",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-judge-mention-v1",
+              "text": "The just-derived [Why Not Say It Right Away?] still requires further confirmation of the sequence behind the approach from the fiance's side. Mr. Park Jun-hyeok's testimony is needed.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-a-react-v1",
+              "text": "Would that company person be objective? If he works at the same company as Kim Tae-yun, he will end up considering that side's circumstances first.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-judge-decree-v1",
+              "text": "The court will manage possible bias through the scope of questioning. This court registers Mr. Park Jun-hyeok as a witness.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-a-claim-v1",
+              "text": "Your Honor, Su-min sent the messages one-sidedly, and Kim Tae-yun only received them. That is all I saw.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-b-interject-v1",
+              "text": "Actually, the junior from that person's company is a student in my class. That junior did not know that and apparently said all kinds of strange things at work. Would it be better to hear it directly?",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:b",
+                "speakerRole:party",
+                "archetype:affect_flattening",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-judge-decree-v1",
+              "text": "A statement has just come out to the effect that the company knows about this. To confirm the related facts, the court will proceed with confirmation from Mr. Park Jun-hyeok's side.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-a-react-v1",
+              "text": "...Yes, we can hear it from that company person. But it is hard to see that as the whole story.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-judge-mention-v1",
+              "text": "With the current materials alone, the sequence of conduct on the fiance's side has not been sufficiently confirmed. A witness who can confirm it is needed.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-a-react-v1",
+              "text": "Do we really need that company person? If he works at the same company as Kim Tae-yun, he would have to choose his words carefully.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-judge-decree-v1",
+              "text": "Taking that into account, I will limit the scope of questioning to the facts. The court will hear Mr. Park Jun-hyeok's testimony.",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

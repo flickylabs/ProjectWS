@@ -27287,6 +27287,273 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-w-2",
+          "witnessId": "w-2",
+          "variants": [
+            {
+              "id": "emerge-w2-via-cascade-judge-decree-v1",
+              "text": "先に登録された手がかり[なぜすぐ言わなかったのか]に関連して、婚約者側の行動を確認できる証人が必要です。パク・ジュンヒョクさんを証人としてお呼びします。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-cascade-a-react-v1",
+              "text": "…婚約者の会社の人までですか。キム・テユンさんの後輩なら、片方の話だけを聞いている可能性もあるのではありませんか。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-cascade-b-react-v1",
+              "text": "確認されるならよいと思います。私からこれ以上申し上げることはありません。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:b",
+                "speakerRole:party",
+                "archetype:affect_flattening",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-judge-mention-v1",
+              "text": "いま導き出された[なぜすぐ言わなかったのか]については、婚約者側が接近した経緯の前後関係をさらに確認する必要があります。パク・ジュンヒョクさんの証言が必要です。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-a-react-v1",
+              "text": "その会社の人が客観的でしょうか。キム・テユンさんと同じ会社なら、結局そちら側の事情を先に考えるはずです。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-judge-decree-v1",
+              "text": "偏りの可能性は質問範囲の中で管理します。本法廷はパク・ジュンヒョクさんを証人として登録します。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-a-claim-v1",
+              "text": "裁判官、スミンが一方的にメッセージを送り、キム・テユンさんは受け取っただけです。私が見たのはそれが全てです。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-b-interject-v1",
+              "text": "実は、その人の会社の後輩が私のレッスンの受講生です。その後輩はそれを知らず、会社で妙な話をいろいろしていたそうです。直接聞いてみてはいかがですか。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:b",
+                "speakerRole:party",
+                "archetype:affect_flattening",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-judge-decree-v1",
+              "text": "いま、会社で知っているという趣旨の発言がありました。関連する事実関係を確認するため、パク・ジュンヒョクさん側の確認を進めます。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-a-react-v1",
+              "text": "…はい、その会社の人に聞けばよいでしょう。ただ、その話が全てだとは見にくいです。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-judge-mention-v1",
+              "text": "現在の資料だけでは、婚約者側の行動の前後関係が十分に確認されていません。これを確認できる証人が必要です。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-a-react-v1",
+              "text": "あえてその会社の人をですか。キム・テユンさんと同じ会社なら、発言には慎重になるはずですが。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-judge-decree-v1",
+              "text": "その点を踏まえ、質問範囲を事実関係に限定します。パク・ジュンヒョクさんの証言を聞きます。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

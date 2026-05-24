@@ -27739,6 +27739,273 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-w-2",
+          "witnessId": "w-2",
+          "variants": [
+            {
+              "id": "emerge-w2-via-cascade-judge-decree-v1",
+              "text": "关于此前登记的线索[为什么没有马上说]，需要一位能够确认未婚夫一方行动经过的证人。本庭将请朴俊赫先生作为证人出席。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-cascade-a-react-v1",
+              "text": "……连未婚夫公司的人也要叫吗？如果是金泰允的后辈，听到的也可能只是单方面的说法吧。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-cascade-b-react-v1",
+              "text": "能确认就好。我没有更多要补充的话。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:cascade_from_card",
+                "priorCard:dc-2",
+                "speaker:b",
+                "speakerRole:party",
+                "archetype:affect_flattening",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-judge-mention-v1",
+              "text": "刚刚得出的[为什么没有马上说]，还需要进一步确认未婚夫一方接近崔秀敏的先后经过。需要朴俊赫先生的证言。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-a-react-v1",
+              "text": "那个公司的人能客观吗？如果和金泰允在同一家公司，最后肯定会先考虑那边的情况。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-combo-judge-decree-v1",
+              "text": "偏向的可能性会在提问范围内控制。本法庭将朴俊赫先生登记为证人。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:combination_result",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-a-claim-v1",
+              "text": "裁判官，秀敏是单方面发了消息，金泰允只是接收而已。我看到的就只有这些。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-b-interject-v1",
+              "text": "其实，那个人公司里的后辈是我课上的学员。那个后辈不知道这层关系，据说在公司里说了各种奇怪的话。要不要直接听听他的说法？",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:b",
+                "speakerRole:party",
+                "archetype:affect_flattening",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-judge-decree-v1",
+              "text": "刚才出现了公司里知道此事这一层意思的发言。为确认相关事实关系，本庭将对朴俊赫一方进行确认。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-npc-a-react-v1",
+              "text": "……好，听听那边公司的人也行。不过很难说他的话就是全部。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:npc_interjection",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-judge-mention-v1",
+              "text": "仅凭现有资料，未婚夫一方行动的先后关系还没有充分确认。需要一位能够确认这一点的证人。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-a-react-v1",
+              "text": "一定要找那边公司的人吗？如果和金泰允在同一家公司，说话恐怕会很谨慎。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:a",
+                "speakerRole:party",
+                "archetype:premature_summary",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            },
+            {
+              "id": "emerge-w2-via-fallback-judge-decree-v1",
+              "text": "考虑到这一点，提问范围将限定在事实关系上。本庭将听取朴俊赫先生的证言。",
+              "tags": [
+                "channel:emergence_narrative",
+                "emerge:w-2",
+                "trigger:judge_auto_mention",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:witness",
+                "listenerRole:witness",
+                "address:summon",
+                "register:formal",
+                "honorific:formal",
+                "scope:all_present",
+                "revealScope:all_present",
+                "tense:present"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }
