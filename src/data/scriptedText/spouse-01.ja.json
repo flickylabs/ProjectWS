@@ -24782,6 +24782,573 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-e-5",
+          "evidenceId": "e-5",
+          "variants": [
+            {
+              "id": "emerge-e5-via-a-interject-v1",
+              "text": "裁判官。問題はオフィステルだけではありません。夫の口座から大きなお金が引き出された形跡もあります。",
+              "behaviorHint": "こらえていた言葉をもう飲み込めず、割って入る。怒りが先に立つが、語尾だけはできる限り抑える。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:재판관님",
+                "judgeAddressState:defined",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:charged",
+                "continuity:interjection",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-react-v1",
+              "text": "パク・ジヨンさん、今おっしゃった大きな出金の形跡は、どのように知ったのですか。",
+              "behaviorHint": "突然の差し込みを遮らず、新しく出た発言の出所から落ち着いて確認する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:박지연_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:reactive_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:fact_check",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-response-v1",
+              "text": "夫が私に内緒で管理していた口座に、見過ごせない大きな金額の出金記録がありました。",
+              "behaviorHint": "口にしたことを自分でも意識し、一瞬ひるむ。それでも事実確認が必要だという態度は崩さない。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:past",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-b-shock-v1",
+              "text": "お前…あの口座を知ってたのか？ あれは俺が別に…",
+              "behaviorHint": "見つかった部分を否定できず、言葉が途切れる。自分の口座が露見したことに動揺している。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:자기야",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:shock",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-rebuke-v1",
+              "text": "今それが大事なの？ 先に出ていったお金の説明をして。",
+              "behaviorHint": "夫の動揺を見て、かえって疑いが固まる。話題を本筋に戻す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:rebuke",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-decree-v1",
+              "text": "それなら、本法廷にイ・ジュノさんの個人口座の出金記録を正式に登録します。",
+              "behaviorHint": "新たに明らかになった資金の流れを、別途検討すべき対象として確定する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:npc_interjection",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-query-v1",
+              "text": "イ・ジュノさん、通話記録と発信者不明のメッセージをあわせて確認します。一定の間隔で連絡が続いている以上、その時期に別に動いた資金があったのか説明していただけますか。",
+              "behaviorHint": "二つの資料を比較したうえで、資金移動の有無に焦点を絞って尋ねる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:combo_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:evidence_combo",
+                "clue:clue-cash-pattern",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-3",
+                "evidence:e-4",
+                "evidence:e-5",
+                "clue:clue-cash-pattern"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-b-response-v1",
+              "text": "…個人的に別に管理していた口座はあります。ただ、その記録まで今すべて説明するのは困難です。",
+              "behaviorHint": "最初は否定しようとするが、証拠の流れを見て一歩引く。口座の存在だけを認め、詳しい説明は避ける。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:guarded_admission",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-a-aware-v1",
+              "text": "今になって言うの？ その口座から大きなお金も出ていったじゃない。",
+              "behaviorHint": "事実が表に出た瞬間、疑ってきたことが確定する感覚を受ける。安堵と虚しさが混ざる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-decree-v1",
+              "text": "今の陳述に基づき、本法廷にイ・ジュノさんの個人口座の出金記録を正式に登録します。",
+              "behaviorHint": "被告の認めた内容を根拠に、新しい証拠を法廷記録に載せる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:combination_result",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-outburst-v1",
+              "text": "では、私の口座の出金記録まで全部出せということですか？ 私がお金を引き出した記録があるからといって、全部が不自然なことではないでしょう！",
+              "behaviorHint": "圧迫に耐えきれず、声が上がる。防御しようとして、自分が隠していた言葉を漏らす。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:emotional_outburst",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:angry_deflection",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-catch-v1",
+              "text": "イ・ジュノさん、今ご自身でおっしゃった口座の出金記録が、実際に存在するという意味ですか。",
+              "behaviorHint": "本人が漏らした言葉を見逃さず、すぐに聞き返す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_catch",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:catch_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-b-admit-v1",
+              "text": "…はい、私の個人口座から出金された記録があります。",
+              "behaviorHint": "今の発言を取り消せないと悟り、短く認める。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:broken",
+                "continuity:admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-a-react-v1",
+              "text": "今になって言うの？ それなのに、私が余計な疑いをかけているって、私だけおかしい人みたいにしていたじゃない。",
+              "behaviorHint": "積み重ねてきた疑いが事実として出た瞬間、怒りより先に、これまでの理不尽さへのわだかまりが噴き出す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-decree-v1",
+              "text": "その陳述を根拠に、本法廷にイ・ジュノさんの個人口座の出金記録を正式に登録します。",
+              "behaviorHint": "突発的な発言を、公式な証拠の流れへと切り替える。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:emotional_outburst",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-decree-v1",
+              "text": "イ・ジュノさん、現在までに提出されたメッセージと通話の状況だけでも、資金の流れを別に確認する必要があります。本法廷は、イ・ジュノさんの個人口座の出金記録を正式な検討対象として登録します。",
+              "behaviorHint": "これ以上先送りにせず、法廷が直接検討範囲を広げる。感情を交えず、手続きとして宣言する。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_auto_mention",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "responseMode:judge_formal_decree",
+                "trigger:judge_auto_mention",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-b-respond-v1",
+              "text": "…はい、その記録があることは認めます。",
+              "behaviorHint": "もう避けられないと判断したように、短く乾いた調子で認める。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:short_admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:judge_auto_mention",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -25552,6 +25552,573 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-e-5",
+          "evidenceId": "e-5",
+          "variants": [
+            {
+              "id": "emerge-e5-via-a-interject-v1",
+              "text": "裁判官。问题不只是公寓式办公楼。我丈夫的账户里也有一大笔钱被转走的迹象。",
+              "behaviorHint": "她再也咽不下忍着的话，打断发言。怒意先涌上来，但句尾仍尽量压住。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:재판관님",
+                "judgeAddressState:defined",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:charged",
+                "continuity:interjection",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-react-v1",
+              "text": "朴智妍女士，您刚才说的大额取款迹象，是怎么知道的？",
+              "behaviorHint": "法官没有打断突如其来的插话，而是先冷静确认新说法的来源。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:박지연_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:reactive_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:fact_check",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-response-v1",
+              "text": "我丈夫瞒着我管理的账户里，有几笔不能就这样放过去的大额取款记录。",
+              "behaviorHint": "她意识到自己刚才说出了什么，短暂退缩。但她仍没有放弃需要确认事实的态度。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:past",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-b-shock-v1",
+              "text": "老婆……你知道那个账户？那是我另外……",
+              "behaviorHint": "他无法否认已经暴露的部分，话语中断。自己的账户被揭出来，让他明显动摇。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:자기야",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:shock",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-rebuke-v1",
+              "text": "现在重要的是这个吗？先解释被转走的钱。",
+              "behaviorHint": "看到丈夫动摇，她的怀疑反而更确定。她把话题拉回核心。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:rebuke",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-decree-v1",
+              "text": "既然如此，本法庭正式登记李俊浩先生的个人账户取款记录。",
+              "behaviorHint": "法官将新显露的资金流向确定为单独审查对象。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:npc_interjection",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-query-v1",
+              "text": "李俊浩先生，我们一起看通话记录和未知发件人短信。联系以固定间隔持续出现，那么请说明那段时期是否有另行流动的资金。",
+              "behaviorHint": "对比两份资料后，法官集中询问是否存在资金流动。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:combo_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:evidence_combo",
+                "clue:clue-cash-pattern",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-3",
+                "evidence:e-4",
+                "evidence:e-5",
+                "clue:clue-cash-pattern"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-b-response-v1",
+              "text": "……我确实有一个私下单独管理的账户。不过，要我现在把那些记录全都说明清楚，确实很难。",
+              "behaviorHint": "他起初想否认，但看到证据的走向后退了一步。他只承认账户存在，避开详细说明。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:guarded_admission",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-a-aware-v1",
+              "text": "你现在才说？那个账户里也有一大笔钱转出去了吧。",
+              "behaviorHint": "事实浮出水面的瞬间，她感觉自己一直以来的怀疑终于被确认。安心和空落混在一起。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-decree-v1",
+              "text": "根据刚才的陈述，本法庭正式登记李俊浩先生的个人账户取款记录。",
+              "behaviorHint": "法官以被告的承认为依据，将新证据列入法庭记录。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:combination_result",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-outburst-v1",
+              "text": "那是要我连自己账户的取款记录也全部交出来吗？就算有我取钱的记录，也不代表每一笔都可疑吧！",
+              "behaviorHint": "他承受不住压力，声音抬高。为了防御，反而漏出了自己一直藏着的词。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:emotional_outburst",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:angry_deflection",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-catch-v1",
+              "text": "李俊浩先生，您刚才自己提到的账户取款记录，意思是确实存在吗？",
+              "behaviorHint": "法官没有放过他自己漏出的词，立刻追问。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_catch",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:catch_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-b-admit-v1",
+              "text": "……是的，我的个人账户里有取款记录。",
+              "behaviorHint": "他意识到刚才的话已经收不回去，只能短短承认。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:broken",
+                "continuity:admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-a-react-v1",
+              "text": "你现在才说？结果还一直说是我无端怀疑，把我一个人说成不正常的人。",
+              "behaviorHint": "积累已久的怀疑成为事实的瞬间，先爆发的不是愤怒，而是这些日子受到的不公。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-decree-v1",
+              "text": "以该陈述为依据，本法庭正式登记李俊浩先生的个人账户取款记录。",
+              "behaviorHint": "法官把突发发言转化为正式的证据路径。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:emotional_outburst",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-decree-v1",
+              "text": "李俊浩先生，仅凭目前提交的短信和通话情况，也有必要另行确认资金流向。本法庭将李俊浩先生的个人账户取款记录正式登记为审查对象。",
+              "behaviorHint": "法庭不再拖延，直接扩大审查范围。宣告不带情绪，只按程序推进。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_auto_mention",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "responseMode:judge_formal_decree",
+                "trigger:judge_auto_mention",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-b-respond-v1",
+              "text": "……是的，我承认有那些记录。",
+              "behaviorHint": "他像是判断已经无法回避，短促而干涩地承认。",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:short_admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:judge_auto_mention",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

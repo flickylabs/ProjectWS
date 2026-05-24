@@ -24156,6 +24156,573 @@
           ]
         }
       ]
+    },
+    "emergence_narrative": {
+      "entries": [
+        {
+          "key": "emerge-e-5",
+          "evidenceId": "e-5",
+          "variants": [
+            {
+              "id": "emerge-e5-via-a-interject-v1",
+              "text": "Your Honor. The officetel is not the only issue. There are also signs that a large sum left my husband's account.",
+              "behaviorHint": "She cuts in, no longer able to swallow the words she has been holding back. Anger comes first, but she keeps her voice as controlled as she can.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:재판관님",
+                "judgeAddressState:defined",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:charged",
+                "continuity:interjection",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-react-v1",
+              "text": "Ms. Park, how did you learn about the large withdrawal you just mentioned?",
+              "behaviorHint": "The Judge does not shut down the sudden interjection, and calmly verifies the source of the new statement first.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:박지연_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:reactive_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:fact_check",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-response-v1",
+              "text": "There were withdrawal records for large amounts from an account my husband had been managing behind my back, amounts I could not simply overlook.",
+              "behaviorHint": "She briefly shrinks back, aware of what she has just said. Even so, she does not retreat from the need to verify the facts.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:past",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:남편",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-b-shock-v1",
+              "text": "Honey... you knew about that account? That was something I kept separate...",
+              "behaviorHint": "He cannot deny the part that has been exposed, and his words trail off. He is shaken that his own account has come to light.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:a",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:자기야",
+                "callTermState:defined",
+                "emotion:tense",
+                "continuity:shock",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-a-rebuke-v1",
+              "text": "Is that what matters right now? Explain the money that left first.",
+              "behaviorHint": "Seeing her husband shaken only hardens her suspicion. She pulls the subject back to the point.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:rebuke",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:npc_interjection",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-a-interject-judge-decree-v1",
+              "text": "In that case, this court formally enters Mr. Lee Jun-ho's personal account withdrawal records into evidence.",
+              "behaviorHint": "The Judge confirms the newly revealed money flow as a separate matter for review.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:npc_interjection",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-query-v1",
+              "text": "Mr. Lee Jun-ho, let us look at the call records and the unknown-sender texts together. Given the repeated intervals of contact, can you tell the court whether there was any separate movement of funds around that period?",
+              "behaviorHint": "After comparing the two records, the Judge focuses the question on whether funds moved.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:combo_query",
+                "reveal:none",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:evidence_combo",
+                "clue:clue-cash-pattern",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-3",
+                "evidence:e-4",
+                "evidence:e-5",
+                "clue:clue-cash-pattern"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-b-response-v1",
+              "text": "...There is an account I had been managing separately, for personal reasons. But it is difficult for me to explain all of those records right now.",
+              "behaviorHint": "He starts to deny it, then steps back after seeing the direction of the evidence. He admits only that the account exists and avoids the details.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:answer",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:guarded_admission",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-a-aware-v1",
+              "text": "So you are only saying that now? A large sum went out of that account too.",
+              "behaviorHint": "At the moment the fact comes out, she feels what she had suspected become certain. Relief and emptiness mix together.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:combination_result",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-combo-judge-decree-v1",
+              "text": "Based on that statement, this court formally enters Mr. Lee Jun-ho's personal account withdrawal records into evidence.",
+              "behaviorHint": "The Judge places the new evidence into the court record on the basis of the respondent's admission.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:combination_result",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-outburst-v1",
+              "text": "So now you are asking me to produce every withdrawal record from my account? Having records of money I withdrew does not mean all of it is suspicious!",
+              "behaviorHint": "Unable to endure the pressure, his voice rises. In trying to defend himself, he lets slip the very words he had been hiding.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:emotional_outburst",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:angry_deflection",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-catch-v1",
+              "text": "Mr. Lee Jun-ho, do you mean that the account withdrawal records you just mentioned yourself actually exist?",
+              "behaviorHint": "The Judge immediately catches and repeats the words he let slip.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:single",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_catch",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:judge_formal_prompt",
+                "questionType:catch_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-b-admit-v1",
+              "text": "...Yes, there are withdrawal records from my personal account.",
+              "behaviorHint": "Realizing he cannot take back what he just said, he gives a short admission.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:broken",
+                "continuity:admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-a-react-v1",
+              "text": "So you are only saying that now? And after all that, you kept making me look strange for suspecting something for no reason.",
+              "behaviorHint": "The instant her accumulated suspicion becomes fact, the resentment over how unfair it has all been bursts out before the anger does.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:informal",
+                "honorific:informal",
+                "audience:single",
+                "tense:past",
+                "relationship:spouse",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:charged",
+                "continuity:react",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:emotional_outburst",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-b-angry-judge-decree-v1",
+              "text": "On the basis of that statement, this court formally enters Mr. Lee Jun-ho's personal account withdrawal records into evidence.",
+              "behaviorHint": "The Judge turns the outburst into an official evidence path.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:evidence_register",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "trigger:emotional_outburst",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-decree-v1",
+              "text": "Mr. Lee Jun-ho, the texts and call circumstances submitted so far are enough to require a separate review of the funds flow. This court formally enters Mr. Lee Jun-ho's personal account withdrawal records for review.",
+              "behaviorHint": "Without delaying further, the court expands the scope of review directly. The declaration is procedural and emotionless.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:b",
+                "listenerRole:party",
+                "address:toParty",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:judge_auto_mention",
+                "reveal:evidence_name",
+                "disclosure:guarded",
+                "action:evidence_register",
+                "responseMode:judge_formal_decree",
+                "trigger:judge_auto_mention",
+                "emergence:e-5",
+                "evidence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            },
+            {
+              "id": "emerge-e5-via-judge-auto-b-respond-v1",
+              "text": "...Yes, I acknowledge that those records exist.",
+              "behaviorHint": "As if deciding there is no way to avoid it now, he admits it briefly and dryly.",
+              "tags": [
+                "channel:emergence_narrative",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "audience:both",
+                "tense:present",
+                "relationship:spouse",
+                "judgeAddress:none",
+                "callTerm:none",
+                "callTermState:none",
+                "emotion:tense",
+                "continuity:short_admission",
+                "reveal:partial",
+                "disclosure:guarded",
+                "responseMode:short_admission",
+                "trigger:judge_auto_mention",
+                "emergence:e-5"
+              ],
+              "sourceRefs": [
+                "dispute:d-2",
+                "evidence:e-5"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }
