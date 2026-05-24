@@ -218,6 +218,9 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
         [evidenceId]: { ...state, narrativeFiredTrigger: triggerId },
       },
     })
+    // 통합 narrativeSlice 동기화 — cascade_from_card lookup pool 포함용
+    const root = get() as unknown as { markNarrativeFiredEmergence?: (id: string, triggerId: string, turn: number) => void; turnCount?: number }
+    root.markNarrativeFiredEmergence?.(evidenceId, triggerId, root.turnCount ?? 0)
   },
 
   isUnlocked: (evidenceId) => {

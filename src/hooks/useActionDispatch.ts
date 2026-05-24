@@ -62,6 +62,11 @@ import { toTrustWindowBand as _toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
 import { attemptNarrativeForEvidence, buildActionContext } from '../engine/narrativeOrchestrator'
+import {
+  attemptCoreNarrativeForWitness,
+  attemptCoreNarrativeForDispute,
+  attemptCoreNarrativeFallbackForAll,
+} from '../engine/narrativeIntegration'
 import { getInterrogationMicroVfx, shouldPlayImpactBeat } from '../engine/vfxHierarchyEngine'
 import { hasContradictionComparison } from '../utils/contradiction'
 import { getAvailableSlots } from '../engine/witnessTestimonyResolver'
@@ -1271,6 +1276,10 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 
   const witness = state.caseData.duo.socialGraph.find(tp => tp.id === action.witnessId)
   if (!witness) return
+
+  // Core narrative wrapper (Cycle 2) — 증인 호출 narrative 우선 발화.
+  // non-gating MVP: fire 성공 시 dialogue 추가 후 일반 소환 흐름 진행. fire 실패는 fallback 대기.
+  attemptCoreNarrativeForWitness(action.witnessId, `call_witness.${action.witnessId}`)
 
   // 다층 증언 데이터 로드 시도
   const caseKey = normalizeCaseKey(state.caseData.caseId ?? '')
@@ -4136,6 +4145,9 @@ export function applyWitnessSlot(slotId: string): void {
   }
 
   if (slot.effect.emergenceTrigger) {
+    // Core narrative wrapper (Cycle 2) — hidden dispute emerge narrative 선행.
+    // non-gating MVP: fire 성공 시 narrative dialogue 추가 후 mechanical emerge 진행.
+    attemptCoreNarrativeForDispute(slot.effect.emergenceTrigger, `witness_testimony.${pending?.witnessId ?? ''}`)
     // Hidden 쟁점 발현 트리거
     state.emergeDispute(slot.effect.emergenceTrigger, 'witness_testimony', state.turnCount, '증인 진술로 숨겨진 쟁점이 드러났습니다.')
     state.addDialogue({

@@ -23,6 +23,7 @@ import { showGuideCutscene } from '../../common/guideCutscene'
 import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 import { playCombinationFailure, playCombinationSuccess } from '../../../engine/soundEngine'
+import { attemptCoreNarrativeForDossier, attemptCoreNarrativeForWitness } from '../../../engine/narrativeIntegration'
 import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
 import { translate, useI18n, type MessageKey } from '../../../i18n'
 import { localizeRuntimeText } from '../../../i18n/runtimeText'
@@ -499,6 +500,14 @@ export default function PCRightPanel() {
       })
       clearComboSlots()
       return
+    }
+
+    // Core narrative wrapper (Cycle 2) — dossier surface + 동시 unlock된 witness surface.
+    if (result.outputId?.startsWith('dc-')) {
+      attemptCoreNarrativeForDossier(result.outputId, `combination_result.${matchingRecipe.id}`, matchingRecipe.id)
+    }
+    for (const w of result.newlyUnlockedWitnesses ?? []) {
+      attemptCoreNarrativeForWitness(w.id, `combination_result.${matchingRecipe.id}`)
     }
 
     const newlyUnlockedWitnesses = result.newlyUnlockedWitnesses ?? []

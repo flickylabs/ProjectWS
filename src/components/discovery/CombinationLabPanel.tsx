@@ -15,6 +15,7 @@ import {
   type PcPinnedNote,
 } from '../pc/panels/PCImportantNotesSection'
 import { playCombinationFailure, playCombinationSuccess } from '../../engine/soundEngine'
+import { attemptCoreNarrativeForDossier, attemptCoreNarrativeForWitness } from '../../engine/narrativeIntegration'
 import { cleanOutputLabel, cleanOutputSummary } from '../../utils/combinationLabels'
 import { useI18n, type LocaleCode } from '../../i18n'
 import { localizeRuntimeText } from '../../i18n/runtimeText'
@@ -363,6 +364,15 @@ export default function CombinationLabPanel() {
         copy.failed
       showToast(reason, 'warn')
       return
+    }
+
+    // Core narrative wrapper (Cycle 2) — dossier surface + 동시 unlock된 witness surface.
+    // non-gating MVP: mechanical surface는 그대로 진행하고 narrative dialogue를 추가.
+    if (result.outputId?.startsWith('dc-')) {
+      attemptCoreNarrativeForDossier(result.outputId, `combination_result.${matchingRecipe.id}`, matchingRecipe.id)
+    }
+    for (const w of result.newlyUnlockedWitnesses ?? []) {
+      attemptCoreNarrativeForWitness(w.id, `combination_result.${matchingRecipe.id}`)
     }
 
     store.addDialogue({

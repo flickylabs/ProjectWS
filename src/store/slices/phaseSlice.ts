@@ -5,6 +5,7 @@ import { PHASE_ORDER } from '../../utils/constants'
 import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readinessEngine'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 import { triggerConfessionModalIfReady } from '../../engine/confessionTrigger'
+import { attemptCoreNarrativeFallbackForAll } from '../../engine/narrativeIntegration'
 import { getVerdictDisputeGate } from '../../engine/verdictAdvanceGate'
 import { emitPhaseEnter, emitPhaseExit } from '../../telemetry/wirePoints'
 import type { UnsafeAny } from '../../types/lint'
@@ -130,6 +131,11 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
         }
       }
     }
+
+    // Core narrative wrapper (Cycle 2) — 매 턴 종료 시 fallback judge_auto_mention 1건 평가.
+    // legacy-eligible + N턴 경과 + 미발동 emergence가 있으면 첫 fire 성공한 1건 발화.
+    // 사용자 인지 부담 회피 — 한 턴 한 fallback만.
+    attemptCoreNarrativeFallbackForAll()
 
     // 매 턴 끝: readiness 자동 갱신
     const fullState = get() as UnsafeAny

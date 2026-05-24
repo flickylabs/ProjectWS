@@ -15,6 +15,7 @@ import { createEventFeedbackSlice, type EventFeedbackSlice, type EventFeedbackCo
 import { createJudgeObservationSlice, type JudgeObservationSlice } from './slices/judgeObservationSlice'
 import { createJudgeNotebookSlice, type JudgeNotebookSlice } from './slices/judgeNotebookSlice'
 import { createTutorialSlice, type TutorialState } from './slices/tutorialSlice'
+import { createNarrativeSlice, type NarrativeSlice } from './slices/narrativeSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -334,7 +335,7 @@ function applyPerks(set: (partial: UnsafeAny) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & JudgeObservationSlice & JudgeNotebookSlice & TutorialState & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & JudgeObservationSlice & JudgeNotebookSlice & TutorialState & NarrativeSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -516,6 +517,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createJudgeObservationSlice(...args),
     ...createJudgeNotebookSlice(...args),
     ...createTutorialSlice(...args),
+    ...createNarrativeSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -1108,6 +1110,9 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         feedbackQueue: [],
         activeFeedback: null,
         minorStream: [],
+        // Core narrative wrapper (Cycle 2) — emergence fire 추적 초기화
+        firedEmergences: {},
+        narrativeLegacyEligibleTurns: {},
         judgeObservations: [],
         observationHistoryOpen: false,
         pendingResonances: [],
@@ -1284,5 +1289,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     // 재판관의 관찰 — 세션 내 유지 (리로드 시 복원)
     judgeObservations: state.judgeObservations,
     observationHistoryOpen: state.observationHistoryOpen,
+    // Core narrative wrapper — emergence fire 상태 세션 내 유지
+    firedEmergences: state.firedEmergences,
+    narrativeLegacyEligibleTurns: state.narrativeLegacyEligibleTurns,
   }),
 }))

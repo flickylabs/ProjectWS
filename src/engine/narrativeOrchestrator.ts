@@ -221,23 +221,27 @@ function attemptNarrativeForEmergence(args: {
 
 /**
  * 이미 fire된 카드/증거 ID set 수집.
- * Cycle 1: evidence narrativeFiredTrigger map만 처리.
- * Cycle 2: dossier / witness / dispute fired 추적은 store slice 확장 후 추가.
+ *
+ * Cycle 2 unified narrativeSlice — evidence / dossier / witness / dispute 모든 emergence
+ * 단일 firedEmergences map에서 lookup. cascade_from_card precondition single source.
+ *
+ * 기존 evidence-only 경로 (evidenceState.narrativeFiredTrigger) 는 fire 시 markNarrativeFiredEmergence
+ * 함께 호출되어 narrativeSlice에 동기화됨. 양쪽 모두 anchor로 사용 가능.
  */
 function collectFiredCardIds(): ReadonlySet<string> {
   const state = useGameStore.getState() as {
-    evidence?: { narrativeFiredTrigger?: Record<string, string | undefined> }
-    dossier?: { narrativeFiredTrigger?: Record<string, string | undefined> }
-    witness?: { narrativeFiredTrigger?: Record<string, string | undefined> }
-    dispute?: { narrativeFiredTrigger?: Record<string, string | undefined> }
+    getFiredEmergenceIds?: () => ReadonlySet<string>
+    firedEmergences?: Record<string, { triggerId: string; turn: number }>
+    evidenceStates?: Record<string, { narrativeFiredTrigger?: string }>
   }
   const fired = new Set<string>()
-  for (const slice of [state.evidence, state.dossier, state.witness, state.dispute]) {
-    const map = slice?.narrativeFiredTrigger
-    if (!map) continue
-    for (const [id, trigger] of Object.entries(map)) {
-      if (trigger) fired.add(id)
-    }
+  // 1. 통합 narrativeSlice (Cycle 2+)
+  const ids = state.getFiredEmergenceIds?.() ?? new Set(Object.keys(state.firedEmergences ?? {}))
+  for (const id of ids) fired.add(id)
+  // 2. 레거시 evidence-per-state (Cycle 1 evidence 경로가 markNarrativeFiredEmergence를
+  //    아직 호출하지 않은 사이클 대비 안전망)
+  for (const [id, entry] of Object.entries(state.evidenceStates ?? {})) {
+    if (entry?.narrativeFiredTrigger) fired.add(id)
   }
   return fired
 }
