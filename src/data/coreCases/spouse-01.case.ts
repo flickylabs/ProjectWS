@@ -2598,7 +2598,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         ],
       },
       noteText: ko(
-        '휴대폰 검색 기록과 보험 상담 기록이 같은 시기·같은 영역(산부인과·고위험 임신·시험관)으로 모인다. 형 사건과는 연결되지 않는 영역이며 가입 흔적은 없다 — 결정에 도달하지 못한 혼자만의 조사.',
+        '휴대폰 의학 검색 기록과 보험사 견적 자료가 같은 시기, 같은 의료 영역에 모인다. 기존 사용처와는 결이 다르고, 보험 가입 흔적은 없다.',
       ),
       successConditionSummary: [
         ko('e-8 Original 이상'),
@@ -2616,13 +2616,13 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           disputeUpgrade: { disputeId: 'h-d4', weight: 'high', ambiguity: 'low' },
         },
       ],
-      judgeHint: ko('e-8 + e-9 결합으로 부상한 단서. h-d4 등록 직전.'),
+      judgeHint: ko('휴대폰 의학 검색 기록과 보험사 견적 자료가 같은 시기, 같은 의료 영역으로 겹칩니다. 이 자료들이 기존 사용처와 분리된 준비였는지 확인하겠습니다.'),
       challenges: {
         b: {
           questions: [
             {
               id: 'dc-8.b.q1',
-              text: ko('아내 모르게 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?'),
+              text: ko('이준호 씨, 아내에게 바로 말하지 않고 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?'),
               lockedHint: ko('e-8 + e-9 Original + B의 가족 사정 인정 후 등장.'),
               attackVector: 'responsibility',
               requiredLieState: 'S3',
@@ -2634,7 +2634,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
             },
             {
               id: 'dc-8.b.q2',
-              text: ko('이 자료들의 진짜 목적이 무엇이었는지 직접 답해 주십시오.'),
+              text: ko('이준호 씨, 이 자료들의 진짜 목적이 무엇이었는지 직접 답해 주십시오.'),
               lockedHint: ko('h-d4 S3 이상 + 공감 접근 누적 후 등장.'),
               attackVector: 'motive',
               requiredLieState: 'S4',

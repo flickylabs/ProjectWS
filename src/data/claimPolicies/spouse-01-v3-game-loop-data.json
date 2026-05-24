@@ -309,7 +309,7 @@
           "questions": [
             {
               "id": "dc-8.b.q1",
-              "text": "아내 모르게 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?",
+              "text": "이준호 씨, 아내에게 바로 말하지 않고 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?",
               "lockedHint": "e-8 + e-9 Original + B의 가족 사정 인정 후 등장.",
               "attackVector": "responsibility",
               "requiredLieState": "S3",
@@ -321,7 +321,7 @@
             },
             {
               "id": "dc-8.b.q2",
-              "text": "이 자료들의 진짜 목적이 무엇이었는지 직접 답해 주십시오.",
+              "text": "이준호 씨, 이 자료들의 진짜 목적이 무엇이었는지 직접 답해 주십시오.",
               "lockedHint": "h-d4 S3 이상 + 공감 접근 누적 후 등장.",
               "attackVector": "motive",
               "requiredLieState": "S4",

@@ -1,0 +1,194 @@
+{
+  "batch": 5,
+  "channel": "dossier",
+  "entries": [
+    {
+      "key": "dossier|dc-8|noteText|v1",
+      "party": "system",
+      "disputeId": "h-d4",
+      "dossierCardId": "dc-8",
+      "lieState": "S2",
+      "questionType": "noteText",
+      "stanceHint": "note",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "dossier-dc-8-noteText-v1",
+          "text": "휴대폰 의학 검색 기록과 보험사 견적 자료가 같은 시기, 같은 의료 영역에 모입니다. 기존 사용처와는 결이 다르고, 보험 가입 흔적은 없습니다.",
+          "behaviorHint": "시스템 노트처럼 차분하게 자료의 겹치는 지점만 정리한다.",
+          "stageGate": "S2 dossier-surface 권위 준수 — 의학 검색/보험 견적/가입 없음만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "dc-8의 핵심을 직접 결론 내리지 않고 자료의 시기·영역 겹침으로만 제시."
+        },
+        {
+          "id": "dossier-dc-8-noteText-v2",
+          "text": "두 자료는 한동안 이어진 검색과 상담의 흐름을 보여 줍니다. 다만 실제 가입이나 확정된 계약은 남아 있지 않습니다.",
+          "behaviorHint": "판단을 유보한 채 자료 상태와 남은 의문만 남긴다.",
+          "stageGate": "S2 dossier-surface 권위 준수 — 수상한 자료와 보험 상담 범위에 머물고 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘결론’보다 ‘흐름’과 ‘미가입’에 초점을 두어 dossier 단서 카드 톤 유지."
+        }
+      ]
+    },
+    {
+      "key": "dossier|dc-8|judgeHint|v1",
+      "party": "judge",
+      "disputeId": "h-d4",
+      "dossierCardId": "dc-8",
+      "lieState": "S2",
+      "questionType": "judgeHint",
+      "stanceHint": "prompt",
+      "truthLevel": "hint",
+      "linkedEvidence": [
+        "e-8",
+        "e-9"
+      ],
+      "variants": [
+        {
+          "id": "dossier-dc-8-judgeHint-v1",
+          "text": "휴대폰 의학 검색 기록과 보험사 견적 자료가 같은 시기, 같은 의료 영역으로 겹칩니다. 이 자료들이 기존 사용처와 분리된 준비였는지 확인하겠습니다.",
+          "behaviorHint": "재판관이 두 자료의 접점을 짚고 다음 질문의 범위를 좁힌다.",
+          "stageGate": "S2 judge dossier-surface 준수 — e-8/e-9 표면 정보와 ‘기존 사용처와 분리’까지만 제시, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘무엇을 위한 준비’라고 단정하지 않고, 확인할 쟁점으로 남겨 플레이어 추론 여지를 유지."
+        },
+        {
+          "id": "dossier-dc-8-judgeHint-v2",
+          "text": "검색 기록과 보험 견적은 모두 실행 단계까지 가지 않았습니다. 그렇다면 반복된 상담의 이유를 따로 확인해야 합니다.",
+          "behaviorHint": "자료의 한계를 먼저 정리한 뒤 동기 확인으로 넘어간다.",
+          "stageGate": "S2 judge dossier-surface 준수 — 보험 상담/가입 안 함 frame만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "강한 결론을 피하고 ‘이유 확인’으로 이어지는 법정 질문 톤 적용."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-8.b.q1|S3|v1",
+      "party": "judge",
+      "disputeId": "h-d4",
+      "dossierCardId": "dc-8",
+      "questionId": "dc-8.b.q1",
+      "questionText": "아내에게 바로 말하지 않고 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?",
+      "targetParty": "b",
+      "requiredLieState": "S3",
+      "lieState": "S3",
+      "questionType": "dossier_question",
+      "stanceHint": "responsibility_press",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "dc-8-b-q1-S3-question-v1",
+          "text": "이준호 씨, 아내에게 바로 말하지 않고 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?",
+          "behaviorHint": "재판관이 책임의 방향을 조용히 좁히며 답변을 요구한다.",
+          "stageGate": "S3 권위 준수 — 출산 관련 조사/혼자 알아봄 frame 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "권위 질문을 자연화하되 ‘아내에게 바로 말하지 않고’로 격식과 구어 균형 유지."
+        },
+        {
+          "id": "dc-8-b-q1-S3-question-v2",
+          "text": "이준호 씨, 검색 기록과 보험 상담이 출산 관련 자료로 이어집니다. 왜 그 일을 부부 사이에서 함께 다루지 못했습니까?",
+          "behaviorHint": "두 자료를 묶어 보되 결론을 말하지 않고 소통 실패를 묻는다.",
+          "stageGate": "S3 권위 준수 — 출산 관련 자료/보험 상담 언급 허용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "‘결정의 무게’라는 추상 표현을 일부 풀어 ‘함께 다루지 못한 이유’로 답변 가능성을 높임."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-8.b.q1|S3|response|v1",
+      "party": "b",
+      "disputeId": "h-d4",
+      "dossierCardId": "dc-8",
+      "questionId": "dc-8.b.q1",
+      "targetParty": "b",
+      "requiredLieState": "S3",
+      "lieState": "S3",
+      "questionType": "dossier_response",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "dc-8-b-q1-S3-response-v1",
+          "text": "제 아내가 부담스러워할까 봐 바로 말하지 못했습니다. 그래서 혼자 자료를 보고, 의사 친구에게 상담하고, 보험 상담도 받았습니다. 가입은 하지 않았습니다.",
+          "behaviorHint": "한 박자 늦게 답하다가 인정할 수 있는 범위만 차례로 꺼낸다.",
+          "stageGate": "S3 B 권위 준수 — 혼자 알아봄/의사 친구 상담/보험 상담/가입 안 함/부담 회피만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "avoidant archetype에 맞춰 큰 사실은 인정하되 가장 아픈 명칭은 끝까지 피함."
+        },
+        {
+          "id": "dc-8-b-q1-S3-response-v2",
+          "text": "말을 꺼내면 제 아내에게 다시 부담이 될 거라고 생각했습니다. 혼자라도 알아봐야 한다고 봤고, 그 판단을 나눌 용기가 없었습니다.",
+          "behaviorHint": "문장 사이를 길게 띄우며, 자기 판단의 책임을 작게 인정한다.",
+          "stageGate": "S3 B 권위 준수 — 부담 회피와 혼자 알아봄 frame 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "아내가 닫아 둔 화제의 압박을 직접 명명하지 않고 부담 회피로 자연스럽게 처리."
+        },
+        {
+          "id": "dc-8-b-q1-S3-response-v3",
+          "text": "검색과 상담은 제 일이 맞습니다. 하지만 어디까지 말해야 할지 몰라서 계속 미뤘습니다. 그게 제일 큰 잘못입니다.",
+          "behaviorHint": "짧게 인정한 뒤 말끝을 낮춘다. 핵심 단어는 아직 꺼내지 않는다.",
+          "stageGate": "S3 B 권위 준수 — 검색/상담 인정과 책임 인정만 사용, 단계 금지어 미사용.",
+          "naturalKoreanNotes": "회피형 캐릭터의 ‘인정하지만 이름 붙이지 않는’ 답변 패턴 적용."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-8.b.q2|S4|v1",
+      "party": "judge",
+      "disputeId": "h-d4",
+      "dossierCardId": "dc-8",
+      "questionId": "dc-8.b.q2",
+      "questionText": "이 자료들의 진짜 목적이 무엇이었는지 직접 답해 주십시오.",
+      "targetParty": "b",
+      "requiredLieState": "S4",
+      "lieState": "S4",
+      "questionType": "dossier_question",
+      "stanceHint": "motive_press",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "dc-8-b-q2-S4-question-v1",
+          "text": "이준호 씨, 이 자료들의 진짜 목적이 무엇이었는지 직접 답해 주십시오.",
+          "behaviorHint": "재판관이 우회 설명을 멈추게 하고 목적을 직접 묻는다.",
+          "stageGate": "S4 진입 질문 — 치료비 frame을 열 수 있는 단계이나 질문 자체는 목적 확인에 머묾.",
+          "naturalKoreanNotes": "권위 문장을 간결하게 유지해 dossier challenge의 압박을 살림."
+        },
+        {
+          "id": "dc-8-b-q2-S4-question-v2",
+          "text": "이준호 씨, 휴대폰 검색과 보험 상담을 이어서 한 이유를 이제 말씀해 주십시오.",
+          "behaviorHint": "자료의 연결을 다시 짚고 더 미룰 수 없다는 분위기를 만든다.",
+          "stageGate": "S4 진입 질문 — 검색/보험 상담의 목적 추궁 허용, 치료비 명시는 응답으로 유보.",
+          "naturalKoreanNotes": "강조 부사를 빼고 짧은 법정 질문으로 정리."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-8.b.q2|S4|response|v1",
+      "party": "b",
+      "disputeId": "h-d4",
+      "dossierCardId": "dc-8",
+      "questionId": "dc-8.b.q2",
+      "targetParty": "b",
+      "requiredLieState": "S4",
+      "lieState": "S4",
+      "questionType": "dossier_response",
+      "stanceHint": "confess",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "dc-8-b-q2-S4-response-v1",
+          "text": "제 아내의 치료비를 준비하려던 돈이었습니다. 의사 친구에게 물어보고 보험 상담을 받은 것도 그 비용을 감당할 방법을 찾으려던 일이었습니다.",
+          "behaviorHint": "처음으로 ‘치료비’를 꺼낸 뒤 숨을 깊게 들이쉰다.",
+          "stageGate": "S4 B 권위 준수 — 치료비/본 목적/의사 친구/보험 상담 허용. 완전 자백의 세부 결합 표현은 S5로 보류.",
+          "naturalKoreanNotes": "S4 transitionBeat에 맞춰 치료비 단어를 처음 열고, 완전 자백은 S5로 남김."
+        },
+        {
+          "id": "dc-8-b-q2-S4-response-v2",
+          "text": "그 돈은 제 개인적인 용도로 모은 게 아니었습니다. 제 아내에게 필요할지 모르는 치료비를 제가 혼자 붙잡고 있던 겁니다.",
+          "behaviorHint": "큰 사실은 인정하지만, 마지막 문장에서 목소리가 낮아진다.",
+          "stageGate": "S4 B 권위 준수 — 치료비 목적 명시 허용, 기존 hidden keyword 미사용.",
+          "naturalKoreanNotes": "avoidant 답변답게 ‘혼자 붙잡고 있던’ 표현으로 독단과 회피를 동시에 드러냄."
+        },
+        {
+          "id": "dc-8-b-q2-S4-response-v3",
+          "text": "제 아내가 그 화제를 힘들어한다는 걸 알았습니다. 그래서 제가 먼저 알아보고, 치료비를 준비해 두려 했습니다. 말하지 않은 건 변명의 여지가 없습니다.",
+          "behaviorHint": "고개를 내린 채 목적과 침묵의 책임을 함께 인정한다.",
+          "stageGate": "S4 B 권위 준수 — 치료비와 부담 회피 동기 허용, 완전 자백의 세부 전환은 S5로 유보.",
+          "naturalKoreanNotes": "‘화제’로 A의 회피 맥락을 살리되 S5 수준의 전체 타임라인 설명은 피함."
+        }
+      ]
+    }
+  ]
+}
