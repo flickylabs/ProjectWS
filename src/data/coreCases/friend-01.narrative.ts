@@ -1,20 +1,33 @@
 /**
- * friend-01 — Core Narrative Wrapper Layer (Cycle 7 — Line A + B)
+ * friend-01 — Core Narrative Wrapper Layer (Cycle 7 Line A+B + Cycle 8b Line C)
  *
  * 권위: [[design_core_narrative_cycle_procedure]] / [[feedback_new_dispute_evidence_narrative_justification]]
- * Brief: docs/design/core-narrative-cycle7-friend01-lineAB-20260524/
+ * Brief: docs/design/core-narrative-cycle7-friend01-lineAB-20260524/ + docs/design/core-narrative-cycle8b-friend01-lineC-20260525/
  *
  * Cycle 7 (Line A + B): 5 emergence × multi-trigger candidate.
  *   - dc-1 "단톡방 글의 근거" (label 변경 commit 081e8dbc)
  *   - dc-2 "먼저 넘은 선"
  *   - e-4 "예비신랑의 선 넘는 메시지와 최수민의 거절 답장"
  *   - w-1 "김세라 (단톡방 동조자)"
- *   - w-2 "박준혁 (예비신랑 회사 후배)"
+ *   - w-2 "박준혁 (예비신랑 회사 후배)" — Cycle 7 dc-2 영역 4 trigger
  *
- * Cycle 8 (Line C 아버지/사기) + Cycle 9 (Line D 종합) 영역은 별도 cycle.
+ * Cycle 8b (Line C 아버지/사기 — plot revision base b77a27c5 후): 7 emergence + w-2 확장.
+ *   - e-5 "예비신랑 회사 단톡 떠벌림 + 9일간 차단 메시지" (plot revision 자료 교체)
+ *   - dc-3 "같은 부탁"
+ *   - d-3 "아버지의 돈 접근 패턴" (hidden)
+ *   - e-6 "과거 송금 영수증 + 문자"
+ *   - dc-4 "손절의 이유" (label 변경 — 기존 "손절의 값")
+ *   - d-4 "과거 손절과 아버지의 사기" (hidden, legitimacyIssue)
+ *   - w-3 "오미경 (분식집 사장, pro_b)"
+ *   - w-2 확장 — dc-3 영역 cascade + combo trigger 2개 추가
+ *
+ * Cycle 9 (Line D 종합 — e-7 / d-5 / dc-5) 영역은 별도 cycle.
  *
  * First-Fired-Wins + judge_auto_mention fallback (turnsAfterEligible: 5).
- * 신규 정책 (Cycle 7 도입): `feedback_judge_dispassionate_action_focused`.
+ * 캐릭터 frame (Cycle 8b 핵심):
+ *   - B (affect_flattening): 자제 톤. b-outburst trigger 사용 X. b-submit "어쩔 수 없이 단답" frame.
+ *   - A (premature_summary): 결론 먼저 + 부정 외침. a-outburst 격앙 부정 frame.
+ * 정책: `feedback_judge_dispassionate_action_focused` (Cycle 7 도입) + `design_friend01_truth_disclosure_policy` (그룹 2/3/4 surface tier 단계별).
  */
 
 import type { NarrativeTriggerCandidate } from '../../types/narrativeTrigger'
@@ -268,10 +281,13 @@ export const w1NarrativeTriggers: NarrativeTriggerCandidate[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// w-2 "박준혁 (예비신랑 회사 후배, neutral + accurate)" (CoreWitness) — 4 candidates
+// w-2 "박준혁 (예비신랑 회사 후배 + B 필라테스 수강생, neutral + accurate)" (CoreWitness)
+// Cycle 7 dc-2 영역 4 candidates + Cycle 8b dc-3 영역 2 candidates (확장) = 총 6 candidates
+// First-Fired-Wins — w-2 emergence per entity 한 번 fire되면 모든 후보 disabled
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  // Cycle 7 dc-2 영역 4 candidates
   {
     id: 'w2-via-cascade',
     type: 'cascade_from_card',
@@ -323,6 +339,468 @@ export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
       'emerge-w2-via-fallback-judge-mention-v1',
       'emerge-w2-via-fallback-a-react-v1',
       'emerge-w2-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  // Cycle 8b dc-3 영역 2 candidates (확장) — w-2.unlockedByDossier ['dc-2','dc-3'] 확장 권위
+  {
+    id: 'w2-via-cascade-dc3',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-3',
+    },
+    scriptedRefs: [
+      'emerge-w2-via-cascade-dc3-judge-decree-v1',
+      'emerge-w2-via-cascade-dc3-a-react-v1',
+      'emerge-w2-via-cascade-dc3-b-react-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'w2-via-combo-dc3',
+    type: 'combination_result',
+    recipeId: 'combine-3',
+    preconditions: {
+      disputeLieState: { 'd-3': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-w2-via-combo-dc3-judge-mention-v1',
+      'emerge-w2-via-combo-dc3-a-react-v1',
+      'emerge-w2-via-combo-dc3-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cycle 8b — Line C 아버지 돈 line (plot revision base b77a27c5)
+// 7 emergence × 4 trigger candidate
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─────────────────────────────────────────────────────────────────────────────
+// e-5 "예비신랑 회사 단톡 떠벌림 + 9일간 차단 메시지" (CoreEvidence) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const e5NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'e5-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'd-2',
+      disputeLieState: { 'd-2': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-e5-via-cascade-judge-mention-v1',
+      'emerge-e5-via-cascade-b-submit-v1',
+      'emerge-e5-via-cascade-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e5-via-npc-b-interject',
+    type: 'npc_interjection',
+    source: 'b',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S2+' },
+      contextAction: 'question.fact_pursuit.a',
+    },
+    scriptedRefs: [
+      'emerge-e5-via-npc-b-interject-v1',
+      'emerge-e5-via-npc-a-react-v1',
+      'emerge-e5-via-npc-judge-mention-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e5-via-outburst-a',
+    type: 'emotional_outburst',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken', 'angry'] },
+      disputeLieState: { 'd-2': 'S2+' },
+    },
+    scriptedRefs: [
+      'emerge-e5-via-outburst-a-confess-v1',
+      'emerge-e5-via-outburst-judge-catch-v1',
+      'emerge-e5-via-outburst-judge-mention-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'e5-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-e5-via-fallback-judge-query-v1',
+      'emerge-e5-via-fallback-b-submit-v1',
+      'emerge-e5-via-fallback-judge-mention-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// dc-3 "같은 부탁" (CoreDossierCard) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const dc3NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'dc3-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-3',
+    preconditions: {
+      disputeLieState: { 'd-3': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc3-via-combo-judge-query-v1',
+      'emerge-dc3-via-combo-b-context-v1',
+      'emerge-dc3-via-combo-a-react-v1',
+      'emerge-dc3-via-combo-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'dc3-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'e-5',
+      disputeLieState: { 'd-3': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc3-via-cascade-judge-decree-v1',
+      'emerge-dc3-via-cascade-b-react-v1',
+      'emerge-dc3-via-cascade-judge-decree-v2',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'dc3-via-outburst-a',
+    type: 'emotional_outburst',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken'] },
+      disputeLieState: { 'd-3': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc3-via-outburst-a-deny-v1',
+      'emerge-dc3-via-outburst-judge-catch-v1',
+      'emerge-dc3-via-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'dc3-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-dc3-via-fallback-judge-query-v1',
+      'emerge-dc3-via-fallback-b-context-v1',
+      'emerge-dc3-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// d-3 "아버지의 돈 접근 패턴" (CoreDispute, hidden) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const d3NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'd3-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-3',
+      disputeLieState: { 'd-2': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d3-via-cascade-judge-decree-v1',
+      'emerge-d3-via-cascade-a-react-v1',
+      'emerge-d3-via-cascade-b-react-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'd3-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-3',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d3-via-combo-judge-mention-v1',
+      'emerge-d3-via-combo-a-react-v1',
+      'emerge-d3-via-combo-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'd3-via-outburst-a',
+    type: 'emotional_outburst',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken', 'angry'] },
+      disputeLieState: { 'd-2': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d3-via-outburst-a-deny-v1',
+      'emerge-d3-via-outburst-judge-catch-v1',
+      'emerge-d3-via-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'd3-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-d3-via-fallback-judge-mention-v1',
+      'emerge-d3-via-fallback-a-react-v1',
+      'emerge-d3-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// e-6 "과거 송금 영수증 + 문자" (CoreEvidence) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const e6NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'e6-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'd-3',
+      disputeLieState: { 'd-3': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-e6-via-cascade-judge-mention-v1',
+      'emerge-e6-via-cascade-b-submit-v1',
+      'emerge-e6-via-cascade-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e6-via-npc-b-interject',
+    type: 'npc_interjection',
+    source: 'b',
+    preconditions: {
+      disputeLieState: { 'd-3': 'S2+' },
+      contextAction: 'question.fact_pursuit.a',
+    },
+    scriptedRefs: [
+      'emerge-e6-via-npc-b-interject-v1',
+      'emerge-e6-via-npc-a-react-v1',
+      'emerge-e6-via-npc-judge-mention-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'e6-via-outburst-a',
+    type: 'emotional_outburst',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken', 'angry'] },
+      disputeLieState: { 'd-3': 'S2+' },
+    },
+    scriptedRefs: [
+      'emerge-e6-via-outburst-a-confess-v1',
+      'emerge-e6-via-outburst-judge-catch-v1',
+      'emerge-e6-via-outburst-judge-mention-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'e6-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-e6-via-fallback-judge-query-v1',
+      'emerge-e6-via-fallback-b-submit-v1',
+      'emerge-e6-via-fallback-judge-mention-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// dc-4 "손절의 이유" (CoreDossierCard, label 변경: 기존 "손절의 값") — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const dc4NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'dc4-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-4',
+    preconditions: {
+      disputeLieState: { 'd-4': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc4-via-combo-judge-query-v1',
+      'emerge-dc4-via-combo-b-context-v1',
+      'emerge-dc4-via-combo-a-react-v1',
+      'emerge-dc4-via-combo-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'dc4-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'e-6',
+      disputeLieState: { 'd-4': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc4-via-cascade-judge-decree-v1',
+      'emerge-dc4-via-cascade-b-react-v1',
+      'emerge-dc4-via-cascade-judge-decree-v2',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'dc4-via-outburst-a',
+    type: 'emotional_outburst',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken', 'angry'] },
+      disputeLieState: { 'd-4': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc4-via-outburst-a-deny-v1',
+      'emerge-dc4-via-outburst-judge-catch-v1',
+      'emerge-dc4-via-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'dc4-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-dc4-via-fallback-judge-query-v1',
+      'emerge-dc4-via-fallback-b-context-v1',
+      'emerge-dc4-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// d-4 "과거 손절과 아버지의 사기" (CoreDispute, hidden, legitimacyIssue) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const d4NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'd4-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-4',
+      disputeLieState: { 'd-3': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d4-via-cascade-judge-decree-v1',
+      'emerge-d4-via-cascade-a-react-v1',
+      'emerge-d4-via-cascade-b-react-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'd4-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-4',
+    preconditions: {
+      disputeLieState: { 'd-3': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d4-via-combo-judge-mention-v1',
+      'emerge-d4-via-combo-a-react-v1',
+      'emerge-d4-via-combo-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'd4-via-outburst-a',
+    type: 'emotional_outburst',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken', 'angry'] },
+      disputeLieState: { 'd-3': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d4-via-outburst-a-deny-v1',
+      'emerge-d4-via-outburst-judge-catch-v1',
+      'emerge-d4-via-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'd4-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-d4-via-fallback-judge-mention-v1',
+      'emerge-d4-via-fallback-a-react-v1',
+      'emerge-d4-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// w-3 "오미경 (분식집 사장, pro_b + accurate)" (CoreWitness) — 4 candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const w3NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'w3-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-4',
+    },
+    scriptedRefs: [
+      'emerge-w3-via-cascade-judge-decree-v1',
+      'emerge-w3-via-cascade-a-react-v1',
+      'emerge-w3-via-cascade-b-react-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'w3-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-4',
+    preconditions: {
+      disputeLieState: { 'd-4': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-w3-via-combo-judge-mention-v1',
+      'emerge-w3-via-combo-a-react-v1',
+      'emerge-w3-via-combo-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'w3-via-npc-b-context',
+    type: 'npc_interjection',
+    source: 'b',
+    preconditions: {
+      disputeLieState: { 'd-4': 'S1+' },
+    },
+    scriptedRefs: [
+      'emerge-w3-via-npc-b-context-v1',
+      'emerge-w3-via-npc-judge-catch-v1',
+      'emerge-w3-via-npc-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'w3-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-w3-via-fallback-judge-mention-v1',
+      'emerge-w3-via-fallback-a-react-v1',
+      'emerge-w3-via-fallback-judge-decree-v1',
     ],
     vfxProfile: 'standard',
   },
