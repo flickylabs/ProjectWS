@@ -31,6 +31,12 @@ import {
   w2NarrativeTriggers,
   d3NarrativeTriggers,
   w3NarrativeTriggers,
+  d4NarrativeTriggers,
+  e7NarrativeTriggers,
+  dc4NarrativeTriggers,
+  d5NarrativeTriggers,
+  e5NarrativeTriggers,
+  dc5NarrativeTriggers,
 } from './family-01.narrative'
 
 /* ============================================================================
@@ -1549,6 +1555,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d4NarrativeTriggers,
     },
     /* ============================================================
      * dispute d-5 — 어머니의 숨겨진 마음 (최종 책임축, e-5 자필 비율 노출)
@@ -1846,6 +1853,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d5NarrativeTriggers,
     },
   ],
 
@@ -2066,6 +2074,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ko('S5 이전 노출 시 자기 몫 축소 동기 leak'),
         ],
       },
+      narrativeTriggers: e5NarrativeTriggers,
     },
     {
       id: 'e-6',
@@ -2159,6 +2168,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ko('아버지 실명까지 공개되면 인도성 점수 하락'),
         ],
       },
+      narrativeTriggers: e7NarrativeTriggers,
     },
   ],
 
@@ -2544,6 +2554,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc4NarrativeTriggers,
     },
     {
       id: 'dc-5',
@@ -2628,6 +2639,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc5NarrativeTriggers,
     },
   ],
 
