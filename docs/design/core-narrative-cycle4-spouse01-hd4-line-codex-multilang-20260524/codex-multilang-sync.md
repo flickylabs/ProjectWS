@@ -1,23 +1,20 @@
 # Codex Thread — spouse-01 Cycle 4 h-d4 line 다국어 sync
 
 작성일: 2026-05-25
-주체: Codex / ChatGPT (외부 AI 도구) — 사용자가 폴더 업로드 + prompt paste 방식
+주체: Codex worktree (baseline anchor 영역)
 범위: 채널 `emergence_narrative` 의 Cycle 4 entry — e-8 (13) + e-9 (12) + dc-8 (13) + h-d4 (13) = 51 variants × 3 lang = **153 entry sync**
 
 ---
 
-## §0. 사용 방식
-
-본 의뢰서는 **외부 AI 도구 (ChatGPT / OpenAI Codex web 등)** 에 사용자가 직접 전달하는 방식. worktree spawn 또는 새 ClaudeCode 세션 불필요.
+## §0. 진입 조건
 
 | 항목 | 조건 |
 |---|---|
-| 사용 도구 | ChatGPT / OpenAI Codex web Project 또는 채팅 첨부 |
-| 입력 | 본 폴더 파일 11개 모두 업로드 (사용자가 ZIP 또는 개별) |
-| Prompt | §7 paste-ready prompt 참조 |
-| 출력 형식 | JSON 응답 (`output-cycle4-multilang.json`, 153 entry 배열) |
-| 산출 처리 | 사용자가 JSON 응답 다운로드 → `result/output-cycle4-multilang.json` 저장 → 메인 Claude 세션에 알림 |
-| 메인 Claude 후속 | spouse-01.{en,ja,zh-CN}.json 에 apply + tsc + build + qa:fast + commit + push |
+| worktree spawn | `git worktree add -b codex/spouse01-cycle4-multilang ../ws-spouse01-cycle4-multilang main` (main HEAD 기준 — 본 cycle 6+7단계 commit `66444bc7` / `2c2ff15d` 포함) |
+| safe.directory | `git config --global --add safe.directory $worktree_path` 필수 — [[feedback_codex_worktree_safe_directory]] |
+| 작업 시작 전 | `git status --short` clean |
+| 파일 편집 도구 | Write/Edit tool로만 변경 (PowerShell `Set-Content`/`Out-File` 회피 — 인코딩 mojibake) — [[feedback_powershell_encoding_utf8]] |
+| 산출 | branch `codex/spouse01-cycle4-multilang` push |
 
 ---
 
@@ -27,7 +24,7 @@ Core System narrative wrapper layer Cycle 4 — spouse-01 h-d4 line (비자금�
 
 - KO commit: main HEAD `66444bc7` 시점에 51 entry (`src/data/scriptedText/spouse-01.json` channels.emergence_narrative.entries) 적용 완료
 - 본 작업: EN/JA/ZH-CN sync 51 entry × 3 lang = 153 entry 작성
-- 권위 brief: `docs/design/core-narrative-cycle4-spouse01-hd4-line-20260524/` (gpt-pro-brief.md + spouse01-tone-samples.md + batch7-reuse-spec.md) — 본 폴더는 다국어 sync 영역 별도 self-contained
+- 권위 brief: `docs/design/core-narrative-cycle4-spouse01-hd4-line-20260524/` (gpt-pro-brief.md + spouse01-tone-samples.md + batch7-reuse-spec.md) — KO 작성 시 사용된 의뢰서. 본 sync 의뢰서는 다국어 sync 영역 별도 self-contained
 
 ### Cycle 4 처리 emergence (4개 — 단일 batch, cascade chain)
 
@@ -67,15 +64,19 @@ dc-3 (이준호의 비밀 개인 계좌, Cycle 2) ──→ e-8 (휴대폰 의�
 
 ## §2. KO baseline (main HEAD `66444bc7`)
 
-### 영향 파일
+### 영향 파일 (Codex 변경 대상)
 
 ```
-src/data/scriptedText/spouse-01.json  channels.emergence_narrative
+src/data/scriptedText/spouse-01.en.json    channels.emergence_narrative.entries 배열에 4 key 추가
+src/data/scriptedText/spouse-01.ja.json    동일
+src/data/scriptedText/spouse-01.zh-CN.json 동일
 ```
 
-본 batch는 같은 channel.entries 배열에 4 새 key 추가 (emerge-e-8 / emerge-e-9 / emerge-dc-8 / emerge-h-d4). 기존 13 entry (Cycle 1/2/3) 유지. 총 17 entry / 216 variant.
+본 batch는 같은 channel.entries 배열에 4 새 key 추가 (emerge-e-8 / emerge-e-9 / emerge-dc-8 / emerge-h-d4). 기존 13 entry (Cycle 1/2/3) 유지. 총 17 entry / 216 variant per language.
 
 ### 51 entry 풀 list (main HEAD `66444bc7`, KO baseline 확정)
+
+KO baseline 파일에서 정확한 text + behaviorHint + tags 직접 읽어 사용. 본 표는 ID + speaker → listener + 핵심 KO 1줄 요약 (작업 흐름 reference용):
 
 | # | Emergence | Trigger | ID | speaker→listener | 핵심 KO (1줄 요약) |
 |---|---|---|---|---|---|
@@ -131,6 +132,8 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 | 50 | h-d4 | judge_auto_mention | emerge-hd4-via-judge-auto-decree-v1 | judge→all | ★★ **5턴 fallback — Batch 7 시안 차용**: "비자금의 원래 목적이 형 관련 자금 사용과 분리, 누가 더 상처받았는지를 가르는 문제 아님, 이준호 씨 부부가 함께 결정할 일을 혼자, 박지연 씨도 말하지 않은 시간, [비자금의 원래 목적] 쟁점 부상 + 함께 정리할 기회" (단어 surface 회피, sourceTone tag 보존) |
 | 51 | h-d4 | judge_auto_mention | emerge-hd4-via-judge-auto-b-respond-v1 | b→judge | 예, 재판관님. 받아들이겠습니다 |
 
+⚠ 위 표는 작업 reference. 정확한 KO text + behaviorHint + tags는 worktree 안 `src/data/scriptedText/spouse-01.json` channels.emergence_narrative.entries 배열의 4 새 key (emerge-e-8 / emerge-e-9 / emerge-dc-8 / emerge-h-d4) 에서 직접 읽어 사용.
+
 ---
 
 ## §3. 다국어 번역 원칙
@@ -166,7 +169,7 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 | B→J #44 ("자기한테") | "자기한테 한 번도 말 안 한 채로" | "I never told you, not once" | "君に一度も話さないまま" | "我从来没跟你说过" |
 | A→B #46 | "자기야, 그럼 이건 다 뭐야?" | "Honey, then what is all this?" or "Jun-ho, what is all this?" | "ジュノ、じゃあこれは全部なんなの？" or "ねえ、これは一体" | "俊浩，那这都是怎么回事？" |
 
-⚠ 본 3 entry tag의 `register:casual` + `honorific:casual` + `callTerm:자기` 그대로 보존 (사용자 측 처리 — Codex는 text/behaviorHint만 번역).
+⚠ 본 3 entry tag의 `register:casual` + `honorific:casual` + `callTerm:자기` 그대로 보존 (외국어 파일 tag는 KO와 동일 — 자동 복사).
 
 **문화 차이 처리:**
 - EN: 부부 호명에 "Honey/Baby/Darling" 또는 이름 직접 호명 (Park Ji-yeon은 "Ji-yeon"으로 친밀). 영어는 격식/반말 구분 약함 → 친밀 톤 + contraction (you're / what's) 위주
@@ -189,7 +192,7 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 | `[이준호의 또 다른 침묵]` (본 cycle dc-8 label) | `[Mr. Lee's Another Silence]` | `[イ・ジュノのもう一つの沈黙]` | `[李俊浩的另一种沉默]` |
 | `[비자금의 원래 목적]` (본 cycle h-d4 name) | `[The Original Purpose of the Slush Fund]` | `[裏金の本来の目的]` | `[私房钱的原本目的]` |
 
-⚠ entity 이름 baseline은 기존 ScriptedText의 evidence/dossierCard/dispute name 영역 (spouse-01.{lang}.json) 참조. 본 cycle 신규 4 entity (e-8/e-9/dc-8/h-d4) 명칭은 case.ts authority의 다국어 derive (`src/data/cases/generated/spouse-01.{lang}.json`) 영역 baseline 참조.
+⚠ entity 이름 baseline은 worktree 안 `src/data/cases/generated/spouse-01.{lang}.json` 영역에서 직접 확인 (case.ts authority의 다국어 derive). 본 표는 제안 — derive 영역의 실제 명칭이 있으면 그것 우선 사용.
 
 ### 3.5. dynamics 차별성 보존
 
@@ -219,19 +222,13 @@ src/data/scriptedText/spouse-01.json  channels.emergence_narrative
 
 ### 3.7. 단서(clue) 명칭 정책 ([[feedback_dossier_card_renamed_to_clue]])
 
-player-visible text 영역에서 **'단서'** 명칭 사용. 본 cycle 단서 등재 영역 (judge decree entry 4건 + dossier surface narrative):
+player-visible text 영역에서 **'단서'** 명칭 사용. 본 cycle 단서 등재 영역 (judge decree entry 4건):
 
 | KO | EN | JA | ZH-CN |
 |---|---|---|---|
 | 단서 | clue | 手がかり | 线索 |
 
-본 cycle 단서 등재 entry 4건:
-- #29: "본 법정에 [이준호의 또 다른 침묵] 단서를 정식 등재합니다."
-- #32: 동일
-- #36: 동일
-- #37: "본 법정은 [이준호의 또 다른 침묵]을 단서로 등재합니다."
-
-다국어:
+본 cycle 단서 등재 entry 4건 (#29, #32, #36, #37):
 - EN: "This court officially registers the clue [Mr. Lee's Another Silence]."
 - JA: "本法廷は手がかり[イ・ジュノのもう一つの沈黙]を正式に登録します。"
 - ZH-CN: "本法庭正式登记线索[李俊浩的另一种沉默]。"
@@ -240,7 +237,7 @@ player-visible text 영역에서 **'단서'** 명칭 사용. 본 cycle 단서 �
 
 [[design_spouse01_truth_disclosure_policy]] 권위 + 본 cycle 신규 h-d4 line 진실 단어 정책.
 
-#### h-d4 fire 전 surface 절대 X (entries #1-41 + #46-51 = 50 entry)
+#### h-d4 fire 전 surface 절대 X (entries #1-41 + #43-51 = 50 entry)
 
 다음 키워드는 **entry #42 (emerge-hd4-via-b-outburst-v1) 1개에만 surface 허용**:
 
@@ -262,7 +259,7 @@ player-visible text 영역에서 **'단서'** 명칭 사용. 본 cycle 단서 �
 | JA | "ねえ… あのお金は、最初は君のためだったんだ。新婚の頃、不妊診断を受けて、君が出産の話題が出るたびに心を閉ざしてから、僕は一人で医師の友人に聞いて、治療費や保障見積を調べてきたんだ。10年近く貯めたお金で、兄の件が起きる前から貯めてきたお金なんだ。" |
 | ZH-CN | "智妍… 那笔钱，最初是为你存的。新婚初期，你接受了不孕诊断之后，每次一提到生育话题你就把心门关上，从那以后我一个人去问医生朋友，去打听治疗费和保障报价。这笔钱攒了将近10年，是哥的事发生之前就开始攒的。" |
 
-⚠ entry #42 외 다른 entry에서 위 키워드 surface 시 P0 leak (진실 노출 정책 위반). Codex가 의역으로 우회 단어 사용 시도해도 ★ X. 본 키워드는 정확히 entry #42 영역에서만 surface, 다른 영역은 frame 단어 ("의학 영역 검색 / 보험 견적 / 같은 시기 / 분리된 준비") 사용.
+⚠ entry #42 외 다른 entry에서 위 키워드 surface 시 P0 leak (진실 노출 정책 위반). 의역 우회 단어도 ★ X. 본 키워드는 정확히 entry #42 영역에서만 surface, 다른 영역은 frame 단어 ("의학 영역 검색 / 보험 견적 / 같은 시기 / 분리된 준비") 사용.
 
 #### 허용 frame 단어 (h-d4 fire 전 영역 사용 OK)
 
@@ -292,96 +289,80 @@ entry #50 (`emerge-hd4-via-judge-auto-decree-v1`)는 Batch 7 mediation 시안 `m
 
 ---
 
-## §4. 작업 산출 — JSON 응답 형식
+## §4. 작업 흐름 (worktree 안에서)
 
-본 의뢰서를 받은 AI(Codex/ChatGPT)는 **JSON 응답 1개 파일** (`output-cycle4-multilang.json`) 작성. 153 entry 배열 (51 entry × 3 lang).
+### 4.1. 입력 file 직접 읽기
 
-각 entry 구조:
+worktree 안에서 다음 file 정독:
+- KO baseline: `src/data/scriptedText/spouse-01.json` channels.emergence_narrative.entries 의 4 새 key (emerge-e-8 / emerge-e-9 / emerge-dc-8 / emerge-h-d4)
+- 외국어 baseline: `src/data/scriptedText/spouse-01.{en,ja,zh-CN}.json` channels.emergence_narrative.entries (기존 13 entry 톤 reference)
+- entity 명칭: `src/data/cases/generated/spouse-01.{en,ja,zh-CN}.json` (cascade priorCard 다국어 명칭 baseline)
+
+### 4.2. 외국어 entry 작성
+
+3 외국어 file 각각 channels.emergence_narrative.entries 배열에 4 새 key 추가 (KO와 동일 key + variants):
 
 ```json
 {
-  "id": "emerge-e8-via-cascade-judge-mention-v1",
-  "lang": "en",
-  "text": "{번역된 text}",
-  "behaviorHint": "{번역된 behaviorHint, 없으면 생략}"
+  "key": "emerge-e-8",
+  "evidenceId": "e-8",
+  "variants": [
+    {
+      "id": "emerge-e8-via-cascade-judge-mention-v1",
+      "text": "{번역된 text}",
+      "behaviorHint": "{번역된 behaviorHint, 없으면 생략}",
+      "tags": [...KO와 동일 tag set...]
+    },
+    ...
+  ]
 }
 ```
 
-### tag 처리 영역
+**tag 영역**: KO entry의 tags 그대로 복사 (`channel:emergence_narrative` / `speaker:` / `listener:` / `register:` / `trigger:` / `priorCard:` / `comboRecipeId:` / `sourceTone:` 등 모두 동일). 번역 영역은 **`text` + `behaviorHint` 만**.
 
-외국어 entry의 tags는 KO와 동일 — 사용자 측에서 자동 복사 (메인 Claude 처리). AI는 `id` / `lang` / `text` / `behaviorHint` 만 응답하면 됨.
+### 4.3. 메인 Claude의 6단계 검증 패턴 그대로
 
-### 153 entry 분포
+```powershell
+npx tsc --noEmit
+npm run build
+npm run -s qa:fast
+```
 
-| lang | emerge-e-8 | emerge-e-9 | emerge-dc-8 | emerge-h-d4 | 합계 |
-|---|---|---|---|---|---|
-| en | 13 | 12 | 13 | 13 | 51 |
-| ja | 13 | 12 | 13 | 13 | 51 |
-| zh-CN | 13 | 12 | 13 | 13 | 51 |
-| **합계** | **39** | **36** | **39** | **39** | **153** |
+PASS 확인 후 §5 commit + push.
 
 ---
 
-## §5. 메인 Claude 후속 (Codex 응답 도착 시)
+## §5. 산출 (commit + push)
 
-사용자가 JSON 응답을 `docs/design/core-narrative-cycle4-spouse01-hd4-line-codex-multilang-20260524/result/output-cycle4-multilang.json` 에 저장하고 메인 세션에 알리면:
+```powershell
+git add src/data/scriptedText/spouse-01.en.json src/data/scriptedText/spouse-01.ja.json src/data/scriptedText/spouse-01.zh-CN.json
+git commit -m "i18n(spouse-01): sync Cycle 4 h-d4 line — 51 entry × 3 lang = 153 외국어 (cascade/b-outburst/a-confront/fallback)"
+git push -u origin codex/spouse01-cycle4-multilang
+```
 
-1. 메인 Claude가 `spouse-01.{en,ja,zh-CN}.json` channels.emergence_narrative.entries 에 4 새 key 추가 (id 매핑으로 KO tags 자동 복사)
-2. `npx tsc --noEmit` PASS
-3. `npm run build` PASS
-4. `npm run -s qa:fast` RELEASE READY (static P0=0, route P0=0)
-5. commit + push
-6. Cycle 4 완료 보고 (HEAD hash + 다음 cycle 안내)
+메인 Claude session이 fast-forward merge 또는 JSON union script 처리 (CT 세션과 동시 변경 시).
 
 ---
 
 ## §6. 자매 cycle / 영역 충돌 회피
 
-본 cycle은 spouse-01 h-d4 line **단일 batch**. 자매 batch 없음.
+본 cycle은 spouse-01 h-d4 line **단일 batch** (Cycle 7 batch 분리와 달리 단일 worktree).
 
-병렬 진행 가능성 (영역 충돌 X — file 영역 분리):
-- `friend-01` Cycle 8 (Line C 아버지 line, 8 emergence) — friend-01.{lang}.json만 변경
+병렬 진행 가능성 (충돌 X — file 영역 분리):
+- `friend-01` Cycle 8 후속 작업 — friend-01.{lang}.json만 변경
 - `family-01` 후속 cycle — family-01.{lang}.json만 변경
 
 본 sync는 `spouse-01.{en,ja,zh-CN}.json` 영역만 변경 → 다른 사건 영역과 ScriptedText file 영역 완전 분리.
 
-CT 세션 (judge dispassionate sweep / cross-case polish 등) 병렬 운영 시: 본 cycle 8단계 (사후 통합) commit 후 CT 세션과 file 영역 분리 검토.
+⚠ CT 세션 (judge dispassionate sweep / cross-case polish 등)이 spouse-01.{lang}.json 같은 file에 동시 변경하면 충돌 위험. main 통합 시 union script 처리 필요. 사용자가 CT 세션 commit 시점 본 cycle main 통합 시점 분리 권장.
 
 ---
 
-## §7. 사용자가 외부 AI에 paste할 Prompt
+## §7. 검토 우선순위 (Codex self-check)
 
-본 폴더 11개 파일 (README.md / codex-multilang-sync.md / 9 memory) 을 ChatGPT/Codex Project에 업로드한 후, 아래 prompt 그대로 paste:
-
-```
-첨부한 codex-multilang-sync.md 의뢰서대로 spouse-01 Cycle 4 h-d4 line
-emergence narrative 외국어 sync 153 entry 작성.
-
-- KO baseline: src/data/scriptedText/spouse-01.json 의 emerge-e-8 / emerge-e-9 / emerge-dc-8 / emerge-h-d4 4 key 51 variants
-  (의뢰서 §2 표가 51 entry 풀 list — 모든 ID + speaker + 1줄 요약 포함)
-- 다국어 번역 원칙 (§3.1~3.9 정독 필수):
-  * 판사 격식 (Your Honor / 判事様 / 审判官) — §3.1
-  * NPC dynamics (A 외도 frame 강화 정점 → h-d4 frame 직면 / B 회피→자기방어→자백 progression) — §3.2
-  * ★★★ 부부 직접 발화 친밀체 (entry #42, #44, #46 — "자기야" 반말 → 친밀체 신규 적용) — §3.5 정밀 표 참조
-  * cascade_from_card entity 호명 일관 (§3.4 표 5 entity baseline)
-  * 본인 가족 호칭 자기 시점 (B 발화 "형" 자기 시점 OK, "brother-in-law/義兄/大伯子" X) — §3.6
-  * 단서 명칭 (clue / 手がかり / 线索) — §3.7
-  * ★★★ 진실 노출 정책 엄격 — entry #42 1개만 박지연 난임/치료비/의사 친구/신혼 초기/10년 모은 단어 surface 허용, 나머지 50 entry는 절대 surface X — §3.8 정밀 표 참조
-  * Batch 7 톤 차용 (entry #50 — 책임 split frame 보존 + 단어 surface 회피) — §3.9
-- 출력 형식: JSON 배열, 각 entry: {id, lang, text, behaviorHint?}
-- 153 entry (51 × en/ja/zh-CN)
-- 응답 파일명: output-cycle4-multilang.json
-
-검토 우선순위 (self-check):
-1. ★★★ entry #42 b-outburst (3 lang) — 박지연 난임/치료비 단어 정확한 다국어 surface + 부부 친밀체 호칭
-2. ★★★ entry #1-41, #43-51 — 박지연 난임/치료비 단어 절대 X (의역 우회도 X) — frame 단어로 표현
+1. ★★★ entry #42 b-outburst (3 lang) — 박지연 난임/치료비 단어 정확한 다국어 surface + 부부 친밀체 호칭 (§3.3 + §3.8)
+2. ★★★ entry #1-41, #43-51 — 박지연 난임/치료비 단어 절대 X (의역 우회도 X) — frame 단어로 표현 (§3.8 frame 단어 표)
 3. ★★ entry #44 b-admit-more (3 lang) — "자기한테" 호칭 유지 (친밀체)
 4. ★★ entry #46 a-confront (3 lang) — "자기야, 외도가 아니라면 도대체 뭐였어?" 부부 직접 발화 친밀체 + 외도 frame 마지막 단정 수위 유지
 5. ★★ entry #50 judge_auto_decree (3 lang) — Batch 7 책임 split frame 차용 + 단어 surface 회피
-6. ★ cascade entry (#1-3, #14-16, #30-32, #39-41) — priorCard entity 명칭 baseline 일관 (§3.4 표)
-```
-
-AI 응답 도착 후:
-1. 응답 JSON을 `result/output-cycle4-multilang.json` 에 저장
-2. 메인 Claude 세션에 "Cycle 4 다국어 응답 도착" 알림
-3. 메인 Claude가 spouse-01.{en,ja,zh-CN}.json 에 자동 apply + 검증 + commit + push
+6. ★ cascade entry (#1-3, #14-16, #30-32, #39-41) — priorCard entity 명칭 baseline 일관 (§3.4 표) — worktree 안 `src/data/cases/generated/spouse-01.{lang}.json` 영역 derive 명칭과 일관 확인
