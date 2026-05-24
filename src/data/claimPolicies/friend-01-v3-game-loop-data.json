@@ -105,7 +105,7 @@
     {
       "id": "dc-3",
       "name": "같은 부탁",
-      "description": "현재 문자와 과거 송금 흐름을 붙여 아버지의 반복 패턴을 확정하는 카드.",
+      "description": "예비신랑이 떠벌린 흔적과 과거 송금 흐름을 붙여 아버지의 반복 시도 패턴을 확정하는 카드.",
       "evidenceIds": [
         "e-5",
         "e-6"
@@ -121,7 +121,7 @@
         "d-2가 S3 이상"
       ],
       "successEffects": [
-        "송다은 아버지의 현재 접근이 과거와 연결됨",
+        "송다은 아버지의 현재 시도가 과거와 연결됨",
         "d-4 해금에 필요한 반복 패턴 확정"
       ],
       "challenges": [
@@ -131,7 +131,7 @@
             {
               "id": "dc-3.b.q1",
               "text": "같은 돈 부탁을 다시 봤다면, 왜 이번에도 혼자 막는 쪽을 택했습니까?",
-              "lockedHint": "현재 문자와 과거 송금 흐름이 함께 열려야 보입니다.",
+              "lockedHint": "떠벌림 흔적과 과거 송금 흐름이 함께 열려야 보입니다.",
               "attackVector": "context",
               "requiredLieState": "S2",
               "onSuccess": {
@@ -517,7 +517,7 @@
       "fromState": "S1",
       "toState": "S2",
       "primaryBeatType": "partial",
-      "line": "최수민은 \"예비신랑에게 확인하려 했다\"고 밝힌다.",
+      "line": "최수민은 \"예비신랑에게 직접 막아보려 했다\"고 밝힌다.",
       "behaviorHint": "말의 속도가 늦어진다."
     },
     {
@@ -1046,7 +1046,7 @@
     },
     {
       "evidenceId": "e-5",
-      "name": "아버지와 예비신랑의 문자",
+      "name": "떠벌림 흔적과 9일간 메시지",
       "depthStages": [
         {
           "id": "stub",
@@ -1101,7 +1101,10 @@
           "summary": "자료는 인증되지만 사기 인지 영역은 봉인 단계."
         }
       ],
-      "sealTargets": []
+      "sealTargets": [
+        "회사 동료 실명",
+        "최수민 메시지의 사적 톤"
+      ]
     },
     {
       "evidenceId": "e-6",
@@ -1456,6 +1459,22 @@
     }
   ],
   "sensitiveSealTargets": [
+    {
+      "evidenceId": "e-5",
+      "label": "떠벌림 흔적과 9일간 메시지",
+      "targets": [
+        "회사 동료 실명",
+        "최수민 메시지의 사적 톤"
+      ],
+      "recommendedTiming": [
+        "d-3 S2 이상 도달 시 핵심 영역만 조건부 노출",
+        "dc-3 직전"
+      ],
+      "risks": [
+        "회사 동료 실명 노출은 박준혁(증인) 신원 보호 영역과 충돌",
+        "최수민 메시지의 사적 톤 노출은 B character 보호 약화"
+      ]
+    },
     {
       "evidenceId": "e-6",
       "label": "과거 송금 기록과 문자",

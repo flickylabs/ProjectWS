@@ -76,7 +76,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
     contextType: 'friend_betrayal_reframe',
     difficulty: 'hard',
     anchorTruth: ko(
-      '최수민의 9일간 연락은 집착이 아니라 송다은 아버지의 돈 접근 패턴을 결혼 직전 예비신랑에게 경고하려던 것이었다. 과거 손절의 진짜 원인은 송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기였고, 최수민은 송다은이 무너질까 봐 끝내 그 사실을 말하지 못한 채 악역을 자처했다. 송다은은 확인 없이 단톡방에서 최수민을 매도했고, 같은 구조가 반복됐다.',
+      '최수민의 9일간 연락은 집착이 아니라 송다은 아버지가 결혼 직전 예비신랑에게 돈 접근을 시도하는 흐름을 차단하려던 것이었다. 과거 손절의 진짜 원인은 송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기였고, 최수민은 송다은이 무너질까 봐 끝내 그 사실을 말하지 못한 채 악역을 자처했다. 송다은은 확인 없이 단톡방에서 최수민을 매도했고, 같은 구조가 반복됐다.',
     ),
     emotionalBait: ko(
       '손절한 전 절친이 내 예비신랑에게 계속 연락한다. 결혼 3주 전, 그 장면만 보면 누구라도 친구가 선을 넘었다고 생각한다.',
@@ -944,7 +944,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       name: ko('아버지의 돈 접근 패턴'),
       truth: true,
       truthDescription: ko(
-        '송다은 아버지가 예비신랑에게 돈 얘기를 꺼내고 있었고, 최수민은 과거에 같은 패턴을 당한 적이 있어 예비신랑에게 경고하려 했다.',
+        '송다은 아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도하려 하고 있었고, 최수민은 과거에 같은 일을 당한 적이 있어 결혼 자체가 위기에 빠질까 봐 예비신랑에게 직접 연락해 막으려 했다.',
       ),
       quadrant: 'b_only',
       weight: 'high',
@@ -963,8 +963,8 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       },
       verdictOptions: {
         wrong: ko('송다은 아버지는 예비신랑에게 인사차 안부를 전했을 뿐이다.'),
-        partial: ko('돈 이야기가 오간 것 같지만 구체적 내용은 확인이 안 된다.'),
-        truth: ko('송다은 아버지가 예비신랑에게 돈을 빌려달라고 접근했고, 최수민은 과거 같은 패턴을 겪은 적이 있다.'),
+        partial: ko('돈 이야기가 시도된 정황은 있지만 구체적 내용은 확인이 안 된다.'),
+        truth: ko('송다은 아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도했고, 최수민은 과거 같은 일을 겪었기에 결혼 위기를 막으려 직접 연락했다.'),
         defer: ko('대화의 실체를 확인할 수 없다. 유보한다.'),
       },
       lieConfig: {
@@ -1064,18 +1064,18 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
             },
           },
           b: {
-            admittedFact: ko('결혼 직전 돈 얘기가 반복되는 게 걱정돼 예비신랑에게 확인하려 했다.'),
-            allowedKeywords: koKeywords('결혼 직전 돈 얘기', '걱정', '확인하려'),
+            admittedFact: ko('결혼 직전 돈 얘기가 시도되는 게 걱정돼 예비신랑에게 직접 막아보려 연락했다.'),
+            allowedKeywords: koKeywords('결혼 직전 돈 얘기', '걱정', '직접 막아보려'),
             forbiddenKeywords: keywords(
               ['아버지의 사기', '같은 패턴 반복', '과거 손절 = A 아버지 원인'],
               ["father's fraud", 'same pattern again', "old breakup caused by A's father"],
               ['父の詐欺', '同じパターン', '過去の絶交はAの父が原因'],
               ['父亲诈骗', '同样模式', '过去绝交是A父亲造成的'],
             ),
-            answerFrame: ko('B는 돈 얘기 반복 + 확인 동기 인정. 사기/패턴 반복은 회피.'),
+            answerFrame: ko('B는 돈 얘기 시도 + 차단 동기 인정. 사기/패턴 반복은 회피.'),
             transitionTrigger: 'direct',
             transitionBeat: {
-              line: ko('최수민은 "예비신랑에게 확인하려 했다"고 밝힌다.'),
+              line: ko('최수민은 "예비신랑에게 직접 막아보려 했다"고 밝힌다.'),
               behaviorHint: ko('말의 속도가 늦어진다.'),
             },
           },
@@ -1098,15 +1098,15 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
             },
           },
           b: {
-            admittedFact: ko('과거에 본인이 같은 흐름을 겪었기에 이번 패턴을 알아봤다. 그래서 예비신랑에게 경고하려 했다.'),
-            allowedKeywords: koKeywords('과거에 같은 흐름', '패턴 인식', '경고하려'),
+            admittedFact: ko('과거에 본인이 같은 흐름을 겪었기에 이번 패턴을 알아봤다. 결혼이 위기에 빠질까 봐 예비신랑에게 직접 연락해 막으려 했다.'),
+            allowedKeywords: koKeywords('과거에 같은 흐름', '패턴 인식', '직접 연락해 막으려'),
             forbiddenKeywords: keywords(
               ['아버지의 사기', '아버지 돈 갈취', '과거 손절 = A 아버지 원인', '투자 명목 사기'],
               ["father's fraud", 'father extorted money', "old breakup caused by A's father", 'investment fraud'],
               ['父の詐欺', '父が金を奪った', '過去の絶交はAの父が原因', '投資名目の詐欺'],
               ['父亲诈骗', '父亲骗钱', '过去绝交是A父亲造成的', '投资名义诈骗'],
             ),
-            answerFrame: ko('B는 같은 흐름·경고 의도 인정. 과거 손절 원인·사기는 회피.'),
+            answerFrame: ko('B는 같은 흐름·차단 의도 인정. 과거 손절 원인·사기는 회피.'),
             transitionTrigger: 'motive',
             transitionBeat: {
               line: ko('최수민은 "예전부터 같은 말을 들어 봤다"며 숨을 삼킨다.'),
@@ -1140,7 +1140,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         },
         S5: {
           a: {
-            admittedFact: ko('아버지가 예비신랑에게 결혼 자금 명목으로 돈을 꺼낼 흐름을 본인이 알고 있었다. 멈추지 못한 책임이 있다.'),
+            admittedFact: ko('아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도하는 흐름을 본인이 알고 있었다. 멈추지 못한 책임이 있다.'),
             allowedKeywords: koKeywords('돈 접근', '알고 있었음', '멈추지 못한 책임'),
             forbiddenKeywords: keywords([], [], [], []),
             answerFrame: ko('A는 진실 완전 인정. 인지·방관 책임 직접 진술.'),
@@ -1152,11 +1152,11 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           },
           b: {
             admittedFact: ko(
-              '송다은 아버지가 예비신랑에게 결혼 자금 명목으로 돈을 빌려달라고 접근했고, 본인은 과거 같은 흐름을 겪었기에 패턴을 알아봤다. 그래서 예비신랑에게 경고하려 했다.',
+              '송다은 아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도하고 있었고, 본인은 과거 같은 일을 겪었기에 패턴을 알아봤다. 결혼 자체가 위기에 빠질까 봐 예비신랑에게 직접 연락해 막으려 했다.',
             ),
-            allowedKeywords: koKeywords('아버지의 돈 접근', '같은 패턴 반복', '경고 의도'),
+            allowedKeywords: koKeywords('아버지의 돈 접근', '같은 패턴 반복', '차단 의도'),
             forbiddenKeywords: keywords([], [], [], []),
-            answerFrame: ko('B는 진실 완전 인정. 아버지 돈 접근 + 패턴 + 경고 의도 모두 진술.'),
+            answerFrame: ko('B는 진실 완전 인정. 아버지 돈 접근 + 패턴 + 차단 의도 모두 진술.'),
             transitionTrigger: 'direct',
             transitionBeat: {
               line: ko('최수민은 패턴을 정확히 옮긴다.'),
@@ -1196,7 +1196,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
         S2: {
-          surfaceClaim: ko('투자 얘기 민감 / 확인하려 함'),
+          surfaceClaim: ko('투자 얘기 민감 / 차단하려 함'),
           hiddenTruth: ko('돈 부탁 + 같은 패턴'),
           validActions: ['motive_search', 'empathy_approach'],
           requiredEvidence: ['e-5'],
@@ -1994,44 +1994,55 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
     },
     {
       id: 'e-5',
-      name: ko('송다은 아버지와 예비신랑의 문자'),
-      surfaceName: ko('아버지와 예비신랑의 문자'),
-      description: ko('송다은 아버지가 예비신랑에게 "결혼 전에 잠깐만 도와주면 금방 돌려준다", "다은이한테는 아직 말하지 마"라고 보낸 문자 기록.'),
-      surfaceDescription: ko('송다은 아버지가 예비신랑에게 돈 이야기를 꺼낸 문자.'),
+      name: ko('예비신랑 회사 단톡 떠벌림과 최수민의 9일간 차단 연락'),
+      surfaceName: ko('떠벌림 흔적과 9일간 메시지'),
+      description: ko('예비신랑 김태윤이 회사 동료 단톡방에서 "다은이 아버지가 결혼 자금 좀 도와달래"라며 토로한 캡처와, 그 시점 직후 최수민이 예비신랑에게 보낸 9일간의 차단 메시지 원본.'),
+      surfaceDescription: ko('예비신랑이 회사에서 떠벌린 단톡방 캡처와 최수민의 9일간 메시지.'),
       type: 'chat',
       reliability: 'hard',
       completeness: 'original',
       provenance: 'self_possessed',
       legitimacy: 'lawful',
-      subjectParty: 'both',
+      subjectParty: 'b',
       proves: ['d-3'],
       isTrap: false,
       requires: ['e-1'],
       requiredLieState: 'S2',
       partyContext: {
         a: {
-          questionAngle: ko('아버지의 이 문자를 알고 있었는지'),
+          questionAngle: ko('아버지가 예비신랑에게 결혼 자금을 시도했다는 사실을 알고 있었는지'),
           implication: ko('인지·방관 여부.'),
         },
         b: {
-          questionAngle: ko('이 문자를 보고 무엇을 떠올렸는지'),
-          implication: ko('과거 동일 패턴 인식.'),
+          questionAngle: ko('9일간 연락의 실제 의도는 무엇이었는지'),
+          implication: ko('결혼 위기 차단 시도 + 과거 동일 패턴 인식.'),
         },
       },
       depthStages: [
-        { id: 'stub', summary: ko('아버지가 예비신랑에게 보낸 문자 1건 존재 표시.') },
-        { id: 'excerpt', summary: ko('"결혼 전에 잠깐만 도와주면 금방 돌려준다" 발췌만 보임.') },
-        { id: 'original', summary: ko('"사위 될 사람이면 이 정도는 믿어야지" 추가 + 발송 시각 모두 확인.') },
-        { id: 'context', summary: ko('최수민의 9일간 연락 시기와 정확히 겹친다는 흐름 복원.') },
-        { id: 'established', summary: ko('송다은 아버지가 결혼 자금 명목으로 돈을 꺼내려 했다고 공식기록 채택.') },
+        { id: 'stub', summary: ko('예비신랑 회사 단톡 캡처 1건 + 최수민 메시지 1건 존재 표시.') },
+        { id: 'excerpt', summary: ko('"다은이 아버지가 결혼 자금 좀 도와달래" 토로 일부 + 최수민 첫 메시지만 보임.') },
+        { id: 'original', summary: ko('단톡 전체 + 최수민의 9일간 메시지 원본 확인. "결혼 전에 한 번 얘기해요" 직접 frame까지 포함.') },
+        { id: 'context', summary: ko('예비신랑이 단톡 토로 직후 박준혁이 최수민에게 알린 시점 흐름 복원.') },
+        { id: 'established', summary: ko('송다은 아버지가 결혼 자금 시도를 했고 그로 인해 최수민이 결혼 위기를 막으려 직접 연락한 것임이 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('최수민 또는 재판관 측 포착.') },
-        { id: 'verifying', summary: ko('예비신랑 휴대폰 원본 확인.') },
-        { id: 'authenticated', summary: ko('발신자 + 시각이 모두 일치.') },
-        { id: 'challenged', summary: ko('송다은이 단순 인사 frame을 주장.') },
-        { id: 'misread', summary: ko('자료는 인증되지만 사기 인지 영역은 봉인 단계.') },
+        { id: 'submitted', summary: ko('최수민 또는 박준혁이 단톡 캡처 + 메시지 원본 제출.') },
+        { id: 'verifying', summary: ko('단톡 발화 시각 + 메신저 원본 대조.') },
+        { id: 'authenticated', summary: ko('발화자 + 시각 모두 일치.') },
+        { id: 'challenged', summary: ko('송다은이 단톡 발화는 농담 frame을 주장.') },
+        { id: 'misread', summary: ko('자료는 인증되지만 아버지 시도 인지 영역은 봉인 단계.') },
       ],
+      sensitiveSealTargets: {
+        labels: [ko('회사 동료 실명'), ko('최수민 메시지의 사적 톤')],
+        recommendedTiming: [
+          ko('d-3 S2 이상 도달 시 핵심 영역만 조건부 노출'),
+          ko('dc-3 직전'),
+        ],
+        risks: [
+          ko('회사 동료 실명 노출은 박준혁(증인) 신원 보호 영역과 충돌'),
+          ko('최수민 메시지의 사적 톤 노출은 B character 보호 약화'),
+        ],
+      },
     },
     {
       id: 'e-6',
@@ -2180,8 +2191,8 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         fromB: ko('수민 선생님'),
       },
       hiddenAgenda: ko('예비신랑과의 직장 관계가 불편해질까 봐 조심한다.'),
-      relatedDisputes: ['d-2'],
-      unlockedByDossier: ['dc-2'],
+      relatedDisputes: ['d-2', 'd-3'],
+      unlockedByDossier: ['dc-2', 'dc-3'],
       testimony: {
         byDispute: {
           'd-2': {
@@ -2192,6 +2203,16 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
             cannotDisprove: [
               ko('두 사람 사이 모든 메시지를 직접 본 것은 아님.'),
               ko('최수민이 거절했는지는 본인 진술 기준.'),
+            ],
+          },
+          'd-3': {
+            canProve: [
+              ko('예비신랑이 회사 동료 단톡방에서 "다은이 아버지가 결혼 자금 좀 도와달래" 토로한 시점.'),
+              ko('그 토로 직후 본인이 최수민에게 알린 사실.'),
+            ],
+            cannotDisprove: [
+              ko('실제 송다은 아버지가 예비신랑에게 보낸 직접 메시지는 본인이 본 영역 밖.'),
+              ko('최수민과 예비신랑의 1:1 메시지 전체는 모름.'),
             ],
           },
         },
@@ -2397,7 +2418,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
     {
       id: 'dc-3',
       label: ko('같은 부탁'),
-      description: ko('현재 문자와 과거 송금 흐름을 붙여 아버지의 반복 패턴을 확정하는 카드.'),
+      description: ko('예비신랑이 떠벌린 흔적과 과거 송금 흐름을 붙여 아버지의 반복 시도 패턴을 확정하는 카드.'),
       type: 'derived_note',
       linkedDisputes: ['d-3'],
       linkedParty: 'b',
@@ -2427,7 +2448,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         ],
       },
       noteText: ko(
-        '송다은 아버지가 예비신랑에게 보낸 문자와 과거 최수민에게 보낸 송금 부탁이 거의 동일한 흐름이다.',
+        '송다은 아버지가 예비신랑에게 결혼 자금 명목으로 시도한 흐름이 과거 최수민에게 보낸 송금 부탁과 거의 동일하다.',
       ),
       successConditionSummary: [
         ko('e-5가 Original 이상'),
@@ -2435,7 +2456,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         ko('d-2가 S3 이상'),
       ],
       successEffects: [
-        ko('송다은 아버지의 현재 접근이 과거와 연결됨'),
+        ko('송다은 아버지의 현재 시도가 과거와 연결됨'),
         ko('d-4 해금에 필요한 반복 패턴 확정'),
       ],
       effects: [
@@ -2449,7 +2470,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
             {
               id: 'dc-3.b.q1',
               text: ko('같은 돈 부탁을 다시 봤다면, 왜 이번에도 혼자 막는 쪽을 택했습니까?'),
-              lockedHint: ko('현재 문자와 과거 송금 흐름이 함께 열려야 보입니다.'),
+              lockedHint: ko('떠벌림 흔적과 과거 송금 흐름이 함께 열려야 보입니다.'),
               attackVector: 'context',
               requiredLieState: 'S2',
               onSuccess: {
@@ -2630,7 +2651,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       inputs: ['e-5', 'e-6'],
       cost: 1,
       outputId: 'dc-3',
-      discoveryText: ko('송다은 아버지가 예비신랑에게 보낸 문자와 과거 최수민에게 보낸 송금 부탁 흐름이 거의 동일하다.'),
+      discoveryText: ko('예비신랑이 회사에서 떠벌린 아버지의 결혼 자금 요청과 과거 최수민에게 보낸 송금 부탁이 거의 동일한 흐름이다.'),
       route: 'evidence_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
@@ -2638,7 +2659,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         requiredTruthStage: { 'd-2': 3 },
         autoSurfaceAllowed: false,
       },
-      surfaceFallback: ko('과거와 현재 자금 부탁 흐름을 대조 중.'),
+      surfaceFallback: ko('과거 송금 흐름과 현재 떠벌림 흔적을 대조 중.'),
     },
     {
       id: 'combine-4',
@@ -2660,7 +2681,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       inputs: ['e-4', 'e-7'],
       cost: 1,
       outputId: 'dc-1',
-      discoveryText: ko('예비신랑의 접근과 대조표를 합치면, 최수민의 연락이 경고였다는 결론이 강화된다.'),
+      discoveryText: ko('예비신랑의 접근과 대조표를 합치면, 최수민의 연락이 결혼 위기 차단이었다는 결론이 강화된다.'),
       route: 'evidence_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
