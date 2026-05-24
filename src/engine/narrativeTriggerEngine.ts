@@ -45,6 +45,12 @@ export interface NarrativeTriggerEvaluationContext {
   lastActionContext?: string
   /** 직전에 발동된 조합 recipeId — combination_result 후보 매칭 전용. */
   lastFiredRecipeId?: string
+  /**
+   * 이미 fire된 카드/증거 ID set — cascade_from_card 후보의 requirePriorCardFired
+   * 매칭 전용. dossierCard / evidence ID 통합 (priorCard 영역 통합 정책).
+   * [[design_narrative_cascade_from_card]]
+   */
+  firedCardIds?: ReadonlySet<string>
 }
 
 export interface GameStateSnapshot {
@@ -116,6 +122,13 @@ function matchCandidate(
     if (!candidate.recipeId) return false
     if (candidate.recipeId !== ctx.lastFiredRecipeId) return false
   }
+  // cascade_from_card 후보: 적어도 하나의 preconditions OR 묶음에 requirePriorCardFired가
+  // 명시돼야 한다. priorCard 매칭 자체는 matchOtherPreconditions 가 처리.
+  if (candidate.type === 'cascade_from_card') {
+    const list = normalizePreconditions(candidate.preconditions)
+    const hasPriorCardSpec = list.some((pc) => Boolean(pc.requirePriorCardFired))
+    if (!hasPriorCardSpec) return false
+  }
   const preconditionsList = normalizePreconditions(candidate.preconditions)
   // OR 묶음 — 하나라도 만족 시 fire
   return preconditionsList.some((pc) => matchPreconditions(pc, ctx))
@@ -169,6 +182,11 @@ function matchOtherPreconditions(
   if (pc.contextAction) {
     const last = ctx.lastActionContext ?? ''
     if (!matchContextAction(pc.contextAction, last)) return false
+  }
+  // requirePriorCardFired (Cycle 2 cascade_from_card) — 이전 카드/증거 fire 확인
+  if (pc.requirePriorCardFired) {
+    const fired = ctx.firedCardIds
+    if (!fired || !fired.has(pc.requirePriorCardFired)) return false
   }
   // turnsAfterEligible — evaluateFallback에서만 의미. 일반 evaluate는 skip.
   return true

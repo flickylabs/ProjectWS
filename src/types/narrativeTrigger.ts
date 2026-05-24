@@ -17,12 +17,17 @@ import { z } from 'zod'
 // Trigger types
 // ─────────────────────────────────────────────────────────────────────────────
 
-/** narrative trigger 후보 타입. 권위 trigger 4종 (3 권장 + 1 fallback). */
+/**
+ * narrative trigger 후보 타입.
+ * Cycle 1: 4종 (3 권장 + 1 fallback)
+ * Cycle 2: +cascade_from_card (사건 카드 인과 chain) — [[design_narrative_cascade_from_card]]
+ */
 export const NarrativeTriggerTypeSchema = z.enum([
   'npc_interjection',      // 상대측 NPC 끼어듦 → 판사 reactive
   'combination_result',    // 증거 조합 결과 → 판사 query → 답변 중 발동
   'emotional_outburst',    // NPC 격앙/동요 → 돌발 발화
   'judge_auto_mention',    // N턴 fallback — 판사 자발 (Loose 세팅 안전망)
+  'cascade_from_card',     // 이전 사건 카드/증거 fire 후 자연 연속 등장 (Cycle 2 신규)
 ])
 export type NarrativeTriggerType = z.infer<typeof NarrativeTriggerTypeSchema>
 
@@ -53,6 +58,12 @@ export const NarrativeTriggerPreconditionsSchema = z.object({
   contextAction: z.string().optional(),
   /** legacy 조건 만족 후 N턴 대기. judge_auto_mention fallback 전용. */
   turnsAfterEligible: z.number().int().nonnegative().optional(),
+  /**
+   * cascade_from_card 전용 (Cycle 2) — 본 trigger 발동 전 fire 되어야 할 이전
+   * 카드/증거 ID. dossierCardId 또는 evidenceId 통합. 미fire 상태면 본 trigger
+   * 평가 skip. [[design_narrative_cascade_from_card]]
+   */
+  requirePriorCardFired: z.string().min(1).optional(),
 })
 export type NarrativeTriggerPreconditions = z.infer<typeof NarrativeTriggerPreconditionsSchema>
 

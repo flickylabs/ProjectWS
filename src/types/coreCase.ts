@@ -363,6 +363,10 @@ export const CoreDisputeSchema = z.object({
     a: PartyLieConfigSchema,
     b: PartyLieConfigSchema,
   }),
+  /** Core narrative wrapper layer (Cycle 2+) — hidden dispute emergence 시점
+   *  multi-trigger 후보. legacy unlock 조건 만족 시 평가 → First-Fired-Wins.
+   *  미지정 시 즉시 emerge (legacy behavior). open dispute에는 무효. */
+  narrativeTriggers: z.array(NarrativeTriggerCandidateSchema).optional(),
 })
 export type CoreDispute = z.infer<typeof CoreDisputeSchema>
 
@@ -529,6 +533,11 @@ export const CoreWitnessSchema = z.object({
   testimony: z.object({
     byDispute: z.record(z.string(), WitnessTestimonyByDisputeSchema),
   }),
+  /** Core narrative wrapper layer (Cycle 2+) — 증인 호출 가능 surface 시점
+   *  multi-trigger 후보. unlockedByDossier 조건 만족 시 평가 → First-Fired-Wins.
+   *  미지정 시 즉시 호출 가능 (legacy behavior).
+   *  복수 relatedDisputes 보유 시 cascade trigger의 priorCard로 disputeContext 분기. */
+  narrativeTriggers: z.array(NarrativeTriggerCandidateSchema).optional(),
 })
 export type CoreWitness = z.infer<typeof CoreWitnessSchema>
 
@@ -616,6 +625,11 @@ export const CoreDossierCardSchema = z.object({
   effects: z.array(DossierEffectSchema).optional(),
   judgeHint: LocalizedStringSchema.optional(),
   challenges: DossierChallengesSchema,
+  /** Core narrative wrapper layer (Cycle 2+) — dossier card surface 시점
+   *  multi-trigger 후보. combinationLab 조합 성공 시 평가 → First-Fired-Wins.
+   *  미지정 시 즉시 surface (legacy behavior).
+   *  cascade_from_card trigger 사용 시 priorCard에 이전 카드/증거 ID 명시. */
+  narrativeTriggers: z.array(NarrativeTriggerCandidateSchema).optional(),
 })
 export type CoreDossierCard = z.infer<typeof CoreDossierCardSchema>
 

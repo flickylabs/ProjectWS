@@ -14,9 +14,18 @@
 
 import { useGameStore } from '../store/useGameStore'
 import type { EvidenceNode } from '../types/case'
-import type { PartyId, LieState } from '../types/coreCase'
+import type {
+  PartyId,
+  LieState,
+  CoreDispute,
+  CoreDossierCard,
+  CoreWitness,
+} from '../types/coreCase'
 import type { Speaker } from '../types/dialogue'
-import type { NarrativeTriggerFireResult } from '../types/narrativeTrigger'
+import type {
+  NarrativeTriggerCandidate,
+  NarrativeTriggerFireResult,
+} from '../types/narrativeTrigger'
 import {
   evaluateNarrativeTriggers,
   evaluateFallback,
@@ -151,8 +160,16 @@ interface UnknownDialogueDispatcher {
 // Unified evaluate-and-dispatch (foundation API)
 // ─────────────────────────────────────────────────────────────────────────────
 
-export interface NarrativeAttemptContext {
+/**
+ * Cycle 1 evidence emergence 호환 — evidenceDef + 공통 context.
+ * Cycle 2 dossier/witness/dispute는 별도 wrapper context 타입 사용.
+ */
+export interface NarrativeAttemptContext extends NarrativeAttemptCommonContext {
   evidenceDef: EvidenceNode
+}
+
+/** evidence/dossier/witness/dispute 공통 context. */
+export interface NarrativeAttemptCommonContext {
   currentTurn: number
   lastActionContext?: string
   lastFiredRecipeId?: string
@@ -160,6 +177,69 @@ export interface NarrativeAttemptContext {
   firedTrigger?: string
   /** legacy 조건 만족 turn (fallback 계산용). */
   legacyEligibleTurn?: number
+}
+
+/**
+ * Generic emergence attempt — evidence / dossier / witness / dispute 공통 helper.
+ * 호출자 책임: emergenceId, candidates, relatedDisputes 명시.
+ */
+function attemptNarrativeForEmergence(args: {
+  emergenceId: string
+  candidates: NarrativeTriggerCandidate[] | undefined
+  relatedDisputes: string[]
+  ctx: NarrativeAttemptCommonContext
+  mode: 'evaluate' | 'fallback'
+}): NarrativeTriggerFireResult | null | undefined {
+  const { candidates, ctx } = args
+  if (!candidates || candidates.length === 0) return undefined
+  if (ctx.firedTrigger) return null
+  if (args.mode === 'fallback' && ctx.legacyEligibleTurn === undefined) return null
+
+  const snapshot = buildGameStateSnapshot()
+  const firedCardIds = collectFiredCardIds()
+  const evaluator = args.mode === 'evaluate' ? evaluateNarrativeTriggers : evaluateFallback
+  const fired = evaluator({
+    emergenceId: args.emergenceId,
+    candidates,
+    state: snapshot,
+    firedTrigger: ctx.firedTrigger,
+    legacyEligibleTurn: ctx.legacyEligibleTurn,
+    currentTurn: ctx.currentTurn,
+    lastActionContext: ctx.lastActionContext,
+    lastFiredRecipeId: ctx.lastFiredRecipeId,
+    firedCardIds,
+  })
+  if (fired) {
+    dispatchNarrativeSequence(fired, {
+      emergenceId: args.emergenceId,
+      relatedDisputes: args.relatedDisputes,
+    })
+    return fired
+  }
+  return null
+}
+
+/**
+ * 이미 fire된 카드/증거 ID set 수집.
+ * Cycle 1: evidence narrativeFiredTrigger map만 처리.
+ * Cycle 2: dossier / witness / dispute fired 추적은 store slice 확장 후 추가.
+ */
+function collectFiredCardIds(): ReadonlySet<string> {
+  const state = useGameStore.getState() as {
+    evidence?: { narrativeFiredTrigger?: Record<string, string | undefined> }
+    dossier?: { narrativeFiredTrigger?: Record<string, string | undefined> }
+    witness?: { narrativeFiredTrigger?: Record<string, string | undefined> }
+    dispute?: { narrativeFiredTrigger?: Record<string, string | undefined> }
+  }
+  const fired = new Set<string>()
+  for (const slice of [state.evidence, state.dossier, state.witness, state.dispute]) {
+    const map = slice?.narrativeFiredTrigger
+    if (!map) continue
+    for (const [id, trigger] of Object.entries(map)) {
+      if (trigger) fired.add(id)
+    }
+  }
+  return fired
 }
 
 /**
@@ -173,29 +253,13 @@ export interface NarrativeAttemptContext {
 export function attemptNarrativeForEvidence(
   ctx: NarrativeAttemptContext,
 ): NarrativeTriggerFireResult | null | undefined {
-  const candidates = ctx.evidenceDef.narrativeTriggers
-  if (!candidates || candidates.length === 0) return undefined
-  if (ctx.firedTrigger) return null
-
-  const snapshot = buildGameStateSnapshot()
-  const fired = evaluateNarrativeTriggers({
+  return attemptNarrativeForEmergence({
     emergenceId: ctx.evidenceDef.id,
-    candidates,
-    state: snapshot,
-    firedTrigger: ctx.firedTrigger,
-    legacyEligibleTurn: ctx.legacyEligibleTurn,
-    currentTurn: ctx.currentTurn,
-    lastActionContext: ctx.lastActionContext,
-    lastFiredRecipeId: ctx.lastFiredRecipeId,
+    candidates: ctx.evidenceDef.narrativeTriggers,
+    relatedDisputes: ctx.evidenceDef.proves,
+    ctx,
+    mode: 'evaluate',
   })
-  if (fired) {
-    dispatchNarrativeSequence(fired, {
-      emergenceId: ctx.evidenceDef.id,
-      relatedDisputes: ctx.evidenceDef.proves,
-    })
-    return fired
-  }
-  return null
 }
 
 /**
@@ -205,30 +269,101 @@ export function attemptNarrativeForEvidence(
 export function attemptFallbackForEvidence(
   ctx: NarrativeAttemptContext,
 ): NarrativeTriggerFireResult | null | undefined {
-  const candidates = ctx.evidenceDef.narrativeTriggers
-  if (!candidates || candidates.length === 0) return undefined
-  if (ctx.firedTrigger) return null
-  if (ctx.legacyEligibleTurn === undefined) return null
-
-  const snapshot = buildGameStateSnapshot()
-  const fired = evaluateFallback({
+  return attemptNarrativeForEmergence({
     emergenceId: ctx.evidenceDef.id,
-    candidates,
-    state: snapshot,
-    firedTrigger: ctx.firedTrigger,
-    legacyEligibleTurn: ctx.legacyEligibleTurn,
-    currentTurn: ctx.currentTurn,
-    lastActionContext: ctx.lastActionContext,
-    lastFiredRecipeId: ctx.lastFiredRecipeId,
+    candidates: ctx.evidenceDef.narrativeTriggers,
+    relatedDisputes: ctx.evidenceDef.proves,
+    ctx,
+    mode: 'fallback',
   })
-  if (fired) {
-    dispatchNarrativeSequence(fired, {
-      emergenceId: ctx.evidenceDef.id,
-      relatedDisputes: ctx.evidenceDef.proves,
-    })
-    return fired
-  }
-  return null
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cycle 2 — Dossier / Witness / Dispute emergence (cascade_from_card 지원)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface DossierNarrativeContext extends NarrativeAttemptCommonContext {
+  dossierDef: CoreDossierCard
+}
+
+export interface WitnessNarrativeContext extends NarrativeAttemptCommonContext {
+  witnessDef: CoreWitness
+}
+
+export interface DisputeNarrativeContext extends NarrativeAttemptCommonContext {
+  disputeDef: CoreDispute
+}
+
+export function attemptNarrativeForDossier(
+  ctx: DossierNarrativeContext,
+): NarrativeTriggerFireResult | null | undefined {
+  return attemptNarrativeForEmergence({
+    emergenceId: ctx.dossierDef.id,
+    candidates: ctx.dossierDef.narrativeTriggers,
+    relatedDisputes: ctx.dossierDef.linkedDisputes,
+    ctx,
+    mode: 'evaluate',
+  })
+}
+
+export function attemptFallbackForDossier(
+  ctx: DossierNarrativeContext,
+): NarrativeTriggerFireResult | null | undefined {
+  return attemptNarrativeForEmergence({
+    emergenceId: ctx.dossierDef.id,
+    candidates: ctx.dossierDef.narrativeTriggers,
+    relatedDisputes: ctx.dossierDef.linkedDisputes,
+    ctx,
+    mode: 'fallback',
+  })
+}
+
+export function attemptNarrativeForWitness(
+  ctx: WitnessNarrativeContext,
+): NarrativeTriggerFireResult | null | undefined {
+  return attemptNarrativeForEmergence({
+    emergenceId: ctx.witnessDef.id,
+    candidates: ctx.witnessDef.narrativeTriggers,
+    relatedDisputes: ctx.witnessDef.relatedDisputes,
+    ctx,
+    mode: 'evaluate',
+  })
+}
+
+export function attemptFallbackForWitness(
+  ctx: WitnessNarrativeContext,
+): NarrativeTriggerFireResult | null | undefined {
+  return attemptNarrativeForEmergence({
+    emergenceId: ctx.witnessDef.id,
+    candidates: ctx.witnessDef.narrativeTriggers,
+    relatedDisputes: ctx.witnessDef.relatedDisputes,
+    ctx,
+    mode: 'fallback',
+  })
+}
+
+export function attemptNarrativeForDispute(
+  ctx: DisputeNarrativeContext,
+): NarrativeTriggerFireResult | null | undefined {
+  return attemptNarrativeForEmergence({
+    emergenceId: ctx.disputeDef.id,
+    candidates: ctx.disputeDef.narrativeTriggers,
+    relatedDisputes: [ctx.disputeDef.id],
+    ctx,
+    mode: 'evaluate',
+  })
+}
+
+export function attemptFallbackForDispute(
+  ctx: DisputeNarrativeContext,
+): NarrativeTriggerFireResult | null | undefined {
+  return attemptNarrativeForEmergence({
+    emergenceId: ctx.disputeDef.id,
+    candidates: ctx.disputeDef.narrativeTriggers,
+    relatedDisputes: [ctx.disputeDef.id],
+    ctx,
+    mode: 'fallback',
+  })
 }
 
 // re-export for caller convenience
