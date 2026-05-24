@@ -33,6 +33,22 @@
   w-2 (김영수 호출 가능)              ← Batch 3
 ```
 
+## 신규 정책 — 재판관 어법 사실/행위 중심 (Cycle 7 도입, 본 cycle 적용)
+
+`feedback_judge_dispassionate_action_focused.md` 정책 (병렬 spouse-01 Cycle 7 세션에서 정립). 본 cycle 의뢰서 전체에 적용.
+
+핵심:
+- 재판관 발화에 감정·가치 어휘 회피 ("선을 넘다", "흐름", "낙인" X)
+- 사실·행위·선후관계 중심 ("정황", "선후관계", "관련 자료")
+- "반증/그 X" → "관련 X" 중립 표현
+- **증인 호출 동사 다양화** (단일 "호출하겠습니다" 반복 X)
+- dossier label도 "누구" frame X "행위/상황" frame ← 본 cycle dc-1 "말년의 종이", dc-2 "수정된 유언장" 모두 부합
+
+본 cycle 영향:
+- Batch 1 w-1 호출 narrative: 호출 동사 다양화 ("부르겠습니다" / "모시겠습니다" / "직접 들어보겠습니다" / "확인해 보겠습니다")
+- Batch 2 d-2 / e-3 fallback: 평가성 어휘 ("충분히 정리됐다", "필요한 시점이라 봅니다") → 사실 진술 ("관련 자료가 모였다", "추가로 확보됐다")
+- Batch 3 dc-2 / w-2 fallback: 평가성 어휘 회피 + 호출 동사 다양화
+
 ## 신규 정책 — '단서' 명칭 (Cycle 5 도입)
 
 본 cycle부터 player-visible text에서 `사건 카드 / dossier card` → **`단서`** (clue) 표현 통일.

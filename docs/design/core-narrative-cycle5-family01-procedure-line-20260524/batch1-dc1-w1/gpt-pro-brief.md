@@ -16,6 +16,7 @@
 - `design_family01_truth_disclosure_policy.md` — family-01 진실 노출 정책 (Line A 영역 surface 금지 keyword 명시)
 - `design_truth_leak_keyword_nature.md` — hidden 본성 분류
 - `feedback_dossier_card_renamed_to_clue.md` — **'사건 카드 → 단서' 명칭 변경 (Cycle 5 신규)**
+- `feedback_judge_dispassionate_action_focused.md` — **재판관 어법: 감정·가치 판단 회피, 사실/행위 중심 (Cycle 7 신규, 본 cycle 적용)**
 - `feedback_natural_korean_npc_active_voice.md` — NPC 발화 자연화 5 차원
 - `feedback_judge_question_quality.md` — 재판관 질문 품질
 - `feedback_self_reference_speaker_context.md` — 자기지시 정밀
@@ -321,6 +322,17 @@ ScriptedText entry text의 cascade reference 패턴:
 
 자연화 5 차원 (`feedback_natural_korean_npc_active_voice.md`) 적용:
 - 강력 어휘 완화 / 모호 referent 명확 동사구 / 피동 회피 / 직역체 내면 발화 / 자연 완충재
+
+**재판관 어법 — 사실/행위 중심** (`feedback_judge_dispassionate_action_focused.md` Cycle 7 신규):
+- 감정·가치 판단 어휘 회피 ("선을 넘다", "흐름", "낙인" X)
+- 사실·행위·선후관계 중심 어휘 ("먼저 연락", "정황", "선후관계", "관련 자료")
+- "반증/그 X" → "관련 X" 중립 유지
+- **증인 호출 동사 다양화** — 단일 "호출하겠습니다" 반복 X. 본 batch w-1 호출 entry에서:
+  - "최복순 씨를 부르겠습니다"
+  - "최복순 씨를 본 법정에 모시겠습니다"
+  - "최복순 씨 진술을 직접 들어보겠습니다"
+  - "최복순 씨를 증인으로 모시도록 준비하겠습니다"
+  - 위 류 중 trigger 별로 다른 동사 사용 권장
 
 자기지시 정밀 (`feedback_self_reference_speaker_context.md`):
 - NPC 1인칭 자기 발화에 "본인" X → "저/제"
