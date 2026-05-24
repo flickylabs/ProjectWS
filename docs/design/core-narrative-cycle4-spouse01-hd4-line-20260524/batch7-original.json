@@ -1,0 +1,60 @@
+{
+  "batch": 7,
+  "channel": "mediation",
+  "entries": [
+    {
+      "key": "mediation|h-d4|S4|v1",
+      "party": "judge",
+      "targetParty": "both",
+      "disputeId": "h-d4",
+      "lieState": "S4",
+      "questionType": "mediation",
+      "angle": "responsibility_split",
+      "stanceHint": "balanced",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "mediation-h-d4-S4-responsibility-split-v1",
+          "text": "이 쟁점은 누가 더 상처받았는지를 가르는 문제가 아닙니다. 이준호 씨는 치료비를 혼자 준비하며 부부가 함께 결정할 일을 혼자 안았습니다. 박지연 씨는 난임 진단과 관련된 화제를 오래 닫아 두었습니다. 책임의 무게는 같지 않지만, 두 분 모두 말하지 않은 시간이 있습니다.",
+          "behaviorHint": "재판관이 두 사람을 번갈아 보며 책임을 차분히 나눠 짚는다.",
+          "stageGate": "S4 mediation 권위 준수 — 치료비와 난임 진단 관련 화제 회피를 함께 다루되, S5 완전 자백 연표는 보류.",
+          "naturalKoreanNotes": "재판관 격식체로 책임을 분리하되 과한 비난을 피함. 추상 대비 대신 ‘혼자 준비’와 ‘화제를 닫음’으로 구체화."
+        },
+        {
+          "id": "mediation-h-d4-S4-responsibility-split-v2",
+          "text": "치료비로 시작됐다는 사실은 이준호 씨의 침묵을 덜어 주지 않습니다. 박지연 씨도 그 화제를 오래 피하면서 부부가 이야기할 길을 닫았습니다. 지금은 돈의 사용처보다, 왜 서로에게 묻지 못했는지를 정리해야 합니다.",
+          "behaviorHint": "재판관이 한쪽 편을 들지 않고, 숨긴 쪽과 피한 쪽의 책임을 순서대로 정리한다.",
+          "stageGate": "S4 mediation 권위 준수 — 본 목적과 화제 회피 frame 사용, 이후 사용처의 세부 연표는 보류.",
+          "naturalKoreanNotes": "‘침묵’만 반복하지 않고 사용처·질문 부재를 연결해 중재 발화로 정돈. ‘보입니다’식 완곡 직역체를 피함."
+        }
+      ]
+    },
+    {
+      "key": "mediation|h-d4|S4|v2",
+      "party": "judge",
+      "targetParty": "both",
+      "disputeId": "h-d4",
+      "lieState": "S4",
+      "questionType": "mediation",
+      "angle": "communication_repair",
+      "stanceHint": "repair",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "mediation-h-d4-S4-communication-repair-v1",
+          "text": "이준호 씨, 배려라는 말로 단독 결정을 덮을 수는 없습니다. 박지연 씨, 상처 때문에 말을 닫았다는 이유만으로 책임이 사라지지도 않습니다. 두 분은 치료비와 출산, 돈 이야기를 한 사람이 감당할 일이 아니라 함께 확인할 일로 다뤄야 합니다.",
+          "behaviorHint": "재판관이 두 사람을 차례로 호명하고, 앞으로의 대화 기준을 제시한다.",
+          "stageGate": "S4 mediation 권위 준수 — 치료비와 출산 영역의 대화 회복을 직접 언급 가능, S5 완전 자백 문구는 보류.",
+          "naturalKoreanNotes": "‘배려’와 ‘상처’를 변명으로 쓰지 못하게 하되, 중재 채널에 맞춰 실천 문장으로 마무리."
+        },
+        {
+          "id": "mediation-h-d4-S4-communication-repair-v2",
+          "text": "오늘 확인된 것은 치료비를 준비한 마음만이 아닙니다. 그 마음을 숨긴 방식, 그리고 그 화제를 피한 방식도 함께 확인됐습니다. 두 분은 먼저 각자 사과할 부분을 말하고, 앞으로 어떤 결정을 함께 확인할지 정해야 합니다.",
+          "behaviorHint": "재판관이 감정 평가보다 다음 행동을 정리하게 하는 톤으로 말한다.",
+          "stageGate": "S4 mediation 권위 준수 — 본 목적과 화제 회피 책임을 중재 언어로 정리, 기존 hidden keyword 미사용.",
+          "naturalKoreanNotes": "양극 추상명사 대신 ‘숨긴 방식’과 ‘피한 방식’을 구체 행동으로 둠. 재판관 중재 발화답게 실행 가능한 다음 단계로 끝냄."
+        }
+      ]
+    }
+  ]
+}
