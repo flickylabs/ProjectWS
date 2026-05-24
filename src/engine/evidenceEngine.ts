@@ -12,6 +12,10 @@ export interface EvidenceRuntimeState {
   confidentialSource?: boolean
   /** 심층 조사 완료 여부 — 1회 이상 조사 시 true, surface→real 전환 */
   deepInvestigated?: boolean
+  /** Core narrative trigger 발동 기록. 한 번 set되면 나머지 후보 영구 disabled (First-Fired-Wins). */
+  narrativeFiredTrigger?: string
+  /** legacy unlock 조건 만족 turn 기록. judge_auto_mention fallback N턴 계산용. */
+  narrativeLegacyEligibleTurn?: number
 }
 
 export function createInitialEvidenceStates(

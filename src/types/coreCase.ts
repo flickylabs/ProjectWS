@@ -29,6 +29,7 @@
  */
 
 import { z } from 'zod'
+import { NarrativeTriggerCandidateSchema } from './narrativeTrigger'
 
 /* ============================================================================
  * 1. 공통 타입 (locale, party, lieState, channel)
@@ -488,6 +489,10 @@ export const CoreEvidenceSchema = z.object({
   trustStates: z.array(EvidenceTrustStateSchema).optional(),
   /** G5: 민감 정보 봉인 대상. */
   sensitiveSealTargets: SensitiveSealTargetSchema.optional(),
+  /** Core narrative wrapper layer (Cycle 1+) — emergence 시점 multi-trigger 후보.
+   *  legacy unlock 조건 만족 시 평가 → First-Fired-Wins.
+   *  미지정 시 즉시 unlock (legacy behavior). */
+  narrativeTriggers: z.array(NarrativeTriggerCandidateSchema).optional(),
 })
 export type CoreEvidence = z.infer<typeof CoreEvidenceSchema>
 
