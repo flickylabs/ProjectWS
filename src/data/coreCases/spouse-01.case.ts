@@ -84,18 +84,18 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     contextType: 'marital_finance_reframe',
     difficulty: 'hard',
     anchorTruth: ko(
-      '박지연은 남편이 딴살림을 차렸다고 확신한 뒤 위임장을 조작하여 공동 적금 2,000만원을 해지했고, 전액을 투자방에 송금했다가 사기로 손실했다. 이준호는 외도가 아니라 개인회생 중인 친형의 조카(중2)를 돌보고 있었고, 개인 비자금에서 3,000만원을 현금으로 형에게 전달했다.',
+      '박지연은 신혼 초기 난임 진단 이후 출산을 포기하고 그 화제 자체를 회피해 왔다. 이준호는 아내에게 부담을 주지 않으려 혼자 난임 치료 가능성을 알아보며 본인 명의 별도 계좌에 10년 가까이 비자금 3,000만원을 모았다. 형이 개인회생에 들어간 뒤 그 자금을 4회 분할로 현금 출금해 형에게 전달했다. 박지연은 남편이 딴살림을 차렸다고 확신한 뒤 위임장을 조작해 공동 적금 2,000만원을 해지하고 전액을 투자방에 송금했다가 사기로 잃었다. 이준호의 오피스텔 방문 대상은 외도 상대가 아니라 개인회생 중인 친형의 조카(중2)였다.',
     ),
     emotionalBait: ko(
       '매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.',
     ),
     resolutionDilemma: ko(
-      '개인회생 중인 형과 조카를 지키려다 개인 비자금 3,000만원을 현금으로 전달한 남편과, 배신당했다고 확신하고 위임장을 조작하여 공동 적금 2,000만원을 해지한 뒤 전액을 투자방 사기로 날린 아내 중 누가 더 무거운 책임을 져야 하는가. 숨김은 남편이 먼저, 계좌 감시는 아내가 먼저, 범죄 행위는 아내가 저질렀다.',
+      '신혼 초기 난임 진단을 받은 아내와, 그 화제를 다시 꺼내지 못한 채 혼자 출산 가능성을 더 알아보려 비자금을 모아 온 남편. 형의 개인회생 사건이 터지자 그 비자금은 친형에게 전환됐고, 같은 시기 아내는 외도를 확신하며 위임장을 조작해 공동 적금 2,000만원을 해지하고 투자방 사기로 잃었다. 침묵의 무게와 위임장 조작의 무게 중 어느 쪽이 더 큰가, 그리고 비자금의 원래 목적이 가족 외부 지원으로 전환된 결정은 누구의 책임인가. 숨김은 남편이 먼저(난임 치료비 비자금 + 형 사정), 계좌 감시는 아내가 먼저, 범죄 행위는 아내가 저질렀다.',
     ),
     conflictSeed: ko('TE-SpouseV301'),
     variableModules: ['VM-spouse-v3-a', 'VM-spouse-v3-b'],
     twistModule: 'TW-spouse-v3-1',
-    sensitivityTags: ['minor_privacy', 'health_privacy', 'family_debt', 'shared_finance'],
+    sensitivityTags: ['minor_privacy', 'health_privacy', 'family_debt', 'shared_finance', 'infertility_privacy'],
     evidenceAxisLegend: {
       depthStages: [
         { id: 'stub', label: ko('Stub'), summary: ko('존재만 보임') },
@@ -139,16 +139,17 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         '배신당한 사람이라는 위치를 먼저 잡고 말하지만, 동기 질문이 들어오면 수치심과 불안을 핑계로 설명 범위를 넓힌다.',
       ),
       pride: 6,
-      fear: ko('위임장 조작이 범죄로 확정되는 것을 가장 두려워한다.'),
+      fear: ko('위임장 조작이 범죄로 확정되는 것이 가장 두렵다. 그리고 신혼 초기 난임 진단을 받은 이후 출산이라는 화제 자체를 다시 꺼내야 하는 자리도 견디지 못한다.'),
       riskAppetite: 5,
       digitalHabit: 'messenger_main',
       dailyRoutine: ko(
-        '학원 마감 뒤 집에 돌아와 카드 내역과 통화기록을 반복해 확인하며 남편이 먼저 가정을 버릴지 모른다는 불안을 키웠다.',
+        '학원 마감 뒤 집에 돌아와 카드 내역과 통화기록을 반복해 확인하며 남편이 먼저 가정을 버릴지 모른다는 불안을 키웠다. 난임 진단 이후로는 산부인과·임신 관련 화제가 나오면 자리를 피하거나 침묵으로 닫는다.',
       ),
       sensitivePoints: [
         ko('오피스텔 방문과 새벽 전화는 딴살림 흔적인가'),
         ko('위임장 조작으로 공동 적금 2,000만원을 해지한 것은 범죄인가'),
         ko('은폐와 선제행동의 순서'),
+        ko('신혼 초기 난임 진단과 그 이후 출산 화제 회피'),
       ],
       verbalTells: [
         {
@@ -185,16 +186,17 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         '사실을 완전히 부정하기보다 중요한 이유를 뒤로 미루고, 모호어로 시간을 벌다가 압박이 누적되면 한꺼번에 털어놓는다.',
       ),
       pride: 6,
-      fear: ko('형 이야기를 꺼내면 시댁 갈등으로 이혼까지 갈 것이라는 공포.'),
+      fear: ko('형 이야기를 꺼내면 시댁 갈등으로 이혼까지 갈 것이라는 공포. 그리고 아내가 닫아 둔 난임이라는 화제를 다시 들춰 부담을 주는 것도 똑같이 두렵다.'),
       riskAppetite: 4,
       digitalHabit: 'minimal',
       dailyRoutine: ko(
-        '매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다.',
+        '매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다. 한편 아내 모르게 산부인과·고위험 임신 관련 자료를 검색하고 의사 친구와 통화하며 보험 상담도 비공식으로 받아 왔다.',
       ),
       sensitivePoints: [
         ko('오피스텔 방문과 새벽 전화는 딴살림 흔적인가'),
         ko('개인 비자금에서 3,000만원을 현금으로 형에게 전달한 것은 배우자 동의 없는 독단인가'),
         ko('은폐와 선제행동의 순서'),
+        ko('아내 모르게 난임 치료 가능성을 알아보며 별도 비자금을 모아 온 사실'),
       ],
       verbalTells: [
         {
@@ -222,7 +224,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     },
   },
 
-  /* ----- timeline (audit Section 1 — 6 stage 권위) ----- */
+  /* ----- timeline (audit Section 1 — 7 stage, Cycle 4 plot revision: 난임 진단 stage 신규 추가) ----- */
   timeline: [
     {
       stage: 0,
@@ -239,6 +241,21 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     },
     {
       stage: 1,
+      whenLabel: ko('결혼 1~3년차 (신혼 초기)'),
+      actor: 'a',
+      action: ko(
+        '박지연이 임신을 시도했으나 산부인과 검진 결과 난임 진단을 받음. 충격으로 출산을 포기하고 그 이후로 임신·출산 화제 자체를 회피. 이준호는 아내의 결정을 받아들이는 한편, 부담을 주지 않기 위해 화제를 다시 꺼내지 못한 채 혼자 출산 가능성을 더 알아보기로 결심.',
+      ),
+      aPerception: ko('본인 난임 진단 인지. 출산 포기 + 화제 회피 결정.'),
+      bPerception: ko('아내 진단 + 회피 모두 인지. 혼자 조사·자금 마련 결심.'),
+      exposureGate: {
+        minLieState: 'S5',
+        allowedChannels: ['aftermath', 'dossier'],
+      },
+      sourceFacts: ['infertility_diagnosis_a', 'fertility_research_b_start'],
+    },
+    {
+      stage: 2,
       whenLabel: ko('결혼 ~10년차'),
       actor: 'b',
       action: ko(
@@ -253,22 +270,22 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       sourceFacts: ['ledger-2'],
     },
     {
-      stage: 2,
+      stage: 3,
       whenLabel: ko('결혼 직후~현재 (10년간)'),
       actor: 'b',
       action: ko(
-        '이준호가 본인 명의 별도 계좌에 급여 잔액과 현금을 조금씩 모음. 누적 ~3,000만 원. 처음엔 비자금이었으나 형 사정 발생 후 형/조카 지원 자금으로 전환.',
+        '이준호가 본인 명의 별도 계좌에 급여 잔액과 현금을 조금씩 모음. 누적 ~3,000만 원. 처음에는 박지연의 난임 치료비 마련을 위한 자금이었고, 그 사이 의사 친구의 비공식 상담과 보험 상담을 비공식으로 받아 옴. 형 사정 발생 후 그 자금이 형/조카 지원 자금으로 전환.',
       ),
-      aPerception: ko('계좌 존재 자체를 모름.'),
-      bPerception: ko('전부 인지.'),
+      aPerception: ko('계좌 존재 자체를 모름. 남편의 출산 관련 조사도 모름.'),
+      bPerception: ko('전부 인지. 원래 목적은 난임 치료비.'),
       exposureGate: {
         minLieState: 'S2',
         allowedChannels: ['evidence_present', 'dossier', 'interrogation'],
       },
-      sourceFacts: ['e-5_account_history'],
+      sourceFacts: ['e-5_account_history', 'e-8_search_history', 'e-9_insurance_consult'],
     },
     {
-      stage: 3,
+      stage: 4,
       whenLabel: ko('사건 발생 4개월 전 ~ 최근'),
       actor: 'b',
       action: ko(
@@ -283,14 +300,14 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       sourceFacts: ['e-5_withdrawals'],
     },
     {
-      stage: 4,
+      stage: 5,
       whenLabel: ko('사건 발생 6주 전'),
       actor: 'a',
       action: ko(
         '박지연이 외도 단정 후 이혼 대비로 본인 몫 보호 → 이준호의 서명을 위조한 위임장 작성 → 공동 적금 2,012만 원 중도 해지 → 박지연 개인계좌로 즉시 입금 (2026.01.18).',
       ),
       aPerception: ko('전부 인지. 위임장 위조가 범죄임도 인지하며 가장 두려워함.'),
-      bPerception: ko('단계 5 이후에 알게 됨.'),
+      bPerception: ko('단계 6 이후에 알게 됨.'),
       exposureGate: {
         minLieState: 'S3',
         allowedChannels: ['evidence_present', 'dossier'],
@@ -298,7 +315,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       sourceFacts: ['e-7_proxy_form', 'fear_a_proxy'],
     },
     {
-      stage: 5,
+      stage: 6,
       whenLabel: ko('사건 발생 6주 전 ~ 4주 전 (적금 해지 직후)'),
       actor: 'a',
       action: ko(
@@ -350,6 +367,20 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       isTrue: true,
       weight: 8,
       quadrant: 'both_know',
+    },
+    {
+      id: 't-6',
+      fact: ko('B의 비자금 3,000만 원은 원래 A의 난임 치료비 마련을 위해 신혼 초기부터 모아 온 자금이었고, 형 사건 발생 후 그 자금이 형 지원으로 전환되었다.'),
+      isTrue: true,
+      weight: 9,
+      quadrant: 'b_only',
+    },
+    {
+      id: 't-7',
+      fact: ko('A는 신혼 초기 난임 진단 후 출산을 포기했고, 그 화제 자체를 회피해 왔다. B가 혼자 출산 가능성을 더 알아보고 있었다는 사실은 모른다.'),
+      isTrue: true,
+      weight: 8,
+      quadrant: 'a_only',
     },
   ],
 
@@ -1226,9 +1257,308 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       },
       narrativeTriggers: hd3NarrativeTriggers,
     },
+    /* ============================================================
+     * dispute h-d4 — 비자금의 원래 목적 (Cycle 4 plot revision 신규)
+     *
+     * d-2 자금 사용처(형 개인회생 자금 전달)는 자백 완료된 상태에서,
+     * 신규 증거 e-8(휴대폰 병원 검색 기록) + e-9(보험 상담 기록) + dc-8 단서를 통해
+     * 비자금의 원래 목적이 박지연의 난임 치료비 마련이었다는 사실이 드러난다.
+     * 신혼 초기 박지연 난임 진단 → 출산 포기·화제 회피 → 이준호 혼자 조사·자금 마련.
+     * 책임 분담: B 70 / A 30 (B 침묵·독단 우위, A 화제 회피로 소통 단절 일부 책임).
+     * ============================================================ */
+    {
+      id: 'h-d4',
+      name: ko('비자금의 원래 목적'),
+      truth: true,
+      truthDescription: ko(
+        '이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 보험 상담을 받으며 출산 가능성을 더 알아봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.',
+      ),
+      quadrant: 'b_only',
+      weight: 'high',
+      ambiguity: 'low',
+      legitimacyIssue: true,
+      hidden: true,
+      v3Visibility: 'hidden',
+      correctResponsibility: { a: 30, b: 70 },
+      mediationLink: '비자금의 원래 목적과 부부 침묵의 무게',
+      requiredEvidence: ['e-8', 'e-9'],
+      judgmentStatement: ko('비자금의 원래 목적은 박지연의 난임 치료비였고, 그 사실을 침묵해 온 책임은 이준호가 더 크다.'),
+      unlockCondition: {
+        requireDispute: { id: 'd-2', minState: 'S5' },
+        runtimeRule: ko('d-2 S5 자백 후 비자금 운용 패턴 의문 + 신규 증거(e-8/e-9) 발현 시'),
+        authoredRule: ko('자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + 휴대폰 검색·보험 상담 기록이 형 사정과 무관한 영역을 가리키면 새 쟁점 부상'),
+      },
+      verdictOptions: {
+        wrong: ko('비자금은 처음부터 형에게 줄 돈으로 모은 것이다.'),
+        partial: ko('비자금의 원래 목적은 불분명하나 사용처는 형이 맞다.'),
+        truth: ko('비자금은 원래 박지연의 난임 치료비를 위해 모은 자금이었고, 형 사건 발생 후 그 자금이 형 지원으로 전환되었다.'),
+        defer: ko('원래 목적을 단정할 수 없다. 판단을 유보한다.'),
+      },
+      lieConfig: {
+        a: {
+          lieType: 'LT-1',
+          lieIntensity: 'L1',
+          lieMotive: 'self_protection',
+          initialState: 'S0',
+          collapseViaTrust: false,
+        },
+        b: {
+          lieType: 'LT-6',
+          lieIntensity: 'L3',
+          lieMotive: 'partner_protection',
+          initialState: 'S0',
+          collapseViaTrust: true,
+        },
+      },
+      truthStages: {
+        S0: {
+          a: {
+            admittedFact: ko('비자금 사용처는 형이라고 들었다. 다른 목적이 있었는지는 모른다.'),
+            allowedKeywords: koKeywords('형에게 간 돈', '다른 목적 모른다'),
+            forbiddenKeywords: keywords(
+              ['난임 치료비', '난임 진단', '출산 가능성 조사', '보험 상담', '의사 친구 상담'],
+              ['infertility treatment funds', 'infertility diagnosis', 'fertility research', 'insurance consultation', 'doctor friend consultation'],
+              ['不妊治療費', '不妊診断', '妊娠可能性の調査', '保険相談', '医師の友人への相談'],
+              ['不孕治疗费', '不孕诊断', '生育可能性调查', '保险咨询', '医生朋友咨询'],
+            ),
+            answerFrame: ko('A는 사용처 = 형으로 확정된 사실 인정. 원래 목적은 별도 영역으로 보지 않음. 난임·치료비 키워드 절대 등장 X.'),
+            transitionTrigger: null,
+            transitionBeat: null,
+          },
+          b: {
+            admittedFact: ko('비자금은 그냥 모은 돈이다. 사용처는 형 맞다.'),
+            allowedKeywords: koKeywords('그냥 모은 돈', '사용처 = 형'),
+            forbiddenKeywords: keywords(
+              ['난임 치료비', '난임 진단', '아내 모르게', '출산 가능성 조사', '보험 상담'],
+              ['infertility treatment funds', 'infertility diagnosis', 'unbeknownst to wife', 'fertility research', 'insurance consultation'],
+              ['不妊治療費', '不妊診断', '妻に内緒で', '妊娠可能性の調査', '保険相談'],
+              ['不孕治疗费', '不孕诊断', '瞒着妻子', '生育可能性调查', '保险咨询'],
+            ),
+            answerFrame: ko('B는 비자금 원래 목적 부정. "그냥 모은 돈" frame strict.'),
+            transitionTrigger: null,
+            transitionBeat: null,
+          },
+        },
+        S1: {
+          a: {
+            admittedFact: ko('남편이 가족 외부 일 때문에 따로 모았다는 설명은 들었지만, 10년 가까이 모은 데에는 다른 이유가 있을 수도 있다.'),
+            allowedKeywords: koKeywords('10년 누적', '다른 이유'),
+            forbiddenKeywords: keywords(
+              ['난임 치료비', '난임 진단', '출산 가능성 조사'],
+              ['infertility treatment funds', 'infertility diagnosis', 'fertility research'],
+              ['不妊治療費', '不妊診断', '妊娠可能性の調査'],
+              ['不孕治疗费', '不孕诊断', '生育可能性调查'],
+            ),
+            answerFrame: ko('A는 "다른 이유" 가능성 인정. 다만 본인 영역과 연관 짓지 않음.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('박지연은 "왜 그렇게 오래 모았지"라며 짧게 자문한다.'),
+              behaviorHint: ko('시선이 잠깐 옆을 향했다 돌아온다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('처음부터 형을 위해 모은 돈은 아니다. 형 일은 나중에 생긴 일이다.'),
+            allowedKeywords: koKeywords('처음부터 형 아님', '나중에 생긴 일'),
+            forbiddenKeywords: keywords(
+              ['난임 치료비', '난임 진단', '아내 모르게', '출산 가능성 조사'],
+              ['infertility treatment funds', 'infertility diagnosis', 'unbeknownst to wife', 'fertility research'],
+              ['不妊治療費', '不妊診断', '妻に内緒で', '妊娠可能性の調査'],
+              ['不孕治疗费', '不孕诊断', '瞒着妻子', '生育可能性调查'],
+            ),
+            answerFrame: ko('B는 원래 목적이 형이 아니었다는 점만 인정. 진짜 목적은 아직 회피.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('이준호는 "원래는 형 일과 별개로 모았다"고 말한다.'),
+              behaviorHint: ko('한 박자 늦은 답.'),
+            },
+          },
+        },
+        S2: {
+          a: {
+            admittedFact: ko('수상한 메모와 보험 상담 기록이 있다고 들었다. 처음엔 외도 의심까지 들었지만 형 일과는 다른 영역이라는 점을 받아들인다.'),
+            allowedKeywords: koKeywords('수상한 자료', '보험 상담', '형 일과 다른 영역'),
+            forbiddenKeywords: keywords(
+              ['난임 치료비', '난임 진단', '출산 가능성 조사'],
+              ['infertility treatment funds', 'infertility diagnosis', 'fertility research'],
+              ['不妊治療費', '不妊診断', '妊娠可能性の調査'],
+              ['不孕治疗费', '不孕诊断', '生育可能性调查'],
+            ),
+            answerFrame: ko('A는 신규 증거 영역까지 인정. 원래 목적은 여전히 미상.'),
+            transitionTrigger: 'hard_evidence',
+            transitionBeat: {
+              line: ko('박지연은 "그건 또 무슨 자료냐"고 묻는다.'),
+              behaviorHint: ko('손이 책상 위에서 잠깐 멈춘다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('휴대폰 검색 기록과 보험 상담 기록은 본인 것이 맞다. 다만 가입까지 가지는 않았다.'),
+            allowedKeywords: koKeywords('휴대폰 검색', '보험 상담', '가입 안 함'),
+            forbiddenKeywords: keywords(
+              ['난임 치료비', '난임 진단', '출산 가능성 조사', '아내 모르게'],
+              ['infertility treatment funds', 'infertility diagnosis', 'fertility research', 'unbeknownst to wife'],
+              ['不妊治療費', '不妊診断', '妊娠可能性の調査', '妻に内緒で'],
+              ['不孕治疗费', '不孕诊断', '生育可能性调查', '瞒着妻子'],
+            ),
+            answerFrame: ko('B는 자료 존재만 인정. 용도/동기는 회피.'),
+            transitionTrigger: 'hard_evidence',
+            transitionBeat: {
+              line: ko('이준호는 "그건 그냥 알아본 정도"라고 말한다.'),
+              behaviorHint: ko('말끝이 흐려진다.'),
+            },
+          },
+        },
+        S3: {
+          a: {
+            admittedFact: ko('남편이 본인 모르게 출산 가능성을 알아본 영역이 있었다는 사실을 받아들인다.'),
+            allowedKeywords: koKeywords('출산 관련 조사', '본인 모르게'),
+            forbiddenKeywords: keywords(
+              ['난임 진단'],
+              ['infertility diagnosis'],
+              ['不妊診断'],
+              ['不孕诊断'],
+            ),
+            answerFrame: ko('A는 출산 관련 조사 사실 인정. 본인 진단 영역은 아직 직접 언급 X.'),
+            transitionTrigger: 'empathy',
+            transitionBeat: {
+              line: ko('박지연은 처음으로 "그 사람이 그걸 혼자 알아봤었구나"라고 말한다.'),
+              behaviorHint: ko('숨을 한 번 길게 내쉰다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('아내에게 부담을 주지 않으려고 혼자 출산 가능성을 알아본 시기가 있었다. 의사 친구와 상담했고 보험도 알아봤지만 가입은 하지 않았다.'),
+            allowedKeywords: koKeywords('혼자 알아봄', '의사 친구 상담', '보험 상담', '가입 안 함', '부담 주지 않으려'),
+            forbiddenKeywords: keywords(
+              ['난임 진단', '난임 치료비'],
+              ['infertility diagnosis', 'infertility treatment funds'],
+              ['不妊診断', '不妊治療費'],
+              ['不孕诊断', '不孕治疗费'],
+            ),
+            answerFrame: ko('B는 혼자 조사 사실 + 의사 친구 + 보험 상담까지 인정. 난임/치료비 정확한 용어는 회피.'),
+            transitionTrigger: 'empathy',
+            transitionBeat: {
+              line: ko('이준호는 "혼자라도 알아봐야 했다"고 말한다.'),
+              behaviorHint: ko('어깨가 한 번 내려간다.'),
+            },
+          },
+        },
+        S4: {
+          a: {
+            admittedFact: ko('남편의 조사가 본인 난임 진단과 관련된 영역이었다는 점을 인정한다. 그 화제를 다시 꺼낸 적이 없다는 점도 인정한다.'),
+            allowedKeywords: koKeywords('난임 진단과 관련', '화제 회피'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 본인 진단 영역까지 직접 인정. 화제 회피의 무게도 받아들임.'),
+            transitionTrigger: 'empathy',
+            transitionBeat: {
+              line: ko('박지연은 "그 화제는 내가 닫아 둔 거였다"고 말한다.'),
+              behaviorHint: ko('손이 책상 위에서 길게 멈춘다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('비자금은 아내의 난임 치료비를 위해 모은 자금이었다. 의사 친구와 보험 상담은 모두 그 목적이었다.'),
+            allowedKeywords: koKeywords('난임 치료비', '본 목적', '의사 친구', '보험 상담'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 비자금의 본 목적을 명시. 난임 치료비 frame 직접 진술.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('이준호는 처음으로 "치료비"라는 단어를 꺼낸다.'),
+              behaviorHint: ko('호흡이 한 번 깊어진다.'),
+            },
+          },
+        },
+        S5: {
+          a: {
+            admittedFact: ko('남편의 비자금이 본인의 난임 치료비를 위한 자금이었다는 사실을 완전히 받아들인다. 본인이 그 화제를 닫고 회피한 것도 부부 침묵의 한 축이었음을 인정한다.'),
+            allowedKeywords: koKeywords('난임 치료비', '부부 침묵의 한 축', '회피의 책임'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 비자금 원래 목적 진실 완전 인정. 본인 회피 책임도 명시.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('박지연은 두 사람의 침묵을 처음으로 한 묶음으로 말한다.'),
+              behaviorHint: ko('시선이 잠깐 남편 쪽을 향한다.'),
+            },
+          },
+          b: {
+            admittedFact: ko(
+              '신혼 초기부터 박지연의 난임 치료비를 위해 본인 명의 별도 계좌에 비자금 3,000만 원을 모았고, 의사 친구의 비공식 상담과 보험 상담을 받았으나 가입은 하지 않았다. 형이 개인회생에 들어간 뒤 그 자금을 형에게 전환했다.',
+            ),
+            allowedKeywords: koKeywords('난임 치료비', '신혼 초기', '의사 친구 상담', '보험 상담', '가입 없음', '형 사건 후 전환'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 진실 완전 인정. 원래 목적 + 조사 방법 + 자금 전환 전부 진술.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('이준호는 "그 돈은 처음엔 당신을 위한 거였다"고 말한다.'),
+              behaviorHint: ko('시선이 흔들리지 않는다.'),
+            },
+          },
+        },
+      },
+      channelExposure: {
+        judge_question: { minLieState: 'S0', isSurfaceOnly: true, isDossierSurface: false },
+        judge_contradiction: { minLieState: 'S0', isSurfaceOnly: true, isDossierSurface: false },
+        judge_evidence_combo: { minLieState: 'S2', isSurfaceOnly: true, isDossierSurface: false },
+        judge_witness_summon: { minLieState: 'S2', isSurfaceOnly: true, isDossierSurface: false },
+        dossier: { minLieState: 'S2', isSurfaceOnly: false, isDossierSurface: true },
+        interrogation: { minLieState: 'S0', isSurfaceOnly: false, isDossierSurface: false },
+        contradiction_pursuit: { minLieState: 'S1', isSurfaceOnly: false, isDossierSurface: false },
+        evidence_present: { minLieState: 'S2', isSurfaceOnly: false, isDossierSurface: false },
+        mediation: { minLieState: 'S4', isSurfaceOnly: false, isDossierSurface: false },
+        aftermath: { minLieState: 'S5', isSurfaceOnly: false, isDossierSurface: false },
+        free_interrogation: { minLieState: 'S0', isSurfaceOnly: false, isDossierSurface: false },
+      },
+      progressionStages: {
+        S0: {
+          surfaceClaim: ko('사용처 = 형으로 확정 / 다른 목적 없음'),
+          hiddenTruth: ko('비자금 원래 목적 = 난임 치료비'),
+          validActions: ['fact_pursuit', 'evidence_query'],
+          requiredEvidence: [],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S1: {
+          surfaceClaim: ko('10년 누적의 다른 이유 / 처음부터 형 아님'),
+          hiddenTruth: ko('비자금 원래 목적 = 난임 치료비'),
+          validActions: ['fact_pursuit', 'evidence_query'],
+          requiredEvidence: ['e-5'],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S2: {
+          surfaceClaim: ko('수상한 자료 / 보험 상담 (가입 X)'),
+          hiddenTruth: ko('출산 가능성 조사 + 난임 치료비'),
+          validActions: ['evidence_query', 'motive_search'],
+          requiredEvidence: ['e-8', 'e-9'],
+          requiredWitness: [],
+          successUnlocks: ['dc-8'],
+        },
+        S3: {
+          surfaceClaim: ko('출산 관련 조사 / 혼자 알아봄'),
+          hiddenTruth: ko('난임 치료비 + 아내 부담 회피'),
+          validActions: ['motive_search', 'empathy_approach'],
+          requiredEvidence: ['e-8', 'e-9'],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S4: {
+          surfaceClaim: ko('난임 치료비 / 본 목적 명시'),
+          hiddenTruth: ko('부부 침묵의 책임 분리'),
+          validActions: ['empathy_approach'],
+          requiredEvidence: [],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S5: {
+          surfaceClaim: ko('완전 인정'),
+          hiddenTruth: ko('—'),
+          validActions: ['fact_pursuit'],
+          requiredEvidence: [],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+      },
+    },
   ],
 
-  /* ----- evidence (7개: e-1 ~ e-7) ----- */
+  /* ----- evidence (9개: e-1 ~ e-9, Cycle 4 e-8/e-9 신규) ----- */
   evidence: [
     {
       id: 'e-1',
@@ -1602,9 +1932,107 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       ],
       narrativeTriggers: e7NarrativeTriggers,
     },
+    /* ============================================================
+     * evidence e-8 — 휴대폰 병원 검색 기록 (Cycle 4 plot revision 신규)
+     *
+     * 표면: 산부인과·여성 질환·고위험 임신 검색이 반복 → 외도 의심 frame (내연녀 임신 의심)
+     * 진실: 박지연 모르게 난임 치료 가능성을 알아본 이준호의 조사 흔적
+     * ============================================================ */
+    {
+      id: 'e-8',
+      name: ko('이준호 휴대폰의 의학 검색 기록'),
+      surfaceName: ko('휴대폰 의학 검색 기록'),
+      description: ko(
+        '이준호의 휴대폰 검색 기록 중 산부인과·여성 질환·임신 관련 검색이 반복된다. 일부는 의사 친구와의 통화 직후 시기에 몰려 있다.',
+      ),
+      surfaceDescription: ko('이준호 휴대폰에 남은 산부인과·여성 질환 검색 기록.'),
+      type: 'device',
+      reliability: 'hard',
+      completeness: 'original',
+      provenance: 'self_possessed',
+      legitimacy: 'lawful',
+      subjectParty: 'b',
+      proves: ['h-d4'],
+      isTrap: false,
+      requires: ['e-3'],
+      requiredLieState: 'S2',
+      partyContext: {
+        a: {
+          questionAngle: ko('남편 휴대폰에서 산부인과 검색이 반복된 이유를 어떻게 보는지'),
+          implication: ko('산부인과·여성 질환 검색 = 외도 상대 관련 의심으로 frame 강화.'),
+        },
+        b: {
+          questionAngle: ko('이 검색 기록을 본인 영역에서 어떻게 설명할 것인지'),
+          implication: ko('혼자만 알아본 의학 영역의 조사 흔적.'),
+        },
+      },
+      depthStages: [
+        { id: 'stub', summary: ko('의학 관련 검색 기록 존재 표시.') },
+        { id: 'excerpt', summary: ko('산부인과·여성 질환 검색만 우선 보임 — 외도 의심 frame.') },
+        { id: 'original', summary: ko('임신·여성 의학 영역 검색 전체와 의사 친구 통화 시각 정합 확인.') },
+        { id: 'context', summary: ko('검색 영역이 형 사정과는 무관한 부부 영역이라는 점이 복원됨.') },
+        { id: 'established', summary: ko('B가 혼자 의학 영역을 지속적으로 알아봐 왔다고 공식기록 채택.') },
+      ],
+      trustStates: [
+        { id: 'submitted', summary: ko('A가 휴대폰 일부 캡처 제출 또는 B 휴대폰 발췌.') },
+        { id: 'verifying', summary: ko('휴대폰 원본 검색 기록 대조.') },
+        { id: 'authenticated', summary: ko('검색 시점·키워드가 통화 기록과 일치.') },
+        { id: 'challenged', summary: ko('외도 frame과 혼자 알아본 frame 두 해석이 충돌.') },
+        { id: 'misread', summary: ko('검색 자체는 인증되지만 의도 해석은 심문과 맥락으로 확정.') },
+      ],
+    },
+    /* ============================================================
+     * evidence e-9 — 보험 상담 기록 (가입 X) (Cycle 4 plot revision 신규)
+     *
+     * 표면: 고액 의료비 특약·고위험 산모 보험 상담 → 외도 의심 frame (내연녀 수익자 가능성)
+     * 진실: 박지연 난임 치료비를 위한 보험 알아보기 (가입은 안 함)
+     * ============================================================ */
+    {
+      id: 'e-9',
+      name: ko('이준호의 보험사 견적 자료 (가입 없음)'),
+      surfaceName: ko('보험사 견적 자료'),
+      description: ko(
+        '이준호가 여러 보험사에서 받은 의료비 보장 특약 견적서 묶음. 모두 견적·상담 단계에서 멈춰 있고 실제 가입 흔적은 없다.',
+      ),
+      surfaceDescription: ko('이준호 명의 보험사 견적서들.'),
+      type: 'contract',
+      reliability: 'hard',
+      completeness: 'original',
+      provenance: 'self_possessed',
+      legitimacy: 'lawful',
+      subjectParty: 'b',
+      proves: ['h-d4'],
+      isTrap: false,
+      requires: ['e-8'],
+      requiredLieState: 'S2',
+      partyContext: {
+        a: {
+          questionAngle: ko('남편이 혼자 받은 보험 견적의 정체가 무엇인지'),
+          implication: ko('수익자 공란/타인 상담 = 외도 상대 수익자 의심.'),
+        },
+        b: {
+          questionAngle: ko('가입까지 가지 않은 보험을 왜 여러 곳에서 상담만 받았는지'),
+          implication: ko('의료비 대비를 알아본 것이지만 결정을 내리지 못함.'),
+        },
+      },
+      depthStages: [
+        { id: 'stub', summary: ko('보험 견적서 묶음 존재 표시.') },
+        { id: 'excerpt', summary: ko('고액 의료비 특약·수익자 공란 견적만 보임 — 외도 의심 frame.') },
+        { id: 'original', summary: ko('의료비 보장 특약 견적이 여성 의학 영역까지 포함된다는 점과 가입 0건이라는 점이 확인됨.') },
+        { id: 'context', summary: ko('e-8 휴대폰 검색 시기와 상담일이 정합되며 모든 견적이 결정 단계에 도달하지 못함.') },
+        { id: 'established', summary: ko('B가 의학 영역의 의료비 대비만 알아봤으나 결정에는 도달하지 못했다고 공식기록 채택.') },
+      ],
+      trustStates: [
+        { id: 'submitted', summary: ko('B 측 제출 또는 A 발견 사본 제출.') },
+        { id: 'verifying', summary: ko('보험사 원본 견적서 대조.') },
+        { id: 'authenticated', summary: ko('상담일·상담 항목·미가입 사실 확인.') },
+        { id: 'challenged', summary: ko('A가 수익자 의심을 제기 / B가 의학 영역 대비라고 주장.') },
+        { id: 'misread', summary: ko('상담 사실은 인증되지만 진짜 의도는 심문과 맥락으로 확정.') },
+      ],
+    },
   ],
 
-  /* ----- witnesses (3명: w-1, w-2, w-3) — 사용자 결정 6 반영 (w-2에 d-2 추가, h-d4 폐기) ----- */
+  /* ----- witnesses (3명: w-1, w-2, w-3) — 사용자 결정 6 반영 (w-2에 d-2 추가). h-d4는 Cycle 4에서 신설 (이전 폐기 영역과 별개). ----- */
   witnesses: [
     {
       id: 'w-1',
@@ -2130,9 +2558,99 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       },
       narrativeTriggers: dc7NarrativeTriggers,
     },
+    /* ============================================================
+     * dossierCard dc-8 — 이준호의 또 다른 침묵 (Cycle 4 plot revision 신규)
+     *
+     * e-8 (휴대폰 검색 기록) + e-9 (보험 상담 기록) 결합으로 부상.
+     * 외도 frame과 출산 조사 frame 두 해석 사이에서 진짜 목적(난임 치료비)을 가리키는 단서.
+     * h-d4 발현 직전 단서. linkedParty: b.
+     * ============================================================ */
+    {
+      id: 'dc-8',
+      label: ko('이준호의 또 다른 침묵'),
+      description: ko('형 사건과는 무관한 영역에서도 이준호가 혼자 무언가를 준비해 왔다는 단서. 외도 의심과 출산 조사 두 해석 사이.'),
+      type: 'derived_note',
+      linkedDisputes: ['h-d4'],
+      linkedParty: 'b',
+      linkedEvidence: ['e-8', 'e-9'],
+      leadLine: {
+        id: 'L-8',
+        name: ko('Hidden Purpose Lead'),
+        leadType: 'Beneficiary',
+        firstInputs: ['e-8', 'e-9'],
+        secondInputs: ['L-8', 'stmt-b-family'],
+        interpretationChoices: [
+          {
+            id: 'L-8-A',
+            text: ko('외도 상대를 위한 준비다'),
+            implication: ko('A의 외도 의심을 강화한다.'),
+          },
+          {
+            id: 'L-8-B',
+            text: ko('부부의 출산 영역을 혼자 알아본 흔적이다'),
+            implication: ko('진짜 목적이 형 사정과는 별개 영역임을 본다.'),
+          },
+          {
+            id: 'L-8-C',
+            text: ko('단순한 정보 수집일 수 있다'),
+            implication: ko('판단을 유보한다.'),
+          },
+        ],
+      },
+      noteText: ko(
+        '휴대폰 검색 기록과 보험 상담 기록이 같은 시기·같은 영역(산부인과·고위험 임신·시험관)으로 모인다. 형 사건과는 연결되지 않는 영역이며 가입 흔적은 없다 — 결정에 도달하지 못한 혼자만의 조사.',
+      ),
+      successConditionSummary: [
+        ko('e-8 Original 이상'),
+        ko('e-9 Original 이상'),
+        ko('B에게 동기 추궁 또는 공감 접근 누적'),
+      ],
+      successEffects: [
+        ko('h-d4 핵심 사실 "비자금 원래 목적 = 난임 치료비" 잠정 인정'),
+        ko('B가 혼자 출산 가능성을 알아본 사실 직접 언급'),
+      ],
+      effects: [
+        { kind: 'unlock_note', unlockNodeId: 'dc-8' },
+        {
+          kind: 'upgrade_dispute',
+          disputeUpgrade: { disputeId: 'h-d4', weight: 'high', ambiguity: 'low' },
+        },
+      ],
+      judgeHint: ko('e-8 + e-9 결합으로 부상한 단서. h-d4 등록 직전.'),
+      challenges: {
+        b: {
+          questions: [
+            {
+              id: 'dc-8.b.q1',
+              text: ko('아내 모르게 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?'),
+              lockedHint: ko('e-8 + e-9 Original + B의 가족 사정 인정 후 등장.'),
+              attackVector: 'responsibility',
+              requiredLieState: 'S3',
+              onSuccess: {
+                blockVector: 'responsibility',
+                revealAtom: 'spouse-01:b:h-d4:S4:0',
+                lieAdvance: true,
+              },
+            },
+            {
+              id: 'dc-8.b.q2',
+              text: ko('이 자료들의 진짜 목적이 무엇이었는지 직접 답해 주십시오.'),
+              lockedHint: ko('h-d4 S3 이상 + 공감 접근 누적 후 등장.'),
+              attackVector: 'motive',
+              requiredLieState: 'S4',
+              onSuccess: {
+                blockVector: 'motive',
+                revealAtom: 'spouse-01:b:h-d4:S5:0',
+                lieAdvance: true,
+              },
+            },
+          ],
+        },
+      },
+    },
   ],
 
-  /* ----- combinationRecipes — recipe 재구성 (사용자 결정 8건 반영) + clue-cash-pattern (Cycle 1) ----- */
+  /* ----- combinationRecipes — recipe 재구성 (사용자 결정 8건 반영) + clue-cash-pattern (Cycle 1) + combine-7 (Cycle 4) ----- */
   combinationRecipes: [
     {
       id: 'clue-cash-pattern',
@@ -2225,6 +2743,22 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       },
       surfaceFallback: ko('B의 가족 관련 진술과 문자를 대조 중.'),
     },
+    {
+      id: 'combine-7',
+      /** e-8 + e-9 → dc-8 ("이준호의 또 다른 침묵" — Cycle 4 plot revision). B 측 자료. */
+      inputs: ['e-8', 'e-9'],
+      cost: 2,
+      outputId: 'dc-8',
+      discoveryText: ko('휴대폰의 산부인과·난임 검색 기록과 가입 없이 멈춘 보험 상담 견적이 같은 시기·같은 영역으로 모인다.'),
+      route: 'evidence_combine',
+      gate: {
+        allowedChannels: ['evidence_present', 'dossier'],
+        requiredEvidenceStages: { 'e-8': 'original', 'e-9': 'original' },
+        requiredTruthStage: { 'd-2': 5 },
+        autoSurfaceAllowed: false,
+      },
+      surfaceFallback: ko('B의 휴대폰 검색과 보험 상담 견적을 대조 중.'),
+    },
   ],
 
   /* ----- authorityPlacements — 재판관 추천 모먼트 ----- */
@@ -2305,13 +2839,46 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       purpose: ko('외도 오해를 확실히 꺾되 미성년자 사생활 리스크 관리.'),
       contextDispute: 'd-1',
     },
+    {
+      action: ko('원본 제출 명령'),
+      recommendedMoment: ko('h-d4 등장 직후 e-8 / e-9 Excerpt 시점'),
+      purpose: ko('휴대폰 검색 기록과 보험 상담 견적의 전체 영역을 확보.'),
+      contextDispute: 'h-d4',
+    },
+    {
+      action: ko('잠정 인정'),
+      recommendedMoment: ko('e-8 + e-9 결합으로 dc-8 부상 직후'),
+      purpose: ko('B가 형 사건과는 무관한 영역에서도 혼자 무언가를 준비했다는 사실 기록.'),
+      contextDispute: 'h-d4',
+    },
+    {
+      action: ko('분리심문'),
+      recommendedMoment: ko('e-8 Original 직후 B'),
+      purpose: ko('avoidant인 B의 진짜 동기를 단독 영역에서 끌어냄.'),
+      contextDispute: 'h-d4',
+    },
+    {
+      action: ko('선처 창구'),
+      recommendedMoment: ko('dc-8 직후 또는 h-d4 S3 도달 시'),
+      purpose: ko('아내 부담 회피 동기를 더 빨리 진술하도록.'),
+      contextDispute: 'h-d4',
+    },
+    {
+      action: ko('민감정보 봉인 해제'),
+      recommendedMoment: ko('h-d4 S3 이상 + 의학·임신 영역 진입 시'),
+      purpose: ko('난임 진단·치료 영역의 사생활 리스크 관리.'),
+      contextDispute: 'h-d4',
+    },
   ],
 
   /* ----- officialRecordRecommendations — v3-game-loop의 잘못된 entry ("B가 공동 적금 보냄")는
-   *  사건 흐름과 모순이라 Authority에서 수정. 권위 = anchorTruth + timeline. ----- */
+   *  사건 흐름과 모순이라 Authority에서 수정. 권위 = anchorTruth + timeline.
+   *  Cycle 4 plot revision으로 비자금 원래 목적·난임 영역 entry 추가. ----- */
   officialRecordRecommendations: [
     ko('B의 오피스텔 방문 대상은 형과 조카였다.'),
     ko('B는 개인 비자금 3,000만 원을 배우자 동의 없이 형에게 현금으로 전달했다.'),
+    ko('B의 비자금은 원래 A의 난임 치료비 마련을 위해 신혼 초기부터 모아 온 자금이었고, 형 사건 발생 후 형 지원으로 전환되었다.'),
+    ko('A는 신혼 초기 난임 진단 후 출산을 포기했고 그 화제를 회피해 왔다. B는 그 결정을 존중하면서도 혼자 출산 가능성을 더 알아봐 왔다.'),
     ko('A는 남편의 외도를 확신한 뒤 위임장을 위조해 공동 적금 2,000만 원을 해지하고, 전액을 투자방에 송금했다가 사기로 잃었다.'),
     ko('숨김은 B가 먼저 시작했고 실제 비밀 송금은 A가 먼저 실행했다.'),
     ko('두 사람 모두 말 못할 이유가 있었지만 둘 다 공동 재산을 혼자 움직였다.'),
@@ -2330,12 +2897,16 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       ko('시댁 관련 대화 규칙과 공동재산 사전 동의 규칙을 동시에 다시 세운다.'),
     ],
     봉인정보경계: [
-      ko('미성년자 정보와 건강 관련 민감정보는 필요한 범위까지만 해제한다.'),
+      ko('미성년자 정보와 건강 관련 민감정보(난임 진단 포함)는 필요한 범위까지만 해제한다.'),
       ko('외도 오해는 해소하되 가족 돌봄과 공동재산 월권은 별도 책임으로 남긴다.'),
+    ],
+    부부침묵재정렬: [
+      ko('자금 영역의 침묵(비자금 모금·사용처)과 출산 영역의 침묵(난임 진단·치료 조사)을 분리해 다룬다.'),
+      ko('아내가 닫아 둔 화제를 어떤 방식으로 다시 열 수 있을지에 대한 합의 절차를 별도로 둔다.'),
     ],
   },
 
-  /* ----- relationshipLedger (TODO Step 2c — full) ----- */
+  /* ----- relationshipLedger (TODO Step 2c — full / Cycle 4: ledger-3 신규) ----- */
   relationshipLedger: [
     {
       id: 'ledger-1',
@@ -2366,12 +2937,25 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       emotionalResidue: 'strong',
       connectionToCurrent: 'direct',
     },
+    {
+      id: 'ledger-3',
+      category: 'silenced',
+      description: ko(
+        '신혼 초기 A의 난임 진단 이후 A가 출산 화제를 닫아 두자 B는 그 결정을 존중하면서도 혼자 출산 가능성을 더 알아봐 왔다. 두 사람의 침묵이 비자금이라는 형태로 누적된 영역.',
+      ),
+      isReal: true,
+      whoRemembersAccurately: 'both',
+      whoDistorts: 'none',
+      currentlyResolved: 'unresolved',
+      emotionalResidue: 'strong',
+      connectionToCurrent: 'direct',
+    },
   ],
 
   /* ----- flags ----- */
   baseEvidenceIds: ['e-1', 'e-2', 'e-3'],
-  monetaryDisputeIds: ['d-2', 'h-d3'],
-  activeLedgerEntries: ['ledger-1', 'ledger-2'],
+  monetaryDisputeIds: ['d-2', 'h-d3', 'h-d4'],
+  activeLedgerEntries: ['ledger-1', 'ledger-2', 'ledger-3'],
   activeThirdParties: ['w-1', 'w-2', 'w-3'],
 
   /* ----- uiExposure (Step 2d 보강) ----- */
@@ -2447,6 +3031,20 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           ['fear of in-law conflict', 'caring for older brother family', 'niece care', 'middle school girl'],
           ['婚家との葛藤への恐れ', '兄の家族の世話', '姪の世話', '中学2年女子'],
           ['对婆家冲突的恐惧', '照顾哥哥的家人', '照顾侄女', '初二女学生'],
+        ),
+      },
+      'h-d4': {
+        hidden: keywords(
+          ['난임 치료비', '난임 진단', '시험관 시술', '출산 가능성 조사', '의사 친구 비공식 상담', '고위험 임신', '아내 모르게', '아내 부담 회피', '출산 포기', '신혼 초기 난임'],
+          ['infertility treatment funds', 'infertility diagnosis', 'IVF procedure', 'fertility research', 'unofficial consultation with doctor friend', 'high-risk pregnancy', 'unbeknownst to wife', 'sparing wife the burden', 'giving up on having children', 'infertility in early marriage'],
+          ['不妊治療費', '不妊診断', '体外受精', '妊娠可能性の調査', '医師の友人への非公式相談', 'ハイリスク妊娠', '妻に内緒で', '妻に負担をかけないため', '出産の断念', '新婚初期の不妊'],
+          ['不孕治疗费', '不孕诊断', '试管婴儿', '生育可能性调查', '医生朋友的非正式咨询', '高危妊娠', '瞒着妻子', '为不给妻子增加负担', '放弃生育', '新婚初期不孕'],
+        ),
+        surface: keywords(
+          ['비자금', '비자금의 원래 목적', '의학 검색 기록', '보험 견적', '혼자 알아본 영역', '부부 침묵'],
+          ['hidden funds', 'original purpose of the hidden funds', 'medical search history', 'insurance estimates', 'area researched alone', 'spousal silence'],
+          ['隠し資金', '隠し資金の本来の目的', '医学検索履歴', '保険見積もり', '一人で調べた領域', '夫婦の沈黙'],
+          ['私房钱', '私房钱原本的用途', '医学搜索记录', '保险报价', '独自查询的领域', '夫妻间的沉默'],
         ),
       },
     },

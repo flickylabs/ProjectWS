@@ -151,6 +151,52 @@
         "sourceRefs": [
           "src/data/cases/generated/spouse-01.json:evidence.e-7"
         ]
+      },
+      "e-8": {
+        "evidenceId": "e-8",
+        "name": "이준호 휴대폰의 의학 검색 기록",
+        "surfaceName": "휴대폰 의학 검색 기록",
+        "surfaceDescription": "이준호 휴대폰에 남은 산부인과·여성 질환 검색 기록.",
+        "descriptionTruth": [
+          "난임 치료비",
+          "난임 진단",
+          "출산 가능성 조사",
+          "보험 상담"
+        ],
+        "truthLexemes": [
+          "난임 치료비",
+          "난임 진단",
+          "출산 가능성 조사",
+          "보험 상담",
+          "의사 친구 상담",
+          "아내 모르게"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-8"
+        ]
+      },
+      "e-9": {
+        "evidenceId": "e-9",
+        "name": "이준호의 보험사 견적 자료 (가입 없음)",
+        "surfaceName": "보험사 견적 자료",
+        "surfaceDescription": "이준호 명의 보험사 견적서들.",
+        "descriptionTruth": [
+          "난임 치료비",
+          "난임 진단",
+          "출산 가능성 조사",
+          "보험 상담"
+        ],
+        "truthLexemes": [
+          "난임 치료비",
+          "난임 진단",
+          "출산 가능성 조사",
+          "보험 상담",
+          "의사 친구 상담",
+          "아내 모르게"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-9"
+        ]
       }
     },
     "disputes": {
@@ -192,6 +238,22 @@
         ],
         "sourceRefs": [
           "src/data/cases/generated/spouse-01.json:disputes.h-d3"
+        ]
+      },
+      "h-d4": {
+        "surface": "비자금의 원래 목적",
+        "truth": "이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 보험 상담을 받으며 출산 가능성을 더 알아봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.",
+        "protectedSurface": "비자금의 원래 목적",
+        "truthLexemes": [
+          "난임 치료비",
+          "난임 진단",
+          "출산 가능성 조사",
+          "보험 상담",
+          "의사 친구 상담",
+          "아내 모르게"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:disputes.h-d4"
         ]
       }
     },
@@ -862,6 +924,26 @@
           "autoSurfaceAllowed": false
         },
         "surfaceFallback": "B의 가족 관련 진술과 문자를 대조 중."
+      },
+      "combine-7": {
+        "sourceText": "휴대폰의 산부인과·난임 검색 기록과 가입 없이 멈춘 보험 상담 견적이 같은 시기·같은 영역으로 모인다.",
+        "truthLexemes": [],
+        "gate": {
+          "allowedChannels": [
+            "evidence_present",
+            "dossier"
+          ],
+          "route": "evidence_combine",
+          "requiredEvidenceStages": {
+            "e-8": "original",
+            "e-9": "original"
+          },
+          "requiredTruthStage": {
+            "d-2": 5
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "B의 휴대폰 검색과 보험 상담 견적을 대조 중."
       }
     }
   },
@@ -1487,6 +1569,123 @@
               "npc": "손실만 물으면 박지연은 사기 피해자 프레임으로 다시 들어간다.",
               "gameplay": "h-d3 진실만 확정한다. A/B 책임을 자동 동률화하지 않는다."
             }
+          },
+          {
+            "stage": 5,
+            "name": "완전 인정",
+            "surfaceClaim": "완전 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          }
+        ]
+      },
+      "h-d4": {
+        "title": "비자금의 원래 목적",
+        "draftCompleteness": "derived-from-authority",
+        "statementFracture": [],
+        "truthStages": [
+          {
+            "stage": 0,
+            "name": "사용처 = 형으로 확정 / 다른 목적 없음",
+            "surfaceClaim": "사용처 = 형으로 확정 / 다른 목적 없음",
+            "hiddenTruth": "비자금 원래 목적 = 난임 치료비",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit",
+              "evidence_query"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 1,
+            "name": "10년 누적의 다른 이유 / 처음부터 형 아님",
+            "surfaceClaim": "10년 누적의 다른 이유 / 처음부터 형 아님",
+            "hiddenTruth": "비자금 원래 목적 = 난임 치료비",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit",
+              "evidence_query"
+            ],
+            "requiredEvidence": [
+              "e-5"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 2,
+            "name": "수상한 자료 / 보험 상담 (가입 X)",
+            "surfaceClaim": "수상한 자료 / 보험 상담 (가입 X)",
+            "hiddenTruth": "출산 가능성 조사 + 난임 치료비",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "evidence_query",
+              "motive_search"
+            ],
+            "requiredEvidence": [
+              "e-8",
+              "e-9"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": [
+              "dc-8"
+            ]
+          },
+          {
+            "stage": 3,
+            "name": "출산 관련 조사 / 혼자 알아봄",
+            "surfaceClaim": "출산 관련 조사 / 혼자 알아봄",
+            "hiddenTruth": "난임 치료비 + 아내 부담 회피",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "motive_search",
+              "empathy_approach"
+            ],
+            "requiredEvidence": [
+              "e-8",
+              "e-9"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 4,
+            "name": "난임 치료비 / 본 목적 명시",
+            "surfaceClaim": "난임 치료비 / 본 목적 명시",
+            "hiddenTruth": "부부 침묵의 책임 분리",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "empathy_approach"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
           },
           {
             "stage": 5,

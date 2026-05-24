@@ -203,6 +203,92 @@
           "账户查看"
         ]
       }
+    },
+    "h-d4": {
+      "hidden": {
+        "ko": [
+          "난임 치료비",
+          "난임 진단",
+          "시험관 시술",
+          "출산 가능성 조사",
+          "의사 친구 비공식 상담",
+          "고위험 임신",
+          "아내 모르게",
+          "아내 부담 회피",
+          "출산 포기",
+          "신혼 초기 난임"
+        ],
+        "en": [
+          "infertility treatment funds",
+          "infertility diagnosis",
+          "IVF procedure",
+          "fertility research",
+          "unofficial consultation with doctor friend",
+          "high-risk pregnancy",
+          "unbeknownst to wife",
+          "sparing wife the burden",
+          "giving up on having children",
+          "infertility in early marriage"
+        ],
+        "ja": [
+          "不妊治療費",
+          "不妊診断",
+          "体外受精",
+          "妊娠可能性の調査",
+          "医師の友人への非公式相談",
+          "ハイリスク妊娠",
+          "妻に内緒で",
+          "妻に負担をかけないため",
+          "出産の断念",
+          "新婚初期の不妊"
+        ],
+        "zh-CN": [
+          "不孕治疗费",
+          "不孕诊断",
+          "试管婴儿",
+          "生育可能性调查",
+          "医生朋友的非正式咨询",
+          "高危妊娠",
+          "瞒着妻子",
+          "为不给妻子增加负担",
+          "放弃生育",
+          "新婚初期不孕"
+        ]
+      },
+      "surface": {
+        "ko": [
+          "비자금",
+          "비자금의 원래 목적",
+          "의학 검색 기록",
+          "보험 견적",
+          "혼자 알아본 영역",
+          "부부 침묵"
+        ],
+        "en": [
+          "hidden funds",
+          "original purpose of the hidden funds",
+          "medical search history",
+          "insurance estimates",
+          "area researched alone",
+          "spousal silence"
+        ],
+        "ja": [
+          "隠し資金",
+          "隠し資金の本来の目的",
+          "医学検索履歴",
+          "保険見積もり",
+          "一人で調べた領域",
+          "夫婦の沈黙"
+        ],
+        "zh-CN": [
+          "私房钱",
+          "私房钱原本的用途",
+          "医学搜索记录",
+          "保险报价",
+          "独自查询的领域",
+          "夫妻间的沉默"
+        ]
+      }
     }
   },
   "family-01": {
