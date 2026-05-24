@@ -24,26 +24,31 @@ Brief: `docs/design/core-narrative-cycle7-friend01-lineAB-20260524/batch3-w1/`
 
 ---
 
-## §2. KO baseline (main HEAD)
-
-⚠ **5단계 검토 후 fill-in 영역**.
+## §2. KO baseline (main HEAD `f2e9a529`, Cycle 7 6단계 commit 완료)
 
 ### 영향 파일
 
 ```
-src/data/scriptedText/friend-01.json  channels.emergence_narrative
+src/data/scriptedText/friend-01.json  channels.emergence_narrative  emerge-w-1 key (13 variants)
 ```
 
-### 13 entry 구조 (skeleton — 6단계 KO apply 후 fill-in)
+### 13 entry 구조 (확정)
 
-| Trigger | # | ID 예상 | speaker→listener | 핵심 KO (fill-in 대기) |
+| Trigger | # | ID | speaker→listener | 핵심 KO (1줄 요약) |
 |---|---|---|---|---|
-| **w-1** cascade_from_card (priorCard:dc-1) | 1~3 | emerge-w1-via-cascade-* | 판사·A·B | 앞서 [단톡방 글의 근거] 후 김세라 호출 |
-| **w-1** combination_result (combine-8) | 4~6 | emerge-w1-via-combo-* | 판사·A | stmt-a-accusation + e-2 후 김세라 호출 |
-| **w-1** npc_interjection | 7~9 | emerge-w1-via-npc-* | B·판사·A | B 우회 인용 "그땐 다들 그렇게..." catch |
-| **w-1** judge_auto_mention | 10~13 | emerge-w1-via-fallback-* | 판사·A·B | N턴 stall 후 자발 호출 |
-
-⚠ 위 ID 예상. GPT Pro 실제 응답 + 5단계 검토 후 확정.
+| **w-1** cascade_from_card | 1 | emerge-w1-via-cascade-judge-decree-v1 | 판사→전체 (priorCard:dc-1) | 앞서 [단톡방 글의 근거] 단서 등록, 단톡방 발언·반응 확인 위해 김세라 호출 |
+| w-1 cascade_from_card | 2 | emerge-w1-via-cascade-a-react-v1 | A→판사 (priorCard:dc-1) | A 동요 — "…세라까지요, 재판관님? 아니, 세라가 있으면 그때 단톡방 분위기는 설명될 겁니다." |
+| w-1 cascade_from_card | 3 | emerge-w1-via-cascade-b-react-v1 | B→판사 (priorCard:dc-1) | B 평평 — 확인되면 좋겠다, 그 자리에 있던 사람의 말이 필요 |
+| **w-1** combination_result | 4 | emerge-w1-via-combo-judge-mention-v1 | 판사→전체 | 송다은 발언 단톡방 확산 순서 확인 위해 당시 자리 인물 호출 |
+| w-1 combination_result | 5 | emerge-w1-via-combo-a-react-v1 | A→판사 | A 동의 — 단톡방 친구들이 다 봤다, 세라도 자리 |
+| w-1 combination_result | 6 | emerge-w1-via-combo-judge-decree-v1 | 판사→전체 | 김세라 본 법정 증인 등록, 단톡방 순서·반응 확인 |
+| **w-1** npc_interjection | 7 | emerge-w1-via-npc-b-context-v1 | B→판사 | B 우회 — 그때 단톡방 다들 같은 반응, 혼자 다른 말 꺼낼 자리 X |
+| w-1 npc_interjection | 8 | emerge-w1-via-npc-judge-decree-v1 | 판사→전체 | B 언급 당시 대화방 반응 직접 확인 필요, 김세라 증인으로 모심 |
+| w-1 npc_interjection | 9 | emerge-w1-via-npc-a-react-v1 | A→판사 | A 동의 — 세라가 다 안다, 혼자 그렇게 본 게 아니었다 |
+| **w-1** judge_auto_mention | 10 | emerge-w1-via-fallback-judge-mention-v1 | 판사→전체 | N턴 stall — 단톡방에 함께 있던 인물 진술 필요, 당사자 기억만으로 부족 |
+| w-1 judge_auto_mention | 11 | emerge-w1-via-fallback-a-react-v1 | A→판사 | A 동의 — 세라가 그 자리에 있었다, 단톡방 반응도 설명 가능 |
+| w-1 judge_auto_mention | 12 | emerge-w1-via-fallback-b-react-v1 | B→판사 | B 평평 — 확인되면 좋겠다, 대화방 반응까지 대신 말할 수 없다 |
+| w-1 judge_auto_mention | 13 | emerge-w1-via-fallback-judge-decree-v1 | 판사→전체 | 김세라 진술 청취, 단톡방 발언·반응 순서 확인 |
 
 ---
 

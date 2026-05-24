@@ -42,37 +42,33 @@ Core System narrative wrapper layer Cycle 7 (friend-01 Line A+B) 첫 batch.
 
 ---
 
-## §2. KO baseline (main HEAD)
+## §2. KO baseline (main HEAD `f2e9a529`, Cycle 7 6단계 commit 완료)
 
-⚠ **5단계 검토 후 fill-in 영역** — GPT Pro 응답 도착 + 메인 세션 검토 + 6단계 KO apply commit 후 본 §2 entry table 채움.
-
-### 영향 파일 (예상)
+### 영향 파일
 
 ```
-src/data/scriptedText/friend-01.json  channels.emergence_narrative  (신규 channel)
+src/data/scriptedText/friend-01.json  channels.emergence_narrative  (신규 channel, 본 cycle 신규 생성)
 ```
 
-`emergence_narrative` 채널은 friend-01에서 신규 생성. 본 batch는 13 entry 추가.
+`emergence_narrative` 채널은 friend-01에서 신규 생성. 본 batch는 `emerge-dc-1` key 하위 13 variants 추가됨.
 
-### 13 entry 구조 (skeleton — 6단계 KO apply 후 fill-in)
+### 13 entry 구조 (확정)
 
 | Trigger | # | ID | speaker→listener | 핵심 KO (1줄 요약) |
 |---|---|---|---|---|
-| **dc-1** combination_result | 1 | emerge-dc1-via-combo-judge-query-v1 | 판사→A | (fill-in 대기) |
-| dc-1 combination_result | 2 | emerge-dc1-via-combo-a-response-v1 | A→판사 | (fill-in 대기) |
-| dc-1 combination_result | 3 | emerge-dc1-via-combo-b-react-v1 | B→판사 | (fill-in 대기) |
-| dc-1 combination_result | 4 | emerge-dc1-via-combo-judge-decree-v1 | 판사→전체 | (fill-in 대기) |
-| **dc-1** npc_interjection | 5 | emerge-dc1-via-npc-b-interject-v1 | B→A | (fill-in 대기) |
-| dc-1 npc_interjection | 6 | emerge-dc1-via-npc-judge-query-v1 | 판사→A | (fill-in 대기) |
-| dc-1 npc_interjection | 7 | emerge-dc1-via-npc-judge-decree-v1 | 판사→전체 | (fill-in 대기) |
-| **dc-1** emotional_outburst | 8 | emerge-dc1-via-outburst-a-confess-v1 | A→판사 | (fill-in 대기) |
-| dc-1 emotional_outburst | 9 | emerge-dc1-via-outburst-judge-catch-v1 | 판사→A | (fill-in 대기) |
-| dc-1 emotional_outburst | 10 | emerge-dc1-via-outburst-judge-decree-v1 | 판사→전체 | (fill-in 대기) |
-| **dc-1** judge_auto_mention | 11 | emerge-dc1-via-fallback-judge-query-v1 | 판사→A | (fill-in 대기) |
-| dc-1 judge_auto_mention | 12 | emerge-dc1-via-fallback-a-response-v1 | A→판사 | (fill-in 대기) |
-| dc-1 judge_auto_mention | 13 | emerge-dc1-via-fallback-judge-decree-v1 | 판사→전체 | (fill-in 대기) |
-
-⚠ 위 ID는 gpt-pro-brief.md §2 명세 기준 예상. GPT Pro 실제 응답에 따라 일부 변동 가능.
+| **dc-1** combination_result | 1 | emerge-dc1-via-combo-judge-query-v1 | 판사→A | 연락 기록 + 단톡방 캡처 시각 비교, 게시 시점이 직접 묻기 전이라 선후관계 확인 요청 |
+| dc-1 combination_result | 2 | emerge-dc1-via-combo-a-response-v1 | A→판사 | 게시 시점 인정, 단 며칠 연락 누적으로 그냥 넘길 상황 아니었다고 frame 유지 |
+| dc-1 combination_result | 3 | emerge-dc1-via-combo-b-react-v1 | B→판사 | 기록 그대로 인정, 묻지도 않은 일 먼저 설명 기회 못 받았다고 평평히 진술 |
+| dc-1 combination_result | 4 | emerge-dc1-via-combo-judge-decree-v1 | 판사→전체 | 시각 차이 근거로 [단톡방 글의 근거] 단서 등록 |
+| **dc-1** npc_interjection | 5 | emerge-dc1-via-npc-b-interject-v1 | B→A (간접 to 판사) | B 짧은 끼어듦 "다은아, 제대로 확인은 하고 말한 거야?" |
+| dc-1 npc_interjection | 6 | emerge-dc1-via-npc-judge-query-v1 | 판사→A | B 끼어듦 기록 후 A 대상 게시 시점 사실 확인 요청 |
+| dc-1 npc_interjection | 7 | emerge-dc1-via-npc-judge-decree-v1 | 판사→전체 | 확인 시점 문제 검토 위해 [단톡방 글의 근거] 단서 추가 |
+| **dc-1** emotional_outburst | 8 | emerge-dc1-via-outburst-a-confess-v1 | A→판사 | A 감정 자백 "솔직히 감정이 앞서서 글을 먼저 올리긴 했습니다. 그래도 저는..." |
+| dc-1 emotional_outburst | 9 | emerge-dc1-via-outburst-judge-catch-v1 | 판사→A | "관련 글이 정확한 확인 없이 작성됐다는 점을 인정하는 것처럼 들립니다" 정정 권유 |
+| dc-1 emotional_outburst | 10 | emerge-dc1-via-outburst-judge-decree-v1 | 판사→전체 | 게시 전 확인 여부 쟁점 확인, [단톡방 글의 근거] 단서 등록 |
+| **dc-1** judge_auto_mention | 11 | emerge-dc1-via-fallback-judge-query-v1 | 판사→A | N턴 stall 후 자발 — 선후관계 정리되지 않음, 게시 경위 진술 요청 |
+| dc-1 judge_auto_mention | 12 | emerge-dc1-via-fallback-a-response-v1 | A→판사 | A 방어 — 연락 자체가 위험 신호였고 가만히 있을 수 없었다 frame 유지 |
+| dc-1 judge_auto_mention | 13 | emerge-dc1-via-fallback-judge-decree-v1 | 판사→전체 | 게시 경위 확인 필요, [단톡방 글의 근거] 단서 목록 등록 |
 
 ---
 

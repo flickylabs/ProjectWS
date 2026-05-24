@@ -24,26 +24,44 @@ Brief: `docs/design/core-narrative-cycle7-friend01-lineAB-20260524/batch4-w2/`
 
 ---
 
-## §2. KO baseline (main HEAD)
-
-⚠ **5단계 검토 후 fill-in 영역**.
+## §2. KO baseline (main HEAD `f2e9a529`, Cycle 7 6단계 commit 완료)
 
 ### 영향 파일
 
 ```
-src/data/scriptedText/friend-01.json  channels.emergence_narrative
+src/data/scriptedText/friend-01.json  channels.emergence_narrative  emerge-w-2 key (13 variants)
+src/data/coreCases/friend-01.case.ts  witnesses[id='w-2']  knowledgeScope + address.fromB  (사용자 narrative 결정 — 박준혁 = B의 필라테스 수강생 이중 관계 추가)
 ```
 
-### 13 entry 구조 (skeleton — 6단계 KO apply 후 fill-in)
+### 13 entry 구조 (확정)
 
-| Trigger | # | ID 예상 | speaker→listener | 핵심 KO (fill-in 대기) |
+| Trigger | # | ID | speaker→listener | 핵심 KO (1줄 요약) |
 |---|---|---|---|---|
-| **w-2** cascade_from_card (priorCard:dc-2) | 1~3 | emerge-w2-via-cascade-* | 판사·A·B | 앞서 [먼저 넘은 선] 후 박준혁 호출 |
-| **w-2** combination_result (combine-2/9) | 4~6 | emerge-w2-via-combo-* | 판사·A | combine-2/9 후 객관 확인 증인 |
-| **w-2** npc_interjection | 7~10 | emerge-w2-via-npc-* | A·B·판사 | A "수민이만 일방적" 단정 + B "그 사람 회사에선..." 흘림 catch |
-| **w-2** judge_auto_mention | 11~13 | emerge-w2-via-fallback-* | 판사·A | N턴 stall 후 자발 호출 |
+| **w-2** cascade_from_card | 1 | emerge-w2-via-cascade-judge-decree-v1 | 판사→전체 (priorCard:dc-2) | 앞서 [먼저 넘은 선] 단서 등록, 예비신랑 측 행적 확인 위해 박준혁 증인으로 모심 |
+| w-2 cascade_from_card | 2 | emerge-w2-via-cascade-a-react-v1 | A→판사 (priorCard:dc-2) | A 의심 — 예비신랑 회사 사람까지요? 김태윤 후배라면 한쪽 얘기만 들릴 가능성 |
+| w-2 cascade_from_card | 3 | emerge-w2-via-cascade-b-react-v1 | B→판사 (priorCard:dc-2) | B 평평 — 확인되면 좋겠다, 더 보탤 말 없다 |
+| **w-2** combination_result | 4 | emerge-w2-via-combo-judge-mention-v1 | 판사→전체 | [먼저 넘은 선] 후 선후관계 더 확인 필요, 박준혁 증언 필요 |
+| w-2 combination_result | 5 | emerge-w2-via-combo-a-react-v1 | A→판사 | A 편향 의심 — 회사 사람이 객관적이겠나, 같은 회사면 그쪽 사정 먼저 |
+| w-2 combination_result | 6 | emerge-w2-via-combo-judge-decree-v1 | 판사→전체 | 편향 가능성 질문 범위에서 관리, 본 법정에 박준혁 증인 등록 |
+| **w-2** npc_interjection | 7 | emerge-w2-via-npc-a-claim-v1 | A→판사 | A 단정 — 수민이가 일방적으로 메시지 보냈고 김태윤은 받기만, 그게 본 전부 |
+| w-2 npc_interjection | 8 | emerge-w2-via-npc-b-interject-v1 | B→A | B 짧은 끼어듦 — "사실 그 사람 회사 후배가 제 수업 수강생입니다. 그 후배는 회사에서 별 이상한 이야기를 다 했다고 합니다. 직접 들어보시는 게 어떠신가요?" (B와 박준혁 이중 인연) |
+| w-2 npc_interjection | 9 | emerge-w2-via-npc-judge-decree-v1 | 판사→전체 | 회사에서 알고 있다는 취지 발언, 박준혁 측 확인 진행 |
+| w-2 npc_interjection | 10 | emerge-w2-via-npc-a-react-v1 | A→판사 | A 동요 — 그쪽 회사 사람한테 들으면 되겠다, 다만 그 말이 전부라 보긴 어렵다 |
+| **w-2** judge_auto_mention | 11 | emerge-w2-via-fallback-judge-mention-v1 | 판사→전체 | N턴 stall — 예비신랑 측 행적 선후관계 미확인, 확인 가능 증인 필요 |
+| w-2 judge_auto_mention | 12 | emerge-w2-via-fallback-a-react-v1 | A→판사 | A 의심 — 굳이 그쪽 회사 사람을요? 같은 회사면 말 조심스러울 텐데 |
+| w-2 judge_auto_mention | 13 | emerge-w2-via-fallback-judge-decree-v1 | 판사→전체 | 편향 감안 질문 범위 사실관계로 제한, 박준혁 증언 청취 |
 
-⚠ 위 ID 예상. GPT Pro 실제 응답 + 5단계 검토 후 확정.
+### 추가 다국어 변경 영역 (w-2 knowledgeScope + address)
+
+본 batch는 ScriptedText 외에도 **w-2 metadata 다국어 영역 변경 필요**:
+
+| field | 변경 전 | 변경 후 (KO baseline) |
+|---|---|---|
+| `witnesses[w-2].knowledgeScope` | "예비신랑의 회사 후배로, 예비신랑이 최수민에게 먼저 접근한 사실을 알고 있다." | **"예비신랑 김태윤의 회사 후배이자 최수민의 필라테스 수강생. 회사에서 예비신랑이 떠벌린 이야기를 우연히 듣고 최수민에게 알린 적이 있다."** |
+| `witnesses[w-2].address.fromB` | "최수민 씨" | **"수민 선생님"** (수강생 → 강사 호칭) |
+
+다국어 영역 (EN/JA/ZH-CN)에서도 동일 의미·정합 변경 필요. 영향 file:
+- `src/data/cases/generated/friend-01.{en,ja,zh-CN}.json` witnesses[w-2] 영역
 
 ---
 
