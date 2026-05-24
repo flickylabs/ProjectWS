@@ -1,26 +1,18 @@
 /**
- * family-01 — Core Narrative Wrapper Layer (Cycle 5 — Line A 절차/판단)
+ * family-01 — Core Narrative Wrapper Layer
  *
  * 권위: [[design_core_narrative_cycle_procedure]] / [[feedback_new_dispute_evidence_narrative_justification]]
- * Brief: docs/design/core-narrative-cycle5-family01-procedure-line-20260524/
  *
- * Cycle 5 (Line A 절차/판단) — 6 emergence × multi-trigger candidate. First-Fired-Wins +
- * judge_auto_mention fallback.
+ * Cycle 5 (Line A 절차/판단) — 6 emergence × multi-trigger candidate.
+ *   Brief: docs/design/core-narrative-cycle5-family01-procedure-line-20260524/
+ *   - dc-1 / w-1 / d-2 / e-3 / dc-2 / w-2
+ *   - cascade chain: dc-1 → w-1 / dc-1 → d-2 → e-3 / d-2 → dc-2 → w-2
  *
- * 6 emergence:
- *   - dc-1 "말년의 종이" (DossierCard) — 4 trigger
- *   - w-1  "최복순" (Witness) — 3 trigger
- *   - d-2  "공증 절차의 개입" (Dispute) — 4 trigger
- *   - e-3  "전 요양보호사 음성증언" (Evidence) — 4 trigger
- *   - dc-2 "수정된 유언장" (DossierCard) — 4 trigger
- *   - w-2  "김영수" (Witness) — 3 trigger
- *
- * cascade chain: dc-1 → w-1 / dc-1 → d-2 → e-3 / d-2 → dc-2 → w-2
- *   - w-1 cascade priorCard:dc-1
- *   - d-2 cascade priorCard:dc-1
- *   - e-3 cascade priorCard:dc-1
- *   - dc-2 cascade priorCard:d-2 (dispute → dossier 첫 사용 사례)
- *   - w-2 cascade priorCard:dc-2
+ * Cycle 6 (Line B 20년 돈) — 2 emergence × multi-trigger candidate.
+ *   Brief: docs/design/core-narrative-cycle6-family01-money-line-20260524/
+ *   - d-3 + dc-3 **통합 event** (5 trigger) — d-3에만 narrativeTriggers 부착, dc-3 force-unlock
+ *   - w-3 "박순애" (3 trigger)
+ *   - cascade chain: dc-2 → d-3+dc-3 → w-3
  */
 
 import type { NarrativeTriggerCandidate } from '../../types/narrativeTrigger'
@@ -360,6 +352,126 @@ export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     scriptedRefs: [
       'emerge-w2-via-judge-auto-summon-v1',
       'emerge-w2-via-judge-auto-b-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cycle 6 — Line B (20년 돈) — 2 emergence × 8 trigger candidates
+// ─────────────────────────────────────────────────────────────────────────────
+
+// d-3 "오래된 지원의 출처" (CoreDispute) — 5 trigger candidates
+//
+// 통합 event 패턴 (사용자 결정): d-3 trigger fire 시 narrative entry text가 dc-3 등록 announcement 포함.
+// dc-3 mechanical unlock은 caller (useActionDispatch)가 d-3 fire 시 force-unlock 처리. dc-3.narrativeTriggers는 미부착.
+// cascade priorCard:dc-2 (Cycle 5 마지막 단서 → Cycle 6 첫 쟁점, 자연 후속)
+export const d3NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'd3-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-2',
+      disputeLieState: { 'd-2': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d3-dc3-via-cascade-judge-decree-v1',
+      'emerge-d3-dc3-via-cascade-b-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'd3-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-6',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d3-dc3-via-combo-judge-decree-v1',
+      'emerge-d3-dc3-via-combo-b-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'd3-via-a-interject',
+    type: 'npc_interjection',
+    source: 'a',
+    preconditions: [
+      { disputeLieState: { 'd-2': 'S3+' }, partyPhase: { a: ['defensive', 'shaken'] } },
+      { disputeLieState: { 'd-2': 'S3+' }, partyDistrust: { a: { min: 40 } } },
+    ],
+    scriptedRefs: [
+      'emerge-d3-dc3-via-a-interject-v1',
+      'emerge-d3-dc3-via-a-interject-judge-react-v1',
+      'emerge-d3-dc3-via-a-interject-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'd3-via-b-outburst',
+    type: 'emotional_outburst',
+    source: 'b',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S3+' },
+      partyPhase: { b: ['defensive', 'shaken'] },
+    },
+    scriptedRefs: [
+      'emerge-d3-dc3-via-b-outburst-v1',
+      'emerge-d3-dc3-via-b-outburst-judge-react-v1',
+      'emerge-d3-dc3-via-b-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'd3-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 8 },
+    scriptedRefs: [
+      'emerge-d3-dc3-via-judge-auto-decree-v1',
+      'emerge-d3-dc3-via-judge-auto-b-respond-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// w-3 "박순애" (CoreWitness, 어머니의 오랜 지인) — 3 trigger candidates
+export const w3NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'w3-via-cascade',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-3',
+      disputeLieState: { 'd-3': 'S2+' },
+    },
+    scriptedRefs: [
+      'emerge-w3-via-cascade-judge-summon-v1',
+      'emerge-w3-via-cascade-a-react-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'w3-via-b-interject',
+    type: 'npc_interjection',
+    source: 'b',
+    preconditions: {
+      disputeLieState: { 'd-3': 'S2+' },
+      partyPhase: { b: ['defensive', 'resigned'] },
+    },
+    scriptedRefs: [
+      'emerge-w3-via-b-interject-v1',
+      'emerge-w3-via-b-interject-judge-react-v1',
+      'emerge-w3-via-b-interject-judge-summon-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+  {
+    id: 'w3-via-judge-auto',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-w3-via-judge-auto-summon-v1',
+      'emerge-w3-via-judge-auto-b-respond-v1',
     ],
     vfxProfile: 'standard',
   },

@@ -306,6 +306,13 @@ export interface CombinationLabSlice {
   runCombinationRecipe: (recipeId: string) => { ok: boolean; reason?: string; outputId?: string; newlyUnlockedWitnesses?: { id: string; name: string }[] }
   /** 대화에서 statement 노드의 따옴표 문구가 실제 발화될 때 discoveredNodeIds에 추가 */
   syncStatementsFromDialogue: (text: string) => void
+  /**
+   * Core narrative wrapper (Cycle 6) — dispute narrative trigger fire가 dossier 등록 announcement를
+   * 포함하는 통합 event 영역에서, mechanical dc-XX unlock을 동기화하는 helper.
+   * 본 helper는 unlockedNotes + discoveredNodeIds에 dossier 추가. effects (upgrade_dispute 등)는
+   * 후속 player action 시 자연 처리 — 본 cycle 영역 한정.
+   */
+  forceUnlockDossierNode: (dossierId: string) => void
 }
 
 export const createCombinationLabSlice: StateCreator<UnsafeAny, [], [], CombinationLabSlice> = (set, get) => ({
@@ -352,6 +359,30 @@ export const createCombinationLabSlice: StateCreator<UnsafeAny, [], [], Combinat
       combinationLabRuntime: {
         ...state,
         discoveredNodeIds: [...state.discoveredNodeIds, ...newlyDiscovered],
+      },
+    })
+  },
+
+  forceUnlockDossierNode: (dossierId: string) => {
+    const root = get() as UnsafeAny
+    const runtime = root.combinationLabRuntime as CombinationLabRuntimeState
+    if (!runtime) return
+    if (runtime.discoveredNodeIds.includes(dossierId)) return
+    const caseData = root.caseData as CaseData | null
+    if (!caseData) return
+    const dossier = (caseData as UnsafeAny).dossierCards?.find?.((d: { id: string }) => d.id === dossierId)
+    if (!dossier) return
+    const noteText = typeof dossier.noteText === 'string'
+      ? dossier.noteText
+      : (dossier.noteText?.ko ?? '')
+    set({
+      combinationLabRuntime: {
+        ...runtime,
+        discoveredNodeIds: [...runtime.discoveredNodeIds, dossierId],
+        unlockedNotes: {
+          ...runtime.unlockedNotes,
+          [dossierId]: noteText,
+        },
       },
     })
   },

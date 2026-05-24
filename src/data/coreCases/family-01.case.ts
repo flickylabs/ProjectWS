@@ -29,6 +29,8 @@ import {
   e3NarrativeTriggers,
   dc2NarrativeTriggers,
   w2NarrativeTriggers,
+  d3NarrativeTriggers,
+  w3NarrativeTriggers,
 } from './family-01.narrative'
 
 /* ============================================================================
@@ -1242,6 +1244,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d3NarrativeTriggers,
     },
     /* ============================================================
      * dispute d-4 — 가족 기록과 침묵의 이유 (e-7 일기장)
@@ -2266,6 +2269,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w3NarrativeTriggers,
     },
   ],
 
