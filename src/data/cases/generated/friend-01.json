@@ -192,7 +192,7 @@
         "slot": "neutral_observer",
         "name": "박준혁",
         "relationTo": "neutral",
-        "knowledgeScope": "예비신랑의 회사 후배로, 예비신랑이 최수민에게 먼저 접근한 사실을 알고 있다.",
+        "knowledgeScope": "예비신랑 김태윤의 회사 후배이자 최수민의 필라테스 수강생. 회사에서 예비신랑이 떠벌린 이야기를 우연히 듣고 최수민에게 알린 적이 있다.",
         "witnessedDirectly": true,
         "bias": "neutral",
         "distortionRisk": "accurate",
@@ -2020,7 +2020,76 @@
             }
           ]
         }
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e4-via-combo",
+          "type": "combination_result",
+          "preconditions": {
+            "disputeLieState": {
+              "d-2": "S0+"
+            }
+          },
+          "recipeId": "combine-2",
+          "scriptedRefs": [
+            "emerge-e4-via-combo-judge-mention-v1",
+            "emerge-e4-via-combo-b-context-v1",
+            "emerge-e4-via-combo-a-react-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e4-via-cascade",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-1": "S0+"
+            },
+            "requirePriorCardFired": "dc-1"
+          },
+          "scriptedRefs": [
+            "emerge-e4-via-cascade-judge-request-v1",
+            "emerge-e4-via-cascade-b-submit-v1",
+            "emerge-e4-via-cascade-judge-mention-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e4-via-outburst-b",
+          "type": "emotional_outburst",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-2": "S0+"
+            },
+            "partyPhase": {
+              "b": [
+                "shaken",
+                "angry"
+              ]
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e4-via-outburst-b-confess-v1",
+            "emerge-e4-via-outburst-judge-request-v1",
+            "emerge-e4-via-outburst-judge-mention-v1"
+          ],
+          "vfxProfile": "emphasis"
+        },
+        {
+          "id": "e4-via-judge-auto",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "turnsAfterEligible": 5
+          },
+          "scriptedRefs": [
+            "emerge-e4-via-fallback-judge-request-v1",
+            "emerge-e4-via-fallback-b-submit-v1",
+            "emerge-e4-via-fallback-judge-mention-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -3383,7 +3452,7 @@
       {
         "id": "dc-1",
         "type": "derived_note",
-        "label": "dc-1 확인 없이 매도한 건 누구인가",
+        "label": "dc-1 단톡방 글의 근거",
         "linkedDisputeIds": [
           "d-5"
         ],
@@ -3451,7 +3520,7 @@
     "outputs": [
       {
         "id": "dc-1",
-        "label": "dc-1 확인 없이 매도한 건 누구인가",
+        "label": "dc-1 단톡방 글의 근거",
         "summary": "단톡방에서의 단정과 공개 매도 책임을 송다은 측에서 직접 추궁하는 첫 카드.",
         "nodeType": "derived_note",
         "noteText": "연락 기록과 단톡방 캡처를 대조하면, 최수민의 연락 사실이 직접 확인도 없이 \"집착\"으로 프레이밍된 과정이 보인다.",

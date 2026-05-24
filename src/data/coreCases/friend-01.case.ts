@@ -25,6 +25,13 @@ import {
   type LocalizedString,
   type LocalizedKeywordSet,
 } from '../../types/coreCase'
+import {
+  dc1NarrativeTriggers,
+  dc2NarrativeTriggers,
+  e4NarrativeTriggers,
+  w1NarrativeTriggers,
+  w2NarrativeTriggers,
+} from './friend-01.narrative'
 
 /* ============================================================================
  * Helpers
@@ -1983,6 +1990,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('송다은이 예비신랑 책임 영역에 이의.') },
         { id: 'misread', summary: ko('선후관계는 인증되지만 해석은 d-1 reframe과 함께 처리.') },
       ],
+      narrativeTriggers: e4NarrativeTriggers,
     },
     {
       id: 'e-5',
@@ -2154,6 +2162,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w1NarrativeTriggers,
     },
     {
       id: 'w-2',
@@ -2164,11 +2173,11 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       bias: 'neutral',
       distortionRisk: 'accurate',
       knowledgeScope: ko(
-        '예비신랑의 회사 후배로, 예비신랑이 최수민에게 먼저 접근한 사실을 알고 있다.',
+        '예비신랑 김태윤의 회사 후배이자 최수민의 필라테스 수강생. 회사에서 예비신랑이 떠벌린 이야기를 우연히 듣고 최수민에게 알린 적이 있다.',
       ),
       address: {
         fromA: ko('그분'),
-        fromB: ko('최수민 씨'),
+        fromB: ko('수민 선생님'),
       },
       hiddenAgenda: ko('예비신랑과의 직장 관계가 불편해질까 봐 조심한다.'),
       relatedDisputes: ['d-2'],
@@ -2187,6 +2196,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w2NarrativeTriggers,
     },
     {
       id: 'w-3',
@@ -2227,7 +2237,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
   dossierCards: [
     {
       id: 'dc-1',
-      label: ko('확인 없이 매도한 건 누구인가'),
+      label: ko('단톡방 글의 근거'),
       description: ko('단톡방에서의 단정과 공개 매도 책임을 송다은 측에서 직접 추궁하는 첫 카드.'),
       type: 'derived_note',
       linkedDisputes: ['d-5'],
@@ -2311,6 +2321,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc1NarrativeTriggers,
     },
     {
       id: 'dc-2',
@@ -2381,6 +2392,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc2NarrativeTriggers,
     },
     {
       id: 'dc-3',

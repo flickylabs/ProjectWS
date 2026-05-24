@@ -1,0 +1,263 @@
+[
+  {
+    "id": "emerge-dc1-via-combo-judge-query-v1",
+    "text": "방금 대조된 연락 기록과 단톡방 캡처를 보면, 단톡방 게시 시각이 수민 씨에게 직접 묻기 전입니다. 송다은 씨, 이 선후관계를 확인해 주십시오.",
+    "behaviorHint": "자료가 맞물린 직후, 재판관이 시간 순서를 차분히 확인한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:combination_result",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:party",
+      "listenerRole:party",
+      "address:toParty",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-combo-a-response-v1",
+    "text": "글을 올린 시점이 먼저였던 건 맞습니다, 재판관님. 하지만 당시엔 이미 며칠 연락이 이어졌고, 제가 그냥 넘길 수 있는 상황은 아니었습니다.",
+    "behaviorHint": "A는 먼저 결론을 방어한 뒤 시점 사실만 인정한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:combination_result",
+      "emerge:dc-1",
+      "speaker:a",
+      "speakerRole:party",
+      "listener:judge",
+      "listenerRole:judge",
+      "address:toJudge",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-combo-b-react-v1",
+    "text": "기록은 그대로입니다, 재판관님. 저는 묻지도 않은 일을 먼저 설명할 기회를 받지 못했습니다.",
+    "behaviorHint": "B는 낮은 톤으로 사실만 덧붙이며 설명 기회가 없었다는 감각을 남긴다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:combination_result",
+      "emerge:dc-1",
+      "speaker:b",
+      "speakerRole:party",
+      "listener:judge",
+      "listenerRole:judge",
+      "address:toJudge",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-combo-judge-decree-v1",
+    "text": "연락 기록과 단톡방 캡처의 시각 차이를 근거로, 본 법정에 [단톡방 글의 근거]를 단서로 등록합니다.",
+    "behaviorHint": "재판관이 자료의 시간 차이를 절차적으로 단서화한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:combination_result",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:all",
+      "listenerRole:all",
+      "address:toAll",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-npc-b-interject-v1",
+    "text": "다은아, 제대로 확인은 하고 말한 거야?",
+    "behaviorHint": "B가 친구 호칭으로 짧게 끼어들며 감정을 드러내지 않는다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:npc_interjection",
+      "emerge:dc-1",
+      "speaker:b",
+      "speakerRole:party",
+      "listener:party",
+      "listenerRole:party",
+      "address:toParty",
+      "interrupt:true",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-npc-judge-query-v1",
+    "text": "최수민 씨의 방금 발언은 기록하겠습니다. 송다은 씨, 단톡방에 글을 올린 시점이 수민 씨에게 직접 확인하기 전이었는지 답하십시오.",
+    "behaviorHint": "재판관이 B의 말을 받되 A에게 확인 시점을 묻는다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:npc_interjection",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:party",
+      "listenerRole:party",
+      "address:toParty",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-npc-judge-decree-v1",
+    "text": "방금 제기된 확인 시점 문제를 따로 검토하겠습니다. [단톡방 글의 근거]를 새로운 단서로 추가합니다.",
+    "behaviorHint": "재판관이 끼어든 발언에서 나온 확인 시점만 분리해 단서화한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:npc_interjection",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:all",
+      "listenerRole:all",
+      "address:toAll",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-outburst-a-confess-v1",
+    "text": "솔직히 감정이 앞서서 글을 먼저 올리긴 했습니다. 그래도 저는, 당시에는… 그렇게 볼 수밖에 없었습니다.",
+    "behaviorHint": "A의 결론형 말투가 감정 때문에 잠시 무너진다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:emotional_outburst",
+      "emerge:dc-1",
+      "speaker:a",
+      "speakerRole:party",
+      "listener:judge",
+      "listenerRole:judge",
+      "address:toJudge",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-outburst-judge-catch-v1",
+    "text": "관련 글이 정확한 확인 없이 작성됐다는 점을 인정하는 것처럼 들립니다. 송다은 씨, 방금 답변을 정정하시겠습니까?",
+    "behaviorHint": "재판관이 자백처럼 들린 표현을 중립적으로 확인한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:emotional_outburst",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:party",
+      "listenerRole:party",
+      "address:toParty",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-outburst-judge-decree-v1",
+    "text": "송다은 씨의 방금 답변으로 게시 전 확인 여부가 쟁점이 됐습니다. [단톡방 글의 근거]를 단서로 등록해 검토합니다.",
+    "behaviorHint": "재판관이 방금 답변의 게시 전 확인 여부를 단서화한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:emotional_outburst",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:all",
+      "listenerRole:all",
+      "address:toAll",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-fallback-judge-query-v1",
+    "text": "단톡방 발언과 수민 씨에게 확인한 시점 사이의 선후관계가 아직 정리되지 않았습니다. 송다은 씨, 단톡방에 글을 먼저 올린 경위를 말씀해 주십시오.",
+    "behaviorHint": "재판관이 정체된 논점을 직접 정리한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:judge_auto_mention",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:party",
+      "listenerRole:party",
+      "address:toParty",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-fallback-a-response-v1",
+    "text": "글을 올린 일만 따로 떼어 보면 제가 불리해 보일 겁니다, 재판관님. 하지만 당시엔 연락이 이어지는 것 자체가 위험한 신호였고, 가만히 있을 수 없었습니다.",
+    "behaviorHint": "A가 불리한 시점을 인정하지 않으려 방어적으로 말한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:judge_auto_mention",
+      "emerge:dc-1",
+      "speaker:a",
+      "speakerRole:party",
+      "listener:judge",
+      "listenerRole:judge",
+      "address:toJudge",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  },
+  {
+    "id": "emerge-dc1-via-fallback-judge-decree-v1",
+    "text": "제출된 연락 기록과 단톡방 캡처를 함께 보면 게시 경위 확인이 필요합니다. [단톡방 글의 근거]를 단서 목록에 올립니다.",
+    "behaviorHint": "재판관이 이미 제출된 자료를 바탕으로 단서 목록을 갱신한다.",
+    "tags": [
+      "channel:emergence_narrative",
+      "trigger:judge_auto_mention",
+      "emerge:dc-1",
+      "speaker:judge",
+      "speakerRole:judge",
+      "listener:all",
+      "listenerRole:all",
+      "address:toAll",
+      "register:formal",
+      "honorific:formal",
+      "scope:all_present",
+      "revealScope:all_present",
+      "tense:present"
+    ]
+  }
+]
