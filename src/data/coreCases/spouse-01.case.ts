@@ -1627,7 +1627,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           a: {
             admittedFact: ko('남편 차에서 예비 부모 정서 도서가 나왔다. 내연녀가 임신했고 그래서 이런 책을 본 게 아니냐.'),
             allowedKeywords: koKeywords('예비 부모 책', '내연녀 임신', '의심'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['내연녀 없음', '임신 사실 아님', '본인 위한 책', '박지연 난임', '난임 진단'],
+              ['no mistress', 'pregnancy is not true', 'book for himself', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['愛人はいない', '妊娠は事実ではない', '本人のための本', '朴ジヨンの不妊', '不妊診断'],
+              ['没有情妇', '怀孕并非事实', '为自己看的书', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('A는 내연녀 임신 단정 frame을 강하게 유지.'),
             transitionTrigger: null,
             transitionBeat: null,
@@ -1635,7 +1640,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           b: {
             admittedFact: ko('그건 오해다. 그런 일은 없다.'),
             allowedKeywords: koKeywords('오해', '없다'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['내연녀 없음', '본인 위한 책', '혼자 부모 될 마음 정리', '아내에게 알리지 않고 알아봄', '박지연 난임', '난임 진단'],
+              ['no mistress', 'book for himself', 'privately preparing emotionally for parenthood', 'looking into it without telling his wife', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['愛人はいない', '本人のための本', '親になる気持ちを一人で整理', '妻に知らせず調べる', '朴ジヨンの不妊', '不妊診断'],
+              ['没有情妇', '为自己看的书', '独自整理为人父母的心情', '瞒着妻子了解', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('B는 부정으로 일관. 본인 동기는 회피.'),
             transitionTrigger: null,
             transitionBeat: null,
@@ -1645,7 +1655,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           a: {
             admittedFact: ko('단정까지는 아니지만 그쪽 가능성이 가장 커 보인다.'),
             allowedKeywords: koKeywords('가능성 큼'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['내연녀 없음', '본인 위한 책', '박지연 난임', '난임 진단'],
+              ['no mistress', 'book for himself', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['愛人はいない', '本人のための本', '朴ジヨンの不妊', '不妊診断'],
+              ['没有情妇', '为自己看的书', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('A는 단정 톤을 미세하게 완화.'),
             transitionTrigger: 'direct',
             transitionBeat: {
@@ -1656,7 +1671,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           b: {
             admittedFact: ko('그 책을 본 적은 있다. 자세한 사정은 말하기 어렵다.'),
             allowedKeywords: koKeywords('본 적 있음', '말하기 어려움'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['본인 위한 책', '혼자 부모 될 마음 정리', '아내에게 알리지 않고 알아봄', '박지연 난임', '난임 진단'],
+              ['book for himself', 'privately preparing emotionally for parenthood', 'looking into it without telling his wife', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['本人のための本', '親になる気持ちを一人で整理', '妻に知らせず調べる', '朴ジヨンの不妊', '不妊診断'],
+              ['为自己看的书', '独自整理为人父母的心情', '瞒着妻子了解', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('B는 책을 본 사실 부분 인정. 동기는 회피.'),
             transitionTrigger: 'direct',
             transitionBeat: {
@@ -1669,7 +1689,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           a: {
             admittedFact: ko('내연녀 임신이라고 단정하기엔 입증이 부족하지만, 그렇다고 다른 설명도 잘 보이지 않는다.'),
             allowedKeywords: koKeywords('단정 부족', '다른 설명 없음'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['내연녀 없음', '임신 사실 아님', '본인 위한 책', '난임 진단'],
+              ['no mistress', 'pregnancy is not true', 'book for himself', 'infertility diagnosis'],
+              ['愛人はいない', '妊娠は事実ではない', '本人のための本', '不妊診断'],
+              ['没有情妇', '怀孕并非事实', '为自己看的书', '不孕诊断'],
+            ),
             answerFrame: ko('A는 단정에서 한 발 물러나 의심 톤으로 완화.'),
             transitionTrigger: 'hard_evidence',
             transitionBeat: {
@@ -1680,7 +1705,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           b: {
             admittedFact: ko('그 책은 본인이 보던 것이 맞다. 누구를 위해 봤는지는 말하기 어렵다.'),
             allowedKeywords: koKeywords('본인이 봄', '말하기 어려움'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['본인 위한 책', '혼자 부모 될 마음 정리', '아내에게 알리지 않고 알아봄', '난임 진단'],
+              ['book for himself', 'privately preparing emotionally for parenthood', 'looking into it without telling his wife', 'infertility diagnosis'],
+              ['本人のための本', '親になる気持ちを一人で整理', '妻に知らせず調べる', '不妊診断'],
+              ['为自己看的书', '独自整理为人父母的心情', '瞒着妻子了解', '不孕诊断'],
+            ),
             answerFrame: ko('B는 본인 자료임은 인정하되 동기는 회피.'),
             transitionTrigger: 'empathy',
             transitionBeat: {
@@ -1693,7 +1723,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           a: {
             admittedFact: ko('내연녀 임신 frame이 흔들린다. 다만 그럼 누구를 위한 자료인지가 분명치 않다.'),
             allowedKeywords: koKeywords('frame 흔들림', '누구를 위함 불분명'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['내연녀 없음', '본인 위한 책', '박지연 난임', '난임 진단'],
+              ['no mistress', 'book for himself', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['愛人はいない', '本人のための本', '朴ジヨンの不妊', '不妊診断'],
+              ['没有情妇', '为自己看的书', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('A는 misdirection frame에서 한 발 더 물러남.'),
             transitionTrigger: 'empathy',
             transitionBeat: {
@@ -1704,7 +1739,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           b: {
             admittedFact: ko('아내에게는 알리지 않은 채 알아본 자료가 맞다. 동기는 마지막에 말씀드리겠다.'),
             allowedKeywords: koKeywords('아내에게 알리지 않음', '동기 마지막'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['본인 위한 책', '혼자 부모 될 마음 정리', '박지연 난임', '난임 진단'],
+              ['book for himself', 'privately preparing emotionally for parenthood', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['本人のための本', '親になる気持ちを一人で整理', '朴ジヨンの不妊', '不妊診断'],
+              ['为自己看的书', '独自整理为人父母的心情', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('B는 침묵 동기 인정. 진실 핵심은 회피.'),
             transitionTrigger: 'empathy',
             transitionBeat: {
@@ -1717,7 +1757,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           a: {
             admittedFact: ko('내연녀 임신은 거의 아니라고 보인다. 본인의 단정 frame이 잘못이었을 가능성을 받아들인다.'),
             allowedKeywords: koKeywords('내연녀 임신 거의 아님', '단정 frame 잘못'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['본인 위한 책', '박지연 난임', '난임 진단'],
+              ['book for himself', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['本人のための本', '朴ジヨンの不妊', '不妊診断'],
+              ['为自己看的书', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('A는 misdirection frame 거의 무너짐. 단정 책임 일부 인정.'),
             transitionTrigger: 'direct',
             transitionBeat: {
@@ -1728,7 +1773,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           b: {
             admittedFact: ko('이 자료들은 본인이 부모 될 가능성을 혼자 알아본 흔적이다. 다른 사람을 위한 것이 아니다.'),
             allowedKeywords: koKeywords('본인 부모 될 가능성', '혼자 알아봄'),
-            forbiddenKeywords: keywords([], [], [], []),
+            forbiddenKeywords: keywords(
+              ['혼자 부모 될 마음 정리', '박지연 난임', '난임 진단'],
+              ['privately preparing emotionally for parenthood', "Park Ji-yeon's infertility", 'infertility diagnosis'],
+              ['親になる気持ちを一人で整理', '朴ジヨンの不妊', '不妊診断'],
+              ['独自整理为人父母的心情', '朴智妍不孕', '不孕诊断'],
+            ),
             answerFrame: ko('B는 misdirection 진실 거의 인정. 정확한 표현은 다음 단계.'),
             transitionTrigger: 'direct',
             transitionBeat: {
