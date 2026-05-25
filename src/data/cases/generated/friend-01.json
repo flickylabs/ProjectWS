@@ -2940,7 +2940,75 @@
           ],
           "note": "과거와 현재의 돈 부탁 문구가 매우 비슷하고, 두 번 모두 최수민이 충분히 설명하지 못한 채 비난을 받았다."
         }
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e7-via-cascade-d4",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-4": "S3+"
+            },
+            "requirePriorCardFired": "d-4"
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-cascade-d4-judge-decree-v1",
+            "emerge-e7-via-cascade-d4-a-react-v1",
+            "emerge-e7-via-cascade-d4-b-react-v1"
+          ],
+          "vfxProfile": "emphasis"
+        },
+        {
+          "id": "e7-via-cascade-w3",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-4": "S3+"
+            },
+            "requirePriorCardFired": "w-3"
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-cascade-w3-judge-mention-v1",
+            "emerge-e7-via-cascade-w3-b-submit-v1",
+            "emerge-e7-via-cascade-w3-judge-decree-v1"
+          ],
+          "vfxProfile": "emphasis"
+        },
+        {
+          "id": "e7-via-outburst-b",
+          "type": "emotional_outburst",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-4": "S3+"
+            },
+            "partyPhase": {
+              "b": [
+                "shaken"
+              ]
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-outburst-b-surface-v1",
+            "emerge-e7-via-outburst-judge-catch-v1",
+            "emerge-e7-via-outburst-judge-decree-v1"
+          ],
+          "vfxProfile": "emphasis"
+        },
+        {
+          "id": "e7-via-fallback",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "turnsAfterEligible": 5
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-fallback-judge-query-v1",
+            "emerge-e7-via-fallback-b-submit-v1",
+            "emerge-e7-via-fallback-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

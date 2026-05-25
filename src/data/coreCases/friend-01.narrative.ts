@@ -1,8 +1,8 @@
 /**
- * friend-01 — Core Narrative Wrapper Layer (Cycle 7 Line A+B + Cycle 8b Line C)
+ * friend-01 — Core Narrative Wrapper Layer (Cycle 7 Line A+B + Cycle 8b Line C + Cycle 9 Line D)
  *
  * 권위: [[design_core_narrative_cycle_procedure]] / [[feedback_new_dispute_evidence_narrative_justification]]
- * Brief: docs/design/core-narrative-cycle7-friend01-lineAB-20260524/ + docs/design/core-narrative-cycle8b-friend01-lineC-20260525/
+ * Brief: docs/design/core-narrative-cycle7-friend01-lineAB-20260524/ + docs/design/core-narrative-cycle8b-friend01-lineC-20260525/ + docs/design/core-narrative-cycle9-friend01-lineD-20260525/
  *
  * Cycle 7 (Line A + B): 5 emergence × multi-trigger candidate.
  *   - dc-1 "단톡방 글의 근거" (label 변경 commit 081e8dbc)
@@ -21,7 +21,10 @@
  *   - w-3 "오미경 (분식집 사장, pro_b)"
  *   - w-2 확장 — dc-3 영역 cascade + combo trigger 2개 추가
  *
- * Cycle 9 (Line D 종합 — e-7 / d-5 / dc-5) 영역은 별도 cycle.
+ * Cycle 9 (Line D 종합 — friend-01 narrative wrapper 영역 마지막 cycle): 3 emergence × 4 trigger = 12 trigger candidate.
+ *   - e-7 "과거/현재 대조표" — cascade priorCard d-4 / w-3 + b outburst (1문장) + fallback
+ *   - d-5 "단톡방 매도와 명예훼손" (hidden) — cascade priorCard e-7 / dc-4 + a npc_interjection + fallback
+ *   - dc-5 "낙인의 순서" — cascade priorCard d-5 + combine-7 (e-2+e-7) + a outburst + fallback
  *
  * First-Fired-Wins + judge_auto_mention fallback (turnsAfterEligible: 5).
  * 캐릭터 frame (Cycle 8b 핵심):
@@ -801,6 +804,198 @@ export const w3NarrativeTriggers: NarrativeTriggerCandidate[] = [
       'emerge-w3-via-fallback-judge-mention-v1',
       'emerge-w3-via-fallback-a-react-v1',
       'emerge-w3-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Cycle 9 (Line D 종합 — friend-01 narrative wrapper 영역 마지막 cycle)
+// 3 emergence × 4 trigger = 12 trigger candidate / 36 KO entry
+// cascade chain: d-4/w-3 → e-7 → d-5 → dc-5 (사건 종결)
+// 진실 노출 정책: 그룹 5 (확인 없이 매도 / 명예훼손 / 먼저 낙인 / B 또 악역 / 반복 침묵) surface tier 단독
+// ═════════════════════════════════════════════════════════════════════════════
+
+// ─────────────────────────────────────────────────────────────────────────────
+// e-7 "과거/현재 대조표" (CoreEvidence) — 4 candidates
+// requires e-4 + e-5 + e-6 + S3 / proves d-5 + d-1
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const e7NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'e7-via-cascade-d4',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'd-4',
+      disputeLieState: { 'd-4': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-e7-via-cascade-d4-judge-decree-v1',
+      'emerge-e7-via-cascade-d4-a-react-v1',
+      'emerge-e7-via-cascade-d4-b-react-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'e7-via-cascade-w3',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'w-3',
+      disputeLieState: { 'd-4': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-e7-via-cascade-w3-judge-mention-v1',
+      'emerge-e7-via-cascade-w3-b-submit-v1',
+      'emerge-e7-via-cascade-w3-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'e7-via-outburst-b',
+    type: 'emotional_outburst',
+    source: 'b',
+    preconditions: {
+      partyPhase: { b: ['shaken'] },
+      disputeLieState: { 'd-4': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-e7-via-outburst-b-surface-v1',
+      'emerge-e7-via-outburst-judge-catch-v1',
+      'emerge-e7-via-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'e7-via-fallback',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-e7-via-fallback-judge-query-v1',
+      'emerge-e7-via-fallback-b-submit-v1',
+      'emerge-e7-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// d-5 "단톡방 매도와 명예훼손" (CoreDispute, hidden) — 4 candidates
+// unlock: d-3 S3 + d-4 S3 또는 dc-4 success effect (unlock_dispute d-5)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const d5NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'd5-via-cascade-e7',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'e-7',
+      disputeLieState: { 'd-4': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d5-via-cascade-e7-judge-decree-v1',
+      'emerge-d5-via-cascade-e7-a-react-v1',
+      'emerge-d5-via-cascade-e7-b-react-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'd5-via-cascade-dc4',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-4',
+      disputeLieState: { 'd-3': 'S3+', 'd-4': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d5-via-cascade-dc4-judge-mention-v1',
+      'emerge-d5-via-cascade-dc4-a-react-v1',
+      'emerge-d5-via-cascade-dc4-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'd5-via-npc-a',
+    type: 'npc_interjection',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken', 'defensive'] },
+      disputeLieState: { 'd-3': 'S3+', 'd-4': 'S3+' },
+    },
+    scriptedRefs: [
+      'emerge-d5-via-npc-a-defend-v1',
+      'emerge-d5-via-npc-judge-catch-v1',
+      'emerge-d5-via-npc-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'd5-via-fallback',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-d5-via-fallback-judge-mention-v1',
+      'emerge-d5-via-fallback-a-react-v1',
+      'emerge-d5-via-fallback-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// dc-5 "낙인의 순서" (CoreDossierCard, linkedParty 'a') — 4 candidates
+// 종결 단서 — friend-01 narrative wrapper 영역 마지막 entry
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const dc5NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  {
+    id: 'dc5-via-cascade-d5',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'd-5',
+    },
+    scriptedRefs: [
+      'emerge-dc5-via-cascade-d5-judge-decree-v1',
+      'emerge-dc5-via-cascade-d5-a-react-v1',
+      'emerge-dc5-via-cascade-d5-b-react-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'dc5-via-combo',
+    type: 'combination_result',
+    recipeId: 'combine-7',
+    preconditions: {
+      disputeLieState: { 'd-5': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc5-via-combo-judge-mention-v1',
+      'emerge-dc5-via-combo-a-react-v1',
+      'emerge-dc5-via-combo-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'dc5-via-outburst-a',
+    type: 'emotional_outburst',
+    source: 'a',
+    preconditions: {
+      partyPhase: { a: ['shaken'] },
+      disputeLieState: { 'd-5': 'S2+' },
+    },
+    scriptedRefs: [
+      'emerge-dc5-via-outburst-a-defend-v1',
+      'emerge-dc5-via-outburst-judge-catch-v1',
+      'emerge-dc5-via-outburst-judge-decree-v1',
+    ],
+    vfxProfile: 'emphasis',
+  },
+  {
+    id: 'dc5-via-fallback',
+    type: 'judge_auto_mention',
+    preconditions: { turnsAfterEligible: 5 },
+    scriptedRefs: [
+      'emerge-dc5-via-fallback-judge-mention-v1',
+      'emerge-dc5-via-fallback-a-react-v1',
+      'emerge-dc5-via-fallback-judge-decree-v1',
     ],
     vfxProfile: 'standard',
   },
