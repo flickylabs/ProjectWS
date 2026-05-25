@@ -401,19 +401,21 @@
 {
   "spouse-01": {
     "evidence": [
-      {"id":"e-1","name":"영수증 묶음 (5장)","desc":"이준호 카드 사용 위치/시간 패턴 — 단독으로는 외도/돌봄 둘 다 가능"},
+      {"id":"e-1","name":"영수증 묶음 (5장)","desc":"이준호 카드 사용 위치/시간 패턴 — 교보문고 영수증의 도서 결제 흔적이 e-10 cascade 단서"},
       {"id":"e-2","name":"블랙박스 GPS / 네비 즐겨찾기","desc":"오피스텔 정기 방문 좌표"},
       {"id":"e-3","name":"통화기록","desc":"새벽 정기 통화 패턴"},
       {"id":"e-4","name":"발신자 미상 문자","desc":"정기 자금 이동 요청 — e-3과 결합 시 dc-cash-clue 발화"},
-      {"id":"e-5","name":"이준호 개인 계좌 출금 내역","desc":"500/800/700/1,000만 원 분할 출금 — B 비자금 정체"},
+      {"id":"e-5","name":"이준호의 개인 계좌 출금 내역","desc":"본인 명의 별도 계좌의 분할 출금 4건 (500/800/700/1,000만) — B 비자금 정체"},
       {"id":"e-6","name":"투자방 텔레그램 + 송금 기록","desc":"박지연 사기 송금 — h-d3 입증"},
       {"id":"e-7","name":"공동 적금 해지 서류","desc":"이준호 서명 위조 위임장 — h-d3 핵심"},
-      {"id":"e-8","name":"이준호 휴대폰의 의학 검색 기록","desc":"난임/출산 관련 검색 — 외도 vs 출산 조사 갈림"},
-      {"id":"e-9","name":"이준호 보험사 견적 자료","desc":"난임 치료 보험 견적 — e-8과 결합 시 h-d4 입증"}
+      {"id":"e-8","name":"종합산부인과병원 주차 영수증 묶음","desc":"이준호 명의 차량의 산부인과 정기 방문 흔적 — 외도 vs 출산 조사 갈림"},
+      {"id":"e-9","name":"이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세","desc":"본인 명의 산전우울증 자가진단 + 상담소 예약 (실제 상담 진행 X) — e-8과 결합 시 h-d4 입증"},
+      {"id":"e-10","name":"B의 예비 부모 정서 도서 + 본인 필기 흔적","desc":"e-1 교보문고 영수증에서 cascade로 emerge — 표면: 내연녀 임신 의심 / 실체: B 본인의 부모 될 마음 정리. d-3와 cutscene_dual_emergence 동시 등장"}
     ],
     "disputes": [
       {"id":"d-1","name":"오피스텔 방문과 새벽 전화","desc":"A: 외도 / B: 형 가족 돌봄 — 실체: 친형+조카 돌봄","party":""},
       {"id":"d-2","name":"남편 명의 계좌의 목돈 출금","desc":"A: 외도 자금 / B: 가족 지원 — 실체: 형 개인회생 지원","party":""},
+      {"id":"d-3","name":"내연녀 임신 의심","desc":"A: 내연녀 임신 단정 / B: 부정 — 실체: misdirection (내연녀 없음 + B 본인 부모 될 마음 정리, h-d4로 수렴)","party":"a_only","hidden":true},
       {"id":"h-d3","name":"공동 적금 2,000만 원 해지 경위","desc":"A의 위임장 위조 + 투자방 사기 손실 (A 별도 범죄)","party":"","hidden":true},
       {"id":"h-d4","name":"비자금의 원래 목적","desc":"신혼 초기 박지연 난임 치료비 → 형 사건 후 형 지원으로 전환","party":"","hidden":true}
     ],
@@ -3608,6 +3610,96 @@
         "reveal": "none",
         "sourceRefs": [],
         "emergence": "h-d4"
+      }
+    ],
+    "e-10": [
+      {
+        "variantId": "emerge-e10-via-cascade-judge-mention-v1",
+        "text": "앞서 확인된 [영수증 묶음]의 교보문고 결제 흔적에서, 동일 결제 건에 「예비 부모를 위한 마음 가이드」류 정서 도서 1권이 함께 찍혀 있음이 확인되었습니다. 본 법정은 그 도서 본체와 본인 필기 흔적을 자료로 확보하여 검토하겠습니다.",
+        "behaviorHint": "잠시 멈추고 좌석을 둘러본 뒤, 영수증과 책 본체를 나란히 들어 보인다.",
+        "speaker": "judge",
+        "speakerRole": "judge",
+        "listener": "all",
+        "emotion": "measured",
+        "continuity": "cascade_mention",
+        "trigger": "cascade_from_card",
+        "reveal": "partial",
+        "sourceRefs": ["evidence:e-1", "evidence:e-10"],
+        "emergence": "e-10",
+        "vfx": "cutscene_dual_emergence"
+      },
+      {
+        "variantId": "emerge-e10-via-cascade-a-react-v1",
+        "text": "예비 부모 책이라니요. 그럼 도대체 누구를… 누구를 위해 그런 책을 본 거죠.",
+        "behaviorHint": "어깨가 굳어지고, 책에서 시선을 떼지 못한다.",
+        "speaker": "a",
+        "speakerRole": "party",
+        "listener": "judge",
+        "emotion": "shaken",
+        "continuity": "reaction",
+        "trigger": "cascade_from_card",
+        "reveal": "none",
+        "sourceRefs": ["evidence:e-10"],
+        "emergence": "e-10"
+      },
+      {
+        "variantId": "emerge-e10-via-cascade-b-response-v1",
+        "text": "그건… 제가 본 책이 맞습니다. 그 이상은 지금 자리에서 드리기 어렵습니다.",
+        "behaviorHint": "한 박자 늦게 답하고, 책 표지를 곁눈으로만 본다.",
+        "speaker": "b",
+        "speakerRole": "party",
+        "listener": "judge",
+        "emotion": "tense",
+        "continuity": "response",
+        "trigger": "cascade_from_card",
+        "reveal": "partial",
+        "sourceRefs": ["evidence:e-10"],
+        "emergence": "e-10"
+      },
+      {
+        "variantId": "emerge-e10-via-cascade-judge-decree-v1",
+        "text": "본 법정에 [예비 부모 정서 도서 + 본인 필기 흔적]을 자료로 등재합니다. 동시에 [내연녀 임신 의심]을 본 사건의 신규 쟁점으로 정식 등록합니다.",
+        "behaviorHint": "책과 동시에 새 쟁점 카드를 한 번에 들어 보인다.",
+        "speaker": "judge",
+        "speakerRole": "judge",
+        "listener": "all",
+        "emotion": "measured",
+        "continuity": "decree",
+        "trigger": "cascade_from_card",
+        "reveal": "partial",
+        "sourceRefs": ["evidence:e-10", "dispute:d-3"],
+        "emergence": "e-10",
+        "vfx": "cutscene_dual_emergence"
+      }
+    ],
+    "d-3": [
+      {
+        "variantId": "emerge-d3-via-cascade-judge-decree-v1",
+        "text": "[내연녀 임신 의심]을 본 사건의 새 쟁점으로 채택합니다. 예비 부모 정서 도서·본인 필기·산부인과 동선이 같은 갈래로 모인 만큼, 본 쟁점의 실체를 단정 없이 검토하겠습니다.",
+        "behaviorHint": "쟁점 카드를 양손으로 들고 한 박자 두었다 자리에 놓는다.",
+        "speaker": "judge",
+        "speakerRole": "judge",
+        "listener": "all",
+        "emotion": "measured",
+        "continuity": "decree",
+        "trigger": "cascade_from_card",
+        "reveal": "partial",
+        "sourceRefs": ["dispute:d-3", "evidence:e-10"],
+        "emergence": "d-3"
+      },
+      {
+        "variantId": "emerge-d3-via-cascade-a-react-v1",
+        "text": "이게 외도 아니라면, 그럼 정말 도대체 무엇 때문에 그 책을 보고 그 병원을 갔다는 거죠.",
+        "behaviorHint": "단정이 한 박자 흔들리고, 다음 말이 곧장 이어지지 못한다.",
+        "speaker": "a",
+        "speakerRole": "party",
+        "listener": "judge",
+        "emotion": "shaken",
+        "continuity": "reaction",
+        "trigger": "cascade_from_card",
+        "reveal": "none",
+        "sourceRefs": ["dispute:d-3"],
+        "emergence": "d-3"
       }
     ]
   },
