@@ -436,6 +436,70 @@ html, body {
   animation: cutscene-gavel-swing 0.8s ease-out both 0.2s;
 }
 
+/* 7. evidence_dispute_dual_emergence — 4초 4단계 sequence (2026-05-25)
+   0.0~0.4s : letterbox enter (위/아래 검은 띠)
+   0.4~1.8s : evidence 카드 좌측 슬라이드 + fade + scale
+   1.8~3.2s : dispute 카드 우측 슬라이드 + fade + scale
+   3.2~4.0s : connector + caption emphasis (fade-in + scale pulse) */
+@keyframes cutscene-dual-letterbox-top-in {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+@keyframes cutscene-dual-letterbox-bottom-in {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+}
+.cutscene-dual-letterbox-top {
+  height: 14vh;
+  z-index: 5;
+  animation: cutscene-dual-letterbox-top-in 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.cutscene-dual-letterbox-bottom {
+  height: 14vh;
+  z-index: 5;
+  animation: cutscene-dual-letterbox-bottom-in 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes cutscene-dual-evidence-in {
+  0% { transform: translateX(-50px) scale(0.85); opacity: 0; }
+  60% { transform: translateX(0) scale(1.04); opacity: 1; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+.cutscene-dual-evidence-card {
+  /* 0.4s delay + 1.4s duration; 0% 상태 유지 위해 fill mode both */
+  opacity: 0;
+  animation: cutscene-dual-evidence-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+@keyframes cutscene-dual-dispute-in {
+  0% { transform: translateX(50px) scale(0.85); opacity: 0; }
+  60% { transform: translateX(0) scale(1.04); opacity: 1; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+.cutscene-dual-dispute-card {
+  opacity: 0;
+  animation: cutscene-dual-dispute-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both;
+}
+
+@keyframes cutscene-dual-connector-in {
+  0% { opacity: 0; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.cutscene-dual-connector {
+  opacity: 0;
+  animation: cutscene-dual-connector-in 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 3.2s both;
+}
+
+@keyframes cutscene-dual-caption-in {
+  0% { opacity: 0; transform: translate(-50%, 8px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+.cutscene-dual-caption {
+  opacity: 0;
+  animation: cutscene-dual-caption-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 3.3s both;
+}
+
 /* ====================================================================
    Truth Reveal Cutscene (3 variants: trust / slip / witness)
    Design authority: tmp/cutscene-mockup-v5.html

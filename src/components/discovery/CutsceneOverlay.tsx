@@ -4,13 +4,14 @@
  * 게임 하이라이트 시점에 극적 비주얼을 전체 화면 위에 표시.
  * 기존 GameEventModal, StateTransitionFeedback 등과 공존하되 z-index 최상위.
  *
- * 6종 컷씬:
- *   lie_collapse       — 거짓말 붕괴 (S5 도달)
- *   contradiction_hit  — 모순 지적 성공
- *   emotional_burst    — 감정 폭발
- *   dispute_emergence  — 쟁점 발현
- *   phase_transition   — Phase 전환
- *   verdict_gavel      — 최종 판결
+ * 7종 컷씬:
+ *   lie_collapse                     — 거짓말 붕괴 (S5 도달)
+ *   contradiction_hit                — 모순 지적 성공
+ *   emotional_burst                  — 감정 폭발
+ *   dispute_emergence                — 쟁점 발현
+ *   evidence_dispute_dual_emergence  — evidence + dispute 동시 등장 (2026-05-25)
+ *   phase_transition                 — Phase 전환
+ *   verdict_gavel                    — 최종 판결
  *
  * 각 유형은 자동 dismiss + 유저 클릭 dismiss 모두 지원.
  */
@@ -93,6 +94,7 @@ export default function CutsceneOverlay() {
       {event.type === 'contradiction_hit' && <ContradictionHitScene data={event.data} />}
       {event.type === 'emotional_burst' && <EmotionalBurstScene data={event.data} />}
       {event.type === 'dispute_emergence' && <DisputeEmergenceScene data={event.data} />}
+      {event.type === 'evidence_dispute_dual_emergence' && <EvidenceDisputeDualEmergenceScene data={event.data} />}
       {event.type === 'phase_transition' && <PhaseTransitionScene data={event.data} />}
       {event.type === 'verdict_gavel' && <VerdictGavelScene data={event.data} />}
       {(event.type === 'truth_reveal_trust' ||
@@ -217,6 +219,78 @@ function DisputeEmergenceScene({ data }: { data?: CutsceneEvent['data'] }) {
           {data.disputeName}
         </p>
       )}
+    </div>
+  )
+}
+
+/** 4b. Evidence + Dispute 동시 등장 (2026-05-25) — 4초 4단계 sequence
+ *    0.0~0.4s: 레터박스 진입 (위/아래 검은 띠)
+ *    0.4~1.8s: 좌측 evidence 카드 슬라이드 인 + scale
+ *    1.8~3.2s: 우측 dispute 카드 슬라이드 인 + scale
+ *    3.2~4.0s: 양 카드 emphasis (글로우 + 연결 효과 + 하단 자막)
+ */
+function EvidenceDisputeDualEmergenceScene({ data }: { data?: CutsceneEvent['data'] }) {
+  return (
+    <div className="absolute inset-0 bg-gray-950/90 overflow-hidden">
+      {/* Letterbox — 위/아래 검은 띠 (0~0.4s 진입) */}
+      <div className="cutscene-dual-letterbox-top absolute left-0 right-0 top-0 bg-black" />
+      <div className="cutscene-dual-letterbox-bottom absolute left-0 right-0 bottom-0 bg-black" />
+
+      {/* 중앙 카드 컨테이너 */}
+      <div className="absolute inset-0 flex items-center justify-center px-6">
+        <div className="flex items-stretch gap-5 max-w-3xl w-full">
+          {/* 좌측 — Evidence 카드 (0.4~1.8s) */}
+          <div className="cutscene-dual-evidence-card flex-1 bg-gray-900/90 border-2 border-amber-500/40 rounded-2xl p-5 shadow-[0_0_40px_rgba(250,204,21,0.25)]">
+            <div className="text-[10px] text-amber-300/70 font-bold tracking-widest mb-2 text-center">
+              신규 증거
+            </div>
+            <div className="flex justify-center mb-3">
+              <svg width="44" height="44" viewBox="0 0 24 24" className="text-amber-400">
+                <path
+                  d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"
+                  fill="currentColor"
+                  opacity="0.85"
+                />
+                <path d="M14 2v6h6" fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth="1.2" />
+              </svg>
+            </div>
+            <p className="text-base font-bold text-amber-100 text-center leading-snug">
+              {data?.evidenceName ?? '신규 자료'}
+            </p>
+          </div>
+
+          {/* 중앙 connector (3.2~4.0s emphasis) */}
+          <div className="cutscene-dual-connector flex flex-col items-center justify-center gap-1 min-w-[64px]">
+            <span className="text-amber-400 text-3xl font-black leading-none">↔</span>
+            <span className="text-[10px] text-amber-300/70 font-bold tracking-widest text-center">
+              동시 등장
+            </span>
+          </div>
+
+          {/* 우측 — Dispute 카드 (1.8~3.2s) */}
+          <div className="cutscene-dual-dispute-card flex-1 bg-gray-900/90 border-2 border-amber-500/40 rounded-2xl p-5 shadow-[0_0_40px_rgba(250,204,21,0.25)]">
+            <div className="text-[10px] text-amber-300/70 font-bold tracking-widest mb-2 text-center">
+              신규 쟁점
+            </div>
+            <div className="flex justify-center mb-3">
+              <svg width="44" height="44" viewBox="0 0 56 56" className="text-amber-400">
+                <rect x="4" y="4" width="20" height="20" rx="3" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.6" />
+                <rect x="32" y="4" width="20" height="20" rx="3" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.85" />
+                <rect x="4" y="32" width="20" height="20" rx="3" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.85" />
+                <rect x="32" y="32" width="20" height="20" rx="3" fill="currentColor" opacity="0.35" stroke="currentColor" strokeWidth="2" />
+              </svg>
+            </div>
+            <p className="text-base font-bold text-amber-100 text-center leading-snug">
+              {data?.disputeName ?? '신규 쟁점'}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 하단 자막 (3.2~4.0s emphasis) */}
+      <div className="cutscene-dual-caption absolute bottom-[18%] left-1/2 -translate-x-1/2 text-amber-300/85 text-sm font-bold tracking-wider whitespace-nowrap">
+        본 법정 — 자료 등재 + 쟁점 정식 등록
+      </div>
     </div>
   )
 }
