@@ -48,9 +48,13 @@
 
 ## 다음 단계
 
-1. 사용자 검토 → 항목별 대안 채택/수정 (P0 1건 + P1 5건)
-2. 채택 후 case.ts 변경 작업 (Claude — frame anchor 추가로 변경 규모 작음)
-3. 검증 4종 (tsc / build-core-case derive / qa:fast / detect-truth-leak --strict)
-4. dc-3 / dc-5 noteText cascade 검토 (e-6 변경 시)
-5. ScriptedText evidence_present 채널 변경 영향 진단 (KO 권위 → 다국어 sync 필요 시 Codex 의뢰)
-6. **friend-01** 동일 절차 진입 (사건 3)
+1. ✅ 사용자 검토 → 항목별 대안 채택/수정 — **2026-05-26 완료**
+2. ✅ 적용 작업 (case.ts + narrative.ts + ScriptedText 4언어 + HTML + derive 4 layer) — **2026-05-26 완료**
+3. ✅ 검증 4종 (tsc / build-core-case derive / qa:fast / detect-truth-leak --strict) — **모두 PASS**
+4. → **friend-01** 동일 절차 진입 (사건 3) — 다음 세션
+
+## 사용자 결정 요약 (2026-05-26)
+
+- **e-3 폐기** (음성증언과 w-1 증인 동일 인물 중복) — w-1 testimony.byDispute['d-1']로 단일화
+- **e-6 어머니 통장 frame 정리** (depthStages context + trustStates submitted 상속인 자격 발급)
+- **P1 나머지 NO-OP** (e-2/e-4/e-5/e-7 — 게임 흐름상 자세히 언급할 상황 X)

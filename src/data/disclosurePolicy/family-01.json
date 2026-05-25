@@ -39,25 +39,6 @@
           "src/data/cases/generated/family-01.json:evidence.e-2"
         ]
       },
-      "e-3": {
-        "evidenceId": "e-3",
-        "name": "전 요양보호사 음성증언",
-        "surfaceName": "전 돌봄 직원 음성",
-        "surfaceDescription": "유서 관련 행동을 목격한 제3자의 음성증언.",
-        "descriptionTruth": [
-          "정후가 종이를 읽어드림",
-          "형 오기 전 마무리",
-          "유서 절차 개입 정황"
-        ],
-        "truthLexemes": [
-          "종이를 읽어드림",
-          "형 오기 전",
-          "유서 절차 개입"
-        ],
-        "sourceRefs": [
-          "src/data/cases/generated/family-01.json:evidence.e-3"
-        ]
-      },
       "e-4": {
         "evidenceId": "e-4",
         "name": "공증인 메모 기록",
@@ -1130,26 +1111,6 @@
         },
         "surfaceFallback": "상속 감정과 오래된 자금 흐름을 함께 볼 필요가 있다."
       },
-      "combine-11": {
-        "sourceText": "방문 빈도와 전 요양보호사 증언 시점이 절차 직전 흐름으로 정렬된다.",
-        "truthLexemes": [],
-        "gate": {
-          "allowedChannels": [
-            "evidence_present",
-            "dossier"
-          ],
-          "route": "evidence_combine",
-          "requiredEvidenceStages": {
-            "e-2": "original",
-            "e-3": "original"
-          },
-          "requiredTruthStage": {
-            "d-1": 2
-          },
-          "autoSurfaceAllowed": false
-        },
-        "surfaceFallback": "방문 빈도와 증언 시점이 겹친다."
-      },
       "combine-12": {
         "sourceText": "'모시고 산 건 나인데 왜 40이냐'와 윤정후의 차단 발언을 맞대면, 비율 뒤에 숨은 사정이 있다는 흐름이 보인다.",
         "truthLexemes": [],
@@ -1259,7 +1220,7 @@
               "leak": "B may admit visits increased but not motive."
             },
             "successUnlocks": [
-              "e-3"
+              "w-1"
             ],
             "failureResponse": {
               "npc": "B says visiting often is not the same as forcing a will.",
@@ -1290,8 +1251,7 @@
               "witness_summon"
             ],
             "requiredEvidence": [
-              "e-2",
-              "e-3"
+              "e-2"
             ],
             "requiredWitness": [
               "w-1"
@@ -1333,7 +1293,7 @@
               "empathy_approach"
             ],
             "requiredEvidence": [
-              "e-3"
+              "e-2"
             ],
             "requiredWitness": [
               "w-1"

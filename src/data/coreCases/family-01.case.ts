@@ -26,7 +26,6 @@ import {
   dc1NarrativeTriggers,
   w1NarrativeTriggers,
   d2NarrativeTriggers,
-  e3NarrativeTriggers,
   dc2NarrativeTriggers,
   w2NarrativeTriggers,
   d3NarrativeTriggers,
@@ -378,7 +377,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       correctResponsibility: { a: 30, b: 70 },
       /* schema ambiguity 'medium' 미지원 — legacy case JSON의 d-1 ambiguity='medium' → 'low'로 조정. evidence 분명. */
       mediationLink: '말년 유서 작성 과정의 적법성',
-      requiredEvidence: ['e-2', 'e-3'],
+      requiredEvidence: ['e-2'],
       judgmentStatement: ko('어머니의 판단 능력은 완전히 상실되지 않았으나, 윤정후의 개입은 적법성 문제를 남긴다.'),
       verdictOptions: {
         wrong: ko('어머니는 동생의 압박으로 유서를 작성했고, 제대로 판단할 수 없는 상태였다.'),
@@ -620,13 +619,13 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           validActions: ['fact_pursuit', 'evidence_query'],
           requiredEvidence: ['e-2'],
           requiredWitness: [],
-          successUnlocks: ['e-3'],
+          successUnlocks: ['w-1'],
         },
         S2: {
           surfaceClaim: ko('시점 겹침 / 종이를 읽어드림'),
           hiddenTruth: ko('도움과 개입의 경계'),
           validActions: ['evidence_query', 'witness_summon'],
-          requiredEvidence: ['e-2', 'e-3'],
+          requiredEvidence: ['e-2'],
           requiredWitness: ['w-1'],
           successUnlocks: ['dc-1'],
         },
@@ -634,7 +633,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           surfaceClaim: ko('형 오기 전 / 충돌 회피'),
           hiddenTruth: ko('자기 판단을 얹음'),
           validActions: ['contradiction_pursuit', 'empathy_approach'],
-          requiredEvidence: ['e-3'],
+          requiredEvidence: ['e-2'],
           requiredWitness: ['w-1'],
           successUnlocks: ['d-2'],
         },
@@ -1939,49 +1938,11 @@ export const family01CaseAuthority: CoreCaseAuthority = {
         { id: 'misread', summary: ko('방문 사실은 인증되나 의도 해석은 별도 자료 필요.') },
       ],
     },
-    {
-      id: 'e-3',
-      name: ko('전 요양보호사 음성증언'),
-      surfaceName: ko('전 돌봄 직원 음성'),
-      /* description은 surface-safe 영역 (P0 gate 회피). 절차 정황은 depthStages context 단계에서 노출. */
-      description: ko('말년 어머니 곁에서 유서 관련 행동을 목격한 제3자의 음성증언.'),
-      surfaceDescription: ko('유서 관련 행동을 목격한 제3자의 음성증언.'),
-      type: 'audio',
-      reliability: 'soft',
-      completeness: 'partial',
-      provenance: 'self_possessed',
-      legitimacy: 'lawful',
-      subjectParty: 'b',
-      proves: ['d-1'],
-      isTrap: false,
-      requires: ['e-2'],
-      requiredLieState: 'S1',
-      partyContext: {
-        a: {
-          questionAngle: ko('동생이 형이 오기 전에 끝내려 한 정황을 어떻게 듣는지'),
-          implication: ko('정후의 서두름이 절차 의도를 가른다.'),
-        },
-        b: {
-          questionAngle: ko('어머니에게 종이를 읽어드린 의미'),
-          implication: ko('도움과 개입의 경계 영역.'),
-        },
-      },
-      depthStages: [
-        { id: 'stub', summary: ko('녹음 파일 존재만 보인다.') },
-        { id: 'excerpt', summary: ko('정후의 방문과 형에 대한 언급 일부가 들린다.') },
-        { id: 'original', summary: ko('종이를 읽어드리는 장면과 "형 오기 전에" 발화 확인.') },
-        { id: 'context', summary: ko('방문기록 e-2와 시점이 정합되며 절차 개입 정황 복원.') },
-        { id: 'established', summary: ko('정후가 유서 절차에 들어간 정황이 증언으로 공식기록 채택.') },
-      ],
-      trustStates: [
-        { id: 'submitted', summary: ko('전 요양보호사 본인이 제출.') },
-        { id: 'verifying', summary: ko('녹음 시점과 근무 일자 대조.') },
-        { id: 'authenticated', summary: ko('근무 기간과 발화 정황 일치.') },
-        { id: 'challenged', summary: ko('증언 단편만으로 강요 판단은 어렵다는 이의.') },
-        { id: 'misread', summary: ko('증언 사실은 인증되나 절차 강요까지의 해석은 별도 평가.') },
-      ],
-      narrativeTriggers: e3NarrativeTriggers,
-    },
+    /* e-3 (전 요양보호사 음성증언) 폐기 — 2026-05-26 폴리싱 결정.
+     * 음성증언과 w-1 (전 요양보호사 최복순) 증인이 동일 인물 영역이라 두 채널 중복.
+     * 동일 사실 영역은 w-1 testimony.byDispute['d-1']로 단일화 (이미 본문 포함).
+     * dc-1 leadLine.firstInputs: ['e-2'] / d-1 progressionStages requiredEvidence: ['e-2'] +
+     * requiredWitness: ['w-1']로 재배치. combine-11 (e-2+e-3 → dc-2) 영역도 함께 폐기. */
     {
       id: 'e-4',
       name: ko('공증인 메모 기록'),
@@ -2106,11 +2067,11 @@ export const family01CaseAuthority: CoreCaseAuthority = {
         { id: 'stub', summary: ko('어머니 통장과 형 쪽 입금 1건 존재만 보인다.') },
         { id: 'excerpt', summary: ko('월 단위 정기 지원금 흐름이 보인다.') },
         { id: 'original', summary: ko('20년간 송금 패턴 + 공장 위기 3억원 큰 자금 이동 확인.') },
-        { id: 'context', summary: ko('윤정후 계좌 출금 → 어머니 통장 → 윤태성 쪽 입금 흐름 복원.') },
+        { id: 'context', summary: ko('어머니 통장에 정후 이름으로 입금된 송금 흐름과 어머니 통장에서 형 쪽으로 빠진 입금 흐름이 같은 통장 한 곳에 모두 기록된 것이 복원된다.') },
         { id: 'established', summary: ko('20년간 지원의 실제 출처가 윤정후 돈이라고 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('은행 측 계좌 자료 제출.') },
+        { id: 'submitted', summary: ko('어머니 통장 거래 내역을 상속인 자격으로 발급받아 제출.') },
         { id: 'verifying', summary: ko('계좌 간 송금 흐름과 시점 대조.') },
         { id: 'authenticated', summary: ko('각 단계 송금 시각과 금액이 모두 일치.') },
         { id: 'challenged', summary: ko('어머니 자금과 동생 자금의 구분이 흐릿하다는 이의.') },
@@ -2293,12 +2254,12 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       type: 'derived_evidence',
       linkedDisputes: ['d-1'],
       linkedParty: 'b',
-      linkedEvidence: ['e-1', 'e-2', 'e-3'],
+      linkedEvidence: ['e-1', 'e-2'],
       leadLine: {
         id: 'L-1',
         name: ko('Timeline Lead'),
         leadType: 'Timeline',
-        firstInputs: ['e-2', 'e-3'],
+        firstInputs: ['e-2'],
         secondInputs: ['L-1', 'e-1'],
         interpretationChoices: [
           { id: 'L-1-A', text: ko('치매 이용이다'), implication: ko('전면 무효 frame으로 밀어붙인다.') },
@@ -2799,21 +2760,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       },
       surfaceFallback: ko('상속 감정과 오래된 자금 흐름을 함께 볼 필요가 있다.'),
     },
-    {
-      id: 'combine-11',
-      inputs: ['e-2', 'e-3'],
-      cost: 1,
-      outputId: 'dc-2',
-      discoveryText: ko('방문 빈도와 전 요양보호사 증언 시점이 절차 직전 흐름으로 정렬된다.'),
-      route: 'evidence_combine',
-      gate: {
-        allowedChannels: ['evidence_present', 'dossier'],
-        requiredEvidenceStages: { 'e-2': 'original', 'e-3': 'original' },
-        requiredTruthStage: { 'd-1': 2 },
-        autoSurfaceAllowed: false,
-      },
-      surfaceFallback: ko('방문 빈도와 증언 시점이 겹친다.'),
-    },
+    /* combine-11 (e-2+e-3 → dc-2) 폐기 — e-3 폐기 cascade. dc-2는 combine-5 (stmt-b-silence+e-4)와 dc2NarrativeTriggers (cascade/outburst/judge-auto)로 충분히 unlock 가능. */
     {
       id: 'combine-12',
       inputs: ['stmt-a-heir', 'stmt-b-silence'],
@@ -2839,9 +2786,9 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       contextDispute: 'd-1',
     },
     {
-      action: ko('원본 제출 명령'),
-      recommendedMoment: ko('e-3 등장 직후'),
-      purpose: ko('전 요양보호사 음성증언을 원본으로 확보.'),
+      action: ko('증인 출석 요청'),
+      recommendedMoment: ko('d-1 S2 도달 직후 w-1 축'),
+      purpose: ko('전 요양보호사 최복순(w-1)이 직접 본 종이 읽는 장면과 "형 오기 전에" 발화를 본 법정에서 직접 청취.'),
       contextDispute: 'd-1',
     },
     {
@@ -2864,7 +2811,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     },
     {
       action: ko('분리심문'),
-      recommendedMoment: ko('e-3 Original 직후 B'),
+      recommendedMoment: ko('w-1 증언 인증 직후 B'),
       purpose: ko('affect_flattening인 B를 도움/개입 경계에서 흔든다.'),
       contextDispute: 'd-1',
     },
@@ -2876,7 +2823,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
     },
     {
       action: ko('잠정 인정'),
-      recommendedMoment: ko('e-3 인증 후'),
+      recommendedMoment: ko('w-1 증언 인증 후'),
       purpose: ko('윤정후의 유서 절차 개입 사실을 부분 기록.'),
       contextDispute: 'd-1',
     },

@@ -3,6 +3,12 @@
 작성: 2026-05-25 → 2026-05-26 · baseline: main HEAD `5c0ab871` · 검토자: Claude
 선행 사례: [spouse-01 보고서](../polish-reality-check-spouse01-20260525/polish-reality-check.md) (동일 4 차원 평가 / 4 P0 결정 + 적용 완료)
 
+**적용 상태 (2026-05-26 사용자 결정 반영)**:
+- ✅ **e-3 폐기** (음성증언과 w-1 증인 동일 인물 중복) — w-1 testimony.byDispute['d-1']로 단일화
+- ✅ **e-6 어머니 통장 frame 정리** — depthStages context + trustStates submitted (상속인 자격 발급)
+- ❌ **P1 나머지 (e-2/e-4/e-5/e-7) NO-OP** (사용자 결정: 게임 흐름상 자세히 언급할 상황 X)
+- 적용 commit: 본 세션 commit (HEAD push 후 갱신)
+
 ## §0 사건 요약
 
 - **관계**: 형제 (윤태성 A 48세 / 윤정후 B 44세)
@@ -201,53 +207,56 @@ dispute name은 모두 자연. 변경 권장 항목 없음.
 
 ---
 
-## §6 종합 권고 — 우선순위
+## §6 종합 권고 — 우선순위 + 적용 결과
 
-### P0 — 변경 필수
+### 2026-05-26 사용자 결정 반영
 
-1. **e-6 오래된 계좌 흐름** — 등장 경로 frame 명시
-   - 작업: case.ts e-6 description/surfaceDescription/trustStates submitted 영역에 "윤정후 측이 d-3 단계 진입 후 본인 계좌 출금 + 어머니 통장 경유 + 형 입금 흐름 묶음을 자발 제출" frame anchor 추가 + provenance 'institutional' → 'self_possessed' (정후 측) 검토
-   - cascade: dc-3 / dc-5 noteText 미세 검토 ("윤정후 측 자발 제출" frame 일관성) + scriptedText evidence_present 채널 4언어 sync
+**관점 변경 (사용자)**:
+- e-6의 자료 source는 어머니 통장 거래 내역 중심이므로 P0 → P2 (frame 미세 sharpening). 어머니 통장에 정후 송금 입금 + 어머니 통장에서 형 쪽 입금이 한 통장에 모두 기록되어 있고, 상속인 자격으로 양측 모두 발급 가능
+- e-3는 w-1 (전 요양보호사 최복순) 증인과 동일 인물 영역이라 두 채널 중복. P0/P1보다 더 큰 영역 — **evidence 폐기 + 증인 단일화**
+- e-2/e-4/e-5/e-7 P1 anchor는 게임 흐름상 자세히 언급할 상황이 없어 **NO-OP** 처리
 
-### P1 — 조정 권장
+### 적용 영역 (본 세션)
 
-2. **e-2 요양원 방문기록** — 직계 가족 자격 frame 명시
-   - 작업: trustStates submitted 영역 "윤태성 또는 윤정후가 직계 가족 자격으로 요양원에 본인 방문 기록 사본 요청 + 시설 측 동의 후 제출" 한 줄 변경
-   - cascade: 거의 없음 (frame anchor만)
+| # | 항목 | 결정 | 작업 |
+|---|---|---|---|
+| 1 | **e-3 음성증언 폐기** | 적용 | evidence 정의 제거 + w-1 testimony 단일화 + dc-1/d-1/combine-11/authorityPlacements cascade + ScriptedText 4언어 106 entries 제거 + HTML 관계도 sync |
+| 2 | **e-6 어머니 통장 frame 정리** | 적용 | depthStages context 정후 본인 계좌 영역 → 어머니 통장 시점 정리 + trustStates submitted 상속인 자격 발급 명시 |
+| 3 | e-2 요양원 방문기록 frame | NO-OP | 사용자 결정 (게임 흐름 영향 X) |
+| 4 | e-4 공증인 메모 w-2 출석 frame | NO-OP | 동일 |
+| 5 | e-5 자필 연습본 정후 보관 anchor | NO-OP | 동일 |
+| 6 | e-7 일기장 정후 보관 anchor | NO-OP | 동일 |
 
-3. **e-3 전 요양보호사 음성증언** — 녹음 동기 anchor
-   - 작업: case.ts e-3 description에 "최복순이 퇴직 직전 어머니 안전 우려로 휴대폰에 비공식 메모용으로 남긴 녹음" 한 줄 추가
-   - cascade: 거의 없음
+### 적용 결과
 
-4. **e-4 공증인 메모 기록** — w-2 증인 출석 frame
-   - 작업: trustStates submitted 영역 "공증인(w-2 김영수) 본인이 증인 출석 시 자기 작성 메모를 본 법정에 제출" 한 줄 변경
-   - cascade: 거의 없음
+- **case.ts**: evidence 7 → 6 (e-3 제거) + d-1 progressionStages requiredEvidence 정리 + dc-1 linkedEvidence/leadLine 정리 + combine-11 폐기 + authorityPlacements 3 모멘트 w-1 시점으로 변경 + e-6 depthStages/trustStates 정리
+- **narrative.ts**: e3NarrativeTriggers 폐기 + dc1-via-combo-11 trigger 제거 + cascade chain 주석 정리
+- **ScriptedText**: 4언어 e-3 entries 106 제거 (KO 31 + EN/JA/ZH-CN 각 25)
+- **HTML**: entity-registry e-3 + e-6 desc + w-1 desc + dc-1 linkedEvidence 변경 / emergence-data e-3 array 통째로 제거 (128 lines)
+- **Derive 4 layer**: build-core-case --case family-01 --write 성공 (L1 ~5 / L3 ~4 / L4 ~3 / L5 top-level 무변경)
 
-5. **e-5 어머니 자필 유언장 연습본** — 정후 보관 + 자발 제출 anchor
-   - 작업: case.ts e-5 description에 "윤정후가 어머니 유품 정리 시 발견하여 보관해 왔으며, d-5 단계 진입 후 어머니 뜻 원본을 본인 책임 영역으로 제출" 한 줄 추가
-   - cascade: 거의 없음
+### 검증 4종 PASS
 
-6. **e-7 어머니 일기장** — 정후 보관 + d-4 단계 제출 anchor
-   - 작업: case.ts e-7 description에 "윤정후가 어머니 유품 정리 시 발견 + 형 정체성 보호 명분으로 보관해 왔으며, d-4 단계 진입 후 침묵 동기를 자료로 갈음하는 영역으로 제출" 한 줄 추가
-   - cascade: 거의 없음
-
-### P2 — 향후 검토
-
-7. dc-3 / dc-5 noteText 미세 검토 (e-6 변경 후 frame 일관성)
-8. narrative wrapper 정밀 점검 — e-5 / e-7 narrative 등장 시점이 case.ts 권위 anchor와 충돌 X (이미 narrative wrapper에 정합 trigger 있음 — Cycle 5/6/7 모두 종료)
+| 검증 | 결과 |
+|---|---|
+| tsc -b --noEmit | 0 errors |
+| qa:fast | RELEASE READY (P0=0 hard=0) |
+| detect-truth-leak --strict | 0 findings (4언어 모두 0) |
+| build-core-case derive | success (4 layer 모두 write) |
 
 ---
 
-## §7 다음 단계 절차
+## §7 다음 단계 절차 (완료된 작업)
 
-| Phase | 작업 | 담당 |
+| Phase | 작업 | 결과 |
 |---|---|---|
-| 1 | 사용자 항목별 결정 (P0 1건 + P1 5건) | 사용자 |
-| 2 | case.ts evidence 변경 (description/surfaceDescription/trustStates/provenance) | Claude |
-| 3 | 검증 4종 (tsc / build-core-case derive / qa:fast / detect-truth-leak --strict) | Claude |
-| 4 | dc-3 / dc-5 noteText 미세 검토 (cascade 영역) | Claude |
-| 5 | ScriptedText evidence_present 채널 변경 영향 진단 (KO 권위 → 다국어 sync 필요 시) | Claude |
-| 6 | 다국어 sync 의뢰 (Codex self-contained 폴더) — 변경 영역 식별 후 진행 | Codex |
+| 1 | 사용자 항목별 결정 | ✅ e-3 폐기 + e-6 frame 정리 + P1 나머지 NO-OP |
+| 2 | case.ts + narrative.ts 변경 | ✅ |
+| 3 | ScriptedText 4언어 e-3 entries 제거 | ✅ 106 entries |
+| 4 | HTML 관계도 sync | ✅ |
+| 5 | Derive 4 layer 재생성 | ✅ |
+| 6 | 검증 4종 | ✅ 모두 PASS |
+| 7 | commit + push | (본 세션 진행 중) |
 
 ---
 

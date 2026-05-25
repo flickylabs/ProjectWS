@@ -438,10 +438,9 @@
     "evidence": [
       {"id":"e-1","name":"60:40 유서 사본","desc":"공증본 — 정후 60 : 태성 40"},
       {"id":"e-2","name":"요양원 방문기록","desc":"공증 3주 전 정후 방문 급증 패턴"},
-      {"id":"e-3","name":"전 요양보호사 음성증언","desc":"\"형 오기 전에 끝내자\" 발화 + 종이 읽어드리는 장면 목격"},
       {"id":"e-4","name":"공증인 메모 기록","desc":"오전 1차 공란 → 오후 수정 60:40 확정 절차 기록"},
-      {"id":"e-5","name":"어머니 자필 유언장 연습본","desc":"자필 비율 90:10 — 정후가 더 많이 받는 원안"},
-      {"id":"e-6","name":"오래된 계좌 흐름","desc":"20년 정기 송금 — 정후 → 어머니 통장 → 태성"},
+      {"id":"e-5","name":"어머니 자필 유언장 연습본","desc":"자필 비율 90:10 — 정후 더 많이 받는 원안"},
+      {"id":"e-6","name":"오래된 계좌 흐름","desc":"20년 정기 송금 — 어머니 통장에 정후 송금 입금 + 어머니 통장에서 태성 쪽으로 빠진 입금이 같은 통장에 모두 기록 (상속인 자격 발급)"},
       {"id":"e-7","name":"어머니 일기장","desc":"태성 비친자 출생 비밀 + 정후 사전 인지 + 어머니 두 아들 동등 시각"}
     ],
     "disputes": [
@@ -452,12 +451,12 @@
       {"id":"d-5","name":"어머니의 숨겨진 마음","desc":"A: 장남 우선 / B: 정후 보호 명분 — 실체: 어머니 두 아들 동등 시각","party":"","hidden":true}
     ],
     "witnesses": [
-      {"id":"w-1","name":"최복순 (전 요양보호사)","desc":"61세 여. 정후가 어머니에게 종이 읽어드리는 장면 + \"형 오기 전에 끝내자\" 발화 직접 들음. 어머니의 오랜 이웃 박순애(w-3)와 동네에서 오래 알고 지내 어머니의 평소 발화 일부 전해 들음","bias":"neutral","disputes":["d-1"]},
+      {"id":"w-1","name":"최복순 (전 요양보호사)","desc":"61세 여. 정후가 어머니에게 종이 읽어드리는 장면 + \"형 오기 전에 끝내자\" 발화 직접 들음. 어머니의 오랜 이웃 박순애(w-3)와 동네에서 오래 알고 지내 어머니의 평소 발화 일부 전해 들음. 2026-05-26 폴리싱: 옛 e-3 음성증언 영역이 본 증인의 직접 발화로 단일화됨","bias":"neutral","disputes":["d-1"]},
       {"id":"w-2","name":"김영수 (공증인 메모 담당)","desc":"57세 남. 오전 1차 공란 → 오후 수정 60:40 절차 + 어머니 상태 흔들림 메모","bias":"neutral","disputes":["d-2"]},
       {"id":"w-3","name":"박순애 (어머니 오랜 지인)","desc":"69세 여. \"정후가 매달 돈을 보낸다\" 어머니 발화 + \"정후가 더 짊어졌다\" 어머니 속마음. 전 요양보호사 최복순(w-1)과 동네 오래 친분 — 어머니의 마음 영역과 평소 생활 영역을 두 채널로 안다","bias":"pro_a","disputes":["d-3","d-5"]}
     ],
     "dossier": [
-      {"id":"dc-1","name":"말년의 종이","desc":"방문 패턴 + 읽어드리던 종이가 치매 이용인지 불안한 보호인지 가르는 첫 카드","party":"b","evidence":["e-1","e-2","e-3"],"disputes":["d-1"]},
+      {"id":"dc-1","name":"말년의 종이","desc":"방문 패턴 + 읽어드리던 종이가 치매 이용인지 불안한 보호인지 가르는 첫 카드","party":"b","evidence":["e-1","e-2"],"disputes":["d-1"]},
       {"id":"dc-2","name":"수정된 유언장","desc":"공증 오후 수정의 존재를 넘어 절차 안에서 어떤 흐름이 만들어졌는지 묻는 카드","party":"b","evidence":["e-4"],"disputes":["d-2"]},
       {"id":"dc-3","name":"20년의 돈","desc":"어머니 돈처럼 보였던 흐름을 윤정후 개인의 희생으로 뒤집는 지원 실체 카드","party":"b","evidence":["e-6"],"disputes":["d-3"]},
       {"id":"dc-4","name":"감춘 이유","desc":"유서 조작 + 20년 지원의 끝에 있던 출생 비밀의 이유를 직접 묻는 심층 카드","party":"b","evidence":["e-7"],"disputes":["d-4"]},
@@ -4114,134 +4113,6 @@
         "reveal": "none",
         "sourceRefs": [],
         "emergence": "d-2"
-      }
-    ],
-    "e-3": [
-      {
-        "variantId": "emerge-e3-via-b-interject-v1",
-        "text": "당시 담당하셨던 분이 들으셨다면 다 아실 겁니다.",
-        "behaviorHint": "윤정후가 감정을 누른 채 짧게 말한다. 자기 결백을 길게 설명하지 않고 현장 담당자 쪽으로 말을 돌린다.",
-        "speaker": "b",
-        "speakerRole": "party",
-        "listener": "judge",
-        "emotion": "flat",
-        "continuity": "interjection",
-        "trigger": "npc_interjection",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-b-interject-judge-react-v1",
-        "text": "관련 음성 자료를 본 법정에 자료로 받겠습니다.",
-        "behaviorHint": "재판관이 윤정후의 말에서 자료 경로만 받아낸다. 감정 반응 없이 수령 결정을 알린다.",
-        "speaker": "judge",
-        "speakerRole": "judge",
-        "listener": "party",
-        "emotion": "measured",
-        "continuity": "reactive",
-        "trigger": "npc_interjection",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-b-interject-judge-decree-v1",
-        "text": "본 법정에 [전 돌봄 직원 음성]을 증거 자료로 등록합니다.",
-        "behaviorHint": "재판관이 음성증언 자료의 등록을 선언한다. 증언 내용은 풀지 않고 자료명만 밝힌다.",
-        "speaker": "judge",
-        "speakerRole": "judge",
-        "listener": "party",
-        "emotion": "measured",
-        "continuity": "decree",
-        "trigger": "npc_interjection",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-cascade-judge-decree-v1",
-        "text": "단서 [말년의 종이]와 같은 시기 현장 음성이 추가로 확보됐습니다. 본 법정에 [전 돌봄 직원 음성]을 증거 자료로 등록합니다.",
-        "behaviorHint": "재판관이 앞서 열린 단서와 같은 시기 자료를 연결한다. 증언 내용은 언급하지 않고 확보된 자료만 등록한다.",
-        "speaker": "judge",
-        "speakerRole": "judge",
-        "listener": "party",
-        "emotion": "measured",
-        "continuity": "cascade",
-        "trigger": "cascade_from_card",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-cascade-b-respond-v1",
-        "text": "예…",
-        "behaviorHint": "윤정후가 짧게 답하고 시선을 내린다. 감정은 거의 드러내지 않는다.",
-        "speaker": "b",
-        "speakerRole": "party",
-        "listener": "judge",
-        "emotion": "flat",
-        "continuity": "response",
-        "trigger": "cascade_from_card",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-combo-judge-decree-v1",
-        "text": "방문기록과 같은 시기에 녹음된 음성이 확보됐습니다. 본 법정에 [전 돌봄 직원 음성]을 증거 자료로 등록합니다.",
-        "behaviorHint": "재판관이 방문기록 분석에서 이어진 자료 확보 사실을 말한다. 새 증거 등록만 차분히 알린다.",
-        "speaker": "judge",
-        "speakerRole": "judge",
-        "listener": "party",
-        "emotion": "measured",
-        "continuity": "combination_result",
-        "trigger": "combination_result",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-combo-b-respond-v1",
-        "text": "예, 받아들이겠습니다.",
-        "behaviorHint": "윤정후가 낮은 목소리로 답한다. 반박하지 않고 짧게 멈춘다.",
-        "speaker": "b",
-        "speakerRole": "party",
-        "listener": "judge",
-        "emotion": "flat",
-        "continuity": "response",
-        "trigger": "combination_result",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-judge-auto-decree-v1",
-        "text": "어머니 말년 시기에 녹음된 담당자 음성 자료가 추가로 확보됐습니다. 본 법정에 [전 돌봄 직원 음성]을 증거 자료로 등록합니다.",
-        "behaviorHint": "재판관이 추가 확보된 자료의 존재를 알린다. 보강 목적을 말하지 않고 자료 등록만 진행한다.",
-        "speaker": "judge",
-        "speakerRole": "judge",
-        "listener": "party",
-        "emotion": "measured",
-        "continuity": "auto_mention",
-        "trigger": "judge_auto_mention",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
-      },
-      {
-        "variantId": "emerge-e3-via-judge-auto-b-respond-v1",
-        "text": "예, 받아들이겠습니다.",
-        "behaviorHint": "윤정후가 표정 없이 짧게 답한다. 말끝을 늘리지 않고 바로 멈춘다.",
-        "speaker": "b",
-        "speakerRole": "party",
-        "listener": "judge",
-        "emotion": "flat",
-        "continuity": "response",
-        "trigger": "judge_auto_mention",
-        "reveal": "none",
-        "sourceRefs": [],
-        "emergence": "e-3"
       }
     ],
     "dc-2": [

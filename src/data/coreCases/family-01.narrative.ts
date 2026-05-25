@@ -3,10 +3,12 @@
  *
  * 권위: [[design_core_narrative_cycle_procedure]] / [[feedback_new_dispute_evidence_narrative_justification]]
  *
- * Cycle 5 (Line A 절차/판단) — 6 emergence × multi-trigger candidate.
+ * Cycle 5 (Line A 절차/판단) — 5 emergence × multi-trigger candidate.
  *   Brief: docs/design/core-narrative-cycle5-family01-procedure-line-20260524/
- *   - dc-1 / w-1 / d-2 / e-3 / dc-2 / w-2
- *   - cascade chain: dc-1 → w-1 / dc-1 → d-2 → e-3 / d-2 → dc-2 → w-2
+ *   - dc-1 / w-1 / d-2 / dc-2 / w-2
+ *   - cascade chain: dc-1 → w-1 / dc-1 → d-2 / d-2 → dc-2 → w-2
+ *   - 2026-05-26 폴리싱: e-3 (전 요양보호사 음성증언) 폐기 — w-1 (전 요양보호사 최복순) 증인과 동일 인물 중복 영역.
+ *     동일 사실은 w-1 testimony.byDispute['d-1']로 단일화.
  *
  * Cycle 6 (Line B 20년 돈) — 2 emergence × multi-trigger candidate.
  *   Brief: docs/design/core-narrative-cycle6-family01-money-line-20260524/
@@ -19,7 +21,7 @@ import type { NarrativeTriggerCandidate } from '../../types/narrativeTrigger'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // dc-1 "말년의 종이" (CoreDossierCard) — 4 trigger candidates
-// (combo-1 / combo-11 — 두 recipe candidate 분리, npc / outburst / fallback)
+// (combo-1 — npc / outburst / fallback. combo-11은 e-3 폐기와 함께 제거됨)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const dc1NarrativeTriggers: NarrativeTriggerCandidate[] = [
@@ -27,19 +29,6 @@ export const dc1NarrativeTriggers: NarrativeTriggerCandidate[] = [
     id: 'dc1-via-combo-1',
     type: 'combination_result',
     recipeId: 'combine-1',
-    preconditions: {
-      disputeLieState: { 'd-1': 'S1+' },
-    },
-    scriptedRefs: [
-      'emerge-dc1-via-combo-judge-decree-v1',
-      'emerge-dc1-via-combo-b-react-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'dc1-via-combo-11',
-    type: 'combination_result',
-    recipeId: 'combine-11',
     preconditions: {
       disputeLieState: { 'd-1': 'S1+' },
     },
@@ -198,61 +187,10 @@ export const d2NarrativeTriggers: NarrativeTriggerCandidate[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// e-3 "전 요양보호사 음성증언" (CoreEvidence) — 4 trigger candidates
+// e-3 (전 요양보호사 음성증언) — 2026-05-26 폴리싱 폐기.
+// w-1 (전 요양보호사 최복순) 증인과 동일 인물 중복 영역. 동일 사실 영역은
+// w-1 narrativeTriggers + testimony.byDispute['d-1']로 단일화.
 // ─────────────────────────────────────────────────────────────────────────────
-
-export const e3NarrativeTriggers: NarrativeTriggerCandidate[] = [
-  {
-    id: 'e3-via-b-interject',
-    type: 'npc_interjection',
-    source: 'b',
-    preconditions: {
-      disputeLieState: { 'd-1': 'S1+' },
-    },
-    scriptedRefs: [
-      'emerge-e3-via-b-interject-v1',
-      'emerge-e3-via-b-interject-judge-react-v1',
-      'emerge-e3-via-b-interject-judge-decree-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'e3-via-cascade',
-    type: 'cascade_from_card',
-    preconditions: {
-      requirePriorCardFired: 'dc-1',
-      disputeLieState: { 'd-1': 'S1+' },
-    },
-    scriptedRefs: [
-      'emerge-e3-via-cascade-judge-decree-v1',
-      'emerge-e3-via-cascade-b-respond-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'e3-via-combo',
-    type: 'combination_result',
-    preconditions: {
-      contextAction: 'evidence_analyze.b.e-2',
-      disputeLieState: { 'd-1': 'S1+' },
-    },
-    scriptedRefs: [
-      'emerge-e3-via-combo-judge-decree-v1',
-      'emerge-e3-via-combo-b-respond-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'e3-via-judge-auto',
-    type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 6 },
-    scriptedRefs: [
-      'emerge-e3-via-judge-auto-decree-v1',
-      'emerge-e3-via-judge-auto-b-respond-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // dc-2 "수정된 유언장" (CoreDossierCard) — 4 trigger candidates

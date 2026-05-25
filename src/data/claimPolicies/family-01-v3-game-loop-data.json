@@ -7,8 +7,7 @@
       "description": "말년의 방문 패턴과 읽어주던 종이가 치매 이용인지, 불안한 보호인지 가르는 첫 카드.",
       "evidenceIds": [
         "e-1",
-        "e-2",
-        "e-3"
+        "e-2"
       ],
       "relatedDisputes": [
         "d-1"
@@ -964,65 +963,6 @@
       "sealTargets": []
     },
     {
-      "evidenceId": "e-3",
-      "name": "전 돌봄 직원 음성",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "녹음 파일 존재만 보인다."
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "정후의 방문과 형에 대한 언급 일부가 들린다."
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "종이를 읽어드리는 장면과 \"형 오기 전에\" 발화 확인."
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "방문기록 e-2와 시점이 정합되며 절차 개입 정황 복원."
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "정후가 유서 절차에 들어간 정황이 증언으로 공식기록 채택."
-        }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "전 요양보호사 본인이 제출."
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "녹음 시점과 근무 일자 대조."
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "근무 기간과 발화 정황 일치."
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "증언 단편만으로 강요 판단은 어렵다는 이의."
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "증언 사실은 인증되나 절차 강요까지의 해석은 별도 평가."
-        }
-      ],
-      "sealTargets": []
-    },
-    {
       "evidenceId": "e-4",
       "name": "인증 절차 메모",
       "depthStages": [
@@ -1272,8 +1212,7 @@
       "name": "Timeline Lead",
       "leadType": "Timeline",
       "firstInputs": [
-        "e-2",
-        "e-3"
+        "e-2"
       ],
       "secondInputs": [
         "L-1",
@@ -1418,9 +1357,9 @@
       "contextDispute": "d-1"
     },
     {
-      "action": "원본 제출 명령",
-      "recommendedMoment": "e-3 등장 직후",
-      "purpose": "전 요양보호사 음성증언을 원본으로 확보.",
+      "action": "증인 출석 요청",
+      "recommendedMoment": "d-1 S2 도달 직후 w-1 축",
+      "purpose": "전 요양보호사 최복순(w-1)이 직접 본 종이 읽는 장면과 \"형 오기 전에\" 발화를 본 법정에서 직접 청취.",
       "contextDispute": "d-1"
     },
     {
@@ -1443,7 +1382,7 @@
     },
     {
       "action": "분리심문",
-      "recommendedMoment": "e-3 Original 직후 B",
+      "recommendedMoment": "w-1 증언 인증 직후 B",
       "purpose": "affect_flattening인 B를 도움/개입 경계에서 흔든다.",
       "contextDispute": "d-1"
     },
@@ -1455,7 +1394,7 @@
     },
     {
       "action": "잠정 인정",
-      "recommendedMoment": "e-3 인증 후",
+      "recommendedMoment": "w-1 증언 인증 후",
       "purpose": "윤정후의 유서 절차 개입 사실을 부분 기록.",
       "contextDispute": "d-1"
     },

@@ -269,8 +269,7 @@
       "truthDescription": "윤정후는 어머니 말년에 자주 방문하며 유서 내용을 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.",
       "quadrant": "both_know",
       "requiredEvidence": [
-        "e-2",
-        "e-3"
+        "e-2"
       ],
       "correctResponsibility": {
         "a": 30,
@@ -906,231 +905,6 @@
           "note": "10월 이후 B 방문이 급증했다. 요양보호사 교체(10.14)와 공증(11.05) 사이 장시간 방문이 이어졌고, 윤태성의 방문은 같은 기간 2회에 그쳤다."
         }
       }
-    },
-    {
-      "id": "e-3",
-      "name": "전 요양보호사 음성증언",
-      "surfaceName": "전 돌봄 직원 음성",
-      "description": "말년 어머니 곁에서 유서 관련 행동을 목격한 제3자의 음성증언.",
-      "surfaceDescription": "유서 관련 행동을 목격한 제3자의 음성증언.",
-      "type": "audio",
-      "reliability": "soft",
-      "completeness": "partial",
-      "provenance": "self_possessed",
-      "legitimacy": "lawful",
-      "proves": [
-        "d-1"
-      ],
-      "isTrap": false,
-      "requires": [
-        "e-2"
-      ],
-      "requiredLieState": "S1",
-      "investigationResults": {
-        "request_original": "전 요양보호사가 윤정후가 어머니에게 종이를 읽어드리는 모습을 직접 봤다고 진술했다.",
-        "check_metadata": "증언자의 근무 기간은 공증 전 방문 집중 시기와 겹친다. '형님 오기 전'이라는 표현도 확인된다.",
-        "restore_context": "읽어드린 종이가 유서였는지, 조심스러운 태도가 보호였는지 배제였는지는 다른 기록과 함께 판단해야 한다."
-      },
-      "subjectParty": "b",
-      "investigationStages": [
-        {
-          "stage": 1,
-          "revealKey": "request_original",
-          "question": {
-            "text": "이 증언의 녹취 원본을 확인해 주십시오.",
-            "attackVector": "authenticity"
-          },
-          "label": "증언확인",
-          "unlockHint": null
-        },
-        {
-          "stage": 2,
-          "revealKey": "check_metadata",
-          "question": {
-            "text": "증언자의 근무 시기와 공증일을 맞춰 봐 주십시오.",
-            "attackVector": "context"
-          },
-          "label": "시점대조",
-          "unlockHint": "증언을 확인하면 근무 기간과 방문 기록을 함께 대조할 수 있습니다."
-        },
-        {
-          "stage": 3,
-          "revealKey": "restore_context",
-          "question": {
-            "text": "종이를 읽어드린 행동의 뜻을 밝혀 주십시오.",
-            "attackVector": "responsibility"
-          },
-          "label": "의도추궁",
-          "unlockHint": "시점을 대조하면 조심스러운 태도가 보호였는지 배제였는지 물을 수 있습니다."
-        }
-      ],
-      "partyContext": {
-        "a": {
-          "questionAngle": "이 증언이 동생의 어떤 의도를 보여준다고 보십니까?",
-          "implication": "윤태성은 '형님 오기 전'이라는 말을 배제 의도로 받아들인다."
-        },
-        "b": {
-          "questionAngle": "어머니에게 종이를 읽어드린 이유와 그 자리의 분위기를 설명해 주십시오.",
-          "implication": "윤정후는 압박과 설명의 차이를 밝혀야 한다."
-        }
-      },
-      "v3DepthPlan": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "증언 녹취가 있다는 사실만 보인다."
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "종이를 읽어드렸다는 핵심 문장만 보인다."
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "증언자 신원, 근무 기간, 전체 진술을 확인한다."
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "방문기록과 공증일을 대조해 발언 맥락을 복원한다."
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "목격 사실은 인정하고 의도는 다른 증거와 함께 판단한다."
-        }
-      ],
-      "v3TrustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "전 요양보호사 진술이 제출됐다."
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "근무기록과 녹취 파일의 날짜를 대조한다."
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "해당 기간 근무 사실과 직접 목격 여부가 확인됐다."
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "윤태성과 윤정후가 '조심스러움'의 의미를 다르게 해석한다."
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "증언은 직접 목격에 근거하지만 의도 단정에는 한계가 있다."
-        }
-      ],
-      "meta": {
-        "name": "전 요양보호사 음성증언",
-        "type": "testimony",
-        "viewerType": "testimony",
-        "trustLevel": "mid",
-        "trustLabel": "보통",
-        "source": "witness",
-        "sourceLabel": "증인",
-        "legality": "ok",
-        "legalLabel": "적법",
-        "stage": 1,
-        "stageLabel": "초기 공개",
-        "sourceNote": "self_possessed / partial",
-        "redactions": []
-      },
-      "viewerData": {
-        "meta": {
-          "name": "전 요양보호사 음성증언",
-          "type": "testimony",
-          "viewerType": "testimony",
-          "trustLevel": "mid",
-          "trustLabel": "보통",
-          "source": "witness",
-          "sourceLabel": "증인",
-          "legality": "ok",
-          "legalLabel": "적법",
-          "stage": 3,
-          "stageLabel": "3단계 — 전체 공개",
-          "sourceNote": "self_possessed / partial",
-          "redactions": []
-        },
-        "testimony": {
-          "witnessName": "최복순",
-          "witnessDesc": "전 담당 요양보호사 (2024.03~2025.10.14 근무)",
-          "quote": "정후 씨가 어머님한테 종이를 자주 읽어드렸어요. 내용은 또렷이 못 들었지만, 형님 오기 전에는 끝내자고 조심스러워하셨어요. 어머님이 힘들어하시면 그만하자고 했고, 어머님이 먼저 물으시면 그때 더 설명했어요. 그런데 저는 10월에 갑자기 교체됐습니다. 이유는 듣지 못했습니다.",
-          "confidence": "mid",
-          "confidenceLabel": "보통",
-          "bias": "neutral",
-          "biasLabel": "중립",
-          "directWitness": true,
-          "relatedRef": "요양보호사 교체 2025.10.14 / 공증 2025.11.05"
-        }
-      },
-      "narrativeTriggers": [
-        {
-          "id": "e3-via-b-interject",
-          "type": "npc_interjection",
-          "source": "b",
-          "preconditions": {
-            "disputeLieState": {
-              "d-1": "S1+"
-            }
-          },
-          "scriptedRefs": [
-            "emerge-e3-via-b-interject-v1",
-            "emerge-e3-via-b-interject-judge-react-v1",
-            "emerge-e3-via-b-interject-judge-decree-v1"
-          ],
-          "vfxProfile": "standard"
-        },
-        {
-          "id": "e3-via-cascade",
-          "type": "cascade_from_card",
-          "preconditions": {
-            "disputeLieState": {
-              "d-1": "S1+"
-            },
-            "requirePriorCardFired": "dc-1"
-          },
-          "scriptedRefs": [
-            "emerge-e3-via-cascade-judge-decree-v1",
-            "emerge-e3-via-cascade-b-respond-v1"
-          ],
-          "vfxProfile": "standard"
-        },
-        {
-          "id": "e3-via-combo",
-          "type": "combination_result",
-          "preconditions": {
-            "disputeLieState": {
-              "d-1": "S1+"
-            },
-            "contextAction": "evidence_analyze.b.e-2"
-          },
-          "scriptedRefs": [
-            "emerge-e3-via-combo-judge-decree-v1",
-            "emerge-e3-via-combo-b-respond-v1"
-          ],
-          "vfxProfile": "standard"
-        },
-        {
-          "id": "e3-via-judge-auto",
-          "type": "judge_auto_mention",
-          "preconditions": {
-            "turnsAfterEligible": 6
-          },
-          "scriptedRefs": [
-            "emerge-e3-via-judge-auto-decree-v1",
-            "emerge-e3-via-judge-auto-b-respond-v1"
-          ],
-          "vfxProfile": "standard"
-        }
-      ]
     },
     {
       "id": "e-4",
@@ -2050,16 +1824,6 @@
       "proves": [
         "d-5"
       ]
-    },
-    {
-      "requires": [
-        "e-2",
-        "e-3"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-2"
-      ]
     }
   ],
   "truthTable": [
@@ -2520,19 +2284,6 @@
         "visibility": "base"
       },
       {
-        "id": "e-3",
-        "type": "evidence",
-        "label": "e-3 전 돌봄 직원 음성",
-        "sourceRef": "e-3",
-        "linkedDisputeIds": [
-          "d-1"
-        ],
-        "linkedEvidenceIds": [
-          "e-3"
-        ],
-        "visibility": "base"
-      },
-      {
         "id": "e-4",
         "type": "evidence",
         "label": "e-4 인증 절차 메모",
@@ -2657,8 +2408,7 @@
         ],
         "linkedEvidenceIds": [
           "e-1",
-          "e-2",
-          "e-3"
+          "e-2"
         ],
         "visibility": "derived"
       },
@@ -2933,17 +2683,6 @@
         "resultType": "dossier"
       },
       {
-        "id": "combine-11",
-        "inputs": [
-          "e-2",
-          "e-3"
-        ],
-        "cost": 1,
-        "discoveryText": "방문 빈도와 전 요양보호사 증언 시점이 절차 직전 흐름으로 정렬된다.",
-        "outputId": "dc-2",
-        "resultType": "upgrade"
-      },
-      {
         "id": "combine-12",
         "inputs": [
           "stmt-a-heir",
@@ -3045,8 +2784,7 @@
         "name": "Timeline Lead",
         "leadType": "Timeline",
         "firstInputs": [
-          "e-2",
-          "e-3"
+          "e-2"
         ],
         "secondInputs": [
           "L-1",
@@ -3191,9 +2929,9 @@
         "contextDispute": "d-1"
       },
       {
-        "action": "원본 제출 명령",
-        "recommendedMoment": "e-3 등장 직후",
-        "purpose": "전 요양보호사 음성증언을 원본으로 확보.",
+        "action": "증인 출석 요청",
+        "recommendedMoment": "d-1 S2 도달 직후 w-1 축",
+        "purpose": "전 요양보호사 최복순(w-1)이 직접 본 종이 읽는 장면과 \"형 오기 전에\" 발화를 본 법정에서 직접 청취.",
         "contextDispute": "d-1"
       },
       {
@@ -3216,7 +2954,7 @@
       },
       {
         "action": "분리심문",
-        "recommendedMoment": "e-3 Original 직후 B",
+        "recommendedMoment": "w-1 증언 인증 직후 B",
         "purpose": "affect_flattening인 B를 도움/개입 경계에서 흔든다.",
         "contextDispute": "d-1"
       },
@@ -3228,7 +2966,7 @@
       },
       {
         "action": "잠정 인정",
-        "recommendedMoment": "e-3 인증 후",
+        "recommendedMoment": "w-1 증언 인증 후",
         "purpose": "윤정후의 유서 절차 개입 사실을 부분 기록.",
         "contextDispute": "d-1"
       },
