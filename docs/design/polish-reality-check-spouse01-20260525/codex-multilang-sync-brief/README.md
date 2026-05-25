@@ -9,7 +9,13 @@
 - **e-8**: 휴대폰 의학 검색 기록 → **종합산부인과병원 주차 영수증 묶음**
 - **e-9**: 보험사 견적 자료 → **이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세**
 
-본 commit에서는 **KO 권위 본문만** 신규 자료 명칭으로 갱신함. 외국어 sync 영역은 본 의뢰서로 분리.
+추가로 **동적 dispute frame 전환 메커니즘 1차 적용**:
+- **e-1**: 교보문고 영수증 1건에 「예비 부모를 위한 마음 가이드」류 정서 도서 1권 동시 결제 흔적 추가 + proves 다중 link (d-1 + h-d4)
+- **e-8/e-9/dc-8/h-d4**: partyContext.a.implication / dc-8 noteText / h-d4 truthDescription에 "d-1 외도 frame 유지 시 = 내연녀 임신 의심 / d-1 진실 확정 후 = 부부 사이 난임 의문으로 자연 전환" 두 frame 통합 표현
+
+본 commit에서는 **KO 권위 본문만** 신규 자료 명칭 + frame 통합 표현으로 갱신함. 외국어 sync 영역은 본 의뢰서로 분리.
+
+설계 spec: [`docs/design/dynamic-dispute-frame-shift-20260525/`](../../dynamic-dispute-frame-shift-20260525/) (시스템 schema/런타임/VFX 구현은 별도 세션).
 
 ## 의뢰 범위
 

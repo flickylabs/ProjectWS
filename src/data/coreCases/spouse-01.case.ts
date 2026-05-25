@@ -1279,7 +1279,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       name: ko('비자금의 원래 목적'),
       truth: true,
       truthDescription: ko(
-        '이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.',
+        '이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다. d-1(오피스텔 방문)이 가족 돌봄 진실로 확정되면 외도 frame이 무너지고, h-d4 영역 자료들(산부인과 주차 영수증·산전우울증 자가진단)이 "그럼 도대체 왜 B가 임산부 관련 자료를?"이라는 의문으로 자연 frame 전환되어 부부 사이 난임 문제가 핵심으로 부각된다.',
       ),
       quadrant: 'b_only',
       weight: 'high',
@@ -1573,15 +1573,23 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       id: 'e-1',
       name: ko('영수증 묶음 (5장)'),
       surfaceName: ko('영수증 묶음 5장'),
-      description: ko('남편의 차에서 발견한 영수증 목록이다. 영수증 내역 중 여성용 물품이 있어 아내의 의심이 시작됐다.'),
-      surfaceDescription: ko('차 안에서 발견된 영수증 5장.'),
+      /**
+       * 2026-05-25 폴리싱: 교보문고 영수증 1건에 조카용 참고서와 「예비 부모를 위한 마음 가이드」(일반명)
+       *   1권이 동시 결제된 흔적 추가 → d-1 진실 확정 후 h-d4 영역의 두 번째 layer 단서로 재해석.
+       *   proves 다중 link (d-1 + h-d4)로 확장 — 동적 dispute frame 전환 메커니즘 1차 적용.
+       */
+      description: ko(
+        '남편의 차에서 발견한 영수증 목록이다. 영수증 내역 중 여성용 물품이 있어 아내의 의심이 시작됐다. 교보문고 영수증 1건에는 조카용 참고서와 함께 「예비 부모를 위한 마음 가이드」류의 정서 도서 1권이 같은 결제 건으로 찍혀 있다.',
+      ),
+      surfaceDescription: ko('차 안에서 발견된 영수증 5장 (편의점 2 / 뷰티 1 / 다이소 1 / 교보문고 1).'),
       type: 'log',
       reliability: 'hard',
       completeness: 'original',
       provenance: 'institutional',
       legitimacy: 'lawful',
       subjectParty: 'b',
-      proves: ['d-1'],
+      /** 다중 link — d-1(외도 의심)이 1차 frame, d-1 진실 확정 후엔 교보문고 영수증의 예비 부모 정서 도서가 h-d4 2차 layer로 부상. */
+      proves: ['d-1', 'h-d4'],
       isTrap: false,
       requires: [],
       partyContext: {
@@ -1591,22 +1599,22 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         },
         b: {
           questionAngle: ko('영수증 물품들은 누구를 위해 산 것인지'),
-          implication: ko('참고서·다이소 학용품이 조카 흔적의 결정적 단서.'),
+          implication: ko('참고서·다이소 학용품이 조카 흔적의 결정적 단서. 같은 교보문고 영수증의 예비 부모 정서 도서는 B 본인이 부모 될 마음을 혼자 정리한 또 다른 layer.'),
         },
       },
       depthStages: [
         { id: 'stub', summary: ko('영수증 5장 존재만 보임.') },
         { id: 'excerpt', summary: ko('편의점·뷰티 2장 (머리끈, 틴트)이 우선 보임.') },
-        { id: 'original', summary: ko('5장 전체 (편의점 2 + 뷰티 1 + 다이소 1 + 교보문고 1) 확인.') },
-        { id: 'context', summary: ko('e-2 정차 좌표와 e-3 통화 시각이 같은 날 겹침.') },
-        { id: 'established', summary: ko('영수증 품목과 시간대가 조카 돌봄 정황과 부합.') },
+        { id: 'original', summary: ko('5장 전체 (편의점 2 + 뷰티 1 + 다이소 1 + 교보문고 1) 확인 — 교보문고 영수증에는 조카용 참고서와 「예비 부모를 위한 마음 가이드」류 정서 도서 1권이 동시 결제됨.') },
+        { id: 'context', summary: ko('e-2 정차 좌표와 e-3 통화 시각이 같은 날 겹침. 교보문고 결제 시각도 같은 동선 안.') },
+        { id: 'established', summary: ko('영수증 품목과 시간대가 조카 돌봄 정황과 부합. d-1 진실 확정 후엔 예비 부모 정서 도서가 h-d4 영역(B 혼자 부모 될 준비)으로 layer 전환.') },
       ],
       trustStates: [
         { id: 'submitted', summary: ko('A가 차에서 발견하여 제출.') },
         { id: 'verifying', summary: ko('원본 영수증 대조.') },
         { id: 'authenticated', summary: ko('카드앱 원본과 시각 일치.') },
         { id: 'challenged', summary: ko('품목만으로 외도 단정은 오독이라는 이의.') },
-        { id: 'misread', summary: ko('데이터는 인증되지만 외도 해석은 오독 가능.') },
+        { id: 'misread', summary: ko('데이터는 인증되지만 외도 해석은 오독 가능 — 같은 영수증의 정서 도서가 두 번째 layer 단서.') },
       ],
     },
     {
@@ -1969,7 +1977,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       partyContext: {
         a: {
           questionAngle: ko('남편 차에서 산부인과 주차 영수증이 반복적으로 나온 이유를 어떻게 보는지'),
-          implication: ko('산부인과 반복 방문 = 외도 상대 동행 의심으로 frame 강화.'),
+          implication: ko('d-1 외도 frame 유지 시 = 내연녀 동행 의심으로 frame 강화. d-1 진실 확정 후엔 = "그럼 도대체 왜?"라는 의문으로 frame 전환, 부부 사이 다른 사정(난임)으로 자연 수렴.'),
         },
         b: {
           questionAngle: ko('동행자 없이 본인 혼자 그 병원에 갔던 사실을 어떻게 설명할 것인지'),
@@ -2022,7 +2030,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       partyContext: {
         a: {
           questionAngle: ko('남편 명의 산전우울증 자가진단·상담 예약 자료가 누구를 위한 것이라고 보는지'),
-          implication: ko('타인 정서 케어 = 내연녀 임신·정서 위기 의심으로 frame 강화.'),
+          implication: ko('d-1 외도 frame 유지 시 = 내연녀 임신·정서 위기 의심으로 frame 강화. d-1 진실 확정 후엔 = 본인 명의라는 점이 부각되어 "B 본인이 부모 될 마음 정리"라는 두 번째 layer로 frame 전환, e-1 교보문고 영수증의 예비 부모 정서 도서와 정합되며 부부 사이 난임 문제로 자연 수렴.'),
         },
         b: {
           questionAngle: ko('이 자료가 본인 명의로 되어 있는 이유를 어떻게 설명할 것인지'),
@@ -2614,7 +2622,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         ],
       },
       noteText: ko(
-        '○○ 종합산부인과 주차 영수증과 본인 명의 산전우울증 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다.',
+        '○○ 종합산부인과 주차 영수증과 본인 명의 산전우울증 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다. d-1 외도 frame이 유지되는 동안엔 내연녀 임신 의심으로 읽히지만, d-1 진실(가족 돌봄)이 확정되면 frame이 자연 전환되어 부부 사이 다른 사정(난임)으로 수렴한다. 같은 시기 e-1 교보문고 영수증의 예비 부모 정서 도서가 이 layer와 정합.',
       ),
       successConditionSummary: [
         ko('e-8 Original 이상'),
