@@ -2182,7 +2182,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       occupation: ko('전 요양보호사'),
       bias: 'neutral',
       distortionRisk: 'accurate',
-      knowledgeScope: ko('요양보호사로 일하며 윤정후가 어머니에게 종이를 읽어드리고, 형 오기 전에 끝내자고 조심스러워하던 모습을 직접 봤다.'),
+      knowledgeScope: ko('요양보호사로 일하며 윤정후가 어머니에게 종이를 읽어드리고, 형 오기 전에 끝내자고 조심스러워하던 모습을 직접 봤다. 어머니의 오랜 이웃 박순애와 동네에서 오래 알고 지낸 사이라, 어머니가 평소 두 아들에 대해 박순애에게 한 말도 일부 전해 들었다.'),
       address: {
         fromA: ko('큰아들분'),
         fromB: ko('작은아들분'),
@@ -2196,6 +2196,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
             canProve: [
               ko('윤정후가 어머니에게 종이를 읽어드린 장면.'),
               ko('형이 오기 전에 끝내자는 발화를 직접 들음.'),
+              ko('박순애로부터 전해 들은 어머니 평소 마음 영역 일부 (자기 관찰 영역 외 보강).'),
             ],
             cannotDisprove: [
               ko('정확한 강요 여부까지는 본인이 판단할 영역이 아니다.'),
@@ -2247,7 +2248,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       occupation: ko('어머니의 오랜 지인'),
       bias: 'pro_a',
       distortionRisk: 'biased',
-      knowledgeScope: ko('어머니로부터 두 아들에 대한 속마음을 자주 들었다. 정후가 매달 돈을 보낸다는 말과 태성이 공장 도움이 어디서 왔는지에 대해 어머니의 발화를 기억한다.'),
+      knowledgeScope: ko('어머니의 오랜 지인. 동네에서 전 요양보호사 최복순과도 오래 알고 지낸 사이라, 어머니의 마음 영역과 평소 생활 영역을 두 채널로 안다. 어머니로부터 두 아들에 대한 속마음을 자주 들었고, 정후가 매달 돈을 보낸다는 말과 태성이 공장 도움이 어디서 왔는지에 대해 어머니의 발화를 기억한다.'),
       address: {
         fromA: ko('태성이'),
         fromB: ko('정후'),

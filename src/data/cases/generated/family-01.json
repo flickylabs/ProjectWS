@@ -163,7 +163,7 @@
         "slot": "institutional",
         "name": "최복순",
         "relationTo": "neutral",
-        "knowledgeScope": "요양보호사로 일하며 윤정후가 어머니에게 종이를 읽어드리고, 형 오기 전에 끝내자고 조심스러워하던 모습을 직접 봤다.",
+        "knowledgeScope": "요양보호사로 일하며 윤정후가 어머니에게 종이를 읽어드리고, 형 오기 전에 끝내자고 조심스러워하던 모습을 직접 봤다. 어머니의 오랜 이웃 박순애와 동네에서 오래 알고 지낸 사이라, 어머니가 평소 두 아들에 대해 박순애에게 한 말도 일부 전해 들었다.",
         "witnessedDirectly": true,
         "bias": "neutral",
         "distortionRisk": "accurate",
@@ -223,7 +223,7 @@
         "slot": "close_friend",
         "name": "박순애",
         "relationTo": "a",
-        "knowledgeScope": "어머니로부터 두 아들에 대한 속마음을 자주 들었다. 정후가 매달 돈을 보낸다는 말과 태성이 공장 도움이 어디서 왔는지에 대해 어머니의 발화를 기억한다.",
+        "knowledgeScope": "어머니의 오랜 지인. 동네에서 전 요양보호사 최복순과도 오래 알고 지낸 사이라, 어머니의 마음 영역과 평소 생활 영역을 두 채널로 안다. 어머니로부터 두 아들에 대한 속마음을 자주 들었고, 정후가 매달 돈을 보낸다는 말과 태성이 공장 도움이 어디서 왔는지에 대해 어머니의 발화를 기억한다.",
         "witnessedDirectly": false,
         "bias": "pro_a",
         "distortionRisk": "biased",
@@ -1070,7 +1070,67 @@
           "directWitness": true,
           "relatedRef": "요양보호사 교체 2025.10.14 / 공증 2025.11.05"
         }
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e3-via-b-interject",
+          "type": "npc_interjection",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-1": "S1+"
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e3-via-b-interject-v1",
+            "emerge-e3-via-b-interject-judge-react-v1",
+            "emerge-e3-via-b-interject-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e3-via-cascade",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-1": "S1+"
+            },
+            "requirePriorCardFired": "dc-1"
+          },
+          "scriptedRefs": [
+            "emerge-e3-via-cascade-judge-decree-v1",
+            "emerge-e3-via-cascade-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e3-via-combo",
+          "type": "combination_result",
+          "preconditions": {
+            "disputeLieState": {
+              "d-1": "S1+"
+            },
+            "contextAction": "evidence_analyze.b.e-2"
+          },
+          "scriptedRefs": [
+            "emerge-e3-via-combo-judge-decree-v1",
+            "emerge-e3-via-combo-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e3-via-judge-auto",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "turnsAfterEligible": 6
+          },
+          "scriptedRefs": [
+            "emerge-e3-via-judge-auto-decree-v1",
+            "emerge-e3-via-judge-auto-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -1441,7 +1501,73 @@
           ],
           "signature": "작성자: 윤○○ / 자필 연습본"
         }
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e5-via-cascade",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-5": "S3+"
+            },
+            "requirePriorCardFired": "dc-4"
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-cascade-judge-decree-v1",
+            "emerge-e5-via-cascade-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e5-via-combo",
+          "type": "combination_result",
+          "preconditions": {
+            "disputeLieState": {
+              "d-5": "S3+"
+            }
+          },
+          "recipeId": "combine-2",
+          "scriptedRefs": [
+            "emerge-e5-via-combo-judge-decree-v1",
+            "emerge-e5-via-combo-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e5-via-b-interject",
+          "type": "npc_interjection",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-5": "S3+"
+            },
+            "partyPhase": {
+              "b": [
+                "defensive",
+                "shaken"
+              ]
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-b-interject-v1",
+            "emerge-e5-via-b-interject-judge-react-v1",
+            "emerge-e5-via-b-interject-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e5-via-judge-auto",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "turnsAfterEligible": 6
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-judge-auto-decree-v1",
+            "emerge-e5-via-judge-auto-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -1789,7 +1915,79 @@
             }
           ]
         }
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e7-via-cascade",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-4": "S2+"
+            },
+            "requirePriorCardFired": "d-4"
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-cascade-judge-decree-v1",
+            "emerge-e7-via-cascade-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e7-via-b-interject",
+          "type": "npc_interjection",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-4": "S2+"
+            },
+            "partyPhase": {
+              "b": [
+                "defensive",
+                "resigned"
+              ]
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-b-interject-v1",
+            "emerge-e7-via-b-interject-judge-react-v1",
+            "emerge-e7-via-b-interject-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e7-via-b-outburst",
+          "type": "emotional_outburst",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-4": "S2+"
+            },
+            "partyPhase": {
+              "b": [
+                "shaken"
+              ]
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-b-outburst-v1",
+            "emerge-e7-via-b-outburst-judge-react-v1",
+            "emerge-e7-via-b-outburst-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e7-via-judge-auto",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "turnsAfterEligible": 6
+          },
+          "scriptedRefs": [
+            "emerge-e7-via-judge-auto-decree-v1",
+            "emerge-e7-via-judge-auto-b-respond-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     }
   ],
   "evidenceCombinations": [
@@ -2467,7 +2665,7 @@
       {
         "id": "dc-2",
         "type": "derived_evidence",
-        "label": "dc-2 줄인 유서",
+        "label": "dc-2 수정된 유언장",
         "linkedDisputeIds": [
           "d-2"
         ],
@@ -2540,7 +2738,7 @@
       },
       {
         "id": "dc-2",
-        "label": "dc-2 줄인 유서",
+        "label": "dc-2 수정된 유언장",
         "summary": "공증 오후 수정의 존재를 넘어서, 절차 안에서 어떤 흐름이 만들어졌는지를 묻는 카드.",
         "nodeType": "derived_evidence",
         "noteText": "오전 1차 접수에서 비율이 비어 있다가 오후 수정 접수에서 60:40으로 확정된 흐름이 공증인 메모로 남아 있다. 절차에 손댄 책임이 드러나는 카드.",
