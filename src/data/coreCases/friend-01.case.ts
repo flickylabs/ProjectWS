@@ -2239,7 +2239,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       bias: 'pro_b',
       distortionRisk: 'accurate',
       knowledgeScope: ko(
-        '동네 분식집 사장으로, 과거에 송다은 아버지가 최수민에게 돈을 빌리러 온 것을 봤다. 최수민이 울면서 가게에 온 적이 있다.',
+        '동네 분식집 사장으로, 송다은과 최수민 둘 다 어릴 적부터 단골로 드나들었다. 그래서 송다은 아버지가 가게 앞에서 최수민에게 돈을 빌리려 한 장면 + 최수민이 가게에 울면서 들어왔던 시기를 모두 직접 봤다.',
       ),
       address: {
         fromA: ko('그 집 딸'),
@@ -2254,6 +2254,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
             canProve: [
               ko('과거 송다은 아버지가 가게 앞에서 최수민에게 돈을 빌리려 한 장면.'),
               ko('최수민이 가게에 울면서 들어왔던 일이 손절 시기와 가깝다는 점.'),
+              ko('두 사람이 어릴 적부터 단골이라 둘 사이의 관계 변화도 자연 감지함.'),
             ],
             cannotDisprove: [
               ko('실제 송금/미상환 금액은 본인이 본 영역 밖.'),

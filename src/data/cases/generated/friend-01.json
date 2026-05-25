@@ -224,7 +224,7 @@
         "slot": "community_witness",
         "name": "오미경",
         "relationTo": "b",
-        "knowledgeScope": "동네 분식집 사장으로, 과거에 송다은 아버지가 최수민에게 돈을 빌리러 온 것을 봤다. 최수민이 울면서 가게에 온 적이 있다.",
+        "knowledgeScope": "동네 분식집 사장으로, 송다은과 최수민 둘 다 어릴 적부터 단골로 드나들었다. 그래서 송다은 아버지가 가게 앞에서 최수민에게 돈을 빌리려 한 장면 + 최수민이 가게에 울면서 들어왔던 시기를 모두 직접 봤다.",
         "witnessedDirectly": true,
         "bias": "pro_b",
         "distortionRisk": "accurate",
