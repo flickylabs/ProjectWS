@@ -224,8 +224,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ]
             }
           ],
@@ -462,8 +461,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ]
             }
           ],
@@ -713,8 +711,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ]
             }
           ],
@@ -963,8 +960,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ],
               "isAdmissionSafe": true
             }
@@ -1209,8 +1205,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ],
               "isAdmissionSafe": true
             }
@@ -1456,8 +1451,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ],
               "isAdmissionSafe": true
             }
@@ -7416,8 +7410,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ]
             }
           ],
@@ -7654,8 +7647,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ]
             }
           ],
@@ -7901,8 +7893,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ]
             }
           ],
@@ -8146,8 +8137,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ],
               "isAdmissionSafe": true
             }
@@ -8397,8 +8387,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ],
               "isAdmissionSafe": true
             }
@@ -8644,8 +8633,7 @@
               "source": "v2",
               "requiresEvidenceIds": [
                 "e-1",
-                "e-2",
-                "e-3"
+                "e-2"
               ],
               "isAdmissionSafe": true
             }
