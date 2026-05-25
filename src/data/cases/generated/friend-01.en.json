@@ -4,7 +4,7 @@
   "overlayKind": "generatedCaseSurface",
   "overlayScope": "full",
   "meta": {
-    "anchorTruth": "Choi Su-min was not trying to seduce Da-eun's fiance; she was trying to make him cautious. Long before that, unable to tell Song Da-eun what her father had done to her, she accepted the blame herself.",
+    "anchorTruth": "Choi Su-min's nine days of contact were not obsession; she was trying to block the flow in which Song Da-eun's father attempted to approach the fiance for money right before the wedding. The real reason the old friendship ended was that Song Da-eun's father had taken money from Choi Su-min under the pretext of an investment scam, and Choi Su-min chose to play the villain because she could never bring herself to tell Song Da-eun and risk breaking her. Song Da-eun smeared Choi Su-min in the group chat without verifying, and the same structure repeated.",
     "emotionalBait": "My former best friend keeps contacting my fiancé after cutting ties with me. Three weeks before the wedding, anyone seeing only that would think she had crossed the line.",
     "resolutionDilemma": "Even if Choi Su-min’s silence came from protection each time, it ultimately created greater misunderstanding and stigma. Song Da-eun’s hasty judgment was cruel, but it was also a reaction made without knowing the truth about her father.",
     "title": "Ex-Best Friend Who Cut Ties"
@@ -108,7 +108,7 @@
       {
         "id": "w-2",
         "name": "Park Jun-hyeok",
-        "knowledgeScope": "As a junior at the fiancé's company, I know that the fiancé approached Choi Su-min first.",
+        "knowledgeScope": "A junior coworker of fiance Kim Tae-yun at the company and one of Choi Su-min's Pilates clients. He once happened to hear the fiance blurt this out at work and told Choi Su-min.",
         "surfaceKnowledge": "He is a third-party witness who knows the behavior patterns of the fiancé.",
         "witnessProfile": {
           "occupation": "Office worker",
@@ -118,7 +118,7 @@
           "addressJudge": "Your Honor",
           "addressA": "that person",
           "addressB": "Ms. Choi Su-min",
-          "hiddenAgenda": "I am careful that my work relationship with my husband-to-be may become uncomfortable."
+          "hiddenAgenda": "He is careful because his workplace relationship with the fiance may become uncomfortable."
         }
       },
       {
@@ -178,7 +178,7 @@
     {
       "id": "d-3",
       "name": "Father’s Money Pattern",
-      "truthDescription": "Song Da-eun’s father was bringing up money with the fiancé, and Choi Su-min tried to warn the fiancé because she had experienced the same pattern in the past.",
+      "truthDescription": "Song Da-eun's father was attempting to approach the fiance under the pretext of wedding funds, and Choi Su-min had experienced the same thing in the past, so she contacted the fiance directly to stop the wedding itself from falling into crisis.",
       "mediationLink": "Song Da-eun’s Father’s Money Pattern",
       "judgmentStatement": "Song Da-eun’s father’s money pattern was the same in the past and present.",
       "v3UnlockPlan": {
@@ -186,9 +186,9 @@
         "authoredRule": "After d-2 confirms the fiancé’s approach, if Choi Su-min explains why she warned him, Song Da-eun’s father’s pattern emerges."
       },
       "verdictOptions": {
-        "wrong": "Song Da-eun’s father merely checked in with the fiancé as a greeting.",
-        "partial": "It appears money was discussed, but the details are not confirmed.",
-        "truth": "Song Da-eun’s father approached the fiancé to borrow money, and Choi Su-min had experienced the same pattern before.",
+        "wrong": "Song Da-eun's father merely checked in with the fiance as a greeting.",
+        "partial": "There are signs that a money approach was attempted, but the concrete details are not confirmed.",
+        "truth": "Song Da-eun's father attempted to approach the fiance under the pretext of wedding funds, and because Choi Su-min had experienced the same thing in the past, she contacted him directly to block the wedding crisis.",
         "defer": "The substance of the conversation cannot be confirmed. Defer judgment."
       }
     },
@@ -3141,10 +3141,10 @@
     },
     {
       "id": "e-5",
-      "name": "Texts Between Song Da-eun’s Father and the Fiancé",
-      "surfaceName": "Text from Song Da-eun’s Father",
-      "description": "A record of request-like texts exchanged between Song Da-eun’s father and the fiancé. The staged originals must be compared to see whether there was a money request and a request for secrecy.",
-      "surfaceDescription": "There is a text record between Song Da-eun’s father and the fiancé.",
+      "name": "Fiance's Company Group-Chat Blurt and Choi Su-min's Nine Days of Blocking Messages",
+      "surfaceName": "Blurting-out trace and nine days of messages",
+      "description": "A capture of fiance Kim Tae-yun venting in a company colleague group chat that \"Daeun's father wants help with the wedding funds,\" plus the originals of Choi Su-min's nine days of intervention messages to the fiance immediately afterward.",
+      "surfaceDescription": "A company group-chat capture of the fiance blurting it out, and Choi Su-min's nine days of messages.",
       "investigationResults": {
         "request_original": "The first page only confirms a wedding-preparation check-in and a cautious hint of a request. It is still hard to say whether it concerns money or a personal consultation.",
         "check_metadata": "The second page reveals a flow that looks like a money-related request, but the amount and exact purpose remain sealed.",
@@ -3174,12 +3174,12 @@
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "Did you know your father made a private request to your fiancé?",
-          "implication": "Confirm how much Song Da-eun knew about her father’s request."
+          "questionAngle": "Did you know that your father had tried to ask the fiance for wedding funds?",
+          "implication": "Whether Song Da-eun knew about it or looked away."
         },
         "b": {
-          "questionAngle": "How did you learn about this text flow, and why did you try to warn him?",
-          "implication": "Confirm Choi Su-min’s motive for warning him."
+          "questionAngle": "What was the actual purpose of the nine days of contact?",
+          "implication": "An attempt to block a wedding crisis, and recognition of the same past pattern."
         }
       },
       "v3DepthPlan": [
@@ -4215,7 +4215,7 @@
       },
       {
         "id": "e-5",
-        "label": "e-5 Text from Song Da-eun’s Father"
+        "label": "e-5 Blurting-out trace and nine days of messages"
       },
       {
         "id": "e-6",
@@ -4276,10 +4276,10 @@
       },
       {
         "id": "dc-3",
-        "label": "dc-3 Tried to Stop It Alone Again?",
-        "summary": "If Song Da-eun’s father brought up money again in the same way, why try to stop it alone again?",
-        "noteText": "If Song Da-eun’s father brought up money again in the same way, why did you try to stop it alone this time too?",
-        "judgeHint": "A new issue has emerged: “The Request That Reached the Fiancé.” Confirm the request’s content and route."
+        "label": "dc-3 Same Request",
+        "summary": "A clue that ties the fiance's blurting-out trace to the old transfer flow and confirms the father's repeated attempt pattern.",
+        "noteText": "The flow in which Song Da-eun's father attempted to ask the fiance for wedding funds is almost identical to the old transfer request he sent to Choi Su-min.",
+        "judgeHint": "The new issue \"Reason for the Past Fallout\" can now surface."
       },
       {
         "id": "dc-1",
@@ -4314,7 +4314,7 @@
       },
       {
         "id": "combine-3",
-        "discoveryText": "The text Song Da-eun’s father sent to the fiancé closely matches the past IOU sent to Choi Su-min and the partial repayment pattern."
+        "discoveryText": "The father's wedding-funds request that the fiance blurted out at work and the old transfer request to Choi Su-min follow almost the same pattern."
       },
       {
         "id": "combine-4",
@@ -4322,7 +4322,7 @@
       },
       {
         "id": "combine-5",
-        "discoveryText": "The route by which Song Da-eun’s “she’s contacting my man again” remark spread through the group chat is confirmed."
+        "discoveryText": "Combining the fiance's approach with the comparison chart reinforces that Choi Su-min's contact was meant to block a wedding crisis."
       },
       {
         "id": "combine-6",
@@ -4564,15 +4564,25 @@
     ],
     "sensitiveSealTargets": [
       {
+        "evidenceId": "e-5",
+        "targets": [
+          "Company colleagues real names",
+          "Private tone in Choi Su-min's messages"
+        ],
+        "risk": "Exposing company colleagues real names conflicts with Park Jun-hyeok's witness identity protection, and exposing the private tone of Choi Su-min's messages weakens protection for party B's character."
+      },
+      {
+        "evidenceId": "e-6",
         "targets": [
           "Specific transfer amounts",
-          "Song Da-eun’s father’s real name"
+          "Song Da-eun's father's real name",
+          "Bank account number"
         ],
-        "risk": "If the unpaid loan by Song Da-eun’s father is opened too early, Song Da-eun’s emotional reaction may halt questioning."
+        "risk": "If opened too early, Song Da-eun's emotional reaction may halt questioning. Revealing specific amounts can lower the humanity score."
       }
     ],
     "officialRecordRecommendations": [
-      "Choi Su-min’s contact was for warning, not obsession.",
+      "Choi Su-min's nine days of contact were not obsession; she was trying to block Song Da-eun's father's money approach to the fiance right before the wedding.",
       "The fiancé made the overstepping approach to Choi Su-min first.",
       "Song Da-eun’s father’s money pattern is the same in the past and present.",
       "The real reason for the old fallout was Song Da-eun’s father’s unpaid loan.",
