@@ -195,7 +195,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       riskAppetite: 4,
       digitalHabit: 'minimal',
       dailyRoutine: ko(
-        '매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다. 한편 아내 모르게 산부인과·고위험 임신 관련 자료를 검색하고 의사 친구와 통화하며 보험 상담도 비공식으로 받아 왔다.',
+        '매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다. 한편 아내 모르게 점심시간에 종합산부인과병원을 단독으로 다녀오고 의사 친구와 통화했으며, 본인 명의로 산전우울증 자가진단을 받고 정신건강 상담소 예약까지 알아봐 왔다.',
       ),
       sensitivePoints: [
         ko('오피스텔 방문과 새벽 전화는 딴살림 흔적인가'),
@@ -279,7 +279,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       whenLabel: ko('결혼 직후~현재 (10년간)'),
       actor: 'b',
       action: ko(
-        '이준호가 본인 명의 별도 계좌에 급여 잔액과 현금을 조금씩 모음. 누적 ~3,000만 원. 처음에는 박지연의 난임 치료비 마련을 위한 자금이었고, 그 사이 의사 친구의 비공식 상담과 보험 상담을 비공식으로 받아 옴. 형 사정 발생 후 그 자금이 형/조카 지원 자금으로 전환.',
+        '이준호가 본인 명의 별도 계좌에 급여 잔액과 현금을 조금씩 모음. 누적 ~3,000만 원. 처음에는 박지연의 난임 치료비 마련을 위한 자금이었고, 그 사이 의사 친구의 비공식 상담과 본인 명의 산부인과 단독 방문, 산전우울증 자가진단·상담소 예약까지 알아봐 옴. 형 사정 발생 후 그 자금이 형/조카 지원 자금으로 전환.',
       ),
       aPerception: ko('계좌 존재 자체를 모름. 남편의 출산 관련 조사도 모름.'),
       bPerception: ko('전부 인지. 원래 목적은 난임 치료비.'),
@@ -1266,17 +1266,20 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
      * dispute h-d4 — 비자금의 원래 목적 (Cycle 4 plot revision 신규)
      *
      * d-2 자금 사용처(형 개인회생 자금 전달)는 자백 완료된 상태에서,
-     * 신규 증거 e-8(휴대폰 병원 검색 기록) + e-9(보험 상담 기록) + dc-8 단서를 통해
+     * 신규 증거 e-8(종합산부인과 주차 영수증) + e-9(산전우울증 자가진단 결과지 + 상담소 예약 명세) + dc-8 단서를 통해
      * 비자금의 원래 목적이 박지연의 난임 치료비 마련이었다는 사실이 드러난다.
      * 신혼 초기 박지연 난임 진단 → 출산 포기·화제 회피 → 이준호 혼자 조사·자금 마련.
      * 책임 분담: B 70 / A 30 (B 침묵·독단 우위, A 화제 회피로 소통 단절 일부 책임).
+     *
+     * 2026-05-25 폴리싱: e-8/e-9 자료 본질 교체 (휴대폰 검색 → 산부인과 주차 영수증 / 보험 견적 → 산전우울증 자가진단·상담 예약).
+     *   forbiddenKeywords 4언어 영역은 Codex 의뢰로 별도 sync (KO 본문만 본 commit에서 신규 자료 명칭으로 갱신).
      * ============================================================ */
     {
       id: 'h-d4',
       name: ko('비자금의 원래 목적'),
       truth: true,
       truthDescription: ko(
-        '이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 보험 상담을 받으며 출산 가능성을 더 알아봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.',
+        '이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.',
       ),
       quadrant: 'b_only',
       weight: 'high',
@@ -1291,7 +1294,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       unlockCondition: {
         requireDispute: { id: 'd-2', minState: 'S5' },
         runtimeRule: ko('d-2 S5 자백 후 비자금 운용 패턴 의문 + 신규 증거(e-8/e-9) 발현 시'),
-        authoredRule: ko('자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + 휴대폰 검색·보험 상담 기록이 형 사정과 무관한 영역을 가리키면 새 쟁점 부상'),
+        authoredRule: ko('자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 산전우울증 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상'),
       },
       verdictOptions: {
         wrong: ko('비자금은 처음부터 형에게 줄 돈으로 모은 것이다.'),
@@ -1380,8 +1383,8 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         },
         S2: {
           a: {
-            admittedFact: ko('수상한 메모와 보험 상담 기록이 있다고 들었다. 처음엔 외도 의심까지 들었지만 형 일과는 다른 영역이라는 점을 받아들인다.'),
-            allowedKeywords: koKeywords('수상한 자료', '보험 상담', '형 일과 다른 영역'),
+            admittedFact: ko('B 차량의 산부인과 주차 영수증과 본인 명의 산전우울증 자가진단·상담 예약 명세가 있다고 들었다. 처음엔 외도 의심까지 들었지만 형 일과는 다른 갈래라는 점을 받아들인다.'),
+            allowedKeywords: koKeywords('수상한 자료', '산부인과 방문', '산전우울증 자가진단', '형 일과 다른 갈래'),
             forbiddenKeywords: keywords(
               ['난임 치료비', '난임 진단', '출산 가능성 조사'],
               ['infertility treatment funds', 'infertility diagnosis', 'fertility research'],
@@ -1396,8 +1399,8 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
             },
           },
           b: {
-            admittedFact: ko('휴대폰 검색 기록과 보험 상담 기록은 본인 것이 맞다. 다만 가입까지 가지는 않았다.'),
-            allowedKeywords: koKeywords('휴대폰 검색', '보험 상담', '가입 안 함'),
+            admittedFact: ko('산부인과 주차 영수증과 본인 명의 산전우울증 자가진단·상담 예약 명세는 본인 것이 맞다. 다만 실제 상담까지 진행하지는 않았다.'),
+            allowedKeywords: koKeywords('산부인과 방문', '산전우울증 자가진단', '상담 예약만'),
             forbiddenKeywords: keywords(
               ['난임 치료비', '난임 진단', '출산 가능성 조사', '아내 모르게'],
               ['infertility treatment funds', 'infertility diagnosis', 'fertility research', 'unbeknownst to wife'],
@@ -1430,15 +1433,15 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
             },
           },
           b: {
-            admittedFact: ko('아내에게 부담을 주지 않으려고 혼자 출산 가능성을 알아본 시기가 있었다. 의사 친구와 상담했고 보험도 알아봤지만 가입은 하지 않았다.'),
-            allowedKeywords: koKeywords('혼자 알아봄', '의사 친구 상담', '보험 상담', '가입 안 함', '부담 주지 않으려'),
+            admittedFact: ko('아내에게 부담을 주지 않으려고 혼자 출산 가능성을 알아본 시기가 있었다. 의사 친구와 상담했고 점심시간에 종합산부인과를 단독 방문했으며 본인 명의로 산전우울증 자가진단을 받고 상담소 예약까지 알아봤지만 실제 상담은 진행하지 않았다.'),
+            allowedKeywords: koKeywords('혼자 알아봄', '의사 친구 상담', '산부인과 단독 방문', '산전우울증 자가진단', '상담 예약만', '부담 주지 않으려'),
             forbiddenKeywords: keywords(
               ['난임 진단', '난임 치료비'],
               ['infertility diagnosis', 'infertility treatment funds'],
               ['不妊診断', '不妊治療費'],
               ['不孕诊断', '不孕治疗费'],
             ),
-            answerFrame: ko('B는 혼자 조사 사실 + 의사 친구 + 보험 상담까지 인정. 난임/치료비 정확한 용어는 회피.'),
+            answerFrame: ko('B는 혼자 조사 사실 + 의사 친구 + 산부인과 방문 + 산전우울증 자가진단까지 인정. 난임/치료비 정확한 용어는 회피.'),
             transitionTrigger: 'empathy',
             transitionBeat: {
               line: ko('이준호는 "혼자라도 알아봐야 했다"고 말한다.'),
@@ -1459,8 +1462,8 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
             },
           },
           b: {
-            admittedFact: ko('비자금은 아내의 난임 치료비를 위해 모은 자금이었다. 의사 친구와 보험 상담은 모두 그 목적이었다.'),
-            allowedKeywords: koKeywords('난임 치료비', '본 목적', '의사 친구', '보험 상담'),
+            admittedFact: ko('비자금은 아내의 난임 치료비를 위해 모은 자금이었다. 의사 친구 상담과 산부인과 단독 방문, 산전우울증 자가진단 모두 그 목적이었다.'),
+            allowedKeywords: koKeywords('난임 치료비', '본 목적', '의사 친구', '산부인과 방문', '산전우울증 자가진단'),
             forbiddenKeywords: keywords([], [], [], []),
             answerFrame: ko('B는 비자금의 본 목적을 명시. 난임 치료비 frame 직접 진술.'),
             transitionTrigger: 'direct',
@@ -1484,9 +1487,9 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           },
           b: {
             admittedFact: ko(
-              '신혼 초기부터 박지연의 난임 치료비를 위해 본인 명의 별도 계좌에 비자금 3,000만 원을 모았고, 의사 친구의 비공식 상담과 보험 상담을 받았으나 가입은 하지 않았다. 형이 개인회생에 들어간 뒤 그 자금을 형에게 전환했다.',
+              '신혼 초기부터 박지연의 난임 치료비를 위해 본인 명의 별도 계좌에 비자금 3,000만 원을 모았고, 의사 친구의 비공식 상담과 종합산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아봤으나 실제 상담은 진행하지 않았다. 형이 개인회생에 들어간 뒤 그 자금을 형에게 전환했다.',
             ),
-            allowedKeywords: koKeywords('난임 치료비', '신혼 초기', '의사 친구 상담', '보험 상담', '가입 없음', '형 사건 후 전환'),
+            allowedKeywords: koKeywords('난임 치료비', '신혼 초기', '의사 친구 상담', '산부인과 단독 방문', '산전우울증 자가진단', '상담 진행 안 함', '형 사건 후 전환'),
             forbiddenKeywords: keywords([], [], [], []),
             answerFrame: ko('B는 진실 완전 인정. 원래 목적 + 조사 방법 + 자금 전환 전부 진술.'),
             transitionTrigger: 'direct',
@@ -1528,7 +1531,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
         S2: {
-          surfaceClaim: ko('수상한 자료 / 보험 상담 (가입 X)'),
+          surfaceClaim: ko('수상한 자료 / 산전우울증 자가진단·상담 예약 (실제 상담 X)'),
           hiddenTruth: ko('출산 가능성 조사 + 난임 치료비'),
           validActions: ['evidence_query', 'motive_search'],
           requiredEvidence: ['e-8', 'e-9'],
@@ -1679,7 +1682,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'established', summary: ko('반복 통화 + 반복 방문 연동이 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('A가 통화목록 캡처 제출.') },
+        { id: 'submitted', summary: ko('B가 제출에 동의하여 통신사로부터 통화 내역 출력본을 받아 제출.') },
         { id: 'verifying', summary: ko('통신사 상세 내역 대조.') },
         { id: 'authenticated', summary: ko('통신사 원본과 일치.') },
         { id: 'challenged', summary: ko('통화 상대 정체가 빠져 있다는 이의.') },
@@ -1775,7 +1778,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'established', summary: ko('B가 배우자 동의 없이 3,000만 원을 분할 인출했다고 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('A가 통장내역 일부 제출.') },
+        { id: 'submitted', summary: ko('재판관 문서제출명령에 따라 B 측이 본인 명의 계좌 거래 명세서 제출.') },
         { id: 'verifying', summary: ko('계좌 원본 조회 + 앱 원본 확인.') },
         { id: 'authenticated', summary: ko('출금 시각 + 지점이 모두 일치.') },
         { id: 'challenged', summary: ko('B가 형에게 빌려준 돈이라고 주장.') },
@@ -1939,20 +1942,21 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       narrativeTriggers: e7NarrativeTriggers,
     },
     /* ============================================================
-     * evidence e-8 — 휴대폰 병원 검색 기록 (Cycle 4 plot revision 신규)
+     * evidence e-8 — 종합산부인과병원 주차 영수증 묶음 (Cycle 4 plot revision 신규)
+     *   2026-05-25 폴리싱: 휴대폰 검색 기록(A 접근 비현실) → B 차량 발견 주차권/영수증으로 교체.
      *
-     * 표면: 산부인과·여성 질환·고위험 임신 검색이 반복 → 외도 의심 frame (내연녀 임신 의심)
-     * 진실: 박지연 모르게 난임 치료 가능성을 알아본 이준호의 조사 흔적
+     * 표면: 산부인과 반복 방문 사실 → 외도 의심 frame (내연녀 임신 정황)
+     * 진실: 박지연 모르게 출산 가능성을 알아본 이준호의 단독 산부인과 방문 흔적
      * ============================================================ */
     {
       id: 'e-8',
-      name: ko('이준호 휴대폰의 의학 검색 기록'),
-      surfaceName: ko('휴대폰 의학 검색 기록'),
+      name: ko('종합산부인과병원 주차 영수증 묶음'),
+      surfaceName: ko('산부인과 주차 영수증'),
       description: ko(
-        '이준호의 휴대폰 검색 기록 중 산부인과·여성 질환·임신 관련 검색이 반복된다. 일부는 의사 친구와의 통화 직후 시기에 몰려 있다.',
+        '이준호 차량에서 발견된 ○○ 종합산부인과병원 주차 영수증 여러 장. 발급 시각이 평일 점심시간대에 집중되고, 같은 병원에 반복 방문한 흔적이 남아 있다.',
       ),
-      surfaceDescription: ko('이준호 휴대폰에 남은 산부인과·여성 질환 검색 기록.'),
-      type: 'device',
+      surfaceDescription: ko('이준호 차량 내 발견된 산부인과 주차 영수증 묶음.'),
+      type: 'receipt',
       reliability: 'hard',
       completeness: 'original',
       provenance: 'self_possessed',
@@ -1964,45 +1968,48 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       requiredLieState: 'S2',
       partyContext: {
         a: {
-          questionAngle: ko('남편 휴대폰에서 산부인과 검색이 반복된 이유를 어떻게 보는지'),
-          implication: ko('산부인과·여성 질환 검색 = 외도 상대 관련 의심으로 frame 강화.'),
+          questionAngle: ko('남편 차에서 산부인과 주차 영수증이 반복적으로 나온 이유를 어떻게 보는지'),
+          implication: ko('산부인과 반복 방문 = 외도 상대 동행 의심으로 frame 강화.'),
         },
         b: {
-          questionAngle: ko('이 검색 기록을 본인 영역에서 어떻게 설명할 것인지'),
-          implication: ko('혼자만 알아본 의학 영역의 조사 흔적.'),
+          questionAngle: ko('동행자 없이 본인 혼자 그 병원에 갔던 사실을 어떻게 설명할 것인지'),
+          implication: ko('점심시간 단독 방문 = 혼자 출산 가능성을 알아본 흔적.'),
         },
       },
       depthStages: [
-        { id: 'stub', summary: ko('의학 관련 검색 기록 존재 표시.') },
-        { id: 'excerpt', summary: ko('산부인과·여성 질환 검색만 우선 보임 — 외도 의심 frame.') },
-        { id: 'original', summary: ko('임신·여성 의학 영역 검색 전체와 의사 친구 통화 시각 정합 확인.') },
-        { id: 'context', summary: ko('검색 영역이 형 사정과는 무관한 부부 영역이라는 점이 복원됨.') },
-        { id: 'established', summary: ko('B가 혼자 의학 영역을 지속적으로 알아봐 왔다고 공식기록 채택.') },
+        { id: 'stub', summary: ko('산부인과 주차 영수증 존재 표시.') },
+        { id: 'excerpt', summary: ko('주차 영수증 2~3장 (병원명·발급 시각)만 우선 보임 — 외도 의심 frame.') },
+        { id: 'original', summary: ko('주차 영수증 전체와 점심시간 단독 방문 패턴 확인.') },
+        { id: 'context', summary: ko('병원 출입 CCTV 협조 검토 시 B 단독 방문이 확인되는 정황 복원.') },
+        { id: 'established', summary: ko('B가 혼자 산부인과를 반복 방문했다고 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('A가 휴대폰 일부 캡처 제출 또는 B 휴대폰 발췌.') },
-        { id: 'verifying', summary: ko('휴대폰 원본 검색 기록 대조.') },
-        { id: 'authenticated', summary: ko('검색 시점·키워드가 통화 기록과 일치.') },
+        { id: 'submitted', summary: ko('A가 B 차량에서 발견하여 제출.') },
+        { id: 'verifying', summary: ko('병원·발급 시각 원본 대조.') },
+        { id: 'authenticated', summary: ko('주차 시각이 e-3 통화 시각·B 근무 일정과 정합.') },
         { id: 'challenged', summary: ko('외도 frame과 혼자 알아본 frame 두 해석이 충돌.') },
-        { id: 'misread', summary: ko('검색 자체는 인증되지만 의도 해석은 심문과 맥락으로 확정.') },
+        { id: 'misread', summary: ko('방문 사실은 인증되지만 동행 여부·진료 내용은 심문과 맥락으로 확정.') },
       ],
       narrativeTriggers: e8NarrativeTriggers,
     },
     /* ============================================================
-     * evidence e-9 — 보험 상담 기록 (가입 X) (Cycle 4 plot revision 신규)
+     * evidence e-9 — 이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세 (Cycle 4 plot revision 신규)
+     *   2026-05-25 폴리싱: 보험사 견적(보유/제출 비현실) → B 명의 종이 출력 자료로 교체.
      *
-     * 표면: 고액 의료비 특약·고위험 산모 보험 상담 → 외도 의심 frame (내연녀 수익자 가능성)
-     * 진실: 박지연 난임 치료비를 위한 보험 알아보기 (가입은 안 함)
+     * 표면: 산전우울증 자가진단 + 상담소 예약 → 외도 의심 frame
+     *   - 사용자(유저)까지도 "내연녀가 임신 후 정서적으로 무너졌고 B가 대신 자가진단·상담 알아본 것?" 의심 가능
+     *   - 또는 "B 본인이 정서적으로 무너졌다? 왜?" 의문
+     * 진실: 박지연을 위한 미래(임신 가능성)를 혼자 그려보다가 정서적으로 무거워진 B가 본인 명의로 알아본 흔적
      * ============================================================ */
     {
       id: 'e-9',
-      name: ko('이준호의 보험사 견적 자료 (가입 없음)'),
-      surfaceName: ko('보험사 견적 자료'),
+      name: ko('이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세'),
+      surfaceName: ko('산전우울증 자가진단 + 상담 예약'),
       description: ko(
-        '이준호가 여러 보험사에서 받은 의료비 보장 특약 견적서 묶음. 모두 견적·상담 단계에서 멈춰 있고 실제 가입 흔적은 없다.',
+        '이준호 명의로 출력된 산전우울증 자가진단 결과지(점수표 포함)와 정신건강 상담소 예약 확인 명세. 모두 종이/표 출력본이며, 자가진단지에는 B 본인의 필기 표시가 일부 남아 있다. 실제 상담 진행 여부는 별도 확인 필요.',
       ),
-      surfaceDescription: ko('이준호 명의 보험사 견적서들.'),
-      type: 'contract',
+      surfaceDescription: ko('이준호 명의로 출력된 산전우울증 자가진단 결과지와 상담소 예약 확인 명세.'),
+      type: 'medical_record',
       reliability: 'hard',
       completeness: 'original',
       provenance: 'self_possessed',
@@ -2014,27 +2021,27 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       requiredLieState: 'S2',
       partyContext: {
         a: {
-          questionAngle: ko('남편이 혼자 받은 보험 견적의 정체가 무엇인지'),
-          implication: ko('수익자 공란/타인 상담 = 외도 상대 수익자 의심.'),
+          questionAngle: ko('남편 명의 산전우울증 자가진단·상담 예약 자료가 누구를 위한 것이라고 보는지'),
+          implication: ko('타인 정서 케어 = 내연녀 임신·정서 위기 의심으로 frame 강화.'),
         },
         b: {
-          questionAngle: ko('가입까지 가지 않은 보험을 왜 여러 곳에서 상담만 받았는지'),
-          implication: ko('의료비 대비를 알아본 것이지만 결정을 내리지 못함.'),
+          questionAngle: ko('이 자료가 본인 명의로 되어 있는 이유를 어떻게 설명할 것인지'),
+          implication: ko('아내에게 부담을 주지 않으려 혼자 부모 될 마음을 정리하던 흔적.'),
         },
       },
       depthStages: [
-        { id: 'stub', summary: ko('보험 견적서 묶음 존재 표시.') },
-        { id: 'excerpt', summary: ko('고액 의료비 특약·수익자 공란 견적만 보임 — 외도 의심 frame.') },
-        { id: 'original', summary: ko('의료비 보장 특약 견적이 여성 의학 영역까지 포함된다는 점과 가입 0건이라는 점이 확인됨.') },
-        { id: 'context', summary: ko('e-8 휴대폰 검색 시기와 상담일이 정합되며 모든 견적이 결정 단계에 도달하지 못함.') },
-        { id: 'established', summary: ko('B가 의학 영역의 의료비 대비만 알아봤으나 결정에는 도달하지 못했다고 공식기록 채택.') },
+        { id: 'stub', summary: ko('산전우울증 자가진단 결과지·상담 예약 명세 존재 표시.') },
+        { id: 'excerpt', summary: ko('자가진단 점수표·예약 명세 일부만 보임 — 외도/타인 정서 케어 의심 frame.') },
+        { id: 'original', summary: ko('자가진단지 본인 필기 + 본인 명의 예약 명세 전체 확인.') },
+        { id: 'context', summary: ko('자료 시점이 e-8 산부인과 방문 시기와 정합되며 B 본인이 직접 받았다는 점이 복원됨.') },
+        { id: 'established', summary: ko('B가 본인 명의로 부모 될 마음을 혼자 정리해 왔다고 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('B 측 제출 또는 A 발견 사본 제출.') },
-        { id: 'verifying', summary: ko('보험사 원본 견적서 대조.') },
-        { id: 'authenticated', summary: ko('상담일·상담 항목·미가입 사실 확인.') },
-        { id: 'challenged', summary: ko('A가 수익자 의심을 제기 / B가 의학 영역 대비라고 주장.') },
-        { id: 'misread', summary: ko('상담 사실은 인증되지만 진짜 의도는 심문과 맥락으로 확정.') },
+        { id: 'submitted', summary: ko('A가 B 책상/차량/소지품에서 발견하여 제출.') },
+        { id: 'verifying', summary: ko('자가진단지 발급처·상담소 원본 명세 대조.') },
+        { id: 'authenticated', summary: ko('예약 명세의 명의·날짜가 e-8 산부인과 방문 시기와 정합.') },
+        { id: 'challenged', summary: ko('A가 타인 정서 케어(내연녀) 의심을 제기 / B가 본인 명의·본인 필기임을 근거로 본인 일이라고 주장.') },
+        { id: 'misread', summary: ko('명의·서류 자체는 인증되지만 진짜 동기는 심문과 맥락으로 확정.') },
       ],
       narrativeTriggers: e9NarrativeTriggers,
     },
@@ -2569,14 +2576,15 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     /* ============================================================
      * dossierCard dc-8 — 이준호의 또 다른 침묵 (Cycle 4 plot revision 신규)
      *
-     * e-8 (휴대폰 검색 기록) + e-9 (보험 상담 기록) 결합으로 부상.
-     * 외도 frame과 출산 조사 frame 두 해석 사이에서 진짜 목적(난임 치료비)을 가리키는 단서.
+     * e-8 (종합산부인과 주차 영수증) + e-9 (산전우울증 자가진단 결과지 + 상담소 예약 명세) 결합으로 부상.
+     * 외도 frame과 부모 될 준비 frame 두 해석 사이에서 진짜 목적(난임 치료비)을 가리키는 단서.
      * h-d4 발현 직전 단서. linkedParty: b.
+     * 2026-05-25 폴리싱: e-8/e-9 자료 본질 교체.
      * ============================================================ */
     {
       id: 'dc-8',
       label: ko('이준호의 또 다른 침묵'),
-      description: ko('형 사건과는 무관한 영역에서도 이준호가 혼자 무언가를 준비해 왔다는 단서. 외도 의심과 출산 조사 두 해석 사이.'),
+      description: ko('형 사건과는 무관한 곳에서도 이준호가 혼자 무언가를 준비해 왔다는 단서. 외도 의심과 부모 될 준비 두 해석 사이.'),
       type: 'derived_note',
       linkedDisputes: ['h-d4'],
       linkedParty: 'b',
@@ -2595,8 +2603,8 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           },
           {
             id: 'L-8-B',
-            text: ko('부부의 출산 영역을 혼자 알아본 흔적이다'),
-            implication: ko('진짜 목적이 형 사정과는 별개 영역임을 본다.'),
+            text: ko('부모 될 준비를 혼자 알아본 흔적이다'),
+            implication: ko('진짜 목적이 형 사정과는 별개 갈래임을 본다.'),
           },
           {
             id: 'L-8-C',
@@ -2606,7 +2614,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         ],
       },
       noteText: ko(
-        '휴대폰 의학 검색 기록과 보험사 견적 자료가 같은 시기, 같은 의료 영역에 모인다. 기존 사용처와는 결이 다르고, 보험 가입 흔적은 없다.',
+        '○○ 종합산부인과 주차 영수증과 본인 명의 산전우울증 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다.',
       ),
       successConditionSummary: [
         ko('e-8 Original 이상'),
@@ -2624,13 +2632,13 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           disputeUpgrade: { disputeId: 'h-d4', weight: 'high', ambiguity: 'low' },
         },
       ],
-      judgeHint: ko('휴대폰 의학 검색 기록과 보험사 견적 자료가 같은 시기, 같은 의료 영역으로 겹칩니다. 이 자료들이 기존 사용처와 분리된 준비였는지 확인하겠습니다.'),
+      judgeHint: ko('산부인과 주차 영수증과 본인 명의 산전우울증 자가진단·상담 예약 명세가 같은 시기로 겹칩니다. 이 자료들이 누구를 위한 준비였는지 확인하겠습니다.'),
       challenges: {
         b: {
           questions: [
             {
               id: 'dc-8.b.q1',
-              text: ko('이준호 씨, 아내에게 바로 말하지 않고 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?'),
+              text: ko('이준호 씨, 아내에게 바로 말하지 않고 부모 될 준비를 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?'),
               lockedHint: ko('e-8 + e-9 Original + B의 가족 사정 인정 후 등장.'),
               attackVector: 'responsibility',
               requiredLieState: 'S3',
@@ -2754,11 +2762,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     },
     {
       id: 'combine-7',
-      /** e-8 + e-9 → dc-8 ("이준호의 또 다른 침묵" — Cycle 4 plot revision). B 측 자료. */
+      /** e-8 + e-9 → dc-8 ("이준호의 또 다른 침묵" — Cycle 4 plot revision). B 측 자료.
+       *  2026-05-25 폴리싱: e-8(주차 영수증) + e-9(산전우울증 자가진단 + 상담 예약 명세)로 자료 본질 교체. */
       inputs: ['e-8', 'e-9'],
       cost: 2,
       outputId: 'dc-8',
-      discoveryText: ko('휴대폰의 산부인과·난임 검색 기록과 가입 없이 멈춘 보험 상담 견적이 같은 시기·같은 영역으로 모인다.'),
+      discoveryText: ko('산부인과 반복 방문 흔적과 본인 명의 산전우울증 자가진단·상담 예약 명세가 같은 시기, 같은 부모 될 준비 갈래로 모인다.'),
       route: 'evidence_combine',
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
@@ -2766,7 +2775,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         requiredTruthStage: { 'd-2': 5 },
         autoSurfaceAllowed: false,
       },
-      surfaceFallback: ko('B의 휴대폰 검색과 보험 상담 견적을 대조 중.'),
+      surfaceFallback: ko('B의 산부인과 방문 흔적과 본인 명의 정서 케어 자료를 대조 중.'),
     },
   ],
 
@@ -2851,7 +2860,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
     {
       action: ko('원본 제출 명령'),
       recommendedMoment: ko('h-d4 등장 직후 e-8 / e-9 Excerpt 시점'),
-      purpose: ko('휴대폰 검색 기록과 보험 상담 견적의 전체 영역을 확보.'),
+      purpose: ko('산부인과 주차 영수증과 산전우울증 자가진단·상담 예약 명세의 전체 자료를 확보.'),
       contextDispute: 'h-d4',
     },
     {

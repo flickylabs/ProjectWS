@@ -805,7 +805,8 @@ export const dc2NarrativeTriggers: NarrativeTriggerCandidate[] = [
 
 // ═════════════════════════════════════════════════════════════════════════════
 // Cycle 4 — h-d4 line (비자금의 원래 목적 = 박지연 난임 치료비) — 4 emergence
-// e-8 (휴대폰 의학 검색) / e-9 (보험사 견적) / dc-8 (이준호의 또 다른 침묵) / h-d4 (쟁점)
+// e-8 (종합산부인과 주차 영수증) / e-9 (산전우울증 자가진단 + 상담소 예약) / dc-8 (이준호의 또 다른 침묵) / h-d4 (쟁점)
+// 2026-05-25 폴리싱: e-8/e-9 자료 본질 교체 (휴대폰 검색 → 주차 영수증 / 보험 견적 → 자가진단·예약)
 //
 // Brief: docs/design/core-narrative-cycle4-spouse01-hd4-line-20260524/
 // 권위: [[design_spouse01_truth_disclosure_policy]] (박지연 난임/치료비 단어는 h-d4
@@ -821,7 +822,7 @@ export const dc2NarrativeTriggers: NarrativeTriggerCandidate[] = [
 // ═════════════════════════════════════════════════════════════════════════════
 
 // ─────────────────────────────────────────────────────────────────────────────
-// e-8 "이준호 휴대폰의 의학 검색 기록" (CoreEvidence) — 4 candidates
+// e-8 "종합산부인과병원 주차 영수증 묶음" (CoreEvidence) — 4 candidates
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const e8NarrativeTriggers: NarrativeTriggerCandidate[] = [
@@ -889,7 +890,7 @@ export const e8NarrativeTriggers: NarrativeTriggerCandidate[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// e-9 "이준호의 보험사 견적 자료 (가입 없음)" (CoreEvidence) — 4 candidates
+// e-9 "이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세" (CoreEvidence) — 4 candidates
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const e9NarrativeTriggers: NarrativeTriggerCandidate[] = [
