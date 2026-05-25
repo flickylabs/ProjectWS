@@ -1181,7 +1181,7 @@
               "leak": "No truth leak; repeat questioning should stall."
             },
             "successUnlocks": [
-              "stage 1 when e-2 or e-3 appears"
+              "stage 1 when e-2 appears or w-1 summoned"
             ],
             "failureResponse": {
               "npc": "A repeats that the will cannot be trusted; B says the mother had her own will.",
@@ -1233,8 +1233,7 @@
             "surfaceClaim": "시점 겹침 / 종이를 읽어드림",
             "hiddenTruth": "도움과 개입의 경계",
             "entryConditions": [
-              "e-3 stage >= Original",
-              "or witness w-1 summoned"
+              "witness w-1 summoned"
             ],
             "allowedDisclosure": [
               "종이를 읽어드림",

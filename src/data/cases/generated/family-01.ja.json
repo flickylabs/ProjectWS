@@ -873,187 +873,6 @@
       }
     },
     {
-      "id": "e-3",
-      "name": "元介護職員の音声証言",
-      "surfaceName": "元介護職員の音声証言",
-      "description": "「ジョンフさんが母君に紙をよく読み聞かせ、兄上が来る前に終えようと慎重にしていた」という証言。",
-      "surfaceDescription": "元介護職員の証言が存在します。",
-      "investigationResults": {
-        "request_original": "元介護職員は、ユン・ジョンフが母に紙を読み聞かせる様子を直接見たと陳述しました。",
-        "check_metadata": "証言者の勤務期間は、公証前に訪問が集中した時期と重なります。「兄上が来る前」という表現も確認されます。",
-        "restore_context": "読み聞かせた紙が遺言書だったのか、慎重な態度が保護だったのか排除だったのかは、他の記録と合わせて判断する必要があります。"
-      },
-      "investigationStages": [
-        {
-          "question": {
-            "text": "この証言の録音原本を確認してください。"
-          },
-          "label": "証言確認"
-        },
-        {
-          "question": {
-            "text": "証言者の勤務時期と公証日を照合してください。"
-          },
-          "label": "時点照合",
-          "unlockHint": "証言を確認すれば、勤務期間と訪問記録を合わせて照合できます。"
-        },
-        {
-          "question": {
-            "text": "紙を読み聞かせた行動の意味を明らかにしてください。"
-          },
-          "label": "意図追及",
-          "unlockHint": "時点を照合すれば、慎重な態度が保護だったのか排除だったのかを問うことができます。"
-        }
-      ],
-      "partyContext": {
-        "a": {
-          "questionAngle": "この証言は弟のどのような意図を示していると思いますか。",
-          "implication": "ユン・テソンは「兄上が来る前」という言葉を、排除の意図として受け取っています。"
-        },
-        "b": {
-          "questionAngle": "母に紙を読み聞かせた理由と、その場の雰囲気を説明してください。",
-          "implication": "ユン・ジョンフは、圧力と説明の違いを明らかにする必要があります。"
-        }
-      },
-      "v3DepthPlan": [
-        {
-          "id": "stub",
-          "summary": "証言録音がある事実だけが見えます。",
-          "label": "概要"
-        },
-        {
-          "id": "excerpt",
-          "summary": "紙を読み聞かせたという核心文だけが見えます。",
-          "label": "抜粋"
-        },
-        {
-          "id": "original",
-          "summary": "証言者の身元、勤務期間、全体陳述を確認します。",
-          "label": "原本"
-        },
-        {
-          "id": "context",
-          "summary": "訪問記録と公証日を照合し、発言の文脈を復元します。",
-          "label": "文脈"
-        },
-        {
-          "id": "established",
-          "summary": "目撃事実は認め、意図は他の証拠と合わせて判断します。",
-          "label": "確定"
-        }
-      ],
-      "v3TrustStates": [
-        {
-          "id": "submitted",
-          "label": "提出済み",
-          "summary": "元介護職員の陳述が提出されました。"
-        },
-        {
-          "id": "verifying",
-          "label": "検証中",
-          "summary": "勤務記録と録音ファイルの日付を照合します。"
-        },
-        {
-          "id": "authenticated",
-          "label": "認証済み",
-          "summary": "該当期間の勤務事実と直接目撃の有無が確認されました。"
-        },
-        {
-          "id": "challenged",
-          "label": "異議あり",
-          "summary": "ユン・テソンとユン・ジョンフは「慎重さ」の意味を異なって解釈しています。"
-        },
-        {
-          "id": "misread",
-          "label": "操作／誤読判定",
-          "summary": "証言は直接目撃に基づきますが、意図を断定するには限界があります。"
-        }
-      ],
-      "meta": {
-        "name": "元介護職員の音声証言",
-        "trustLabel": "普通",
-        "sourceLabel": "証人",
-        "legalLabel": "適法",
-        "stageLabel": "初期開示"
-      },
-      "viewerData": {
-        "meta": {
-          "name": "元介護職員の音声証言",
-          "trustLabel": "普通",
-          "sourceLabel": "証人",
-          "legalLabel": "適法",
-          "stageLabel": "3段階 — 全体開示"
-        },
-        "testimony": {
-          "witnessName": "チェ・ボクスン",
-          "witnessDesc": "元担当介護職員（2024.03〜2025.10.14勤務）",
-          "quote": "ジョンフさんは母君に紙をよく読み聞かせていました。内容ははっきり聞こえませんでしたが、兄上が来る前には終えようと慎重にしていました。母君がつらそうにするとやめようと言い、母君が先に尋ねるとその時はさらに説明していました。ですが私は10月に突然交代になりました。理由は聞いていません。",
-          "confidenceLabel": "普通",
-          "biasLabel": "中立",
-          "relatedRef": "介護職員交代 2025.10.14／公証 2025.11.05"
-        }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "元介護職員の音声証言",
-            "trustLabel": "普通",
-            "sourceLabel": "証人",
-            "legalLabel": "適法",
-            "stageLabel": "1段階 — 目撃要旨のみ",
-            "redactions": [
-              "証人の実名",
-              "正確な勤務期間"
-            ]
-          },
-          "testimony": {
-            "witnessDesc": "元担当介護職員",
-            "quote": "次男の方が母君に紙を読み聞かせる姿を何度も見ました。",
-            "confidenceLabel": "普通",
-            "biasLabel": "中立",
-            "relatedRef": "公証前後の勤務者"
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "元介護職員の音声証言",
-            "trustLabel": "普通",
-            "sourceLabel": "証人",
-            "legalLabel": "適法",
-            "stageLabel": "2段階 — 勤務期間と核心発言",
-            "redactions": [
-              "証人名の一部"
-            ]
-          },
-          "testimony": {
-            "witnessName": "チェ氏",
-            "witnessDesc": "元担当介護職員（2024.03〜2025.10勤務）",
-            "quote": "ジョンフさんは母君に紙をよく読み聞かせていました。兄上が来る前には終えようと慎重にしていました。",
-            "confidenceLabel": "普通",
-            "biasLabel": "中立",
-            "relatedRef": "介護職員交代時点と公証前の集中訪問時期"
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "元介護職員の音声証言",
-            "trustLabel": "普通",
-            "sourceLabel": "証人",
-            "legalLabel": "適法",
-            "stageLabel": "3段階 — 全録音要約"
-          },
-          "testimony": {
-            "witnessName": "チェ・ボクスン",
-            "witnessDesc": "元担当介護職員（2024.03〜2025.10.14勤務）",
-            "quote": "ジョンフさんは母君に紙をよく読み聞かせていました。内容ははっきり聞こえませんでしたが、兄上が来る前には終えようと慎重にしていました。母君がつらそうにするとやめようと言い、母君が先に尋ねるとその時はさらに説明していました。ですが私は10月に突然交代になりました。理由は聞いていません。",
-            "confidenceLabel": "普通",
-            "biasLabel": "中立",
-            "relatedRef": "介護職員交代 2025.10.14／公証 2025.11.05"
-          }
-        }
-      }
-    },
-    {
       "id": "e-4",
       "name": "公証人のメモ記録",
       "surfaceName": "公証人のメモ記録",
@@ -2134,10 +1953,6 @@
         "label": "e-2 介護施設の訪問記録"
       },
       {
-        "id": "e-3",
-        "label": "e-3 元介護職員の音声証言"
-      },
-      {
         "id": "e-4",
         "label": "e-4 公証人のメモ記録"
       },
@@ -2456,7 +2271,7 @@
     "authorityPlacements": [
       {
         "action": "原本提出命令",
-        "recommendedMoment": "d-1序盤 e-1/e-3 Excerpt時点",
+        "recommendedMoment": "d-1序盤 e-1/e-2 Excerpt時点",
         "purpose": "遺言書コピーと介護職員証言の原本確保"
       },
       {

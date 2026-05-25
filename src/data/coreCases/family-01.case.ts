@@ -265,7 +265,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
         minLieState: 'S1',
         allowedChannels: ['evidence_present', 'dossier'],
       },
-      sourceFacts: ['e-2_visits', 'e-3_caregiver'],
+      sourceFacts: ['e-2_visits', 'w-1_caregiver_observation'],
     },
     {
       stage: 3,
@@ -2269,7 +2269,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       },
       noteText: ko('방문 급증 + 종이를 읽어드린 정황 + 형 오기 전 발화가 한 흐름으로 모여 도움과 개입의 경계가 드러난다.'),
       successConditionSummary: [
-        ko('e-2와 e-3이 Original 이상'),
+        ko('e-2가 Original 이상이고 w-1 증인 출석 완료'),
         ko('윤정후가 d-1에서 S2 이상으로 진입'),
       ],
       successEffects: [

@@ -863,182 +863,6 @@
       }
     },
     {
-      "id": "e-3",
-      "name": "Former Caregiver Audio Testimony",
-      "surfaceName": "Former Caregiver Audio Testimony",
-      "description": "Testimony that “Mr. Jeong-hu often read papers aloud to the mother and was careful to finish before the older brother arrived.”",
-      "surfaceDescription": "Testimony from the former caregiver exists.",
-      "investigationResults": {
-        "request_original": "The former caregiver stated that she directly saw Yoon Jeong-hu reading papers aloud to the mother.",
-        "check_metadata": "The witness's work period overlaps with the concentrated visits before notarization. The phrase “before the older brother arrives” is also confirmed.",
-        "restore_context": "Whether the paper he read was the will, and whether his cautious attitude was protection or exclusion, must be judged with other records."
-      },
-      "investigationStages": [
-        {
-          "question": {
-            "text": "Please check the original recording of this testimony."
-          },
-          "label": "Testimony Check"
-        },
-        {
-          "question": {
-            "text": "Please align the witness's work period with the notarization date."
-          },
-          "label": "Timing Cross-Check",
-          "unlockHint": "Once the testimony is checked, you can compare the work period with the visit logs."
-        },
-        {
-          "question": {
-            "text": "Please determine what it meant to read the paper aloud."
-          },
-          "label": "Press on Intent",
-          "unlockHint": "By comparing the timing, you can ask whether the cautious attitude was protection or exclusion."
-        }
-      ],
-      "partyContext": {
-        "a": {
-          "questionAngle": "What intent of your younger brother do you think this testimony shows?",
-          "implication": "Yoon Tae-seong takes “before the older brother arrives” as an intent to exclude him."
-        },
-        "b": {
-          "questionAngle": "Please explain why you read the paper aloud to your mother and what the atmosphere was like.",
-          "implication": "Yoon Jeong-hu must clarify the difference between pressure and explanation."
-        }
-      },
-      "v3DepthPlan": [
-        {
-          "id": "stub",
-          "summary": "Only the existence of a testimony recording is visible."
-        },
-        {
-          "id": "excerpt",
-          "summary": "Only the key statement that he read the paper aloud is visible."
-        },
-        {
-          "id": "original",
-          "summary": "Confirm the witness's identity, work period, and full statement."
-        },
-        {
-          "id": "context",
-          "summary": "Compare the visit logs with the notarization date to reconstruct the context of the statement."
-        },
-        {
-          "id": "established",
-          "summary": "Acknowledge the witnessed fact, and judge intent together with other evidence."
-        }
-      ],
-      "v3TrustStates": [
-        {
-          "id": "submitted",
-          "label": "Submitted",
-          "summary": "The former caregiver's statement was submitted."
-        },
-        {
-          "id": "verifying",
-          "label": "Verifying",
-          "summary": "Compare the work records with the date of the recording file."
-        },
-        {
-          "id": "authenticated",
-          "label": "Authenticated",
-          "summary": "Her work during the relevant period and direct observation have been confirmed."
-        },
-        {
-          "id": "challenged",
-          "label": "Challenged",
-          "summary": "Yoon Tae-seong and Yoon Jeong-hu interpret the meaning of “caution” differently."
-        },
-        {
-          "id": "misread",
-          "label": "Manipulation/Misread Determination",
-          "summary": "The testimony is based on direct observation, but it has limits for determining intent."
-        }
-      ],
-      "meta": {
-        "name": "Former Caregiver Audio Testimony",
-        "trustLabel": "Medium",
-        "sourceLabel": "Witness",
-        "legalLabel": "Legal",
-        "stageLabel": "Initially Revealed"
-      },
-      "viewerData": {
-        "meta": {
-          "name": "Former Caregiver Audio Testimony",
-          "trustLabel": "Medium",
-          "sourceLabel": "Witness",
-          "legalLabel": "Legal",
-          "stageLabel": "Stage 3 — Full Reveal"
-        },
-        "testimony": {
-          "witnessName": "Choi Bok-sun",
-          "witnessDesc": "Former caregiver in charge (worked 2024.03–2025.10.14)",
-          "quote": "Mr. Jeong-hu often read papers aloud to his mother. I couldn't clearly hear the contents, but he was careful and said they should finish before his older brother came. When his mother looked tired, he said they should stop; when she asked first, he explained more. But I was suddenly replaced in October. I was never told why.",
-          "confidenceLabel": "Medium",
-          "biasLabel": "Neutral",
-          "relatedRef": "Caregiver change 2025.10.14 / Notarization 2025.11.05"
-        }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "Former Caregiver Audio Testimony",
-            "trustLabel": "Medium",
-            "sourceLabel": "Witness",
-            "legalLabel": "Legal",
-            "stageLabel": "Stage 1 — Witnessed Gist Only",
-            "redactions": [
-              "Witness real name",
-              "Exact work period"
-            ]
-          },
-          "testimony": {
-            "witnessDesc": "Former Caregiver in Charge",
-            "quote": "I saw the younger son reading papers aloud to his mother several times.",
-            "confidenceLabel": "Medium",
-            "biasLabel": "Neutral",
-            "relatedRef": "Staff around the notarization period"
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "Former Caregiver Audio Testimony",
-            "trustLabel": "Medium",
-            "sourceLabel": "Witness",
-            "legalLabel": "Legal",
-            "stageLabel": "Stage 2 — Work Period and Key Statement",
-            "redactions": [
-              "Partial witness name"
-            ]
-          },
-          "testimony": {
-            "witnessName": "Ms. Choi",
-            "witnessDesc": "Former caregiver in charge (worked 2024.03–2025.10)",
-            "quote": "Mr. Jeong-hu often read papers aloud to his mother. He was careful and said they should finish before his older brother came.",
-            "confidenceLabel": "Medium",
-            "biasLabel": "Neutral",
-            "relatedRef": "Caregiver change timing and concentrated visit period before notarization"
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "Former Caregiver Audio Testimony",
-            "trustLabel": "Medium",
-            "sourceLabel": "Witness",
-            "legalLabel": "Legal",
-            "stageLabel": "Stage 3 — Full Recording Summary"
-          },
-          "testimony": {
-            "witnessName": "Choi Bok-sun",
-            "witnessDesc": "Former caregiver in charge (worked 2024.03–2025.10.14)",
-            "quote": "Mr. Jeong-hu often read papers aloud to his mother. I couldn't clearly hear the contents, but he was careful and said they should finish before his older brother came. When his mother looked tired, he said they should stop; when she asked first, he explained more. But I was suddenly replaced in October. I was never told why.",
-            "confidenceLabel": "Medium",
-            "biasLabel": "Neutral",
-            "relatedRef": "Caregiver change 2025.10.14 / Notarization 2025.11.05"
-          }
-        }
-      }
-    },
-    {
       "id": "e-4",
       "name": "Notary's Memo Notes",
       "surfaceName": "Notary's Memo Notes",
@@ -2056,10 +1880,6 @@
         "label": "e-2 Care Home Visit Logs"
       },
       {
-        "id": "e-3",
-        "label": "e-3 Former Caregiver Audio Testimony"
-      },
-      {
         "id": "e-4",
         "label": "e-4 Notary's Memo Notes"
       },
@@ -2373,7 +2193,7 @@
     "authorityPlacements": [
       {
         "action": "Order to Submit Originals",
-        "recommendedMoment": "d-1 early, e-1/e-3 Excerpt point",
+        "recommendedMoment": "d-1 early, e-1/e-2 Excerpt point",
         "purpose": "Secure originals of the will copy and caregiver testimony"
       },
       {

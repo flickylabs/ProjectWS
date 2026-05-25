@@ -863,182 +863,6 @@
       }
     },
     {
-      "id": "e-3",
-      "name": "前护理员语音证言",
-      "surfaceName": "前护理员语音证言",
-      "description": "证言称：“正厚先生经常给母亲读纸张，并小心地说要在哥哥来之前结束。”",
-      "surfaceDescription": "存在前护理员的证言。",
-      "investigationResults": {
-        "request_original": "前护理员陈述称，亲眼看到尹正厚给母亲读纸张。",
-        "check_metadata": "证人的工作期间与公证前探访集中的时期重合。“哥哥来之前”这一表达也得到确认。",
-        "restore_context": "他读的纸张是否是遗嘱，以及小心态度究竟是保护还是排除，都必须结合其他记录判断。"
-      },
-      "investigationStages": [
-        {
-          "question": {
-            "text": "请确认这份证言的录音原件。"
-          },
-          "label": "证言确认"
-        },
-        {
-          "question": {
-            "text": "请对照证人的工作时期与公证日期。"
-          },
-          "label": "时间点对照",
-          "unlockHint": "确认该证言后，可以将工作期间与探访记录一并对照。"
-        },
-        {
-          "question": {
-            "text": "请查明读纸张这一行为的含义。"
-          },
-          "label": "追问意图",
-          "unlockHint": "对照时间点后，可以询问这种谨慎态度究竟是保护还是排除。"
-        }
-      ],
-      "partyContext": {
-        "a": {
-          "questionAngle": "您认为这份证言显示了弟弟的什么意图？",
-          "implication": "尹泰成把“哥哥来之前”理解为排除自己的意图。"
-        },
-        "b": {
-          "questionAngle": "请说明您给母亲读纸张的理由以及当时的气氛。",
-          "implication": "尹正厚必须说明施压与解释之间的区别。"
-        }
-      },
-      "v3DepthPlan": [
-        {
-          "id": "stub",
-          "summary": "只能看到存在证言录音这一事实。"
-        },
-        {
-          "id": "excerpt",
-          "summary": "只能看到“读纸张给她听”这一核心句子。"
-        },
-        {
-          "id": "original",
-          "summary": "确认证人身份、工作期间和完整陈述。"
-        },
-        {
-          "id": "context",
-          "summary": "对照探访记录与公证日期，复原发言语境。"
-        },
-        {
-          "id": "established",
-          "summary": "承认目击事实，意图则结合其他证据判断。"
-        }
-      ],
-      "v3TrustStates": [
-        {
-          "id": "submitted",
-          "label": "已提交",
-          "summary": "已提交前护理员陈述。"
-        },
-        {
-          "id": "verifying",
-          "label": "验证中",
-          "summary": "将工作记录与录音文件日期对照。"
-        },
-        {
-          "id": "authenticated",
-          "label": "已认证",
-          "summary": "已确认其在相关期间工作以及是否直接目击。"
-        },
-        {
-          "id": "challenged",
-          "label": "已提出异议",
-          "summary": "尹泰成和尹正厚对“小心谨慎”的含义有不同解释。"
-        },
-        {
-          "id": "misread",
-          "label": "操纵/误读判定",
-          "summary": "证言基于直接目击，但在断定义图上存在限制。"
-        }
-      ],
-      "meta": {
-        "name": "前护理员语音证言",
-        "trustLabel": "普通",
-        "sourceLabel": "证人",
-        "legalLabel": "合法",
-        "stageLabel": "初期公开"
-      },
-      "viewerData": {
-        "meta": {
-          "name": "前护理员语音证言",
-          "trustLabel": "普通",
-          "sourceLabel": "证人",
-          "legalLabel": "合法",
-          "stageLabel": "第3阶段 — 全部公开"
-        },
-        "testimony": {
-          "witnessName": "崔福顺",
-          "witnessDesc": "前负责护理员（2024.03–2025.10.14任职）",
-          "quote": "正厚先生经常给母亲读纸张。内容我没听清，但他很小心，说要在哥哥来之前结束。母亲觉得累时，他就说先停下；如果母亲先问，他就再解释。可是我在10月突然被换掉了，没听说原因。",
-          "confidenceLabel": "普通",
-          "biasLabel": "中立",
-          "relatedRef": "护理员更换 2025.10.14 / 公证 2025.11.05"
-        }
-      },
-      "viewerDataByStage": {
-        "1": {
-          "meta": {
-            "name": "前护理员语音证言",
-            "trustLabel": "普通",
-            "sourceLabel": "证人",
-            "legalLabel": "合法",
-            "stageLabel": "第1阶段 — 仅目击要点",
-            "redactions": [
-              "证人实名",
-              "准确工作期间"
-            ]
-          },
-          "testimony": {
-            "witnessDesc": "前负责护理员",
-            "quote": "我多次看到小儿子给母亲读纸张。",
-            "confidenceLabel": "普通",
-            "biasLabel": "中立",
-            "relatedRef": "公证前后工作人员"
-          }
-        },
-        "2": {
-          "meta": {
-            "name": "前护理员语音证言",
-            "trustLabel": "普通",
-            "sourceLabel": "证人",
-            "legalLabel": "合法",
-            "stageLabel": "第2阶段 — 工作期间与核心发言",
-            "redactions": [
-              "证人姓名部分"
-            ]
-          },
-          "testimony": {
-            "witnessName": "崔女士",
-            "witnessDesc": "前负责护理员（2024.03–2025.10任职）",
-            "quote": "正厚先生经常给母亲读纸张。他很小心，说要在哥哥来之前结束。",
-            "confidenceLabel": "普通",
-            "biasLabel": "中立",
-            "relatedRef": "护理员更换时间点与公证前集中探访时期"
-          }
-        },
-        "3": {
-          "meta": {
-            "name": "前护理员语音证言",
-            "trustLabel": "普通",
-            "sourceLabel": "证人",
-            "legalLabel": "合法",
-            "stageLabel": "第3阶段 — 完整录音摘要"
-          },
-          "testimony": {
-            "witnessName": "崔福顺",
-            "witnessDesc": "前负责护理员（2024.03–2025.10.14任职）",
-            "quote": "正厚先生经常给母亲读纸张。内容我没听清，但他很小心，说要在哥哥来之前结束。母亲觉得累时，他就说先停下；如果母亲先问，他就再解释。可是我在10月突然被换掉了，没听说原因。",
-            "confidenceLabel": "普通",
-            "biasLabel": "中立",
-            "relatedRef": "护理员更换 2025.10.14 / 公证 2025.11.05"
-          }
-        }
-      }
-    },
-    {
       "id": "e-4",
       "name": "公证人备忘记录",
       "surfaceName": "公证人备忘记录",
@@ -2056,10 +1880,6 @@
         "label": "e-2 疗养院探访记录"
       },
       {
-        "id": "e-3",
-        "label": "e-3 前护理员语音证言"
-      },
-      {
         "id": "e-4",
         "label": "e-4 公证人备忘记录"
       },
@@ -2373,7 +2193,7 @@
     "authorityPlacements": [
       {
         "action": "命令提交原件",
-        "recommendedMoment": "d-1前期 e-1/e-3 Excerpt时间点",
+        "recommendedMoment": "d-1前期 e-1/e-2 Excerpt时间点",
         "purpose": "取得遗嘱副本和护理员证言的原件"
       },
       {

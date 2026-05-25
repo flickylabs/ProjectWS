@@ -15,7 +15,7 @@
       "subjectParty": "b",
       "leadId": "L-1",
       "successConditionSummary": [
-        "e-2와 e-3이 Original 이상",
+        "e-2가 Original 이상이고 w-1 증인 출석 완료",
         "윤정후가 d-1에서 S2 이상으로 진입"
       ],
       "successEffects": [
