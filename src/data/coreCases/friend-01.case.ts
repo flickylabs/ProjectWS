@@ -1847,7 +1847,9 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       id: 'e-1',
       name: ko('최수민→예비신랑 연락 기록'),
       surfaceName: ko('예비신랑 연락 기록'),
-      description: ko('최근 9일 동안 최수민이 예비신랑 김태윤에게 전화와 문자를 반복한 기록.'),
+      /* 2026-05-26 폴리싱: 본 자료는 예비신랑 김태윤 휴대폰 영역의 송수신 흐름.
+       * 김태윤이 송다은에게 자기 휴대폰 메시지·통화 기록을 캡처로 보여준 후 송다은이 정리·제출하는 frame. */
+      description: ko('최근 9일 동안 최수민이 예비신랑 김태윤에게 전화와 문자를 반복한 기록. 김태윤 휴대폰 영역의 송수신 흐름을 김태윤이 송다은에게 캡처로 보여준 후 송다은이 본 법정에 정리하여 제출.'),
       surfaceDescription: ko('최근 며칠 동안 이어진 전화와 문자 기록.'),
       type: 'log',
       reliability: 'hard',
@@ -1876,7 +1878,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         { id: 'established', summary: ko('연락 의도를 경고 가능성까지 놓고 판단할 수 있다.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('송다은이 캡처 제출.') },
+        { id: 'submitted', summary: ko('예비신랑 김태윤이 본인 휴대폰 자료를 송다은에게 캡처로 보여준 후, 송다은이 본 법정에 정리하여 제출.') },
         { id: 'verifying', summary: ko('원본 통화기록 대조 중.') },
         { id: 'authenticated', summary: ko('통신사 기록과 일치 확인.') },
         { id: 'challenged', summary: ko('최수민이 연락 의도에 대해 이의 제기.') },
@@ -2039,7 +2041,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         { id: 'established', summary: ko('송다은 아버지가 결혼 자금 시도를 했고 그로 인해 최수민이 결혼 위기를 막으려 직접 연락한 것임이 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('최수민 또는 박준혁이 단톡 캡처 + 메시지 원본 제출.') },
+        { id: 'submitted', summary: ko('박준혁(w-2)이 회사 동료로서 본인 휴대폰의 회사 단톡 캡처를 제공하고, 최수민이 본인 휴대폰의 9일간 메시지 원본을 제출하여 본 법정에서 종합.') },
         { id: 'verifying', summary: ko('단톡 발화 시각 + 메신저 원본 대조.') },
         { id: 'authenticated', summary: ko('발화자 + 시각 모두 일치.') },
         { id: 'challenged', summary: ko('송다은이 단톡 발화는 농담 frame을 주장.') },
@@ -2145,7 +2147,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         { id: 'established', summary: ko('송다은 아버지의 돈 접근 패턴이 반복되며 최수민이 이번에도 혼자 막으려 했다고 공식기록 채택.') },
       ],
       trustStates: [
-        { id: 'submitted', summary: ko('재판관 측 정리 또는 최수민 제출.') },
+        { id: 'submitted', summary: ko('본 법정이 e-4 + e-5 + e-6 자료의 시점·문구를 종합 정리한 권위 자료.') },
         { id: 'verifying', summary: ko('과거·현재 문구 정렬 + 시간 흐름 검증.') },
         { id: 'authenticated', summary: ko('두 시점 문구 + 시점 모두 일치.') },
         { id: 'challenged', summary: ko('송다은이 우연한 유사 frame을 주장.') },
