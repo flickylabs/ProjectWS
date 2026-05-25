@@ -15,6 +15,7 @@ export interface CutsceneEvent {
     | 'contradiction_hit'
     | 'emotional_burst'
     | 'dispute_emergence'
+    | 'evidence_dispute_dual_emergence' // evidence + dispute 동시 등장 컷씬 (2026-05-25)
     | 'phase_transition'
     | 'verdict_gavel'
     | 'truth_reveal_trust'   // 신뢰 자백 (lieState S5 자연 도달)
@@ -39,6 +40,9 @@ export interface CutsceneEvent {
     witnessId?: string
     witnessName?: string
     witnessQuote?: string
+    // ── dual emergence payload (evidence + dispute 동시) ──
+    evidenceId?: string
+    evidenceName?: string
   }
 }
 
@@ -48,6 +52,8 @@ export const CUTSCENE_DURATION: Record<CutsceneEvent['type'], number> = {
   contradiction_hit: 3000,
   emotional_burst: 2000,
   dispute_emergence: 2000,
+  /** evidence + dispute 동시 등장 — 레터박스(0.4s) + evidence 카드 소극(1.4s) + dispute 카드 소극(1.4s) + 카메라 closure(0.8s) */
+  evidence_dispute_dual_emergence: 4000,
   phase_transition: 2000,
   verdict_gavel: 3000,
   truth_reveal_trust: 13000,    // wide → focus(0.7s) + typing + closure
@@ -129,6 +135,23 @@ export function shouldTriggerCutscene(
         type,
         data: {
           disputeName: data?.disputeName as string | undefined,
+        },
+      }
+      break
+    }
+
+    // evidence + dispute 동시 등장 (예: spouse-01 e-10 책 본체 + d-3 내연녀 임신 의심)
+    case 'evidence_dispute_dual_emergence': {
+      const type = 'evidence_dispute_dual_emergence' as const
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
+      result = {
+        type,
+        data: {
+          evidenceId: data?.evidenceId as string | undefined,
+          evidenceName: data?.evidenceName as string | undefined,
+          disputeId: data?.disputeId as string | undefined,
+          disputeName: data?.disputeName as string | undefined,
+          caseId: data?.caseId as string | undefined,
         },
       }
       break

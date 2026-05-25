@@ -217062,6 +217062,193 @@
               ]
             }
           ]
+        },
+        {
+          "key": "emerge-e-10",
+          "evidenceId": "e-10",
+          "variants": [
+            {
+              "id": "emerge-e10-via-cascade-judge-mention-v1",
+              "text": "앞서 확인된 [영수증 묶음]의 교보문고 결제 흔적에서, 동일 결제 건에 「예비 부모를 위한 마음 가이드」류 정서 도서 1권이 함께 찍혀 있음이 확인되었습니다. 본 법정은 그 도서 본체와 본인 필기 흔적을 자료로 확보하여 검토하겠습니다.",
+              "behaviorHint": "잠시 멈추고 좌석을 둘러본 뒤, 영수증과 책 본체를 나란히 들어 보인다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:cascade_mention",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "priorCard:e-1",
+                "vfx:cutscene_dual_emergence"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-a-react-v1",
+              "text": "예비 부모 책이라니요. 그럼 도대체 누구를… 누구를 위해 그런 책을 본 거죠.",
+              "behaviorHint": "어깨가 굳어지고, 책에서 시선을 떼지 못한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-b-response-v1",
+              "text": "그건… 제가 본 책이 맞습니다. 그 이상은 지금 자리에서 드리기 어렵습니다.",
+              "behaviorHint": "한 박자 늦게 답하고, 책 표지를 곁눈으로만 본다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:single",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:tense",
+                "continuity:response",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-judge-decree-v1",
+              "text": "본 법정에 [예비 부모 정서 도서 + 본인 필기 흔적]을 자료로 등재합니다. 동시에 [내연녀 임신 의심]을 본 사건의 신규 쟁점으로 정식 등록합니다.",
+              "behaviorHint": "책과 동시에 새 쟁점 카드를 한 번에 들어 보인다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "vfx:cutscene_dual_emergence"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "emerge-d-3",
+          "disputeId": "d-3",
+          "variants": [
+            {
+              "id": "emerge-d3-via-cascade-judge-decree-v1",
+              "text": "[내연녀 임신 의심]을 본 사건의 새 쟁점으로 채택합니다. 예비 부모 정서 도서·본인 필기·산부인과 동선이 같은 갈래로 모인 만큼, 본 쟁점의 실체를 단정 없이 검토하겠습니다.",
+              "behaviorHint": "쟁점 카드를 양손으로 들고 한 박자 두었다 자리에 놓는다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:d-3",
+                "priorCard:e-10"
+              ]
+            },
+            {
+              "id": "emerge-d3-via-cascade-a-react-v1",
+              "text": "이게 외도 아니라면, 그럼 정말 도대체 무엇 때문에 그 책을 보고 그 병원을 갔다는 거죠.",
+              "behaviorHint": "단정이 한 박자 흔들리고, 다음 말이 곧장 이어지지 못한다.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:d-3"
+              ]
+            }
+          ]
         }
       ]
     }

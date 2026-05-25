@@ -1279,7 +1279,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       name: ko('비자금의 원래 목적'),
       truth: true,
       truthDescription: ko(
-        '이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다. d-1(오피스텔 방문)이 가족 돌봄 진실로 확정되면 외도 frame이 무너지고, h-d4 영역 자료들(산부인과 주차 영수증·산전우울증 자가진단)이 "그럼 도대체 왜 B가 임산부 관련 자료를?"이라는 의문으로 자연 frame 전환되어 부부 사이 난임 문제가 핵심으로 부각된다.',
+        '이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.',
       ),
       quadrant: 'b_only',
       weight: 'high',
@@ -1565,6 +1565,282 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       },
       narrativeTriggers: hd4NarrativeTriggers,
     },
+    /* ============================================================
+     * dispute d-3 — 내연녀 임신 의심 (2026-05-25 폴리싱 신규 misdirection 쟁점)
+     *
+     * e-10 (예비 부모 정서 도서 + B 본인 필기) emergence와 동시 등장 (cutscene_dual_emergence).
+     * 표면: 외도 의심 + 예비 부모 정서 도서 → 내연녀 임신 의심 비약
+     * 진실: 내연녀 없음. B 본인이 박지연 난임 진단 후 혼자 부모 될 마음을 정리한 흔적 (h-d4로 수렴)
+     * 책임 분담: A 80 / B 20 (A 단정 frame 책임 우위, B 침묵으로 오해 방치 일부 책임)
+     *
+     * misdirection 쟁점: d-1(가족 돌봄 진실) 또는 h-d4(난임 치료비 진실) 확정으로 자연 무너짐.
+     *   → d-3 verdict=wrong + h-d4 verdict=truth가 짝지어진다.
+     *
+     * 본 commit에서는 truthStages를 S0/S2/S5 3단계로 짧게 작성 (4언어 forbiddenKeywords는 Codex 의뢰).
+     * ============================================================ */
+    {
+      id: 'd-3',
+      name: ko('내연녀 임신 의심'),
+      truth: false,
+      truthDescription: ko(
+        '내연녀가 존재하지 않으며 임신도 사실이 아니다. e-10 예비 부모 정서 도서와 e-8/e-9 산부인과 자료들은 모두 이준호 본인이 박지연 난임 진단 후 아내에게 부담을 주지 않으려 혼자 부모 될 마음을 정리하던 흔적이다. 본 misdirection 쟁점은 d-1(가족 돌봄) 또는 h-d4(난임 치료비) 진실 확정 시 자연 무너진다.',
+      ),
+      quadrant: 'a_only',
+      weight: 'high',
+      ambiguity: 'high',
+      legitimacyIssue: false,
+      hidden: false,
+      v3Visibility: 'hidden',
+      correctResponsibility: { a: 80, b: 20 },
+      mediationLink: '외도 의심의 확장 — 임신 frame',
+      requiredEvidence: ['e-10'],
+      judgmentStatement: ko('내연녀 임신 의심은 사실이 아니다. 본 dispute는 misdirection이며 e-10은 B 본인이 부모 될 준비를 혼자 알아본 흔적이다.'),
+      unlockCondition: {
+        requireDispute: { id: 'd-1', minState: 'S2' },
+        runtimeRule: ko('e-1 original 도달 + d-1 S2+ 시점에서 e-10 emergence와 동시 발현'),
+        authoredRule: ko('e-1 영수증 묶음의 교보문고 결제 흔적이 책 본체(e-10)로 emergence하면서 동시에 본 misdirection 쟁점도 정식 등장. 컷씬급 dual emergence VFX.'),
+      },
+      verdictOptions: {
+        wrong: ko('내연녀가 임신했고 이준호가 그 사실을 알고 있었다.'),
+        partial: ko('내연녀의 존재 자체가 의심되지만 임신은 단정할 수 없다.'),
+        truth: ko('내연녀 임신은 사실이 아니다. 예비 부모 정서 도서는 이준호 본인이 부모 될 마음을 혼자 정리한 흔적이다.'),
+        defer: ko('현재로서는 실체를 단정할 수 없다. 판단을 유보한다.'),
+      },
+      lieConfig: {
+        a: {
+          lieType: 'LT-2',
+          lieIntensity: 'L2',
+          lieMotive: 'self_protection',
+          initialState: 'S0',
+          collapseViaTrust: false,
+        },
+        b: {
+          lieType: 'LT-6',
+          lieIntensity: 'L2',
+          lieMotive: 'partner_protection',
+          initialState: 'S0',
+          collapseViaTrust: true,
+        },
+      },
+      truthStages: {
+        S0: {
+          a: {
+            admittedFact: ko('남편 차에서 예비 부모 정서 도서가 나왔다. 내연녀가 임신했고 그래서 이런 책을 본 게 아니냐.'),
+            allowedKeywords: koKeywords('예비 부모 책', '내연녀 임신', '의심'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 내연녀 임신 단정 frame을 강하게 유지.'),
+            transitionTrigger: null,
+            transitionBeat: null,
+          },
+          b: {
+            admittedFact: ko('그건 오해다. 그런 일은 없다.'),
+            allowedKeywords: koKeywords('오해', '없다'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 부정으로 일관. 본인 동기는 회피.'),
+            transitionTrigger: null,
+            transitionBeat: null,
+          },
+        },
+        S1: {
+          a: {
+            admittedFact: ko('단정까지는 아니지만 그쪽 가능성이 가장 커 보인다.'),
+            allowedKeywords: koKeywords('가능성 큼'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 단정 톤을 미세하게 완화.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('박지연은 단정 어휘를 한 발만 누른다.'),
+              behaviorHint: ko('어깨가 굳는다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('그 책을 본 적은 있다. 자세한 사정은 말하기 어렵다.'),
+            allowedKeywords: koKeywords('본 적 있음', '말하기 어려움'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 책을 본 사실 부분 인정. 동기는 회피.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('이준호는 한 박자 늦게 "본 적은 있다"고 답한다.'),
+              behaviorHint: ko('답이 짧다.'),
+            },
+          },
+        },
+        S2: {
+          a: {
+            admittedFact: ko('내연녀 임신이라고 단정하기엔 입증이 부족하지만, 그렇다고 다른 설명도 잘 보이지 않는다.'),
+            allowedKeywords: koKeywords('단정 부족', '다른 설명 없음'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 단정에서 한 발 물러나 의심 톤으로 완화.'),
+            transitionTrigger: 'hard_evidence',
+            transitionBeat: {
+              line: ko('박지연은 "그럼 도대체 왜 이런 책을 봤느냐"고 묻는다.'),
+              behaviorHint: ko('책을 다시 한 번 들춰본다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('그 책은 본인이 보던 것이 맞다. 누구를 위해 봤는지는 말하기 어렵다.'),
+            allowedKeywords: koKeywords('본인이 봄', '말하기 어려움'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 본인 자료임은 인정하되 동기는 회피.'),
+            transitionTrigger: 'empathy',
+            transitionBeat: {
+              line: ko('이준호는 "내가 본 거 맞다"고 처음으로 인정한다.'),
+              behaviorHint: ko('숨을 한 박자 늦게 쉰다.'),
+            },
+          },
+        },
+        S3: {
+          a: {
+            admittedFact: ko('내연녀 임신 frame이 흔들린다. 다만 그럼 누구를 위한 자료인지가 분명치 않다.'),
+            allowedKeywords: koKeywords('frame 흔들림', '누구를 위함 불분명'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 misdirection frame에서 한 발 더 물러남.'),
+            transitionTrigger: 'empathy',
+            transitionBeat: {
+              line: ko('박지연은 "그럼 누구를 위해서…"라며 말을 흐린다.'),
+              behaviorHint: ko('숨을 짧게 들이마신다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('아내에게는 알리지 않은 채 알아본 자료가 맞다. 동기는 마지막에 말씀드리겠다.'),
+            allowedKeywords: koKeywords('아내에게 알리지 않음', '동기 마지막'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 침묵 동기 인정. 진실 핵심은 회피.'),
+            transitionTrigger: 'empathy',
+            transitionBeat: {
+              line: ko('이준호는 "아내 모르게 본 게 맞다"고 인정한다.'),
+              behaviorHint: ko('시선이 잠시 떨어진다.'),
+            },
+          },
+        },
+        S4: {
+          a: {
+            admittedFact: ko('내연녀 임신은 거의 아니라고 보인다. 본인의 단정 frame이 잘못이었을 가능성을 받아들인다.'),
+            allowedKeywords: koKeywords('내연녀 임신 거의 아님', '단정 frame 잘못'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 misdirection frame 거의 무너짐. 단정 책임 일부 인정.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('박지연은 "내가 잘못 본 거였을 수도…"라며 말끝을 흐린다.'),
+              behaviorHint: ko('손이 책 위에서 잠시 멈춘다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('이 자료들은 본인이 부모 될 가능성을 혼자 알아본 흔적이다. 다른 사람을 위한 것이 아니다.'),
+            allowedKeywords: koKeywords('본인 부모 될 가능성', '혼자 알아봄'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 misdirection 진실 거의 인정. 정확한 표현은 다음 단계.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('이준호는 처음으로 "혼자 알아봤다"고 분명히 말한다.'),
+              behaviorHint: ko('숨이 길어진다.'),
+            },
+          },
+        },
+        S5: {
+          a: {
+            admittedFact: ko('내연녀 임신 의심은 본인의 단정이었다. 남편이 본인을 위해 혼자 부모 될 준비를 알아본 흔적이었다는 점을 받아들인다.'),
+            allowedKeywords: koKeywords('단정의 책임', '본인 위한 흔적'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('A는 misdirection 단정 책임 완전 인정.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('박지연은 "내가 잘못 본 거였다"고 말한다.'),
+              behaviorHint: ko('손이 책 위에 길게 머문다.'),
+            },
+          },
+          b: {
+            admittedFact: ko('그 책은 본인이 박지연 모르게 부모 될 마음을 혼자 정리하려 산 책이다. 내연녀는 없고 임신도 사실이 아니다.'),
+            allowedKeywords: koKeywords('본인을 위한 책', '부모 될 마음 정리', '내연녀 없음'),
+            forbiddenKeywords: keywords([], [], [], []),
+            answerFrame: ko('B는 misdirection 진실 완전 인정. h-d4 진실로의 진입점.'),
+            transitionTrigger: 'direct',
+            transitionBeat: {
+              line: ko('이준호는 "그 책은 나 혼자 보려고 산 거였다"고 말한다.'),
+              behaviorHint: ko('시선이 처음으로 박지연을 향한다.'),
+            },
+          },
+        },
+      },
+      channelExposure: {
+        judge_question: { minLieState: 'S0', isSurfaceOnly: true, isDossierSurface: false },
+        judge_contradiction: { minLieState: 'S0', isSurfaceOnly: true, isDossierSurface: false },
+        judge_evidence_combo: { minLieState: 'S2', isSurfaceOnly: true, isDossierSurface: false },
+        judge_witness_summon: { minLieState: 'S2', isSurfaceOnly: true, isDossierSurface: false },
+        dossier: { minLieState: 'S2', isSurfaceOnly: false, isDossierSurface: true },
+        interrogation: { minLieState: 'S0', isSurfaceOnly: false, isDossierSurface: false },
+        contradiction_pursuit: { minLieState: 'S1', isSurfaceOnly: false, isDossierSurface: false },
+        evidence_present: { minLieState: 'S0', isSurfaceOnly: false, isDossierSurface: false },
+        mediation: { minLieState: 'S4', isSurfaceOnly: false, isDossierSurface: false },
+        aftermath: { minLieState: 'S5', isSurfaceOnly: false, isDossierSurface: false },
+        free_interrogation: { minLieState: 'S0', isSurfaceOnly: false, isDossierSurface: false },
+      },
+      progressionStages: {
+        S0: {
+          surfaceClaim: ko('내연녀 임신 단정 / B 부정'),
+          hiddenTruth: ko('내연녀 없음 + B 본인 정서 준비'),
+          validActions: ['fact_pursuit', 'motive_search'],
+          requiredEvidence: ['e-10'],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S1: {
+          surfaceClaim: ko('단정 완화 / B 책 본 사실 인정'),
+          hiddenTruth: ko('B 본인 정서 준비 동기'),
+          validActions: ['fact_pursuit', 'motive_search'],
+          requiredEvidence: ['e-10'],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S2: {
+          surfaceClaim: ko('내연녀 단정 부족 / B 자료 본인 것 인정'),
+          hiddenTruth: ko('B 본인 부모 될 준비 흔적'),
+          validActions: ['empathy_approach', 'motive_search'],
+          requiredEvidence: ['e-10'],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S3: {
+          surfaceClaim: ko('frame 흔들림 / B 침묵 동기 일부 인정'),
+          hiddenTruth: ko('B 본인이 알아본 자료'),
+          validActions: ['empathy_approach', 'motive_search'],
+          requiredEvidence: ['e-10'],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S4: {
+          surfaceClaim: ko('내연녀 임신 거의 아님 / B 본인 부모 될 가능성 인정'),
+          hiddenTruth: ko('정확한 표현 = 난임'),
+          validActions: ['empathy_approach'],
+          requiredEvidence: [],
+          requiredWitness: [],
+          successUnlocks: [],
+        },
+        S5: {
+          surfaceClaim: ko('내연녀 임신은 사실 아님 + B 본인 자료 인정'),
+          hiddenTruth: ko('—'),
+          validActions: ['fact_pursuit'],
+          requiredEvidence: [],
+          requiredWitness: [],
+          successUnlocks: ['h-d4'],
+        },
+      },
+      narrativeTriggers: [
+        {
+          id: 'd3-via-cascade-from-e10',
+          type: 'cascade_from_card',
+          preconditions: {
+            requirePriorCardFired: 'e-10',
+          },
+          scriptedRefs: [
+            'emerge-d3-via-cascade-judge-decree-v1',
+            'emerge-d3-via-cascade-a-react-v1',
+          ],
+          /** standard — cutscene은 e-10 trigger가 책임 (cutscene_dual_emergence로 한 번 발동). d-3 자체는 같은 cutscene 안에서 동시 surface. */
+          vfxProfile: 'standard',
+        },
+      ],
+    },
   ],
 
   /* ----- evidence (9개: e-1 ~ e-9, Cycle 4 e-8/e-9 신규) ----- */
@@ -1575,8 +1851,8 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       surfaceName: ko('영수증 묶음 5장'),
       /**
        * 2026-05-25 폴리싱: 교보문고 영수증 1건에 조카용 참고서와 「예비 부모를 위한 마음 가이드」(일반명)
-       *   1권이 동시 결제된 흔적 추가 → d-1 진실 확정 후 h-d4 영역의 두 번째 layer 단서로 재해석.
-       *   proves 다중 link (d-1 + h-d4)로 확장 — 동적 dispute frame 전환 메커니즘 1차 적용.
+       *   1권이 동시 결제된 흔적 추가 — 책 본체는 별도 evidence e-10으로 emergence.
+       *   원본 영수증 자체는 d-1만 입증 (영수증은 결제 사실만, 책의 의미는 e-10 자료가 입증).
        */
       description: ko(
         '남편의 차에서 발견한 영수증 목록이다. 영수증 내역 중 여성용 물품이 있어 아내의 의심이 시작됐다. 교보문고 영수증 1건에는 조카용 참고서와 함께 「예비 부모를 위한 마음 가이드」류의 정서 도서 1권이 같은 결제 건으로 찍혀 있다.',
@@ -1588,8 +1864,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       provenance: 'institutional',
       legitimacy: 'lawful',
       subjectParty: 'b',
-      /** 다중 link — d-1(외도 의심)이 1차 frame, d-1 진실 확정 후엔 교보문고 영수증의 예비 부모 정서 도서가 h-d4 2차 layer로 부상. */
-      proves: ['d-1', 'h-d4'],
+      proves: ['d-1'],
       isTrap: false,
       requires: [],
       partyContext: {
@@ -1599,7 +1874,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         },
         b: {
           questionAngle: ko('영수증 물품들은 누구를 위해 산 것인지'),
-          implication: ko('참고서·다이소 학용품이 조카 흔적의 결정적 단서. 같은 교보문고 영수증의 예비 부모 정서 도서는 B 본인이 부모 될 마음을 혼자 정리한 또 다른 layer.'),
+          implication: ko('참고서·다이소 학용품이 조카 흔적의 결정적 단서. 교보문고 영수증의 정서 도서 결제 흔적은 책 본체(e-10) emergence의 진입점.'),
         },
       },
       depthStages: [
@@ -1607,14 +1882,14 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'excerpt', summary: ko('편의점·뷰티 2장 (머리끈, 틴트)이 우선 보임.') },
         { id: 'original', summary: ko('5장 전체 (편의점 2 + 뷰티 1 + 다이소 1 + 교보문고 1) 확인 — 교보문고 영수증에는 조카용 참고서와 「예비 부모를 위한 마음 가이드」류 정서 도서 1권이 동시 결제됨.') },
         { id: 'context', summary: ko('e-2 정차 좌표와 e-3 통화 시각이 같은 날 겹침. 교보문고 결제 시각도 같은 동선 안.') },
-        { id: 'established', summary: ko('영수증 품목과 시간대가 조카 돌봄 정황과 부합. d-1 진실 확정 후엔 예비 부모 정서 도서가 h-d4 영역(B 혼자 부모 될 준비)으로 layer 전환.') },
+        { id: 'established', summary: ko('영수증 품목과 시간대가 조카 돌봄 정황과 부합. 교보문고 결제 흔적은 e-10 책 본체 emergence의 진입점.') },
       ],
       trustStates: [
         { id: 'submitted', summary: ko('A가 차에서 발견하여 제출.') },
         { id: 'verifying', summary: ko('원본 영수증 대조.') },
         { id: 'authenticated', summary: ko('카드앱 원본과 시각 일치.') },
         { id: 'challenged', summary: ko('품목만으로 외도 단정은 오독이라는 이의.') },
-        { id: 'misread', summary: ko('데이터는 인증되지만 외도 해석은 오독 가능 — 같은 영수증의 정서 도서가 두 번째 layer 단서.') },
+        { id: 'misread', summary: ko('데이터는 인증되지만 외도 해석은 오독 가능.') },
       ],
     },
     {
@@ -1977,7 +2252,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       partyContext: {
         a: {
           questionAngle: ko('남편 차에서 산부인과 주차 영수증이 반복적으로 나온 이유를 어떻게 보는지'),
-          implication: ko('d-1 외도 frame 유지 시 = 내연녀 동행 의심으로 frame 강화. d-1 진실 확정 후엔 = "그럼 도대체 왜?"라는 의문으로 frame 전환, 부부 사이 다른 사정(난임)으로 자연 수렴.'),
+          implication: ko('산부인과 반복 방문 = 외도 상대 동행 의심으로 frame 강화.'),
         },
         b: {
           questionAngle: ko('동행자 없이 본인 혼자 그 병원에 갔던 사실을 어떻게 설명할 것인지'),
@@ -2030,7 +2305,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       partyContext: {
         a: {
           questionAngle: ko('남편 명의 산전우울증 자가진단·상담 예약 자료가 누구를 위한 것이라고 보는지'),
-          implication: ko('d-1 외도 frame 유지 시 = 내연녀 임신·정서 위기 의심으로 frame 강화. d-1 진실 확정 후엔 = 본인 명의라는 점이 부각되어 "B 본인이 부모 될 마음 정리"라는 두 번째 layer로 frame 전환, e-1 교보문고 영수증의 예비 부모 정서 도서와 정합되며 부부 사이 난임 문제로 자연 수렴.'),
+          implication: ko('타인 정서 케어 = 내연녀 임신·정서 위기 의심으로 frame 강화.'),
         },
         b: {
           questionAngle: ko('이 자료가 본인 명의로 되어 있는 이유를 어떻게 설명할 것인지'),
@@ -2052,6 +2327,77 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'misread', summary: ko('명의·서류 자체는 인증되지만 진짜 동기는 심문과 맥락으로 확정.') },
       ],
       narrativeTriggers: e9NarrativeTriggers,
+    },
+    /* ============================================================
+     * evidence e-10 — B의 예비 부모 정서 도서 + 본인 필기 흔적 (2026-05-25 폴리싱 신규)
+     *
+     * e-1 영수증 묶음 안의 교보문고 영수증에 결제 흔적만 있던 도서가 책 본체로 정식 등장.
+     * d-3 misdirection 쟁점(내연녀 임신 의심)과 동시 emergence (cutscene_dual_emergence).
+     *
+     * 표면: 「예비 부모를 위한 마음 가이드」류 도서 + B 필기 → "B가 예비 아빠를 준비?" → 내연녀 임신 의심으로 비약
+     * 진실: B 본인이 박지연 난임 진단 후 혼자 부모 될 마음을 정리한 흔적 (h-d4 진실로 수렴)
+     * ============================================================ */
+    {
+      id: 'e-10',
+      name: ko('B의 예비 부모 정서 도서 + 본인 필기 흔적'),
+      surfaceName: ko('예비 부모 정서 도서'),
+      description: ko(
+        'e-1 교보문고 영수증의 결제 흔적이 단서가 되어 책 본체가 확보된 상태. 「예비 부모를 위한 마음 가이드」류 도서 1권에 B 본인 필체로 밑줄과 여백 메모가 일부 페이지에 남아 있다. 결제일·결제 매장이 e-1 영수증과 일치.',
+      ),
+      surfaceDescription: ko('B 책상/차량에서 확보된 예비 부모 정서 도서 (본인 필기 흔적 포함).'),
+      type: 'document',
+      reliability: 'hard',
+      completeness: 'original',
+      provenance: 'self_possessed',
+      legitimacy: 'lawful',
+      subjectParty: 'b',
+      /** d-3 (내연녀 임신 의심 misdirection) 1차 link + h-d4 (비자금 원래 목적 진실) 2차 link */
+      proves: ['d-3', 'h-d4'],
+      isTrap: false,
+      requires: ['e-1'],
+      requiredLieState: 'S0',
+      partyContext: {
+        a: {
+          questionAngle: ko('남편 차/책상에서 예비 부모 정서 도서가 나온 이유를 어떻게 보는지'),
+          implication: ko('예비 부모 정서 도서 = 누군가 임신했다는 의심으로 비약 (내연녀 임신 frame).'),
+        },
+        b: {
+          questionAngle: ko('이 책에 본인 필기가 있다는 사실을 어떻게 설명할 것인지'),
+          implication: ko('본인 필기 흔적 = B 본인이 진지하게 부모 될 마음을 정리한 증거.'),
+        },
+      },
+      depthStages: [
+        { id: 'stub', summary: ko('예비 부모 정서 도서 1권 존재 표시.') },
+        { id: 'excerpt', summary: ko('도서 제목·표지만 우선 보임 — 내연녀 임신 의심 frame 강화.') },
+        { id: 'original', summary: ko('도서 본문에 B 본인 필체로 밑줄·여백 메모가 남아 있는 페이지 확인 — 본인 정서 정리 흔적.') },
+        { id: 'context', summary: ko('결제일·매장이 e-1 교보문고 영수증과 일치하고, e-8 산부인과 방문 시기와도 정합.') },
+        { id: 'established', summary: ko('B가 본인을 위해 부모 될 마음을 정리한 자료임이 공식기록 채택.') },
+      ],
+      trustStates: [
+        { id: 'submitted', summary: ko('A가 B 책상/차량에서 발견하여 제출.') },
+        { id: 'verifying', summary: ko('도서 결제 흔적(e-1)과 필체 대조.') },
+        { id: 'authenticated', summary: ko('결제 흔적·필체·도서 페이지 모두 일치.') },
+        { id: 'challenged', summary: ko('A가 "누구를 위한 책이냐"고 의심 / B가 본인 필기를 근거로 본인 자료라고 주장.') },
+        { id: 'misread', summary: ko('도서·필체는 인증되지만 진짜 목적은 심문과 맥락으로 확정.') },
+      ],
+      narrativeTriggers: [
+        {
+          id: 'e10-via-cascade-from-e1',
+          type: 'cascade_from_card',
+          preconditions: {
+            requirePriorCardFired: 'e-1',
+            disputeLieState: { 'd-1': 'S2+' },
+          },
+          scriptedRefs: [
+            'emerge-e10-via-cascade-judge-mention-v1',
+            'emerge-e10-via-cascade-a-react-v1',
+            'emerge-e10-via-cascade-b-response-v1',
+            'emerge-e10-via-cascade-judge-decree-v1',
+          ],
+          /** 컷씬급 — e-10 + d-3 동시 emergence cutscene 한 번 발동. */
+          vfxProfile: 'cutscene_dual_emergence',
+        },
+      ],
     },
   ],
 
@@ -2622,7 +2968,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         ],
       },
       noteText: ko(
-        '○○ 종합산부인과 주차 영수증과 본인 명의 산전우울증 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다. d-1 외도 frame이 유지되는 동안엔 내연녀 임신 의심으로 읽히지만, d-1 진실(가족 돌봄)이 확정되면 frame이 자연 전환되어 부부 사이 다른 사정(난임)으로 수렴한다. 같은 시기 e-1 교보문고 영수증의 예비 부모 정서 도서가 이 layer와 정합.',
+        '○○ 종합산부인과 주차 영수증과 본인 명의 산전우울증 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다.',
       ),
       successConditionSummary: [
         ko('e-8 Original 이상'),

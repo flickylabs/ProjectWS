@@ -10,6 +10,7 @@ export type CutsceneType =
   | 'trust_peak'
   | 'truth_breakthrough'
   | 'dispute_emergence'
+  | 'evidence_dispute_dual_emergence'
   | 'phase_transition'
   | 'verdict_gavel'
   | 'truth_reveal_trust'
@@ -68,6 +69,7 @@ const MAJOR_CUTSCENES = new Set<CutsceneType>([
   'lie_collapse',
   'truth_breakthrough',
   'dispute_emergence',
+  'evidence_dispute_dual_emergence',
   'emotion_peak',
   'trust_peak',
   'verdict_gavel',

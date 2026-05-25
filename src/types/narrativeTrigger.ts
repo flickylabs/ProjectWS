@@ -90,7 +90,15 @@ export const NarrativeTriggerCandidateSchema = z.object({
   /** narrative 시퀀스의 ScriptedText id 배열. */
   scriptedRefs: z.array(z.string().min(1)).min(1),
   /** VFX 강도. 등재 시 컷씬/팝업 연출 프로필. */
-  vfxProfile: z.enum(['standard', 'emphasis']).default('standard').optional(),
+  /**
+   * VFX 강도 — 등재 시 컷씬/팝업 연출 프로필.
+   *
+   *  - 'standard' : 기본 popup/lightning (1초 내외)
+   *  - 'emphasis' : 강조 popup + 화면 살짝 어두워짐 (2~3초)
+   *  - 'cutscene_dual_emergence' : 컷씬급 (evidence + dispute 동시 emergence 전용).
+   *      화면 전환 레터박스 + 카메라 한 박자 지연 + 두 카드 동시 소극 (4~5초). MAJOR_CUTSCENES 큐.
+   */
+  vfxProfile: z.enum(['standard', 'emphasis', 'cutscene_dual_emergence']).default('standard').optional(),
 })
 export type NarrativeTriggerCandidate = z.infer<typeof NarrativeTriggerCandidateSchema>
 
@@ -121,7 +129,7 @@ export interface NarrativeTriggerFireResult {
   /** narrative 시퀀스 (재생 순서). */
   scriptedSequence: string[]
   /** VFX 프로필. */
-  vfxProfile: 'standard' | 'emphasis'
+  vfxProfile: 'standard' | 'emphasis' | 'cutscene_dual_emergence'
   /** 발동된 trigger 타입 (telemetry/observation 용). */
   triggerType: NarrativeTriggerType
 }

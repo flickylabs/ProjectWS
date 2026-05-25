@@ -33,6 +33,7 @@ import {
 } from './narrativeTriggerEngine'
 import { getEmergenceVariantById } from './scriptedTextLoader'
 import { localizeRuntimeText } from '../i18n/runtimeText'
+import { shouldTriggerCutscene, type CutsceneEvent } from './cutsceneTriggerEngine'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Snapshot builder
@@ -367,6 +368,39 @@ export function attemptFallbackForDispute(
     relatedDisputes: [ctx.disputeDef.id],
     ctx,
     mode: 'fallback',
+  })
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cutscene helpers (2026-05-25 — evidence + dispute dual emergence)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * fireResult.vfxProfile === 'cutscene_dual_emergence' 면 컷씬급 evidence+dispute
+ * 동시 등장 cutscene event를 빌드해서 반환. 호출자(hooks)가 triggerCutscene() 호출.
+ *
+ * 쿨다운 검사는 vfxHierarchyEngine.shouldPlayCutscene 내부에서 처리.
+ */
+export function maybeBuildDualEmergenceCutscene(
+  fireResult: NarrativeTriggerFireResult,
+  ctx: {
+    currentTurn: number
+    caseId?: string
+    evidenceId?: string
+    evidenceName?: string
+    disputeId?: string
+    disputeName?: string
+    phase?: string | null
+  },
+): CutsceneEvent | null {
+  if (fireResult.vfxProfile !== 'cutscene_dual_emergence') return null
+  return shouldTriggerCutscene('evidence_dispute_dual_emergence', ctx.currentTurn, {
+    caseId: ctx.caseId,
+    evidenceId: ctx.evidenceId,
+    evidenceName: ctx.evidenceName,
+    disputeId: ctx.disputeId,
+    disputeName: ctx.disputeName,
+    phase: ctx.phase,
   })
 }
 

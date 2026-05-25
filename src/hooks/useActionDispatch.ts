@@ -61,7 +61,7 @@ import type { BeatScriptV2 } from '../types'
 import { toTrustWindowBand as _toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
-import { attemptNarrativeForEvidence, buildActionContext } from '../engine/narrativeOrchestrator'
+import { attemptNarrativeForEvidence, buildActionContext, maybeBuildDualEmergenceCutscene } from '../engine/narrativeOrchestrator'
 import {
   attemptCoreNarrativeForWitness,
   attemptCoreNarrativeForDispute,
@@ -1096,6 +1096,22 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       if (attempt) {
         // fire 성공 — 마킹 후 등재 흐름 진행
         fresh.markNarrativeFired?.(def.id, attempt.triggerId)
+        // evidence + dispute dual emergence cutscene (2026-05-25)
+        //   vfxProfile === 'cutscene_dual_emergence' 인 trigger fire 시 컷씬급 발동.
+        //   dual 파트너 dispute는 evidence.proves 첫 번째 항목 (e-10 → d-3 등).
+        const dualDispute = def.proves?.[0]
+            ? fresh.caseData?.disputes?.find((d: UnsafeAny) => d.id === def.proves[0])
+            : undefined
+        const dualCutscene = maybeBuildDualEmergenceCutscene(attempt, {
+          currentTurn: state.turnCount,
+          caseId: state.caseData?.caseId,
+          evidenceId: def.id,
+          evidenceName: getEvidenceDisplayName(def, fresh.evidenceStates[def.id]),
+          disputeId: dualDispute?.id,
+          disputeName: dualDispute?.name,
+          phase: state.currentPhase,
+        })
+        if (dualCutscene) triggerCutscene(dualCutscene)
       }
       // attempt === undefined: narrativeTriggers 미정의 → legacy 즉시 등재 흐름
       const newDisplayName = getEvidenceDisplayName(def, fresh.evidenceStates[def.id])

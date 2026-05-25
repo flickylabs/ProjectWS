@@ -266,6 +266,7 @@ export type CutsceneSfxType =
   | 'contradiction_hit'
   | 'emotional_burst'
   | 'dispute_emergence'
+  | 'evidence_dispute_dual_emergence'
   | 'phase_transition'
   | 'verdict_gavel'
   | 'dramatic_reveal'
@@ -348,6 +349,20 @@ export function playCutsceneSfx(type: CutsceneSfxType) {
         playBassDrop(ctx, start, 98, 52, 0.45, 0.13)
         playElectricSnap(ctx, start + 0.16, 0.72)
         playSparkCluster(ctx, start + 0.27, [392, 523, 784, 1047], 0.042)
+      })
+      break
+    case 'evidence_dispute_dual_emergence':
+      // dispute_emergence보다 임팩트 강화 (한 박자 더 깊은 bass + reveal 두 번 + spark cluster 확장)
+      duckBgmForCourtBeat(1400, 0.04)
+      playFile('/sfx/tension.mp3', 0.36)
+      playFileDelayed('/sfx/reveal.mp3', 0.28, 280)
+      playFileDelayed('/sfx/reveal.mp3', 0.22, 1500)
+      withAudioContext((ctx) => {
+        const start = ctx.currentTime + 0.03
+        playBassDrop(ctx, start, 88, 44, 0.55, 0.18)
+        playElectricSnap(ctx, start + 0.18, 0.82)
+        playSparkCluster(ctx, start + 0.3, [392, 523, 659, 784, 1047], 0.05)
+        playSparkCluster(ctx, start + 1.55, [523, 659, 880, 1047, 1318], 0.045)
       })
       break
     case 'phase_transition':
