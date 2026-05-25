@@ -30,11 +30,14 @@ import {
   dc2NarrativeTriggers,
   dc3NarrativeTriggers,
   dc4NarrativeTriggers,
+  dc5NarrativeTriggers,
   d3NarrativeTriggers,
   d4NarrativeTriggers,
+  d5NarrativeTriggers,
   e4NarrativeTriggers,
   e5NarrativeTriggers,
   e6NarrativeTriggers,
+  e7NarrativeTriggers,
   w1NarrativeTriggers,
   w2NarrativeTriggers,
   w3NarrativeTriggers,
@@ -1834,6 +1837,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d5NarrativeTriggers,
     },
   ],
 
@@ -2147,6 +2151,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('송다은이 우연한 유사 frame을 주장.') },
         { id: 'misread', summary: ko('패턴은 인증되지만 책임 분리는 mediation 영역.') },
       ],
+      narrativeTriggers: e7NarrativeTriggers,
     },
   ],
 
@@ -2628,6 +2633,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc5NarrativeTriggers,
     },
   ],
 
