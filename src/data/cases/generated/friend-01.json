@@ -2378,7 +2378,77 @@
             }
           ]
         }
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e5-via-cascade",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-2": "S3+"
+            },
+            "requirePriorCardFired": "d-2"
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-cascade-judge-mention-v1",
+            "emerge-e5-via-cascade-b-submit-v1",
+            "emerge-e5-via-cascade-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e5-via-npc-b-interject",
+          "type": "npc_interjection",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-2": "S2+"
+            },
+            "contextAction": "question.fact_pursuit.a"
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-npc-b-interject-v1",
+            "emerge-e5-via-npc-a-react-v1",
+            "emerge-e5-via-npc-judge-mention-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e5-via-outburst-a",
+          "type": "emotional_outburst",
+          "source": "a",
+          "preconditions": {
+            "disputeLieState": {
+              "d-2": "S2+"
+            },
+            "partyPhase": {
+              "a": [
+                "shaken",
+                "angry"
+              ]
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-outburst-a-confess-v1",
+            "emerge-e5-via-outburst-judge-catch-v1",
+            "emerge-e5-via-outburst-judge-mention-v1"
+          ],
+          "vfxProfile": "emphasis"
+        },
+        {
+          "id": "e5-via-judge-auto",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "turnsAfterEligible": 5
+          },
+          "scriptedRefs": [
+            "emerge-e5-via-fallback-judge-query-v1",
+            "emerge-e5-via-fallback-b-submit-v1",
+            "emerge-e5-via-fallback-judge-mention-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -2590,7 +2660,77 @@
             "suspicious": true
           }
         ]
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e6-via-cascade",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "disputeLieState": {
+              "d-3": "S3+"
+            },
+            "requirePriorCardFired": "d-3"
+          },
+          "scriptedRefs": [
+            "emerge-e6-via-cascade-judge-mention-v1",
+            "emerge-e6-via-cascade-b-submit-v1",
+            "emerge-e6-via-cascade-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e6-via-npc-b-interject",
+          "type": "npc_interjection",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-3": "S2+"
+            },
+            "contextAction": "question.fact_pursuit.a"
+          },
+          "scriptedRefs": [
+            "emerge-e6-via-npc-b-interject-v1",
+            "emerge-e6-via-npc-a-react-v1",
+            "emerge-e6-via-npc-judge-mention-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e6-via-outburst-a",
+          "type": "emotional_outburst",
+          "source": "a",
+          "preconditions": {
+            "disputeLieState": {
+              "d-3": "S2+"
+            },
+            "partyPhase": {
+              "a": [
+                "shaken",
+                "angry"
+              ]
+            }
+          },
+          "scriptedRefs": [
+            "emerge-e6-via-outburst-a-confess-v1",
+            "emerge-e6-via-outburst-judge-catch-v1",
+            "emerge-e6-via-outburst-judge-mention-v1"
+          ],
+          "vfxProfile": "emphasis"
+        },
+        {
+          "id": "e6-via-judge-auto",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "turnsAfterEligible": 5
+          },
+          "scriptedRefs": [
+            "emerge-e6-via-fallback-judge-query-v1",
+            "emerge-e6-via-fallback-b-submit-v1",
+            "emerge-e6-via-fallback-judge-mention-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     },
     {
       "id": "e-7",
@@ -3495,7 +3635,7 @@
       {
         "id": "dc-4",
         "type": "derived_note",
-        "label": "dc-4 손절의 값",
+        "label": "dc-4 손절의 이유",
         "linkedDisputeIds": [
           "d-4"
         ],
@@ -3584,7 +3724,7 @@
       },
       {
         "id": "dc-4",
-        "label": "dc-4 손절의 값",
+        "label": "dc-4 손절의 이유",
         "summary": "과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였음을 드러내는 카드.",
         "nodeType": "derived_note",
         "noteText": "과거 손절의 진짜 원인은 송다은 아버지의 차용금 미상환이었고, 최수민의 침묵은 송다은을 무너뜨리지 않으려는 보호에서 비롯됐다.",

@@ -28,9 +28,16 @@ import {
 import {
   dc1NarrativeTriggers,
   dc2NarrativeTriggers,
+  dc3NarrativeTriggers,
+  dc4NarrativeTriggers,
+  d3NarrativeTriggers,
+  d4NarrativeTriggers,
   e4NarrativeTriggers,
+  e5NarrativeTriggers,
+  e6NarrativeTriggers,
   w1NarrativeTriggers,
   w2NarrativeTriggers,
+  w3NarrativeTriggers,
 } from './friend-01.narrative'
 
 /* ============================================================================
@@ -1228,6 +1235,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d3NarrativeTriggers,
     },
     /* ============================================================
      * dispute d-4 — 과거 손절과 아버지의 사기 (hidden, legitimacyIssue)
@@ -1525,6 +1533,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d4NarrativeTriggers,
     },
     /* ============================================================
      * dispute d-5 — 단톡방 매도와 명예훼손 (hidden)
@@ -2043,6 +2052,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           ko('최수민 메시지의 사적 톤 노출은 B character 보호 약화'),
         ],
       },
+      narrativeTriggers: e5NarrativeTriggers,
     },
     {
       id: 'e-6',
@@ -2095,6 +2105,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           ko('구체적 금액 노출은 인도성 점수 하락 가능'),
         ],
       },
+      narrativeTriggers: e6NarrativeTriggers,
     },
     {
       id: 'e-7',
@@ -2251,6 +2262,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w3NarrativeTriggers,
     },
   ],
 
@@ -2482,10 +2494,11 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc3NarrativeTriggers,
     },
     {
       id: 'dc-4',
-      label: ko('손절의 값'),
+      label: ko('손절의 이유'),
       description: ko('과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였음을 드러내는 카드.'),
       type: 'derived_note',
       linkedDisputes: ['d-4'],
@@ -2550,6 +2563,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc4NarrativeTriggers,
     },
     {
       id: 'dc-5',
