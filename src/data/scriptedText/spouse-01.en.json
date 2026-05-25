@@ -18761,7 +18761,7 @@
           "variants": [
             {
               "id": "judgeq-d-1-fact_pursuit-2-v1",
-              "text": "Mr. Lee, you made short calls to the same number every morning. Could you tell me who the person on the other end of the phone was?",
+              "text": "Mr. Lee, you repeatedly made short calls to the same number in the early-morning hours. Please state who the other party to the call at that time was.",
               "behaviorHint": "Narrow the question to the details that make up the context. Separate time from contact partner to find instability."
             },
             {
@@ -18997,7 +18997,7 @@
             },
             {
               "id": "judgeq-d-1-empathy_approach-1-v2",
-              "text": "Ms. Park, please tell us what your first reaction was when you first saw that record.",
+              "text": "Ms. Park, when you first checked the call record, what emotion did you feel so strongly that your body reacted first? Please tell us.",
               "behaviorHint": "Ask for the first emotional reaction rather than a judgment. This question lowers defenses slightly and draws out the inner feeling."
             },
             {
@@ -19360,7 +19360,7 @@
             },
             {
               "id": "judgeq-d-2-motive_search-4-v2",
-              "text": "Ms. Park, why did you go beyond the line of questioning Mr. Lee when you felt like you had to protect your part?",
+              "text": "Ms. Park, why did the thought that you needed to protect your share lead to directly pressing Mr. Lee for an answer?",
               "behaviorHint": "Make them explain why they pushed ahead despite knowing the choice could become overreach or obsession."
             },
             {
@@ -19403,7 +19403,7 @@
             },
             {
               "id": "judgeq-d-2-empathy_approach-1-v4",
-              "text": "Ms. Park, please tell me whether your hands stiffened first or the calculations in your head began after seeing that record.",
+              "text": "Ms. Park, after seeing the withdrawal record, please tell us whether your hands stiffened first or calculations came to mind first.",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the circumstances of the large withdrawal and the spouse's exclusion; start with a basic question."
             },
             {
@@ -19766,7 +19766,7 @@
             },
             {
               "id": "judgeq-h-d3-motive_search-4-v4",
-              "text": "Both of you, to what extent do you think you can explain your actions that crossed the line by citing the other person's fault?",
+              "text": "Both of you, to what extent do you believe you can account for your own act of directly altering the termination procedure by citing what the other person concealed?",
               "behaviorHint": "Ask about the judgment and fear behind the action; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
             },
             {
@@ -19905,6 +19905,37 @@
               "id": "judgeq-h-d3-empathy_approach-4-v5",
               "text": "Ms. Park, how do you accept the fact that the time you hid it out of shame left Mr. Lee with even greater pain?",
               "behaviorHint": "Open emotional pressure to deepen the statement; narrow the procedure and responsibility for the joint savings cancellation; organize the point so responsibility cannot be avoided."
+            }
+          ]
+        },
+        {
+          "key": "h-d4|fact_pursuit|3",
+          "disputeId": "h-d4",
+          "questionType": "fact_pursuit",
+          "depth": 3,
+          "variants": [
+            {
+              "id": "judgeq-h-d4-fact_pursuit-3-a-v1",
+              "text": "Ms. Park, when you saw the medical search record on the phone, did you treat that record as material separate from the explanation given earlier?",
+              "behaviorHint": "The judge only confirms the separation between the material and the earlier stated use."
+            },
+            {
+              "id": "judgeq-h-d4-fact_pursuit-3-b-v1",
+              "text": "Mr. Lee, do you acknowledge that the phone search record is yours? How do you explain why the relevant search record remained?",
+              "behaviorHint": "The judge addresses both the authenticated material and the gap in the explanation."
+            }
+          ]
+        },
+        {
+          "key": "h-d4|motive_search|1",
+          "disputeId": "h-d4",
+          "questionType": "motive_search",
+          "depth": 1,
+          "variants": [
+            {
+              "id": "judgeq-h-d4-motive_search-1-a-v1",
+              "text": "Ms. Park, after hearing the explanation that those materials were medical-related research, what was the first thought that came to mind?",
+              "behaviorHint": "The judge asks about A's shift in perception and first reaction."
             }
           ]
         }
@@ -20062,7 +20093,7 @@
             },
             {
               "id": "judgec-d-2-mid-v5",
-              "text": "Ms. Park, your statements on the large withdrawal from the husband's account no longer line up. Separate the missing facts from the interpretation and answer plainly.",
+              "text": "Ms. Park, if you intend to take issue with the said withdrawal, you must also explain how you came to know about the withdrawal record.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             }
           ]
@@ -20135,7 +20166,7 @@
           "variants": [
             {
               "id": "judgec-h-d3-mid-v1",
-              "text": "Ms. Park, your position as a person who has already been betrayed does not excuse handling the documents without authorization. Tell us why you crossed that line.",
+              "text": "Ms. Park, even if you were in fact the one betrayed, that cannot justify preparing documents without authorization. Please state why you directly altered the termination procedure.",
               "behaviorHint": "Make the changed position and the omitted reason confront each other clearly."
             },
             {
@@ -20181,7 +20212,7 @@
             },
             {
               "id": "judgec-h-d3-hard-v4",
-              "text": "Both of you, for the two of you, hiding and actions that cross the line have different weights. Don't shift blame for cancellation procedure problems onto other issues.",
+              "text": "Both of you, the concealed fact and the act of directly altering the termination procedure are separate matters. Do not shift responsibility for the termination procedure issue onto another dispute.",
               "behaviorHint": "Stop the evasion and make them answer even the unfavorable parts directly."
             },
             {
