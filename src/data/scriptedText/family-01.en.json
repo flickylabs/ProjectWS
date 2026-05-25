@@ -25327,7 +25327,7 @@
             },
             {
               "id": "judgeq-d-1-motive-search-4-v3",
-              "text": "Mr. Yoon Jeong-hu, if you crossed the line under the justification of helping your mother, why did you do it?",
+              "text": "Mr. Yoon Jeong-hu, if you directly altered the will-drafting procedure with the intent of helping your mother, what was your reason?",
               "behaviorHint": "It asks for the reason behind the choice, not an excuse. It aims at why they crossed that line."
             },
             {
@@ -25581,7 +25581,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-4-v1",
-              "text": "Mr. Yoon Jeong-hu, even if it was not just for your own gain, why did you cross the line into the procedure?",
+              "text": "Mr. Yoon Jeong-hu, even if the intervention was not for your own gain, why did you directly alter the will-drafting procedure?",
               "behaviorHint": "It asks for the decisive reason and responsibility so they can no longer turn away. The question tries to straighten out where fact and interpretation diverge."
             },
             {
@@ -25746,7 +25746,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-empathy_approach-1-v1",
-              "text": "Mr. Yoon Jeong-hu, at the moment you altered that document, who came to mind first?",
+              "text": "Mr. Yoon Jeong-hu, at the moment of revising the will, who came to mind first?",
               "behaviorHint": "It asks for the first emotional reaction rather than a judgment. The question lowers their defenses a little and draws out the feeling underneath."
             },
             {
@@ -25766,7 +25766,7 @@
             },
             {
               "id": "judgeq-d-2-empathy-approach-1-v5",
-              "text": "Both of you, tell me what kind of wound that document left with each of you.",
+              "text": "Both of you, please tell me what kind of wound the revised will left with each of you.",
               "behaviorHint": "It asks for the first emotional reaction rather than a judgment. The question lowers their defenses a little."
             }
           ]
@@ -25784,7 +25784,7 @@
             },
             {
               "id": "judgeq-d-2-empathy_approach-2-v2",
-              "text": "Mr. Yoon Tae-seong, did you feel your place as eldest son collapse the moment you saw that document?",
+              "text": "Mr. Yoon Tae-seong, did you feel your place as eldest son collapse the moment you saw the altered will?",
               "behaviorHint": "It asks about guilt and anxiety within the flow of time. The question makes them remember where the emotion grew stronger."
             },
             {
@@ -25865,7 +25865,7 @@
             },
             {
               "id": "judgeq-d-2-empathy-approach-4-v5",
-              "text": "Both of you, answer how much that document blurred your mother's wishes.",
+              "text": "Both of you, please answer where you each believe the revised will differed from your mother's wishes.",
               "behaviorHint": "It makes them choose the heaviest emotion. It lets them see responsibility and hurt for themselves."
             }
           ]
@@ -26505,7 +26505,7 @@
           "variants": [
             {
               "id": "judgeq-d-4-motive-search-4-v1",
-              "text": "Mr. Yoon Jeong-hu, explain the judgment that crossed the legal line in the name of protection.",
+              "text": "Mr. Yoon Jeong-hu, please explain why you judged it necessary to directly alter the legal procedure.",
               "behaviorHint": "It asks for the reason behind the choice, not an excuse. It aims at why they crossed that line."
             },
             {
@@ -26757,7 +26757,7 @@
             },
             {
               "id": "judgec-d-1-hard-v5",
-              "text": "Mr. Yoon Jeong-hu, the word \"help\" cannot cover the part where you decided in her place. Where did you cross the line?",
+              "text": "Mr. Yoon Jeong-hu, the word \"help\" cannot cover the part where you decided in her place. Where did you directly alter the will-drafting procedure?",
               "behaviorHint": "The Judge cuts off avoidance of responsibility and demands a key answer. Tone fixes the contradiction in the court record."
             }
           ]
@@ -26843,7 +26843,7 @@
             },
             {
               "id": "judgec-d-2-hard-v3",
-              "text": "Mr. Yoon Jeong-hu, saying it was protection does not erase the responsibility for procedural intervention. Answer what line you crossed.",
+              "text": "Mr. Yoon Jeong-hu, saying it was for help does not erase responsibility for procedural intervention. Please answer what action you took to directly alter the will-drafting procedure.",
               "behaviorHint": "The Judge cuts off avoidance of responsibility and demands a key answer. Tone fixes the contradiction in the court record."
             },
             {
@@ -27227,7 +27227,7 @@
           "variants": [
             {
               "id": "judgeec-dc-1-b-q2-hard-v1",
-              "text": "Mr. Yoon Jeong-hu, the word \"helped\" cannot cover the visit record and the reading testimony. State now where you crossed the line.",
+              "text": "Mr. Yoon Jeong-hu, saying you helped your mother cannot, by itself, cover the visit record and the reading testimony. Please state now where you directly altered the will-drafting procedure.",
               "behaviorHint": "The Judge demands an immediate answer based on the final-years papers combo. Tone cuts off evasion."
             },
             {
@@ -27440,7 +27440,7 @@
             },
             {
               "id": "judgeec-dc-2-b-q2-hard-v4",
-              "text": "Mr. Yoon Jeong-hu, lowering the share from 90 to 60 and leaving 40 to Mr. Yoon Tae-seong is where good intent and illegality stand together. Answer now why you crossed that line.",
+              "text": "Taken together, the notary's memo and the revised will confirm circumstances indicating that Mr. Yoon Tae-seong's share was re-adjusted. Please answer now why you directly altered the legal procedure.",
               "behaviorHint": "The Judge demands an immediate answer based on the reduced-will combo. Tone cuts off evasion."
             },
             {
@@ -27491,7 +27491,7 @@
           "variants": [
             {
               "id": "judgeec-dc-3-b-q1-mid-v1",
-              "text": "Putting the handwritten draft and older transfer-history bundle together shows long-running regular support and business funds. Why did you not say this from the beginning?",
+              "text": "Putting the handwritten draft and account records together shows the sequence of remittances over an extended period. Why did you not say this from the beginning?",
               "behaviorHint": "The Judge clearly points out the direction of the twenty-year money combo. Tone leaves no room to postpone."
             },
             {
@@ -27511,7 +27511,7 @@
             },
             {
               "id": "judgeec-dc-3-b-q1-mid-v5",
-              "text": "Mr. Yoon Jeong-hu, the older transfer-history bundle is more than a small favor. Explain now what it means when connected to the handwritten draft.",
+              "text": "Mr. Yoon Jeong-hu, the account shows repeated and substantial money movements. Please explain now what they mean when viewed together with the handwritten draft.",
               "behaviorHint": "The Judge clearly points out the direction of the twenty-year money combo. Tone leaves no room to postpone."
             }
           ]
@@ -27874,7 +27874,7 @@
             },
             {
               "id": "judgeec-dc-5-a-q1-soft-v5",
-              "text": "Mr. Yoon Tae-seong, the unfairness you felt after seeing the changed will and the facts shown by the older transfer-history bundle must be viewed together. Sort out the feeling of being the eldest son.",
+              "text": "Mr. Yoon Tae-seong, the unfairness you felt after seeing the altered will and the facts confirmed in the account's remittance record must be viewed together. Please sort out what you felt as the eldest son.",
               "behaviorHint": "The Judge calmly presents the Mother's Wishes combo. Tone first asks for the evidence links to be explained."
             }
           ]
