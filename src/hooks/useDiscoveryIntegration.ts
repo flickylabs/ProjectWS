@@ -21,6 +21,7 @@ import { getSafeEmergenceDescription, getSafeEmergenceTitle } from '../data/safe
 import type { UnsafeAny } from '../types/lint'
 import { triggerCutscene } from '../components/discovery/CutsceneOverlay'
 import { shouldTriggerCutscene } from '../engine/cutsceneTriggerEngine'
+import { attemptCoreNarrativeForDispute } from '../engine/narrativeIntegration'
 
 
 function hasEvidenceStage(state: UnsafeAny, evidenceId: string): boolean {
@@ -212,6 +213,9 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
       const rawDescription = '새로운 단서가 기존 설명과 맞물립니다. 확인해야 할 범위만 추가되었습니다.'
       const description = getSafeEmergenceDescription(caseData.caseId, entry.disputeId, rawDescription)
       const title = getSafeEmergenceTitle(caseData.caseId, entry.disputeId, dispute?.name ?? entry.disputeId)
+      // Core narrative wrapper (Cycle 6+) — dispute emerge 직전 narrative trigger 평가.
+      // fire 성공 시 narrative dialogue 추가 후 mechanical emerge 진행. fire 실패는 fallback 대기.
+      attemptCoreNarrativeForDispute(entry.disputeId, via)
       state.emergeDispute(entry.disputeId, via, turnCount, description)
       v4Effects.disputeDiscovered(entry.disputeId, title, description, {
         turn: state.turnCount,

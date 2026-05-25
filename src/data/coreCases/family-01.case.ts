@@ -22,6 +22,22 @@ import {
   type LocalizedString,
   type LocalizedKeywordSet,
 } from '../../types/coreCase'
+import {
+  dc1NarrativeTriggers,
+  w1NarrativeTriggers,
+  d2NarrativeTriggers,
+  e3NarrativeTriggers,
+  dc2NarrativeTriggers,
+  w2NarrativeTriggers,
+  d3NarrativeTriggers,
+  w3NarrativeTriggers,
+  d4NarrativeTriggers,
+  e7NarrativeTriggers,
+  dc4NarrativeTriggers,
+  d5NarrativeTriggers,
+  e5NarrativeTriggers,
+  dc5NarrativeTriggers,
+} from './family-01.narrative'
 
 /* ============================================================================
  * Helpers
@@ -644,7 +660,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
      * dispute d-2 — 공증 절차의 개입 (e-5 재배치 후 절차 narrative만)
      *
      * 오전 1차 공란 → 오후 수정 60:40 확정. 자필 비율 수치는 d-5로 이동.
-     * dossier dc-2 ("줄인 유서")와 link.
+     * dossier dc-2 ("수정된 유언장")와 link.
      * ============================================================ */
     {
       id: 'd-2',
@@ -928,6 +944,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d2NarrativeTriggers,
     },
     /* ============================================================
      * dispute d-3 — 오래된 지원의 출처 (e-6 계좌 흐름)
@@ -1233,6 +1250,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d3NarrativeTriggers,
     },
     /* ============================================================
      * dispute d-4 — 가족 기록과 침묵의 이유 (e-7 일기장)
@@ -1537,6 +1555,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d4NarrativeTriggers,
     },
     /* ============================================================
      * dispute d-5 — 어머니의 숨겨진 마음 (최종 책임축, e-5 자필 비율 노출)
@@ -1834,6 +1853,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: [],
         },
       },
+      narrativeTriggers: d5NarrativeTriggers,
     },
   ],
 
@@ -1960,6 +1980,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('증언 단편만으로 강요 판단은 어렵다는 이의.') },
         { id: 'misread', summary: ko('증언 사실은 인증되나 절차 강요까지의 해석은 별도 평가.') },
       ],
+      narrativeTriggers: e3NarrativeTriggers,
     },
     {
       id: 'e-4',
@@ -2053,6 +2074,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ko('S5 이전 노출 시 자기 몫 축소 동기 leak'),
         ],
       },
+      narrativeTriggers: e5NarrativeTriggers,
     },
     {
       id: 'e-6',
@@ -2146,6 +2168,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ko('아버지 실명까지 공개되면 인도성 점수 하락'),
         ],
       },
+      narrativeTriggers: e7NarrativeTriggers,
     },
   ],
 
@@ -2181,6 +2204,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w1NarrativeTriggers,
     },
     {
       id: 'w-2',
@@ -2213,6 +2237,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w2NarrativeTriggers,
     },
     {
       id: 'w-3',
@@ -2254,6 +2279,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           },
         },
       },
+      narrativeTriggers: w3NarrativeTriggers,
     },
   ],
 
@@ -2326,10 +2352,11 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc1NarrativeTriggers,
     },
     {
       id: 'dc-2',
-      label: ko('줄인 유서'),
+      label: ko('수정된 유언장'),
       description: ko('공증 오후 수정의 존재를 넘어서, 절차 안에서 어떤 흐름이 만들어졌는지를 묻는 카드.'),
       type: 'derived_evidence',
       linkedDisputes: ['d-2'],
@@ -2394,6 +2421,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc2NarrativeTriggers,
     },
     {
       id: 'dc-3',
@@ -2526,6 +2554,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc4NarrativeTriggers,
     },
     {
       id: 'dc-5',
@@ -2610,6 +2639,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           ],
         },
       },
+      narrativeTriggers: dc5NarrativeTriggers,
     },
   ],
 

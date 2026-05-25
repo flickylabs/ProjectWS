@@ -32,6 +32,18 @@ interface NarrativeStoreView {
   narrativeLegacyEligibleTurns?: Record<string, number>
   markNarrativeFiredEmergence?: (id: string, triggerId: string, turn: number) => void
   markNarrativeLegacyEligible?: (id: string, turn: number) => void
+  forceUnlockDossierNode?: (dossierId: string) => void
+}
+
+/**
+ * Cycle 6 — dispute narrative trigger fire 시 동기 force-unlock 매핑.
+ *
+ * 본 cycle에서 d-3 "오래된 지원의 출처" + dc-3 "20년의 돈"이 한 narrative event로 통합 surface
+ * (사용자 결정 2026-05-24: 두 layer 내용 동일 → narrative event 통합). d-3 trigger fire 시
+ * narrative entry text가 dc-3 등록 announcement를 포함하므로, mechanical dc-3 unlock도 동기 처리.
+ */
+const FORCE_UNLOCK_DOSSIER_ON_DISPUTE_FIRE: Record<string, string> = {
+  'd-3': 'dc-3',
 }
 
 function readNarrativeStore(): NarrativeStoreView {
@@ -56,6 +68,10 @@ function applyAttemptOutcome(
   const store = readNarrativeStore()
   if (attempt) {
     store.markNarrativeFiredEmergence?.(emergenceId, attempt.triggerId, currentTurn)
+    const dossierToForceUnlock = FORCE_UNLOCK_DOSSIER_ON_DISPUTE_FIRE[emergenceId]
+    if (dossierToForceUnlock) {
+      store.forceUnlockDossierNode?.(dossierToForceUnlock)
+    }
   } else if (attempt === null) {
     store.markNarrativeLegacyEligible?.(emergenceId, currentTurn)
   }
