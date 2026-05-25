@@ -284,7 +284,7 @@
     {
       "id": "dc-8",
       "name": "이준호의 또 다른 침묵",
-      "description": "형 사건과는 무관한 영역에서도 이준호가 혼자 무언가를 준비해 왔다는 단서. 외도 의심과 출산 조사 두 해석 사이.",
+      "description": "형 사건과는 무관한 곳에서도 이준호가 혼자 무언가를 준비해 왔다는 단서. 외도 의심과 부모 될 준비 두 해석 사이.",
       "evidenceIds": [
         "e-8",
         "e-9"
@@ -309,7 +309,7 @@
           "questions": [
             {
               "id": "dc-8.b.q1",
-              "text": "이준호 씨, 아내에게 바로 말하지 않고 출산 관련 영역을 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?",
+              "text": "이준호 씨, 아내에게 바로 말하지 않고 부모 될 준비를 혼자 알아봐 온 결정의 무게를 어떻게 보십니까?",
               "lockedHint": "e-8 + e-9 Original + B의 가족 사정 인정 후 등장.",
               "attackVector": "responsibility",
               "requiredLieState": "S3",
@@ -1079,6 +1079,116 @@
       "primaryBeatType": "confession",
       "line": "이준호는 \"그 돈은 처음엔 당신을 위한 거였다\"고 말한다.",
       "behaviorHint": "시선이 흔들리지 않는다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-3-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "박지연은 단정 어휘를 한 발만 누른다.",
+      "behaviorHint": "어깨가 굳는다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-3-s0-s1",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "partial",
+      "line": "이준호는 한 박자 늦게 \"본 적은 있다\"고 답한다.",
+      "behaviorHint": "답이 짧다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-3-s1-s2",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"그럼 도대체 왜 이런 책을 봤느냐\"고 묻는다.",
+      "behaviorHint": "책을 다시 한 번 들춰본다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-3-s1-s2",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"내가 본 거 맞다\"고 처음으로 인정한다.",
+      "behaviorHint": "숨을 한 박자 늦게 쉰다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-3-s2-s3",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"그럼 누구를 위해서…\"라며 말을 흐린다.",
+      "behaviorHint": "숨을 짧게 들이마신다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-3-s2-s3",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "이준호는 \"아내 모르게 본 게 맞다\"고 인정한다.",
+      "behaviorHint": "시선이 잠시 떨어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-3-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "박지연은 \"내가 잘못 본 거였을 수도…\"라며 말끝을 흐린다.",
+      "behaviorHint": "손이 책 위에서 잠시 멈춘다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-3-s3-s4",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "line": "이준호는 처음으로 \"혼자 알아봤다\"고 분명히 말한다.",
+      "behaviorHint": "숨이 길어진다."
+    },
+    {
+      "id": "spouse-v3-01-beat-a-d-3-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "박지연은 \"내가 잘못 본 거였다\"고 말한다.",
+      "behaviorHint": "손이 책 위에 길게 머문다."
+    },
+    {
+      "id": "spouse-v3-01-beat-b-d-3-s4-s5",
+      "caseId": "spouse-v3-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "이준호는 \"그 책은 나 혼자 보려고 산 거였다\"고 말한다.",
+      "behaviorHint": "시선이 처음으로 박지연을 향한다."
     }
   ],
   "evidenceProgressions": [
@@ -1502,7 +1612,7 @@
     },
     {
       "evidenceId": "e-8",
-      "name": "휴대폰 의학 검색 기록",
+      "name": "산부인과 주차 영수증",
       "depthStages": [
         {
           "id": "stub",
@@ -1561,7 +1671,7 @@
     },
     {
       "evidenceId": "e-9",
-      "name": "보험사 견적 자료",
+      "name": "산전우울증 자가진단 + 상담 예약",
       "depthStages": [
         {
           "id": "stub",
@@ -1614,6 +1724,65 @@
           "id": "misread",
           "label": "조작/오독 판정",
           "summary": "상담 사실은 인증되지만 진짜 의도는 심문과 맥락으로 확정."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-10",
+      "name": "예비 부모 정서 도서",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "예비 부모 정서 도서 1권 존재 표시."
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "도서 제목·표지만 우선 보임 — 내연녀 임신 의심 frame 강화."
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "도서 본문에 B 본인 필체로 밑줄·여백 메모가 남아 있는 페이지 확인 — 본인 정서 정리 흔적."
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "결제일·매장이 e-1 교보문고 영수증과 일치하고, e-8 산부인과 방문 시기와도 정합."
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B가 본인을 위해 부모 될 마음을 정리한 자료임이 공식기록 채택."
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 B 책상/차량에서 발견하여 제출."
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "도서 결제 흔적(e-1)과 필체 대조."
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "결제 흔적·필체·도서 페이지 모두 일치."
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "A가 \"누구를 위한 책이냐\"고 의심 / B가 본인 필기를 근거로 본인 자료라고 주장."
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "도서·필체는 인증되지만 진짜 목적은 심문과 맥락으로 확정."
         }
       ],
       "sealTargets": []
@@ -1777,8 +1946,8 @@
         },
         {
           "id": "L-8-B",
-          "text": "부부의 출산 영역을 혼자 알아본 흔적이다",
-          "implication": "진짜 목적이 형 사정과는 별개 영역임을 본다."
+          "text": "부모 될 준비를 혼자 알아본 흔적이다",
+          "implication": "진짜 목적이 형 사정과는 별개 갈래임을 본다."
         },
         {
           "id": "L-8-C",
@@ -1868,7 +2037,7 @@
     {
       "action": "원본 제출 명령",
       "recommendedMoment": "h-d4 등장 직후 e-8 / e-9 Excerpt 시점",
-      "purpose": "휴대폰 검색 기록과 보험 상담 견적의 전체 영역을 확보.",
+      "purpose": "산부인과 주차 영수증과 산전우울증 자가진단·상담 예약 명세의 전체 자료를 확보.",
       "contextDispute": "h-d4"
     },
     {
@@ -1910,7 +2079,7 @@
       "name": "비자금의 원래 목적",
       "unlockPlan": {
         "runtimeRule": "d-2 S5 자백 후 비자금 운용 패턴 의문 + 신규 증거(e-8/e-9) 발현 시",
-        "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + 휴대폰 검색·보험 상담 기록이 형 사정과 무관한 영역을 가리키면 새 쟁점 부상"
+        "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 산전우울증 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상"
       }
     }
   ],

@@ -13,7 +13,7 @@
         "evidenceId": "e-1",
         "name": "영수증 묶음 (5장)",
         "surfaceName": "영수증 묶음 5장",
-        "surfaceDescription": "차 안에서 발견된 영수증 5장.",
+        "surfaceDescription": "차 안에서 발견된 영수증 5장 (편의점 2 / 뷰티 1 / 다이소 1 / 교보문고 1).",
         "descriptionTruth": [
           "조카 학용품",
           "삼촌이 챙겨주는",
@@ -154,9 +154,9 @@
       },
       "e-8": {
         "evidenceId": "e-8",
-        "name": "이준호 휴대폰의 의학 검색 기록",
-        "surfaceName": "휴대폰 의학 검색 기록",
-        "surfaceDescription": "이준호 휴대폰에 남은 산부인과·여성 질환 검색 기록.",
+        "name": "종합산부인과병원 주차 영수증 묶음",
+        "surfaceName": "산부인과 주차 영수증",
+        "surfaceDescription": "이준호 차량 내 발견된 산부인과 주차 영수증 묶음.",
         "descriptionTruth": [
           "난임 치료비",
           "난임 진단",
@@ -177,9 +177,9 @@
       },
       "e-9": {
         "evidenceId": "e-9",
-        "name": "이준호의 보험사 견적 자료 (가입 없음)",
-        "surfaceName": "보험사 견적 자료",
-        "surfaceDescription": "이준호 명의 보험사 견적서들.",
+        "name": "이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세",
+        "surfaceName": "산전우울증 자가진단 + 상담 예약",
+        "surfaceDescription": "이준호 명의로 출력된 산전우울증 자가진단 결과지와 상담소 예약 확인 명세.",
         "descriptionTruth": [
           "난임 치료비",
           "난임 진단",
@@ -196,6 +196,29 @@
         ],
         "sourceRefs": [
           "src/data/cases/generated/spouse-01.json:evidence.e-9"
+        ]
+      },
+      "e-10": {
+        "evidenceId": "e-10",
+        "name": "B의 예비 부모 정서 도서 + 본인 필기 흔적",
+        "surfaceName": "예비 부모 정서 도서",
+        "surfaceDescription": "B 책상/차량에서 확보된 예비 부모 정서 도서 (본인 필기 흔적 포함).",
+        "descriptionTruth": [
+          "난임 치료비",
+          "난임 진단",
+          "출산 가능성 조사",
+          "보험 상담"
+        ],
+        "truthLexemes": [
+          "난임 치료비",
+          "난임 진단",
+          "출산 가능성 조사",
+          "보험 상담",
+          "의사 친구 상담",
+          "아내 모르게"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-10"
         ]
       }
     },
@@ -242,7 +265,7 @@
       },
       "h-d4": {
         "surface": "비자금의 원래 목적",
-        "truth": "이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 보험 상담을 받으며 출산 가능성을 더 알아봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.",
+        "truth": "이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.",
         "protectedSurface": "비자금의 원래 목적",
         "truthLexemes": [
           "난임 치료비",
@@ -254,6 +277,15 @@
         ],
         "sourceRefs": [
           "src/data/cases/generated/spouse-01.json:disputes.h-d4"
+        ]
+      },
+      "d-3": {
+        "surface": "내연녀 임신 의심",
+        "truth": "내연녀가 존재하지 않으며 임신도 사실이 아니다. e-10 예비 부모 정서 도서와 e-8/e-9 산부인과 자료들은 모두 이준호 본인이 박지연 난임 진단 후 아내에게 부담을 주지 않으려 혼자 부모 될 마음을 정리하던 흔적이다. 본 misdirection 쟁점은 d-1(가족 돌봄) 또는 h-d4(난임 치료비) 진실 확정 시 자연 무너진다.",
+        "protectedSurface": "내연녀 임신 의심",
+        "truthLexemes": [],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:disputes.d-3"
         ]
       }
     },
@@ -926,7 +958,7 @@
         "surfaceFallback": "B의 가족 관련 진술과 문자를 대조 중."
       },
       "combine-7": {
-        "sourceText": "휴대폰의 산부인과·난임 검색 기록과 가입 없이 멈춘 보험 상담 견적이 같은 시기·같은 영역으로 모인다.",
+        "sourceText": "산부인과 반복 방문 흔적과 본인 명의 산전우울증 자가진단·상담 예약 명세가 같은 시기, 같은 부모 될 준비 갈래로 모인다.",
         "truthLexemes": [],
         "gate": {
           "allowedChannels": [
@@ -943,7 +975,7 @@
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "B의 휴대폰 검색과 보험 상담 견적을 대조 중."
+        "surfaceFallback": "B의 산부인과 방문 흔적과 본인 명의 정서 케어 자료를 대조 중."
       }
     }
   },
@@ -1631,8 +1663,8 @@
           },
           {
             "stage": 2,
-            "name": "수상한 자료 / 보험 상담 (가입 X)",
-            "surfaceClaim": "수상한 자료 / 보험 상담 (가입 X)",
+            "name": "수상한 자료 / 산전우울증 자가진단·상담 예약 (실제 상담 X)",
+            "surfaceClaim": "수상한 자료 / 산전우울증 자가진단·상담 예약 (실제 상담 X)",
             "hiddenTruth": "출산 가능성 조사 + 난임 치료비",
             "entryConditions": [],
             "allowedDisclosure": [],
@@ -1702,6 +1734,123 @@
             "requiredWitness": [],
             "meterTriggers": {},
             "successUnlocks": []
+          }
+        ]
+      },
+      "d-3": {
+        "title": "내연녀 임신 의심",
+        "draftCompleteness": "derived-from-authority",
+        "statementFracture": [],
+        "truthStages": [
+          {
+            "stage": 0,
+            "name": "내연녀 임신 단정 / B 부정",
+            "surfaceClaim": "내연녀 임신 단정 / B 부정",
+            "hiddenTruth": "내연녀 없음 + B 본인 정서 준비",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit",
+              "motive_search"
+            ],
+            "requiredEvidence": [
+              "e-10"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 1,
+            "name": "단정 완화 / B 책 본 사실 인정",
+            "surfaceClaim": "단정 완화 / B 책 본 사실 인정",
+            "hiddenTruth": "B 본인 정서 준비 동기",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit",
+              "motive_search"
+            ],
+            "requiredEvidence": [
+              "e-10"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 2,
+            "name": "내연녀 단정 부족 / B 자료 본인 것 인정",
+            "surfaceClaim": "내연녀 단정 부족 / B 자료 본인 것 인정",
+            "hiddenTruth": "B 본인 부모 될 준비 흔적",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "empathy_approach",
+              "motive_search"
+            ],
+            "requiredEvidence": [
+              "e-10"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 3,
+            "name": "frame 흔들림 / B 침묵 동기 일부 인정",
+            "surfaceClaim": "frame 흔들림 / B 침묵 동기 일부 인정",
+            "hiddenTruth": "B 본인이 알아본 자료",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "empathy_approach",
+              "motive_search"
+            ],
+            "requiredEvidence": [
+              "e-10"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 4,
+            "name": "내연녀 임신 거의 아님 / B 본인 부모 될 가능성 인정",
+            "surfaceClaim": "내연녀 임신 거의 아님 / B 본인 부모 될 가능성 인정",
+            "hiddenTruth": "정확한 표현 = 난임",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "empathy_approach"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": []
+          },
+          {
+            "stage": 5,
+            "name": "내연녀 임신은 사실 아님 + B 본인 자료 인정",
+            "surfaceClaim": "내연녀 임신은 사실 아님 + B 본인 자료 인정",
+            "hiddenTruth": "—",
+            "entryConditions": [],
+            "allowedDisclosure": [],
+            "forbiddenDisclosure": [],
+            "validActions": [
+              "fact_pursuit"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {},
+            "successUnlocks": [
+              "h-d4"
+            ]
           }
         ]
       }

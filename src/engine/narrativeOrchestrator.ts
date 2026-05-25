@@ -233,7 +233,7 @@ function collectFiredCardIds(): ReadonlySet<string> {
   const state = useGameStore.getState() as {
     getFiredEmergenceIds?: () => ReadonlySet<string>
     firedEmergences?: Record<string, { triggerId: string; turn: number }>
-    evidenceStates?: Record<string, { narrativeFiredTrigger?: string }>
+    evidenceStates?: Record<string, { narrativeFiredTrigger?: string; unlocked?: boolean }>
   }
   const fired = new Set<string>()
   // 1. 통합 narrativeSlice (Cycle 2+)
@@ -241,8 +241,14 @@ function collectFiredCardIds(): ReadonlySet<string> {
   for (const id of ids) fired.add(id)
   // 2. 레거시 evidence-per-state (Cycle 1 evidence 경로가 markNarrativeFiredEmergence를
   //    아직 호출하지 않은 사이클 대비 안전망)
+  //
+  // 2026-05-25 보강: narrativeTriggers를 가지지 않는 evidence (e-1 같은 초기 단서)도
+  //   unlocked = true 상태면 cascade_from_card precondition의 진입점으로 인정한다.
+  //   기존엔 narrativeFiredTrigger만 기준이라 narrative gate 없는 evidence는 영구 진입점이
+  //   될 수 없었음. e-10이 cascade_from_card 'e-1'을 가지는 dual emergence 디자인에 필요.
   for (const [id, entry] of Object.entries(state.evidenceStates ?? {})) {
     if (entry?.narrativeFiredTrigger) fired.add(id)
+    else if (entry?.unlocked) fired.add(id)
   }
   return fired
 }

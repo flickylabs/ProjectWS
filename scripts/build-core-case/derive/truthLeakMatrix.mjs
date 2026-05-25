@@ -71,21 +71,24 @@ function buildCaseEntry(authority, existingCaseEntry) {
     const surfaceJa = deriveCaseSurfaceForDispute(authority, d, 'ja', existingCaseEntry)
     const surfaceZh = deriveCaseSurfaceForDispute(authority, d, 'zh-CN', existingCaseEntry)
 
+    // 2026-05-25: 4언어 모두 출력 (빈 배열도 포함). 검증 (detect-truth-leak.cjs)이
+    //   hidden.{ko,en,ja,zh-CN} 4언어 array 필수로 요구하기 때문.
+    //   이전 로직은 빈 배열 lang을 skip해서 misdirection 신규 dispute(d-3 등)가 검증 실패.
     const entry = {
       hidden: {
         ko: hiddenKo,
-        ...(hiddenEn.length > 0 ? { en: hiddenEn } : {}),
-        ...(hiddenJa.length > 0 ? { ja: hiddenJa } : {}),
-        ...(hiddenZh.length > 0 ? { 'zh-CN': hiddenZh } : {}),
+        en: hiddenEn,
+        ja: hiddenJa,
+        'zh-CN': hiddenZh,
       },
     }
-    if (surfaceKo || surfaceEn || surfaceJa || surfaceZh) {
-      entry.surface = {
-        ...(surfaceKo ? { ko: surfaceKo } : {}),
-        ...(surfaceEn ? { en: surfaceEn } : {}),
-        ...(surfaceJa ? { ja: surfaceJa } : {}),
-        ...(surfaceZh ? { 'zh-CN': surfaceZh } : {}),
-      }
+    // 2026-05-25: surface entry도 항상 4언어 배열 출력 (빈 배열 포함).
+    //   detect-truth-leak.cjs가 매 dispute의 surface 필수로 요구.
+    entry.surface = {
+      ko: surfaceKo ?? [],
+      en: surfaceEn ?? [],
+      ja: surfaceJa ?? [],
+      'zh-CN': surfaceZh ?? [],
     }
     // _designIntentTags = baseline matrix 영역 ∪ Authority case-wide ∪ Authority per-dispute (union)
     //
