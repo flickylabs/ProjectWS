@@ -28382,6 +28382,193 @@
               ]
             }
           ]
+        },
+        {
+          "key": "emerge-e-10",
+          "evidenceId": "e-10",
+          "variants": [
+            {
+              "id": "emerge-e10-via-cascade-judge-mention-v1",
+              "text": "From the Kyobo Bookstore payment trace in the previously confirmed [bundle of receipts], it has been confirmed that the same transaction also included one such \"Heart Guide for Expectant Parents\" emotional book. This Court will secure the book itself and the personal handwritten notes as materials and examine them.",
+              "behaviorHint": "Pauses briefly, looks around the seats, then holds up the receipt and the book itself side by side.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:cascade_mention",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "priorCard:e-1",
+                "vfx:cutscene_dual_emergence"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-a-react-v1",
+              "text": "A book for expectant parents? Then who on earth... who was he reading that kind of book for?",
+              "behaviorHint": "Her shoulders stiffen, and she cannot look away from the book.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-b-response-v1",
+              "text": "That is... yes, that is the book I read. It is difficult for me to say more in this setting.",
+              "behaviorHint": "He answers a beat late and looks at the cover only from the corner of his eye.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:single",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:tense",
+                "continuity:response",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-judge-decree-v1",
+              "text": "This Court enters [expectant-parent emotional guidance book + personal handwritten notes] into the case record. At the same time, This Court formally registers [suspected pregnancy by the alleged mistress] as a new dispute in This Case.",
+              "behaviorHint": "Holds up the book and the new dispute card at the same time.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "vfx:cutscene_dual_emergence"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "emerge-d-3",
+          "disputeId": "d-3",
+          "variants": [
+            {
+              "id": "emerge-d3-via-cascade-judge-decree-v1",
+              "text": "This Court adopts [suspected pregnancy by the alleged mistress] as a new dispute in This Case. Because the expectant-parent emotional guidance book, personal handwritten notes, and OB-GYN trail converge along the same line, This Court will examine the substance of this dispute without assumption.",
+              "behaviorHint": "Holds the dispute card in both hands, pauses for a beat, then sets it down.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:d-3",
+                "priorCard:e-10"
+              ]
+            },
+            {
+              "id": "emerge-d3-via-cascade-a-react-v1",
+              "text": "If this is not infidelity, then what on earth was he reading that book and going to that hospital for?",
+              "behaviorHint": "Her certainty wavers for a beat, and the next words do not come immediately.",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:d-3"
+              ]
+            }
+          ]
         }
       ]
     }

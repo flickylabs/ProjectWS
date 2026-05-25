@@ -29677,6 +29677,193 @@
               ]
             }
           ]
+        },
+        {
+          "key": "emerge-e-10",
+          "evidenceId": "e-10",
+          "variants": [
+            {
+              "id": "emerge-e10-via-cascade-judge-mention-v1",
+              "text": "在此前确认的[收据集]中，教保文库的付款记录显示，同一笔付款里还包含一本《给准父母的心灵指南》类情绪书。本法庭将把书本本体和本人手写笔记作为资料加以确保并审视。",
+              "behaviorHint": "短暂停顿并环视席位后，将收据和书本本体并排举起示意。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:cascade_mention",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "priorCard:e-1",
+                "vfx:cutscene_dual_emergence"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-a-react-v1",
+              "text": "准父母看的书？那到底是给谁……他到底是为了谁看那种书的？",
+              "behaviorHint": "她肩膀僵住，视线无法从书上移开。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-b-response-v1",
+              "text": "那是……我看过的书，没错。再多的内容，现在这个场合我很难说明。",
+              "behaviorHint": "他慢了一拍才回答，只用余光看向书的封面。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:single",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:tense",
+                "continuity:response",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-judge-decree-v1",
+              "text": "本法庭将[准父母情绪指导书 + 本人手写笔记]列入案件记录。同时，将[情人怀孕嫌疑]正式登记为本案的新争点。",
+              "behaviorHint": "将书本和新的争点卡同时举起示意。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "vfx:cutscene_dual_emergence"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "emerge-d-3",
+          "disputeId": "d-3",
+          "variants": [
+            {
+              "id": "emerge-d3-via-cascade-judge-decree-v1",
+              "text": "本法庭采纳[情人怀孕嫌疑]为本案的新争点。准父母情绪指导书、本人手写笔记、妇产科活动轨迹既已汇聚于同一脉络，本法庭将不作断定地审视本争点的实质。",
+              "behaviorHint": "双手举着争点卡，停顿一拍后放回座位。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:d-3",
+                "priorCard:e-10"
+              ]
+            },
+            {
+              "id": "emerge-d3-via-cascade-a-react-v1",
+              "text": "如果这不是婚外恋，那他到底是为了什么看那本书，又去了那家医院？",
+              "behaviorHint": "她的断定迟疑了一拍，下一句话没能立刻接上。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:d-3"
+              ]
+            }
+          ]
         }
       ]
     }

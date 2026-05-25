@@ -29005,6 +29005,193 @@
               ]
             }
           ]
+        },
+        {
+          "key": "emerge-e-10",
+          "evidenceId": "e-10",
+          "variants": [
+            {
+              "id": "emerge-e10-via-cascade-judge-mention-v1",
+              "text": "先ほど確認された[領収書の束]の教保文庫の決済履歴から、同一の決済に「予定父母のための心のガイド」類の情緒本1冊が含まれていたことを確認しました。当法廷は、その書籍本体と本人筆記の痕跡を資料として確保し、検討します。",
+              "behaviorHint": "一拍置いて座席を見渡し、領収書と書籍本体を並べて示す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:cascade_mention",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "priorCard:e-1",
+                "vfx:cutscene_dual_emergence"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-a-react-v1",
+              "text": "予定父母向けの本、ですか。では一体、誰を……誰のためにそのような本を読んだというのですか。",
+              "behaviorHint": "肩が固まり、書籍から視線を外せない。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-b-response-v1",
+              "text": "それは……私が読んだ本で間違いありません。それ以上は、この場で申し上げかねます。",
+              "behaviorHint": "一拍遅れて答え、表紙を横目で見るだけにとどめる。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:b",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:single",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:tense",
+                "continuity:response",
+                "reveal:partial",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:e-10"
+              ]
+            },
+            {
+              "id": "emerge-e10-via-cascade-judge-decree-v1",
+              "text": "当法廷は[予定父母向け情緒ガイド本 + 本人筆記の痕跡]を資料として登録します。同時に、[内縁の妻の妊娠疑惑]を本件の新たな争点として正式登録します。",
+              "behaviorHint": "書籍と新たな争点カードを同時に掲げて示す。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:e-10",
+                "vfx:cutscene_dual_emergence"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "emerge-d-3",
+          "disputeId": "d-3",
+          "variants": [
+            {
+              "id": "emerge-d3-via-cascade-judge-decree-v1",
+              "text": "[内縁の妻の妊娠疑惑]を本件の新たな争点として採用します。予定父母向け情緒ガイド本、本人筆記の痕跡、産婦人科の動線が同じ筋に集まった以上、本争点の実体を断定せず検討します。",
+              "behaviorHint": "争点カードを両手で持ち、一拍置いてから席に置く。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:judge",
+                "speakerRole:judge",
+                "listener:all",
+                "listenerRole:all",
+                "address:toAll",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:이준호_씨",
+                "callTermState:defined",
+                "emotion:measured",
+                "continuity:decree",
+                "reveal:partial",
+                "disclosure:opening",
+                "trigger:cascade_from_card",
+                "emergence:d-3",
+                "priorCard:e-10"
+              ]
+            },
+            {
+              "id": "emerge-d3-via-cascade-a-react-v1",
+              "text": "これが不倫でないなら、では本当に一体、何のためにその本を読み、その病院へ行ったというのですか。",
+              "behaviorHint": "断定が一拍揺らぎ、次の言葉がすぐには続かない。",
+              "tags": [
+                "channel:emergence_narrative",
+                "caseId:spouse-01",
+                "speaker:a",
+                "speakerRole:party",
+                "listener:judge",
+                "listenerRole:judge",
+                "address:toJudge",
+                "audience:all",
+                "scope:all_present",
+                "register:formal",
+                "honorific:formal",
+                "tense:present",
+                "relationship:spouse",
+                "callTerm:재판관님",
+                "callTermState:defined",
+                "judgeAddress:재판관님",
+                "emotion:shaken",
+                "continuity:reaction",
+                "reveal:none",
+                "disclosure:guarded",
+                "trigger:cascade_from_card",
+                "emergence:d-3"
+              ]
+            }
+          ]
         }
       ]
     }
