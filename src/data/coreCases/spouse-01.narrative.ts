@@ -50,22 +50,14 @@ export const dc3NarrativeTriggers: NarrativeTriggerCandidate[] = [
     ],
     vfxProfile: 'standard',
   },
-  {
-    id: 'dc3-via-a-interject',
-    type: 'npc_interjection',
-    source: 'a',
-    preconditions: [
-      { disputeLieState: { 'd-2': 'S1+' }, contextAction: 'evidence_present.b' },
-      { partyDistrust: { a: { min: 50 } }, contextAction: 'evidence_present.b' },
-    ],
-    scriptedRefs: [
-      'emerge-dc3-via-a-interject-v1',
-      'emerge-dc3-via-a-interject-judge-react-v1',
-      'emerge-dc3-via-a-interject-a-response-v1',
-      'emerge-dc3-via-a-interject-judge-decree-v1',
-    ],
-    vfxProfile: 'standard',
-  },
+  /**
+   * 2026-05-27 trigger 재편성 — `dc3-via-a-interject` 폐기 (Issue 2 안 A).
+   *
+   * 폐기 이유: precondition = `evidence_present.b` (어떤 evidence 든) + 자금 사용처 S1+ —
+   *   broad 패턴. 「영수증 묶음 5장」을 박지연(b)에게 제시하는 시점 등 의도 외 시점에도
+   *   부적절 발동 가능. ScriptedText (`emerge-dc3-via-a-interject-*-v1`) 4개는 본 thread
+   *   trigger 폐기 후 ledger 정리 (다음 스크립트 thread 안내용).
+   */
   {
     id: 'dc3-via-judge-auto',
     type: 'judge_auto_mention',
@@ -566,37 +558,25 @@ export const e4NarrativeTriggers: NarrativeTriggerCandidate[] = [
     ],
     vfxProfile: 'standard',
   },
-  {
-    id: 'e4-via-a-interject',
-    type: 'npc_interjection',
-    source: 'a',
-    preconditions: [
-      { disputeLieState: { 'd-1': 'S1+' }, contextAction: 'evidence_present.b' },
-      { partyDistrust: { a: { min: 50 } }, contextAction: 'evidence_present.b' },
-    ],
-    scriptedRefs: [
-      'emerge-e4-via-a-interject-v1',
-      'emerge-e4-via-a-interject-judge-react-v1',
-      'emerge-e4-via-a-interject-a-response-v1',
-      'emerge-e4-via-a-interject-judge-decree-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'e4-via-b-interject',
-    type: 'npc_interjection',
-    source: 'b',
-    preconditions: {
-      disputeLieState: { 'd-1': 'S1+' },
-      partyPhase: { b: ['defensive', 'shaken'] },
-    },
-    scriptedRefs: [
-      'emerge-e4-via-b-interject-v1',
-      'emerge-e4-via-b-interject-a-pursue-v1',
-      'emerge-e4-via-b-interject-judge-decree-v1',
-    ],
-    vfxProfile: 'standard',
-  },
+  /**
+   * 2026-05-27 trigger 재편성 — `e4-via-a-interject` + `e4-via-b-interject` 둘 다 폐기
+   *   (Issue 1 안 B — 사용자 명시 회귀 해결).
+   *
+   * 폐기 이유:
+   *  - `e4-via-a-interject`: precondition = 외도 의심 S1+ + `evidence_present.b` (어떤
+   *    evidence 든) — broad 패턴. 「영수증 묶음 5장」(e-1) stage 1 시점에 박지연(b)에게
+   *    영수증을 제시하면 외도 의심 S1+ + evidence_present.b 만족 → 부적절 발동 (사용자
+   *    명시 회귀).
+   *  - `e4-via-b-interject`: precondition = 외도 의심 S1+ + 박지연 감정 단계만 (contextAction
+   *    없음) — 가장 broad. 어느 시점에든 발동 가능.
+   *
+   * 잔존 candidate: `e4-via-e3-stage2` (「통화기록」 stage 2 cascade) + `e4-via-judge-auto`
+   *   (재판관 자동 fallback). 「발신자 미상 문자」는 「통화기록」 cascade 경로로만 자연
+   *   등장 (다른 evidence 제시 시 부적절 발동 X).
+   *
+   * ScriptedText (`emerge-e4-via-a-interject-*-v1` 4개 + `emerge-e4-via-b-interject-*-v1`
+   *   3개) 는 본 thread 폐기 후 ledger 정리 (다음 스크립트 thread 안내용).
+   */
   {
     id: 'e4-via-judge-auto',
     type: 'judge_auto_mention',
@@ -810,11 +790,33 @@ export const dc2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     ],
     vfxProfile: 'standard',
   },
+  {
+    /** 2026-05-27 신설 (Issue 8 안 A) — 비자금 사용처(d-2) line 진행 중 「시댁 얘기」
+     *  cascade. cross-line link (d-1 + d-2) narrative 의도 반영. 기존 candidate 4개
+     *  모두 외도 의심(d-1) 의존 → 비자금 사용처 line 진행 시점에는 발동 X 였음.
+     *
+     *  본 candidate: 「이준호의 비밀 개인 계좌」(dc-3) 등장 + 비자금 사용처 S2+ 도달 시
+     *  자연 cascade. ScriptedText (다음 thread): "비밀 계좌 추적 중 박지연이 다시
+     *  시댁 화제로 격앙" 등 의도. scriptedRefs 는 기존 cascade ref 재활용 (다음 thread
+     *  에서 d-2 line 분기 ref 등록 + 변경). */
+    id: 'dc2-via-cascade-d2-progression',
+    type: 'cascade_from_card',
+    preconditions: {
+      requirePriorCardFired: 'dc-3',
+      disputeLieState: { 'd-2': 'S2+' },
+    },
+    scriptedRefs: [
+      'emerge-dc2-via-cascade-judge-mention-v1',
+      'emerge-dc2-via-cascade-a-response-v1',
+      'emerge-dc2-via-cascade-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
 ]
 
 // ═════════════════════════════════════════════════════════════════════════════
 // Cycle 4 — h-d4 line (비자금의 원래 목적 = 박지연 난임 치료비) — 4 emergence
-// e-8 (종합산부인과 주차 영수증) / e-9 (산전우울증 자가진단 + 상담소 예약) / dc-8 (이준호의 또 다른 침묵) / h-d4 (쟁점)
+// e-8 (종합산부인과 주차 영수증) / e-9 (예비 부모 정서 자가진단 + 상담소 예약) / dc-8 (이준호의 또 다른 침묵) / h-d4 (쟁점)
 // 2026-05-25 폴리싱: e-8/e-9 자료 본질 교체 (휴대폰 검색 → 주차 영수증 / 보험 견적 → 자가진단·예약)
 //
 // Brief: docs/design/core-narrative-cycle4-spouse01-hd4-line-20260524/
@@ -899,7 +901,22 @@ export const e8NarrativeTriggers: NarrativeTriggerCandidate[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// e-9 "이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세" (CoreEvidence) — 4 candidates
+// e-9 "이준호 명의 「예비 부모 정서 자가진단 결과지 + 상담소 예약 확인 명세」"
+//   (CoreEvidence) — 3 candidates
+//
+// 2026-05-27 narrative 정합 보강 (사용자 narrative 답):
+//   - 박지연 = 난임 진단 후 출산 포기, 시술 안 함 결정. "산전우울증" 명칭은 임신 중 우울증
+//     의미로 박지연 난임 설정과 충돌.
+//   - 이준호 = 박지연 마음 설득 위해 정서 준비 자료 자기 공부. e-8 산부인과 방문 (난임
+//     시술 수준 확인) + e-9 정서 자가진단 (박지연 설득 자료) + e-10 「부모가 되는 마음
+//     연습」 (부모 마음가짐 공부) 정합.
+//   - 명칭 「산전우울증 자가진단」 → 「예비 부모 정서 자가진단」 변경.
+//
+// 2026-05-27 trigger 재편성 (Issue 2 안 A + Issue 3 안 동의):
+//   - `e9-via-a-interject` 폐기 (broad 패턴 — Issue 2)
+//   - `e9-via-b-submit` 폐기 (이준호 자료 frame 과 박지연 자기 노출 발화 부정합 — Issue 3)
+//   - `e9-via-b-outburst` 신설 — 사용자 narrative 답 ("내연녀 임신 오해 시 감정 폭발 강화")
+//     반영. e-8 fired + 자금 사용처 자백 (d-2 S5+) + 박지연 감정 단계 (충격/분노/체념).
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const e9NarrativeTriggers: NarrativeTriggerCandidate[] = [
@@ -918,35 +935,27 @@ export const e9NarrativeTriggers: NarrativeTriggerCandidate[] = [
     vfxProfile: 'standard',
   },
   {
-    id: 'e9-via-a-interject',
-    type: 'npc_interjection',
-    source: 'a',
-    preconditions: [
-      { requirePriorCardFired: 'e-8', partyDistrust: { a: { min: 50 } }, contextAction: 'evidence_present.b' },
-      { requirePriorCardFired: 'e-8', partyDistrust: { a: { min: 50 } }, contextAction: 'question.fact_pursuit.b' },
-    ],
-    scriptedRefs: [
-      'emerge-e9-via-a-interject-v1',
-      'emerge-e9-via-a-interject-judge-react-v1',
-      'emerge-e9-via-a-interject-a-response-v1',
-      'emerge-e9-via-a-interject-judge-decree-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'e9-via-b-submit',
-    type: 'npc_interjection',
+    /** 신설 — 박지연 감정 폭발. e-8 (주차 영수증) 등장 + 자금 사용처 자백 (d-2 S5+) 도달 +
+     *  박지연 감정 단계 (충격/분노/체념) 시점. 사용자 narrative 답 정합 — "내연녀 임신
+     *  대비 정서 준비?" misdirection 강화 + 박지연 감정 폭발.
+     *
+     *  ScriptedText (다음 thread): "당신 그동안 (나 모르게) 무슨 준비를 하고 있었던 건데?
+     *  내연녀가 임신해서 정서적으로 무너졌던 거지? 그래서 당신이 대신 자가진단까지
+     *  알아본 거잖아!" 등 의도. */
+    id: 'e9-via-b-outburst',
+    type: 'emotional_outburst',
     source: 'b',
     preconditions: {
       requirePriorCardFired: 'e-8',
-      partyPhase: { b: ['defensive', 'shaken'] },
+      disputeLieState: { 'd-2': 'S5+' },
+      partyPhase: { b: ['shaken', 'angry', 'resigned'] },
     },
     scriptedRefs: [
       'emerge-e9-via-b-submit-v1',
       'emerge-e9-via-b-submit-judge-react-v1',
       'emerge-e9-via-b-submit-judge-decree-v1',
     ],
-    vfxProfile: 'standard',
+    vfxProfile: 'emphasis',
   },
   {
     id: 'e9-via-judge-auto',
