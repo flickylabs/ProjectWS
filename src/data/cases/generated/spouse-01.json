@@ -1416,30 +1416,30 @@
             "redactions": []
           },
           "gps_log": [
-            { "timestamp": "02.13 (금) 18:33", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.13 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.11 (수) 18:47", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.09 (월) 18:38", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:48", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.06 (금) 18:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:36", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.04 (수) 18:35", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.02 (월) 18:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false },
-            { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "37.4962, 126.9461", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:46", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "37.4865, 127.0521", "suspicious": false }
+            { "timestamp": "02.13 (금) 18:33", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.13 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.11 (수) 18:47", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.11 (수) 21:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.09 (월) 18:38", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.09 (월) 21:48", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.06 (금) 18:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.06 (금) 21:36", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.04 (수) 18:35", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.04 (수) 21:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.02 (월) 18:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.02 (월) 21:46", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false }
           ]
         },
         "2": {
@@ -1692,7 +1692,7 @@
             { "date": "02.02 08:43", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "6분 42초", "suspicious": false },
             { "date": "02.01 13:27", "type": "miss", "typeLabel": "부재중", "target": "070-****-0771",          "duration": "-",        "suspicious": false }
           ],
-          "note": "010-****-3847 번호와의 통화가 새벽·낮 모두 반복적으로 보임. 통화 시간은 매번 0:30~2분 사이로 짧음."
+          "note": "010-****-3847 번호와의 통화가 새벽에 반복적으로 보임. 통화 시간은 매번 0:30~2분 사이로 짧음."
         }
       },
       "viewerDataByStage": {
@@ -1825,7 +1825,7 @@
               { "date": "02.02 08:43", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "6분 42초", "suspicious": false },
               { "date": "02.01 13:27", "type": "miss", "typeLabel": "부재중", "target": "070-****-0771",          "duration": "-",        "suspicious": false }
             ],
-            "note": "발신자 미상 번호 (010-****-3847)와의 통화가 새벽·낮 모두 반복적으로 확인됨. 통화 시간은 매번 0:30~2분 사이로 짧음."
+            "note": "발신자 미상 번호 (010-****-3847)와의 통화가 새벽에 반복적으로 확인됨. 통화 시간은 매번 0:30~2분 사이로 짧음."
           }
         }
       }

@@ -27496,6 +27496,30 @@ body.pc-mode .pc-phone-chat__pager button.is-active {
   color: rgba(255, 239, 199, 0.96) !important;
 }
 
+body.pc-mode .pc-phone-chat__pager .pc-phone-chat__pager-arrow {
+  flex: 0 0 auto !important;
+  min-width: 28px !important;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  color: rgba(232, 193, 114, 0.86) !important;
+}
+
+body.pc-mode .pc-phone-chat__pager .pc-phone-chat__pager-arrow:disabled {
+  opacity: 0.32 !important;
+  cursor: default !important;
+  color: rgba(205, 209, 222, 0.45) !important;
+}
+
+body.pc-mode .pc-phone-chat__date-marker {
+  margin-bottom: 4px !important;
+  letter-spacing: 0.04em !important;
+  color: rgba(232, 193, 114, 0.82) !important;
+  background: rgba(212, 162, 78, 0.08) !important;
+}
+
 body.pc-mode .pc-phone-chat.is-group-dm .pc-phone-chat__messages {
   gap: 11px !important;
   padding: 18px 14px 24px !important;

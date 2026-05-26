@@ -101,8 +101,9 @@ export default function PCEvidenceViewer() {
       .sort((a, b) => a - b)
     if (validKeysAsc.length === 0) return baseViewerData
     const latest = stageMap[String(validKeysAsc[validKeysAsc.length - 1])] ?? baseViewerData
-    // chat/email 타입: 모든 해금된 단계의 메시지를 pages로 누적 노출 (단계 상승 후 이전 단계 회람 가능)
-    if ((evidence.type === 'chat' || evidence.type === 'email') && validKeysAsc.length > 1) {
+    // chat/email 타입: 모든 해금된 단계의 메시지를 pages로 누적 노출 (단계 상승 후 이전 단계 회람 가능).
+    // pages 1개일 때도 page.label (stageLabel)을 ChatViewer로 전달해 날짜 marker 노출.
+    if ((evidence.type === 'chat' || evidence.type === 'email') && validKeysAsc.length >= 1) {
       const latestChat = (latest as UnsafeAny)?.chat
       if (latestChat && Array.isArray(latestChat.messages)) {
         const pages = validKeysAsc

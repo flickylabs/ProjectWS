@@ -103,7 +103,7 @@ const VIEWER_COPY = {
     category: '분류',
     counterNumber: '상대 번호',
     targetContent: '대상·내용',
-    callDurationMessage: '통화시간·메시지',
+    callDurationMessage: '통화시간',
     duration: '소요시간',
     diaryFallback: '어머니의 공책',
     handwrittenCopy: '자필 사본',
@@ -478,34 +478,38 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
           <span>RECEIPT BUNDLE</span>
           <strong>{formatCopy(copy.receiptItem, { current: current + 1, total: sheets.length })}</strong>
         </div>
-        <div className="pc-receipt-viewer__dots" aria-label={copy.receiptPageSelect}>
-          {sheets.map((_, i) => (
-            <button
-              key={i}
-              aria-label={formatCopy(copy.receiptView, { index: i + 1 })}
-              className={i === current ? 'is-active' : ''}
-              onClick={() => setCurrent(i)}
-              type="button"
-            />
-          ))}
-        </div>
+        {sheets.length > 1 ? (
+          <div className="pc-receipt-viewer__dots" aria-label={copy.receiptPageSelect}>
+            {sheets.map((_, i) => (
+              <button
+                key={i}
+                aria-label={formatCopy(copy.receiptView, { index: i + 1 })}
+                className={i === current ? 'is-active' : ''}
+                onClick={() => setCurrent(i)}
+                type="button"
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
 
-      <div className="pc-receipt-strip" aria-label={copy.receiptList}>
-        {sheets.map((candidate, i) => (
-          <button
-            className={`pc-receipt-thumb${i === current ? ' is-active' : ''}${candidate.suspicious ? ' is-suspicious' : ''}`}
-            key={`${candidate.storeName}-${candidate.date}-${i}`}
-            onClick={() => setCurrent(i)}
-            type="button"
-          >
-            <span>{String(i + 1).padStart(2, '0')}</span>
-            <strong>{candidate.storeName}</strong>
-            <em>{candidate.date}</em>
-            <b>{candidate.total}</b>
-          </button>
-        ))}
-      </div>
+      {sheets.length > 1 ? (
+        <div className="pc-receipt-strip" aria-label={copy.receiptList}>
+          {sheets.map((candidate, i) => (
+            <button
+              className={`pc-receipt-thumb${i === current ? ' is-active' : ''}${candidate.suspicious ? ' is-suspicious' : ''}`}
+              key={`${candidate.storeName}-${candidate.date}-${i}`}
+              onClick={() => setCurrent(i)}
+              type="button"
+            >
+              <span>{String(i + 1).padStart(2, '0')}</span>
+              <strong>{candidate.storeName}</strong>
+              <em>{candidate.date}</em>
+              <b>{candidate.total}</b>
+            </button>
+          ))}
+        </div>
+      ) : null}
 
       <div className={`pc-receipt-paper${sheet.suspicious ? ' is-suspicious' : ''}`}>
         <span className="pc-receipt-paper__texture" aria-hidden="true" />
@@ -572,22 +576,24 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         </div>
       </div>
 
-      <div className="pc-receipt-nav">
-        <button
-          disabled={current === 0}
-          onClick={() => setCurrent((p) => Math.max(0, p - 1))}
-          type="button"
-        >
-          {copy.previous}
-        </button>
-        <button
-          disabled={current === sheets.length - 1}
-          onClick={() => setCurrent((p) => Math.min(sheets.length - 1, p + 1))}
-          type="button"
-        >
-          {copy.next}
-        </button>
-      </div>
+      {sheets.length > 1 ? (
+        <div className="pc-receipt-nav">
+          <button
+            disabled={current === 0}
+            onClick={() => setCurrent((p) => Math.max(0, p - 1))}
+            type="button"
+          >
+            {copy.previous}
+          </button>
+          <button
+            disabled={current === sheets.length - 1}
+            onClick={() => setCurrent((p) => Math.min(sheets.length - 1, p + 1))}
+            type="button"
+          >
+            {copy.next}
+          </button>
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -758,6 +764,15 @@ export function ChatViewer({
         </div>
         {pages.length > 1 ? (
           <div className="pc-phone-chat__pager" aria-label={copy.chatPages}>
+            <button
+              className="pc-phone-chat__pager-arrow"
+              disabled={currentPage === 0}
+              onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
+              type="button"
+              aria-label={copy.previous}
+            >
+              ◀
+            </button>
             {pages.map((p, i) => (
               <button
                 key={`${p.label ?? 'page'}-${i}`}
@@ -768,9 +783,23 @@ export function ChatViewer({
                 {p.label ?? formatCopy(copy.page, { index: i + 1 })}
               </button>
             ))}
+            <button
+              className="pc-phone-chat__pager-arrow"
+              disabled={currentPage === pages.length - 1}
+              onClick={() => setCurrentPage((p) => Math.min(pages.length - 1, p + 1))}
+              type="button"
+              aria-label={copy.next}
+            >
+              ▶
+            </button>
           </div>
         ) : null}
         <div className="pc-phone-chat__messages">
+        {page?.label ? (
+          <div className="pc-phone-chat__system pc-phone-chat__date-marker">
+            {page.label}
+          </div>
+        ) : null}
         {activeMessages.map((m, i) => {
           if (m.type === 'deleted') {
             return (
