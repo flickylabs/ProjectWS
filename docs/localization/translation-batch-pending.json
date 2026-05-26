@@ -278,6 +278,15 @@
             "page 134 excerpt: '준비는 완벽한 계획표를 채우는 일이 아니다. 내가 어떤 사람이 되고 싶은지, 어떤 말은 줄이고 어떤 태도는 지킬지 미리 정해 두는 일에 가깝다. __오래 기다린 자리든 예상보다 일찍 다가온 자리든, 그 자리에 들어선 마음은 같은 무게로 소중하다.__ 흔들리는 날에도 다시 돌아올 기준이 있으면 마음은 덜 헤맨다.' (notes 영역 비움)"
           ],
           "note": "사용자 manual 검증 결과 '영수증 영역으로 보임' 영역 + '책 metaphor 강화' 요청. DocumentShellVariant 'book' 추가 + EvidenceDocumentShell 영역에서 variant === 'book' 시 영수증 도장 영역 (clip / serial 'COPY' / stamp '원본대조' / eyebrow '증거 사본') 미렌더. BookSubView variant 영역 \"contract\" → \"book\". CSS pc-doc-shell--book 영역 신규 — 책 표지 styling (배경 #f5ecd6 + 좌측 책등 border-left 6px + box-shadow + 가운데 정렬 header h3 22px + footer 점선 border) + view별 영역 (view-cover = stage 1 책 표지 form + view-toc / view-dogeared = 펼친 페이지 form) + pc-doc-book__underline inline (text-decoration underline + color rgba(180,75,35,0.82) + thickness 2px + offset 3px). dogearedPages 영역에서 사용자 요청: 여백 메모 제거 + 본문 안 인라인 밑줄로 변경. notes 영역 데이터는 비운 array 유지 (BookDogearedPage schema 영역 호환). 새 underline phrases: page 47 '그 마음을 두려워하지 말고 천천히 받아들이는 일이 가장 먼저 해야 할 준비다.' / page 89 '두려움을 없애려 하지 말고 그 마음을 인정하는 데서 시작하자.' / page 134 '오래 기다린 자리든 예상보다 일찍 다가온 자리든, 그 자리에 들어선 마음은 같은 무게로 소중하다.' 진실 노출 정책 keyword (박지연/난임/임신/내연녀/출산/태교/치료) 직접 surface 0 — '오래 기다린 자리/예상보다 일찍 다가온 자리' 우회 표현으로 사용자 안 '오랜 노력으로 얻은 아기/의도치 않은 아기' 의도 보존. 검증: qa:fast RELEASE READY (P0=0) / detect-truth-leak --strict 0 findings (4 lang) / derive L1~L5 no top-level changes (case.ts 영역 schema 변경 0)."
+        },
+        {
+          "file": "src/components/pc/evidence/EvidenceSubViewers.tsx + src/app/pc.css",
+          "path": "BookSubView page navigator (좌우 화살표 + dots) + cover 영역 meta/ISBN hide + 형광펜 음영 (밑줄 → highlighter) + toc 음영 제거 + dogeared page-header 가시성 개선 + 볼드 제거",
+          "type": "수정",
+          "koTexts": [
+            "신규 i18n key 'bookPageCover': ko='표지' / en='Cover' / ja='表紙' / zh-CN='封面' (page navigator dot aria-label 영역)"
+          ],
+          "note": "사용자 manual 검증 2차 요청: (1) 각 stage별 페이지 구분 + 좌우 화살표 이동 / (2) 표지에는 제목·저자·마케팅 문구·출판사만 (구매 매장/구매일/ISBN 제거) / (3) 목차 음영 제거 + 손글씨 느낌 강조 (형광펜) + 볼드 제거 / (4) 접힌 페이지 한 페이지로 모음 + 페이지 번호/챕터 영역 가시성 개선 + 볼드 제거. 결정 = 형광펜 음영 (사용자 선택권 '형광펜 vs 밑줄 중 자연' 영역 채택, 가독성 우수 + 책에 직접 표시한 자연 느낌). BookSubView 영역 page navigator state 영역 (useState pageIdx + useEffect view 변경 시 reset) + pages array (view 영역에 따라 cover/toc/dogeared 영역 점진 추가) + 좌우 화살표 button + dots indicator + current page rendering 분기. cover page 영역에서 meta 영역 (구매 매장/구매일) 자체 미렌더 + footer 영역 cover 시 ISBN 영역 hide. CSS pc-doc-book__highlight 신규 (linear-gradient 104deg + background-size 100% 0.72em + position 0 0.62em + box-decoration-break clone + padding 0 3px + font-weight 500 = 볼드 X). pc-doc-book__toc-item.is-highlighted background 음영 제거 (form-weight 500 + 형광펜은 title 안 highlight span 영역). pc-doc-book__page-num/page-chapter background transparent + 책 페이지 동일 색 + 점선 border-bottom + font-weight 800. pc-doc-book--page-{cover,toc,dogeared} className으로 view별 styling 분기 (기존 view-X 영역 rename). renderExcerptWithUnderline → renderExcerptWithHighlight 영역 rename (className pc-doc-book__highlight 영역 사용). 검증: qa:fast RELEASE READY (P0=0) / detect-truth-leak --strict 0 findings (4 lang)."
         }
       ]
     },

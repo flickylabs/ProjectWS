@@ -114,6 +114,7 @@ const VIEWER_COPY = {
     // 2026-05-26: e-10 「예비 부모 정서 도서」 BookSubView i18n key
     purchaseStore: '구매 매장',
     purchaseDate: '구매일',
+    bookPageCover: '표지',
     bookToc: '목차',
     bookChapter: '챕터',
     bookBookmark: '책갈피·강조',
@@ -222,6 +223,7 @@ const VIEWER_COPY = {
     comments: 'Comments',
     purchaseStore: 'Purchase Store',
     purchaseDate: 'Purchase Date',
+    bookPageCover: 'Cover',
     bookToc: 'Table of Contents',
     bookChapter: 'Chapter',
     bookBookmark: 'Bookmarked/Highlighted',
@@ -330,6 +332,7 @@ const VIEWER_COPY = {
     comments: 'コメント',
     purchaseStore: '購入店',
     purchaseDate: '購入日',
+    bookPageCover: '表紙',
     bookToc: '目次',
     bookChapter: '章',
     bookBookmark: '栞・強調',
@@ -438,6 +441,7 @@ const VIEWER_COPY = {
     comments: '评论',
     purchaseStore: '购买店',
     purchaseDate: '购买日期',
+    bookPageCover: '封面',
     bookToc: '目录',
     bookChapter: '章',
     bookBookmark: '书签·重点',
@@ -1102,19 +1106,21 @@ export function ContractViewer({ title, subtitle, rows, signature, book }: {
 //   stage별 점진 노출: 1=표지 / 2=목차 강조 / 3=접힌 페이지 + 본인 필체 메모.
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-function renderExcerptWithUnderline(excerpt: string, pageKey: string | number): ReactNode {
-  // Parses __phrase__ markers as inline underlines.
+function renderExcerptWithHighlight(excerpt: string, pageKey: string | number): ReactNode {
+  // Parses __phrase__ markers as inline highlighter marks.
   const parts = excerpt.split(/(__[^_]+__)/g)
   return parts.map((part, idx) => {
     if (part.startsWith('__') && part.endsWith('__')) {
       const text = part.slice(2, -2)
       return (
-        <span key={`u-${pageKey}-${idx}`} className="pc-doc-book__underline">{text}</span>
+        <span key={`h-${pageKey}-${idx}`} className="pc-doc-book__highlight">{text}</span>
       )
     }
     return <span key={`t-${pageKey}-${idx}`}>{part}</span>
   })
 }
+
+type BookPageKind = 'cover' | 'toc' | 'dogeared'
 
 function BookSubView({ data }: { data: BookData }) {
   const copy = useViewerCopy()
@@ -1122,6 +1128,24 @@ function BookSubView({ data }: { data: BookData }) {
   const cover = data.cover
   const docTitle = cover.title || copy.documentCopy
   const docSubtitle = cover.subtitle
+
+  const pages: BookPageKind[] = ['cover']
+  if (view !== 'cover' && data.toc && data.toc.length > 0) pages.push('toc')
+  if (view === 'dogeared' && data.dogearedPages && data.dogearedPages.length > 0) pages.push('dogeared')
+
+  const [pageIdx, setPageIdx] = useState(0)
+  useEffect(() => {
+    setPageIdx(0)
+  }, [view])
+  const safeIdx = Math.min(pageIdx, pages.length - 1)
+  const current = pages[safeIdx]
+
+  const PAGE_LABEL: Record<BookPageKind, string> = {
+    cover: copy.bookPageCover,
+    toc: copy.bookToc,
+    dogeared: copy.bookDogearedPages,
+  }
+
   return (
     <EvidenceDocumentShell
       title={docTitle}
@@ -1131,27 +1155,52 @@ function BookSubView({ data }: { data: BookData }) {
       footer={
         <span>
           {cover.author}{cover.publisher ? ` · ${cover.publisher}` : ''}
-          {cover.isbn ? ` · ISBN ${cover.isbn}` : ''}
+          {current !== 'cover' && cover.isbn ? ` · ISBN ${cover.isbn}` : ''}
         </span>
       }
     >
-      <div className={`pc-doc-book pc-doc-book--view-${view}`}>
-        <div className="pc-doc-book__meta">
-          {cover.purchaseStore ? (
-            <div className="pc-doc-book__meta-row">
-              <span className="pc-doc-book__meta-label">{copy.purchaseStore}</span>
-              <span className="pc-doc-book__meta-value">{cover.purchaseStore}</span>
+      <div className={`pc-doc-book pc-doc-book--page-${current}`}>
+        {pages.length > 1 ? (
+          <div className="pc-doc-book__nav" role="navigation">
+            <button
+              type="button"
+              className="pc-doc-book__nav-arrow"
+              aria-label={copy.previous}
+              disabled={safeIdx === 0}
+              onClick={() => setPageIdx((p) => Math.max(0, p - 1))}
+            >
+              ←
+            </button>
+            <div className="pc-doc-book__nav-dots">
+              {pages.map((p, i) => (
+                <button
+                  key={`dot-${p}`}
+                  type="button"
+                  className={i === safeIdx ? 'is-active' : ''}
+                  aria-label={PAGE_LABEL[p]}
+                  onClick={() => setPageIdx(i)}
+                />
+              ))}
             </div>
-          ) : null}
-          {cover.purchaseDate ? (
-            <div className="pc-doc-book__meta-row">
-              <span className="pc-doc-book__meta-label">{copy.purchaseDate}</span>
-              <span className="pc-doc-book__meta-value">{cover.purchaseDate}</span>
-            </div>
-          ) : null}
-        </div>
+            <button
+              type="button"
+              className="pc-doc-book__nav-arrow"
+              aria-label={copy.next}
+              disabled={safeIdx === pages.length - 1}
+              onClick={() => setPageIdx((p) => Math.min(pages.length - 1, p + 1))}
+            >
+              →
+            </button>
+          </div>
+        ) : null}
 
-        {view !== 'cover' && data.toc && data.toc.length > 0 ? (
+        {current === 'cover' ? (
+          <div className="pc-doc-book__cover-page">
+            {/* cover page: title/subtitle/footer 영역은 Shell header/footer 영역. 본 영역은 비워두어 표지 form 유지 */}
+          </div>
+        ) : null}
+
+        {current === 'toc' && data.toc && data.toc.length > 0 ? (
           <section className="pc-doc-book__toc">
             <h4 className="pc-doc-book__section-title">{copy.bookToc}</h4>
             <ul className="pc-doc-book__toc-list">
@@ -1161,17 +1210,20 @@ function BookSubView({ data }: { data: BookData }) {
                   className={`pc-doc-book__toc-item${entry.highlighted ? ' is-highlighted' : ''}`}
                 >
                   <span className="pc-doc-book__toc-chapter">{copy.bookChapter} {entry.chapter}</span>
-                  <span className="pc-doc-book__toc-title">{entry.title}</span>
-                  {entry.highlighted ? (
-                    <span className="pc-doc-book__toc-bookmark" aria-label={copy.bookBookmark}>★</span>
-                  ) : null}
+                  <span className="pc-doc-book__toc-title">
+                    {entry.highlighted ? (
+                      <span className="pc-doc-book__highlight">{entry.title}</span>
+                    ) : (
+                      entry.title
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>
           </section>
         ) : null}
 
-        {view === 'dogeared' && data.dogearedPages && data.dogearedPages.length > 0 ? (
+        {current === 'dogeared' && data.dogearedPages && data.dogearedPages.length > 0 ? (
           <section className="pc-doc-book__dogeared">
             <h4 className="pc-doc-book__section-title">
               {copy.bookDogearedPages}
@@ -1190,7 +1242,7 @@ function BookSubView({ data }: { data: BookData }) {
                   </header>
                   {page.excerpt ? (
                     <p className="pc-doc-book__page-excerpt">
-                      {renderExcerptWithUnderline(page.excerpt, page.page)}
+                      {renderExcerptWithHighlight(page.excerpt, page.page)}
                     </p>
                   ) : null}
                 </article>
