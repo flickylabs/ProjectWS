@@ -131,6 +131,38 @@ function buildWitnessGameState(state: ReturnType<typeof useGameStore.getState>) 
 const _contradictionTokens: Record<string, number> = {}
 const _empathyAttempts: Record<string, number> = {}
 
+// 2026-05-26 d-1 b측 lieState 회귀 fix (안 C: cascade 후 mute window)
+//   spouse-01 e-3 stage 2 → b 제시 시점 e-4 cascade fire 직후 일정 턴 동안
+//   QUESTION_TRIGGERS V4 폴백 (lieStateMachine.ts line 74-90) 영역을 차단.
+//   cascade narrative 후 fact_pursuit 1~2회로 S2→S3→S4 점프 회귀 차단.
+//   hard_evidence 폴백 / motiveSkip / matchedTransition / contradiction_pursuit /
+//   witness_testimony / trust_* 영역은 mute 적용 X (자연 진행 영역).
+//   key 형식: `${agentId}:${disputeId}` (예: 'b:d-1'), value = mute 만료 turn count.
+const _postCascadeV4FallbackMute: Map<string, number> = new Map()
+const POST_CASCADE_V4_FALLBACK_MUTE_TURNS = 2
+const V4_FALLBACK_QUESTION_TRIGGERS = new Set([
+  'direct_question',
+  'timeline_question',
+  'motive_question',
+  'context_question',
+  'empathy_question',
+  'provenance_question',
+])
+
+function isV4FallbackMuted(agentId: string, disputeId: string, currentTurn: number): boolean {
+  const expiry = _postCascadeV4FallbackMute.get(`${agentId}:${disputeId}`)
+  if (expiry === undefined) return false
+  if (currentTurn >= expiry) {
+    _postCascadeV4FallbackMute.delete(`${agentId}:${disputeId}`)
+    return false
+  }
+  return true
+}
+
+function setPostCascadeV4FallbackMute(agentId: string, disputeId: string, currentTurn: number): void {
+  _postCascadeV4FallbackMute.set(`${agentId}:${disputeId}`, currentTurn + POST_CASCADE_V4_FALLBACK_MUTE_TURNS)
+}
+
 const LIE_STATE_RANK_FOR_UNLOCK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
 
 const EMOTION_PHASE_LABELS: Record<string, string> = {
@@ -1165,6 +1197,12 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
             relatedDisputes: e4Def.proves,
             turn: state.turnCount,
           })
+          // 2026-05-26 d-1 b측 lieState 회귀 fix (안 C)
+          //   cascade narrative fire 직후 b:d-1 V4 폴백 mute window 설정.
+          //   POST_CASCADE_V4_FALLBACK_MUTE_TURNS 턴 동안 fact_pursuit 등
+          //   QUESTION_TRIGGERS 단독으로 d-1 lieState 점프 차단.
+          //   hard_evidence / contradiction_pursuit / witness 영역은 자연 진행 유지.
+          setPostCascadeV4FallbackMute('b', 'd-1', state.turnCount)
         }
       }
     }
@@ -1880,7 +1918,15 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   }
 
   // ── V4 전략적 차별화: 질문 유형별 다른 메커니즘 ──
-  const triggers = questionTypeToTrigger(action.questionType)
+  const rawTriggers = questionTypeToTrigger(action.questionType)
+  // 2026-05-26 d-1 b측 lieState 회귀 fix (안 C)
+  //   cascade 직후 mute window 동안 V4 폴백 trigger (QUESTION_TRIGGERS) 필터링.
+  //   lieStateMachine.ts line 74-90의 sameFromTransition 영역 차단.
+  //   mute 영역 = (agentId:disputeId) 한정, 다른 dispute/agent 영향 X.
+  const isV4Muted = isV4FallbackMuted(action.target, action.disputeId, state.turnCount)
+  const triggers = isV4Muted
+    ? rawTriggers.filter(t => !V4_FALLBACK_QUESTION_TRIGGERS.has(t))
+    : rawTriggers
   let didTransition = false
 
   const agent = action.target === 'a' ? state.agentA : state.agentB
