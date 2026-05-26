@@ -3701,7 +3701,44 @@
         "e-1"
       ],
       "requiredLieState": "S0",
+      "investigationResults": {
+        "inspect_book_cover": "도서 「예비 부모를 위한 마음 가이드」 1권. 결제일·매장 영수증(e-1)과 일치한다. 누가 누구를 위해 산 책인지 아직 단정할 수 없다.",
+        "browse_table_of_contents": "목차에서 부모 정서·두려움·준비 영역 챕터에 책갈피·강조 표시가 모여 있다. 단순 임신 준비가 아니라 정서 정리에 초점이 맞춰져 있다.",
+        "check_dogeared_pages": "접힌 페이지마다 B 본인 필체로 밑줄과 여백 메모가 남아 있다. B 본인이 진지하게 정독하고 부모 될 마음을 스스로 정리한 자료로 보인다."
+      },
       "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 1,
+          "revealKey": "inspect_book_cover",
+          "question": {
+            "text": "이 책이 어디서 나왔습니까?",
+            "attackVector": "authenticity"
+          },
+          "label": "도서 확인",
+          "unlockHint": null
+        },
+        {
+          "stage": 2,
+          "revealKey": "browse_table_of_contents",
+          "question": {
+            "text": "이 책에서 어떤 부분에 관심이 모여 있습니까?",
+            "attackVector": "context"
+          },
+          "label": "목차 탐색",
+          "unlockHint": "도서를 한 번 더 살펴보면 목차에서 어느 챕터에 표시가 모여 있는지 확인할 수 있습니다."
+        },
+        {
+          "stage": 3,
+          "revealKey": "check_dogeared_pages",
+          "question": {
+            "text": "여기에 표시된 페이지들은 누가 무엇을 위해 표시한 것입니까?",
+            "attackVector": "responsibility"
+          },
+          "label": "접힌 페이지 확인",
+          "unlockHint": "목차의 강조 챕터를 따라가면 접힌 페이지에 남은 필기를 확인할 수 있습니다."
+        }
+      ],
       "partyContext": {
         "a": {
           "questionAngle": "남편 차/책상에서 예비 부모 정서 도서가 나온 이유를 어떻게 보는지",
@@ -3766,6 +3803,222 @@
           "summary": "도서·필체는 인증되지만 진짜 목적은 심문과 맥락으로 확정."
         }
       ],
+      "meta": {
+        "name": "예비 부모 정서 도서",
+        "type": "document",
+        "viewerType": "document",
+        "trustLevel": "high",
+        "trustLabel": "높음",
+        "source": "self",
+        "sourceLabel": "본인 소지",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 3,
+        "stageLabel": "전체 공개 (기본)",
+        "sourceNote": "self_possessed / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "예비 부모 정서 도서",
+          "type": "document",
+          "viewerType": "document",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "self",
+          "sourceLabel": "본인 소지",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 3,
+          "stageLabel": "전체 공개 (기본)",
+          "sourceNote": "self_possessed / original",
+          "redactions": []
+        },
+        "document": {
+          "subtype": "book",
+          "cover": {
+            "title": "(GPT Pro 의뢰 영역 — 책 제목)",
+            "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
+            "author": "(GPT Pro 의뢰 영역 — 저자)",
+            "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
+            "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
+            "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+            "purchaseStore": "교보문고 강남점"
+          },
+          "toc": [
+            { "chapter": 1, "title": "(GPT Pro 의뢰)", "highlighted": true },
+            { "chapter": 2, "title": "(GPT Pro 의뢰)", "highlighted": true },
+            { "chapter": 3, "title": "(GPT Pro 의뢰)", "highlighted": false },
+            { "chapter": 4, "title": "(GPT Pro 의뢰)", "highlighted": true },
+            { "chapter": 5, "title": "(GPT Pro 의뢰)", "highlighted": false },
+            { "chapter": 6, "title": "(GPT Pro 의뢰)", "highlighted": false }
+          ],
+          "dogearedPages": [
+            {
+              "page": 47,
+              "chapter": 1,
+              "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 1)",
+              "notes": [
+                { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 1)" }
+              ]
+            },
+            {
+              "page": 89,
+              "chapter": 2,
+              "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 2)",
+              "notes": [
+                { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 1)" }
+              ]
+            },
+            {
+              "page": 134,
+              "chapter": 4,
+              "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 3)",
+              "notes": [
+                { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 2)" },
+                { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 2)" }
+              ]
+            }
+          ],
+          "handwritingOwner": "b"
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "예비 부모 정서 도서 (외관 확인)",
+            "type": "document",
+            "viewerType": "document",
+            "trustLevel": "high",
+            "trustLabel": "높음",
+            "source": "self",
+            "sourceLabel": "본인 소지",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 도서 외관",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "document": {
+            "subtype": "book",
+            "view": "cover",
+            "cover": {
+              "title": "(GPT Pro 의뢰 영역 — 책 제목)",
+              "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
+              "author": "(GPT Pro 의뢰 영역 — 저자)",
+              "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
+              "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
+              "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+              "purchaseStore": "교보문고 강남점"
+            }
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "예비 부모 정서 도서 (목차 강조 확인)",
+            "type": "document",
+            "viewerType": "document",
+            "trustLevel": "high",
+            "trustLabel": "높음",
+            "source": "self",
+            "sourceLabel": "본인 소지",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 목차 + 강조 챕터",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "document": {
+            "subtype": "book",
+            "view": "toc",
+            "cover": {
+              "title": "(GPT Pro 의뢰 영역 — 책 제목)",
+              "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
+              "author": "(GPT Pro 의뢰 영역 — 저자)",
+              "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
+              "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
+              "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+              "purchaseStore": "교보문고 강남점"
+            },
+            "toc": [
+              { "chapter": 1, "title": "(GPT Pro 의뢰)", "highlighted": true },
+              { "chapter": 2, "title": "(GPT Pro 의뢰)", "highlighted": true },
+              { "chapter": 3, "title": "(GPT Pro 의뢰)", "highlighted": false },
+              { "chapter": 4, "title": "(GPT Pro 의뢰)", "highlighted": true },
+              { "chapter": 5, "title": "(GPT Pro 의뢰)", "highlighted": false },
+              { "chapter": 6, "title": "(GPT Pro 의뢰)", "highlighted": false }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "예비 부모 정서 도서 (접힌 페이지 + 본인 필체 메모)",
+            "type": "document",
+            "viewerType": "document",
+            "trustLevel": "high",
+            "trustLabel": "높음",
+            "source": "self",
+            "sourceLabel": "본인 소지",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 접힌 페이지 + 메모",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "document": {
+            "subtype": "book",
+            "view": "dogeared",
+            "cover": {
+              "title": "(GPT Pro 의뢰 영역 — 책 제목)",
+              "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
+              "author": "(GPT Pro 의뢰 영역 — 저자)",
+              "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
+              "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
+              "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+              "purchaseStore": "교보문고 강남점"
+            },
+            "toc": [
+              { "chapter": 1, "title": "(GPT Pro 의뢰)", "highlighted": true },
+              { "chapter": 2, "title": "(GPT Pro 의뢰)", "highlighted": true },
+              { "chapter": 3, "title": "(GPT Pro 의뢰)", "highlighted": false },
+              { "chapter": 4, "title": "(GPT Pro 의뢰)", "highlighted": true },
+              { "chapter": 5, "title": "(GPT Pro 의뢰)", "highlighted": false },
+              { "chapter": 6, "title": "(GPT Pro 의뢰)", "highlighted": false }
+            ],
+            "dogearedPages": [
+              {
+                "page": 47,
+                "chapter": 1,
+                "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 1)",
+                "notes": [
+                  { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 1)" }
+                ]
+              },
+              {
+                "page": 89,
+                "chapter": 2,
+                "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 2)",
+                "notes": [
+                  { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 1)" }
+                ]
+              },
+              {
+                "page": 134,
+                "chapter": 4,
+                "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 3)",
+                "notes": [
+                  { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 2)" },
+                  { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 2)" }
+                ]
+              }
+            ],
+            "handwritingOwner": "b"
+          }
+        }
+      },
       "narrativeTriggers": [
         {
           "id": "e10-via-bookbaby-question-angle",

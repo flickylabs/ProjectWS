@@ -1,0 +1,58 @@
+{
+  "_format_note": "GPT Pro 응답 형식 template. 모든 placeholder 영역 작성 후 반환. 그대로 generated JSON에 patch.",
+  "cover": {
+    "title": "(작성: 책 제목 — 한국어 자연 부모 정서 도서 톤)",
+    "subtitle": "(작성: 부제, 선택)",
+    "author": "(작성: 저자 이름)",
+    "publisher": "(작성: 출판사)",
+    "isbn": "(작성: ISBN 13자리, 가상)",
+    "purchaseDate": "(작성: 결제일 YYYY.MM.DD — e-1 영수증과 자연 정합)",
+    "purchaseStore": "교보문고 강남점"
+  },
+  "toc": [
+    { "chapter": 1, "title": "(작성: 강조 챕터 1 — 부모 정서 영역)", "highlighted": true },
+    { "chapter": 2, "title": "(작성: 강조 챕터 2 — 두려움 다스리기 영역)", "highlighted": true },
+    { "chapter": 3, "title": "(작성: 비강조 챕터 — 일반 부모 가이드)", "highlighted": false },
+    { "chapter": 4, "title": "(작성: 강조 챕터 3 — 준비 / 자기 정리 영역)", "highlighted": true },
+    { "chapter": 5, "title": "(작성: 비강조 챕터)", "highlighted": false },
+    { "chapter": 6, "title": "(작성: 비강조 챕터)", "highlighted": false }
+  ],
+  "dogearedPages": [
+    {
+      "page": 47,
+      "chapter": 1,
+      "excerpt": "(작성: 본문 발췌 1 — 챕터 1 영역 부모 정서, 2-4 문장)",
+      "notes": [
+        { "type": "underline", "text": "(작성: 밑줄 메모 1 — B 본인 다짐 / 정리 톤)" }
+      ]
+    },
+    {
+      "page": 89,
+      "chapter": 2,
+      "excerpt": "(작성: 본문 발췌 2 — 챕터 2 영역 두려움 다스리기, 2-4 문장)",
+      "notes": [
+        { "type": "margin", "text": "(작성: 여백 메모 1 — B 본인 정서 정리 톤)" }
+      ]
+    },
+    {
+      "page": 134,
+      "chapter": 4,
+      "excerpt": "(작성: 본문 발췌 3 — 챕터 4 영역 준비 / 자기 정리, 2-4 문장)",
+      "notes": [
+        { "type": "underline", "text": "(작성: 밑줄 메모 2 — B 본인 다짐 톤)" },
+        { "type": "margin", "text": "(작성: 여백 메모 2 — B 본인 정서 정리 톤)" }
+      ]
+    }
+  ],
+  "investigationResults_proposal": {
+    "_note": "현재 generated JSON 영역 사본 (조정 안 제안 가능, frame과 정합 시 그대로 유지 OK)",
+    "inspect_book_cover": "도서 「{title}」 1권. 결제일·매장 영수증(e-1)과 일치한다. 누가 누구를 위해 산 책인지 아직 단정할 수 없다.",
+    "browse_table_of_contents": "목차에서 부모 정서·두려움·준비 영역 챕터에 책갈피·강조 표시가 모여 있다. 단순 임신 준비가 아니라 정서 정리에 초점이 맞춰져 있다.",
+    "check_dogeared_pages": "접힌 페이지마다 B 본인 필체로 밑줄과 여백 메모가 남아 있다. B 본인이 진지하게 정독하고 부모 될 마음을 스스로 정리한 자료로 보인다."
+  },
+  "_self_check": {
+    "_keyword_violation_check": "다음 keyword 모두 미사용 확인: 박지연 / 지연 / 아내 / 난임 / 임신 / 출산 / 태교 / 치료 / 형 / 조카 / 시댁 / 회생 / 형사 — 모두 OK일 때 작업 완료",
+    "_tone_check": "한국어 자연 발화 / 자기 시점 1인칭 또는 abstract / 번역체 X / 시적 양극 대비 회피",
+    "_frame_check": "stage 1 = 외관 + d-3 강화 / stage 2 = 목차 강조 + d-3 흔들 / stage 3 = 본인 필체 + d-3 무너짐 (단 진실 직접 노출 X)"
+  }
+}

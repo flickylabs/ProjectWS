@@ -8,6 +8,7 @@ import type {
   BankRow, ChatMessage, ContractRow, TestimonyData,
   CCTVEvent, LogRow, DeviceSection, SNSData,
   ReceiptSheet, GpsLogEntry, LogPage,
+  BookData,
 } from './demoEvidenceData'
 
 type DocumentShellVariant = 'contract' | 'ledger' | 'bank' | 'testimony'
@@ -110,6 +111,17 @@ const VIEWER_COPY = {
     phoneOf: '{owner}의 휴대폰',
     privacy: '공개범위',
     comments: '댓글',
+    // 2026-05-26: e-10 「예비 부모 정서 도서」 BookSubView i18n key
+    purchaseStore: '구매 매장',
+    purchaseDate: '구매일',
+    bookToc: '목차',
+    bookChapter: '챕터',
+    bookBookmark: '책갈피·강조',
+    bookDogearedPages: '접힌 페이지',
+    bookHandwritingOwnerA: '필체 = 본인 (A)',
+    bookHandwritingOwnerB: '필체 = 본인 (B)',
+    bookNoteUnderline: '밑줄',
+    bookNoteMargin: '여백 메모',
   },
   en: {
     evidenceCopy: 'Evidence Copy',
@@ -208,6 +220,16 @@ const VIEWER_COPY = {
     phoneOf: "{owner}'s Phone",
     privacy: 'Privacy',
     comments: 'Comments',
+    purchaseStore: 'Purchase Store',
+    purchaseDate: 'Purchase Date',
+    bookToc: 'Table of Contents',
+    bookChapter: 'Chapter',
+    bookBookmark: 'Bookmarked/Highlighted',
+    bookDogearedPages: 'Dog-eared Pages',
+    bookHandwritingOwnerA: 'Handwriting · A',
+    bookHandwritingOwnerB: 'Handwriting · B',
+    bookNoteUnderline: 'Underline',
+    bookNoteMargin: 'Margin Note',
   },
   ja: {
     evidenceCopy: '証拠写し',
@@ -306,6 +328,16 @@ const VIEWER_COPY = {
     phoneOf: '{owner}の携帯電話',
     privacy: '公開範囲',
     comments: 'コメント',
+    purchaseStore: '購入店',
+    purchaseDate: '購入日',
+    bookToc: '目次',
+    bookChapter: '章',
+    bookBookmark: '栞・強調',
+    bookDogearedPages: '折り目のページ',
+    bookHandwritingOwnerA: '筆跡 · A',
+    bookHandwritingOwnerB: '筆跡 · B',
+    bookNoteUnderline: '下線',
+    bookNoteMargin: '余白メモ',
   },
   'zh-CN': {
     evidenceCopy: '证据副本',
@@ -404,6 +436,16 @@ const VIEWER_COPY = {
     phoneOf: '{owner}的手机',
     privacy: '公开范围',
     comments: '评论',
+    purchaseStore: '购买店',
+    purchaseDate: '购买日期',
+    bookToc: '目录',
+    bookChapter: '章',
+    bookBookmark: '书签·重点',
+    bookDogearedPages: '折角页面',
+    bookHandwritingOwnerA: '笔迹 · A',
+    bookHandwritingOwnerB: '笔迹 · B',
+    bookNoteUnderline: '下划线',
+    bookNoteMargin: '页边批注',
   },
 } satisfies Record<LocaleCode, Record<string, string>>
 
@@ -1002,10 +1044,15 @@ function buildGroupAvatarStack(messages: ChatMessage[]): ReactNode {
 // 3. ContractViewer — 계약서/가계부
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-export function ContractViewer({ title, subtitle, rows, signature }: {
-  title: string; subtitle: string; rows: ContractRow[]; signature?: string
+export function ContractViewer({ title, subtitle, rows, signature, book }: {
+  title: string; subtitle: string; rows: ContractRow[]; signature?: string; book?: BookData
 }) {
   const copy = useViewerCopy()
+  // 2026-05-26: e-10 「예비 부모 정서 도서」 evidence — subtype 'book' 영역 분기.
+  //   기존 ContractViewer rows form 영역 대신 BookSubView 렌더 (cover / toc / dogeared).
+  if (book) {
+    return <BookSubView data={book} />
+  }
   return (
     <EvidenceDocumentShell
       title={title}
@@ -1025,6 +1072,112 @@ export function ContractViewer({ title, subtitle, rows, signature }: {
             {r.amount ? <span className="pc-doc-form__amount tabular-nums">{r.amount}</span> : null}
           </div>
         ))}
+      </div>
+    </EvidenceDocumentShell>
+  )
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 3-B. BookSubView — 책 evidence (e-10 「예비 부모 정서 도서」)
+//   ContractViewer 영역의 book subtype 분기. view 영역 = 'cover' / 'toc' / 'dogeared'.
+//   stage별 점진 노출: 1=표지 / 2=목차 강조 / 3=접힌 페이지 + 본인 필체 메모.
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+function BookSubView({ data }: { data: BookData }) {
+  const copy = useViewerCopy()
+  const view = data.view ?? 'cover'
+  const cover = data.cover
+  const docTitle = cover.title || copy.documentCopy
+  const docSubtitle = cover.subtitle
+  return (
+    <EvidenceDocumentShell
+      title={docTitle}
+      subtitle={docSubtitle}
+      stamp={copy.originalCheck}
+      variant="contract"
+      footer={
+        <span>
+          {cover.author}{cover.publisher ? ` · ${cover.publisher}` : ''}
+          {cover.isbn ? ` · ISBN ${cover.isbn}` : ''}
+        </span>
+      }
+    >
+      <div className="pc-doc-book">
+        <div className="pc-doc-book__meta">
+          {cover.purchaseStore ? (
+            <div className="pc-doc-book__meta-row">
+              <span className="pc-doc-book__meta-label">{copy.purchaseStore}</span>
+              <span className="pc-doc-book__meta-value">{cover.purchaseStore}</span>
+            </div>
+          ) : null}
+          {cover.purchaseDate ? (
+            <div className="pc-doc-book__meta-row">
+              <span className="pc-doc-book__meta-label">{copy.purchaseDate}</span>
+              <span className="pc-doc-book__meta-value">{cover.purchaseDate}</span>
+            </div>
+          ) : null}
+        </div>
+
+        {view !== 'cover' && data.toc && data.toc.length > 0 ? (
+          <section className="pc-doc-book__toc">
+            <h4 className="pc-doc-book__section-title">{copy.bookToc}</h4>
+            <ul className="pc-doc-book__toc-list">
+              {data.toc.map((entry) => (
+                <li
+                  key={`toc-${entry.chapter}`}
+                  className={`pc-doc-book__toc-item${entry.highlighted ? ' is-highlighted' : ''}`}
+                >
+                  <span className="pc-doc-book__toc-chapter">{copy.bookChapter} {entry.chapter}</span>
+                  <span className="pc-doc-book__toc-title">{entry.title}</span>
+                  {entry.highlighted ? (
+                    <span className="pc-doc-book__toc-bookmark" aria-label={copy.bookBookmark}>★</span>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {view === 'dogeared' && data.dogearedPages && data.dogearedPages.length > 0 ? (
+          <section className="pc-doc-book__dogeared">
+            <h4 className="pc-doc-book__section-title">
+              {copy.bookDogearedPages}
+              {data.handwritingOwner === 'b' ? (
+                <span className="pc-doc-book__handwriting-tag">{copy.bookHandwritingOwnerB}</span>
+              ) : data.handwritingOwner === 'a' ? (
+                <span className="pc-doc-book__handwriting-tag">{copy.bookHandwritingOwnerA}</span>
+              ) : null}
+            </h4>
+            <div className="pc-doc-book__pages">
+              {data.dogearedPages.map((page) => (
+                <article key={`page-${page.page}`} className="pc-doc-book__page">
+                  <header className="pc-doc-book__page-header">
+                    <span className="pc-doc-book__page-num">p. {page.page}</span>
+                    <span className="pc-doc-book__page-chapter">{copy.bookChapter} {page.chapter}</span>
+                  </header>
+                  {page.excerpt ? (
+                    <p className="pc-doc-book__page-excerpt">{page.excerpt}</p>
+                  ) : null}
+                  {page.notes.length > 0 ? (
+                    <ul className="pc-doc-book__notes">
+                      {page.notes.map((note, idx) => (
+                        <li
+                          key={`note-${page.page}-${idx}`}
+                          className={`pc-doc-book__note pc-doc-book__note--${note.type}`}
+                        >
+                          <span className="pc-doc-book__note-tag">
+                            {note.type === 'underline' ? copy.bookNoteUnderline : copy.bookNoteMargin}
+                          </span>
+                          <span className="pc-doc-book__note-text">{note.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
       </div>
     </EvidenceDocumentShell>
   )

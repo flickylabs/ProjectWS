@@ -11158,6 +11158,192 @@ body.pc-mode .pc-doc-form__row.has-no-amount .pc-doc-form__content {
   grid-column: 2 / span 2;
 }
 
+/* 2026-05-26: e-10 「예비 부모 정서 도서」 BookSubView — cover / toc / dogeared 3 view. */
+body.pc-mode .pc-doc-book {
+  display: grid;
+  gap: 18px;
+}
+
+body.pc-mode .pc-doc-book__meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 16px;
+  padding: 12px 16px;
+  border: 1px solid rgba(70, 55, 32, 0.24);
+  background: rgba(255, 255, 255, 0.32);
+}
+
+body.pc-mode .pc-doc-book__meta-row {
+  display: contents;
+}
+
+body.pc-mode .pc-doc-book__meta-label {
+  display: flex;
+  align-items: center;
+  color: rgba(45, 37, 24, 0.64);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.pc-mode .pc-doc-book__meta-value {
+  display: flex;
+  align-items: center;
+  color: #2d2518;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+body.pc-mode .pc-doc-book__section-title {
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(70, 55, 32, 0.32);
+  color: rgba(45, 37, 24, 0.78);
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.pc-mode .pc-doc-book__handwriting-tag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(159, 26, 26, 0.16);
+  color: rgba(146, 22, 22, 0.85);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+body.pc-mode .pc-doc-book__toc {
+  display: grid;
+  gap: 8px;
+}
+
+body.pc-mode .pc-doc-book__toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+body.pc-mode .pc-doc-book__toc-item {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  border-left: 3px solid transparent;
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(45, 37, 24, 0.76);
+  font-size: 13px;
+}
+
+body.pc-mode .pc-doc-book__toc-item.is-highlighted {
+  border-left-color: rgba(212, 162, 78, 0.85);
+  background: rgba(212, 162, 78, 0.12);
+  color: #2d2518;
+  font-weight: 700;
+}
+
+body.pc-mode .pc-doc-book__toc-chapter {
+  color: rgba(45, 37, 24, 0.56);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.pc-mode .pc-doc-book__toc-bookmark {
+  color: rgba(212, 162, 78, 0.95);
+  font-size: 14px;
+}
+
+body.pc-mode .pc-doc-book__dogeared {
+  display: grid;
+  gap: 12px;
+}
+
+body.pc-mode .pc-doc-book__pages {
+  display: grid;
+  gap: 14px;
+}
+
+body.pc-mode .pc-doc-book__page {
+  padding: 14px 16px;
+  border: 1px solid rgba(70, 55, 32, 0.24);
+  border-left: 4px solid rgba(212, 162, 78, 0.6);
+  background: rgba(255, 255, 255, 0.32);
+  display: grid;
+  gap: 10px;
+}
+
+body.pc-mode .pc-doc-book__page-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(45, 37, 24, 0.64);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.pc-mode .pc-doc-book__page-num {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(70, 55, 32, 0.12);
+  color: rgba(45, 37, 24, 0.78);
+}
+
+body.pc-mode .pc-doc-book__page-chapter {
+  color: rgba(45, 37, 24, 0.56);
+}
+
+body.pc-mode .pc-doc-book__page-excerpt {
+  margin: 0;
+  color: #2d2518;
+  font-size: 13px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+body.pc-mode .pc-doc-book__notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+body.pc-mode .pc-doc-book__note {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.4);
+  color: #30271b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+body.pc-mode .pc-doc-book__note--underline {
+  border-left: 3px solid rgba(212, 162, 78, 0.7);
+}
+
+body.pc-mode .pc-doc-book__note--margin {
+  border-left: 3px solid rgba(105, 75, 32, 0.5);
+}
+
+body.pc-mode .pc-doc-book__note-tag {
+  color: rgba(45, 37, 24, 0.56);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+body.pc-mode .pc-doc-book__note-text {
+  color: #30271b;
+  font-weight: 600;
+}
+
 body.pc-mode .pc-doc-bank-summary {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr) max-content minmax(0, 1fr);

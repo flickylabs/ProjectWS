@@ -247,8 +247,15 @@ function EvidenceSubContent({
       return <ChatViewer header={(data as UnsafeAny).header ?? ''} messages={(data as UnsafeAny).messages ?? []} pages={(data as UnsafeAny).pages} inputStatus={(data as UnsafeAny).inputStatus} />
     case 'contract':
     case 'estimate':
-    case 'document':
-      return <ContractViewer title={(data as UnsafeAny).title ?? ''} subtitle={(data as UnsafeAny).subtitle ?? ''} rows={(data as UnsafeAny).rows ?? []} signature={(data as UnsafeAny).signature} />
+    case 'document': {
+      // 2026-05-26: e-10 「예비 부모 정서 도서」 evidence — subtype 'book' 분기.
+      //   document.subtype === 'book' 시 ContractViewer 영역의 BookSubView 렌더 (cover/toc/dogeared).
+      const docData = data as UnsafeAny
+      if (docData.subtype === 'book') {
+        return <ContractViewer title='' subtitle='' rows={[]} book={docData} />
+      }
+      return <ContractViewer title={docData.title ?? ''} subtitle={docData.subtitle ?? ''} rows={docData.rows ?? []} signature={docData.signature} />
+    }
     case 'testimony':
       return <TestimonyViewer data={data as UnsafeAny} />
     case 'cctv':

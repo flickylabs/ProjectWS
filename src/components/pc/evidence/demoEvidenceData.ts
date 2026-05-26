@@ -52,6 +52,42 @@ export interface ContractRow {
   missing: boolean
 }
 
+// ── Book (e-10 「예비 부모 정서 도서」 영역 evidence — 책 본체 + 본인 필체 메모) ──
+//   ContractViewer 영역의 `book?` prop으로 전달. subtype 'book' 인식 시 BookSubView 렌더.
+//   view = 'cover' / 'toc' / 'dogeared' 3 stage 분기 — 단계별 점진 노출 영역.
+export interface BookCover {
+  title: string
+  subtitle?: string
+  author: string
+  publisher: string
+  isbn: string
+  purchaseDate: string
+  purchaseStore: string
+}
+export interface BookTocEntry {
+  chapter: number
+  title: string
+  highlighted: boolean
+}
+export interface BookNote {
+  type: 'underline' | 'margin'
+  text: string
+}
+export interface BookDogearedPage {
+  page: number
+  chapter: number
+  excerpt: string
+  notes: BookNote[]
+}
+export interface BookData {
+  subtype: 'book'
+  view?: 'cover' | 'toc' | 'dogeared'
+  cover: BookCover
+  toc?: BookTocEntry[]
+  dogearedPages?: BookDogearedPage[]
+  handwritingOwner?: 'a' | 'b'
+}
+
 // ── Testimony ──
 export interface TestimonyData {
   witnessName: string

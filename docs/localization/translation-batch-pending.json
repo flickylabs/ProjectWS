@@ -179,6 +179,45 @@
             "implication: '참고서가 해당 방문의 성격을 가르는 결정적 단서가 된다.' → '교보문고 결제 건 안에 같이 잡힌 별도 도서가 본 영수증 묶음의 핵심 진입점.'"
           ],
           "note": "C-3c sub-thread (e-10 cascade 재설계 영역). 영수증 stage 3 도달 후 박지연이 이준호에게 e-1을 evidence_present 하는 시점이 곧 책 angle 질문 시점 → e-10 (예비 부모 정서 도서 + 본인 필기 흔적) cascade emerge frame. 영수증 단계 도달이나 영수증 제시 단독으로는 e-10 발동 X (stage 3 게이트는 useActionDispatch hook이 보장). truth-leak 정합: implication 영역에서 '조카/학용품' 키워드 제거 (stage 0 노출 방지). e-10 narrativeTrigger schema 영역 (case.ts L2441~L2475 + generated json) 및 useActionDispatch hook 영역 (e-1 stage 3 + b 제시 → e-10 cascade) 변경은 ScriptedText 영역 KO 권위 변경 없음 (재활용 4 entry는 이전 Cycle dual emergence 영역에서 4 lang sync 완료 [[design-narrative-cascade-from-card]])."
+        },
+        {
+          "file": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+          "path": "VIEWER_COPY.{ko,en,ja,zh-CN} — BookSubView i18n key 10건 신설",
+          "type": "신설",
+          "koTexts": [
+            "purchaseStore: 구매 매장",
+            "purchaseDate: 구매일",
+            "bookToc: 목차",
+            "bookChapter: 챕터",
+            "bookBookmark: 책갈피·강조",
+            "bookDogearedPages: 접힌 페이지",
+            "bookHandwritingOwnerA: 필체 = 본인 (A)",
+            "bookHandwritingOwnerB: 필체 = 본인 (B)",
+            "bookNoteUnderline: 밑줄",
+            "bookNoteMargin: 여백 메모"
+          ],
+          "note": "ContractViewer 영역 book subtype 확장 (BookSubView — cover/toc/dogeared 3 view) 영역 UI label. en/ja/zh-CN 직역 작성 (Claude 단순 직역 — 이전 callDurationMessage 영역 패턴 정합). 다음 batch 의뢰 시 polish 권장. e-10 「예비 부모 정서 도서」 evidence viewer 영역 외 다른 evidence 영역 영향 X (subtype 'book' 분기 영역만 사용)."
+        },
+        {
+          "file": "src/data/coreCases/spouse-01.case.ts + src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-10].investigationStages + investigationResults + viewerData + viewerDataByStage — 도서 evidence 조사 단계 시스템 신설",
+          "type": "신설",
+          "koTexts": [
+            "investigationStages 3 stage:",
+            "  stage 1 — revealKey 'inspect_book_cover' / label '도서 확인' / question '이 책이 어디서 나왔습니까?' / unlockHint null",
+            "  stage 2 — revealKey 'browse_table_of_contents' / label '목차 탐색' / question '이 책에서 어떤 부분에 관심이 모여 있습니까?' / unlockHint '도서를 한 번 더 살펴보면 목차에서 어느 챕터에 표시가 모여 있는지 확인할 수 있습니다.'",
+            "  stage 3 — revealKey 'check_dogeared_pages' / label '접힌 페이지 확인' / question '여기에 표시된 페이지들은 누가 무엇을 위해 표시한 것입니까?' / unlockHint '목차의 강조 챕터를 따라가면 접힌 페이지에 남은 필기를 확인할 수 있습니다.'",
+            "investigationResults 3 entry:",
+            "  inspect_book_cover: '도서 「{title}」 1권. 결제일·매장 영수증(e-1)과 일치한다. 누가 누구를 위해 산 책인지 아직 단정할 수 없다.'",
+            "  browse_table_of_contents: '목차에서 부모 정서·두려움·준비 영역 챕터에 책갈피·강조 표시가 모여 있다. 단순 임신 준비가 아니라 정서 정리에 초점이 맞춰져 있다.'",
+            "  check_dogeared_pages: '접힌 페이지마다 B 본인 필체로 밑줄과 여백 메모가 남아 있다. B 본인이 진지하게 정독하고 부모 될 마음을 스스로 정리한 자료로 보인다.'",
+            "viewerDataByStage 영역 meta:",
+            "  stage 1 — name '예비 부모 정서 도서 (외관 확인)' / stageLabel '1단계 — 도서 외관'",
+            "  stage 2 — name '예비 부모 정서 도서 (목차 강조 확인)' / stageLabel '2단계 — 목차 + 강조 챕터'",
+            "  stage 3 — name '예비 부모 정서 도서 (접힌 페이지 + 본인 필체 메모)' / stageLabel '3단계 — 접힌 페이지 + 메모'",
+            "purchaseStore '교보문고 강남점' (e-1 영수증 영역 정합)"
+          ],
+          "note": "spouse-01 e-10 「예비 부모 정서 도서」 evidence의 investigationStages 3단계 신설 + viewerDataByStage 1/2/3 (subtype 'book' 구조 — cover/toc/dogearedPages) + investigationResults 3 entry. cover.{title,subtitle,author,publisher,isbn,purchaseDate} + toc 6 chapter title + dogearedPages 3 page (excerpt + notes) 영역 KO 권위 텍스트는 '(GPT Pro 의뢰 영역 — XXX)' placeholder 형태 — 본 ledger sync 대상 X. 별도 GPT Pro self-contained 의뢰 폴더 (docs/design/spouse01-e10-book-content-brief-20260526/) 영역에서 GPT Pro 결과 도착 시 placeholder 일괄 교체 + 그 시점에 본 ledger 항목 다음 batch entry로 추가. 사건 frame: surface = '내연녀 임신 의심 (d-3 misdirection)' / 진실 = 'B 본인이 박지연 난임 진단 후 부모 될 마음 정리 (h-d4 진실로 수렴)'. stage 1 = misdirection 강화 / stage 2 = frame 흔들 / stage 3 = B 본인 자료 surface (단 박지연 난임 / h-d4 keyword 직접 노출 X — confession/dossier 영역에서 통합)."
         }
       ]
     },

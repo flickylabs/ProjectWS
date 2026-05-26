@@ -2425,6 +2425,47 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           implication: ko('본인 필기 흔적 = B 본인이 진지하게 부모 될 마음을 정리한 증거.'),
         },
       },
+      /**
+       * 2026-05-26 — investigationStages 3단계 신규 추가.
+       *
+       * 단계별 진실 노출 흐름:
+       *  - stage 1 (도서 확인): 표지·구매처 확인. e-1 영수증과 일치. d-3 misdirection
+       *    (내연녀 임신 의심) frame 유지 — "누구를 위한 책?"
+       *  - stage 2 (목차 탐색): 목차 + 강조 chapter. 부모 정서·두려움·준비 영역.
+       *    단순 임신 frame → 정서 정리 frame 전환 — d-3 흔들리기 시작.
+       *  - stage 3 (접힌 페이지 확인): 접힌 페이지 + B 본인 필체 밑줄/여백 메모.
+       *    B 본인이 정독한 자료임이 자연 확인 — "B 본인이 부모 될 마음 정리한 자료"
+       *    surface. d-3 무너짐, h-d4 진실 영역 접근 (단 박지연 난임은 직접 surface X).
+       *
+       * label / unlockHint / 메모 본문 등 narrative text는 generated JSON 영역에서
+       * 직접 보존 (GPT Pro 의뢰 영역).
+       */
+      investigationStages: [
+        {
+          stage: 1,
+          revealKey: 'inspect_book_cover',
+          question: {
+            text: ko('이 책이 어디서 나왔습니까?'),
+            attackVector: 'authenticity',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'browse_table_of_contents',
+          question: {
+            text: ko('이 책에서 어떤 부분에 관심이 모여 있습니까?'),
+            attackVector: 'context',
+          },
+        },
+        {
+          stage: 3,
+          revealKey: 'check_dogeared_pages',
+          question: {
+            text: ko('여기에 표시된 페이지들은 누가 무엇을 위해 표시한 것입니까?'),
+            attackVector: 'responsibility',
+          },
+        },
+      ],
       depthStages: [
         { id: 'stub', summary: ko('예비 부모 정서 도서 1권 존재 표시.') },
         { id: 'excerpt', summary: ko('도서 제목·표지만 우선 보임 — 내연녀 임신 의심 frame 강화.') },
