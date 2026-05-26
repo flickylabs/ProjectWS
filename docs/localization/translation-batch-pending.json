@@ -199,6 +199,25 @@
           "note": "ContractViewer 영역 book subtype 확장 (BookSubView — cover/toc/dogeared 3 view) 영역 UI label. en/ja/zh-CN 직역 작성 (Claude 단순 직역 — 이전 callDurationMessage 영역 패턴 정합). 다음 batch 의뢰 시 polish 권장. e-10 「예비 부모 정서 도서」 evidence viewer 영역 외 다른 evidence 영역 영향 X (subtype 'book' 분기 영역만 사용)."
         },
         {
+          "file": "src/data/coreCases/spouse-01.case.ts + src/data/cases/generated/spouse-01.json + src/data/scriptedText/spouse-01.json",
+          "path": "evidence[id=e-10].{description, investigationResults, viewerData, viewerDataByStage} + evidence[id=e-1].viewerData.receipt[교보문고].items[책].name (2 location) + scriptedText emerge-e-10 judge-mention-v1.text — GPT Pro 산출 적용 (책 제목 「부모가 되는 마음 연습」 확정)",
+          "type": "수정",
+          "koTexts": [
+            "case.ts description + generated JSON description: '「예비 부모를 위한 마음 가이드」류 도서 1권' → '「부모가 되는 마음 연습」 도서 1권'",
+            "investigationResults.inspect_book_cover: '도서 「부모가 되는 마음 연습」 1권. 결제일·매장 영수증(e-1)과 일치한다. 누가 누구를 위해 산 책인지 아직 단정할 수 없다.'",
+            "investigationResults.browse_table_of_contents: '목차에서 부모 정서·두려움·준비 영역 챕터에 책갈피·강조 표시가 모여 있다. 단순한 물품 구매가 아니라 마음을 정리하려는 흔적으로 읽힌다.' (이전: '단순 임신 준비가 아니라 정서 정리에 초점이 맞춰져 있다.' — GPT 보수 표현 채택, '임신' keyword 제거)",
+            "cover: title '부모가 되는 마음 연습' / subtitle '걱정을 줄이고 내 자리를 준비하는 법' / author '김도윤' / publisher '마음자리출판' / isbn '9791198427319' / purchaseDate '2024.05.18'",
+            "toc 6 chapter title: 1='부모가 된다는 말을 천천히 받아들이기' (highlighted) / 2='걱정이 커질 때 마음을 붙잡는 법' (highlighted) / 3='처음의 양육 리듬을 만드는 일' / 4='내 자리를 준비하는 작은 약속들' (highlighted) / 5='아이와 함께 배우는 생활 습관' / 6='어른들의 관계를 단단하게 조율하기'",
+            "dogearedPages page 47 excerpt: '부모가 된다는 말은 하루아침에 마음속에 자리를 잡지 않는다. 어떤 사람에게는 기대보다 먼저 걱정이 올라오고, 어떤 사람에게는 책임이라는 단어가 오래 남는다. 중요한 것은 그 마음을 밀어내지 않고, 오늘의 속도로 하나씩 이름 붙이는 일이다.' / underline note: '나는 아직 서툴다. 그래도 도망가지 말고 내 속도부터 인정하기.'",
+            "dogearedPages page 89 excerpt: '걱정은 준비가 부족하다는 신호만은 아니다. 지키고 싶은 것이 생겼을 때 마음이 먼저 움직이는 방식이기도 하다. 다만 걱정이 모든 결정을 대신하게 두면, 스스로를 살필 힘이 줄어든다. 숨을 고르고, 지금 할 수 있는 한 가지를 적는 것부터 시작해도 된다.' / margin note: '두려움을 없애려 하지 말 것. 내가 할 수 있는 일을 작게 나누기.'",
+            "dogearedPages page 134 excerpt: '준비는 완벽한 계획표를 채우는 일이 아니다. 내가 어떤 사람이 되고 싶은지, 어떤 말은 줄이고 어떤 태도는 지킬지 미리 정해 두는 일에 가깝다. 흔들리는 날에도 다시 돌아올 기준이 있으면 마음은 덜 헤맨다.' / underline note: '준비=물건보다 태도. 내가 지킬 기준을 먼저 정하기.' / margin note: '내 자리에서 할 수 있는 것부터. 말보다 반복되는 행동.'",
+            "e-1 영수증 viewerData + viewerDataByStage stage 3 교보문고 영수증 item name: '예비 부모를 위한 마음 가이드' → '부모가 되는 마음 연습' (2 location)",
+            "ScriptedText emerge-e-10 judge-mention-v1.text: '동일 결제 건에 「예비 부모를 위한 마음 가이드」류 정서 도서 1권' → '동일 결제 건에 「부모가 되는 마음 연습」 정서 도서 1권' (\"류\" placeholder 제거)"
+          ],
+          "note": "GPT Pro 의뢰서 결과 (docs/design/spouse01-e10-book-content-brief-20260526/) 적용 — 책 제목 「부모가 되는 마음 연습」 / 저자 김도윤 / 출판사 마음자리출판 / ISBN 9791198427319 / 구매일 2024.05.18 확정. Claude 보정 1건: investigationResults.browse_table_of_contents에서 GPT 산출 표현 ('단순한 물품 구매가 아니라 마음을 정리하려는 흔적으로 읽힌다.') 채택 — '임신' keyword 제거 (진실 노출 정책 더 보수). 진실 노출 정책 keyword (박지연/난임/임신/내연녀) 0 violation. e-1 영수증 item name + ScriptedText judge mention text도 책 제목 통일 sync (다국어 sync 영역 자동 포함). 검증: qa:fast RELEASE READY (P0=0) / detect-truth-leak --strict 0 findings (4 lang).",
+          "_followingNote_legacyEntry_below": "이 entry는 기존 'investigationStages + viewerData' batch entry의 placeholder 영역을 실제 KO 권위로 갱신한 영역. 아래 entry의 cover/toc/dogearedPages placeholder 영역은 본 entry에서 모두 교체됨."
+        },
+        {
           "file": "src/data/coreCases/spouse-01.case.ts + src/data/cases/generated/spouse-01.json",
           "path": "evidence[id=e-10].investigationStages + investigationResults + viewerData + viewerDataByStage — 도서 evidence 조사 단계 시스템 신설",
           "type": "신설",

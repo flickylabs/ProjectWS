@@ -761,7 +761,7 @@
                 "amount": "13,000"
               },
               {
-                "name": "예비 부모를 위한 마음 가이드",
+                "name": "부모가 되는 마음 연습",
                 "code": "978-89-9381",
                 "unitPrice": "14,000",
                 "qty": 1,
@@ -1231,7 +1231,7 @@
                   "amount": "13,000"
                 },
                 {
-                  "name": "예비 부모를 위한 마음 가이드",
+                  "name": "부모가 되는 마음 연습",
                   "code": "978-89-9381",
                   "unitPrice": "14,000",
                   "qty": 1,
@@ -1398,20 +1398,118 @@
           "redactions": []
         },
         "gps_log": [
-          { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-          { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 28분)", "suspicious": true  },
-          { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-          { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 03분)", "suspicious": true  },
-          { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-          { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 18분)", "suspicious": true  },
-          { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 도착", "suspicious": true  },
-          { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 출발 (체류 1시간 00분)", "suspicious": true  },
-          { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-          { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 1시간 51분)", "suspicious": true  },
-          { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-          { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 24분)", "suspicious": true  },
-          { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-          { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 10분)", "suspicious": true  }
+          {
+            "timestamp": "02.13 (금) 19:00",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 도착",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.13 (금) 21:28",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 출발 (체류 2시간 28분)",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.11 (수) 19:13",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 도착",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.11 (수) 21:16",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 출발 (체류 2시간 03분)",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.09 (월) 19:04",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 도착",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.09 (월) 21:22",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 출발 (체류 2시간 18분)",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.07 (토) 12:30",
+            "lat": "37.5176",
+            "lng": "127.0473",
+            "speed": "0 km/h",
+            "location": "★ 종합 산부인과 도착",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.07 (토) 13:30",
+            "lat": "37.5176",
+            "lng": "127.0473",
+            "speed": "0 km/h",
+            "location": "★ 종합 산부인과 출발 (체류 1시간 00분)",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.06 (금) 19:18",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 도착",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.06 (금) 21:09",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 출발 (체류 1시간 51분)",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.04 (수) 19:01",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 도착",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.04 (수) 21:25",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 출발 (체류 2시간 24분)",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.02 (월) 19:08",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 도착",
+            "suspicious": true
+          },
+          {
+            "timestamp": "02.02 (월) 21:18",
+            "lat": "37.4962",
+            "lng": "126.9461",
+            "speed": "0 km/h",
+            "location": "★ 봉천동 출발 (체류 2시간 10분)",
+            "suspicious": true
+          }
         ]
       },
       "viewerDataByStage": {
@@ -1432,40 +1530,278 @@
             "redactions": []
           },
           "gps_log": [
-            { "timestamp": "02.13 (금) 18:33", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.13 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.11 (수) 18:30", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.11 (수) 18:55", "lat": "37.4862", "lng": "126.9425", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.09 (월) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.09 (월) 18:30", "lat": "37.4860", "lng": "126.9410", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:52", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 11:55", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 14:00", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 14:45", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 15:15", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.06 (금) 18:51", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:25", "lat": "37.4830", "lng": "126.9510", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.04 (수) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.04 (수) 18:25", "lat": "37.4853", "lng": "126.9395", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.02 (월) 18:42", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false }
+            {
+              "timestamp": "02.13 (금) 18:33",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.13 (금) 19:00",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.13 (금) 21:28",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.13 (금) 21:55",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 18:30",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 18:55",
+              "lat": "37.4862",
+              "lng": "126.9425",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 19:13",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 21:16",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 21:50",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 18:00",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 18:30",
+              "lat": "37.4860",
+              "lng": "126.9410",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 19:04",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 21:22",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 21:52",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 11:55",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 12:30",
+              "lat": "37.5176",
+              "lng": "127.0473",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 13:30",
+              "lat": "37.5176",
+              "lng": "127.0473",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 14:00",
+              "lat": "37.4994",
+              "lng": "127.0277",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 14:45",
+              "lat": "37.4994",
+              "lng": "127.0277",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 15:15",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 18:51",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 19:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 21:09",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 21:25",
+              "lat": "37.4830",
+              "lng": "126.9510",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 21:55",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 18:00",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 18:25",
+              "lat": "37.4853",
+              "lng": "126.9395",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 19:01",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 21:25",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 21:55",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 18:42",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 19:08",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 21:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 21:50",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            }
           ]
         },
         "2": {
@@ -1485,40 +1821,278 @@
             "redactions": []
           },
           "gps_log": [
-            { "timestamp": "02.13 (금) 18:33", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.13 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.11 (수) 18:30", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.11 (수) 18:55", "lat": "37.4862", "lng": "126.9425", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.09 (월) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.09 (월) 18:30", "lat": "37.4860", "lng": "126.9410", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:52", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.07 (토) 11:55", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 14:00", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 14:45", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.07 (토) 15:15", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.06 (금) 18:51", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:25", "lat": "37.4830", "lng": "126.9510", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.04 (수) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.04 (수) 18:25", "lat": "37.4853", "lng": "126.9395", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.02 (월) 18:42", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
-            { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false }
+            {
+              "timestamp": "02.13 (금) 18:33",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.13 (금) 19:00",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.13 (금) 21:28",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.13 (금) 21:55",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "강남구 개포동 (자택)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 18:30",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 18:55",
+              "lat": "37.4862",
+              "lng": "126.9425",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 19:13",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 21:16",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.11 (수) 21:50",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "강남구 개포동 (자택)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 18:00",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 18:30",
+              "lat": "37.4860",
+              "lng": "126.9410",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 19:04",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 21:22",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.09 (월) 21:52",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "강남구 개포동 (자택)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 11:55",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 12:30",
+              "lat": "37.5176",
+              "lng": "127.0473",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 13:30",
+              "lat": "37.5176",
+              "lng": "127.0473",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 14:00",
+              "lat": "37.4994",
+              "lng": "127.0277",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 14:45",
+              "lat": "37.4994",
+              "lng": "127.0277",
+              "speed": "0 km/h",
+              "location": "?????",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.07 (토) 15:15",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 18:51",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 19:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 21:09",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 21:25",
+              "lat": "37.4830",
+              "lng": "126.9510",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.06 (금) 21:55",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "강남구 개포동 (자택)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 18:00",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 18:25",
+              "lat": "37.4853",
+              "lng": "126.9395",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 19:01",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 21:25",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.04 (수) 21:55",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "강남구 개포동 (자택)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 18:42",
+              "lat": "37.5006",
+              "lng": "127.0364",
+              "speed": "0 km/h",
+              "location": "강남구 역삼동 (직장)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 19:08",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 21:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "관악구 봉천동",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.02 (월) 21:50",
+              "lat": "37.4865",
+              "lng": "127.0521",
+              "speed": "0 km/h",
+              "location": "강남구 개포동 (자택)",
+              "suspicious": false
+            }
           ]
         },
         "3": {
@@ -1538,20 +2112,118 @@
             "redactions": []
           },
           "gps_log": [
-            { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-            { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 28분)", "suspicious": true  },
-            { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-            { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 03분)", "suspicious": true  },
-            { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-            { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 18분)", "suspicious": true  },
-            { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 도착", "suspicious": true  },
-            { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 출발 (체류 1시간 00분)", "suspicious": true  },
-            { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-            { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 1시간 51분)", "suspicious": true  },
-            { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-            { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 24분)", "suspicious": true  },
-            { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
-            { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 10분)", "suspicious": true  }
+            {
+              "timestamp": "02.13 (금) 19:00",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 도착",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.13 (금) 21:28",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 출발 (체류 2시간 28분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.11 (수) 19:13",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 도착",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.11 (수) 21:16",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 출발 (체류 2시간 03분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.09 (월) 19:04",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 도착",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.09 (월) 21:22",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 출발 (체류 2시간 18분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.07 (토) 12:30",
+              "lat": "37.5176",
+              "lng": "127.0473",
+              "speed": "0 km/h",
+              "location": "★ 종합 산부인과 도착",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.07 (토) 13:30",
+              "lat": "37.5176",
+              "lng": "127.0473",
+              "speed": "0 km/h",
+              "location": "★ 종합 산부인과 출발 (체류 1시간 00분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.06 (금) 19:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 도착",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.06 (금) 21:09",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 출발 (체류 1시간 51분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.04 (수) 19:01",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 도착",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.04 (수) 21:25",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 출발 (체류 2시간 24분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.02 (월) 19:08",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 도착",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.02 (월) 21:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 출발 (체류 2시간 10분)",
+              "suspicious": true
+            }
           ]
         }
       }
@@ -1707,28 +2379,182 @@
         },
         "log": {
           "rows": [
-            { "date": "02.14 13:22", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "7분 33초", "suspicious": false },
-            { "date": "02.14 00:12", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 30초", "suspicious": true  },
-            { "date": "02.13 21:35", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "1분 05초", "suspicious": false },
-            { "date": "02.13 12:11", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "1분 06초", "suspicious": false },
-            { "date": "02.12 01:13", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 55초", "suspicious": true  },
-            { "date": "02.11 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310",          "duration": "-",        "suspicious": false },
-            { "date": "02.11 08:46", "type": "out",  "typeLabel": "발신",   "target": "02-****-3441 (직장)",    "duration": "1분 30초", "suspicious": false },
-            { "date": "02.10 23:58", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "0분 55초", "suspicious": true  },
-            { "date": "02.10 18:40", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441 (직장)",    "duration": "2분 10초", "suspicious": false },
-            { "date": "02.10 12:10", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "0분 45초", "suspicious": false },
-            { "date": "02.09 17:11", "type": "miss", "typeLabel": "부재중", "target": "070-****-0526",          "duration": "-",        "suspicious": false },
-            { "date": "02.08 13:57", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "9분 18초", "suspicious": false },
-            { "date": "02.07 12:31", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "1분 20초", "suspicious": false },
-            { "date": "02.07 00:50", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 45초", "suspicious": true  },
-            { "date": "02.06 12:43", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "1분 41초", "suspicious": false },
-            { "date": "02.06 12:11", "type": "miss", "typeLabel": "부재중", "target": "010-****-7720 (아내)",   "duration": "-",        "suspicious": false },
-            { "date": "02.05 01:03", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120",          "duration": "-",        "suspicious": false },
-            { "date": "02.04 08:41", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441 (직장)",    "duration": "3분 05초", "suspicious": false },
-            { "date": "02.03 00:17", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 12초", "suspicious": true  },
-            { "date": "02.02 12:13", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "3분 22초", "suspicious": false },
-            { "date": "02.02 08:43", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "6분 42초", "suspicious": false },
-            { "date": "02.01 13:27", "type": "miss", "typeLabel": "부재중", "target": "070-****-0771",          "duration": "-",        "suspicious": false }
+            {
+              "date": "02.14 13:22",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-0551 (어머니)",
+              "duration": "7분 33초",
+              "suspicious": false
+            },
+            {
+              "date": "02.14 00:12",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "1분 30초",
+              "suspicious": true
+            },
+            {
+              "date": "02.13 21:35",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-7720 (아내)",
+              "duration": "1분 05초",
+              "suspicious": false
+            },
+            {
+              "date": "02.13 12:11",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-7720 (아내)",
+              "duration": "1분 06초",
+              "suspicious": false
+            },
+            {
+              "date": "02.12 01:13",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "1분 55초",
+              "suspicious": true
+            },
+            {
+              "date": "02.11 14:22",
+              "type": "miss",
+              "typeLabel": "부재중",
+              "target": "070-****-3310",
+              "duration": "-",
+              "suspicious": false
+            },
+            {
+              "date": "02.11 08:46",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "02-****-3441 (직장)",
+              "duration": "1분 30초",
+              "suspicious": false
+            },
+            {
+              "date": "02.10 23:58",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "0분 55초",
+              "suspicious": true
+            },
+            {
+              "date": "02.10 18:40",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "02-****-3441 (직장)",
+              "duration": "2분 10초",
+              "suspicious": false
+            },
+            {
+              "date": "02.10 12:10",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-7720 (아내)",
+              "duration": "0분 45초",
+              "suspicious": false
+            },
+            {
+              "date": "02.09 17:11",
+              "type": "miss",
+              "typeLabel": "부재중",
+              "target": "070-****-0526",
+              "duration": "-",
+              "suspicious": false
+            },
+            {
+              "date": "02.08 13:57",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-0551 (어머니)",
+              "duration": "9분 18초",
+              "suspicious": false
+            },
+            {
+              "date": "02.07 12:31",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-7720 (아내)",
+              "duration": "1분 20초",
+              "suspicious": false
+            },
+            {
+              "date": "02.07 00:50",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "1분 45초",
+              "suspicious": true
+            },
+            {
+              "date": "02.06 12:43",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-7720 (아내)",
+              "duration": "1분 41초",
+              "suspicious": false
+            },
+            {
+              "date": "02.06 12:11",
+              "type": "miss",
+              "typeLabel": "부재중",
+              "target": "010-****-7720 (아내)",
+              "duration": "-",
+              "suspicious": false
+            },
+            {
+              "date": "02.05 01:03",
+              "type": "miss",
+              "typeLabel": "부재중",
+              "target": "070-****-1120",
+              "duration": "-",
+              "suspicious": false
+            },
+            {
+              "date": "02.04 08:41",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "02-****-3441 (직장)",
+              "duration": "3분 05초",
+              "suspicious": false
+            },
+            {
+              "date": "02.03 00:17",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "1분 12초",
+              "suspicious": true
+            },
+            {
+              "date": "02.02 12:13",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-7720 (아내)",
+              "duration": "3분 22초",
+              "suspicious": false
+            },
+            {
+              "date": "02.02 08:43",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-0551 (어머니)",
+              "duration": "6분 42초",
+              "suspicious": false
+            },
+            {
+              "date": "02.01 13:27",
+              "type": "miss",
+              "typeLabel": "부재중",
+              "target": "070-****-0771",
+              "duration": "-",
+              "suspicious": false
+            }
           ],
           "note": "010-****-3847 번호와의 통화가 새벽에 반복적으로 보임. 통화 시간은 매번 0:30~2분 사이로 짧음."
         }
@@ -1752,28 +2578,182 @@
           },
           "log": {
             "rows": [
-              { "date": "02.14 13:22", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551", "duration": "7분 33초", "suspicious": false },
-              { "date": "02.14 00:12", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847", "duration": "1분 30초", "suspicious": false },
-              { "date": "02.13 21:35", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720", "duration": "1분 05초", "suspicious": false },
-              { "date": "02.13 12:11", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720", "duration": "1분 06초", "suspicious": false },
-              { "date": "02.12 01:13", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847", "duration": "1분 55초", "suspicious": false },
-              { "date": "02.11 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-",        "suspicious": false },
-              { "date": "02.11 08:46", "type": "out",  "typeLabel": "발신",   "target": "02-****-3441",  "duration": "1분 30초", "suspicious": false },
-              { "date": "02.10 23:58", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847", "duration": "0분 55초", "suspicious": false },
-              { "date": "02.10 18:40", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441",  "duration": "2분 10초", "suspicious": false },
-              { "date": "02.10 12:10", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720", "duration": "0분 45초", "suspicious": false },
-              { "date": "02.09 17:11", "type": "miss", "typeLabel": "부재중", "target": "070-****-0526", "duration": "-",        "suspicious": false },
-              { "date": "02.08 13:57", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551", "duration": "9분 18초", "suspicious": false },
-              { "date": "02.07 12:31", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720", "duration": "1분 20초", "suspicious": false },
-              { "date": "02.07 00:50", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847", "duration": "1분 45초", "suspicious": false },
-              { "date": "02.06 12:43", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720", "duration": "1분 41초", "suspicious": false },
-              { "date": "02.06 12:11", "type": "miss", "typeLabel": "부재중", "target": "010-****-7720", "duration": "-",        "suspicious": false },
-              { "date": "02.05 01:03", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-",        "suspicious": false },
-              { "date": "02.04 08:41", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441",  "duration": "3분 05초", "suspicious": false },
-              { "date": "02.03 00:17", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847", "duration": "1분 12초", "suspicious": false },
-              { "date": "02.02 12:13", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720", "duration": "3분 22초", "suspicious": false },
-              { "date": "02.02 08:43", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551", "duration": "6분 42초", "suspicious": false },
-              { "date": "02.01 13:27", "type": "miss", "typeLabel": "부재중", "target": "070-****-0771", "duration": "-",        "suspicious": false }
+              {
+                "date": "02.14 13:22",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551",
+                "duration": "7분 33초",
+                "suspicious": false
+              },
+              {
+                "date": "02.14 00:12",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.13 21:35",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720",
+                "duration": "1분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.13 12:11",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720",
+                "duration": "1분 06초",
+                "suspicious": false
+              },
+              {
+                "date": "02.12 01:13",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 55초",
+                "suspicious": false
+              },
+              {
+                "date": "02.11 14:22",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-3310",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.11 08:46",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "02-****-3441",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 23:58",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "0분 55초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 18:40",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441",
+                "duration": "2분 10초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 12:10",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720",
+                "duration": "0분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.09 17:11",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-0526",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.08 13:57",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551",
+                "duration": "9분 18초",
+                "suspicious": false
+              },
+              {
+                "date": "02.07 12:31",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720",
+                "duration": "1분 20초",
+                "suspicious": false
+              },
+              {
+                "date": "02.07 00:50",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.06 12:43",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720",
+                "duration": "1분 41초",
+                "suspicious": false
+              },
+              {
+                "date": "02.06 12:11",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "010-****-7720",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.05 01:03",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-1120",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 08:41",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441",
+                "duration": "3분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 00:17",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 12초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 12:13",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720",
+                "duration": "3분 22초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 08:43",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551",
+                "duration": "6분 42초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 13:27",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-0771",
+                "duration": "-",
+                "suspicious": false
+              }
             ],
             "note": "2월 통화 기록 — 반복적인 통화 흔적이 보인다."
           }
@@ -1796,28 +2776,182 @@
           },
           "log": {
             "rows": [
-              { "date": "02.14 13:22", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "7분 33초", "suspicious": false },
-              { "date": "02.14 00:12", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 30초", "suspicious": false },
-              { "date": "02.13 21:35", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "1분 05초", "suspicious": false },
-              { "date": "02.13 12:11", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "1분 06초", "suspicious": false },
-              { "date": "02.12 01:13", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 55초", "suspicious": false },
-              { "date": "02.11 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310",          "duration": "-",        "suspicious": false },
-              { "date": "02.11 08:46", "type": "out",  "typeLabel": "발신",   "target": "02-****-3441 (직장)",    "duration": "1분 30초", "suspicious": false },
-              { "date": "02.10 23:58", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "0분 55초", "suspicious": false },
-              { "date": "02.10 18:40", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441 (직장)",    "duration": "2분 10초", "suspicious": false },
-              { "date": "02.10 12:10", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "0분 45초", "suspicious": false },
-              { "date": "02.09 17:11", "type": "miss", "typeLabel": "부재중", "target": "070-****-0526",          "duration": "-",        "suspicious": false },
-              { "date": "02.08 13:57", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "9분 18초", "suspicious": false },
-              { "date": "02.07 12:31", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "1분 20초", "suspicious": false },
-              { "date": "02.07 00:50", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 45초", "suspicious": false },
-              { "date": "02.06 12:43", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "1분 41초", "suspicious": false },
-              { "date": "02.06 12:11", "type": "miss", "typeLabel": "부재중", "target": "010-****-7720 (아내)",   "duration": "-",        "suspicious": false },
-              { "date": "02.05 01:03", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120",          "duration": "-",        "suspicious": false },
-              { "date": "02.04 08:41", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441 (직장)",    "duration": "3분 05초", "suspicious": false },
-              { "date": "02.03 00:17", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 12초", "suspicious": false },
-              { "date": "02.02 12:13", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "3분 22초", "suspicious": false },
-              { "date": "02.02 08:43", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "6분 42초", "suspicious": false },
-              { "date": "02.01 13:27", "type": "miss", "typeLabel": "부재중", "target": "070-****-0771",          "duration": "-",        "suspicious": false }
+              {
+                "date": "02.14 13:22",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551 (어머니)",
+                "duration": "7분 33초",
+                "suspicious": false
+              },
+              {
+                "date": "02.14 00:12",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.13 21:35",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.13 12:11",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 06초",
+                "suspicious": false
+              },
+              {
+                "date": "02.12 01:13",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 55초",
+                "suspicious": false
+              },
+              {
+                "date": "02.11 14:22",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-3310",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.11 08:46",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "02-****-3441 (직장)",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 23:58",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "0분 55초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 18:40",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "2분 10초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 12:10",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "0분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.09 17:11",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-0526",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.08 13:57",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551 (어머니)",
+                "duration": "9분 18초",
+                "suspicious": false
+              },
+              {
+                "date": "02.07 12:31",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 20초",
+                "suspicious": false
+              },
+              {
+                "date": "02.07 00:50",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.06 12:43",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 41초",
+                "suspicious": false
+              },
+              {
+                "date": "02.06 12:11",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "010-****-7720 (아내)",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.05 01:03",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-1120",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 08:41",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "3분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 00:17",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 12초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 12:13",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "3분 22초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 08:43",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551 (어머니)",
+                "duration": "6분 42초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 13:27",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-0771",
+                "duration": "-",
+                "suspicious": false
+              }
             ],
             "note": "저장된 번호와 대조 — 아내, 어머니, 직장 외 발신자 미상 번호가 존재한다."
           }
@@ -1840,28 +2974,182 @@
           },
           "log": {
             "rows": [
-              { "date": "02.14 13:22", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "7분 33초", "suspicious": false },
-              { "date": "02.14 00:12", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 30초", "suspicious": true  },
-              { "date": "02.13 21:35", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "1분 05초", "suspicious": false },
-              { "date": "02.13 12:11", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "1분 06초", "suspicious": false },
-              { "date": "02.12 01:13", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 55초", "suspicious": true  },
-              { "date": "02.11 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310",          "duration": "-",        "suspicious": false },
-              { "date": "02.11 08:46", "type": "out",  "typeLabel": "발신",   "target": "02-****-3441 (직장)",    "duration": "1분 30초", "suspicious": false },
-              { "date": "02.10 23:58", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "0분 55초", "suspicious": true  },
-              { "date": "02.10 18:40", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441 (직장)",    "duration": "2분 10초", "suspicious": false },
-              { "date": "02.10 12:10", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "0분 45초", "suspicious": false },
-              { "date": "02.09 17:11", "type": "miss", "typeLabel": "부재중", "target": "070-****-0526",          "duration": "-",        "suspicious": false },
-              { "date": "02.08 13:57", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "9분 18초", "suspicious": false },
-              { "date": "02.07 12:31", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "1분 20초", "suspicious": false },
-              { "date": "02.07 00:50", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 45초", "suspicious": true  },
-              { "date": "02.06 12:43", "type": "out",  "typeLabel": "발신",   "target": "010-****-7720 (아내)",   "duration": "1분 41초", "suspicious": false },
-              { "date": "02.06 12:11", "type": "miss", "typeLabel": "부재중", "target": "010-****-7720 (아내)",   "duration": "-",        "suspicious": false },
-              { "date": "02.05 01:03", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120",          "duration": "-",        "suspicious": false },
-              { "date": "02.04 08:41", "type": "in",   "typeLabel": "수신",   "target": "02-****-3441 (직장)",    "duration": "3분 05초", "suspicious": false },
-              { "date": "02.03 00:17", "type": "out",  "typeLabel": "발신",   "target": "010-****-3847",          "duration": "1분 12초", "suspicious": true  },
-              { "date": "02.02 12:13", "type": "in",   "typeLabel": "수신",   "target": "010-****-7720 (아내)",   "duration": "3분 22초", "suspicious": false },
-              { "date": "02.02 08:43", "type": "in",   "typeLabel": "수신",   "target": "010-****-0551 (어머니)", "duration": "6분 42초", "suspicious": false },
-              { "date": "02.01 13:27", "type": "miss", "typeLabel": "부재중", "target": "070-****-0771",          "duration": "-",        "suspicious": false }
+              {
+                "date": "02.14 13:22",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551 (어머니)",
+                "duration": "7분 33초",
+                "suspicious": false
+              },
+              {
+                "date": "02.14 00:12",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 30초",
+                "suspicious": true
+              },
+              {
+                "date": "02.13 21:35",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.13 12:11",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 06초",
+                "suspicious": false
+              },
+              {
+                "date": "02.12 01:13",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 55초",
+                "suspicious": true
+              },
+              {
+                "date": "02.11 14:22",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-3310",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.11 08:46",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "02-****-3441 (직장)",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 23:58",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "0분 55초",
+                "suspicious": true
+              },
+              {
+                "date": "02.10 18:40",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "2분 10초",
+                "suspicious": false
+              },
+              {
+                "date": "02.10 12:10",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "0분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.09 17:11",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-0526",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.08 13:57",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551 (어머니)",
+                "duration": "9분 18초",
+                "suspicious": false
+              },
+              {
+                "date": "02.07 12:31",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 20초",
+                "suspicious": false
+              },
+              {
+                "date": "02.07 00:50",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 45초",
+                "suspicious": true
+              },
+              {
+                "date": "02.06 12:43",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 41초",
+                "suspicious": false
+              },
+              {
+                "date": "02.06 12:11",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "010-****-7720 (아내)",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.05 01:03",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-1120",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 08:41",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "3분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 00:17",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 12초",
+                "suspicious": true
+              },
+              {
+                "date": "02.02 12:13",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "3분 22초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 08:43",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-0551 (어머니)",
+                "duration": "6분 42초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 13:27",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-0771",
+                "duration": "-",
+                "suspicious": false
+              }
             ],
             "note": "발신자 미상 번호 (010-****-3847)와의 통화가 새벽에 반복적으로 확인됨. 통화 시간은 매번 0:30~2분 사이로 짧음."
           }
@@ -2302,8 +3590,8 @@
             "disputeLieState": {
               "d-1": "S1+"
             },
-            "requirePriorCardFired": "e-3",
-            "contextAction": "evidence_present.b.e-3"
+            "contextAction": "evidence_present.b.e-3",
+            "requirePriorCardFired": "e-3"
           },
           "scriptedRefs": [
             "emerge-e4-via-e3-stage2-judge-q1-v1",
@@ -3685,7 +4973,7 @@
       "id": "e-10",
       "name": "B의 예비 부모 정서 도서 + 본인 필기 흔적",
       "surfaceName": "예비 부모 정서 도서",
-      "description": "e-1 교보문고 영수증의 결제 흔적이 단서가 되어 책 본체가 확보된 상태. 「예비 부모를 위한 마음 가이드」류 도서 1권에 B 본인 필체로 밑줄과 여백 메모가 일부 페이지에 남아 있다. 결제일·결제 매장이 e-1 영수증과 일치.",
+      "description": "e-1 교보문고 영수증의 결제 흔적이 단서가 되어 책 본체가 확보된 상태. 「부모가 되는 마음 연습」 도서 1권에 B 본인 필체로 밑줄과 여백 메모가 일부 페이지에 남아 있다. 결제일·결제 매장이 e-1 영수증과 일치.",
       "surfaceDescription": "B 책상/차량에서 확보된 예비 부모 정서 도서 (본인 필기 흔적 포함).",
       "type": "document",
       "reliability": "hard",
@@ -3702,8 +4990,8 @@
       ],
       "requiredLieState": "S0",
       "investigationResults": {
-        "inspect_book_cover": "도서 「예비 부모를 위한 마음 가이드」 1권. 결제일·매장 영수증(e-1)과 일치한다. 누가 누구를 위해 산 책인지 아직 단정할 수 없다.",
-        "browse_table_of_contents": "목차에서 부모 정서·두려움·준비 영역 챕터에 책갈피·강조 표시가 모여 있다. 단순 임신 준비가 아니라 정서 정리에 초점이 맞춰져 있다.",
+        "inspect_book_cover": "도서 「부모가 되는 마음 연습」 1권. 결제일·매장 영수증(e-1)과 일치한다. 누가 누구를 위해 산 책인지 아직 단정할 수 없다.",
+        "browse_table_of_contents": "목차에서 부모 정서·두려움·준비 영역 챕터에 책갈피·강조 표시가 모여 있다. 단순한 물품 구매가 아니라 마음을 정리하려는 흔적으로 읽힌다.",
         "check_dogeared_pages": "접힌 페이지마다 B 본인 필체로 밑줄과 여백 메모가 남아 있다. B 본인이 진지하게 정독하고 부모 될 마음을 스스로 정리한 자료로 보인다."
       },
       "subjectParty": "b",
@@ -3837,46 +5125,82 @@
         "document": {
           "subtype": "book",
           "cover": {
-            "title": "(GPT Pro 의뢰 영역 — 책 제목)",
-            "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
-            "author": "(GPT Pro 의뢰 영역 — 저자)",
-            "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
-            "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
-            "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+            "title": "부모가 되는 마음 연습",
+            "subtitle": "걱정을 줄이고 내 자리를 준비하는 법",
+            "author": "김도윤",
+            "publisher": "마음자리출판",
+            "isbn": "9791198427319",
+            "purchaseDate": "2024.05.18",
             "purchaseStore": "교보문고 강남점"
           },
           "toc": [
-            { "chapter": 1, "title": "(GPT Pro 의뢰)", "highlighted": true },
-            { "chapter": 2, "title": "(GPT Pro 의뢰)", "highlighted": true },
-            { "chapter": 3, "title": "(GPT Pro 의뢰)", "highlighted": false },
-            { "chapter": 4, "title": "(GPT Pro 의뢰)", "highlighted": true },
-            { "chapter": 5, "title": "(GPT Pro 의뢰)", "highlighted": false },
-            { "chapter": 6, "title": "(GPT Pro 의뢰)", "highlighted": false }
+            {
+              "chapter": 1,
+              "title": "부모가 된다는 말을 천천히 받아들이기",
+              "highlighted": true
+            },
+            {
+              "chapter": 2,
+              "title": "걱정이 커질 때 마음을 붙잡는 법",
+              "highlighted": true
+            },
+            {
+              "chapter": 3,
+              "title": "처음의 양육 리듬을 만드는 일",
+              "highlighted": false
+            },
+            {
+              "chapter": 4,
+              "title": "내 자리를 준비하는 작은 약속들",
+              "highlighted": true
+            },
+            {
+              "chapter": 5,
+              "title": "아이와 함께 배우는 생활 습관",
+              "highlighted": false
+            },
+            {
+              "chapter": 6,
+              "title": "어른들의 관계를 단단하게 조율하기",
+              "highlighted": false
+            }
           ],
           "dogearedPages": [
             {
               "page": 47,
               "chapter": 1,
-              "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 1)",
+              "excerpt": "부모가 된다는 말은 하루아침에 마음속에 자리를 잡지 않는다. 어떤 사람에게는 기대보다 먼저 걱정이 올라오고, 어떤 사람에게는 책임이라는 단어가 오래 남는다. 중요한 것은 그 마음을 밀어내지 않고, 오늘의 속도로 하나씩 이름 붙이는 일이다.",
               "notes": [
-                { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 1)" }
+                {
+                  "type": "underline",
+                  "text": "나는 아직 서툴다. 그래도 도망가지 말고 내 속도부터 인정하기."
+                }
               ]
             },
             {
               "page": 89,
               "chapter": 2,
-              "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 2)",
+              "excerpt": "걱정은 준비가 부족하다는 신호만은 아니다. 지키고 싶은 것이 생겼을 때 마음이 먼저 움직이는 방식이기도 하다. 다만 걱정이 모든 결정을 대신하게 두면, 스스로를 살필 힘이 줄어든다. 숨을 고르고, 지금 할 수 있는 한 가지를 적는 것부터 시작해도 된다.",
               "notes": [
-                { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 1)" }
+                {
+                  "type": "margin",
+                  "text": "두려움을 없애려 하지 말 것. 내가 할 수 있는 일을 작게 나누기."
+                }
               ]
             },
             {
               "page": 134,
               "chapter": 4,
-              "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 3)",
+              "excerpt": "준비는 완벽한 계획표를 채우는 일이 아니다. 내가 어떤 사람이 되고 싶은지, 어떤 말은 줄이고 어떤 태도는 지킬지 미리 정해 두는 일에 가깝다. 흔들리는 날에도 다시 돌아올 기준이 있으면 마음은 덜 헤맨다.",
               "notes": [
-                { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 2)" },
-                { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 2)" }
+                {
+                  "type": "underline",
+                  "text": "준비=물건보다 태도. 내가 지킬 기준을 먼저 정하기."
+                },
+                {
+                  "type": "margin",
+                  "text": "내 자리에서 할 수 있는 것부터. 말보다 반복되는 행동."
+                }
               ]
             }
           ],
@@ -3904,12 +5228,12 @@
             "subtype": "book",
             "view": "cover",
             "cover": {
-              "title": "(GPT Pro 의뢰 영역 — 책 제목)",
-              "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
-              "author": "(GPT Pro 의뢰 영역 — 저자)",
-              "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
-              "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
-              "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+              "title": "부모가 되는 마음 연습",
+              "subtitle": "걱정을 줄이고 내 자리를 준비하는 법",
+              "author": "김도윤",
+              "publisher": "마음자리출판",
+              "isbn": "9791198427319",
+              "purchaseDate": "2024.05.18",
               "purchaseStore": "교보문고 강남점"
             }
           }
@@ -3934,21 +5258,45 @@
             "subtype": "book",
             "view": "toc",
             "cover": {
-              "title": "(GPT Pro 의뢰 영역 — 책 제목)",
-              "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
-              "author": "(GPT Pro 의뢰 영역 — 저자)",
-              "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
-              "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
-              "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+              "title": "부모가 되는 마음 연습",
+              "subtitle": "걱정을 줄이고 내 자리를 준비하는 법",
+              "author": "김도윤",
+              "publisher": "마음자리출판",
+              "isbn": "9791198427319",
+              "purchaseDate": "2024.05.18",
               "purchaseStore": "교보문고 강남점"
             },
             "toc": [
-              { "chapter": 1, "title": "(GPT Pro 의뢰)", "highlighted": true },
-              { "chapter": 2, "title": "(GPT Pro 의뢰)", "highlighted": true },
-              { "chapter": 3, "title": "(GPT Pro 의뢰)", "highlighted": false },
-              { "chapter": 4, "title": "(GPT Pro 의뢰)", "highlighted": true },
-              { "chapter": 5, "title": "(GPT Pro 의뢰)", "highlighted": false },
-              { "chapter": 6, "title": "(GPT Pro 의뢰)", "highlighted": false }
+              {
+                "chapter": 1,
+                "title": "부모가 된다는 말을 천천히 받아들이기",
+                "highlighted": true
+              },
+              {
+                "chapter": 2,
+                "title": "걱정이 커질 때 마음을 붙잡는 법",
+                "highlighted": true
+              },
+              {
+                "chapter": 3,
+                "title": "처음의 양육 리듬을 만드는 일",
+                "highlighted": false
+              },
+              {
+                "chapter": 4,
+                "title": "내 자리를 준비하는 작은 약속들",
+                "highlighted": true
+              },
+              {
+                "chapter": 5,
+                "title": "아이와 함께 배우는 생활 습관",
+                "highlighted": false
+              },
+              {
+                "chapter": 6,
+                "title": "어른들의 관계를 단단하게 조율하기",
+                "highlighted": false
+              }
             ]
           }
         },
@@ -3972,46 +5320,82 @@
             "subtype": "book",
             "view": "dogeared",
             "cover": {
-              "title": "(GPT Pro 의뢰 영역 — 책 제목)",
-              "subtitle": "(GPT Pro 의뢰 영역 — 부제)",
-              "author": "(GPT Pro 의뢰 영역 — 저자)",
-              "publisher": "(GPT Pro 의뢰 영역 — 출판사)",
-              "isbn": "(GPT Pro 의뢰 영역 — ISBN)",
-              "purchaseDate": "(e-1 영수증과 일치 — 결제일 자동 매핑)",
+              "title": "부모가 되는 마음 연습",
+              "subtitle": "걱정을 줄이고 내 자리를 준비하는 법",
+              "author": "김도윤",
+              "publisher": "마음자리출판",
+              "isbn": "9791198427319",
+              "purchaseDate": "2024.05.18",
               "purchaseStore": "교보문고 강남점"
             },
             "toc": [
-              { "chapter": 1, "title": "(GPT Pro 의뢰)", "highlighted": true },
-              { "chapter": 2, "title": "(GPT Pro 의뢰)", "highlighted": true },
-              { "chapter": 3, "title": "(GPT Pro 의뢰)", "highlighted": false },
-              { "chapter": 4, "title": "(GPT Pro 의뢰)", "highlighted": true },
-              { "chapter": 5, "title": "(GPT Pro 의뢰)", "highlighted": false },
-              { "chapter": 6, "title": "(GPT Pro 의뢰)", "highlighted": false }
+              {
+                "chapter": 1,
+                "title": "부모가 된다는 말을 천천히 받아들이기",
+                "highlighted": true
+              },
+              {
+                "chapter": 2,
+                "title": "걱정이 커질 때 마음을 붙잡는 법",
+                "highlighted": true
+              },
+              {
+                "chapter": 3,
+                "title": "처음의 양육 리듬을 만드는 일",
+                "highlighted": false
+              },
+              {
+                "chapter": 4,
+                "title": "내 자리를 준비하는 작은 약속들",
+                "highlighted": true
+              },
+              {
+                "chapter": 5,
+                "title": "아이와 함께 배우는 생활 습관",
+                "highlighted": false
+              },
+              {
+                "chapter": 6,
+                "title": "어른들의 관계를 단단하게 조율하기",
+                "highlighted": false
+              }
             ],
             "dogearedPages": [
               {
                 "page": 47,
                 "chapter": 1,
-                "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 1)",
+                "excerpt": "부모가 된다는 말은 하루아침에 마음속에 자리를 잡지 않는다. 어떤 사람에게는 기대보다 먼저 걱정이 올라오고, 어떤 사람에게는 책임이라는 단어가 오래 남는다. 중요한 것은 그 마음을 밀어내지 않고, 오늘의 속도로 하나씩 이름 붙이는 일이다.",
                 "notes": [
-                  { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 1)" }
+                  {
+                    "type": "underline",
+                    "text": "나는 아직 서툴다. 그래도 도망가지 말고 내 속도부터 인정하기."
+                  }
                 ]
               },
               {
                 "page": 89,
                 "chapter": 2,
-                "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 2)",
+                "excerpt": "걱정은 준비가 부족하다는 신호만은 아니다. 지키고 싶은 것이 생겼을 때 마음이 먼저 움직이는 방식이기도 하다. 다만 걱정이 모든 결정을 대신하게 두면, 스스로를 살필 힘이 줄어든다. 숨을 고르고, 지금 할 수 있는 한 가지를 적는 것부터 시작해도 된다.",
                 "notes": [
-                  { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 1)" }
+                  {
+                    "type": "margin",
+                    "text": "두려움을 없애려 하지 말 것. 내가 할 수 있는 일을 작게 나누기."
+                  }
                 ]
               },
               {
                 "page": 134,
                 "chapter": 4,
-                "excerpt": "(GPT Pro 의뢰 영역 — 본문 발췌 3)",
+                "excerpt": "준비는 완벽한 계획표를 채우는 일이 아니다. 내가 어떤 사람이 되고 싶은지, 어떤 말은 줄이고 어떤 태도는 지킬지 미리 정해 두는 일에 가깝다. 흔들리는 날에도 다시 돌아올 기준이 있으면 마음은 덜 헤맨다.",
                 "notes": [
-                  { "type": "underline", "text": "(GPT Pro 의뢰 영역 — 밑줄 메모 2)" },
-                  { "type": "margin", "text": "(GPT Pro 의뢰 영역 — 여백 메모 2)" }
+                  {
+                    "type": "underline",
+                    "text": "준비=물건보다 태도. 내가 지킬 기준을 먼저 정하기."
+                  },
+                  {
+                    "type": "margin",
+                    "text": "내 자리에서 할 수 있는 것부터. 말보다 반복되는 행동."
+                  }
                 ]
               }
             ],
