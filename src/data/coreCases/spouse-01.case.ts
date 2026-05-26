@@ -2432,24 +2432,28 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'misread', summary: ko('도서·필체는 인증되지만 진짜 목적은 심문과 맥락으로 확정.') },
       ],
       /**
-       * 2026-05-26 C-1 (Step 5 sub-thread) — 기존 e10-via-cascade-from-e1 (requirePriorCardFired:'e-1' +
-       * disputeLieState:{'d-1':'S2+'})는 e-1 시작 시 unlock + d-1 S2+ 도달 시점에 즉시 발동되어
-       * 사용자가 e-1 stage 1에서 e-10 emerge로 경험하는 회귀 발생. 사용자 결정으로 본 trigger 임시
-       * 무력화 — C-3 (B 영역 육아서적 추가 후 별도 sub-thread)에서 e-1 stage 3 + 육아서적 cascade로
-       * 신규 설계 예정. 무력화 방법 = 만족 불가능한 placeholder requirePriorCardFired.
+       * 2026-05-26 C-1/C-2 (Step 5 sub-thread) — e-1 영수증 묶음을 이준호(b)에게 제시하는 시점에
+       * cascade로 e-10 (예비 부모 정서 도서) emerge. 4 entry scripted (judge_mention → A_react → B_response →
+       * judge_decree)로 d-3 (내연녀 임신 의심) 동시 등록 컷씬급 연출. priorCard 'e-1' + d-1 S2+ +
+       * contextAction 'evidence_present.b.e-1' 3중 게이트. stage 3 게이트는 schema-only 안에서 미보장
+       * (사용자 의식 영역, 회귀 가능성 잔존).
        */
       narrativeTriggers: [
         {
-          id: 'e10-pending-c3-redesign',
+          id: 'e10-via-e1-stage3-bookbaby',
           type: 'cascade_from_card',
           preconditions: {
-            requirePriorCardFired: 'pending-c3-bookbabytrigger',
-            disputeLieState: { 'd-1': 'S5+' },
+            requirePriorCardFired: 'e-1',
+            disputeLieState: { 'd-1': 'S2+' },
+            contextAction: 'evidence_present.b.e-1',
           },
           scriptedRefs: [
             'emerge-e10-via-cascade-judge-mention-v1',
+            'emerge-e10-via-cascade-a-react-v1',
+            'emerge-e10-via-cascade-b-response-v1',
+            'emerge-e10-via-cascade-judge-decree-v1',
           ],
-          vfxProfile: 'standard',
+          vfxProfile: 'cutscene_dual_emergence',
         },
       ],
     },

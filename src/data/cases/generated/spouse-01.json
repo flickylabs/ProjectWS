@@ -3768,18 +3768,22 @@
       ],
       "narrativeTriggers": [
         {
-          "id": "e10-pending-c3-redesign",
+          "id": "e10-via-e1-stage3-bookbaby",
           "type": "cascade_from_card",
           "preconditions": {
             "disputeLieState": {
-              "d-1": "S5+"
+              "d-1": "S2+"
             },
-            "requirePriorCardFired": "pending-c3-bookbabytrigger"
+            "requirePriorCardFired": "e-1",
+            "contextAction": "evidence_present.b.e-1"
           },
           "scriptedRefs": [
-            "emerge-e10-via-cascade-judge-mention-v1"
+            "emerge-e10-via-cascade-judge-mention-v1",
+            "emerge-e10-via-cascade-a-react-v1",
+            "emerge-e10-via-cascade-b-response-v1",
+            "emerge-e10-via-cascade-judge-decree-v1"
           ],
-          "vfxProfile": "standard"
+          "vfxProfile": "cutscene_dual_emergence"
         }
       ]
     }
