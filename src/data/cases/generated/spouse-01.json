@@ -5228,9 +5228,9 @@
       ],
       "requiredLieState": "S0",
       "investigationResults": {
-        "inspect_book_cover": "도서 「부모가 되는 마음 연습」 1권. 결제일·매장 영수증(e-1)과 일치한다. 누가 누구를 위해 산 책인지 아직 단정할 수 없다.",
-        "browse_table_of_contents": "목차에서 부모 정서·두려움·준비 영역 챕터에 책갈피·강조 표시가 모여 있다. 단순한 물품 구매가 아니라 마음을 정리하려는 흔적으로 읽힌다.",
-        "check_dogeared_pages": "접힌 페이지마다 B 본인 필체로 밑줄과 여백 메모가 남아 있다. B 본인이 진지하게 정독하고 부모 될 마음을 스스로 정리한 자료로 보인다."
+        "inspect_book_cover": "「부모가 되는 마음 연습」이라는 이름의 출산 대비 도서이다.",
+        "browse_table_of_contents": "목차의 몇 개 챕터에 밑줄이 그어져 있다.",
+        "check_dogeared_pages": "일부 페이지가 접혀 있고, 주요 문장에 밑줄이 그어져 있다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -5375,32 +5375,38 @@
             {
               "chapter": 1,
               "title": "부모가 된다는 말을 천천히 받아들이기",
-              "highlighted": true
+              "highlighted": true,
+              "startPage": 13
             },
             {
               "chapter": 2,
               "title": "걱정이 커질 때 마음을 붙잡는 법",
-              "highlighted": true
+              "highlighted": true,
+              "startPage": 58
             },
             {
               "chapter": 3,
               "title": "처음의 양육 리듬을 만드는 일",
-              "highlighted": false
+              "highlighted": false,
+              "startPage": 105
             },
             {
               "chapter": 4,
               "title": "내 자리를 준비하는 작은 약속들",
-              "highlighted": true
+              "highlighted": true,
+              "startPage": 127
             },
             {
               "chapter": 5,
               "title": "아이와 함께 배우는 생활 습관",
-              "highlighted": false
+              "highlighted": false,
+              "startPage": 159
             },
             {
               "chapter": 6,
               "title": "어른들의 관계를 단단하게 조율하기",
-              "highlighted": false
+              "highlighted": false,
+              "startPage": 187
             }
           ],
           "dogearedPages": [
@@ -5489,32 +5495,38 @@
               {
                 "chapter": 1,
                 "title": "부모가 된다는 말을 천천히 받아들이기",
-                "highlighted": true
+                "highlighted": true,
+                "startPage": 13
               },
               {
                 "chapter": 2,
                 "title": "걱정이 커질 때 마음을 붙잡는 법",
-                "highlighted": true
+                "highlighted": true,
+                "startPage": 58
               },
               {
                 "chapter": 3,
                 "title": "처음의 양육 리듬을 만드는 일",
-                "highlighted": false
+                "highlighted": false,
+                "startPage": 105
               },
               {
                 "chapter": 4,
                 "title": "내 자리를 준비하는 작은 약속들",
-                "highlighted": true
+                "highlighted": true,
+                "startPage": 127
               },
               {
                 "chapter": 5,
                 "title": "아이와 함께 배우는 생활 습관",
-                "highlighted": false
+                "highlighted": false,
+                "startPage": 159
               },
               {
                 "chapter": 6,
                 "title": "어른들의 관계를 단단하게 조율하기",
-                "highlighted": false
+                "highlighted": false,
+                "startPage": 187
               }
             ]
           }
@@ -5551,32 +5563,38 @@
               {
                 "chapter": 1,
                 "title": "부모가 된다는 말을 천천히 받아들이기",
-                "highlighted": true
+                "highlighted": true,
+                "startPage": 13
               },
               {
                 "chapter": 2,
                 "title": "걱정이 커질 때 마음을 붙잡는 법",
-                "highlighted": true
+                "highlighted": true,
+                "startPage": 58
               },
               {
                 "chapter": 3,
                 "title": "처음의 양육 리듬을 만드는 일",
-                "highlighted": false
+                "highlighted": false,
+                "startPage": 105
               },
               {
                 "chapter": 4,
                 "title": "내 자리를 준비하는 작은 약속들",
-                "highlighted": true
+                "highlighted": true,
+                "startPage": 127
               },
               {
                 "chapter": 5,
                 "title": "아이와 함께 배우는 생활 습관",
-                "highlighted": false
+                "highlighted": false,
+                "startPage": 159
               },
               {
                 "chapter": 6,
                 "title": "어른들의 관계를 단단하게 조율하기",
-                "highlighted": false
+                "highlighted": false,
+                "startPage": 187
               }
             ],
             "dogearedPages": [

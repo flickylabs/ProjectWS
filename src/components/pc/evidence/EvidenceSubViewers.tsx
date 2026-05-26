@@ -469,6 +469,7 @@ function EvidenceDocumentShell({
   variant,
   children,
   footer,
+  hideHeader,
 }: {
   title: string
   subtitle?: string
@@ -476,6 +477,7 @@ function EvidenceDocumentShell({
   variant: DocumentShellVariant
   children: ReactNode
   footer?: ReactNode
+  hideHeader?: boolean
 }) {
   const copy = useViewerCopy()
   const isBook = variant === 'book'
@@ -486,11 +488,13 @@ function EvidenceDocumentShell({
         {!isBook ? <span className="pc-doc-paper__clip" aria-hidden="true" /> : null}
         {!isBook ? <span className="pc-doc-paper__serial" aria-hidden="true">COPY</span> : null}
         {!isBook ? <span className="pc-doc-stamp" aria-hidden="true">{stamp}</span> : null}
-        <header className="pc-doc-paper__header">
-          {!isBook ? <span className="pc-doc-paper__eyebrow">{copy.evidenceCopy}</span> : null}
-          <h3>{title || copy.documentCopy}</h3>
-          {subtitle ? <p>{subtitle}</p> : null}
-        </header>
+        {!hideHeader ? (
+          <header className="pc-doc-paper__header">
+            {!isBook ? <span className="pc-doc-paper__eyebrow">{copy.evidenceCopy}</span> : null}
+            <h3>{title || copy.documentCopy}</h3>
+            {subtitle ? <p>{subtitle}</p> : null}
+          </header>
+        ) : null}
         <div className="pc-doc-paper__content">
           {children}
         </div>
@@ -1146,18 +1150,20 @@ function BookSubView({ data }: { data: BookData }) {
     dogeared: copy.bookDogearedPages,
   }
 
+  const isCover = current === 'cover'
   return (
     <EvidenceDocumentShell
       title={docTitle}
       subtitle={docSubtitle}
       stamp={copy.originalCheck}
       variant="book"
-      footer={
+      hideHeader={isCover}
+      footer={isCover ? null : (
         <span>
           {cover.author}{cover.publisher ? ` · ${cover.publisher}` : ''}
-          {current !== 'cover' && cover.isbn ? ` · ISBN ${cover.isbn}` : ''}
+          {cover.isbn ? ` · ISBN ${cover.isbn}` : ''}
         </span>
-      }
+      )}
     >
       <div className={`pc-doc-book pc-doc-book--page-${current}`}>
         {pages.length > 1 ? (
@@ -1194,9 +1200,20 @@ function BookSubView({ data }: { data: BookData }) {
           </div>
         ) : null}
 
-        {current === 'cover' ? (
+        {isCover ? (
           <div className="pc-doc-book__cover-page">
-            {/* cover page: title/subtitle/footer 영역은 Shell header/footer 영역. 본 영역은 비워두어 표지 form 유지 */}
+            <div className="pc-doc-book__cover-top">
+              <h2 className="pc-doc-book__cover-title">{cover.title || copy.documentCopy}</h2>
+              {cover.author ? (
+                <p className="pc-doc-book__cover-author">{cover.author}</p>
+              ) : null}
+            </div>
+            {cover.subtitle ? (
+              <p className="pc-doc-book__cover-tagline">{cover.subtitle}</p>
+            ) : null}
+            {cover.publisher ? (
+              <p className="pc-doc-book__cover-publisher">{cover.publisher}</p>
+            ) : null}
           </div>
         ) : null}
 
@@ -1217,6 +1234,9 @@ function BookSubView({ data }: { data: BookData }) {
                       entry.title
                     )}
                   </span>
+                  {typeof entry.startPage === 'number' ? (
+                    <span className="pc-doc-book__toc-page">{entry.startPage}</span>
+                  ) : null}
                 </li>
               ))}
             </ul>

@@ -68,6 +68,7 @@ export interface BookTocEntry {
   chapter: number
   title: string
   highlighted: boolean
+  startPage?: number
 }
 export interface BookNote {
   type: 'underline' | 'margin'

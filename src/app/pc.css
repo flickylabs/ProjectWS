@@ -11230,31 +11230,39 @@ body.pc-mode .pc-doc-book__toc-list {
 body.pc-mode .pc-doc-book__toc-item {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
-  gap: 12px;
-  align-items: center;
-  padding: 8px 12px;
-  border-left: 3px solid transparent;
-  background: rgba(255, 255, 255, 0.16);
-  color: rgba(45, 37, 24, 0.76);
+  gap: 14px;
+  align-items: baseline;
+  padding: 6px 0;
+  border: none;
+  background: transparent;
+  color: rgba(45, 37, 24, 0.82);
   font-size: 13px;
 }
 
 body.pc-mode .pc-doc-book__toc-item.is-highlighted {
-  border-left-color: rgba(212, 162, 78, 0.85);
-  background: rgba(212, 162, 78, 0.12);
-  color: #2d2518;
-  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 500;
 }
 
 body.pc-mode .pc-doc-book__toc-chapter {
-  color: rgba(45, 37, 24, 0.56);
-  font-size: 12px;
+  color: rgba(45, 37, 24, 0.62);
+  font-size: 12.5px;
   font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+body.pc-mode .pc-doc-book__toc-page {
+  color: rgba(45, 37, 24, 0.62);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
 }
 
 body.pc-mode .pc-doc-book__toc-bookmark {
-  color: rgba(212, 162, 78, 0.95);
-  font-size: 14px;
+  display: none;
 }
 
 body.pc-mode .pc-doc-book__dogeared {
@@ -11472,32 +11480,96 @@ body.pc-mode .pc-doc-book__nav-dots button.is-active {
   transform: scale(1.18);
 }
 
-/* cover page (stage 1 책 표지 — 본문 영역은 비움) */
+/* cover page (stage 1 책 표지 — 세로형 + title/author/subtitle/publisher 영역 직접 layout) */
 body.pc-mode .pc-doc-book--page-cover .pc-doc-book__cover-page {
-  min-height: 220px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 460px;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 56px 28px 44px;
+  text-align: center;
+  gap: 32px;
 }
 
-/* toc page (stage 2 펼친 페이지) */
+body.pc-mode .pc-doc-book__cover-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+body.pc-mode .pc-doc-book__cover-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  color: #1a120a;
+  line-height: 1.28;
+  word-break: keep-all;
+}
+
+body.pc-mode .pc-doc-book__cover-author {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(40, 28, 16, 0.74);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+body.pc-mode .pc-doc-book__cover-tagline {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(40, 28, 16, 0.66);
+  line-height: 1.55;
+  word-break: keep-all;
+  max-width: 280px;
+}
+
+body.pc-mode .pc-doc-book__cover-publisher {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(40, 28, 16, 0.58);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  padding-top: 18px;
+  border-top: 1px solid rgba(95, 68, 38, 0.2);
+  width: 60%;
+}
+
+/* toc page (stage 2 — 세로형 책 안 form, 여백 풍부, 세로 책등 그라데이션 X) */
+body.pc-mode .pc-doc-book--page-toc {
+  min-height: 420px;
+}
+
 body.pc-mode .pc-doc-book--page-toc .pc-doc-book__toc {
-  padding: 18px 22px;
-  border: 1px solid rgba(95, 68, 38, 0.22);
-  border-radius: 2px;
-  background:
-    linear-gradient(90deg, rgba(95, 68, 38, 0.06) 0%, transparent 6%),
-    rgba(255, 250, 240, 0.62);
+  padding: 28px 36px 36px;
+  border: none;
+  background: transparent;
+  max-width: 460px;
+  margin: 0 auto;
 }
 
-/* toc highlighted — 음영 제거, 형광펜은 title 안 highlight span 영역에서 처리 */
-body.pc-mode .pc-doc-book__toc-item.is-highlighted {
-  background: none;
-  padding-left: 0;
+body.pc-mode .pc-doc-book--page-toc .pc-doc-book__section-title {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(95, 68, 38, 0.22);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: rgba(40, 28, 16, 0.78);
 }
 
-body.pc-mode .pc-doc-book__toc-item.is-highlighted .pc-doc-book__toc-title {
-  font-weight: 500;
-  color: inherit;
+body.pc-mode .pc-doc-book--page-toc .pc-doc-book__toc-list {
+  gap: 14px;
+}
+
+body.pc-mode .pc-doc-book--page-toc .pc-doc-book__toc-item {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* dogeared page (stage 3 페이지 본문) */
