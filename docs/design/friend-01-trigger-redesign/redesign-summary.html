@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>friend-01 narrative trigger 재편성 — 본 thread 요약</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #181b22;
+    --panel-2: #1f232c;
+    --line: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #9aa0aa;
+    --accent: #f4c849;
+
+    --friend: #7aa9e0;
+    --friend-bg: #15212a;
+    --friend-border: #20354a;
+
+    --hidden: #c977d6;
+    --pro-a: #e07b6c;
+    --pro-b: #7fc88a;
+    --neutral: #c2c7d0;
+    --cross-line: #f4a449;
+
+    --status-removed: #e07b6c;
+    --status-removed-bg: rgba(224,123,108,0.12);
+    --status-added: #7fc88a;
+    --status-added-bg: rgba(127,200,138,0.12);
+    --status-changed: #f4c849;
+    --status-changed-bg: rgba(244,200,73,0.12);
+    --status-kept: #9aa0aa;
+    --status-kept-bg: rgba(154,160,170,0.08);
+
+    --trig-npc: #f4a449;
+    --trig-emotional: #e0769a;
+    --trig-judge: #7aa9e0;
+    --trig-cascade: #c977d6;
+    --trig-combo: #7fc88a;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Pretendard', 'Inter', system-ui, sans-serif; margin: 0; padding: 0; line-height: 1.55; }
+  body { padding: 24px 24px 96px; max-width: 1320px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 19px; margin: 28px 0 10px; letter-spacing: -0.01em; padding-bottom: 6px; border-bottom: 2px solid var(--line); }
+  h3 { font-size: 15px; margin: 18px 0 8px; letter-spacing: -0.005em; color: var(--accent); }
+  p { margin: 6px 0; }
+  .lead { color: var(--muted); font-size: 13.5px; }
+  code { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 4px; color: var(--accent); }
+
+  .meta { display: flex; gap: 14px; margin: 12px 0 24px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+  .meta span { padding: 4px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+  .meta span strong { color: var(--text); font-weight: 600; }
+
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin: 12px 0 24px; }
+  .summary-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .summary-card .sc-label { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; }
+  .summary-card .sc-value { font-size: 22px; font-weight: 700; color: var(--accent); line-height: 1.2; margin-bottom: 4px; }
+  .summary-card .sc-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+  table.decisions { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13px; }
+  table.decisions th { background: var(--panel-2); color: var(--accent); font-size: 12px; font-weight: 600; text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); letter-spacing: 0.02em; }
+  table.decisions td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.decisions tr:hover td { background: rgba(255,255,255,0.03); }
+  table.decisions td.issue-col { font-weight: 600; color: var(--text); width: 220px; }
+  table.decisions td.decision-col { color: var(--muted); }
+  table.decisions td.applied-col { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px; color: var(--neutral); }
+
+  table.matrix { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 13px; }
+  table.matrix th { background: var(--panel-2); color: var(--accent); font-size: 11.5px; font-weight: 600; text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  table.matrix td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  table.matrix tr.line-group td { background: rgba(244,200,73,0.06); font-weight: 700; color: var(--accent); padding: 8px 10px; font-size: 12px; }
+  table.matrix tr:hover td { background: rgba(255,255,255,0.03); }
+  table.matrix tr.line-group:hover td { background: rgba(244,200,73,0.08); }
+  table.matrix td.ent-id { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px; color: var(--muted); width: 60px; }
+  table.matrix td.ent-name { color: var(--text); }
+  table.matrix td.cnt { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; text-align: center; width: 70px; color: var(--muted); }
+
+  .status-pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-right: 4px; }
+  .pill-removed { color: var(--status-removed); background: var(--status-removed-bg); border: 1px solid var(--status-removed); }
+  .pill-added { color: var(--status-added); background: var(--status-added-bg); border: 1px solid var(--status-added); }
+  .pill-changed { color: var(--status-changed); background: var(--status-changed-bg); border: 1px solid var(--status-changed); }
+  .pill-kept { color: var(--status-kept); background: var(--status-kept-bg); border: 1px solid var(--line); }
+
+  .type-pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .type-cascade { color: var(--trig-cascade); background: rgba(201,119,214,0.12); border: 1px solid rgba(201,119,214,0.4); }
+  .type-combo { color: var(--trig-combo); background: rgba(127,200,138,0.12); border: 1px solid rgba(127,200,138,0.4); }
+  .type-npc { color: var(--trig-npc); background: rgba(244,164,73,0.12); border: 1px solid rgba(244,164,73,0.4); }
+  .type-emotional { color: var(--trig-emotional); background: rgba(224,118,154,0.12); border: 1px solid rgba(224,118,154,0.4); }
+  .type-judge { color: var(--trig-judge); background: rgba(122,169,224,0.12); border: 1px solid rgba(122,169,224,0.4); }
+
+  .chain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0 24px; }
+  .chain-box { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+  .chain-box h4 { margin: 0 0 8px; font-size: 13.5px; color: var(--accent); }
+  .chain-flow { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px; line-height: 1.7; color: var(--text); white-space: pre; overflow-x: auto; }
+  .chain-flow .arrow { color: var(--muted); }
+  .chain-flow .new { color: var(--status-added); font-weight: 600; }
+  .chain-flow .changed { color: var(--status-changed); font-weight: 600; }
+  .chain-flow .removed { color: var(--status-removed); text-decoration: line-through; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 12px; margin: 12px 0 24px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .card-title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .card-meta { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .card-row { display: flex; gap: 8px; align-items: baseline; margin: 4px 0; font-size: 12.5px; }
+  .card-key { color: var(--muted); width: 110px; flex-shrink: 0; font-size: 11.5px; }
+  .card-val { color: var(--text); font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px; }
+  .card-desc { margin-top: 8px; font-size: 12px; color: var(--text); line-height: 1.55; padding-top: 8px; border-top: 1px dashed var(--line); }
+
+  .card.added { border-left: 4px solid var(--status-added); }
+  .card.removed { border-left: 4px solid var(--status-removed); }
+  .card.changed { border-left: 4px solid var(--status-changed); }
+
+  .turns-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0 24px; }
+  .turns-box { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+  .turns-box h4 { margin: 0 0 6px; font-size: 13px; color: var(--accent); }
+  .turns-box .turns-value { font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .turns-box .turns-entities { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<h1>friend-01 narrative trigger 재편성 — 본 thread 요약</h1>
+<p class="lead">사건: 「손절한 절친」 (송다은 vs 최수민) — 단톡방 매도 + 다층 가족·사기 사건. 본 thread = trigger 구조 재편성만 (ScriptedText / 다국어 sync 는 별도 thread).</p>
+
+<div class="meta">
+  <span>작성일: <strong>2026-05-27</strong></span>
+  <span>HEAD: <strong>본 thread commit 후 갱신</strong></span>
+  <span>base: <strong>70a114f2</strong></span>
+  <span>검증: <strong>tsc clean + qa:fast RELEASE READY (P0=0)</strong></span>
+</div>
+
+<h2>핵심 변경 요약</h2>
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="sc-label">Issue 결정</div>
+    <div class="sc-value">12건</div>
+    <div class="sc-desc">변경 적용 7건 (Issue 2/3/4/5/10/12 + 11 공통 CT 안내) + 현재 유지 5건 (Issue 1/6/7/8/9)</div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">신설 candidate</div>
+    <div class="sc-value">2개</div>
+    <div class="sc-desc">B 자책 발언 결합 경로 — 「먼저 넘은 선」 재진입 + 「같은 부탁」 진입</div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">폐기 candidate</div>
+    <div class="sc-value">1개</div>
+    <div class="sc-desc">「오미경」 B 끌어들이기 broad (이용 action 제한 없음)</div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">precondition 변경</div>
+    <div class="sc-value">6개</div>
+    <div class="sc-desc">증인 3명 cascade 쟁점 게이트 추가 + 「예비신랑 메시지」 priorCard 추가 + 「떠벌림 흔적」 priorCard 변경</div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">turns 차등 변경</div>
+    <div class="sc-value">8개</div>
+    <div class="sc-desc">재판관 폴백 — chain 시작 + 증인 = 3턴 / chain 중간 = 4턴 / 핵심 reframe + 종점 = 5턴 유지</div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">전체 candidate</div>
+    <div class="sc-value">63개</div>
+    <div class="sc-desc">62 → 63 (신설 2 - 폐기 1). entity 16개 (w-2 = 7, 다른 = 4 또는 3)</div>
+  </div>
+</div>
+
+<h2>Issue 결정 표</h2>
+<table class="decisions">
+  <thead>
+    <tr>
+      <th style="width: 220px;">Issue</th>
+      <th style="width: 180px;">결정</th>
+      <th>적용 영역</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="issue-col">1. 사건 시작 시 보유 evidence wrapper</td>
+      <td class="decision-col"><span class="status-pill pill-kept">A 유지</span></td>
+      <td class="applied-col">변경 없음 — e-1/e-2/e-3 narrative wrapper 미부착 유지</td>
+    </tr>
+    <tr>
+      <td class="issue-col">2. combination recipe 4개 누락</td>
+      <td class="decision-col"><span class="status-pill pill-added">C 부분 추가</span></td>
+      <td class="applied-col">combine-9 → dc-2 candidate + combine-10 → dc-3 candidate 신설</td>
+    </tr>
+    <tr>
+      <td class="issue-col">3. 「오미경」 broad</td>
+      <td class="decision-col"><span class="status-pill pill-removed">C 폐기</span></td>
+      <td class="applied-col">w3-via-npc-b-context candidate 제거 (3 refs 정리)</td>
+    </tr>
+    <tr>
+      <td class="issue-col">4. 「예비신랑 메시지와 답장」 broad</td>
+      <td class="decision-col"><span class="status-pill pill-changed">B priorCard 추가</span></td>
+      <td class="applied-col">e4-via-outburst-b 에 requirePriorCardFired: e-1 추가</td>
+    </tr>
+    <tr>
+      <td class="issue-col">5. e-5 dispute priorCard</td>
+      <td class="decision-col"><span class="status-pill pill-changed">B 단서로 변경</span></td>
+      <td class="applied-col">e5-via-cascade priorCard d-2 → dc-2 변경 + d-2 S3+ 유지</td>
+    </tr>
+    <tr>
+      <td class="issue-col">6. 감정 폭발 partyPhase 일관</td>
+      <td class="decision-col"><span class="status-pill pill-kept">A 유지</span></td>
+      <td class="applied-col">변경 없음 — 의도적 차별 ([shaken] only / [shaken, angry] / [shaken, defensive])</td>
+    </tr>
+    <tr>
+      <td class="issue-col">7. 「김세라」 B 끌어들이기 frame</td>
+      <td class="decision-col"><span class="status-pill pill-kept">A 유지</span></td>
+      <td class="applied-col">변경 없음 — B 가 자기 추궁받을 때 pro_a 증인 끌어내기 특수 frame</td>
+    </tr>
+    <tr>
+      <td class="issue-col">8. 「먼저 넘은 선」 cross-line</td>
+      <td class="decision-col"><span class="status-pill pill-kept">A 유지</span></td>
+      <td class="applied-col">변경 없음 — cross-line dossier first-fire 후 dispute progression 으로 자연</td>
+    </tr>
+    <tr>
+      <td class="issue-col">9. e-7/dc-5 d-1 cross-line</td>
+      <td class="decision-col"><span class="status-pill pill-kept">A 유지</span></td>
+      <td class="applied-col">변경 없음 — d-1 reframe 강화는 dispute progression 으로 자연</td>
+    </tr>
+    <tr>
+      <td class="issue-col">10. 증인 이어 등장 쟁점 게이트</td>
+      <td class="decision-col"><span class="status-pill pill-changed">B 추가</span></td>
+      <td class="applied-col">w-1 (d-1 S2+) / w-2 dc-2 (d-2 S2+) / w-2 dc-3 (d-3 S0+) / w-3 (d-4 S0+) 추가</td>
+    </tr>
+    <tr>
+      <td class="issue-col">11. e-1 첫 사용 Hybrid hook</td>
+      <td class="decision-col"><span class="status-pill pill-kept">B 공통 CT 안내</span></td>
+      <td class="applied-col">본 thread 변경 X — 공통 CT thread 에 영역 안내 (Hybrid hook 신설 제안)</td>
+    </tr>
+    <tr>
+      <td class="issue-col">12. 재판관 폴백 turns 차등</td>
+      <td class="decision-col"><span class="status-pill pill-changed">B 차등 도입</span></td>
+      <td class="applied-col">chain 시작+증인 = 3턴 / chain 중간 = 4턴 / 핵심 reframe + 종점 = 5턴 유지</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>entity 변경 매트릭스</h2>
+<table class="matrix">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>게임 내 명칭 (label / surface)</th>
+      <th>변경 영역</th>
+      <th style="text-align: center;">candidate 변화</th>
+      <th>turnsAfterEligible</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="line-group"><td colspan="5">Line A — 단톡방 매도 frame (d-5 + d-1 cross)</td></tr>
+    <tr>
+      <td class="ent-id">dc-1</td>
+      <td class="ent-name">「단톡방 글의 근거」</td>
+      <td><span class="status-pill pill-kept">변경 없음</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5턴 유지</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">w-1</td>
+      <td class="ent-name">「김세라」 (pro_a)</td>
+      <td><span class="status-pill pill-changed">cascade 쟁점 게이트 추가</span> <span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5 → 3턴</code></td>
+    </tr>
+    <tr class="line-group"><td colspan="5">Line B — 예비신랑 선 넘기 frame (d-2)</td></tr>
+    <tr>
+      <td class="ent-id">dc-2</td>
+      <td class="ent-name">「먼저 넘은 선」 (cross-line)</td>
+      <td><span class="status-pill pill-added">신설 candidate 1개 (combine-9)</span></td>
+      <td class="cnt">4 → 5</td>
+      <td><code>5턴 유지</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">e-4</td>
+      <td class="ent-name">「예비신랑 메시지와 답장」</td>
+      <td><span class="status-pill pill-changed">outburst priorCard 추가</span> <span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5 → 3턴</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">w-2</td>
+      <td class="ent-name">「박준혁」 (neutral)</td>
+      <td><span class="status-pill pill-changed">cascade 쟁점 게이트 2개 추가</span> <span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">6 → 6</td>
+      <td><code>5 → 3턴</code></td>
+    </tr>
+    <tr class="line-group"><td colspan="5">Line C — 아버지 돈 접근 패턴 frame (d-3 + d-4 hidden)</td></tr>
+    <tr>
+      <td class="ent-id">e-5</td>
+      <td class="ent-name">「떠벌림 흔적과 9일간 메시지」</td>
+      <td><span class="status-pill pill-changed">cascade priorCard 변경 (d-2 → dc-2)</span> <span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5 → 3턴</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">dc-3</td>
+      <td class="ent-name">「같은 부탁」</td>
+      <td><span class="status-pill pill-added">신설 candidate 1개 (combine-10)</span></td>
+      <td class="cnt">4 → 5</td>
+      <td><code>5턴 유지</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">d-3</td>
+      <td class="ent-name">「아버지의 돈 접근 패턴」 (hidden)</td>
+      <td><span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5 → 4턴</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">e-6</td>
+      <td class="ent-name">「과거 송금 기록과 문자」</td>
+      <td><span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5 → 4턴</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">dc-4</td>
+      <td class="ent-name">「손절의 이유」</td>
+      <td><span class="status-pill pill-kept">변경 없음</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5턴 유지</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">d-4</td>
+      <td class="ent-name">「과거 손절과 아버지의 사기」 (hidden)</td>
+      <td><span class="status-pill pill-kept">변경 없음</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5턴 유지</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">w-3</td>
+      <td class="ent-name">「오미경」 (pro_b)</td>
+      <td><span class="status-pill pill-removed">npc-b-context 폐기</span> <span class="status-pill pill-changed">cascade 게이트 추가</span> <span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">4 → 3</td>
+      <td><code>5 → 3턴</code></td>
+    </tr>
+    <tr class="line-group"><td colspan="5">Line D — 매도 종합 (d-5 hidden 종결)</td></tr>
+    <tr>
+      <td class="ent-id">e-7</td>
+      <td class="ent-name">「두 시점 대조표」 (cross-line)</td>
+      <td><span class="status-pill pill-changed">turns 변경</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5 → 4턴</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">d-5</td>
+      <td class="ent-name">「단톡방 매도와 명예훼손」 (hidden)</td>
+      <td><span class="status-pill pill-kept">변경 없음</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5턴 유지</code></td>
+    </tr>
+    <tr>
+      <td class="ent-id">dc-5</td>
+      <td class="ent-name">「낙인의 순서」 (cross-line)</td>
+      <td><span class="status-pill pill-kept">변경 없음</span></td>
+      <td class="cnt">4 → 4</td>
+      <td><code>5턴 유지</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>cascade chain Before/After</h2>
+<div class="chain-grid">
+  <div class="chain-box">
+    <h4>Before (HEAD 70a114f2)</h4>
+    <div class="chain-flow">e-1 / e-2 / e-3 (초기 보유, wrapper 없음)
+  ↓ combine-1
+dc-1 (4 candidate)
+  ↓ cascade
+  ├─→ w-1 (cascade priorCard dc-1, <span class="changed">쟁점 게이트 없음</span>)
+  ├─→ dc-2 (4 candidate, cross-line d-1+d-2)
+  └─→ e-4 (cascade priorCard dc-1)
+
+dc-2 (4 candidate)
+  ↓ cascade
+w-2 dc-2 영역 (cascade priorCard dc-2, <span class="changed">쟁점 게이트 없음</span>)
+
+<span class="changed">e-5 (cascade priorCard d-2 — dispute)</span>
+  ↓
+dc-3 (4 candidate)
+  ↓ cascade
+d-3 → e-6 → dc-4
+  ├─→ d-4 (hidden)
+  └─→ w-3 (cascade priorCard dc-4, <span class="changed">쟁점 게이트 없음</span>)
+       <span class="removed">+ w3-via-npc-b-context (broad)</span>
+
+dc-4 → e-7 → d-5 → dc-5 (사건 종결)
+
+<span class="muted">⚠ combine-5/6/9/10 narrative trigger 미사용</span>
+<span class="muted">⚠ judge_auto 모두 turnsAfterEligible 5 일관</span></div>
+  </div>
+  <div class="chain-box">
+    <h4>After (본 thread 변경)</h4>
+    <div class="chain-flow">e-1 / e-2 / e-3 (초기 보유, wrapper 없음 — Issue 1 유지)
+  ↓ combine-1
+dc-1 (4 candidate)
+  ↓ cascade
+  ├─→ w-1 (cascade + <span class="new">d-1 S2+ 게이트</span>)
+  ├─→ dc-2 (4 + <span class="new">combine-9 신설</span> = 5)
+  └─→ e-4 (cascade + <span class="new">outburst-b priorCard e-1</span>)
+
+dc-2 (5 candidate)
+  ↓ cascade
+w-2 dc-2 영역 (cascade + <span class="new">d-2 S2+ 게이트</span>)
+
+e-5 (cascade <span class="new">priorCard dc-2</span> + d-2 S3+)
+  ↓
+dc-3 (4 + <span class="new">combine-10 신설</span> = 5)
+  ↓ cascade
+d-3 → e-6 → dc-4
+  ├─→ d-4 (hidden)
+  └─→ w-3 (cascade + <span class="new">d-4 S0+ 게이트</span>, 3 candidate)
+       <span class="removed">npc-b-context 폐기</span>
+
+dc-4 → e-7 → d-5 → dc-5 (사건 종결)
+
+<span class="muted">차등 turns: 핵심 reframe + 종점 = 5턴 / chain 중간 = 4턴 / chain 시작 + 증인 = 3턴</span></div>
+  </div>
+</div>
+
+<h2>신설 candidate 카드</h2>
+<div class="card-grid">
+  <div class="card added">
+    <div class="card-header">
+      <div class="card-title">「먼저 넘은 선」 B 자책 결합</div>
+      <span class="type-pill type-combo">combination_result</span>
+    </div>
+    <div class="card-meta">target entity: dc-2 (linkedDisputes: d-1 + d-2 cross-line)</div>
+    <div class="card-row">
+      <span class="card-key">candidate ID</span>
+      <span class="card-val">dc2-via-combo-stmt-b-silence</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">recipeId</span>
+      <span class="card-val">combine-9 (stmt-b-silence + e-4)</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">precondition</span>
+      <span class="card-val">disputeLieState: d-2 S0+</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">scriptedRefs</span>
+      <span class="card-val">신규 4개 (judge-query / b-context / a-react / judge-decree)</span>
+    </div>
+    <div class="card-desc">B (최수민) 자책 발언 ("참았어야 했다" 류) + 「예비신랑 메시지와 답장」(e-4) 결합 → 「먼저 넘은 선」(dc-2) 재진입. B 자책 frame 으로 예비신랑 선 넘기 강화.</div>
+  </div>
+  <div class="card added">
+    <div class="card-header">
+      <div class="card-title">「같은 부탁」 B 자책 결합</div>
+      <span class="type-pill type-combo">combination_result</span>
+    </div>
+    <div class="card-meta">target entity: dc-3 (Line C — 아버지 돈 접근 패턴)</div>
+    <div class="card-row">
+      <span class="card-key">candidate ID</span>
+      <span class="card-val">dc3-via-combo-stmt-b-silence</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">recipeId</span>
+      <span class="card-val">combine-10 (stmt-b-silence + e-5)</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">precondition</span>
+      <span class="card-val">disputeLieState: d-3 S1+</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">scriptedRefs</span>
+      <span class="card-val">신규 4개 (judge-query / b-context / a-react / judge-decree)</span>
+    </div>
+    <div class="card-desc">B 자책 발언 + 「떠벌림 흔적과 9일간 메시지」(e-5) 결합 → 「같은 부탁」(dc-3) 진입. B 자책 frame 으로 아버지 돈 접근 패턴 진입.</div>
+  </div>
+</div>
+
+<h2>폐기 candidate 카드</h2>
+<div class="card-grid">
+  <div class="card removed">
+    <div class="card-header">
+      <div class="card-title">「오미경」 B 끌어들이기 broad</div>
+      <span class="type-pill type-npc">npc_interjection</span>
+    </div>
+    <div class="card-meta">target entity: w-3 (오미경, pro_b 증인)</div>
+    <div class="card-row">
+      <span class="card-key">candidate ID</span>
+      <span class="card-val">w3-via-npc-b-context (폐기)</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">precondition (현재)</span>
+      <span class="card-val">disputeLieState: d-4 S1+ (contextAction 없음)</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">scriptedRefs (cleanup)</span>
+      <span class="card-val">3 refs (npc-b-context-v1 / npc-judge-catch-v1 / npc-judge-decree-v1)</span>
+    </div>
+    <div class="card-desc">broad 패턴 — d-4 S1+ 만 만족 시 어떤 action 이든 발동. cascade (dc-4) + combo (combine-4) + judge-auto 3 candidate 로 충분 (spouse-01 Issue 2 안 A 와 같은 폐기 패턴).</div>
+  </div>
+</div>
+
+<h2>precondition 변경 candidate 카드</h2>
+<div class="card-grid">
+  <div class="card changed">
+    <div class="card-header">
+      <div class="card-title">「예비신랑 메시지와 답장」 B 격앙</div>
+      <span class="type-pill type-emotional">emotional_outburst</span>
+    </div>
+    <div class="card-meta">candidate ID: e4-via-outburst-b</div>
+    <div class="card-row">
+      <span class="card-key">변경</span>
+      <span class="card-val">requirePriorCardFired: e-1 (신규 추가)</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">기존 유지</span>
+      <span class="card-val">partyPhase.b: [shaken, angry] + d-2 S0+</span>
+    </div>
+    <div class="card-desc">「예비신랑 연락 기록」(e-1) 인지 후만 B 격앙 발동. e-1 이 초기 보유라 게이트 효과 미세하지만 의도 명시.</div>
+  </div>
+  <div class="card changed">
+    <div class="card-header">
+      <div class="card-title">「떠벌림 흔적」 이어 등장</div>
+      <span class="type-pill type-cascade">cascade_from_card</span>
+    </div>
+    <div class="card-meta">candidate ID: e5-via-cascade</div>
+    <div class="card-row">
+      <span class="card-key">변경</span>
+      <span class="card-val">requirePriorCardFired: d-2 → dc-2</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">기존 유지</span>
+      <span class="card-val">disputeLieState: d-2 S3+</span>
+    </div>
+    <div class="card-desc">출처 카드가 쟁점 직접 (d-2) 이 아닌 단서 「먼저 넘은 선」(dc-2). 다른 cascade candidate 와 구조 일관.</div>
+  </div>
+  <div class="card changed">
+    <div class="card-header">
+      <div class="card-title">증인 4 cascade 쟁점 게이트</div>
+      <span class="type-pill type-cascade">cascade_from_card</span>
+    </div>
+    <div class="card-meta">candidate IDs: w1-via-cascade / w2-via-cascade / w2-via-cascade-dc3 / w3-via-cascade</div>
+    <div class="card-row">
+      <span class="card-key">w-1 추가</span>
+      <span class="card-val">disputeLieState: d-1 S2+</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">w-2 dc-2 추가</span>
+      <span class="card-val">disputeLieState: d-2 S2+</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">w-2 dc-3 추가</span>
+      <span class="card-val">disputeLieState: d-3 S0+</span>
+    </div>
+    <div class="card-row">
+      <span class="card-key">w-3 추가</span>
+      <span class="card-val">disputeLieState: d-4 S0+</span>
+    </div>
+    <div class="card-desc">증인 이어 등장 candidate 가 단서만 만족하면 발동하던 영역 — 다른 cascade candidate 와 일관성 (쟁점 진행도 게이트 추가).</div>
+  </div>
+</div>
+
+<h2>재판관 폴백 turnsAfterEligible 차등</h2>
+<div class="turns-grid">
+  <div class="turns-box" style="border-left: 4px solid var(--status-kept);">
+    <h4>5턴 유지 — 핵심 reframe + chain 종점</h4>
+    <div class="turns-value">7개 entity</div>
+    <div class="turns-entities">「단톡방 글의 근거」(dc-1) / 「먼저 넘은 선」(dc-2) / 「같은 부탁」(dc-3) / 「손절의 이유」(dc-4) / 「낙인의 순서」(dc-5) / 「과거 손절과 아버지의 사기」(d-4) / 「단톡방 매도와 명예훼손」(d-5)</div>
+  </div>
+  <div class="turns-box" style="border-left: 4px solid var(--status-changed);">
+    <h4>4턴 변경 — chain 중간</h4>
+    <div class="turns-value">3개 entity</div>
+    <div class="turns-entities">「아버지의 돈 접근 패턴」(d-3) / 「과거 송금 기록과 문자」(e-6) / 「두 시점 대조표」(e-7)</div>
+  </div>
+  <div class="turns-box" style="border-left: 4px solid var(--status-added);">
+    <h4>3턴 변경 — chain 시작 + 증인</h4>
+    <div class="turns-value">5개 entity</div>
+    <div class="turns-entities">「예비신랑 메시지와 답장」(e-4) / 「떠벌림 흔적과 9일간 메시지」(e-5) / 「김세라」(w-1) / 「박준혁」(w-2) / 「오미경」(w-3)</div>
+  </div>
+</div>
+
+<h2>공통 CT thread 안내 영역 (본 thread 변경 X)</h2>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Issue 11 — 「예비신랑 연락 기록」(e-1) 첫 사용 Hybrid hook 신설 제안</div>
+    <span class="status-pill pill-kept">공통 CT thread 영역</span>
+  </div>
+  <div class="card-desc">
+    spouse-01 의 C-2 / C-3c hook 패턴 적용 안. <code>useActionDispatch.ts</code> 의 friend-01 hook 영역 신설:<br><br>
+    <code>condition</code>: action.evidenceId === 'e-1' + action.target === 'b' + e-1 latestStage >= 2 (또는 3)<br>
+    <code>결과</code>: attemptNarrativeForEvidence(dc-1) 강제 cascade — 「예비신랑 연락 기록」 깊이 탐색 시 「단톡방 글의 근거」(dc-1) 자동 surface<br><br>
+    본 thread 영역 외 — 공통 CT thread 검토 + 사용자 합의 후 적용.
+  </div>
+</div>
+
+<h2>검증</h2>
+<table class="decisions">
+  <thead>
+    <tr><th>검증 항목</th><th>결과</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>tsc --noEmit</td><td><span class="status-pill pill-added">clean (출력 없음)</span></td></tr>
+    <tr><td>qa:fast</td><td><span class="status-pill pill-added">RELEASE READY</span></td></tr>
+    <tr><td>static P0</td><td><span class="status-pill pill-added">0건</span> (findings 1813, hard 0)</td></tr>
+    <tr><td>route P0</td><td><span class="status-pill pill-added">0건</span> (findings 33, hard 0)</td></tr>
+    <tr><td>combined P0</td><td><span class="status-pill pill-added">0건</span></td></tr>
+    <tr><td>scriptedVariants cross-case</td><td>14973 (spouse-01 + family-01 + friend-01 통합) — 본 thread 변경 영향 없음</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p>본 자료 = <a href="./inventory.md">inventory.md</a> + <a href="./issues.md">issues.md</a> + <a href="./script-changes.md">script-changes.md</a> 의 사용자 시각화. 본 thread commit 후 핸드오프 메모리 생성.</p>
+  <p>다음 thread = ScriptedText 작성 (script-changes.md 권위) → 다국어 sync 별도 thread.</p>
+</footer>
+
+</body>
+</html>
