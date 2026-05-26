@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>family-01 사건 전체 구조 개요</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #181b22;
+    --panel-2: #1f232c;
+    --panel-3: #14171d;
+    --line: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #9aa0aa;
+    --muted-2: #6e747e;
+    --accent: #a799c4;
+
+    --family: #a799c4;
+    --family-bg: #1f1a2a;
+    --family-border: #3d3450;
+    --family-soft: rgba(167,153,196,0.08);
+
+    --hidden: #c977d6;
+    --pro-a: #e07b6c;
+    --pro-b: #7fc88a;
+    --neutral: #c2c7d0;
+
+    --truth: #f4c849;
+    --motive: #e0769a;
+    --evidence: #7aa9e0;
+    --dossier: #c977d6;
+    --witness: #f4a449;
+    --combine: #7fc88a;
+
+    --stage-s0: #6e747e;
+    --stage-s1: #7aa9e0;
+    --stage-s2: #7fc88a;
+    --stage-s3: #f4c849;
+    --stage-s4: #f4a449;
+    --stage-s5: #e0769a;
+
+    --line-a: #5c8db5;
+    --line-b: #b58a5c;
+    --line-c: #8c5cb5;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Pretendard', 'Inter', system-ui, sans-serif; margin: 0; padding: 0; line-height: 1.55; }
+  body { padding: 24px 24px 96px; max-width: 1400px; margin: 0 auto; }
+
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 20px; margin: 32px 0 12px; letter-spacing: -0.01em; padding-bottom: 6px; border-bottom: 2px solid var(--line); display: flex; align-items: center; gap: 10px; }
+  h2 .sec-num { display: inline-block; font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; }
+  h3 { font-size: 15px; margin: 18px 0 8px; letter-spacing: -0.005em; color: var(--accent); }
+  h4 { font-size: 13px; margin: 12px 0 6px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  p { margin: 6px 0; }
+  .lead { color: var(--muted); font-size: 13.5px; }
+  code { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 4px; color: var(--accent); }
+
+  /* ============ scope header ============ */
+  .scope-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; background: var(--family-bg); color: var(--family); border: 1px solid var(--family-border); margin-right: 6px; vertical-align: middle; }
+
+  .meta { display: flex; gap: 14px; margin: 12px 0 24px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+  .meta span { padding: 4px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+  .meta span strong { color: var(--text); font-weight: 600; }
+
+  /* ============ TOC ============ */
+  .toc { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin: 12px 0 24px; }
+  .toc-title { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 24px; }
+  .toc li { font-size: 13px; padding: 2px 0; color: var(--text); break-inside: avoid; }
+  .toc li a { color: var(--text); text-decoration: none; }
+  .toc li a:hover { color: var(--accent); }
+
+  /* ============ context section ============ */
+  .context-card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0 20px; }
+  .context-card .ctx-desc { font-size: 14.5px; line-height: 1.7; color: var(--text); }
+  .context-card .ctx-trigger { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .ctx-meta { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: var(--muted); }
+  .ctx-meta span strong { color: var(--accent); }
+
+  /* ============ parties grid ============ */
+  .parties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0 20px; }
+  .party-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; position: relative; }
+  .party-card.a { border-left: 4px solid var(--pro-a); }
+  .party-card.b { border-left: 4px solid var(--pro-b); }
+  .party-card .p-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .party-card .p-name { font-size: 18px; font-weight: 700; color: var(--text); }
+  .party-card .p-archetype { font-size: 11px; padding: 2px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; background: rgba(255,255,255,0.06); }
+  .party-card.a .p-archetype { color: var(--pro-a); }
+  .party-card.b .p-archetype { color: var(--pro-b); }
+  .party-card .p-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .party-card .p-style { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .party-card .p-fear { font-size: 12.5px; color: var(--muted); }
+  .party-card .p-fear strong { color: var(--accent); }
+  .party-card .p-sensitive { margin-top: 8px; }
+  .party-card .p-sensitive ul { margin: 4px 0 0; padding-left: 20px; font-size: 12.5px; color: var(--muted); }
+  .party-card .p-sensitive li { margin: 2px 0; }
+
+  /* ============ timeline ============ */
+  .timeline { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 12px 0 24px; }
+  .tl-track { display: grid; grid-template-columns: 80px 130px 1fr 200px; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--line); align-items: start; }
+  .tl-track:last-child { border-bottom: none; }
+  .tl-stage { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: var(--accent); }
+  .tl-when { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .tl-action { font-size: 13px; line-height: 1.6; color: var(--text); }
+  .tl-perception { font-size: 11.5px; line-height: 1.5; color: var(--muted-2); font-family: 'Pretendard', sans-serif; }
+  .tl-perception .pa { color: var(--pro-a); font-weight: 600; }
+  .tl-perception .pb { color: var(--pro-b); font-weight: 600; }
+  .tl-perception .ps { color: var(--muted); font-weight: 600; }
+
+  /* ============ dispute chain ============ */
+  .dispute-chain { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 12px 0 24px; position: relative; }
+  .dispute-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; position: relative; }
+  .dispute-card.initial { border-top: 3px solid var(--stage-s0); }
+  .dispute-card.hidden { border-top: 3px solid var(--hidden); }
+  .dispute-card .d-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .dispute-card .d-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+  .dispute-card .d-tag { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: 0.04em; }
+  .dispute-card .d-tag.initial { background: rgba(110,116,126,0.18); color: var(--stage-s0); }
+  .dispute-card .d-tag.hidden { background: rgba(201,119,214,0.18); color: var(--hidden); }
+  .dispute-card .d-meta { font-size: 11.5px; color: var(--muted); margin: 6px 0; font-family: 'JetBrains Mono', monospace; }
+  .dispute-card .d-truth { font-size: 12px; color: var(--text); line-height: 1.55; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  .dispute-card .d-truth strong { color: var(--accent); }
+  .dispute-card .d-resp { display: flex; gap: 4px; margin-top: 8px; font-size: 11px; }
+  .dispute-card .d-resp .ra { color: var(--pro-a); font-family: 'JetBrains Mono', monospace; }
+  .dispute-card .d-resp .rb { color: var(--pro-b); font-family: 'JetBrains Mono', monospace; }
+  .dispute-card .d-unlock { font-size: 11px; color: var(--muted); margin-top: 6px; padding: 4px 6px; background: rgba(0,0,0,0.25); border-radius: 4px; font-family: 'JetBrains Mono', monospace; }
+  .dispute-arrow { position: absolute; top: 50%; right: -7px; transform: translateY(-50%); color: var(--accent); font-size: 14px; font-weight: 700; z-index: 2; background: var(--bg); padding: 0 2px; }
+
+  /* dispute stage table */
+  .stage-table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 12px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .stage-table th { background: var(--panel-2); color: var(--accent); font-weight: 600; text-align: left; padding: 8px 10px; font-size: 11px; letter-spacing: 0.03em; border-bottom: 1px solid var(--line); }
+  .stage-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .stage-table tr:last-child td { border-bottom: none; }
+  .stage-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .stage-table .stage-cell { font-family: 'JetBrains Mono', monospace; font-weight: 700; width: 50px; text-align: center; }
+  .stage-table .stage-cell.s0 { color: var(--stage-s0); }
+  .stage-table .stage-cell.s1 { color: var(--stage-s1); }
+  .stage-table .stage-cell.s2 { color: var(--stage-s2); }
+  .stage-table .stage-cell.s3 { color: var(--stage-s3); }
+  .stage-table .stage-cell.s4 { color: var(--stage-s4); }
+  .stage-table .stage-cell.s5 { color: var(--stage-s5); }
+
+  /* ============ evidence + dossier + witness grids ============ */
+  .entity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin: 12px 0 24px; }
+  .entity-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .entity-card.evidence { border-left: 4px solid var(--evidence); }
+  .entity-card.dossier { border-left: 4px solid var(--dossier); }
+  .entity-card.witness { border-left: 4px solid var(--witness); }
+  .entity-card.deprecated { opacity: 0.4; border-left: 4px solid var(--muted-2); }
+  .entity-card .e-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; gap: 8px; }
+  .entity-card .e-id { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--accent); font-weight: 700; }
+  .entity-card .e-tag { font-size: 10px; padding: 1px 5px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; background: rgba(255,255,255,0.06); color: var(--muted); }
+  .entity-card .e-name { font-size: 13px; color: var(--text); font-weight: 600; margin-bottom: 4px; }
+  .entity-card .e-surface { font-size: 11.5px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+  .entity-card .e-desc { font-size: 12px; color: var(--neutral); line-height: 1.55; margin-bottom: 6px; }
+  .entity-card .e-meta { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; padding: 5px 7px; background: rgba(0,0,0,0.25); border-radius: 4px; margin-top: 6px; }
+  .entity-card .e-meta strong { color: var(--accent); }
+  .entity-card .e-cand { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 999px; background: rgba(167,153,196,0.18); color: var(--accent); margin-left: 4px; }
+  .entity-card .e-cand.zero { background: rgba(110,116,126,0.18); color: var(--muted); }
+  .entity-card .e-warn { font-size: 11px; color: var(--motive); margin-top: 4px; padding: 4px 6px; background: rgba(224,118,154,0.08); border-radius: 4px; }
+
+  /* ============ combine matrix ============ */
+  .combine-matrix { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 12.5px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .combine-matrix th { background: var(--panel-2); color: var(--combine); font-weight: 600; text-align: left; padding: 9px 12px; font-size: 11.5px; border-bottom: 1px solid var(--line); }
+  .combine-matrix td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .combine-matrix tr:hover td { background: rgba(127,200,138,0.04); }
+  .combine-matrix tr.deprecated td { opacity: 0.45; text-decoration: line-through; }
+  .combine-matrix .cm-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--combine); width: 100px; }
+  .combine-matrix .cm-inputs { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--neutral); }
+  .combine-matrix .cm-output { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--dossier); }
+  .combine-matrix .cm-arrow { color: var(--accent); margin: 0 4px; }
+  .combine-matrix .cm-route { font-size: 10.5px; padding: 1px 6px; border-radius: 3px; }
+  .combine-matrix .cm-route.evidence_combine { background: rgba(122,169,224,0.18); color: var(--evidence); }
+  .combine-matrix .cm-route.statement_combine { background: rgba(244,164,73,0.18); color: var(--witness); }
+  .combine-matrix .cm-gate { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+
+  /* ============ cascade chain (ascii-style) ============ */
+  .chain-block { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px; }
+  .chain-block.line-a { border-left: 4px solid var(--line-a); }
+  .chain-block.line-b { border-left: 4px solid var(--line-b); }
+  .chain-block.line-c { border-left: 4px solid var(--line-c); }
+  .chain-block h4 { margin: 0 0 10px; font-size: 13.5px; color: var(--text); text-transform: none; letter-spacing: 0; }
+  .chain-block.line-a h4 { color: var(--line-a); }
+  .chain-block.line-b h4 { color: var(--line-b); }
+  .chain-block.line-c h4 { color: var(--line-c); }
+  .chain-flow { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.8; color: var(--text); white-space: pre-wrap; padding: 12px 14px; background: var(--panel-3); border-radius: 6px; overflow-x: auto; }
+  .chain-flow .ent { font-weight: 700; color: var(--accent); }
+  .chain-flow .arrow { color: var(--dossier); font-weight: 700; margin: 0 4px; }
+  .chain-flow .cond { color: var(--muted); font-size: 11px; }
+  .chain-flow .integrated { color: var(--truth); font-weight: 700; }
+  .chain-flow .note { color: var(--muted); font-style: italic; font-size: 11px; }
+
+  /* ============ disclosure policy ============ */
+  .disclosure-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 12.5px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .disclosure-table th { background: var(--panel-2); color: var(--truth); font-weight: 600; text-align: left; padding: 10px 12px; font-size: 11.5px; border-bottom: 1px solid var(--line); }
+  .disclosure-table td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .disclosure-table .dg-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent); width: 60px; }
+  .disclosure-table .dg-key { color: var(--text); width: 280px; font-size: 12px; line-height: 1.5; }
+  .disclosure-table .dg-tier { font-size: 11px; line-height: 1.6; color: var(--muted); }
+  .disclosure-table .dg-tier .tier-step { display: block; margin: 2px 0; padding: 3px 0; }
+  .disclosure-table .dg-tier .stage-mark { display: inline-block; font-family: 'JetBrains Mono', monospace; font-weight: 700; padding: 1px 6px; border-radius: 3px; margin-right: 6px; font-size: 10.5px; }
+  .disclosure-table .dg-tier .stage-mark.s0-s2 { background: rgba(110,116,126,0.18); color: var(--stage-s0); }
+  .disclosure-table .dg-tier .stage-mark.s3 { background: rgba(244,200,73,0.18); color: var(--stage-s3); }
+  .disclosure-table .dg-tier .stage-mark.s4 { background: rgba(244,164,73,0.18); color: var(--stage-s4); }
+  .disclosure-table .dg-tier .stage-mark.s5 { background: rgba(224,118,154,0.18); color: var(--stage-s5); }
+  .disclosure-table .dg-tier .stage-mark.sealed { background: rgba(224,123,108,0.18); color: var(--pro-a); }
+
+  /* ============ trigger distribution ============ */
+  .trig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+  .trig-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .trig-card .t-type { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .trig-card .t-count { font-size: 28px; font-weight: 700; line-height: 1.2; }
+  .trig-card.cascade .t-count { color: var(--dossier); }
+  .trig-card.combo .t-count { color: var(--combine); }
+  .trig-card.npc .t-count { color: var(--witness); }
+  .trig-card.outburst .t-count { color: var(--motive); }
+  .trig-card.judge .t-count { color: var(--evidence); }
+  .trig-card .t-desc { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+
+  /* ============ user decisions history ============ */
+  .decision-list { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin: 12px 0 24px; }
+  .decision-item { padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  .decision-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .decision-item .di-cycle { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: var(--family-bg); color: var(--family); border: 1px solid var(--family-border); margin-right: 8px; }
+  .decision-item .di-summary { font-size: 13px; color: var(--text); }
+  .decision-item .di-detail { font-size: 12px; color: var(--muted); margin-top: 4px; padding-left: 8px; border-left: 2px solid var(--line); }
+
+  /* ============ misc ============ */
+  .note-box { background: var(--family-soft); border: 1px solid var(--family-border); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-size: 13px; }
+  .note-box strong { color: var(--accent); }
+  .legend { display: flex; gap: 14px; margin: 8px 0 14px; font-size: 11.5px; color: var(--muted); flex-wrap: wrap; }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+
+  .footer { margin: 40px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11.5px; }
+  .footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<h1><span class="scope-tag">FAMILY-01</span>사건 전체 구조 개요</h1>
+<p class="lead">윤태성·윤정후 형제 유산 분쟁 — 어머니 말년 유서 60:40을 둘러싼 다층 가족 비밀. trigger 재편성 thread 종료 시점 (HEAD a56f5447) 권위 자료.</p>
+
+<div class="meta">
+  <span>일자 <strong>2026-05-27</strong></span>
+  <span>HEAD <strong><code>a56f5447</code></strong></span>
+  <span>권위 source <strong><code>family-01.case.ts</code> (3021 line) + <code>family-01.narrative.ts</code> (740 line)</strong></span>
+  <span>entity 총합 <strong>20 (dispute 5 + evidence 6 + dossier 5 + witness 3 + 폐기 1)</strong></span>
+  <span>narrative trigger candidate <strong>약 52개</strong> (Issue 1 재편성 후)</span>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+  <div class="toc-title">목차</div>
+  <ol>
+    <li><a href="#section-context">사건 개요</a></li>
+    <li><a href="#section-parties">당사자 + 증인</a></li>
+    <li><a href="#section-timeline">사건 timeline (6 stage)</a></li>
+    <li><a href="#section-dispute">5 쟁점 chain progression</a></li>
+    <li><a href="#section-evidence">7 증거 inventory</a></li>
+    <li><a href="#section-dossier">5 단서 카드 inventory</a></li>
+    <li><a href="#section-witness">3 증인 inventory</a></li>
+    <li><a href="#section-combine">12 결합 recipe 매트릭스</a></li>
+    <li><a href="#section-cascade">narrative cascade chain 전체</a></li>
+    <li><a href="#section-disclosure">진실 노출 정책 5 keyword 그룹</a></li>
+    <li><a href="#section-trigger">narrative trigger 분포</a></li>
+    <li><a href="#section-decisions">cycle 별 사용자 사전 결정 history</a></li>
+  </ol>
+</div>
+
+<!-- ===================== 1. 사건 개요 ===================== -->
+<h2 id="section-context"><span class="sec-num">1</span>사건 개요</h2>
+
+<div class="context-card">
+  <div class="ctx-desc">치매 어머니가 남긴 유서에서 동생 60%, 형 40%로 적혀 있다. 평생 어머니를 모시고 살았다고 자부하는 윤태성은 분노하고, 동생은 끝까지 담담하다.</div>
+  <div class="ctx-trigger">초반에는 유서 비율과 요양원 방문 기록이 윤정후의 개입처럼 보인다. 그러나 공증인 메모와 자필 연습본, 오래된 계좌 흐름, 어머니 일기장이 차례로 열리면 사건의 중심은 단순한 유산 다툼을 넘어선다.</div>
+  <div class="ctx-meta">
+    <span>감정 압박 <strong>9 / 10</strong></span>
+    <span>영향 대상 <strong>both</strong></span>
+    <span>quadrant 분포 <strong>both_know × 1 (d-1) + b_only × 4 (d-2~d-5)</strong></span>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>핵심 진실:</strong> 윤정후 돈이 어머니 통장을 거쳐 20년간 형에게 정기 지원금 + 공장 위기 3억원으로 전달됨. 어머니 일기장 = 윤태성이 친자가 아니라는 사실 + 윤정후가 사전 인지 + 친자 양보. 자필 연습본 = 90:10 → 공증 60:40 으로 윤정후 본인이 줄임 (보호 명분).
+</div>
+
+<!-- ===================== 2. 당사자 + 증인 ===================== -->
+<h2 id="section-parties"><span class="sec-num">2</span>당사자 + 증인</h2>
+
+<div class="parties-grid">
+  <div class="party-card a">
+    <div class="p-header">
+      <span class="p-name">윤태성 (A)</span>
+      <span class="p-archetype">confrontational</span>
+    </div>
+    <div class="p-meta">48세 · 주방가구 공장 대표 · 자존심 8/10</div>
+    <div class="p-style">목소리를 높여 상대를 누르고, 형이라는 위치를 먼저 내세운다. 불리해지면 동생의 인격을 깎아내리며 질문 자체를 무력화하려 든다.</div>
+    <div class="p-fear"><strong>두려움</strong>: 평생 장남이라 믿었던 자기 정체성이 무너지는 것</div>
+    <div class="p-sensitive">
+      <strong style="font-size:11px;color:var(--accent)">민감 영역</strong>
+      <ul>
+        <li>장남이라는 자기 위치</li>
+        <li>공장 위기 당시 어디서 돈이 들어왔는지</li>
+        <li>자기 정체성에 관한 오래된 가족 사정</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="party-card b">
+    <div class="p-header">
+      <span class="p-name">윤정후 (B)</span>
+      <span class="p-archetype">affect_flattening</span>
+    </div>
+    <div class="p-meta">44세 · 자동차부품 가게 운영 · 자존심 5/10</div>
+    <div class="p-style">감정을 최대한 억누르며 사실만 짧게 말한다. 담담해 보이지만 그 담담함이 오히려 의심을 산다. 진짜 감정은 마지막까지 드러내지 않으려 한다.</div>
+    <div class="p-fear"><strong>두려움</strong>: 형이 오래된 가족 기록의 의미를 감당하지 못하는 것</div>
+    <div class="p-sensitive">
+      <strong style="font-size:11px;color:var(--accent)">민감 영역</strong>
+      <ul>
+        <li>자필 연습본의 비율을 줄인 책임</li>
+        <li>형 몰래 20년간 이어간 비밀 지원</li>
+        <li>형에게 말하지 못한 가족 기록</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>증인 3명</h3>
+<div class="entity-grid">
+  <div class="entity-card witness">
+    <div class="e-head"><span class="e-id">w-1</span><span class="e-tag">neutral · accurate</span></div>
+    <div class="e-name">최복순 (61세, 전 요양보호사)</div>
+    <div class="e-desc">윤정후가 어머니에게 종이를 읽어드리고 "형 오기 전에 끝내자"고 조심스러워하던 모습을 직접 봤다. 박순애와 동네에서 오래 알고 지낸 사이.</div>
+    <div class="e-meta">관련 쟁점 <strong>d-1</strong> · unlockedBy <strong>dc-1</strong> · trigger <strong>2개</strong> (Issue 1 폐기 후)</div>
+  </div>
+  <div class="entity-card witness">
+    <div class="e-head"><span class="e-id">w-2</span><span class="e-tag">institutional</span></div>
+    <div class="e-name">김영수 (공증인 메모 담당)</div>
+    <div class="e-desc">공증 당일 오전 1차 비율 공란 + 오후 수정 60:40 확정 흐름을 본 절차 담당자.</div>
+    <div class="e-meta">관련 쟁점 <strong>d-2</strong> · unlockedBy <strong>dc-2</strong> · trigger <strong>2개</strong> (Issue 1 폐기 후)</div>
+  </div>
+  <div class="entity-card witness">
+    <div class="e-head"><span class="e-id">w-3</span><span class="e-tag">pro_a · biased</span></div>
+    <div class="e-name">박순애 (69세, 어머니의 오랜 지인)</div>
+    <div class="e-desc">어머니의 마음 영역 + 평소 생활을 두 채널로 안다. 정후가 매달 돈을 보낸다는 말 + 태성을 위한 어머니의 통장 흐름을 어머니로부터 직접 들음.</div>
+    <div class="e-meta">관련 쟁점 <strong>d-3 + d-5</strong> · unlockedBy <strong>dc-3 + dc-5</strong> (cross-cycle) · trigger <strong>3개</strong></div>
+  </div>
+</div>
+
+<!-- ===================== 3. 사건 timeline ===================== -->
+<h2 id="section-timeline"><span class="sec-num">3</span>사건 timeline (6 stage)</h2>
+
+<p class="lead">실제 사건 진행 순서. 각 stage 별 행위자 + 양측 인식 차이 + 노출 게이트 정책 권위.</p>
+
+<div class="timeline">
+  <div class="tl-track">
+    <div class="tl-stage">stage 0</div>
+    <div class="tl-when">20여 년 전 · B</div>
+    <div class="tl-action">윤정후는 어머니에게서 아버지가 윤태성의 친부가 아니라는 사실을 듣고, 본인이 물려받을 예정이던 가업 공장을 형에게 양보한다. 본인은 자동차부품 가게로 시작한다.</div>
+    <div class="tl-perception">
+      <span class="pa">A</span> 공장을 형이 운영하는 것을 당연히 여긴다.<br>
+      <span class="pb">B</span> 전부 인지. 형이 무너지지 않게 하기 위한 결정.<br>
+      <span class="ps">노출</span> S4+ · aftermath / dossier
+    </div>
+  </div>
+
+  <div class="tl-track">
+    <div class="tl-stage">stage 1</div>
+    <div class="tl-when">약 20년간 · B</div>
+    <div class="tl-action">윤정후는 어머니 통장을 거쳐 매달 일정액의 정기 지원금을 보낸다. 형은 그 돈이 어머니 돈인 줄 안다. 공장 위기 시점에는 3억원도 같은 경로로 형에게 흘러간다.</div>
+    <div class="tl-perception">
+      <span class="pa">A</span> 어머니가 자신에게 보낸 돈이라고 믿는다.<br>
+      <span class="pb">B</span> 전부 인지.<br>
+      <span class="ps">노출</span> S2+ · evidence_present / dossier
+    </div>
+  </div>
+
+  <div class="tl-track">
+    <div class="tl-stage">stage 2</div>
+    <div class="tl-when">말년 (2025.09~10) · B</div>
+    <div class="tl-action">어머니가 요양 단계에 들어선 후 윤정후의 요양원 방문이 공증 3주 전부터 급증한다. 어머니에게 종이를 읽어드리는 모습이 전 요양보호사에게 목격된다.</div>
+    <div class="tl-perception">
+      <span class="pa">A</span> 동생이 어머니를 자주 본다는 정도만 인지.<br>
+      <span class="pb">B</span> 어머니의 자필 연습본을 함께 보고 비율을 정리하려 했다.<br>
+      <span class="ps">노출</span> S1+ · evidence_present / dossier
+    </div>
+  </div>
+
+  <div class="tl-track">
+    <div class="tl-stage">stage 3</div>
+    <div class="tl-when">공증 직전 (2025.10.14) · system</div>
+    <div class="tl-action">담당 요양보호사가 교체된다. 최복순은 그만두고 박○○으로 바뀐다. 공증 절차 직전 단계.</div>
+    <div class="tl-perception">
+      <span class="pa">A</span> 교체 사실 자체만 인지.<br>
+      <span class="pb">B</span> 교체 시점을 정확히 인지.<br>
+      <span class="ps">노출</span> S2+ · evidence_present / dossier
+    </div>
+  </div>
+
+  <div class="tl-track">
+    <div class="tl-stage">stage 4</div>
+    <div class="tl-when">공증 당일 (2025.11.05) · B</div>
+    <div class="tl-action">오전 1차 접수에서는 분배 비율이 비어 있다. 오후 수정 접수에서 윤정후의 진행 압박 아래 60:40으로 확정된다. 어머니 상태가 불안정한 가운데 절차가 마무리된다.</div>
+    <div class="tl-perception">
+      <span class="pa">A</span> 공증본만 보며 결과만 안다.<br>
+      <span class="pb">B</span> 자필 90:10을 공증 60:40으로 줄이는 방향으로 자기 손으로 마무리.<br>
+      <span class="ps">노출</span> S2+ · evidence_present / dossier
+    </div>
+  </div>
+
+  <div class="tl-track">
+    <div class="tl-stage">stage 5</div>
+    <div class="tl-when">어머니 사망 직후 ~ 조사 시점 · system</div>
+    <div class="tl-action">어머니 자필 연습본 (정후 90, 태성 10)이 유품에서 발견된다. 어머니 일기장에서 출생 비밀과 두 아들에 대한 어머니의 마음, 윤정후의 사전 인지가 드러난다.</div>
+    <div class="tl-perception">
+      <span class="pa">A</span> 연습본 존재만 알게 됨. 정확한 비율은 사건 조사 후반 단계에 인지.<br>
+      <span class="pb">B</span> 전부 인지.<br>
+      <span class="ps">노출</span> S5+ · aftermath / dossier
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 4. 5 dispute chain ===================== -->
+<h2 id="section-dispute"><span class="sec-num">4</span>5 쟁점 chain progression</h2>
+
+<p class="lead">d-1 (시작점, both_know) → d-2 → d-3 → d-4 → d-5 (모두 b_only hidden). 각자 6 stage (S0~S5) 진행. successUnlocks 로 다음 entity 자동 unlock.</p>
+
+<div class="legend">
+  <span class="legend-item"><span class="legend-dot" style="background:var(--stage-s0)"></span>initial</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--hidden)"></span>hidden</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--stage-s2)"></span>S2 unlock</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--stage-s3)"></span>S3 unlock</span>
+</div>
+
+<div class="dispute-chain">
+  <div class="dispute-card initial">
+    <div class="d-id">d-1</div>
+    <div class="d-name">유서 작성과 판단 능력</div>
+    <span class="d-tag initial">initial</span>
+    <div class="d-meta">weight: high · ambiguity: low</div>
+    <div class="d-truth"><strong>진실:</strong> 어머니의 판단 능력은 완전히 상실되지 않았으나, 윤정후의 개입은 적법성 문제를 남긴다.</div>
+    <div class="d-resp"><span class="ra">A:30</span> / <span class="rb">B:70</span></div>
+    <div class="d-unlock">S1→w-1 / S2→dc-1 / S3→d-2</div>
+    <div class="dispute-arrow">→</div>
+  </div>
+
+  <div class="dispute-card hidden">
+    <div class="d-id">d-2</div>
+    <div class="d-name">공증 절차의 개입</div>
+    <span class="d-tag hidden">hidden</span>
+    <div class="d-meta">weight: high · ambiguity: low</div>
+    <div class="d-truth"><strong>진실:</strong> 공증본 60:40은 오전 1차 공란 → 오후 수정에서 정후의 진행 압박 아래 확정. 동기는 본 쟁점에서 미정 (d-5).</div>
+    <div class="d-resp"><span class="ra">A:15</span> / <span class="rb">B:85</span></div>
+    <div class="d-unlock">S2→dc-2 / S3→d-3</div>
+    <div class="dispute-arrow">→</div>
+  </div>
+
+  <div class="dispute-card hidden">
+    <div class="d-id">d-3</div>
+    <div class="d-name">오래된 지원의 출처</div>
+    <span class="d-tag hidden">hidden</span>
+    <div class="d-meta">weight: high · ambiguity: low</div>
+    <div class="d-truth"><strong>진실:</strong> 윤정후 돈이 어머니 통장을 거쳐 20년간 형에게 정기 지원금 + 공장 위기 3억원 전달. 형은 어머니 돈인 줄 안다.</div>
+    <div class="d-resp"><span class="ra">A:60</span> / <span class="rb">B:40</span></div>
+    <div class="d-unlock">S2→dc-3 · 통합 event ⚡ / S3→d-4</div>
+    <div class="dispute-arrow">→</div>
+  </div>
+
+  <div class="dispute-card hidden">
+    <div class="d-id">d-4</div>
+    <div class="d-name">가족 기록과 침묵의 이유</div>
+    <span class="d-tag hidden">hidden</span>
+    <div class="d-meta">weight: high · ambiguity: high</div>
+    <div class="d-truth"><strong>진실:</strong> 어머니 일기장 = 윤태성 친자가 아닌 사실 + 두 아들 동등 + 정후 사전 인지 + 공장 양보 + 정후의 침묵.</div>
+    <div class="d-resp"><span class="ra">A:25</span> / <span class="rb">B:75</span></div>
+    <div class="d-unlock">S2→dc-4 / S3→d-5</div>
+    <div class="dispute-arrow">→</div>
+  </div>
+
+  <div class="dispute-card hidden">
+    <div class="d-id">d-5</div>
+    <div class="d-name">어머니의 숨겨진 마음</div>
+    <span class="d-tag hidden">hidden</span>
+    <div class="d-meta">weight: high · ambiguity: high</div>
+    <div class="d-truth"><strong>진실:</strong> 자필 90:10 → 공증 60:40 축소. 둘 다 어머니 뜻을 그대로 두지 못함 (장남 당연시 + 보호 명분).</div>
+    <div class="d-resp"><span class="ra">A: 50</span> / <span class="rb">B: 50</span></div>
+    <div class="d-unlock">S2→dc-5 (최종 종합)</div>
+  </div>
+</div>
+
+<h3>각 쟁점 S0~S5 surfaceClaim (player 입장에서 본 양측 주장 흐름)</h3>
+
+<table class="stage-table">
+  <thead>
+    <tr>
+      <th>stage</th>
+      <th>d-1 유서/판단</th>
+      <th>d-2 공증 절차</th>
+      <th>d-3 20년 돈</th>
+      <th>d-4 가족 기록/침묵</th>
+      <th>d-5 어머니 마음</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="stage-cell s0">S0</td><td>전면 무효 / 어머니 뜻 주장</td><td>조작 의심 / 정상 진행</td><td>어머니 돈 frame / 본인 일 아니다</td><td>(미진입)</td><td>(미진입)</td></tr>
+    <tr><td class="stage-cell s1">S1</td><td>판단 능력 의심 / 유서 논의 인정</td><td>매끄럽지 않은 절차 / 약간의 수정</td><td>공장 위기 큰돈 / 어머니 통장 흐름</td><td>—</td><td>—</td></tr>
+    <tr><td class="stage-cell s2">S2</td><td>시점 겹침 / 종이를 읽어드림</td><td>오전 1차 / 오후 수정본</td><td>계좌 자료 / 형 쪽 본인 돈 흐름</td><td>가족 사정 인지 일부</td><td>비율 차이 존재 인정</td></tr>
+    <tr><td class="stage-cell s3">S3</td><td>형 오기 전 / 충돌 회피</td><td>오후 수정 마무리 / 어머니 상태</td><td>동생 돈 + 형 모르게</td><td>친자 아닌 사실 인정 (친부 실명 봉인)</td><td>자기 쪽 줄임 / 보호 명분</td></tr>
+    <tr><td class="stage-cell s4">S4</td><td>판단과 개입 분리</td><td>절차 개입 책임 / 동기 분리</td><td>자존심 무너짐 / 형 자존심 동기</td><td>친자 양보 + 형 정체성 보호 명분</td><td>두 번 왜곡 / 보호 명분 책임</td></tr>
+    <tr><td class="stage-cell s5">S5</td><td>단정 책임 인정</td><td>절차 책임 확정</td><td>20년 진실 완전 인정</td><td>일기장 진실 완전 인정 (친부 실명 영구 봉인)</td><td>자필 90:10 + 공증 60:40 축소 인정</td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== 5. 7 evidence ===================== -->
+<h2 id="section-evidence"><span class="sec-num">5</span>7 증거 inventory (e-3 폐기 후 활성 6)</h2>
+
+<div class="entity-grid">
+  <div class="entity-card evidence">
+    <div class="e-head"><span class="e-id">e-1</span><span class="e-tag">contract · hard</span></div>
+    <div class="e-name">60:40 유서 사본</div>
+    <div class="e-surface">(공개 명칭) 분배 비율이 적힌 서류 사본</div>
+    <div class="e-desc">어머니 사망 두 달 전 작성된 공증 유서 사본. 윤정후 60%, 윤태성 40%. 공증 도장.</div>
+    <div class="e-meta">증명 <strong>d-1 + d-2</strong> · 첫 등장 <strong>d-1.S0 (시작점)</strong> · narrative trigger <strong class="e-cand zero">0개</strong></div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head"><span class="e-id">e-2</span><span class="e-tag">log · hard</span></div>
+    <div class="e-name">요양원 방문기록</div>
+    <div class="e-surface">(공개 명칭) 시설 방문 기록</div>
+    <div class="e-desc">말년 방문 빈도 + 담당자 교체 시점. 공증 전 윤정후 방문 급증.</div>
+    <div class="e-meta">증명 <strong>d-1</strong> · 첫 등장 <strong>d-1.S1</strong> · narrative trigger <strong class="e-cand zero">0개</strong></div>
+  </div>
+  <div class="entity-card deprecated">
+    <div class="e-head"><span class="e-id">e-3</span><span class="e-tag">폐기</span></div>
+    <div class="e-name">전 요양보호사 음성증언 (폐기)</div>
+    <div class="e-surface">2026-05-26 폴리싱 폐기 — w-1 (최복순) 증인과 동일 인물 영역 중복</div>
+    <div class="e-desc">동일 사실은 w-1 testimony.byDispute['d-1']로 단일화. combine-11 (e-2+e-3 → dc-2) 동반 폐기.</div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head"><span class="e-id">e-4</span><span class="e-tag">institutional_note · hard</span></div>
+    <div class="e-name">공증인 메모 기록</div>
+    <div class="e-surface">(공개 명칭) 인증 절차 메모</div>
+    <div class="e-desc">오전 1차 접수 비율 공란 → 오후 수정 60:40 확정 흐름 + 어머니 상태 메모.</div>
+    <div class="e-meta">증명 <strong>d-2</strong> · 첫 등장 <strong>d-2.requiredEvidence</strong> · narrative trigger <strong class="e-cand zero">0개</strong></div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head"><span class="e-id">e-5</span><span class="e-tag">document · self_possessed</span></div>
+    <div class="e-name">어머니 자필 유언장 연습본</div>
+    <div class="e-surface">(공개 명칭) 자필 메모 사본</div>
+    <div class="e-desc">어머니 자필 흔적 — 자필 90:10 흔적. requires e-7. requiredLieState S5.</div>
+    <div class="e-meta">증명 <strong>d-5</strong> · cascade <strong>dc-4 priorCard</strong> · narrative trigger <strong class="e-cand">4개</strong></div>
+    <div class="e-warn">⚠ 봉인: 자필 비율 정확 수치 (90:10) + 자기 몫 축소 방향 → d-5 S5 도달 후만 노출</div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head"><span class="e-id">e-6</span><span class="e-tag">financial_record · hard</span></div>
+    <div class="e-name">오래된 계좌 흐름</div>
+    <div class="e-surface">(공개 명칭) 오래된 송금 내역 묶음</div>
+    <div class="e-desc">20년 송금 패턴 + 공장 위기 3억원. 어머니 통장 경유 흐름.</div>
+    <div class="e-meta">증명 <strong>d-3</strong> · 첫 등장 <strong>d-3.requiredEvidence</strong> · narrative trigger <strong class="e-cand zero">0개</strong></div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head"><span class="e-id">e-7</span><span class="e-tag">document · privacy_concern</span></div>
+    <div class="e-name">어머니 일기장</div>
+    <div class="e-surface">(공개 명칭) 오래된 노트 사본</div>
+    <div class="e-desc">윤태성 친자 아님 + 두 아들 동등 + 정후 사전 인지 + 공장 양보 기록. requiredLieState S2.</div>
+    <div class="e-meta">증명 <strong>d-4 + d-5</strong> · cascade <strong>d-4 priorCard</strong> · narrative trigger <strong class="e-cand">4개</strong></div>
+    <div class="e-warn">⚠ 영구 봉인: 친부 실명 + 구체적 출생 경위 + "아버지 피는 아니다" 직접 표현</div>
+  </div>
+</div>
+
+<!-- ===================== 6. 5 dossier ===================== -->
+<h2 id="section-dossier"><span class="sec-num">6</span>5 단서 카드 inventory</h2>
+
+<div class="entity-grid">
+  <div class="entity-card dossier">
+    <div class="e-head"><span class="e-id">dc-1</span><span class="e-tag">L-1 Timeline</span></div>
+    <div class="e-name">말년의 종이</div>
+    <div class="e-desc">방문 급증 + 종이를 읽어드린 정황 + 형 오기 전 발화. 도움과 개입의 경계가 드러남.</div>
+    <div class="e-meta">link <strong>d-1</strong> · party <strong>b</strong> · 입력 <strong>e-2 → L-1 + e-1</strong> · narrative trigger <strong class="e-cand">3개</strong> (Issue 1 폐기 후 -1)</div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head"><span class="e-id">dc-2</span><span class="e-tag">L-2 Procedural</span></div>
+    <div class="e-name">수정된 유언장</div>
+    <div class="e-desc">오전 1차 비율 공란 → 오후 수정 60:40 확정 흐름. 절차에 손댄 책임이 드러나는 카드.</div>
+    <div class="e-meta">link <strong>d-2</strong> · party <strong>b</strong> · 입력 <strong>e-4 → L-2 + w-2</strong> · narrative trigger <strong class="e-cand">4개</strong></div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head"><span class="e-id">dc-3</span><span class="e-tag">L-3 Beneficiary</span></div>
+    <div class="e-name">20년의 돈</div>
+    <div class="e-desc">윤정후 계좌 → 어머니 통장 → 윤태성 쪽 20년 정기 + 공장 위기 3억원의 실체.</div>
+    <div class="e-meta">link <strong>d-3</strong> · party <strong>b</strong> · 입력 <strong>e-6 → L-3 + w-3</strong> · narrative trigger <strong class="e-cand zero">0개</strong> (d-3 통합 event)</div>
+    <div class="e-warn">⚡ 통합 event: d-3 trigger fire 시 narrativeIntegration 의 force-unlock generic 매핑으로 dc-3 동기 surface</div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head"><span class="e-id">dc-4</span><span class="e-tag">L-4 Context</span></div>
+    <div class="e-name">감춘 이유</div>
+    <div class="e-desc">어머니 일기장 출생 비밀 + 두 아들 동등 + 정후 사전 인지 + 친자 양보. 침묵의 동기 = 형의 정체성 보호.</div>
+    <div class="e-meta">link <strong>d-4</strong> · party <strong>b</strong> · 입력 <strong>e-7 → L-4 + e-6</strong> · narrative trigger <strong class="e-cand">5개</strong> (multi-recipe 두 candidate)</div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head"><span class="e-id">dc-5</span><span class="e-tag">L-5 Closure</span></div>
+    <div class="e-name">어머니의 뜻</div>
+    <div class="e-desc">자필 90:10 → 공증 60:40 축소 흐름 + 20년 지원 + 출생 비밀 종합. 양측 책임축 동시 정리.</div>
+    <div class="e-meta">link <strong>d-5</strong> · party <strong>b</strong> + challenges.a · 입력 <strong>e-1 + e-6 → L-5 + e-7</strong> · narrative trigger <strong class="e-cand">4개</strong> (a-outburst 단독)</div>
+  </div>
+</div>
+
+<!-- ===================== 7. 3 witness (이미 위에 + 상세) ===================== -->
+<h2 id="section-witness"><span class="sec-num">7</span>3 증인 inventory (상세)</h2>
+
+<p class="lead">증인 호출은 dossier 등장으로 unlock. w-3 만 cross-cycle (dc-3 + dc-5 두 경로 unlock).</p>
+
+<table class="stage-table">
+  <thead>
+    <tr>
+      <th style="width:50px">ID</th>
+      <th style="width:130px">이름 / 직업</th>
+      <th style="width:80px">bias</th>
+      <th style="width:140px">관련 쟁점</th>
+      <th style="width:140px">unlock 경로</th>
+      <th>증언 영역 (canProve)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="stage-cell" style="color:var(--witness)">w-1</td>
+      <td>최복순 (61, 전 요양보호사)</td>
+      <td>neutral</td>
+      <td>d-1</td>
+      <td>dc-1 단일 cascade</td>
+      <td>윤정후가 어머니에게 종이를 읽어드린 장면 / "형 오기 전에 끝내자" 직접 청취 / 박순애로부터 들은 어머니 평소 마음 영역</td>
+    </tr>
+    <tr>
+      <td class="stage-cell" style="color:var(--witness)">w-2</td>
+      <td>김영수 (공증인 메모 담당)</td>
+      <td>institutional</td>
+      <td>d-2</td>
+      <td>dc-2 단일 cascade</td>
+      <td>공증 당일 오전 1차 비율 공란 + 오후 수정 60:40 확정 흐름 + 어머니 상태 관찰</td>
+    </tr>
+    <tr>
+      <td class="stage-cell" style="color:var(--witness)">w-3</td>
+      <td>박순애 (69, 어머니의 오랜 지인)</td>
+      <td>pro_a · biased</td>
+      <td>d-3 + d-5</td>
+      <td><strong style="color:var(--accent)">cross-cycle</strong>: dc-3 + dc-5</td>
+      <td>(d-3) 어머니 "정후가 매달 돈을 보낸다" 발화 + 통장 흐름 일부 / (d-5) "정후가 더 짊어졌다" 발화 + 태성 안쓰러움 발화</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===================== 8. 12 combine recipe ===================== -->
+<h2 id="section-combine"><span class="sec-num">8</span>12 결합 recipe 매트릭스 (combine-11 폐기 후 활성 11)</h2>
+
+<p class="lead">evidence + evidence (또는 statement) 결합으로 dossier 단서 unlock. legacy 12 중 combine-11 (e-2+e-3 → dc-2) = e-3 폐기 cascade.</p>
+
+<table class="combine-matrix">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>입력</th>
+      <th>출력</th>
+      <th>route</th>
+      <th>gate (요건)</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="cm-id">combine-1</td><td class="cm-inputs">e-1 + e-2</td><td class="cm-output">→ dc-1</td><td><span class="cm-route evidence_combine">evidence_combine</span></td><td class="cm-gate">e-1/e-2 excerpt · d-1 S1</td><td>공증본 비율과 방문 시점이 같은 기간으로 겹친다</td></tr>
+    <tr><td class="cm-id">combine-2</td><td class="cm-inputs">e-4 + e-5</td><td class="cm-output">→ dc-5</td><td><span class="cm-route evidence_combine">evidence_combine</span></td><td class="cm-gate">e-4/e-5 original · d-5 S3</td><td>공증인 메모 절차 흐름 + 자필 연습본 분배 흔적 정리</td></tr>
+    <tr><td class="cm-id">combine-3</td><td class="cm-inputs">e-5 + e-6</td><td class="cm-output">→ dc-3</td><td><span class="cm-route evidence_combine">evidence_combine</span></td><td class="cm-gate">e-5 context · e-6 original · d-3 S2</td><td>자필 분배 흔적 + 오래된 송금 흐름 같은 출처로 묶임</td></tr>
+    <tr><td class="cm-id">combine-4</td><td class="cm-inputs">e-6 + e-7</td><td class="cm-output">→ dc-4</td><td><span class="cm-route evidence_combine">evidence_combine</span></td><td class="cm-gate">e-6/e-7 context · d-4 S3</td><td>오래된 송금 + 어머니 일기장 = 침묵의 동기</td></tr>
+    <tr><td class="cm-id">combine-5</td><td class="cm-inputs">stmt-b-silence + e-4</td><td class="cm-output">→ dc-2</td><td><span class="cm-route statement_combine">statement_combine</span></td><td class="cm-gate">e-4 context · d-2 S2</td><td>윤정후 차단 발언 + 인증 절차 메모 맞물림</td></tr>
+    <tr><td class="cm-id">combine-6</td><td class="cm-inputs">stmt-b-mother + e-6</td><td class="cm-output">→ dc-3</td><td><span class="cm-route statement_combine">statement_combine</span></td><td class="cm-gate">e-6 original · d-3 S2</td><td>어머니 뜻 발언 뒤 오래된 지원 흐름</td></tr>
+    <tr><td class="cm-id">combine-7</td><td class="cm-inputs">e-5 + e-7</td><td class="cm-output">→ dc-4</td><td><span class="cm-route evidence_combine">evidence_combine</span></td><td class="cm-gate">e-5 original · e-7 context · d-4 S3</td><td>자필 연습본 + 어머니 일기장 한 흐름. <strong style="color:var(--accent)">dc-4 multi-recipe 두 candidate 중 하나</strong></td></tr>
+    <tr><td class="cm-id">combine-8</td><td class="cm-inputs">e-1 + e-7</td><td class="cm-output">→ dc-5</td><td><span class="cm-route evidence_combine">evidence_combine</span></td><td class="cm-gate">e-1/e-7 context · d-5 S2</td><td>유서 비율 + 어머니 기록 = 장남 당연시 + 보호 명분</td></tr>
+    <tr><td class="cm-id">combine-9</td><td class="cm-inputs">stmt-a-heir + e-7</td><td class="cm-output">→ dc-5</td><td><span class="cm-route statement_combine">statement_combine</span></td><td class="cm-gate">e-7 context · d-5 S2</td><td>"모시고 산 건 나인데" + 어머니 기록 충돌</td></tr>
+    <tr><td class="cm-id">combine-10</td><td class="cm-inputs">stmt-a-heir + e-6</td><td class="cm-output">→ dc-3</td><td><span class="cm-route statement_combine">statement_combine</span></td><td class="cm-gate">e-6 context · d-3 S3</td><td>상속 감정 + 오래된 송금 흐름 함께 봄</td></tr>
+    <tr class="deprecated"><td class="cm-id">combine-11</td><td class="cm-inputs">e-2 + e-3</td><td class="cm-output">→ dc-2</td><td>—</td><td>—</td><td>e-3 폐기 cascade</td></tr>
+    <tr><td class="cm-id">combine-12</td><td class="cm-inputs">stmt-a-heir + stmt-b-silence</td><td class="cm-output">→ dc-2</td><td><span class="cm-route statement_combine">statement_combine</span></td><td class="cm-gate">d-2 S1</td><td>"모시고 산 건 나인데 왜 40" + 정후 차단 발언</td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== 9. cascade chain ===================== -->
+<h2 id="section-cascade"><span class="sec-num">9</span>narrative cascade chain 전체 (3 line)</h2>
+
+<p class="lead">narrative wrapper 부착 entity 의 cascade priorCard 의존 그래프. Issue 1 폐기 (4 candidate) 반영 후 상태.</p>
+
+<div class="chain-block line-a">
+  <h4>Cycle 5 — Line A · 절차/판단 line (d-1 진입)</h4>
+  <div class="chain-flow">
+<span class="ent">d-1 「유서 작성과 판단 능력」</span> <span class="cond">(initial, narrativeTrigger 0)</span>
+  <span class="arrow">↓</span> progressionStages
+  <span class="arrow">├─→</span> <span class="ent">dc-1 「말년의 종이」</span> <span class="cond">(3 candidate: combo-1 / b-outburst / judge-auto)</span>
+  <span class="arrow">│   ├─→</span> <span class="ent">w-1 「최복순」</span> <span class="cond">(2 candidate: cascade / judge-auto, priorCard: dc-1)</span>
+  <span class="arrow">│   └─→</span> <span class="ent">d-2 「공증 절차의 개입」</span> <span class="cond">(3 candidate: cascade / b-outburst / judge-auto, priorCard: dc-1)</span>
+  <span class="arrow">│         ├─→</span> <span class="ent">dc-2 「수정된 유언장」</span> <span class="cond">(4 candidate: combo-5 / cascade / b-outburst / judge-auto)</span>
+  <span class="arrow">│         │     └─→</span> <span class="ent">w-2 「김영수」</span> <span class="cond">(2 candidate: cascade / judge-auto, priorCard: dc-2)</span>
+  <span class="arrow">│         └─→</span> <span class="ent">d-3</span> <span class="cond">(d-2.S3.successUnlocks)</span>
+
+<span class="note">※ Issue 1 폐기: dc1-via-a-interject / w1-via-b-interject / d2-via-a-interject / w2-via-b-interject 4 candidate.</span>
+  </div>
+</div>
+
+<div class="chain-block line-b">
+  <h4>Cycle 6 — Line B · 20년 돈 line (d-3 + dc-3 통합 event)</h4>
+  <div class="chain-flow">
+<span class="ent">dc-2 「수정된 유언장」</span> <span class="cond">(Cycle 5 마지막)</span>
+  <span class="arrow">↓</span> priorCard: dc-2 + d-2 S3+
+<span class="ent">d-3 「오래된 지원의 출처」</span>  <span class="integrated">⚡  dc-3 「20년의 돈」</span>
+  <span class="cond">(5 candidate: cascade / combo-6 / a-interject / b-outburst / judge-auto)</span>
+  <span class="cond">scriptedRefs ID = emerge-d3-dc3-via-* — 통합 event</span>
+  <span class="note">↑ narrativeIntegration.ts force-unlock generic 매핑: d-3 fire 시 dc-3 동시 surface</span>
+  <span class="arrow">↓</span> priorCard: dc-3 + d-3 S2+
+<span class="ent">w-3 「박순애」</span> <span class="cond">(3 candidate: cascade / b-interject / judge-auto)</span>
+  <span class="cond">unlockedByDossier: [dc-3, dc-5] cross-cycle</span>
+  </div>
+</div>
+
+<div class="chain-block line-c">
+  <h4>Cycle 7 — Line C · 비밀+최종 line (d-4 → e-7 / dc-4 → d-5 → e-5 → dc-5)</h4>
+  <div class="chain-flow">
+<span class="ent">dc-3 「20년의 돈」</span> <span class="cond">(Cycle 6)</span>
+  <span class="arrow">↓</span> priorCard: dc-3 + d-3 S3+
+<span class="ent">d-4 「가족 기록과 침묵의 이유」</span> <span class="cond">(5 candidate: cascade / combo-4 / b-interject / a-outburst / judge-auto)</span>
+  <span class="arrow">↓</span> priorCard: d-4
+  <span class="arrow">├─→</span> <span class="ent">e-7 「어머니 일기장」</span> <span class="cond">(4 candidate: cascade / b-interject / b-outburst / judge-auto)</span>
+  <span class="arrow">└─→</span> <span class="ent">dc-4 「감춘 이유」</span> <span class="cond">(5 candidate: cascade / combo-4 / combo-7 / b-outburst / judge-auto)</span>
+        <span class="arrow">↓</span> <strong style="color:var(--accent)">두 priorCard 경로</strong> (Issue 8)
+        <span class="arrow">├─→</span> <span class="ent">d-5</span> <span class="cond">(via dc-4 메인: d5-via-cascade-dc4)</span>
+        <span class="arrow">└─→</span> <span class="ent">d-5</span> <span class="cond">(via e-7 차선: d5-via-cascade-e7)</span>
+              <span class="cond">d-5 「어머니의 숨겨진 마음」 (5 candidate)</span>
+              <span class="arrow">↓</span> priorCard: dc-4 + d-5 S3+
+              <span class="ent">e-5 「자필 메모 사본」</span> <span class="cond">(4 candidate, requires e-7, requiredLieState S5)</span>
+              <span class="arrow">↓</span> priorCard: d-5 + d-5 S2+
+              <span class="ent">dc-5 「어머니의 뜻」</span> <span class="cond">(4 candidate, a-outburst 단독 — Issue 10)</span>
+                <span class="note">↑ w-3 unlockedByDossier 의 dc-5 경로 (cross-cycle 재unlock — 이미 dc-3 으로 unlock 된 경우 안전)</span>
+  </div>
+</div>
+
+<!-- ===================== 10. disclosure policy ===================== -->
+<h2 id="section-disclosure"><span class="sec-num">10</span>진실 노출 정책 5 keyword 그룹 × disclosure tier</h2>
+
+<p class="lead">player-visible text 의 진실 노출 단계 정책. ScriptedText / dialogue 작성 시 self-check 권위.</p>
+
+<table class="disclosure-table">
+  <thead>
+    <tr>
+      <th>그룹</th>
+      <th>keyword</th>
+      <th>등장 정책 (단계별)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="dg-id">1</td>
+      <td class="dg-key"><strong>출생 비밀 / 친자가 아니다 / 배다른 / 아버지 피</strong></td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S2</span>양측 모두 등장 X (일기장 영역 검증 전 / dc-4 unlock 전)</span>
+        <span class="tier-step"><span class="stage-mark s3">d-4 S3</span>B 가 친자 아닌 사실 + 어머니 결정 침묵 인정. <strong>친부 실명 + 출생 경위 봉인 유지</strong></span>
+        <span class="tier-step"><span class="stage-mark s5">d-4 S5</span>양측 진실 완전 인정. <strong>친부 실명만 영구 봉인</strong></span>
+        <span class="tier-step"><span class="stage-mark sealed">위반</span>A 의 S0~S2 발화 등장 시 P0 leak (A 는 사건 후반까지 출생 비밀 인지 X)</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">2</td>
+      <td class="dg-key"><strong>정후 돈 / 윤정후 돈 / 어머니 통장 경유 / 정기 지원금 / 3억원 전달 / 20년 비밀 지원</strong></td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S1</span>A 는 어머니 돈 frame strict. B 는 모름 strict</span>
+        <span class="tier-step"><span class="stage-mark s2">d-3 S2</span>e-6 original + dc-3 unlock 후 B 가 송금 사실 인정 가능</span>
+        <span class="tier-step"><span class="stage-mark s5">d-3 S5</span>양측 20년 진실 완전 인정</span>
+        <span class="tier-step"><span class="stage-mark sealed">leak 검출</span>truth-leak-matrix hidden baseline 등록 (surface phrase 정밀 검출)</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">3</td>
+      <td class="dg-key"><strong>자필 90:10 / 공증 60:40 으로 축소 / 자기 몫 양보</strong></td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S4</span>B 가 "비중 차이 존재" 만 인정. <strong>정확 수치 봉인</strong></span>
+        <span class="tier-step"><span class="stage-mark s5">d-5 S5</span>e-5 (자필 연습본) requiredLieState='S5' 도달 후 정확 수치 노출</span>
+        <span class="tier-step"><span class="stage-mark sealed">위반</span>d-5 S4 이전에 "90:10" 또는 "60:40 으로 줄임" 표현 등장 시 P0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">4</td>
+      <td class="dg-key"><strong>공장 양보 / 친자가 양보 / 형 자존심 / 형의 정체성</strong></td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S2</span>양측 모두 등장 X</span>
+        <span class="tier-step"><span class="stage-mark s4">d-3 S4</span>B 가 "형 자존심 동기" 명시 가능 (구체 공장 양보는 d-4)</span>
+        <span class="tier-step"><span class="stage-mark s4">d-4 S4</span>B 가 "친자 양보" + "형 정체성 보호" 동기 명시</span>
+        <span class="tier-step"><span class="stage-mark s5">d-4 S5</span>양측 진실 완전 인정</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">5</td>
+      <td class="dg-key"><strong>유산 당연시 / 보호 명분 / 어머니 뜻 왜곡 / 두 번 왜곡</strong></td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S2</span>양측 자기 frame 유지. 단어 자체 등장 X</span>
+        <span class="tier-step"><span class="stage-mark s3">d-5 S3</span>B "보호 명분" 동기 명시. A "당연시" frame 부분 인정</span>
+        <span class="tier-step"><span class="stage-mark s5">d-5 S5</span>양측 "두 번 왜곡" 책임 완전 인정</span>
+        <span class="tier-step"><span class="stage-mark sealed">검출 X</span>본 그룹 = 동기/태도 영역 (false positive 영역). truth-leak-matrix hidden 등록 X. forbiddenKeywords 로만 frame inject</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===================== 11. trigger 분포 ===================== -->
+<h2 id="section-trigger"><span class="sec-num">11</span>narrative trigger 분포 (Issue 1 폐기 후)</h2>
+
+<div class="trig-grid">
+  <div class="trig-card cascade">
+    <div class="t-type">cascade_from_card</div>
+    <div class="t-count">14</div>
+    <div class="t-desc">priorCard chain 의존. d-5 만 두 candidate (dc-4 메인 + e-7 차선).</div>
+  </div>
+  <div class="trig-card npc">
+    <div class="t-type">npc_interjection</div>
+    <div class="t-count">6</div>
+    <div class="t-desc">조용한 끌어들이기. Issue 1 폐기로 broad 4개 제거 → 정밀 partyPhase + dispute 단계 추가 영역만 유지.</div>
+  </div>
+  <div class="trig-card combo">
+    <div class="t-type">combination_result</div>
+    <div class="t-count">8</div>
+    <div class="t-desc">recipeId 의존. dc-4 만 multi-recipe 두 candidate (combine-4 + combine-7).</div>
+  </div>
+  <div class="trig-card outburst">
+    <div class="t-type">emotional_outburst</div>
+    <div class="t-count">9</div>
+    <div class="t-desc">정밀 partyPhase (shaken / defensive / resigned). dc-5 만 A 측 단독 (양측 책임축 종합).</div>
+  </div>
+  <div class="trig-card judge">
+    <div class="t-type">judge_auto_mention</div>
+    <div class="t-count">13</div>
+    <div class="t-desc">대기 턴 fallback. 모든 wrapper entity 1개씩. dispute 7~8 / dossier 6~8 / witness 5 / evidence 6 차등.</div>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>총 candidate 약 52개</strong> (Issue 1 재편성 전 56 → -4 폐기). family-01 영역 Hybrid hook 자체 없음 (spouse-01 의 C-2/C-3c hook 같은 강제 stage gate 영역 없음). 단 narrativeIntegration.ts 의 generic <code>FORCE_UNLOCK_DOSSIER_ON_DISPUTE_FIRE['d-3']: 'dc-3'</code> 매핑이 d-3 ↔ dc-3 통합 event 처리 (공통 engine 영역).
+</div>
+
+<!-- ===================== 12. cycle 별 사용자 사전 결정 history ===================== -->
+<h2 id="section-decisions"><span class="sec-num">12</span>cycle 별 사용자 사전 결정 history</h2>
+
+<p class="lead">family-01 narrative wrapper 작성 시 cycle 별 사용자 결정 권위. 본 trigger 재편성 thread 의 "유지" 결정 9건의 근거.</p>
+
+<div class="decision-list">
+  <div class="decision-item">
+    <span class="di-cycle">Cycle 5 (Line A)</span>
+    <span class="di-summary">5 emergence × multi-trigger candidate — dc-1 / w-1 / d-2 / dc-2 / w-2</span>
+    <div class="di-detail">cascade chain = dc-1 → w-1 / dc-1 → d-2 / d-2 → dc-2 → w-2. e-3 (전 요양보호사 음성증언) 2026-05-26 폴리싱 폐기 (w-1 와 동일 인물 중복). combine-11 (e-2+e-3 → dc-2) 동반 폐기.</div>
+  </div>
+  <div class="decision-item">
+    <span class="di-cycle">Cycle 6 (Line B)</span>
+    <span class="di-summary">2 emergence × multi-trigger — d-3 (dc-3 통합 event) / w-3</span>
+    <div class="di-detail">사용자 결정 2026-05-24: d-3 와 dc-3 두 layer 내용 동일 → narrative event 통합. d-3 trigger fire 시 narrative entry text 가 dc-3 등록 announcement 포함 + mechanical dc-3 unlock 동기 (narrativeIntegration force-unlock generic 매핑). dc-3 별도 narrativeTrigger 미부착.</div>
+  </div>
+  <div class="decision-item">
+    <span class="di-cycle">Cycle 7 (Line C)</span>
+    <span class="di-summary">6 emergence × 26 trigger candidate — d-4 / e-7 / dc-4 / d-5 / e-5 / dc-5</span>
+    <div class="di-detail">사용자 결정: 그룹 1 (출생 비밀) / 그룹 4 (친자 양보) / 그룹 5 (보호 명분) surface 시작. 그룹 3 (자필 90:10 정확 수치) 절대 X (d-5 S5 봉인). dc-4 multi-recipe 두 candidate (combine-4 + combine-7 동일 ref 공유). d-5 cascade 두 candidate (dc-4 메인 + e-7 차선). dc-5 a-outburst 단독 (장남 당연시 frame 책임 인식 첫 진입).</div>
+  </div>
+  <div class="decision-item">
+    <span class="di-cycle">2026-05-27 재편성</span>
+    <span class="di-summary">Issue 1 broad 4 candidate 폐기 (본 thread) — 나머지 Issue 9건 모두 cycle 별 사전 결정 유지</span>
+    <div class="di-detail">dc1-via-a-interject + w1-via-b-interject + d2-via-a-interject + w2-via-b-interject 4 candidate 폐기. ScriptedText 약 13 ref orphan 전환 (다음 thread). 신설 0 / 변경 0 / 명칭 변경 0.</div>
+  </div>
+</div>
+
+<!-- ===================== footer ===================== -->
+<div class="footer">
+  본 문서 = family-01 사건 전체 구조 시각화 (HEAD a56f5447 시점). 권위 source = <a href="../../../src/data/coreCases/family-01.case.ts">family-01.case.ts</a> + <a href="../../../src/data/coreCases/family-01.narrative.ts">family-01.narrative.ts</a>. 본 thread 자료 = <a href="./inventory.md">inventory.md</a> + <a href="./issues.md">issues.md</a> + <a href="./script-changes.md">script-changes.md</a> + <a href="./redesign-summary.html">redesign-summary.html</a> (재편성 결과 시각화).
+</div>
+
+</body>
+</html>
