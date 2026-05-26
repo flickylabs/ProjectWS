@@ -11,7 +11,7 @@ import type {
   BookData,
 } from './demoEvidenceData'
 
-type DocumentShellVariant = 'contract' | 'ledger' | 'bank' | 'testimony'
+type DocumentShellVariant = 'contract' | 'ledger' | 'bank' | 'testimony' | 'book'
 
 const VIEWER_COPY = {
   ko: {
@@ -474,15 +474,16 @@ function EvidenceDocumentShell({
   footer?: ReactNode
 }) {
   const copy = useViewerCopy()
+  const isBook = variant === 'book'
   return (
     <div className={`pc-doc-shell pc-doc-shell--${variant}`}>
       <div className="pc-doc-paper">
         <div className="pc-doc-paper__texture" aria-hidden="true" />
-        <span className="pc-doc-paper__clip" aria-hidden="true" />
-        <span className="pc-doc-paper__serial" aria-hidden="true">COPY</span>
-        <span className="pc-doc-stamp" aria-hidden="true">{stamp}</span>
+        {!isBook ? <span className="pc-doc-paper__clip" aria-hidden="true" /> : null}
+        {!isBook ? <span className="pc-doc-paper__serial" aria-hidden="true">COPY</span> : null}
+        {!isBook ? <span className="pc-doc-stamp" aria-hidden="true">{stamp}</span> : null}
         <header className="pc-doc-paper__header">
-          <span className="pc-doc-paper__eyebrow">{copy.evidenceCopy}</span>
+          {!isBook ? <span className="pc-doc-paper__eyebrow">{copy.evidenceCopy}</span> : null}
           <h3>{title || copy.documentCopy}</h3>
           {subtitle ? <p>{subtitle}</p> : null}
         </header>
@@ -1101,6 +1102,20 @@ export function ContractViewer({ title, subtitle, rows, signature, book }: {
 //   stage별 점진 노출: 1=표지 / 2=목차 강조 / 3=접힌 페이지 + 본인 필체 메모.
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+function renderExcerptWithUnderline(excerpt: string, pageKey: string | number): ReactNode {
+  // Parses __phrase__ markers as inline underlines.
+  const parts = excerpt.split(/(__[^_]+__)/g)
+  return parts.map((part, idx) => {
+    if (part.startsWith('__') && part.endsWith('__')) {
+      const text = part.slice(2, -2)
+      return (
+        <span key={`u-${pageKey}-${idx}`} className="pc-doc-book__underline">{text}</span>
+      )
+    }
+    return <span key={`t-${pageKey}-${idx}`}>{part}</span>
+  })
+}
+
 function BookSubView({ data }: { data: BookData }) {
   const copy = useViewerCopy()
   const view = data.view ?? 'cover'
@@ -1112,7 +1127,7 @@ function BookSubView({ data }: { data: BookData }) {
       title={docTitle}
       subtitle={docSubtitle}
       stamp={copy.originalCheck}
-      variant="contract"
+      variant="book"
       footer={
         <span>
           {cover.author}{cover.publisher ? ` · ${cover.publisher}` : ''}
@@ -1120,7 +1135,7 @@ function BookSubView({ data }: { data: BookData }) {
         </span>
       }
     >
-      <div className="pc-doc-book">
+      <div className={`pc-doc-book pc-doc-book--view-${view}`}>
         <div className="pc-doc-book__meta">
           {cover.purchaseStore ? (
             <div className="pc-doc-book__meta-row">
@@ -1174,22 +1189,9 @@ function BookSubView({ data }: { data: BookData }) {
                     <span className="pc-doc-book__page-chapter">{copy.bookChapter} {page.chapter}</span>
                   </header>
                   {page.excerpt ? (
-                    <p className="pc-doc-book__page-excerpt">{page.excerpt}</p>
-                  ) : null}
-                  {page.notes.length > 0 ? (
-                    <ul className="pc-doc-book__notes">
-                      {page.notes.map((note, idx) => (
-                        <li
-                          key={`note-${page.page}-${idx}`}
-                          className={`pc-doc-book__note pc-doc-book__note--${note.type}`}
-                        >
-                          <span className="pc-doc-book__note-tag">
-                            {note.type === 'underline' ? copy.bookNoteUnderline : copy.bookNoteMargin}
-                          </span>
-                          <span className="pc-doc-book__note-text">{note.text}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="pc-doc-book__page-excerpt">
+                      {renderExcerptWithUnderline(page.excerpt, page.page)}
+                    </p>
                   ) : null}
                 </article>
               ))}

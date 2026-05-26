@@ -11344,6 +11344,108 @@ body.pc-mode .pc-doc-book__note-text {
   font-weight: 600;
 }
 
+/* ─── e-10 book metaphor (variant='book') ─── */
+
+/* inline underline (dogeared excerpt 안 곳곳 밑줄) */
+body.pc-mode .pc-doc-book__underline {
+  text-decoration: underline;
+  text-decoration-color: rgba(180, 75, 35, 0.82);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: none;
+  font-weight: 700;
+  color: #1d160e;
+}
+
+/* shell 영역 책 표지 (영수증 도장 영역은 컴포넌트에서 hide) */
+body.pc-mode .pc-doc-shell--book .pc-doc-paper {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 240, 0.6) 0%, rgba(244, 236, 220, 0.4) 100%),
+    #f5ecd6;
+  border-radius: 3px 8px 8px 3px;
+  border-left: 6px solid rgba(95, 68, 38, 0.46);
+  box-shadow:
+    inset 0 0 0 1px rgba(95, 68, 38, 0.14),
+    0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+body.pc-mode .pc-doc-shell--book .pc-doc-paper__header {
+  text-align: center;
+  padding: 26px 28px 18px;
+  border-bottom: 1px solid rgba(95, 68, 38, 0.2);
+}
+
+body.pc-mode .pc-doc-shell--book .pc-doc-paper__header h3 {
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  color: #1a120a;
+  text-align: center;
+}
+
+body.pc-mode .pc-doc-shell--book .pc-doc-paper__header p {
+  margin: 10px auto 0;
+  color: rgba(40, 28, 16, 0.7);
+  font-size: 13.5px;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  max-width: 360px;
+}
+
+body.pc-mode .pc-doc-shell--book .pc-doc-paper__footer {
+  text-align: center;
+  color: rgba(40, 28, 16, 0.62);
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(95, 68, 38, 0.22);
+}
+
+/* stage 1 cover view 영역 — 책 표지 비율 (세로 form) */
+body.pc-mode .pc-doc-book.pc-doc-book--view-cover {
+  padding: 32px 12px 24px;
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+}
+
+body.pc-mode .pc-doc-book--view-cover .pc-doc-book__meta {
+  padding: 14px 22px;
+  border: 1px solid rgba(95, 68, 38, 0.22);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.42);
+  min-width: 260px;
+}
+
+/* stage 2 toc view 영역 — 책 펼친 페이지 form */
+body.pc-mode .pc-doc-book--view-toc .pc-doc-book__toc {
+  padding: 18px 22px;
+  border: 1px solid rgba(95, 68, 38, 0.22);
+  border-radius: 2px;
+  background:
+    linear-gradient(90deg, rgba(95, 68, 38, 0.06) 0%, transparent 6%),
+    rgba(255, 250, 240, 0.62);
+}
+
+/* stage 3 dogeared view 영역 — 책 페이지 본문 form */
+body.pc-mode .pc-doc-book--view-dogeared .pc-doc-book__page {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(95, 68, 38, 0.06) 0%, transparent 5%),
+    rgba(255, 250, 240, 0.62);
+  border: 1px solid rgba(95, 68, 38, 0.22);
+  border-left: 3px solid rgba(212, 162, 78, 0.55);
+  padding: 16px 20px 18px;
+}
+
+body.pc-mode .pc-doc-book--view-dogeared .pc-doc-book__page-excerpt {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #2a1e10;
+}
+
 body.pc-mode .pc-doc-bank-summary {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr) max-content minmax(0, 1fr);
