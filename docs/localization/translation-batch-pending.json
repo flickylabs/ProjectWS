@@ -169,6 +169,16 @@
             "viewerDataByStage[3] (강조, 14 row): 봉천 도착/출발 12 row keep + 산부인과 도착/출발 2 row 신규"
           ],
           "note": "B-1 (자택→직장 frame) + B-2 (산부인과 chain + 경유지 row + 영수증 시각 정합) sub-thread. 출발지 frame 정책 = '각 출발지 = 직장 (가전제품 매장, 강남구 역삼동)', 복귀는 자택 keep. 2/7 토요일 = 직장 출발 (가전제품 매장 토 영업 frame) + 산부인과 단독 면회 (상대 방문, 동행자 frame X — narrative 영역 별도 처리 [[design-spouse01-truth-disclosure-policy]] 정책 정합). 좌표 영역: 직장 37.5006/127.0364 / 산부인과 37.5176/127.0473 / 교보 37.4994/127.0277 / 봉천 매장 봉천동 영역 내 인접 좌표 (다이소 37.4853/126.9395 / 올리브영 37.4860/126.9410 / CU 37.4862/126.9425 / GS25 37.4830/126.9510). 산부인과 reveal 정책: stage 2 = 봉천만 (사용자 결정), stage 3 = 산부인과 추가 reveal. truth-leak 영역 정합: '종합 산부인과' surface 표기만 사용 (방문자 신원/관계 미명시) — [[design-spouse01-truth-disclosure-policy]] 위반 영역 X."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json + src/data/coreCases/spouse-01.case.ts",
+          "path": "evidence[id=e-1].partyContext.b.{questionAngle, implication} — C-3c sub-thread (e-10 cascade 새 frame: 책 angle 질문 영역 정밀화)",
+          "type": "수정",
+          "koTexts": [
+            "questionAngle: '이 영수증의 물품들은 누구를 위해 구매한 것인지 설명해 주십시오.' → '교보문고 결제 안에 참고서와 별도 결제된 도서가 한 권 더 있다. 그 도서를 누구를 위해 산 것인지'",
+            "implication: '참고서가 해당 방문의 성격을 가르는 결정적 단서가 된다.' → '교보문고 결제 건 안에 같이 잡힌 별도 도서가 본 영수증 묶음의 핵심 진입점.'"
+          ],
+          "note": "C-3c sub-thread (e-10 cascade 재설계 영역). 영수증 stage 3 도달 후 박지연이 이준호에게 e-1을 evidence_present 하는 시점이 곧 책 angle 질문 시점 → e-10 (예비 부모 정서 도서 + 본인 필기 흔적) cascade emerge frame. 영수증 단계 도달이나 영수증 제시 단독으로는 e-10 발동 X (stage 3 게이트는 useActionDispatch hook이 보장). truth-leak 정합: implication 영역에서 '조카/학용품' 키워드 제거 (stage 0 노출 방지). e-10 narrativeTrigger schema 영역 (case.ts L2441~L2475 + generated json) 및 useActionDispatch hook 영역 (e-1 stage 3 + b 제시 → e-10 cascade) 변경은 ScriptedText 영역 KO 권위 변경 없음 (재활용 4 entry는 이전 Cycle dual emergence 영역에서 4 lang sync 완료 [[design-narrative-cascade-from-card]])."
         }
       ]
     },

@@ -498,8 +498,8 @@
           "implication": "머리끈/틴트가 외도 의심의 출발점이다."
         },
         "b": {
-          "questionAngle": "이 영수증의 물품들은 누구를 위해 구매한 것인지 설명해 주십시오.",
-          "implication": "참고서가 해당 방문의 성격을 가르는 결정적 단서가 된다."
+          "questionAngle": "교보문고 결제 안에 참고서와 별도 결제된 도서가 한 권 더 있다. 그 도서를 누구를 위해 산 것인지",
+          "implication": "교보문고 결제 건 안에 같이 잡힌 별도 도서가 본 영수증 묶음의 핵심 진입점."
         }
       },
       "v3DepthPlan": [
@@ -3768,16 +3768,17 @@
       ],
       "narrativeTriggers": [
         {
-          "id": "e10-pending-c3b-redesign",
+          "id": "e10-via-bookbaby-question-angle",
           "type": "cascade_from_card",
           "preconditions": {
-            "disputeLieState": {
-              "d-1": "S5+"
-            },
-            "requirePriorCardFired": "pending-c3b-bookbaby-question-angle"
+            "contextAction": "evidence_present.b.e-1",
+            "requirePriorCardFired": "e-1"
           },
           "scriptedRefs": [
-            "emerge-e10-via-cascade-judge-mention-v1"
+            "emerge-e10-via-cascade-judge-mention-v1",
+            "emerge-e10-via-cascade-a-react-v1",
+            "emerge-e10-via-cascade-b-response-v1",
+            "emerge-e10-via-cascade-judge-decree-v1"
           ],
           "vfxProfile": "standard"
         }

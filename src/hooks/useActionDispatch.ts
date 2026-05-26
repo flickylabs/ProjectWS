@@ -1155,6 +1155,59 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
 
+  // 2026-05-26 C-3c sub-thread — spouse-01 e-1 stage 3 + present to b → e-10 cascade emerge.
+  //   evidence stage advance event hook 영역. requires gate 우회 + stage 영역 게이트
+  //   (narrativeTrigger schema 미지원 영역 보완).
+  //   조건: spouse-01 사건 / e-1 (영수증 묶음)을 b에게 제시 / e-1 latestStage >= 3 (참고서 +
+  //     별도 도서 단서 노출 시점) / e-10 미발동 + 미해금.
+  //   발동 시 attemptNarrativeForEvidence(e-10)가 4단계 dialogue (judge mention → a react →
+  //     b response → judge decree) 자동 발행 + e-10 forceUnlock + popup. vfxProfile = standard
+  //     (dual emergence cutscene 영역 폐기).
+  //   narrative frame: 박지연이 영수증 stage 3 도달 후 (참고서 + 별도 도서 단서 인지) 이준호에게
+  //     영수증 책 angle 질문 → 책 본체 (e-10) cascade emerge.
+  //   d-3 (내연녀 임신 의심 misdirection) narrativeTrigger는 requirePriorCardFired='e-10'으로
+  //     본 cascade fire 시 자연 emerge.
+  if (
+    action.evidenceId === 'e-1' &&
+    action.target === 'b' &&
+    normalizeCaseKey(state.caseData?.caseId ?? '') === 'spouse-01'
+  ) {
+    const e1State = useGameStore.getState().evidenceStates['e-1']
+    const e1Stages = Array.isArray(evDef?.investigationStages) ? evDef.investigationStages : []
+    const e1Investigated = Array.isArray(e1State?.investigatedActions) ? e1State.investigatedActions : []
+    const e1LatestStage = e1Stages
+      .filter((s: UnsafeAny) => e1Investigated.includes(s.revealKey))
+      .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
+      .at(-1)?.stage ?? 0
+    if (e1LatestStage >= 3) {
+      const fresh = useGameStore.getState() as UnsafeAny
+      const e10Def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === 'e-10')
+      const e10State = fresh.evidenceStates['e-10']
+      if (e10Def && !e10State?.narrativeFiredTrigger && !e10State?.unlocked) {
+        const attempt = attemptNarrativeForEvidence({
+          evidenceDef: e10Def,
+          currentTurn: state.turnCount,
+          lastActionContext: buildActionContext(action),
+          firedTrigger: e10State?.narrativeFiredTrigger,
+          legacyEligibleTurn: e10State?.narrativeLegacyEligibleTurn,
+        })
+        if (attempt) {
+          fresh.forceUnlockEvidence?.('e-10', attempt.triggerId)
+          const e10DisplayName = getEvidenceDisplayName(e10Def, useGameStore.getState().evidenceStates['e-10'])
+          enqueueNewEvidenceCutscene('e-10', {
+            body: `${e10DisplayName}${pp이가(e10DisplayName)} 새로 등재되었습니다.`,
+          })
+          state.addDialogue({
+            speaker: 'system',
+            text: `새로운 증거를 손에 넣었다 — ${e10DisplayName}`,
+            relatedDisputes: e10Def.proves,
+            turn: state.turnCount,
+          })
+        }
+      }
+    }
+  }
+
   // 2026-05-26 Step 5 sub-thread (C-2 재설계) — spouse-01 e-3 stage 2 + present to b → e-4 cascade emerge.
   //   evidence stage advance event hook 영역. requires gate 우회.
   //   조건: spouse-01 사건 / e-3 (통화기록)을 b에게 제시 / e-3 latestStage >= 2 / e-4 미발동 + 미해금.

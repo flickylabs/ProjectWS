@@ -1924,8 +1924,16 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           implication: ko('머리끈/틴트가 외도 의심 출발점.'),
         },
         b: {
-          questionAngle: ko('영수증 물품들은 누구를 위해 산 것인지'),
-          implication: ko('참고서·다이소 학용품이 조카 흔적의 결정적 단서. 교보문고 영수증의 별도 도서 결제 흔적은 책 본체(e-10) emergence의 진입점.'),
+          /**
+           * 2026-05-26 C-3c 재설계 — partyContext.b.questionAngle 영역을 책 angle로 정밀화.
+           * 영수증 stage 3 도달 후 (참고서 + 별도 도서 단서 노출) 박지연이 이준호에게
+           * 본 영수증을 evidence_present 하는 시점이 곧 책 angle 질문 시점. 이 시점에서
+           * e-10 (책 본체 + 본인 필기 흔적) cascade emerge (useActionDispatch hook 영역).
+           * stage 1/2 영역은 같은 partyContext angle text 사용하되 stage 3 미도달 시
+           * cascade 게이트로 e-10 발동 X (hook이 stage 영역 보장).
+           */
+          questionAngle: ko('교보문고 결제 안에 참고서와 별도 결제된 도서가 한 권 더 있다. 그 도서를 누구를 위해 산 것인지'),
+          implication: ko('교보문고 결제 건 안에 같이 잡힌 별도 도서가 본 영수증 묶음의 핵심 진입점.'),
         },
       },
       depthStages: [
@@ -2432,22 +2440,37 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'misread', summary: ko('도서·필체는 인증되지만 진짜 목적은 심문과 맥락으로 확정.') },
       ],
       /**
-       * 2026-05-26 C-3b (회귀 fix) — C-3 schema-only 안 (commit 84ec53bd)이 manual 검증에서
-       * 회귀 노출 (e-1 stage 1에서 e-10 emerge 단순 popup). 사용자 결정으로 본 trigger 임시
-       * 영구 차단 — 새 frame 영역 (안 2 = e-1.partyContext.b 책 관련 questionAngle 신설 +
-       * 그 angle 질문 시점 발동 + vfxProfile standard popup form) 별도 sub-thread 설계 + 적용
-       * 영역. 무력화 방법 = 만족 불가능한 placeholder requirePriorCardFired.
+       * 2026-05-26 C-3c 재설계 — 새 frame 적용.
+       *
+       * frame:
+       *  - 영수증 묶음 (e-1) unlock + e-1 stage 3 도달 (참고서 + 별도 도서 단서 노출) + 박지연이
+       *    이준호에게 e-1을 evidence_present (책 angle 질문) 시점에 e-10 cascade emerge.
+       *  - e-1 영수증 단계 도달이나 영수증 제시만으로는 발동 X (stage 3 미도달 영역 차단 +
+       *    contextAction evidence_present.b.e-1 정밀 매칭 + useActionDispatch hook의 stage 게이트).
+       *
+       * schema vs hook 책임 분담:
+       *  - schema (본 trigger) = requirePriorCardFired 'e-1' + contextAction
+       *    'evidence_present.b.e-1' precondition. stage 영역 게이트는 schema 미지원이므로
+       *    useActionDispatch hook이 e-1 stage 3 도달 영역 확인 후 attemptNarrativeForEvidence
+       *    호출 형식. C-2 (e-3 stage 2 → e-4 cascade) 패턴 모방.
+       *
+       * vfxProfile = standard (사용자 frame 결정). dual emergence cutscene 영역 폐기.
+       * d-3 narrativeTrigger (requirePriorCardFired: 'e-10') 영역은 그대로 — e-10 fire 시
+       * d-3 자연 cascade emerge.
        */
       narrativeTriggers: [
         {
-          id: 'e10-pending-c3b-redesign',
+          id: 'e10-via-bookbaby-question-angle',
           type: 'cascade_from_card',
           preconditions: {
-            requirePriorCardFired: 'pending-c3b-bookbaby-question-angle',
-            disputeLieState: { 'd-1': 'S5+' },
+            requirePriorCardFired: 'e-1',
+            contextAction: 'evidence_present.b.e-1',
           },
           scriptedRefs: [
             'emerge-e10-via-cascade-judge-mention-v1',
+            'emerge-e10-via-cascade-a-react-v1',
+            'emerge-e10-via-cascade-b-response-v1',
+            'emerge-e10-via-cascade-judge-decree-v1',
           ],
           vfxProfile: 'standard',
         },
