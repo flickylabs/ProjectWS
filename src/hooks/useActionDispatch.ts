@@ -1146,11 +1146,11 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
         if (dualCutscene) triggerCutscene(dualCutscene)
       }
       // attempt === undefined: narrativeTriggers 미정의 → legacy 즉시 등재 흐름
+      // 2026-05-26: 발언 기록 system 중복 메시지 제거 — 증거 popup만 노출.
       const newDisplayName = getEvidenceDisplayName(def, fresh.evidenceStates[def.id])
       enqueueNewEvidenceCutscene(def.id, {
         body: `${newDisplayName}${pp이가(newDisplayName)} 진실 단계 변화로 확보되었습니다.`,
       })
-      state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${newDisplayName}`, relatedDisputes: def.proves, turn: state.turnCount })
     }
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
@@ -1197,12 +1197,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
           enqueueNewEvidenceCutscene('e-10', {
             body: `${e10DisplayName}${pp이가(e10DisplayName)} 새로 등재되었습니다.`,
           })
-          state.addDialogue({
-            speaker: 'system',
-            text: `새로운 증거를 손에 넣었다 — ${e10DisplayName}`,
-            relatedDisputes: e10Def.proves,
-            turn: state.turnCount,
-          })
+          // 2026-05-26: 발언 기록 system 중복 메시지 제거 — 증거 popup만 노출.
         }
       }
     }
@@ -1244,12 +1239,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
           enqueueNewEvidenceCutscene('e-4', {
             body: `${e4DisplayName}${pp이가(e4DisplayName)} 새로 등재되었습니다.`,
           })
-          state.addDialogue({
-            speaker: 'system',
-            text: `새로운 증거를 손에 넣었다 — ${e4DisplayName}`,
-            relatedDisputes: e4Def.proves,
-            turn: state.turnCount,
-          })
+          // 2026-05-26: 발언 기록 system 중복 메시지 제거 — 증거 popup만 노출.
           // 2026-05-26 d-1 b측 lieState 회귀 fix (안 C)
           //   cascade narrative fire 직후 b:d-1 V4 폴백 mute window 설정.
           //   POST_CASCADE_V4_FALLBACK_MUTE_TURNS 턴 동안 fact_pursuit 등
@@ -1329,12 +1319,12 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     if (def) {
       playEvidenceUnlock()
       // [Phase F] 새 증거 메시지 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용
+      // 2026-05-26: 발언 기록 system 중복 메시지 제거 — 증거 popup만 노출.
       const newEvState = state.evidenceStates[def.id]
       const newDisplayName = getEvidenceDisplayName(def, newEvState)
       enqueueNewEvidenceCutscene(def.id, {
         body: `${newDisplayName}${pp이가(newDisplayName)} 좌측 증거 목록에 추가되었습니다.`,
       })
-      state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${newDisplayName}`, relatedDisputes: def.proves, turn: state.turnCount })
     }
   }
 

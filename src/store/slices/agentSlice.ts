@@ -56,6 +56,9 @@ type AgentSliceRootState = AgentSlice & {
   processMetrics: ProcessMetrics
   trackMetric: (key: keyof ProcessMetrics, delta?: number) => void
   enqueueFeedback?: (item: UnsafeAny) => string
+  // 2026-05-26: 감정 단계 변화 milestone을 popup + 재판관의 관찰 panel 동시 등재.
+  turnCount?: number
+  addJudgeObservation?: (item: UnsafeAny) => string
 }
 
 function hasS3Plus(agent: AgentState): boolean {
@@ -126,6 +129,7 @@ function maybeEnqueueEmotionMilestone(
 
   const copy = EMOTION_MILESTONE_COPY[next.phase]
   const name = getPartyName(root, party)
+  // 2026-05-26: 도넛 + X 형식으로 통일 (3초 자동 소멸 + X 즉시 닫기).
   root.enqueueFeedback({
     kind: 'state_change',
     eyebrow: '감정 단계 변화',
@@ -134,7 +138,17 @@ function maybeEnqueueEmotionMilestone(
     tag: `감정 ${EMOTION_PHASE_LABELS[prev.phase]} → ${EMOTION_PHASE_LABELS[next.phase]}`,
     party,
     tone: copy.tone,
-    autoDismissMs: next.phase === 'shaken' ? 2400 : 3200,
+    allowAutoDismiss: true,
+    autoDismissMs: 3000,
+  })
+  // 2026-05-26: popup 휘발 후에도 정보 유지되도록 재판관의 관찰 panel에 entry 등재.
+  root.addJudgeObservation?.({
+    category: 'slip',
+    iconId: 'i-heart',
+    title: `${name} · ${copy.title}`,
+    summary: copy.body || undefined,
+    party,
+    turnCount: root.turnCount ?? 0,
   })
 }
 

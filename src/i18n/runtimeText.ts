@@ -2985,15 +2985,8 @@ function applyPatterns(value: string, locale: Exclude<LocaleCode, 'ko'>): string
     } as LocaleText)[locale]
   }
 
-  match = /^새로운 증거를 손에 넣었다\s*[—-]\s*(.+)$/.exec(trimmed)
-  if (match) {
-    const subject = softLocalize(match[1], locale)
-    return ({
-      en: `New evidence acquired — ${subject}`,
-      ja: `新証拠を入手 — ${subject}`,
-      'zh-CN': `取得新证据 — ${subject}`,
-    } as LocaleText)[locale]
-  }
+  // 2026-05-26: '새로운 증거를 손에 넣었다' 시스템 메시지 dispatch 모두 제거됨 (증거 popup만 노출).
+  //   다국어 변환 정의도 dead code 정리.
 
   match = /^(?:새 쟁점|New Dispute)\s*[—-]\s*(.+)$/.exec(trimmed)
   if (match) {

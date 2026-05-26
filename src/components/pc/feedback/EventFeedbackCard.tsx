@@ -233,16 +233,32 @@ function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile
  * 작은 카운트다운 도넛 표시. SVG circle 두 겹 — 배경(고정 faint) + 전경(stroke 비워지며 회전).
  * 사용자가 "타이머가 다 차서 사라지는" 인지 가능하도록 시각화.
  * key={active.id}로 popup 전환마다 애니메이션 reset.
+ *
+ * 2026-05-26 사용자 요청: 도넛을 살짝 키우고 가운데 X — 클릭 시 즉시 닫힘 (3초 대기 skip).
  */
-function AutoDismissDonut({ autoDismissMs }: { autoDismissMs: number }) {
+function AutoDismissDonut({
+  autoDismissMs,
+  onClose,
+  closeLabel,
+}: {
+  autoDismissMs: number
+  onClose: () => void
+  closeLabel: string
+}) {
   const style = { '--countdown-ms': `${autoDismissMs}ms` } as CSSProperties
   return (
-    <span className="pc-event-feedback__autodismiss-donut" aria-hidden="true" style={style}>
-      <svg viewBox="0 0 32 32">
+    <button
+      type="button"
+      className="pc-event-feedback__autodismiss-donut"
+      aria-label={closeLabel}
+      style={style}
+      onClick={onClose}
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
         <circle className="pc-event-feedback__autodismiss-donut-bg" cx="16" cy="16" r="12" />
         <circle className="pc-event-feedback__autodismiss-donut-fg" cx="16" cy="16" r="12" />
       </svg>
-    </span>
+    </button>
   )
 }
 
@@ -847,7 +863,12 @@ export default function EventFeedbackCard() {
         {/* 2026-05-24: allowAutoDismiss opt-in popup의 카운트다운 도넛 — title row 우측 끝,
             확인 버튼 우측 세로선 위치. key={active.id}로 popup 전환마다 애니메이션 reset. */}
         {active.allowAutoDismiss && active.autoDismissMs ? (
-          <AutoDismissDonut key={`${active.id}-donut`} autoDismissMs={active.autoDismissMs} />
+          <AutoDismissDonut
+            key={`${active.id}-donut`}
+            autoDismissMs={active.autoDismissMs}
+            onClose={() => setPhase('leaving')}
+            closeLabel={localizeRuntimeText('닫기', locale)}
+          />
         ) : null}
         {/* 2026-05-22 v3.3: focusTakeover beat-mark도 panel-pin 마름모 시스템에 통합.
             기존 막대/추상 형상(span+i) → cue별 명확 아이콘. 36px 크기는 --beat modifier가 유지하여
