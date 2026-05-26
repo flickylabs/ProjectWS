@@ -154,9 +154,9 @@
       },
       "e-8": {
         "evidenceId": "e-8",
-        "name": "종합산부인과병원 주차 영수증 묶음",
-        "surfaceName": "산부인과 주차 영수증",
-        "surfaceDescription": "이준호 차량 내 발견된 산부인과 주차 영수증 묶음.",
+        "name": "「헤라 여성 메디컬 센터」 주차 영수증 (발급처 인쇄 오염)",
+        "surfaceName": "주차 영수증 (발급처 오염)",
+        "surfaceDescription": "이준호 차량 내 발견된 주차 영수증 1장. 발급처 명칭 영역 인쇄가 오염된 상태.",
         "descriptionTruth": [
           "난임 치료비",
           "난임 진단",

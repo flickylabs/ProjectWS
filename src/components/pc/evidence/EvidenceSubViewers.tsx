@@ -558,6 +558,12 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <span className="pc-receipt-paper__perforation is-top" aria-hidden="true" />
         <span className="pc-receipt-paper__perforation is-bottom" aria-hidden="true" />
         {sheet.suspicious ? <span className="pc-receipt-paper__stamp" aria-hidden="true">{copy.needsCompare}</span> : null}
+        {sheet.investigationNote ? (
+          <div className="pc-receipt-postit" role="note">
+            {sheet.investigationNote.label ? <strong className="pc-receipt-postit__label">{sheet.investigationNote.label}</strong> : null}
+            <p>{sheet.investigationNote.text}</p>
+          </div>
+        ) : null}
 
         <header className="pc-receipt-paper__head">
           <div className="pc-receipt-paper__mark" aria-hidden="true">
@@ -568,8 +574,20 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
             </svg>
           </div>
           <span>RECEIPT NO. {receiptNo}</span>
-          <h3>{sheet.storeName}</h3>
-          {sheet.storeAddr ? <p>{sheet.storeAddr}</p> : null}
+          <h3 className="pc-receipt-paper__store-name">
+            <span className="pc-receipt-paper__store-name-text">{sheet.storeName}</span>
+            {sheet.smudge && (sheet.smudge.targets?.includes('storeName') ?? true) ? (
+              <span className={`pc-receipt-paper__smudge pc-receipt-paper__smudge--${sheet.smudge.level}`} aria-hidden="true" />
+            ) : null}
+          </h3>
+          {sheet.storeAddr ? (
+            <p className="pc-receipt-paper__store-addr">
+              <span className="pc-receipt-paper__store-addr-text">{sheet.storeAddr}</span>
+              {sheet.smudge && sheet.smudge.targets?.includes('storeAddr') ? (
+                <span className={`pc-receipt-paper__smudge pc-receipt-paper__smudge--${sheet.smudge.level}`} aria-hidden="true" />
+              ) : null}
+            </p>
+          ) : null}
           <time>{sheet.date}</time>
         </header>
 

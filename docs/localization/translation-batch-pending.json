@@ -237,6 +237,36 @@
             "purchaseStore '교보문고 강남점' (e-1 영수증 영역 정합)"
           ],
           "note": "spouse-01 e-10 「예비 부모 정서 도서」 evidence의 investigationStages 3단계 신설 + viewerDataByStage 1/2/3 (subtype 'book' 구조 — cover/toc/dogearedPages) + investigationResults 3 entry. cover.{title,subtitle,author,publisher,isbn,purchaseDate} + toc 6 chapter title + dogearedPages 3 page (excerpt + notes) 영역 KO 권위 텍스트는 '(GPT Pro 의뢰 영역 — XXX)' placeholder 형태 — 본 ledger sync 대상 X. 별도 GPT Pro self-contained 의뢰 폴더 (docs/design/spouse01-e10-book-content-brief-20260526/) 영역에서 GPT Pro 결과 도착 시 placeholder 일괄 교체 + 그 시점에 본 ledger 항목 다음 batch entry로 추가. 사건 frame: surface = '내연녀 임신 의심 (d-3 misdirection)' / 진실 = 'B 본인이 박지연 난임 진단 후 부모 될 마음 정리 (h-d4 진실로 수렴)'. stage 1 = misdirection 강화 / stage 2 = frame 흔들 / stage 3 = B 본인 자료 surface (단 박지연 난임 / h-d4 keyword 직접 노출 X — confession/dossier 영역에서 통합)."
+        },
+        {
+          "file": "src/data/coreCases/spouse-01.case.ts + src/data/cases/generated/spouse-01.json + src/components/pc/evidence/{demoEvidenceData.ts,EvidenceSubViewers.tsx} + src/app/pc.css",
+          "path": "evidence[id=e-8].{name, surfaceName, description, surfaceDescription, partyContext, depthStages, trustStates, investigationStages, investigationResults, meta, viewerData, viewerDataByStage} + ReceiptSheet schema (smudge + investigationNote optional) + ReceiptViewer 컴포넌트 (smudge overlay + postit rendering) + smudge/postit CSS — 「헤라 여성 메디컬 센터」 주차 영수증 stage 시스템 신설 + 발급처 인쇄 오염 점진 reveal fx",
+          "type": "신설/수정",
+          "koTexts": [
+            "name: '종합산부인과병원 주차 영수증 묶음' → '「헤라 여성 메디컬 센터」 주차 영수증 (발급처 인쇄 오염)'",
+            "surfaceName: '산부인과 주차 영수증' → '주차 영수증 (발급처 오염)'",
+            "description: '이준호 차량에서 발견된 주차 영수증 1장. 발급처 명칭 영역의 인쇄가 오염되어 알아보기 어려운 상태. 발급 시각은 평일 점심시간대. 영수증 하단 주소 정보로 외부 조회한 결과 발급처는 「헤라 여성 메디컬 센터」(여성 전문 병원).'",
+            "surfaceDescription: '이준호 차량 내 발견된 주차 영수증 1장. 발급처 명칭 영역 인쇄가 오염된 상태.'",
+            "partyContext.a.questionAngle: '남편 차에서 발견된 주차 영수증의 발급처가 여성 전문 병원이었던 이유를 어떻게 보는지' / implication: '여성 전문 병원 방문 = 외도 상대 동행 의심으로 frame 강화.'",
+            "partyContext.b.questionAngle: '동행자 없이 본인 혼자 그 여성 전문 시설을 방문한 사실을 어떻게 설명할 것인지' / implication: '점심시간 단독 방문 = 혼자 출산 가능성을 알아본 흔적.'",
+            "depthStages 5 entry 변경 (휴대폰 검색 frame → 주차 영수증 1장 + 인쇄 오염 점진 reveal frame): stub '주차 영수증 1장 존재 표시.' / excerpt '주차 영수증의 매수·시각만 우선 보임 — 발급처 인쇄 오염 상태.' / original '발급처 명칭 일부와 영수증 본문 확인 — 「░░░░░░ 메디컬 센터 주차장」 까지 reveal.' / context '영수증 하단 주소 정보로 외부 조회한 결과 발급처가 「헤라 여성 메디컬 센터」(여성 전문 병원)로 확인.' / established 'B가 혼자 여성 전문 병원을 점심시간에 방문했다고 공식기록 채택.'",
+            "trustStates 5 entry 변경: submitted 'A가 B 차량에서 발견하여 제출.' / verifying '발급처 주소 외부 조회와 발급 시각 대조.' / authenticated '주차 시각이 e-3 통화 시각·B 근무 일정과 정합.' / challenged '외도 frame과 혼자 알아본 frame 두 해석이 충돌.' / misread '방문 사실은 인증되지만 동행 여부·진료 내용은 심문과 맥락으로 확정.'",
+            "investigationStages 3 stage 신규:",
+            "  stage 1 — revealKey 'inspect_parking_receipt' / label '주차 영수증 확인' / question '이 주차 영수증은 어디서 발급된 것입니까?' / unlockHint null",
+            "  stage 2 — revealKey 'wipe_smudge_partial' / label '오염된 부분 닦아내기' / question '인쇄가 오염된 부분을 조심스럽게 닦아내 봅시다.' / unlockHint '발급처 영역 인쇄가 오염되어 있어 일부 닦아내면 시설 이름이 드러날 수 있습니다.'",
+            "  stage 3 — revealKey 'address_lookup_identifies_clinic' / label '주소 조회로 확인' / question '더 닦아낼 수 없는 부분이 남아 있습니다. 영수증 하단 주소로 외부 조회해 봅시다.' / unlockHint '영수증 하단 주소 정보로 외부 조회하면 발급처의 정체를 확인할 수 있습니다.'",
+            "investigationResults 3 entry 신규:",
+            "  inspect_parking_receipt: '주차 영수증 1장이 확인됨. 발급 시각이 평일 점심시간대. 다만 발급처 명칭 영역의 인쇄가 일부 오염되어 알아보기 어렵다.'",
+            "  wipe_smudge_partial: '오염된 인쇄 영역을 조심스럽게 닦아낸 결과 발급처 명칭 뒷부분에 「메디컬 센터」가 포함되어 있다. 앞 부분은 훼손이 심해 더 이상 닦아낼 수 없다.'",
+            "  address_lookup_identifies_clinic: '영수증 하단의 주소 정보로 외부 조회한 결과 발급처는 「헤라 여성 메디컬 센터」(여성 전문 병원). 점심시간대 단독 방문 frame이 강화된다.'",
+            "viewerData 영역 신규 (storeName '헤라 여성 메디컬 센터 주차장' / storeAddr '서울 강남구 삼성동 142-08' / date '2026.02.07 (토) 12:30' / items '주차 1시간 00분' 5,000원 1행 / smudge.level 'partial' targets ['storeName'] / investigationNote.label '주소 외부 조회 결과' text '발급처 = 「헤라 여성 메디컬 센터」 (여성 전문 병원).')",
+            "viewerDataByStage 영역 meta:",
+            "  stage 1 — name '주차 영수증 (발급처 오염 상태)' / stageLabel '1단계 — 발급처 인쇄 오염' / smudge.level 'covered'",
+            "  stage 2 — name '주차 영수증 (발급처 일부 reveal)' / stageLabel '2단계 — 오염 부분 닦아냄 (앞부분 훼손 잔존)' / smudge.level 'partial'",
+            "  stage 3 — name '주차 영수증 (헤라 여성 메디컬 센터 확정)' / stageLabel '3단계 — 주소 외부 조회로 정체 확인' / smudge.level 'revealed' + investigationNote 추가",
+            "ReceiptViewer 컴포넌트 i18n: 신규 KO key 영역 X (smudge / investigationNote 영역은 data-driven, label은 evidence data 영역의 KO 권위)"
+          ],
+          "note": "spouse-01 e-8 「헤라 여성 메디컬 센터 주차 영수증」 evidence의 investigationStages 3단계 신설 + viewerDataByStage 1/2/3 (smudge level 차등 + stage 3 investigationNote postit) + investigationResults 3 entry + ReceiptSheet schema 영역 smudge/investigationNote optional field 신규 + ReceiptViewer 컴포넌트의 storeName/storeAddr overlay smudge rendering + 포스트잇 형식 investigationNote rendering + pc.css smudge overlay (clip-path inset(0 55% 0 0) for partial/revealed) + postit (yellow 노트 + rotate -3.2deg + 스카치 테이프 ::before) styling. 사용자 자작 안: stage 1 '주차장 — 혼자 어딜 다녀왔을까?' / stage 2 '메디컬 센터 — 왠 병원? 더이상 오염을 지워내기 어려움 훼손된 상태' / stage 3 '주소 기반 확인 결과 「헤라 여성 메디컬 센터」 — 여성 전문 병원이잖아? 여길 왜??'. visual fx: 안 ⓐ CSS overlay 잉크 얼룩. 영수증 매수: 1장 (이전 묶음 표현 폐기). 진실 노출 정책 keyword (박지연/난임/임신/내연녀) 직접 surface 0 — '여성 메디컬 센터' / '여성 전문 병원' 표현은 d-3 misdirection frame 강화 영역. e-9 cascade gate: 추가 X (기존 unlock 흐름 유지, [[design-narrative-trigger-stage-gate-limit]] 영역 한계 그대로). 검증: qa:fast RELEASE READY (P0=0) / detect-truth-leak --strict 0 findings (4 lang). 다국어 sync 4 lang 영역: name/surfaceName/description/surfaceDescription/partyContext/depthStages/trustStates/investigationResults/investigationStages label·unlockHint/viewerData·viewerDataByStage receipt 영역 (storeName/storeAddr/items 텍스트/investigationNote)."
         }
       ]
     },

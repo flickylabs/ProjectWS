@@ -119,6 +119,14 @@ export interface ReceiptSheet {
   total: string
   paymentMethod: string
   suspicious: boolean
+  smudge?: {
+    level: 'covered' | 'partial' | 'revealed'
+    targets?: Array<'storeName' | 'storeAddr'>
+  }
+  investigationNote?: {
+    text: string
+    label?: string
+  }
 }
 
 // ── GPS Log ──

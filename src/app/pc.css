@@ -27199,6 +27199,97 @@ body.pc-mode .pc-receipt-paper__head time {
   font-style: normal !important;
 }
 
+/* ─── e-8 smudge overlay (발급처 인쇄 오염 점진 reveal fx) ─── */
+body.pc-mode .pc-receipt-paper__store-name,
+body.pc-mode .pc-receipt-paper__store-addr {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+body.pc-mode .pc-receipt-paper__store-name-text,
+body.pc-mode .pc-receipt-paper__store-addr-text {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body.pc-mode .pc-receipt-paper__smudge {
+  position: absolute !important;
+  inset: -3px -8px !important;
+  z-index: 2 !important;
+  border-radius: 3px !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse 70% 90% at 25% 50%, rgba(30, 24, 18, 0.96) 0%, rgba(30, 24, 18, 0.92) 38%, transparent 78%),
+    linear-gradient(135deg, #2a2218 30%, #3a2e22 60%, #2a2218 90%) !important;
+  mix-blend-mode: multiply !important;
+  transition: opacity 0.6s ease, clip-path 0.6s ease !important;
+  filter: blur(0.4px) !important;
+}
+
+body.pc-mode .pc-receipt-paper__smudge--covered {
+  opacity: 1 !important;
+  clip-path: inset(0) !important;
+}
+
+body.pc-mode .pc-receipt-paper__smudge--partial,
+body.pc-mode .pc-receipt-paper__smudge--revealed {
+  opacity: 0.95 !important;
+  clip-path: inset(0 55% 0 0) !important;
+}
+
+/* ─── e-8 investigation postit (stage 3: 주소 외부 조회 메모) ─── */
+body.pc-mode .pc-receipt-postit {
+  position: absolute !important;
+  top: 16px !important;
+  right: 14px !important;
+  z-index: 30 !important;
+  width: 184px !important;
+  padding: 22px 14px 14px !important;
+  background: linear-gradient(180deg, #fff4a8 0%, #f7e986 100%) !important;
+  color: #2a2418 !important;
+  font-family: "Gowun Dodum", "Nanum Pen Script", "Pretendard", sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.32),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+  transform: rotate(-3.2deg) !important;
+  border-radius: 2px 6px 4px 2px !important;
+  pointer-events: none !important;
+}
+
+body.pc-mode .pc-receipt-postit::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -8px !important;
+  left: 50% !important;
+  width: 64px !important;
+  height: 18px !important;
+  background: linear-gradient(180deg, rgba(255, 220, 130, 0.7) 0%, rgba(220, 180, 80, 0.45) 100%) !important;
+  border: 1px solid rgba(180, 140, 60, 0.18) !important;
+  transform: translateX(-50%) rotate(1.4deg) !important;
+  border-radius: 2px !important;
+  opacity: 0.85 !important;
+}
+
+body.pc-mode .pc-receipt-postit__label {
+  display: block !important;
+  margin-bottom: 4px !important;
+  color: rgba(80, 35, 18, 0.88) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+}
+
+body.pc-mode .pc-receipt-postit p {
+  margin: 0 !important;
+  font-weight: 500 !important;
+  color: #2a2218 !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+}
+
 body.pc-mode .pc-receipt-separator {
   height: 1px !important;
   margin: 17px 0 12px !important;

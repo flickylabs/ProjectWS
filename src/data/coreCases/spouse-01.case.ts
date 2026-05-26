@@ -2284,20 +2284,28 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       narrativeTriggers: e7NarrativeTriggers,
     },
     /* ============================================================
-     * evidence e-8 — 종합산부인과병원 주차 영수증 묶음 (Cycle 4 plot revision 신규)
+     * evidence e-8 — 「헤라 여성 메디컬 센터」 주차 영수증 1장 (2026-05-26 stage 시스템 신설)
      *   2026-05-25 폴리싱: 휴대폰 검색 기록(A 접근 비현실) → B 차량 발견 주차권/영수증으로 교체.
+     *   2026-05-26 stage 신설: 영수증 1장 + 발급처 인쇄 오염 점진 reveal frame (smudge fx).
      *
-     * 표면: 산부인과 반복 방문 사실 → 외도 의심 frame (내연녀 임신 정황)
-     * 진실: 박지연 모르게 출산 가능성을 알아본 이준호의 단독 산부인과 방문 흔적
+     * 표면: 「여성 메디컬 센터」 방문 흔적 → 외도 의심 frame (내연녀 임신 정기 검진 의심)
+     * 진실: 박지연 모르게 출산 가능성을 알아본 이준호의 단독 방문 흔적 (h-d4 진실로 수렴)
+     *
+     * investigationStages 3 stage (smudge level 차등):
+     *  - stage 1 (주차 영수증 확인): 발급처 인쇄 완전 오염 → "혼자 어딜 다녀왔을까?" 단순 의문
+     *  - stage 2 (오염된 부분 닦아내기): 뒷부분 reveal = "░░░░░░ 메디컬 센터 주차장"
+     *      → "왠 병원?" — 단 앞부분 훼손으로 더 닦아낼 수 없음
+     *  - stage 3 (주소 조회로 확인): 영수증 하단 주소로 외부 조회 → "헤라 여성 메디컬 센터"
+     *      → "여성 전문 병원이잖아? 여길 왜??" misdirection 강화 (외도 frame)
      * ============================================================ */
     {
       id: 'e-8',
-      name: ko('종합산부인과병원 주차 영수증 묶음'),
-      surfaceName: ko('산부인과 주차 영수증'),
+      name: ko('「헤라 여성 메디컬 센터」 주차 영수증 (발급처 인쇄 오염)'),
+      surfaceName: ko('주차 영수증 (발급처 오염)'),
       description: ko(
-        '이준호 차량에서 발견된 ○○ 종합산부인과병원 주차 영수증 여러 장. 발급 시각이 평일 점심시간대에 집중되고, 같은 병원에 반복 방문한 흔적이 남아 있다.',
+        '이준호 차량에서 발견된 주차 영수증 1장. 발급처 명칭 영역의 인쇄가 오염되어 알아보기 어려운 상태. 발급 시각은 평일 점심시간대. 영수증 하단 주소 정보로 외부 조회한 결과 발급처는 「헤라 여성 메디컬 센터」(여성 전문 병원).',
       ),
-      surfaceDescription: ko('이준호 차량 내 발견된 산부인과 주차 영수증 묶음.'),
+      surfaceDescription: ko('이준호 차량 내 발견된 주차 영수증 1장. 발급처 명칭 영역 인쇄가 오염된 상태.'),
       type: 'receipt',
       reliability: 'hard',
       completeness: 'original',
@@ -2310,24 +2318,50 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       requiredLieState: 'S2',
       partyContext: {
         a: {
-          questionAngle: ko('남편 차에서 산부인과 주차 영수증이 반복적으로 나온 이유를 어떻게 보는지'),
-          implication: ko('산부인과 반복 방문 = 외도 상대 동행 의심으로 frame 강화.'),
+          questionAngle: ko('남편 차에서 발견된 주차 영수증의 발급처가 여성 전문 병원이었던 이유를 어떻게 보는지'),
+          implication: ko('여성 전문 병원 방문 = 외도 상대 동행 의심으로 frame 강화.'),
         },
         b: {
-          questionAngle: ko('동행자 없이 본인 혼자 그 병원에 갔던 사실을 어떻게 설명할 것인지'),
+          questionAngle: ko('동행자 없이 본인 혼자 그 여성 전문 시설을 방문한 사실을 어떻게 설명할 것인지'),
           implication: ko('점심시간 단독 방문 = 혼자 출산 가능성을 알아본 흔적.'),
         },
       },
+      investigationStages: [
+        {
+          stage: 1,
+          revealKey: 'inspect_parking_receipt',
+          question: {
+            text: ko('이 주차 영수증은 어디서 발급된 것입니까?'),
+            attackVector: 'authenticity',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'wipe_smudge_partial',
+          question: {
+            text: ko('인쇄가 오염된 부분을 조심스럽게 닦아내 봅시다.'),
+            attackVector: 'context',
+          },
+        },
+        {
+          stage: 3,
+          revealKey: 'address_lookup_identifies_clinic',
+          question: {
+            text: ko('더 닦아낼 수 없는 부분이 남아 있습니다. 영수증 하단 주소로 외부 조회해 봅시다.'),
+            attackVector: 'responsibility',
+          },
+        },
+      ],
       depthStages: [
-        { id: 'stub', summary: ko('산부인과 주차 영수증 존재 표시.') },
-        { id: 'excerpt', summary: ko('주차 영수증 2~3장 (병원명·발급 시각)만 우선 보임 — 외도 의심 frame.') },
-        { id: 'original', summary: ko('주차 영수증 전체와 점심시간 단독 방문 패턴 확인.') },
-        { id: 'context', summary: ko('병원 출입 CCTV 협조 검토 시 B 단독 방문이 확인되는 정황 복원.') },
-        { id: 'established', summary: ko('B가 혼자 산부인과를 반복 방문했다고 공식기록 채택.') },
+        { id: 'stub', summary: ko('주차 영수증 1장 존재 표시.') },
+        { id: 'excerpt', summary: ko('주차 영수증의 매수·시각만 우선 보임 — 발급처 인쇄 오염 상태.') },
+        { id: 'original', summary: ko('발급처 명칭 일부와 영수증 본문 확인 — 「░░░░░░ 메디컬 센터 주차장」 까지 reveal.') },
+        { id: 'context', summary: ko('영수증 하단 주소 정보로 외부 조회한 결과 발급처가 「헤라 여성 메디컬 센터」(여성 전문 병원)로 확인.') },
+        { id: 'established', summary: ko('B가 혼자 여성 전문 병원을 점심시간에 방문했다고 공식기록 채택.') },
       ],
       trustStates: [
         { id: 'submitted', summary: ko('A가 B 차량에서 발견하여 제출.') },
-        { id: 'verifying', summary: ko('병원·발급 시각 원본 대조.') },
+        { id: 'verifying', summary: ko('발급처 주소 외부 조회와 발급 시각 대조.') },
         { id: 'authenticated', summary: ko('주차 시각이 e-3 통화 시각·B 근무 일정과 정합.') },
         { id: 'challenged', summary: ko('외도 frame과 혼자 알아본 frame 두 해석이 충돌.') },
         { id: 'misread', summary: ko('방문 사실은 인증되지만 동행 여부·진료 내용은 심문과 맥락으로 확정.') },

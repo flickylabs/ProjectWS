@@ -1612,7 +1612,7 @@
     },
     {
       "evidenceId": "e-8",
-      "name": "산부인과 주차 영수증",
+      "name": "주차 영수증 (발급처 오염)",
       "depthStages": [
         {
           "id": "stub",
