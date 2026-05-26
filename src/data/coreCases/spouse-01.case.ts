@@ -2432,12 +2432,12 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
      * ============================================================ */
     {
       id: 'e-10',
-      name: ko('B의 예비 부모 정서 도서 + 본인 필기 흔적'),
-      surfaceName: ko('예비 부모 정서 도서'),
+      name: ko('출산 준비 도서'),
+      surfaceName: ko('출산 준비 도서'),
       description: ko(
-        'e-1 교보문고 영수증의 결제 흔적이 단서가 되어 책 본체가 확보된 상태. 「부모가 되는 마음 연습」 도서 1권에 B 본인 필체로 밑줄과 여백 메모가 일부 페이지에 남아 있다. 결제일·결제 매장이 e-1 영수증과 일치.',
+        'e-1 교보문고 영수증의 결제 흔적이 단서가 되어 책 본체가 확보된 상태. 「부모가 되는 마음 연습」 도서 1권에 B 본인 필체로 밑줄이 일부 페이지에 남아 있다. 결제일·결제 매장이 e-1 영수증과 일치.',
       ),
-      surfaceDescription: ko('B 책상/차량에서 확보된 예비 부모 정서 도서 (본인 필기 흔적 포함).'),
+      surfaceDescription: ko('B 책상/차량에서 확보된 출산 준비 도서 (본인 필체 밑줄 포함).'),
       type: 'document',
       reliability: 'hard',
       completeness: 'original',

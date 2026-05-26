@@ -5209,10 +5209,10 @@
     },
     {
       "id": "e-10",
-      "name": "B의 예비 부모 정서 도서 + 본인 필기 흔적",
-      "surfaceName": "예비 부모 정서 도서",
-      "description": "e-1 교보문고 영수증의 결제 흔적이 단서가 되어 책 본체가 확보된 상태. 「부모가 되는 마음 연습」 도서 1권에 B 본인 필체로 밑줄과 여백 메모가 일부 페이지에 남아 있다. 결제일·결제 매장이 e-1 영수증과 일치.",
-      "surfaceDescription": "B 책상/차량에서 확보된 예비 부모 정서 도서 (본인 필기 흔적 포함).",
+      "name": "출산 준비 도서",
+      "surfaceName": "출산 준비 도서",
+      "description": "e-1 교보문고 영수증의 결제 흔적이 단서가 되어 책 본체가 확보된 상태. 「부모가 되는 마음 연습」 도서 1권에 B 본인 필체로 밑줄이 일부 페이지에 남아 있다. 결제일·결제 매장이 e-1 영수증과 일치.",
+      "surfaceDescription": "B 책상/차량에서 확보된 출산 준비 도서 (본인 필체 밑줄 포함).",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -5228,7 +5228,7 @@
       ],
       "requiredLieState": "S0",
       "investigationResults": {
-        "inspect_book_cover": "「부모가 되는 마음 연습」이라는 이름의 출산 대비 도서이다.",
+        "inspect_book_cover": "「부모가 되는 마음 연습」이라는 이름의 출산 준비 도서이다.",
         "browse_table_of_contents": "목차의 몇 개 챕터에 밑줄이 그어져 있다.",
         "check_dogeared_pages": "일부 페이지가 접혀 있고, 주요 문장에 밑줄이 그어져 있다."
       },
@@ -6259,7 +6259,7 @@
       {
         "id": "e-10",
         "type": "evidence",
-        "label": "e-10 예비 부모 정서 도서",
+        "label": "e-10 출산 준비 도서",
         "sourceRef": "e-10",
         "linkedDisputeIds": [
           "d-3",

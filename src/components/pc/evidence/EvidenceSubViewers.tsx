@@ -1151,10 +1151,11 @@ function BookSubView({ data }: { data: BookData }) {
   }
 
   const isCover = current === 'cover'
+  const isToc = current === 'toc'
   return (
     <EvidenceDocumentShell
       title={docTitle}
-      subtitle={docSubtitle}
+      subtitle={isToc ? undefined : docSubtitle}
       stamp={copy.originalCheck}
       variant="book"
       hideHeader={isCover}
@@ -1226,7 +1227,7 @@ function BookSubView({ data }: { data: BookData }) {
                   key={`toc-${entry.chapter}`}
                   className={`pc-doc-book__toc-item${entry.highlighted ? ' is-highlighted' : ''}`}
                 >
-                  <span className="pc-doc-book__toc-chapter">{copy.bookChapter} {entry.chapter}</span>
+                  <span className="pc-doc-book__toc-chapter">{entry.chapter}</span>
                   <span className="pc-doc-book__toc-title">
                     {entry.highlighted ? (
                       <span className="pc-doc-book__highlight">{entry.title}</span>
@@ -1247,11 +1248,6 @@ function BookSubView({ data }: { data: BookData }) {
           <section className="pc-doc-book__dogeared">
             <h4 className="pc-doc-book__section-title">
               {copy.bookDogearedPages}
-              {data.handwritingOwner === 'b' ? (
-                <span className="pc-doc-book__handwriting-tag">{copy.bookHandwritingOwnerB}</span>
-              ) : data.handwritingOwner === 'a' ? (
-                <span className="pc-doc-book__handwriting-tag">{copy.bookHandwritingOwnerA}</span>
-              ) : null}
             </h4>
             <div className="pc-doc-book__pages">
               {data.dogearedPages.map((page) => (

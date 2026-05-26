@@ -200,9 +200,9 @@
       },
       "e-10": {
         "evidenceId": "e-10",
-        "name": "B의 예비 부모 정서 도서 + 본인 필기 흔적",
-        "surfaceName": "예비 부모 정서 도서",
-        "surfaceDescription": "B 책상/차량에서 확보된 예비 부모 정서 도서 (본인 필기 흔적 포함).",
+        "name": "출산 준비 도서",
+        "surfaceName": "출산 준비 도서",
+        "surfaceDescription": "B 책상/차량에서 확보된 출산 준비 도서 (본인 필체 밑줄 포함).",
         "descriptionTruth": [
           "난임 치료비",
           "난임 진단",

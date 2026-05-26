@@ -11229,14 +11229,15 @@ body.pc-mode .pc-doc-book__toc-list {
 
 body.pc-mode .pc-doc-book__toc-item {
   display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  gap: 14px;
+  grid-template-columns: 18px 1fr max-content;
+  gap: 12px;
   align-items: baseline;
   padding: 6px 0;
   border: none;
   background: transparent;
   color: rgba(45, 37, 24, 0.82);
-  font-size: 13px;
+  font-size: 12.5px;
+  white-space: nowrap;
 }
 
 body.pc-mode .pc-doc-book__toc-item.is-highlighted {
@@ -11250,7 +11251,15 @@ body.pc-mode .pc-doc-book__toc-chapter {
   color: rgba(45, 37, 24, 0.62);
   font-size: 12.5px;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+body.pc-mode .pc-doc-book__toc-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 body.pc-mode .pc-doc-book__toc-page {
@@ -11259,6 +11268,8 @@ body.pc-mode .pc-doc-book__toc-page {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
+  text-align: right;
+  min-width: 28px;
 }
 
 body.pc-mode .pc-doc-book__toc-bookmark {
@@ -11368,7 +11379,8 @@ body.pc-mode .pc-doc-book__underline {
   background-repeat: no-repeat;
   background-size: 100% 0.72em;
   background-position: 0 0.62em;
-  padding: 0 3px;
+  padding: 0;
+  margin: 0;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   text-decoration: none;
