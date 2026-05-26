@@ -20,8 +20,10 @@
 import type { NarrativeTriggerCandidate } from '../../types/narrativeTrigger'
 
 // ─────────────────────────────────────────────────────────────────────────────
-// dc-1 "말년의 종이" (CoreDossierCard) — 4 trigger candidates
-// (combo-1 — npc / outburst / fallback. combo-11은 e-3 폐기와 함께 제거됨)
+// dc-1 "말년의 종이" (CoreDossierCard) — 3 trigger candidates
+// (combo-1 — outburst / fallback. 2026-05-27 trigger 재편성: dc1-via-a-interject
+//  폐기 — contextAction 없는 broad 패턴, d-1 S1+ 도달만으로 발동했던 영역.
+//  cascade chain + combo + judge_auto fallback 만으로 충분.)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const dc1NarrativeTriggers: NarrativeTriggerCandidate[] = [
@@ -35,22 +37,6 @@ export const dc1NarrativeTriggers: NarrativeTriggerCandidate[] = [
     scriptedRefs: [
       'emerge-dc1-via-combo-judge-decree-v1',
       'emerge-dc1-via-combo-b-react-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'dc1-via-a-interject',
-    type: 'npc_interjection',
-    source: 'a',
-    preconditions: [
-      { disputeLieState: { 'd-1': 'S1+' } },
-      { partyDistrust: { a: { min: 50 } } },
-    ],
-    scriptedRefs: [
-      'emerge-dc1-via-a-interject-v1',
-      'emerge-dc1-via-a-interject-judge-react-v1',
-      'emerge-dc1-via-a-interject-a-response-v1',
-      'emerge-dc1-via-a-interject-judge-decree-v1',
     ],
     vfxProfile: 'standard',
   },
@@ -83,7 +69,10 @@ export const dc1NarrativeTriggers: NarrativeTriggerCandidate[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// w-1 "최복순" (CoreWitness) — 3 trigger candidates
+// w-1 "최복순" (CoreWitness) — 2 trigger candidates
+// (2026-05-27 trigger 재편성: w1-via-b-interject 폐기 — contextAction + partyPhase
+//  모두 없는 broad 패턴, d-1 S2+ 도달만으로 발동했던 영역.
+//  cascade priorCard + judge_auto fallback 만으로 충분.)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const w1NarrativeTriggers: NarrativeTriggerCandidate[] = [
@@ -101,20 +90,6 @@ export const w1NarrativeTriggers: NarrativeTriggerCandidate[] = [
     vfxProfile: 'standard',
   },
   {
-    id: 'w1-via-b-interject',
-    type: 'npc_interjection',
-    source: 'b',
-    preconditions: {
-      disputeLieState: { 'd-1': 'S2+' },
-    },
-    scriptedRefs: [
-      'emerge-w1-via-b-interject-v1',
-      'emerge-w1-via-b-interject-judge-react-v1',
-      'emerge-w1-via-b-interject-judge-summon-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
     id: 'w1-via-judge-auto',
     type: 'judge_auto_mention',
     preconditions: { turnsAfterEligible: 5 },
@@ -127,7 +102,10 @@ export const w1NarrativeTriggers: NarrativeTriggerCandidate[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// d-2 "공증 절차의 개입" (CoreDispute) — 4 trigger candidates
+// d-2 "공증 절차의 개입" (CoreDispute) — 3 trigger candidates
+// (2026-05-27 trigger 재편성: d2-via-a-interject 폐기 — contextAction 없는 broad
+//  패턴, d-1 S2+ 도달만으로 발동했던 영역. dc-1 cascade priorCard 자연 흐름 +
+//  outburst + judge_auto fallback 만으로 충분.)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const d2NarrativeTriggers: NarrativeTriggerCandidate[] = [
@@ -141,21 +119,6 @@ export const d2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     scriptedRefs: [
       'emerge-d2-via-cascade-judge-decree-v1',
       'emerge-d2-via-cascade-a-react-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'd2-via-a-interject',
-    type: 'npc_interjection',
-    source: 'a',
-    preconditions: [
-      { disputeLieState: { 'd-1': 'S2+' } },
-      { partyDistrust: { a: { min: 50 } }, disputeLieState: { 'd-1': 'S1+' } },
-    ],
-    scriptedRefs: [
-      'emerge-d2-via-a-interject-v1',
-      'emerge-d2-via-a-interject-judge-react-v1',
-      'emerge-d2-via-a-interject-judge-decree-v1',
     ],
     vfxProfile: 'standard',
   },
@@ -252,7 +215,10 @@ export const dc2NarrativeTriggers: NarrativeTriggerCandidate[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// w-2 "김영수" (CoreWitness) — 3 trigger candidates
+// w-2 "김영수" (CoreWitness) — 2 trigger candidates
+// (2026-05-27 trigger 재편성: w2-via-b-interject 폐기 — contextAction + partyPhase
+//  모두 없는 broad 패턴, d-2 S2+ 도달만으로 발동했던 영역.
+//  cascade priorCard + judge_auto fallback 만으로 충분.)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
@@ -266,20 +232,6 @@ export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     scriptedRefs: [
       'emerge-w2-via-cascade-judge-summon-v1',
       'emerge-w2-via-cascade-a-react-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
-    id: 'w2-via-b-interject',
-    type: 'npc_interjection',
-    source: 'b',
-    preconditions: {
-      disputeLieState: { 'd-2': 'S2+' },
-    },
-    scriptedRefs: [
-      'emerge-w2-via-b-interject-v1',
-      'emerge-w2-via-b-interject-judge-react-v1',
-      'emerge-w2-via-b-interject-judge-summon-v1',
     ],
     vfxProfile: 'standard',
   },
