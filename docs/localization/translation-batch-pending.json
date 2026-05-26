@@ -105,6 +105,15 @@
             "location labels (stage 3): '★ 봉천동 도착' / '★ 봉천동 출발 (체류 2시간 28분)' 등"
           ],
           "note": "기존 망원동 자택 frame 폐기 → 강남구 개포동 자택. 2026.02 중 월/수/금 6일 봉천동 정기 방문 (18:30~22:00 안팎, 체류 2시간 안팎). stage별 viewer: 1=좌표 / 2=주소 / 3=봉천동만 + 체류 시간 강조. base는 stage 3 영역."
+        },
+        {
+          "file": "src/components/pc/evidence/EvidenceSubViewers.tsx",
+          "path": "VIEWER_COPY.{ko,en,ja,zh-CN}.callDurationMessage",
+          "type": "수정",
+          "koTexts": [
+            "callDurationMessage: '통화시간·메시지' → '통화시간'"
+          ],
+          "note": "LogViewer 4번째 column header. KO 권위 '통화시간'으로 단순화. 통화/메시지 영역 통합 column이 아니라 통화 길이만 표시. EN/JA/ZH-CN 4언어 sync 필요 (영역: EN 'Call Time/Message' → 'Call Time', JA '通話時間·メッセージ' → '通話時間', ZH-CN '通话时间·消息' → '通话时间'). visit log (e-5 등) 영역에는 별도 'duration' key 사용 영역이라 본 변경의 visit 영역 회귀 X."
         }
       ]
     }
