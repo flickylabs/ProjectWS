@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>spouse-01 narrative trigger 재편성 — 본 thread 요약</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #181b22;
+    --panel-2: #1f232c;
+    --line: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #9aa0aa;
+    --accent: #f4c849;
+
+    --spouse: #e07b6c;
+    --spouse-bg: #2a1715;
+    --spouse-border: #4a2520;
+
+    --hidden: #c977d6;
+    --pro-a: #e07b6c;
+    --pro-b: #7fc88a;
+    --neutral: #c2c7d0;
+
+    --status-removed: #e07b6c;
+    --status-removed-bg: rgba(224,123,108,0.12);
+    --status-added: #7fc88a;
+    --status-added-bg: rgba(127,200,138,0.12);
+    --status-changed: #f4c849;
+    --status-changed-bg: rgba(244,200,73,0.12);
+    --status-kept: #9aa0aa;
+    --status-kept-bg: rgba(154,160,170,0.08);
+
+    --trig-npc: #f4a449;
+    --trig-emotional: #e0769a;
+    --trig-judge: #7aa9e0;
+    --trig-cascade: #c977d6;
+    --trig-combo: #7fc88a;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Pretendard', 'Inter', system-ui, sans-serif; margin: 0; padding: 0; line-height: 1.55; }
+  body { padding: 24px 24px 96px; max-width: 1320px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 19px; margin: 28px 0 10px; letter-spacing: -0.01em; padding-bottom: 6px; border-bottom: 2px solid var(--line); }
+  h3 { font-size: 15px; margin: 18px 0 8px; letter-spacing: -0.005em; color: var(--accent); }
+  p { margin: 6px 0; }
+  .lead { color: var(--muted); font-size: 13.5px; }
+  code { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 4px; color: var(--accent); }
+
+  /* ============ header meta ============ */
+  .meta { display: flex; gap: 14px; margin: 12px 0 24px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+  .meta span { padding: 4px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+  .meta span strong { color: var(--text); font-weight: 600; }
+
+  /* ============ summary cards ============ */
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin: 12px 0 24px; }
+  .summary-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .summary-card .sc-label { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; }
+  .summary-card .sc-value { font-size: 22px; font-weight: 700; color: var(--accent); line-height: 1.2; margin-bottom: 4px; }
+  .summary-card .sc-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+  /* ============ decision table ============ */
+  table.decisions { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13px; }
+  table.decisions th { background: var(--panel-2); color: var(--accent); font-size: 12px; font-weight: 600; text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); letter-spacing: 0.02em; }
+  table.decisions td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.decisions tr:hover td { background: rgba(255,255,255,0.03); }
+  table.decisions td.issue-col { font-weight: 600; color: var(--text); width: 200px; }
+  table.decisions td.decision-col { color: var(--muted); }
+  table.decisions td.applied-col { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px; color: var(--neutral); }
+
+  /* ============ entity matrix ============ */
+  table.matrix { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 13px; }
+  table.matrix th { background: var(--panel-2); color: var(--accent); font-size: 11.5px; font-weight: 600; text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  table.matrix td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  table.matrix tr.line-group td { background: rgba(244,200,73,0.06); font-weight: 700; color: var(--accent); padding: 8px 10px; font-size: 12px; }
+  table.matrix tr:hover td { background: rgba(255,255,255,0.03); }
+  table.matrix tr.line-group:hover td { background: rgba(244,200,73,0.08); }
+  table.matrix td.ent-id { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px; color: var(--muted); width: 60px; }
+  table.matrix td.ent-name { color: var(--text); }
+  table.matrix td.cnt { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; text-align: center; width: 70px; color: var(--muted); }
+  table.matrix td.cnt strong { color: var(--text); }
+
+  /* ============ status pills ============ */
+  .pill { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; letter-spacing: 0.02em; line-height: 1.5; }
+  .pill.removed { background: var(--status-removed-bg); color: var(--status-removed); border: 1px solid rgba(224,123,108,0.4); }
+  .pill.added { background: var(--status-added-bg); color: var(--status-added); border: 1px solid rgba(127,200,138,0.4); }
+  .pill.changed { background: var(--status-changed-bg); color: var(--status-changed); border: 1px solid rgba(244,200,73,0.4); }
+  .pill.kept { background: var(--status-kept-bg); color: var(--status-kept); border: 1px solid rgba(154,160,170,0.3); }
+
+  /* ============ chain diagram ============ */
+  .chain-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 12px 0 24px; }
+  .chain-box { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .chain-box.before { border-left: 4px solid var(--status-removed); }
+  .chain-box.after { border-left: 4px solid var(--status-added); }
+  .chain-box h4 { margin: 0 0 8px; font-size: 13px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+  .chain-flow { font-family: 'Pretendard', 'Inter', system-ui, sans-serif; font-size: 13px; line-height: 1.7; color: var(--text); white-space: pre-wrap; padding: 12px; background: rgba(0,0,0,0.25); border-radius: 6px; }
+  .chain-flow .step { display: block; margin: 6px 0; }
+  .chain-flow .ent { font-weight: 700; color: var(--accent); }
+  .chain-flow .cond { color: var(--muted); font-size: 11.5px; font-family: 'JetBrains Mono', 'Consolas', monospace; }
+  .chain-flow .arrow { color: var(--trig-cascade); font-weight: 700; margin: 0 6px; }
+  .chain-flow .note { color: var(--muted); font-size: 11.5px; font-style: italic; }
+
+  /* ============ candidate cards ============ */
+  .cand-section { margin: 16px 0; }
+  .cand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; margin: 8px 0 16px; }
+  .cand-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; position: relative; }
+  .cand-card.removed { border-left: 4px solid var(--status-removed); }
+  .cand-card.added { border-left: 4px solid var(--status-added); }
+  .cand-card.changed { border-left: 4px solid var(--status-changed); }
+  .cand-card .cc-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+  .cand-card .cc-id { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; color: var(--accent); font-weight: 700; }
+  .cand-card .cc-type { font-size: 10.5px; padding: 1px 6px; border-radius: 4px; font-family: 'JetBrains Mono', 'Consolas', monospace; }
+  .cand-card .cc-type.npc_interjection { background: rgba(244,164,73,0.18); color: var(--trig-npc); }
+  .cand-card .cc-type.emotional_outburst { background: rgba(224,118,154,0.18); color: var(--trig-emotional); }
+  .cand-card .cc-type.judge_auto_mention { background: rgba(122,169,224,0.18); color: var(--trig-judge); }
+  .cand-card .cc-type.cascade_from_card { background: rgba(201,119,214,0.18); color: var(--trig-cascade); }
+  .cand-card .cc-type.combination_result { background: rgba(127,200,138,0.18); color: var(--trig-combo); }
+  .cand-card .cc-entity { font-size: 12.5px; color: var(--text); margin-bottom: 4px; }
+  .cand-card .cc-entity strong { color: var(--accent); }
+  .cand-card .cc-desc { font-size: 12px; color: var(--muted); line-height: 1.5; margin: 6px 0 0; }
+  .cand-card .cc-pre { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11px; color: var(--muted); margin-top: 6px; padding: 6px 8px; background: rgba(0,0,0,0.25); border-radius: 4px; white-space: pre-wrap; }
+
+  /* ============ misc ============ */
+  .note-box { background: rgba(244,200,73,0.06); border: 1px solid rgba(244,200,73,0.3); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-size: 13px; }
+  .note-box strong { color: var(--accent); }
+  .next-thread { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; margin: 20px 0; }
+  .next-thread h3 { margin-top: 0; }
+  .next-thread ul { margin: 8px 0; padding-left: 20px; }
+  .next-thread li { margin: 4px 0; color: var(--muted); font-size: 13px; }
+  .next-thread li strong { color: var(--text); }
+
+  .footer { margin: 36px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11.5px; }
+  .footer a { color: var(--accent); text-decoration: none; }
+
+  .e9-rename { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin: 12px 0; }
+  .e9-rename .rename-line { font-size: 14.5px; margin: 6px 0; }
+  .e9-rename .old { color: var(--status-removed); text-decoration: line-through; }
+  .e9-rename .arrow { color: var(--accent); font-weight: 700; margin: 0 8px; }
+  .e9-rename .new { color: var(--status-added); font-weight: 600; }
+  .e9-rename .reason { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+
+</style>
+</head>
+<body>
+
+<h1>spouse-01 narrative trigger 재편성 — 본 thread 요약</h1>
+<p class="lead">Issue 8건 + Chain 5 결정 + schema/hook 적용 + e-9 명칭 변경 완료. ScriptedText 작성은 다음 thread (script-changes.md 권위).</p>
+
+<div class="meta">
+  <span>일자 <strong>2026-05-27</strong></span>
+  <span>HEAD <strong><code>dad84af6</code></strong></span>
+  <span>직전 base <strong><code>ea109878</code></strong></span>
+  <span>main push <strong>완료</strong></span>
+  <span>검증 <strong style="color:var(--status-added)">tsc clean / qa:fast RELEASE READY (P0=0)</strong></span>
+</div>
+
+<!-- ===================== 1. 한눈 요약 ===================== -->
+<h2>한눈 요약</h2>
+
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="sc-label">폐기 candidate</div>
+    <div class="sc-value" style="color: var(--status-removed)">5개</div>
+    <div class="sc-desc">e-4 a-interject / e-4 b-interject / dc-3 a-interject / e-5 a-interjection / e-9 a-interject. <strong>「발신자 미상 문자」 「영수증 묶음 5장」 stage 1 부적절 발동 회귀 해결</strong></div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">신설 candidate</div>
+    <div class="sc-value" style="color: var(--status-added)">4개</div>
+    <div class="sc-desc">「출산 준비 도서」 e-10 candidate 1 → 3 (안 2 적용) + 「예비 부모 정서 자가진단」 e-9 b-outburst + 「시댁 얘기만 나오면 싸움」 dc-2 비자금 line cascade</div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">변경 candidate</div>
+    <div class="sc-value" style="color: var(--status-changed)">1개</div>
+    <div class="sc-desc"><code>e10-via-bookbaby-question-angle</code> → <code>e10-via-b-bookangle-interject</code>. type cascade_from_card → npc_interjection (b측 박지연 끼어들기)</div>
+  </div>
+  <div class="summary-card">
+    <div class="sc-label">e-9 evidence 명칭</div>
+    <div class="sc-value" style="color: var(--status-changed); font-size: 16px; line-height: 1.4">「산전우울증」 → 「예비 부모 정서」</div>
+    <div class="sc-desc">case.ts 20+ 매치 일괄. narrative 정합 보강 (박지연 난임 설정과 "산전우울증" 의학 충돌 해결)</div>
+  </div>
+</div>
+
+<!-- ===================== 2. Issue 8건 + Chain 5 결정 ===================== -->
+<h2>Issue 8건 + Chain 5 결정</h2>
+
+<table class="decisions">
+  <thead>
+    <tr>
+      <th style="width: 200px">Issue</th>
+      <th style="width: 280px">사용자 결정</th>
+      <th>본 thread 적용 결과</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="issue-col">Chain 5 (영수증 → 책)</td>
+      <td class="decision-col"><span class="pill added">안 2 · 추가 등장 시점</span> 박지연 끼어들기 형식. "내연녀가 임신까지 한 것 같다" + 차 콘솔박스 책 언급</td>
+      <td class="applied-col">「출산 준비 도서」 candidate 1 → 3 (b측 박지연 끼어들기 주 + dc-1 cascade 추가 + 재판관 fallback). C-3c hook 유지.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 1 (e-4 broad)</td>
+      <td class="decision-col"><span class="pill removed">안 B · 끼어들기 2개 완전 폐기</span> 「발신자 미상 문자」 = 「통화기록」 cascade + 재판관 fallback 2개만</td>
+      <td class="applied-col"><code>e4-via-a-interject</code> + <code>e4-via-b-interject</code> 폐기. 사용자 명시 회귀 해결.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 2 (유사 broad 3개)</td>
+      <td class="decision-col"><span class="pill removed">안 A · 3개 모두 폐기</span> 「발신자 미상 문자」와 일관성</td>
+      <td class="applied-col"><code>dc3-via-a-interject</code> + <code>e5-via-a-interjection</code> + <code>e9-via-a-interject</code> 폐기.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 3 (e-9 b-submit)</td>
+      <td class="decision-col"><span class="pill changed">동의 · 폐기 + 박지연 감정 폭발 candidate 신설</span> + e-9 명칭 「산전우울증」 → 「예비 부모 정서」</td>
+      <td class="applied-col"><code>e9-via-b-submit</code> 폐기 → <code>e9-via-b-outburst</code> 신설 (emotional_outburst, b측, [shaken/angry/resigned], e-8 fired + d-2 S5+). case.ts 20+ 매치 명칭 일괄 변경.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 4 (초기 evidence wrapper)</td>
+      <td class="decision-col"><span class="pill kept">초기 보유 유지 + wrapper 불필요</span></td>
+      <td class="applied-col">변경 없음. e-1 / e-2 / e-3 narrative trigger 0 유지.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 5 (e-8 chain frame)</td>
+      <td class="decision-col"><span class="pill kept">현재 구조 유지</span> + ScriptedText 보강은 다음 thread</td>
+      <td class="applied-col">변경 없음.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 6 (h-d4 진입 path)</td>
+      <td class="decision-col"><span class="pill kept">두 경로 자연 — 현재 유지</span> 비자금 chain + misdirection 무너짐 path 둘 다</td>
+      <td class="applied-col">변경 없음.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 7 (재판관 fallback)</td>
+      <td class="decision-col"><span class="pill kept">현재 차등 유지</span> entity 별 의도 보존</td>
+      <td class="applied-col">변경 없음.</td>
+    </tr>
+    <tr>
+      <td class="issue-col">Issue 8 (dc-2 cross-line)</td>
+      <td class="decision-col"><span class="pill added">비자금 사용처 line candidate 추가</span> cross-line 의도 반영</td>
+      <td class="applied-col"><code>dc2-via-cascade-d2-progression</code> 신설 (cascade_from_card, 「이준호의 비밀 개인 계좌」 등장 + d-2 S2+).</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===================== 3. 16 entity 변경 매트릭스 ===================== -->
+<h2>16 entity × candidate 변경 매트릭스</h2>
+
+<table class="matrix">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>게임 내 명칭</th>
+      <th>이전</th>
+      <th>본 thread</th>
+      <th>변경 유형</th>
+      <th>비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="line-group"><td colspan="6">외도 의심 line (d-1)</td></tr>
+    <tr><td class="ent-id">e-1</td><td class="ent-name">영수증 묶음 5장</td><td class="cnt"><strong>0</strong></td><td class="cnt"><strong>0</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">초기 player 보유 (Issue 4)</td></tr>
+    <tr><td class="ent-id">e-2</td><td class="ent-name">블랙박스 GPS 기록</td><td class="cnt"><strong>0</strong></td><td class="cnt"><strong>0</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">초기 player 보유</td></tr>
+    <tr><td class="ent-id">e-3</td><td class="ent-name">통화기록</td><td class="cnt"><strong>0</strong></td><td class="cnt"><strong>0</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">초기 player 보유</td></tr>
+    <tr><td class="ent-id">e-4</td><td class="ent-name">발신자 미상 문자</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>2</strong></td><td><span class="pill removed">-2 폐기</span></td><td class="ec-desc">a/b 끼어들기 broad 2개 폐기 (Issue 1)</td></tr>
+    <tr><td class="ent-id">dc-1</td><td class="ent-name">오피스텔의 사람들</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr><td class="ent-id">w-1</td><td class="ent-name">오피스텔 경비</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr><td class="ent-id">dc-2</td><td class="ent-name">시댁 얘기만 나오면 싸움</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>5</strong></td><td><span class="pill added">+1 신설</span></td><td class="ec-desc">cross-line 비자금 사용처 cascade 추가 (Issue 8)</td></tr>
+    <tr class="line-group"><td colspan="6">위임장 조작 line (d-2 → h-d3)</td></tr>
+    <tr><td class="ent-id">e-5</td><td class="ent-name">개인 계좌 출금 내역</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>3</strong></td><td><span class="pill removed">-1 폐기</span></td><td class="ec-desc">a 끼어들기 가장 broad 폐기 (Issue 2)</td></tr>
+    <tr><td class="ent-id">dc-3</td><td class="ent-name">이준호의 비밀 개인 계좌</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>3</strong></td><td><span class="pill removed">-1 폐기</span></td><td class="ec-desc">a 끼어들기 broad 폐기 (Issue 2)</td></tr>
+    <tr><td class="ent-id">e-7</td><td class="ent-name">공동 적금 해지 서류</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr><td class="ent-id">dc-7</td><td class="ent-name">공동 적금 2,000만 원의 해지</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr><td class="ent-id">w-2</td><td class="ent-name">은행 직원</td><td class="cnt"><strong>3</strong></td><td class="cnt"><strong>3</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">h-d3 분기만</td></tr>
+    <tr><td class="ent-id">h-d3</td><td class="ent-name">위임장 조작 (hidden)</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr class="line-group"><td colspan="6">투자방 송금 line</td></tr>
+    <tr><td class="ent-id">e-6</td><td class="ent-name">투자방 텔레그램</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr><td class="ent-id">dc-4</td><td class="ent-name">돌이키고 싶은 2,000만 원</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr><td class="ent-id">w-3</td><td class="ent-name">박미라</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr class="line-group"><td colspan="6">비자금 진실 line (h-d4 난임 치료비 진실)</td></tr>
+    <tr><td class="ent-id">e-8</td><td class="ent-name">「헤라 여성 메디컬 센터」 주차 영수증</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">Issue 5 — 현재 chain 유지 (ScriptedText 보강 다음 thread)</td></tr>
+    <tr><td class="ent-id">e-9</td><td class="ent-name"><span style="color:var(--status-removed); text-decoration:line-through; font-size:12px">산전우울증 자가진단</span> <span style="color:var(--status-added); font-weight:600">→ 예비 부모 정서 자가진단</span></td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>3</strong></td><td><span class="pill removed">-1</span> <span class="pill added">+1</span> <span class="pill changed">명칭</span></td><td class="ec-desc">a 끼어들기 폐기 + b-submit → b-outburst (감정 폭발) 신설 + 명칭 일괄 (Issue 2/3)</td></tr>
+    <tr><td class="ent-id">e-10</td><td class="ent-name">「부모가 되는 마음 연습」 출산 준비 도서</td><td class="cnt"><strong>1</strong></td><td class="cnt"><strong>3</strong></td><td><span class="pill added">+2 신설</span> <span class="pill changed">변경</span></td><td class="ec-desc">안 2 적용 — 박지연 끼어들기 형식 + dc-1 cascade 추가 + 재판관 fallback (Chain 5)</td></tr>
+    <tr><td class="ent-id">dc-8</td><td class="ent-name">이준호의 또 다른 침묵</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">—</td></tr>
+    <tr><td class="ent-id">h-d4</td><td class="ent-name">난임 치료비 진실 (hidden)</td><td class="cnt"><strong>4</strong></td><td class="cnt"><strong>4</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">Issue 6 — 두 진입 path 자연 유지</td></tr>
+    <tr class="line-group"><td colspan="6">Misdirection</td></tr>
+    <tr><td class="ent-id">d-3</td><td class="ent-name">내연녀 임신 의심 (misdirection)</td><td class="cnt"><strong>1</strong></td><td class="cnt"><strong>1</strong></td><td><span class="pill kept">유지</span></td><td class="ec-desc">e-10 fire 시 자동 dual cascade (모든 e-10 candidate 적용)</td></tr>
+  </tbody>
+</table>
+
+<div class="note-box">
+  <strong>총합:</strong> 16 entity (narrative wrapper 부착) / 65 candidate (이전) → <strong>62 candidate (현재)</strong> = -5 폐기 + 4 신설 + 1 변경.
+</div>
+
+<!-- ===================== 4. Chain 5 Before / After ===================== -->
+<h2>Chain 5 Before / After — 가장 큰 narrative 변경</h2>
+
+<p class="lead">사용자 명시 "영수증에서 책이 나오는 흐름이 부자연" → 박지연 끼어들기 형식으로 변경 + 추가 등장 시점 부착.</p>
+
+<div class="chain-compare">
+  <div class="chain-box before">
+    <h4>Before · 1 candidate (cascade)</h4>
+    <div class="chain-flow">
+<span class="step"><span class="ent">「영수증 묶음 5장」(e-1)</span></span>
+<span class="step"><span class="cond">stage 3 도달 + 박지연에게 evidence_present</span></span>
+<span class="step" style="margin-left:14px"><span class="arrow">↓ [C-3c hook]</span></span>
+<span class="step"><span class="ent">「출산 준비 도서」(e-10)</span> <span class="cond">cascade_from_card (1 candidate)</span></span>
+<span class="step" style="margin-left:14px"><span class="arrow">↓ requirePriorCardFired: e-10</span></span>
+<span class="step"><span class="ent">「내연녀 임신 의심」(d-3)</span> <span class="cond">dual emergence</span></span>
+<span class="step"></span>
+<span class="step"><span class="note">※ NPC dispassionate frame — 영수증 cascade 자동 발화</span></span>
+    </div>
+  </div>
+
+  <div class="chain-box after">
+    <h4>After · 3 candidate (박지연 끼어들기 형식)</h4>
+    <div class="chain-flow">
+<span class="step"><strong style="color:var(--status-added)">[candidate 1 · 주]</strong></span>
+<span class="step"><span class="ent">e-1</span> stage 3 + 박지연에게 제시</span>
+<span class="step" style="margin-left:14px"><span class="arrow">↓ npc_interjection (b측)</span></span>
+<span class="step"><span class="ent">「출산 준비 도서」</span> + <span class="ent">「내연녀 임신 의심」</span> dual</span>
+<span class="step"></span>
+<span class="step"><strong style="color:var(--status-added)">[candidate 2 · 추가]</strong></span>
+<span class="step"><span class="ent">「오피스텔의 사람들」(dc-1)</span> 등장 후</span>
+<span class="step"><span class="cond">+ 외도 의심 S2+ + 박지연 [방어/충격]</span></span>
+<span class="step" style="margin-left:14px"><span class="arrow">↓ npc_interjection (b측)</span></span>
+<span class="step"><span class="ent">e-10</span> + <span class="ent">d-3</span> dual</span>
+<span class="step"></span>
+<span class="step"><strong style="color:var(--status-added)">[candidate 3 · 안전망]</strong></span>
+<span class="step"><span class="ent">dc-1</span> 등장 + 외도 의심 S2+ 후 5턴</span>
+<span class="step" style="margin-left:14px"><span class="arrow">↓ judge_auto_mention</span></span>
+<span class="step"><span class="ent">e-10</span> + <span class="ent">d-3</span> dual</span>
+<span class="step"></span>
+<span class="step"><span class="note">※ C-3c hook (e-1 stage 3 게이트) 유지 · 모든 candidate fire 시 d-3 자동 cascade</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>narrative 의도:</strong> 박지연이 끼어들며 "내연녀가 임신까지 한 것 같다" + 차 콘솔박스에서 발견한 「출산 준비 도서」 언급. 박지연이 직접 능동적으로 misdirection frame ("내연녀 임신") 강화 → e-10 + d-3 동시 surface.
+</div>
+
+<!-- ===================== 5. trigger 폐기·신설·변경 카드 ===================== -->
+<h2>trigger 폐기·신설·변경 상세</h2>
+
+<div class="cand-section">
+  <h3 style="color: var(--status-removed)">폐기 (5개)</h3>
+  <div class="cand-grid">
+
+    <div class="cand-card removed">
+      <div class="cc-head"><span class="cc-id">e4-via-a-interject</span><span class="cc-type npc_interjection">npc_interjection · a</span></div>
+      <div class="cc-entity"><strong>「발신자 미상 문자」(e-4)</strong></div>
+      <div class="cc-desc">precondition broad (외도 의심 S1+ + evidence_present.b 무차별). 「영수증 묶음」 stage 1에 박지연에게 제시 → 부적절 발동 — 사용자 명시 회귀 원인.</div>
+      <div class="cc-pre">disputeLieState: d-1: S1+
+contextAction: evidence_present.b (broad)</div>
+    </div>
+
+    <div class="cand-card removed">
+      <div class="cc-head"><span class="cc-id">e4-via-b-interject</span><span class="cc-type npc_interjection">npc_interjection · b</span></div>
+      <div class="cc-entity"><strong>「발신자 미상 문자」(e-4)</strong></div>
+      <div class="cc-desc">contextAction 자체 없음 (가장 broad). 박지연 [방어/충격] 단계만으로 발동.</div>
+      <div class="cc-pre">disputeLieState: d-1: S1+
+partyPhase.b: [defensive, shaken]</div>
+    </div>
+
+    <div class="cand-card removed">
+      <div class="cc-head"><span class="cc-id">dc3-via-a-interject</span><span class="cc-type npc_interjection">npc_interjection · a</span></div>
+      <div class="cc-entity"><strong>「이준호의 비밀 개인 계좌」(dc-3)</strong></div>
+      <div class="cc-desc">precondition broad (비자금 사용처 S1+ + evidence_present.b 무차별).</div>
+      <div class="cc-pre">disputeLieState: d-2: S1+
+contextAction: evidence_present.b (broad)</div>
+    </div>
+
+    <div class="cand-card removed">
+      <div class="cc-head"><span class="cc-id">e5-via-a-interjection</span><span class="cc-type npc_interjection">npc_interjection · a</span></div>
+      <div class="cc-entity"><strong>「개인 계좌 출금 내역」(e-5)</strong></div>
+      <div class="cc-desc">contextAction 자체 없음 (가장 broad). 외도 의심 S2+ 단독으로 발동 가능.</div>
+      <div class="cc-pre">OR: [{ d-1: S2+ }] OR [{ distrust.a≥50 }]</div>
+    </div>
+
+    <div class="cand-card removed">
+      <div class="cc-head"><span class="cc-id">e9-via-a-interject</span><span class="cc-type npc_interjection">npc_interjection · a</span></div>
+      <div class="cc-entity"><strong>「예비 부모 정서 자가진단」(e-9)</strong></div>
+      <div class="cc-desc">precondition broad (e-8 fired + evidence_present.b 무차별).</div>
+      <div class="cc-pre">requirePriorCardFired: e-8
+contextAction: evidence_present.b (broad)</div>
+    </div>
+
+    <div class="cand-card removed">
+      <div class="cc-head"><span class="cc-id">e9-via-b-submit</span><span class="cc-type npc_interjection">npc_interjection · b</span></div>
+      <div class="cc-entity"><strong>「예비 부모 정서 자가진단」(e-9)</strong></div>
+      <div class="cc-desc">박지연 자기 노출 발화 의도이지만 evidence 본질이 이준호 자료라 frame 불일치. b-outburst 신설로 대체.</div>
+      <div class="cc-pre">requirePriorCardFired: e-8
+partyPhase.b: [defensive, shaken]</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="cand-section">
+  <h3 style="color: var(--status-added)">신설 (4개) — scriptedRefs 는 다음 thread 신규 등록 영역</h3>
+  <div class="cand-grid">
+
+    <div class="cand-card added">
+      <div class="cc-head"><span class="cc-id">e10-via-b-bookangle-interject</span><span class="cc-type npc_interjection">npc_interjection · b</span></div>
+      <div class="cc-entity"><strong>「출산 준비 도서」(e-10)</strong> · 주 등장</div>
+      <div class="cc-desc">「영수증 묶음 5장」 책 angle (stage 3) + 박지연에게 제시 시점 박지연 끼어들기. type cascade_from_card → npc_interjection 변경. C-3c hook 이 stage 3 게이트 강제.</div>
+      <div class="cc-pre">requirePriorCardFired: e-1
+contextAction: evidence_present.b.e-1
+(stage 3 게이트는 hook 영역)</div>
+    </div>
+
+    <div class="cand-card added">
+      <div class="cc-head"><span class="cc-id">e10-via-b-dc1-interject</span><span class="cc-type npc_interjection">npc_interjection · b</span></div>
+      <div class="cc-entity"><strong>「출산 준비 도서」(e-10)</strong> · 추가 등장</div>
+      <div class="cc-desc">「오피스텔의 사람들」 등장 후 외도 의심 강화 + 박지연 [방어/충격] 도달 시 끼어들기.</div>
+      <div class="cc-pre">requirePriorCardFired: dc-1
+disputeLieState: d-1: S2+
+partyPhase.b: [defensive, shaken]</div>
+    </div>
+
+    <div class="cand-card added">
+      <div class="cc-head"><span class="cc-id">e10-via-judge-auto</span><span class="cc-type judge_auto_mention">judge_auto_mention</span></div>
+      <div class="cc-entity"><strong>「출산 준비 도서」(e-10)</strong> · 안전망</div>
+      <div class="cc-desc">「오피스텔의 사람들」 등장 + 외도 의심 S2+ 후 5턴 fallback 재판관 자동 언급.</div>
+      <div class="cc-pre">requirePriorCardFired: dc-1
+disputeLieState: d-1: S2+
+turnsAfterEligible: 5</div>
+    </div>
+
+    <div class="cand-card added">
+      <div class="cc-head"><span class="cc-id">e9-via-b-outburst</span><span class="cc-type emotional_outburst">emotional_outburst · b</span></div>
+      <div class="cc-entity"><strong>「예비 부모 정서 자가진단」(e-9)</strong></div>
+      <div class="cc-desc">박지연 감정 폭발 — "내연녀가 임신해서 정서적으로 무너졌던 거지?" misdirection 강화 발화. 사용자 narrative 답 ("감정적으로 더 크게 폭발") 정합.</div>
+      <div class="cc-pre">requirePriorCardFired: e-8
+disputeLieState: d-2: S5+
+partyPhase.b: [shaken, angry, resigned]</div>
+    </div>
+
+    <div class="cand-card added">
+      <div class="cc-head"><span class="cc-id">dc2-via-cascade-d2-progression</span><span class="cc-type cascade_from_card">cascade_from_card</span></div>
+      <div class="cc-entity"><strong>「시댁 얘기만 나오면 싸움」(dc-2)</strong></div>
+      <div class="cc-desc">cross-line 의도 반영 — 「이준호의 비밀 개인 계좌」 등장 + 비자금 사용처 S2+ 도달 시 cascade. 기존 4 candidate 모두 외도 line 의존이었음.</div>
+      <div class="cc-pre">requirePriorCardFired: dc-3
+disputeLieState: d-2: S2+</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== 6. e-9 명칭 변경 ===================== -->
+<h2>e-9 명칭 변경 (narrative 정합 보강)</h2>
+
+<div class="e9-rename">
+  <div class="rename-line">
+    <span class="old">「산전우울증 자가진단 결과지 + 상담소 예약 확인 명세」</span>
+    <span class="arrow">→</span>
+    <span class="new">「예비 부모 정서 자가진단 결과지 + 상담소 예약 확인 명세」</span>
+  </div>
+  <div class="reason">
+    <strong>이유 (사용자 narrative 답):</strong>
+    "산전우울증" = 임신 중 우울증 의미 → 박지연이 <strong>난임</strong> (임신 불가, 출산 포기) 설정과 의학 충돌.
+    이준호가 박지연 마음 설득 위해 정서 준비 자료 자기 공부했다는 frame 정합 — <strong>「예비 부모 정서」</strong> 표현이 자연.
+    <br><br>
+    <strong>적용 영역:</strong> case.ts 20+ 매치 일괄 변경 (NPC 사실 / dispute admittedFact / allowedKeywords / surfaceClaim / answerFrame / combination / discoveryText / purpose / judgeHint 등). narrative.ts Cycle 4 주석 동기화.
+    <br><br>
+    <strong>다음 thread:</strong> ScriptedText (src/data/scriptedText/spouse-01.json + 다국어 sidecar) sync — script-changes.md 3번 영역 grep 검색 명령 참조.
+  </div>
+</div>
+
+<!-- ===================== 7. 다음 thread 안내 ===================== -->
+<h2>다음 thread 안내</h2>
+
+<div class="next-thread">
+  <h3>ScriptedText 작성 thread (다음)</h3>
+  <p class="lead">권위 자료: <code>docs/design/spouse-01-trigger-redesign/script-changes.md</code></p>
+  <ul>
+    <li><strong>1단계:</strong> 폐기된 5 candidate 의 scriptedRefs 21개 처리 — 옵션 A (삭제, 4 lang sync 필요) 또는 옵션 B (orphan 보존)</li>
+    <li><strong>2단계:</strong> 신설·변경된 4 candidate 의 신규 ref ID 등록 — 「출산 준비 도서」 3개 (현재 ref 임시 재활용 → 박지연 끼어들기 frame 발화) + e-9 b-outburst + dc-2 d-2 cascade</li>
+    <li><strong>3단계:</strong> e-9 명칭 변경 동반 sync — src/data/scriptedText/ + src/data/cases/generated/ + runtimeText.* 등 KO 영역 "산전우울증" → "예비 부모 정서"</li>
+    <li><strong>4단계:</strong> 수동 검증 — 「출산 준비 도서」 등장 3 경로 + 「발신자 미상 문자」 stage 1 부적절 발동 회귀 해결 확인</li>
+    <li><strong>5단계:</strong> 검증 (tsc + qa:fast + qa:cutscene + qa:lqa strict)</li>
+    <li><strong>6단계:</strong> commit + 다국어 thread 안내</li>
+  </ul>
+
+  <h3 style="margin-top:18px">다국어 sync thread (별도)</h3>
+  <ul>
+    <li>e-9 명칭 4언어 sync (EN/JA/ZH-CN)</li>
+    <li>폐기 scriptedRefs 4언어 entries 정리</li>
+    <li>신규 scriptedRefs 4언어 entries 등록 (KO base translation)</li>
+    <li>ledger 갱신 — <code>docs/localization/translation-batch-pending.json</code></li>
+  </ul>
+</div>
+
+<div class="footer">
+  자료 위치: <code>docs/design/spouse-01-trigger-redesign/</code> · 인벤토리 = <a href="./inventory.md">inventory.md</a> · Issue = <a href="./issues.md">issues.md</a> · 다음 thread 안내 = <a href="./script-changes.md">script-changes.md</a>
+  <br>commit <code>dad84af6</code> (2026-05-27) · 직전 base <code>ea109878</code>
+</div>
+
+</body>
+</html>
