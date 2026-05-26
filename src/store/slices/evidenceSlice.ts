@@ -52,6 +52,12 @@ export interface EvidenceSlice {
   revertEvidenceUnlock: (evidenceId: string, legacyEligibleTurn: number) => void
   /** Core narrative gate — fire 성공 시 narrativeFiredTrigger 마킹 (이후 후보 평가 skip). */
   markNarrativeFired: (evidenceId: string, triggerId: string) => void
+  /**
+   * 2026-05-26 Step 5 sub-thread — evidence stage advance event hook 영역.
+   * requires gate 우회로 evidence를 unlocked=true + narrativeFiredTrigger=triggerId로 강제 등재.
+   * narrativeSlice firedEmergences 동기화. e-1 stage 3 cascade → e-4 emerge 같은 사용 영역.
+   */
+  forceUnlockEvidence: (evidenceId: string, triggerId: string) => void
 }
 
 export interface CombinationPartnerHint {
@@ -219,6 +225,25 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
       },
     })
     // 통합 narrativeSlice 동기화 — cascade_from_card lookup pool 포함용
+    const root = get() as unknown as { markNarrativeFiredEmergence?: (id: string, triggerId: string, turn: number) => void; turnCount?: number }
+    root.markNarrativeFiredEmergence?.(evidenceId, triggerId, root.turnCount ?? 0)
+  },
+
+  forceUnlockEvidence: (evidenceId, triggerId) => {
+    const { evidenceStates } = get()
+    const state = evidenceStates[evidenceId]
+    if (!state) return
+    set({
+      evidenceStates: {
+        ...evidenceStates,
+        [evidenceId]: {
+          ...state,
+          unlocked: true,
+          narrativeFiredTrigger: triggerId,
+          narrativeLegacyEligibleTurn: state.narrativeLegacyEligibleTurn,
+        },
+      },
+    })
     const root = get() as unknown as { markNarrativeFiredEmergence?: (id: string, triggerId: string, turn: number) => void; turnCount?: number }
     root.markNarrativeFiredEmergence?.(evidenceId, triggerId, root.turnCount ?? 0)
   },

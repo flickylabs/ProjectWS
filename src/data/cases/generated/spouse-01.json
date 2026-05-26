@@ -457,7 +457,7 @@
       "investigationResults": {
         "request_original": "집에서 멀리 떨어진 동네에 각기 다른 날짜에 방문한 것으로 보여진다.",
         "check_metadata": "물품 구매 영수증들이다. 틴트, 헤어롤, 머리끈, 손거울 등 여성용 제품들이 눈에 띈다.",
-        "restore_context": "서점 영수증에서 중학생 참고서가 눈에 띈다."
+        "restore_context": "서점 영수증에서 중학생 참고서와 예비 부모 서적이 함께 눈에 띈다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -591,7 +591,7 @@
           {
             "storeName": "CU 관악봉천점",
             "storeAddr": "서울 관악구 봉천로 234",
-            "date": "2026.02.18 (화) 19:23",
+            "date": "2026.02.11 (수) 18:55",
             "items": [
               {
                 "name": "빙그레 바나나맛우유",
@@ -624,7 +624,7 @@
           {
             "storeName": "올리브영 봉천역점",
             "storeAddr": "서울 관악구 봉천로 212 2F",
-            "date": "2026.02.15 (토) 14:07",
+            "date": "2026.02.09 (월) 18:30",
             "items": [
               {
                 "name": "에뛰드 픽싱틴트 #05",
@@ -664,7 +664,7 @@
           {
             "storeName": "GS25 관악중앙점",
             "storeAddr": "서울 관악구 관악로 142",
-            "date": "2026.02.08 (토) 21:45",
+            "date": "2026.02.06 (금) 21:25",
             "items": [
               {
                 "name": "컵라면 진라면매운맛",
@@ -704,7 +704,7 @@
           {
             "storeName": "다이소 봉천점",
             "storeAddr": "서울 관악구 봉천로 201 1F",
-            "date": "2026.02.05 (수) 16:12",
+            "date": "2026.02.04 (수) 18:25",
             "items": [
               {
                 "name": "미니 손거울",
@@ -744,7 +744,7 @@
           {
             "storeName": "교보문고 강남점",
             "storeAddr": "서울 서초구 강남대로 465",
-            "date": "2026.02.12 (수) 18:30",
+            "date": "2026.02.07 (토) 14:35",
             "items": [
               {
                 "name": "중등 수학 1-1 기본+응용",
@@ -759,11 +759,18 @@
                 "unitPrice": "13,000",
                 "qty": 1,
                 "amount": "13,000"
+              },
+              {
+                "name": "예비 부모를 위한 마음 가이드",
+                "code": "978-89-9381",
+                "unitPrice": "14,000",
+                "qty": 1,
+                "amount": "14,000"
               }
             ],
-            "subtotal": "29,000",
+            "subtotal": "43,000",
             "tax": "0",
-            "total": "29,000",
+            "total": "43,000",
             "paymentMethod": "신한카드 (일시불) ****-3892",
             "suspicious": true
           }
@@ -790,7 +797,7 @@
             {
               "storeName": "CU 관악봉천점",
               "storeAddr": "서울 관악구 봉천로 234",
-              "date": "2026.02.18 (화) 19:23",
+              "date": "2026.02.11 (수) 18:55",
               "items": [
                 {
                   "name": "빙그레 바나나맛우유",
@@ -823,7 +830,7 @@
             {
               "storeName": "GS25 관악중앙점",
               "storeAddr": "서울 관악구 관악로 142",
-              "date": "2026.02.08 (토) 21:45",
+              "date": "2026.02.06 (금) 21:25",
               "items": [
                 {
                   "name": "컵라면 진라면매운맛",
@@ -882,7 +889,7 @@
             {
               "storeName": "CU 관악봉천점",
               "storeAddr": "서울 관악구 봉천로 234",
-              "date": "2026.02.18 (화) 19:23",
+              "date": "2026.02.11 (수) 18:55",
               "items": [
                 {
                   "name": "빙그레 바나나맛우유",
@@ -915,7 +922,7 @@
             {
               "storeName": "올리브영 봉천역점",
               "storeAddr": "서울 관악구 봉천로 212 2F",
-              "date": "2026.02.15 (토) 14:07",
+              "date": "2026.02.09 (월) 18:30",
               "items": [
                 {
                   "name": "에뛰드 픽싱틴트 #05",
@@ -955,7 +962,7 @@
             {
               "storeName": "GS25 관악중앙점",
               "storeAddr": "서울 관악구 관악로 142",
-              "date": "2026.02.08 (토) 21:45",
+              "date": "2026.02.06 (금) 21:25",
               "items": [
                 {
                   "name": "컵라면 진라면매운맛",
@@ -995,7 +1002,7 @@
             {
               "storeName": "다이소 봉천점",
               "storeAddr": "서울 관악구 봉천로 201 1F",
-              "date": "2026.02.05 (수) 16:12",
+              "date": "2026.02.04 (수) 18:25",
               "items": [
                 {
                   "name": "미니 손거울",
@@ -1054,7 +1061,7 @@
             {
               "storeName": "CU 관악봉천점",
               "storeAddr": "서울 관악구 봉천로 234",
-              "date": "2026.02.18 (화) 19:23",
+              "date": "2026.02.11 (수) 18:55",
               "items": [
                 {
                   "name": "빙그레 바나나맛우유",
@@ -1087,7 +1094,7 @@
             {
               "storeName": "올리브영 봉천역점",
               "storeAddr": "서울 관악구 봉천로 212 2F",
-              "date": "2026.02.15 (토) 14:07",
+              "date": "2026.02.09 (월) 18:30",
               "items": [
                 {
                   "name": "에뛰드 픽싱틴트 #05",
@@ -1127,7 +1134,7 @@
             {
               "storeName": "GS25 관악중앙점",
               "storeAddr": "서울 관악구 관악로 142",
-              "date": "2026.02.08 (토) 21:45",
+              "date": "2026.02.06 (금) 21:25",
               "items": [
                 {
                   "name": "컵라면 진라면매운맛",
@@ -1167,7 +1174,7 @@
             {
               "storeName": "다이소 봉천점",
               "storeAddr": "서울 관악구 봉천로 201 1F",
-              "date": "2026.02.05 (수) 16:12",
+              "date": "2026.02.04 (수) 18:25",
               "items": [
                 {
                   "name": "미니 손거울",
@@ -1207,7 +1214,7 @@
             {
               "storeName": "교보문고 강남점",
               "storeAddr": "서울 서초구 강남대로 465",
-              "date": "2026.02.12 (수) 18:30",
+              "date": "2026.02.07 (토) 14:35",
               "items": [
                 {
                   "name": "중등 수학 1-1 기본+응용",
@@ -1222,11 +1229,18 @@
                   "unitPrice": "13,000",
                   "qty": 1,
                   "amount": "13,000"
+                },
+                {
+                  "name": "예비 부모를 위한 마음 가이드",
+                  "code": "978-89-9381",
+                  "unitPrice": "14,000",
+                  "qty": 1,
+                  "amount": "14,000"
                 }
               ],
-              "subtotal": "29,000",
+              "subtotal": "43,000",
               "tax": "0",
-              "total": "29,000",
+              "total": "43,000",
               "paymentMethod": "신한카드 (일시불) ****-3892",
               "suspicious": true
             }
@@ -1252,8 +1266,8 @@
       "requires": [],
       "investigationResults": {
         "request_original": "2월 중 같은 좌표로 반복 이동한 흔적이 보인다.",
-        "check_metadata": "좌표를 주소와 대조했다. 자택(강남구 개포동) 외에 관악구 봉천동을 정기적으로 방문한 패턴이 드러난다.",
-        "restore_context": "봉천동 도착부터 다시 출발까지의 체류 시간을 집중해서 보면 매번 2시간 안팎이다."
+        "check_metadata": "좌표를 주소와 대조했다. 직장(강남구 역삼동) 외에 관악구 봉천동을 정기적으로 방문한 패턴이 드러난다.",
+        "restore_context": "봉천동 도착부터 다시 출발까지의 체류 시간을 집중해서 보면 매번 2시간 안팎이다. 2월 7일 토요일 오전에는 강남구 영역 종합 산부인과 방문 흔적도 보인다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -1390,6 +1404,8 @@
           { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 03분)", "suspicious": true  },
           { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
           { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 18분)", "suspicious": true  },
+          { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 도착", "suspicious": true  },
+          { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 출발 (체류 1시간 00분)", "suspicious": true  },
           { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
           { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 1시간 51분)", "suspicious": true  },
           { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
@@ -1416,30 +1432,40 @@
             "redactions": []
           },
           "gps_log": [
-            { "timestamp": "02.13 (금) 18:33", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.13 (금) 18:33", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.13 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.11 (수) 18:47", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.11 (수) 18:30", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.11 (수) 18:55", "lat": "37.4862", "lng": "126.9425", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.09 (월) 18:38", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.11 (수) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.09 (월) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.09 (월) 18:30", "lat": "37.4860", "lng": "126.9410", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:48", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.06 (금) 18:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.09 (월) 21:52", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 11:55", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 14:00", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 14:45", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 15:15", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.06 (금) 18:51", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:36", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.04 (수) 18:35", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.06 (금) 21:25", "lat": "37.4830", "lng": "126.9510", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.06 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.04 (수) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.04 (수) 18:25", "lat": "37.4853", "lng": "126.9395", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.02 (월) 18:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.04 (수) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.02 (월) 18:42", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
             { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "?????", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:46", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false }
+            { "timestamp": "02.02 (월) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "?????", "suspicious": false }
           ]
         },
         "2": {
@@ -1459,30 +1485,40 @@
             "redactions": []
           },
           "gps_log": [
-            { "timestamp": "02.13 (금) 18:33", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.13 (금) 18:33", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
             { "timestamp": "02.13 (금) 19:00", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.13 (금) 21:28", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.13 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.11 (수) 18:47", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.11 (수) 18:30", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
+            { "timestamp": "02.11 (수) 18:55", "lat": "37.4862", "lng": "126.9425", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.11 (수) 19:13", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.11 (수) 21:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.09 (월) 18:38", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.11 (수) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.09 (월) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
+            { "timestamp": "02.09 (월) 18:30", "lat": "37.4860", "lng": "126.9410", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.09 (월) 21:48", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.06 (금) 18:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.09 (월) 21:52", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.07 (토) 11:55", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
+            { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 14:00", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 14:45", "lat": "37.4994", "lng": "127.0277", "speed": "0 km/h", "location": "?????", "suspicious": false },
+            { "timestamp": "02.07 (토) 15:15", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
+            { "timestamp": "02.06 (금) 18:51", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
             { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.06 (금) 21:36", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.04 (수) 18:35", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.06 (금) 21:25", "lat": "37.4830", "lng": "126.9510", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
+            { "timestamp": "02.06 (금) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.04 (수) 18:00", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
+            { "timestamp": "02.04 (수) 18:25", "lat": "37.4853", "lng": "126.9395", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.04 (수) 21:25", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.04 (수) 21:51", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
-            { "timestamp": "02.02 (월) 18:42", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.04 (수) 21:55", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false },
+            { "timestamp": "02.02 (월) 18:42", "lat": "37.5006", "lng": "127.0364", "speed": "0 km/h", "location": "강남구 역삼동 (직장)", "suspicious": false },
             { "timestamp": "02.02 (월) 19:08", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
             { "timestamp": "02.02 (월) 21:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "관악구 봉천동", "suspicious": false },
-            { "timestamp": "02.02 (월) 21:46", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false }
+            { "timestamp": "02.02 (월) 21:50", "lat": "37.4865", "lng": "127.0521", "speed": "0 km/h", "location": "강남구 개포동 (자택)", "suspicious": false }
           ]
         },
         "3": {
@@ -1497,7 +1533,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 3,
-            "stageLabel": "3단계 — 봉천동 도착~출발 시간",
+            "stageLabel": "3단계 — 봉천동 도착~출발 시간 + 산부인과 단발 방문",
             "sourceNote": "institutional / original",
             "redactions": []
           },
@@ -1508,6 +1544,8 @@
             { "timestamp": "02.11 (수) 21:16", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 03분)", "suspicious": true  },
             { "timestamp": "02.09 (월) 19:04", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
             { "timestamp": "02.09 (월) 21:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 2시간 18분)", "suspicious": true  },
+            { "timestamp": "02.07 (토) 12:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 도착", "suspicious": true  },
+            { "timestamp": "02.07 (토) 13:30", "lat": "37.5176", "lng": "127.0473", "speed": "0 km/h", "location": "★ 종합 산부인과 출발 (체류 1시간 00분)", "suspicious": true  },
             { "timestamp": "02.06 (금) 19:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
             { "timestamp": "02.06 (금) 21:09", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 출발 (체류 1시간 51분)", "suspicious": true  },
             { "timestamp": "02.04 (수) 19:01", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 도착", "suspicious": true  },
@@ -2258,18 +2296,21 @@
       },
       "narrativeTriggers": [
         {
-          "id": "e4-via-cascade",
+          "id": "e4-via-e3-stage2",
           "type": "cascade_from_card",
           "preconditions": {
             "disputeLieState": {
               "d-1": "S1+"
             },
-            "requirePriorCardFired": "e-3"
+            "requirePriorCardFired": "e-3",
+            "contextAction": "evidence_present.b.e-3"
           },
           "scriptedRefs": [
-            "emerge-e4-via-cascade-judge-mention-v1",
-            "emerge-e4-via-cascade-b-response-v1",
-            "emerge-e4-via-cascade-judge-decree-v1"
+            "emerge-e4-via-e3-stage2-judge-q1-v1",
+            "emerge-e4-via-e3-stage2-b-hedge-v1",
+            "emerge-e4-via-e3-stage2-a-reveal-v1",
+            "emerge-e4-via-e3-stage2-b-confess-v1",
+            "emerge-e4-via-e3-stage2-judge-q2-v1"
           ],
           "vfxProfile": "standard"
         },
@@ -3727,21 +3768,18 @@
       ],
       "narrativeTriggers": [
         {
-          "id": "e10-via-cascade-from-e1",
+          "id": "e10-pending-c3-redesign",
           "type": "cascade_from_card",
           "preconditions": {
             "disputeLieState": {
-              "d-1": "S2+"
+              "d-1": "S5+"
             },
-            "requirePriorCardFired": "e-1"
+            "requirePriorCardFired": "pending-c3-bookbabytrigger"
           },
           "scriptedRefs": [
-            "emerge-e10-via-cascade-judge-mention-v1",
-            "emerge-e10-via-cascade-a-react-v1",
-            "emerge-e10-via-cascade-b-response-v1",
-            "emerge-e10-via-cascade-judge-decree-v1"
+            "emerge-e10-via-cascade-judge-mention-v1"
           ],
-          "vfxProfile": "cutscene_dual_emergence"
+          "vfxProfile": "standard"
         }
       ]
     }

@@ -1123,6 +1123,53 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
 
+  // 2026-05-26 Step 5 sub-thread (C-2 재설계) — spouse-01 e-3 stage 2 + present to b → e-4 cascade emerge.
+  //   evidence stage advance event hook 영역. requires gate 우회.
+  //   조건: spouse-01 사건 / e-3 (통화기록)을 b에게 제시 / e-3 latestStage >= 2 / e-4 미발동 + 미해금.
+  //   발동 시 attemptNarrativeForEvidence(e-4)가 5단계 dialogue 자동 발행 + e-4 forceUnlock + popup.
+  //   narrative frame: 발신자 미상 번호 인지 시점에 a(박지연) interjection으로 휴대폰 본 사실 폭로
+  //     → e-4 (발신자 미상 문자) 정식 등재.
+  if (
+    action.evidenceId === 'e-3' &&
+    action.target === 'b' &&
+    normalizeCaseKey(state.caseData?.caseId ?? '') === 'spouse-01'
+  ) {
+    const e3State = useGameStore.getState().evidenceStates['e-3']
+    const e3Stages = Array.isArray(evDef?.investigationStages) ? evDef.investigationStages : []
+    const e3Investigated = Array.isArray(e3State?.investigatedActions) ? e3State.investigatedActions : []
+    const e3LatestStage = e3Stages
+      .filter((s: UnsafeAny) => e3Investigated.includes(s.revealKey))
+      .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
+      .at(-1)?.stage ?? 0
+    if (e3LatestStage >= 2) {
+      const fresh = useGameStore.getState() as UnsafeAny
+      const e4Def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === 'e-4')
+      const e4State = fresh.evidenceStates['e-4']
+      if (e4Def && !e4State?.narrativeFiredTrigger && !e4State?.unlocked) {
+        const attempt = attemptNarrativeForEvidence({
+          evidenceDef: e4Def,
+          currentTurn: state.turnCount,
+          lastActionContext: buildActionContext(action),
+          firedTrigger: e4State?.narrativeFiredTrigger,
+          legacyEligibleTurn: e4State?.narrativeLegacyEligibleTurn,
+        })
+        if (attempt) {
+          fresh.forceUnlockEvidence?.('e-4', attempt.triggerId)
+          const e4DisplayName = getEvidenceDisplayName(e4Def, useGameStore.getState().evidenceStates['e-4'])
+          enqueueNewEvidenceCutscene('e-4', {
+            body: `${e4DisplayName}${pp이가(e4DisplayName)} 새로 등재되었습니다.`,
+          })
+          state.addDialogue({
+            speaker: 'system',
+            text: `새로운 증거를 손에 넣었다 — ${e4DisplayName}`,
+            relatedDisputes: e4Def.proves,
+            turn: state.turnCount,
+          })
+        }
+      }
+    }
+  }
+
   // V2: 증거 제시 → misconception 전이 시도
   {
     const v2CaseId = normalizeCaseKey(state.caseData?.caseId ?? '')

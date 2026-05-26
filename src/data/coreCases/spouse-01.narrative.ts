@@ -543,17 +543,26 @@ export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const e4NarrativeTriggers: NarrativeTriggerCandidate[] = [
+  /**
+   * 2026-05-26 Step 5 sub-thread (C-2 재설계) — e-3 통화기록 stage 2 (발신자 미상 번호
+   * 인지) 도달 후 player가 e-3을 b(이준호)에게 제시하는 시점에 발동되는 5단계 narrative.
+   * 박지연 a interjection으로 휴대폰 본 사실 폭로 → e-4 (발신자 미상 문자) 정식 등재.
+   * stage 2 gate는 useActionDispatch.evidence_present.b.e-3 처리 영역에서 검사.
+   */
   {
-    id: 'e4-via-cascade',
+    id: 'e4-via-e3-stage2',
     type: 'cascade_from_card',
     preconditions: {
       requirePriorCardFired: 'e-3',
+      contextAction: 'evidence_present.b.e-3',
       disputeLieState: { 'd-1': 'S1+' },
     },
     scriptedRefs: [
-      'emerge-e4-via-cascade-judge-mention-v1',
-      'emerge-e4-via-cascade-b-response-v1',
-      'emerge-e4-via-cascade-judge-decree-v1',
+      'emerge-e4-via-e3-stage2-judge-q1-v1',
+      'emerge-e4-via-e3-stage2-b-hedge-v1',
+      'emerge-e4-via-e3-stage2-a-reveal-v1',
+      'emerge-e4-via-e3-stage2-b-confess-v1',
+      'emerge-e4-via-e3-stage2-judge-q2-v1',
     ],
     vfxProfile: 'standard',
   },

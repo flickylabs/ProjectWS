@@ -114,6 +114,80 @@
             "callDurationMessage: '통화시간·메시지' → '통화시간'"
           ],
           "note": "LogViewer 4번째 column header. KO 권위 '통화시간'으로 단순화. 통화/메시지 영역 통합 column이 아니라 통화 길이만 표시. EN/JA/ZH-CN 4언어 sync 필요 (영역: EN 'Call Time/Message' → 'Call Time', JA '通話時間·メッセージ' → '通話時間', ZH-CN '通话时间·消息' → '通话时间'). visit log (e-5 등) 영역에는 별도 'duration' key 사용 영역이라 본 변경의 visit 영역 회귀 X."
+        },
+        {
+          "file": "src/data/scriptedText/spouse-01.json",
+          "path": "channels.emergence_narrative.entries[key=emerge-e-4].variants (신규 5건: emerge-e4-via-e3-stage2-*)",
+          "type": "신설",
+          "koTexts": [
+            "Step 1 (judge → b): 이준호 씨, 이 번호로 새벽에 짧게 오간 통화는 누구와 한 것입니까?",
+            "Step 2 (b → judge): 사정이 있습니다. 다만, 누구와의 통화인지 지금 말씀드리기는 어렵습니다.",
+            "Step 3 (a → judge, interjection): 외도 대상이 구입을 부탁하는 문자가 있었습니다.",
+            "Step 4 (b → a/judge, mixed register): 내 문자도 본 거야? 재판관님, 부탁을 받고 구입한 건 맞지만 외도는 아닙니다.",
+            "Step 5 (judge → b): 이준호 씨, 그럼 그 문자 내역을 보여주실 수 있을까요?"
+          ],
+          "note": "C-2 재설계 — 사용자 manual 검증에서 'e-1 영수증은 발신자 미상 문자와 연결고리 약함, 본래 통화기록(e-3) 조사 시점에 박지연 interjection으로 e-4 emerge가 맞음' 결정. 본래 e-1 stage 3 cascade로 작성된 5단계 narrative를 e-3 stage 2 cascade로 재활용. Step 1+2 = e-3 (통화기록 발신자 미상 번호) 맥락에 맞게 재작성, Step 3/4/5 = 사용자 명시본 그대로. e-3 stage 2 (발신자 미상 번호 인지) 도달 후 player가 e-3을 b(이준호)에게 제시하는 시점에 발동. Step 3 박지연 발화 frame (a) — 박지연이 이준호 휴대폰을 봤다 (본 발화로 폭로). Step 4 이준호 발화 '내 문자도 본 거야?'는 부부 직접 발화 반말 영역 (Cycle 4 h-d4 '자기야' 정책 동일). 발동 직후 system이 e-4 (발신자 미상 문자) 등재 (vfxProfile: standard). 다국어 sync 시 register mix (informal→formal) 영역 주의. behaviorHint는 KO만 추가 — 다국어 sync 불필요 (UI 비노출 영역). 기존 e4-via-cascade 3 step (emerge-e4-via-cascade-judge-mention/b-response/judge-decree-v1) entry는 폐기됐으나 scriptedText에 unused로 남아있음 — 다국어 sync 작업 영역 외."
+        },
+        {
+          "file": "src/data/coreCases/spouse-01.narrative.ts + src/data/cases/generated/spouse-01.json",
+          "path": "e4NarrativeTriggers / evidence[id=e-4].narrativeTriggers — e4-via-cascade (e-3 cascade 3 step) 폐기 + 신규 e4-via-e3-stage2 candidate",
+          "type": "신설/폐기",
+          "koTexts": [
+            "scriptedRefs 5건: emerge-e4-via-e3-stage2-judge-q1-v1 / -b-hedge-v1 / -a-reveal-v1 / -b-confess-v1 / -judge-q2-v1"
+          ],
+          "note": "기존 e4-via-cascade (cascade_from_card requirePriorCardFired:'e-3', 3 step) 폐기 + 신규 e4-via-e3-stage2 (cascade_from_card requirePriorCardFired:'e-3', contextAction:'evidence_present.b.e-3', disputeLieState:{d-1:S1+}, 5 step) 대체. e-3 stage 2 gate는 useActionDispatch.evidence_present.b.e-3 처리 영역에서 별도 검사 (forceUnlockEvidence helper 신설). 기존 e4-via-a-interject + e4-via-b-interject + e4-via-judge-auto 3 candidate는 유지 (First-Fired-Wins). KO 권위 변경 없음 (메타데이터만)."
+        },
+        {
+          "file": "src/data/coreCases/spouse-01.case.ts + src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-10].narrativeTriggers — e10-via-cascade-from-e1 폐기 + dummy e10-pending-c3-redesign 무력화",
+          "type": "수정",
+          "koTexts": [],
+          "note": "C-1 임시 무력화 — 기존 e10-via-cascade-from-e1 (requirePriorCardFired:'e-1' + d-1:S2+ + cutscene_dual_emergence)은 e-1 시작 시 unlock + d-1 S2+ 도달 시점에 즉시 발동되어 사용자 manual 검증에서 'e-1 stage 1에서 e-10 emerge' 회귀로 경험. 사용자 결정으로 본 trigger 임시 무력화 — C-3 (B 영역 육아서적 추가 후 별도 sub-thread)에서 e-1 stage 3 + 육아서적 cascade로 신규 설계 예정. 무력화 방법 = 만족 불가능한 placeholder requirePriorCardFired:'pending-c3-bookbabytrigger' + d-1:S5+. KO 권위 변경 없음 (precondition + scriptedRefs 메타데이터만). scriptedText 4 entry (emerge-e10-via-cascade-judge-mention/a-react/b-response/judge-decree-v1)는 unused로 유지 — C-3 재활용 가능."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-1].investigationResults.restore_context + viewerData.receipt + viewerDataByStage.{1,2,3}.receipt — B-3 sub-thread (영수증 일자 재구성 + 교보문고 육아 서적 추가)",
+          "type": "수정",
+          "koTexts": [
+            "investigationResults.restore_context: '서점 영수증에서 중학생 참고서가 눈에 띈다.' → '서점 영수증에서 중학생 참고서와 예비 부모 서적이 함께 눈에 띈다.'",
+            "교보문고 영수증 items 신규 1행 추가: name '예비 부모를 위한 마음 가이드' / code '978-89-9381' / unitPrice '14,000' / amount '14,000' (subtotal/total 29,000 → 43,000)",
+            "영수증 5장 일자 재구성 (GPS 봉천 방문 chain 정합): CU 2/18(화) 19:23 → 2/11(수) 18:55 / GS25 2/8(토) 21:45 → 2/6(금) 21:25 / 다이소 2/5(수) 16:12 → 2/4(수) 18:25 / 올리브영 2/15(토) 14:07 → 2/9(월) 18:30 / 교보 2/12(수) 18:30 → 2/7(토) 14:35"
+          ],
+          "note": "B-3 + B-2 일자 재구성 sub-thread. GPS 봉천 방문 6일(월/수/금) chain과 영수증 일자 정합 — 봉천 매장 4장은 봉천 방문일 중 4일에 경유 형태로 매핑 (직장→경유→봉천 또는 봉천→경유→자택), 교보문고는 별도 2/7 토요일 산부인과 동행 chain. '예비 부모를 위한 마음 가이드' 영역 = e-1 stage 3 reveal text 강화 (C-3 cascade trigger 재설계 영역, 본 sub-thread X) 후속 기반. 영수증 매장명/주소/상품명 자체 KO 변경 없음 (date string + 신규 1행만 변경 영역 sync 대상)."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-2].investigationResults + viewerData.gps_log + viewerDataByStage.{1,2,3}.gps_log — B-1+B-2 sub-thread (자택→직장 frame + 산부인과 2/7 chain + 경유지 row 추가)",
+          "type": "수정",
+          "koTexts": [
+            "investigationResults.check_metadata: '자택(강남구 개포동) 외에 관악구 봉천동을 정기적으로 방문한 패턴이 드러난다.' → '직장(강남구 역삼동) 외에 관악구 봉천동을 정기적으로 방문한 패턴이 드러난다.'",
+            "investigationResults.restore_context: 산부인과 reveal 추가 — '봉천동 도착부터 다시 출발까지의 체류 시간을 집중해서 보면 매번 2시간 안팎이다. 2월 7일 토요일 오전에는 강남구 영역 종합 산부인과 방문 흔적도 보인다.'",
+            "stageLabel stage 3: '3단계 — 봉천동 도착~출발 시간' → '3단계 — 봉천동 도착~출발 시간 + 산부인과 단발 방문'",
+            "viewerData.gps_log (base, 14 row): 봉천 도착/출발 12 row + 산부인과 도착/출발 2 row 신규 / location 신규 '★ 종합 산부인과 도착' / '★ 종합 산부인과 출발 (체류 1시간 00분)'",
+            "viewerDataByStage[1] (좌표만, 34 row): 출발지 좌표 자택(37.4865/127.0521) → 직장(37.5006/127.0364) frame 변경 + 봉천 매장 경유 4 row 신규 + 2/7 산부인과 chain 6 row 신규 (모두 location '?????')",
+            "viewerDataByStage[2] (주소 표시, 34 row): location 자택 출발 row → '강남구 역삼동 (직장)' / 경유 row → '관악구 봉천동' / 산부인과/교보 row → '?????' (사용자 결정: stage 2는 봉천만 reveal)",
+            "viewerDataByStage[3] (강조, 14 row): 봉천 도착/출발 12 row keep + 산부인과 도착/출발 2 row 신규"
+          ],
+          "note": "B-1 (자택→직장 frame) + B-2 (산부인과 chain + 경유지 row + 영수증 시각 정합) sub-thread. 출발지 frame 정책 = '각 출발지 = 직장 (가전제품 매장, 강남구 역삼동)', 복귀는 자택 keep. 2/7 토요일 = 직장 출발 (가전제품 매장 토 영업 frame) + 산부인과 단독 면회 (상대 방문, 동행자 frame X — narrative 영역 별도 처리 [[design-spouse01-truth-disclosure-policy]] 정책 정합). 좌표 영역: 직장 37.5006/127.0364 / 산부인과 37.5176/127.0473 / 교보 37.4994/127.0277 / 봉천 매장 봉천동 영역 내 인접 좌표 (다이소 37.4853/126.9395 / 올리브영 37.4860/126.9410 / CU 37.4862/126.9425 / GS25 37.4830/126.9510). 산부인과 reveal 정책: stage 2 = 봉천만 (사용자 결정), stage 3 = 산부인과 추가 reveal. truth-leak 영역 정합: '종합 산부인과' surface 표기만 사용 (방문자 신원/관계 미명시) — [[design-spouse01-truth-disclosure-policy]] 위반 영역 X."
+        }
+      ]
+    },
+    {
+      "caseId": "ui-system",
+      "context": "설정 화면(PCSettingsView) ABOUT + SUPPORT 카드 추가 — Discord 커뮤니티 링크 도입",
+      "openedAt": "2026-05-26",
+      "changes": [
+        {
+          "file": "src/i18n/messages/settings.ts",
+          "path": "settings.support.*",
+          "type": "신설",
+          "koTexts": [
+            "settings.support.title: 고객 센터",
+            "settings.support.discord: Discord 커뮤니티",
+            "settings.support.discordDesc: 공지 · 문의 · 버그 제보 · 신규 기능 제안",
+            "settings.support.discordButton: 참여하기"
+          ],
+          "note": "설정 창 SUPPORT 카드 4 신규 KO 키. EN/JA/ZH-CN은 placeholder 직역 동시 반영 (Support / サポート / 客户支持 등) — 다음 batch에서 자연스러운 표현 polish 의뢰 권장. Discord URL = https://discord.gg/7mUjFGdcN (코드 상수, i18n 영역 X)."
         }
       ]
     }

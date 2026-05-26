@@ -2431,22 +2431,25 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'challenged', summary: ko('A가 "누구를 위한 책이냐"고 의심 / B가 본인 필기를 근거로 본인 자료라고 주장.') },
         { id: 'misread', summary: ko('도서·필체는 인증되지만 진짜 목적은 심문과 맥락으로 확정.') },
       ],
+      /**
+       * 2026-05-26 C-1 (Step 5 sub-thread) — 기존 e10-via-cascade-from-e1 (requirePriorCardFired:'e-1' +
+       * disputeLieState:{'d-1':'S2+'})는 e-1 시작 시 unlock + d-1 S2+ 도달 시점에 즉시 발동되어
+       * 사용자가 e-1 stage 1에서 e-10 emerge로 경험하는 회귀 발생. 사용자 결정으로 본 trigger 임시
+       * 무력화 — C-3 (B 영역 육아서적 추가 후 별도 sub-thread)에서 e-1 stage 3 + 육아서적 cascade로
+       * 신규 설계 예정. 무력화 방법 = 만족 불가능한 placeholder requirePriorCardFired.
+       */
       narrativeTriggers: [
         {
-          id: 'e10-via-cascade-from-e1',
+          id: 'e10-pending-c3-redesign',
           type: 'cascade_from_card',
           preconditions: {
-            requirePriorCardFired: 'e-1',
-            disputeLieState: { 'd-1': 'S2+' },
+            requirePriorCardFired: 'pending-c3-bookbabytrigger',
+            disputeLieState: { 'd-1': 'S5+' },
           },
           scriptedRefs: [
             'emerge-e10-via-cascade-judge-mention-v1',
-            'emerge-e10-via-cascade-a-react-v1',
-            'emerge-e10-via-cascade-b-response-v1',
-            'emerge-e10-via-cascade-judge-decree-v1',
           ],
-          /** 컷씬급 — e-10 + d-3 동시 emergence cutscene 한 번 발동. */
-          vfxProfile: 'cutscene_dual_emergence',
+          vfxProfile: 'standard',
         },
       ],
     },
