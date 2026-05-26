@@ -1,0 +1,112 @@
+{
+  "version": "1.0",
+  "description": "KO 권위 수정 시 다국어 sync 필요 변경을 누적 기록. 사건 단위 batch 의뢰 정책 (memory: feedback-translation-batch-accumulate, 2026-05-26).",
+  "policy": "사건 전체 작업 완료 시 batch를 self-contained 폴더로 묶어 Codex 의뢰. 의뢰 완료 시 해당 batch 항목 제거.",
+  "ledgerSchema": {
+    "caseId": "사건 ID (spouse-01 / family-01 / friend-01)",
+    "context": "batch 작업 영역 요약",
+    "openedAt": "YYYY-MM-DD",
+    "changes": [
+      {
+        "file": "변경 파일 경로",
+        "path": "JSON path 또는 line range",
+        "type": "신설 | 수정 | 폐기",
+        "koTexts": ["KO 권위 텍스트 (다국어 sync 대상)"],
+        "note": "변경 컨텍스트 / 의도 / 다국어 영역 주의사항"
+      }
+    ]
+  },
+  "batches": [
+    {
+      "caseId": "spouse-01",
+      "context": "evidence stage system 정비 (e-1/e-2/e-3/e-4 단계 시스템 + e-1 cascade narrative 5단계 대화 재설계 + e-4 emerge frame 변경)",
+      "openedAt": "2026-05-26",
+      "changes": [
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-1].investigationResults",
+          "type": "수정",
+          "koTexts": [
+            "request_original: 집에서 멀리 떨어진 동네에 각기 다른 날짜에 방문한 것으로 보여진다.",
+            "check_metadata: 물품 구매 영수증들이다. 틴트, 헤어롤, 머리끈, 손거울 등 여성용 제품들이 눈에 띈다.",
+            "restore_context: 서점 영수증에서 중학생 참고서가 눈에 띈다."
+          ],
+          "note": "1단계 reveal frame 변경 (외도 단서 핵심 → 동네 방문 패턴 단서). 2단계 reveal에 다이소 머리끈/손거울 추가 (사용자 frame 정합). 3단계 reveal은 서점 참고서로 응축."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-1].viewerDataByStage",
+          "type": "신설",
+          "koTexts": [
+            "stage 1 meta.name: 영수증 묶음 (2장 확인) / stageLabel: 1단계 — 우선 보이는 영수증 2장",
+            "stage 2 meta.name: 영수증 묶음 (4장 대조) / stageLabel: 2단계 — 추가 매장 영수증까지 합산 4장",
+            "stage 3 meta.name: 영수증 묶음 (5장 전체) / stageLabel: 3단계 — 5장 전체 확인"
+          ],
+          "note": "단계별 점진 공개 receipt 배열 (1=CU+GS25 2장 / 2=+올리브영+다이소 4장 / 3=+교보문고 5장). receipt 본문은 기존 viewerData receipt에서 재배치 — 매장명/상품명/주소/금액 등 KO 권위 변경 없음. base viewerData에 임시 추가했던 '예비 부모를 위한 마음 가이드' 항목 제거 (사용자 명시 외 영역, e-10 cascade 영역 별도)."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-4].investigationResults",
+          "type": "수정",
+          "koTexts": [
+            "request_original: 저장되지 않은 번호와 주고받은 문자이다. 이미 알고 있는 사이로 보인다.",
+            "check_metadata: 상대는 박지연에 대해 알고 있는 듯하다. 영수증 속 물품들의 구입 동기도 드러난다.",
+            "restore_context: 이준호가 상대방의 아이를 돌봐주는 듯한 정황이 보인다."
+          ],
+          "note": "1단계 frame을 '저장되지 않은 번호 + 이미 알고 있는 사이'로 변경 (외도 의심에서 친분 frame). 2단계는 박지연 인지 + 영수증 물품 동기 단서. 3단계는 아이 돌봄 정황 — e-1 stage 3 참고서 reveal과 cascade 정합."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-4].viewerData.chat.messages + viewerDataByStage",
+          "type": "신설/수정",
+          "koTexts": [
+            "stageLabel: '1월 23일 (금)' / '1월 30일 (금)' / '2월 7일 (월)'",
+            "meta.name: '발신자 미상 문자 (1월 23일)' / '(1월 30일)' / '(2월 7일)'",
+            "stage 1 messages (1월 23일, 00:42~00:45): '나야. 당분간 이 번호로 연락할께.' / '응.' / '혹시 모르니 번호 저장은 하지 마.' / '응. 몸은 괜찮은 거지?' / '응. 항상 고마워.' / '고맙긴 뭘...' / '그럼 부탁할께.' / '응.'",
+            "stage 2 messages (1월 30일, 01:21~01:25): '매번 고마워. 다음 주도 부탁할께.' / '응. 필요한 건 없어?' / '아, 얘기 했던 것들 좀 부탁할께.' / '응, 적어놨어. 월요일에 사갈께.' / '집에서는 뭐라 안해?' / '어차피 요새 사이 안좋아서 관심도 없어. 걱정 마.' / '응... 미안하고 고마워...' / '그런 말 하지 마.'",
+            "stage 3 messages (2월 7일, 01:08~01:12): '얘기 들었어. 미안해.' / '괜찮아. 애들이 다 그렇지 뭐.' / '요새 사춘기인 것 같아.' / '안그래도 힘들겠지...' / '얼마 전부터 성적 스트레스도 있나봐.' / '그럼 내가 공부를 좀 봐줄까?' / '그럴 시간이 어딨어? 마음만으로도 고마워.' / '일단 참고서 좀 사갈께. 해보고 결정하지 뭐.'"
+          ],
+          "note": "기존 viewerData.chat.messages 14건 폐기 + 신규 3 stages × 8건 신설. base는 stage 3 (가장 완성) 영역. 새 field 'time' 추가 (HH:MM 새벽 시간대, 5분 이내 묶음). header = '010-****-3847' 모든 stage 동일. 발신자 미상 = 끝번호 3847."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-3].investigationResults + meta.name + viewerData.log + viewerDataByStage",
+          "type": "수정/신설",
+          "koTexts": [
+            "meta.name: '통화기록' → '통화 기록 대장 - 2월'",
+            "request_original: 2월 통화 기록 중 반복적인 통화 내역이 보인다.",
+            "check_metadata: 통화가 잦은 번호를 저장된 번호와 대조를 해보니 아내, 어머니, 직장 외 발신자 미상 번호가 존재한다.",
+            "restore_context: 발신자 미상 번호 역시 통화 시간이 짧아 보인다.",
+            "stageLabel 1: '1단계 — 일자/시각/분류/번호/통화 시간'",
+            "stageLabel 2: '2단계 — 저장된 번호와 대조 (상대 이름 표시)'",
+            "stageLabel 3: '3단계 — 발신자 미상 번호(3847) 하이라이트'",
+            "note (stage 1): '2월 통화 기록 — 반복적인 통화 흔적이 보인다.'",
+            "note (stage 2): '저장된 번호와 대조 — 아내, 어머니, 직장 외 발신자 미상 번호가 존재한다.'",
+            "note (stage 3): '발신자 미상 번호 (010-****-3847)와의 통화가 새벽·낮 모두 반복적으로 확인됨. 통화 시간은 매번 0:30~2분 사이로 짧음.'",
+            "target labels (stage 1): 번호만 (010-****-7720) — 이름 없음",
+            "target labels (stage 2+3): 번호 + 이름 (010-****-7720 (아내), 010-****-0551 (어머니), 02-****-3441 (직장))"
+          ],
+          "note": "통화 기록 22건 (기존 14건 → 13건 날짜 재정렬 + 9건 신규 + 1건 폐기). 3847 통화 5건 시간 0:30~2분으로 일괄 조정. 단계별 viewer 차등: 1단계=익명 / 2단계=이름 / 3단계=3847 하이라이트(suspicious flag). '통화시간·메시지' → '통화시간' column header 변경은 LogViewer i18n 영역 (UI 작업 후속)."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json",
+          "path": "evidence[id=e-2].investigationResults + meta.name + viewerData.gps_log + viewerDataByStage",
+          "type": "수정/신설",
+          "koTexts": [
+            "meta.name: '블랙박스 GPS 기록' → '블랙박스 GPS 2월'",
+            "request_original: 2월 중 같은 좌표로 반복 이동한 흔적이 보인다.",
+            "check_metadata: 좌표를 주소와 대조했다. 자택(강남구 개포동) 외에 관악구 봉천동을 정기적으로 방문한 패턴이 드러난다.",
+            "restore_context: 봉천동 도착부터 다시 출발까지의 체류 시간을 집중해서 보면 매번 2시간 안팎이다.",
+            "stageLabel 1: '1단계 — 좌표만'",
+            "stageLabel 2: '2단계 — 주소 확인'",
+            "stageLabel 3: '3단계 — 봉천동 도착~출발 시간'",
+            "location labels (stage 1): '37.4865, 127.0521' / '37.4962, 126.9461' (좌표만, 주소 없음)",
+            "location labels (stage 2): '강남구 개포동 (자택)' / '관악구 봉천동'",
+            "location labels (stage 3): '★ 봉천동 도착' / '★ 봉천동 출발 (체류 2시간 28분)' 등"
+          ],
+          "note": "기존 망원동 자택 frame 폐기 → 강남구 개포동 자택. 2026.02 중 월/수/금 6일 봉천동 정기 방문 (18:30~22:00 안팎, 체류 2시간 안팎). stage별 viewer: 1=좌표 / 2=주소 / 3=봉천동만 + 체류 시간 강조. base는 stage 3 영역."
+        }
+      ]
+    }
+  ]
+}
