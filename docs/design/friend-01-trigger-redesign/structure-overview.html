@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>friend-01 사건 전체 구조 개요</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #181b22;
+    --panel-2: #1f232c;
+    --panel-3: #14171d;
+    --line: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #9aa0aa;
+    --muted-2: #6e747e;
+    --accent: #7aa9e0;
+
+    --friend: #7aa9e0;
+    --friend-bg: #15212a;
+    --friend-border: #20354a;
+    --friend-soft: rgba(122,169,224,0.08);
+
+    --hidden: #c977d6;
+    --pro-a: #e07b6c;
+    --pro-b: #7fc88a;
+    --neutral: #c2c7d0;
+
+    --truth: #f4c849;
+    --motive: #e0769a;
+    --evidence: #7aa9e0;
+    --dossier: #c977d6;
+    --witness: #f4a449;
+    --combine: #7fc88a;
+
+    --stage-s0: #6e747e;
+    --stage-s1: #7aa9e0;
+    --stage-s2: #7fc88a;
+    --stage-s3: #f4c849;
+    --stage-s4: #f4a449;
+    --stage-s5: #e0769a;
+
+    --line-a: #5c8db5;
+    --line-b: #b58a5c;
+    --line-c: #8c5cb5;
+    --line-d: #b55c8d;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Pretendard', 'Inter', system-ui, sans-serif; margin: 0; padding: 0; line-height: 1.55; }
+  body { padding: 24px 24px 96px; max-width: 1400px; margin: 0 auto; }
+
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 20px; margin: 32px 0 12px; letter-spacing: -0.01em; padding-bottom: 6px; border-bottom: 2px solid var(--line); display: flex; align-items: center; gap: 10px; }
+  h2 .sec-num { display: inline-block; font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; }
+  h3 { font-size: 15px; margin: 18px 0 8px; letter-spacing: -0.005em; color: var(--accent); }
+  h4 { font-size: 13px; margin: 12px 0 6px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  p { margin: 6px 0; }
+  .lead { color: var(--muted); font-size: 13.5px; }
+  code { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 4px; color: var(--accent); }
+
+  .scope-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; background: var(--friend-bg); color: var(--friend); border: 1px solid var(--friend-border); margin-right: 6px; vertical-align: middle; }
+
+  .meta { display: flex; gap: 14px; margin: 12px 0 24px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+  .meta span { padding: 4px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+  .meta span strong { color: var(--text); font-weight: 600; }
+
+  .toc { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin: 12px 0 24px; }
+  .toc-title { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 24px; }
+  .toc li { font-size: 13px; padding: 2px 0; color: var(--text); break-inside: avoid; }
+  .toc li a { color: var(--text); text-decoration: none; }
+  .toc li a:hover { color: var(--accent); }
+
+  .context-card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0 20px; }
+  .context-card .ctx-desc { font-size: 14.5px; line-height: 1.7; color: var(--text); }
+  .context-card .ctx-trigger { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .context-card .ctx-truth { font-size: 13px; line-height: 1.6; color: var(--truth); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); font-weight: 500; }
+  .ctx-meta { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+  .ctx-meta span strong { color: var(--accent); }
+
+  .parties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0 20px; }
+  .party-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; position: relative; }
+  .party-card.a { border-left: 4px solid var(--pro-a); }
+  .party-card.b { border-left: 4px solid var(--pro-b); }
+  .party-card .p-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .party-card .p-name { font-size: 18px; font-weight: 700; color: var(--text); }
+  .party-card .p-archetype { font-size: 11px; padding: 2px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; background: rgba(255,255,255,0.06); }
+  .party-card.a .p-archetype { color: var(--pro-a); }
+  .party-card.b .p-archetype { color: var(--pro-b); }
+  .party-card .p-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .party-card .p-style { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .party-card .p-fear { font-size: 12.5px; color: var(--muted); }
+  .party-card .p-fear strong { color: var(--accent); }
+  .party-card .p-sensitive { margin-top: 8px; }
+  .party-card .p-sensitive ul { margin: 4px 0 0; padding-left: 20px; font-size: 12.5px; color: var(--muted); }
+  .party-card .p-sensitive li { margin: 2px 0; }
+
+  .witness-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0 24px; }
+  .witness-card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--witness); border-radius: 8px; padding: 12px 14px; }
+  .witness-card.bias-a { border-left-color: var(--pro-a); }
+  .witness-card.bias-b { border-left-color: var(--pro-b); }
+  .witness-card.bias-neutral { border-left-color: var(--neutral); }
+  .witness-card .w-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .witness-card .w-name { font-size: 14px; font-weight: 700; color: var(--text); }
+  .witness-card .w-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  .witness-card .w-bias { font-size: 10.5px; padding: 1px 6px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; }
+  .witness-card.bias-a .w-bias { background: rgba(224,123,108,0.18); color: var(--pro-a); }
+  .witness-card.bias-b .w-bias { background: rgba(127,200,138,0.18); color: var(--pro-b); }
+  .witness-card.bias-neutral .w-bias { background: rgba(194,199,208,0.18); color: var(--neutral); }
+  .witness-card .w-meta { font-size: 11.5px; color: var(--muted); margin: 4px 0; }
+  .witness-card .w-scope { font-size: 12px; line-height: 1.55; color: var(--neutral); margin-top: 6px; }
+  .witness-card .w-agenda { font-size: 11.5px; color: var(--motive); margin-top: 6px; padding: 4px 6px; background: rgba(224,118,154,0.08); border-radius: 4px; }
+  .witness-card .w-unlock { font-size: 11px; color: var(--muted); margin-top: 6px; font-family: 'JetBrains Mono', monospace; padding: 4px 6px; background: rgba(0,0,0,0.25); border-radius: 4px; }
+
+  .timeline { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 12px 0 24px; }
+  .tl-track { display: grid; grid-template-columns: 80px 140px 1fr 220px; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--line); align-items: start; }
+  .tl-track:last-child { border-bottom: none; }
+  .tl-stage { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: var(--accent); }
+  .tl-when { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .tl-action { font-size: 13px; line-height: 1.6; color: var(--text); }
+  .tl-perception { font-size: 11.5px; line-height: 1.5; color: var(--muted-2); font-family: 'Pretendard', sans-serif; }
+  .tl-perception .pa { color: var(--pro-a); font-weight: 600; }
+  .tl-perception .pb { color: var(--pro-b); font-weight: 600; }
+  .tl-perception .ps { color: var(--muted); font-weight: 600; }
+
+  .dispute-chain { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 12px 0 24px; position: relative; }
+  .dispute-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; position: relative; }
+  .dispute-card.initial { border-top: 3px solid var(--stage-s0); }
+  .dispute-card.hidden { border-top: 3px solid var(--hidden); }
+  .dispute-card .d-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .dispute-card .d-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+  .dispute-card .d-tag { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: 0.04em; }
+  .dispute-card .d-tag.initial { background: rgba(110,116,126,0.18); color: var(--stage-s0); }
+  .dispute-card .d-tag.hidden { background: rgba(201,119,214,0.18); color: var(--hidden); }
+  .dispute-card .d-tag.legit { background: rgba(244,164,73,0.18); color: var(--witness); margin-left: 4px; }
+  .dispute-card .d-meta { font-size: 11.5px; color: var(--muted); margin: 6px 0; font-family: 'JetBrains Mono', monospace; }
+  .dispute-card .d-truth { font-size: 12px; color: var(--text); line-height: 1.55; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  .dispute-card .d-truth strong { color: var(--accent); }
+  .dispute-card .d-resp { display: flex; gap: 4px; margin-top: 8px; font-size: 11px; }
+  .dispute-card .d-resp .ra { color: var(--pro-a); font-family: 'JetBrains Mono', monospace; }
+  .dispute-card .d-resp .rb { color: var(--pro-b); font-family: 'JetBrains Mono', monospace; }
+  .dispute-card .d-unlock { font-size: 11px; color: var(--muted); margin-top: 6px; padding: 4px 6px; background: rgba(0,0,0,0.25); border-radius: 4px; font-family: 'JetBrains Mono', monospace; }
+
+  .stage-table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 12px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .stage-table th { background: var(--panel-2); color: var(--accent); font-weight: 600; text-align: left; padding: 8px 10px; font-size: 11px; letter-spacing: 0.03em; border-bottom: 1px solid var(--line); }
+  .stage-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .stage-table tr:last-child td { border-bottom: none; }
+  .stage-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .stage-table .stage-cell { font-family: 'JetBrains Mono', monospace; font-weight: 700; width: 50px; text-align: center; }
+  .stage-table .stage-cell.s0 { color: var(--stage-s0); }
+  .stage-table .stage-cell.s1 { color: var(--stage-s1); }
+  .stage-table .stage-cell.s2 { color: var(--stage-s2); }
+  .stage-table .stage-cell.s3 { color: var(--stage-s3); }
+  .stage-table .stage-cell.s4 { color: var(--stage-s4); }
+  .stage-table .stage-cell.s5 { color: var(--stage-s5); }
+
+  .entity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin: 12px 0 24px; }
+  .entity-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .entity-card.evidence { border-left: 4px solid var(--evidence); }
+  .entity-card.dossier { border-left: 4px solid var(--dossier); }
+  .entity-card.base { border-left: 4px solid var(--stage-s0); }
+  .entity-card .e-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; gap: 8px; }
+  .entity-card .e-id { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--accent); font-weight: 700; }
+  .entity-card .e-tag { font-size: 10px; padding: 1px 5px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; background: rgba(255,255,255,0.06); color: var(--muted); }
+  .entity-card .e-name { font-size: 13px; color: var(--text); font-weight: 600; margin-bottom: 4px; }
+  .entity-card .e-surface { font-size: 11.5px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+  .entity-card .e-desc { font-size: 12px; color: var(--neutral); line-height: 1.55; margin-bottom: 6px; }
+  .entity-card .e-meta { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; padding: 5px 7px; background: rgba(0,0,0,0.25); border-radius: 4px; margin-top: 6px; }
+  .entity-card .e-meta strong { color: var(--accent); }
+  .entity-card .e-cand { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 999px; background: rgba(122,169,224,0.18); color: var(--accent); margin-left: 4px; }
+  .entity-card .e-cand.zero { background: rgba(110,116,126,0.18); color: var(--muted); }
+  .entity-card .e-warn { font-size: 11px; color: var(--motive); margin-top: 4px; padding: 4px 6px; background: rgba(224,118,154,0.08); border-radius: 4px; }
+
+  .combine-matrix { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 12.5px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .combine-matrix th { background: var(--panel-2); color: var(--combine); font-weight: 600; text-align: left; padding: 9px 12px; font-size: 11.5px; border-bottom: 1px solid var(--line); }
+  .combine-matrix td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .combine-matrix tr:hover td { background: rgba(127,200,138,0.04); }
+  .combine-matrix tr.added td { background: rgba(127,200,138,0.06); }
+  .combine-matrix .cm-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--combine); width: 100px; }
+  .combine-matrix .cm-inputs { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--neutral); }
+  .combine-matrix .cm-output { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--dossier); }
+  .combine-matrix .cm-arrow { color: var(--accent); margin: 0 4px; }
+  .combine-matrix .cm-route { font-size: 10.5px; padding: 1px 6px; border-radius: 3px; }
+  .combine-matrix .cm-route.evidence_combine { background: rgba(122,169,224,0.18); color: var(--evidence); }
+  .combine-matrix .cm-route.statement_combine { background: rgba(244,164,73,0.18); color: var(--witness); }
+  .combine-matrix .cm-gate { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .combine-matrix .cm-used { font-size: 11px; color: var(--text); font-family: 'JetBrains Mono', monospace; }
+
+  .chain-block { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px; }
+  .chain-block.line-a { border-left: 4px solid var(--line-a); }
+  .chain-block.line-b { border-left: 4px solid var(--line-b); }
+  .chain-block.line-c { border-left: 4px solid var(--line-c); }
+  .chain-block.line-d { border-left: 4px solid var(--line-d); }
+  .chain-block h4 { margin: 0 0 10px; font-size: 13.5px; color: var(--text); text-transform: none; letter-spacing: 0; }
+  .chain-block.line-a h4 { color: var(--line-a); }
+  .chain-block.line-b h4 { color: var(--line-b); }
+  .chain-block.line-c h4 { color: var(--line-c); }
+  .chain-block.line-d h4 { color: var(--line-d); }
+  .chain-flow { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.8; color: var(--text); white-space: pre-wrap; padding: 12px 14px; background: var(--panel-3); border-radius: 6px; overflow-x: auto; }
+  .chain-flow .ent { font-weight: 700; color: var(--accent); }
+  .chain-flow .arrow { color: var(--dossier); font-weight: 700; margin: 0 4px; }
+  .chain-flow .cond { color: var(--muted); font-size: 11px; }
+  .chain-flow .new { color: var(--combine); font-weight: 700; }
+  .chain-flow .note { color: var(--muted); font-style: italic; font-size: 11px; }
+
+  .disclosure-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 12.5px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .disclosure-table th { background: var(--panel-2); color: var(--truth); font-weight: 600; text-align: left; padding: 10px 12px; font-size: 11.5px; border-bottom: 1px solid var(--line); }
+  .disclosure-table td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .disclosure-table .dg-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent); width: 60px; }
+  .disclosure-table .dg-key { color: var(--text); width: 280px; font-size: 12px; line-height: 1.5; }
+  .disclosure-table .dg-tier { font-size: 11px; line-height: 1.6; color: var(--muted); }
+  .disclosure-table .dg-tier .tier-step { display: block; margin: 2px 0; padding: 3px 0; }
+  .disclosure-table .dg-tier .stage-mark { display: inline-block; font-family: 'JetBrains Mono', monospace; font-weight: 700; padding: 1px 6px; border-radius: 3px; margin-right: 6px; font-size: 10.5px; }
+  .disclosure-table .dg-tier .stage-mark.s0-s2 { background: rgba(110,116,126,0.18); color: var(--stage-s0); }
+  .disclosure-table .dg-tier .stage-mark.s3 { background: rgba(244,200,73,0.18); color: var(--stage-s3); }
+  .disclosure-table .dg-tier .stage-mark.s4 { background: rgba(244,164,73,0.18); color: var(--stage-s4); }
+  .disclosure-table .dg-tier .stage-mark.s5 { background: rgba(224,118,154,0.18); color: var(--stage-s5); }
+
+  .trig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+  .trig-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .trig-card .t-type { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .trig-card .t-count { font-size: 28px; font-weight: 700; line-height: 1.2; }
+  .trig-card.cascade .t-count { color: var(--dossier); }
+  .trig-card.combo .t-count { color: var(--combine); }
+  .trig-card.npc .t-count { color: var(--witness); }
+  .trig-card.outburst .t-count { color: var(--motive); }
+  .trig-card.judge .t-count { color: var(--evidence); }
+  .trig-card .t-desc { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+
+  .decision-list { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin: 12px 0 24px; }
+  .decision-item { padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  .decision-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .decision-item .di-cycle { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: var(--friend-bg); color: var(--friend); border: 1px solid var(--friend-border); margin-right: 8px; }
+  .decision-item .di-summary { font-size: 13px; color: var(--text); }
+  .decision-item .di-detail { font-size: 12px; color: var(--muted); margin-top: 4px; padding-left: 8px; border-left: 2px solid var(--line); }
+
+  .note-box { background: var(--friend-soft); border: 1px solid var(--friend-border); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-size: 13px; }
+  .note-box strong { color: var(--accent); }
+  .legend { display: flex; gap: 14px; margin: 8px 0 14px; font-size: 11.5px; color: var(--muted); flex-wrap: wrap; }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+
+  .footer { margin: 40px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11.5px; }
+  .footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<h1><span class="scope-tag">FRIEND-01</span>사건 전체 구조 개요</h1>
+<p class="lead">송다은·최수민 친구 사이 명예훼손 + 다층 가족·사기 사건 — 단톡방 매도와 9일간 연락의 진실. trigger 재편성 thread 종료 시점 (HEAD 90c3fb24) 권위 자료.</p>
+
+<div class="meta">
+  <span>일자 <strong>2026-05-27</strong></span>
+  <span>HEAD <strong><code>90c3fb24</code></strong></span>
+  <span>권위 source <strong><code>friend-01.case.ts</code> (3031 line) + <code>friend-01.narrative.ts</code> (1019 line)</strong></span>
+  <span>entity 총합 <strong>20 (dispute 5 + evidence 7 + dossier 5 + witness 3)</strong></span>
+  <span>narrative trigger candidate <strong>63개</strong> (재편성 후)</span>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+  <div class="toc-title">목차</div>
+  <ol>
+    <li><a href="#section-context">사건 개요</a></li>
+    <li><a href="#section-parties">당사자 + 증인</a></li>
+    <li><a href="#section-timeline">사건 timeline (6 stage)</a></li>
+    <li><a href="#section-dispute">5 쟁점 chain progression</a></li>
+    <li><a href="#section-evidence">7 증거 inventory</a></li>
+    <li><a href="#section-dossier">5 단서 카드 inventory</a></li>
+    <li><a href="#section-witness">3 증인 상세</a></li>
+    <li><a href="#section-combine">10 결합 recipe 매트릭스</a></li>
+    <li><a href="#section-cascade">narrative cascade chain 전체 (4 line)</a></li>
+    <li><a href="#section-disclosure">진실 노출 정책 5 keyword 그룹</a></li>
+    <li><a href="#section-trigger">narrative trigger 분포</a></li>
+    <li><a href="#section-decisions">cycle 별 사용자 사전 결정 history</a></li>
+  </ol>
+</div>
+
+<!-- ===================== 1. 사건 개요 ===================== -->
+<h2 id="section-context"><span class="sec-num">1</span>사건 개요</h2>
+
+<div class="context-card">
+  <div class="ctx-desc">손절한 전 절친이 결혼 3주 전 내 예비신랑에게 9일간 반복 연락했다. 단톡방에는 "수민이가 또 내 남자한테 연락한다"는 글이 올라왔고, 친구들이 동조했다.</div>
+  <div class="ctx-trigger"><strong>triggerAmplifier:</strong> 초반에는 최수민의 9일간 연락 기록과 송다은의 단톡방 발언이 겹치며 최수민이 집착하는 사람으로 보인다. 그러나 예비신랑의 선 넘는 메시지와 송다은 아버지의 돈 접근 패턴이 드러나면서 사건의 중심은 집착이 아니라 반복되는 침묵과 낙인으로 뒤집힌다.</div>
+  <div class="ctx-truth"><strong>anchorTruth (진실 앵커):</strong> 최수민의 9일간 연락은 집착이 아니라 송다은 아버지가 결혼 직전 예비신랑에게 돈 접근을 시도하는 흐름을 차단하려던 것이었다. 과거 손절의 진짜 원인은 송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기였고, 최수민은 송다은이 무너질까 봐 끝내 그 사실을 말하지 못한 채 악역을 자처했다. 송다은은 확인 없이 단톡방에서 최수민을 매도했고, 같은 구조가 반복됐다.</div>
+  <div class="ctx-meta">
+    <span>caseNumber <strong>TE-FriendV401</strong></span>
+    <span>relationshipType <strong>friend</strong></span>
+    <span>contextType <strong>friend_betrayal_reframe</strong></span>
+    <span>difficulty <strong>hard</strong></span>
+    <span>emotionalPressure <strong>8/10</strong></span>
+    <span>affects <strong>both</strong></span>
+    <span>sensitivityTags <strong>family_fraud, reputation_damage, emotional_manipulation</strong></span>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>resolutionDilemma (해결 딜레마):</strong> 최수민의 침묵이 매번 보호에서 비롯됐다 해도, 결과적으로 더 큰 오해와 낙인을 만들었다. 송다은의 성급한 단정은 잔인했지만 아버지의 진실을 모른 채 반응한 것이기도 하다. 두 사람 모두 확인 전에 단정한 책임이 남는다.
+</div>
+
+<!-- ===================== 2. 당사자 + 증인 ===================== -->
+<h2 id="section-parties"><span class="sec-num">2</span>당사자 + 증인</h2>
+
+<div class="parties-grid">
+  <div class="party-card a">
+    <div class="p-header">
+      <div class="p-name">송다은 (A, claimant)</div>
+      <div class="p-archetype">premature_summary</div>
+    </div>
+    <div class="p-meta">31세 · 온라인 쇼핑몰 CS 직원 · pride 7 / fear 高 / risk 5</div>
+    <div class="p-style">결론부터 말하고 그 안에 근거를 끼워 넣는다. 상대가 반박하면 이미 끝난 얘기를 다시 꺼내며 맥락을 자기 쪽으로 좁힌다.</div>
+    <div class="p-fear"><strong>두려움:</strong> 아버지의 진짜 모습이 드러나는 것을 가장 두려워한다.</div>
+    <div class="p-sensitive">
+      <strong style="font-size: 11.5px; color: var(--muted);">민감 영역:</strong>
+      <ul>
+        <li>아버지의 돈 문제</li>
+        <li>과거 손절의 진짜 이유</li>
+        <li>확인 없이 단톡방에 올린 일</li>
+      </ul>
+    </div>
+  </div>
+  <div class="party-card b">
+    <div class="p-header">
+      <div class="p-name">최수민 (B, defendant)</div>
+      <div class="p-archetype">affect_flattening</div>
+    </div>
+    <div class="p-meta">31세 · 필라테스 강사 · pride 5 / fear 高 / risk 3</div>
+    <div class="p-style">감정을 눌러 담고 사실만 나열한다. 정작 가장 아픈 이야기를 할 때 목소리가 더 평평해진다.</div>
+    <div class="p-fear"><strong>두려움:</strong> 송다은에게 아버지의 진실을 말하면 친구가 아버지를 돈을 갚지 않은 사람으로 봐야 한다는 것을 알기에 끝까지 말하지 못한다.</div>
+    <div class="p-sensitive">
+      <strong style="font-size: 11.5px; color: var(--muted);">민감 영역:</strong>
+      <ul>
+        <li>송다은 아버지의 차용금 미상환 피해</li>
+        <li>예비신랑이 먼저 선을 넘은 사실</li>
+        <li>또 악역이 된 현재 상황</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>증인 3명 (요약 — 상세는 7섹션)</h3>
+<div class="witness-grid">
+  <div class="witness-card bias-a">
+    <div class="w-head">
+      <div class="w-name">김세라</div>
+      <div class="w-bias">pro_a · strategic</div>
+    </div>
+    <div class="w-id"><code>w-1</code> · 32세 · 미용실 직원</div>
+    <div class="w-scope">단톡방에서 송다은의 글을 보고 최수민을 비난하는 데 동조. 나중에 찜찜한 마음이 들었다.</div>
+  </div>
+  <div class="witness-card bias-neutral">
+    <div class="w-head">
+      <div class="w-name">박준혁</div>
+      <div class="w-bias">neutral · accurate</div>
+    </div>
+    <div class="w-id"><code>w-2</code> · 34세 · 회사원</div>
+    <div class="w-scope">예비신랑 회사 후배 + B 필라테스 수강생. 회사 단톡방 떠벌림을 우연히 듣고 B 에게 알린 적 있음.</div>
+  </div>
+  <div class="witness-card bias-b">
+    <div class="w-head">
+      <div class="w-name">오미경</div>
+      <div class="w-bias">pro_b · accurate</div>
+    </div>
+    <div class="w-id"><code>w-3</code> · 58세 · 분식집 사장</div>
+    <div class="w-scope">동네 분식집. 송다은·최수민 둘 다 어릴 적 단골. A 아버지가 가게 앞에서 B 에게 돈 빌리려 한 장면 + B 가 울며 들어왔던 시기 모두 목격.</div>
+  </div>
+</div>
+
+<!-- ===================== 3. 사건 timeline ===================== -->
+<h2 id="section-timeline"><span class="sec-num">3</span>사건 timeline (6 stage)</h2>
+
+<div class="timeline">
+  <div class="tl-track">
+    <div class="tl-stage">stage 0</div>
+    <div class="tl-when">약 5년 전 (actor: a)</div>
+    <div class="tl-action">송다은 아버지가 최수민에게 투자 명목으로 돈을 빌리고 일부만 갚은 뒤 차일피일 미루며 연락을 끊는다. 최수민이 피해를 입었지만 송다은에게는 말하지 못한다.</div>
+    <div class="tl-perception">
+      <div><span class="pa">A:</span> 아버지가 친구에게 돈 빌렸다는 사실 자체 모름</div>
+      <div><span class="pb">B:</span> 전부 인지, 송다은이 무너질까 봐 입을 닫음</div>
+      <div class="cond" style="margin-top: 4px;">exposureGate: S3+ / channels: evidence_present + dossier</div>
+    </div>
+  </div>
+  <div class="tl-track">
+    <div class="tl-stage">stage 1</div>
+    <div class="tl-when">약 4~5년 전 (actor: b)</div>
+    <div class="tl-action">최수민이 송다은에게 "돈 문제는 내가 알아서 정리할게"라고만 남기고 설명을 피한다. 송다은은 이를 변심으로 받아들인다. 두 사람의 연락이 끊긴다.</div>
+    <div class="tl-perception">
+      <div><span class="pa">A:</span> "넌 돈만 엮이면 사람이 달라진다"고 답하며 변심으로 단정</div>
+      <div><span class="pb">B:</span> 아버지 문제를 들춰야 해서 차마 말하지 못하고 악역을 자처</div>
+      <div class="cond" style="margin-top: 4px;">exposureGate: S2+ / channels: evidence_present + dossier</div>
+    </div>
+  </div>
+  <div class="tl-track">
+    <div class="tl-stage">stage 2</div>
+    <div class="tl-when">약 2년간 (actor: system)</div>
+    <div class="tl-action">두 사람은 연락을 끊고 각자의 삶을 산다. 송다은은 김태윤과 약혼한다. 최수민은 필라테스 강사로 자기 생활을 정리한다.</div>
+    <div class="tl-perception">
+      <div><span class="pa">A:</span> 연락 두절 + 약혼 진행</div>
+      <div><span class="pb">B:</span> 연락 두절 + 자기 생활 정리</div>
+      <div class="cond" style="margin-top: 4px;">exposureGate: S0+ / channels: aftermath + dossier</div>
+    </div>
+  </div>
+  <div class="tl-track">
+    <div class="tl-stage">stage 3</div>
+    <div class="tl-when">결혼 약 3주 전 (actor: a)</div>
+    <div class="tl-action">송다은 아버지가 예비신랑 김태윤에게 "결혼 전에 잠깐만 도와주면 금방 돌려준다", "다은이한테는 아직 말하지 마"라는 문자로 돈 부탁을 시작한다. 같은 시기 최수민은 우연히 이 흐름을 알게 된다.</div>
+    <div class="tl-perception">
+      <div><span class="pa">A:</span> 아버지의 돈 접근을 알지만 모르는 척</div>
+      <div><span class="pb">B:</span> 과거 본인이 당한 것과 같은 패턴임을 알아봄</div>
+      <div class="cond" style="margin-top: 4px;">exposureGate: S2+ / channels: evidence_present + dossier</div>
+    </div>
+  </div>
+  <div class="tl-track">
+    <div class="tl-stage">stage 4</div>
+    <div class="tl-when">결혼 3주 전 ~ 9일간 (actor: b)</div>
+    <div class="tl-action">최수민이 예비신랑에게 전화 6번, 문자 11건을 보낸다. "다은이 관련 이야기예요", "예전에 같은 일이 있었거든요" 같은 문구로 경고하려 하지만 송다은에게는 직접 말하지 못한다.</div>
+    <div class="tl-perception">
+      <div><span class="pa">A:</span> 수민이 또 내 남자에게 연락한다는 단정으로 받아들임</div>
+      <div><span class="pb">B:</span> 전부 인지, 송다은에게 직접 말할 길이 없어 우회로</div>
+      <div class="cond" style="margin-top: 4px;">exposureGate: S0+ / channels: evidence_present + dossier</div>
+    </div>
+  </div>
+  <div class="tl-track">
+    <div class="tl-stage">stage 5</div>
+    <div class="tl-when">단톡방 사건 ~ 현재 (actor: a)</div>
+    <div class="tl-action">송다은이 공통 친구 단톡방에 "수민이가 또 내 남자한테 연락한다"는 글을 올린다. 공통 친구 김세라 등이 동조한다. 최수민은 침묵을 택한다. 사건이 재판으로 진행된다.</div>
+    <div class="tl-perception">
+      <div><span class="pa">A:</span> 단톡방 매도 + 동조 분위기까지 인지, 직접 확인하지 않은 사실은 회피</div>
+      <div><span class="pb">B:</span> 침묵으로 또 악역이 된다는 사실을 인지하면서도 송다은이 무너질까 봐 입을 닫음</div>
+      <div class="cond" style="margin-top: 4px;">exposureGate: S0+ / channels: evidence_present + dossier</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 4. 5 쟁점 chain progression ===================== -->
+<h2 id="section-dispute"><span class="sec-num">4</span>5 쟁점 chain progression</h2>
+
+<div class="legend">
+  <span class="legend-item"><span class="legend-dot" style="background: var(--stage-s0);"></span>initial (surface)</span>
+  <span class="legend-item"><span class="legend-dot" style="background: var(--hidden);"></span>hidden</span>
+  <span class="legend-item"><span class="legend-dot" style="background: var(--witness);"></span>legitimacyIssue</span>
+</div>
+
+<div class="dispute-chain">
+  <div class="dispute-card initial">
+    <div class="d-id">d-1 <span class="d-tag initial">initial</span></div>
+    <div class="d-name">9일간의 연락 의도</div>
+    <div class="d-meta">quadrant: both_know · weight: high · ambiguity: low</div>
+    <div class="d-truth"><strong>진실:</strong> 최수민은 예비신랑에게 9일간 연락. 집착이 아니라 송다은 아버지 돈 접근 패턴 경고. 직접 말할 길 없었음.</div>
+    <div class="d-resp"><span class="ra">A 40</span> / <span class="rb">B 60</span></div>
+    <div class="d-unlock">S2→[e-4] / S3→[dc-1] / S4→[dc-2, d-2]</div>
+  </div>
+  <div class="dispute-card initial">
+    <div class="d-id">d-2 <span class="d-tag initial">initial</span></div>
+    <div class="d-name">예비신랑의 선 넘는 접근</div>
+    <div class="d-meta">quadrant: b_only · weight: high · ambiguity: low</div>
+    <div class="d-truth"><strong>진실:</strong> 예비신랑 김태윤이 먼저 B 에게 "커피 보자" / "이상형" 메시지. B 거절.</div>
+    <div class="d-resp"><span class="ra">A 30</span> / <span class="rb">B 70</span></div>
+    <div class="d-unlock">S4→[dc-2] / S5→[d-3]</div>
+  </div>
+  <div class="dispute-card hidden">
+    <div class="d-id">d-3 <span class="d-tag hidden">hidden</span></div>
+    <div class="d-name">아버지의 돈 접근 패턴</div>
+    <div class="d-meta">quadrant: b_only · weight: high · ambiguity: mid</div>
+    <div class="d-truth"><strong>진실:</strong> A 아버지가 예비신랑에게 결혼 자금 명목 돈 부탁 흐름. B 가 같은 패턴 알아봄.</div>
+    <div class="d-resp"><span class="ra">A 50</span> / <span class="rb">B 50</span></div>
+    <div class="d-unlock">S3→[dc-3] / S4→[d-4]</div>
+  </div>
+  <div class="dispute-card hidden">
+    <div class="d-id">d-4 <span class="d-tag hidden">hidden</span><span class="d-tag legit">legit</span></div>
+    <div class="d-name">과거 손절과 아버지의 사기</div>
+    <div class="d-meta">quadrant: b_only · weight: high · ambiguity: high</div>
+    <div class="d-truth"><strong>진실:</strong> 과거 손절 원인 = A 아버지의 차용금 미상환 사기 피해. B 가 송다은 무너질까 봐 침묵 → 악역 자처.</div>
+    <div class="d-resp"><span class="ra">A 60</span> / <span class="rb">B 40</span></div>
+    <div class="d-unlock">S3→[dc-4] / S4→[d-5]</div>
+  </div>
+  <div class="dispute-card hidden">
+    <div class="d-id">d-5 <span class="d-tag hidden">hidden</span></div>
+    <div class="d-name">단톡방 매도와 명예훼손</div>
+    <div class="d-meta">quadrant: both_know · weight: high · ambiguity: mid</div>
+    <div class="d-truth"><strong>진실:</strong> A 가 확인 없이 단톡방 먼저 매도. B 또 악역. 같은 구조 반복.</div>
+    <div class="d-resp"><span class="ra">A 70</span> / <span class="rb">B 30</span></div>
+    <div class="d-unlock">S3→[dc-1] / S4→[dc-5]</div>
+  </div>
+</div>
+
+<h3>각 쟁점 S0~S5 surfaceClaim 매트릭스</h3>
+
+<table class="stage-table">
+  <thead>
+    <tr>
+      <th style="width: 50px;">stage</th>
+      <th style="width: 220px;">d-1 9일간 연락 의도</th>
+      <th style="width: 220px;">d-2 예비신랑 선 넘는 접근</th>
+      <th style="width: 220px;">d-3 아버지 돈 접근 패턴 (hidden)</th>
+      <th style="width: 220px;">d-4 과거 손절과 아버지 사기 (hidden)</th>
+      <th>d-5 단톡방 매도와 명예훼손 (hidden)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="stage-cell s0">S0</td>
+      <td>집착 단정 / B의 가벼운 안부 부정</td>
+      <td>수민이가 먼저 접근 단정 / 별다른 일 없음</td>
+      <td>아버지 돈 접근 부정 / 단정 불가</td>
+      <td>성격 차이 / 사적인 감정</td>
+      <td>사실 알림 / 아무 말 못함</td>
+    </tr>
+    <tr>
+      <td class="stage-cell s1">S1</td>
+      <td>결혼 직전 불안 / 가볍지 않은 망설임</td>
+      <td>예비신랑 반응 확인 누락 / 따로 온 연락 있음</td>
+      <td>집안 어른 부탁 / 닮은 흐름</td>
+      <td>집안 사정 멀어짐 / 말하면 더 커질 얘기</td>
+      <td>판단이 섞임 / 침묵 ≠ 인정</td>
+    </tr>
+    <tr>
+      <td class="stage-cell s2">S2</td>
+      <td>의도 가능성 / 말할 수 없는 사정</td>
+      <td>메시지 사실 / 사적인 말 섞임</td>
+      <td>투자 얘기 민감 / 차단하려 함</td>
+      <td>아버지 일 영역 / 돈 거래 있었음</td>
+      <td>공개 인지 + 확인보다 멈춤 / 자기 설명 뒤로</td>
+    </tr>
+    <tr>
+      <td class="stage-cell s3">S3</td>
+      <td>예비신랑 + 돈 얘기 흐름 + 송다은 아버지</td>
+      <td>먼저 보냈을 가능성 / 커피 보자 + 이상형</td>
+      <td>돈 접근 사실 + 결혼 자금 명목 / 과거에 같은 흐름</td>
+      <td>미상환 인정 / 단순 다툼 아님 + 돈 문제 끼임</td>
+      <td>확인 없이 먼저 올림 / 침묵이 낙인 만듦</td>
+    </tr>
+    <tr>
+      <td class="stage-cell s4">S4</td>
+      <td>같은 흐름 / 침묵 책임</td>
+      <td>예비신랑이 먼저 + 농담 뒤 돈 요구 흐름</td>
+      <td>인지·방관 / 같은 수법 + 결혼 자금 표적</td>
+      <td>일부만 갚고 연락 끊음 + 본인 침묵 / 사기 피해 + 조용히 사라짐</td>
+      <td>글이 먼저 + 분노 / 반복 구조</td>
+    </tr>
+    <tr>
+      <td class="stage-cell s5">S5</td>
+      <td>진실 완전 인정</td>
+      <td>진실 완전 인정</td>
+      <td>진실 완전 인정</td>
+      <td>진실 완전 인정</td>
+      <td>진실 완전 인정</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===================== 5. 7 증거 inventory ===================== -->
+<h2 id="section-evidence"><span class="sec-num">5</span>7 증거 inventory</h2>
+
+<p class="lead">baseEvidenceIds (사건 시작 시 player 보유): <code>e-1</code> · <code>e-2</code> · <code>e-3</code> (3개). 나머지 4개는 cascade chain 으로 surface.</p>
+
+<div class="entity-grid">
+  <div class="entity-card base">
+    <div class="e-head">
+      <div><span class="e-id">e-1</span> <span class="e-cand zero">narrative 0</span></div>
+      <div class="e-tag">log · base</div>
+    </div>
+    <div class="e-name">최수민→예비신랑 연락 기록</div>
+    <div class="e-surface">surface: 예비신랑 연락 기록</div>
+    <div class="e-desc">9일 동안 최수민이 예비신랑 김태윤에게 전화·문자 반복. 김태윤이 송다은에게 캡처 보여준 후 송다은이 본 법정에 정리·제출.</div>
+    <div class="e-meta"><strong>proves</strong> d-1 · <strong>requires</strong> [] · subjectParty: b</div>
+  </div>
+  <div class="entity-card base">
+    <div class="e-head">
+      <div><span class="e-id">e-2</span> <span class="e-cand zero">narrative 0</span></div>
+      <div class="e-tag">chat · base</div>
+    </div>
+    <div class="e-name">공통 친구 단톡방 캡처</div>
+    <div class="e-surface">surface: 공통 대화방 캡처</div>
+    <div class="e-desc">송다은이 "수민이가 또 내 남자한테 연락한다"고 올렸고, 몇몇 공통 친구가 이에 동조한 단체채팅 캡처.</div>
+    <div class="e-meta"><strong>proves</strong> d-5 · <strong>requires</strong> [] · subjectParty: a</div>
+  </div>
+  <div class="entity-card base">
+    <div class="e-head">
+      <div><span class="e-id">e-3</span> <span class="e-cand zero">narrative 0</span></div>
+      <div class="e-tag">chat · base · S1</div>
+    </div>
+    <div class="e-name">과거 손절 직전 카톡</div>
+    <div class="e-surface">surface: 예전 관계가 끊기기 전 대화</div>
+    <div class="e-desc">예전 관계 끊기기 직전, B 가 짧은 한 마디만 남기고 설명 피함. A 는 변심으로 받아들임.</div>
+    <div class="e-meta"><strong>proves</strong> d-4 · <strong>requires</strong> [] · requiredLieState: S1 · subjectParty: both</div>
+    <div class="e-warn">surface-safe description 정책 — "돈 문제" / "투자 명목" 직접 단어 회피 (진실 노출 정책)</div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head">
+      <div><span class="e-id">e-4</span> <span class="e-cand">4 candidate</span></div>
+      <div class="e-tag">chat</div>
+    </div>
+    <div class="e-name">예비신랑의 선 넘는 메시지와 최수민의 거절 답장</div>
+    <div class="e-surface">surface: 예비신랑 메시지와 답장</div>
+    <div class="e-desc">예비신랑 김태윤이 "다은이 몰래 커피 한 번 보자", "너 같은 스타일이 원래 내 이상형" 같은 말 → B 거절 원본.</div>
+    <div class="e-meta"><strong>proves</strong> d-2 · <strong>requires</strong> [e-1] · subjectParty: b</div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head">
+      <div><span class="e-id">e-5</span> <span class="e-cand">4 candidate</span></div>
+      <div class="e-tag">chat · S2 sealed</div>
+    </div>
+    <div class="e-name">예비신랑 회사 단톡 떠벌림 + 9일간 차단 연락</div>
+    <div class="e-surface">surface: 떠벌림 흔적과 9일간 메시지</div>
+    <div class="e-desc">예비신랑이 회사 동료 단톡방에서 "다은이 아버지가 결혼 자금 좀 도와달래"라며 토로한 캡처 + 직후 B 의 9일간 차단 메시지 원본.</div>
+    <div class="e-meta"><strong>proves</strong> d-3 · <strong>requires</strong> [e-1] · requiredLieState: S2 · subjectParty: b</div>
+    <div class="e-warn">sensitiveSealTargets: 회사 동료 실명 + B 메시지 사적 톤 (d-3 S2+ 시점 조건부 노출)</div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head">
+      <div><span class="e-id">e-6</span> <span class="e-cand">4 candidate</span></div>
+      <div class="e-tag">bank · S2 sealed</div>
+    </div>
+    <div class="e-name">과거 송금 영수증 + 문자</div>
+    <div class="e-surface">surface: 과거 송금 기록과 문자</div>
+    <div class="e-desc">과거 송금 내역 + 차일피일 상환 미뤄진 흐름 (은행·메신저 자료). "급한 투자금 한 달만 쓰고 갚겠다" + "다은이한테 말하지 마라" 문자.</div>
+    <div class="e-meta"><strong>proves</strong> d-4 · <strong>requires</strong> [e-3] · requiredLieState: S2 · provenance: institutional</div>
+    <div class="e-warn">sensitiveSealTargets: 송금 금액 + A 아버지 실명 + 계좌번호 (d-4 S2+ 시점 조건부)</div>
+  </div>
+  <div class="entity-card evidence">
+    <div class="e-head">
+      <div><span class="e-id">e-7</span> <span class="e-cand">4 candidate</span></div>
+      <div class="e-tag">log · S3 sealed · cross</div>
+    </div>
+    <div class="e-name">과거/현재 대조표</div>
+    <div class="e-surface">surface: 두 시점 대조표</div>
+    <div class="e-desc">과거 B 에게 돈 부탁 문구 + 현재 예비신랑에게 보낸 문구 + 사이마다 B 가 혼자 끊고 사라졌던 시점 타임라인 정리한 대조표.</div>
+    <div class="e-meta"><strong>proves</strong> [d-5, d-1] cross · <strong>requires</strong> [e-4, e-5, e-6] · requiredLieState: S3 · subjectParty: both</div>
+  </div>
+</div>
+
+<!-- ===================== 6. 5 단서 카드 inventory ===================== -->
+<h2 id="section-dossier"><span class="sec-num">6</span>5 단서 카드 inventory</h2>
+
+<div class="entity-grid">
+  <div class="entity-card dossier">
+    <div class="e-head">
+      <div><span class="e-id">dc-1</span> <span class="e-cand">4 candidate</span></div>
+      <div class="e-tag">linkedParty: a</div>
+    </div>
+    <div class="e-name">단톡방 글의 근거</div>
+    <div class="e-desc">단톡방에서의 단정과 공개 매도 책임을 송다은 측에서 직접 추궁하는 첫 카드. leadLine: Timeline Lead (firstInputs: e-1+e-2 / secondInputs: L-1+e-7).</div>
+    <div class="e-meta"><strong>linkedDisputes</strong> [d-5] · <strong>linkedEvidence</strong> [e-1, e-2] · successEffects: upgrade d-5 weight</div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head">
+      <div><span class="e-id">dc-2</span> <span class="e-cand">5 candidate</span></div>
+      <div class="e-tag">linkedParty: b · cross</div>
+    </div>
+    <div class="e-name">먼저 넘은 선</div>
+    <div class="e-desc">예비신랑이 먼저 경계를 넘었다는 반전 → B 연락 해석 뒤집기. leadLine: Context Lead (firstInputs: e-1+e-4 / secondInputs: L-2+e-5).</div>
+    <div class="e-meta"><strong>linkedDisputes</strong> [d-1, d-2] cross · <strong>linkedEvidence</strong> [e-1, e-4] · successEffects: upgrade d-2 weight + ambiguity low</div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head">
+      <div><span class="e-id">dc-3</span> <span class="e-cand">5 candidate</span></div>
+      <div class="e-tag">linkedParty: b</div>
+    </div>
+    <div class="e-name">같은 부탁</div>
+    <div class="e-desc">예비신랑 떠벌린 흔적 + 과거 송금 흐름 결합 → 아버지 반복 시도 패턴 확정. leadLine: Beneficiary Lead (firstInputs: e-5+e-6 / secondInputs: L-3+e-7).</div>
+    <div class="e-meta"><strong>linkedDisputes</strong> [d-3] · <strong>linkedEvidence</strong> [e-5, e-6] · successEffects: <strong style="color: var(--motive);">unlock_dispute d-4</strong></div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head">
+      <div><span class="e-id">dc-4</span> <span class="e-cand">4 candidate</span></div>
+      <div class="e-tag">linkedParty: b</div>
+    </div>
+    <div class="e-name">손절의 이유</div>
+    <div class="e-desc">과거 손절이 변심이 아니라 사기 피해 + 침묵의 결과임을 드러내는 카드. leadLine: Emotion Lead (firstInputs: e-3+e-6 / secondInputs: L-4+e-7).</div>
+    <div class="e-meta"><strong>linkedDisputes</strong> [d-4] · <strong>linkedEvidence</strong> [e-3, e-6] · successEffects: <strong style="color: var(--motive);">unlock_dispute d-5</strong></div>
+  </div>
+  <div class="entity-card dossier">
+    <div class="e-head">
+      <div><span class="e-id">dc-5</span> <span class="e-cand">4 candidate</span></div>
+      <div class="e-tag">linkedParty: a · cross</div>
+    </div>
+    <div class="e-name">낙인의 순서</div>
+    <div class="e-desc">누가 먼저 공개적으로 B 를 낙인찍었는지 + 같은 구조가 반복된 이유를 묻는 최종 카드. 송다은 공개 매도 책임 중심.</div>
+    <div class="e-meta"><strong>linkedDisputes</strong> [d-1, d-5] cross · <strong>linkedEvidence</strong> [e-2, e-7] · successEffects: upgrade d-5 weight</div>
+  </div>
+</div>
+
+<!-- ===================== 7. 3 증인 상세 ===================== -->
+<h2 id="section-witness"><span class="sec-num">7</span>3 증인 상세</h2>
+
+<div class="witness-grid">
+  <div class="witness-card bias-a">
+    <div class="w-head">
+      <div class="w-name">김세라</div>
+      <div class="w-bias">pro_a · strategic</div>
+    </div>
+    <div class="w-id"><code>w-1</code> · 32세 · 미용실 직원</div>
+    <div class="w-meta">호칭: A → "다은이" / B → "수민 씨"</div>
+    <div class="w-scope"><strong style="color: var(--text);">knowledgeScope:</strong> 단톡방에서 A 글 보고 B 비난 동조. 나중에 찜찜한 마음.</div>
+    <div class="w-agenda"><strong>hiddenAgenda:</strong> 자신도 B 비난에 가담한 것이 부끄럽다.</div>
+    <div class="w-unlock">relatedDisputes [d-5] · unlockedByDossier [dc-1]<br>canProve: 단톡방 최초 발언 경위 + 동조 흐름 / 직접 확인 없이 분위기 잡힌 시점<br>cannotDisprove: 두 사람 실제 사정 모름 / 본인 동조 책임으로 보수적</div>
+  </div>
+  <div class="witness-card bias-neutral">
+    <div class="w-head">
+      <div class="w-name">박준혁</div>
+      <div class="w-bias">neutral · accurate</div>
+    </div>
+    <div class="w-id"><code>w-2</code> · 34세 · 회사원</div>
+    <div class="w-meta">호칭: A → "그분" / B → "수민 선생님"</div>
+    <div class="w-scope"><strong style="color: var(--text);">knowledgeScope:</strong> 예비신랑 김태윤 회사 후배 + B 필라테스 수강생. 회사 단톡방 떠벌림 우연히 듣고 B 에게 알림.</div>
+    <div class="w-agenda"><strong>hiddenAgenda:</strong> 예비신랑과 직장 관계 불편해질까 봐 조심.</div>
+    <div class="w-unlock">relatedDisputes [d-2, d-3] · unlockedByDossier [dc-2, dc-3] (확장)<br>d-2 canProve: 예비신랑 먼저 접근 시도 / 메시지 송신 직후 자랑 흐름<br>d-3 canProve: "다은이 아버지 결혼 자금 도와달래" 토로 시점 + 본인이 B 에게 알린 사실<br>cannotDisprove: 모든 메시지 직접 본 건 아님 / B 거절은 본인 진술 기준</div>
+  </div>
+  <div class="witness-card bias-b">
+    <div class="w-head">
+      <div class="w-name">오미경</div>
+      <div class="w-bias">pro_b · accurate</div>
+    </div>
+    <div class="w-id"><code>w-3</code> · 58세 · 분식집 사장</div>
+    <div class="w-meta">호칭: A → "그 집 딸" / B → "수민이"</div>
+    <div class="w-scope"><strong style="color: var(--text);">knowledgeScope:</strong> 동네 분식집. A·B 둘 다 어릴 적 단골. A 아버지가 가게 앞에서 B 에게 돈 빌리려 한 장면 + B 가 울며 들어왔던 시기 목격.</div>
+    <div class="w-agenda" style="color: var(--muted); background: rgba(255,255,255,0.04);">hiddenAgenda 없음 (null)</div>
+    <div class="w-unlock">relatedDisputes [d-4] · unlockedByDossier [dc-4]<br>canProve: A 아버지 가게 앞 돈 빌리기 / B 울며 들어왔던 시기 = 손절 시기 근접 / 어릴 적부터 단골 관계 변화 감지<br>cannotDisprove: 실제 송금/미상환 금액 본 영역 밖 / 카톡 내용 모름</div>
+  </div>
+</div>
+
+<!-- ===================== 8. 10 결합 recipe 매트릭스 ===================== -->
+<h2 id="section-combine"><span class="sec-num">8</span>10 결합 recipe 매트릭스</h2>
+
+<table class="combine-matrix">
+  <thead>
+    <tr>
+      <th>recipe</th>
+      <th>route</th>
+      <th>inputs</th>
+      <th>output</th>
+      <th>gate (requiredEvidenceStages + dispute)</th>
+      <th>narrative trigger 사용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cm-id">combine-1</td>
+      <td><span class="cm-route evidence_combine">evidence</span></td>
+      <td class="cm-inputs">e-1 + e-2</td>
+      <td class="cm-output">→ dc-1</td>
+      <td class="cm-gate">e-1 excerpt + e-2 excerpt</td>
+      <td class="cm-used">dc1-via-combo (d-1 S0+)</td>
+    </tr>
+    <tr>
+      <td class="cm-id">combine-2</td>
+      <td><span class="cm-route evidence_combine">evidence</span></td>
+      <td class="cm-inputs">e-1 + e-4</td>
+      <td class="cm-output">→ dc-2</td>
+      <td class="cm-gate">e-1 original + e-4 original</td>
+      <td class="cm-used">dc2-via-combo / e4-via-combo / w2-via-combo (모두 d-2 S0+)</td>
+    </tr>
+    <tr>
+      <td class="cm-id">combine-3</td>
+      <td><span class="cm-route evidence_combine">evidence</span></td>
+      <td class="cm-inputs">e-5 + e-6</td>
+      <td class="cm-output">→ dc-3</td>
+      <td class="cm-gate">e-5 original + e-6 original · d-2 ≥ 3</td>
+      <td class="cm-used">dc3-via-combo / d3-via-combo / w2-via-combo-dc3</td>
+    </tr>
+    <tr>
+      <td class="cm-id">combine-4</td>
+      <td><span class="cm-route evidence_combine">evidence</span></td>
+      <td class="cm-inputs">e-3 + e-6</td>
+      <td class="cm-output">→ dc-4</td>
+      <td class="cm-gate">e-3 original + e-6 original · d-3 ≥ 2</td>
+      <td class="cm-used">dc4-via-combo / d4-via-combo / w3-via-combo</td>
+    </tr>
+    <tr>
+      <td class="cm-id">combine-5</td>
+      <td><span class="cm-route evidence_combine">evidence</span></td>
+      <td class="cm-inputs">e-4 + e-7</td>
+      <td class="cm-output">→ dc-1 (재진입)</td>
+      <td class="cm-gate">e-4 original + e-7 context · d-2 ≥ 3</td>
+      <td class="cm-used" style="color: var(--muted);">미사용 (Issue 2 유지)</td>
+    </tr>
+    <tr>
+      <td class="cm-id">combine-6</td>
+      <td><span class="cm-route evidence_combine">evidence</span></td>
+      <td class="cm-inputs">e-3 + e-7</td>
+      <td class="cm-output">→ dc-5</td>
+      <td class="cm-gate">e-3 context + e-7 context · d-4 ≥ 3</td>
+      <td class="cm-used" style="color: var(--muted);">미사용 (Issue 2 유지)</td>
+    </tr>
+    <tr>
+      <td class="cm-id">combine-7</td>
+      <td><span class="cm-route evidence_combine">evidence</span></td>
+      <td class="cm-inputs">e-2 + e-7</td>
+      <td class="cm-output">→ dc-5</td>
+      <td class="cm-gate">e-2 original + e-7 context · d-5 ≥ 2</td>
+      <td class="cm-used">dc5-via-combo (d-5 S0+)</td>
+    </tr>
+    <tr>
+      <td class="cm-id">combine-8</td>
+      <td><span class="cm-route statement_combine">statement</span></td>
+      <td class="cm-inputs">stmt-a-accusation + e-2</td>
+      <td class="cm-output">→ dc-1 (재진입)</td>
+      <td class="cm-gate">e-2 original</td>
+      <td class="cm-used">w1-via-combo (d-5 S0+)</td>
+    </tr>
+    <tr class="added">
+      <td class="cm-id">combine-9</td>
+      <td><span class="cm-route statement_combine">statement</span></td>
+      <td class="cm-inputs">stmt-b-silence + e-4</td>
+      <td class="cm-output">→ dc-2 (재진입)</td>
+      <td class="cm-gate">e-4 original</td>
+      <td class="cm-used" style="color: var(--combine); font-weight: 700;">dc2-via-combo-stmt-b-silence (신설, d-2 S0+)</td>
+    </tr>
+    <tr class="added">
+      <td class="cm-id">combine-10</td>
+      <td><span class="cm-route statement_combine">statement</span></td>
+      <td class="cm-inputs">stmt-b-silence + e-5</td>
+      <td class="cm-output">→ dc-3 (재진입)</td>
+      <td class="cm-gate">e-5 original · d-3 ≥ 1</td>
+      <td class="cm-used" style="color: var(--combine); font-weight: 700;">dc3-via-combo-stmt-b-silence (신설, d-3 S1+)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note-box">
+  본 thread (trigger 재편성) 변경: combine-9 / combine-10 narrative trigger 신설 (Issue 2 안 C). combine-5/6 은 dossier 재진입 영역이지만 narrative event 불필요 결정 (현재 유지).
+</div>
+
+<!-- ===================== 9. narrative cascade chain 전체 ===================== -->
+<h2 id="section-cascade"><span class="sec-num">9</span>narrative cascade chain 전체 (4 line)</h2>
+
+<div class="chain-block line-a">
+  <h4>Line A — 단톡방 매도 frame (d-5 + d-1 cross)</h4>
+  <div class="chain-flow"><span class="ent">e-1</span> (예비신랑 연락 기록, base, narrative 0)
+<span class="ent">e-2</span> (공통 대화방 캡처, base, narrative 0)
+  <span class="arrow">↓</span> combine-1
+<span class="ent">dc-1</span> (단톡방 글의 근거, 4 candidate)
+  <span class="arrow">↓</span> requirePriorCardFired: dc-1
+  ├─→ <span class="ent">w-1</span> (김세라, cascade + <span class="new">d-1 S2+ 신규 게이트</span>)
+  ├─→ <span class="ent">dc-2</span> (먼저 넘은 선, cross-line dc-1 cascade + d-1 S0+)
+  └─→ <span class="ent">e-4</span> (예비신랑 메시지, cascade priorCard dc-1)
+<span class="note">별도: combine-5 (e-4+e-7→dc-1) / combine-8 (stmt-a+e-2→dc-1) = w-1 trigger 가 combine-8 사용</span></div>
+</div>
+
+<div class="chain-block line-b">
+  <h4>Line B — 예비신랑 선 넘기 frame (d-2)</h4>
+  <div class="chain-flow"><span class="ent">dc-1</span> (Line A 진입 후)
+  <span class="arrow">↓</span> dc-1 cascade
+<span class="ent">e-4</span> (예비신랑 메시지와 답장)
+  <span class="arrow">↓</span> combine-2
+<span class="ent">dc-2</span> (먼저 넘은 선, <span class="new">+ combine-9 신설 candidate</span>)
+  <span class="arrow">↓</span> requirePriorCardFired: dc-2 + <span class="new">d-2 S2+ 신규 게이트</span>
+<span class="ent">w-2</span> (박준혁, dc-2 영역 4 candidate)
+  <span class="arrow">↓</span>
+d-2 truthStages.S4 → unlock [dc-2, d-2 자체 강화]
+d-2 truthStages.S5 → <span class="new">unlock [d-3]</span> (hidden dispute 등장)</div>
+</div>
+
+<div class="chain-block line-c">
+  <h4>Line C — 아버지 돈 접근 패턴 frame (d-3 + d-4 hidden)</h4>
+  <div class="chain-flow"><span class="ent">d-2 S4</span> → d-3 unlock (hidden dispute 등장)
+  <span class="arrow">↓</span> requirePriorCardFired: <span class="new">dc-2 (변경) + d-2 S3+</span>
+<span class="ent">e-5</span> (떠벌림 흔적과 9일간 메시지, proves d-3)
+  <span class="arrow">↓</span> combine-3 (requires d-2 S3) + cascade priorCard e-5
+<span class="ent">dc-3</span> (같은 부탁, <span class="new">+ combine-10 신설 candidate</span>)
+  successEffects: <span class="new">unlock_dispute d-4</span>
+  <span class="arrow">↓</span> requirePriorCardFired: dc-3 + d-2 S3+
+<span class="ent">d-3</span> (아버지의 돈 접근 패턴, hidden dispute 본격 발현)
+  <span class="arrow">↓</span> requirePriorCardFired: d-3 + d-3 S3+
+<span class="ent">e-6</span> (과거 송금 기록과 문자, proves d-4, requires e-3)
+  <span class="arrow">↓</span> combine-4 (requires d-3 S2) + cascade priorCard e-6
+<span class="ent">dc-4</span> (손절의 이유)
+  successEffects: <span class="new">unlock_dispute d-5</span>
+  <span class="arrow">↓</span> requirePriorCardFired: dc-4 + d-3 S3+
+<span class="ent">d-4</span> (과거 손절과 아버지의 사기, hidden + legitimacyIssue)
+  <span class="arrow">↓</span> requirePriorCardFired: dc-4 + <span class="new">d-4 S0+ 신규 게이트</span>
+<span class="ent">w-3</span> (오미경, 3 candidate <span class="note">w3-via-npc-b-context 폐기됨</span>)
+<span class="note">별도: w-2 dc-3 확장 — cascade priorCard dc-3 + d-3 S0+ 신규 게이트 / combo combine-3 (d-3 S0+)</span></div>
+</div>
+
+<div class="chain-block line-d">
+  <h4>Line D — 매도/명예훼손 종합 (d-5 hidden 종결)</h4>
+  <div class="chain-flow"><span class="ent">dc-4</span> successEffects unlock_dispute d-5 (hidden dispute 등장)
+  <span class="arrow">↓</span> requirePriorCardFired: d-4 + d-4 S3+ (e7-cascade-d4)
+  <span class="arrow">↓</span> requirePriorCardFired: w-3 + d-4 S3+ (e7-cascade-w3)
+<span class="ent">e-7</span> (두 시점 대조표, proves [d-5, d-1] cross / requires [e-4, e-5, e-6])
+  <span class="arrow">↓</span> requirePriorCardFired: e-7 + d-4 S3+ (d5-cascade-e7)
+  <span class="arrow">↓</span> requirePriorCardFired: dc-4 + d-3 S3+ + d-4 S3+ (d5-cascade-dc4)
+<span class="ent">d-5</span> (단톡방 매도와 명예훼손 — 본격 추궁 발현)
+  <span class="arrow">↓</span> requirePriorCardFired: d-5 + combine-7 (e-2+e-7, requires d-5 S2)
+<span class="ent">dc-5</span> (낙인의 순서 — cross-line + 최종 단서)
+<span class="note">d-1 cross-line reframe = dispute progression 자연 (Issue 9 현재 유지)</span></div>
+</div>
+
+<h3>dispute truthStages.successUnlocks 매트릭스 (직접 unlock)</h3>
+<table class="stage-table">
+  <thead>
+    <tr><th>dispute</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>d-1</code></td><td>[e-4]</td><td>[dc-1]</td><td>[dc-2, d-2]</td><td>—</td></tr>
+    <tr><td><code>d-2</code></td><td>—</td><td>—</td><td>[dc-2]</td><td>[d-3]</td></tr>
+    <tr><td><code>d-3</code></td><td>—</td><td>[dc-3]</td><td>[d-4]</td><td>—</td></tr>
+    <tr><td><code>d-4</code></td><td>—</td><td>[dc-4]</td><td>[d-5]</td><td>—</td></tr>
+    <tr><td><code>d-5</code></td><td>—</td><td>[dc-1] (재진입)</td><td>[dc-5]</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== 10. 진실 노출 정책 ===================== -->
+<h2 id="section-disclosure"><span class="sec-num">10</span>진실 노출 정책 5 keyword 그룹</h2>
+<p class="lead">권위: <code>design-friend01-truth-disclosure-policy</code> 메모리. 5 keyword 그룹별 dispute stage 단계 disclosure tier 정책. ScriptedText / Dialogue 작성 시 self-check 필수.</p>
+
+<table class="disclosure-table">
+  <thead>
+    <tr>
+      <th style="width: 60px;">그룹</th>
+      <th style="width: 280px;">keyword</th>
+      <th>disclosure tier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="dg-id">1</td>
+      <td class="dg-key">예비신랑이 먼저 / 예비신랑이 찝쩍 / 선 넘는 메시지 / 최수민의 거절</td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S2 봉인</span>양측 모두 절대 등장 X (e-4 검증 전)</span>
+        <span class="tier-step"><span class="stage-mark s3">d-2 S3</span>B 가 "커피 보자/이상형 메시지 먼저 + 거절" 인정</span>
+        <span class="tier-step"><span class="stage-mark s5">d-2 S5</span>양측 진실 완전 인정</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">2</td>
+      <td class="dg-key">아버지의 사기 / 아버지 돈 갈취 / 투자 명목 사기 / 미상환 / 차용금 미상환</td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S2 봉인</span>양측 모두 절대 등장 X</span>
+        <span class="tier-step"><span class="stage-mark s3">d-3 S3</span>B 가 "본인이 과거 같은 흐름 겪어 패턴 알아봄" 인정 (d-3 회피)</span>
+        <span class="tier-step"><span class="stage-mark s3">d-4 S3</span>A 가 "아버지가 갚지 못한 돈 있었다" 인정</span>
+        <span class="tier-step"><span class="stage-mark s5">d-4 S5</span>양측 사기 + 미상환 + 손절 원인 완전 인정</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">3</td>
+      <td class="dg-key">B 경고 의도 / 꼬시려 한 게 아니라 경고 / 같은 패턴 반복</td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S1 봉인</span>B 는 "가벼운 안부 / 가볍지 않은 망설임" frame 유지</span>
+        <span class="tier-step"><span class="stage-mark s3">d-1 S3</span>B 가 "결혼 직전 돈 얘기 흐름 보여 경고 시도" 명시</span>
+        <span class="tier-step"><span class="stage-mark s3">d-3 S3</span>"송다은 아버지가 같은 흐름 + 본인이 같은 흐름 겪음" 명시</span>
+        <span class="tier-step"><span class="stage-mark s5">d-3 S5</span>양측 진실 완전 인정 ("같은 패턴 반복")</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">4</td>
+      <td class="dg-key">과거 손절 = A 아버지 원인 / B 차마 못 말함</td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S2 봉인</span>B 는 "사적 감정 / 더 커질 얘기" frame 회피</span>
+        <span class="tier-step"><span class="stage-mark s3">d-4 S3</span>B 가 "단순 친구 다툼 아님 + 돈 문제 끼어 있었다" 인정</span>
+        <span class="tier-step"><span class="stage-mark s4">d-4 S4</span>B 가 "송다은이 무너질 것 같아 참았다" 동기 명시</span>
+        <span class="tier-step"><span class="stage-mark s5">d-4 S5</span>양측 진실 완전 인정 (사기 + 침묵 동기 + 악역 자처)</span>
+        <span class="tier-step" style="color: var(--motive);">⚠ 동기/감정 영역 = truth-leak-matrix hidden 등록 X (false positive 영역)</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="dg-id">5</td>
+      <td class="dg-key">확인 없이 매도 / 명예훼손 / 먼저 낙인 / B 또 악역 / 반복 침묵</td>
+      <td class="dg-tier">
+        <span class="tier-step"><span class="stage-mark s0-s2">S0~S2 봉인</span>양측 모두 자기 frame / 단어 자체 등장 X</span>
+        <span class="tier-step"><span class="stage-mark s3">d-5 S3</span>A 가 "확인 없이 단톡방에 먼저 올린 것은 사실" 인정 (명예훼손 평가 회피)</span>
+        <span class="tier-step"><span class="stage-mark s4">d-5 S4</span>A 가 "글을 올린 손이 먼저였다" 무너짐 / B 가 "두 번 다 같은 구조" 인정</span>
+        <span class="tier-step"><span class="stage-mark s5">d-5 S5</span>양측 진실 완전 인정 (성급한 단정 / 매도 / 반복 침묵 책임)</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===================== 11. narrative trigger 분포 ===================== -->
+<h2 id="section-trigger"><span class="sec-num">11</span>narrative trigger 분포 (재편성 후)</h2>
+
+<p class="lead">총 63 candidate (재편성 전 62 → 신설 2 - 폐기 1). 16 entity (w-2 만 6 candidate, 나머지 = 4 또는 3).</p>
+
+<div class="trig-grid">
+  <div class="trig-card cascade">
+    <div class="t-type">cascade_from_card</div>
+    <div class="t-count">17</div>
+    <div class="t-desc">priorCard chain 의존 (가장 큰 type). e-5 priorCard 가 dispute → dossier 변경 (Issue 5)</div>
+  </div>
+  <div class="trig-card combo">
+    <div class="t-type">combination_result</div>
+    <div class="t-count">14</div>
+    <div class="t-desc">recipeId 의존. combine-9/10 신설 (Issue 2). 7 recipe 사용 (combine-1/2/3/4/7/8/9/10)</div>
+  </div>
+  <div class="trig-card npc">
+    <div class="t-type">npc_interjection</div>
+    <div class="t-count">7</div>
+    <div class="t-desc">w3-via-npc-b-context 폐기 (Issue 3). 「김세라」 B 끌어들이기 frame 유지 (Issue 7)</div>
+  </div>
+  <div class="trig-card outburst">
+    <div class="t-type">emotional_outburst</div>
+    <div class="t-count">10</div>
+    <div class="t-desc">e-4 priorCard 추가 (Issue 4). partyPhase 분기 [shaken] only / [shaken, angry] / [shaken, defensive] 의도적 차별 (Issue 6 유지)</div>
+  </div>
+  <div class="trig-card judge">
+    <div class="t-type">judge_auto_mention</div>
+    <div class="t-count">15</div>
+    <div class="t-desc">turnsAfterEligible 차등 (Issue 12) — 핵심 reframe + 종점 5턴 / chain 중간 4턴 / chain 시작 + 증인 3턴</div>
+  </div>
+</div>
+
+<h3>turnsAfterEligible 차등 분류</h3>
+<div class="trig-grid">
+  <div class="trig-card judge">
+    <div class="t-type">5턴 유지 (7 entity)</div>
+    <div class="t-count" style="font-size: 16px;">핵심 reframe + chain 종점</div>
+    <div class="t-desc">dc-1 / dc-2 / dc-3 / dc-4 / dc-5 / d-4 / d-5</div>
+  </div>
+  <div class="trig-card outburst">
+    <div class="t-type">4턴 변경 (3 entity)</div>
+    <div class="t-count" style="font-size: 16px;">chain 중간</div>
+    <div class="t-desc">d-3 / e-6 / e-7</div>
+  </div>
+  <div class="trig-card combo">
+    <div class="t-type">3턴 변경 (5 entity)</div>
+    <div class="t-count" style="font-size: 16px;">chain 시작 + 증인</div>
+    <div class="t-desc">e-4 / e-5 / w-1 / w-2 / w-3</div>
+  </div>
+</div>
+
+<!-- ===================== 12. cycle 별 사용자 결정 history ===================== -->
+<h2 id="section-decisions"><span class="sec-num">12</span>cycle 별 사용자 사전 결정 history</h2>
+
+<div class="decision-list">
+  <div class="decision-item">
+    <div><span class="di-cycle">Cycle 7</span><strong class="di-summary">Line A + B 5 emergence narrative wrapper 완료 (05-24)</strong></div>
+    <div class="di-detail">dc-1 「단톡방 글의 근거」 / dc-2 「먼저 넘은 선」 / e-4 「예비신랑 메시지와 답장」 / w-1 「김세라」 / w-2 「박준혁」 (dc-2 영역) 5 emergence × multi-trigger. <strong>dc-1 label 변경 commit 081e8dbc</strong> ("확인 없이 매도한 건 누구인가" → "단톡방 글의 근거"). 신규 정책 <code>feedback-judge-dispassionate-action-focused</code> (재판관 어법 — 사실/행위 중심) 도입.</div>
+  </div>
+  <div class="decision-item">
+    <div><span class="di-cycle">Cycle 8 (CT)</span><strong class="di-summary">friend-01 plot revision — e-5 reframe + B character integrity (05-24)</strong></div>
+    <div class="di-detail">HEAD b77a27c5 main push. Authority 7 영역 (e-5 자료 자체 교체 / d-3 / w-2 testimony.byDispute['d-3'] 신규 / dc-3 / combine-3 + anchorTruth + combine-5) + ScriptedText 155 KO reword + derived layer 4개 sync. e-5 본질 변경 = 「예비신랑 회사 단톡 떠벌림 + 9일간 차단 메시지」 (이전: 송다은 아버지 직접 메시지). B character integrity = "송다은이 무너질까 봐 침묵 + 악역 자처" frame 강화.</div>
+  </div>
+  <div class="decision-item">
+    <div><span class="di-cycle">Cycle 8b</span><strong class="di-summary">Line C 아버지 line 7 emergence + w-2 dc-3 확장 (05-25)</strong></div>
+    <div class="di-detail">HEAD 670e5ef6. 7 emergence + w-2 dc-3 영역 2 candidate 확장 = 30 trigger / 92 KO entries / +315 외국어 variants (Cycle 7 누락 153 복구 + Cycle 8b 신규 162) + dc-4 label "손절의 값" → "손절의 이유" 변경. 신규 정책 <code>feedback-codex-ide-parallel-same-worktree</code> (같은 file 동시 변경 위험).</div>
+  </div>
+  <div class="decision-item">
+    <div><span class="di-cycle">Cycle 9</span><strong class="di-summary">Line D 종합 3 emergence — 사건 종결 (05-25)</strong></div>
+    <div class="di-detail">e-7 「두 시점 대조표」 / d-5 「단톡방 매도와 명예훼손」 / dc-5 「낙인의 순서」 3 emergence × 4 trigger = 12 candidate / 36 KO entry. cascade chain: d-4/w-3 → e-7 → d-5 → dc-5 (사건 종결). 진실 노출 정책 그룹 5 (확인 없이 매도 / 명예훼손 / 먼저 낙인 / B 또 악역 / 반복 침묵) surface tier 단독.</div>
+  </div>
+  <div class="decision-item">
+    <div><span class="di-cycle">trigger 재편성</span><strong class="di-summary">Issue 12건 결정 (본 thread, 05-27) — HEAD 90c3fb24</strong></div>
+    <div class="di-detail">적용 6건: combine-9/10 candidate 신설 (Issue 2) / w3-via-npc-b-context 폐기 (Issue 3) / e-4 priorCard 추가 (Issue 4) / e-5 priorCard d-2→dc-2 (Issue 5) / 증인 4 cascade 쟁점 게이트 (Issue 10) / turns 차등 8 entity (Issue 12). 유지 5건: Issue 1/6/7/8/9. 공통 CT 안내 1건: Issue 11 (Hybrid hook 신설 제안).</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>본 자료 = <a href="./inventory.md">inventory.md</a> + <a href="./issues.md">issues.md</a> + <a href="./script-changes.md">script-changes.md</a> + <a href="./redesign-summary.html">redesign-summary.html</a> 의 사건 전체 구조 종합 시각화.</p>
+  <p>권위 base HEAD <code>90c3fb24</code> · 본 자료 commit 시점 갱신.</p>
+  <p><strong>다음 thread 가능 영역:</strong> (A) friend-01 ScriptedText thread (script-changes.md 권위, 3 폐기 refs + 8 신설 refs) / (B) friend-01 narrative integrity review thread (사건 데이터 자체 개연성·일관성 비판적 검토 — 별도 진입 base 메모리 참조).</p>
+</div>
+
+</body>
+</html>
