@@ -158,6 +158,21 @@ export const dc2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     ],
     vfxProfile: 'standard',
   },
+  {
+    id: 'dc2-via-combo-stmt-b-silence',
+    type: 'combination_result',
+    recipeId: 'combine-9',
+    preconditions: {
+      disputeLieState: { 'd-2': 'S0+' },
+    },
+    scriptedRefs: [
+      'emerge-dc2-via-combo-stmt-b-silence-judge-query-v1',
+      'emerge-dc2-via-combo-stmt-b-silence-b-context-v1',
+      'emerge-dc2-via-combo-stmt-b-silence-a-react-v1',
+      'emerge-dc2-via-combo-stmt-b-silence-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -199,6 +214,7 @@ export const e4NarrativeTriggers: NarrativeTriggerCandidate[] = [
     type: 'emotional_outburst',
     source: 'b',
     preconditions: {
+      requirePriorCardFired: 'e-1',
       partyPhase: { b: ['shaken', 'angry'] },
       disputeLieState: { 'd-2': 'S0+' },
     },
@@ -212,7 +228,7 @@ export const e4NarrativeTriggers: NarrativeTriggerCandidate[] = [
   {
     id: 'e4-via-judge-auto',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 3 },
     scriptedRefs: [
       'emerge-e4-via-fallback-judge-request-v1',
       'emerge-e4-via-fallback-b-submit-v1',
@@ -232,6 +248,7 @@ export const w1NarrativeTriggers: NarrativeTriggerCandidate[] = [
     type: 'cascade_from_card',
     preconditions: {
       requirePriorCardFired: 'dc-1',
+      disputeLieState: { 'd-1': 'S2+' },
     },
     scriptedRefs: [
       'emerge-w1-via-cascade-judge-decree-v1',
@@ -272,7 +289,7 @@ export const w1NarrativeTriggers: NarrativeTriggerCandidate[] = [
   {
     id: 'w1-via-judge-auto',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 3 },
     scriptedRefs: [
       'emerge-w1-via-fallback-judge-mention-v1',
       'emerge-w1-via-fallback-a-react-v1',
@@ -296,6 +313,7 @@ export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     type: 'cascade_from_card',
     preconditions: {
       requirePriorCardFired: 'dc-2',
+      disputeLieState: { 'd-2': 'S2+' },
     },
     scriptedRefs: [
       'emerge-w2-via-cascade-judge-decree-v1',
@@ -337,7 +355,7 @@ export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
   {
     id: 'w2-via-judge-auto',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 3 },
     scriptedRefs: [
       'emerge-w2-via-fallback-judge-mention-v1',
       'emerge-w2-via-fallback-a-react-v1',
@@ -351,6 +369,7 @@ export const w2NarrativeTriggers: NarrativeTriggerCandidate[] = [
     type: 'cascade_from_card',
     preconditions: {
       requirePriorCardFired: 'dc-3',
+      disputeLieState: { 'd-3': 'S0+' },
     },
     scriptedRefs: [
       'emerge-w2-via-cascade-dc3-judge-decree-v1',
@@ -389,7 +408,7 @@ export const e5NarrativeTriggers: NarrativeTriggerCandidate[] = [
     id: 'e5-via-cascade',
     type: 'cascade_from_card',
     preconditions: {
-      requirePriorCardFired: 'd-2',
+      requirePriorCardFired: 'dc-2',
       disputeLieState: { 'd-2': 'S3+' },
     },
     scriptedRefs: [
@@ -432,7 +451,7 @@ export const e5NarrativeTriggers: NarrativeTriggerCandidate[] = [
   {
     id: 'e5-via-judge-auto',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 3 },
     scriptedRefs: [
       'emerge-e5-via-fallback-judge-query-v1',
       'emerge-e5-via-fallback-b-submit-v1',
@@ -502,6 +521,21 @@ export const dc3NarrativeTriggers: NarrativeTriggerCandidate[] = [
     ],
     vfxProfile: 'standard',
   },
+  {
+    id: 'dc3-via-combo-stmt-b-silence',
+    type: 'combination_result',
+    recipeId: 'combine-10',
+    preconditions: {
+      disputeLieState: { 'd-3': 'S1+' },
+    },
+    scriptedRefs: [
+      'emerge-dc3-via-combo-stmt-b-silence-judge-query-v1',
+      'emerge-dc3-via-combo-stmt-b-silence-b-context-v1',
+      'emerge-dc3-via-combo-stmt-b-silence-a-react-v1',
+      'emerge-dc3-via-combo-stmt-b-silence-judge-decree-v1',
+    ],
+    vfxProfile: 'standard',
+  },
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -555,7 +589,7 @@ export const d3NarrativeTriggers: NarrativeTriggerCandidate[] = [
   {
     id: 'd3-via-judge-auto',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 4 },
     scriptedRefs: [
       'emerge-d3-via-fallback-judge-mention-v1',
       'emerge-d3-via-fallback-a-react-v1',
@@ -617,7 +651,7 @@ export const e6NarrativeTriggers: NarrativeTriggerCandidate[] = [
   {
     id: 'e6-via-judge-auto',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 4 },
     scriptedRefs: [
       'emerge-e6-via-fallback-judge-query-v1',
       'emerge-e6-via-fallback-b-submit-v1',
@@ -760,6 +794,7 @@ export const w3NarrativeTriggers: NarrativeTriggerCandidate[] = [
     type: 'cascade_from_card',
     preconditions: {
       requirePriorCardFired: 'dc-4',
+      disputeLieState: { 'd-4': 'S0+' },
     },
     scriptedRefs: [
       'emerge-w3-via-cascade-judge-decree-v1',
@@ -783,23 +818,9 @@ export const w3NarrativeTriggers: NarrativeTriggerCandidate[] = [
     vfxProfile: 'standard',
   },
   {
-    id: 'w3-via-npc-b-context',
-    type: 'npc_interjection',
-    source: 'b',
-    preconditions: {
-      disputeLieState: { 'd-4': 'S1+' },
-    },
-    scriptedRefs: [
-      'emerge-w3-via-npc-b-context-v1',
-      'emerge-w3-via-npc-judge-catch-v1',
-      'emerge-w3-via-npc-judge-decree-v1',
-    ],
-    vfxProfile: 'standard',
-  },
-  {
     id: 'w3-via-judge-auto',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 3 },
     scriptedRefs: [
       'emerge-w3-via-fallback-judge-mention-v1',
       'emerge-w3-via-fallback-a-react-v1',
@@ -868,7 +889,7 @@ export const e7NarrativeTriggers: NarrativeTriggerCandidate[] = [
   {
     id: 'e7-via-fallback',
     type: 'judge_auto_mention',
-    preconditions: { turnsAfterEligible: 5 },
+    preconditions: { turnsAfterEligible: 4 },
     scriptedRefs: [
       'emerge-e7-via-fallback-judge-query-v1',
       'emerge-e7-via-fallback-b-submit-v1',
