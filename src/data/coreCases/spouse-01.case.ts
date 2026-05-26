@@ -2432,28 +2432,24 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'misread', summary: ko('도서·필체는 인증되지만 진짜 목적은 심문과 맥락으로 확정.') },
       ],
       /**
-       * 2026-05-26 C-1/C-2 (Step 5 sub-thread) — e-1 영수증 묶음을 이준호(b)에게 제시하는 시점에
-       * cascade로 e-10 (예비 부모 정서 도서) emerge. 4 entry scripted (judge_mention → A_react → B_response →
-       * judge_decree)로 d-3 (내연녀 임신 의심) 동시 등록 컷씬급 연출. priorCard 'e-1' + d-1 S2+ +
-       * contextAction 'evidence_present.b.e-1' 3중 게이트. stage 3 게이트는 schema-only 안에서 미보장
-       * (사용자 의식 영역, 회귀 가능성 잔존).
+       * 2026-05-26 C-3b (회귀 fix) — C-3 schema-only 안 (commit 84ec53bd)이 manual 검증에서
+       * 회귀 노출 (e-1 stage 1에서 e-10 emerge 단순 popup). 사용자 결정으로 본 trigger 임시
+       * 영구 차단 — 새 frame 영역 (안 2 = e-1.partyContext.b 책 관련 questionAngle 신설 +
+       * 그 angle 질문 시점 발동 + vfxProfile standard popup form) 별도 sub-thread 설계 + 적용
+       * 영역. 무력화 방법 = 만족 불가능한 placeholder requirePriorCardFired.
        */
       narrativeTriggers: [
         {
-          id: 'e10-via-e1-stage3-bookbaby',
+          id: 'e10-pending-c3b-redesign',
           type: 'cascade_from_card',
           preconditions: {
-            requirePriorCardFired: 'e-1',
-            disputeLieState: { 'd-1': 'S2+' },
-            contextAction: 'evidence_present.b.e-1',
+            requirePriorCardFired: 'pending-c3b-bookbaby-question-angle',
+            disputeLieState: { 'd-1': 'S5+' },
           },
           scriptedRefs: [
             'emerge-e10-via-cascade-judge-mention-v1',
-            'emerge-e10-via-cascade-a-react-v1',
-            'emerge-e10-via-cascade-b-response-v1',
-            'emerge-e10-via-cascade-judge-decree-v1',
           ],
-          vfxProfile: 'cutscene_dual_emergence',
+          vfxProfile: 'standard',
         },
       ],
     },

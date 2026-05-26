@@ -3768,22 +3768,18 @@
       ],
       "narrativeTriggers": [
         {
-          "id": "e10-via-e1-stage3-bookbaby",
+          "id": "e10-pending-c3b-redesign",
           "type": "cascade_from_card",
           "preconditions": {
             "disputeLieState": {
-              "d-1": "S2+"
+              "d-1": "S5+"
             },
-            "requirePriorCardFired": "e-1",
-            "contextAction": "evidence_present.b.e-1"
+            "requirePriorCardFired": "pending-c3b-bookbaby-question-angle"
           },
           "scriptedRefs": [
-            "emerge-e10-via-cascade-judge-mention-v1",
-            "emerge-e10-via-cascade-a-react-v1",
-            "emerge-e10-via-cascade-b-response-v1",
-            "emerge-e10-via-cascade-judge-decree-v1"
+            "emerge-e10-via-cascade-judge-mention-v1"
           ],
-          "vfxProfile": "cutscene_dual_emergence"
+          "vfxProfile": "standard"
         }
       ]
     }
