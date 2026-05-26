@@ -185,9 +185,9 @@
             "settings.support.title: 고객 센터",
             "settings.support.discord: Discord 커뮤니티",
             "settings.support.discordDesc: 공지 · 문의 · 버그 제보 · 신규 기능 제안",
-            "settings.support.discordButton: 참여하기"
+            "settings.support.discordButton: 바로가기"
           ],
-          "note": "설정 창 SUPPORT 카드 4 신규 KO 키. EN/JA/ZH-CN은 placeholder 직역 동시 반영 (Support / サポート / 客户支持 등) — 다음 batch에서 자연스러운 표현 polish 의뢰 권장. Discord URL = https://discord.gg/7mUjFGdcN (코드 상수, i18n 영역 X)."
+          "note": "설정 창 SUPPORT row 4 신규 KO 키 (이전 카드 형태 → wide row 형태로 리팩토링됨). discordButton은 사용자 결정으로 '참여하기' → '바로가기' (링크 클릭 의미 강조). EN/JA/ZH-CN placeholder 직역 동시 반영: Support / サポート / 客户支持 (title), Discord Community / Discord コミュニティ / Discord 社区 (discord), Open / 開く / 前往 (discordButton). 다음 batch에서 polish 의뢰 권장. Discord URL = https://discord.gg/7mUjFGdcN (코드 상수, i18n 영역 X)."
         }
       ]
     }

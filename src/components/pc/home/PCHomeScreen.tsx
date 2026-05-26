@@ -3,12 +3,9 @@ import { getAllCases, getCaseById } from '../../../data/cases'
 import { getHallOfFameForSeason, getJudgeProfile, getLeaderboard, getPlayerStats, loadExtendedHistory, loadProfile } from '../../../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../../../data/seasons'
 import { checkConnection } from '../../../engine/llmClient'
-import { isBgmEnabled, isSoundEnabled, playBgm as playBgmFn, setBgmEnabled, setSoundEnabled, stopBgm as stopBgmFn } from '../../../engine/soundEngine'
-import { isTelemetryOptedOut, setOptOut as setTelemetryOptOut } from '../../../telemetry/funnelClient'
-import { getSettings, updateSettings } from '../../../hooks/useLocalStorage'
+import { playBgm as playBgmFn, stopBgm as stopBgmFn } from '../../../engine/soundEngine'
 import { setLLMMode } from '../../../hooks/useActionDispatch'
-import { useScreenPreset } from '../../../hooks/useScreenPreset'
-import { SCREEN_PRESETS, type ScreenPresetId } from '../../../utils/screenPresets'
+import PCSettingsView from '../settings/PCSettingsView'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { shouldRunSpouse01Tutorial } from '../../../store/slices/tutorialSlice'
 import { translate, useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
@@ -32,9 +29,7 @@ type HomeView = 'home' | 'general' | 'generalCases' | 'season' | 'profile' | 'le
 type JudgeDeskTab = 'profile' | 'history' | 'progression'
 type HistoryMode = 'general' | 'season'
 type HistoryResultTab = 'result' | 'verdict_pronounce' | 'epilogue' | 'bonus'
-type HomeSettings = ReturnType<typeof getSettings>
 type SessionProgress = { completedCount: number; totalCount: number; averageScore: number | null; progressRate: number }
-type PendingScreenPreset = { previous: ScreenPresetId; next: ScreenPresetId }
 type HistoryCaseCard = {
   caseData: CaseData
   entries: ExtendedHistoryEntry[]
@@ -57,8 +52,7 @@ function formatHallOfFameCaseLabel(caseId: string, cases: CaseData[]): string {
 }
 
 export default function PCHomeScreen() {
-  const { t, locale, locales, setLocale } = useI18n()
-  const { preset: screenPreset, setPreset: setScreenPreset } = useScreenPreset()
+  const { t, locale, locales } = useI18n()
   const [showIntro, setShowIntro] = useState(() => !hasSeenPcIntro())
   const [view, setView] = useState<HomeView>('home')
   const [judgeDeskTab, setJudgeDeskTab] = useState<JudgeDeskTab>('profile')
@@ -68,15 +62,8 @@ export default function PCHomeScreen() {
   const [selectedHistoryKey, setSelectedHistoryKey] = useState<string | null>(null)
   const [historyDetailEntry, setHistoryDetailEntry] = useState<ExtendedHistoryEntry | null>(null)
   const [leaderboardSort, setLeaderboardSort] = useState<SortCategory>('total')
-  const [settings, setSettings] = useState<HomeSettings>(() => getSettings())
-  const [bgmOn, setBgmOn] = useState(() => isBgmEnabled())
-  const [sfxOn, setSfxOn] = useState(() => isSoundEnabled())
-  const [telemetryAllowed, setTelemetryAllowed] = useState(() => !isTelemetryOptedOut())
   const [llmConnected, setLlmConnected] = useState<boolean | null>(null)
-  const [checkingConnection, setCheckingConnection] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
-  const [pendingScreenPreset, setPendingScreenPreset] = useState<PendingScreenPreset | null>(null)
-  const [screenConfirmCountdown, setScreenConfirmCountdown] = useState(5)
   const countdown = 0 // 충전 시스템 비활성 상태
 
   const initializeCase = useStore((s) => s.initializeCase)
@@ -114,14 +101,8 @@ export default function PCHomeScreen() {
 
   const titleName = t(`pc.home.judgeTitle.${judgeProfile.titleId}.name` as MessageKey)
   const titleSubtitle = t(`pc.home.judgeTitle.${judgeProfile.titleId}.subtitle` as MessageKey)
-  const selectedLocale = locales.find((item) => item.code === locale)
   const seasonNumber = season.id.replace(/^s/, '')
   const seasonLabel = t('pc.home.season.name', { number: seasonNumber })
-  const liveStatus = llmConnected == null
-    ? t('pc.home.status.checking')
-    : llmConnected
-      ? t('pc.home.status.connected')
-      : t('pc.home.status.disconnected')
   const judgeLevel = Math.max(1, history.length || 1)
   const reputation = history.reduce((sum, entry) => sum + Math.max(0, entry.score), 0)
 
@@ -204,24 +185,6 @@ export default function PCHomeScreen() {
     setSelectedHistoryKey(getHistoryKey(selectedCaseEntries[0]))
   }, [selectedCaseEntries, selectedHistoryCase, selectedHistoryKey])
 
-  useEffect(() => {
-    if (!pendingScreenPreset) return
-
-    setScreenConfirmCountdown(5)
-    const countdownTimer = window.setInterval(() => {
-      setScreenConfirmCountdown((current) => Math.max(0, current - 1))
-    }, 1000)
-    const revertTimer = window.setTimeout(() => {
-      setScreenPreset(pendingScreenPreset.previous)
-      setPendingScreenPreset(null)
-    }, 5000)
-
-    return () => {
-      window.clearInterval(countdownTimer)
-      window.clearTimeout(revertTimer)
-    }
-  }, [pendingScreenPreset, setScreenPreset])
-
   const startCase = async (caseData: CaseData) => {
     stopBgmFn()
     setLLMMode(llmConnected ?? false)
@@ -236,60 +199,6 @@ export default function PCHomeScreen() {
     if (!shouldRunSpouse01Tutorial(caseData.caseId)) {
       useGameStore.getState().advancePhase(GamePhase.Phase1_InitialStatement)
     }
-  }
-
-  const toggleBgm = () => {
-    const next = !bgmOn
-    setBgmOn(next)
-    setBgmEnabled(next)
-    if (next) playBgmFn('/bgm/title.mp3', 0.12)
-    else stopBgmFn()
-  }
-
-  const toggleSfx = () => {
-    const next = !sfxOn
-    setSfxOn(next)
-    setSoundEnabled(next)
-  }
-
-  const toggleTelemetry = () => {
-    const next = !telemetryAllowed
-    setTelemetryAllowed(next)
-    setTelemetryOptOut(!next)
-  }
-
-  const refreshConnection = async () => {
-    setCheckingConnection(true)
-    try {
-      const result = await checkConnection()
-      setLlmConnected(result.connected)
-    } finally {
-      setCheckingConnection(false)
-    }
-  }
-
-  const updateTypingSpeed = (value: HomeSettings['typingSpeed']) => {
-    updateSettings({ typingSpeed: value })
-    setSettings((current) => ({ ...current, typingSpeed: value }))
-  }
-
-  const requestScreenPreset = (nextPreset: ScreenPresetId) => {
-    if (nextPreset === screenPreset) return
-    const previousPreset = pendingScreenPreset?.previous ?? screenPreset
-    setScreenPreset(nextPreset)
-    setPendingScreenPreset({ previous: previousPreset, next: nextPreset })
-    setScreenConfirmCountdown(5)
-  }
-
-  const keepScreenPreset = () => {
-    setPendingScreenPreset(null)
-    setScreenConfirmCountdown(5)
-  }
-
-  const revertScreenPreset = () => {
-    if (pendingScreenPreset) setScreenPreset(pendingScreenPreset.previous)
-    setPendingScreenPreset(null)
-    setScreenConfirmCountdown(5)
   }
 
   const _openGuide = () => openPcInteractionPanel({
@@ -536,67 +445,12 @@ export default function PCHomeScreen() {
       {view === 'settings' && (
         <section className="pc-depth-shell">
           <DepthHeader eyebrow="SETTINGS" title={t('settings.title')} description={t('settings.preview.designGuideNote')} onBack={() => setView('home')} />
-          <div className="pc-settings-grid-v2">
-            <Card eyebrow="DISPLAY" title={t('settings.display.title')}>
-              <div className="pc-settings-select-row">
-                <div>
-                  <strong>{t('settings.display.resolutionPreset')}</strong>
-                  <p>{t('settings.display.resolutionDescription')}</p>
-                </div>
-                <select
-                  className="pc-settings-select"
-                  value={screenPreset}
-                  onChange={(event) => requestScreenPreset(event.target.value as ScreenPresetId)}
-                >
-                  <option value="auto">{t('settings.display.autoDetect')}</option>
-                  {SCREEN_PRESETS.map((p) => (
-                    <option key={p.id} value={p.id}>{p.label}{p.note ? ` (${p.note})` : ''}</option>
-                  ))}
-                </select>
-              </div>
-            </Card>
-            <Card eyebrow="LANGUAGE" title={t('settings.language.title')}>
-              <div className="pc-settings-select-row">
-                <div>
-                  <strong>{t('settings.language.displayLanguage')}</strong>
-                  <p>{t('settings.language.displayLanguageDescription')}</p>
-                </div>
-                <select
-                  className="pc-settings-select"
-                  value={locale}
-                  aria-label={t('language.selectorTitle')}
-                  onChange={(event) => setLocale(event.target.value as LocaleCode)}
-                >
-                  {locales.map((item) => (
-                    <option key={item.code} value={item.code}>
-                      {item.nativeName}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <SummaryRow label={t('settings.language.current')} value={selectedLocale?.nativeName ?? locale} />
-            </Card>
-            <Card eyebrow="AUDIO" title={t('settings.audio.title')}><ToggleRow checked={bgmOn} label={t('settings.audio.bgmShort')} description={t('settings.audio.bgmHomeDesc')} onToggle={toggleBgm} /><ToggleRow checked={sfxOn} label={t('settings.audio.sfxShort')} description={t('settings.audio.sfxHomeDesc')} onToggle={toggleSfx} /></Card>
-            <Card eyebrow="GAMEPLAY" title={t('settings.gameplay.homeTitle')}><SummaryRow label={t('settings.gameplay.behaviorHintsShort')} value={settings.showBehaviorHints ? t('settings.toggle.on') : t('settings.toggle.off')} /><SummaryRow label={t('settings.gameplay.autoAdvance')} value={settings.autoAdvanceDialogue ? t('settings.toggle.on') : t('settings.toggle.off')} /><div className="pc-settings-select-row"><div><strong>{t('settings.gameplay.textSpeed')}</strong><p>{t('settings.gameplay.textSpeedHomeDesc')}</p></div><select className="pc-settings-select" onChange={(event) => updateTypingSpeed(event.target.value as HomeSettings['typingSpeed'])} value={settings.typingSpeed}><option value="fast">{t('settings.gameplay.speed.fastAdverb')}</option><option value="normal">{t('settings.gameplay.speed.normal')}</option><option value="slow">{t('settings.gameplay.speed.slowAdverb')}</option></select></div></Card>
-            <Card eyebrow="LIVE" title={t('pc.home.modal.live.title')}><SummaryRow label="AI" value={liveStatus} /><SummaryRow label={t('pc.home.modal.live.rechargeLabel')} value={formatCountdown(countdown)} /><button className="pc-inline-button" disabled={checkingConnection} onClick={refreshConnection} type="button">{checkingConnection ? t('pc.home.status.checking') : t('pc.home.modal.live.checkAgain')}</button></Card>
-            <Card eyebrow="DATA" title={t('settings.data.telemetry.group')}>
-              <ToggleRow
-                checked={telemetryAllowed}
-                label={t('settings.data.telemetry.toggle')}
-                description={t('settings.data.telemetry.toggleDesc')}
-                onToggle={toggleTelemetry}
-              />
-            </Card>
-          </div>
+          <PCSettingsView />
         </section>
       )}
 
       {historyDetailEntry ? (
         <HistoryDetailModal entry={historyDetailEntry} onClose={() => setHistoryDetailEntry(null)} />
-      ) : null}
-
-      {pendingScreenPreset ? (
-        <ScreenPresetConfirmModal countdown={screenConfirmCountdown} onCancel={revertScreenPreset} onConfirm={keepScreenPreset} />
       ) : null}
     </div>
   )
@@ -672,31 +526,6 @@ function AxisRow({ label, left, right, value }: { label: string; left: string; r
         <div className="pc-axis-row__line"><i style={{ left: `${percent}%` }} /></div>
         <span className={`pc-axis-row__pole glow-${rightGlow}`}>{right}</span>
       </div>
-    </div>
-  )
-}
-
-function ToggleRow({ checked, label, description, onToggle }: { checked: boolean; label: string; description: string; onToggle: () => void }) {
-  return <div className="pc-toggle-row"><div><strong>{label}</strong><p>{description}</p></div><button className={`pc-toggle-row__switch${checked ? ' is-on' : ''}`} onClick={onToggle} type="button"><i /></button></div>
-}
-
-function SummaryRow({ label, value }: { label: string; value: string }) {
-  return <div className="pc-summary-row"><strong>{label}</strong><span>{value}</span></div>
-}
-
-function ScreenPresetConfirmModal({ countdown, onCancel, onConfirm }: { countdown: number; onCancel: () => void; onConfirm: () => void }) {
-  return (
-    <div className="pc-resolution-confirm-backdrop" role="presentation">
-      <section className="pc-resolution-confirm" role="dialog" aria-modal="true" aria-labelledby="pc-resolution-confirm-title">
-        <h3 id="pc-resolution-confirm-title">{translate('pc.resolutionConfirm.title')}</h3>
-        <div className="pc-resolution-confirm__count">
-          <span>{translate('pc.resolutionConfirm.rollback', { seconds: countdown })}</span>
-        </div>
-        <div className="pc-resolution-confirm__actions">
-          <button className="pc-inline-button" onClick={onConfirm} type="button">{translate('pc.home.yes')}</button>
-          <button className="pc-inline-button is-ghost" onClick={onCancel} type="button">{translate('pc.home.no')}</button>
-        </div>
-      </section>
     </div>
   )
 }
