@@ -227,7 +227,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       whenLabel: ko('20여 년 전'),
       actor: 'b',
       action: ko(
-        '윤정후는 어머니에게서 아버지가 윤태성의 친부가 아니라는 사실을 듣고, 본인이 물려받을 예정이던 가업 공장을 형에게 양보한다. 본인은 자동차부품 가게로 시작한다.',
+        '윤정후는 어머니에게서 아버지가 윤태성의 친부가 아니라는 사실을 듣고, 어머니의 결정과 청을 따라 본인이 물려받을 예정이던 가업 공장을 형에게 양보한다. 본인은 자동차부품 가게로 시작한다.',
       ),
       aPerception: ko('공장을 형이 운영하는 것을 당연히 여긴다.'),
       bPerception: ko('전부 인지. 형이 무너지지 않게 하기 위한 결정.'),
@@ -242,7 +242,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       whenLabel: ko('약 20년간'),
       actor: 'b',
       action: ko(
-        '윤정후는 어머니 통장을 거쳐 매달 일정액의 정기 지원금을 보낸다. 형은 그 돈이 어머니 돈인 줄 안다. 공장 위기 시점에는 3억원도 같은 경로로 형에게 흘러간다.',
+        '윤정후는 어머니 통장을 거쳐 매달 일정액의 정기 지원금을 보낸다. 어머니는 이 흐름을 알면서 정후 뜻을 따라 형 쪽으로 매달 전달한다. 형은 그 돈이 어머니 돈인 줄 안다. 공장 위기 시점에는 3억원도 같은 경로로 형에게 흘러간다.',
       ),
       aPerception: ko('어머니가 자신에게 보낸 돈이라고 믿는다.'),
       bPerception: ko('전부 인지.'),
@@ -366,7 +366,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       name: ko('유서 작성과 판단 능력'),
       truth: true,
       truthDescription: ko(
-        '윤정후는 어머니 말년에 자주 방문하며 유서 내용을 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.',
+        '윤정후는 어머니 말년에, 특히 공증 직전 3주간 방문 빈도가 부쩍 늘었고 그 동안 유서 내용을 함께 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.',
       ),
       quadrant: 'both_know',
       weight: 'high',
@@ -2405,7 +2405,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           { id: 'L-3-C', text: ko('형 자존심을 지키려는 통로'), implication: ko('보호 명분 영역.') },
         ],
       },
-      noteText: ko('윤정후 계좌 → 어머니 통장 → 윤태성 쪽으로 20년간 흘러간 월 정기 지원금과 공장 위기 3억원의 실체. 형이 모르게 한 결정의 동기가 d-4로 이어진다.'),
+      noteText: ko('윤정후 계좌 → 어머니 통장 → 윤태성 쪽으로 20년간 흘러간 월 정기 지원금과 공장 위기 3억원의 실체. 형이 모르게 한 결정의 동기가 가족 기록 영역으로 이어진다.'),
       successConditionSummary: [
         ko('e-6이 Original 이상'),
         ko('d-2가 S3 이상으로 진전되어 d-3이 열린 상태'),
