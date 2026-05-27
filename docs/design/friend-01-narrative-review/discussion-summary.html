@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>friend-01 narrative integrity review — discussion summary</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #181b22;
+    --panel-2: #1f232c;
+    --panel-3: #14171d;
+    --line: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #9aa0aa;
+    --muted-2: #6e747e;
+    --accent: #7aa9e0;
+    --friend: #7aa9e0;
+    --friend-bg: #15212a;
+    --friend-border: #20354a;
+    --friend-soft: rgba(122,169,224,0.08);
+
+    --p0: #e0769a;
+    --p1: #f4a449;
+    --p2: #f4c849;
+    --p3: #7fc88a;
+    --apply: #7fc88a;
+    --keep: #6e747e;
+    --refer: #c977d6;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Pretendard', 'Inter', system-ui, sans-serif; margin: 0; padding: 0; line-height: 1.55; }
+  body { padding: 24px 24px 96px; max-width: 1400px; margin: 0 auto; }
+
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 20px; margin: 32px 0 12px; letter-spacing: -0.01em; padding-bottom: 6px; border-bottom: 2px solid var(--line); display: flex; align-items: center; gap: 10px; }
+  h2 .sec-num { display: inline-block; font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; }
+  h3 { font-size: 15px; margin: 18px 0 8px; letter-spacing: -0.005em; color: var(--accent); }
+  p { margin: 6px 0; }
+  .lead { color: var(--muted); font-size: 13.5px; }
+  code { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 4px; color: var(--accent); }
+
+  .scope-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; background: var(--friend-bg); color: var(--friend); border: 1px solid var(--friend-border); margin-right: 6px; vertical-align: middle; }
+
+  .meta { display: flex; gap: 14px; margin: 12px 0 24px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+  .meta span { padding: 4px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+  .meta span strong { color: var(--text); font-weight: 600; }
+
+  .toc { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin: 12px 0 24px; }
+  .toc-title { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 24px; }
+  .toc li { font-size: 13px; padding: 2px 0; color: var(--text); break-inside: avoid; }
+  .toc li a { color: var(--text); text-decoration: none; }
+  .toc li a:hover { color: var(--accent); }
+
+  .note-box { background: var(--friend-soft); border: 1px solid var(--friend-border); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-size: 13px; }
+  .note-box strong { color: var(--accent); }
+
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 12px 0 24px; }
+  .summary-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; text-align: center; }
+  .summary-card.p0 { border-top: 3px solid var(--p0); }
+  .summary-card.p1 { border-top: 3px solid var(--p1); }
+  .summary-card.p2 { border-top: 3px solid var(--p2); }
+  .summary-card.p3 { border-top: 3px solid var(--p3); }
+  .summary-card .sc-tier { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; }
+  .summary-card.p0 .sc-tier { color: var(--p0); }
+  .summary-card.p1 .sc-tier { color: var(--p1); }
+  .summary-card.p2 .sc-tier { color: var(--p2); }
+  .summary-card.p3 .sc-tier { color: var(--p3); }
+  .summary-card .sc-count { font-size: 32px; font-weight: 700; margin: 4px 0; line-height: 1; }
+  .summary-card .sc-desc { font-size: 11.5px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+  .summary-card .sc-applied { font-size: 11px; color: var(--apply); margin-top: 4px; font-weight: 700; }
+
+  .findings-table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 12.5px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .findings-table th { background: var(--panel-2); color: var(--accent); font-weight: 600; text-align: left; padding: 9px 12px; font-size: 11.5px; letter-spacing: 0.03em; border-bottom: 1px solid var(--line); }
+  .findings-table td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .findings-table tr:last-child td { border-bottom: none; }
+  .findings-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .findings-table tr.p0 td:first-child { border-left: 3px solid var(--p0); }
+  .findings-table tr.p1 td:first-child { border-left: 3px solid var(--p1); }
+  .findings-table tr.p2 td:first-child { border-left: 3px solid var(--p2); }
+  .findings-table tr.p3 td:first-child { border-left: 3px solid var(--p3); }
+  .findings-table .ft-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent); width: 70px; }
+  .findings-table .ft-tier { width: 50px; text-align: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10.5px; padding: 1px 6px; border-radius: 3px; }
+  .findings-table .ft-tier.p0 { background: rgba(224,118,154,0.18); color: var(--p0); }
+  .findings-table .ft-tier.p1 { background: rgba(244,164,73,0.18); color: var(--p1); }
+  .findings-table .ft-tier.p2 { background: rgba(244,200,73,0.18); color: var(--p2); }
+  .findings-table .ft-tier.p3 { background: rgba(127,200,138,0.18); color: var(--p3); }
+  .findings-table .ft-area { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .findings-table .ft-title { color: var(--text); font-weight: 600; font-size: 12.5px; line-height: 1.5; }
+  .findings-table .ft-decision { font-size: 11.5px; line-height: 1.5; }
+  .findings-table .ft-decision.apply { color: var(--apply); font-weight: 600; }
+  .findings-table .ft-decision.keep { color: var(--keep); }
+  .findings-table .ft-decision.refer { color: var(--refer); }
+
+  .change-block { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px; }
+  .change-block.timeline { border-left: 4px solid var(--p0); }
+  .change-block.responsibility { border-left: 4px solid var(--p1); }
+  .change-block.layer { border-left: 4px solid var(--p2); }
+  .change-block.detail { border-left: 4px solid var(--p3); }
+  .change-block h4 { margin: 0 0 10px; font-size: 13.5px; color: var(--text); text-transform: none; letter-spacing: 0; font-weight: 700; }
+  .change-block h4 .ch-tier { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; padding: 2px 7px; border-radius: 3px; margin-left: 8px; }
+  .change-block.timeline h4 .ch-tier { background: rgba(224,118,154,0.18); color: var(--p0); }
+  .change-block.responsibility h4 .ch-tier { background: rgba(244,164,73,0.18); color: var(--p1); }
+  .change-block.layer h4 .ch-tier { background: rgba(244,200,73,0.18); color: var(--p2); }
+  .change-block.detail h4 .ch-tier { background: rgba(127,200,138,0.18); color: var(--p3); }
+  .change-item { padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  .change-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .change-item .ci-loc { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--accent); margin-bottom: 4px; }
+  .change-item .ci-before { font-size: 12px; color: var(--muted); margin: 4px 0; padding: 6px 10px; background: rgba(110,116,126,0.08); border-radius: 4px; line-height: 1.5; }
+  .change-item .ci-before::before { content: 'Before  '; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--muted); font-size: 10px; letter-spacing: 0.08em; }
+  .change-item .ci-after { font-size: 12px; color: var(--text); margin: 4px 0; padding: 6px 10px; background: rgba(127,200,138,0.08); border-radius: 4px; line-height: 1.5; }
+  .change-item .ci-after::before { content: 'After  '; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--apply); font-size: 10px; letter-spacing: 0.08em; }
+  .change-item .ci-after strong { color: var(--apply); }
+
+  .reasoning { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13px; }
+  .reasoning .r-title { color: var(--accent); font-weight: 700; font-size: 12.5px; margin-bottom: 4px; }
+  .reasoning ul { margin: 6px 0; padding-left: 20px; }
+  .reasoning li { margin: 3px 0; line-height: 1.55; color: var(--muted); }
+
+  .footer { margin: 40px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11.5px; }
+  .footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<h1><span class="scope-tag">FRIEND-01</span>narrative integrity review — discussion summary</h1>
+<p class="lead">friend-01 사건 데이터 자체 (timeline / 쟁점 / 증거 / 단서 / 증인 / 결합 / 진실 노출 / character) 개연성·일관성 비판적 검토 결과 + 17 영역 수정 적용 + 사용자 결정 history.</p>
+
+<div class="meta">
+  <span>일자 <strong>2026-05-27</strong></span>
+  <span>HEAD <strong><code>79ba8b0b</code></strong></span>
+  <span>진입 base <strong><code>abfa7abe</code></strong></span>
+  <span>findings <strong>28건 (P0 3 / P1 6 / P2 10 / P3 9)</strong></span>
+  <span>적용 <strong>17 영역 (case.ts 변경 +53 / -13 line)</strong></span>
+  <span>유지 <strong>5건</strong></span>
+  <span>공통 CT 안내 <strong>1건</strong></span>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+  <div class="toc-title">목차</div>
+  <ol>
+    <li><a href="#section-summary">요약 (영역별 매트릭스)</a></li>
+    <li><a href="#section-findings">28건 findings 일람</a></li>
+    <li><a href="#section-changes-timeline">변경 영역 — timeline + character (P0)</a></li>
+    <li><a href="#section-changes-responsibility">변경 영역 — 책임 분배 frame (P1)</a></li>
+    <li><a href="#section-changes-layer">변경 영역 — dispute / evidence / witness (P2)</a></li>
+    <li><a href="#section-changes-detail">변경 영역 — 단서 / truthTable (P3)</a></li>
+    <li><a href="#section-decisions">사용자 결정 history</a></li>
+    <li><a href="#section-next">다음 thread 안내</a></li>
+  </ol>
+</div>
+
+<!-- ===================== 1. 요약 ===================== -->
+<h2 id="section-summary"><span class="sec-num">1</span>요약 (영역별 매트릭스)</h2>
+
+<div class="summary-grid">
+  <div class="summary-card p0">
+    <div class="sc-tier">P0 — 사건 진실 자체</div>
+    <div class="sc-count">3</div>
+    <div class="sc-desc">timeline + character driver 입체성</div>
+    <div class="sc-applied">3 영역 모두 적용</div>
+  </div>
+  <div class="summary-card p1">
+    <div class="sc-tier">P1 — 책임 / 정책</div>
+    <div class="sc-count">6</div>
+    <div class="sc-desc">correctResponsibility frame / 진실 노출 정책</div>
+    <div class="sc-applied">3 영역 적용 + 3 통합</div>
+  </div>
+  <div class="summary-card p2">
+    <div class="sc-tier">P2 — 자연성</div>
+    <div class="sc-count">10</div>
+    <div class="sc-desc">character + 증인 + 증거 cohesion</div>
+    <div class="sc-applied">6 영역 적용 + 4 통합/유지</div>
+  </div>
+  <div class="summary-card p3">
+    <div class="sc-tier">P3 — 디테일</div>
+    <div class="sc-count">9</div>
+    <div class="sc-desc">표기 / 누락 / 정합 영역</div>
+    <div class="sc-applied">3 영역 적용 + 1 공통 CT</div>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>적용 분류:</strong>
+  <ul style="margin: 6px 0 0; padding-left: 20px;">
+    <li><strong style="color: var(--apply);">적용 17건</strong> (P0 3 + P1 3 + P2 6 + P3 5 / 일부 통합) — case.ts 변경 commit <code>79ba8b0b</code></li>
+    <li><strong style="color: var(--keep);">유지 5건</strong> (F-16 / F-24 / F-25 / F-26 / F-28) — 현재 frame 자연 영역</li>
+    <li><strong style="color: var(--refer);">통합/대체 5건</strong> (F-02/F-09 → F-01 통합 / F-18 → F-03 통합 / F-08 → timeline 부분 / F-22 → 변경 0 / F-23 → F-12 통합)</li>
+    <li><strong style="color: var(--refer);">공통 CT 안내 1건</strong> (F-27 — e-7 provenance <code>court_compiled</code> type 신설)</li>
+  </ul>
+</div>
+
+<!-- ===================== 2. 28건 findings 일람 ===================== -->
+<h2 id="section-findings"><span class="sec-num">2</span>28건 findings 일람</h2>
+
+<table class="findings-table">
+  <thead>
+    <tr>
+      <th style="width: 70px;">ID</th>
+      <th style="width: 50px;">tier</th>
+      <th style="width: 130px;">영역</th>
+      <th>제목</th>
+      <th style="width: 180px;">결정</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="p0"><td class="ft-id">F-01</td><td><span class="ft-tier p0">P0</span></td><td class="ft-area">3rd party character</td><td class="ft-title">A 아버지 character 동기 명시 X</td><td class="ft-decision apply">적용 (timeline stage 0)</td></tr>
+    <tr class="p0"><td class="ft-id">F-02</td><td><span class="ft-tier p0">P0</span></td><td class="ft-area">timeline</td><td class="ft-title">stage 0 두 가족 사전 관계 자연성</td><td class="ft-decision apply">적용 (F-01 통합)</td></tr>
+    <tr class="p0"><td class="ft-id">F-03</td><td><span class="ft-tier p0">P0</span></td><td class="ft-area">timeline + B character</td><td class="ft-title">B 9일간 우회 경고 행동 자연성</td><td class="ft-decision apply">적용 (timeline stage 4)</td></tr>
+    <tr class="p1"><td class="ft-id">F-04</td><td><span class="ft-tier p1">P1</span></td><td class="ft-area">책임 분배</td><td class="ft-title">d-2 A:20 / B:80 — 예비신랑 책임 영역</td><td class="ft-decision apply">적용 (주석 + officialRecord)</td></tr>
+    <tr class="p1"><td class="ft-id">F-05</td><td><span class="ft-tier p1">P1</span></td><td class="ft-area">책임 분배</td><td class="ft-title">d-4 A:30 / B:70 — A 아버지 행위 책임</td><td class="ft-decision apply">적용 (F-04 통합)</td></tr>
+    <tr class="p1"><td class="ft-id">F-06</td><td><span class="ft-tier p1">P1</span></td><td class="ft-area">5 쟁점 (quadrant)</td><td class="ft-title">d-3 quadrant b_only vs A 인지 영역</td><td class="ft-decision apply">적용 (truthDescription 보강)</td></tr>
+    <tr class="p1"><td class="ft-id">F-07</td><td><span class="ft-tier p1">P1</span></td><td class="ft-area">3 증인 (w-1)</td><td class="ft-title">김세라 hiddenAgenda 시점 자연성</td><td class="ft-decision apply">적용 (knowledgeScope 보강)</td></tr>
+    <tr class="p1"><td class="ft-id">F-08</td><td><span class="ft-tier p1">P1</span></td><td class="ft-area">timeline + e-3</td><td class="ft-title">B 손절 「돈 문제」 frame 자연성</td><td class="ft-decision apply">적용 (timeline stage 1 aPerception)</td></tr>
+    <tr class="p1"><td class="ft-id">F-09</td><td><span class="ft-tier p1">P1</span></td><td class="ft-area">사건 흐름 + A 아버지</td><td class="ft-title">A 아버지 결혼 3주 전 동일 패턴 시점</td><td class="ft-decision apply">적용 (F-01 통합 + timeline stage 3)</td></tr>
+    <tr class="p2"><td class="ft-id">F-10</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">timeline (stage 2~3)</td><td class="ft-title">B 인지 경로 미명시 (박준혁)</td><td class="ft-decision apply">적용 (timeline stage 3)</td></tr>
+    <tr class="p2"><td class="ft-id">F-11</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">timeline + e-2 + A character</td><td class="ft-title">A 단톡방 매도 즉각성 + 친구 동조 즉각성</td><td class="ft-decision apply">적용 (e-2 depthStages.original)</td></tr>
+    <tr class="p2"><td class="ft-id">F-12</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">3rd party (김태윤)</td><td class="ft-title">예비신랑 character + A 결혼 결정 영향</td><td class="ft-decision apply">적용 (officialRecord 1줄)</td></tr>
+    <tr class="p2"><td class="ft-id">F-13</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">3 증인 (w-2)</td><td class="ft-title">박준혁 이중 관계 + B 에게 알리는 동기</td><td class="ft-decision apply">적용 (knowledgeScope 보강)</td></tr>
+    <tr class="p2"><td class="ft-id">F-14</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">3 증인 (w-3)</td><td class="ft-title">오미경 5년 전 장면 기억 자연성</td><td class="ft-decision apply">적용 (knowledgeScope 보강)</td></tr>
+    <tr class="p2"><td class="ft-id">F-15</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">5 단서 (challenges)</td><td class="ft-title">dc-1.b.q1 ↔ dc-5.b.q1 frame 동일</td><td class="ft-decision apply">적용 (dc-5.b.q1 frame 변경)</td></tr>
+    <tr class="p2"><td class="ft-id">F-16</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">7 증거 (e-6 provenance)</td><td class="ft-title">5년 전 통장 + 문자 B 보존 자연성</td><td class="ft-decision keep">유지 (일반적 정황)</td></tr>
+    <tr class="p2"><td class="ft-id">F-17</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">7 증거 + 증인 정합</td><td class="ft-title">e-5 회사 동료 실명 봉인 = 박준혁 본인</td><td class="ft-decision apply">적용 (sensitiveSealTargets.labels 명확화)</td></tr>
+    <tr class="p2"><td class="ft-id">F-18</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">B character</td><td class="ft-title">B affect_flattening + 9일간 적극 행동 정합</td><td class="ft-decision apply">적용 (F-03 통합)</td></tr>
+    <tr class="p2"><td class="ft-id">F-19</td><td><span class="ft-tier p2">P2</span></td><td class="ft-area">timeline + e-1</td><td class="ft-title">9일간 연락 내용 frame 모호성</td><td class="ft-decision apply">적용 (e-1 depthStages.context)</td></tr>
+    <tr class="p3"><td class="ft-id">F-20</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">5 단서 (dc-5)</td><td class="ft-title">dc-5 leadLine 미정의</td><td class="ft-decision apply">적용 (L-5 Synthesis Lead 신설)</td></tr>
+    <tr class="p3"><td class="ft-id">F-21</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">truthTable</td><td class="ft-title">t-5 weight=8 의도 vs 누락</td><td class="ft-decision apply">적용 (주석 명시 — 의도된 차별)</td></tr>
+    <tr class="p3"><td class="ft-id">F-22</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">표기</td><td class="ft-title">「예비 신랑」 vs 「예비신랑」 일관성</td><td class="ft-decision keep">검색 = 띄어쓰기 0건 / 변경 X</td></tr>
+    <tr class="p3"><td class="ft-id">F-23</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">3rd party (김태윤)</td><td class="ft-title">김태윤 실명 영역 + 사건 종결 frame</td><td class="ft-decision apply">적용 (F-12 통합)</td></tr>
+    <tr class="p3"><td class="ft-id">F-24</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">7 증거 (e-1 / e-4)</td><td class="ft-title">e-1 ↔ e-4 출처 분리</td><td class="ft-decision keep">유지 (정합)</td></tr>
+    <tr class="p3"><td class="ft-id">F-25</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">7 증거 (영역 중첩)</td><td class="ft-title">e-1 / e-4 / e-5 9일간 중첩 정합</td><td class="ft-decision keep">유지 (분리 자연)</td></tr>
+    <tr class="p3"><td class="ft-id">F-26</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">사건 핵심 진실</td><td class="ft-title">anchorTruth 다층 진실 disclosure tier</td><td class="ft-decision keep">유지 (정합)</td></tr>
+    <tr class="p3"><td class="ft-id">F-27</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">7 증거 (provenance)</td><td class="ft-title">e-7 provenance vs trustStates 정합</td><td class="ft-decision refer">공통 CT 안내 (court_compiled type)</td></tr>
+    <tr class="p3"><td class="ft-id">F-28</td><td><span class="ft-tier p3">P3</span></td><td class="ft-area">진실 노출 정책</td><td class="ft-title">truthLeakOverride.perDispute 비움 정합</td><td class="ft-decision keep">유지 (정책 정합)</td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== 3. 변경 영역 — timeline + character (P0) ===================== -->
+<h2 id="section-changes-timeline"><span class="sec-num">3</span>변경 영역 — timeline + character (P0)</h2>
+
+<div class="change-block timeline">
+  <h4>timeline stage 0 — A 아버지 동기 + 두 가족 사전 관계 <span class="ch-tier">P0 · F-01 / F-02</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:233-235 (timeline[0].action)</div>
+    <div class="ci-before">송다은 아버지가 최수민에게 투자 명목으로 돈을 빌리고 일부만 갚은 뒤 차일피일 미루며 연락을 끊는다. 최수민이 피해를 입었지만 송다은에게는 말하지 못한다.</div>
+    <div class="ci-after"><strong>두 가족이 동네에서 가까이 지내던 시기, 송다은 아버지가 사업 자금이 어려워지자 투자 명목으로</strong> 최수민에게 돈을 빌리고 일부만 갚은 뒤 차일피일 미루며 연락을 끊는다. 최수민이 피해를 입었지만 송다은에게는 말하지 못한다.</div>
+  </div>
+</div>
+
+<div class="change-block timeline">
+  <h4>timeline stage 1 — A 단정 습관 frame 보강 <span class="ch-tier">P0 · F-08</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:251 (timeline[1].aPerception)</div>
+    <div class="ci-before">'넌 돈만 엮이면 사람이 달라진다'고 답하며 변심으로 단정한다.</div>
+    <div class="ci-after">'넌 돈만 엮이면 사람이 달라진다'고 답하며 변심으로 단정한다. <strong>평소 최수민이 어려운 이야기를 우회로 처리하는 패턴을 변심으로 받아들이는 단정 습관이 작동한다.</strong></div>
+  </div>
+</div>
+
+<div class="change-block timeline">
+  <h4>timeline stage 3 — A 아버지 패턴 반복 + B 인지 경로 <span class="ch-tier">P0 · F-09 / F-10</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:278-280 (timeline[3].action)</div>
+    <div class="ci-before">송다은 아버지가 예비신랑 김태윤에게 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '다은이한테는 아직 말하지 마'라는 문자로 돈 부탁을 시작한다. 같은 시기 최수민은 우연히 이 흐름을 알게 된다.</div>
+    <div class="ci-after"><strong>송다은 아버지가 5년 전과 같은 흐름을 다시 시작한다.</strong> 예비신랑 김태윤에게 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '다은이한테는 아직 말하지 마'라는 문자로 돈 부탁을 시도한다. 같은 시기 최수민은 <strong>박준혁(예비신랑 회사 후배 + 본인 필라테스 수강생)을 통해 우연히 이 흐름을 알게 된다.</strong></div>
+  </div>
+</div>
+
+<div class="change-block timeline">
+  <h4>timeline stage 4 — B 평소와 다른 위기 행동 동기 <span class="ch-tier">P0 · F-03 / F-18</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:293-295 (timeline[4].action)</div>
+    <div class="ci-before">최수민이 예비신랑에게 전화 6번, 문자 11건을 보낸다. "다은이 관련 이야기예요", "예전에 같은 일이 있었거든요" 같은 문구로 경고하려 하지만 송다은에게는 직접 말하지 못한다.</div>
+    <div class="ci-after"><strong>최수민은 평소처럼 조용히 사라지는 방식 대신, 결혼이 무너질 수 있다는 위기감으로 평소와 다르게 9일간 반복 연락한다.</strong> 예비신랑에게 전화 6번, 문자 11건을 보낸다. "다은이 관련 이야기예요", "예전에 같은 일이 있었거든요" 같은 문구로 경고하려 하지만 송다은에게는 직접 말하지 못한다.</div>
+  </div>
+</div>
+
+<div class="reasoning">
+  <div class="r-title">Reasoning</div>
+  <ul>
+    <li><strong>F-01/F-02</strong>: 사건 anchorTruth 핵심 driver (A 아버지 사기 패턴 반복) character 입체성 + 두 가족 사전 관계 frame 명시 = stage 0 description 보강이 새 schema 없이 자연. character note 영역 신설 (F-01-C) 보다 description 보강이 정합.</li>
+    <li><strong>F-03/F-18</strong>: B character verbalTells 영역 = 일상 frame, 위기 영역과 다른 layer. timeline 영역에 「위기 동기」 frame 명시이 player frame 답 영역 직접.</li>
+    <li><strong>F-08</strong>: e-3 description = surface-safe 정책 영역 (돈 문제 / 투자 명목 직접 단어 회피). timeline stage 1 aPerception 보강이 더 자연.</li>
+    <li><strong>F-09/F-10</strong>: F-01 과 동일 영역 통합 + B 인지 경로 (박준혁) 명시로 timeline narrative cohesion 확보.</li>
+  </ul>
+</div>
+
+<!-- ===================== 4. 책임 분배 frame ===================== -->
+<h2 id="section-changes-responsibility"><span class="sec-num">4</span>변경 영역 — 책임 분배 frame (P1)</h2>
+
+<div class="change-block responsibility">
+  <h4>disputes 영역 주석 — correctResponsibility 정책 명시 <span class="ch-tier">P1 · F-04 / F-05</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:360 (disputes 영역 주석)</div>
+    <div class="ci-after"><strong>correctResponsibility 정책 (2026-05-27 narrative integrity review):</strong>
+      <ul style="margin: 6px 0; padding-left: 20px;">
+        <li>두 당사자 (A 송다은 + B 최수민) 의 <strong>정직 / 확인 책임</strong> 분배만 표현.</li>
+        <li>3rd party (예비신랑 김태윤 / 송다은 아버지) 의 행위 책임은 본 분배 외 영역. 별도 정리는 <code>officialRecordRecommendations</code> 영역에서 권고.</li>
+        <li>예: d-2 A:20 / B:80 = "예비신랑이 먼저 선 넘기" 진실 frame 에서 A 의 모른 채 단정 책임 + B 가 다은에게 직접 알리지 않은 정직 책임 분배. 예비신랑 본인 행위 책임은 본 분배 외.</li>
+        <li>예: d-4 A:30 / B:70 = "과거 손절 = 송다은 아버지 사기 + B 침묵" frame. A 의 가족 일원 인지·방관 책임 + B 의 정직 책임 분배. 송다은 아버지 본인 행위 책임은 본 분배 외.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="change-block responsibility">
+  <h4>officialRecordRecommendations — 3rd party 책임 별도 정리 권고 <span class="ch-tier">P1 · F-12 / F-23</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:2877-2880 (officialRecordRecommendations 영역에 2줄 추가)</div>
+    <div class="ci-after">
+      • 예비신랑 김태윤의 선 넘는 접근과 회사 단톡방 떠벌림 영역의 책임은 본 사건 외 별도 정리가 권고된다.<br>
+      • 송다은 아버지의 5년 전 사기 + 결혼 3주 전 동일 패턴 반복 영역의 행위 책임은 본 사건 외 별도 절차가 권고된다.
+    </div>
+  </div>
+</div>
+
+<div class="change-block responsibility">
+  <h4>d-3 truthDescription — A 알면서도 모른 척 frame 명시 <span class="ch-tier">P1 · F-06</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:956-958 (d-3.truthDescription)</div>
+    <div class="ci-before">송다은 아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도하려 하고 있었고, 최수민은 과거에 같은 일을 당한 적이 있어 결혼 자체가 위기에 빠질까 봐 예비신랑에게 직접 연락해 막으려 했다.</div>
+    <div class="ci-after">송다은 아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도하려 하고 있었고, 최수민은 과거에 같은 일을 당한 적이 있어 결혼 자체가 위기에 빠질까 봐 예비신랑에게 직접 연락해 막으려 했다. <strong>송다은은 아버지의 이러한 흐름을 일찍부터 알면서도 모른 척했다.</strong></div>
+  </div>
+</div>
+
+<div class="reasoning">
+  <div class="r-title">Reasoning</div>
+  <ul>
+    <li><strong>F-04/F-05</strong>: 수치 보정 (A:30/B:70 또는 A:50/B:50) 보다 주석 명시가 frame 의미 정확. 책임 분배 frame = 「두 당사자 정직 책임」 명시 + 3rd party 책임 별도 영역 (officialRecord) 명확화.</li>
+    <li><strong>F-06</strong>: schema quadrant (b_only) 변경 = LLM frame inject 영향 가능 → schema 영역 유지 + truthDescription 보강으로 「A 는 알면서 모른 척」 frame 명시. <code>b_only</code> = B 만 「인정」, A 는 「알면서 회피」 영역으로 frame 일관.</li>
+    <li><strong>F-12/F-23</strong>: 예비신랑 + A 아버지 책임 영역 = 본 사건 외 별도 절차 권고 frame. truthDescription 또는 anchorTruth 영역 변경 X (사건 진실 frame 영역 고정).</li>
+  </ul>
+</div>
+
+<!-- ===================== 5. dispute / evidence / witness ===================== -->
+<h2 id="section-changes-layer"><span class="sec-num">5</span>변경 영역 — dispute / evidence / witness (P2)</h2>
+
+<div class="change-block layer">
+  <h4>w-1 김세라 knowledgeScope — 동조 책임 부끄러움 시점 <span class="ch-tier">P2 · F-07</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:2170-2172 (w-1.knowledgeScope)</div>
+    <div class="ci-before">단톡방에서 송다은의 글을 보고 최수민을 비난하는 데 동조했다. 나중에 찜찜한 마음이 들었다.</div>
+    <div class="ci-after">단톡방에서 송다은의 글을 보고 최수민을 비난하는 데 동조했다. <strong>사건이 본 법정으로 넘어가면서 진실 일부가 드러난 뒤로 본인이 동조한 책임이 점점 부끄러워졌다.</strong></div>
+  </div>
+</div>
+
+<div class="change-block layer">
+  <h4>w-2 박준혁 knowledgeScope — 회사 영역 넘는 동기 frame <span class="ch-tier">P2 · F-13</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:2204-2206 (w-2.knowledgeScope)</div>
+    <div class="ci-before">예비신랑 김태윤의 회사 후배이자 최수민의 필라테스 수강생. 회사에서 예비신랑이 떠벌린 이야기를 우연히 듣고 최수민에게 알린 적이 있다.</div>
+    <div class="ci-after">예비신랑 김태윤의 회사 후배이자 최수민의 필라테스 수강생. 회사에서 예비신랑이 떠벌린 이야기를 우연히 듣고 최수민에게 알린 적이 있다. <strong>결혼 자체가 위태로워 보였고, 필라테스 수강생으로서 최수민과 더 가까운 관계였기에 회사 영역을 넘어서라도 알릴 수밖에 없다고 판단했다.</strong></div>
+  </div>
+</div>
+
+<div class="change-block layer">
+  <h4>w-3 오미경 knowledgeScope — 평소 단골 vs 가게 앞 장면 어긋남 <span class="ch-tier">P2 · F-14</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:2248-2250 (w-3.knowledgeScope)</div>
+    <div class="ci-before">동네 분식집 사장으로, 송다은과 최수민 둘 다 어릴 적부터 단골로 드나들었다. 그래서 송다은 아버지가 가게 앞에서 최수민에게 돈을 빌리려 한 장면 + 최수민이 가게에 울면서 들어왔던 시기를 모두 직접 봤다.</div>
+    <div class="ci-after">동네 분식집 사장으로, 송다은과 최수민 둘 다 어릴 적부터 단골로 드나들었다. 그래서 송다은 아버지가 가게 앞에서 최수민에게 돈을 빌리려 한 장면 + 최수민이 가게에 울면서 들어왔던 시기를 모두 직접 봤다. <strong>송다은 아버지도 평소 단골이었기에 가게 앞에서의 돈 요구 장면이 평소 단골 모습과 어긋나 강한 인상으로 남았다.</strong></div>
+  </div>
+</div>
+
+<div class="change-block layer">
+  <h4>e-2 depthStages.original — 동조 vs 침묵 그룹 분위기 패턴 <span class="ch-tier">P2 · F-11</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts (e-2.depthStages.original)</div>
+    <div class="ci-before">공통 친구 동조 메시지까지 모두 확인.</div>
+    <div class="ci-after">공통 친구 동조 메시지까지 모두 확인. <strong>김세라 등 1~2명이 즉각 동조하고 나머지 친구는 침묵하는 그룹 분위기 패턴이 드러남.</strong></div>
+  </div>
+</div>
+
+<div class="change-block layer">
+  <h4>e-1 depthStages.context — B 우회 frame 모호성 + 예비신랑 자기 frame 해석 <span class="ch-tier">P2 · F-19</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts (e-1.depthStages.context)</div>
+    <div class="ci-before">다은 관련 사유와 과거 반복 암시가 확인됨.</div>
+    <div class="ci-after">다은 관련 사유와 과거 반복 암시가 확인됨. <strong>최수민의 우회 frame ("다은이 관련" / "예전에 같은 일") 이 예비신랑 입장에서는 자기 frame 으로 해석하기 좋은 모호성으로 작용한 흐름.</strong></div>
+  </div>
+</div>
+
+<div class="change-block layer">
+  <h4>dc-5.b.q1 — 반복 구조 + 결과 frame (dc-1.b.q1 와 분화) <span class="ch-tier">P2 · F-15</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts (dossierCards[4].challenges.b.questions[0].text)</div>
+    <div class="ci-before">이번에도 스스로 악역이 되면 같은 낙인이 반복된다는 걸 알면서, 왜 끝까지 혼자 버텼습니까?</div>
+    <div class="ci-after"><strong>두 시점 모두 혼자 막으려 한 행동이 결국 송다은을 또 한 번 무너뜨리는 결과로 이어졌다는 점은 어떻게 받아들이고 있습니까?</strong></div>
+  </div>
+</div>
+
+<div class="reasoning">
+  <div class="r-title">Reasoning</div>
+  <ul>
+    <li><strong>F-07/F-13/F-14</strong>: knowledgeScope = 증인의 인지 영역 + 사건 frame 영역 명시. 동기 / 시점 frame 보강으로 증언 자연성 확보.</li>
+    <li><strong>F-11</strong>: e-2 depthStages.original 영역 = 단톡방 캡처 전체 확인 단계. 그룹 분위기 패턴 명시로 A character (premature_summary) + 친구 동조 frame 자연성.</li>
+    <li><strong>F-19</strong>: e-1 depthStages.context = 9일간 연락 영역의 맥락 복원 단계. B 우회 frame 모호성 → 예비신랑 자기 frame 해석 → 회사 단톡 떠벌림 흐름 까지 narrative cohesion.</li>
+    <li><strong>F-15</strong>: dc-1.b.q1 (단톡방 글의 근거, B 침묵 첫 추궁) ↔ dc-5.b.q1 (낙인의 순서, B 침묵 종합 추궁) frame 분화. dc-5 = 반복 구조 + 결과 frame 으로 chain 종점 영역 강화.</li>
+  </ul>
+</div>
+
+<!-- ===================== 6. 단서 / truthTable ===================== -->
+<h2 id="section-changes-detail"><span class="sec-num">6</span>변경 영역 — 단서 / truthTable (P3)</h2>
+
+<div class="change-block detail">
+  <h4>dc-5 leadLine 신설 — L-5 Synthesis Lead <span class="ch-tier">P3 · F-20</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts (dossierCards[4].leadLine 신설)</div>
+    <div class="ci-after">
+      <strong>id</strong>: L-5 · <strong>name</strong>: Synthesis Lead · <strong>leadType</strong>: Synthesis<br>
+      <strong>firstInputs</strong>: [e-2, e-7] · <strong>secondInputs</strong>: [L-5, dc-4]<br>
+      <strong>interpretationChoices</strong>:
+      <ul style="margin: 4px 0; padding-left: 20px;">
+        <li>L-5-A: 두 시점 모두 같은 구조가 반복됐다 (d-5 본격 정리 + 두 당사자 책임 분배)</li>
+        <li>L-5-B: 확인 없이 단톡방에 올린 책임이 가장 크다 (A 책임 중심)</li>
+        <li>L-5-C: 혼자 막으려 한 침묵의 책임도 크다 (B 책임 중심)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="change-block detail">
+  <h4>e-5 sensitiveSealTargets.labels — 박준혁 외 회사 다른 동료 영역 명확화 <span class="ch-tier">P3 · F-17</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts (e-5.sensitiveSealTargets.labels)</div>
+    <div class="ci-before">['회사 동료 실명', '최수민 메시지의 사적 톤']</div>
+    <div class="ci-after">[<strong>'예비신랑 회사 다른 동료 실명 (박준혁 외)'</strong>, '최수민 메시지의 사적 톤']</div>
+  </div>
+</div>
+
+<div class="change-block detail">
+  <h4>truthTable t-5 weight=8 의도된 차별 주석 <span class="ch-tier">P3 · F-21</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts:351-353 (truthTable t-5 직전 주석)</div>
+    <div class="ci-after"><strong>주석 추가:</strong> "t-5 weight=8 (다른 t-1~t-4 = 10). 의도된 차별 — 절차/매도 책임 = 실체 진실 (사기 / 사기 패턴 반복 / 선 넘기) frame 보다 가벼움 영역."</div>
+  </div>
+</div>
+
+<div class="change-block detail">
+  <h4>「예비신랑」 표기 일관성 검색 <span class="ch-tier">P3 · F-22</span></h4>
+  <div class="change-item">
+    <div class="ci-loc">friend-01.case.ts 전체 검색 결과</div>
+    <div class="ci-after">「예비 신랑」 (띄어쓰기 있는) 매치 <strong>0건</strong>. 모든 영역 = 「예비신랑」 통일 = <strong>변경 영역 0</strong>.</div>
+  </div>
+</div>
+
+<div class="reasoning">
+  <div class="r-title">Reasoning</div>
+  <ul>
+    <li><strong>F-20</strong>: dc-1~dc-4 모두 leadLine 정의 → dc-5 만 누락. chain 종점 카드 frame = leadLine 없이 직접 challenge 진행 의도 가능 단 dc 영역 일관성 + player 경로 frame 영역 boost. Synthesis Lead 신설 + interpretationChoices 3개로 두 당사자 책임 분배 영역 명시.</li>
+    <li><strong>F-17</strong>: e-5 회사 동료 영역의 봉인 vs 박준혁 (w-2) 본인 증인 영역 충돌 → labels 명확화로 「박준혁 외 다른 동료」 영역만 봉인 frame 분화.</li>
+    <li><strong>F-21</strong>: t-5 weight=8 의도 vs 누락 영역 명확화. 절차 책임 (단톡방 매도) = 실체 진실 (사기 / 선 넘기) frame 보다 가벼움 = 의도된 차별. 주석 명시로 미래 maintainer 영역 frame 명확.</li>
+    <li><strong>F-22</strong>: 검색 결과 띄어쓰기 영역 0건 → 변경 영역 0. 이미 일관 영역.</li>
+  </ul>
+</div>
+
+<!-- ===================== 7. 사용자 결정 history ===================== -->
+<h2 id="section-decisions"><span class="sec-num">7</span>사용자 결정 history</h2>
+
+<div class="note-box">
+  <strong>결정 #1 (2026-05-27, 본 thread 진입 직후)</strong>: 전체 30개 매트릭스 작성 후 일괄 결정 + <code>docs/design/friend-01-narrative-review/</code> 신규 폴더 + 영역별 commit 분리.<br><br>
+  <strong>결정 #2 (P0 timeline + character)</strong>: 모두 적용 (권장 안) — F-01/F-02/F-03/F-08/F-09/F-10/F-18 통합.<br><br>
+  <strong>결정 #3 (P1 책임 분배 frame)</strong>: 주석 명시 + officialRecord 추가 (권장 안) — F-04/F-05/F-12/F-23 통합.<br><br>
+  <strong>결정 #4 (F-06/F-15/F-20)</strong>: 모두 적용 (권장 안) — d-3 truthDescription 보강 + dc-5.b.q1 frame 변경 + dc-5 leadLine 신설.<br><br>
+  <strong>결정 #5 (P2/P3 마이너 보강 + F-27 공통 CT)</strong>: 권장 안 일괄 적용 + F-27 공통 CT 안내 (권장 안).
+</div>
+
+<!-- ===================== 8. 다음 thread 안내 ===================== -->
+<h2 id="section-next"><span class="sec-num">8</span>다음 thread 안내</h2>
+
+<div class="note-box">
+  <strong>본 thread 종료 후 후속 작업:</strong>
+  <ul style="margin: 6px 0 0; padding-left: 20px;">
+    <li><strong>다국어 sync thread</strong> — case.ts KO 변경 영역의 EN/JA/ZH-CN sync 의뢰서 작성 + Codex thread 진입. 영향 영역: timeline (stage 0/1/3/4) / d-3 truthDescription / w-1/w-2/w-3 knowledgeScope / e-1/e-2 depthStages / dc-5.b.q1 + leadLine / officialRecordRecommendations.</li>
+    <li><strong>ScriptedText thread</strong> — dc-5.b.q1 / d-3 truthDescription 영역의 ScriptedText 영향 검토 (별도 thread). 직전 trigger 재편성 thread (script-changes.md) 권위 자료와 통합 검토.</li>
+    <li><strong>공통 CT thread 안내</strong> — F-27 (e-7 provenance <code>court_compiled</code> type 신설 검토). 다른 사건 (spouse-01 / family-01) 의 court-compiled 영역 정책 검토 통합.</li>
+    <li><strong>family-01 narrative integrity review</strong> — 동일 패턴 thread 진행 중 (별도 thread). 본 thread 결정 (correctResponsibility 정책 / character 보강 / leadLine 신설 등) 참고 가능.</li>
+    <li><strong>spouse-01 narrative integrity review</strong> — 본 thread 종료 후 별도 thread 진입 검토 (사전 검토 영역 적용 가능).</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>본 자료 = <a href="./review-findings.md">review-findings.md</a> + <a href="./proposals.md">proposals.md</a> 의 적용 결과 시각화.</p>
+  <p>권위 base HEAD <code>79ba8b0b</code> · 직전 trigger 재편성 thread base = <code>90c3fb24</code> (HEAD abfa7abe).</p>
+  <p>관련 자료 = <a href="../friend-01-trigger-redesign/structure-overview.html">friend-01 사건 전체 구조 시각화</a></p>
+</div>
+
+</body>
+</html>
