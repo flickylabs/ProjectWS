@@ -141,7 +141,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       riskAppetite: 7,
       digitalHabit: 'minimal',
       dailyRoutine: ko(
-        '공장에서 주문을 처리하고 저녁엔 어머니 집에 들러 자신이 돌봤다는 생활을 유지해왔다.',
+        '공장에서 주문을 처리하고 저녁에는 어머니 집에 들러 일상을 챙겼다. 어머니가 요양 단계에 들어선 뒤로는 직접 모시던 시간이 줄고 요양원 방문으로 바뀌었으나, 본인은 평생 어머니를 가까이서 모셨다는 자기 인식을 유지해왔다.',
       ),
       sensitivePoints: [
         ko('장남이라는 자기 위치'),
@@ -187,7 +187,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       riskAppetite: 3,
       digitalHabit: 'minimal',
       dailyRoutine: ko(
-        '본래 부모님이 자신에게 물려주려던 가업 공장을 형에게 양보하고 본인은 작은 자동차부품 가게로 시작했으며, 그 가게를 운영하며 틈틈이 어머니에게 송금하고 형 몰래 정기 지원금과 병원비를 대 왔다.',
+        '본래 부모님이 자신에게 물려주려던 가업 공장을 형에게 양보하고 본인은 자동차부품 가게로 시작했으며, 십수 년 사이에 거래처가 안정되어 가게가 자리잡았다. 그 가게를 운영하며 어머니에게 정기적으로 송금하고 형 몰래 정기 지원금과 병원비까지 대왔으며, 형 공장 위기 때에는 가게 자산과 거래처 신용을 일부 담보로 잡아 3억원을 마련해 어머니 통장을 거쳐 보냈다.',
       ),
       sensitivePoints: [
         ko('자필 연습본의 비율을 줄인 책임'),
@@ -257,10 +257,10 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       whenLabel: ko('말년 (2025.09~10)'),
       actor: 'b',
       action: ko(
-        '어머니가 요양 단계에 들어선 후 윤정후의 요양원 방문이 공증 3주 전부터 급증한다. 어머니에게 종이를 읽어드리는 모습이 전 요양보호사에게 목격된다.',
+        '어머니가 요양 단계에 들어서기 직전, 아직 의식이 명료하던 시기에 자필 연습본 한 장(정후 90, 태성 10)을 본인 손으로 미리 남긴다. 요양 단계에 들어선 뒤로는 윤정후의 요양원 방문이 공증 3주 전부터 급증하고, 어머니에게 그 연습본을 함께 펼쳐 비율을 정리하려는 모습이 전 요양보호사에게 목격된다. 어머니는 이때 본인 집 거주에서 요양원 거주로 옮긴 상태다.',
       ),
-      aPerception: ko('동생이 어머니를 자주 본다는 정도만 인지.'),
-      bPerception: ko('어머니의 자필 연습본을 함께 보고 비율을 정리하려 했다.'),
+      aPerception: ko('동생이 어머니를 자주 본다는 정도만 인지. 어머니 거주가 본인 집에서 요양원으로 옮긴 시점 자체만 인지.'),
+      bPerception: ko('어머니가 명료할 때 남긴 자필 연습본을 함께 보고 비율을 정리하려 했다.'),
       exposureGate: {
         minLieState: 'S1',
         allowedChannels: ['evidence_present', 'dossier'],
@@ -1567,7 +1567,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       name: ko('어머니의 숨겨진 마음'),
       truth: true,
       truthDescription: ko(
-        '윤태성은 유산을 돌봄의 보상처럼 당연시했고, 윤정후는 형을 보호한다는 이유로 어머니 뜻과 문서를 대신 정리하려 했다. 어머니가 자필 연습본에 남긴 90:10을 정후가 공증 60:40으로 줄인 것이 그 대표 흔적이다. 두 사람 모두 어머니 뜻을 있는 그대로 두지 못했다.',
+        '윤태성은 유산을 돌봄의 보상처럼 당연시했고, 윤정후는 형을 보호한다는 이유로 어머니 뜻과 문서를 대신 정리하려 했다. 어머니가 명료하던 시기에 자필 연습본에 직접 남긴 90:10을, 정후가 어머니 상태가 흐트러진 공증 단계에서 60:40으로 줄인 것이 그 대표 흔적이다. 두 사람 모두 어머니 뜻을 있는 그대로 두지 못했다.',
       ),
       quadrant: 'both_know',
       weight: 'high',
@@ -2635,7 +2635,8 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
         requiredEvidenceStages: { 'e-4': 'original', 'e-5': 'original' },
-        requiredTruthStage: { 'd-5': 3 },
+        /* e-5.requiredLieState='S5' (자필 비율 정확 수치 봉인) 정합 — d-5 S5 도달 후 e-5 input 결합 가능. dc-5는 다른 경로(combine-8/9, cascade)로도 unlock 가능. */
+        requiredTruthStage: { 'd-5': 5 },
         autoSurfaceAllowed: false,
       },
       surfaceFallback: ko('두 유서의 비율이 서로 다르다.'),
@@ -2650,7 +2651,8 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       gate: {
         allowedChannels: ['evidence_present', 'dossier'],
         requiredEvidenceStages: { 'e-5': 'context', 'e-6': 'original' },
-        requiredTruthStage: { 'd-3': 2 },
+        /* e-5.requiredLieState='S5' 정합 — d-5 S5 도달 후 e-5 input 결합 가능. dc-3은 d-3 통합 event force-unlock으로 사전 확보, 본 결합은 사후 종합용. */
+        requiredTruthStage: { 'd-3': 5, 'd-5': 5 },
         autoSurfaceAllowed: false,
       },
       surfaceFallback: ko('유품 문서의 비율과 오래된 자금 흐름이 연결된다.'),
