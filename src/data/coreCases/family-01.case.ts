@@ -1989,7 +1989,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
       surfaceName: ko('자필 메모 사본'),
       /* description은 surface-safe — 구체 비율 수치는 depthStages established 단계에서만 노출. */
       description: ko('어머니가 남긴 자필 유언장 연습본. 공증본과 별개로 분배 방향이 적힌 흔적이 있다.'),
-      surfaceDescription: ko('어머니가 남긴 자필 유언장 연습본. 구체 비율은 단계 조사로 확인된다.'),
+      surfaceDescription: ko('어머니가 남긴 자필 유언장 연습본. 분배 방향의 흔적이 일부만 보인다.'),
       type: 'document',
       reliability: 'hard',
       completeness: 'original',
@@ -2157,7 +2157,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
             canProve: [
               ko('윤정후가 어머니에게 종이를 읽어드린 장면.'),
               ko('형이 오기 전에 끝내자는 발화를 직접 들음.'),
-              ko('박순애로부터 전해 들은 어머니 평소 마음 영역 일부 (자기 관찰 영역 외 보강).'),
+              ko('박순애로부터 전해 들은 어머니 평소 마음 영역 일부 (직접 청취 영역과 분리 — 박순애 본인의 해석이 일부 섞여 있을 수 있다).'),
             ],
             cannotDisprove: [
               ko('정확한 강요 여부까지는 본인이 판단할 영역이 아니다.'),
@@ -2231,7 +2231,7 @@ export const family01CaseAuthority: CoreCaseAuthority = {
           },
           'd-5': {
             canProve: [
-              ko('어머니가 두 아들에 대해 "정후가 더 짊어졌다"고 말한 적이 있다는 사실.'),
+              ko('어머니가 두 아들에 대해 "정후가 더 짊어졌다"고 말한 적이 있다는 사실 (본인 frame과 어긋나는 영역이라 평소에는 잘 꺼내지 않지만, 직접 들은 발화라 부인하지는 못한다).'),
               ko('태성에 대한 어머니의 안쓰러움 발화.'),
             ],
             cannotDisprove: [
