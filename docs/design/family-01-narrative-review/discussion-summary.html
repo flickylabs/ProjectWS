@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>family-01 narrative integrity review — 결과 요약</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #181b22;
+    --panel-2: #1f232c;
+    --panel-3: #14171d;
+    --line: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #9aa0aa;
+    --muted-2: #6e747e;
+    --accent: #a799c4;
+    --family: #a799c4;
+    --family-bg: #1f1a2a;
+    --family-border: #3d3450;
+    --p0: #e07b6c;
+    --p1: #f4a449;
+    --p2: #f4c849;
+    --p3: #7fc88a;
+    --pro-a: #e07b6c;
+    --pro-b: #7fc88a;
+    --truth: #f4c849;
+    --change: #7aa9e0;
+    --keep: #c2c7d0;
+    --out: #6e747e;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Pretendard', 'Inter', system-ui, sans-serif; margin: 0; padding: 0; line-height: 1.55; }
+  body { padding: 24px 24px 96px; max-width: 1400px; margin: 0 auto; }
+
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 20px; margin: 32px 0 12px; letter-spacing: -0.01em; padding-bottom: 6px; border-bottom: 2px solid var(--line); display: flex; align-items: center; gap: 10px; }
+  h2 .sec-num { display: inline-block; font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; }
+  h3 { font-size: 15px; margin: 18px 0 8px; letter-spacing: -0.005em; color: var(--accent); }
+  h4 { font-size: 13px; margin: 12px 0 6px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  p { margin: 6px 0; }
+  .lead { color: var(--muted); font-size: 13.5px; }
+  code { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 4px; color: var(--accent); }
+
+  .scope-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; background: var(--family-bg); color: var(--family); border: 1px solid var(--family-border); margin-right: 6px; vertical-align: middle; }
+  .meta { display: flex; gap: 14px; margin: 12px 0 24px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+  .meta span { padding: 4px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+  .meta span strong { color: var(--text); font-weight: 600; }
+
+  .toc { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin: 12px 0 24px; }
+  .toc-title { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 24px; }
+  .toc li { font-size: 13px; padding: 2px 0; color: var(--text); break-inside: avoid; }
+  .toc li a { color: var(--text); text-decoration: none; }
+  .toc li a:hover { color: var(--accent); }
+
+  .note-box { background: rgba(167,153,196,0.08); border: 1px solid var(--family-border); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-size: 13px; }
+  .note-box strong { color: var(--accent); }
+
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 12px 0 24px; }
+  .stat-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .stat-card .s-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat-card .s-count { font-size: 28px; font-weight: 700; line-height: 1.2; }
+  .stat-card.p0 .s-count { color: var(--p0); }
+  .stat-card.p1 .s-count { color: var(--p1); }
+  .stat-card.p2 .s-count { color: var(--p2); }
+  .stat-card.p3 .s-count { color: var(--p3); }
+  .stat-card.change .s-count { color: var(--change); }
+  .stat-card.keep .s-count { color: var(--keep); }
+  .stat-card .s-desc { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+
+  .findings-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 12.5px; background: var(--panel); border-radius: 8px; overflow: hidden; }
+  .findings-table th { background: var(--panel-2); color: var(--accent); font-weight: 600; text-align: left; padding: 9px 12px; font-size: 11.5px; border-bottom: 1px solid var(--line); }
+  .findings-table td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .findings-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .findings-table .ft-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; width: 70px; }
+  .findings-table .ft-id.p0 { color: var(--p0); }
+  .findings-table .ft-id.p1 { color: var(--p1); }
+  .findings-table .ft-id.p2 { color: var(--p2); }
+  .findings-table .ft-id.p3 { color: var(--p3); }
+  .findings-table .ft-area { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  .findings-table .ft-decision { font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; }
+  .findings-table .ft-decision.change { background: rgba(122,169,224,0.18); color: var(--change); }
+  .findings-table .ft-decision.keep { background: rgba(194,199,208,0.18); color: var(--keep); }
+  .findings-table .ft-decision.out { background: rgba(110,116,126,0.18); color: var(--out); }
+
+  .diff-block { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 8px 0; font-size: 12.5px; line-height: 1.6; }
+  .diff-block .d-area { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); margin-bottom: 6px; }
+  .diff-block .d-before, .diff-block .d-after { padding: 6px 8px; border-radius: 4px; margin: 4px 0; font-size: 12px; }
+  .diff-block .d-before { background: rgba(224,123,108,0.08); border-left: 3px solid var(--p0); color: var(--text); }
+  .diff-block .d-after { background: rgba(127,200,138,0.08); border-left: 3px solid var(--p3); color: var(--text); }
+  .diff-block .d-mark { font-family: 'JetBrains Mono', monospace; font-weight: 700; margin-right: 6px; }
+  .diff-block .d-mark.before { color: var(--p0); }
+  .diff-block .d-mark.after { color: var(--p3); }
+
+  .commit-flow { background: var(--panel-3); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 12px 0; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.8; color: var(--text); white-space: pre-wrap; overflow-x: auto; }
+  .commit-flow .sha { color: var(--truth); font-weight: 700; }
+  .commit-flow .arrow { color: var(--accent); margin: 0 4px; }
+  .commit-flow .note { color: var(--muted); font-style: italic; font-size: 11px; }
+
+  .validate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 12px 0 24px; }
+  .v-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .v-card .v-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .v-card .v-state { font-size: 14px; font-weight: 700; line-height: 1.2; color: var(--p3); }
+  .v-card .v-detail { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+
+  .footer { margin: 40px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11.5px; }
+  .footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<h1><span class="scope-tag">FAMILY-01</span>narrative integrity review — 결과 요약</h1>
+<p class="lead">family-01 사건 데이터 자체 (timeline / parties / 5 쟁점 / 7 증거 / 5 단서 / 3 증인 / 12 결합 / 진실 노출 정책 / 사건 핵심 진실) 의 개연성·일관성·자연성 비판적 검토 + 수정 적용 결과.</p>
+
+<div class="meta">
+  <span>일자 <strong>2026-05-28</strong></span>
+  <span>thread 진입 base <strong><code>abfa7abe</code></strong></span>
+  <span>3 commit (HEAD) <strong><code>fd9a6b21</code></strong></span>
+  <span>변경 file 영역 <strong>case.ts + 2 derive (L1 + L4)</strong></span>
+  <span>총 발견 <strong>27건 (P0 4 + P1 5 + P2 11 + P3 7)</strong></span>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+  <div class="toc-title">목차</div>
+  <ol>
+    <li><a href="#section-context">본 thread 영역 + 절차</a></li>
+    <li><a href="#section-summary">발견 항목 통계</a></li>
+    <li><a href="#section-findings">발견 항목 매트릭스 (27건)</a></li>
+    <li><a href="#section-p0">P0 변경 영역 4건 (commit 1)</a></li>
+    <li><a href="#section-p1">P1 변경 영역 3건 + 유지 2건 (commit 2)</a></li>
+    <li><a href="#section-p2">P2 변경 영역 4건 + 유지 7건 (commit 3)</a></li>
+    <li><a href="#section-keep">유지 영역 14건 종합</a></li>
+    <li><a href="#section-derive">derive 영역 영향</a></li>
+    <li><a href="#section-validate">검증 결과</a></li>
+    <li><a href="#section-next">다음 thread 분기</a></li>
+  </ol>
+</div>
+
+<!-- ===================== 1. context ===================== -->
+<h2 id="section-context"><span class="sec-num">1</span>본 thread 영역 + 절차</h2>
+
+<div class="note-box">
+  <strong>본 thread 영역:</strong> family-01 사건 데이터 자체 (timeline / parties / 5 쟁점 / 7 증거 / 5 단서 / 3 증인 / 12 결합 / 진실 노출 정책 / 사건 핵심 진실) 의 개연성·일관성·자연성 비판적 검토 + 수정.<br>
+  <strong>영역 외:</strong> narrative trigger schema (직전 thread 종료) / ScriptedText 작성 / 다국어 sync / 공통 모듈 / spouse-01 / friend-01 사건 영역 (각 thread).<br>
+  <strong>병렬 운영:</strong> 4 thread (spouse-01 테스트 + 본 thread + friend-01 trigger + 공통 CT) 중 본 thread = 인스턴스 2. 다른 thread 영역 변경 (spouse-01 case.ts/scriptedText + useActionDispatch.ts) = working tree 잔존 / 본 commit 영역 외.
+</div>
+
+<h3>9 단계 절차 (본 thread 수행)</h3>
+
+<div class="commit-flow">
+[0단계 진입] git status + HEAD abfa7abe + 진입 base 메모리 4건 정독
+   <span class="arrow">↓</span>
+[1단계 정찰] structure-overview.html (878 line) + case.ts (3021 line) + narrative.ts (757 line) 전수 정독
+   <span class="arrow">↓</span>
+[2단계 자료 작성] review-findings.md (27건 매트릭스) + proposals.md (수정 옵션 좌표 20건)
+   <span class="arrow">↓</span>
+[3단계 사용자 결정] Claude 추천 일괄 채택 (P0 4 / P1 3 + 유지 2 / P2 4 + 유지 7)
+   <span class="arrow">↓</span>
+[4단계 P0 적용] case.ts 6 spot 변경 (자금 + dead path + 거주·돌봄 + 자필 시점)
+   <span class="arrow">↓</span>
+[5단계 P0 검증] tsc clean + derive sync L1/L4 + qa:fast RELEASE READY (P0=0)
+   <span class="arrow">↓</span>
+[6단계 P0 commit] <span class="sha">8622e959</span> (refactor + review-findings.md + proposals.md)
+   <span class="arrow">↓</span>
+[7단계 P1 적용 + commit] case.ts 3 spot 변경 → <span class="sha">7a9beb83</span> (w-3/w-1 testimony + e-5 surface)
+   <span class="arrow">↓</span>
+[8단계 P2 적용 + commit] case.ts 4 spot 변경 → <span class="sha">fd9a6b21</span> (timeline + d-1 + dc-3)
+   <span class="arrow">↓</span>
+[9단계 시각화 + 핸드오프] discussion-summary.html + 핸드오프 + main push
+</div>
+
+<!-- ===================== 2. summary ===================== -->
+<h2 id="section-summary"><span class="sec-num">2</span>발견 항목 통계</h2>
+
+<h3>우선순위별</h3>
+<div class="summary-grid">
+  <div class="stat-card p0">
+    <div class="s-label">P0</div>
+    <div class="s-count">4</div>
+    <div class="s-desc">사건 진실 자체 모순 / schema 정합 위험</div>
+  </div>
+  <div class="stat-card p1">
+    <div class="s-label">P1</div>
+    <div class="s-count">5</div>
+    <div class="s-desc">노출 정책 / character integrity / cross-layer 정합</div>
+  </div>
+  <div class="stat-card p2">
+    <div class="s-label">P2</div>
+    <div class="s-count">11</div>
+    <div class="s-desc">자연성 / 개연성</div>
+  </div>
+  <div class="stat-card p3">
+    <div class="s-label">P3</div>
+    <div class="s-count">7</div>
+    <div class="s-desc">정독 결과 자연·정합 / 변경 불요</div>
+  </div>
+</div>
+
+<h3>결정 결과별</h3>
+<div class="summary-grid">
+  <div class="stat-card change">
+    <div class="s-label">변경 적용</div>
+    <div class="s-count">11</div>
+    <div class="s-desc">P0 4 + P1 3 + P2 4</div>
+  </div>
+  <div class="stat-card keep">
+    <div class="s-label">현재 유지</div>
+    <div class="s-count">14</div>
+    <div class="s-desc">P1 2 + P2 7 + P3 7 (정합·자연 확인)</div>
+  </div>
+  <div class="stat-card">
+    <div class="s-label" style="color:var(--out)">본 thread 영역 외</div>
+    <div class="s-count" style="color:var(--out)">1</div>
+    <div class="s-desc">P1-3 narrative wrapper (후속 thread)</div>
+  </div>
+  <div class="stat-card">
+    <div class="s-label" style="color:var(--accent)">commit 누적</div>
+    <div class="s-count" style="color:var(--accent)">3</div>
+    <div class="s-desc">P0 / P1 / P2 분리</div>
+  </div>
+</div>
+
+<!-- ===================== 3. findings matrix ===================== -->
+<h2 id="section-findings"><span class="sec-num">3</span>발견 항목 매트릭스 (27건 종합)</h2>
+
+<table class="findings-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>영역</th>
+      <th>요약</th>
+      <th>결정</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="ft-id p0">P0-1</td><td class="ft-area">parties.b.dailyRoutine</td><td>윤정후 자금 규모 정합 (가게 + 송금 + 형 정기 + 3억 + 병원비)</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p0">P0-2</td><td class="ft-area">combine-2/3 gate</td><td>e-5 unlock (S5) vs combine gate (S3/S2) dead path</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p0">P0-3</td><td class="ft-area">parties.a.dailyRoutine + timeline stage 2</td><td>A "모시고 살았다" frame vs 어머니 요양 timeline 갭</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p0">P0-4</td><td class="ft-area">timeline stage 2 + d-5.truthDescription</td><td>자필 90:10 작성 시점 timeline 누락</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p1">P1-1</td><td class="ft-area">w-3.testimony['d-5'].canProve</td><td>w-3 pro_a·biased vs "정후가 더 짊어졌다" 발화 충돌</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p1">P1-2</td><td class="ft-area">w-1.testimony['d-1'].canProve</td><td>w-3 → 박순애 → w-1 간접 전달 2 채널 신뢰성</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p1">P1-3</td><td class="ft-area">narrative.ts w3NarrativeTriggers</td><td>w-3 cross-cycle dc-5 narrative wrapper 없음</td><td><span class="ft-decision out">영역 외</span></td></tr>
+    <tr><td class="ft-id p1">P1-4</td><td class="ft-area">dc-3 noteText 통합 event</td><td>d-3 S2 force-unlock 시 dc-3 description "3억" 노출 정합</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p1">P1-5</td><td class="ft-area">e-5.surfaceDescription</td><td>"단계 조사로 확인된다" 메타 표현</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p2">P2-1</td><td class="ft-area">timeline stage 0 action</td><td>윤정후 24세 가업 양보 + 사업 결정 자연성 (어머니 결정 frame 보강)</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p2">P2-2</td><td class="ft-area">timeline stage 1 action</td><td>어머니 통장 경유 매달 흐름의 어머니 능동 영역 명시</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p2">P2-3</td><td class="ft-area">d-1.truthDescription</td><td>"자주 방문" vs timeline "급증" 어휘 정합</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p2">P2-4</td><td class="ft-area">witness w-2</td><td>neutral·accurate vs hiddenAgenda 정합</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p2">P2-5</td><td class="ft-area">e-6.depthStages.context</td><td>정후 입금 vs 형 출금 시점 격차 영역</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p2">P2-6</td><td class="ft-area">e-7 일기장 정보 집중</td><td>5 영역 한 일기장 집중 자연성</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p2">P2-7</td><td class="ft-area">dc-3.noteText</td><td>"d-4로 이어진다" 메타 어휘</td><td><span class="ft-decision change">변경</span></td></tr>
+    <tr><td class="ft-id p2">P2-8</td><td class="ft-area">dc-5.challenges.b.q2</td><td>B challenge 영역 양측 책임 인정 발화 정합</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p2">P2-9</td><td class="ft-area">combine-9</td><td>e-7 (출생 비밀) + A 발화 → dc-5 (어머니 뜻) 결합 자연성</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p2">P2-10</td><td class="ft-area">parties.b sensitivePoints UI</td><td>자필 어휘 노출 시점 정책 정합</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p2">P2-11</td><td class="ft-area">dc-4.type='note'</td><td>다른 dossier 'derived_evidence' vs dc-4 'note' 차이</td><td><span class="ft-decision keep">유지</span></td></tr>
+    <tr><td class="ft-id p3">P3-1~7</td><td class="ft-area">d-3 S0 / d-3 S2 / d-4 S1/S2 / d-5 S5 / e-5 surfaceName / e-7 봉인 / anchorTruth</td><td>정독 결과 자연·정합 7건</td><td><span class="ft-decision keep">유지</span></td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== 4. P0 변경 영역 4건 ===================== -->
+<h2 id="section-p0"><span class="sec-num">4</span>P0 변경 영역 4건 (commit <code>8622e959</code>)</h2>
+
+<h3>P0-1. parties.b.dailyRoutine — 자금 형성 경로 보강</h3>
+<div class="diff-block">
+  <div class="d-area">src/data/coreCases/family-01.case.ts · parties.b.dailyRoutine</div>
+  <div class="d-before"><span class="d-mark before">전</span>본래 부모님이 자신에게 물려주려던 가업 공장을 형에게 양보하고 본인은 작은 자동차부품 가게로 시작했으며, 그 가게를 운영하며 틈틈이 어머니에게 송금하고 형 몰래 정기 지원금과 병원비를 대 왔다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>본래 부모님이 자신에게 물려주려던 가업 공장을 형에게 양보하고 본인은 자동차부품 가게로 시작했으며, 십수 년 사이에 거래처가 안정되어 가게가 자리잡았다. 그 가게를 운영하며 어머니에게 정기적으로 송금하고 형 몰래 정기 지원금과 병원비까지 대왔으며, 형 공장 위기 때에는 가게 자산과 거래처 신용을 일부 담보로 잡아 3억원을 마련해 어머니 통장을 거쳐 보냈다.</div>
+</div>
+
+<h3>P0-2. combine-2 / combine-3 gate — e-5 access 정합</h3>
+<div class="diff-block">
+  <div class="d-area">combinationRecipes · combine-2 (e-4 + e-5 → dc-5)</div>
+  <div class="d-before"><span class="d-mark before">전</span>requiredTruthStage: { 'd-5': 3 }</div>
+  <div class="d-after"><span class="d-mark after">후</span>requiredTruthStage: { 'd-5': 5 }  // e-5.requiredLieState='S5' 정합</div>
+</div>
+<div class="diff-block">
+  <div class="d-area">combinationRecipes · combine-3 (e-5 + e-6 → dc-3)</div>
+  <div class="d-before"><span class="d-mark before">전</span>requiredTruthStage: { 'd-3': 2 }</div>
+  <div class="d-after"><span class="d-mark after">후</span>requiredTruthStage: { 'd-3': 5, 'd-5': 5 }  // dc-3은 d-3 통합 event force-unlock으로 사전 확보, 본 결합은 사후 종합용</div>
+</div>
+
+<h3>P0-3. parties.a.dailyRoutine + timeline stage 2 — 어머니 거주·돌봄 frame 정합</h3>
+<div class="diff-block">
+  <div class="d-area">parties.a.dailyRoutine</div>
+  <div class="d-before"><span class="d-mark before">전</span>공장에서 주문을 처리하고 저녁엔 어머니 집에 들러 자신이 돌봤다는 생활을 유지해왔다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>공장에서 주문을 처리하고 저녁에는 어머니 집에 들러 일상을 챙겼다. 어머니가 요양 단계에 들어선 뒤로는 직접 모시던 시간이 줄고 요양원 방문으로 바뀌었으나, 본인은 평생 어머니를 가까이서 모셨다는 자기 인식을 유지해왔다.</div>
+</div>
+
+<h3>P0-4. timeline stage 2 action + d-5.truthDescription — 자필 작성 시점</h3>
+<div class="diff-block">
+  <div class="d-area">timeline stage 2 action (말년 2025.09~10)</div>
+  <div class="d-before"><span class="d-mark before">전</span>어머니가 요양 단계에 들어선 후 윤정후의 요양원 방문이 공증 3주 전부터 급증한다. 어머니에게 종이를 읽어드리는 모습이 전 요양보호사에게 목격된다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>어머니가 요양 단계에 들어서기 직전, 아직 의식이 명료하던 시기에 자필 연습본 한 장(정후 90, 태성 10)을 본인 손으로 미리 남긴다. 요양 단계에 들어선 뒤로는 윤정후의 요양원 방문이 공증 3주 전부터 급증하고, 어머니에게 그 연습본을 함께 펼쳐 비율을 정리하려는 모습이 전 요양보호사에게 목격된다. 어머니는 이때 본인 집 거주에서 요양원 거주로 옮긴 상태다.</div>
+</div>
+<div class="diff-block">
+  <div class="d-area">disputes · d-5.truthDescription</div>
+  <div class="d-before"><span class="d-mark before">전</span>...어머니가 자필 연습본에 남긴 90:10을 정후가 공증 60:40으로 줄인 것이 그 대표 흔적이다...</div>
+  <div class="d-after"><span class="d-mark after">후</span>...어머니가 명료하던 시기에 자필 연습본에 직접 남긴 90:10을, 정후가 어머니 상태가 흐트러진 공증 단계에서 60:40으로 줄인 것이 그 대표 흔적이다...</div>
+</div>
+
+<!-- ===================== 5. P1 변경 영역 3건 + 유지 2건 ===================== -->
+<h2 id="section-p1"><span class="sec-num">5</span>P1 변경 영역 3건 + 유지 2건 (commit <code>7a9beb83</code>)</h2>
+
+<h3>P1-1. w-3.testimony['d-5'].canProve — cross-frame 메타 추가</h3>
+<div class="diff-block">
+  <div class="d-area">witnesses · w-3 (박순애, pro_a · biased)</div>
+  <div class="d-before"><span class="d-mark before">전</span>어머니가 두 아들에 대해 "정후가 더 짊어졌다"고 말한 적이 있다는 사실.</div>
+  <div class="d-after"><span class="d-mark after">후</span>어머니가 두 아들에 대해 "정후가 더 짊어졌다"고 말한 적이 있다는 사실 (본인 frame과 어긋나는 영역이라 평소에는 잘 꺼내지 않지만, 직접 들은 발화라 부인하지는 못한다).</div>
+</div>
+
+<h3>P1-2. w-1.testimony['d-1'].canProve — 간접 전달 명시</h3>
+<div class="diff-block">
+  <div class="d-area">witnesses · w-1 (최복순, neutral · accurate)</div>
+  <div class="d-before"><span class="d-mark before">전</span>박순애로부터 전해 들은 어머니 평소 마음 영역 일부 (자기 관찰 영역 외 보강).</div>
+  <div class="d-after"><span class="d-mark after">후</span>박순애로부터 전해 들은 어머니 평소 마음 영역 일부 (직접 청취 영역과 분리 — 박순애 본인의 해석이 일부 섞여 있을 수 있다).</div>
+</div>
+
+<h3>P1-5. e-5.surfaceDescription — 자연 어휘 변경</h3>
+<div class="diff-block">
+  <div class="d-area">evidence · e-5 (자필 메모 사본)</div>
+  <div class="d-before"><span class="d-mark before">전</span>어머니가 남긴 자필 유언장 연습본. 구체 비율은 단계 조사로 확인된다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>어머니가 남긴 자필 유언장 연습본. 분배 방향의 흔적이 일부만 보인다.</div>
+</div>
+
+<h3>유지 영역 2건</h3>
+<div class="note-box">
+  <strong>P1-3 w-3 narrative wrapper dc-5 분기 (영역 외):</strong> 직전 family-01 trigger 재편성 thread 종료 영역. 본 thread 영역 외. d-5 영역 증언은 testimony.byDispute['d-5'] 등록 영역으로 mechanical surface 가능. 후속 thread 검토.<br><br>
+  <strong>P1-4 dc-3 noteText 통합 event 시점 정합 (현재 유지):</strong> dossier 채널 vs 발화 채널 분리 정합. d-3 S2 force-unlock 시 dossier surface OK. disclosure policy 그룹 2 (정후 돈 / 3억 / 통장 경유) = d-3 S2+ 인정 영역 정합. 변경 X.
+</div>
+
+<!-- ===================== 6. P2 변경 영역 4건 + 유지 7건 ===================== -->
+<h2 id="section-p2"><span class="sec-num">6</span>P2 변경 영역 4건 + 유지 7건 (commit <code>fd9a6b21</code>)</h2>
+
+<h3>P2-1. timeline stage 0 action — 어머니 결정 frame 보강</h3>
+<div class="diff-block">
+  <div class="d-area">timeline stage 0 (20여 년 전)</div>
+  <div class="d-before"><span class="d-mark before">전</span>윤정후는 어머니에게서 아버지가 윤태성의 친부가 아니라는 사실을 듣고, 본인이 물려받을 예정이던 가업 공장을 형에게 양보한다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>윤정후는 어머니에게서 아버지가 윤태성의 친부가 아니라는 사실을 듣고, 어머니의 결정과 청을 따라 본인이 물려받을 예정이던 가업 공장을 형에게 양보한다.</div>
+</div>
+
+<h3>P2-2. timeline stage 1 action — 어머니 능동 영역 명시</h3>
+<div class="diff-block">
+  <div class="d-area">timeline stage 1 (약 20년간)</div>
+  <div class="d-before"><span class="d-mark before">전</span>윤정후는 어머니 통장을 거쳐 매달 일정액의 정기 지원금을 보낸다. 형은 그 돈이 어머니 돈인 줄 안다. 공장 위기 시점에는 3억원도 같은 경로로 형에게 흘러간다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>윤정후는 어머니 통장을 거쳐 매달 일정액의 정기 지원금을 보낸다. 어머니는 이 흐름을 알면서 정후 뜻을 따라 형 쪽으로 매달 전달한다. 형은 그 돈이 어머니 돈인 줄 안다. 공장 위기 시점에는 3억원도 같은 경로로 형에게 흘러간다.</div>
+</div>
+
+<h3>P2-3. d-1.truthDescription — 방문 빈도 어휘 정밀화</h3>
+<div class="diff-block">
+  <div class="d-area">disputes · d-1.truthDescription</div>
+  <div class="d-before"><span class="d-mark before">전</span>윤정후는 어머니 말년에 자주 방문하며 유서 내용을 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>윤정후는 어머니 말년에, 특히 공증 직전 3주간 방문 빈도가 부쩍 늘었고 그 동안 유서 내용을 함께 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.</div>
+</div>
+
+<h3>P2-7. dc-3.noteText — 메타 어휘 → 자연 어휘</h3>
+<div class="diff-block">
+  <div class="d-area">dossierCards · dc-3 (20년의 돈)</div>
+  <div class="d-before"><span class="d-mark before">전</span>...형이 모르게 한 결정의 동기가 d-4로 이어진다.</div>
+  <div class="d-after"><span class="d-mark after">후</span>...형이 모르게 한 결정의 동기가 가족 기록 영역으로 이어진다.</div>
+</div>
+
+<h3>유지 영역 7건</h3>
+<div class="note-box">
+  <strong>P2-4 ~ P2-11</strong> = 정독 결과 자연·정합 / 의도된 영역으로 확인. 변경 X.<br>
+  <ul style="margin-top:6px; font-size:12.5px; color:var(--text);">
+    <li><strong>P2-4</strong> w-2 neutral·accurate + hiddenAgenda — 직업적 자기방어 영역 별도 정합</li>
+    <li><strong>P2-5</strong> e-6 depthStages context — 현재 영역 충분</li>
+    <li><strong>P2-6</strong> e-7 일기장 정보 집중 — 어머니 사적 일기장 자연</li>
+    <li><strong>P2-8</strong> dc-5 challenges.b.q2 — d-5 핵심 양측 책임 인정 영역</li>
+    <li><strong>P2-9</strong> combine-9 (stmt-a-heir + e-7 → dc-5) — e-7 = 어머니 마음 영역도 포함 정합</li>
+    <li><strong>P2-10</strong> parties.b sensitivePoints UI gate — 자필 어휘 = 그룹 3 d-5 S5 정합</li>
+    <li><strong>P2-11</strong> dc-4 type='note' — 출생 비밀 봉인 영역 의도된 분류</li>
+  </ul>
+</div>
+
+<!-- ===================== 7. 유지 영역 14건 ===================== -->
+<h2 id="section-keep"><span class="sec-num">7</span>유지 영역 14건 종합</h2>
+
+<table class="findings-table">
+  <thead>
+    <tr><th>ID</th><th>영역</th><th>유지 근거</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="ft-id p1">P1-3</td><td class="ft-area">narrative.ts w3NarrativeTriggers</td><td>본 thread 영역 외 (직전 trigger 재편성 thread 종료) — 후속 narrative wrapper thread 검토</td></tr>
+    <tr><td class="ft-id p1">P1-4</td><td class="ft-area">dc-3 noteText</td><td>dossier 채널 vs 발화 채널 분리 정합 / disclosure policy 그룹 2 d-3 S2+ OK</td></tr>
+    <tr><td class="ft-id p2">P2-4</td><td class="ft-area">w-2</td><td>neutral·accurate vs hiddenAgenda 직업적 자기방어 영역 별도 정합</td></tr>
+    <tr><td class="ft-id p2">P2-5</td><td class="ft-area">e-6.context</td><td>현재 영역 충분 / 시점 격차 명시 영역 추가 시 의미 영역 변동</td></tr>
+    <tr><td class="ft-id p2">P2-6</td><td class="ft-area">e-7 정보 집중</td><td>어머니 사적 일기장 = 정보 집중 자연</td></tr>
+    <tr><td class="ft-id p2">P2-8</td><td class="ft-area">dc-5.b.q2</td><td>양측 책임 인정 영역 = d-5 핵심 / linkedParty 'b' 영역 자연</td></tr>
+    <tr><td class="ft-id p2">P2-9</td><td class="ft-area">combine-9</td><td>e-7 = 어머니 마음 영역도 포함 / dc-5 = 양측 책임축 종합 정합</td></tr>
+    <tr><td class="ft-id p2">P2-10</td><td class="ft-area">parties.b sensitivePoints UI</td><td>gate 'after_any_collapse' + 자필 어휘 그룹 3 d-5 S5 정합</td></tr>
+    <tr><td class="ft-id p2">P2-11</td><td class="ft-area">dc-4 type='note'</td><td>출생 비밀 봉인 영역 분류 의도 / design 자료 명시 가능</td></tr>
+    <tr><td class="ft-id p3">P3-1~7</td><td class="ft-area">7건 종합</td><td>d-3 S0/S2 transition, d-4 S1/S2 transition, d-5 S5 transition, e-5 surfaceName, e-7 sensitiveSeal, anchorTruth 4 핵심 사실 — 모두 자연·정합</td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== 8. derive ===================== -->
+<h2 id="section-derive"><span class="sec-num">8</span>derive 영역 영향 (build-core-case auto-sync)</h2>
+
+<div class="commit-flow">
+[P0 commit 8622e959]
+  L1 src/data/cases/generated/family-01.json    : +0/-0/~2 (duo + disputes)
+  L3 src/data/claimPolicies/family-01-v3-...    : (no top-level changes)
+  L4 src/data/disclosurePolicy/family-01.json   : +0/-0/~2
+  L5 truth-leak-matrix.json                     : (no top-level changes)
+
+[P1 commit 7a9beb83]
+  L1 src/data/cases/generated/family-01.json    : +0/-0/~1 (w-1/w-3 testimony)
+  L3                                            : (no top-level changes)
+  L4 src/data/disclosurePolicy/family-01.json   : +0/-0/~1
+  L5                                            : (no top-level changes)
+
+[P2 commit fd9a6b21]
+  L1 src/data/cases/generated/family-01.json    : +0/-0/~2 (timeline + dc-3)
+  L3                                            : (no top-level changes)
+  L4 src/data/disclosurePolicy/family-01.json   : +0/-0/~1 (d-1 truthDescription)
+  L5                                            : (no top-level changes)
+</div>
+
+<div class="note-box">
+  <strong>derive 영향 종합:</strong> L1 + L4 영역만 sync. L3 (claimPolicies) + L5 (truth-leak-matrix) = top-level 변경 없음. truth-leak-matrix 의 family-01 영역 hidden phrase = 본 review 영역에서 변경 X (그룹 1~5 keyword 정책 그대로 보존).
+</div>
+
+<!-- ===================== 9. 검증 ===================== -->
+<h2 id="section-validate"><span class="sec-num">9</span>검증 결과 (3 commit 후 최종)</h2>
+
+<div class="validate-grid">
+  <div class="v-card">
+    <div class="v-label">tsc --noEmit</div>
+    <div class="v-state">clean</div>
+    <div class="v-detail">출력 없음 / type 영역 회귀 없음</div>
+  </div>
+  <div class="v-card">
+    <div class="v-label">qa:fast static</div>
+    <div class="v-state">P0 = 0</div>
+    <div class="v-detail">cases=3 / scriptedVariants=14975 / findings=1820 / hard=0 / candidates=1820</div>
+  </div>
+  <div class="v-card">
+    <div class="v-label">qa:fast route</div>
+    <div class="v-state">P0 = 0</div>
+    <div class="v-detail">routes=12 / actions=64 / findings=33 / hard=0</div>
+  </div>
+  <div class="v-card">
+    <div class="v-label">qa:fast combined</div>
+    <div class="v-state">RELEASE READY</div>
+    <div class="v-detail">P0=0 / 직전 trigger 재편성 thread (1813) → +7 finding (모두 candidate hard=0)</div>
+  </div>
+</div>
+
+<!-- ===================== 10. 다음 thread ===================== -->
+<h2 id="section-next"><span class="sec-num">10</span>다음 thread 분기</h2>
+
+<div class="note-box">
+  <strong>본 thread 종료 후 분기 후보:</strong>
+  <ol style="margin-top:8px;">
+    <li><strong>spouse-01 narrative integrity review thread</strong> (동일 패턴) — spouse-01 사건 데이터 자체 비판적 검토 + 수정. spouse-01 manual 테스트 thread 와 별도 영역</li>
+    <li><strong>friend-01 narrative integrity review thread</strong> (동일 패턴) — friend-01 사건 데이터 자체 비판적 검토 + 수정. 진입 base = <a href="../friend-01-trigger-redesign/structure-overview.html">structure-overview.html</a></li>
+    <li><strong>family-01 ScriptedText / 다국어 thread</strong> — 직전 trigger 재편성 thread 의 13 ref orphan 처리 영역 + 본 thread 변경의 영향 (truthDescription / dailyRoutine / timeline action 어휘 변경 → ScriptedText 영향 없음, narrative wrapper 변경 X 이므로)</li>
+    <li><strong>family-01 narrative wrapper P1-3 영역 thread</strong> — w-3 cross-cycle dc-5 분기 narrativeTrigger 신설 검토 (직전 trigger 재편성 thread 와 동일 영역 후속 thread)</li>
+  </ol>
+</div>
+
+<!-- ===================== footer ===================== -->
+<div class="footer">
+  본 문서 = family-01 narrative integrity review thread 결과 시각화 (HEAD <code>fd9a6b21</code> 시점). 권위 source = <a href="../../../src/data/coreCases/family-01.case.ts">family-01.case.ts</a>. 본 thread 자료 = <a href="./review-findings.md">review-findings.md</a> + <a href="./proposals.md">proposals.md</a> + 본 discussion-summary.html. 직전 thread (trigger 재편성) 자료 = <a href="../family-01-trigger-redesign/structure-overview.html">structure-overview.html</a> + <a href="../family-01-trigger-redesign/redesign-summary.html">redesign-summary.html</a>.
+</div>
+
+</body>
+</html>
