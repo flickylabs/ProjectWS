@@ -231,7 +231,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       whenLabel: ko('약 5년 전'),
       actor: 'a',
       action: ko(
-        '송다은 아버지가 최수민에게 투자 명목으로 돈을 빌리고 일부만 갚은 뒤 차일피일 미루며 연락을 끊는다. 최수민이 피해를 입었지만 송다은에게는 말하지 못한다.',
+        '두 가족이 동네에서 가까이 지내던 시기, 송다은 아버지가 사업 자금이 어려워지자 투자 명목으로 최수민에게 돈을 빌리고 일부만 갚은 뒤 차일피일 미루며 연락을 끊는다. 최수민이 피해를 입었지만 송다은에게는 말하지 못한다.',
       ),
       aPerception: ko('아버지가 친구에게 돈을 빌렸다는 사실 자체를 모른다.'),
       bPerception: ko('전부 인지. 그러나 송다은이 무너질까 봐 입을 닫는다.'),
@@ -248,7 +248,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       action: ko(
         "최수민이 송다은에게 '돈 문제는 내가 알아서 정리할게'라고만 남기고 설명을 피한다. 송다은은 이를 변심으로 받아들인다. 두 사람의 연락이 끊긴다.",
       ),
-      aPerception: ko("'넌 돈만 엮이면 사람이 달라진다'고 답하며 변심으로 단정한다."),
+      aPerception: ko("'넌 돈만 엮이면 사람이 달라진다'고 답하며 변심으로 단정한다. 평소 최수민이 어려운 이야기를 우회로 처리하는 패턴을 변심으로 받아들이는 단정 습관이 작동한다."),
       bPerception: ko('아버지 문제를 들춰야 해서 차마 말하지 못하고 악역을 자처한다.'),
       exposureGate: {
         minLieState: 'S2',
@@ -276,7 +276,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       whenLabel: ko('결혼 약 3주 전'),
       actor: 'a',
       action: ko(
-        "송다은 아버지가 예비신랑 김태윤에게 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '다은이한테는 아직 말하지 마'라는 문자로 돈 부탁을 시작한다. 같은 시기 최수민은 우연히 이 흐름을 알게 된다.",
+        "송다은 아버지가 5년 전과 같은 흐름을 다시 시작한다. 예비신랑 김태윤에게 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '다은이한테는 아직 말하지 마'라는 문자로 돈 부탁을 시도한다. 같은 시기 최수민은 박준혁(예비신랑 회사 후배 + 본인 필라테스 수강생)을 통해 우연히 이 흐름을 알게 된다.",
       ),
       aPerception: ko('아버지의 돈 접근을 알지만 모르는 척한다.'),
       bPerception: ko('과거 본인이 당한 것과 같은 패턴이라는 사실을 알아본다.'),
@@ -291,7 +291,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       whenLabel: ko('결혼 약 3주 전 ~ 9일간'),
       actor: 'b',
       action: ko(
-        '최수민이 예비신랑에게 전화 6번, 문자 11건을 보낸다. "다은이 관련 이야기예요", "예전에 같은 일이 있었거든요" 같은 문구로 경고하려 하지만 송다은에게는 직접 말하지 못한다.',
+        '최수민은 평소처럼 조용히 사라지는 방식 대신, 결혼이 무너질 수 있다는 위기감으로 평소와 다르게 9일간 반복 연락한다. 예비신랑에게 전화 6번, 문자 11건을 보낸다. "다은이 관련 이야기예요", "예전에 같은 일이 있었거든요" 같은 문구로 경고하려 하지만 송다은에게는 직접 말하지 못한다.',
       ),
       aPerception: ko('수민이 또 내 남자에게 연락한다는 단정으로 받아들인다.'),
       bPerception: ko('전부 인지. 송다은에게 직접 말할 길이 없어 우회로를 택한다.'),
@@ -348,6 +348,8 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       weight: 10,
       quadrant: 'b_only',
     },
+    /* t-5 weight=8 (다른 t-1~t-4 = 10). 의도된 차별 —
+     * 절차/매도 책임 = 실체 진실 (사기 / 사기 패턴 반복 / 선 넘기) frame 보다 가벼움 영역. */
     {
       id: 't-5',
       fact: ko('송다은이 확인 없이 단톡방에서 최수민을 먼저 매도했다.'),
@@ -357,7 +359,19 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
     },
   ],
 
-  /* ----- disputes (5개: d-1, d-2, d-3, d-4, d-5) ----- */
+  /* ----- disputes (5개: d-1, d-2, d-3, d-4, d-5)
+   *
+   * correctResponsibility 정책 (2026-05-27 narrative integrity review):
+   *   - 두 당사자 (A 송다은 + B 최수민) 의 정직 / 확인 책임 분배만 표현.
+   *   - 3rd party (예비신랑 김태윤 / 송다은 아버지) 의 행위 책임은 본 분배 외 영역.
+   *     별도 정리는 officialRecordRecommendations 영역에서 권고.
+   *   - 예: d-2 A:20 / B:80 = "예비신랑이 먼저 선 넘기" 진실 frame 에서
+   *     A 의 모른 채 단정 책임 + B 가 다은에게 직접 알리지 않은 정직 책임 분배.
+   *     예비신랑 본인 행위 책임은 본 분배 외.
+   *   - 예: d-4 A:30 / B:70 = "과거 손절 = 송다은 아버지 사기 + B 침묵" frame.
+   *     A 의 가족 일원 인지·방관 책임 + B 의 정직 책임 분배.
+   *     송다은 아버지 본인 행위 책임은 본 분배 외.
+   * ----- */
   disputes: [
     /* ============================================================
      * dispute d-1 — 9일간의 연락 의도
@@ -954,7 +968,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       name: ko('아버지의 돈 접근 패턴'),
       truth: true,
       truthDescription: ko(
-        '송다은 아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도하려 하고 있었고, 최수민은 과거에 같은 일을 당한 적이 있어 결혼 자체가 위기에 빠질까 봐 예비신랑에게 직접 연락해 막으려 했다.',
+        '송다은 아버지가 예비신랑에게 결혼 자금 명목으로 접근을 시도하려 하고 있었고, 최수민은 과거에 같은 일을 당한 적이 있어 결혼 자체가 위기에 빠질까 봐 예비신랑에게 직접 연락해 막으려 했다. 송다은은 아버지의 이러한 흐름을 일찍부터 알면서도 모른 척했다.',
       ),
       quadrant: 'b_only',
       weight: 'high',
@@ -1874,7 +1888,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         { id: 'stub', summary: ko('연락 기록 존재만 보임.') },
         { id: 'excerpt', summary: ko('발신 횟수와 부재중 중심으로 보임.') },
         { id: 'original', summary: ko('일부 문자 원문으로 사적 연락 오해를 낮춤.') },
-        { id: 'context', summary: ko('다은 관련 사유와 과거 반복 암시가 확인됨.') },
+        { id: 'context', summary: ko('다은 관련 사유와 과거 반복 암시가 확인됨. 최수민의 우회 frame ("다은이 관련" / "예전에 같은 일") 이 예비신랑 입장에서는 자기 frame 으로 해석하기 좋은 모호성으로 작용한 흐름.') },
         { id: 'established', summary: ko('연락 의도를 경고 가능성까지 놓고 판단할 수 있다.') },
       ],
       trustStates: [
@@ -1913,7 +1927,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       depthStages: [
         { id: 'stub', summary: ko('단톡방 캡처 1건 존재 표시.') },
         { id: 'excerpt', summary: ko('송다은의 최초 발언만 보임.') },
-        { id: 'original', summary: ko('공통 친구 동조 메시지까지 모두 확인.') },
+        { id: 'original', summary: ko('공통 친구 동조 메시지까지 모두 확인. 김세라 등 1~2명이 즉각 동조하고 나머지 친구는 침묵하는 그룹 분위기 패턴이 드러남.') },
         { id: 'context', summary: ko('직접 확인 전 단톡방 공개 순서가 복원됨.') },
         { id: 'established', summary: ko('확인 없는 공개 매도 시작점이 공식기록 채택.') },
       ],
@@ -2048,7 +2062,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
         { id: 'misread', summary: ko('자료는 인증되지만 아버지 시도 인지 영역은 봉인 단계.') },
       ],
       sensitiveSealTargets: {
-        labels: [ko('회사 동료 실명'), ko('최수민 메시지의 사적 톤')],
+        labels: [ko('예비신랑 회사 다른 동료 실명 (박준혁 외)'), ko('최수민 메시지의 사적 톤')],
         recommendedTiming: [
           ko('d-3 S2 이상 도달 시 핵심 영역만 조건부 노출'),
           ko('dc-3 직전'),
@@ -2168,7 +2182,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       bias: 'pro_a',
       distortionRisk: 'strategic',
       knowledgeScope: ko(
-        '단톡방에서 송다은의 글을 보고 최수민을 비난하는 데 동조했다. 나중에 찜찜한 마음이 들었다.',
+        '단톡방에서 송다은의 글을 보고 최수민을 비난하는 데 동조했다. 사건이 본 법정으로 넘어가면서 진실 일부가 드러난 뒤로 본인이 동조한 책임이 점점 부끄러워졌다.',
       ),
       address: {
         fromA: ko('다은이'),
@@ -2202,7 +2216,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       bias: 'neutral',
       distortionRisk: 'accurate',
       knowledgeScope: ko(
-        '예비신랑 김태윤의 회사 후배이자 최수민의 필라테스 수강생. 회사에서 예비신랑이 떠벌린 이야기를 우연히 듣고 최수민에게 알린 적이 있다.',
+        '예비신랑 김태윤의 회사 후배이자 최수민의 필라테스 수강생. 회사에서 예비신랑이 떠벌린 이야기를 우연히 듣고 최수민에게 알린 적이 있다. 결혼 자체가 위태로워 보였고, 필라테스 수강생으로서 최수민과 더 가까운 관계였기에 회사 영역을 넘어서라도 알릴 수밖에 없다고 판단했다.',
       ),
       address: {
         fromA: ko('그분'),
@@ -2246,7 +2260,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       bias: 'pro_b',
       distortionRisk: 'accurate',
       knowledgeScope: ko(
-        '동네 분식집 사장으로, 송다은과 최수민 둘 다 어릴 적부터 단골로 드나들었다. 그래서 송다은 아버지가 가게 앞에서 최수민에게 돈을 빌리려 한 장면 + 최수민이 가게에 울면서 들어왔던 시기를 모두 직접 봤다.',
+        '동네 분식집 사장으로, 송다은과 최수민 둘 다 어릴 적부터 단골로 드나들었다. 그래서 송다은 아버지가 가게 앞에서 최수민에게 돈을 빌리려 한 장면 + 최수민이 가게에 울면서 들어왔던 시기를 모두 직접 봤다. 송다은 아버지도 평소 단골이었기에 가게 앞에서의 돈 요구 장면이 평소 단골 모습과 어긋나 강한 인상으로 남았다.',
       ),
       address: {
         fromA: ko('그 집 딸'),
@@ -2581,6 +2595,30 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
       linkedDisputes: ['d-1', 'd-5'],
       linkedParty: 'a',
       linkedEvidence: ['e-2', 'e-7'],
+      leadLine: {
+        id: 'L-5',
+        name: ko('Synthesis Lead'),
+        leadType: 'Synthesis',
+        firstInputs: ['e-2', 'e-7'],
+        secondInputs: ['L-5', 'dc-4'],
+        interpretationChoices: [
+          {
+            id: 'L-5-A',
+            text: ko('두 시점 모두 같은 구조가 반복됐다'),
+            implication: ko('d-5 본격 정리 + 두 당사자 책임 분배.'),
+          },
+          {
+            id: 'L-5-B',
+            text: ko('확인 없이 단톡방에 올린 책임이 가장 크다'),
+            implication: ko('A 책임 중심.'),
+          },
+          {
+            id: 'L-5-C',
+            text: ko('혼자 막으려 한 침묵의 책임도 크다'),
+            implication: ko('B 책임 중심.'),
+          },
+        ],
+      },
       noteText: ko(
         '두 시점에서 같은 구조가 반복된다. 송다은이 먼저 단정하고 공개 매도한 책임과 최수민이 또 혼자 막으려다 낙인을 허용한 책임이 어떻게 엇갈리는지를 정리한다.',
       ),
@@ -2622,7 +2660,7 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
           questions: [
             {
               id: 'dc-5.b.q1',
-              text: ko('이번에도 스스로 악역이 되면 같은 낙인이 반복된다는 걸 알면서, 왜 끝까지 혼자 버텼습니까?'),
+              text: ko('두 시점 모두 혼자 막으려 한 행동이 결국 송다은을 또 한 번 무너뜨리는 결과로 이어졌다는 점은 어떻게 받아들이고 있습니까?'),
               lockedHint: ko('반복 패턴 대조표가 열려야 보입니다.'),
               attackVector: 'context',
               requiredLieState: 'S3',
@@ -2875,6 +2913,8 @@ export const friend01CaseAuthority: CoreCaseAuthority = {
     ko('송다은 아버지의 돈 접근 패턴은 과거와 현재가 같았다.'),
     ko('과거 손절의 진짜 원인은 송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기였다.'),
     ko('송다은이 확인 없이 단톡방에서 최수민을 먼저 매도했고, 최수민은 또 악역을 자처하는 구조가 반복됐다.'),
+    ko('예비신랑 김태윤의 선 넘는 접근과 회사 단톡방 떠벌림 영역의 책임은 본 사건 외 별도 정리가 권고된다.'),
+    ko('송다은 아버지의 5년 전 사기 + 결혼 3주 전 동일 패턴 반복 영역의 행위 책임은 본 사건 외 별도 절차가 권고된다.'),
   ],
 
   /* ----- solutions ----- */
