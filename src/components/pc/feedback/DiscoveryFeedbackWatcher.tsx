@@ -385,7 +385,11 @@ export default function DiscoveryFeedbackWatcher() {
     const caseData = state.caseData
     if (!caseData) return
     const dispute = caseData.disputes.find((d) => d.id === pendingEmergence.disputeId)
-    const disputeName = getSafeEmergenceTitle(caseData.caseId, pendingEmergence.disputeId, dispute?.name ?? pendingEmergence.disputeId)
+    // dispute.safeName 1순위 (사건별 작성자가 진실 노출 정책에 맞춰 등록한 표면 라벨),
+    // 다음 SAFE_EMERGENCE_TITLES map (legacy override), 마지막 dispute.name fallback.
+    const safeNameFromSchema = (dispute as { safeName?: string } | undefined)?.safeName
+    const disputeName = safeNameFromSchema
+      ?? getSafeEmergenceTitle(caseData.caseId, pendingEmergence.disputeId, dispute?.name ?? pendingEmergence.disputeId)
     const routeLabel = t(ROUTE_LABEL_KEYS[pendingEmergence.route] ?? 'pc.discovery.feedback.route.default')
     const surfaceOnlyEmergence = isSpousePrivateAccountWithdrawalDispute(dispute)
     const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description, disputeName, t, tp)
@@ -539,7 +543,9 @@ export default function DiscoveryFeedbackWatcher() {
               : undefined
             const hook = getEmergenceHook(hookCaseId, pendingEmergence.disputeId, speakerLieState)
             const hookText = hook?.text ?? ''
-            const safeHookDisputeName = getSafeEmergenceTitle(hookCaseId, pendingEmergence.disputeId, emergedDispute?.name ?? '')
+            const hookSafeNameFromSchema = (emergedDispute as { safeName?: string } | undefined)?.safeName
+            const safeHookDisputeName = hookSafeNameFromSchema
+              ?? getSafeEmergenceTitle(hookCaseId, pendingEmergence.disputeId, emergedDispute?.name ?? '')
             const fallbackText = safeHookDisputeName
               ? t('pc.discovery.feedback.emergence.hookFallback.withName', { disputeName: safeHookDisputeName })
               : t('pc.discovery.feedback.emergence.hookFallback.generic')

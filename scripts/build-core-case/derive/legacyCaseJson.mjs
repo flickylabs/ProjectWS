@@ -194,6 +194,7 @@ function deriveDisputes(authority, existing) {
     return {
       id: d.id,
       name: ko(d.name),
+      ...(d.safeName ? { safeName: ko(d.safeName) } : {}),
       truth: d.truth,
       truthDescription: ko(d.truthDescription),
       quadrant: d.quadrant,
@@ -342,6 +343,10 @@ function deriveEvidence(authority, existing) {
       ...(ex.meta ? { meta: ex.meta } : {}),
       ...(ex.viewerData ? { viewerData: ex.viewerData } : {}),
       ...(ex.viewerDataByStage ? { viewerDataByStage: ex.viewerDataByStage } : {}),
+      // Stage-aware presentable target gate — Authority 권위, runtime 통과.
+      ...(e.presentableTargetsByStage
+        ? { presentableTargetsByStage: e.presentableTargetsByStage }
+        : {}),
       // Core narrative wrapper (Cycle 1+) — Authority가 권위, runtime은 그대로 통과.
       ...(e.narrativeTriggers ? { narrativeTriggers: e.narrativeTriggers } : {}),
     }

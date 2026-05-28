@@ -1366,6 +1366,11 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       enqueueNewEvidenceCutscene(def.id, {
         body: `${newDisplayName}${pp이가(newDisplayName)} 좌측 증거 목록에 추가되었습니다.`,
       })
+      v4Effects.evidenceDiscovered(def.id, newDisplayName, '', {
+        turn: state.turnCount,
+        caseId: state.caseData?.caseId,
+        phase: state.currentPhase,
+      })
     }
   }
 
@@ -2929,6 +2934,16 @@ function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential =
       enqueueNewEvidenceCutscene(effects.evidenceUnlock, {
         body: '발언에서 파생된 새 증거가 좌측 증거 목록에 추가되었습니다.',
       })
+      const unlockedDef = state.evidenceDefinitions.find((e) => e.id === effects.evidenceUnlock)
+      if (unlockedDef) {
+        const dispState = state.evidenceStates[effects.evidenceUnlock]
+        const dispName = getEvidenceDisplayName(unlockedDef, dispState)
+        v4Effects.evidenceDiscovered(effects.evidenceUnlock, dispName, '', {
+          turn: state.turnCount,
+          caseId: state.caseData?.caseId,
+          phase: state.currentPhase,
+        })
+      }
     }
   }
   if (effects.claimUpdate) {
@@ -3099,6 +3114,11 @@ export function actuallyDiscoverEvidence(evidenceId: string, partyOverride?: Par
   const discoveredDisplayName = getEvidenceDisplayName(ev, useGameStore.getState().evidenceStates[ev.id])
   enqueueNewEvidenceCutscene(evidenceId, {
     body: `${discoveredDisplayName}${pp이가(discoveredDisplayName)} 심문 중 새 증거로 확보되었습니다.`,
+  })
+  v4Effects.evidenceDiscovered(evidenceId, discoveredDisplayName, '', {
+    turn: state.turnCount,
+    caseId: state.caseData?.caseId,
+    phase: state.currentPhase,
   })
   state.addDialogue({
     speaker: 'system',
@@ -3524,6 +3544,11 @@ export function applyLieCollapseSuccess(disputeId: string, party: PartyId) {
     playEvidenceUnlock()
     enqueueNewEvidenceCutscene(lockedEv.id, {
       body: `${displayName}${pp이가(displayName)} 붕괴 보상으로 확보되었습니다.`,
+    })
+    v4Effects.evidenceDiscovered(lockedEv.id, displayName, '', {
+      turn: state.turnCount,
+      caseId: state.caseData?.caseId,
+      phase: state.currentPhase,
     })
     state.addDialogue({
       speaker: 'system',

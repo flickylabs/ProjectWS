@@ -152,6 +152,13 @@ export interface EvidenceNode {
   investigationResults: Record<string, string>
   /** 이 증거가 보여주는 행위의 주체: a/b/both */
   subjectParty?: 'a' | 'b' | 'both'
+  /**
+   * 조사 단계별 제시 가능 대상 게이트. key는 조사 완료 횟수(investigatedActions.length).
+   * 게이트가 정의되어 있으면 currentStage 이하 중 가장 큰 key의 targets를 사용해 isRelevant 평가.
+   * 게이트에 매치되는 stage가 없으면 subjectParty fallback.
+   * 예: { 3: ['both'] } = stage 3 이상 도달 시 양측 모두 제시 가능.
+   */
+  presentableTargetsByStage?: Record<number, ('a' | 'b' | 'both')[]>
   /** 조사 단계별 해금되는 심문 질문. stage 0은 열람만으로, stage N은 N회 조사 후. */
   investigationStages?: {
     stage: number
@@ -308,6 +315,12 @@ export interface CombinationLabConfig {
 export interface Dispute {
   id: string
   name: string
+  /**
+   * Truth-safe 표면 라벨. 새 쟁점 등장 popup 등 자백 전 노출 영역에서 사용.
+   * 미지정 시 `name` fallback. name 자체가 truth spoiler인 dispute (예: '내연녀 임신 의심')
+   * 만 safeName 명시 — 사건별 작성자가 진실 노출 정책에 맞춰 등록.
+   */
+  safeName?: string
   truth: boolean
   truthDescription: string
   quadrant: KnowledgeQuadrant

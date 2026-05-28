@@ -10,6 +10,7 @@ export type CutsceneType =
   | 'trust_peak'
   | 'truth_breakthrough'
   | 'dispute_emergence'
+  | 'evidence_unlock'
   | 'evidence_dispute_dual_emergence'
   | 'phase_transition'
   | 'verdict_gavel'

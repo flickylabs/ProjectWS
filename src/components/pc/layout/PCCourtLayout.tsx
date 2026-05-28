@@ -170,6 +170,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
             '.pc-interaction-overlay',
             '.v4-confession-overlay',
             '.v4-dispute-card-overlay',
+            '.v4-evidence-card-overlay',
           ].join(', ')
         )
         if ((!feedbackBusy && !busy) || Date.now() - startedAt >= maxMs) {

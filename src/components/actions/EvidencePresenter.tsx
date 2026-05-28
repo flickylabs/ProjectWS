@@ -105,8 +105,25 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const dimmedSet = useMemo(() => new Set(surfaceResult.dimmedIds), [surfaceResult.dimmedIds])
 
   const { available, presented, locked, dimmed, unrelated } = useMemo(() => {
-    // subjectParty 기준 매칭 — 비매칭은 unrelated 카테고리로 분리해 disabled로 표시
-    const isRelevant = (e: UnsafeAny) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
+    // 1순위: presentableTargetsByStage (stage-aware 게이트). currentStage 이하 중
+    // 가장 큰 key의 targets를 사용. 매치 stage 없으면 subjectParty fallback.
+    // 2순위 (fallback): subjectParty 기준 매칭.
+    const isRelevant = (e: UnsafeAny) => {
+      const stageGate = e.presentableTargetsByStage as Record<string, ('a'|'b'|'both')[]> | undefined
+      if (stageGate && target) {
+        const state = evidenceStates[e.id]
+        const currentStage = state?.investigatedActions?.length ?? 0
+        const matchedStage = Object.keys(stageGate)
+          .map((k) => Number(k))
+          .filter((s) => Number.isFinite(s) && s <= currentStage)
+          .sort((a, b) => b - a)[0]
+        if (matchedStage !== undefined) {
+          const targets = stageGate[String(matchedStage)]
+          return targets.includes('both') || targets.includes(target)
+        }
+      }
+      return !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
+    }
     const isPresentedToTarget = (e: UnsafeAny) => {
       if (!target) return false
       const state = evidenceStates[e.id]

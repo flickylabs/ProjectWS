@@ -59,9 +59,8 @@ export function getSafeEmergenceTitle(
   disputeId: string,
   fallback = DEFAULT_EMERGENCE_TITLE,
 ): string {
-  void fallback
   const caseId = resolveCaseId(storeOrCaseId)
-  return SAFE_EMERGENCE_TITLES[caseId]?.[disputeId] ?? DEFAULT_EMERGENCE_TITLE
+  return SAFE_EMERGENCE_TITLES[caseId]?.[disputeId] ?? fallback
 }
 
 export function getSafeEmergenceDescription(

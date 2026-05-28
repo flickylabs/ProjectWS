@@ -39,6 +39,14 @@ export interface DisputeDiscoveryEvent {
   context?: VfxTurnContext
 }
 
+export interface EvidenceDiscoveryEvent {
+  type: 'evidence_discovery'
+  evidenceId: string
+  title: string               // surfaceName ?? name
+  description: string         // surfaceDescription ?? description ?? ''
+  context?: VfxTurnContext
+}
+
 export interface ContradictionEvent {
   type: 'contradiction'
   party: 'a' | 'b'
@@ -85,6 +93,7 @@ export interface ScoreCounterEvent {
 export type PresentationEvent =
   | NewFactEvent
   | DisputeDiscoveryEvent
+  | EvidenceDiscoveryEvent
   | ContradictionEvent
   | ConfessionEvent
   | CombineSuccessEvent
@@ -121,6 +130,8 @@ async function handleEvent(event: PresentationEvent): Promise<void> {
       return handleNewFact(event)
     case 'dispute_discovery':
       return handleDisputeDiscovery(event)
+    case 'evidence_discovery':
+      return handleEvidenceDiscovery(event)
     case 'contradiction':
       return handleContradiction(event)
     case 'confession':
@@ -172,6 +183,28 @@ async function handleDisputeDiscovery(e: DisputeDiscoveryEvent) {
   }
   // 커스텀 이벤트로 UI 업데이트 알림
   window.dispatchEvent(new CustomEvent('v4:dispute-discovered', { detail: { disputeId: e.disputeId } }))
+}
+
+/** 새 evidence 등재 — dispute card 와 동일 패밀리, 청록 톤. */
+async function handleEvidenceDiscovery(e: EvidenceDiscoveryEvent) {
+  if (shouldPlayCutscene('evidence_unlock', normalizeContext(e.context))) {
+    await waitForPresentationLane()
+    playEvidenceUnlock()
+    const locale = getRuntimeTextLocale()
+    const overlay = document.createElement('div')
+    overlay.className = 'v4-evidence-card-overlay'
+    overlay.innerHTML = `
+      <div class="v4-evidence-card">
+        <div class="v4-evidence-card__label">${escapeHtml(localizeRuntimeText('새로운 증거 등재', locale))}</div>
+        <div class="v4-evidence-card__title">${escapeHtml(localizeRuntimeText(e.title, locale))}</div>
+        ${e.description ? `<div class="v4-evidence-card__desc">${escapeHtml(localizeRuntimeText(e.description, locale))}</div>` : ''}
+      </div>
+    `
+    document.body.appendChild(overlay)
+    await delay(2500)
+    overlay.remove()
+  }
+  window.dispatchEvent(new CustomEvent('v4:evidence-discovered', { detail: { evidenceId: e.evidenceId } }))
 }
 
 /** #4 모순 발견 — React 컴포넌트에서 처리하도록 이벤트만 발행 */
@@ -297,6 +330,7 @@ async function waitForPresentationLane(maxMs = 2600): Promise<void> {
         '.pc-combination-success',
         '.v4-confession-overlay',
         '.v4-dispute-card-overlay',
+        '.v4-evidence-card-overlay',
       ].join(', ')
     )
     if (!busy) return
@@ -361,6 +395,9 @@ export const v4Effects = {
 
   disputeDiscovered: (disputeId: string, title: string, description: string, context?: VfxTurnContext) =>
     emitPresentationEvent({ type: 'dispute_discovery', disputeId, title, description, context }),
+
+  evidenceDiscovered: (evidenceId: string, title: string, description: string, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'evidence_discovery', evidenceId, title, description, context }),
 
   contradiction: (party: 'a' | 'b', prev: string, curr: string, disputeId: string, context?: VfxTurnContext) =>
     emitPresentationEvent({ type: 'contradiction', party, previousClaim: prev, currentClaim: curr, disputeId, context }),

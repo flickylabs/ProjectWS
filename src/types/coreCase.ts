@@ -332,6 +332,12 @@ export type PartyLieConfig = z.infer<typeof PartyLieConfigSchema>
 export const CoreDisputeSchema = z.object({
   id: z.string().min(1),
   name: LocalizedStringSchema,
+  /**
+   * Truth-safe 표면 라벨. 새 쟁점 등장 popup 등 자백 전 노출 영역에서 사용.
+   * 미지정 시 name fallback. name 자체가 truth spoiler인 dispute (예: '내연녀 임신 의심')
+   * 만 safeName 명시 — 사건별 작성자가 진실 노출 정책에 맞춰 등록.
+   */
+  safeName: LocalizedStringSchema.optional(),
   /** boolean — d-1 truth=true 같은 영역. truthStages.S5와 별개로 명시. */
   truth: z.boolean(),
   /** S5 도달 시 공식 진실 텍스트. truthStages.S5.{a,b}.admittedFact 보강용. */
@@ -487,6 +493,14 @@ export const CoreEvidenceSchema = z.object({
     b: PartyEvidenceContextSchema.optional(),
   }),
   investigationStages: z.array(EvidenceInvestigationStageSchema).optional(),
+  /**
+   * 조사 단계별 제시 가능 대상 게이트. key는 조사 완료 횟수, value는 허용 대상.
+   * 게이트가 있으면 currentStage 이하 중 가장 큰 key의 targets를 사용해 isRelevant 평가.
+   * 매치 stage 없으면 subjectParty fallback.
+   */
+  presentableTargetsByStage: z
+    .record(z.string(), z.array(z.enum(['a', 'b', 'both'])).min(1))
+    .optional(),
   /** G1: authored 5단계 깊이 (Stub/Excerpt/Original/Context/Established). */
   depthStages: z.array(EvidenceDepthStageSchema).optional(),
   /** G1: authored 5단계 신뢰 (Submitted/Verifying/Authenticated/Challenged/Misread). */

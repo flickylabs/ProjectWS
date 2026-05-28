@@ -212,7 +212,9 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
       const dispute = caseData.disputes.find((d: import('../types').Dispute) => d.id === entry.disputeId)
       const rawDescription = '새로운 단서가 기존 설명과 맞물립니다. 확인해야 할 범위만 추가되었습니다.'
       const description = getSafeEmergenceDescription(caseData.caseId, entry.disputeId, rawDescription)
-      const title = getSafeEmergenceTitle(caseData.caseId, entry.disputeId, dispute?.name ?? entry.disputeId)
+      const safeNameFromSchema = (dispute as { safeName?: string } | undefined)?.safeName
+      const title = safeNameFromSchema
+        ?? getSafeEmergenceTitle(caseData.caseId, entry.disputeId, dispute?.name ?? entry.disputeId)
       // Core narrative wrapper (Cycle 6+) — dispute emerge 직전 narrative trigger 평가.
       // fire 성공 시 narrative dialogue 추가 후 mechanical emerge 진행. fire 실패는 fallback 대기.
       attemptCoreNarrativeForDispute(entry.disputeId, via)
