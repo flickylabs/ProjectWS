@@ -537,48 +537,32 @@ export default function DiscoveryFeedbackWatcher() {
             }, 4000)
             // [B-16-A·B] 화제 전환 NPC hook 발화 — 사전 작성된 데이터 (emergenceHooks.ts) 활용.
             // 화자 lieState 기반으로 톤 선택 (S0~S2: attack / S3~S4: confession / S5: resignation).
-            const emergedDispute = s.caseData?.disputes.find((d) => d.id === pendingEmergence.disputeId)
             const hookCaseId = (s.caseData?.caseId ?? '').replace(/^case-/, '')
             const hookSpeaker = getEmergenceHookSpeaker(hookCaseId, pendingEmergence.disputeId)
             const speakerLieState = hookSpeaker
               ? (hookSpeaker === 'a' ? s.agentA : s.agentB).lieStateMap[pendingEmergence.disputeId]?.currentState
               : undefined
             const hook = getEmergenceHook(hookCaseId, pendingEmergence.disputeId, speakerLieState)
-            const hookText = hook?.text ?? ''
-            const hookSafeNameFromSchema = (emergedDispute as { safeName?: string } | undefined)?.safeName
-            const safeHookDisputeName = hookSafeNameFromSchema
-              ?? getSafeEmergenceTitle(hookCaseId, pendingEmergence.disputeId, emergedDispute?.name ?? '')
-            const fallbackText = safeHookDisputeName
-              ? t('pc.discovery.feedback.emergence.hookFallback.withName', { disputeName: safeHookDisputeName })
-              : t('pc.discovery.feedback.emergence.hookFallback.generic')
-            const hookKey = `emergence-hook:${hookCaseId}:${pendingEmergence.disputeId}:${hookText || fallbackText}`
+            // emergenceHook 데이터가 없는 쟁점은 폴백 말풍선 발화를 추가하지 않는다.
+            // (쟁점 등장 패널/VFX 는 위에서 이미 처리됨 — 어색한 generic 발화 제거, 2026-05-28)
+            if (!hook) return
+            const hookText = hook.text
+            const hookKey = `emergence-hook:${hookCaseId}:${pendingEmergence.disputeId}:${hookText}`
             const alreadyLogged = s.dialogueLog.some((d) =>
-              d.text === (hookText || fallbackText)
+              d.text === hookText
               && (d.relatedDisputes ?? []).includes(pendingEmergence.disputeId)
             )
             if (surfacedEmergenceHookRef.current.has(hookKey) || alreadyLogged) return
             surfacedEmergenceHookRef.current.add(hookKey)
 
-            if (hook) {
-              s.addDialogue({
-                speaker: hook.speaker,
-                text: hook.text,
-                behaviorHint: hook.behaviorHint,
-                relatedDisputes: [pendingEmergence.disputeId],
-                turn: s.turnCount,
-                source: 'script',
-              })
-            } else {
-              // 폴백 — 데이터 없는 경우 (Legacy 사건 등) generic 발화
-              s.addDialogue({
-                speaker: s.pcTargetParty,
-                text: fallbackText,
-                relatedDisputes: [pendingEmergence.disputeId],
-                turn: s.turnCount,
-                behaviorHint: t('pc.discovery.feedback.emergence.hookFallback.behaviorHint'),
-                source: 'fallback',
-              })
-            }
+            s.addDialogue({
+              speaker: hook.speaker,
+              text: hook.text,
+              behaviorHint: hook.behaviorHint,
+              relatedDisputes: [pendingEmergence.disputeId],
+              turn: s.turnCount,
+              source: 'script',
+            })
           },
         },
       ],
