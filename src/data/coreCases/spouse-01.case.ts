@@ -1879,7 +1879,7 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
        * 2026-05-27 — d-3 narrative trigger 영역 자체 제거.
        *
        * 사용자 시나리오 (2026-05-27 manual 테스트 follow-up): 「내연녀 임신 의심」(d-3) 정식
-       * 등록 발화 = e-10 candidate 1 의 6번째 ref (emerge-e10-via-b3-judge-decree-v1) 의 통합
+       * 등록 발화 = e-10 candidate 1 의 마지막 ref (emerge-e10-via-b3-judge-decree-v1) 의 통합
        * 발화 "새로운 쟁점과 함께 「출산 준비 도서」를 증거로 추가합니다" 로 흡수됨. d-3 자체
        * 별도 narrative trigger 발화 영역 불필요.
        *
@@ -1912,6 +1912,13 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       provenance: 'institutional',
       legitimacy: 'lawful',
       subjectParty: 'b',
+      /**
+       * 2026-05-28 — 「영수증 묶음 5장」 조사 3단계 도달 시 박지연(원고 a) 제시 버튼 활성화.
+       *   stage 0~2 는 subjectParty 'b'(이준호) fallback 유지 (외도 의심 추궁 = 이준호 대상).
+       *   stage 3 도달 시 'both' → 박지연(a) 제시(C-3c hook = e-10「출산 준비 도서」 + d-3「내연녀
+       *   임신 의심」 cascade emerge 6 turn) + 이준호(b) 제시(C-3d hook = 참고서 변명 4 turn) 둘 다 가능.
+       */
+      presentableTargetsByStage: { 3: ['both'] },
       proves: ['d-1'],
       isTrap: false,
       requires: [],
@@ -1982,7 +1989,6 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
             requirePriorCardFired: 'e-1',
           },
           scriptedRefs: [
-            'emerge-e1-b3-judge-q-v1',
             'emerge-e1-b3-b-evade-v1',
             'emerge-e1-b3-a-press-v1',
             'emerge-e1-b3-b-plea-v1',
@@ -2619,7 +2625,6 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
             requirePriorCardFired: 'e-1',
           },
           scriptedRefs: [
-            'emerge-e10-via-b3-judge-q-v1',
             'emerge-e10-via-b3-b-shock-v1',
             'emerge-e10-via-b3-a-confront-v1',
             'emerge-e10-via-b3-b-outburst-v1',

@@ -241,6 +241,7 @@
         "h-d3"
       ],
       "subjectParty": "a",
+      "leadId": "L-7",
       "successConditionSummary": [
         "e-7 Original + 필적 검증",
         "A에게 절차 책임 추궁"
@@ -1922,6 +1923,37 @@
           "id": "L-4-B",
           "text": "이혼 대비 은닉이다",
           "implication": "A의 계산을 먼저 본다."
+        }
+      ]
+    },
+    {
+      "id": "L-7",
+      "name": "Procedural Lead",
+      "leadType": "Procedural",
+      "firstInputs": [
+        "e-7",
+        "stmt-a-protect"
+      ],
+      "secondInputs": [
+        "L-7",
+        "w-2-angle"
+      ],
+      "dossierCardId": "dc-7",
+      "interpretationChoices": [
+        {
+          "id": "L-7-A",
+          "text": "위임장을 위조하여 단독 해지한 것이다",
+          "implication": "h-d3 절차 책임 frame을 확정한다."
+        },
+        {
+          "id": "L-7-B",
+          "text": "합의 하에 해지됐을 수도 있다",
+          "implication": "판단을 유보한다."
+        },
+        {
+          "id": "L-7-C",
+          "text": "은행 절차 미숙으로 처리된 것이다",
+          "implication": "책임이 은행 창구로 분산된다."
         }
       ]
     },

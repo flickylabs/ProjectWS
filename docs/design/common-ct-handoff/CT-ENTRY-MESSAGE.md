@@ -33,11 +33,17 @@
 - [EvidencePresenter.tsx:109](../../../src/components/actions/EvidencePresenter.tsx#L109) isRelevant 가 stage gate 1순위 평가 (`investigatedActions.length` 기준 최고 게이트 적용), subjectParty fallback 유지
 - derive script 통과 ([scripts/build-core-case/derive/legacyCaseJson.mjs](../../../scripts/build-core-case/derive/legacyCaseJson.mjs))
 
-**남은 작업 (공통 CT thread)**:
-- e-1 게이트 등록 후 **end-to-end manual 검증** — stage 3 도달 시 박지연 버튼 실제 활성화 + 박지연 분기 발동까지 확인. presenter logic 보강 필요 시 처리.
+**⚠ 확정 root cause (2026-05-28 manual 검증)** — **게이트 평가 누락 컴포넌트**:
+- 실제 화면에 뜨는 증거 제시 모달은 **`EvidencePresenter.tsx` 가 아니라 [PCInteractionPanel.tsx](../../../src/components/pc/layout/PCInteractionPanel.tsx)** 입니다. (`pc.interaction.notTarget` "대상 아님" 라벨 렌더 컴포넌트)
+- [PCInteractionPanel.tsx:1018-1022](../../../src/components/pc/layout/PCInteractionPanel.tsx#L1018) 의 `aRelevant`/`bRelevant` 가 **`subjectParty` 만 평가**하고 `presentableTargetsByStage` 게이트를 보지 않음. 그래서 e-1(subjectParty 'b') 은 게이트 등록 + derived 반영 후에도 원고(A) 버튼이 계속 "대상 아님".
+- 같은 파일 line 359 / 392 에도 동일 `subjectParty` 단독 relevant 로직 존재 (evidence list 영역) — 함께 점검 필요.
 
-**전제 (spouse-01 thread 영역, 공통 CT 영역 아님)**:
-- e-1 에 `presentableTargetsByStage: { 3: ['both'] }` (또는 `{ 3: ['a','b'] }`) 등록 = **spouse-01 thread**. 이게 등록되어야 stage 3 도달 시 원고(A) 버튼 활성화됨. 공통 thread 는 이 데이터 등록을 하지 않음 → spouse-01 thread 안내.
+**남은 작업 (공통 CT thread)**:
+- **PCInteractionPanel.tsx 에 게이트 로직 적용** — EvidencePresenter.tsx:111 의 `isRelevant`(stageGate → currentStage 이하 최대 등록 stage 의 targets, 매치 없으면 subjectParty fallback) 를 PCInteractionPanel 의 `aRelevant`/`bRelevant`(line 1018-1020, `currentStage` 는 line 1011 에 이미 있음)에 동일 적용. `getEvidencePresentDisabledReason` / `formatPresentButtonLabel` 는 `relevant` 파라미터를 받으므로 추가 변경 불필요.
+- 적용 후 stage 3 도달 시 박지연 버튼 활성화 + 박지연 분기(C-3c hook = e-10 + d-3 cascade) 발동까지 **end-to-end manual 검증**.
+
+**전제 (spouse-01 thread 영역 — ✅ 완료)**:
+- e-1 에 `presentableTargetsByStage: { 3: ['both'] }` 등록 + derived json (generated/claimPolicies/disclosurePolicy) 반영 = **spouse-01 thread 완료** (build-core-case --write 적용, generated json 확인 `{"3":["both"]}`). 데이터·derived 는 준비됐고, 위 PCInteractionPanel 게이트 평가만 추가되면 즉시 동작.
 
 ---
 
@@ -74,6 +80,24 @@
 - 미등록 dispute 의 fallback(`dispute.name`)이 truth-safe 한지 사건별 검증 — name 자체가 진실 스포일러인 dispute 가 자백 전 노출되지 않도록 확인. 위험 dispute 발견 시 해당 사건 thread 에 `safeName` 등록 안내.
 
 **영역 경계**: `safeName` 등록 = 사건별 thread / fallback logic = 공통 CT.
+
+---
+
+## 4순위 — 새 쟁점 등장 시 어색한 폴백 발화 제거 (사용자 결정 2026-05-28)
+
+**현상**: emergenceHook 데이터가 없는 쟁점이 등장하면 NPC 말풍선에 폴백 발화가 자동으로 뜹니다 — `…사실, {쟁점명} 건도 함께 봐주셔야 합니다.` spouse-01 「내연녀 임신 의심」(d-3) 등장 시 **"…사실, 내연녀 임신 의심 건도 함께 봐주셔야 합니다."** 가 떠서 어색합니다.
+
+**위치**:
+- [DiscoveryFeedbackWatcher.tsx:571-581](../../../src/components/pc/feedback/DiscoveryFeedbackWatcher.tsx#L571) — `else` 분기가 `fallbackText` 를 `addDialogue`(source: 'fallback')
+- [discovery.ts:80-81](../../../src/i18n/messages/discovery.ts#L80) `hookFallback.withName` / `.generic`
+
+**요청 (사용자 결정 = 공통 폴백 발화 전체 제거)**:
+- emergenceHook 이 없는 쟁점 등장 시 **폴백 말풍선 발화(else 분기)를 추가하지 않음** (모든 사건 공통).
+- 쟁점 등장 패널/VFX(emergence popup + 번개/오라)는 **유지** — 말풍선 폴백 발화만 제거.
+- hook 데이터가 있는 쟁점은 기존 hook 발화 유지.
+- 미사용 i18n 키(`hookFallback.*`) + [runtimeText.ts:3689](../../../src/i18n/runtimeText.ts#L3689) 폴백 파싱 정규식 정리 검토.
+
+**영역 경계**: 폴백 메커니즘 = 공통 컴포넌트 → 공통 CT. (spouse-01 측 orphan `emerge-d-3` scriptedText 는 spouse-01 thread 가 이미 제거 완료)
 
 ---
 

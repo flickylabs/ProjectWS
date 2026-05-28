@@ -10,6 +10,7 @@ import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getD
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playEvidenceUnlock, playEvidenceUpgrade, playInvestigationTokenWarning, playSeparation } from '../engine/soundEngine'
 import { v4Effects } from '../engine/presentationEngine'
+import { getSafeEmergenceTitle, getSafeEmergenceDescription } from '../data/safeEmergenceCopy'
 import { iga, eunneun as _eunneun } from '../utils/korean'
 import { showToast, showLLMErrorBanner } from '../components/common/Toast'
 import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
@@ -1201,6 +1202,27 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
             body: `${e10DisplayName}${pp이가(e10DisplayName)} 새로 등재되었습니다.`,
           })
           // 2026-05-26: 발언 기록 system 중복 메시지 제거 — 증거 popup만 노출.
+
+          // 2026-05-28 — d-3 (내연녀 임신 의심) misdirection 쟁점 dual emergence.
+          //   e-10 은 forceUnlock(presented X)이라 표준 runDiscoveryChecks 의 checkEmergence
+          //   (requiredEvidence = presented 기준)를 만족하지 못함 → 본 hook 이 e-10 발동과 동시에
+          //   d-3 emerge 를 직접 책임. 등장 패널/VFX 는 표준 경로와 동일하게 emergeDispute +
+          //   v4Effects.disputeDiscovered 로 통일 처리.
+          const d3Fresh = useGameStore.getState() as UnsafeAny
+          const d3Entry = d3Fresh.discovery?.disputeVisibility?.['d-3']
+          if (d3Entry?.visibility === 'hidden') {
+            const d3Dispute = d3Fresh.caseData?.disputes?.find((d: UnsafeAny) => d.id === 'd-3')
+            const d3CaseId = d3Fresh.caseData?.caseId ?? ''
+            const d3RawDescription = '새로운 단서가 기존 설명과 맞물립니다. 확인해야 할 범위만 추가되었습니다.'
+            const d3Description = getSafeEmergenceDescription(d3CaseId, 'd-3', d3RawDescription)
+            const d3Title = d3Dispute?.safeName ?? getSafeEmergenceTitle(d3CaseId, 'd-3', d3Dispute?.name ?? 'd-3')
+            d3Fresh.emergeDispute?.('d-3', 'cascade_from_card', state.turnCount, d3Description)
+            v4Effects.disputeDiscovered('d-3', d3Title, d3Description, {
+              turn: state.turnCount,
+              caseId: d3CaseId,
+              phase: state.currentPhase,
+            })
+          }
         }
       }
     }

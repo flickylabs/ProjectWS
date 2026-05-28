@@ -12,7 +12,18 @@
 「영수증 묶음 5장」 (e-1) 조사 3단계 도달 후 박지연(원고 A)에게 제시하는 버튼이 비활성 상태로 6 turn 시퀀스 (박지연 분기 「내연녀 임신 의심」 등장) 진입 불가.
 
 ### 영역
-증거 제시 버튼의 활성화 조건 영역 (UI/store). 사건 데이터 영역 아님 → 공통 CT thread.
+증거 제시 버튼의 활성화 조건 영역 (UI). 사건 데이터 영역 아님 → 공통 CT thread.
+
+### ⚠ 확정 root cause (2026-05-28)
+- 실제 제시 모달은 `EvidencePresenter.tsx` 가 아니라 **`PCInteractionPanel.tsx`** ("대상 아님" 라벨 = `pc.interaction.notTarget` 렌더 컴포넌트).
+- `PCInteractionPanel.tsx:1018-1022` 의 `aRelevant`/`bRelevant` 가 **`subjectParty` 만 평가**, `presentableTargetsByStage` 게이트 미평가. (line 359 / 392 에도 동일 로직 존재)
+- 공통 CT thread 가 `a5d7e91f` 에서 EvidencePresenter.tsx 에만 게이트 로직을 넣고 실제 모달 PCInteractionPanel.tsx 를 누락 → e-1 게이트 등록·derived 반영 후에도 박지연 "대상 아님".
+
+### 남은 작업 (공통 CT thread)
+- EvidencePresenter.tsx:111 `isRelevant` 게이트 로직을 PCInteractionPanel.tsx 의 `aRelevant`/`bRelevant`(line 1018-1020, `currentStage` 는 line 1011)에 동일 적용. `getEvidencePresentDisabledReason`/`formatPresentButtonLabel` 는 `relevant` 파라미터 받으므로 추가 변경 불필요.
+
+### 전제 (spouse-01 thread — ✅ 완료)
+- e-1 에 `presentableTargetsByStage: { 3: ['both'] }` 등록 + derived json 반영 완료 (generated json `{"3":["both"]}` 확인). PCInteractionPanel 게이트 평가만 추가되면 즉시 동작.
 
 ### 기대
 e-1 조사 3단계 + 박지연(A) 제시 버튼 활성화 → spouse-01 thread 가 적용한 박지연 6 turn 시퀀스 발동 가능.
@@ -74,6 +85,31 @@ e-1 조사 3단계 + 박지연(A) 제시 버튼 활성화 → spouse-01 thread �
 
 - `design-new-entity-emergence-unified-vfx-panel` (본 정책 권위)
 - `feedback-new-dispute-evidence-narrative-justification` (새 쟁점/증거 narrative justification, 보완 관계)
+
+---
+
+## Issue E — 새 쟁점 등장 시 어색한 폴백 발화 제거 (2026-05-28)
+
+### 현상
+emergenceHook 데이터가 없는 쟁점이 등장하면, NPC 가 자동으로 폴백 발화를 말합니다:
+- `…사실, {쟁점명} 건도 함께 봐주셔야 합니다.` (withName)
+- `…사실, 그것만이 아니었습니다.` (generic)
+
+spouse-01 「내연녀 임신 의심」(d-3) 은 emergenceHook 이 없어서 등장 시 **"…사실, 내연녀 임신 의심 건도 함께 봐주셔야 합니다."** 라는 어색한 폴백 발화가 박지연 말풍선으로 떴습니다. 사용자 판단 = 이 자동 폴백 발화 자체가 어색 → 제거.
+
+### 위치
+- 발화 생성: [DiscoveryFeedbackWatcher.tsx:571-581](src/components/pc/feedback/DiscoveryFeedbackWatcher.tsx#L571) — emergenceHook 이 null 일 때 `else` 분기가 `fallbackText` 를 `addDialogue`(source: 'fallback')
+- 폴백 문구: [discovery.ts:80-81](src/i18n/messages/discovery.ts#L80) `pc.discovery.feedback.emergence.hookFallback.withName` / `.generic`
+
+### 요청 (사용자 결정 = 공통 폴백 발화 전체 제거)
+- emergenceHook 이 없는 쟁점 등장 시 **폴백 발화(else 분기)를 추가하지 않음** (모든 사건 공통).
+- 쟁점 등장 패널/VFX(`enqueueFeedback` emergence popup + 번개/오라 연출)는 **유지** — 말풍선 폴백 발화만 제거.
+- hook 데이터가 있는 쟁점은 기존대로 hook 발화 유지 (`if (hook)` 분기).
+- 미사용이 되는 i18n 키(`hookFallback.withName/generic/behaviorHint`) + `runtimeText.ts:3689` 의 폴백 파싱 정규식도 함께 정리 검토.
+
+### 영역 경계
+- 폴백 발화 메커니즘 = 공통 컴포넌트(DiscoveryFeedbackWatcher) → 공통 CT thread.
+- 참고: spouse-01 측 orphan scriptedText(`emerge-d-3` 2 variant)는 spouse-01 thread 가 이미 제거 완료 (별개 정리).
 
 ---
 
