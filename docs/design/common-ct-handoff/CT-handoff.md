@@ -113,6 +113,54 @@ spouse-01 「내연녀 임신 의심」(d-3) 은 emergenceHook 이 없어서 등
 
 ---
 
+## Issue F — 「모순 발견」 라벨 단순화 (2026-05-28)
+
+### 현상
+모순 발견 모달의 두 패널 라벨이 `이전 발언 A` / `현재 발언 B` 로 표시됩니다. 사용자 요청 = `A`/`B` suffix 제거 → `이전 발언` / `현재 발언`.
+
+### 위치 (공통 i18n — 모든 사건 공통)
+- [src/i18n/runtimeText.ts:821-822](src/i18n/runtimeText.ts#L821) `'이전 발언 A'` / `'현재 발언 B'` 번역 맵 (en/ja/zh-CN 도 `A`/`B` suffix 동반 제거)
+- [src/i18n/messages/layout.ts:236-237](src/i18n/messages/layout.ts#L236) `pc.dialogue.contradiction.previous` / `.current`
+- [src/hooks/useActionDispatch.ts:3563-3564](src/hooks/useActionDispatch.ts#L3563) `previousLabel: '이전 발언 A'` / `currentLabel: '현재 발언 B'`
+- [src/components/court/DialogueLog.tsx:99,108](src/components/court/DialogueLog.tsx#L99) fallback 라벨
+- `src/i18n/runtimeText.generated.ts` 재생성 필요 (5026/7256 라인 키)
+
+### 요청
+`A`/`B` 접미사 제거. 4언어 모두 (en `Previous Statement A`→`Previous Statement` 등).
+
+---
+
+## Issue G — 모순 발견 오작동 (무관한 발언 비교, 2026-05-28)
+
+### 현상
+spouse-01 manual 테스트: 「출산 준비 도서」 관련 질문에 대한 현재 답변(`아니, 무슨 말을 그렇게 해?` — LLM 생성 무의미 발화)이, 무관한 이전 답변(e-8 주차 영수증/여성 병원 방문 관련 `예, 그 메디컬 센터에 간 것은 맞습니다...`)과 **모순으로 잘못 매칭**되어 「모순 발견」 모달이 떴습니다. 두 발언은 서로 다른 쟁점/주제라 모순이 아닙니다.
+
+### 영역 (공통 엔진 + LLM 품질)
+- 모순 검출: [src/engine/contradictionEngine.ts](src/engine/contradictionEngine.ts) — 같은 화자의 이전/현재 발언 모순 1차 필터. **서로 다른 쟁점·증거 맥락의 발언을 비교 대상에서 제외**하는 게이트 강화 필요.
+- 근본 원인 일부 = e-8 등 신규 entity 의 scripted 답변 부재 → LLM 즉석 생성 발화 품질 편차. (e-8 답변 scripted 화는 별도 Codex thread 진행 — `docs/design/spouse-01-entity-matrix/codex-brief-e8-dialogue.md` 참조)
+
+### 요청
+모순 비교를 동일 쟁점/맥락 내로 한정하거나, 무의미·회피성 단답을 모순 후보에서 배제하는 가드 추가 검토.
+
+---
+
+## Issue H — 쟁점 진실 확정 후 연관 증거 제시 차단 (2026-05-28)
+
+### 현상 (사용자 결정 = 공통 게임 규칙)
+어떤 쟁점의 진실이 이미 밝혀진(확정된) 이후, 그 쟁점에만 연관된 증거를 제시하려 하면 심문이 무의미합니다.
+
+### 요청
+- 해당 증거가 입증하는 쟁점이 **모두 진실 확정 상태**이면, 증거 제시 시 NPC 심문/발화 없이 **시스템 메시지만** 띄우고 종료:
+  - `이 쟁점은 이미 진실이 밝혀져 이 증거로 심문을 하는 것이 무의미합니다.`
+  - 별도 스크립트(NPC 발화) 노출 없음.
+- 증거가 입증하는 쟁점 중 **하나라도 미확정**이면 기존 동작 유지.
+
+### 영역 (공통 엔진)
+- 증거 제시 처리: [src/hooks/useActionDispatch.ts](src/hooks/useActionDispatch.ts) `handleEvidencePresent` 진입부 가드.
+- "진실 확정" 판정 기준(쟁점 lieState S5 / collapsed / 판결 등) 은 공통 엔진의 dispute 상태 모델 기준으로 CT thread 가 결정.
+
+---
+
 ## 발신 thread 정보
 
 - 발신 = spouse-01 manual 테스트·수정 thread (2026-05-28)

@@ -49,6 +49,15 @@ function passesSpouse01EmergenceGate(state: UnsafeAny, disputeId: string): boole
   const caseId = String(state.caseData?.caseId ?? '').replace(/^case-/, '')
   if (caseId !== 'spouse-01') return true
 
+  // 2026-05-28 — d-3 「내연녀 임신 의심」 은 auto-emergence(checkEmergence) 경로로 절대 등장 X.
+  //   오직 명시적 hook 2곳의 직접 emergeDispute 로만 등장:
+  //     ① C-3c hook (「영수증 묶음」 조사 3단계 박지연 제시 → e-10 dual emergence)
+  //     ② e-2 hook (「블랙박스 GPS」 조사 3단계 → d-3)
+  //   두 hook 은 runDiscoveryChecks 를 거치지 않으므로 본 gate 영향 없음. 본 false 반환으로
+  //   d-1 evidence(e-1/e-2) 제시 시 d-1 lieState 상승에 따라 d-3 가 의도치 않게 자동 등장하던
+  //   회귀를 원천 차단 (사용자 manual 테스트 반복 보고).
+  if (disputeId === 'd-3') return false
+
   if (disputeId === 'd-2') {
     return getMaxLieRank(state, 'd-1') >= 3 ||
       hasEvidenceStage(state, 'e-4') ||

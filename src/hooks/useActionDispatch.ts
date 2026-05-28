@@ -1771,6 +1771,74 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
     }
   }
 
+  // 2026-05-28 — spouse-01 e-10 (출산 준비 도서) 조사 2단계(목차 탐색) 도달 시 e-8 (주차 영수증)
+  //   cascade 등장. 사용자 설계: 책 목차를 펼치니 그 사이에 주차 영수증이 끼워져 있었다는 발견.
+  //   e-8 의 조기 auto-unlock(requires e-3 + d-1 S2 leak)은 case.ts 에서 제거됨 (requires:[] +
+  //   requiredLieState 제거 → baseEvidenceIds 미포함이라 초기 잠금 + checkUnlocks skip). 본 hook 이
+  //   e-8 의 단일 등장 경로 (forceUnlock + popup). e-10 자체가 C-3c hook(영수증 stage 3 박지연 제시)
+  //   으로만 등장하므로, 책을 발견한 뒤 목차까지 조사한 player 에게만 e-8 이 surface 된다.
+  if (
+    action.evidenceId === 'e-10' &&
+    normalizeCaseKey(state.caseData?.caseId ?? '') === 'spouse-01'
+  ) {
+    const fresh = useGameStore.getState() as UnsafeAny
+    const e10Def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === 'e-10')
+    const e10State = fresh.evidenceStates['e-10']
+    const e10Stages = Array.isArray(e10Def?.investigationStages) ? e10Def.investigationStages : []
+    const e10Investigated = Array.isArray(e10State?.investigatedActions) ? e10State.investigatedActions : []
+    const e10LatestStage = e10Stages
+      .filter((s: UnsafeAny) => e10Investigated.includes(s.revealKey))
+      .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
+      .at(-1)?.stage ?? 0
+    if (e10LatestStage >= 2) {
+      const e8Def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === 'e-8')
+      const e8State = fresh.evidenceStates['e-8']
+      if (e8Def && !e8State?.unlocked) {
+        fresh.forceUnlockEvidence?.('e-8', 'e8-via-e10-toc')
+        const e8DisplayName = getEvidenceDisplayName(e8Def, useGameStore.getState().evidenceStates['e-8'])
+        enqueueNewEvidenceCutscene('e-8', {
+          body: `「출산 준비 도서」 목차 사이에서 ${e8DisplayName}${pp이가(e8DisplayName)} 발견되어 새로 등재되었습니다.`,
+        })
+      }
+    }
+  }
+
+  // 2026-05-28 — spouse-01 「블랙박스 GPS」(e-2) 조사 3단계(시간 패턴 — 산부인과 단독 방문 드러남)
+  //   도달 시 「내연녀 임신 의심」(d-3) 쟁점 emerge. 사용자 설계: GPS 시간 패턴에서 산부인과 방문
+  //   정황이 드러나며 내연녀 임신 의심 frame 이 정식 쟁점화. d-3 의 또 다른 진입점 — 다른 하나는
+  //   C-3c hook(「영수증 묶음」 stage 3 박지연 제시 시 e-10 dual emergence). 둘 중 먼저 도달한 쪽이
+  //   emerge (hidden guard 로 중복 방지). 표준 emergeDispute + disputeDiscovered 통일 패널/VFX.
+  if (
+    action.evidenceId === 'e-2' &&
+    normalizeCaseKey(state.caseData?.caseId ?? '') === 'spouse-01'
+  ) {
+    const fresh = useGameStore.getState() as UnsafeAny
+    const e2Def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === 'e-2')
+    const e2State = fresh.evidenceStates['e-2']
+    const e2Stages = Array.isArray(e2Def?.investigationStages) ? e2Def.investigationStages : []
+    const e2Investigated = Array.isArray(e2State?.investigatedActions) ? e2State.investigatedActions : []
+    const e2LatestStage = e2Stages
+      .filter((s: UnsafeAny) => e2Investigated.includes(s.revealKey))
+      .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
+      .at(-1)?.stage ?? 0
+    if (e2LatestStage >= 3) {
+      const d3Entry = fresh.discovery?.disputeVisibility?.['d-3']
+      if (d3Entry?.visibility === 'hidden') {
+        const d3Dispute = fresh.caseData?.disputes?.find((d: UnsafeAny) => d.id === 'd-3')
+        const d3CaseId = fresh.caseData?.caseId ?? ''
+        const d3RawDescription = '새로운 단서가 기존 설명과 맞물립니다. 확인해야 할 범위만 추가되었습니다.'
+        const d3Description = getSafeEmergenceDescription(d3CaseId, 'd-3', d3RawDescription)
+        const d3Title = d3Dispute?.safeName ?? getSafeEmergenceTitle(d3CaseId, 'd-3', d3Dispute?.name ?? 'd-3')
+        fresh.emergeDispute?.('d-3', 'cascade_from_card', state.turnCount, d3Description)
+        v4Effects.disputeDiscovered('d-3', d3Title, d3Description, {
+          turn: state.turnCount,
+          caseId: d3CaseId,
+          phase: state.currentPhase,
+        })
+      }
+    }
+  }
+
   // 증거 조사는 턴을 쓰지 않지만 숨겨진 쟁점/후속 증거 조건을 만족시킬 수 있다.
   runDiscoveryChecks(useGameStore.getState().pcTargetParty ?? 'a')
 

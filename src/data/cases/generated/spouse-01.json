@@ -362,48 +362,10 @@
       "wrongTruths": {}
     },
     {
-      "id": "h-d4",
-      "name": "비자금의 원래 목적",
-      "truth": true,
-      "truthDescription": "이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 예비 부모 정서 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.",
-      "quadrant": "b_only",
-      "requiredEvidence": [
-        "e-8",
-        "e-9"
-      ],
-      "correctResponsibility": {
-        "a": 30,
-        "b": 70
-      },
-      "ambiguity": "low",
-      "weight": "high",
-      "mediationLink": "비자금의 원래 목적과 부부 침묵의 무게",
-      "legitimacyIssue": true,
-      "judgmentStatement": "비자금의 원래 목적은 박지연의 난임 치료비였고, 그 사실을 침묵해 온 책임은 이준호가 더 크다.",
-      "hidden": true,
-      "v3Visibility": "hidden",
-      "unlockCondition": {
-        "requireDispute": {
-          "id": "d-2",
-          "minState": "S5"
-        }
-      },
-      "v3UnlockPlan": {
-        "runtimeRule": "d-2 S5 자백 후 비자금 운용 패턴 의문 + 신규 증거(e-8/e-9) 발현 시",
-        "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상"
-      },
-      "verdictOptions": {
-        "wrong": "비자금은 처음부터 형에게 줄 돈으로 모은 것이다.",
-        "partial": "비자금의 원래 목적은 불분명하나 사용처는 형이 맞다.",
-        "truth": "비자금은 원래 박지연의 난임 치료비를 위해 모은 자금이었고, 형 사건 발생 후 그 자금이 형 지원으로 전환되었다.",
-        "defer": "원래 목적을 단정할 수 없다. 판단을 유보한다."
-      }
-    },
-    {
       "id": "d-3",
       "name": "내연녀 임신 의심",
       "truth": false,
-      "truthDescription": "내연녀가 존재하지 않으며 임신도 사실이 아니다. e-10 예비 부모 정서 도서와 e-8/e-9 산부인과 자료들은 모두 이준호 본인이 박지연 난임 진단 후 아내에게 부담을 주지 않으려 혼자 부모 될 마음을 정리하던 흔적이다. 본 misdirection 쟁점은 d-1(가족 돌봄) 또는 h-d4(난임 치료비) 진실 확정 시 자연 무너진다.",
+      "truthDescription": "내연녀가 존재하지 않으며 임신도 사실이 아니다. e-10 출산 준비 도서와 e-8 주차 영수증(여성 병원 단독 방문)은 모두 이준호 본인이 박지연 난임 진단 후 아내에게 부담을 주지 않으려 혼자 부모 될 마음을 정리하던 흔적이다. 본 misdirection 쟁점은 d-1(가족 돌봄) 진실 확정 시 자연 무너진다.",
       "quadrant": "a_only",
       "requiredEvidence": [
         "e-10"
@@ -419,14 +381,9 @@
       "judgmentStatement": "내연녀 임신 의심은 사실이 아니다. 본 dispute는 misdirection이며 e-10은 B 본인이 부모 될 준비를 혼자 알아본 흔적이다.",
       "hidden": false,
       "v3Visibility": "hidden",
-      "unlockCondition": {
-        "requireDispute": {
-          "id": "d-1",
-          "minState": "S2"
-        }
-      },
+      "unlockCondition": {},
       "v3UnlockPlan": {
-        "runtimeRule": "e-1 original 도달 + d-1 S2+ 시점에서 e-10 emergence와 동시 발현",
+        "runtimeRule": "「영수증 묶음 5장」 조사 3단계 박지연(a) 제시 시 e-10 forceUnlock 과 동시에 C-3c hook 이 직접 emerge (dual emergence). 자동 unlockCondition 경로 없음.",
         "authoredRule": "e-1 영수증 묶음의 교보문고 결제 흔적이 책 본체(e-10)로 emergence하면서 동시에 본 misdirection 쟁점도 정식 등장. 컷씬급 dual emergence VFX."
       },
       "verdictOptions": {
@@ -465,7 +422,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 영수증들, 누가 무엇을 산 것입니까?",
+            "text": "이 영수증들 내 품목들은 본인이 직접 구입하신 것이 맞습니까?",
             "attackVector": "authenticity"
           },
           "label": "영수확인",
@@ -1271,8 +1228,8 @@
     },
     {
       "id": "e-2",
-      "name": "블랙박스 GPS / 네비 즐겨찾기",
-      "surfaceName": "블랙박스 GPS 기록",
+      "name": "블랙박스 GPS",
+      "surfaceName": "블랙박스 GPS",
       "description": "매일 같은 좌표에 정차. 오피스텔 주소 확인. A가 B 차에서 확인.",
       "surfaceDescription": "차량 GPS 정차 기록.",
       "type": "device",
@@ -4578,23 +4535,20 @@
     },
     {
       "id": "e-8",
-      "name": "「헤라 여성 메디컬 센터」 주차 영수증 (발급처 인쇄 오염)",
-      "surfaceName": "주차 영수증 (발급처 오염)",
-      "description": "이준호 차량에서 발견된 주차 영수증 1장. 발급처 명칭 영역의 인쇄가 오염되어 알아보기 어려운 상태. 발급 시각은 평일 점심시간대. 영수증 하단 주소 정보로 외부 조회한 결과 발급처는 「헤라 여성 메디컬 센터」(여성 전문 병원).",
-      "surfaceDescription": "이준호 차량 내 발견된 주차 영수증 1장. 발급처 명칭 영역 인쇄가 오염된 상태.",
+      "name": "주차 영수증",
+      "surfaceName": "주차 영수증",
+      "description": "책 사이에서 발견된 주차 영수증 1장. 발급처 명칭 영역의 인쇄가 오염되어 알아보기 어려운 상태. 발급 시각은 평일 점심시간대. 영수증 하단 주소 정보로 외부 조회한 결과 발급처는 「헤라 여성 메디컬 센터」(여성 전문 병원).",
+      "surfaceDescription": "책 사이에서 발견된 주차 영수증 1장. 발급처 명칭 영역 인쇄가 오염된 상태.",
       "type": "receipt",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "self_possessed",
       "legitimacy": "lawful",
       "proves": [
-        "h-d4"
+        "d-3"
       ],
       "isTrap": false,
-      "requires": [
-        "e-3"
-      ],
-      "requiredLieState": "S2",
+      "requires": [],
       "investigationResults": {
         "inspect_parking_receipt": "주차 영수증 1장이 확인됨. 발급 시각이 평일 점심시간대. 다만 발급처 명칭 영역의 인쇄가 일부 오염되어 알아보기 어렵다.",
         "wipe_smudge_partial": "오염된 인쇄 영역을 조심스럽게 닦아낸 결과 발급처 명칭 뒷부분에 「메디컬 센터」가 포함되어 있다. 앞 부분은 훼손이 심해 더 이상 닦아낼 수 없다.",
@@ -4626,7 +4580,7 @@
           "stage": 3,
           "revealKey": "address_lookup_identifies_clinic",
           "question": {
-            "text": "더 닦아낼 수 없는 부분이 남아 있습니다. 영수증 하단 주소로 외부 조회해 봅시다.",
+            "text": "주차 영수증의 방문처 이름은 제대로 보이지 않지만, 주소로 확인한 결과 여성 병원으로 보여집니다. 이 곳에 방문하신 목적이 무엇입니까?",
             "attackVector": "responsibility"
           },
           "label": "주소 조회로 확인",
@@ -4980,146 +4934,6 @@
       ]
     },
     {
-      "id": "e-9",
-      "name": "이준호 명의 예비 부모 정서 자가진단 결과지 + 상담소 예약 확인 명세",
-      "surfaceName": "예비 부모 정서 자가진단 + 상담 예약",
-      "description": "이준호 명의로 출력된 예비 부모 정서 자가진단 결과지(점수표 포함)와 정신건강 상담소 예약 확인 명세. 모두 종이/표 출력본이며, 자가진단지에는 B 본인의 필기 표시가 일부 남아 있다. 실제 상담 진행 여부는 별도 확인 필요.",
-      "surfaceDescription": "이준호 명의로 출력된 예비 부모 정서 자가진단 결과지와 상담소 예약 확인 명세.",
-      "type": "medical_record",
-      "reliability": "hard",
-      "completeness": "original",
-      "provenance": "self_possessed",
-      "legitimacy": "lawful",
-      "proves": [
-        "h-d4"
-      ],
-      "isTrap": false,
-      "requires": [
-        "e-8"
-      ],
-      "requiredLieState": "S2",
-      "subjectParty": "b",
-      "partyContext": {
-        "a": {
-          "questionAngle": "남편이 혼자 받은 보험 견적의 정체가 무엇인지",
-          "implication": "수익자 공란/타인 상담 = 외도 상대 수익자 의심."
-        },
-        "b": {
-          "questionAngle": "가입까지 가지 않은 보험을 왜 여러 곳에서 상담만 받았는지",
-          "implication": "의료비 대비를 알아본 것이지만 결정을 내리지 못함."
-        }
-      },
-      "v3DepthPlan": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "보험 견적서 묶음 존재 표시."
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "고액 의료비 특약·수익자 공란 견적만 보임 — 외도 의심 frame."
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "의료비 보장 특약 견적이 여성 의학 영역까지 포함된다는 점과 가입 0건이라는 점이 확인됨."
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "e-8 휴대폰 검색 시기와 상담일이 정합되며 모든 견적이 결정 단계에 도달하지 못함."
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "B가 의학 영역의 의료비 대비만 알아봤으나 결정에는 도달하지 못했다고 공식기록 채택."
-        }
-      ],
-      "v3TrustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "B 측 제출 또는 A 발견 사본 제출."
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "보험사 원본 견적서 대조."
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "상담일·상담 항목·미가입 사실 확인."
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "A가 수익자 의심을 제기 / B가 의학 영역 대비라고 주장."
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "상담 사실은 인증되지만 진짜 의도는 심문과 맥락으로 확정."
-        }
-      ],
-      "narrativeTriggers": [
-        {
-          "id": "e9-via-cascade",
-          "type": "cascade_from_card",
-          "preconditions": {
-            "disputeLieState": {
-              "d-2": "S5+"
-            },
-            "requirePriorCardFired": "e-8"
-          },
-          "scriptedRefs": [
-            "emerge-e9-via-cascade-judge-mention-v1",
-            "emerge-e9-via-cascade-b-response-v1",
-            "emerge-e9-via-cascade-judge-decree-v1"
-          ],
-          "vfxProfile": "standard"
-        },
-        {
-          "id": "e9-via-b-outburst",
-          "type": "emotional_outburst",
-          "source": "b",
-          "preconditions": {
-            "disputeLieState": {
-              "d-2": "S5+"
-            },
-            "partyPhase": {
-              "b": [
-                "shaken",
-                "angry",
-                "resigned"
-              ]
-            },
-            "requirePriorCardFired": "e-8"
-          },
-          "scriptedRefs": [
-            "emerge-e9-via-b-submit-v1",
-            "emerge-e9-via-b-submit-judge-react-v1",
-            "emerge-e9-via-b-submit-judge-decree-v1"
-          ],
-          "vfxProfile": "emphasis"
-        },
-        {
-          "id": "e9-via-judge-auto",
-          "type": "judge_auto_mention",
-          "preconditions": {
-            "turnsAfterEligible": 3,
-            "requirePriorCardFired": "e-8"
-          },
-          "scriptedRefs": [
-            "emerge-e9-via-judge-auto-decree-v1",
-            "emerge-e9-via-judge-auto-b-respond-v1"
-          ],
-          "vfxProfile": "standard"
-        }
-      ]
-    },
-    {
       "id": "e-10",
       "name": "출산 준비 도서",
       "surfaceName": "출산 준비 도서",
@@ -5131,8 +4945,7 @@
       "provenance": "self_possessed",
       "legitimacy": "lawful",
       "proves": [
-        "d-3",
-        "h-d4"
+        "d-3"
       ],
       "isTrap": false,
       "requires": [],
@@ -5629,16 +5442,6 @@
       "proves": [
         "d-2"
       ]
-    },
-    {
-      "requires": [
-        "e-8",
-        "e-9"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "h-d4"
-      ]
     }
   ],
   "truthTable": [
@@ -5799,41 +5602,6 @@
       ]
     },
     {
-      "disputeId": "h-d4",
-      "lieType": "LT-1",
-      "lieIntensity": "L1",
-      "lieMotive": "self_protection",
-      "initialState": "S0",
-      "collapseViaTrust": false,
-      "transitions": [
-        {
-          "from": "S0",
-          "to": "S1",
-          "trigger": "direct_question"
-        },
-        {
-          "from": "S1",
-          "to": "S2",
-          "trigger": "hard_evidence"
-        },
-        {
-          "from": "S2",
-          "to": "S3",
-          "trigger": "empathy_question"
-        },
-        {
-          "from": "S3",
-          "to": "S4",
-          "trigger": "empathy_question"
-        },
-        {
-          "from": "S4",
-          "to": "S5",
-          "trigger": "direct_question"
-        }
-      ]
-    },
-    {
       "disputeId": "d-3",
       "lieType": "LT-2",
       "lieIntensity": "L2",
@@ -5976,41 +5744,6 @@
       ]
     },
     {
-      "disputeId": "h-d4",
-      "lieType": "LT-6",
-      "lieIntensity": "L3",
-      "lieMotive": "partner_protection",
-      "initialState": "S0",
-      "collapseViaTrust": true,
-      "transitions": [
-        {
-          "from": "S0",
-          "to": "S1",
-          "trigger": "direct_question"
-        },
-        {
-          "from": "S1",
-          "to": "S2",
-          "trigger": "hard_evidence"
-        },
-        {
-          "from": "S2",
-          "to": "S3",
-          "trigger": "empathy_question"
-        },
-        {
-          "from": "S3",
-          "to": "S4",
-          "trigger": "direct_question"
-        },
-        {
-          "from": "S4",
-          "to": "S5",
-          "trigger": "direct_question"
-        }
-      ]
-    },
-    {
       "disputeId": "d-3",
       "lieType": "LT-6",
       "lieIntensity": "L2",
@@ -6081,8 +5814,7 @@
   ],
   "monetaryDisputeIds": [
     "d-2",
-    "h-d3",
-    "h-d4"
+    "h-d3"
   ],
   "combinationLab": {
     "analysisPointsBase": 5,
@@ -6104,7 +5836,7 @@
       {
         "id": "e-2",
         "type": "evidence",
-        "label": "e-2 블랙박스 GPS 기록",
+        "label": "e-2 블랙박스 GPS",
         "sourceRef": "e-2",
         "linkedDisputeIds": [
           "d-1"
@@ -6182,26 +5914,13 @@
       {
         "id": "e-8",
         "type": "evidence",
-        "label": "e-8 주차 영수증 (발급처 오염)",
+        "label": "e-8 주차 영수증",
         "sourceRef": "e-8",
         "linkedDisputeIds": [
-          "h-d4"
+          "d-3"
         ],
         "linkedEvidenceIds": [
           "e-8"
-        ],
-        "visibility": "base"
-      },
-      {
-        "id": "e-9",
-        "type": "evidence",
-        "label": "e-9 예비 부모 정서 자가진단 + 상담 예약",
-        "sourceRef": "e-9",
-        "linkedDisputeIds": [
-          "h-d4"
-        ],
-        "linkedEvidenceIds": [
-          "e-9"
         ],
         "visibility": "base"
       },
@@ -6211,8 +5930,7 @@
         "label": "e-10 출산 준비 도서",
         "sourceRef": "e-10",
         "linkedDisputeIds": [
-          "d-3",
-          "h-d4"
+          "d-3"
         ],
         "linkedEvidenceIds": [
           "e-10"
@@ -6357,19 +6075,6 @@
           "e-7"
         ],
         "visibility": "derived"
-      },
-      {
-        "id": "dc-8",
-        "type": "derived_note",
-        "label": "dc-8 이준호의 또 다른 침묵",
-        "linkedDisputeIds": [
-          "h-d4"
-        ],
-        "linkedEvidenceIds": [
-          "e-8",
-          "e-9"
-        ],
-        "visibility": "derived"
       }
     ],
     "outputs": [
@@ -6491,28 +6196,6 @@
           }
         ],
         "judgeHint": "은행 직원(w-2)에게 위임장 처리 경위 추궁 가능."
-      },
-      {
-        "id": "dc-8",
-        "label": "dc-8 이준호의 또 다른 침묵",
-        "summary": "형 사건과는 무관한 곳에서도 이준호가 혼자 무언가를 준비해 왔다는 단서. 외도 의심과 부모 될 준비 두 해석 사이.",
-        "nodeType": "derived_note",
-        "noteText": "○○ 종합산부인과 주차 영수증과 본인 명의 예비 부모 정서 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "dc-8"
-          },
-          {
-            "kind": "upgrade_dispute",
-            "disputeUpgrade": {
-              "disputeId": "h-d4",
-              "weight": "high",
-              "ambiguity": "low"
-            }
-          }
-        ],
-        "judgeHint": "산부인과 주차 영수증과 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 같은 시기로 겹칩니다. 이 자료들이 누구를 위한 준비였는지 확인하겠습니다."
       }
     ],
     "recipes": [
@@ -6581,17 +6264,6 @@
         "discoveryText": "B의 가족 관련 진술과 학교 알림 문자가 형/조카 정황으로 모인다.",
         "outputId": "dc-2",
         "resultType": "dossier"
-      },
-      {
-        "id": "combine-7",
-        "inputs": [
-          "e-8",
-          "e-9"
-        ],
-        "cost": 2,
-        "discoveryText": "산부인과 반복 방문 흔적과 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 같은 시기, 같은 부모 될 준비 갈래로 모인다.",
-        "outputId": "dc-8",
-        "resultType": "upgrade"
       }
     ]
   },
@@ -6659,14 +6331,6 @@
         "unlockPlan": {
           "runtimeRule": "d-2 발견 후 공동 적금/위임장 단서 조사 시 해금",
           "authoredRule": "d-2 발견 뒤 어느 쪽 심문이든 공동 적금과 위임장 조작 단서가 드러나면 생성"
-        }
-      },
-      {
-        "id": "h-d4",
-        "name": "비자금의 원래 목적",
-        "unlockPlan": {
-          "runtimeRule": "d-2 S5 자백 후 비자금 운용 패턴 의문 + 신규 증거(e-8/e-9) 발현 시",
-          "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상"
         }
       }
     ],
@@ -6837,37 +6501,6 @@
             "implication": "책임이 은행 창구로 분산된다."
           }
         ]
-      },
-      {
-        "id": "L-8",
-        "name": "Hidden Purpose Lead",
-        "leadType": "Beneficiary",
-        "firstInputs": [
-          "e-8",
-          "e-9"
-        ],
-        "secondInputs": [
-          "L-8",
-          "stmt-b-family"
-        ],
-        "dossierCardId": "dc-8",
-        "interpretationChoices": [
-          {
-            "id": "L-8-A",
-            "text": "외도 상대를 위한 준비다",
-            "implication": "A의 외도 의심을 강화한다."
-          },
-          {
-            "id": "L-8-B",
-            "text": "부모 될 준비를 혼자 알아본 흔적이다",
-            "implication": "진짜 목적이 형 사정과는 별개 갈래임을 본다."
-          },
-          {
-            "id": "L-8-C",
-            "text": "단순한 정보 수집일 수 있다",
-            "implication": "판단을 유보한다."
-          }
-        ]
       }
     ],
     "authorityPlacements": [
@@ -6946,36 +6579,6 @@
         "recommendedMoment": "돌봄 해석을 택했지만 실체가 부족할 때 또는 dc-1 직전",
         "purpose": "외도 오해를 확실히 꺾되 미성년자 사생활 리스크 관리.",
         "contextDispute": "d-1"
-      },
-      {
-        "action": "원본 제출 명령",
-        "recommendedMoment": "h-d4 등장 직후 e-8 / e-9 Excerpt 시점",
-        "purpose": "산부인과 주차 영수증과 예비 부모 정서 자가진단·상담 예약 명세의 전체 자료를 확보.",
-        "contextDispute": "h-d4"
-      },
-      {
-        "action": "잠정 인정",
-        "recommendedMoment": "e-8 + e-9 결합으로 dc-8 부상 직후",
-        "purpose": "B가 형 사건과는 무관한 영역에서도 혼자 무언가를 준비했다는 사실 기록.",
-        "contextDispute": "h-d4"
-      },
-      {
-        "action": "분리심문",
-        "recommendedMoment": "e-8 Original 직후 B",
-        "purpose": "avoidant인 B의 진짜 동기를 단독 영역에서 끌어냄.",
-        "contextDispute": "h-d4"
-      },
-      {
-        "action": "선처 창구",
-        "recommendedMoment": "dc-8 직후 또는 h-d4 S3 도달 시",
-        "purpose": "아내 부담 회피 동기를 더 빨리 진술하도록.",
-        "contextDispute": "h-d4"
-      },
-      {
-        "action": "민감정보 봉인 해제",
-        "recommendedMoment": "h-d4 S3 이상 + 의학·임신 영역 진입 시",
-        "purpose": "난임 진단·치료 영역의 사생활 리스크 관리.",
-        "contextDispute": "h-d4"
       }
     ],
     "sensitiveSealTargets": [

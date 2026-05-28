@@ -564,6 +564,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
 
       <div className={`pc-receipt-paper${sheet.suspicious ? ' is-suspicious' : ''}`}>
         <span className="pc-receipt-paper__texture" aria-hidden="true" />
+        {sheet.smudge ? <span className="pc-receipt-paper__stains" aria-hidden="true" /> : null}
         <span className="pc-receipt-paper__perforation is-top" aria-hidden="true" />
         <span className="pc-receipt-paper__perforation is-bottom" aria-hidden="true" />
         {sheet.suspicious ? <span className="pc-receipt-paper__stamp" aria-hidden="true">{copy.needsCompare}</span> : null}

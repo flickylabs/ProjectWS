@@ -313,6 +313,46 @@
             "generated JSON investigationResults.inspect_book_cover: '「부모가 되는 마음 연습」이라는 이름의 출산 대비 도서이다.' → '...출산 준비 도서이다.'"
           ],
           "note": "사용자 manual 검증 4차 요청: (1) 목차에서 부제 '걱정을 줄이고 내 자리를 준비하는 법' 영역 표시 X (toc page에서만 hide, cover page는 그대로) / (2) 목차에서 '챕터' 단어 제거 (번호만 표시) / (3) 챕터 제목 한 줄 유지 (폰트 축소 + nowrap + overflow ellipsis) / (4) 페이지 번호 우측 정렬 / (5) 본문 접힌 페이지 밑줄 들여쓰기 제거 (형광펜 padding 0) / (6) 'dogeared 필체 = 본인 (B)' 영역 제거 (handwriting-tag 영역 미렌더) / (7) 증거 이름 '출산 준비 도서'로 통일 (name/surfaceName/description/surfaceDescription + investigationResults stage 1). 영역 변경: BookSubView toc page 시 subtitle prop undefined (Shell header subtitle 영역 hide) + toc rendering 영역 '챕터' 단어 제거 ({entry.chapter}만 표시) + dogeared section title handwriting-tag 영역 미렌더. CSS pc-doc-book__toc-item 영역 grid-template-columns 'max-content 1fr max-content' → '18px 1fr max-content' (챕터 번호 영역 18px 고정 + 제목 1fr + 페이지 max-content) + white-space nowrap + font-size 12.5px + toc-chapter text-align right + tabular-nums + toc-title overflow hidden text-overflow ellipsis min-width 0 + toc-page text-align right min-width 28px. CSS pc-doc-book__highlight padding 0 3px → padding 0 + margin 0 (들여쓰기 영역 제거). evidence rename 영역 '출산 준비' keyword 영역 detect-truth-leak --strict 0 findings (4 lang) 통과 — substring 영역 매칭 영역 회피. 다국어 sync 4 lang 영역: e-10 name/surfaceName/description/surfaceDescription + investigationResults.inspect_book_cover."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json + src/data/scriptedText/spouse-01.json",
+          "path": "evidence[id=e-1].investigationStages[stage=1].question.text + scriptedText[channel:evidence_present] b-e-1-early-self-v3/v4/v5.text",
+          "type": "수정",
+          "koTexts": [
+            "재판관 질문 (e-1 영수증 조사 1단계): '이 영수증들, 누가 무엇을 산 것입니까?' → '이 영수증들 내 품목들은 본인이 직접 구입하신 것이 맞습니까?'",
+            "이준호 답변 v4: '영수증까지 남아 있을 줄은 몰랐습니다. 제가 산 건 맞습니다.' → '네, 제가 구입한 것들입니다.'",
+            "이준호 답변 v3: '당시 필요한 사람에게 대신 사다 준 것입니다. 다만, 그게 누구인지 말씀드리기는 어렵습니다.' → '네, 제가 산 게 맞습니다. 다만 부탁을 받고 대신 사 둔 것이라, 그게 누구인지까지는 말씀드리기 어렵습니다.'",
+            "이준호 답변 v5: '다만 그걸 왜 샀는지까지는 지금 바로 길게 말씀드리기 어렵습니다.' → '맞습니다. 다만 왜 샀는지까지 지금 이 자리에서 길게 말씀드리기는 어렵습니다.'",
+            "이준호 답변 v1: '그건... 제가 산 겁니다.' → '그건... 아는 사람 부탁을 받고 구입한 것입니다.'"
+          ],
+          "note": "2026-05-28 manual 테스트 follow-up — e-1 영수증 조사 1단계 재판관 질문을 개방형('누가 무엇을 샀나')에서 예/아니오 확인형('본인이 구입한 게 맞나')으로 변경. 이에 맞춰 이준호(b) 자기 인정 답변 pool(b-e-1-early-self) 5 variant 중 v4(사용자 지정 시안) + v3/v5(예/아니오 질문에 부정합하던 2건 Codex 재작성) + v1(사용자 추가 지시로 '아는 사람 부탁' hedge 도입)을 정리. v2('제가 필요해서 구입한 것들입니다.')는 기존 유지. v1/v3/v5는 '네/맞습니다/그건' 인정 후 hedge(부탁·누구인지·이유는 지금 말하기 어렵다) 유지 — 진실 노출 정책 keyword(형/조카/난임/박지연/내연녀) 0, '부탁을 받고 대신/아는 사람 부탁' surface-safe. 재판관 질문은 e-1에 case.ts investigationStages가 없어 generated json이 hybrid merge로 보존하는 영역(직접 편집 = 권위). 다국어 sync 4 lang: generated json question + scriptedText v1/v3/v4/v5 (en/ja/zh-CN). behaviorHint 변경 없음(UI 비노출). 검증: qa:fast RELEASE READY (P0=0). [동반 logic fix — 번역 불필요: d-3 unlockCondition.requireDispute 제거(조기 자동 등장 차단) + e-8 requires:[]+requiredLieState 제거(e-1 stage 3 조기 auto-unlock 차단, e-10 조사 2단계 hook 으로 등장 이전). e-8 등장 popup body '「출산 준비 도서」 목차 사이에서 ... 발견되어 새로 등재되었습니다.'는 useActionDispatch 하드코딩 KO — 기존 enqueueNewEvidenceCutscene body 패턴과 동일(현재 다국어 미연동 영역).]"
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json (← src/data/coreCases/spouse-01.case.ts)",
+          "path": "evidence[id=e-8].{description, surfaceDescription, trustStates.submitted} + evidence[id=e-2].{name, surfaceName}",
+          "type": "수정",
+          "koTexts": [
+            "e-8 description: '이준호 차량에서 발견된 주차 영수증 1장. ...' → '책 사이에서 발견된 주차 영수증 1장. ...' (나머지 문장 동일)",
+            "e-8 surfaceDescription: '이준호 차량 내 발견된 주차 영수증 1장. 발급처 명칭 영역 인쇄가 오염된 상태.' → '책 사이에서 발견된 주차 영수증 1장. 발급처 명칭 영역 인쇄가 오염된 상태.'",
+            "e-8 trustStates.submitted: 'A가 B 차량에서 발견하여 제출.' → 'A가 「출산 준비 도서」 사이에서 발견하여 제출.'",
+            "e-2 name: '블랙박스 GPS / 네비 즐겨찾기' → '블랙박스 GPS'",
+            "e-2 surfaceName: '블랙박스 GPS 기록' → '블랙박스 GPS'",
+            "e-8 name: '「헤라 여성 메디컬 센터」 주차 영수증 (발급처 인쇄 오염)' → '주차 영수증'",
+            "e-8 surfaceName: '주차 영수증 (발급처 오염)' → '주차 영수증'"
+          ],
+          "note": "2026-05-28 manual 테스트 follow-up (추가 지시). e-8 발견 위치를 '이준호 차량' → '책(「출산 준비 도서」) 사이'로 정합 — e-8 이 e-10 조사 2단계 목차에서 등장하는 재설계와 narrative coherence 맞춤 (책은 콘솔박스에 있었으므로 차량 provenance 와 모순 아님, 발견 frame 만 책으로). e-8 증거명도 '「헤라 여성 메디컬 센터」 주차 영수증 (발급처 인쇄 오염)' → '주차 영수증' 으로 단순화(사용자 지시) + surfaceName 동일하게 '주차 영수증' (name==surfaceName 으로 surfaceName_violation 회피, 발급처 clinic 식별은 stage 3 investigationResults 에서만 노출 — 이름 단순화로 truth 노출 오히려 감소). e-2 증거명에서 '/ 네비 즐겨찾기' 제거 → '블랙박스 GPS'. surfaceName 도 name 과 동일하게 '블랙박스 GPS' 로 맞춤 — name!=surfaceName 이면 surfaceName 이 locked name 을 substring 으로 포함하여 qa-runtime-gate 의 locked_evidence_name_exposed/surfaceName_violation P0 발생(e-3 '통화기록' 처럼 name==surfaceName 은 검사 skip). 다국어 sync 4 lang: e-8 name/surfaceName/description/surfaceDescription/trustStates.submitted + e-2 name/surfaceName (en/ja/zh-CN). [동반 logic·CSS — 번역 불필요: e-2 조사 3단계(restore_context) 도달 시 d-3 emerge hook 신설(useActionDispatch.handleEvidenceInvestigate). d-3 의 두 번째 진입점(다른 하나 = C-3c hook 영수증 stage 3 박지연 dual emergence). + e-8 smudge 렌더링 재설계(pc.css ::before/::after 불규칙 다각형 2개, covered=2 / partial·revealed=1) + 영수증 ambient 오염 얼룩 레이어(pc-receipt-paper__stains, radial-gradient 5개 흩뿌림, smudge 있는 영수증=e-8 에만) — CSS only.] 검증: qa:fast RELEASE READY (P0=0)."
+        },
+        {
+          "file": "src/data/cases/generated/spouse-01.json (← src/data/coreCases/spouse-01.case.ts) + 비자금 라인 폐기 (다국어 sync 정리 필요)",
+          "path": "evidence[id=e-8].investigationStages[stage=3].question.text + dispute[id=d-3].{truthDescription, truthStages...answerFrame} + 폐기: dispute h-d4 / evidence e-9 / dossier dc-8 / combine-7",
+          "type": "수정/폐기",
+          "koTexts": [
+            "e-8 조사 3단계 재판관 질문: '더 닦아낼 수 없는 부분이 남아 있습니다. 영수증 하단 주소로 외부 조회해 봅시다.' → '주차 영수증의 방문처 이름은 제대로 보이지 않지만, 주소로 확인한 결과 여성 병원으로 보여집니다. 이 곳에 방문하신 목적이 무엇입니까?'",
+            "d-3 truthDescription: e-9/h-d4 참조 제거 — '...e-10 출산 준비 도서와 e-8 주차 영수증(여성 병원 단독 방문)은 모두 이준호 본인이 박지연 난임 진단 후 아내에게 부담을 주지 않으려 혼자 부모 될 마음을 정리하던 흔적이다. 본 misdirection 쟁점은 d-1(가족 돌봄) 진실 확정 시 자연 무너진다.'",
+            "d-3 S5 answerFrame: 'B는 misdirection 진실 완전 인정. h-d4 진실로의 진입점.' → 'B는 misdirection 진실 완전 인정 — 본인이 혼자 부모 될 준비를 한 흔적.'",
+            "[폐기 — 다국어 파일에서 제거 필요] 쟁점 h-d4 「비자금의 원래 목적」 전체 / 증거 e-9 「예비 부모 정서 자가진단 + 상담 예약」 전체 / 단서 dc-8 「이준호의 또 다른 침묵」 전체"
+          ],
+          "note": "2026-05-28 비자금 라인 전체 정리 (사용자 결정 '라인 전체 정리'). case.ts/narrative.ts 에서 h-d4(쟁점)+e-9(증거)+dc-8(단서)+combine-7(결합)+e8/e9/dc8/hd4 leadLines·keyword map 모두 제거, e-8.proves h-d4→d-3, e-10.proves [d-3,h-d4]→[d-3], d-3 successUnlocks ['h-d4']→[]. 빌드 결과 disputes 5→4 / evidence 10→9 / dossierCards 7→6, cross-ref 통과 + qa:fast RELEASE READY (P0=0). **다국어 작업 (별도 Codex thread)**: (1) generated case json `spouse-01.{en,ja,zh-CN}.json` 에 아직 남아있는 h-d4/e-9/dc-8 entity 제거 + e-8/e-10 proves·d-3 truthDescription·e-8 stage3 question sync. (2) scriptedText `spouse-01.{json,en,ja,zh-CN}` 의 orphan entry(b-e-9-*, emerge-e9/dc8/hd4-*) 제거. (3) b-e-8 답변 pool 재작성 — 상세 brief = `docs/design/spouse-01-entity-matrix/codex-brief-e8-dialogue.md`."
         }
       ]
     },

@@ -27501,29 +27501,75 @@ body.pc-mode .pc-receipt-paper__store-addr-text {
   z-index: 1 !important;
 }
 
+/* 발급처 인쇄 오염 — 포스트잇처럼 불규칙한 다각형 잉크 얼룩 2개(앞·뒤)로 덮는다.
+   container 자체는 배경 없음. 얼룩은 ::before(앞=좌측)·::after(뒤=우측) 두 조각. */
 body.pc-mode .pc-receipt-paper__smudge {
   position: absolute !important;
-  inset: -3px -8px !important;
+  inset: -4px -10px !important;
   z-index: 2 !important;
-  border-radius: 3px !important;
   pointer-events: none !important;
+  background: none !important;
+}
+
+body.pc-mode .pc-receipt-paper__smudge::before,
+body.pc-mode .pc-receipt-paper__smudge::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -2px !important;
+  bottom: -2px !important;
   background:
-    radial-gradient(ellipse 70% 90% at 25% 50%, rgba(30, 24, 18, 0.96) 0%, rgba(30, 24, 18, 0.92) 38%, transparent 78%),
-    linear-gradient(135deg, #2a2218 30%, #3a2e22 60%, #2a2218 90%) !important;
+    radial-gradient(ellipse 62% 82% at 42% 46%, rgba(28, 22, 16, 0.97) 0%, rgba(34, 27, 20, 0.93) 46%, rgba(34, 27, 20, 0.85) 76%, transparent 100%),
+    linear-gradient(135deg, #2a2218 28%, #3a2e22 62%, #251e16 92%) !important;
   mix-blend-mode: multiply !important;
-  transition: opacity 0.6s ease, clip-path 0.6s ease !important;
-  filter: blur(0.4px) !important;
+  filter: blur(0.3px) !important;
+  transition: opacity 0.5s ease !important;
 }
 
-body.pc-mode .pc-receipt-paper__smudge--covered {
+/* 앞부분 얼룩(좌측) — 불규칙 다각형 + 약간 회전. 모든 단계에서 유지(앞글씨는 끝까지 가림). */
+body.pc-mode .pc-receipt-paper__smudge::before {
+  left: -3% !important;
+  width: 52% !important;
+  clip-path: polygon(6% 14%, 26% 2%, 52% 9%, 70% 3%, 88% 18%, 97% 42%, 92% 66%, 98% 86%, 76% 97%, 50% 90%, 24% 98%, 7% 80%, 2% 52%, 9% 30%) !important;
+  transform: rotate(-2.4deg) !important;
+}
+
+/* 뒷부분 얼룩(우측) — 다른 형태 + 반대 회전. 1단계에서만 표시. */
+body.pc-mode .pc-receipt-paper__smudge::after {
+  right: -3% !important;
+  width: 58% !important;
+  clip-path: polygon(10% 8%, 34% 2%, 58% 12%, 80% 4%, 95% 24%, 90% 48%, 98% 72%, 84% 94%, 60% 88%, 36% 97%, 14% 86%, 4% 62%, 10% 36%, 3% 18%) !important;
+  transform: rotate(2deg) !important;
+}
+
+/* 1단계(covered): 앞·뒤 두 군데 모두 가림 */
+body.pc-mode .pc-receipt-paper__smudge--covered::before,
+body.pc-mode .pc-receipt-paper__smudge--covered::after {
   opacity: 1 !important;
-  clip-path: inset(0) !important;
 }
 
-body.pc-mode .pc-receipt-paper__smudge--partial,
-body.pc-mode .pc-receipt-paper__smudge--revealed {
-  opacity: 0.95 !important;
-  clip-path: inset(0 55% 0 0) !important;
+/* 2·3단계(partial/revealed): 뒷부분 얼룩 치워짐 → 뒷글씨 노출. 앞부분 얼룩은 잔존. */
+body.pc-mode .pc-receipt-paper__smudge--partial::after,
+body.pc-mode .pc-receipt-paper__smudge--revealed::after {
+  opacity: 0 !important;
+}
+
+/* 영수증 전반 ambient 오염 — 발급처 얼룩만 단독으로 있으면 부자연스러우므로
+   영수증 곳곳에 옅은 잉크 얼룩 몇 개를 흩뿌려 실제 오염된 종이처럼 보이게 한다.
+   stage 와 무관한 장식 레이어 (smudge 가 있는 영수증 = e-8 에만 렌더). 본문 글씨는
+   multiply + 낮은 농도로 비치므로 가독성 유지. */
+body.pc-mode .pc-receipt-paper__stains {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  mix-blend-mode: multiply !important;
+  filter: blur(0.5px) !important;
+  background:
+    radial-gradient(ellipse 42px 30px at 87% 9%, rgba(34, 27, 20, 0.40) 0%, rgba(34, 27, 20, 0.18) 54%, transparent 82%),
+    radial-gradient(ellipse 26px 34px at 7% 57%, rgba(34, 27, 20, 0.32) 0%, transparent 76%),
+    radial-gradient(ellipse 34px 22px at 66% 86%, rgba(34, 27, 20, 0.28) 0%, transparent 80%),
+    radial-gradient(circle 11px at 34% 39%, rgba(34, 27, 20, 0.24) 0%, transparent 84%),
+    radial-gradient(ellipse 18px 22px at 92% 64%, rgba(34, 27, 20, 0.22) 0%, transparent 80%) !important;
 }
 
 /* ─── e-8 investigation postit (stage 3: 주소 외부 조회 메모) ─── */
