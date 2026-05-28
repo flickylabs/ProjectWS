@@ -1155,21 +1155,22 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
 
-  // 2026-05-26 C-3c sub-thread — spouse-01 e-1 stage 3 + present to b → e-10 cascade emerge.
-  //   evidence stage advance event hook 영역. requires gate 우회 + stage 영역 게이트
+  // 2026-05-27 C-3c sub-thread — spouse-01 e-1 stage 3 + present to a (박지연) → e-10 cascade
+  //   emerge. evidence stage advance event hook 영역. requires gate 우회 + stage 영역 게이트
   //   (narrativeTrigger schema 미지원 영역 보완).
-  //   조건: spouse-01 사건 / e-1 (영수증 묶음)을 b에게 제시 / e-1 latestStage >= 3 (참고서 +
-  //     별도 도서 단서 노출 시점) / e-10 미발동 + 미해금.
-  //   발동 시 attemptNarrativeForEvidence(e-10)가 4단계 dialogue (judge mention → a react →
-  //     b response → judge decree) 자동 발행 + e-10 forceUnlock + popup. vfxProfile = standard
-  //     (dual emergence cutscene 영역 폐기).
-  //   narrative frame: 박지연이 영수증 stage 3 도달 후 (참고서 + 별도 도서 단서 인지) 이준호에게
-  //     영수증 책 angle 질문 → 책 본체 (e-10) cascade emerge.
-  //   d-3 (내연녀 임신 의심 misdirection) narrativeTrigger는 requirePriorCardFired='e-10'으로
-  //     본 cascade fire 시 자연 emerge.
+  //   조건: spouse-01 사건 / e-1 (영수증 묶음 5장) 을 박지연(a) 에게 제시 / e-1 latestStage >= 3
+  //     (참고서 + 별도 도서 단서 노출 시점) / e-10 미발동 + 미해금.
+  //   발동 시 attemptNarrativeForEvidence(e-10) 가 6 turn dialogue (judge→a 질문 / a→judge 충격 /
+  //     b→a 자기야 변명 / a→b 내연녀 임신 outburst / b→a 부정 / judge→all 진정+등재) 자동 발행 +
+  //     e-10 forceUnlock + popup.
+  //   narrative frame: 박지연(a) 이 영수증 stage 3 (참고서 + 별도 도서 결제 흔적) 인지 후 이준호(b)
+  //     에게 책 angle 추궁 → 박지연이 콘솔박스에 숨겨놓은 책 본체를 폭로 → 「출산 준비 도서」(e-10)
+  //     자료 등재 + 「내연녀 임신 의심」(d-3) misdirection 쟁점 정식 등록.
+  //   d-3 (내연녀 임신 의심) narrativeTrigger 는 requirePriorCardFired='e-10' 으로 본 cascade fire
+  //     시 자연 emerge. d-3 의 별도 발화는 본 시퀀스 6번째 ref 에 통합되어 비움.
   if (
     action.evidenceId === 'e-1' &&
-    action.target === 'b' &&
+    action.target === 'a' &&
     normalizeCaseKey(state.caseData?.caseId ?? '') === 'spouse-01'
   ) {
     const e1State = useGameStore.getState().evidenceStates['e-1']
@@ -1198,6 +1199,46 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
             body: `${e10DisplayName}${pp이가(e10DisplayName)} 새로 등재되었습니다.`,
           })
           // 2026-05-26: 발언 기록 system 중복 메시지 제거 — 증거 popup만 노출.
+        }
+      }
+    }
+  }
+
+  // 2026-05-28 C-3d sub-thread — spouse-01 e-1 stage 3 + present to b (이준호) → e-1 자체
+  //   narrative 발화 시퀀스 dispatch (중학생 참고서 변명 Angle).
+  //   조건: spouse-01 사건 / e-1 (영수증 묶음 5장) 을 이준호(b) 에게 제시 / e-1 latestStage >= 3 /
+  //     e-1 narrativeFiredTrigger 미설정.
+  //   발동 시 attemptNarrativeForEvidence(e-1) 가 5 turn dialogue (judge→b 질문 / b→judge 변명 /
+  //     a→b 추궁 / b→a 부탁 / judge→all 마무리) 자동 발행 + markNarrativeFired.
+  //   narrative frame: 박지연(a) 분기는 C-3c hook (e-10 cascade emerge 영역). 이준호(b) 분기는
+  //     본 hook — 「출산 준비 도서」 cascade emerge X. 중학생 참고서 변명 Angle ScriptedText 만
+  //     dispatch. e-1 evidence 자체는 initial 보유이므로 forceUnlock 영역 X (이미 unlocked).
+  //   진실 노출 정책: 형/조카 직접 노출 X — 이준호 변명에 "아는 사람" 모호 frame 유지.
+  if (
+    action.evidenceId === 'e-1' &&
+    action.target === 'b' &&
+    normalizeCaseKey(state.caseData?.caseId ?? '') === 'spouse-01'
+  ) {
+    const e1State = useGameStore.getState().evidenceStates['e-1']
+    const e1Stages = Array.isArray(evDef?.investigationStages) ? evDef.investigationStages : []
+    const e1Investigated = Array.isArray(e1State?.investigatedActions) ? e1State.investigatedActions : []
+    const e1LatestStage = e1Stages
+      .filter((s: UnsafeAny) => e1Investigated.includes(s.revealKey))
+      .sort((a: UnsafeAny, b: UnsafeAny) => (a.stage ?? 0) - (b.stage ?? 0))
+      .at(-1)?.stage ?? 0
+    if (e1LatestStage >= 3) {
+      const fresh = useGameStore.getState() as UnsafeAny
+      const e1Def = fresh.evidenceDefinitions.find((e: UnsafeAny) => e.id === 'e-1')
+      if (e1Def && !e1State?.narrativeFiredTrigger) {
+        const attempt = attemptNarrativeForEvidence({
+          evidenceDef: e1Def,
+          currentTurn: state.turnCount,
+          lastActionContext: buildActionContext(action),
+          firedTrigger: e1State?.narrativeFiredTrigger,
+          legacyEligibleTurn: e1State?.narrativeLegacyEligibleTurn,
+        })
+        if (attempt) {
+          fresh.markNarrativeFired?.('e-1', attempt.triggerId)
         }
       }
     }

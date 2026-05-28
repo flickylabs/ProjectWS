@@ -1875,21 +1875,18 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
           successUnlocks: ['h-d4'],
         },
       },
-      narrativeTriggers: [
-        {
-          id: 'd3-via-cascade-from-e10',
-          type: 'cascade_from_card',
-          preconditions: {
-            requirePriorCardFired: 'e-10',
-          },
-          scriptedRefs: [
-            'emerge-d3-via-cascade-judge-decree-v1',
-            'emerge-d3-via-cascade-a-react-v1',
-          ],
-          /** standard — cutscene은 e-10 trigger가 책임 (cutscene_dual_emergence로 한 번 발동). d-3 자체는 같은 cutscene 안에서 동시 surface. */
-          vfxProfile: 'standard',
-        },
-      ],
+      /**
+       * 2026-05-27 — d-3 narrative trigger 영역 자체 제거.
+       *
+       * 사용자 시나리오 (2026-05-27 manual 테스트 follow-up): 「내연녀 임신 의심」(d-3) 정식
+       * 등록 발화 = e-10 candidate 1 의 6번째 ref (emerge-e10-via-b3-judge-decree-v1) 의 통합
+       * 발화 "새로운 쟁점과 함께 「출산 준비 도서」를 증거로 추가합니다" 로 흡수됨. d-3 자체
+       * 별도 narrative trigger 발화 영역 불필요.
+       *
+       * d-3 emerge 영역: useDiscoveryIntegration.ts:218 의 표준 dispute discovery 영역이
+       * d-3 의 unlockCondition (d-1 S2+) + requiredEvidence: ['e-10'] 만족 시점에 자동 호출.
+       * e-10 forceUnlock 시점에 d-1 S2+ 도 만족이면 d-3 자동 emerge.
+       */
     },
   ],
 
@@ -1949,6 +1946,50 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
         { id: 'authenticated', summary: ko('카드앱 원본과 시각 일치.') },
         { id: 'challenged', summary: ko('품목만으로 외도 단정은 오독이라는 이의.') },
         { id: 'misread', summary: ko('데이터는 인증되지만 외도 해석은 오독 가능.') },
+      ],
+      /**
+       * 2026-05-28 — 「영수증 묶음 5장」 조사 3단계 + 이준호(b) 제시 시점 narrative 발화 시퀀스.
+       *
+       * 사용자 시안 (2026-05-28 manual 테스트 follow-up): 박지연(a) 제시 시점은 「출산 준비
+       * 도서」(e-10) cascade emerge 영역 (C-3c hook). 이준호(b) 제시 시점은 중학생 참고서
+       * 변명 Angle — 형/조카 직접 노출 X ([[design_spouse01_truth_disclosure_policy]] d-1 자백
+       * 전 가족 돌봄 진실 surface X 정책 준수).
+       *
+       * 5 turn 시퀀스 (judge→b 질문 / b→judge 변명 / a→b 추궁 / b→a 부탁 / judge→all 마무리):
+       *   재판관 → 이준호: "영수증 안에 같이 잡혀 있는 참고서는 누구를 위해 구입한 것입니까?"
+       *   이준호 → 재판관: "그건… 아는 사람이 부탁한 것이었습니다. 자세한 사정은 지금
+       *     이 자리에서 말씀드리기 어렵습니다."
+       *   박지연 → 이준호: "참고서? 누구 아이 책을 사 줬다고? 그 '아는 사람'이 도대체 누구
+       *     길래 화장품에 아이 책까지 사주는 건데?"
+       *   이준호 → 박지연: "나중에 때가 되면 얘기해줄께. 일단 나를 믿어줘."
+       *   재판관 → all: "우선 이 정도까지만 확인을 하겠습니다."
+       *
+       * 진입 게이트는 useActionDispatch.ts C-3d hook 이 단독 책임: e-1 latestStage >= 3 +
+       * action.target === 'b' + spouse-01 확인 + e-1 narrativeFiredTrigger 미설정 시
+       * attemptNarrativeForEvidence(e-1) 호출. schema candidate 의 precondition 은 hook 진입
+       * 후 fire 보장하는 최소한 prereq (requirePriorCardFired: 'e-1') 만 명시.
+       *
+       * e-1 은 initial 보유 evidence → newlyUnlocked 영역 X → 일반 평가 path (line 1108 / 2508)
+       * 에서 attemptNarrativeForEvidence(e-1) 호출 진입 X. C-3d hook 만이 단일 진입 경로.
+       *
+       * vfxProfile: standard (새 evidence/dispute 등장 영역 X — 단순 PingPong dialogue).
+       */
+      narrativeTriggers: [
+        {
+          id: 'e1-stage3-b-explanation',
+          type: 'cascade_from_card',
+          preconditions: {
+            requirePriorCardFired: 'e-1',
+          },
+          scriptedRefs: [
+            'emerge-e1-b3-judge-q-v1',
+            'emerge-e1-b3-b-evade-v1',
+            'emerge-e1-b3-a-press-v1',
+            'emerge-e1-b3-b-plea-v1',
+            'emerge-e1-b3-judge-pause-v1',
+          ],
+          vfxProfile: 'standard',
+        },
       ],
     },
     {
@@ -2045,8 +2086,20 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       subjectParty: 'b',
       proves: ['d-1'],
       isTrap: false,
-      requires: ['e-3'],
-      requiredLieState: 'S1',
+      /**
+       * 2026-05-28 회귀 fix — 「영수증 묶음 5장」 조사 3단계 진입 시점에 「발신자 미상 문자」가
+       * 자동 잠금 해제 + popup 발동되는 회귀 차단. evidenceEngine.checkUnlocks line 79 의
+       * `requires.length === 0 && !requiredLieState` 조건으로 automatic unlock 자체 skip.
+       *
+       * 「발신자 미상 문자」 surface 는 narrative trigger 영역 (C-2 hook 의 강제 우회 호출 +
+       * 재판관 fallback) 이 전담. 이전 `requires: ['e-3']` + `requiredLieState: 'S1'` 영역은
+       * d-1 S1 transition 발생 시점 (예: 「영수증 묶음」 조사 3단계 진입) 에 즉시 만족 →
+       * 자동 unlock + line 1696 popup 발동 회귀.
+       *
+       * 「출산 준비 도서」(e-10) 와 동일 패턴 — narrative gate 가 있는 evidence 는 unlock
+       * 조건을 차단하고 hook 만으로 surface 책임.
+       */
+      requires: [],
       partyContext: {
         a: {
           questionAngle: ko('문자 내용을 어떻게 외도 추정으로 연결했는지'),
@@ -2439,8 +2492,18 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       /** d-3 (내연녀 임신 의심 misdirection) 1차 link + h-d4 (비자금 원래 목적 진실) 2차 link */
       proves: ['d-3', 'h-d4'],
       isTrap: false,
-      requires: ['e-1'],
-      requiredLieState: 'S0',
+      /**
+       * 2026-05-27 회귀 fix — 「영수증 묶음 5장」 조사 1단계 진입 시점에 「출산 준비 도서」가
+       * 자동 잠금 해제 + popup 발동되는 회귀를 차단. evidenceEngine.checkUnlocks line 79 의
+       * `requires.length === 0 && !requiredLieState` 조건으로 automatic unlock 자체 skip.
+       *
+       * 「출산 준비 도서」 등장은 narrative trigger 영역 (C-3c hook 의 강제 우회 호출 +
+       *   등장 시점 2 「오피스텔의 사람들」 cascade + 등장 시점 3 재판관 fallback) 이 전담.
+       * 이전 `requires: ['e-1']` + `requiredLieState: 'S0'` 영역은 「영수증 묶음」 조사 1단계
+       *   시점에 즉시 만족 (e-1 = initial 보유 + 모든 쟁점 진실파악 단계 S0 부터 시작) →
+       *   자동 unlock + line 1696 popup 발동 회귀.
+       */
+      requires: [],
       partyContext: {
         a: {
           questionAngle: ko('남편 차/책상에서 예비 부모 정서 도서가 나온 이유를 어떻게 보는지'),
@@ -2536,21 +2599,32 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
        */
       narrativeTriggers: [
         {
-          /** 주 등장 — 박지연 끼어들기 (영수증 책 angle 시점). C-3c hook 이 stage 3 게이트
-           *  보장 + e-10 forceUnlock + cutscene. type cascade_from_card → npc_interjection
-           *  로 의미적 변경 (NPC 측 능동 발화로 frame). */
+          /** 주 등장 — 「영수증 묶음 5장」 조사 3단계 + 박지연(a) 에게 evidence_present 시점.
+           *  진입 게이트는 useActionDispatch.ts C-3c hook (line 1158~1204) 이 단독 책임:
+           *    e-1 latestStage >= 3 + action.target === 'a' + spouse-01 확인 후 forceUnlock +
+           *    attemptNarrativeForEvidence(e-10) 호출.
+           *  schema candidate 의 precondition 은 진입 게이트 X — hook 이 호출하면 fire 보장하는
+           *  최소한의 prereq (e-1 fired) 만 명시. contextAction 영역 제거 (action context disputeId
+           *  형식 prefix 매칭 영역 불확정성 회피).
+           *
+           *  ScriptedText 6 ref 시퀀스 (judge→a / a→judge / b→a / a→b / b→a / judge→all): 사용자
+           *  시안 (2026-05-27 manual 테스트 follow-up thread) 그대로 적용. 「내연녀 임신 의심」
+           *  (d-3) 정식 등록 발화는 6번째 ref (judge-decree) 에 통합 — d-3 cascade trigger 별도
+           *  발화 영역은 비움.
+           */
           id: 'e10-via-b-bookangle-interject',
           type: 'npc_interjection',
-          source: 'b',
+          source: 'a',
           preconditions: {
             requirePriorCardFired: 'e-1',
-            contextAction: 'evidence_present.b.e-1',
           },
           scriptedRefs: [
-            'emerge-e10-via-cascade-judge-mention-v1',
-            'emerge-e10-via-cascade-a-react-v1',
-            'emerge-e10-via-cascade-b-response-v1',
-            'emerge-e10-via-cascade-judge-decree-v1',
+            'emerge-e10-via-b3-judge-q-v1',
+            'emerge-e10-via-b3-b-shock-v1',
+            'emerge-e10-via-b3-a-confront-v1',
+            'emerge-e10-via-b3-b-outburst-v1',
+            'emerge-e10-via-b3-a-deflect-v1',
+            'emerge-e10-via-b3-judge-decree-v1',
           ],
           vfxProfile: 'standard',
         },
@@ -3069,6 +3143,30 @@ export const spouse01CaseAuthority: CoreCaseAuthority = {
       linkedDisputes: ['h-d3'],
       linkedParty: 'a',
       linkedEvidence: ['e-7'],
+      leadLine: {
+        id: 'L-7',
+        name: ko('Procedural Lead'),
+        leadType: 'Procedural',
+        firstInputs: ['e-7', 'stmt-a-protect'],
+        secondInputs: ['L-7', 'w-2-angle'],
+        interpretationChoices: [
+          {
+            id: 'L-7-A',
+            text: ko('위임장을 위조하여 단독 해지한 것이다'),
+            implication: ko('h-d3 절차 책임 frame을 확정한다.'),
+          },
+          {
+            id: 'L-7-B',
+            text: ko('합의 하에 해지됐을 수도 있다'),
+            implication: ko('판단을 유보한다.'),
+          },
+          {
+            id: 'L-7-C',
+            text: ko('은행 절차 미숙으로 처리된 것이다'),
+            implication: ko('책임이 은행 창구로 분산된다.'),
+          },
+        ],
+      },
       noteText: ko(
         '○○은행 공동 적금 (월 50만×36개월) 2026.01.18 중도 해지 → 2,012만 원 박지연 개인계좌 즉시 입금. 위임장의 이준호 서명이 본인 필적 아님.',
       ),

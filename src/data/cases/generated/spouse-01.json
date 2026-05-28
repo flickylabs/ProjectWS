@@ -79,7 +79,7 @@
       "fear": "형 이야기를 꺼내면 시댁 갈등으로 이혼까지 갈 것이라는 공포. 그리고 아내가 닫아 둔 난임이라는 화제를 다시 들춰 부담을 주는 것도 똑같이 두렵다.",
       "riskAppetite": 4,
       "digitalHabit": "minimal",
-      "dailyRoutine": "매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다. 한편 아내 모르게 점심시간에 종합산부인과병원을 단독으로 다녀오고 의사 친구와 통화했으며, 본인 명의로 산전우울증 자가진단을 받고 정신건강 상담소 예약까지 알아봐 왔다.",
+      "dailyRoutine": "매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다. 한편 아내 모르게 점심시간에 종합산부인과병원을 단독으로 다녀오고 의사 친구와 통화했으며, 본인 명의로 예비 부모 정서 자가진단을 받고 정신건강 상담소 예약까지 알아봐 왔다.",
       "sensitivePoints": [
         "오피스텔 방문과 새벽 전화는 딴살림 흔적인가",
         "개인 비자금에서 3,000만원을 현금으로 형에게 전달한 것은 배우자 동의 없는 독단인가",
@@ -365,7 +365,7 @@
       "id": "h-d4",
       "name": "비자금의 원래 목적",
       "truth": true,
-      "truthDescription": "이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 산전우울증 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.",
+      "truthDescription": "이준호의 본인 명의 별도 계좌 비자금 3,000만 원은 원래 박지연의 난임 치료비 마련을 위해 신혼 초기부터 10년 가까이 모아 온 자금이었다. 박지연이 진단 후 출산을 포기하고 화제를 회피하자 이준호는 그 결정을 존중하면서도 혼자 의사 친구의 비공식 상담과 산부인과 단독 방문, 본인 명의 예비 부모 정서 자가진단·상담소 예약까지 알아보며 출산 가능성을 더 그려봤다. 형이 개인회생에 들어가자 그 자금을 형에게 전환했다.",
       "quadrant": "b_only",
       "requiredEvidence": [
         "e-8",
@@ -390,7 +390,7 @@
       },
       "v3UnlockPlan": {
         "runtimeRule": "d-2 S5 자백 후 비자금 운용 패턴 의문 + 신규 증거(e-8/e-9) 발현 시",
-        "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 산전우울증 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상"
+        "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상"
       },
       "verdictOptions": {
         "wrong": "비자금은 처음부터 형에게 줄 돈으로 모은 것이다.",
@@ -1246,7 +1246,24 @@
             }
           ]
         }
-      }
+      },
+      "narrativeTriggers": [
+        {
+          "id": "e1-stage3-b-explanation",
+          "type": "cascade_from_card",
+          "preconditions": {
+            "requirePriorCardFired": "e-1"
+          },
+          "scriptedRefs": [
+            "emerge-e1-b3-judge-q-v1",
+            "emerge-e1-b3-b-evade-v1",
+            "emerge-e1-b3-a-press-v1",
+            "emerge-e1-b3-b-plea-v1",
+            "emerge-e1-b3-judge-pause-v1"
+          ],
+          "vfxProfile": "standard"
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -3171,10 +3188,7 @@
         "d-1"
       ],
       "isTrap": false,
-      "requires": [
-        "e-3"
-      ],
-      "requiredLieState": "S1",
+      "requires": [],
       "investigationResults": {
         "request_original": "저장되지 않은 번호와 주고받은 문자이다. 이미 알고 있는 사이로 보인다.",
         "check_metadata": "상대는 박지연에 대해 알고 있는 듯하다. 영수증 속 물품들의 구입 동기도 드러난다.",
@@ -3603,56 +3617,6 @@
           "vfxProfile": "standard"
         },
         {
-          "id": "e4-via-a-interject",
-          "type": "npc_interjection",
-          "source": "a",
-          "preconditions": [
-            {
-              "disputeLieState": {
-                "d-1": "S1+"
-              },
-              "contextAction": "evidence_present.b"
-            },
-            {
-              "partyDistrust": {
-                "a": {
-                  "min": 50
-                }
-              },
-              "contextAction": "evidence_present.b"
-            }
-          ],
-          "scriptedRefs": [
-            "emerge-e4-via-a-interject-v1",
-            "emerge-e4-via-a-interject-judge-react-v1",
-            "emerge-e4-via-a-interject-a-response-v1",
-            "emerge-e4-via-a-interject-judge-decree-v1"
-          ],
-          "vfxProfile": "standard"
-        },
-        {
-          "id": "e4-via-b-interject",
-          "type": "npc_interjection",
-          "source": "b",
-          "preconditions": {
-            "disputeLieState": {
-              "d-1": "S1+"
-            },
-            "partyPhase": {
-              "b": [
-                "defensive",
-                "shaken"
-              ]
-            }
-          },
-          "scriptedRefs": [
-            "emerge-e4-via-b-interject-v1",
-            "emerge-e4-via-b-interject-a-pursue-v1",
-            "emerge-e4-via-b-interject-judge-decree-v1"
-          ],
-          "vfxProfile": "standard"
-        },
-        {
           "id": "e4-via-judge-auto",
           "type": "judge_auto_mention",
           "preconditions": {
@@ -3867,34 +3831,6 @@
         ]
       },
       "narrativeTriggers": [
-        {
-          "id": "e5-via-a-interjection",
-          "type": "npc_interjection",
-          "source": "a",
-          "preconditions": [
-            {
-              "disputeLieState": {
-                "d-1": "S2+"
-              }
-            },
-            {
-              "partyDistrust": {
-                "a": {
-                  "min": 50
-                }
-              }
-            }
-          ],
-          "scriptedRefs": [
-            "emerge-e5-via-a-interject-v1",
-            "emerge-e5-via-a-interject-judge-react-v1",
-            "emerge-e5-via-a-interject-a-response-v1",
-            "emerge-e5-via-a-interject-b-shock-v1",
-            "emerge-e5-via-a-interject-a-rebuke-v1",
-            "emerge-e5-via-a-interject-judge-decree-v1"
-          ],
-          "vfxProfile": "standard"
-        },
         {
           "id": "e5-via-combo-cash-pattern",
           "type": "combination_result",
@@ -5041,10 +4977,10 @@
     },
     {
       "id": "e-9",
-      "name": "이준호 명의 산전우울증 자가진단 결과지 + 상담소 예약 확인 명세",
-      "surfaceName": "산전우울증 자가진단 + 상담 예약",
-      "description": "이준호 명의로 출력된 산전우울증 자가진단 결과지(점수표 포함)와 정신건강 상담소 예약 확인 명세. 모두 종이/표 출력본이며, 자가진단지에는 B 본인의 필기 표시가 일부 남아 있다. 실제 상담 진행 여부는 별도 확인 필요.",
-      "surfaceDescription": "이준호 명의로 출력된 산전우울증 자가진단 결과지와 상담소 예약 확인 명세.",
+      "name": "이준호 명의 예비 부모 정서 자가진단 결과지 + 상담소 예약 확인 명세",
+      "surfaceName": "예비 부모 정서 자가진단 + 상담 예약",
+      "description": "이준호 명의로 출력된 예비 부모 정서 자가진단 결과지(점수표 포함)와 정신건강 상담소 예약 확인 명세. 모두 종이/표 출력본이며, 자가진단지에는 B 본인의 필기 표시가 일부 남아 있다. 실제 상담 진행 여부는 별도 확인 필요.",
+      "surfaceDescription": "이준호 명의로 출력된 예비 부모 정서 자가진단 결과지와 상담소 예약 확인 명세.",
       "type": "medical_record",
       "reliability": "hard",
       "completeness": "original",
@@ -5141,46 +5077,18 @@
           "vfxProfile": "standard"
         },
         {
-          "id": "e9-via-a-interject",
-          "type": "npc_interjection",
-          "source": "a",
-          "preconditions": [
-            {
-              "partyDistrust": {
-                "a": {
-                  "min": 50
-                }
-              },
-              "contextAction": "evidence_present.b",
-              "requirePriorCardFired": "e-8"
-            },
-            {
-              "partyDistrust": {
-                "a": {
-                  "min": 50
-                }
-              },
-              "contextAction": "question.fact_pursuit.b",
-              "requirePriorCardFired": "e-8"
-            }
-          ],
-          "scriptedRefs": [
-            "emerge-e9-via-a-interject-v1",
-            "emerge-e9-via-a-interject-judge-react-v1",
-            "emerge-e9-via-a-interject-a-response-v1",
-            "emerge-e9-via-a-interject-judge-decree-v1"
-          ],
-          "vfxProfile": "standard"
-        },
-        {
-          "id": "e9-via-b-submit",
-          "type": "npc_interjection",
+          "id": "e9-via-b-outburst",
+          "type": "emotional_outburst",
           "source": "b",
           "preconditions": {
+            "disputeLieState": {
+              "d-2": "S5+"
+            },
             "partyPhase": {
               "b": [
-                "defensive",
-                "shaken"
+                "shaken",
+                "angry",
+                "resigned"
               ]
             },
             "requirePriorCardFired": "e-8"
@@ -5190,7 +5098,7 @@
             "emerge-e9-via-b-submit-judge-react-v1",
             "emerge-e9-via-b-submit-judge-decree-v1"
           ],
-          "vfxProfile": "standard"
+          "vfxProfile": "emphasis"
         },
         {
           "id": "e9-via-judge-auto",
@@ -5223,10 +5131,7 @@
         "h-d4"
       ],
       "isTrap": false,
-      "requires": [
-        "e-1"
-      ],
-      "requiredLieState": "S0",
+      "requires": [],
       "investigationResults": {
         "inspect_book_cover": "「부모가 되는 마음 연습」이라는 이름의 출산 준비 도서이다.",
         "browse_table_of_contents": "목차의 몇 개 챕터에 밑줄이 그어져 있다.",
@@ -5623,16 +5528,57 @@
       },
       "narrativeTriggers": [
         {
-          "id": "e10-via-bookbaby-question-angle",
-          "type": "cascade_from_card",
+          "id": "e10-via-b-bookangle-interject",
+          "type": "npc_interjection",
+          "source": "a",
           "preconditions": {
-            "contextAction": "evidence_present.b.e-1",
             "requirePriorCardFired": "e-1"
+          },
+          "scriptedRefs": [
+            "emerge-e10-via-b3-judge-q-v1",
+            "emerge-e10-via-b3-b-shock-v1",
+            "emerge-e10-via-b3-a-confront-v1",
+            "emerge-e10-via-b3-b-outburst-v1",
+            "emerge-e10-via-b3-a-deflect-v1",
+            "emerge-e10-via-b3-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e10-via-b-dc1-interject",
+          "type": "npc_interjection",
+          "source": "b",
+          "preconditions": {
+            "disputeLieState": {
+              "d-1": "S2+"
+            },
+            "partyPhase": {
+              "b": [
+                "defensive",
+                "shaken"
+              ]
+            },
+            "requirePriorCardFired": "dc-1"
           },
           "scriptedRefs": [
             "emerge-e10-via-cascade-judge-mention-v1",
             "emerge-e10-via-cascade-a-react-v1",
             "emerge-e10-via-cascade-b-response-v1",
+            "emerge-e10-via-cascade-judge-decree-v1"
+          ],
+          "vfxProfile": "standard"
+        },
+        {
+          "id": "e10-via-judge-auto",
+          "type": "judge_auto_mention",
+          "preconditions": {
+            "disputeLieState": {
+              "d-1": "S2+"
+            },
+            "turnsAfterEligible": 5,
+            "requirePriorCardFired": "dc-1"
+          },
+          "scriptedRefs": [
             "emerge-e10-via-cascade-judge-decree-v1"
           ],
           "vfxProfile": "standard"
@@ -6246,7 +6192,7 @@
       {
         "id": "e-9",
         "type": "evidence",
-        "label": "e-9 산전우울증 자가진단 + 상담 예약",
+        "label": "e-9 예비 부모 정서 자가진단 + 상담 예약",
         "sourceRef": "e-9",
         "linkedDisputeIds": [
           "h-d4"
@@ -6548,7 +6494,7 @@
         "label": "dc-8 이준호의 또 다른 침묵",
         "summary": "형 사건과는 무관한 곳에서도 이준호가 혼자 무언가를 준비해 왔다는 단서. 외도 의심과 부모 될 준비 두 해석 사이.",
         "nodeType": "derived_note",
-        "noteText": "○○ 종합산부인과 주차 영수증과 본인 명의 산전우울증 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다.",
+        "noteText": "○○ 종합산부인과 주차 영수증과 본인 명의 예비 부모 정서 자가진단 결과지·상담소 예약 확인 명세가 같은 시기, 같은 부모 될 준비라는 갈래에 모인다. 자료 모두 B 본인 명의·본인 동선이며, 형 사건과는 무관하다.",
         "effects": [
           {
             "kind": "unlock_note",
@@ -6563,7 +6509,7 @@
             }
           }
         ],
-        "judgeHint": "산부인과 주차 영수증과 본인 명의 산전우울증 자가진단·상담 예약 명세가 같은 시기로 겹칩니다. 이 자료들이 누구를 위한 준비였는지 확인하겠습니다."
+        "judgeHint": "산부인과 주차 영수증과 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 같은 시기로 겹칩니다. 이 자료들이 누구를 위한 준비였는지 확인하겠습니다."
       }
     ],
     "recipes": [
@@ -6640,7 +6586,7 @@
           "e-9"
         ],
         "cost": 2,
-        "discoveryText": "산부인과 반복 방문 흔적과 본인 명의 산전우울증 자가진단·상담 예약 명세가 같은 시기, 같은 부모 될 준비 갈래로 모인다.",
+        "discoveryText": "산부인과 반복 방문 흔적과 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 같은 시기, 같은 부모 될 준비 갈래로 모인다.",
         "outputId": "dc-8",
         "resultType": "upgrade"
       }
@@ -6717,7 +6663,7 @@
         "name": "비자금의 원래 목적",
         "unlockPlan": {
           "runtimeRule": "d-2 S5 자백 후 비자금 운용 패턴 의문 + 신규 증거(e-8/e-9) 발현 시",
-          "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 산전우울증 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상"
+          "authoredRule": "자금 사용처는 형으로 확정됐으나 10년 누적 자금이 형 사건 이전부터 모인 패턴 + B 차량 산부인과 주차 영수증 + 본인 명의 예비 부모 정서 자가진단·상담 예약 명세가 형 사정과 무관한 갈래를 가리키면 새 쟁점 부상"
         }
       }
     ],
@@ -6970,7 +6916,7 @@
       {
         "action": "원본 제출 명령",
         "recommendedMoment": "h-d4 등장 직후 e-8 / e-9 Excerpt 시점",
-        "purpose": "산부인과 주차 영수증과 산전우울증 자가진단·상담 예약 명세의 전체 자료를 확보.",
+        "purpose": "산부인과 주차 영수증과 예비 부모 정서 자가진단·상담 예약 명세의 전체 자료를 확보.",
         "contextDispute": "h-d4"
       },
       {
