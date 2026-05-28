@@ -181,6 +181,12 @@ export interface EventFeedbackItem {
   /** actions/onDefer 없는 popup의 기본 정책(확인 [Space] 강제 + auto-dismiss 차단)을 opt-out.
    *  true 시 [확인 Space] 미노출 + autoDismissMs 정상 적용. 단순 정보성 가이드용. */
   allowAutoDismiss?: boolean
+  /**
+   * 표시 우선순위. 높을수록 먼저 표시. 동시 등장 시 신규 항목 위상 정렬에 사용.
+   * 권장값: 쟁점 등장 3 / 증거 등장 2 / 증인 등장 1. 미지정 시 0 (기존 FIFO 동작).
+   * active 는 선점하지 않음 — 이미 표시 중인 카드는 유지하고 큐 내부만 정렬.
+   */
+  priority?: number
   /** observation 전용: 해당 파티의 archetype 태그로 수렴 애니메이션 재생 */
   convergeToTag?: boolean
   /** 가이드 컷씬: 임의의 타겟 selector로 수렴 + 수렴 완료 후 타겟 3번 깜빡 */
@@ -239,7 +245,19 @@ export const createEventFeedbackSlice: StateCreator<EventFeedbackSlice, [], [], 
       if (!state.activeFeedback) {
         return { activeFeedback: entry, feedbackQueue: state.feedbackQueue }
       }
-      return { feedbackQueue: [...state.feedbackQueue, entry] }
+      // priority desc 정렬 삽입 (stable — 같은 priority 는 FIFO). active 는 선점 X.
+      // priority 미지정 = 0. 기존 항목 모두 0 이면 맨 뒤 push (기존 FIFO 동작 보존).
+      const entryPriority = entry.priority ?? 0
+      const queue = state.feedbackQueue
+      let insertAt = queue.length
+      for (let i = 0; i < queue.length; i += 1) {
+        if ((queue[i].priority ?? 0) < entryPriority) {
+          insertAt = i
+          break
+        }
+      }
+      const nextQueue = [...queue.slice(0, insertAt), entry, ...queue.slice(insertAt)]
+      return { feedbackQueue: nextQueue }
     })
     return id
   },

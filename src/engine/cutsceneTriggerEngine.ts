@@ -15,7 +15,6 @@ export interface CutsceneEvent {
     | 'contradiction_hit'
     | 'emotional_burst'
     | 'dispute_emergence'
-    | 'evidence_unlock' // 새 evidence 등재 시 공통 카드 overlay (2026-05-28)
     | 'evidence_dispute_dual_emergence' // evidence + dispute 동시 등장 컷씬 (2026-05-25)
     | 'phase_transition'
     | 'verdict_gavel'
@@ -53,8 +52,6 @@ export const CUTSCENE_DURATION: Record<CutsceneEvent['type'], number> = {
   contradiction_hit: 3000,
   emotional_burst: 2000,
   dispute_emergence: 2000,
-  /** 새 evidence 등재 카드 — fade-in 0.3s + 표시 1.9s + fade-out 0.3s */
-  evidence_unlock: 2500,
   /** evidence + dispute 동시 등장 — 레터박스(0.4s) + evidence 카드 소극(1.4s) + dispute 카드 소극(1.4s) + 카메라 closure(0.8s) */
   evidence_dispute_dual_emergence: 4000,
   phase_transition: 2000,
@@ -143,19 +140,8 @@ export function shouldTriggerCutscene(
       break
     }
 
-    // 새 evidence 등재 시
-    case 'evidence_unlock': {
-      const type = 'evidence_unlock' as const
-      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
-      result = {
-        type,
-        data: {
-          evidenceId: data?.evidenceId as string | undefined,
-          evidenceName: data?.evidenceName as string | undefined,
-        },
-      }
-      break
-    }
+    // 새 evidence 등재 — 시각 표현은 evidence_result popup(EventFeedbackCard)으로 통일.
+    // (별도 DOM overlay cutscene 미사용 — 2026-05-28 popup 통일 정책)
 
     // evidence + dispute 동시 등장 (예: spouse-01 e-10 책 본체 + d-3 내연녀 임신 의심)
     case 'evidence_dispute_dual_emergence': {

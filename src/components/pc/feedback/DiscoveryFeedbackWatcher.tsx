@@ -484,6 +484,8 @@ export default function DiscoveryFeedbackWatcher() {
     void surfaceOnlyEmergence
     state.enqueueFeedback({
       kind: 'emergence',
+      // 신규 항목 등장 우선순위 — 쟁점 3 > 증거 2 > 증인 1 (동시 등장 시 순차 표시)
+      priority: 3,
       eyebrow: t('pc.discovery.feedback.emergence.eyebrow'),
       title: disputeName,
       // body 제거 (사용자 11th: '쟁점을 확인하는 과정에서…' 텍스트 과다).
@@ -1182,6 +1184,8 @@ export default function DiscoveryFeedbackWatcher() {
     })
     state.enqueueFeedback({
       kind: 'witness_choice',
+      // 신규 항목 등장 우선순위 — 쟁점 3 > 증거 2 > 증인 1
+      priority: 1,
       eyebrow: t('pc.discovery.feedback.witness.eyebrow'),
       title: pc.witnessName,
       body: pc.isResummon
