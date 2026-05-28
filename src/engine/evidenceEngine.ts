@@ -1,5 +1,35 @@
-import type { EvidenceNode, EvidenceCombination } from '../types'
+import type { EvidenceNode, EvidenceCombination, PartyId } from '../types'
 import type { AppraisalVerdict, EvidenceAppraisalEntry, PartialTrustDetail } from '../types/discovery'
+
+/**
+ * 증거 제시 대상 적합성 판정 (단일 권위).
+ * - presentableTargetsByStage 게이트가 있으면 currentStage 이하 중 가장 큰 등록 stage 의 targets 사용.
+ *   targets.includes('both') || targets.includes(party).
+ * - 게이트에 매치되는 stage 가 없으면 subjectParty fallback (legacy 동작 보존).
+ *
+ * EvidencePresenter / PCInteractionPanel 등 제시 UI 가 공유 — 한 곳에서만 평가하도록 통합.
+ */
+export function isEvidenceRelevantForParty(
+  evidence: {
+    subjectParty?: 'a' | 'b' | 'both'
+    presentableTargetsByStage?: Record<string, ('a' | 'b' | 'both')[]>
+  },
+  party: PartyId | null,
+  currentStage: number,
+): boolean {
+  const stageGate = evidence.presentableTargetsByStage
+  if (stageGate && party) {
+    const matchedStage = Object.keys(stageGate)
+      .map((k) => Number(k))
+      .filter((s) => Number.isFinite(s) && s <= currentStage)
+      .sort((a, b) => b - a)[0]
+    if (matchedStage !== undefined) {
+      const targets = stageGate[String(matchedStage)]
+      return targets.includes('both') || targets.includes(party)
+    }
+  }
+  return !evidence.subjectParty || evidence.subjectParty === 'both' || evidence.subjectParty === party
+}
 
 export interface EvidenceRuntimeState {
   id: string

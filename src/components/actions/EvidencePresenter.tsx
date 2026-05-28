@@ -3,7 +3,7 @@ import type { PartyId } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth as _determineTestimonyDepth, getDepthSystemMessage as _getDepthSystemMessage } from '../../engine/witnessEngine'
-import { canAppraise, getUnlockedQuestions, getLockedQuestions, computeSurfacedEvidence } from '../../engine/evidenceEngine'
+import { canAppraise, getUnlockedQuestions, getLockedQuestions, computeSurfacedEvidence, isEvidenceRelevantForParty } from '../../engine/evidenceEngine'
 import { playClick, playEvidenceUnlock as _playEvidenceUnlock, playInvestigationTokenWarning } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 import EvidenceVisual from '../common/EvidenceVisual'
@@ -105,25 +105,9 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const dimmedSet = useMemo(() => new Set(surfaceResult.dimmedIds), [surfaceResult.dimmedIds])
 
   const { available, presented, locked, dimmed, unrelated } = useMemo(() => {
-    // 1순위: presentableTargetsByStage (stage-aware 게이트). currentStage 이하 중
-    // 가장 큰 key의 targets를 사용. 매치 stage 없으면 subjectParty fallback.
-    // 2순위 (fallback): subjectParty 기준 매칭.
-    const isRelevant = (e: UnsafeAny) => {
-      const stageGate = e.presentableTargetsByStage as Record<string, ('a'|'b'|'both')[]> | undefined
-      if (stageGate && target) {
-        const state = evidenceStates[e.id]
-        const currentStage = state?.investigatedActions?.length ?? 0
-        const matchedStage = Object.keys(stageGate)
-          .map((k) => Number(k))
-          .filter((s) => Number.isFinite(s) && s <= currentStage)
-          .sort((a, b) => b - a)[0]
-        if (matchedStage !== undefined) {
-          const targets = stageGate[String(matchedStage)]
-          return targets.includes('both') || targets.includes(target)
-        }
-      }
-      return !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
-    }
+    // presentableTargetsByStage 게이트 1순위, subjectParty fallback — isEvidenceRelevantForParty 단일 권위 사용.
+    const isRelevant = (e: UnsafeAny) =>
+      isEvidenceRelevantForParty(e, target, evidenceStates[e.id]?.investigatedActions?.length ?? 0)
     const isPresentedToTarget = (e: UnsafeAny) => {
       if (!target) return false
       const state = evidenceStates[e.id]

@@ -8,6 +8,7 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
+import { isEvidenceRelevantForParty } from '../../../engine/evidenceEngine'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 import { shouldBypassSpaceDismiss } from '../../../utils/keyboardDismiss'
 import { emitVerdictCtaCollapsed } from './verdictAdvanceEvents'
@@ -356,7 +357,7 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
     actions: linkedEvidence.map((evidence) => {
       const evidenceState = state.evidenceStates[evidence.id]
       const stage = getEvidenceInvestigationStage(evidenceState)
-      const relevant = !evidence.subjectParty || evidence.subjectParty === 'both' || evidence.subjectParty === party
+      const relevant = isEvidenceRelevantForParty(evidence, party, stage)
       const disabledReason = getEvidencePresentDisabledReason(evidenceState, party, partyName, otherPartyName, relevant)
       return {
         kind: 'prepare_evidence_present' as const,
@@ -389,7 +390,7 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
   const context = party === 'a' ? evidence.partyContext?.a : evidence.partyContext?.b
   const evidenceState = state.evidenceStates[evidenceId]
   const currentStage = getEvidenceInvestigationStage(evidenceState)
-  const relevant = !evidence.subjectParty || evidence.subjectParty === 'both' || evidence.subjectParty === party
+  const relevant = isEvidenceRelevantForParty(evidence, party, currentStage)
   const disabledReason = getEvidencePresentDisabledReason(evidenceState, party, partyName, otherPartyName, relevant)
 
   return {
@@ -1014,10 +1015,10 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   const nameB = localizeRuntimeText(caseData.duo.partyB.name, locale)
   const presentedToA = isEvidencePresentedForCurrentStage(state, 'a')
   const presentedToB = isEvidencePresentedForCurrentStage(state, 'b')
-  // subjectParty 분기 — 비매칭 측에 제시 = 게임 메커니즘상 효과 X
-  const subjectParty = evidence.subjectParty ?? 'both'
-  const aRelevant = subjectParty === 'both' || subjectParty === 'a'
-  const bRelevant = subjectParty === 'both' || subjectParty === 'b'
+  // presentableTargetsByStage 게이트 1순위, subjectParty fallback — isEvidenceRelevantForParty 단일 권위.
+  // (stage 3 도달 시 양측 제시 활성화 등 — currentStage 는 위 line 참조)
+  const aRelevant = isEvidenceRelevantForParty(evidence, 'a', currentStage)
+  const bRelevant = isEvidenceRelevantForParty(evidence, 'b', currentStage)
   const aDisabledReason = getEvidencePresentDisabledReason(state, 'a', nameA, nameB, aRelevant)
   const bDisabledReason = getEvidencePresentDisabledReason(state, 'b', nameB, nameA, bRelevant)
 
